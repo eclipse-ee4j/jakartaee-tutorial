@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Registering a Custom Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/96c4d89611.js"></script>
+  </head>
+  <body>
+<table id="doc-title" cellspacing="0" cellpadding="0">
+  <tr>
+  <td align="left" valign="top">
+  <b>Jakarta Enterprise Edition (Jakarta EE) 8</b><br />
+  <b>The Jakarta EE Tutorial</b>
+	 <!-- <p class="beta">Beta Draft (Pre-General Availability)</p> -->
+  </td>
+  </tr>
+</table>
+<hr />
+
+<table width="90%" id="top-nav" cellspacing="0" cellpadding="0">
+	<colgroup>
+		<col width="12%"/>
+		<col width="12%"/>
+		<col width="*"/>
+	</colgroup>
+	<tr>
+		<td align="left">
+		<a href="jsf-configure008.html">
+			<span class="vector-font"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Previous</span>
+		</a>
+		</td>
+
+		<td align="left">
+		<a href="jsf-configure010.html">
+			<span class=" vector-font"><i class="fa fa-arrow-circle-right vector-font" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Next</span>
+		</a>
+		</td>
+
+		<td align="right">
+		<a href="toc.html">
+			<span class=" vector-font"><i class="fa fa-list vector-font" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Contents</span>
+		</a>
+		</td>
+	</tr>
+</table>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a id="BNAXE"></a><a id="registering-a-custom-converter"></a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registering_a_custom_converter">Registering a Custom Converter</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As is the case with a custom validator, if the application developer
+creates a custom converter, you must register it with the application
+either by using the <code>@FacesConverter</code> annotation, as described in
+<a href="jsf-custom011.html#GLPHB">Creating a Custom Converter</a>, or by using
+the <code>converter</code> XML element in the application configuration resource
+file. Here is a hypothetical <code>converter</code> configuration for
+<code>CreditCardConverter</code> from the Duke&#8217;s Bookstore case study:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;converter&gt;
+    &lt;description&gt;
+        Converter for credit card numbers that normalizes
+        the input to a standard format
+    &lt;/description&gt;
+    &lt;converter-id&gt;CreditCardConverter&lt;/converter-id&gt;
+    &lt;converter-class&gt;
+        dukesbookstore.converters.CreditCardConverter
+    &lt;/converter-class&gt;
+&lt;/converter&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Attributes specified in a <code>converter</code> tag override any settings in the
+<code>@FacesConverter</code> annotation.</p>
+</div>
+<div class="paragraph">
+<p>The <code>converter</code> element represents a <code>javax.faces.convert.Converter</code>
+implementation and contains required <code>converter-id</code> and
+<code>converter-class</code> elements.</p>
+</div>
+<div class="paragraph">
+<p>The <code>converter-id</code> element identifies an ID that is used by the
+<code>converter</code> attribute of a UI component tag to apply the converter to
+the component&#8217;s data. <a href="jsf-custom011.html#BNATU">Using a Custom
+Converter</a> includes an example of referencing the custom converter from
+a component tag.</p>
+</div>
+<div class="paragraph">
+<p>The <code>converter-class</code> element identifies the <code>Converter</code> implementation.</p>
+</div>
+<div class="paragraph">
+<p><a href="jsf-custom011.html#BNAUS">Creating and Using a Custom Converter</a>
+explains how to create a custom converter.</p>
+</div>
+</div>
+</div>
+
+<hr />
+
+<table width="90%" id="bottom-nav" cellspacing="0" cellpadding="0">
+	<colgroup>
+		<col width="12%"/>
+		<col width="12%"/>
+		<col width="*"/>
+	</colgroup>
+	<tr>		
+		<td align="left">
+		<a href="jsf-configure008.html">
+			<span class=" vector-font"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Previous</span>
+		</a>
+		</td>
+
+		<td align="left">
+		<a href="jsf-configure010.html">
+			<span class="vector-font"><i class="fa fa-arrow-circle-right vector-font" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Next</span>
+		</a>
+		</td>
+
+		<td align="right">
+		<a href="toc.html">
+			<span class="vector-font"><i class="fa fa-list vector-font" aria-hidden="true"></i></span>
+			<span style="position:relative;top:-2px;">Contents</span>
+		</a>
+		</td>
+	</tr>
+</table>
+
+<span id="copyright">
+        <img src="img/eclipse_foundation_logo_tiny.png" height="20px" alt="Eclipse Foundation Logo" align="top"/>&nbsp;            
+        <span >Copyright&nbsp;&copy;&nbsp;2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span>
+</span>
+
+<!--<p align="center" class="beta">Beta Draft (Pre-General Availability)</p> -->
+
+</body>
+</html>

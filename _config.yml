@@ -1,0 +1,19 @@
+remote_theme:  jakartaee/jekyll-theme-jakarta-ee
+
+title: [Eclipse GlassFish Tutorial]
+description: [Eclipse GlassFish Tutorial a.k.a. Jakarta EE Tutorial]
+
+# sidebar links url
+links:
+  source: https://github.com/eclipse-ee4j/glassfish-tutorial
+  download:
+  mailinglist: https://accounts.eclipse.org/mailing-list/glassfish-dev
+  #javadocs:
+  docs: tut/toc.html
+  #faq:
+  #hide_issuetracker: true #set explicitly to 'true' if you don't want to have the issue tracker link displayed
+
+include:
+  LICENSE.md
+  CONTRIBUTING.md
+
