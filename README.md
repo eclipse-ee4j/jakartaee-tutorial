@@ -20,7 +20,7 @@ This tutorial is part of the [Eclipse GlassFish project](https://projects.eclips
 
 Note that the Jakarta EE Tutorial code examples are located in a separate repository, [here](https://github.com/eclipse-ee4j/glassfish-tutorial-examples). You can download all the sample code in a single .zip file with [this link](https://github.com/eclipse-ee4j/glassfish-tutorial-examples/archive/master.zip).
 
-If you are interested in contributing to this document, read the [Contribution Guidelines](https://github.com/eclipse-ee4j/glassfish-tutorial/blob/master/CONTRIBUTING.md). The source for this tutorial text is available here(https://github.com/eclipse-ee4j/glassfish-tutorial). 
+If you are interested in contributing to this document, read the [Contribution Guidelines](https://github.com/eclipse-ee4j/glassfish-tutorial/blob/master/CONTRIBUTING.md). The source for this tutorial text is available [here](https://github.com/eclipse-ee4j/glassfish-tutorial). 
 
 See the links in the right-hand side-bar for additional details.
 
