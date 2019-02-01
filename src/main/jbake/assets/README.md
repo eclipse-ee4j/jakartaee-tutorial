@@ -8,7 +8,7 @@ are used to develop enterprise applications.
 [View the Jakarta EE Tutorial](toc.html)
 
 The latest build of the {{site.title}} is automatically published to
-this site as HTML via a Jenkins jobthat watches for changes to the
+this site as HTML via a Jenkins job that watches for changes to the
 master branch of the repository. The tutorial is authored in
 [AsciiDoc](http://asciidoc.org/). AsciiDoc is similar to markdown but
 is particularly suited for user documentation. If you are interested in
