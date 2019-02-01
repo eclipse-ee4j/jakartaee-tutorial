@@ -1,26 +1,42 @@
-# Jakarta EE Tutorial
+# About this Project
 
-Welcome to the Jakarta EE Tutorial. Click this link to view the [Complete Table of Contents](tut/toc.html). This guide provides a step-by-step, hand's on walk-through of the Jakarta EE technologies.
+The {{site.title}} Project is the official site for the
+_Jakarta Platform, Enterprise Edition (Jakarta EE) Tutorial_.
+The {{site.title}} teaches and demonstrates the Jakarta EE features that
+are used to develop enterprise applications.
 
-The Jakarta EE tutorial is divided into twelve parts:
-1. [Overview](tut/partintro.html#GFIRP)
-1. [Platform Basics](tut/partplatform.html#GFIRP2)
-1. [The Web Tier](tut/partwebtier.html#BNADP)
-1. [Bean Validation](tut/partbeanvalidation.html#sthref1322)
-1. [Contexts and Dependency Injection for Jakarta EE](tut/partcdi.html#GJBNR)
-1. [Web Services](tut/partwebsvcs.html#BNAYK)
-1. [Enterprise Beans](tut/partentbeans.html#BNBLR)
-1. [Persistence](tut/partpersist.html#BNBPY)
-1. [Messaging](tut/partmessaging.html#GFIRP3)
-1. [Security](tut/partsecurity.html#GIJRP)
-1. [Jakarta EE Supporting Technologies](tut/partsupporttechs.html#GIJUE)
-1. [Case Studies](tut/partcasestudies.html#GKGJW)
+[View the Jakarta EE Tutorial](toc.html)
 
-This tutorial is part of the [Eclipse GlassFish project](https://projects.eclipse.org/projects/ee4j.glassfish).
+The latest build of the {{site.title}} is automatically published to
+this site as HTML via a Jenkins jobthat watches for changes to the
+master branch of the repository. The tutorial is authored in
+[AsciiDoc](http://asciidoc.org/). AsciiDoc is similar to markdown but
+is particularly suited for user documentation. If you are interested in
+forking the tutorial source files or building the tutorials locally,
+then see the [repository](https://github.com/eclipse-ee4j/glassfish-tutorial).
 
-Note that the Jakarta EE Tutorial code examples are located in a separate repository, [here](https://github.com/eclipse-ee4j/glassfish-tutorial-examples). You can download all the sample code in a single .zip file with [this link](https://github.com/eclipse-ee4j/glassfish-tutorial-examples/archive/master.zip).
+# Related Projects
 
-If you are interested in contributing to this document, read the [Contribution Guidelines](https://github.com/eclipse-ee4j/glassfish-tutorial/blob/master/CONTRIBUTING.md). The source for this tutorial text is available [here](https://github.com/eclipse-ee4j/glassfish-tutorial). 
+* [eclipse-ee4j/glassfish-tutorial-examples](https://github.com/eclipse-ee4j/glassfish-tutorial-examples):
+this repository contains the example code that is used in the {{site.title}}.
 
-See the links in the right-hand side-bar for additional details.
+* [Your First Cup: An Introduction to the Jakarta EE Platform](https://eclipse-ee4j.github.io/firstcup/):
+an introductory tutorial suitable for beginners.
 
+* [eclipse-ee4j/firstcup-examples](https://github.com/eclipse-ee4j/firstcup-examples):
+this repository contains the example code that is used in the Your
+First Cup tutorial.
+
+# How-to Contribute
+The easiest way to contribute is by opening an
+[issue](https://github.com/eclipse-ee4j/glassfish-tutorial/issues)
+that contains feedback and review comments.
+
+The {{site.title}} is open for contributions and your help is greatly
+appreciated. If you have an idea for the tutorial and want to add a
+section or update an existing section, then review the following
+links:
+
+* [Contribute](CONTRIBUTING)
+* [Pull Request Acceptance Workflow](pr_doc_workflow)
+* [License](LICENSE)
