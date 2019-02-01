@@ -24,7 +24,7 @@
         <version>5</version>
     </parent>
     <groupId>org.glassfish.docs</groupId>
-    <artifactId>javaee-tutorial</artifactId>
+    <artifactId>jakartaee-tutorial</artifactId>
     <packaging>pom</packaging>
     <version>8.1-SNAPSHOT</version>
     <name>Java EE Tutorial</name>
@@ -33,14 +33,14 @@
         <maven.site.skip>true</maven.site.skip>
     </properties>
     <scm>
-      <connection>scm:git:git@github.com:javaee/tutorial.git</connection>
-      <developerConnection>scm:git:git@github.com:javaee/tutorial.git</developerConnection>
-      <url>https://github.com/javaee/tutorial</url>      
+      <connection>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</connection>
+      <developerConnection>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</developerConnection>
+      <url>https://github.com/eclipse-ee4j/glassfish-tutorial</url>      
     <tag>HEAD</tag>
   </scm>
     <distributionManagement>
         <site>
-            <url>scm:git:git@github.com:javaee/tutorial.git</url>
+            <url>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</url>
         </site>
     </distributionManagement>
     <build>
