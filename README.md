@@ -1,7 +1,7 @@
 # Jakarta EE Tutorial
 
 This repository contains the source files that are used to build the
-Jakarta Enterprise Edition (Jakarta EE) 8 Tutorial. The source files
+_Jakarta Enterprise Edition (Jakarta EE) Tutorial_. The source files
 are authored in [AsciiDoc](http://asciidoc.org/).  AsciiDoc is similar
 to markdown but is particularly suited for user documentation.  This
 project also uses [JBake](http://jbake.org/). JBake is a static site
