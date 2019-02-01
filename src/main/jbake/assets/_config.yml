@@ -1,14 +1,17 @@
-theme: jekyll-theme-architect
+remote_theme: jakartaee/jekyll-theme-jakarta-ee
 
 title: [Jakarta EE Tutorial]
 description: [Jakarta EE Tutorial Project]
 
 # sidebar links url
 links:
-  source: https://github.com/javaee/tutorial
-  download: https://github.com/javaee/tutorial/releases
-  #mailinglist: https://javaee.groups.io/g/tutorial
+  source: https://github.com/eclipse-ee4j/glassfish-tutorial
+  download: https://github.com/eclipse-ee4j/glassfish-tutorial/releases
+  mailinglist: https://accounts.eclipse.org/mailing-list/glassfish-dev
   #javadocs:
-  docs: https://javaee.github.io/tutorial/toc.html
+  docs: toc.html
   #faq:
 
+include:
+  - LICENSE.md
+  - CONTRIBUTING.md
