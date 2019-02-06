@@ -169,10 +169,10 @@ Declaring Resource References
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your web component uses such objects as enterprise beans, data
-sources, or web services, you use Java EE annotations to inject these
+sources, or web services, you use Jakarta EE annotations to inject these
 resources into your application. Annotations eliminate a lot of the
 boilerplate lookup code and configuration elements that previous
-versions of Java EE required.
+versions of Jakarta EE required.
 
 Although resource injection using annotations can be more convenient for
 the developer, there are some restrictions on using it in web

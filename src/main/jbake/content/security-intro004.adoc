@@ -13,7 +13,7 @@ Securing GlassFish Server
 
 This tutorial describes deployment to GlassFish Server, which provides
 highly secure, interoperable, and distributed component computing based
-on the Java EE security model. GlassFish Server supports the Java EE 8
+on the Jakarta EE security model. GlassFish Server supports the Jakarta EE 8
 security model. You can configure GlassFish Server for the following
 purposes.
 
@@ -30,7 +30,7 @@ contracts between GlassFish Server and authorization policy modules.
 These contracts specify how the authorization providers are installed,
 configured, and used in access decisions.
 * Using pluggable audit modules.
-* Customizing authentication mechanisms. All implementations of Java EE
+* Customizing authentication mechanisms. All implementations of Jakarta EE
 8 compatible web containers are required to support the Servlet Profile
 of JSR 196, which offers an avenue for customizing the authentication
 mechanism applied by the web container on behalf of one or more

@@ -23,7 +23,7 @@ CDI 2.0 is specified by JSR 365. Related specifications that CDI uses
 include the following:
 
 * JSR 330, Dependency Injection for Java
-* The Managed Beans specification, an offshoot of the Java EE platform
+* The Managed Beans specification, an offshoot of the Jakarta EE platform
 specification (JSR 366)
 
 The most fundamental services provided by CDI are as follows.
@@ -48,7 +48,7 @@ interceptor bindings
 (request, session, and application) defined by the Java Servlet
 specification
 * A complete Service Provider Interface (SPI) that allows third-party
-frameworks to integrate cleanly in the Java EE environment
+frameworks to integrate cleanly in the Jakarta EE environment
 
 A major theme of CDI is loose coupling. CDI does the following:
 
@@ -62,7 +62,7 @@ qualifiers, so that the server implementation may vary
 message passing
 * Completely decouples message producers from consumers, by means of
 events
-* Decouples orthogonal concerns by means of Java EE interceptors
+* Decouples orthogonal concerns by means of Jakarta EE interceptors
 
 Along with loose coupling, CDI provides strong typing by
 

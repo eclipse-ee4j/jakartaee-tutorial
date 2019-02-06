@@ -14,12 +14,12 @@ Web Services Support
 
 Web services are web-based enterprise applications that use open,
 XML-based standards and transport protocols to exchange data with
-calling clients. The Java EE platform provides the XML APIs and tools
+calling clients. The Jakarta EE platform provides the XML APIs and tools
 you need to quickly design, develop, test, and deploy web services and
 clients that fully interoperate with other web services and clients
 running on Java-based or non-Java-based platforms.
 
-To write web services and clients with the Java EE XML APIs, all you
+To write web services and clients with the Jakarta EE XML APIs, all you
 need to do is pass parameter data to the method calls and process the
 data returned; for document-oriented web services, you send documents
 containing the service data back and forth. No low-level programming is
@@ -29,7 +29,7 @@ over the standardized XML-based transport protocols. These XML-based
 standards and protocols are introduced in the following sections.
 
 The translation of data to a standardized XML-based data stream is what
-makes web services and clients written with the Java EE XML APIs fully
+makes web services and clients written with the Jakarta EE XML APIs fully
 interoperable. This does not necessarily mean that the data being
 transported includes XML tags, because the transported data can itself
 be plain text, XML data, or any kind of binary data, such as audio,

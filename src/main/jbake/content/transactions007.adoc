@@ -12,8 +12,8 @@ Updating Multiple Databases
 Updating Multiple Databases
 ---------------------------
 
-The Java EE transaction manager controls all enterprise bean
-transactions except for bean-managed JDBC transactions. The Java EE
+The Jakarta EE transaction manager controls all enterprise bean
+transactions except for bean-managed JDBC transactions. The Jakarta EE
 transaction manager allows an enterprise bean to update multiple
 databases within a transaction. link:#BNCJE[Figure 54-2] and
 link:#BNCJF[Figure 54-3] show two scenarios for updating multiple
@@ -28,21 +28,21 @@ database updates occur in the same transaction.
 
 In link:#BNCJF[Figure 54-3], the client calls a business method in
 `Bean-A`, which begins a transaction and updates Database X. Then
-`Bean-A` invokes a method in `Bean-B`, which resides in a remote Java EE
+`Bean-A` invokes a method in `Bean-B`, which resides in a remote Jakarta EE
 server. The method in `Bean-B` updates Database Y. The transaction
-managers of the Java EE servers ensure that both databases are updated
+managers of the Jakarta EE servers ensure that both databases are updated
 in the same transaction.
 
 [[BNCJE]]
 
 .*Figure 54-2 Updating Multiple Databases*
-image:img/javaeett_dt_051.png[
+image:img/jakartaeett_dt_051.png[
 "A diagram showing Bean-A updating databases X and Y, and Bean-B updating
 database Z."]
 
 [[BNCJF]]
 
-.*Figure 54-3 Updating Multiple Databases Across Java EE Servers*
-image:img/javaeett_dt_052.png[
-"A diagram showing Bean-A on one Java EE server updating database X, and
-Bean-B on another Java EE server updating database Y."]
+.*Figure 54-3 Updating Multiple Databases Across Jakarta EE Servers*
+image:img/jakartaeett_dt_052.png[
+"A diagram showing Bean-A on one Jakarta EE server updating database X, and
+Bean-B on another Jakarta EE server updating database Y."]

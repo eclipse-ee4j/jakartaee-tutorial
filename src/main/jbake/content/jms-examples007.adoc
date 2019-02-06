@@ -12,13 +12,13 @@ Receiving Messages Asynchronously Using a Message-Driven Bean
 Receiving Messages Asynchronously Using a Message-Driven Bean
 -------------------------------------------------------------
 
-If you are writing an application to run in the Java EE application
+If you are writing an application to run in the Jakarta EE application
 client container or on the Java SE platform, and you want to receive
 messages asynchronously, you need to define a class that implements the
 `MessageListener` interface, create a `JMSConsumer`, and call the method
 `setMessageListener`.
 
-If you're writing an application to run in the Java EE web or EJB
+If you're writing an application to run in the Jakarta EE web or EJB
 container and want it to receive messages asynchronously, you also need
 to need to define a class that implements the `MessageListener`
 interface. However, instead of creating a `JMSConsumer` and calling the
@@ -56,7 +56,7 @@ the message-driven bean, which then processes the messages.
 [[BNBPM]]
 
 .*Figure 49-3 The simplemessage Application*
-image:img/javaeett_dt_036.png[
+image:img/jakartaeett_dt_036.png[
 "Diagram of application showing an application client sending a message
 to a queue, and the message being delivered to a message-driven bean"]
 

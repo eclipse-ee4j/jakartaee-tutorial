@@ -11,7 +11,7 @@ prev=security-advanced006.html
 Configuring Security Using Deployment Descriptors
 -------------------------------------------------
 
-The recommended way to configure security in the Java EE 8 platform is
+The recommended way to configure security in the Jakarta EE 8 platform is
 with annotations. If you wish to override the security settings at
 deployment time, you can use security elements in the `web.xml`
 deployment descriptor to do so. This section describes how to use the
@@ -79,7 +79,7 @@ it from being read in transit.
 Specifying Non-Default Principal-to-Role Mapping in the Deployment Descriptor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Java EE Security API requires that group principal names be mapped to
+The Jakarta EE Security API requires that group principal names be mapped to
 roles of the same name by default. GlassFish adheres to this standard, by default,
 and provides group principal to role mapping. Implementations of the standard
 can, however, provide mechanisms to configure a different default.

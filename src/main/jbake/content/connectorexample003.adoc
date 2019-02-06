@@ -36,7 +36,7 @@ adapter, the message-driven bean, and the web application
 [[CHDGFGHB]]
 
 .*Figure 56-3 The traffic Example*
-image:img/javaeett_dt_056.png[
+image:img/jakartaeett_dt_056.png[
 "This figure shows the components of the traffic example: a WAR
 communicating with an enterprise bean using a JMS topic, and a RAR
 communicating with an EIS over a TCP socket."]
@@ -57,7 +57,7 @@ a traffic update looks like this:
  ]}
 ----
 
-The `traffic-rar` module implements the inbound contract of the Java EE
+The `traffic-rar` module implements the inbound contract of the Jakarta EE
 Connector Architecture. This module subscribes to the traffic
 information system using the TCP port indicated by the configuration
 provided by the MDB and invokes the methods of the MDB to process
@@ -79,9 +79,9 @@ and sends them to the clients using a WebSocket endpoint.
 Using the Inbound Resource Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In most cases, Java EE application developers use inbound resource
+In most cases, Jakarta EE application developers use inbound resource
 adapters developed by a third party. To use an inbound resource adapter,
-a Java EE application includes a message-driven bean with the following
+a Jakarta EE application includes a message-driven bean with the following
 characteristics.
 
 * The MDB implements the business interface defined by the resource
@@ -90,7 +90,7 @@ adapter.
 adapter.
 
 The business interface defined by the resource adapter is not specified
-in the Java EE Connector Architecture; it is specific to the EIS.
+in the Jakarta EE Connector Architecture; it is specific to the EIS.
 
 The MDB in this example is defined as follows:
 
@@ -140,14 +140,14 @@ Implementing the Inbound Resource Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `traffic-rar` module implements the inbound resource adapter
-contract from the Java EE Connector Architecture for the simple traffic
+contract from the Jakarta EE Connector Architecture for the simple traffic
 information system (EIS) used in this example. The architecture of the
 inbound resource adapter is shown in link:#CHDHADDC[Figure 56-4].
 
 [[CHDHADDC]]
 
 .*Figure 56-4 Architecture of the traffic Example*
-image:img/javaeett_dt_057.png[
+image:img/jakartaeett_dt_057.png[
 "This figure shows the classes in each of the components of the traffic
 example."]
 

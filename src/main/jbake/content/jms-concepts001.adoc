@@ -14,14 +14,14 @@ Overview of the JMS API
 
 This overview defines the concept of messaging, describes the JMS API
 and where it can be used, and explains how the JMS API works within the
-Java EE platform.
+Jakarta EE platform.
 
 The following topics are addressed here:
 
 * link:#BNCDS[What Is Messaging?]
 * link:#BNCDT[What Is the JMS API?]
 * link:#BNCDU[When Can You Use the JMS API?]
-* link:#BNCDW[How Does the JMS API Work with the Java EE Platform?]
+* link:#BNCDW[How Does the JMS API Work with the Jakarta EE Platform?]
 
 [[BNCDS]][[what-is-messaging]]
 
@@ -123,7 +123,7 @@ might work.
 [[BNCDV]]
 
 .*Figure 48-1 Messaging in an Enterprise Application*
-image:img/javaeett_dt_026.png[
+image:img/jakartaeett_dt_026.png[
 "Diagram showing messaging between various departments in an enterprise"]
 
 Manufacturing is only one example of how an enterprise can use the JMS
@@ -132,8 +132,8 @@ services applications, and many others can make use of messaging.
 
 [[BNCDW]][[how-does-the-jms-api-work-with-the-java-ee-platform]]
 
-How Does the JMS API Work with the Java EE Platform?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How Does the JMS API Work with the Jakarta EE Platform?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the JMS API was first introduced, its most important purpose was to
 allow Java applications to access existing messaging-oriented middleware
@@ -141,11 +141,11 @@ allow Java applications to access existing messaging-oriented middleware
 implemented the JMS API, so a JMS product can now provide a complete
 messaging capability for an enterprise.
 
-The JMS API is an integral part of the Java EE platform, and application
-developers can use messaging with Java EE components. JMS 2.0 is part of
-the Java EE 8 release.
+The JMS API is an integral part of the Jakarta EE platform, and application
+developers can use messaging with Jakarta EE components. JMS 2.0 is part of
+the Jakarta EE 8 release.
 
-The JMS API in the Java EE platform has the following features.
+The JMS API in the Jakarta EE platform has the following features.
 
 * Application clients, Enterprise JavaBeans (EJB) components, and web
 components can send or synchronously receive a JMS message. Application
@@ -160,19 +160,19 @@ concurrent processing of messages.
 Transaction API (JTA) transactions, which allow JMS operations and
 database accesses to take place within a single transaction.
 
-The JMS API enhances the other parts of the Java EE platform by
+The JMS API enhances the other parts of the Jakarta EE platform by
 simplifying enterprise development, allowing loosely coupled, reliable,
-asynchronous interactions among Java EE components and legacy systems
+asynchronous interactions among Jakarta EE components and legacy systems
 capable of messaging. A developer can easily add new behavior to a Java
 EE application that has existing business events by adding a new
-message-driven bean to operate on specific business events. The Java EE
+message-driven bean to operate on specific business events. The Jakarta EE
 platform, moreover, enhances the JMS API by providing support for JTA
 transactions and allowing for the concurrent consumption of messages.
 For more information, see the Enterprise JavaBeans specification, v3.2.
 
 The JMS provider can be integrated with the application server using the
-Java EE Connector architecture. You access the JMS provider through a
+Jakarta EE Connector architecture. You access the JMS provider through a
 resource adapter. This capability allows vendors to create JMS providers
 that can be plugged in to multiple application servers, and it allows
 application servers to support multiple JMS providers. For more
-information, see the Java EE Connector architecture specification, v1.7.
+information, see the Jakarta EE Connector architecture specification, v1.7.

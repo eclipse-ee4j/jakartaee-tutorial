@@ -2,7 +2,7 @@ type=page
 status=published
 title=Examples: Securing Enterprise Beans
 next=security-api.html
-prev=security-javaee002.html
+prev=security-jakartaee002.html
 ~~~~~~
 = Examples: Securing Enterprise Beans
 
@@ -282,7 +282,7 @@ Enterprise Beans"] and is found in the
 the example by adding the necessary elements to secure the application
 by using the `getCallerPrincipal` and `isCallerInRole` methods, which
 are discussed in more detail in
-link:security-javaee002.html#securing-an-enterprise-bean-programmatically
+link:security-jakartaee002.html#securing-an-enterprise-bean-programmatically
 [Securing an Enterprise Bean Programmatically].
 
 In general, the following steps are necessary when using the

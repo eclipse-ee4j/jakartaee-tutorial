@@ -107,7 +107,7 @@ contains a CDI bean is a bean archive. For more information on packaging
 bean archives, see link:cdi-basic013.html#GJBNZ[Configuring a CDI
 Application] in this chapter and link:cdi-adv001.html#CACDCFDE[Packaging
 CDI Applications] in link:cdi-adv.html#GJEHI[Chapter 27, "Contexts and
-Dependency Injection for Java EE: Advanced Topics"].
+Dependency Injection for Jakarta EE: Advanced Topics"].
 
 In this example, `MessageB` is the only class that implements the
 `Message` interface. If an application has more than one implementation
@@ -116,4 +116,4 @@ which implementation to inject. For more information, see
 link:cdi-basic006.html#GJBCK[Using Qualifiers] in this chapter and
 link:cdi-adv002.html#GJSDF[Using Alternatives in CDI Applications] in
 link:cdi-adv.html#GJEHI[Chapter 27, "Contexts and Dependency Injection
-for Java EE: Advanced Topics"].
+for Jakarta EE: Advanced Topics"].

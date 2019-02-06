@@ -12,9 +12,9 @@ Securing Application Clients
 Securing Application Clients
 ----------------------------
 
-The Java EE authentication requirements for application clients are the
-same as for other Java EE components, and the same authentication
-techniques can be used as for other Java EE application components. No
+The Jakarta EE authentication requirements for application clients are the
+same as for other Jakarta EE components, and the same authentication
+techniques can be used as for other Jakarta EE application components. No
 authentication is necessary when accessing unprotected web resources.
 
 When accessing protected web resources, the usual varieties of
@@ -28,7 +28,7 @@ to specify SSL client authentication.
 
 Authentication is required when accessing protected enterprise beans.
 The authentication mechanisms for enterprise beans are discussed in
-link:security-javaee002.html#BNBYL[Securing Enterprise Beans].
+link:security-jakartaee002.html#BNBYL[Securing Enterprise Beans].
 
 An application client makes use of an authentication service provided by
 the application client container for authenticating its users. The

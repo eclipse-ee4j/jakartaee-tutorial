@@ -28,7 +28,7 @@ Methods].
 A producer field is a simpler alternative to a producer method; it is a
 field of a bean that generates an object. It can be used instead of a
 simple getter method. Producer fields are particularly useful for
-declaring Java EE resources such as data sources, JMS resources, and web
+declaring Jakarta EE resources such as data sources, JMS resources, and web
 service references.
 
 A producer method or field is annotated with the

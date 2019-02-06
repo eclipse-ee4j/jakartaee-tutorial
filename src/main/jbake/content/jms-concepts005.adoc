@@ -1,16 +1,16 @@
 type=page
 status=published
-title=Using the JMS API in Java EE Applications
+title=Using the JMS API in Jakarta EE Applications
 next=jms-concepts006.html
 prev=jms-concepts004.html
 ~~~~~~
-= Using the JMS API in Java EE Applications
+= Using the JMS API in Jakarta EE Applications
 
 
 [[BNCGL]][[using-the-jms-api-in-java-ee-applications]]
 
-Using the JMS API in Java EE Applications
------------------------------------------
+Using the JMS API in Jakarta EE Applications
+--------------------------------------------
 
 This section describes how using the JMS API in enterprise bean
 applications or web applications differs from using it in application
@@ -19,10 +19,10 @@ clients.
 The following topics are addressed here:
 
 * link:#CHDGICJB[Overview of Using the JMS API]
-* link:#BABHFBDH[Creating Resources for Java EE Applications]
+* link:#BABHFBDH[Creating Resources for Jakarta EE Applications]
 * link:#BNCGM[Using Resource Injection in Enterprise Bean or Web
 Components]
-* link:#BNCGN[Using Java EE Components to Produce and to Synchronously
+* link:#BNCGN[Using Jakarta EE Components to Produce and to Synchronously
 Receive Messages]
 * link:#BNCGQ[Using Message-Driven Beans to Receive Messages
 Asynchronously]
@@ -33,7 +33,7 @@ Asynchronously]
 Overview of Using the JMS API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A general rule in the Java EE platform specification applies to all Java
+A general rule in the Jakarta EE platform specification applies to all Java
 EE components that use the JMS API within EJB or web containers:
 Application components in the web and EJB containers must not attempt to
 create more than one active (not closed) `Session` object per
@@ -46,11 +46,11 @@ connection.
 
 [[BABHFBDH]][[creating-resources-for-java-ee-applications]]
 
-Creating Resources for Java EE Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating Resources for Jakarta EE Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use annotations to create application-specific connection
-factories and destinations for Java EE enterprise bean or web
+factories and destinations for Jakarta EE enterprise bean or web
 components. The resources you create in this way are visible only to the
 application for which you create them.
 
@@ -155,7 +155,7 @@ Using Resource Injection in Enterprise Bean or Web Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You may use resource injection to inject both administered objects and
-`JMSContext` objects in Java EE applications.
+`JMSContext` objects in Jakarta EE applications.
 
 The following topics are addressed here:
 
@@ -168,7 +168,7 @@ Injecting a ConnectionFactory, Queue, or Topic
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Normally, you use the `@Resource` annotation to inject a
-`ConnectionFactory`, `Queue`, or `Topic` into your Java EE application.
+`ConnectionFactory`, `Queue`, or `Topic` into your Jakarta EE application.
 These objects must be created administratively before you deploy your
 application. You may want to use the default connection factory, whose
 JNDI name is `java:comp/DefaultJMSConnectionFactory`.
@@ -229,11 +229,11 @@ private JMSContext context2;
 
 [[BNCGN]][[using-java-ee-components-to-produce-and-to-synchronously-receive-messages]]
 
-Using Java EE Components to Produce and to Synchronously Receive Messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using Jakarta EE Components to Produce and to Synchronously Receive Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An application that produces messages or synchronously receives them can
-use a Java EE web or EJB component, such as a managed bean, a servlet,
+use a Jakarta EE web or EJB component, such as a managed bean, a servlet,
 or a session bean, to perform these operations. The example in
 link:jms-examples008.html#BNCGW[Sending Messages from a Session Bean to
 an MDB] uses a stateless session bean to send messages to a topic. The
@@ -248,7 +248,7 @@ specifies a timeout value, or use a message-driven bean to receive
 messages asynchronously. For details about synchronous receives, see
 link:jms-concepts003.html#BNCEP[JMS Message Consumers].
 
-Using the JMS API in a Java EE component is in many ways similar to
+Using the JMS API in a Jakarta EE component is in many ways similar to
 using it in an application client. The main differences are the areas of
 resource management and transactions.
 
@@ -307,17 +307,17 @@ Using Message-Driven Beans to Receive Messages Asynchronously
 
 The sections link:ejb-intro003.html#GIPKO[What Is a Message-Driven Bean?]
 and link:jms-concepts001.html#BNCDW[How Does the JMS API Work with the
-Java EE Platform?] describe how the Java EE platform supports a special
-kind of enterprise bean, the message-driven bean, which allows Java EE
-applications to process JMS messages asynchronously. Other Java EE web
+Jakarta EE Platform?] describe how the Jakarta EE platform supports a special
+kind of enterprise bean, the message-driven bean, which allows Jakarta EE
+applications to process JMS messages asynchronously. Other Jakarta EE web
 and EJB components allow you to send messages and to receive them
 synchronously but not asynchronously.
 
 A message-driven bean is a message listener to which messages can be
 delivered from either a queue or a topic. The messages can be sent by
-any Java EE component (from an application client, another enterprise
+any Jakarta EE component (from an application client, another enterprise
 bean, or a web component) or from an application or a system that does
-not use Java EE technology.
+not use Jakarta EE technology.
 
 A message-driven bean class has the following requirements.
 
@@ -496,10 +496,10 @@ link:ejb-intro007.html#GIPKW[The Lifecycle of a Message-Driven Bean].
 Managing JTA Transactions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Java EE application clients and Java SE clients use JMS local
+Jakarta EE application clients and Java SE clients use JMS local
 transactions (described in link:jms-concepts004.html#BNCGH[Using JMS
 Local Transactions]), which allow the grouping of sends and receives
-within a specific JMS session. Java EE applications that run in the web
+within a specific JMS session. Jakarta EE applications that run in the web
 or EJB container commonly use JTA transactions to ensure the integrity
 of accesses to external resources. The key difference between a JTA
 transaction and a JMS local transaction is that a JTA transaction is
@@ -512,7 +512,7 @@ For example, distributed transactions allow multiple applications to
 perform atomic updates on the same database, and they allow a single
 application to perform atomic updates on multiple databases.
 
-In a Java EE application that uses the JMS API, you can use transactions
+In a Jakarta EE application that uses the JMS API, you can use transactions
 to combine message sends or receives with database updates and other
 resource manager operations. You can access resources from multiple
 application components within a single transaction. For example, a

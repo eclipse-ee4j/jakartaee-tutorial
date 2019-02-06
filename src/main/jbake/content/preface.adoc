@@ -20,7 +20,7 @@ to the Eclipse Foundation and is not intended for use in relation to
 Java Enterprise Edition or Orace GlassFish. The documentation is in the 
 process of being revised to reflect the new Jakarta EE branding. 
 Additional changes will be made as requirements and procedures evolve 
-for Jakarta EE. Where applicable, references to Java EE or Java 
+for Jakarta EE. Where applicable, references to Java EE or Java
 Enterprise Edition should be considered references to Jakarta EE. 
 
 Please see the Title page for additional license information.
@@ -79,11 +79,11 @@ The GlassFish Server documentation set describes deployment planning and
 system installation. To obtain documentation for GlassFish Server Open
 Source Edition, go to `https://javaee.github.io/glassfish/documentation`.
 
-The Java EE 8 API specification can be viewed at
-`https://javaee.github.io/glassfish/documentation` and is also provided in the Java
-EE 8 SDK.
+The Jakarta EE 8 API specification can be viewed at
+`https://javaee.github.io/glassfish/documentation` and is also provided in the
+Jakarta EE 8 SDK.
 
-Additionally, the Java EE Specifications at
+Additionally, the Jakarta EE Specifications at
 `https://javaee.github.io/javaee-spec/` might be
 useful.
 
@@ -96,8 +96,8 @@ Server, see
 `http://db.apache.org/derby/docs/10.14/adminguide/`.
 
 The GlassFish Samples project is a collection of sample applications
-that demonstrate a broad range of Java EE technologies. The GlassFish
-Samples are bundled with the Java EE Software Development Kit (SDK) and
+that demonstrate a broad range of Jakarta EE technologies. The GlassFish
+Samples are bundled with the Jakarta EE Software Development Kit (SDK) and
 are also available from the GlassFish Samples project page at
 `https://javaee.github.io/glassfish-samples/`.
 
@@ -171,9 +171,9 @@ Windows, all installations:
 
 `_SystemDrive_:\glassfish5`
 
-|`_tut-install_` |Represents the base installation directory for the Java EE
+|`_tut-install_` |Represents the base installation directory for the Jakarta EE
 Tutorial after you install GlassFish Server or the SDK and run the
-Update Tool. |`_as-install-parent_/docs/javaee-tutorial`
+Update Tool. |`_as-install-parent_/docs/jakartaee-tutorial`
 
 |`_domain-dir_` |Represents the directory in which a domain's configuration
 is stored. |`_as-install_/domains/domain1`

@@ -49,7 +49,7 @@ deployment descriptor:
     <auth-method>CLIENT-CERT</auth-method>
 </login-config>
 ----
-The Java EE Security API provides an alternative means to configure client authentication
+The Jakarta EE Security API provides an alternative means to configure client authentication
 using the `HttpAuthenticationMechanism` interface. This
 interface defines an SPI for writing
 authentication mechanisms that can be provided with an application and
@@ -84,7 +84,7 @@ mutual authentication.
 [[GLIFJ]]
 
 .*Figure 53-1 Certificate-Based Mutual Authentication*
-image:img/javaeett_dt_048.png[
+image:img/jakartaeett_dt_048.png[
 "Diagram of six steps in mutual authentication with certificates"]
 
 In user name/password-based mutual authentication, the following actions
@@ -105,7 +105,7 @@ name/password-based mutual authentication.
 [[GLIGQ]]
 
 .*Figure 53-2 User Name/Password-Based Mutual Authentication*
-image:img/javaeett_dt_049.png[
+image:img/jakartaeett_dt_049.png[
 "Diagram of five steps in mutual authentication with user name and
 password"]
 

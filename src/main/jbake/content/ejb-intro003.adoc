@@ -12,13 +12,13 @@ What Is a Message-Driven Bean?
 What Is a Message-Driven Bean?
 ------------------------------
 
-A message-driven bean is an enterprise bean that allows Java EE
+A message-driven bean is an enterprise bean that allows Jakarta EE
 applications to process messages asynchronously. This type of bean
 normally acts as a JMS message listener, which is similar to an event
 listener but receives JMS messages instead of events. The messages can
-be sent by any Java EE component (an application client, another
+be sent by any Jakarta EE component (an application client, another
 enterprise bean, or a web component) or by a JMS application or system
-that does not use Java EE technology. Message-driven beans can process
+that does not use Jakarta EE technology. Message-driven beans can process
 JMS messages or other kinds of messages.
 
 The following topics are addressed here:

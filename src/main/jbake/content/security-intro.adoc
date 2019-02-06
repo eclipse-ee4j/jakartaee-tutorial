@@ -1,35 +1,35 @@
 type=page
 status=published
-title=Introduction to Security in the Java EE Platform
+title=Introduction to Security in the Jakarta EE Platform
 next=security-intro001.html
 prev=partsecurity.html
 ~~~~~~
-= Introduction to Security in the Java EE Platform
+= Introduction to Security in the Jakarta EE Platform
 
 
 [[BNBWJ]][[introduction-to-security-in-the-java-ee-platform]]
 
-50 Introduction to Security in the Java EE Platform
----------------------------------------------------
+50 Introduction to Security in the Jakarta EE Platform
+------------------------------------------------------
 
 
 This chapter introduces basic security concepts and security mechanisms.
 More information on these concepts and mechanisms can be found in the
-chapter on security in the Java EE 8 specification.
+chapter on security in the Jakarta EE 8 specification.
 
 [width="100%",cols="100%",]
 |=======================================================================
 a|
 *Note:*
 
-The SDK may include additional material demonstrating key features of the Java EE Security API. Please check the latest SDK release notes for additional details.
+The SDK may include additional material demonstrating key features of the Jakarta EE Security API. Please check the latest SDK release notes for additional details.
 
 |=======================================================================
 
 
 The following topics are addressed here:
 
-* link:security-intro001.html#BNBWK[Overview of Java EE Security]
+* link:security-intro001.html#BNBWK[Overview of Jakarta EE Security]
 * link:security-intro002.html#BNBWY[Security Mechanisms]
 * link:security-intro003.html#BNBXE[Securing Containers]
 * link:security-intro004.html#BNBXI[Securing GlassFish Server]

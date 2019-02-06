@@ -13,7 +13,7 @@ Sending and Receiving Messages Using a Simple Web Application
 -------------------------------------------------------------
 
 Web applications can use the JMS API to send and receive messages, as
-noted in link:jms-concepts005.html#BNCGN[Using Java EE Components to
+noted in link:jms-concepts005.html#BNCGN[Using Jakarta EE Components to
 Produce and to Synchronously Receive Messages]. This section describes
 the components of a very simple web application that uses the JMS API.
 
@@ -33,7 +33,7 @@ message synchronously and displays it.
 [[sthref213]]
 
 .*Figure 49-2 The websimplemessage Application*
-image:img/javaeett_dt_035.png[
+image:img/jakartaeett_dt_035.png[
 "Diagram showing a web application in which a managed bean sends a
 message to a queue, and another managed bean receives the message from
 the queue."]

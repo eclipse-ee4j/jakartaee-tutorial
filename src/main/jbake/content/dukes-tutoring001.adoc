@@ -12,7 +12,7 @@ Design and Architecture of Duke's Tutoring
 Design and Architecture of Duke's Tutoring
 ------------------------------------------
 
-Duke's Tutoring is a web application that incorporates several Java EE
+Duke's Tutoring is a web application that incorporates several Jakarta EE
 technologies. It exposes both a main interface (for students, guardians,
 and tutoring center staff) and an administration interface (for staff to
 maintain the system). The business logic for both interfaces is provided
@@ -24,7 +24,7 @@ application.
 [[CHDDJDCH]]
 
 .*Figure 61-1 Architecture of the Duke's Tutoring Example Application*
-image:img/javaeett_dt_061.png[
+image:img/jakartaeett_dt_061.png[
 "Architecture diagram of the Duke's Tutoring example application. Two
 clients access the main interface and the admin interface deployed in
 the web container. These interfaces communicate with enterprise beans
@@ -40,7 +40,7 @@ application, and `dukes-tutoring-common` is packaged and deployed with
 entity classes and helper classes to be reused by other applications,
 such as a JavaFX client application.
 
-Duke's Tutoring uses the following Java EE platform features:
+Duke's Tutoring uses the following Jakarta EE platform features:
 
 * Java Persistence API entities
 
@@ -59,7 +59,7 @@ automatically and portably create and delete the tables in the
 
 ** JAX-RS resources in a session bean
 
-** Java EE security constraints on the administrative interface business
+** Jakarta EE security constraints on the administrative interface business
 methods
 
 ** All enterprise beans packaged within the WAR

@@ -2542,7 +2542,7 @@ Declarative Security]
 ** link:security-intro003.html#using-programmatic-security[Using Programmatic Security]
 * link:security-intro003a.html#using-pluggable-providers[Using Pluggable Providers]
 ** link:security-intro003a.html#jsr-196-java-authentication-service-provider-interface-for-containers-jaspic[JSR-196 Java Authentication Service Provider Interface for Containers (JASPIC)]
-** link:security-intro003a.html#jsr-375-java-ee-security-api[JSR-375 Java EE Security API]
+** link:security-intro003a.html#jsr-375-java-ee-security-api[JSR-375 Jakarta EE Security API]
 
 * link:security-intro004.html#BNBXI[Securing GlassFish Server]
 * link:security-intro005.html#BNBXJ[Working with Realms, Users, Groups,
@@ -2652,49 +2652,49 @@ hello1-formauth Example Using Maven and the asadmin Command]
 Example]
 
 [[getting-started-securing-enterprise-applications]]
-link:security-javaee.html#BNBYK[52 Getting Started Securing Enterprise Applications]
+link:security-jakartaee.html#BNBYK[52 Getting Started Securing Enterprise Applications]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* link:security-javaee001.html#CACGIFHJ[Basic Security Tasks for
+* link:security-jakartaee001.html#CACGIFHJ[Basic Security Tasks for
 Enterprise Applications]
-* link:security-javaee002.html#BNBYL[Securing Enterprise Beans]
+* link:security-jakartaee002.html#BNBYL[Securing Enterprise Beans]
 
-** link:security-javaee002.html#GJGDI[Securing an Enterprise Bean Using
+** link:security-jakartaee002.html#GJGDI[Securing an Enterprise Bean Using
 Declarative Security]
-*** link:security-javaee002.html#GJGCQ[Specifying Authorized Users by
+*** link:security-jakartaee002.html#GJGCQ[Specifying Authorized Users by
 Declaring Security Roles]
-*** link:security-javaee002.html#BNBYU[Specifying an Authentication
+*** link:security-jakartaee002.html#BNBYU[Specifying an Authentication
 Mechanism and Secure Connection]
 
-** link:security-javaee002.html#GJGCS[Securing an Enterprise Bean
+** link:security-jakartaee002.html#GJGCS[Securing an Enterprise Bean
 Programmatically]
 
-** link:security-javaee002.html#BNBYR[Propagating a Security Identity
+** link:security-jakartaee002.html#BNBYR[Propagating a Security Identity
 (Run-As)]
-*** link:security-javaee002.html#BNBZB[Configuring a Component's
+*** link:security-jakartaee002.html#BNBZB[Configuring a Component's
 Propagated Security Identity]
-*** link:security-javaee002.html#BNBZC[Trust between Containers]
+*** link:security-jakartaee002.html#BNBZC[Trust between Containers]
 
-** link:security-javaee002.html#BNBZG[Deploying Secure Enterprise Beans]
-* link:security-javaee003.html#GKBSZ[Examples: Securing Enterprise Beans]
+** link:security-jakartaee002.html#BNBZG[Deploying Secure Enterprise Beans]
+* link:security-jakartaee003.html#GKBSZ[Examples: Securing Enterprise Beans]
 
-** link:security-javaee003.html#BNBZK[The cart-secure Example: Securing
+** link:security-jakartaee003.html#BNBZK[The cart-secure Example: Securing
 an Enterprise Bean with Declarative Security]
-*** link:security-javaee003.html#BNBZL[Annotating the Bean]
-*** link:security-javaee003.html#BNBZN[To Run the cart-secure Example
+*** link:security-jakartaee003.html#BNBZL[Annotating the Bean]
+*** link:security-jakartaee003.html#BNBZN[To Run the cart-secure Example
 Using NetBeans IDE]
-*** link:security-javaee003.html#BNBZO[To Run the cart-secure Example
+*** link:security-jakartaee003.html#BNBZO[To Run the cart-secure Example
 Using Maven]
 
-** link:security-javaee003.html#BNCAA[The converter-secure Example:
+** link:security-jakartaee003.html#BNCAA[The converter-secure Example:
 Securing an Enterprise Bean with Programmatic Security]
-*** link:security-javaee003.html#BNCAB[Modifying ConverterBean]
-*** link:security-javaee003.html#GKBSI[Modifying ConverterServlet]
-*** link:security-javaee003.html#BNCAD[To Run the converter-secure
+*** link:security-jakartaee003.html#BNCAB[Modifying ConverterBean]
+*** link:security-jakartaee003.html#GKBSI[Modifying ConverterServlet]
+*** link:security-jakartaee003.html#BNCAD[To Run the converter-secure
 Example Using NetBeans IDE]
-*** link:security-javaee003.html#BNCAE[To Run the converter-secure
+*** link:security-jakartaee003.html#BNCAE[To Run the converter-secure
 Example Using Maven]
-*** link:security-javaee003.html#GJTDP[To Run the converter-secure
+*** link:security-jakartaee003.html#GJTDP[To Run the converter-secure
 Example]
 
 [[java-api-for-security]]

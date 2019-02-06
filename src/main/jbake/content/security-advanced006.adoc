@@ -105,15 +105,15 @@ Configuring Resource Adapter Security
 
 A resource adapter is a system-level software component that typically
 implements network connectivity to an external resource manager. A
-resource adapter can extend the functionality of the Java EE platform
-either by implementing one of the Java EE standard service APIs, such as
+resource adapter can extend the functionality of the Jakarta EE platform
+either by implementing one of the Jakarta EE standard service APIs, such as
 a JDBC driver, or by defining and implementing a resource adapter for a
 connector to an external application system. Resource adapters can also
 provide services that are entirely local, perhaps interacting with
-native resources. Resource adapters interface with the Java EE platform
-through the Java EE service provider interfaces (Java EE SPI). A
-resource adapter that uses the Java EE SPIs to attach to the Java EE
-platform will be able to work with all Java EE products.
+native resources. Resource adapters interface with the Jakarta EE platform
+through the Jakarta EE service provider interfaces (Jakarta EE SPI). A
+resource adapter that uses the Jakarta EE SPIs to attach to the Jakarta EE
+platform will be able to work with all Jakarta EE products.
 
 To configure the security settings for a resource adapter, you need to
 edit the resource adapter descriptor file, `ra.xml`. Here is an example

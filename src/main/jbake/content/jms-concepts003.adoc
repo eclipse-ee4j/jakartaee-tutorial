@@ -29,7 +29,7 @@ JMS client application.
 [[BNCEI]]
 
 .*Figure 48-5 The JMS API Programming Model*
-image:img/javaeett_dt_030.png[
+image:img/jakartaeett_dt_030.png[
 "Diagram of the JMS API programming model: connection factory,
 JMSContext, connection, session, message producer, message consumer,
 messages, and destinations"]
@@ -45,7 +45,7 @@ Examples that show how to combine all these objects in applications
 appear in link:jms-examples.html#BNCGV[Chapter 49, "Java Message Service
 Examples,"] beginning with link:jms-examples003.html#BNCFA[Writing Simple
 JMS Applications]. For more detail, see the JMS API documentation, part
-of the Java EE API documentation.
+of the Jakarta EE API documentation.
 
 [[BNCEJ]][[jms-administered-objects]]
 
@@ -75,11 +75,11 @@ NetBeans IDE provides a wizard that allows you to create JMS resources
 for GlassFish Server. See link:jms-examples003.html#GKTJS[Creating JMS
 Administered Objects] for details.
 
-The Java EE platform specification allows a developer to create
+The Jakarta EE platform specification allows a developer to create
 administered objects using annotations or deployment descriptor
 elements. Objects created in this way are specific to the application
 for which they are created. See
-link:jms-concepts005.html#BABHFBDH[Creating Resources for Java EE
+link:jms-concepts005.html#BABHFBDH[Creating Resources for Jakarta EE
 Applications] for details. Definitions in a deployment descriptor
 override those specified by annotations.
 
@@ -97,7 +97,7 @@ learn how to create connection factories, see
 link:jms-examples003.html#GKTJS[Creating JMS Administered Objects].
 
 At the beginning of a JMS client program, you usually inject a
-connection factory resource into a `ConnectionFactory` object. A Java EE
+connection factory resource into a `ConnectionFactory` object. A Jakarta EE
 server must provide a JMS connection factory with the logical JNDI name
 `java:comp/DefaultJMSConnectionFactory`. The actual JNDI name will be
 implementation-specific.
@@ -152,7 +152,7 @@ private static Queue queue;
 private static Topic topic;
 ----
 
-In a Java EE application, JMS administered objects are normally placed
+In a Jakarta EE application, JMS administered objects are normally placed
 in the `jms` naming subcontext.
 
 With the common interfaces, you can mix or match connection factories
@@ -179,7 +179,7 @@ or more sessions.
 a|
 *Note*:
 
-In the Java EE platform, the ability to create multiple sessions from a
+In the Jakarta EE platform, the ability to create multiple sessions from a
 single connection is limited to application clients. In web and
 enterprise bean components, a connection can create no more than one
 session.
@@ -239,14 +239,14 @@ JMSContext context = connectionFactory.createContext();
 ----
 
 When called with no arguments from an application client or a Java SE
-client, or from the Java EE web or EJB container when there is no active
+client, or from the Jakarta EE web or EJB container when there is no active
 JTA transaction in progress, the `createContext` method creates a
 non-transacted session with an acknowledgment mode of
 `JMSContext.AUTO_ACKNOWLEDGE`. When called with no arguments from the
 web or EJB container when there is an active JTA transaction in
 progress, the `createContext` method creates a transacted session. For
-information about the way JMS transactions work in Java EE applications,
-see link:jms-concepts005.html#BNCGL[Using the JMS API in Java EE
+information about the way JMS transactions work in Jakarta EE applications,
+see link:jms-concepts005.html#BNCGL[Using the JMS API in Jakarta EE
 Applications].
 
 From an application client or a Java SE client, you can also call the
@@ -402,7 +402,7 @@ The `onMessage` method takes one argument of type `Message`, which your
 implementation of the method can cast to another message subtype as
 needed (see link:#BNCEW[Message Bodies]).
 
-In the Java EE web or EJB container, you use message-driven beans for
+In the Jakarta EE web or EJB container, you use message-driven beans for
 asynchronous message delivery. A message-driven bean also implements the
 `MessageListener` interface and contains an `onMessage` method. For
 details, see link:jms-concepts005.html#BNCGQ[Using Message-Driven Beans
@@ -605,7 +605,7 @@ M6, but they do not receive messages M3 and M4.
 
 .*Figure 48-6 Nondurable Subscriptions and Consumers*
 
-image:img/javaeett_dt_031.png[
+image:img/jakartaeett_dt_031.png[
 "Diagram showing messages being lost when nondurable subscriptions are
 used"]
 
@@ -622,7 +622,7 @@ M4, and M5 arrive while there is no consumer, they are not lost.
 [[BNCGF]]
 
 .*Figure 48-7 Consumers on a Durable Subscription*
-image:img/javaeett_dt_032.png[
+image:img/jakartaeett_dt_032.png[
 "Diagram showing messages being preserved when durable subscriptions are
 used"]
 
@@ -643,7 +643,7 @@ See link:jms-examples003.html#BNCFX[Acknowledging Messages],
 link:jms-examples004.html#BNCGG[Using Durable Subscriptions],
 link:jms-examples005.html#BABEJBHA[Using Shared Durable Subscriptions],
 and link:jms-examples008.html#BNCGW[Sending Messages from a Session Bean
-to an MDB] for examples of Java EE applications that use durable
+to an MDB] for examples of Jakarta EE applications that use durable
 subscriptions.
 
 [[BABJCIGJ]][[creating-shared-subscriptions]]

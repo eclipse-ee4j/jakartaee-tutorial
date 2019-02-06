@@ -42,7 +42,7 @@ with the request immediately to the container.
 Asynchronous Processing in Servlets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Java EE provides asynchronous processing support for servlets and
+Jakarta EE provides asynchronous processing support for servlets and
 filters. If a servlet or a filter reaches a potentially blocking
 operation when processing a request, it can assign the operation to an
 asynchronous execution context and return the thread associated with the

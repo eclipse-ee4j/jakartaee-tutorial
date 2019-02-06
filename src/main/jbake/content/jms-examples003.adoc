@@ -46,7 +46,7 @@ receives them. You can run the clients in two terminal windows.
 When you write a JMS client to run in an enterprise bean application,
 you use many of the same methods in much the same sequence as for an
 application client. However, there are some significant differences.
-link:jms-concepts005.html#BNCGL[Using the JMS API in Java EE
+link:jms-concepts005.html#BNCGL[Using the JMS API in Jakarta EE
 Applications] describes these differences, and this chapter provides
 examples that illustrate them.
 
@@ -139,7 +139,7 @@ jms/__defaultConnectionFactory
 Command list-jms-resources executed successfully.
 ----
 +
-In GlassFish Server, the Java EE `java:comp/DefaultJMSConnectionFactory`
+In GlassFish Server, the Jakarta EE `java:comp/DefaultJMSConnectionFactory`
 resource is mapped to a connection factory named
 `jms/__defaultConnectionFactory`.
 
@@ -582,7 +582,7 @@ explains how to compile and run the clients using GlassFish Server.
 a|
 *Note*:
 
-In the Java EE platform, message listeners can be used only in
+In the Jakarta EE platform, message listeners can be used only in
 application clients, as in this example. To allow asynchronous message
 delivery in a web or enterprise bean application, you use a
 message-driven bean, shown in later examples in this chapter.
@@ -1043,7 +1043,7 @@ configured to use the `CLIENT_ACKNOWLEDGE` setting
 a|
 *Note*:
 
-In the Java EE platform, `CLIENT_ACKNOWLEDGE` sessions can be used only
+In the Jakarta EE platform, `CLIENT_ACKNOWLEDGE` sessions can be used only
 in application clients, as in this example.
 
 |=======================================================================

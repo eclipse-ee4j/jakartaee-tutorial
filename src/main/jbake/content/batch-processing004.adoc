@@ -207,7 +207,7 @@ specified with the `checkpoint-algorithm` element
 
 The checkpoint is updated when the results of a chunk are committed.
 
-Every chunk is processed in a global Java EE transaction. If the
+Every chunk is processed in a global Jakarta EE transaction. If the
 processing of one item in the chunk fails, the transaction is rolled
 back and no processed items from this chunk are stored.
 

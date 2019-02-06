@@ -33,7 +33,7 @@ authenticate users for a web application programmatically.
 
 [[security-context]]
 ==== SecurityContext
-The `SecurityContext` interface, as specified in the Java EE Security API
+The `SecurityContext` interface, as specified in the Jakarta EE Security API
 specification, defines the following method to programmatically trigger the
 authentication process:
 
@@ -160,7 +160,7 @@ described in this section only in the less frequent
 situations in which the web component methods need to access the
 security context information.
 
-The Java EE Security API specification defines the following methods of the
+The Jakarta EE Security API specification defines the following methods of the
 `SecurityContext` interface that allow the application to test aspects of the
 caller data:
 
@@ -218,7 +218,7 @@ information obtained using these APIs.
 Testing Access to a Resource Programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `SecurityContext` interface, as specified in the Java EE Security API
+The `SecurityContext` interface, as specified in the Jakarta EE Security API
 specification, defines the following method for programmatically testing
 access to a resource:
 
@@ -278,7 +278,7 @@ import javax.annotation.security.DeclareRoles;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@DeclareRoles("javaeeuser")
+@DeclareRoles("jakartaeeuser")
 public class LoginServlet extends HttpServlet {
 
     /**
@@ -297,7 +297,7 @@ public class LoginServlet extends HttpServlet {
 
             out.println("Before Login" + "<br><br>");
             out.println("IsUserInRole?.."
-                        + request.isUserInRole("javaeeuser")+"<br>");
+                        + request.isUserInRole("jakartaeeuser")+"<br>");
             out.println("getRemoteUser?.." + request.getRemoteUser()+"<br>");
             out.println("getUserPrincipal?.."
                         + request.getUserPrincipal()+"<br>");
@@ -312,7 +312,7 @@ public class LoginServlet extends HttpServlet {
             }
             out.println("After Login..."+"<br><br>");
             out.println("IsUserInRole?.."
-                        + request.isUserInRole("javaeeuser")+"<br>");
+                        + request.isUserInRole("jakartaeeuser")+"<br>");
             out.println("getRemoteUser?.." + request.getRemoteUser()+"<br>");
             out.println("getUserPrincipal?.."
                         + request.getUserPrincipal()+"<br>");
@@ -321,7 +321,7 @@ public class LoginServlet extends HttpServlet {
             request.logout();
             out.println("After Logout..."+"<br><br>");
             out.println("IsUserInRole?.."
-                        + request.isUserInRole("javaeeuser")+"<br>");
+                        + request.isUserInRole("jakartaeeuser")+"<br>");
             out.println("getRemoteUser?.." + request.getRemoteUser()+"<br>");
             out.println("getUserPrincipal?.."
                         + request.getUserPrincipal()+"<br>");

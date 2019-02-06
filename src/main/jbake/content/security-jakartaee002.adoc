@@ -1,8 +1,8 @@
 type=page
 status=published
 title=Securing Enterprise Beans
-next=security-javaee003.html
-prev=security-javaee001.html
+next=security-jakartaee003.html
+prev=security-jakartaee001.html
 ~~~~~~
 = Securing Enterprise Beans
 
@@ -11,12 +11,12 @@ prev=security-javaee001.html
 Securing Enterprise Beans
 -------------------------
 
-Enterprise beans are Java EE components that implement EJB technology.
+Enterprise beans are Jakarta EE components that implement EJB technology.
 Enterprise beans run in the EJB container, a runtime environment within
 GlassFish Server. Although transparent to the application developer, the
 EJB container provides system-level services, such as transactions and
 security to its enterprise beans, which form the core of transactional
-Java EE applications.
+Jakarta EE applications.
 
 Enterprise bean methods can be secured in either of the following ways.
 
@@ -87,9 +87,9 @@ Some of the material in this chapter assumes that you have already read
 link:ejb-intro.html#GIJSZ[Chapter 35, "Enterprise Beans"],
 link:ejb-gettingstarted.html#GIJRE[Chapter 36, "Getting Started with
 Enterprise Beans"], and link:security-intro.html#BNBWJ[Chapter 50,
-"Introduction to Security in the Java EE Platform"].
+"Introduction to Security in the Jakarta EE Platform"].
 
-This section discusses securing a Java EE application where one or more
+This section discusses securing a Jakarta EE application where one or more
 modules, such as EJB JAR files, are packaged into an EAR file, the
 archive file that holds the application. Security annotations will be
 used in the Java programming class files to specify authorized users and
@@ -151,7 +151,7 @@ authentication will be used to verify the identity of the user.
 It is important to keep in mind that security roles are used to define
 the logical security view of an application. They should not be confused
 with the user groups, users, principals, and other concepts that exist
-in GlassFish Server. Note that the Java EE Security API requires that group
+in GlassFish Server. Note that the Jakarta EE Security API requires that group
 principal names be mapped to roles of the same name by default, but that implementations
 of the standard may allow configuration of a different default. In GlassFish Server,
 you do not need to perform any additional steps to map the roles
@@ -272,7 +272,7 @@ public class Calculator {
 ----
 * `@DenyAll`: Specifies that no security roles are permitted to execute
 the specified method or methods. This means that these methods are
-excluded from execution in the Java EE container.
+excluded from execution in the Jakarta EE container.
 +
 The following example code demonstrates the use of the `@DenyAll`
 annotation:
@@ -384,7 +384,7 @@ These security APIs should be used only in the
 less frequent situations in which the enterprise bean business methods
 need to access the security context information.
 
-The `SecurityContext` interface, as specified in the Java EE Security API specification,
+The `SecurityContext` interface, as specified in the Jakarta EE Security API specification,
 defines three methods
 that allow the bean provider to access security information about the enterprise bean's
 caller:
@@ -498,7 +498,7 @@ You would use programmatic security in this way to dynamically control
 access to a method, for example, when you want to deny access except
 during a particular time of day. An example application that uses the
 `getCallerPrincipal` and `isCallerInRole` methods is described in
-link:security-javaee003.html#BNCAA[The converter-secure Example: Securing
+link:security-jakartaee003.html#BNCAA[The converter-secure Example: Securing
 an Enterprise Bean with Programmatic Security].
 
 [[BNBYR]][[propagating-a-security-identity-run-as]]
@@ -514,7 +514,7 @@ illustrates this concept.
 [[BNBZA]]
 
 .*Figure 52-1 Security Identity Propagation*
-image:img/javaeett_dt_047.png[
+image:img/jakartaeett_dt_047.png[
 "Diagram of security identity propagation from client to intermediate
 container to target container"]
 
@@ -555,7 +555,7 @@ Configuring a Component's Propagated Security Identity
 
 You can configure an enterprise bean's run-as, or propagated, security
 identity by using the `@RunAs` annotation, which defines the role of the
-application during execution in a Java EE container. The annotation can
+application during execution in a Jakarta EE container. The annotation can
 be specified on a class, allowing developers to execute an application
 under a particular role. The role must map to the user/group information
 in the container's security realm. The `@RunAs` annotation specifies the

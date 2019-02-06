@@ -35,10 +35,10 @@ A JMS application is composed of the following parts.
 
 * A JMS provider is a messaging system that implements the JMS
 interfaces and provides administrative and control features. An
-implementation of the Java EE platform that supports the full profile
+implementation of the Jakarta EE platform that supports the full profile
 includes a JMS provider.
 * JMS clients are the programs or components, written in the Java
-programming language, that produce and consume messages. Any Java EE
+programming language, that produce and consume messages. Any Jakarta EE
 application component can act as a JMS client.
 +
 Java SE applications can also act as JMS clients; the Message Queue
@@ -63,7 +63,7 @@ JMS provider.
 
 [[BNCDZ]].*Figure 48-2 JMS API Architecture*
 
-image:img/javaeett_dt_027.png[
+image:img/jakartaeett_dt_027.png[
 "Diagram of JMS API architecture, showing administrative tool, JMS
 client, JNDI namespace, and JMS provider"]
 
@@ -109,7 +109,7 @@ the client sent the message.
 [[BNCEC]]
 
 .*Figure 48-3 Point-to-Point Messaging*
-image:img/javaeett_dt_028.png[
+image:img/jakartaeett_dt_028.png[
 "Diagram of point-to-point messaging, showing Client 1 sending a message
 to a queue, and Client 2 consuming and acknowledging the message"]
 
@@ -162,7 +162,7 @@ messaging.
 
 .*Figure 48-4 Publish/Subscribe Messaging*
 
-image:img/javaeett_dt_029.png[
+image:img/jakartaeett_dt_029.png[
 "Diagram of pub/sub messaging, showing Client 1 sending a message to a
 topic, and the message being delivered to two consumers to the topic"]
 
@@ -184,7 +184,7 @@ arrive within a specified time limit.
 a message listener with a consumer. A message listener is similar to an
 event listener. Whenever a message arrives at the destination, the JMS
 provider delivers the message by calling the listener's `onMessage`
-method, which acts on the contents of the message. In a Java EE
+method, which acts on the contents of the message. In a Jakarta EE
 application, a message-driven bean serves as a message listener (it too
 has an `onMessage` method), but a client does not need to register it
 with a consumer.

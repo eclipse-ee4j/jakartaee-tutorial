@@ -25,7 +25,7 @@ Packaging Enterprise Beans in EJB JAR Modules
 
 An EJB JAR file is portable and can be used for various applications.
 
-To assemble a Java EE application, package one or more modules, such as
+To assemble a Jakarta EE application, package one or more modules, such as
 EJB JAR files, into an EAR file, the archive file that holds the
 application. When deploying the EAR file that contains the enterprise
 bean's EJB JAR file, you also deploy the enterprise bean to GlassFish
@@ -35,7 +35,7 @@ file. link:#BCGFJIJI[Figure 5-2] shows the contents of an EJB JAR file.
 [[BCGFJIJI]]
 
 .*Figure 5-2 Structure of an Enterprise Bean JAR*
-image:img/javaeett_dt_011.png[
+image:img/jakartaeett_dt_011.png[
 "Diagram showing the structure and contents of an enterprise bean JAR
 file."]
 

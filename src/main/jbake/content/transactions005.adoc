@@ -60,11 +60,11 @@ the Java Transaction Service (JTS). However, your code doesn't call the
 JTS methods directly but instead invokes the JTA methods, which then
 call the lower-level JTS routines.
 
-A JTA transaction is controlled by the Java EE transaction manager. You
+A JTA transaction is controlled by the Jakarta EE transaction manager. You
 may want to use a JTA transaction because it can span updates to
 multiple databases from different vendors. A particular DBMS's
 transaction manager may not work with heterogeneous databases. However,
-the Java EE transaction manager does have one limitation: It does not
+the Jakarta EE transaction manager does have one limitation: It does not
 support nested transactions. In other words, it cannot start a
 transaction for an instance until the preceding transaction has ended.
 

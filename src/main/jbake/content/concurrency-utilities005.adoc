@@ -15,7 +15,7 @@ The jobs Concurrency Example
 This section describes a very basic example that shows how to use some
 of the basic concurrency features in an enterprise application.
 Specifically, this example uses one of the main components of
-Concurrency Utilities for Java EE, a Managed Executor Service.
+Concurrency Utilities for Jakarta EE, a Managed Executor Service.
 
 The example demonstrates a scenario where a RESTful web service, exposed
 as a public API, is used to submit generic jobs for execution. These

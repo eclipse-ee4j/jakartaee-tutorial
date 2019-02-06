@@ -19,12 +19,12 @@ separate from the business logic of the application and are repeated
 often within an application. Such tasks are often called cross-cutting
 tasks. Interceptors allow you to specify the code for these tasks in one
 place for easy maintenance. When interceptors were first introduced to
-the Java EE platform, they were specific to enterprise beans. On the
-Java EE platform, you can use them with Java EE managed objects of all
+the Jakarta EE platform, they were specific to enterprise beans. On the
+Jakarta EE platform, you can use them with Jakarta EE managed objects of all
 kinds, including managed beans.
 
-For information on Java EE interceptors, see
-link:interceptors.html#GKEED[Chapter 57, "Using Java EE Interceptors"].
+For information on Jakarta EE interceptors, see
+link:interceptors.html#GKEED[Chapter 57, "Using Jakarta EE Interceptors"].
 
 An interceptor class often contains a method annotated `@AroundInvoke`,
 which specifies the tasks the interceptor will perform when intercepted

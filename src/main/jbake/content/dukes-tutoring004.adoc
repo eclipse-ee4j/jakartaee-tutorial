@@ -41,7 +41,7 @@ To Build and Deploy Duke's Tutoring Using NetBeans IDE
 
 Before You Begin
 
-You must have already configured GlassFish Server as a Java EE server in
+You must have already configured GlassFish Server as a Jakarta EE server in
 NetBeans IDE, as described in link:usingexamples001.html#GIQZL[To Add
 GlassFish Server as a Server Using NetBeans IDE].
 
@@ -144,7 +144,7 @@ This redirects you to the login page at the following URL:
 http://localhost:8080/dukes-tutoring-war/admin/index.xhtml
 ----
 2.  On the login page, enter `admin@example.com` in the User name field,
-and enter `javaee` in the Password field.
+and enter `jakartaee` in the Password field.
 3.  Use the administration interface to add or modify students, add
 guardians, or add addresses.
 * To add a new student, click Create new student in the left menu, fill

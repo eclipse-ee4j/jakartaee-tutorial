@@ -74,7 +74,7 @@ Roles].
 [[BNBXL]]
 
 .*Figure 50-6 Mapping Roles to Users and Groups*
-image:img/javaeett_dt_044.png[
+image:img/jakartaeett_dt_044.png[
 "Diagram of role mapping, showing creation of users and groups,
 definition of roles, and mapping of roles to users and groups"]
 
@@ -93,7 +93,7 @@ realm is a complete database of users and groups identified as valid
 users of one or more applications and controlled by the same
 authentication policy.
 
-The Java EE server authentication service can govern users in multiple
+The Jakarta EE server authentication service can govern users in multiple
 realms. The `file`, `admin-realm`, and `certificate` realms come
 preconfigured for GlassFish Server.
 
@@ -131,11 +131,11 @@ associated with that identity a set of roles that entitle the user to
 access all resources protected by those roles. Users can be associated
 with a group.
 
-A Java EE user is similar to an operating system user. Typically, both
+A Jakarta EE user is similar to an operating system user. Typically, both
 types of users represent people. However, these two types of users are
-not the same. The Java EE server authentication service has no knowledge
+not the same. The Jakarta EE server authentication service has no knowledge
 of the user name and password you provide when you log in to the
-operating system. The Java EE server authentication service is not
+operating system. The Jakarta EE server authentication service is not
 connected to the security mechanism of the operating system. The two
 security services manage users that belong to different realms.
 
@@ -145,7 +145,7 @@ What Is a Group?
 ^^^^^^^^^^^^^^^^
 
 A group is a set of authenticated users, classified by common traits,
-defined in GlassFish Server. A Java EE user of the `file` realm can
+defined in GlassFish Server. A Jakarta EE user of the `file` realm can
 belong to a group in GlassFish Server. (A user in the `certificate`
 realm cannot.) A group in GlassFish Server is a category of users
 classified by common traits, such as job title or customer profile. For
@@ -174,7 +174,7 @@ Some Other Terminology
 ^^^^^^^^^^^^^^^^^^^^^^
 
 The following terminology is also used to describe the security
-requirements of the Java EE platform.
+requirements of the Jakarta EE platform.
 
 * A principal is an entity that can be authenticated by an
 authentication protocol in a security service that is deployed in an
@@ -188,7 +188,7 @@ principal. The security attributes have many uses: for example, access
 to protected resources and auditing of users. Security attributes can be
 associated with a principal by an authentication protocol.
 * A credential is an object that contains or references security
-attributes used to authenticate a principal for Java EE services. A
+attributes used to authenticate a principal for Jakarta EE services. A
 principal acquires a credential upon authentication or from another
 principal that allows its credential to be used.
 
@@ -274,7 +274,7 @@ application. When an application is deployed, the deployer will map the
 roles to security identities in the operational environment, as shown in
 link:#BNBXL[Figure 50-6].
 
-For Java EE components, you define security roles using the
+For Jakarta EE components, you define security roles using the
 `@DeclareRoles` and `@RolesAllowed` metadata annotations.
 
 The following is an example of an application in which the role of
@@ -330,7 +330,7 @@ public class GreetingServlet extends HttpServlet {
 These annotations are discussed in more detail in
 link:security-webtier004.html#GJRMH[Specifying Security for Basic
 Authentication Using Annotations] and
-link:security-javaee002.html#GJGDI[Securing an Enterprise Bean Using
+link:security-jakartaee002.html#GJGDI[Securing an Enterprise Bean Using
 Declarative Security].
 
 After users have provided their login information and the application
@@ -343,14 +343,14 @@ user, or principal.
 Mapping Roles to Users and Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you are developing a Java EE application, you don't need to know
+When you are developing a Jakarta EE application, you don't need to know
 what categories of users have been defined for the realm in which the
-application will be run. In the Java EE platform, the security
+application will be run. In the Jakarta EE platform, the security
 architecture provides a mechanism for mapping the roles defined in the
 application to the users or groups defined in the runtime realm.
 
 The role names used in the application are often the same as the group
-names defined in GlassFish Server. The Java EE Security API requires that
+names defined in GlassFish Server. The Jakarta EE Security API requires that
 group principal names are mapped
 to roles of the same name by default. Accordingly, the *Default Principal To Role Mapping* setting
 is enabled by default on the Security page of

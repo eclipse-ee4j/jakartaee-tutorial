@@ -13,7 +13,7 @@ Packaging Batch Applications
 ----------------------------
 
 Job definition files and batch artifacts do not require separate
-packaging and can be included in any Java EE application.
+packaging and can be included in any Jakarta EE application.
 
 Package the batch artifact classes with the rest of the classes of your
 application, and include the job definition files in one of the

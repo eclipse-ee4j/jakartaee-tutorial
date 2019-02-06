@@ -186,7 +186,7 @@ constrained requests on any connection, including an unprotected one.
 a|
 *Note*:
 
-In practice, Java EE servers treat the `CONFIDENTIAL` and `INTEGRAL`
+In practice, Jakarta EE servers treat the `CONFIDENTIAL` and `INTEGRAL`
 transport guarantee values identically.
 
 |=======================================================================
@@ -288,8 +288,8 @@ a|
 
 An alternative way to perform user authentication, including BASIC
 and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by the
-Java EE Security API, and documented in
-link:security-api.html#using-the-java-ee-security-api[Chapter 53, "Using the Java EE Security API"].
+Jakarta EE Security API, and documented in
+link:security-api.html#using-the-java-ee-security-api[Chapter 53, "Using the Jakarta EE Security API"].
 |=======================================================================
 
 
@@ -312,7 +312,7 @@ server. For information on setting up the user database, see
 link:security-intro005.html#BNBXR[Managing Users and Groups in GlassFish
 Server].
 
-The Java EE platform supports the following authentication mechanisms:
+The Jakarta EE platform supports the following authentication mechanisms:
 
 * Basic authentication
 * Form-based authentication
@@ -322,7 +322,7 @@ The Java EE platform supports the following authentication mechanisms:
 
 Basic, form-based, and digest authentication are discussed in this
 section. Client and mutual authentication are discussed in
-link:security-advanced.html#GJJWX[Chapter 54, "Java EE Security: Advanced
+link:security-advanced.html#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
 Topics"].
 
 HTTP basic authentication and form-based authentication are not very
@@ -369,7 +369,7 @@ authentication.
 [[BNCBP]]
 
 .*Figure 51-1 HTTP Basic Authentication*
-image:img/javaeett_dt_045.png[
+image:img/jakartaeett_dt_045.png[
 "Diagram of four steps in HTTP basic authentication between client and
 server"]
 
@@ -402,7 +402,7 @@ authentication.
 [[GEXFA]]
 
 .*Figure 51-2 Form-Based Authentication*
-image:img/javaeett_dt_046.png[
+image:img/jakartaeett_dt_046.png[
 "Diagram of four steps in form-based authentication between client and
 server"]
 

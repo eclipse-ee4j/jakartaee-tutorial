@@ -15,8 +15,8 @@ Required Software
 The following software is required to run the examples:
 
 * link:#java-platform-standard-edition[Java Platform, Standard Edition]
-* link:#java-ee-7-software-development-kit[Java EE 8 Software Development Kit]
-* link:#java-ee-7-tutorial-component[Java EE 8 Tutorial Component]
+* link:#java-ee-7-software-development-kit[Jakarta EE 8 Software Development Kit]
+* link:#java-ee-7-tutorial-component[Jakarta EE 8 Tutorial Component]
 * link:#netbeans-ide[NetBeans IDE]
 * link:#apache-maven[Apache Maven]
 
@@ -33,13 +33,13 @@ software from
 
 [[GEXAB]][[java-ee-7-software-development-kit]]
 
-Java EE 8 Software Development Kit
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jakarta EE 8 Software Development Kit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GlassFish Server Open Source Edition 5.0 is targeted as the build and
 runtime environment for the tutorial examples. To build, deploy, and run
 the examples, you need a copy of GlassFish Server and, optionally,
-NetBeans IDE. To obtain GlassFish Server, you must install the Java EE 8
+NetBeans IDE. To obtain GlassFish Server, you must install the Jakarta EE 8
 Software Development Kit (SDK), which you can download from
 `http://www.oracle.com/technetwork/java/javaee/downloads/index.html`.
 
@@ -49,7 +49,7 @@ Software Development Kit (SDK), which you can download from
 SDK Installation Tips
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Java EE 8 SDK is installed from a ZIP file. It sets the
+The Jakarta EE 8 SDK is installed from a ZIP file. It sets the
 default administration user name as `admin` with no required password.
 The Admin Port is set to 4848, and the HTTP Port is set to 8080.
 
@@ -72,14 +72,14 @@ as-install/bin
 
 [[GEXBA]][[java-ee-7-tutorial-component]]
 
-Java EE 8 Tutorial Component
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jakarta EE 8 Tutorial Component
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The tutorial component, including the documentation and example source,
-is contained in the Java EE 8 SDK.
+is contained in the Jakarta EE 8 SDK.
 
 ////
-Updates to the Java EE Tutorial are published periodically. For
+Updates to the Jakarta EE Tutorial are published periodically. For
 details on obtaining these updates, see
 link:usingexamples008.html#GIQWR[Getting the Latest Updates to the
 Tutorial].
@@ -92,13 +92,13 @@ NetBeans IDE
 
 The NetBeans integrated development environment (IDE) is a free,
 open-source IDE for developing Java applications, including enterprise
-applications. NetBeans IDE supports the Java EE platform. You can build,
+applications. NetBeans IDE supports the Jakarta EE platform. You can build,
 package, deploy, and run the tutorial examples from within NetBeans IDE.
 
 To run the tutorial examples, you need the latest version of NetBeans
 IDE. You can download NetBeans IDE from
 `https://netbeans.org/downloads/index.html`. Make sure that you download
-the Java EE bundle.
+the Jakarta EE bundle.
 
 [[GJSEQ]][[to-install-netbeans-ide-without-glassfish-server]]
 
@@ -129,7 +129,7 @@ to add GlassFish Server to NetBeans IDE.
 1.  From the Tools menu, choose Servers.
 2.  In the Servers wizard, click Add Server.
 3.  Under Choose Server, select GlassFish Server and click Next.
-4.  Under Server Location, browse to the location of the Java EE 8 SDK
+4.  Under Server Location, browse to the location of the Jakarta EE 8 SDK
 and click Next.
 5.  Under Domain Location, select Register Local Domain.
 6.  Click Finish.
@@ -139,7 +139,7 @@ and click Next.
 Apache Maven
 ~~~~~~~~~~~~
 
-Maven is a Java technology–based build tool developed by the Apache
+Maven is a Java technology-based build tool developed by the Apache
 Software Foundation and is used to build, package, and deploy the
 tutorial examples. To run the tutorial examples from the command line,
 you need Maven 3.0 or higher. If you do not already have Maven, you can

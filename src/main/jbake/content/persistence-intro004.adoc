@@ -65,7 +65,7 @@ unit provide access to the persistence context within that transaction.
 By automatically propagating the persistence context, application
 components don't need to pass references to `EntityManager` instances to
 each other in order to make changes within a single transaction. The
-Java EE container manages the lifecycle of container-managed entity
+Jakarta EE container manages the lifecycle of container-managed entity
 managers.
 
 To obtain an `EntityManager` instance, inject the entity manager into

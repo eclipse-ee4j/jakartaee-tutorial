@@ -19,7 +19,7 @@ object. The container automatically provides instances of these
 dependencies at the injection points at runtime, and it also manages the
 lifecycle of these instances for you.
 
-Dependency injection in Java EE defines scopes, which determine the
+Dependency injection in Jakarta EE defines scopes, which determine the
 lifecycle of the objects that the container instantiates and injects.
 For example, a managed object that is only needed to respond to a single
 client request (such as a currency converter) has a different scope than
@@ -54,5 +54,5 @@ that interface.
 
 For more information about dependency injection, see
 link:cdi-basic.html#GIWHB[Chapter 25, "Introduction to Contexts and
-Dependency Injection for Java EE"] and JSR 299 (Contexts and Dependency
-Injection for the Java EE Platform).
+Dependency Injection for Jakarta EE"] and JSR 299 (Contexts and Dependency
+Injection for the Jakarta EE Platform).

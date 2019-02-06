@@ -12,7 +12,7 @@ Metadata Annotations
 Metadata Annotations
 --------------------
 
-Java EE Connector Architecture provides a set of annotations to minimize
+Jakarta EE Connector Architecture provides a set of annotations to minimize
 the need for deployment descriptors.
 
 * The `@Connector` annotation can be used by the resource adapter
@@ -26,7 +26,7 @@ interface, as in the following example:
 ----
 @Connector(
     displayName = "TrafficResourceAdapter",
-    vendorName = "Java EE Tutorial",
+    vendorName = "Jakarta EE Tutorial",
     version = "7.0"
 )
 public class TrafficResourceAdapter implements ResourceAdapter,
@@ -120,5 +120,5 @@ resource adapter need to be examined for annotations that specify
 deployment information.
 
 For the complete list of annotations and JavaBeans components provided
-in the Java EE platform, see the Java EE Connector Architecture 1.7
+in the Jakarta EE platform, see the Jakarta EE Connector Architecture 1.7
 specification.

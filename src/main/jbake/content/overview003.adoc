@@ -1,21 +1,21 @@
 type=page
 status=published
-title=Java EE Application Model
+title=Jakarta EE Application Model
 next=overview004.html
 prev=overview002.html
 ~~~~~~
-Java EE Application Model
-=========================
+Jakarta EE Application Model
+============================
 
 [[BNAAX]][[java-ee-application-model]]
 
-Java EE Application Model
--------------------------
+Jakarta EE Application Model
+----------------------------
 
-The Java EE application model begins with the Java programming language
+The Jakarta EE application model begins with the Java programming language
 and the Java virtual machine. The proven portability, security, and
 developer productivity they provide form the basis of the application
-model. Java EE is designed to support applications that implement
+model. Jakarta EE is designed to support applications that implement
 enterprise services for customers, employees, suppliers, partners, and
 others who make demands on or contributions to the enterprise. Such
 applications are inherently complex, potentially accessing data from a
@@ -29,14 +29,14 @@ enterprise's information technology department. The middle tier is
 typically run on dedicated server hardware and has access to the full
 services of the enterprise.
 
-The Java EE application model defines an architecture for implementing
+The Jakarta EE application model defines an architecture for implementing
 services as multitier applications that deliver the scalability,
 accessibility, and manageability needed by enterprise-level
 applications. This model partitions the work needed to implement a
 multitier service into the following parts:
 
 * The business and presentation logic to be implemented by the developer
-* The standard system services provided by the Java EE platform
+* The standard system services provided by the Jakarta EE platform
 
 The developer can rely on the platform to provide solutions for the hard
 systems-level problems of developing a multitier service.

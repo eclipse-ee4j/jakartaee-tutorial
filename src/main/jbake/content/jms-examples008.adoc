@@ -49,7 +49,7 @@ Simple Web Application].
 [[BNCGY]]
 
 .*Figure 49-4 An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean*
-image:img/javaeett_dt_037.png[
+image:img/jakartaeett_dt_037.png[
 "Diagram of application showing an application client calling a session
 bean, which sends messages that are processed by a message-driven bean"]
 
@@ -144,7 +144,7 @@ scope because both the session bean and the message-driven bean are in
 the same module. Because the destination is defined in the
 message-driven bean, the `@MessageDriven` annotation uses the
 `destinationLookup` activation config property. (See
-link:jms-concepts005.html#BABHFBDH[Creating Resources for Java EE
+link:jms-concepts005.html#BABHFBDH[Creating Resources for Jakarta EE
 Applications] for more information.) The annotation also sets the
 activation config properties `messageSelector`,
 `subscriptionDurability`, `clientId`, and `subscriptionName`, as

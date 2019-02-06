@@ -52,7 +52,7 @@ Faces specification. The last two are defined by JSR 365.
 
 All predefined scopes except `@Dependent` are contextual scopes. CDI
 places beans of contextual scope in the context whose lifecycle is
-defined by the Java EE specifications. For example, a session context
+defined by the Jakarta EE specifications. For example, a session context
 and its beans exist during the lifetime of an HTTP session. Injected
 references to the beans are contextually aware. The references always
 apply to the bean that is associated with the context for the thread
@@ -70,7 +70,7 @@ destroyed when the context in which it was created ends. Moreover, its
 state is automatically shared by any clients that execute in the same
 context.
 
-Java EE components, such as servlets and enterprise beans, and JavaBeans
+Jakarta EE components, such as servlets and enterprise beans, and JavaBeans
 components do not by definition have a well-defined scope. These
 components are one of the following:
 
@@ -82,7 +82,7 @@ do not contain client-visible state
 such as JavaBeans components and stateful session beans, whose state is
 shared by explicit reference passing between clients
 
-However, if you create a Java EE component that is a managed bean, then it
+However, if you create a Jakarta EE component that is a managed bean, then it
 becomes a scoped object, which exists in a well-defined lifecycle
 context.
 

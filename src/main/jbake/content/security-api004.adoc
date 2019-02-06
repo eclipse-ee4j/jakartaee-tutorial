@@ -21,7 +21,7 @@ Topics include:
 [[overview-of-the-built-in-database-identity-store-example]]
 Overview of the Built-In Database Identity Store Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-JSR 375 mandates that a Java EE container MUST support a built-in `IdentityStore`
+JSR 375 mandates that a Jakarta EE container MUST support a built-in `IdentityStore`
 backed by a database. To support this mandatory requirement, `DatabaseIdentityStore`
 is bundled with the GlassFish-RI.
 

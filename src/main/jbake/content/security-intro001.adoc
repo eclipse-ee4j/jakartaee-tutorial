@@ -1,15 +1,15 @@
 type=page
 status=published
-title=Overview of Java EE Security
+title=Overview of Jakarta EE Security
 next=security-intro002.html
 prev=security-intro.html
 ~~~~~~
-= Overview of Java EE Security
+= Overview of Jakarta EE Security
 
 [[BNBWK]][[overview-of-java-ee-security]]
 
-Overview of Java EE Security
-----------------------------
+Overview of Jakarta EE Security
+-------------------------------
 
 Every enterprise that has either sensitive resources that can be
 accessed by many users or resources that traverse unprotected, open
@@ -48,39 +48,39 @@ model of an application. For more information about programmatic
 security, read link:security-intro003.html#BNBXH[Using Programmatic
 Security].
 
-Java EE 8 includes a Security API specification that defines portable,
+Jakarta EE 8 includes a Security API specification that defines portable,
 plug-in interfaces for authentication and identity stores, and a new
 injectable-type SecurityContext interface that provides an access point for
 programmatic security. You can use the built-in implementations of these APIs,
 or define custom implementations.
 
 More information on these concepts and mechanismsMore information on these concepts
-and mechanisms can be found in the chapter on security in the Java EE 8
+and mechanisms can be found in the chapter on security in the Jakarta EE 8
 specification.
 
 Other chapters in this Part discuss security requirements in web tier
-and enterprise tier applications, and the Java EE Security API.
+and enterprise tier applications, and the Jakarta EE Security API.
 
 * link:security-webtier.html#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] explains how to add security to web components, such
 as servlets.
-* link:security-javaee.html#BNBYK[Chapter 52, "Getting Started Securing
-Enterprise Applications"] explains how to add security to Java EE
+* link:security-jakartaee.html#BNBYK[Chapter 52, "Getting Started Securing
+Enterprise Applications"] explains how to add security to Jakarta EE
 components, such as enterprise beans and application clients.
-* link:security-api.html#using-the-java-ee-security-api[53 Using the Java EE Security API]
+* link:security-api.html#using-the-java-ee-security-api[53 Using the Jakarta EE Security API]
 describes the authentication and credential validation funtionality provided by
-the Java EE security API, and provides examples.
+the Jakarta EE security API, and provides examples.
 
 [[BNBWL]][[a-simple-application-security-walkthrough]]
 
 A Simple Application Security Walkthrough
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The security behavior of a Java EE environment may be better understood
+The security behavior of a Jakarta EE environment may be better understood
 by examining what happens in a simple application with a web client, a
 user interface, and enterprise bean business logic.
 
-In the following example, which is taken from the Java EE
+In the following example, which is taken from the Jakarta EE
 Specification, the web client relies on the web server to act as its
 authentication proxy by collecting user authentication data from the
 client and using it to establish an authenticated session.
@@ -96,7 +96,7 @@ application URL. This action is shown in link:#BNBWN[Figure 50-1].
 [[BNBWN]]
 
 .*Figure 50-1 Initial Request*
-image:img/javaeett_dt_039.png[
+image:img/jakartaeett_dt_039.png[
 "Diagram of initial request from web client to web server for access to a
 protected resource"]
 
@@ -123,7 +123,7 @@ server sets a credential for the user.
 [[BNBWP]]
 
 .*Figure 50-2 Initial Authentication*
-image:img/javaeett_dt_040.png[
+image:img/jakartaeett_dt_040.png[
 "Diagram of initial authentication: server sends form to client, which
 sends authentication data to server for validation"]
 
@@ -144,7 +144,7 @@ link:#BNBWR[Figure 50-3] shows this process.
 [[BNBWR]]
 
 .*Figure 50-3 URL Authorization*
-image:img/javaeett_dt_041.png[
+image:img/jakartaeett_dt_041.png[
 "Diagram of URL authorization"]
 
 The web server's evaluation stops with an "is authorized" outcome when
@@ -163,7 +163,7 @@ original URL request, as shown in link:#BNBWT[Figure 50-4].
 [[BNBWT]]
 
 .*Figure 50-4 Fulfilling the Original Request*
-image:img/javaeett_dt_042.png[
+image:img/jakartaeett_dt_042.png[
 "Diagram of request fulfillment, showing server returning result to
 client"]
 
@@ -187,7 +187,7 @@ one in the web server and one in the EJB container.
 [[BNBWV]]
 
 .*Figure 50-5 Invoking an Enterprise Bean Business Method*
-image:img/javaeett_dt_043.png[
+image:img/jakartaeett_dt_043.png[
 "Diagram of authorization process between web component and enterprise
 bean"]
 
@@ -237,7 +237,7 @@ Ideally, properly implemented security mechanisms will also be
 Characteristics of Application Security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Java EE applications consist of components that can contain both
+Jakarta EE applications consist of components that can contain both
 protected and unprotected resources. Often, you need to protect
 resources to ensure that only authorized users have access.
 Authorization provides controlled access to protected resources.

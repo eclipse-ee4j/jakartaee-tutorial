@@ -30,7 +30,7 @@ link:jaxws.html#BNAYL[Chapter 31, "Building Web Services with JAX-WS,"]
 and link:jaxrs.html#GIEPU[Chapter 32, "Building RESTful Web Services with
 JAX-RS,"] in link:partwebsvcs.html#BNAYK[Part III, "Web Services."]
 
-In the Java EE platform, web components provide the dynamic extension
+In the Jakarta EE platform, web components provide the dynamic extension
 capabilities for a web server. Web components can be Java servlets, web
 pages implemented with JavaServer Faces technology, web service
 endpoints, or JSP pages. link:#BNADS[Figure 6-1] illustrates the
@@ -48,7 +48,7 @@ HTTP response and returns it to the client.
 [[BNADS]]
 
 .*Figure 6-1 Java Web Application Request Handling*
-image:img/javaeett_dt_013.png[
+image:img/jakartaeett_dt_013.png[
 "Diagram of web application request handling. Clients and servlets
 communicate using HttpServletRequest and HttpServletResponse."]
 
@@ -73,7 +73,7 @@ transactions, and email.
 
 Certain aspects of web application behavior can be configured when the
 application is installed, or deployed, to the web container. The
-configuration information can be specified using Java EE annotations or
+configuration information can be specified using Jakarta EE annotations or
 can be maintained in a text file in XML format called a web application
 deployment descriptor (DD). A web application DD must conform to the
 schema described in the Java Servlet specification.

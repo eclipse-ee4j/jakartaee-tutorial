@@ -26,7 +26,7 @@ adapter and the web application
 [[CHDHADIG]]
 
 .*Figure 56-1 The trading Example*
-image:img/javaeett_dt_054.png[
+image:img/jakartaeett_dt_054.png[
 "This figure shows the trading example components: a deployed WAR and RAR
 that communicate with the EIS over a TCP socket."]
 
@@ -43,10 +43,10 @@ request-response pair would look like this:
 << EXECUTED #1234567 TOTAL 50400.00 FEE 252.00
 ----
 
-The `trading-rar` module implements the outbound contract of the Java EE
+The `trading-rar` module implements the outbound contract of the Jakarta EE
 Connector Architecture to submit requests and obtain responses from the
 legacy stock trading execution platform. The `trading-rar` module
-provides and implements a custom client interface for Java EE
+provides and implements a custom client interface for Jakarta EE
 applications to use. This interface is simpler than the Common Client
 Interface (CCI).
 
@@ -62,17 +62,17 @@ EIS.
 Using the Outbound Resource Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In most cases, Java EE application developers use outbound resource
+In most cases, Jakarta EE application developers use outbound resource
 adapters developed by a third party. Outbound resource adapters either
 implement the Common Client Interface (CCI) or provide a custom
 interface for applications to interact with the EIS. Outbound resource
-adapters provide Java EE applications with the following elements:
+adapters provide Jakarta EE applications with the following elements:
 
 * Connection factories
 * Connection handles
 * Other interfaces and objects specific to the EIS domain
 
-Java EE applications obtain an instance of the connection factory via
+Jakarta EE applications obtain an instance of the connection factory via
 resource injection and then use the factory object to obtain connection
 handles to the EIS. The connection handles enable the application to
 make requests and obtain information from the EIS.
@@ -208,7 +208,7 @@ shown in link:#CHDIGAJE[Figure 56-2].
 [[CHDIGAJE]]
 
 .*Figure 56-2 Architecture of the trading Example*
-image:img/javaeett_dt_055.png[
+image:img/jakartaeett_dt_055.png[
 "This figure shows the classes in each of the modules of the trading
 example."]
 

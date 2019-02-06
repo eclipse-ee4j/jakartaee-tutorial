@@ -172,9 +172,9 @@ receive other chat messages until the operation completes. To avoid this
 problem, the endpoint obtains an executor service from the container and
 executes the blocking operation in a different thread using the
 `ManagedExecutorService.submit` method from Concurrency Utilities for
-Java EE.
+Jakarta EE.
 
-The Java API for WebSocket specification requires that Java EE
+The Java API for WebSocket specification requires that Jakarta EE
 implementations instantiate endpoint classes once per connection. This
 facilitates the development of WebSocket endpoints, because you are
 guaranteed that only one thread is executing the code in a WebSocket
@@ -185,8 +185,8 @@ code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method
 has been declared `synchronized`.
 
 Refer to link:concurrency-utilities.html#GKJIQ8[Chapter 59, "Concurrency
-Utilities for Java EE"] for more information on the managed executor
-service and Concurrency Utilities for Java EE.
+Utilities for Jakarta EE"] for more information on the managed executor
+service and Concurrency Utilities for Jakarta EE.
 
 [[CIHFDGHG]][[the-application-messages]]
 

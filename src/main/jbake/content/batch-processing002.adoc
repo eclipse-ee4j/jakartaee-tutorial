@@ -1,19 +1,19 @@
 type=page
 status=published
-title=Batch Processing in Java EE
+title=Batch Processing in Jakarta EE
 next=batch-processing003.html
 prev=batch-processing001.html
 ~~~~~~
-= Batch Processing in Java EE
+= Batch Processing in Jakarta EE
 
 
 [[BCGGIBHA]][[batch-processing-in-java-ee]]
 
-Batch Processing in Java EE
----------------------------
+Batch Processing in Jakarta EE
+------------------------------
 
 This section lists the components of the batch processing framework in
-Java EE and provides an overview of the steps you have to follow to
+Jakarta EE and provides an overview of the steps you have to follow to
 create a batch application.
 
 The following topics are addressed here:
@@ -30,7 +30,7 @@ The following topics are addressed here:
 The Batch Processing Framework
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Java EE includes a batch processing framework that consists of the
+Jakarta EE includes a batch processing framework that consists of the
 following elements:
 
 * A batch runtime that manages the execution of jobs
@@ -39,7 +39,7 @@ following elements:
 * A Java API to implement steps, decision elements, and other batch
 artifacts
 
-Batch applications in Java EE contain XML files and Java classes. The
+Batch applications in Jakarta EE contain XML files and Java classes. The
 XML files define the structure of a job in terms of batch artifacts and
 the relationships between them. (A batch artifact is a part of a
 chunk-oriented step, a task-oriented step, a decision element, or
@@ -53,7 +53,7 @@ Java classes to run the jobs in a batch application.
 Creating Batch Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The process for creating a batch application in Java EE is the
+The process for creating a batch application in Jakarta EE is the
 following.
 
 1.  Design the batch application.
@@ -81,7 +81,7 @@ databases.
 application.
 
 The following sections describe in detail how to use the components of
-the batch processing framework in Java EE to create batch applications.
+the batch processing framework in Jakarta EE to create batch applications.
 
 [[BABDGDJB]][[elements-of-a-batch-job]]
 
@@ -131,7 +131,7 @@ link:batch-processing004.html#BCGDDBBG[Using the Job Specification
 Language], and accessing properties in batch artifacts is described in
 link:batch-processing005.html#BCGHDHGH[Creating Batch Artifacts].
 
-Java EE applications can also pass parameters to a job when they submit
+Jakarta EE applications can also pass parameters to a job when they submit
 it to the batch runtime. This enables you to specify dynamic parameters
 that are only known at runtime. Parameters are also necessary for
 partitioned steps, since each partition needs to know, for example, what
@@ -182,7 +182,7 @@ link:#BCGJBGDF[Table 58-1]. They are represented as strings.
 |============================================================
 
 
-Java EE applications can submit jobs and access the batch status of a
+Jakarta EE applications can submit jobs and access the batch status of a
 job using the `JobOperator` interface, as described in
 link:batch-processing006.html#BCGCAHCB[Submitting Jobs to the Batch
 Runtime]. Job definition files can refer to batch status values using

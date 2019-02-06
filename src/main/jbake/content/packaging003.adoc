@@ -12,10 +12,10 @@ Packaging Web Archives
 Packaging Web Archives
 ----------------------
 
-In the Java EE architecture, a web module is the smallest deployable and
+In the Jakarta EE architecture, a web module is the smallest deployable and
 usable unit of web resources. A web module contains web components and
 static web content files, such as images, which are called web
-resources. A Java EE web module corresponds to a web application as
+resources. A Jakarta EE web module corresponds to a web application as
 defined in the Java Servlet specification.
 
 In addition to web components and web resources, a web module can
@@ -70,7 +70,7 @@ can be deployed on GlassFish Server is shown in link:#BCGGCCHE[Figure
 [[BCGGCCHE]]
 
 .*Figure 5-3 Web Module Structure*
-image:img/javaeett_dt_012.png[
+image:img/jakartaeett_dt_012.png[
 "Diagram of web module structure. WEB-INF and web pages are under the
 root. Under WEB-INF are descriptors and the lib and classes directories."]
 

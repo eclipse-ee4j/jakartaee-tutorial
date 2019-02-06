@@ -31,7 +31,7 @@ Overview of the standalone Example Application
 Testing the business methods of an enterprise bean in a unit test allows
 developers to exercise the business logic of an application separately
 from the other application layers, such as the presentation layer, and
-without having to deploy the application to a Java EE server.
+without having to deploy the application to a Jakarta EE server.
 
 The `standalone` example has two main components: `StandaloneBean`, a
 stateless session bean, and `StandaloneBeanTest`, a JUnit test class

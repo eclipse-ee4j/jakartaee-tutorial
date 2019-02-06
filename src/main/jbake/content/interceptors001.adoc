@@ -12,13 +12,13 @@ prev=interceptors.html
 Overview of Interceptors
 ------------------------
 
-Interceptors are used in conjunction with Java EE managed classes to
+Interceptors are used in conjunction with Jakarta EE managed classes to
 allow developers to invoke interceptor methods on an associated target
 class, in conjunction with method invocations or lifecycle events.
 Common uses of interceptors are logging, auditing, and profiling.
 
 Although interceptors are part of Enterprise JavaBeans 3.2 and Contexts
-and Dependency Injection for Java EE 1.1, the Interceptors 1.2
+and Dependency Injection for Jakarta EE 1.1, the Interceptors 1.2
 specification is downloadable as part of a maintenance release of JSR
 318, Enterprise JavaBeans 3.1, available from
 `http://jcp.org/en/jsr/detail?id=318`. You can use interceptors with
@@ -41,7 +41,7 @@ a|
 *Note*:
 
 Applications that use the deployment descriptor to define interceptors
-are not portable across Java EE servers.
+are not portable across Jakarta EE servers.
 
 |=======================================================================
 
@@ -120,7 +120,7 @@ target class and interceptor class instances are destroyed.
 Interceptors and CDI
 ~~~~~~~~~~~~~~~~~~~~
 
-Contexts and Dependency Injection for Java EE (CDI) builds on the basic
-functionality of Java EE interceptors. For information on CDI
+Contexts and Dependency Injection for Jakarta EE (CDI) builds on the basic
+functionality of Jakarta EE interceptors. For information on CDI
 interceptors, including a discussion of interceptor binding types, see
 link:cdi-adv006.html#GKHJX[Using Interceptors in CDI Applications].

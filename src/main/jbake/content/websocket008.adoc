@@ -25,7 +25,7 @@ public class ChatEndpoint {
 ----
 
 If the endpoint is deployed inside a web application called `chatapp` at
-a local Java EE server in port 8080, clients can connect to the endpoint
+a local Jakarta EE server in port 8080, clients can connect to the endpoint
 using any of the following URIs:
 
 [source,oac_no_warn]

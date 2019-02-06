@@ -11,7 +11,7 @@ prev=security-intro002.html
 Securing Containers
 -------------------
 
-In Java EE, the component containers are responsible for providing
+In Jakarta EE, the component containers are responsible for providing
 application security. A container provides two types of security:
 declarative and programmatic.
 
@@ -36,7 +36,7 @@ application deployment descriptors.
 
 Specific annotations that can be used to specify security information
 within an enterprise bean class file are described in
-link:security-javaee002.html#GJGDI[Securing an Enterprise Bean Using
+link:security-jakartaee002.html#GJGDI[Securing an Enterprise Bean Using
 Declarative Security]. link:security-webtier.html#BNCAS[Chapter 51,
 "Getting Started Securing Web Applications"], describes how to use
 annotations to secure web applications where possible. Deployment
@@ -53,7 +53,7 @@ Using Deployment Descriptors for Declarative Security
 Declarative security can express an application component's security
 requirements by using deployment descriptors. Because deployment
 descriptor information is declarative, it can be changed without the
-need to modify the source code. At runtime, the Java EE server reads the
+need to modify the source code. At runtime, the Jakarta EE server reads the
 deployment descriptor and acts upon the corresponding application,
 module, or component accordingly. Deployment descriptors must provide
 certain structural information for each component if this information
@@ -101,5 +101,5 @@ sections:
 
 * link:security-webtier003.html#GJIIE[Using Programmatic Security with
 Web Applications]
-* link:security-javaee002.html#GJGCS[Securing an Enterprise Bean
+* link:security-jakartaee002.html#GJGCS[Securing an Enterprise Bean
 Programmatically]

@@ -9,13 +9,13 @@ prev=security-intro003.html
 [[using-pluggable-providers]]
 Using Pluggable Providers
 -------------------------
-Java EE includes two specifications that define SPI interfaces for
+Jakarta EE includes two specifications that define SPI interfaces for
 pluggable security providers, JSR-196 and JSR-375. These specifications are
 described in more detail in the following sections:
 
 * link:#jsr-196-java-authentication-service-provider-interface-for-containers-jaspic[JSR-196 Java
 Authentication Service Provider Interface for Containers (JASPIC)]
-* link:#jsr-375-java-ee-security-api[JSR-375 Java EE Security API]
+* link:#jsr-375-java-ee-security-api[JSR-375 Jakarta EE Security API]
 
 [[jsr-196-java-authentication-service-provider-interface-for-containers-jaspic]]
 JSR-196 Java Authentication Service Provider Interface for Containers (JASPIC)
@@ -31,7 +31,7 @@ and that plug in to the JASPIC framework. (Note that it is not necessary for a
 client and server to both use JASPIC, as long as both sides process messages
 correctly for a given protocol.)
 
-JASPIC defines two "profiles" for integrating JASPIC auth modules into Java EE
+JASPIC defines two "profiles" for integrating JASPIC auth modules into Jakarta EE
 containers: the Servlet Container Profile, and the SOAP Profile. Each specifies
 how JASPIC message processing must be integrated into the request processing flow
 of the container in question to validate incoming requests and secure outgoing
@@ -59,7 +59,7 @@ of the outbound message.
 
 JASPIC does not define any standard or built-in ServerAuthModules; they must be
 provided either by the application using the module, or as a non-standard
-extension of a particular vendor's Java EE product. ServerAuthModules can
+extension of a particular vendor's Jakarta EE product. ServerAuthModules can
 sometimes be directly configured for an application in a vendor-specific way, but
 the standard mechanism for making a `ServerAuthModule` available to an application
 is to register a corresponding `AuthConfigProvider` with the global `AuthConfigFactory`.
@@ -67,8 +67,8 @@ An `AuthConfigProvider` makes a `ServerAuthModule` available to the container, v
 series of intermediary objects, for runtime message processing.
 
 [[jsr-375-java-ee-security-api]]
-JSR-375 Java EE Security API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+JSR-375 Jakarta EE Security API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 JSR-375 defines the following authentication-related plugin SPIs:
 
 * `HttpAuthenticationMechanism` - An interface for modules that authenticate callers
@@ -100,6 +100,6 @@ and `IdentityStore` that provide configurable support for common authentication 
 credential validation use cases, without the need to write custom implementations.
 
 Because these SPIs, related annotations, and the CDI deployment mechanism are all
-part of standard Java EE, implementations are completely portable (to the extent
+part of standard Jakarta EE, implementations are completely portable (to the extent
 they do not rely internally on platform-specific APIs or libraries) and can be
-portably deployed to any Java EE server.
+portably deployed to any Jakarta EE server.

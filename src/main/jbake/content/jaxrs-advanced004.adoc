@@ -13,7 +13,7 @@ Integrating JAX-RS with EJB Technology and CDI
 ----------------------------------------------
 
 JAX-RS works with Enterprise JavaBeans technology (enterprise beans) and
-Contexts and Dependency Injection for Java EE (CDI).
+Contexts and Dependency Injection for Jakarta EE (CDI).
 
 In general, for JAX-RS to work with enterprise beans, you need to
 annotate the class of a bean with `@Path` to convert it to a root

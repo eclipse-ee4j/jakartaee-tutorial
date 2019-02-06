@@ -14,7 +14,7 @@ Overview of Web Application Security
 A web application is accessed using a web browser over a network, such
 as the Internet or a company's intranet. As discussed in
 link:overview004.html#BNAAY[Distributed Multitiered Applications], the
-Java EE platform uses a distributed multitiered application model, and
+Jakarta EE platform uses a distributed multitiered application model, and
 web applications run in the web tier.
 
 Web applications contain resources that can be accessed by many users.
@@ -23,10 +23,10 @@ Internet. In such an environment, a substantial number of web
 applications will require some type of security.
 
 Securing applications and their clients in the business tier and the EIS
-tier is discussed in link:security-javaee.html#BNBYK[Chapter 52, "Getting
+tier is discussed in link:security-jakartaee.html#BNBYK[Chapter 52, "Getting
 Started Securing Enterprise Applications"].
 
-In the Java EE platform, web components provide the dynamic extension
+In the Jakarta EE platform, web components provide the dynamic extension
 capabilities for a web server. Web components can be Java servlets or
 JavaServer Faces pages.
 
@@ -39,12 +39,12 @@ the deployer set up the appropriate security policy for the web
 application. Any values explicitly specified in the deployment
 descriptor override any values specified in annotations.
 
-Security for Java EE web applications can be implemented in the
+Security for Jakarta EE web applications can be implemented in the
 following ways.
 
 * Declarative security can be implemented using either metadata
 annotations or an application's deployment descriptor. See
-link:security-intro001.html#BNBWK[Overview of Java EE Security] for more
+link:security-intro001.html#BNBWK[Overview of Jakarta EE Security] for more
 information.
 +
 Declarative security for web applications is described in
@@ -55,7 +55,7 @@ sufficient to express the security model of an application. Declarative
 security alone may not be sufficient when conditional login in a
 particular work flow, instead of for all cases, is required in the
 middle of an application. See link:security-intro001.html#BNBWK[Overview
-of Java EE Security] for more information.
+of Jakarta EE Security] for more information.
 +
 Servlet 4.0 provides the `authenticate`, `login`, and `logout` methods
 of the `HttpServletRequest` interface. With the addition of the
@@ -70,7 +70,7 @@ Applications].
 * Message security works with web services and incorporates security
 features, such as digital signatures and encryption, into the header of
 a SOAP message, working in the application layer, ensuring end-to-end
-security. Message security is not a component of Java EE and is
+security. Message security is not a component of Jakarta EE and is
 mentioned here for informational purposes only.
 
 Some of the material in this chapter builds on material presented
@@ -82,4 +82,4 @@ Applications"]
 * link:jsf-intro.html#BNAPH[Chapter 7, "JavaServer Faces Technology"]
 * link:servlets.html#BNAFD[Chapter 18, "Java Servlet Technology"]
 * link:security-intro.html#BNBWJ[Chapter 50, "Introduction to Security in
-the Java EE Platform"]
+the Jakarta EE Platform"]

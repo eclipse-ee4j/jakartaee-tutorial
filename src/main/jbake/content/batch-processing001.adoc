@@ -86,7 +86,7 @@ batch job.
 [[BABFJBAH]]
 
 .*Figure 58-1 Chunk Steps in a Batch Job*
-image:img/javaeett_dt_058.png[
+image:img/jakartaeett_dt_058.png[
 "This figure shows a batch job that contains two chunk steps: step A and
 step B. Step A has the three parts of a chunk-oriented step: input
 retrieval A, business processing A, and output writing A. Step B also
@@ -150,7 +150,7 @@ chunk steps, task steps and a decision element.
 [[BCGDCDCA]]
 
 .*Figure 58-2 Steps and Decision Elements in a Job*
-image:img/javaeett_dt_059.png[
+image:img/jakartaeett_dt_059.png[
 "This figure shows a batch job that contains two chunk steps, a task step
 and a decision element. The job starts with chunk step A, continues with
 chunk step B, and then decision element D evaluates condition 1. The

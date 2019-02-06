@@ -30,7 +30,7 @@ client can provide it. Using traditional I/O, the container thread
 associated with this request would be sometimes sitting idle waiting for
 the rest of the request.
 
-Java EE provides nonblocking I/O support for servlets and filters when
+Jakarta EE provides nonblocking I/O support for servlets and filters when
 processing requests in asynchronous mode. The following steps summarize
 how to use nonblocking I/O to process requests and write responses
 inside service methods.
