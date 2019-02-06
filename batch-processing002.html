@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Batch Processing in Java EE</title>
+    <title>Batch Processing in Jakarta EE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -59,11 +59,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_batch_processing_in_java_ee">Batch Processing in Java EE</h2>
+<h2 id="_batch_processing_in_jakarta_ee">Batch Processing in Jakarta EE</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section lists the components of the batch processing framework in
-Java EE and provides an overview of the steps you have to follow to
+Jakarta EE and provides an overview of the steps you have to follow to
 create a batch application.</p>
 </div>
 <div class="paragraph">
@@ -97,7 +97,7 @@ create a batch application.</p>
 <div class="sect2">
 <h3 id="_the_batch_processing_framework">The Batch Processing Framework</h3>
 <div class="paragraph">
-<p>Java EE includes a batch processing framework that consists of the
+<p>Jakarta EE includes a batch processing framework that consists of the
 following elements:</p>
 </div>
 <div class="ulist">
@@ -118,7 +118,7 @@ artifacts</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Batch applications in Java EE contain XML files and Java classes. The
+<p>Batch applications in Jakarta EE contain XML files and Java classes. The
 XML files define the structure of a job in terms of batch artifacts and
 the relationships between them. (A batch artifact is a part of a
 chunk-oriented step, a task-oriented step, a decision element, or
@@ -134,7 +134,7 @@ Java classes to run the jobs in a batch application.</p>
 <div class="sect2">
 <h3 id="_creating_batch_applications">Creating Batch Applications</h3>
 <div class="paragraph">
-<p>The process for creating a batch application in Java EE is the
+<p>The process for creating a batch application in Jakarta EE is the
 following.</p>
 </div>
 <div class="olist arabic">
@@ -182,7 +182,7 @@ application.</p>
 </div>
 <div class="paragraph">
 <p>The following sections describe in detail how to use the components of
-the batch processing framework in Java EE to create batch applications.</p>
+the batch processing framework in Jakarta EE to create batch applications.</p>
 </div>
 <div class="paragraph">
 <p><a id="BABDGDJB"></a><a id="elements-of-a-batch-job"></a></p>
@@ -253,7 +253,7 @@ Language</a>, and accessing properties in batch artifacts is described in
 <a href="batch-processing005.html#BCGHDHGH">Creating Batch Artifacts</a>.</p>
 </div>
 <div class="paragraph">
-<p>Java EE applications can also pass parameters to a job when they submit
+<p>Jakarta EE applications can also pass parameters to a job when they submit
 it to the batch runtime. This enables you to specify dynamic parameters
 that are only known at runtime. Parameters are also necessary for
 partitioned steps, since each partition needs to know, for example, what
@@ -338,7 +338,7 @@ runtime as a batch status value. Batch status values are listed
 </tbody>
 </table>
 <div class="paragraph">
-<p>Java EE applications can submit jobs and access the batch status of a
+<p>Jakarta EE applications can submit jobs and access the batch status of a
 job using the <code>JobOperator</code> interface, as described in
 <a href="batch-processing006.html#BCGCAHCB">Submitting Jobs to the Batch
 Runtime</a>. Job definition files can refer to batch status values using

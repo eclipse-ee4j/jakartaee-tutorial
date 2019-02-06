@@ -64,7 +64,7 @@
 <div class="paragraph">
 <p>This overview defines the concept of messaging, describes the JMS API
 and where it can be used, and explains how the JMS API works within the
-Java EE platform.</p>
+Jakarta EE platform.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -81,7 +81,7 @@ Java EE platform.</p>
 <p><a href="#BNCDU">When Can You Use the JMS API?</a></p>
 </li>
 <li>
-<p><a href="#BNCDW">How Does the JMS API Work with the Java EE Platform?</a></p>
+<p><a href="#BNCDW">How Does the JMS API Work with the Jakarta EE Platform?</a></p>
 </li>
 </ul>
 </div>
@@ -225,7 +225,7 @@ might work.</p>
 </div>
 <div id="BNCDV" class="paragraph">
 <div class="title"><strong>Figure 48-1 Messaging in an Enterprise Application</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_026.png" alt="Diagram showing messaging between various departments in an enterprise"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_026.png" alt="Diagram showing messaging between various departments in an enterprise"></span></p>
 </div>
 <div class="paragraph">
 <p>Manufacturing is only one example of how an enterprise can use the JMS
@@ -237,7 +237,7 @@ services applications, and many others can make use of messaging.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_how_does_the_jms_api_work_with_the_java_ee_platform">How Does the JMS API Work with the Java EE Platform?</h3>
+<h3 id="_how_does_the_jms_api_work_with_the_jakarta_ee_platform">How Does the JMS API Work with the Jakarta EE Platform?</h3>
 <div class="paragraph">
 <p>When the JMS API was first introduced, its most important purpose was to
 allow Java applications to access existing messaging-oriented middleware
@@ -246,12 +246,12 @@ implemented the JMS API, so a JMS product can now provide a complete
 messaging capability for an enterprise.</p>
 </div>
 <div class="paragraph">
-<p>The JMS API is an integral part of the Java EE platform, and application
-developers can use messaging with Java EE components. JMS 2.0 is part of
-the Java EE 8 release.</p>
+<p>The JMS API is an integral part of the Jakarta EE platform, and application
+developers can use messaging with Jakarta EE components. JMS 2.0 is part of
+the Jakarta EE 8 release.</p>
 </div>
 <div class="paragraph">
-<p>The JMS API in the Java EE platform has the following features.</p>
+<p>The JMS API in the Jakarta EE platform has the following features.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -276,23 +276,23 @@ database accesses to take place within a single transaction.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The JMS API enhances the other parts of the Java EE platform by
+<p>The JMS API enhances the other parts of the Jakarta EE platform by
 simplifying enterprise development, allowing loosely coupled, reliable,
-asynchronous interactions among Java EE components and legacy systems
+asynchronous interactions among Jakarta EE components and legacy systems
 capable of messaging. A developer can easily add new behavior to a Java
 EE application that has existing business events by adding a new
-message-driven bean to operate on specific business events. The Java EE
+message-driven bean to operate on specific business events. The Jakarta EE
 platform, moreover, enhances the JMS API by providing support for JTA
 transactions and allowing for the concurrent consumption of messages.
 For more information, see the Enterprise JavaBeans specification, v3.2.</p>
 </div>
 <div class="paragraph">
 <p>The JMS provider can be integrated with the application server using the
-Java EE Connector architecture. You access the JMS provider through a
+Jakarta EE Connector architecture. You access the JMS provider through a
 resource adapter. This capability allows vendors to create JMS providers
 that can be plugged in to multiple application servers, and it allows
 application servers to support multiple JMS providers. For more
-information, see the Java EE Connector architecture specification, v1.7.</p>
+information, see the Jakarta EE Connector architecture specification, v1.7.</p>
 </div>
 </div>
 </div>

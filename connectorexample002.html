@@ -86,7 +86,7 @@ adapter and the web application</p>
 </div>
 <div id="CHDHADIG" class="paragraph">
 <div class="title"><strong>Figure 56-1 The trading Example</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_054.png" alt="This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_054.png" alt="This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket."></span></p>
 </div>
 <div class="paragraph">
 <p>The <code>trading-eis</code> module is an auxiliary project that resembles a legacy
@@ -103,10 +103,10 @@ request-response pair would look like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>trading-rar</code> module implements the outbound contract of the Java EE
+<p>The <code>trading-rar</code> module implements the outbound contract of the Jakarta EE
 Connector Architecture to submit requests and obtain responses from the
 legacy stock trading execution platform. The <code>trading-rar</code> module
-provides and implements a custom client interface for Java EE
+provides and implements a custom client interface for Jakarta EE
 applications to use. This interface is simpler than the Common Client
 Interface (CCI).</p>
 </div>
@@ -124,11 +124,11 @@ EIS.</p>
 <div class="sect2">
 <h3 id="_using_the_outbound_resource_adapter">Using the Outbound Resource Adapter</h3>
 <div class="paragraph">
-<p>In most cases, Java EE application developers use outbound resource
+<p>In most cases, Jakarta EE application developers use outbound resource
 adapters developed by a third party. Outbound resource adapters either
 implement the Common Client Interface (CCI) or provide a custom
 interface for applications to interact with the EIS. Outbound resource
-adapters provide Java EE applications with the following elements:</p>
+adapters provide Jakarta EE applications with the following elements:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -144,7 +144,7 @@ adapters provide Java EE applications with the following elements:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Java EE applications obtain an instance of the connection factory via
+<p>Jakarta EE applications obtain an instance of the connection factory via
 resource injection and then use the factory object to obtain connection
 handles to the EIS. The connection handles enable the application to
 make requests and obtain information from the EIS.</p>
@@ -312,7 +312,7 @@ shown in <a href="#CHDIGAJE">Figure 56-2</a>.</p>
 </div>
 <div id="CHDIGAJE" class="paragraph">
 <div class="title"><strong>Figure 56-2 Architecture of the trading Example</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_055.png" alt="This figure shows the classes in each of the modules of the trading example."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_055.png" alt="This figure shows the classes in each of the modules of the trading example."></span></p>
 </div>
 <div class="paragraph">
 <p>The <code>trading-rar</code> module implements the interfaces listed in

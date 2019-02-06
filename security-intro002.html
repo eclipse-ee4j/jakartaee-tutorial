@@ -65,7 +65,7 @@
 <p>The characteristics of an application should be considered when deciding
 the layer and type of security to be provided for applications. The
 following sections discuss the characteristics of the common mechanisms
-that can be used to secure Java EE applications. Each of these
+that can be used to secure Jakarta EE applications. Each of these
 mechanisms can be used individually or with others to provide protection
 layers based on the specific needs of your implementation.</p>
 </div>
@@ -78,7 +78,7 @@ layers based on the specific needs of your implementation.</p>
 <p><a href="#BNBWZ">Java SE Security Mechanisms</a></p>
 </li>
 <li>
-<p><a href="#BNBXA">Java EE Security Mechanisms</a></p>
+<p><a href="#BNBXA">Jakarta EE Security Mechanisms</a></p>
 </li>
 </ul>
 </div>
@@ -98,7 +98,7 @@ mechanisms.</p>
 that enable services to authenticate and enforce access controls upon
 users. JAAS provides a pluggable and extensible framework for
 programmatic user authentication and authorization. JAAS is a core Java
-SE API and is an underlying technology for Java EE security mechanisms.</p>
+SE API and is an underlying technology for Jakarta EE security mechanisms.</p>
 </li>
 <li>
 <p>Java Generic Security Services (Java GSS-API) is a token-based API
@@ -147,14 +147,14 @@ and obtaining, listing, and managing Kerberos tickets.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_java_ee_security_mechanisms">Java EE Security Mechanisms</h3>
+<h3 id="_jakarta_ee_security_mechanisms">Jakarta EE Security Mechanisms</h3>
 <div class="paragraph">
-<p>Java EE security services are provided by the component container and
+<p>Jakarta EE security services are provided by the component container and
 can be implemented by using declarative or programmatic techniques (see
-<a href="security-intro003.html#BNBXE">Securing Containers</a>). Java EE security
+<a href="security-intro003.html#BNBXE">Securing Containers</a>). Jakarta EE security
 services provide a robust and easily configured security mechanism for
 authenticating users and authorizing access to application functions and
-associated data at many different layers. Java EE security services are
+associated data at many different layers. Jakarta EE security services are
 separate from the security mechanisms of the operating system.</p>
 </div>
 <div class="paragraph">
@@ -163,7 +163,7 @@ separate from the security mechanisms of the operating system.</p>
 <div class="sect3">
 <h4 id="_application_layer_security">Application-Layer Security</h4>
 <div class="paragraph">
-<p>In Java EE, component containers are responsible for providing
+<p>In Jakarta EE, component containers are responsible for providing
 application-layer security, security services for a specific application
 type tailored to the needs of the application. At the application layer,
 application firewalls can be used to enhance application protection by
@@ -171,7 +171,7 @@ protecting the communication stream and all associated application
 resources from attacks.</p>
 </div>
 <div class="paragraph">
-<p>Java EE security is easy to implement and configure and can offer
+<p>Jakarta EE security is easy to implement and configure and can offer
 fine-grained access control to application functions and data. However,
 as is inherent to security applied at the application layer, security
 properties are not transferable to applications running in other
@@ -179,7 +179,7 @@ environments and protect data only while it is residing in the
 application environment. In the context of a traditional enterprise
 application, this is not necessarily a problem, but when applied to a
 web services application, in which data often travels across several
-intermediaries, you would need to use the Java EE security mechanisms
+intermediaries, you would need to use the Jakarta EE security mechanisms
 along with transport-layer security and message-layer security for a
 complete security solution.</p>
 </div>

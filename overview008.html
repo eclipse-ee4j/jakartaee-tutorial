@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Java EE APIs</title>
+    <title>Jakarta EE APIs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -59,11 +59,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java_ee_apis">Java EE APIs</h2>
+<h2 id="_jakarta_ee_apis">Jakarta EE APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following sections give a brief summary of the technologies required
-by the Java EE platform and the APIs used in Java EE applications.</p>
+by the Jakarta EE platform and the APIs used in Jakarta EE applications.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACL"></a><a id="enterprise-javabeans-technology"></a></p>
@@ -75,7 +75,7 @@ by the Java EE platform and the APIs used in Java EE applications.</p>
 of code that has fields and methods to implement modules of business
 logic. You can think of an enterprise bean as a building block that can
 be used alone or with other enterprise beans to execute business logic
-on the Java EE server.</p>
+on the Jakarta EE server.</p>
 </div>
 <div class="paragraph">
 <p>Enterprise beans are either session beans or message-driven beans.</p>
@@ -94,7 +94,7 @@ asynchronously. Commonly, these are Java Message Service (JMS) messages.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Enterprise JavaBeans 3.2 and
+<p>The Jakarta EE 8 platform requires Enterprise JavaBeans 3.2 and
 Interceptors 1.2. The Interceptors specification is part of the EJB
 specification.</p>
 </div>
@@ -112,7 +112,7 @@ servlets can respond to any type of request, they are commonly used to
 extend the applications hosted by web servers.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new Java Servlet technology features include
+<p>In the Jakarta EE 8 platform, new Java Servlet technology features include
 the following:</p>
 </div>
 <div class="ulist">
@@ -126,7 +126,7 @@ the following:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Servlet 4.0</p>
+<p>The Jakarta EE 8 platform requires Servlet 4.0</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACP"></a><a id="javaserver-faces-technology"></a></p>
@@ -185,7 +185,7 @@ stored in a model object to types that can be represented in a view.</p>
 XML-based configuration files.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new features of JavaServer Faces technology
+<p>In the Jakarta EE 8 platform, new features of JavaServer Faces technology
 include the following:</p>
 </div>
 <div class="ulist">
@@ -205,7 +205,7 @@ include the following:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JavaServer Faces 2.3 and Expression
+<p>The Jakarta EE 8 platform requires JavaServer Faces 2.3 and Expression
 Language 3.0.</p>
 </div>
 <div class="paragraph">
@@ -235,11 +235,11 @@ HTML or XML</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For information about JSP technology, see <em>The Java EE 5 Tutorial</em> at
+<p>For information about JSP technology, see <em>The Jakarta EE 5 Tutorial</em> at
 <code><a href="http://docs.oracle.com/javaee/5/tutorial/doc/" class="bare">http://docs.oracle.com/javaee/5/tutorial/doc/</a></code>.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JavaServer Pages 2.3 for compatibility
+<p>The Jakarta EE 8 platform requires JavaServer Pages 2.3 for compatibility
 with earlier releases but recommends the use of Facelets as the display
 technology in new applications.</p>
 </div>
@@ -263,7 +263,7 @@ for manipulating XML documents, internationalization tags, tags for
 accessing databases using SQL, and tags for commonly used functions.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JSTL 1.2.</p>
+<p>The Jakarta EE 8 platform requires JSTL 1.2.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNADB"></a><a id="java-persistence-api"></a></p>
@@ -276,7 +276,7 @@ accessing databases using SQL, and tags for commonly used functions.</p>
 persistence. Persistence uses an object/relational mapping approach to
 bridge the gap between an object-oriented model and a relational
 database. The Java Persistence API can also be used in Java SE
-applications outside of the Java EE environment. Java Persistence
+applications outside of the Jakarta EE environment. Java Persistence
 consists of the following areas:</p>
 </div>
 <div class="ulist">
@@ -293,7 +293,7 @@ consists of the following areas:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Java Persistence API 2.2.</p>
+<p>The Jakarta EE 8 platform requires Java Persistence API 2.2.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACR"></a><a id="java-transaction-api"></a></p>
@@ -303,7 +303,7 @@ consists of the following areas:</p>
 <h3 id="_java_transaction_api">Java Transaction API</h3>
 <div class="paragraph">
 <p>The Java Transaction API (JTA) provides a standard interface for
-demarcating transactions. The Java EE architecture provides a default
+demarcating transactions. The Jakarta EE architecture provides a default
 auto commit to handle transaction commits and rollbacks. An auto commit
 means that any other applications that are viewing data will see the
 updated data after each database read or write operation. However, if
@@ -313,7 +313,7 @@ where the entire transaction, including both operations, begins, rolls
 back, and commits.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Java Transaction API 1.2.</p>
+<p>The Jakarta EE 8 platform requires Java Transaction API 1.2.</p>
 </div>
 <div class="paragraph">
 <p><a id="GIRBT"></a><a id="java-api-for-restful-web-services"></a></p>
@@ -329,7 +329,7 @@ application that consists of classes packaged as a servlet in a WAR file
 along with required libraries.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new RESTful web services features include the following:</p>
+<p>In the Jakarta EE 8 platform, new RESTful web services features include the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -351,7 +351,7 @@ along with required libraries.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JAX-RS 2.1.</p>
+<p>The Jakarta EE 8 platform requires JAX-RS 2.1.</p>
 </div>
 <div class="paragraph">
 <p><a id="GJXSD"></a><a id="managed-beans"></a></p>
@@ -364,12 +364,12 @@ along with required libraries.</p>
 minimal requirements, support a small set of basic services, such as
 resource injection, lifecycle callbacks, and interceptors. Managed Beans
 represent a generalization of the managed beans specified by JavaServer
-Faces technology and can be used anywhere in a Java EE application, not
+Faces technology and can be used anywhere in a Jakarta EE application, not
 just in web modules.</p>
 </div>
 <div class="paragraph">
-<p>The Managed Beans specification is part of the Java EE 8 platform
-specification (JSR 366). The Java EE 8 platform requires Managed Beans
+<p>The Managed Beans specification is part of the Jakarta EE 8 platform
+specification (JSR 366). The Jakarta EE 8 platform requires Managed Beans
 1.0.</p>
 </div>
 <div class="paragraph">
@@ -377,10 +377,10 @@ specification (JSR 366). The Java EE 8 platform requires Managed Beans
 </div>
 </div>
 <div class="sect2">
-<h3 id="_contexts_and_dependency_injection_for_java_ee">Contexts and Dependency Injection for Java EE</h3>
+<h3 id="_contexts_and_dependency_injection_for_jakarta_ee">Contexts and Dependency Injection for Jakarta EE</h3>
 <div class="paragraph">
-<p>Contexts and Dependency Injection for Java EE (CDI) defines a set of
-contextual services, provided by Java EE containers, that make it easy
+<p>Contexts and Dependency Injection for Jakarta EE (CDI) defines a set of
+contextual services, provided by Jakarta EE containers, that make it easy
 for developers to use enterprise beans along with JavaServer Faces
 technology in web applications. Designed for use with stateful objects,
 CDI also has many broader uses, allowing developers a great deal of
@@ -388,7 +388,7 @@ flexibility to integrate different kinds of components in a loosely
 coupled but typesafe way.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new CDI features include the following:</p>
+<p>In the Jakarta EE 8 platform, new CDI features include the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -407,7 +407,7 @@ coupled but typesafe way.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires CDI 2.0.</p>
+<p>The Jakarta EE 8 platform requires CDI 2.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="GJXVG"></a><a id="dependency-injection-for-java"></a></p>
@@ -420,12 +420,12 @@ coupled but typesafe way.</p>
 one interface) for use on injectable classes.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE platform, CDI provides support for Dependency Injection.
+<p>In the Jakarta EE platform, CDI provides support for Dependency Injection.
 Specifically, you can use injection points only in a CDI-enabled
 application.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Dependency Injection for Java 1.0.</p>
+<p>The Jakarta EE 8 platform requires Dependency Injection for Java 1.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="GJXTY"></a><a id="bean-validation"></a></p>
@@ -441,7 +441,7 @@ server side, you can define the validation constraints in one place and
 share them across the different layers.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new Bean Validation features include the following:</p>
+<p>In the Jakarta EE 8 platform, new Bean Validation features include the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -454,7 +454,7 @@ share them across the different layers.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Bean Validation 2.0.</p>
+<p>The Jakarta EE 8 platform requires Bean Validation 2.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACQ"></a><a id="java-message-service-api"></a></p>
@@ -464,42 +464,42 @@ share them across the different layers.</p>
 <h3 id="_java_message_service_api">Java Message Service API</h3>
 <div class="paragraph">
 <p>The Java Message Service (JMS) API is a messaging standard that allows
-Java EE application components to create, send, receive, and read
+Jakarta EE application components to create, send, receive, and read
 messages. It enables distributed communication that is loosely coupled,
 reliable, and asynchronous.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JMS 2.0.</p>
+<p>The Jakarta EE 8 platform requires JMS 2.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACZ"></a><a id="java-ee-connector-architecture"></a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_java_ee_connector_architecture">Java EE Connector Architecture</h3>
+<h3 id="_jakarta_ee_connector_architecture">Jakarta EE Connector Architecture</h3>
 <div class="paragraph">
-<p>The Java EE Connector Architecture is used by tools vendors and system
+<p>The Jakarta EE Connector Architecture is used by tools vendors and system
 integrators to create resource adapters that support access to
-enterprise information systems that can be plugged in to any Java EE
-product. A resource adapter is a software component that allows Java EE
+enterprise information systems that can be plugged in to any Jakarta EE
+product. A resource adapter is a software component that allows Jakarta EE
 application components to access and interact with the underlying
 resource manager of the EIS. Because a resource adapter is specific to
 its resource manager, a different resource adapter typically exists for
 each type of database or enterprise information system.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE Connector Architecture also provides a performance-oriented,
-secure, scalable, and message-based transactional integration of Java EE
-platform–based web services with existing EISs that can be either
+<p>The Jakarta EE Connector Architecture also provides a performance-oriented,
+secure, scalable, and message-based transactional integration of Jakarta EE
+platform-based web services with existing EISs that can be either
 synchronous or asynchronous. Existing applications and EISs integrated
-through the Java EE Connector Architecture into the Java EE platform can
-be exposed as XML-based web services by using JAX-WS and Java EE
-component models. Thus JAX-WS and the Java EE Connector Architecture are
+through the Jakarta EE Connector Architecture into the Jakarta EE platform can
+be exposed as XML-based web services by using JAX-WS and Jakarta EE
+component models. Thus JAX-WS and the Jakarta EE Connector Architecture are
 complementary technologies for enterprise application integration (EAI)
 and end-to-end business integration.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Java EE Connector Architecture 1.7.</p>
+<p>The Jakarta EE 8 platform requires Jakarta EE Connector Architecture 1.7.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACS"></a><a id="javamail-api"></a></p>
@@ -508,7 +508,7 @@ and end-to-end business integration.</p>
 <div class="sect2">
 <h3 id="_javamail_api">JavaMail API</h3>
 <div class="paragraph">
-<p>Java EE applications use the JavaMail API to send email notifications.
+<p>Jakarta EE applications use the JavaMail API to send email notifications.
 The JavaMail API has two parts:</p>
 </div>
 <div class="ulist">
@@ -523,11 +523,11 @@ send mail</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE platform includes the JavaMail API with a service provider
+<p>The Jakarta EE platform includes the JavaMail API with a service provider
 that allows application components to send Internet mail.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JavaMail 1.6.</p>
+<p>The Jakarta EE 8 platform requires JavaMail 1.6.</p>
 </div>
 <div class="paragraph">
 <p><a id="GIRBE"></a><a id="java-authorization-contract-for-containers"></a></p>
@@ -537,21 +537,21 @@ that allows application components to send Internet mail.</p>
 <h3 id="_java_authorization_contract_for_containers">Java Authorization Contract for Containers</h3>
 <div class="paragraph">
 <p>The Java Authorization Contract for Containers (JACC) specification
-defines a contract between a Java EE application server and an
-authorization policy provider. All Java EE containers support this
+defines a contract between a Jakarta EE application server and an
+authorization policy provider. All Jakarta EE containers support this
 contract.</p>
 </div>
 <div class="paragraph">
 <p>The JACC specification defines <code>java.security.Permission</code> classes that
-satisfy the Java EE authorization model. The specification defines the
+satisfy the Jakarta EE authorization model. The specification defines the
 binding of container-access decisions to operations on instances of
 these permission classes. It defines the semantics of policy providers
 that use the new permission classes to address the authorization
-requirements of the Java EE platform, including the definition and use
+requirements of the Jakarta EE platform, including the definition and use
 of roles.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JACC 1.5.</p>
+<p>The Jakarta EE 8 platform requires JACC 1.5.</p>
 </div>
 <div class="paragraph">
 <p><a id="GIRGP"></a><a id="java-authentication-service-provider-interface-for-containers"></a></p>
@@ -574,13 +574,13 @@ message and return to their calling containers the identity established
 as a result of the message authentication.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JASPIC 1.1.</p>
+<p>The Jakarta EE 8 platform requires JASPIC 1.1.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="java-ee-security-api">Java EE Security API</h3>
+<h3 id="java-ee-security-api">Jakarta EE Security API</h3>
 <div class="paragraph">
-<p>The Java EE Security API specification defines portable, plug-in interfaces for
+<p>The Jakarta EE Security API specification defines portable, plug-in interfaces for
 HTTP authentication and identity stores, and an injectable SecurityContext interface
 that provides an API for programmatic security.</p>
 </div>
@@ -608,7 +608,7 @@ for default group-to-role mapping, and defines a principal type called
 <code>CallerPrincipal</code> that can represent the identity of an application caller.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Java EE Security API 1.0.</p>
+<p>The Jakarta EE 8 platform requires Jakarta EE Security API 1.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="CJAHDJBJ"></a><a id="java-api-for-websocket"></a></p>
@@ -619,12 +619,12 @@ for default group-to-role mapping, and defines a principal type called
 <div class="paragraph">
 <p>WebSocket is an application protocol that provides full-duplex
 communications between two peers over TCP. The Java API for WebSocket
-enables Java EE applications to create endpoints using annotations that
+enables Jakarta EE applications to create endpoints using annotations that
 specify the configuration parameters of the endpoint and designate its
 lifecycle callback methods.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Java API for WebSocket 1.1.</p>
+<p>The Jakarta EE 8 platform requires Java API for WebSocket 1.1.</p>
 </div>
 <div class="paragraph">
 <p><a id="CJAGIEEI"></a><a id="java-api-for-json-processing"></a></p>
@@ -635,12 +635,12 @@ lifecycle callback methods.</p>
 <div class="paragraph">
 <p>JavaScript Object Notation (JSON) is a text-based data exchange format derived from JavaScript that
 is used in web services and other connected applications. The Java API
-for JSON Processing (JSON-P) enables Java EE applications to parse,
+for JSON Processing (JSON-P) enables Jakarta EE applications to parse,
 transform, and query JSON data using the object model or the streaming
 model.</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE 8 platform, new features of JSON-P include support for the following:</p>
+<p>In the Jakarta EE 8 platform, new features of JSON-P include support for the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -671,7 +671,7 @@ model.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JSON-P 1.1.</p>
+<p>The Jakarta EE 8 platform requires JSON-P 1.1.</p>
 </div>
 </div>
 <div class="sect2">
@@ -680,22 +680,22 @@ model.</p>
 <p>The Java API for JSON Binding (JSON-B) provides a binding layer for converting Java objects to and from JSON messages. JSON-B also supports the ability to customize the default mapping process used in this binding layer through the use of Java annotations for a given field, JavaBean property, type or package, or by providing an implementation of a property naming strategy.</p>
 </div>
 <div class="paragraph">
-<p>JSON-B is new to the Java EE 8 platform. The Java EE 8 platform requires JSON-B 1.0.</p>
+<p>JSON-B is new to the Jakarta EE 8 platform. The Jakarta EE 8 platform requires JSON-B 1.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="CJAFGFCJ"></a><a id="concurrency-utilities-for-java-ee"></a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_concurrency_utilities_for_java_ee">Concurrency Utilities for Java EE</h3>
+<h3 id="_concurrency_utilities_for_jakarta_ee">Concurrency Utilities for Jakarta EE</h3>
 <div class="paragraph">
-<p>Concurrency Utilities for Java EE is a standard API for providing
-asynchronous capabilities to Java EE application components through the
+<p>Concurrency Utilities for Jakarta EE is a standard API for providing
+asynchronous capabilities to Jakarta EE application components through the
 following types of objects: managed executor service, managed scheduled
 executor service, managed thread factory, and context service.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Concurrency Utilities for Java EE 1.0.</p>
+<p>The Jakarta EE 8 platform requires Concurrency Utilities for Jakarta EE 1.0.</p>
 </div>
 <div class="paragraph">
 <p><a id="CJAJHGIH"></a><a id="batch-applications-for-the-java-platform"></a></p>
@@ -712,7 +712,7 @@ job specification language based on XML, a Java API to interact with the
 batch runtime, and a Java API to implement batch artifacts.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Batch Applications for the
+<p>The Jakarta EE 8 platform requires Batch Applications for the
 Java Platform 1.0.</p>
 </div>
 </div>

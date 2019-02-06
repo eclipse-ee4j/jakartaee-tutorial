@@ -96,7 +96,7 @@ JMS client application.</p>
 </div>
 <div id="BNCEI" class="paragraph">
 <div class="title"><strong>Figure 48-5 The JMS API Programming Model</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_030.png" alt="Diagram of the JMS API programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_030.png" alt="Diagram of the JMS API programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"></span></p>
 </div>
 <div class="paragraph">
 <p>JMS also provides queue browsers, objects that allow an application to
@@ -112,7 +112,7 @@ The last subsection briefly describes JMS API exception handling.</p>
 appear in <a href="jms-examples.html#BNCGV">Chapter 49, "Java Message Service
 Examples,"</a> beginning with <a href="jms-examples003.html#BNCFA">Writing Simple
 JMS Applications</a>. For more detail, see the JMS API documentation, part
-of the Java EE API documentation.</p>
+of the Jakarta EE API documentation.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNCEJ"></a><a id="jms-administered-objects"></a></p>
@@ -147,11 +147,11 @@ for GlassFish Server. See <a href="jms-examples003.html#GKTJS">Creating JMS
 Administered Objects</a> for details.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE platform specification allows a developer to create
+<p>The Jakarta EE platform specification allows a developer to create
 administered objects using annotations or deployment descriptor
 elements. Objects created in this way are specific to the application
 for which they are created. See
-<a href="jms-concepts005.html#BABHFBDH">Creating Resources for Java EE
+<a href="jms-concepts005.html#BABHFBDH">Creating Resources for Jakarta EE
 Applications</a> for details. Definitions in a deployment descriptor
 override those specified by annotations.</p>
 </div>
@@ -171,7 +171,7 @@ learn how to create connection factories, see
 </div>
 <div class="paragraph">
 <p>At the beginning of a JMS client program, you usually inject a
-connection factory resource into a <code>ConnectionFactory</code> object. A Java EE
+connection factory resource into a <code>ConnectionFactory</code> object. A Jakarta EE
 server must provide a JMS connection factory with the logical JNDI name
 <code>java:comp/DefaultJMSConnectionFactory</code>. The actual JNDI name will be
 implementation-specific.</p>
@@ -234,7 +234,7 @@ private static Topic topic;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In a Java EE application, JMS administered objects are normally placed
+<p>In a Jakarta EE application, JMS administered objects are normally placed
 in the <code>jms</code> naming subcontext.</p>
 </div>
 <div class="paragraph">
@@ -269,7 +269,7 @@ or more sessions.</p>
 <p><strong>Note</strong>:</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE platform, the ability to create multiple sessions from a
+<p>In the Jakarta EE platform, the ability to create multiple sessions from a
 single connection is limited to application clients. In web and
 enterprise bean components, a connection can create no more than one
 session.</p>
@@ -354,14 +354,14 @@ connection factory:</p>
 </div>
 <div class="paragraph">
 <p>When called with no arguments from an application client or a Java SE
-client, or from the Java EE web or EJB container when there is no active
+client, or from the Jakarta EE web or EJB container when there is no active
 JTA transaction in progress, the <code>createContext</code> method creates a
 non-transacted session with an acknowledgment mode of
 <code>JMSContext.AUTO_ACKNOWLEDGE</code>. When called with no arguments from the
 web or EJB container when there is an active JTA transaction in
 progress, the <code>createContext</code> method creates a transacted session. For
-information about the way JMS transactions work in Java EE applications,
-see <a href="jms-concepts005.html#BNCGL">Using the JMS API in Java EE
+information about the way JMS transactions work in Jakarta EE applications,
+see <a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
@@ -539,7 +539,7 @@ implementation of the method can cast to another message subtype as
 needed (see <a href="#BNCEW">Message Bodies</a>).</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE web or EJB container, you use message-driven beans for
+<p>In the Jakarta EE web or EJB container, you use message-driven beans for
 asynchronous message delivery. A message-driven bean also implements the
 <code>MessageListener</code> interface and contains an <code>onMessage</code> method. For
 details, see <a href="jms-concepts005.html#BNCGQ">Using Message-Driven Beans
@@ -793,7 +793,7 @@ M6, but they do not receive messages M3 and M4.</p>
 </div>
 <div id="BNCGE" class="paragraph">
 <div class="title"><strong>Figure 48-6 Nondurable Subscriptions and Consumers</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_031.png" alt="Diagram showing messages being lost when nondurable subscriptions are used"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_031.png" alt="Diagram showing messages being lost when nondurable subscriptions are used"></span></p>
 </div>
 <div class="paragraph">
 <p>With a durable subscription, the consumer can be closed and re-created,
@@ -808,7 +808,7 @@ M4, and M5 arrive while there is no consumer, they are not lost.</p>
 </div>
 <div id="BNCGF" class="paragraph">
 <div class="title"><strong>Figure 48-7 Consumers on a Durable Subscription</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_032.png" alt="Diagram showing messages being preserved when durable subscriptions are used"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_032.png" alt="Diagram showing messages being preserved when durable subscriptions are used"></span></p>
 </div>
 <div class="paragraph">
 <p>A shared durable subscription allows you to use multiple consumers to
@@ -829,7 +829,7 @@ topic and subscription name:</p>
 <a href="jms-examples004.html#BNCGG">Using Durable Subscriptions</a>,
 <a href="jms-examples005.html#BABEJBHA">Using Shared Durable Subscriptions</a>,
 and <a href="jms-examples008.html#BNCGW">Sending Messages from a Session Bean
-to an MDB</a> for examples of Java EE applications that use durable
+to an MDB</a> for examples of Jakarta EE applications that use durable
 subscriptions.</p>
 </div>
 <div class="paragraph">

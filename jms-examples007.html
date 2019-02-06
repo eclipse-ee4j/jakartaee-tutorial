@@ -62,14 +62,14 @@
 <h2 id="_receiving_messages_asynchronously_using_a_message_driven_bean">Receiving Messages Asynchronously Using a Message-Driven Bean</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are writing an application to run in the Java EE application
+<p>If you are writing an application to run in the Jakarta EE application
 client container or on the Java SE platform, and you want to receive
 messages asynchronously, you need to define a class that implements the
 <code>MessageListener</code> interface, create a <code>JMSConsumer</code>, and call the method
 <code>setMessageListener</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re writing an application to run in the Java EE web or EJB
+<p>If you&#8217;re writing an application to run in the Jakarta EE web or EJB
 container and want it to receive messages asynchronously, you also need
 to need to define a class that implements the <code>MessageListener</code>
 interface. However, instead of creating a <code>JMSConsumer</code> and calling the
@@ -117,7 +117,7 @@ the message-driven bean, which then processes the messages.</p>
 </div>
 <div id="BNBPM" class="paragraph">
 <div class="title"><strong>Figure 49-3 The simplemessage Application</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_036.png" alt="Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_036.png" alt="Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"></span></p>
 </div>
 <div class="paragraph">
 <p>The source code for this application is in the

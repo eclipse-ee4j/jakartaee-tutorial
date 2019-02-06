@@ -266,10 +266,10 @@ receive other chat messages until the operation completes. To avoid this
 problem, the endpoint obtains an executor service from the container and
 executes the blocking operation in a different thread using the
 <code>ManagedExecutorService.submit</code> method from Concurrency Utilities for
-Java EE.</p>
+Jakarta EE.</p>
 </div>
 <div class="paragraph">
-<p>The Java API for WebSocket specification requires that Java EE
+<p>The Java API for WebSocket specification requires that Jakarta EE
 implementations instantiate endpoint classes once per connection. This
 facilitates the development of WebSocket endpoints, because you are
 guaranteed that only one thread is executing the code in a WebSocket
@@ -281,8 +281,8 @@ has been declared <code>synchronized</code>.</p>
 </div>
 <div class="paragraph">
 <p>Refer to <a href="concurrency-utilities.html#GKJIQ8">Chapter 59, "Concurrency
-Utilities for Java EE"</a> for more information on the managed executor
-service and Concurrency Utilities for Java EE.</p>
+Utilities for Jakarta EE"</a> for more information on the managed executor
+service and Concurrency Utilities for Jakarta EE.</p>
 </div>
 <div class="paragraph">
 <p><a id="CIHFDGHG"></a><a id="the-application-messages"></a></p>

@@ -80,7 +80,7 @@ be lost in the event of JMS provider failure. For details, see
 </div>
 <div class="paragraph">
 <p>Transactions allow multiple messages to be sent or received in an atomic
-operation. In the Java EE platform they also allow message sends and
+operation. In the Jakarta EE platform they also allow message sends and
 receives to be combined with database reads and writes in an atomic
 transaction. A transaction is a unit of work into which you can group a
 series of operations, such as message sends and receives, so that the
@@ -114,9 +114,9 @@ the duration of the connection in which they are created. See
 <div class="paragraph">
 <p>The following sections describe these features as they apply to
 application clients or Java SE clients. Some of the features work
-differently in the Java EE web or EJB container; in these cases, the
+differently in the Jakarta EE web or EJB container; in these cases, the
 differences are noted here and are explained in detail in
-<a href="jms-concepts005.html#BNCGL">Using the JMS API in Java EE
+<a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
@@ -150,7 +150,7 @@ Transactions</a>), a message is acknowledged when the session is committed.
 If a transaction is rolled back, all consumed messages are redelivered.</p>
 </div>
 <div class="paragraph">
-<p>In a JTA transaction (in the Java EE web or EJB container) a message is
+<p>In a JTA transaction (in the Jakarta EE web or EJB container) a message is
 acknowledged when the transaction is committed.</p>
 </div>
 <div class="paragraph">
@@ -193,7 +193,7 @@ messages are acknowledged.</p>
 <p>Note:</p>
 </div>
 <div class="paragraph">
-<p>In the Java EE platform, the <code>JMSContext.CLIENT_ACKNOWLEDGE</code> setting can
+<p>In the Jakarta EE platform, the <code>JMSContext.CLIENT_ACKNOWLEDGE</code> setting can
 be used only in an application client, not in a web component or
 enterprise bean.</p>
 </div></div></td>
@@ -539,9 +539,9 @@ session rolls back its transaction in progress, including any pending
 sends and receives.</p>
 </div>
 <div class="paragraph">
-<p>In an application running in the Java EE web or EJB container, you
+<p>In an application running in the Jakarta EE web or EJB container, you
 cannot use local transactions. Instead, you use JTA transactions,
-described in <a href="jms-concepts005.html#BNCGL">Using the JMS API in Java EE
+described in <a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
@@ -580,7 +580,7 @@ illustrates this interaction.</p>
 </div>
 <div id="BNCGI" class="paragraph">
 <div class="title"><strong>Figure 48-8 Using JMS Local Transactions</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_033.png" alt="Diagram of local transactions, showing separate transactions for sending and consuming a message"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_033.png" alt="Diagram of local transactions, showing separate transactions for sending and consuming a message"></span></p>
 </div>
 <div class="paragraph">
 <p>The sending of one or more messages to one or more destinations by

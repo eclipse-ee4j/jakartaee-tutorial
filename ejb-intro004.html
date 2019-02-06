@@ -99,7 +99,7 @@ deployment settings) are hidden from the client.</p>
 </div>
 <div class="paragraph">
 <p>Well-designed interfaces and no-interface views simplify the development
-and maintenance of Java EE applications. Not only do clean interfaces
+and maintenance of Jakarta EE applications. Not only do clean interfaces
 and no-interface views shield the clients from any complexities in the
 EJB tier, but they also allow the enterprise beans to change internally
 without affecting the clients. For example, if you change the
@@ -128,15 +128,15 @@ and Directory Interface syntax to find the enterprise bean instance.</p>
 </div>
 <div class="paragraph">
 <p>Dependency injection is the simplest way of obtaining an enterprise bean
-reference. Clients that run within a Java EE server-managed environment,
+reference. Clients that run within a Jakarta EE server-managed environment,
 JavaServer Faces web applications, JAX-RS web services, other enterprise
-beans, or Java EE application clients support dependency injection using
+beans, or Jakarta EE application clients support dependency injection using
 the <code>javax.ejb.EJB</code> annotation.</p>
 </div>
 <div class="paragraph">
-<p>Applications that run outside a Java EE server-managed environment, such
+<p>Applications that run outside a Jakarta EE server-managed environment, such
 as Java SE applications, must perform an explicit lookup. JNDI supports
-a global syntax for identifying Java EE components to simplify this
+a global syntax for identifying Jakarta EE components to simplify this
 explicit lookup.</p>
 </div>
 <div class="paragraph">
@@ -184,7 +184,7 @@ more than one business interface.</p>
 <li>
 <p>The <code>java:app</code> namespace is used to look up local enterprise beans
 packaged within the same application. That is, the enterprise bean is
-packaged within an EAR file containing multiple Java EE modules. JNDI
+packaged within an EAR file containing multiple Jakarta EE modules. JNDI
 addresses using the <code>java:app</code> namespace are of the following form:</p>
 <div class="listingblock">
 <div class="content">
@@ -212,7 +212,7 @@ using the <code>java:global</code> namespace is <code>java:global/myApp/MyBean</
 <div class="sect2">
 <h3 id="_deciding_on_remote_or_local_access">Deciding on Remote or Local Access</h3>
 <div class="paragraph">
-<p>When you design a Java EE application, one of the first decisions you
+<p>When you design a Jakarta EE application, one of the first decisions you
 make is the type of client access allowed by the enterprise beans:
 remote, local, or web service.</p>
 </div>
@@ -240,7 +240,7 @@ components or other enterprise beans, the type of access depends on how
 you want to distribute your components.</p>
 </li>
 <li>
-<p>Component distribution: Java EE applications are scalable because
+<p>Component distribution: Jakarta EE applications are scalable because
 their server-side components can be distributed across multiple
 machines. In a distributed application, for example, the server that the
 web components run on may not be the one on which the enterprise beans
@@ -494,7 +494,7 @@ client&#8217;s view of an enterprise bean.</p>
 </div>
 <div id="GIPNO" class="paragraph">
 <div class="title"><strong>Figure 35-1 Interfaces for an Enterprise Bean with Remote Access</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_020.png" alt="Diagram showing a remote client accessing an enterprise bean&#8217;s methods through its remote interface."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_020.png" alt="Diagram showing a remote client accessing an enterprise bean&#8217;s methods through its remote interface."></span></p>
 </div>
 <div class="paragraph">
 <p>Client access to an enterprise bean that implements a remote business
@@ -535,7 +535,7 @@ interface&#8217;s <code>lookup</code> method:</p>
 <div class="sect2">
 <h3 id="_web_service_clients">Web Service Clients</h3>
 <div class="paragraph">
-<p>A web service client can access a Java EE application in two ways.
+<p>A web service client can access a Jakarta EE application in two ways.
 First, the client can access a web service created with JAX-WS. (For
 more information on JAX-WS, see <a href="jaxws.html#BNAYL">Chapter 31,
 "Building Web Services with JAX-WS"</a>.) Second, a web service client can
@@ -549,7 +549,7 @@ client is written in the Java programming language. The client doesn&#8217;t
 even "know" what technology implements the service: stateless session
 bean, JAX-WS, or some other technology. In addition, enterprise beans
 and web components can be clients of web services. This flexibility
-enables you to integrate Java EE applications with web services.</p>
+enables you to integrate Jakarta EE applications with web services.</p>
 </div>
 <div class="paragraph">
 <p>A web service client accesses a stateless session bean through the

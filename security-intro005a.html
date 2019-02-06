@@ -62,7 +62,7 @@ to allow it to validate a caller&#8217;s credentials. An identity store may also
 information, such as globally unique caller identifiers or other caller attributes.</p>
 </div>
 <div class="paragraph">
-<p>As specified in the Java EE Security API, the <code>IdentityStore</code> interface
+<p>As specified in the Jakarta EE Security API, the <code>IdentityStore</code> interface
 provides an abstraction of an identity store. Implementations of the <code>IdentityStore</code>
 interface interact with identity stores to authenticate users
 and to retrieve caller group information. Most often, an implementation of the <code>IdentityStore</code>
@@ -72,7 +72,7 @@ but it can also manage user account data itself.</p>
 <div class="paragraph">
 <p>The <code>IdentityStore</code> interface is intended
 primarily for use by the <code>HttpAuthenticationMechanism</code> (also specified in the
-Java EE Security API), but can be used by other implementations such as a JASPIC
+Jakarta EE Security API), but can be used by other implementations such as a JASPIC
 <code>ServerAuthModule</code> or a container&#8217;s built-in authentication mechanisms. Using the
 <code>HttpAuthenticationMechanism</code>
 and <code>IdentityStore</code> implementations, both built-in and custom, provides a significant

@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Java EE 8 APIs in the Java Platform, Standard Edition 8</title>
+    <title>Jakarta EE 8 APIs in the Java Platform, Standard Edition 8</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -59,12 +59,12 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java_ee_8_apis_in_the_java_platform_standard_edition_8">Java EE 8 APIs in the Java Platform, Standard Edition 8</h2>
+<h2 id="_jakarta_ee_8_apis_in_the_java_platform_standard_edition_8">Jakarta EE 8 APIs in the Java Platform, Standard Edition 8</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Several APIs that are required by the Java EE 8 platform are included in
+<p>Several APIs that are required by the Jakarta EE 8 platform are included in
 the Java Platform, Standard Edition 8 (Java SE 8) and are thus available
-to Java EE applications.</p>
+to Jakarta EE applications.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNADA"></a><a id="java-database-connectivity-api"></a></p>
@@ -88,13 +88,13 @@ database directly without going through an enterprise bean.</p>
 access a database</p>
 </li>
 <li>
-<p>A service provider interface to attach a JDBC driver to the Java EE
+<p>A service provider interface to attach a JDBC driver to the Jakarta EE
 platform</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JDBC 4.1.</p>
+<p>The Jakarta EE 8 platform requires JDBC 4.1.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNADC"></a><a id="java-naming-and-directory-interface-api"></a></p>
@@ -108,12 +108,12 @@ directory functionality, enabling applications to access multiple naming
 and directory services, such as LDAP, DNS, and NIS. The JNDI API
 provides applications with methods for performing standard directory
 operations, such as associating attributes with objects and searching
-for objects using their attributes. Using JNDI, a Java EE application
-can store and retrieve any type of named Java object, allowing Java EE
+for objects using their attributes. Using JNDI, a Jakarta EE application
+can store and retrieve any type of named Java object, allowing Jakarta EE
 applications to coexist with many legacy applications and systems.</p>
 </div>
 <div class="paragraph">
-<p>Java EE naming services provide application clients, enterprise beans,
+<p>Jakarta EE naming services provide application clients, enterprise beans,
 and web components with access to a JNDI naming environment. A naming
 environment allows a component to be customized without the need to
 access or change the component&#8217;s source code. A container implements the
@@ -124,16 +124,16 @@ naming context.</p>
 <p>The naming environment provides four logical namespaces: <code>java:comp</code>,
 <code>java:module</code>, <code>java:app</code>, and <code>java:global</code> for objects available to
 components, modules, or applications or shared by all deployed
-applications. A Java EE component can access named system-provided and
+applications. A Jakarta EE component can access named system-provided and
 user-defined objects. The names of some system-provided objects, such as
 a default JDBC <code>DataSource</code> object, a default JMS connection factory,
 and a JTA <code>UserTransaction</code> object, are stored in the <code>java:comp</code>
-namespace. The Java EE platform allows a component to name user-defined
+namespace. The Jakarta EE platform allows a component to name user-defined
 objects, such as enterprise beans, environment entries, JDBC
 <code>DataSource</code> objects, and messaging destinations.</p>
 </div>
 <div class="paragraph">
-<p>A Java EE component can also locate its environment naming context by
+<p>A Jakarta EE component can also locate its environment naming context by
 using JNDI interfaces. A component can create a
 <code>javax.naming.InitialContext</code> object and look up the environment naming
 context in <code>InitialContext</code> under the name <code>java:comp/env</code>. A
@@ -186,11 +186,11 @@ You can find information on the W3C schema at
 to bind an XML schema to a representation in Java language programs.
 JAXB can be used independently or in combination with JAX-WS, in which
 case it provides a standard data binding for web service messages. All
-Java EE application client containers, web containers, and EJB
+Jakarta EE application client containers, web containers, and EJB
 containers support the JAXB API.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JAXB 2.2.</p>
+<p>The Jakarta EE 8 platform requires JAXB 2.2.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACV"></a><a id="java-api-for-xml-web-services"></a></p>
@@ -220,7 +220,7 @@ deserializers, if supported, are treated in the same way as message
 handlers.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires JAX-WS 2.2.</p>
+<p>The Jakarta EE 8 platform requires JAX-WS 2.2.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNACX"></a><a id="soap-with-attachments-api-for-java"></a></p>
@@ -243,7 +243,7 @@ instead using the higher-level JAX-WS API.</p>
 <h3 id="_java_authentication_and_authorization_service">Java Authentication and Authorization Service</h3>
 <div class="paragraph">
 <p>The Java Authentication and Authorization Service (JAAS) provides a way
-for a Java EE application to authenticate and authorize a specific user
+for a Jakarta EE application to authenticate and authorize a specific user
 or group of users to run it.</p>
 </div>
 <div class="paragraph">
@@ -262,7 +262,7 @@ security architecture to support user-based authorization.</p>
 platform.</p>
 </div>
 <div class="paragraph">
-<p>The Java EE 8 platform requires Common Annotations for the Java Platform
+<p>The Jakarta EE 8 platform requires Common Annotations for the Java Platform
 1.2.</p>
 </div>
 </div>

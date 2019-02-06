@@ -100,12 +100,12 @@ order to write applications that use message-driven beans.</p>
 <li>
 <p>A JMS provider is a messaging system that implements the JMS
 interfaces and provides administrative and control features. An
-implementation of the Java EE platform that supports the full profile
+implementation of the Jakarta EE platform that supports the full profile
 includes a JMS provider.</p>
 </li>
 <li>
 <p>JMS clients are the programs or components, written in the Java
-programming language, that produce and consume messages. Any Java EE
+programming language, that produce and consume messages. Any Jakarta EE
 application component can act as a JMS client.</p>
 <div class="paragraph">
 <p>Java SE applications can also act as JMS clients; the Message Queue
@@ -140,7 +140,7 @@ JMS provider.</p>
 <p><a id="BNCDZ"></a>.<strong>Figure 48-2 JMS API Architecture</strong></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/javaeett_dt_027.png" alt="Diagram of JMS API architecture, showing administrative tool, JMS client, JNDI namespace, and JMS provider"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_027.png" alt="Diagram of JMS API architecture, showing administrative tool, JMS client, JNDI namespace, and JMS provider"></span></p>
 </div>
 <div class="paragraph">
 <p><a id="BNCEA"></a><a id="messaging-styles"></a></p>
@@ -195,7 +195,7 @@ the client sent the message.</p>
 </div>
 <div id="BNCEC" class="paragraph">
 <div class="title"><strong>Figure 48-3 Point-to-Point Messaging</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_028.png" alt="Diagram of point-to-point messaging, showing Client 1 sending a message to a queue, and Client 2 consuming and acknowledging the message"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_028.png" alt="Diagram of point-to-point messaging, showing Client 1 sending a message to a queue, and Client 2 consuming and acknowledging the message"></span></p>
 </div>
 <div class="paragraph">
 <p>Use PTP messaging when every message you send must be processed
@@ -258,7 +258,7 @@ messaging.</p>
 </div>
 <div id="BNCEE" class="paragraph">
 <div class="title"><strong>Figure 48-4 Publish/Subscribe Messaging</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_029.png" alt="Diagram of pub/sub messaging, showing Client 1 sending a message to a topic, and the message being delivered to two consumers to the topic"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_029.png" alt="Diagram of pub/sub messaging, showing Client 1 sending a message to a topic, and the message being delivered to two consumers to the topic"></span></p>
 </div>
 <div class="paragraph">
 <p><a id="BNCEG"></a><a id="message-consumption"></a></p>
@@ -286,7 +286,7 @@ arrive within a specified time limit.</p>
 a message listener with a consumer. A message listener is similar to an
 event listener. Whenever a message arrives at the destination, the JMS
 provider delivers the message by calling the listener&#8217;s <code>onMessage</code>
-method, which acts on the contents of the message. In a Java EE
+method, which acts on the contents of the message. In a Jakarta EE
 application, a message-driven bean serves as a message listener (it too
 has an <code>onMessage</code> method), but a client does not need to register it
 with a consumer.</p>

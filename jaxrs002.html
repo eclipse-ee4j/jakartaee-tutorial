@@ -114,10 +114,10 @@ programming language class files with JAX-RS annotations to define
 resources and the actions that can be performed on those resources.
 JAX-RS annotations are runtime annotations; therefore, runtime
 reflection will generate the helper classes and artifacts for the
-resource. A Java EE application archive containing JAX-RS resource
+resource. A Jakarta EE application archive containing JAX-RS resource
 classes will have the resources configured, the helper classes and
 artifacts generated, and the resource exposed to clients by deploying
-the archive to a Java EE server.</p>
+the archive to a Jakarta EE server.</p>
 </div>
 <div class="paragraph">
 <p><a href="#GINNA">Table 30-1</a> lists some of the Java programming annotations
@@ -435,7 +435,7 @@ attempt to process the URI data that corresponds to the location of
 <p>For example, if you want to deploy a resource that responds to the URI
 path template
 <code><a href="http://example.com/myContextRoot/resources/{name1}/{name2}/" class="bare">http://example.com/myContextRoot/resources/{name1}/{name2}/</a></code>, you must
-first deploy the application to a Java EE server that responds to
+first deploy the application to a Jakarta EE server that responds to
 requests to the <code><a href="http://example.com/myContextRoot" class="bare">http://example.com/myContextRoot</a></code> URI and then decorate
 your resource with the following <code>@Path</code> annotation:</p>
 </div>

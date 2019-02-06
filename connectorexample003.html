@@ -99,7 +99,7 @@ adapter, the message-driven bean, and the web application</p>
 </div>
 <div id="CHDGFGHB" class="paragraph">
 <div class="title"><strong>Figure 56-3 The traffic Example</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_056.png" alt="This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_056.png" alt="This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket."></span></p>
 </div>
 <div class="paragraph">
 <p>The <code>traffic-eis</code> module is an auxiliary project that resembles a legacy
@@ -119,7 +119,7 @@ a traffic update looks like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>traffic-rar</code> module implements the inbound contract of the Java EE
+<p>The <code>traffic-rar</code> module implements the inbound contract of the Jakarta EE
 Connector Architecture. This module subscribes to the traffic
 information system using the TCP port indicated by the configuration
 provided by the MDB and invokes the methods of the MDB to process
@@ -144,9 +144,9 @@ and sends them to the clients using a WebSocket endpoint.</p>
 <div class="sect2">
 <h3 id="_using_the_inbound_resource_adapter">Using the Inbound Resource Adapter</h3>
 <div class="paragraph">
-<p>In most cases, Java EE application developers use inbound resource
+<p>In most cases, Jakarta EE application developers use inbound resource
 adapters developed by a third party. To use an inbound resource adapter,
-a Java EE application includes a message-driven bean with the following
+a Jakarta EE application includes a message-driven bean with the following
 characteristics.</p>
 </div>
 <div class="ulist">
@@ -163,7 +163,7 @@ adapter.</p>
 </div>
 <div class="paragraph">
 <p>The business interface defined by the resource adapter is not specified
-in the Java EE Connector Architecture; it is specific to the EIS.</p>
+in the Jakarta EE Connector Architecture; it is specific to the EIS.</p>
 </div>
 <div class="paragraph">
 <p>The MDB in this example is defined as follows:</p>
@@ -220,13 +220,13 @@ resource adapter module.</p>
 <h3 id="_implementing_the_inbound_resource_adapter">Implementing the Inbound Resource Adapter</h3>
 <div class="paragraph">
 <p>The <code>traffic-rar</code> module implements the inbound resource adapter
-contract from the Java EE Connector Architecture for the simple traffic
+contract from the Jakarta EE Connector Architecture for the simple traffic
 information system (EIS) used in this example. The architecture of the
 inbound resource adapter is shown in <a href="#CHDHADDC">Figure 56-4</a>.</p>
 </div>
 <div id="CHDHADDC" class="paragraph">
 <div class="title"><strong>Figure 56-4 Architecture of the traffic Example</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_057.png" alt="This figure shows the classes in each of the components of the traffic example."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_057.png" alt="This figure shows the classes in each of the components of the traffic example."></span></p>
 </div>
 <div class="paragraph">
 <p>The <code>traffic-rar</code> module implements the interfaces listed in

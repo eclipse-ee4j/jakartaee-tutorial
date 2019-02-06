@@ -62,8 +62,8 @@
 <h2 id="_updating_multiple_databases">Updating Multiple Databases</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Java EE transaction manager controls all enterprise bean
-transactions except for bean-managed JDBC transactions. The Java EE
+<p>The Jakarta EE transaction manager controls all enterprise bean
+transactions except for bean-managed JDBC transactions. The Jakarta EE
 transaction manager allows an enterprise bean to update multiple
 databases within a transaction. <a href="#BNCJE">Figure 54-2</a> and
 <a href="#BNCJF">Figure 54-3</a> show two scenarios for updating multiple
@@ -80,18 +80,18 @@ database updates occur in the same transaction.</p>
 <div class="paragraph">
 <p>In <a href="#BNCJF">Figure 54-3</a>, the client calls a business method in
 <code>Bean-A</code>, which begins a transaction and updates Database X. Then
-<code>Bean-A</code> invokes a method in <code>Bean-B</code>, which resides in a remote Java EE
+<code>Bean-A</code> invokes a method in <code>Bean-B</code>, which resides in a remote Jakarta EE
 server. The method in <code>Bean-B</code> updates Database Y. The transaction
-managers of the Java EE servers ensure that both databases are updated
+managers of the Jakarta EE servers ensure that both databases are updated
 in the same transaction.</p>
 </div>
 <div id="BNCJE" class="paragraph">
 <div class="title"><strong>Figure 54-2 Updating Multiple Databases</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_051.png" alt="A diagram showing Bean-A updating databases X and Y, and Bean-B updating database Z."></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_051.png" alt="A diagram showing Bean-A updating databases X and Y, and Bean-B updating database Z."></span></p>
 </div>
 <div id="BNCJF" class="paragraph">
-<div class="title"><strong>Figure 54-3 Updating Multiple Databases Across Java EE Servers</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_052.png" alt="A diagram showing Bean-A on one Java EE server updating database X, and Bean-B on another Java EE server updating database Y."></span></p>
+<div class="title"><strong>Figure 54-3 Updating Multiple Databases Across Jakarta EE Servers</strong></div>
+<p><span class="image"><img src="img/jakartaeett_dt_052.png" alt="A diagram showing Bean-A on one Jakarta EE server updating database X, and Bean-B on another Jakarta EE server updating database Y."></span></p>
 </div>
 </div>
 </div>

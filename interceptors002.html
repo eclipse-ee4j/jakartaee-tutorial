@@ -304,7 +304,7 @@ checked exceptions.</p>
 </div>
 <div class="paragraph">
 <p>Lifecycle interceptor methods are called in an unspecified security and
-transaction context. That is, portable Java EE applications should not
+transaction context. That is, portable Jakarta EE applications should not
 assume the lifecycle event interceptor method has access to a security
 or transaction context. Only one interceptor method for each lifecycle
 event (post-create and pre-destroy) is allowed per class.</p>
@@ -649,7 +649,7 @@ constants listed in <a href="#BABFBAEF">Table 57-2</a>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>PLATFORM_BEFORE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interceptors defined by the Java EE Platform and
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interceptors defined by the Jakarta EE Platform and
 intended to be invoked early in the invocation chain should use the
 range between <code>PLATFORM_BEFORE</code> and <code>LIBRARY_BEFORE</code>. These interceptors
 have the highest priority.</p></td>

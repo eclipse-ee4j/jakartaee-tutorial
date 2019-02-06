@@ -62,41 +62,41 @@
 <h2 id="_what_is_a_resource_adapter">What Is a Resource Adapter?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A resource adapter is a Java EE component that implements the Java EE
+<p>A resource adapter is a Jakarta EE component that implements the Jakarta EE
 Connector Architecture for a specific EIS. Examples of EISs include
 enterprise resource planning, mainframe transaction processing, and
-database systems. In a Java EE server, the Java Message Server and
+database systems. In a Jakarta EE server, the Java Message Server and
 JavaMail also act as EISs that you access using resource adapters. As
 illustrated in <a href="#GJTZO">Figure 55-1</a>, the resource adapter
-facilitates communication between a Java EE application and an EIS.</p>
+facilitates communication between a Jakarta EE application and an EIS.</p>
 </div>
 <div id="GJTZO" class="paragraph">
 <div class="title"><strong>Figure 55-1 Resource Adapters</strong></div>
-<p><span class="image"><img src="img/javaeett_dt_053.png" alt="Resource Adapter Contracts"></span></p>
+<p><span class="image"><img src="img/jakartaeett_dt_053.png" alt="Resource Adapter Contracts"></span></p>
 </div>
 <div class="paragraph">
 <p>Stored in a Resource Adapter Archive (RAR) file, a resource adapter can
-be deployed on any Java EE server, much like a Java EE application. A
+be deployed on any Jakarta EE server, much like a Jakarta EE application. A
 RAR file may be contained in an Enterprise Archive (EAR) file, or it may
 exist as a separate file.</p>
 </div>
 <div class="paragraph">
 <p>A resource adapter is analogous to a JDBC driver. Both provide a
 standard API through which an application can access a resource that is
-outside the Java EE server. For a resource adapter, the target system is
+outside the Jakarta EE server. For a resource adapter, the target system is
 an EIS; for a JDBC driver, it is a DBMS. Resource adapters and JDBC
 drivers are rarely created by application developers. In most cases,
 both types of software are built by vendors that sell tools, servers, or
 integration software.</p>
 </div>
 <div class="paragraph">
-<p>The resource adapter mediates communication between the Java EE server
+<p>The resource adapter mediates communication between the Jakarta EE server
 and the EIS by means of contracts. The application contract defines the
-API through which a Java EE component, such as an enterprise bean,
+API through which a Jakarta EE component, such as an enterprise bean,
 accesses the EIS. This API is the only view that the component has of
 the EIS. The system contracts link the resource adapter to important
-services that are managed by the Java EE server. The resource adapter
-itself and its system contracts are transparent to the Java EE
+services that are managed by the Jakarta EE server. The resource adapter
+itself and its system contracts are transparent to the Jakarta EE
 component.</p>
 </div>
 <div class="paragraph">
@@ -105,7 +105,7 @@ component.</p>
 <div class="sect2">
 <h3 id="_management_contracts">Management Contracts</h3>
 <div class="paragraph">
-<p>The Java EE Connector Architecture defines system contracts that enable
+<p>The Jakarta EE Connector Architecture defines system contracts that enable
 resource adapter lifecycle and thread management.</p>
 </div>
 <div class="paragraph">
@@ -261,7 +261,7 @@ domain&#8217;s identities.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Inbound contracts are system contracts between a Java EE server and an
+<p>Inbound contracts are system contracts between a Jakarta EE server and an
 EIS that enable inbound connectivity from the EIS: pluggability
 contracts for message providers and contracts for importing
 transactions.</p>
