@@ -2,21 +2,21 @@
 
 ## One Time Setup
 * [Fork](https://help.github.com/articles/fork-a-repo/) the
-[tutorial](https://github.com/eclipse-ee4j/glassfish-tutorial/) repository.
+[tutorial](https://github.com/eclipse-ee4j/jakartaee-tutorial/) repository.
 * [Clone](https://help.github.com/articles/cloning-a-repository/)
 your forked repository.
 ```
-$ git clone https://github.com/YOUR-USERNAME/glassfish-tutorial.git
+$ git clone https://github.com/YOUR-USERNAME/jakartaee-tutorial.git
 ```
 * [Configure](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
 the remote for your fork.
 ```
-$ git remote add upstream https://github.com/eclipse-ee4j/glassfish-tutorial.git
+$ git remote add upstream https://github.com/eclipse-ee4j/jakartaee-tutorial.git
 $ git remote -v
-origin    https://github.com/YOUR-USERNAME/glassfish-tutorial.git (fetch)
-origin    https://github.com/YOUR-USERNAME/glassfish-tutorial.git (push)
-upstream    https://github.com/eclipse-ee4j/glassfish-tutorial.git (fetch)
-upstream    https://github.com/eclipse-ee4j/glassfish-tutorial.git (push)
+origin    https://github.com/YOUR-USERNAME/jakartaee-tutorial.git (fetch)
+origin    https://github.com/YOUR-USERNAME/jakartaee-tutorial.git (push)
+upstream    https://github.com/eclipse-ee4j/jakartaee-tutorial.git (fetch)
+upstream    https://github.com/eclipse-ee4j/jakartaee-tutorial.git (push)
 ```
 ## Raising a Pull Request
 * Sync the master of your fork with upstream master.
@@ -41,10 +41,10 @@ $ git commit -m "my commit message"
 $ git push origin doc_update
 ```
 * Before raising a Pull Request, please raise an
-[issue](https://github.com/eclipse-ee4j/glassfish-tutorial/issues)
+[issue](https://github.com/eclipse-ee4j/jakartaee-tutorial/issues)
 if it doesn't exist. We would like every Pull Request to be associated
 with an issue. Submit the Pull Request referring to the issue number.
-* Raise a [Pull Request](https://github.com/eclipse-ee4j/glassfish-tutorial/pulls).
+* Raise a [Pull Request](https://github.com/eclipse-ee4j/jakartaee-tutorial/pulls).
 * Make sure you put a proper 'title' for the Pull Request. The title of
 the Pull Request would become the commit message. Instead of giving
 'title' like "Iss xxxx" or "Fixes #xxxxx", consider giving a proper one

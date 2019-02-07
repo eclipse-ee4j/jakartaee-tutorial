@@ -11,7 +11,7 @@ generated from AsciiDoc content.
 
 Note that the Jakarta EE Tutorial code examples are located in a
 separate repository
-[eclipse-ee4j/glassfish-tutorial-examples](https://github.com/eclipse-ee4j/glassfish-tutorial-examples).
+[eclipse-ee4j/jakartaee-tutorial-examples](https://github.com/eclipse-ee4j/jakartaee-tutorial-examples).
 
 ## Contributing
 The easiest way to contribute is by opening an issue in this project
@@ -33,7 +33,7 @@ tutorial. Note that any changes that are pushed to the master branch
 automatically trigger a build of the site files and tutorial sources.
 The results are automatically pushed to the gh-pages branch. You can
 view the published site
-[here](https://eclipse-ee4j.github.io/glassfish-tutorial).
+[here](https://eclipse-ee4j.github.io/jakartaee-tutorial).
 
 ### Pre-Requisites
 

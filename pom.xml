@@ -17,30 +17,31 @@
  
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>net.java</groupId>
-        <artifactId>jvnet-parent</artifactId>
-        <version>5</version>
+	<groupId>org.eclipse.ee4j</groupId>
+	<artifactId>project</artifactId>
+	<version>1.0.5</version>
     </parent>
-    <groupId>org.glassfish.docs</groupId>
-    <artifactId>jakartaee-tutorial</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jakarta.tutorial</groupId>
+    <artifactId>tutorial</artifactId>
     <packaging>pom</packaging>
     <version>8.1-SNAPSHOT</version>
-    <name>Java EE Tutorial</name>
+    <name>Jakarta EE Tutorial</name>
+
     <properties>
         <site.output.dir>${project.build.directory}/staging</site.output.dir>
         <maven.site.skip>true</maven.site.skip>
     </properties>
     <scm>
-      <connection>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</connection>
-      <developerConnection>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</developerConnection>
-      <url>https://github.com/eclipse-ee4j/glassfish-tutorial</url>      
+      <connection>scm:git:git@github.com:eclipse-ee4j/jakartaee-tutorial.git</connection>
+      <developerConnection>scm:git:git@github.com:eclipse-ee4j/jakartaee-tutorial.git</developerConnection>
+      <url>https://github.com/eclipse-ee4j/jakartaee-tutorial</url>      
     <tag>HEAD</tag>
   </scm>
     <distributionManagement>
         <site>
-            <url>scm:git:git@github.com:eclipse-ee4j/glassfish-tutorial.git</url>
+            <url>scm:git:git@github.com:eclipse-ee4j/jakartaee-tutorial.git</url>
         </site>
     </distributionManagement>
     <build>
