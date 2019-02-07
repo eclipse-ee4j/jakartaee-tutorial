@@ -15,7 +15,7 @@ described in more detail in the following sections:
 
 * link:#jsr-196-java-authentication-service-provider-interface-for-containers-jaspic[JSR-196 Java
 Authentication Service Provider Interface for Containers (JASPIC)]
-* link:#jsr-375-java-ee-security-api[JSR-375 Jakarta EE Security API]
+* link:#jsr-375-jakarta-ee-security-api[JSR-375 Jakarta EE Security API]
 
 [[jsr-196-java-authentication-service-provider-interface-for-containers-jaspic]]
 JSR-196 Java Authentication Service Provider Interface for Containers (JASPIC)
@@ -66,7 +66,7 @@ is to register a corresponding `AuthConfigProvider` with the global `AuthConfigF
 An `AuthConfigProvider` makes a `ServerAuthModule` available to the container, via a
 series of intermediary objects, for runtime message processing.
 
-[[jsr-375-java-ee-security-api]]
+[[jsr-375-jakarta-ee-security-api]]
 JSR-375 Jakarta EE Security API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 JSR-375 defines the following authentication-related plugin SPIs:

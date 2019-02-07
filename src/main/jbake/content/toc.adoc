@@ -106,7 +106,7 @@ Containers]
 ** link:overview008.html#GIRGP[Java Authentication Service Provider
 Interface for Containers]
 
-** link:overview008.html#java-ee-security-api[Jakarta EE Security API]
+** link:overview008.html#jakarta-ee-security-api[Jakarta EE Security API]
 
 ** link:overview008.html#CJAHDJBJ[Java API for WebSocket]
 
@@ -1175,11 +1175,11 @@ in Type Hierarchies]
 ** link:bean-validation-advanced004.html#sthref125[Rules for Using Method
 Constraints in Type Hierarchies]
 
-[[part-v-contexts-and-dependency-injection-for-java-ee]]
+[[part-v-contexts-and-dependency-injection-for-jakarta-ee]]
 link:partcdi.html#GJBNR[Part V Contexts and Dependency Injection for Jakarta EE]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[[introduction-to-contexts-and-dependency-injection-for-java-ee]]
+[[introduction-to-contexts-and-dependency-injection-for-jakarta-ee]]
 link:cdi-basic.html#GIWHB[25 Introduction to Contexts and Dependency Injection for Jakarta EE]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1245,7 +1245,7 @@ the guessnumber-cdi Example Using NetBeans IDE]
 the guessnumber-cdi Example Using Maven]
 *** link:cdi-basicexamples003.html#GJDQB[To Run the guessnumber Example]
 
-[[contexts-and-dependency-injection-for-java-ee-advanced-topics]]
+[[contexts-and-dependency-injection-for-jakarta-ee-advanced-topics]]
 link:cdi-adv.html#GJEHI[27 Contexts and Dependency Injection for Jakarta EE: Advanced Topics]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2503,7 +2503,7 @@ NetBeans IDE]
 link:partsecurity.html#GIJRP[Part X Security]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[[introduction-to-security-in-the-java-ee-platform]]
+[[introduction-to-security-in-the-jakarta-ee-platform]]
 link:security-intro.html#BNBWJ[50 Introduction to Security in the Jakarta EE Platform]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2527,7 +2527,7 @@ Security]
 
 ** link:security-intro002.html#java-se-security-mechanisms[Java SE Security Mechanisms]
 
-** link:security-intro002.html#java-ee-security-mechanisms[Jakarta EE Security Mechanisms]
+** link:security-intro002.html#jakarta-ee-security-mechanisms[Jakarta EE Security Mechanisms]
 *** link:security-intro002.html#application-layer-security[Application-Layer Security]
 *** link:security-intro002.html#transport-layer-security[Transport-Layer Security]
 *** link:security-intro002.html#message-layer-security[Message-Layer Security]
@@ -2542,7 +2542,7 @@ Declarative Security]
 ** link:security-intro003.html#using-programmatic-security[Using Programmatic Security]
 * link:security-intro003a.html#using-pluggable-providers[Using Pluggable Providers]
 ** link:security-intro003a.html#jsr-196-java-authentication-service-provider-interface-for-containers-jaspic[JSR-196 Java Authentication Service Provider Interface for Containers (JASPIC)]
-** link:security-intro003a.html#jsr-375-java-ee-security-api[JSR-375 Jakarta EE Security API]
+** link:security-intro003a.html#jsr-375-jakarta-ee-security-api[JSR-375 Jakarta EE Security API]
 
 * link:security-intro004.html#BNBXI[Securing GlassFish Server]
 * link:security-intro005.html#BNBXJ[Working with Realms, Users, Groups,
@@ -2698,10 +2698,10 @@ Example Using Maven]
 Example]
 
 [[java-api-for-security]]
-link:security-api.html#using-the-java-ee-security-api[53 Using the Jakarta EE Security API]
+link:security-api.html#using-the-jakarta-ee-security-api[53 Using the Jakarta EE Security API]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* link:security-api001.html#about-the-java-ee-security-api[About the Jakarta EE Security API]
+* link:security-api001.html#about-the-jakarta-ee-security-api[About the Jakarta EE Security API]
 
 * link:security-api002.html#overview-of-the-http-auth-mech-int[Overview of the HTTP Authentication Mechanism Interface]
 
@@ -2732,7 +2732,7 @@ link:security-api.html#using-the-java-ee-security-api[53 Using the Jakarta EE Se
 *** link:security-api005.html#to-build-package-and-deploy-the-custom-identity-store-example-using-using-maven[To Build, Package, and Deploy the custom-identity-store Example Using Maven]
 *** link:security-api005.html#to-run-the-custom-identity-store-example[To Run the custom-identity-store Example]
 
-[[java-ee-security-advanced-topics]]
+[[jakarta-ee-security-advanced-topics]]
 link:security-advanced.html#GJJWX[54 Jakarta EE Security: Advanced Topics]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2795,7 +2795,7 @@ Principal-to-Role Mapping in the Deployment Descriptor]
 * link:security-advanced008.html#BABBGBBF[Further Information about
 Advanced Security Topics]
 
-[[part-xi-java-ee-supporting-technologies]]
+[[part-xi-jakarta-ee-supporting-technologies]]
 link:partsupporttechs.html#GIJUE[Part XI Jakarta EE Supporting Technologies]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2894,7 +2894,7 @@ Using NetBeans IDE]
 *** link:connectorexample003.html#BABBBGBA[To Run the traffic Example
 Using Maven]
 
-[[using-java-ee-interceptors]]
+[[using-jakarta-ee-interceptors]]
 link:interceptors.html#GKEED[58 Using Jakarta EE Interceptors]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3048,7 +3048,7 @@ Example Application Using Maven]
 * link:batch-processing010.html#BCGHCHAJ[Further Information about Batch
 Processing]
 
-[[concurrency-utilities-for-java-ee]]
+[[concurrency-utilities-for-jakarta-ee]]
 link:concurrency-utilities.html#GKJIQ8[60 Concurrency Utilities for Jakarta EE]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -65,7 +65,7 @@ mechanisms so that application developers do not have to implement these
 mechanisms in their applications. The same application works in a
 variety of security environments without changing the source code.
 
-[[BNABB]][[java-ee-components]]
+[[BNABB]][[jakarta-ee-components]]
 
 Jakarta EE Components
 ~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +91,7 @@ to be well formed and in compliance with the Jakarta EE specification, and
 they are deployed to production, where they are run and managed by the
 Jakarta EE server.
 
-[[BNABC]][[java-ee-clients]]
+[[BNABC]][[jakarta-ee-clients]]
 
 Jakarta EE Clients
 ~~~~~~~~~~~~~~~~~~
@@ -180,7 +180,7 @@ are typically simple in design and implementation but should conform to
 the naming and design conventions outlined in the JavaBeans component
 architecture.
 
-[[BNABH]][[java-ee-server-communications]]
+[[BNABH]][[jakarta-ee-server-communications]]
 
 Jakarta EE Server Communications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

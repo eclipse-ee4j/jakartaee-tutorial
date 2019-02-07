@@ -7,7 +7,7 @@ prev=jms-concepts004.html
 = Using the JMS API in Jakarta EE Applications
 
 
-[[BNCGL]][[using-the-jms-api-in-java-ee-applications]]
+[[BNCGL]][[using-the-jms-api-in-jakarta-ee-applications]]
 
 Using the JMS API in Jakarta EE Applications
 --------------------------------------------
@@ -44,7 +44,7 @@ This rule does not apply to application clients. The application client
 container supports the creation of multiple sessions for each
 connection.
 
-[[BABHFBDH]][[creating-resources-for-java-ee-applications]]
+[[BABHFBDH]][[creating-resources-for-jakarta-ee-applications]]
 
 Creating Resources for Jakarta EE Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -227,7 +227,7 @@ To use your own connection factory, use code like the following:
 private JMSContext context2;
 ----
 
-[[BNCGN]][[using-java-ee-components-to-produce-and-to-synchronously-receive-messages]]
+[[BNCGN]][[using-jakarta-ee-components-to-produce-and-to-synchronously-receive-messages]]
 
 Using Jakarta EE Components to Produce and to Synchronously Receive Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
