@@ -27,7 +27,7 @@ an introductory tutorial suitable for beginners.
 this repository contains the example code that is used in the Your
 First Cup tutorial.
 
-# How-to Contribute
+# How To Contribute
 The easiest way to contribute is by opening an
 [issue](https://github.com/eclipse-ee4j/jakartaee-tutorial/issues)
 that contains feedback and review comments.
