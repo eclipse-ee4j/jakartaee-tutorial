@@ -69,6 +69,26 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.glassfish.doc</groupId>
+                <artifactId>glassfish-doc-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-toc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>toc</goal>
+                        </goals>
+                        <configuration>
+                            <chapterPatterns>
+                                [0-9]+\s.*,Preface.*,Part\s.*
+                            </chapterPatterns>
+                            <ignoreTagPatterns>JEET.*</ignoreTagPatterns>
+                            <title>The Jakarta EE Tutorial - Jakarta Platform, Enterprise Edition, Release 8</title>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.blazebit</groupId>
                 <artifactId>jbake-maven-plugin</artifactId>
                 <version>1.0.0</version>
@@ -138,6 +158,11 @@
 
 	<pluginManagement>
 	    <plugins>
+		<plugin>
+		    <groupId>org.glassfish.doc</groupId>
+		    <artifactId>glassfish-doc-maven-plugin</artifactId>
+		    <version>1.0</version>
+		</plugin>
 		<plugin>
 		    <groupId>org.apache.maven.plugins</groupId>
 		    <artifactId>maven-assembly-plugin</artifactId>
