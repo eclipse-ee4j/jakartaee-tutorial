@@ -12,9 +12,8 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Jakarta Enterprise Edition (Jakarta EE) 8</b><br />
-  <b>The Jakarta EE Tutorial</b>
-	 <!-- <p class="beta">Beta Draft (Pre-General Availability)</p> -->
+  <b>${content.title}</b><br />
+      <p class="beta">${config.status!}</p>
   </td>
   </tr>
 </table>

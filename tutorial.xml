@@ -25,6 +25,10 @@
     <baseDirectory>jakartaee-tutorial</baseDirectory>
     <fileSets>
 	<fileSet>
+	    <directory>target/generated-docs</directory>
+	    <outputDirectory></outputDirectory>
+	</fileSet>
+	<fileSet>
 	    <directory>target/staging</directory>
 	    <outputDirectory>doc</outputDirectory>
 	    <excludes>

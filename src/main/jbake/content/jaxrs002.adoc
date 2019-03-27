@@ -58,7 +58,7 @@ used. Further information on the JAX-RS APIs can be viewed at
 
 *Table 30-1 Summary of JAX-RS Annotations*
 
-[width=99%,cols="10% 90%"]
+[width="99%",cols="10%,90%"]
 |=======================================================================
 |*Annotation*|*Description*
 |`@Path` |The `@Path` annotation's value is a relative URI path
@@ -489,7 +489,7 @@ standard types.
 
 Table 32-3 Types Supported for HTTP Request and Response Entity Bodies
 
-[width="50%",cols=",100%",options="header",]
+[width="50%",cols="50%,50%",options="header",]
 |=======================================================================
 |Java Type |Supported Media Types
 |`byte[]` |All media types (`*/*`)

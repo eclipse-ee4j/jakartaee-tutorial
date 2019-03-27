@@ -40,7 +40,7 @@
         <span >Copyright&nbsp;&copy;&nbsp;2019,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span>
 </span>
 
-<!--<p align="center" class="beta">Beta Draft (Pre-General Availability)</p> -->
+<p align="center" class="beta">${config.status!}</p>
 
 </body>
 </html>

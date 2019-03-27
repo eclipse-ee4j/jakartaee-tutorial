@@ -42,7 +42,7 @@ contains the methods that a service provider implements.
 
 *Table 21-1 Main Classes and Interfaces in javax.json.bind*
 
-[width=99%,cols="25%,75%"]
+[width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
 |`Jsonb` | Contains the JSON-B methods for serializing Java objects to JSON and deserailizing
@@ -59,7 +59,7 @@ binding strategies and properties for configuring custom serializers and deseria
 [[main-classes-and-interfaces-in-config]]
 
 *Table 21-2 Main Classes and Interfaces in javax.json.bind.config*
-[width=99%,cols="25%,75%"]
+[width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
 |`PropertyNamingStrategy` | Used to set how property names are translated.
@@ -76,7 +76,7 @@ overriding the default scope and field access behavior.
 [[main-classes-and-interfaces-in-serializer]]
 
 *Table 21-3 Main Classes and Interfaces in javax.json.bind.serializer*
-[width=99%,cols="25%,75%"]
+[width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
 |`JsonbDeserializer` | Used to create a deserialization routine for a custom type.
