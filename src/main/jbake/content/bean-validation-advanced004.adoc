@@ -76,7 +76,7 @@ of a subtype method call.
 If your type hierarchy strengthens the preconditions or weakens the
 postconditions of subtype method calls, a
 `javax.validation.ConstraintDeclarationException` will be thrown by the
-Bean Validation runtime.
+Jakarta Bean Validation runtime.
 
 Classes that implement several interfaces that each have the same method
 signature, known as parallel types, need to be aware of the constraints

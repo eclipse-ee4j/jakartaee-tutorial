@@ -1,18 +1,18 @@
 type=page
 status=published
-title=Using Bean Validation Constraints
+title=Using Jakarta Bean Validation Constraints
 next=bean-validation003.html
 prev=bean-validation001.html
 ~~~~~~
-# Using Bean Validation Constraints
+# Using Jakarta Bean Validation Constraints
 
 
 [[GIRCZ]][[using-bean-validation-constraints]]
 
-Using Bean Validation Constraints
+Using Jakarta Bean Validation Constraints
 ---------------------------------
 
-The Bean Validation model is supported by constraints in the form of
+The Jakarta Bean Validation model is supported by constraints in the form of
 annotations placed on a field, method, or class of a JavaBeans
 component, such as a managed bean.
 
@@ -25,7 +25,7 @@ for information on creating custom constraints.
 
 [[sthref121]][[GKAGK]]
 
-Table 23-1 Built-In Bean Validation Constraints
+Table 23-1 Built-In Jakarta Bean Validation Constraints
 
 [width="99%",cols="22%,59%,18%",]
 |=======================================================================
@@ -319,9 +319,9 @@ application's web pages.
 
 For more information on using validation constraints, see the following:
 
-* link:bean-validation-advanced.html#GKAHP[Chapter 24, "Bean Validation:
+* link:bean-validation-advanced.html#GKAHP[Chapter 24, "Jakarta Bean Validation:
 Advanced Topics"]
-* link:jaxrs-advanced002.html#BABCJEDF[Validating Resource Data with Bean
+* link:jaxrs-advanced002.html#BABCJEDF[Validating Resource Data with Jakarta Bean
 Validation]
 * link:persistence-intro002.html#GKAHQ[Validating Persistent Fields and
 Properties]

@@ -12,7 +12,7 @@ prev=bean-validation003.html
 Validating Constructors and Methods
 -----------------------------------
 
-Bean Validation constraints may be placed on the parameters of nonstatic
+Jakarta Bean Validation constraints may be placed on the parameters of nonstatic
 methods and constructors and on the return values of nonstatic methods.
 Static methods and constructors will not be validated.
 
@@ -94,7 +94,7 @@ validation constraint.
 #### Validating Type Arguments of Parameterized Types
 
 [[validating_type_arguments_of_parameterized_types]]
-In Bean Validation 2.0, you can apply constraints to the type arguments of parameterized types. For example: `List<@NotNull Long> numbers;`
+In Jakarta Bean Validation 2.0, you can apply constraints to the type arguments of parameterized types. For example: `List<@NotNull Long> numbers;`
 Constraints can be applied to elements of container types such as `List`, `Map`, `Optional`, and others.
 [source,oac_no_warn]
 ----
