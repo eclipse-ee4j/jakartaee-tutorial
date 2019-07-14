@@ -17,7 +17,7 @@ out, and record when students are outside at the playground.
 
 The following topics are addressed here:
 
-* link:#GKAFJ[Java Persistence API Entities Used in the Main Interface]
+* link:#GKAFJ[Jakarta Persistence Entities Used in the Main Interface]
 * link:#GKAFC[Enterprise Beans Used in the Main Interface]
 * link:#BCGHHCDA[WebSocket Endpoint Used in the Main Interface]
 * link:#GKAET[Facelets Files Used in the Main Interface]
@@ -65,12 +65,12 @@ tutoring session, when they checked in and out, which students went to
 the park while they were at the tutoring center, and when they went to
 and came back from the park.
 
-For information on creating Java Persistence API entities, see
-link:persistence-intro.html#BNBPZ[Chapter 40, "Introduction to the Java
-Persistence API."] For information on validating entity data, see
+For information on creating Jakarta Persistence entities, see
+link:persistence-intro.html#BNBPZ[Chapter 40, "Introduction to the Jakarta
+Persistence."] For information on validating entity data, see
 link:persistence-intro002.html#GKAHQ[Validating Persistent Fields and
 Properties] and link:bean-validation-advanced.html#GKAHP[Chapter 24,
-"Bean Validation: Advanced Topics."]
+"Jakarta Bean Validation: Advanced Topics."]
 
 [[GKAFC]][[enterprise-beans-used-in-the-main-interface]]
 
@@ -83,7 +83,7 @@ business logic for Duke's Tutoring, and are located in the
 
 * `ConfigBean` is a singleton session bean used to create the default
 students when the application is initially deployed, and to create an
-automatic EJB timer that creates tutoring session entities every
+automatic enterprise bean timer that creates tutoring session entities every
 weekday.
 * `RequestBean` is a stateless session bean containing the business
 methods for the main interface. The bean also has business methods for
@@ -113,13 +113,13 @@ changes in the main interface, a `StatusEvent` is fired. The
 out the status change to all the client endpoints registered with
 `StatusEndpoint`.
 
-The `index.xhtml` JavaServer Faces page contains JavaScript code to
+The `index.xhtml` Jakarta Server Faces page contains JavaScript code to
 connect to the WebSocket endpoint. The `onMessage` method on this page
 clicks a JavaServer Faces button, which makes an Ajax request to refresh
 the table that shows the current status of the students.
 
 For more information on WebSocket endpoints, see
-link:websocket.html#GKJIQ5[Chapter 19, "Java API for WebSocket."] For
+link:websocket.html#GKJIQ5[Chapter 19, "Jakarta WebSocket."] For
 information on CDI events, see link:cdi-adv005.html#GKHIC[Using Events in
 CDI Applications].
 
@@ -130,7 +130,7 @@ Facelets Files Used in the Main Interface
 
 The Duke's Tutoring application uses Facelets to display the user
 interface, making extensive use of the templating features of Facelets.
-Facelets, the default display technology for JavaServer Faces
+Facelets, the default display technology for Jakarta Server Faces
 technology, consists of XHTML files located in the
 `_tut-install_/examples/case-studies/dukes-tutoring-war/src/main/webapp/`
 directory.
@@ -238,7 +238,7 @@ Duke's Tutoring also uses the following deployment descriptor in the
 `src/main/resources/META-INF` directory of the `dukes-tutoring-common`
 project:
 
-* `persistence.xml`: The Java Persistence API configuration file
+* `persistence.xml`: The Jakarta Persistence configuration file
 
 No enterprise bean deployment descriptor is used in Duke's Tutoring.
 Annotations in the enterprise bean class files are used for the

@@ -17,7 +17,7 @@ Duke's Bookstore example and how they interact.
 
 The following topics are addressed here:
 
-* link:#GLQER[The Book Java Persistence API Entity]
+* link:#GLQER[The Book Jakarta Persistence Entity]
 * link:#GLQEU[Enterprise Beans Used in Duke's Bookstore]
 * link:#GLQDP[Facelets Pages and Managed Beans Used in Duke's Bookstore]
 * link:#GLQDX[Custom Components and Other Custom Objects Used in Duke's
@@ -258,11 +258,11 @@ Deployment Descriptors Used in Duke's Bookstore
 
 The following deployment descriptors are used in Duke's Bookstore:
 
-* `src/main/resources/META-INF/persistence.xml`: The Java Persistence
-API configuration file
+* `src/main/resources/META-INF/persistence.xml`: The Jakarta Persistence
+configuration file
 * `src/main/webapp/WEB-INF/bookstore.taglib.xml`: The tag library
 descriptor file for the custom components
-* `src/main/webapp/WEB-INF/faces-config.xml`: The JavaServer Faces
+* `src/main/webapp/WEB-INF/faces-config.xml`: The Jakarta Server Faces
 configuration file, which configures the managed beans for the map
 component as well as the resource bundles for the application
 * `src/main/webapp/WEB-INF/web.xml`: The web application configuration
