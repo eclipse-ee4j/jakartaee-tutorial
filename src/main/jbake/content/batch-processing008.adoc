@@ -105,7 +105,7 @@ The first step is defined as follows:
 
 This step is a normal chunk step that specifies the batch artifacts that
 implement each phase of the step. The batch artifact names are not fully
-qualified class names, so the batch artifacts are Jakarta Contexts and Dependency Injection beans annotated
+qualified class names, so the batch artifacts are CDI beans annotated
 with `@Named`.
 
 The second step is defined as follows:
