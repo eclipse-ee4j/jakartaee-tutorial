@@ -57,8 +57,8 @@ a traffic update looks like this:
  ]}
 ----
 
-The `traffic-rar` module implements the inbound contract of the Jakarta EE
-Connector Architecture. This module subscribes to the traffic
+The `traffic-rar` module implements Jakarta Connectors the inbound contract.
+This module subscribes to the traffic
 information system using the TCP port indicated by the configuration
 provided by the MDB and invokes the methods of the MDB to process
 traffic information updates.
@@ -71,7 +71,7 @@ updates for a particular city and publishes the results to a Java
 Message Service (JMS) topic.
 
 The `traffic-war` module contains a message-driven bean that receives
-filtered traffic information updates from the JMS topic asynchronously
+filtered traffic information updates from the Jakarta Messaging topic asynchronously
 and sends them to the clients using a WebSocket endpoint.
 
 [[sthref248]][[using-the-inbound-resource-adapter]]
@@ -90,7 +90,7 @@ adapter.
 adapter.
 
 The business interface defined by the resource adapter is not specified
-in the Jakarta EE Connector Architecture; it is specific to the EIS.
+in the Jakarta Connectors spec; it is specific to the EIS.
 
 The MDB in this example is defined as follows:
 
@@ -112,7 +112,7 @@ resource adapter. The resource adapter requires the MDB to provide the
 When the MDB is deployed, it activates the `traffic-rar` resource
 adapter, which invokes the methods of the MDB to process traffic
 information updates. Then the MDB filters the updates for a particular
-city and publishes the results to a JMS topic.
+city and publishes the results to a Jakarta Messaging topic.
 
 In this particular example, the `TrafficListener` interface is empty. In
 addition to this interface, the resource adapter provides the
@@ -139,8 +139,8 @@ resource adapter module.
 Implementing the Inbound Resource Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `traffic-rar` module implements the inbound resource adapter
-contract from the Jakarta EE Connector Architecture for the simple traffic
+The `traffic-rar` module implements the Jakarta Connectors inbound resource adapter
+contract for the simple traffic
 information system (EIS) used in this example. The architecture of the
 inbound resource adapter is shown in link:#CHDHADDC[Figure 56-4].
 
