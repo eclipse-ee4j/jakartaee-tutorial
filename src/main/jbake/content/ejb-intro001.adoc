@@ -32,9 +32,9 @@ Benefits of Enterprise Beans
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For several reasons, enterprise beans simplify the development of large,
-distributed applications. First, because the EJB container provides
+distributed applications. First, because the Enterprise Bean container provides
 system-level services to enterprise beans, the bean developer can
-concentrate on solving business problems. The EJB container, rather than
+concentrate on solving business problems. The Enterprise Bean container, rather than
 the bean developer, is responsible for system-level services, such as
 transaction management and security authorization.
 
@@ -89,5 +89,5 @@ Table 35-1 Enterprise Bean Types
 service
 
 |Message-driven |Acts as a listener for a particular messaging type,
-such as the Java Message Service API
+such as Jakarta Messaging
 |=======================================================================

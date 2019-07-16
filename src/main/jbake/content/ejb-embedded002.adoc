@@ -61,7 +61,7 @@ java -classpath mySessionBean.jar:containerProviderRuntime.jar:myClient.jar \
 com.example.ejb.client.Main
 ----
 
-In the above example, `mySessionBean.jar` is an EJB JAR containing a
+In the above example, `mySessionBean.jar` is an enterprise bean JAR containing a
 local stateless session bean, `containerProviderRuntime.jar` is a JAR
 file supplied by the enterprise bean provider that contains the needed
 runtime classes for the embedded container, and `myClient.jar` is a JAR
@@ -143,8 +143,8 @@ EJBContainer ec = EJBContainer.createEJBContainer(props);
 
 To specify enterprise bean modules outside the virtual machine
 classpath, set `EJBContainer.MODULES` to a `java.io.File` object or an
-array of `File` objects. Each `File` object refers to an EJB JAR file,
-or a directory containing an expanded EJB JAR file:
+array of `File` objects. Each `File` object refers to an enterprise bean JAR file,
+or a directory containing an expanded enterprise bean JAR file:
 
 [source,oac_no_warn]
 ----

@@ -40,7 +40,7 @@ public class SingletonBean { ... }
 Initializing Singleton Session Beans
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The EJB container is responsible for determining when to initialize a
+The Enterprise Bean container is responsible for determining when to initialize a
 singleton session bean instance unless the singleton session bean
 implementation class is annotated with the `javax.ejb.Startup`
 annotation. In this case, sometimes called eager initialization, the EJB
@@ -96,7 +96,7 @@ public class PrimaryBean { ... }
 public class SecondaryBean { ... }
 ----
 
-This guarantees that the EJB container will initialize `PrimaryBean`
+This guarantees that the Enterprise Bean container will initialize `PrimaryBean`
 before `SecondaryBean`.
 
 The following singleton session bean, `TertiaryBean`, depends on
@@ -111,12 +111,12 @@ public class TertiaryBean { ... }
 
 `SecondaryBean` explicitly requires `PrimaryBean` to be initialized
 before it is initialized, through its own `@DependsOn` annotation. In
-this case, the EJB container will first initialize `PrimaryBean`, then
+this case, the Enterprise Bean container will first initialize `PrimaryBean`, then
 `SecondaryBean`, and finally `TertiaryBean`.
 
 If, however, `SecondaryBean` did not explicitly depend on `PrimaryBean`,
-the EJB container may initialize either `PrimaryBean` or `SecondaryBean`
-first. That is, the EJB container could initialize the singletons in the
+the Enterprise Bean container may initialize either `PrimaryBean` or `SecondaryBean`
+first. That is, the Enterprise Bean container could initialize the singletons in the
 following order: `SecondaryBean`, `PrimaryBean`, `TertiaryBean`.
 
 [[GIPSZ]][[managing-concurrent-access-in-a-singleton-session-bean]]
@@ -141,12 +141,12 @@ container-managed or bean-managed concurrency for the singleton. With
 `javax.ejb.ConcurrencyManagementType.CONTAINER` or
 `javax.ejb.ConcurrencyManagementType.BEAN`. If no
 `@ConcurrencyManagement` annotation is present on the singleton
-implementation class, the EJB container default of container-managed
+implementation class, the Enterprise Bean container default of container-managed
 concurrency is used.
 
 Container-Managed Concurrency
 
-If a singleton uses container-managed concurrency, the EJB container
+If a singleton uses container-managed concurrency, the Enterprise Bean container
 controls client access to the business methods of the singleton. The
 `javax.ejb.Lock` annotation and a `javax.ejb.LockType` type are used to
 specify the access level of the singleton's business methods or
@@ -232,7 +232,7 @@ public class SharedSingletonBean {
 If a method is of locking type `WRITE`, client access to all the
 singleton's methods is blocked until the current client finishes its
 method call or an access timeout occurs. When an access timeout occurs,
-the EJB container throws a `javax.ejb.ConcurrentAccessTimeoutException`.
+the Enterprise Bean container throws a `javax.ejb.ConcurrentAccessTimeoutException`.
 The `javax.ejb.AccessTimeout` annotation is used to specify the number
 of milliseconds before an access timeout occurs. If added at the class
 level of a singleton, `@AccessTimeout` specifies the access timeout
@@ -310,7 +310,7 @@ Handling Errors in a Singleton Session Bean
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If a singleton session bean encounters an error when initialized by the
-EJB container, that singleton instance will be destroyed.
+Enterprise Bean container, that singleton instance will be destroyed.
 
 Unlike other enterprise beans, once a singleton session bean instance is
 initialized, it is not destroyed if the singleton's business or
@@ -353,7 +353,7 @@ public class CounterBean {
 The `@Singleton` annotation marks `CounterBean` as a singleton session
 bean. `CounterBean` uses a local, no-interface view.
 
-`CounterBean` uses the EJB container's default metadata values for
+`CounterBean` uses the Enterprise Bean container's default metadata values for
 singletons to simplify the coding of the singleton implementation class.
 There is no `@ConcurrencyManagement` annotation on the class, so the
 default of container-managed concurrency access is applied. There is no

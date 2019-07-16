@@ -75,7 +75,7 @@ The web client is contained in the following servlet class under the
 converter/web/ConverterServlet.java
 ----
 
-A Java servlet is a web component that responds to HTTP requests.
+A Jakarta servlet is a web component that responds to HTTP requests.
 
 The `ConverterServlet` class uses dependency injection to obtain a
 reference to `ConverterBean`. The `javax.ejb.EJB` annotation is added to

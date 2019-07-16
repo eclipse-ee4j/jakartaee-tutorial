@@ -304,7 +304,7 @@ Timer timer = timerService.createCalendarTimer(schedule);
 
 For details on the method signatures, see the `TimerService` API
 documentation at
-`http://docs.oracle.com/javaee/7/api/javax/ejb/TimerService.html`.
+`https://javaee.github.io/javaee-spec/javadocs/javax/ejb/TimerService.html`.
 
 The bean described in link:#BNBPE[The timersession Example] creates a
 timer as follows:
@@ -340,7 +340,7 @@ hours, days, or longer durations.
 Automatic Timers
 ~~~~~~~~~~~~~~~~
 
-Automatic timers are created by the EJB container when an enterprise
+Automatic timers are created by the Enterprise Bean container when an enterprise
 bean that contains methods annotated with the `@Schedule` or
 `@Schedules` annotations is deployed. An enterprise bean can have
 multiple automatic timeout methods, unlike a programmatic timer, which
@@ -365,7 +365,7 @@ crash. By default, all automatic timers are persistent.
 The optional `timezone` element is used to specify that the automatic
 timer is associated with a particular time zone. If set, this element
 will evaluate all timer expressions in relation to the specified time
-zone, regardless of the time zone in which the EJB container is running.
+zone, regardless of the time zone in which the Enterprise Bean container is running.
 By default, all automatic timers set are in relation to the default time
 zone of the server.
 
@@ -406,7 +406,7 @@ Canceling and Saving Timers
 
 Timers can be cancelled by the following events.
 
-* When a single-event timer expires, the EJB container calls the
+* When a single-event timer expires, the Enterprise Bean container calls the
 associated timeout method and then cancels the timer.
 * When the bean invokes the `cancel` method of the `Timer` interface,
 the container cancels the timer.
@@ -462,7 +462,7 @@ timer's duration is reset as if the cancellation had never occurred.
 
 In beans that use container-managed transactions, the `@Timeout` method
 usually has the `Required` or `RequiresNew` transaction attribute to
-preserve transaction integrity. With these attributes, the EJB container
+preserve transaction integrity. With these attributes, the Enterprise Bean container
 begins the new transaction before calling the `@Timeout` method. If the
 transaction is rolled back, the container will call the `@Timeout`
 method at least one more time.
@@ -485,7 +485,7 @@ local, no-interface view of `TimerSessionBean` and can be invoked by the
 client. In this example, the client invokes `setTimer` with an interval
 duration of 8,000 milliseconds, or 8 seconds. The `setTimer` method
 creates a new timer by invoking the `createTimer` method of
-`TimerService`. Now that the timer is set, the EJB container will invoke
+`TimerService`. Now that the timer is set, the Enterprise Bean container will invoke
 the `programmaticTimeout` method of `TimerSessionBean` when the timer
 expires, in about 8 seconds:
 
