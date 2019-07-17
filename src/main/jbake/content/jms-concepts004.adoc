@@ -1,29 +1,29 @@
 type=page
 status=published
-title=Using Advanced JMS Features
+title=Using Advanced Jakarta Messaging Features
 next=jms-concepts005.html
 prev=jms-concepts003.html
 ~~~~~~
-Using Advanced JMS Features
+Using Advanced Jakarta Messaging Features
 ===========================
 
 [[BNCFU]][[using-advanced-jms-features]]
 
-Using Advanced JMS Features
+Using Advanced Jakarta Messaging Features
 ---------------------------
 
-This section explains how to use features of the JMS API to achieve the
+This section explains how to use features of Jakarta Messaging to achieve the
 level of reliability and performance your application requires. Many
-people use JMS in their applications because they cannot tolerate
+people use Jakarta Messaging in their applications because they cannot tolerate
 dropped or duplicate messages and because they require that every
-message be received once and only once. The JMS API provides this
+message be received once and only once. Jakarta Messaging provides this
 functionality.
 
 The most reliable way to produce a message is to send a `PERSISTENT`
 message, and to do so within a transaction.
 
-JMS messages are `PERSISTENT` by default; `PERSISTENT` messages will not
-be lost in the event of JMS provider failure. For details, see
+Jakarta Messaging messages are `PERSISTENT` by default; `PERSISTENT` messages will not
+be lost in the event of Messaging provider failure. For details, see
 link:#BNCFY[Specifying Message Persistence].
 
 Transactions allow multiple messages to be sent or received in an atomic
@@ -32,13 +32,13 @@ receives to be combined with database reads and writes in an atomic
 transaction. A transaction is a unit of work into which you can group a
 series of operations, such as message sends and receives, so that the
 operations either all succeed or all fail. For details, see
-link:#BNCGH[Using JMS Local Transactions].
+link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
 The most reliable way to consume a message is to do so within a
 transaction, either from a queue or from a durable subscription to a
 topic. For details, see link:jms-concepts003.html#BNCGD[Creating Durable
 Subscriptions], link:#BNCGB[Creating Temporary Destinations], and
-link:#BNCGH[Using JMS Local Transactions].
+link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
 Some features primarily allow an application to improve performance. For
 example, you can set messages to expire after a certain length of time
@@ -56,9 +56,9 @@ link:#BNCGB[Creating Temporary Destinations] for details.
 
 The following sections describe these features as they apply to
 application clients or Java SE clients. Some of the features work
-differently in the Jakarta EE web or EJB container; in these cases, the
+differently in the Jakarta EE web or enterprise bean container; in these cases, the
 differences are noted here and are explained in detail in
-link:jms-concepts005.html#BNCGL[Using the JMS API in Jakarta EE
+link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications].
 
 [[BNCFW]][[controlling-message-acknowledgment]]
@@ -66,21 +66,21 @@ Applications].
 Controlling Message Acknowledgment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Until a JMS message has been acknowledged, it is not considered to be
+Until a Jakarta Messaging message has been acknowledged, it is not considered to be
 successfully consumed. The successful consumption of a message
 ordinarily takes place in three stages.
 
 1.  The client receives the message.
 2.  The client processes the message.
 3.  The message is acknowledged. Acknowledgment is initiated either by
-the JMS provider or by the client, depending on the session
+the Messaging provider or by the client, depending on the session
 acknowledgment mode.
 
-In locally transacted sessions (see link:#BNCGH[Using JMS Local
+In locally transacted sessions (see link:#BNCGH[Using Jakarta Messaging Local
 Transactions]), a message is acknowledged when the session is committed.
 If a transaction is rolled back, all consumed messages are redelivered.
 
-In a JTA transaction (in the Jakarta EE web or EJB container) a message is
+In a Jakarta transaction (in the Jakarta EE web or enterprise bean container) a message is
 acknowledged when the transaction is committed.
 
 In nontransacted sessions, when and how a message is acknowledged depend
@@ -121,15 +121,15 @@ enterprise bean.
 
 * `JMSContext.DUPS_OK_ACKNOWLEDGE`: This option instructs the
 `JMSContext` to lazily acknowledge the delivery of messages. This is
-likely to result in the delivery of some duplicate messages if the JMS
+likely to result in the delivery of some duplicate messages if the Messaging
 provider fails, so it should be used only by consumers that can tolerate
-duplicate messages. (If the JMS provider redelivers a message, it must
+duplicate messages. (If the Messaging provider redelivers a message, it must
 set the value of the `JMSRedelivered` message header to `true`.) This
 option can reduce session overhead by minimizing the work the session
 does to prevent duplicates.
 
 If messages have been received from a queue but not acknowledged when a
-`JMSContext` is closed, the JMS provider retains them and redelivers
+`JMSContext` is closed, the Messaging provider retains them and redelivers
 them when a consumer next accesses the queue. The provider also retains
 unacknowledged messages if an application closes a `JMSContext` that has
 been consuming messages from a durable subscription. (See
@@ -179,15 +179,15 @@ producer and call the `send` method.
 Specifying Message Persistence
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The JMS API supports two delivery modes specifying whether messages are
-lost if the JMS provider fails. These delivery modes are fields of the
+Jakarta Messaging supports two delivery modes specifying whether messages are
+lost if the Messaging provider fails. These delivery modes are fields of the
 `DeliveryMode` interface.
 
-* The default delivery mode, `PERSISTENT`, instructs the JMS provider to
+* The default delivery mode, `PERSISTENT`, instructs the Messaging provider to
 take extra care to ensure that a message is not lost in transit in case
-of a JMS provider failure. A message sent with this delivery mode is
+of a Messaging provider failure. A message sent with this delivery mode is
 logged to stable storage when it is sent.
-* The `NON_PERSISTENT` delivery mode does not require the JMS provider
+* The `NON_PERSISTENT` delivery mode does not require the Messaging provider
 to store the message or otherwise guarantee that it is not lost if the
 provider fails.
 
@@ -215,7 +215,7 @@ can afford to miss messages.
 Setting Message Priority Levels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can use message priority levels to instruct the JMS provider to
+You can use message priority levels to instruct the Messaging provider to
 deliver urgent messages first. Use the `setPriority` method of the
 `JMSProducer` interface to set the priority level for all messages sent
 by that producer.
@@ -230,7 +230,7 @@ context.createProducer().setPriority(7).send(dest, msg);
 ----
 
 The ten levels of priority range from 0 (lowest) to 9 (highest). If you
-do not specify a priority level, the default level is 4. A JMS provider
+do not specify a priority level, the default level is 4. A Messaging provider
 tries to deliver higher-priority messages before lower-priority ones,
 but does not have to deliver messages in exact order of priority.
 
@@ -270,7 +270,7 @@ Specifying a Delivery Delay
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can specify a length of time that must elapse after a message is
-sent before the JMS provider delivers the message. Use the
+sent before the Messaging provider delivers the message. Use the
 `setDeliveryDelay` method of the `JMSProducer` interface to set a
 delivery delay for all messages sent by that producer.
 
@@ -315,11 +315,11 @@ Creating Temporary Destinations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Normally, you create JMS destinations (queues and topics)
-administratively rather than programmatically. Your JMS provider
+administratively rather than programmatically. Your Messaging provider
 includes a tool to create and remove destinations, and it is common for
 destinations to be long-lasting.
 
-The JMS API also enables you to create destinations (`TemporaryQueue`
+Jakarta Messaging also enables you to create destinations (`TemporaryQueue`
 and `TemporaryTopic` objects) that last only for the duration of the
 connection in which they are created. You create these destinations
 dynamically using the `JMSContext.createTemporaryQueue` and the
@@ -360,7 +360,7 @@ Join Messages from Two MDBs].
 
 [[BNCGH]][[using-jms-local-transactions]]
 
-Using JMS Local Transactions
+Using Jakarta Messaging Local Transactions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A transaction groups a series of operations into an atomic unit of work.
@@ -395,12 +395,12 @@ transaction ends and another transaction begins. Closing a transacted
 session rolls back its transaction in progress, including any pending
 sends and receives.
 
-In an application running in the Jakarta EE web or EJB container, you
-cannot use local transactions. Instead, you use JTA transactions,
-described in link:jms-concepts005.html#BNCGL[Using the JMS API in Jakarta EE
+In an application running in the Jakarta EE web or enterprise bean container, you
+cannot use local transactions. Instead, you use Jakarta Transactions,
+described in link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications].
 
-You can combine several sends and receives in a single JMS local
+You can combine several sends and receives in a single Jakarta Messaging local
 transaction, so long as they are all performed using the same
 `JMSContext`.
 
@@ -426,20 +426,20 @@ receives that depend on that message's having been sent.
 
 The production and the consumption of a message cannot both be part of
 the same transaction. The reason is that the transactions take place
-between the clients and the JMS provider, which intervenes between the
+between the clients and the Messaging provider, which intervenes between the
 production and the consumption of the message. link:#BNCGI[Figure 48-8]
 illustrates this interaction.
 
 [[BNCGI]]
 
-.*Figure 48-8 Using JMS Local Transactions*
+.*Figure 48-8 Using Jakarta Messaging Local Transactions*
 image:img/jakartaeett_dt_033.png[
 "Diagram of local transactions, showing separate transactions for sending
 and consuming a message"]
 
 The sending of one or more messages to one or more destinations by
 Client 1 can form a single transaction, because it forms a single set of
-interactions with the JMS provider using a single `JMSContext`.
+interactions with the Messaging provider using a single `JMSContext`.
 Similarly, the receiving of one or more messages from one or more
 destinations by Client 2 also forms a single transaction using a single
 `JMSContext`. But because the two clients have no direct interaction and
@@ -447,7 +447,7 @@ are using two different `JMSContext` objects, no transactions can take
 place between them.
 
 Another way of putting this is that a transaction is a contract between
-a client and a JMS provider that defines whether a message is sent to a
+a client and a Messaging provider that defines whether a message is sent to a
 destination or whether a message is received from the destination. It is
 not a contract between the sending client and the receiving client.
 
@@ -456,7 +456,7 @@ processing. Instead of tightly coupling the sender and the receiver of a
 message, JMS couples the sender of a message with the destination, and
 it separately couples the destination with the receiver of the message.
 Therefore, while the sends and receives each have a tight coupling with
-the JMS provider, they do not have any coupling with each other.
+the Messaging provider, they do not have any coupling with each other.
 
 When you create a `JMSContext`, you can specify whether it is transacted
 by using the `JMSContext.SESSION_TRANSACTED` argument to the
@@ -478,7 +478,7 @@ session to perform the operations. For example, you can use the same
 topic in the same transaction.
 
 The example in link:jms-examples004.html#BNCGJ[Using Local Transactions]
-shows how to use JMS local transactions.
+shows how to use Jakarta Messaging local transactions.
 
 [[BABFIFAJ]][[sending-messages-asynchronously]]
 
@@ -486,7 +486,7 @@ Sending Messages Asynchronously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Normally, when you send a persistent message, the `send` method blocks
-until the JMS provider confirms that the message was sent successfully.
+until the Messaging provider confirms that the message was sent successfully.
 The asynchronous send mechanism allows your application to send a
 message and continue work while waiting to learn whether the send
 completed.

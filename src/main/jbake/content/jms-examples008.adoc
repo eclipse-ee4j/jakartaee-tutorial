@@ -13,7 +13,7 @@ Sending Messages from a Session Bean to an MDB
 ----------------------------------------------
 
 This section explains how to write, compile, package, deploy, and run an
-application that uses the JMS API in conjunction with a session bean.
+application that uses Jakarta Messaging in conjunction with a session bean.
 The application contains the following components:
 
 * An application client that invokes a session bean
@@ -73,7 +73,7 @@ Coding the Application Client: MyAppClient.java
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The application client, `MyAppClient.java`, found under
-`clientsessionmdb-app-client`, performs no JMS API operations and so is
+`clientsessionmdb-app-client`, performs no Messaging operations and so is
 simpler than the client in link:jms-examples007.html#BNBPK[Receiving
 Messages Asynchronously Using a Message-Driven Bean]. The client uses
 dependency injection to obtain the Publisher enterprise bean's business
@@ -176,7 +176,7 @@ The topic is the one defined in the `PublisherBean`. The message
 selector in this case represents both the sports and opinion desks, just
 to demonstrate the syntax of message selectors.
 
-The JMS resource adapter uses these properties to create a connection
+The Jakarta Messaging resource adapter uses these properties to create a connection
 factory for the message-driven bean that allows the bean to use a
 durable subscription.
 
@@ -223,9 +223,9 @@ This command creates the following:
 
 ** An application client JAR file that contains the client class file and
 the session bean's remote interface, along with a manifest file that
-specifies the main class and places the EJB JAR file in its classpath
+specifies the main class and places the Jakarta Enterprise Beans JAR file in its classpath
 
-** An EJB JAR file that contains both the session bean and the
+** An enterprise bean JAR file that contains both the session bean and the
 message-driven bean
 
 ** An application EAR file that contains the two JAR files
@@ -277,8 +277,8 @@ This command creates the following:
 
 ** An application client JAR file that contains the client class file and
 the session bean's remote interface, along with a manifest file that
-specifies the main class and places the EJB JAR file in its classpath
-** An EJB JAR file that contains both the session bean and the
+specifies the main class and places the enterprise bean JAR file in its classpath
+** An enterprise bean JAR file that contains both the session bean and the
 message-driven bean
 ** An application EAR file that contains the two JAR files
 +

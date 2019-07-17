@@ -1,25 +1,25 @@
 type=page
 status=published
-title=Writing Simple JMS Applications
+title=Writing Simple Jakarta Messaging Applications
 next=jms-examples004.html
 prev=jms-examples002.html
 ~~~~~~
-= Writing Simple JMS Applications
+= Writing Simple Jakarta Messaging Applications
 
 
 [[BNCFA]][[writing-simple-jms-applications]]
 
-Writing Simple JMS Applications
+Writing Simple Jakarta Messaging Applications
 -------------------------------
 
-This section shows how to create, package, and run simple JMS clients
+This section shows how to create, package, and run simple Messaging clients
 that are packaged as application clients.
 
 The following topics are addressed here:
 
-* link:#CHDCEFGA[Overview of Writing Simple JMS Application]
-* link:#BNCFD[Starting the JMS Provider]
-* link:#GKTJS[Creating JMS Administered Objects]
+* link:#CHDCEFGA[Overview of Writing Simple Jakarta Messaging Application]
+* link:#BNCFD[Starting the Jakarta Messaging Provider]
+* link:#GKTJS[Creating Jakarta Messaging Administered Objects]
 * link:#BABEEABE[Building All the Simple Examples]
 * link:#BABIHCAE[Sending Messages]
 * link:#BNCFB[Receiving Messages Synchronously]
@@ -31,10 +31,10 @@ Delivery]
 
 [[CHDCEFGA]][[overview-of-writing-simple-jms-application]]
 
-Overview of Writing Simple JMS Application
+Overview of Writing Simple Jakarta Messaging Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The clients demonstrate the basic tasks a JMS application must perform:
+The clients demonstrate the basic tasks a Jakarta Messaging application must perform:
 
 * Creating a `JMSContext`
 * Creating message producers and consumers
@@ -43,10 +43,10 @@ The clients demonstrate the basic tasks a JMS application must perform:
 Each example uses two clients: one that sends messages and one that
 receives them. You can run the clients in two terminal windows.
 
-When you write a JMS client to run in an enterprise bean application,
+When you write a Messaging client to run in an enterprise bean application,
 you use many of the same methods in much the same sequence as for an
 application client. However, there are some significant differences.
-link:jms-concepts005.html#BNCGL[Using the JMS API in Jakarta EE
+link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications] describes these differences, and this chapter provides
 examples that illustrate them.
 
@@ -65,31 +65,31 @@ create administered objects.
 
 [[BNCFD]][[starting-the-jms-provider]]
 
-Starting the JMS Provider
+Starting the Jakarta Messaging Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When you use GlassFish Server, your JMS provider is GlassFish Server.
+When you use GlassFish Server, your Messaging provider is GlassFish Server.
 Start the server as described in
 link:usingexamples002.html#BNADI[Starting and Stopping GlassFish Server].
 
 [[GKTJS]][[creating-jms-administered-objects]]
 
-Creating JMS Administered Objects
+Creating Jakarta Messaging Administered Objects
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example uses the following JMS administered objects:
+This example uses the following Jakarta Messaging administered objects:
 
 * A connection factory
 * Two destination resources: a topic and a queue
 
 Before you run the applications, you can use the `asadmin add-resources`
-command to create needed JMS resources, specifying as the argument a
+command to create needed Messaging resources, specifying as the argument a
 file named `glassfish-resources.xml`. This file can be created in any
 project using NetBeans IDE, although you can also create it by hand. A
 file for the needed resources is present in the
 `jms/simple/producer/src/main/setup/` directory.
 
-The JMS examples use a connection factory with the logical JNDI lookup
+The Jakarta Messaging examples use a connection factory with the logical JNDI lookup
 name `java:comp/DefaultJMSConnectionFactory`, which is preconfigured in
 GlassFish Server.
 
@@ -350,8 +350,8 @@ You will use the client to send three messages to a queue.
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples002.html#BNADI[Starting and Stopping GlassFish Server])
-and that you have created resources and built the simple JMS examples
-(see link:#GKTJS[Creating JMS Administered Objects] and
+and that you have created resources and built the simple Jakarta Messaging examples
+(see link:#GKTJS[Creating Jakarta Messaging Administered Objects] and
 link:#BABEEABE[Building All the Simple Examples]).
 2.  In a terminal window, go to the `producer` directory:
 +
@@ -1027,7 +1027,7 @@ subscription on the topic. Therefore, each of the clients receives all
 Acknowledging Messages
 ~~~~~~~~~~~~~~~~~~~~~~
 
-JMS provides two alternative ways for a consuming client to ensure that
+Jakarta Messaging provides two alternative ways for a consuming client to ensure that
 a message is not acknowledged until the application has finished
 processing the message:
 
