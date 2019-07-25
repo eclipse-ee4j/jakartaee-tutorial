@@ -10,9 +10,9 @@ prev=jsonb.html
 JSON Binding in the Jakarta EE Platform
 ---------------------------------------
 
-Jakarta EE includes support for JSR 367, which provides an API that can serialize
-Java objects to JSON documents and deserialize JSON documents to Java objects. The
-Java API for JSON Binding contains the following packages:
+Jakarta EE includes support for the Jakarta JSON Binding spec, which provides an API that can serialize
+Java objects to JSON documents and deserialize JSON documents to Java objects.
+Jakarta JSON Binding contains the following packages:
 
 * The `javax.json.bind` package contains the binding interface, the builder interface, and
 a configuration class. link:#main-classes-and-interfaces-in-bind[Table 21-1] lists the main classes
@@ -45,7 +45,7 @@ contains the methods that a service provider implements.
 [width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
-|`Jsonb` | Contains the JSON-B methods for serializing Java objects to JSON and deserailizing
+|`Jsonb` | Contains the JSON binding methods for serializing Java objects to JSON and deserailizing
 JSON to Java objects.
 
 |`JsonBuilder` | Used by clients to create `Jsonb` instances.
