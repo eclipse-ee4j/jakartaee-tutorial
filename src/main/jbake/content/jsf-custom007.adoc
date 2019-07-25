@@ -12,7 +12,7 @@ Implementing an Event Listener
 Implementing an Event Listener
 ------------------------------
 
-The JavaServer Faces technology supports action events and value-change
+The Jakarta Faces technology supports action events and value-change
 events for components.
 
 Action events occur when the user activates a component that implements
@@ -60,7 +60,7 @@ Implementing Value-Change Listeners
 
 A `javax.faces.event.ValueChangeListener` implementation must include a
 `processValueChange(ValueChangeEvent)` method. This method processes the
-specified value-change event and is invoked by the JavaServer Faces
+specified value-change event and is invoked by the Jakarta Faces
 implementation when the value-change event occurs. The
 `ValueChangeEvent` instance stores the old and the new values of the
 component that fired the event.
@@ -124,7 +124,7 @@ Implementing Action Listeners
 
 A `javax.faces.event.ActionListener` implementation must include a
 `processAction(ActionEvent)` method. The `processAction(ActionEvent)`
-method processes the specified action event. The JavaServer Faces
+method processes the specified action event. The Jakarta Faces
 implementation invokes the `processAction(ActionEvent)` method when the
 `ActionEvent` occurs.
 

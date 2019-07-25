@@ -13,10 +13,10 @@ Defining the Custom Component Tag in a Tag Library Descriptor
 -------------------------------------------------------------
 
 To use a custom tag, you declare it in a Tag Library Descriptor (TLD).
-The TLD file defines how the custom tag is used in a JavaServer Faces
+The TLD file defines how the custom tag is used in a Jakarta Faces
 page. The web container uses the TLD to validate the tag. The set of
 tags that are part of the HTML render kit are defined in the HTML_BASIC
-TLD, available in the olink:JSFRK[JavaServer Faces standard HTML tag
+TLD, available in the olink:JSFRK[Jakarta Faces standard HTML tag
 library].
 
 The TLD file name must end with `taglib.xml`. In the Duke's Bookstore

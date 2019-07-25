@@ -13,7 +13,7 @@ Developing a Simple Facelets Application: The guessnumber-jsf Example Applicatio
 ---------------------------------------------------------------------------------
 
 This section describes the general steps involved in developing a
-JavaServer Faces application. The following tasks are usually required:
+Jakarta Faces application. The following tasks are usually required:
 
 * Developing the managed beans
 * Creating the pages using the component tags
@@ -46,7 +46,7 @@ tut-install`/examples/web/jsf/guessnumber-jsf/` directory.
 Developing a Managed Bean
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In a typical JavaServer Faces application, each page of the application
+In a typical Jakarta Faces application, each page of the application
 connects to a managed bean that serves as a backing bean. The backing
 bean defines the methods and properties that are associated with the
 components. In this example, both pages use the same backing bean.
@@ -201,7 +201,7 @@ Note the use of the following tags:
 An `h:inputText` tag accepts user input and sets the value of the
 managed bean property `userNumber` through the EL expression
 `#{userNumberBean.userNumber}`. The input value is validated for value
-range by the JavaServer Faces standard validator tag
+range by the Jakarta Faces standard validator tag
 `f:validateLongRange`.
 
 The image file, `wave.med.gif`, is added to the page as a resource, as
@@ -251,7 +251,7 @@ for the Back button to send the user to the `greeting.xhtml` page.
 Configuring the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Configuring a JavaServer Faces application involves mapping the Faces
+Configuring a Jakarta Faces application involves mapping the Faces
 Servlet in the web deployment descriptor file, such as a `web.xml` file,
 and possibly adding managed bean declarations, navigation rules, and
 resource bundle declarations to the application configuration resource
@@ -295,7 +295,7 @@ in bold.
 ----
 
 Note the use of the context parameter `PROJECT_STAGE`. This parameter
-identifies the status of a JavaServer Faces application in the software
+identifies the status of a Jakarta Faces application in the software
 lifecycle.
 
 The stage of an application can affect the behavior of the application.

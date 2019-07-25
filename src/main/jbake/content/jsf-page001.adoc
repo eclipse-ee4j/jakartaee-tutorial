@@ -12,26 +12,26 @@ Setting Up a Page
 Setting Up a Page
 -----------------
 
-A typical JavaServer Faces web page includes the following elements:
+A typical Jakarta Faces web page includes the following elements:
 
-* A set of namespace declarations that declare the JavaServer Faces tag
+* A set of namespace declarations that declare the Jakarta Faces tag
 libraries
 * Optionally, the HTML head (`h:head`) and body (`h:body`) tags
 * A form tag (`h:form`) that represents the user input components
 
-To add the JavaServer Faces components to your web page, you need to
+To add the Jakarta Faces components to your web page, you need to
 provide the page access to the two standard tag libraries: the
-JavaServer Faces HTML render kit tag library and the JavaServer Faces
-core tag library. The olink:JSFRK[JavaServer Faces standard HTML tag
+Jakarta Faces HTML render kit tag library and the Jakarta Faces
+core tag library. The olink:JSFRK[Jakarta Faces standard HTML tag
 library] defines tags that represent common HTML user interface
-components. The JavaServer Faces core tag library defines tags that
+components. The Jakarta Faces core tag library defines tags that
 perform core actions and are independent of a particular render kit.
 
-For a complete list of JavaServer Faces Facelets tags and their
-attributes, refer to the olink:JSFTL[JavaServer Faces Facelets Tag
+For a complete list of Jakarta Faces Facelets tags and their
+attributes, refer to the olink:JSFTL[Jakarta Faces Facelets Tag
 Library documentation].
 
-To use any of the JavaServer Faces tags, you need to include appropriate
+To use any of the Jakarta Faces tags, you need to include appropriate
 directives at the top of each page specifying the tag libraries.
 
 For Facelets applications, the XML namespace directives uniquely
@@ -63,8 +63,8 @@ to distinguish the tags defined in the HTML tag library:
 
 The sections link:jsf-page002.html#BNARF[Adding Components to a Page
 Using HTML Tag Library Tags] and link:jsf-page003.html#BNARC[Using Core
-Tags] describe how to use the component tags from the JavaServer Faces
-standard HTML tag library and the core tags from the JavaServer Faces
+Tags] describe how to use the component tags from the Jakarta Faces
+standard HTML tag library and the core tags from the Jakarta Faces
 core tag library.
 
 

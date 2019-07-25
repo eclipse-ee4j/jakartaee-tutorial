@@ -12,7 +12,7 @@ prev=jsf-configure003.html
 Using Faces Flows
 -----------------
 
-The Faces Flows feature of JavaServer Faces technology allows you to
+The Faces Flows feature of Jakarta Faces technology allows you to
 create a set of pages with a scope, `FlowScoped`, that is greater than
 request scope but less than session scope. For example, you might want
 to create a series of pages for the checkout process in an online store.
@@ -543,7 +543,7 @@ by the configuration file `joinFlow-flow.xml`. It contains a single
 method, `defineFlow`, as a producer method with the `@FlowDefinition`
 qualifier that returns a `javax.faces.flow.Flow` class. The `defineFlow`
 method takes one parameter, a `FlowBuilder` with the qualifier
-`@FlowBuilderParameter`, which is passed in from the JavaServer Faces
+`@FlowBuilderParameter`, which is passed in from the Jakarta Faces
 implementation. The method then calls methods from the
 `javax.faces.flow.Builder.FlowBuilder` class to configure the flow.
 

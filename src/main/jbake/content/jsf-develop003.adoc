@@ -60,7 +60,7 @@ the user has ordered more than $100 worth of books, this method sets the
 is rendered.
 
 After setting the components' `rendered` properties to `true`, this
-method returns the logical outcome `null`. This causes the JavaServer
+method returns the logical outcome `null`. This causes the Jakarta Server
 Faces implementation to re-render the page without creating a new view
 of the page, retaining the customer's input. If this method were to
 return `purchase`, which is the logical outcome to use to advance to a
@@ -70,7 +70,7 @@ data.
 
 If the user does not purchase more than $100 worth of books or if the
 `thankYou` component has already been rendered, the method returns
-`bookreceipt`. The JavaServer Faces implementation loads the
+`bookreceipt`. The Jakarta Faces implementation loads the
 `bookreceipt.xhtml` page after this method returns:
 
 [source,oac_no_warn]

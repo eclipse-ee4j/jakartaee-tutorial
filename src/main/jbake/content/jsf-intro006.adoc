@@ -12,11 +12,11 @@ Navigation Model
 Navigation Model
 ----------------
 
-The JavaServer Faces navigation model makes it easy to define page
+The Jakarta Faces navigation model makes it easy to define page
 navigation and to handle any additional processing that is needed to
 choose the sequence in which pages are loaded.
 
-In JavaServer Faces technology, navigation is a set of rules for
+In Jakarta Faces technology, navigation is a set of rules for
 choosing the next page or view to be displayed after an application
 action, such as when a button or link is clicked.
 
@@ -59,7 +59,7 @@ User-defined navigation is handled as follows.
 
 * Define the rules in the application configuration resource file.
 * Refer to an outcome `String` from the button or link component's
-`action` attribute. This outcome `String` is used by the JavaServer
+`action` attribute. This outcome `String` is used by the Jakarta Server
 Faces implementation to select the navigation rule.
 
 Here is an example navigation rule:

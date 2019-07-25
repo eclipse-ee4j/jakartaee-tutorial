@@ -12,7 +12,7 @@ prev=jsf-configure004.html
 Configuring Managed Beans
 -------------------------
 
-When a page references a managed bean for the first time, the JavaServer
+When a page references a managed bean for the first time, the Jakarta Server
 Faces implementation initializes it either based on a `@Named`
 annotation and scope annotation in the bean class or according to its
 configuration in the application configuration resource file. For
@@ -21,7 +21,7 @@ link:jsf-configure002.html#GIRCH[Using Annotations to Configure Managed
 Beans].
 
 You can use either annotations or the application configuration resource
-file to instantiate managed beans that are used in a JavaServer Faces
+file to instantiate managed beans that are used in a Jakarta Faces
 application and to store them in scope. The managed bean creation
 facility is configured in the application configuration resource file
 using `managed-bean` XML elements to define each bean. This file is
@@ -29,7 +29,7 @@ processed at application startup time. For information on using this
 facility, see link:#BNAWR[Using the managed-bean Element].
 
 Managed beans created in the application configuration resource file are
-JavaServer Faces managed beans, not CDI managed beans.
+Jakarta Faces managed beans, not CDI managed beans.
 
 With the managed bean creation facility, you can
 
@@ -56,8 +56,8 @@ Using the managed-bean Element
 A managed bean is initiated in the application configuration resource
 file using a `managed-bean` element, which represents an instance of a
 bean class that must exist in the application. At runtime, the
-JavaServer Faces implementation processes the `managed-bean` element. If
-a page references the bean and no bean instance exists, the JavaServer
+Jakarta Faces implementation processes the `managed-bean` element. If
+a page references the bean and no bean instance exists, the Jakarta Server
 Faces implementation instantiates the bean as specified by the element
 configuration.
 
@@ -187,7 +187,7 @@ Values*
 |`null-value` |Explicitly sets the property to `null`
 
 |`value` |Defines a single value, such as a `String`, `int`, or
-JavaServer Faces EL expression
+Jakarta Faces EL expression
 |=======================================================================
 
 
