@@ -17,7 +17,7 @@ method on a session bean and call it from a web client. This example
 contains two modules.
 
 * A web application (`async-war`) that contains a stateless session bean
-and a Jakarta Server Faces interface. The `MailerBean` stateless session
+and a Jakarta Faces interface. The `MailerBean` stateless session
 bean defines an asynchronous method, `sendMessage`, which uses the
 Jakarta Mail API to send an email to an specified email address.
 * An auxiliary Java SE program (`async-smtpd`) that simulates an SMTP
@@ -34,7 +34,7 @@ Architecture of the async-war Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `async-war` module consists of a single stateless session bean,
-`MailerBean`, and a Jakarta Server Faces web application front end that uses
+`MailerBean`, and a Jakarta Faces web application front end that uses
 Facelets tags in XHTML files to display a form for users to enter the
 email address for the recipient of an email. The status of the email is
 updated when the email is finally sent.

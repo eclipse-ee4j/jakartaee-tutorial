@@ -70,7 +70,7 @@ and Directory Interface syntax to find the enterprise bean instance.
 
 Dependency injection is the simplest way of obtaining an enterprise bean
 reference. Clients that run within a Jakarta EE server-managed environment,
-Jakarta Server Faces web applications, Jakarta RESTful web services, other enterprise
+Jakarta Faces web applications, Jakarta RESTful web services, other enterprise
 beans, or Jakarta EE application clients support dependency injection using
 the `javax.ejb.EJB` annotation.
 
