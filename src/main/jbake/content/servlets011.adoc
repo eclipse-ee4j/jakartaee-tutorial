@@ -1,23 +1,23 @@
 type=page
 status=published
-title=Uploading Files with Java Servlet Technology
+title=Uploading Files with Jakarta Servlet Technology
 next=servlets012.html
 prev=servlets010.html
 ~~~~~~
-Uploading Files with Java Servlet Technology
+Uploading Files with Jakarta Servlet Technology
 ============================================
 
 [[BABFGCHB]][[uploading-files-with-java-servlet-technology]]
 
-Uploading Files with Java Servlet Technology
+Uploading Files with Jakarta Servlet Technology
 --------------------------------------------
 
 Supporting file uploads is a very basic and common requirement for many
 web applications. In prior versions of the Servlet specification,
 implementing file upload required the use of external libraries or
-complex input processing. The Java Servlet specification now helps to
+complex input processing. The Jakarta Servlet specification now helps to
 provide a viable solution to the problem in a generic and portable way.
-Java Servlet technology now supports file upload out of the box, so any
+Jakarta Servlet technology now supports file upload out of the box, so any
 web container that implements the specification can parse multipart
 requests and make mime attachments available through the
 `HttpServletRequest` object.
