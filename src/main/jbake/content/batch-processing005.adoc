@@ -177,7 +177,7 @@ referenced from the `listener` element inside the `step` element.
 Dependency Injection in Batch Artifacts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To ensure that Jakarta Contexts and Dependency Injection (CDI) works in your
+To ensure that Jakarta Dependency Injection (CDI) works in your
 batch artifacts, follow these steps.
 
 1.  Define your batch artifact implementations as CDI named beans using
@@ -235,7 +235,7 @@ public class MyItemReaderImpl implements ItemReader { ... }
 +
 For more information on bean archives, see
 link:cdi-adv001.html#CACDCFDE[Packaging CDI Applications] in
-link:cdi-adv.html#GJEHI[Chapter 27, "Jakarta EE Contexts and Dependency Injection: Advanced Topics"].
+link:cdi-adv.html#GJEHI[Chapter 27, "Jakarta Dependency Injection: Advanced Topics"].
 
 
 [width="100%",cols="100%",]
@@ -243,7 +243,7 @@ link:cdi-adv.html#GJEHI[Chapter 27, "Jakarta EE Contexts and Dependency Injectio
 a|
 Note:
 
-Jakarta Contexts and Dependency Injection (CDI) is required in order to access
+Jakarta Dependency Injection (CDI) is required in order to access
 context objects from the batch runtime in batch artifacts.
 
 |=======================================================================
