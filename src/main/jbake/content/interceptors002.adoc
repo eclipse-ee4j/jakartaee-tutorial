@@ -292,7 +292,7 @@ sharable across different lifecycle events.
 Intercepting Timeout Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can define interceptors for EJB timer service timeout methods by
+You can define interceptors for Enterprise Bean timer service timeout methods by
 using the `@AroundTimeout` annotation on methods in the target class or
 in an interceptor class. Only one `@AroundTimeout` method per class is
 allowed.
