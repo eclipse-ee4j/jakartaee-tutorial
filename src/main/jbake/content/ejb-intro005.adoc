@@ -23,9 +23,9 @@ enterprise bean exposes a local, no-interface view.
 such as exception and utility classes.
 
 Package the programming artifacts in the preceding list either into an
-EJB JAR file (a stand-alone module that stores the enterprise bean) or
+Enterprise Bean JAR file (a stand-alone module that stores the enterprise bean) or
 within a web application archive (WAR) module. See
-link:packaging002.html#CHDFCDBG[Packaging Enterprise Beans in EJB JAR
+link:packaging002.html#CHDFCDBG[Packaging Enterprise Beans in Enterprise Bean JAR
 Modules] and link:packaging002.html#CHDJABEJ[Packaging Enterprise Beans
 in WAR Modules] for more information.
 

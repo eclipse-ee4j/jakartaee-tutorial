@@ -45,7 +45,7 @@ deployment settings) are hidden from the client.
 Well-designed interfaces and no-interface views simplify the development
 and maintenance of Jakarta EE applications. Not only do clean interfaces
 and no-interface views shield the clients from any complexities in the
-EJB tier, but they also allow the enterprise beans to change internally
+Enterprise Bean tier, but they also allow the enterprise beans to change internally
 without affecting the clients. For example, if you change the
 implementation of a session bean business method, you won't have to
 alter the client code. But if you were to change the method definitions
@@ -70,7 +70,7 @@ and Directory Interface syntax to find the enterprise bean instance.
 
 Dependency injection is the simplest way of obtaining an enterprise bean
 reference. Clients that run within a Jakarta EE server-managed environment,
-JavaServer Faces web applications, JAX-RS web services, other enterprise
+Jakarta Faces web applications, Jakarta RESTful web services, other enterprise
 beans, or Jakarta EE application clients support dependency injection using
 the `javax.ejb.EJB` annotation.
 
@@ -374,9 +374,9 @@ Web Service Clients
 ~~~~~~~~~~~~~~~~~~~
 
 A web service client can access a Jakarta EE application in two ways.
-First, the client can access a web service created with JAX-WS. (For
-more information on JAX-WS, see link:jaxws.html#BNAYL[Chapter 31,
-"Building Web Services with JAX-WS"].) Second, a web service client can
+First, the client can access a web service created with Jakarta XML Web Services. (For
+more information on Jakarta XML Web Services, see link:jaxws.html#BNAYL[Chapter 31,
+"Building Web Services with Jakarta XML Web Services"].) Second, a web service client can
 invoke the business methods of a stateless session bean. Message beans
 cannot be accessed by web service clients.
 
@@ -384,7 +384,7 @@ Provided that it uses the correct protocols (SOAP, HTTP, WSDL), any web
 service client can access a stateless session bean, whether or not the
 client is written in the Java programming language. The client doesn't
 even "know" what technology implements the service: stateless session
-bean, JAX-WS, or some other technology. In addition, enterprise beans
+bean, Jakarta XML Web Services, or some other technology. In addition, enterprise beans
 and web components can be clients of web services. This flexibility
 enables you to integrate Jakarta EE applications with web services.
 

@@ -246,17 +246,17 @@ public List<String> getContents() {
 The signature of a business method must conform to these rules.
 
 * The method name must not begin with `ejb`, to avoid conflicts with
-callback methods defined by the EJB architecture. For example, you
+callback methods defined by the Jakarta Enterprise Beans architecture. For example, you
 cannot call a business method `ejbCreate` or `ejbActivate`.
 * The access control modifier must be `public`.
 * If the bean allows remote access through a remote business interface,
 the arguments and return types must be legal types for the Java Remote
 Method Invocation (RMI) API.
-* If the bean is a JAX-WS web service endpoint, the arguments and return
+* If the bean is a Jakarta XML Web Services endpoint, the arguments and return
 types for the methods annotated `@WebMethod` must be legal types for
-JAX-WS.
-* If the bean is a JAX-RS resource, the arguments and return types for
-the resource methods must be legal types for JAX-RS.
+Jakarta XML Web Services.
+* If the bean is a Jakarta RESTful Web Services resource, the arguments and return types for
+the resource methods must be legal types for Jakarta RESTful Web Services.
 * The modifier must not be `static` or `final`.
 
 The `throws` clause can include exceptions that you define for your

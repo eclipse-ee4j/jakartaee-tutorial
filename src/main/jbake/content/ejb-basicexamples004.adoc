@@ -16,7 +16,7 @@ This example demonstrates a simple web service that generates a response
 based on information received from the client. `HelloServiceBean` is a
 stateless session bean that implements a single method: `sayHello`. This
 method matches the `sayHello` method invoked by the client described in
-link:jaxws002.html#BNAYX[A Simple JAX-WS Application Client].
+link:jaxws002.html#BNAYX[A Simple Jakarta XML Web Services Application Client].
 
 The following topics are addressed here:
 
@@ -45,9 +45,9 @@ not be declared `static` or `final`.
 * Business methods that are exposed to web service clients must be
 annotated with `javax.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
-JAXB-compatible parameters and return types. See the list of JAXB
+Jakarta XML Binding-compatible parameters and return types. See the list of Jakarta XML Binding
 default data type bindings at link:jaxws003.html#BNAZC[Types Supported by
-JAX-WS].
+Jakarta XML Web Services].
 * The implementing class must not be declared `final` and must not be
 `abstract`.
 * The implementing class must have a default public constructor.
@@ -156,10 +156,10 @@ tut-install/examples/ejb/helloservice/
 mvn install
 ----
 +
-This compiles the source files and packages the application into an EJB
+This compiles the source files and packages the application into an enterprise bean
 JAR file located at
 `_tut-install_/examples/ejb/helloservice/target/helloservice.jar`. Then
-the EJB JAR file is deployed to GlassFish Server.
+the enterprise bean JAR file is deployed to GlassFish Server.
 +
 Upon deployment, GlassFish Server generates additional artifacts
 required for web service invocation, including the WSDL file.
