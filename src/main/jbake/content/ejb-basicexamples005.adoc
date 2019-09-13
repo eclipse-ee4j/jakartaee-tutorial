@@ -304,7 +304,7 @@ Timer timer = timerService.createCalendarTimer(schedule);
 
 For details on the method signatures, see the `TimerService` API
 documentation at
-`https://javaee.github.io/javaee-spec/javadocs/javax/ejb/TimerService.html`.
+`https://jakarta.ee/specifications/platform/8/apidocs/javax/ejb/TimerService.html`.
 
 The bean described in link:#BNBPE[The timersession Example] creates a
 timer as follows:
