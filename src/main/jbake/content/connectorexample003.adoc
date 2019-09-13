@@ -57,7 +57,7 @@ a traffic update looks like this:
  ]}
 ----
 
-The `traffic-rar` module implements Jakarta Connectors the inbound contract.
+The `traffic-rar` module implements the inbound contract of the Jakarta Connectors specification.
 This module subscribes to the traffic
 information system using the TCP port indicated by the configuration
 provided by the MDB and invokes the methods of the MDB to process
@@ -90,7 +90,7 @@ adapter.
 adapter.
 
 The business interface defined by the resource adapter is not specified
-in the Jakarta Connectors spec; it is specific to the EIS.
+in the Jakarta Connectors specification; it is specific to the EIS.
 
 The MDB in this example is defined as follows:
 
