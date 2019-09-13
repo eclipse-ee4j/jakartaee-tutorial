@@ -10,7 +10,7 @@ prev=jms-concepts002.html
 [[BNCEH]][[the-jms-api-programming-model]]
 
 Jakarta Messaging Programming Model
------------------------------
+-----------------------------------
 
 The basic building blocks of a Jakarta Messaging application are
 
@@ -50,7 +50,7 @@ of the Jakarta EE API documentation.
 [[BNCEJ]][[jms-administered-objects]]
 
 Jakarta Messaging Administered Objects
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Two parts of a Jakarta Messaging application, destinations and connection factories,
 are commonly maintained administratively rather than programmatically.
@@ -86,7 +86,7 @@ override those specified by annotations.
 [[BNCEK]][[jms-connection-factories]]
 
 Jakarta Messaging Connection Factories
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A connection factory is the object a client uses to create a connection
 to a provider. A connection factory encapsulates a set of connection
@@ -114,7 +114,7 @@ private static ConnectionFactory connectionFactory;
 [[BNCEL]][[jms-destinations]]
 
 Jakarta Messaging Destinations
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A destination is the object a client uses to specify the target of
 messages it produces and the source of messages it consumes. In the PTP
@@ -282,7 +282,7 @@ its work.
 [[BNCEO]][[jms-message-producers]]
 
 Jakarta Messaging Message Producers
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A message producer is an object that is created by a `JMSContext` or a
 session and used for sending messages to a destination. A message
@@ -314,7 +314,7 @@ Messages] for more information.
 [[BNCEP]][[jms-message-consumers]]
 
 Jakarta Messaging Message Consumers
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A message consumer is an object that is created by a `JMSContext` or a
 session and used for receiving messages sent to a destination. A message
@@ -377,7 +377,7 @@ link:#BABJCIGJ[Creating Shared Subscriptions].
 [[BNCEQ]][[jms-message-listeners]]
 
 Jakarta Messaging Message Listeners
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A message listener is an object that acts as an asynchronous event
 handler for messages. This object implements the `MessageListener`
@@ -420,7 +420,7 @@ and message-driven beans.
 [[BNCER]][[jms-message-selectors]]
 
 Jakarta Messaging Message Selectors
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your messaging application needs to filter the messages it receives,
 you can use a Jakarta Messaging message selector, which allows a message consumer for
@@ -691,7 +691,7 @@ link:#BNCGD[Creating Durable Subscriptions].
 [[BNCES]][[jms-messages]]
 
 Jakarta Messaging Messages
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ultimate purpose of a Jakarta Messaging application is to produce and consume
 messages that can then be used by other software applications. Jakarta Messaging
@@ -918,7 +918,7 @@ and `Message`.
 [[BNCEY]][[jms-queue-browsers]]
 
 Jakarta Messaging Queue Browsers
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Messages sent to a queue remain in the queue until the message consumer
 for that queue consumes them. Jakarta Messaging provides a `QueueBrowser`
@@ -948,7 +948,7 @@ examining them.
 [[BNCEZ]][[jms-exception-handling]]
 
 Jakarta Messaging Exception Handling
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The root class for all checked exceptions in Jakarta Messaging is
 `JMSException`. The root cause for all unchecked exceptions in the Jakarta Messaging

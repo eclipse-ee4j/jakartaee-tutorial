@@ -5,12 +5,12 @@ next=jms-concepts005.html
 prev=jms-concepts003.html
 ~~~~~~
 Using Advanced Jakarta Messaging Features
-===========================
+=========================================
 
 [[BNCFU]][[using-advanced-jms-features]]
 
 Using Advanced Jakarta Messaging Features
----------------------------
+-----------------------------------------
 
 This section explains how to use features of Jakarta Messaging to achieve the
 level of reliability and performance your application requires. Many
@@ -361,7 +361,7 @@ Join Messages from Two MDBs].
 [[BNCGH]][[using-jms-local-transactions]]
 
 Using Jakarta Messaging Local Transactions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A transaction groups a series of operations into an atomic unit of work.
 If any one of the operations fails, the transaction can be rolled back,

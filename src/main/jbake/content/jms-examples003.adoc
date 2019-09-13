@@ -10,7 +10,7 @@ prev=jms-examples002.html
 [[BNCFA]][[writing-simple-jms-applications]]
 
 Writing Simple Jakarta Messaging Applications
--------------------------------
+---------------------------------------------
 
 This section shows how to create, package, and run simple Messaging clients
 that are packaged as application clients.
@@ -32,7 +32,7 @@ Delivery]
 [[CHDCEFGA]][[overview-of-writing-simple-jms-application]]
 
 Overview of Writing Simple Jakarta Messaging Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The clients demonstrate the basic tasks a Jakarta Messaging application must perform:
 
@@ -66,7 +66,7 @@ create administered objects.
 [[BNCFD]][[starting-the-jms-provider]]
 
 Starting the Jakarta Messaging Provider
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you use GlassFish Server, your Messaging provider is GlassFish Server.
 Start the server as described in
@@ -75,7 +75,7 @@ link:usingexamples002.html#BNADI[Starting and Stopping GlassFish Server].
 [[GKTJS]][[creating-jms-administered-objects]]
 
 Creating Jakarta Messaging Administered Objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example uses the following Jakarta Messaging administered objects:
 
