@@ -19,11 +19,11 @@ successfully processed, and the transaction can be spread among
 different threads, CPU cores, physical machines, and networks.
 
 Ensuring that a rollback operation will successfully execute in such a
-scenario is crucial. Concurrency Utilities relies on the Java
-Transaction API (JTA) to implement and support transactions on its
+scenario is crucial. Concurrency Utilities relies on Jakarta
+Transactions to implement and support transactions on its
 components through `javax.transaction.UserTransaction`, allowing
 application developers to explicitly manage transaction boundaries. More
-information is available in the JTA specification.
+information is available in the Jakarta Transactions specification.
 
 Optionally, context objects can begin, commit, or roll back
 transactions, but these objects cannot enlist in parent component
