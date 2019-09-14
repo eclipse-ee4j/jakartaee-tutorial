@@ -27,8 +27,8 @@ tier is discussed in link:security-jakartaee.html#BNBYK[Chapter 52, "Getting
 Started Securing Enterprise Applications"].
 
 In the Jakarta EE platform, web components provide the dynamic extension
-capabilities for a web server. Web components can be Java servlets or
-JavaServer Faces pages.
+capabilities for a web server. Web components can be Jakarta servlets or
+Jakarta Server Faces pages.
 
 Certain aspects of web application security can be configured when the
 application is installed, or deployed, to the web container. Annotations
@@ -44,7 +44,7 @@ following ways.
 
 * Declarative security can be implemented using either metadata
 annotations or an application's deployment descriptor. See
-link:security-intro001.html#BNBWK[Overview of Jakarta EE Security] for more
+link:security-intro001.html#BNBWK[Overview of Jakarta Security] for more
 information.
 +
 Declarative security for web applications is described in
@@ -55,7 +55,7 @@ sufficient to express the security model of an application. Declarative
 security alone may not be sufficient when conditional login in a
 particular work flow, instead of for all cases, is required in the
 middle of an application. See link:security-intro001.html#BNBWK[Overview
-of Jakarta EE Security] for more information.
+of Jakarta Security] for more information.
 +
 Servlet 4.0 provides the `authenticate`, `login`, and `logout` methods
 of the `HttpServletRequest` interface. With the addition of the
@@ -79,7 +79,7 @@ are familiar with the information in the following chapters:
 
 * link:webapp.html#BNADR[Chapter 6, "Getting Started with Web
 Applications"]
-* link:jsf-intro.html#BNAPH[Chapter 7, "JavaServer Faces Technology"]
-* link:servlets.html#BNAFD[Chapter 18, "Java Servlet Technology"]
+* link:jsf-intro.html#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]
+* link:servlets.html#BNAFD[Chapter 18, "Jakarta Servlet Technology"]
 * link:security-intro.html#BNBWJ[Chapter 50, "Introduction to Security in
 the Jakarta EE Platform"]

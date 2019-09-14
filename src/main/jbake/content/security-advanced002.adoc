@@ -49,7 +49,7 @@ deployment descriptor:
     <auth-method>CLIENT-CERT</auth-method>
 </login-config>
 ----
-The Jakarta EE Security API provides an alternative means to configure client authentication
+Jakarta Security provides an alternative means to configure client authentication
 using the `HttpAuthenticationMechanism` interface. This
 interface defines an SPI for writing
 authentication mechanisms that can be provided with an application and

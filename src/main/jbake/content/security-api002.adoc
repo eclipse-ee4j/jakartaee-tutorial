@@ -38,21 +38,20 @@ During bean discovery, the servlet container looks for a bean that implements
 `HttpAuthenticationMechanism` -- there should be only one per application -- and,
 if found, arranges for it to be deployed to authenticate the application's callers.
 
-The servlet container leverages JASPIC, the Java Authentication Service
-Provider Interface for Containers, to deploy authentication mechanisms.
-The container provides a JASPIC Server Auth Module (SAM) that can delegate to an
+The servlet container leverages Jakarta Authentication  to deploy authentication mechanisms.
+The container provides a Jakarta Authentication Server Auth Module (SAM) that can delegate to an
 `HttpAuthenticationMechanism`, and arranges for that "bridge" SAM to be registered
-with the JASPIC `AuthConfigFactory`. At runtime, normal JASPIC processing invokes
+with the Jakarta Authentication `AuthConfigFactory`. At runtime, normal Jakarta Authentication processing invokes
 the bridge SAM, which then delegates to the `HttpAuthenticationMechanism` to
 perform the authentication and drive any necessary dialog with the caller, or with
 third parties involved in the authentication protocol flow.
 
 The HttpAuthenticationMechanism interface defines the following three methods,
-which correspond to the three methods defined by the JASPIC ServerAuth interface.
-When one of the JASPIC methods is invoked on the bridge SAM, it delegates to the
+which correspond to the three methods defined by the Jakarta Authentication ServerAuth interface.
+When one of the Jakarta Authentication methods is invoked on the bridge SAM, it delegates to the
 corresponding method of the `HttpAuthenticationMechanism`. Although the method names
 are identical, the method signatures are not; the bridge SAM maps back and forth
-between the parameters passed to it by the JASPIC framework, and the parameters
+between the parameters passed to it by the Jakarta Authentication framework, and the parameters
 expected by an `HttpAuthenticationMechanism`.
 
 * `validateRequest()` -- validate an incoming request and authenticates the caller.
@@ -66,7 +65,7 @@ often be sufficient.
 
 The following annotations can be used to add additional behaviors to an `HttpAuthenticationMechanism`:
 
-* `AutoApplySession` -- indicates that the JASPIC `registerSession` functionality
+* `AutoApplySession` -- indicates that the Jakarta Authentication `registerSession` functionality
 should be enabled such that the the caller's authenticated identity is
 persisted in the caller's servlet session.
 * `LoginToContinue` -- mechanism to specify properties for FORM login --

@@ -65,7 +65,7 @@ certificates, and policy files; generating and verifying JAR signatures;
 and obtaining, listing, and managing Kerberos tickets.
 
 For more information on Java SE security, visit
-`http://docs.oracle.com/javase/7/docs/technotes/guides/security/`.
+`http://docs.oracle.com/javase/8/docs/technotes/guides/security/`.
 
 [[BNBXA]][[jakarta-ee-security-mechanisms]]
 
@@ -92,7 +92,7 @@ application firewalls can be used to enhance application protection by
 protecting the communication stream and all associated application
 resources from attacks.
 
-Jakarta EE security is easy to implement and configure and can offer
+Jakarta Security is easy to implement and configure and can offer
 fine-grained access control to application functions and data. However,
 as is inherent to security applied at the application layer, security
 properties are not transferable to applications running in other

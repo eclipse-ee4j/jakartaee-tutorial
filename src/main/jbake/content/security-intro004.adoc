@@ -32,7 +32,7 @@ configured, and used in access decisions.
 * Using pluggable audit modules.
 * Customizing authentication mechanisms. All implementations of Jakarta EE
 8 compatible web containers are required to support the Servlet Profile
-of JSR 196, which offers an avenue for customizing the authentication
+of Jakarta Authentication, which offers an avenue for customizing the authentication
 mechanism applied by the web container on behalf of one or more
 applications.
 * Setting and changing policy permissions for an application.

@@ -11,10 +11,10 @@ prev=security-jakartaee001.html
 Securing Enterprise Beans
 -------------------------
 
-Enterprise beans are Jakarta EE components that implement EJB technology.
-Enterprise beans run in the EJB container, a runtime environment within
+Enterprise beans are Jakarta EE components that implement enterprise bean technology.
+Enterprise beans run in the enterprise bean container, a runtime environment within
 GlassFish Server. Although transparent to the application developer, the
-EJB container provides system-level services, such as transactions and
+enterprise bean container provides system-level services, such as transactions and
 security to its enterprise beans, which form the core of transactional
 Jakarta EE applications.
 
@@ -90,7 +90,7 @@ Enterprise Beans"], and link:security-intro.html#BNBWJ[Chapter 50,
 "Introduction to Security in the Jakarta EE Platform"].
 
 This section discusses securing a Jakarta EE application where one or more
-modules, such as EJB JAR files, are packaged into an EAR file, the
+modules, such as enterprise bean JAR files, are packaged into an EAR file, the
 archive file that holds the application. Security annotations will be
 used in the Java programming class files to specify authorized users and
 basic, or user name/password, authentication.
@@ -103,7 +103,7 @@ Java class files or within a JAR file that is bundled within the WAR
 module. When a servlet or JavaServer Faces page handles the web front
 end and the application is packaged into a WAR module as a Java class
 file, security for the application can be handled in the application's
-`web.xml` file. The EJB in the WAR file can have its own deployment
+`web.xml` file. The enterprise bean in the WAR file can have its own deployment
 descriptor, `ejb-jar.xml`, if required. Securing web applications using
 `web.xml` is discussed in link:security-webtier.html#BNCAS[Chapter 51,
 "Getting Started Securing Web Applications"].
@@ -113,9 +113,9 @@ mechanisms that can be used to protect enterprise bean resources. The
 protected resources include enterprise bean methods that are called from
 application clients, web components, or other enterprise beans.
 
-For more information on this topic, read the Enterprise JavaBeans 3.2
+For more information on this topic, read the Jakarta Enterprise Beans 3.2
 specification. This document can be downloaded from
-`http://jcp.org/en/jsr/detail?id=345`. Chapter 12 of this specification,
+`https://jakarta.ee/specifications/enterprise-beans/3.2/`. Chapter 12 of this specification,
 "Security Management," discusses security management for enterprise
 beans.
 
@@ -132,7 +132,7 @@ application is not the same person who is responsible for deploying the
 application. An application developer who uses declarative security to
 define method permissions and authentication mechanisms is passing along
 to the deployer a security view of the enterprise beans contained in the
-EJB JAR. When a security view is passed on to the deployer, he or she
+enterprise bean JAR. When a security view is passed on to the deployer, he or she
 uses this information to define method permissions for security roles.
 If you don't define a security view, the deployer will have to determine
 what each business method does to determine which users are authorized
@@ -151,7 +151,7 @@ authentication will be used to verify the identity of the user.
 It is important to keep in mind that security roles are used to define
 the logical security view of an application. They should not be confused
 with the user groups, users, principals, and other concepts that exist
-in GlassFish Server. Note that the Jakarta EE Security API requires that group
+in GlassFish Server. Note that the Jakarta Security requires that group
 principal names be mapped to roles of the same name by default, but that implementations
 of the standard may allow configuration of a different default. In GlassFish Server,
 you do not need to perform any additional steps to map the roles
@@ -172,8 +172,8 @@ Specifying Authorized Users by Declaring Security Roles
 
 This section discusses how to use annotations to specify the method
 permissions for the methods of a bean class. For more information on
-these annotations, refer to the Common Annotations for the Java Platform
-specification at `http://jcp.org/en/jsr/detail?id=250`.
+these annotations, refer to Jakarta Annotations
+specification at `https://jakarta.ee/specifications/annotations/1.3/`.
 
 Method permissions can be specified on the class, the business methods
 of the class, or both. Method permissions can be specified on a method
@@ -519,7 +519,7 @@ image:img/jakartaeett_dt_047.png[
 container to target container"]
 
 In this illustration, an application client is making a call to an
-enterprise bean method in one EJB container. This enterprise bean
+enterprise bean method in one enterprise bean container. This enterprise bean
 method, in turn, makes a call to an enterprise bean method in another
 container. The security identity during the first call is the identity
 of the caller. The security identity during the second call can be any

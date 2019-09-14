@@ -218,7 +218,7 @@ information obtained using these APIs.
 Testing Access to a Resource Programmatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `SecurityContext` interface, as specified in the Jakarta EE Security API
+The `SecurityContext` interface, as specified in the Jakarta Security API
 specification, defines the following method for programmatically testing
 access to a resource:
 
@@ -227,8 +227,8 @@ the specified web resource for the specified HTTP methods, as determined by
 the security constraints configured for the application.
 +
 The resource
-parameter is an `URLPatternSpec`, as defined by the Java Authorization Contract
-for Containers 1.5 specification (`http://jcp.org/en/jsr/detail?id=115`), that
+parameter is an `URLPatternSpec`, as defined by Jakarta Authorization
+(`https://jakarta.ee/specifications/authorization/1.5/`), that
 identifies an application-specific web resource.
 +
 This method can be used to check access to resources in the current application

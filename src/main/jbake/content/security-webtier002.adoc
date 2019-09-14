@@ -287,9 +287,9 @@ a|
 *Note*:
 
 An alternative way to perform user authentication, including BASIC
-and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by the
-Jakarta EE Security API, and documented in
-link:security-api.html#using-the-jakarta-ee-security-api[Chapter 53, "Using the Jakarta EE Security API"].
+and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by 
+Jakarta Security, and documented in
+link:security-api.html#using-the-jakarta-ee-security-api[Chapter 53, "Using Jakarta Security"].
 |=======================================================================
 
 
@@ -407,7 +407,7 @@ image:img/jakartaeett_dt_046.png[
 server"]
 
 The section link:security-webtier004.html#BNCBY[The hello1-formauth
-Example: Form-Based Authentication with a JavaServer Faces Application]
+Example: Form-Based Authentication with a Jakarta Server Faces Application]
 is an example application that uses form-based authentication.
 
 When you create a form-based login, be sure to maintain sessions using

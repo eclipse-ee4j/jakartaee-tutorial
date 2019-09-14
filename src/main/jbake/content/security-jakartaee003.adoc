@@ -268,7 +268,7 @@ The converter-secure Example: Securing an Enterprise Bean with Programmatic Secu
 
 This example demonstrates how to use the `getCallerPrincipal` and
 `isCallerInRole` methods with an enterprise bean. This example starts
-with a very simple EJB application, `converter`, and modifies the
+with a very simple enterprise bean application, `converter`, and modifies the
 methods of the `ConverterBean` so that currency conversion will occur
 only when the requester is in the role of `TutorialUser`.
 

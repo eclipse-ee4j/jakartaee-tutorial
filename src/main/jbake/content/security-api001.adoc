@@ -1,24 +1,24 @@
 type=page
 status=published
-title=About the Jakarta EE Security API
+title=About the Jakarta Security
 next=security-api002.html
 prev=security-api.html
 ~~~~~~
-= About the Jakarta EE Security API
+= About the Jakarta Security
 
 [[about-the-jakarta-ee-security-api]]
-About the Jakarta EE Security API
----------------------------------
+About the Jakarta Security
+--------------------------
 
-Jakarta EE includes support for JSR 375, which defines portable, plug-in interfaces
+Jakarta EE includes support for Jakarta Security, which defines portable, plug-in interfaces
 for authentication and identity stores, and a new injectable-type SecurityContext
 interface that provides an access point for programmatic security. You can use
 the built-in implementations of these APIs, or define custom
 implementations.
 
-The Jakarta EE Security API contains the following packages:
+Jakarta Security contains the following packages:
 
-* The `javax.security.enterprise` package is the main Jakarta EE security API package
+* The `javax.security.enterprise` package is the main Jakarta Security package
 and contains classes and interfaces that span authentication, authorization, and
 identity concerns. link:#main-classes-and-interfaces-in-enterprise[Table 51-1] lists
 the main class and interfaces in this package.
