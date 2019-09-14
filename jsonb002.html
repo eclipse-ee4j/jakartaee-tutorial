@@ -54,9 +54,9 @@
 <h2 id="overview-of-the-json-binding-api">Overview of the JSON Binding API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section provides basic instructions for using the JSON-B client API. The instructions provide a
+<p>This section provides basic instructions for using the Jakarta JSON Binding client API. The instructions provide a
 basis for understanding the <a href="jsonb003.html">jsonbbasics Example Application</a>.
-Refer to the <a href="http://json-b.net/index.html">JSON-B</a> project page for API documentation and a more detailed
+Refer to the <a href="http://json-b.net/index.html">Jakarta JSON Binding</a> project page for API documentation and a more detailed
 User Guide.</p>
 </div>
 <div class="paragraph">
@@ -95,7 +95,7 @@ to the JSON Binding API. For example:</p>
 <div class="sect2">
 <h3 id="using-the-default-mapping">Using the Default Mapping</h3>
 <div class="paragraph">
-<p>JSON-B provides default mappings for serializing and deserializing basic Java and Java SE types as well
+<p>Jakarta JSON Binding provides default mappings for serializing and deserializing basic Java and Java SE types as well
 Java date and time classes. To use the default mappings and mapping behavior, create a josnb instance
 and use the <code>toJson</code> method to serialize to JSON and the <code>fromJson</code> method to deserialize back to an
 object. The following example binds a simple <code>Person</code> object that contains a single <code>name</code> field.</p>
@@ -120,7 +120,7 @@ person = jsonb.fromJson("{name:\"joe"\"}", Person.class);</code></pre>
 <div class="sect2">
 <h3 id="using-customizations">Using Customizations</h3>
 <div class="paragraph">
-<p>JSON-B supports many ways to customize the default mapping behavior. For runtime
+<p>Jakarta JSON Binding supports many ways to customize the default mapping behavior. For runtime
 customizations, a <code>JsonbConfig</code> configuration object is used when creating the <code>jsonbinstance</code>. The <code>JsonbConfig</code>
 class supports many configuration options and also includes advanced options for binding custom types. For
 advanced options, see the <code>JsonbAdapter</code> interface and the <code>JsonbSerializer</code> and <code>JsonbDeserializer</code> interfaces.</p>
@@ -141,7 +141,7 @@ Jsonb jsonb = JsonbBuilder.create(config);</code></pre>
 <div class="sect2">
 <h3 id="using-annotations">Using Annotations</h3>
 <div class="paragraph">
-<p>JSON-B includes many annotations that can be used at compile time to customize the default mapping behavior.
+<p>Jakarta JSON Binding includes many annotations that can be used at compile time to customize the default mapping behavior.
 The following example uses the <code>@JsonbProperty</code> annotation to change the <code>name</code> field to <code>person-name</code> when
 the object is serialized to JSON.</p>
 </div>
