@@ -1,31 +1,31 @@
 type=page
 status=published
-title=Basic Requirements of a Jakarta Faces Application
+title=Basic Requirements of a Jakarta Server Faces Application
 next=jsf-ws.html
 prev=jsf-configure012.html
 ~~~~~~
-= Basic Requirements of a Jakarta Faces Application
+= Basic Requirements of a Jakarta Server Faces Application
 
 
 [[BNAXJ]][[basic-requirements-of-a-javaserver-faces-application]]
 
-Basic Requirements of a Jakarta Faces Application
-----------------------------------------------------
+Basic Requirements of a Jakarta Server Faces Application
+--------------------------------------------------------
 
 In addition to configuring your application, you must satisfy other
-requirements of Jakarta Faces applications, including properly
+requirements of Jakarta Server Faces applications, including properly
 packaging all the necessary files and providing a deployment descriptor.
 This section describes how to perform these administrative tasks.
 
-Jakarta Faces applications can be packaged in a WAR file, which must
+Jakarta Server Faces applications can be packaged in a WAR file, which must
 conform to specific requirements to execute across different containers.
-At a minimum, a WAR file for a Jakarta Faces application may contain
+At a minimum, a WAR file for a Jakarta Server Faces application may contain
 the following:
 
 * A web application deployment descriptor, called `web.xml`, to
 configure resources required by a web application (required)
 * A specific set of JAR files containing essential classes (optional)
-* A set of application classes, Jakarta Faces pages, and other
+* A set of application classes, Jakarta Server Faces pages, and other
 required resources, such as image files
 
 A WAR file may also contain:
@@ -64,10 +64,10 @@ Configuring an Application with a Web Deployment Descriptor
 
 Web applications are commonly configured using elements contained in the
 web application deployment descriptor, `web.xml`. The deployment
-descriptor for a Jakarta Faces application must specify certain
+descriptor for a Jakarta Server Faces application must specify certain
 configurations, including the following:
 
-* The servlet used to process Jakarta Faces requests
+* The servlet used to process Jakarta Server Faces requests
 * The servlet mapping for the processing servlet
 * The path to the configuration resource file, if it exists and is not
 located in a default location
@@ -78,7 +78,7 @@ configurations, such as those that
 * Specify where component state is saved
 * Encrypt state saved on the client
 * Compress state saved on the client
-* Restrict access to pages containing Jakarta Faces tags
+* Restrict access to pages containing Jakarta Server Faces tags
 * Turn on XML validation
 * Specify the Project Stage
 * Verify custom objects
@@ -92,17 +92,17 @@ using NetBeans IDE.
 Identifying the Servlet for Lifecycle Processing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A requirement of a Jakarta Faces application is that all requests to
-the application that reference previously saved Jakarta Faces
+A requirement of a Jakarta Server Faces application is that all requests to
+the application that reference previously saved Jakarta Server Faces
 components must go through `javax.faces.webapp.FacesServlet`. A
 `FacesServlet` instance manages the request-processing lifecycle for web
-applications and initializes the resources required by Jakarta Faces
+applications and initializes the resources required by Jakarta Server Faces
 technology.
 
-Before a Jakarta Faces application can launch its first web page, the
+Before a Jakarta Server Faces application can launch its first web page, the
 web container must invoke the `FacesServlet` instance in order for the
 application lifecycle process to start. See
-link:jsf-intro007.html#BNAQQ[The Lifecycle of a Jakarta Faces
+link:jsf-intro007.html#BNAQQ[The Lifecycle of a Jakarta Server Faces
 Application] for more information.
 
 The following example shows the default configuration of the
@@ -232,7 +232,7 @@ at the top of the editor window.
 3.  Click OK.
 
 If state is saved on the client, the state of the entire view is
-rendered to a hidden field on the page. The Jakarta Faces
+rendered to a hidden field on the page. The Jakarta Server Faces
 implementation saves the state on the server by default. Duke's Forest
 saves its state on the client.
 
@@ -242,7 +242,7 @@ Configuring Project Stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Project Stage is a context parameter identifying the status of a
-Jakarta Faces application in the software lifecycle. The stage of an
+Jakarta Server Faces application in the software lifecycle. The stage of an
 application can affect the behavior of the application. For example,
 error messages can be displayed during the Development stage but
 suppressed during the Production stage.

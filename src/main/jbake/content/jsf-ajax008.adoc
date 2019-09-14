@@ -12,8 +12,8 @@ Ajax Request Lifecycle
 Ajax Request Lifecycle
 ----------------------
 
-An Ajax request varies from other typical Jakarta Faces requests, and
-its processing is also handled differently by the Jakarta Faces
+An Ajax request varies from other typical Jakarta Server Faces requests, and
+its processing is also handled differently by the Jakarta Server Faces
 lifecycle.
 
 As described in link:jsf-intro008.html#GKNOJ[Partial Processing and
@@ -27,14 +27,14 @@ tree processing and rendering.
 
 The `execute` attribute of the `f:ajax` tag identifies which segments of
 the server-side component tree should be processed. Because components
-can be uniquely identified in the Jakarta Faces component tree, it is
+can be uniquely identified in the Jakarta Server Faces component tree, it is
 easy to identify and process a single component, a few components, or a
 whole tree. This is made possible by the `visitTree` method of the
 `UIComponent` class. The identified components then run through the
-Jakarta Faces request lifecycle phases.
+Jakarta Server Faces request lifecycle phases.
 
 Similar to the `execute` attribute, the `render` attribute identifies
-which segments of the Jakarta Faces component tree need to be
+which segments of the Jakarta Server Faces component tree need to be
 rendered during the render response phase.
 
 During the render response phase, the `render` attribute is examined.

@@ -13,7 +13,7 @@ HTML5-Friendly Markup
 ---------------------
 
 When you want to produce user interface features for which HTML does not
-have its own elements, you can create a custom Jakarta Faces
+have its own elements, you can create a custom Jakarta Server Faces
 component and insert it in your Facelets page. This mechanism can cause
 a simple element to create complex web code. However, creating such a
 component is a significant task (see link:jsf-custom.html#BNAVG[Chapter
@@ -21,10 +21,10 @@ component is a significant task (see link:jsf-custom.html#BNAVG[Chapter
 
 HTML5 offers new elements and attributes that can make it unnecessary to
 write your own components. It also provides many new capabilities for
-existing components. Jakarta Faces technology supports HTML5 not by
+existing components. Jakarta Server Faces technology supports HTML5 not by
 introducing new UI components that imitate HTML5 ones but by allowing
 you to use HTML5 markup directly. It also allows you to use Jakarta Server
-Faces attributes within HTML5 elements. Jakarta Faces technology
+Faces attributes within HTML5 elements. Jakarta Server Faces technology
 support for HTML5 falls into two categories:
 
 * Pass-through elements
@@ -33,7 +33,7 @@ support for HTML5 falls into two categories:
 The effect of the HTML5-friendly markup feature is to offer the Facelets
 page author almost complete control over the rendered page output,
 rather than having to pass this control off to component authors. You
-can mix and match Jakarta Faces and HTML5 components and elements as
+can mix and match Jakarta Server Faces and HTML5 components and elements as
 you see fit.
 
 [[sthref33]][[using-pass-through-elements]]
@@ -42,10 +42,10 @@ Using Pass-Through Elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pass-through elements allow you to use HTML5 tags and attributes but to
-treat them as equivalent to Jakarta Faces components associated with
+treat them as equivalent to Jakarta Server Faces components associated with
 a server-side `UIComponent` instance.
 
-To make an element that is not a Jakarta Faces element a pass-through
+To make an element that is not a Jakarta Server Faces element a pass-through
 element, specify at least one of its attributes using the
 `http://xmlns.jcp.org/jsf` namespace. For example, the following code
 declares the namespace with the short name `jsf`:
@@ -121,15 +121,15 @@ Using Pass-Through Attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pass-through attributes are the converse of pass-through elements. They
-allow you to pass attributes that are not Jakarta Faces attributes
+allow you to pass attributes that are not Jakarta Server Faces attributes
 through to the browser without interpretation. If you specify a
-pass-through attribute in a Jakarta Faces `UIComponent`, the
+pass-through attribute in a Jakarta Server Faces `UIComponent`, the
 attribute name and value are passed straight through to the browser
-without being interpreted by Jakarta Faces components or renderers.
+without being interpreted by Jakarta Server Faces components or renderers.
 There are several ways to specify pass-through attributes.
 
-* Use the Jakarta Faces namespace for pass-through attributes to
-prefix the attribute names within a Jakarta Faces component. For
+* Use the Jakarta Server Faces namespace for pass-through attributes to
+prefix the attribute names within a Jakarta Server Faces component. For
 example, the following code declares the namespace with the short name
 `p`, then passes the `type`, `min`, `max`, `required`, and `title`
 attributes through to the HTML5 `input` component:
@@ -296,7 +296,7 @@ field:
 The field for the price specifies the `number` type as a pass-through
 attribute of the `h:inputText` element, offering a range of four ticket
 prices. Here, the `p` prefix on the HTML5 attributes passes them through
-to the browser uninterpreted by the Jakarta Faces input component:
+to the browser uninterpreted by the Jakarta Server Faces input component:
 
 [source,oac_no_warn]
 ----
@@ -313,7 +313,7 @@ to the browser uninterpreted by the Jakarta Faces input component:
 The output of the `calculateTotal` method that is specified as the
 listener for the Ajax event is rendered in the output element whose `id`
 and `name` value is `total`. See link:jsf-ajax.html#GKIOW[Chapter 13,
-"Using Ajax with Jakarta Faces Technology"], for more information.
+"Using Ajax with Jakarta Server Faces Technology"], for more information.
 
 The second Facelets page, `confirmation.xhtml`, uses a pass-through
 `output` element to display the values entered by the user and provides

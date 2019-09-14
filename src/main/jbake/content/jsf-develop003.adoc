@@ -70,7 +70,7 @@ data.
 
 If the user does not purchase more than $100 worth of books or if the
 `thankYou` component has already been rendered, the method returns
-`bookreceipt`. The Jakarta Faces implementation loads the
+`bookreceipt`. The Jakarta Server Faces implementation loads the
 `bookreceipt.xhtml` page after this method returns:
 
 [source,oac_no_warn]

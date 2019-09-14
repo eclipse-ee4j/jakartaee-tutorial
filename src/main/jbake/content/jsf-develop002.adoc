@@ -14,7 +14,7 @@ Writing Bean Properties
 
 
 As explained in link:jsf-develop001.html#BNAQM[Managed Beans in
-Jakarta Faces Technology], a managed bean property can be bound to
+Jakarta Server Faces Technology], a managed bean property can be bound to
 one of the following items:
 
 * A component value
@@ -536,7 +536,7 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 ----
 
 For more general information on component binding, see
-link:jsf-develop001.html#BNAQM[Managed Beans in Jakarta Faces
+link:jsf-develop001.html#BNAQM[Managed Beans in Jakarta Server Faces
 Technology].
 
 For information on how to reference a managed bean method that performs
@@ -554,7 +554,7 @@ Writing Properties Bound to Converters, Listeners, or Validators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All the standard converter, listener, and validator tags included with
-Jakarta Faces technology support binding attributes that allow you to
+Jakarta Server Faces technology support binding attributes that allow you to
 bind converter, listener, or validator implementations to managed bean
 properties.
 

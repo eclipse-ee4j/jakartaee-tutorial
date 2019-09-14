@@ -127,7 +127,7 @@ public static String loadErrorMessage(FacesContext context,
 Referencing Error Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Jakarta Faces page uses the `message` or `messages` tags to access
+A Jakarta Server Faces page uses the `message` or `messages` tags to access
 error messages, as explained in link:jsf-page002.html#BNASO[Displaying
 Error Messages with the h:message and h:messages Tags].
 
@@ -135,7 +135,7 @@ The error messages these tags access include
 
 * The standard error messages that accompany the standard converters and
 validators that ship with the API. (see Section 2.5.2.4 of the
-Jakarta Faces specification for a complete list of standard error
+Jakarta Server Faces specification for a complete list of standard error
 messages)
 * Custom error messages contained in resource bundles registered with
 the application by the application architect using the `resource-bundle`

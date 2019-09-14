@@ -14,11 +14,11 @@ Monitoring Events on the Client
 
 To monitor ongoing Ajax requests, use the `onevent` attribute of the
 `f:ajax` tag. The value of this attribute is the name of a JavaScript
-function. Jakarta Faces calls the `onevent` function at each stage of
+function. Jakarta Server Faces calls the `onevent` function at each stage of
 the processing of an Ajax request: begin, complete, and success.
 
 When calling the JavaScript function assigned to the `onevent` property,
-Jakarta Faces passes a data object to it. The data object contains
+Jakarta Server Faces passes a data object to it. The data object contains
 the properties listed in link:#GKGOE[Table 13-3].
 
 [[sthref71]][[GKGOE]]
