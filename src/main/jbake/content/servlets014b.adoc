@@ -38,6 +38,6 @@ The supplier of the trailer headers can be obtained by accessing the
 `getTrailerFields()` method of the `HttpServletResponse` interface.
 
 
-See the https://javaee.github.io/javaee-spec/[javadoc] for `getTrailerFields()`
+See the https://jakarta.ee/specifications/platform/8/apidocs/[javadoc] for `getTrailerFields()`
 and `isTrailerFieldsReady()` in `HttpServletRequest`, and `getTrailerFields()`
 and `setTrailerFields()` in `HttpServletResponse`.
