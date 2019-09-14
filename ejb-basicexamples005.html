@@ -430,7 +430,7 @@ Timer timer = timerService.createCalendarTimer(schedule);</code></pre>
 <div class="paragraph">
 <p>For details on the method signatures, see the <code>TimerService</code> API
 documentation at
-<code><a href="http://docs.oracle.com/javaee/7/api/javax/ejb/TimerService.html" class="bare">http://docs.oracle.com/javaee/7/api/javax/ejb/TimerService.html</a></code>.</p>
+<code><a href="https://jakarta.ee/specifications/platform/8/apidocs/javax/ejb/TimerService.html" class="bare">https://jakarta.ee/specifications/platform/8/apidocs/javax/ejb/TimerService.html</a></code>.</p>
 </div>
 <div class="paragraph">
 <p>The bean described in <a href="#BNBPE">The timersession Example</a> creates a
@@ -474,7 +474,7 @@ hours, days, or longer durations.</p>
 <div class="sect2">
 <h3 id="_automatic_timers">Automatic Timers</h3>
 <div class="paragraph">
-<p>Automatic timers are created by the EJB container when an enterprise
+<p>Automatic timers are created by the Enterprise Bean container when an enterprise
 bean that contains methods annotated with the <code>@Schedule</code> or
 <code>@Schedules</code> annotations is deployed. An enterprise bean can have
 multiple automatic timeout methods, unlike a programmatic timer, which
@@ -504,7 +504,7 @@ crash. By default, all automatic timers are persistent.</p>
 <p>The optional <code>timezone</code> element is used to specify that the automatic
 timer is associated with a particular time zone. If set, this element
 will evaluate all timer expressions in relation to the specified time
-zone, regardless of the time zone in which the EJB container is running.
+zone, regardless of the time zone in which the Enterprise Bean container is running.
 By default, all automatic timers set are in relation to the default time
 zone of the server.</p>
 </div>
@@ -554,7 +554,7 @@ public void doPeriodicCleanup() { ... }</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>When a single-event timer expires, the EJB container calls the
+<p>When a single-event timer expires, the Enterprise Bean container calls the
 associated timeout method and then cancels the timer.</p>
 </li>
 <li>
@@ -623,7 +623,7 @@ timer&#8217;s duration is reset as if the cancellation had never occurred.</p>
 <div class="paragraph">
 <p>In beans that use container-managed transactions, the <code>@Timeout</code> method
 usually has the <code>Required</code> or <code>RequiresNew</code> transaction attribute to
-preserve transaction integrity. With these attributes, the EJB container
+preserve transaction integrity. With these attributes, the Enterprise Bean container
 begins the new transaction before calling the <code>@Timeout</code> method. If the
 transaction is rolled back, the container will call the <code>@Timeout</code>
 method at least one more time.</p>
@@ -649,7 +649,7 @@ local, no-interface view of <code>TimerSessionBean</code> and can be invoked by 
 client. In this example, the client invokes <code>setTimer</code> with an interval
 duration of 8,000 milliseconds, or 8 seconds. The <code>setTimer</code> method
 creates a new timer by invoking the <code>createTimer</code> method of
-<code>TimerService</code>. Now that the timer is set, the EJB container will invoke
+<code>TimerService</code>. Now that the timer is set, the Enterprise Bean container will invoke
 the <code>programmaticTimeout</code> method of <code>TimerSessionBean</code> when the timer
 expires, in about 8 seconds:</p>
 </div>

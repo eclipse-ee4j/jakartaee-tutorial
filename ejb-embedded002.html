@@ -132,7 +132,7 @@ com.example.ejb.client.Main</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In the above example, <code>mySessionBean.jar</code> is an EJB JAR containing a
+<p>In the above example, <code>mySessionBean.jar</code> is an enterprise bean JAR containing a
 local stateless session bean, <code>containerProviderRuntime.jar</code> is a JAR
 file supplied by the enterprise bean provider that contains the needed
 runtime classes for the embedded container, and <code>myClient.jar</code> is a JAR
@@ -224,8 +224,8 @@ EJBContainer ec = EJBContainer.createEJBContainer(props);</code></pre>
 <div class="paragraph">
 <p>To specify enterprise bean modules outside the virtual machine
 classpath, set <code>EJBContainer.MODULES</code> to a <code>java.io.File</code> object or an
-array of <code>File</code> objects. Each <code>File</code> object refers to an EJB JAR file,
-or a directory containing an expanded EJB JAR file:</p>
+array of <code>File</code> objects. Each <code>File</code> object refers to an enterprise bean JAR file,
+or a directory containing an expanded enterprise bean JAR file:</p>
 </div>
 <div class="listingblock">
 <div class="content">

@@ -71,7 +71,7 @@ obtained, or an injected resource cannot be found. If it encounters a
 system-level problem, your enterprise bean should throw a
 <code>javax.ejb.EJBException</code>. Because the <code>EJBException</code> is a subclass of
 <code>RuntimeException</code>, you do not have to specify it in the <code>throws</code> clause
-of the method declaration. If a system exception is thrown, the EJB
+of the method declaration. If a system exception is thrown, the Jakarta Enterprise Beans
 container might destroy the bean instance. Therefore, a system exception
 cannot be handled by the bean&#8217;s client program, but instead requires
 intervention by a system administrator.</p>
@@ -86,7 +86,7 @@ another exception. The client should be able to handle any application
 exception it receives.</p>
 </div>
 <div class="paragraph">
-<p>If a system exception occurs within a transaction, the EJB container
+<p>If a system exception occurs within a transaction, the Enterprise Bean container
 rolls back the transaction. However, if an application exception is
 thrown within a transaction, the container does not roll back the
 transaction.</p>

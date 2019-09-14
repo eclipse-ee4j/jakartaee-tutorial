@@ -65,7 +65,7 @@
 based on information received from the client. <code>HelloServiceBean</code> is a
 stateless session bean that implements a single method: <code>sayHello</code>. This
 method matches the <code>sayHello</code> method invoked by the client described in
-<a href="jaxws002.html#BNAYX">A Simple JAX-WS Application Client</a>.</p>
+<a href="jaxws002.html#BNAYX">A Simple Jakarta XML Web Services Application Client</a>.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -116,9 +116,9 @@ annotated with <code>javax.jws.WebMethod</code>.</p>
 </li>
 <li>
 <p>Business methods that are exposed to web service clients must have
-JAXB-compatible parameters and return types. See the list of JAXB
+Jakarta XML Binding-compatible parameters and return types. See the list of Jakarta XML Binding
 default data type bindings at <a href="jaxws003.html#BNAZC">Types Supported by
-JAX-WS</a>.</p>
+Jakarta XML Web Services</a>.</p>
 </li>
 <li>
 <p>The implementing class must not be declared <code>final</code> and must not be
@@ -279,10 +279,10 @@ Server</a>).</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This compiles the source files and packages the application into an EJB
+<p>This compiles the source files and packages the application into an enterprise bean
 JAR file located at
 <code><em>tut-install</em>/examples/ejb/helloservice/target/helloservice.jar</code>. Then
-the EJB JAR file is deployed to GlassFish Server.</p>
+the enterprise bean JAR file is deployed to GlassFish Server.</p>
 </div>
 <div class="paragraph">
 <p>Upon deployment, GlassFish Server generates additional artifacts

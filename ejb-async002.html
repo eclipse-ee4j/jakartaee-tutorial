@@ -69,9 +69,9 @@ contains two modules.</p>
 <ul>
 <li>
 <p>A web application (<code>async-war</code>) that contains a stateless session bean
-and a JavaServer Faces interface. The <code>MailerBean</code> stateless session
+and a Jakarta Faces interface. The <code>MailerBean</code> stateless session
 bean defines an asynchronous method, <code>sendMessage</code>, which uses the
-JavaMail API to send an email to an specified email address.</p>
+Jakarta Mail API to send an email to an specified email address.</p>
 </li>
 <li>
 <p>An auxiliary Java SE program (<code>async-smtpd</code>) that simulates an SMTP
@@ -92,15 +92,15 @@ module.</p>
 <h3 id="_architecture_of_the_async_war_module">Architecture of the async-war Module</h3>
 <div class="paragraph">
 <p>The <code>async-war</code> module consists of a single stateless session bean,
-<code>MailerBean</code>, and a JavaServer Faces web application front end that uses
+<code>MailerBean</code>, and a Jakarta Faces web application front end that uses
 Facelets tags in XHTML files to display a form for users to enter the
 email address for the recipient of an email. The status of the email is
 updated when the email is finally sent.</p>
 </div>
 <div class="paragraph">
-<p>The <code>MailerBean</code> session bean injects a JavaMail resource used to send
+<p>The <code>MailerBean</code> session bean injects a Jakarta Mail resource used to send
 an email message to an address specified by the user. The message is
-created, modified, and sent using the JavaMail API. The session bean
+created, modified, and sent using the Jakarta Mail API. The session bean
 looks like this:</p>
 </div>
 <div class="listingblock">
@@ -122,7 +122,7 @@ public class MailerBean {
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(email, false));
             message.setSubject("Test message from async example");
-            message.setHeader("X-Mailer", "JavaMail");
+            message.setHeader("X-Mailer", "Jakarta Mail");
             DateFormat dateFormatter = DateFormat
                     .getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT);
             Date timeStamp = new Date();
@@ -146,7 +146,7 @@ public class MailerBean {
 </div>
 </div>
 <div class="paragraph">
-<p>The injected JavaMail resource can be configured through the GlassFish
+<p>The injected Jakarta Mail resource can be configured through the GlassFish
 Server Administration Console, through a GlassFish Server administrative
 command, or through a resource configuration file packaged with the
 application. The resource configuration can be modified at runtime by
@@ -224,7 +224,7 @@ output tab shows the following message:</p>
 <p>In the Projects tab, right-click the <code>async-war</code> project and select
 Build.</p>
 <div class="paragraph">
-<p>This command configures the JavaMail resource using a GlassFish Server
+<p>This command configures the Jakarta Mail resource using a GlassFish Server
 administrative command and builds, packages, and deploys the <code>async-war</code>
 module.</p>
 </div>
@@ -241,7 +241,7 @@ module.</p>
 <p>In the web browser window, enter an email address and click Send
 email.</p>
 <div class="paragraph">
-<p>The <code>MailerBean</code> stateless bean uses the JavaMail API to deliver an
+<p>The <code>MailerBean</code> stateless bean uses the Jakarta Mail API to deliver an
 email to the SMTP server simulator. The async-smptd output window in
 NetBeans IDE shows the resulting email message, including its headers.</p>
 </div>
@@ -251,14 +251,14 @@ NetBeans IDE shows the resulting email message, including its headers.</p>
 side of the status bar in NetBeans IDE.</p>
 </li>
 <li>
-<p>Delete the JavaMail session resource.</p>
+<p>Delete the Jakarta Mail session resource.</p>
 </li>
 <li>
 <p>In the Services tab, expand the Servers node, then expand the
 GlassFish Server server node.</p>
 </li>
 <li>
-<p>Expand the Resources node, then expand the JavaMail Sessions node.</p>
+<p>Expand the Resources node, then expand the Jakarta Mail Sessions node.</p>
 </li>
 <li>
 <p>Right-click mail/myExampleSession and select Unregister.</p>
@@ -320,7 +320,7 @@ simulator:</p>
 </div>
 </li>
 <li>
-<p>Enter the following command to configure the JavaMail resource and
+<p>Enter the following command to configure the Jakarta Mail resource and
 to build, package, and deploy the <code>async-war</code> module:</p>
 <div class="listingblock">
 <div class="content">
@@ -340,7 +340,7 @@ to build, package, and deploy the <code>async-war</code> module:</p>
 <p>In the web browser window, enter an email address and click Send
 email.</p>
 <div class="paragraph">
-<p>The <code>MailerBean</code> stateless bean uses the JavaMail API to deliver an
+<p>The <code>MailerBean</code> stateless bean uses the Jakarta Mail API to deliver an
 email to the SMTP server simulator. The resulting email message appears
 on the first terminal window, including its headers.</p>
 </div>
@@ -350,7 +350,7 @@ on the first terminal window, including its headers.</p>
 which you issued the command to start the STMP server simulator.</p>
 </li>
 <li>
-<p>To delete the JavaMail session resource, type the following command:</p>
+<p>To delete the Jakarta Mail session resource, type the following command:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">asadmin delete-javamail-resource mail/myExampleSession</code></pre>

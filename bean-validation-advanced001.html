@@ -61,7 +61,7 @@
 <h2 id="_creating_custom_constraints">Creating Custom Constraints</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Bean Validation defines annotations, interfaces, and classes to allow
+<p>Jakarta Bean Validation defines annotations, interfaces, and classes to allow
 developers to create custom constraints.</p>
 </div>
 <div class="paragraph">
@@ -89,7 +89,7 @@ developers to create custom constraints.</p>
 <div class="sect2">
 <h3 id="_using_the_built_in_constraints_to_make_a_new_constraint">Using the Built-In Constraints to Make a New Constraint</h3>
 <div class="paragraph">
-<p>Bean Validation includes several built-in constraints that can be
+<p>Jakarta Bean Validation includes several built-in constraints that can be
 combined to create new, reusable constraints. This can simplify
 constraint definition by allowing developers to define a custom
 constraint made up of several built-in constraints that may then be
@@ -190,7 +190,7 @@ method.</p>
 <h2 id="_implementing_temporal_constraints_using_clockprovider">Implementing Temporal Constraints Using ClockProvider</h2>
 <div class="sectionbody">
 <div id="implementing-temporal-constraints-using-clockprovider" class="paragraph">
-<p>In Bean Validation 2.0, a Clock instance is available for validator implementations to validate any temporal date or time based constraints.</p>
+<p>In Jakarta Bean Validation 2.0, a Clock instance is available for validator implementations to validate any temporal date or time based constraints.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -287,7 +287,7 @@ In the sample, another constraint <code>@Pattern</code> is used to validate the 
 <p>While validating the object or the object graph, it may be necessary to validate the constraints in the parameterized types of a container as well. To validate the elements of the container, the validator must extract the values of these elements in the container. For example, in order to validate the element values of <code>List</code> against one or more constraints such as <code>List&lt;@NotOnVacation Employee&gt;</code> or to apply cascading validation to <code>List&lt;@Valid Employee&gt;</code>, you need a value extractor for the container <code>List</code>.</p>
 </div>
 <div class="paragraph">
-<p>Bean validation provides in-built value extractors for most commonly used container types such as List, Iterable, and others. However, it is also possible to implement and register value-extractor implementations for custom container types or override the in-built value-extractor implementations.</p>
+<p>Jakarta Bean validation provides in-built value extractors for most commonly used container types such as List, Iterable, and others. However, it is also possible to implement and register value-extractor implementations for custom container types or override the in-built value-extractor implementations.</p>
 </div>
 <div class="paragraph">
 <p>Consider a Statistics Calculator for a group of 'Person' entity and 'Employee' is one of the sub-type of the entity 'Person'.</p>
@@ -380,7 +380,7 @@ In the sample, another constraint <code>@Pattern</code> is used to validate the 
 </div>
 </div>
 <div class="paragraph">
-<p>There are multiple mechanisms to register the <code>ValueExtractor</code> with Bean Validation. See, “Registering ValueExtractor” implementations section in the Bean Validation specification <code><a href="http://www.jcp.org/en/jsr/detail?id=380" class="bare">http://www.jcp.org/en/jsr/detail?id=380</a></code>. One of the mechanisms is to register the value extractor with Bean Validation Context.</p>
+<p>There are multiple mechanisms to register the <code>ValueExtractor</code> with Jakarta Bean Validation. See, “Registering ValueExtractor” implementations section in the Jakarta Bean Validation specification <code><a href="http://www.jcp.org/en/jsr/detail?id=380" class="bare">http://www.jcp.org/en/jsr/detail?id=380</a></code>. One of the mechanisms is to register the value extractor with Jakarta Bean Validation Context.</p>
 </div>
 <div class="listingblock">
 <div class="content">

@@ -356,7 +356,7 @@ public List&lt;String&gt; getContents() {
 <ul>
 <li>
 <p>The method name must not begin with <code>ejb</code>, to avoid conflicts with
-callback methods defined by the EJB architecture. For example, you
+callback methods defined by the Jakarta Enterprise Beans architecture. For example, you
 cannot call a business method <code>ejbCreate</code> or <code>ejbActivate</code>.</p>
 </li>
 <li>
@@ -368,13 +368,13 @@ the arguments and return types must be legal types for the Java Remote
 Method Invocation (RMI) API.</p>
 </li>
 <li>
-<p>If the bean is a JAX-WS web service endpoint, the arguments and return
+<p>If the bean is a Jakarta XML Web Services endpoint, the arguments and return
 types for the methods annotated <code>@WebMethod</code> must be legal types for
-JAX-WS.</p>
+Jakarta XML Web Services.</p>
 </li>
 <li>
-<p>If the bean is a JAX-RS resource, the arguments and return types for
-the resource methods must be legal types for JAX-RS.</p>
+<p>If the bean is a Jakarta RESTful Web Services resource, the arguments and return types for
+the resource methods must be legal types for Jakarta RESTful Web Services.</p>
 </li>
 <li>
 <p>The modifier must not be <code>static</code> or <code>final</code>.</p>

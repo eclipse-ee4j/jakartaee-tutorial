@@ -118,8 +118,8 @@ a traffic update looks like this:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>traffic-rar</code> module implements the inbound contract of the Jakarta EE
-Connector Architecture. This module subscribes to the traffic
+<p>The <code>traffic-rar</code> module implements the inbound contract of the Jakarta Connectors specification.
+This module subscribes to the traffic
 information system using the TCP port indicated by the configuration
 provided by the MDB and invokes the methods of the MDB to process
 traffic information updates.</p>
@@ -134,7 +134,7 @@ Message Service (JMS) topic.</p>
 </div>
 <div class="paragraph">
 <p>The <code>traffic-war</code> module contains a message-driven bean that receives
-filtered traffic information updates from the JMS topic asynchronously
+filtered traffic information updates from the Jakarta Messaging topic asynchronously
 and sends them to the clients using a WebSocket endpoint.</p>
 </div>
 <div class="paragraph">
@@ -162,7 +162,7 @@ adapter.</p>
 </div>
 <div class="paragraph">
 <p>The business interface defined by the resource adapter is not specified
-in the Jakarta EE Connector Architecture; it is specific to the EIS.</p>
+in the Jakarta Connectors specification; it is specific to the EIS.</p>
 </div>
 <div class="paragraph">
 <p>The MDB in this example is defined as follows:</p>
@@ -187,7 +187,7 @@ resource adapter. The resource adapter requires the MDB to provide the
 <p>When the MDB is deployed, it activates the <code>traffic-rar</code> resource
 adapter, which invokes the methods of the MDB to process traffic
 information updates. Then the MDB filters the updates for a particular
-city and publishes the results to a JMS topic.</p>
+city and publishes the results to a Jakarta Messaging topic.</p>
 </div>
 <div class="paragraph">
 <p>In this particular example, the <code>TrafficListener</code> interface is empty. In
@@ -218,8 +218,8 @@ resource adapter module.</p>
 <div class="sect2">
 <h3 id="_implementing_the_inbound_resource_adapter">Implementing the Inbound Resource Adapter</h3>
 <div class="paragraph">
-<p>The <code>traffic-rar</code> module implements the inbound resource adapter
-contract from the Jakarta EE Connector Architecture for the simple traffic
+<p>The <code>traffic-rar</code> module implements the Jakarta Connectors inbound resource adapter
+contract for the simple traffic
 information system (EIS) used in this example. The architecture of the
 inbound resource adapter is shown in <a href="#CHDHADDC">Figure 56-4</a>.</p>
 </div>

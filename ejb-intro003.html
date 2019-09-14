@@ -63,12 +63,12 @@
 <div class="paragraph">
 <p>A message-driven bean is an enterprise bean that allows Jakarta EE
 applications to process messages asynchronously. This type of bean
-normally acts as a JMS message listener, which is similar to an event
-listener but receives JMS messages instead of events. The messages can
+normally acts as a Jakarta Messaging message listener, which is similar to an event
+listener but receives Jakarta Messaging messages instead of events. The messages can
 be sent by any Jakarta EE component (an application client, another
-enterprise bean, or a web component) or by a JMS application or system
+enterprise bean, or a web component) or by a Jakarta Messaging application or system
 that does not use Jakarta EE technology. Message-driven beans can process
-JMS messages or other kinds of messages.</p>
+Jakarta Messaging messages or other kinds of messages.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -108,7 +108,7 @@ state for a specific client.</p>
 </li>
 <li>
 <p>All instances of a message-driven bean are equivalent, allowing the
-EJB container to assign a message to any message-driven bean instance.
+Enterprise Bean container to assign a message to any message-driven bean instance.
 The container can pool these instances to allow streams of messages to
 be processed concurrently.</p>
 </li>
@@ -120,14 +120,14 @@ clients.</p>
 </div>
 <div class="paragraph">
 <p>The instance variables of the message-driven bean instance can contain
-some state across the handling of client messages, such as a JMS API
+some state across the handling of client messages, such as a Jakarta Messaging
 connection, an open database connection, or an object reference to an
 enterprise bean object.</p>
 </div>
 <div class="paragraph">
 <p>Client components do not locate message-driven beans and invoke methods
 directly on them. Instead, a client accesses a message-driven bean
-through, for example, JMS by sending messages to the message destination
+through, for example, Jakarta Messaging by sending messages to the message destination
 for which the message-driven bean class is the <code>MessageListener</code>. You
 assign a message-driven bean&#8217;s destination during deployment by using
 GlassFish Server resources.</p>
@@ -161,7 +161,7 @@ can access and update this data.</p>
 <div class="paragraph">
 <p>When a message arrives, the container calls the message-driven bean&#8217;s
 <code>onMessage</code> method to process the message. The <code>onMessage</code> method
-normally casts the message to one of the five JMS message types and
+normally casts the message to one of the five Jakarta Messaging message types and
 handles it in accordance with the application&#8217;s business logic. The
 <code>onMessage</code> method can call helper methods or can invoke a session bean
 to process the information in the message or to store it in a database.</p>
@@ -182,10 +182,10 @@ Message-Driven Bean</a> and <a href="transactions.html#BNCIH">Chapter 54,
 <div class="sect2">
 <h3 id="_when_to_use_message_driven_beans">When to Use Message-Driven Beans</h3>
 <div class="paragraph">
-<p>Session beans allow you to send JMS messages and to receive them
+<p>Session beans allow you to send Jakarta Messaging messages and to receive them
 synchronously but not asynchronously. To avoid tying up server
 resources, do not to use blocking synchronous receives in a server-side
-component; in general, JMS messages should not be sent or received
+component; in general, Jakarta Messaging messages should not be sent or received
 synchronously. To receive messages asynchronously, use a message-driven
 bean.</p>
 </div>
