@@ -1,16 +1,16 @@
 type=page
 status=published
-title=Creating a Simple Web Service and Clients with JAX-WS
+title=Creating a Simple Web Service and Clients with Jakarta XML Web Services
 next=jaxws003.html
 prev=jaxws001.html
 ~~~~~~
-= Creating a Simple Web Service and Clients with JAX-WS
+= Creating a Simple Web Service and Clients with Jakarta XML Web Services
 
 
 [[BNAYN]][[creating-a-simple-web-service-and-clients-with-jax-ws]]
 
-Creating a Simple Web Service and Clients with JAX-WS
------------------------------------------------------
+Creating a Simple Web Service and Clients with Jakarta XML Web Services
+-----------------------------------------------------------------------
 
 This section shows how to build and deploy a simple web service and two
 clients: an application client and a web client. The source code for the
@@ -19,24 +19,24 @@ directory, and the clients are in the
 `_tut-install_/examples/jaxws/hello-appclient/` and
 `_tut-install_/examples/jaxws/hello-webclient/` directories.
 
-link:#BNAYO[Figure 31-1] illustrates how JAX-WS technology manages
+link:#BNAYO[Figure 31-1] illustrates how Jakarta XML Web Services technology manages
 communication between a web service and a client.
 
 [[BNAYO]]
 
-.*Figure 31-1 Communication between a JAX-WS Web Service and a Client*
+.*Figure 31-1 Communication between a Jakarta XML Web Services Web Service and a Client*
 image:img/jakartaeett_dt_019.png[
 "Diagram showing a client and web service communicating through a SOAP
 message."]
 
-The starting point for developing a JAX-WS web service is a Java class
+The starting point for developing a Jakarta XML Web Services web service is a Java class
 annotated with the `javax.jws.WebService` annotation. The `@WebService`
 annotation defines the class as a web service endpoint.
 
 A service endpoint interface or service endpoint implementation (SEI) is
 a Java interface or class, respectively, that declares the methods that
 a client can invoke on the service. An interface is not required when
-building a JAX-WS endpoint. The web service implementation class
+building a Jakarta XML Web Services endpoint. The web service implementation class
 implicitly defines an SEI.
 
 You may specify an explicit interface by adding the `endpointInterface`
@@ -70,10 +70,10 @@ The sections that follow cover these steps in greater detail.
 
 [[BNAYP]][[requirements-of-a-jax-ws-endpoint]]
 
-Requirements of a JAX-WS Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Requirements of a Jakarta XML Web Services Endpoint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JAX-WS endpoints must follow these requirements.
+Jakarta XML Web Services endpoints must follow these requirements.
 
 * The implementing class must be annotated with either the
 `javax.jws.WebService` or the `javax.jws.WebServiceProvider` annotation.
@@ -88,7 +88,7 @@ annotated with `javax.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
 JAXB-compatible parameters and return types. See the list of JAXB
 default data type bindings in link:jaxws003.html#BNAZC[Types Supported by
-JAX-WS].
+Jakarta XML Web Services].
 * The implementing class must not be declared `final` and must not be
 `abstract`.
 * The implementing class must have a default public constructor.
@@ -255,14 +255,14 @@ Under Method returned, you'll see the response from the endpoint.
 
 [[BNAYX]][[a-simple-jax-ws-application-client]]
 
-A Simple JAX-WS Application Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A Simple Jakarta XML Web Services Application Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `HelloAppClient` class is a stand-alone application client that
 accesses the `sayHello` method of `HelloService`. This call is made
 through a port, a local object that acts as a proxy for the remote
 service. The port is created at development time by the `wsimport` Maven
-goal, which generates JAX-WS portable artifacts based on a WSDL file.
+goal, which generates Jakarta XML Web Services portable artifacts based on a WSDL file.
 
 The following topics are addressed here:
 
@@ -410,8 +410,8 @@ Hello, world.
 
 [[GJYGB]][[a-simple-jax-ws-web-client]]
 
-A Simple JAX-WS Web Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+A Simple Jakarta XML Web Services Web Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `HelloServlet` is a servlet that, like the Java client, calls the
 `sayHello` method of the web service. Like the application client, it

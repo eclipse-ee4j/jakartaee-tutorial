@@ -1,22 +1,22 @@
 type=page
 status=published
-title=Types Supported by JAX-WS
+title=Types Supported by Jakarta XML Web Services
 next=jaxws004.html
 prev=jaxws002.html
 ~~~~~~
-= Types Supported by JAX-WS
+= Types Supported by Jakarta XML Web Services
 
 
 [[BNAZC]][[types-supported-by-jax-ws]]
 
-Types Supported by JAX-WS
--------------------------
+Types Supported by Jakarta XML Web Services
+-------------------------------------------
 
-JAX-WS delegates the mapping of Java programming language types to and
-from XML definitions to JAXB. Application developers don't need to know
+Jakarta XML Web Services delegates the mapping of Java programming language types to and
+from XML definitions to Jakarta JSON Binding. Application developers don't need to know
 the details of these mappings but should be aware that not every class
 in the Java language can be used as a method parameter or return type in
-JAX-WS.
+Jakarta XML Web Services.
 
 The following sections explain the default schema-to-Java and
 Java-to-schema data type bindings:
@@ -35,7 +35,7 @@ types in JAXB.
 
 [[sthref135]][[BNAZU]]
 
-*Table 31-1 Mapping of XML Data Types to Java Data Types in JAXB*
+*Table 31-1 Mapping of XML Data Types to Java Data Types in Jakarta JSON Binding*
 
 [width="50%",cols="20%,30%"]
 |=========================================================
@@ -77,7 +77,7 @@ data types.
 
 [[sthref136]][[BNAZX]]
 
-*Table 31-2 Mapping of Java Classes to XML Data Types in JAXB*
+*Table 31-2 Mapping of Java Classes to XML Data Types in Jakarta JSON Binding*
 
 [width="50%",cols="30%,20%"]
 |=============================================================
