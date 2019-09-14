@@ -61,17 +61,17 @@ client container libraries and JAR files.
 |Apache Derby |A copy of Apache Derby database.
 
 |`xjc` |A command-line tool to transform, or bind, a source XML schema
-to a set of JAXB content classes in the Java programming language.
+to a set of Jakarta XML Binding content classes in the Java programming language.
 
 |`schemagen` |A command-line tool to create a schema file for each
 namespace referenced in your Java classes.
 
-|`wsimport` |A command-line tool to generate JAX-WS portable artifacts
+|`wsimport` |A command-line tool to generate Jakarta XML Web Services portable artifacts
 for a given WSDL file. After generation, these artifacts can be packaged
 in a WAR file with the WSDL and schema documents, along with the
 endpoint implementation, and then deployed.
 
 |`wsgen` |A command-line tool to read a web service endpoint class and
-generate all the required JAX-WS portable artifacts for web service
+generate all the required Jakarta XML Web Services portable artifacts for web service
 deployment and invocation.
 |=======================================================================
