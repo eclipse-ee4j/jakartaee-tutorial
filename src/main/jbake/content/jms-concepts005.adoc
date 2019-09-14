@@ -255,7 +255,7 @@ resource management and transactions.
 [[BNCGO]][[managing-jms-resources-in-web-and-ejb-components]]
 
 Managing Jakarta Messaging Resources in Web and Jakarta Enterprise Beans Components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Jakarta Messaging resources are a connection and a session, usually combined in a
 `JMSContext` object. In general, it is important to release Messaging
