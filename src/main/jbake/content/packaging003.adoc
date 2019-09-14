@@ -16,7 +16,7 @@ In the Jakarta EE architecture, a web module is the smallest deployable and
 usable unit of web resources. A web module contains web components and
 static web content files, such as images, which are called web
 resources. A Jakarta EE web module corresponds to a web application as
-defined in the Java Servlet specification.
+defined in the Jakarta Servlet specification.
 
 In addition to web components and web resources, a web module can
 contain other files:
@@ -37,9 +37,9 @@ enterprise bean class files, utility classes, and JavaBeans components
 * `lib`, a directory that contains JAR files that contain enterprise
 beans, and JAR archives of libraries called by server-side classes
 * Deployment descriptors, such as `web.xml` (the web application
-deployment descriptor) and `ejb-jar.xml` (an EJB deployment descriptor)
+deployment descriptor) and `ejb-jar.xml` (an enterprise bean deployment descriptor)
 
-A web module needs a `web.xml` file if it uses JavaServer Faces
+A web module needs a `web.xml` file if it uses Jakarta Server Faces
 technology, if it must specify certain kinds of security information, or
 if you want to override information specified by web component
 annotations.
@@ -52,7 +52,7 @@ A web module can be deployed as an unpacked file structure or can be
 packaged in a JAR file known as a Web Archive (WAR) file. Because the
 contents and use of WAR files differ from those of JAR files, WAR file
 names use a `.war` extension. The web module just described is portable;
-you can deploy it into any web container that conforms to the Java
+you can deploy it into any web container that conforms to the Jakarta
 Servlet specification.
 
 You can provide a runtime deployment descriptor (DD) when you deploy a
