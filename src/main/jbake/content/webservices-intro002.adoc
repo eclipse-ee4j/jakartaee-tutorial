@@ -32,16 +32,16 @@ The following topics are addressed here:
 "Big" Web Services
 ~~~~~~~~~~~~~~~~~~
 
-JAX-WS provides the functionality for "big" web services,
+Jakarta XML Web Services provides the functionality for "big" web services,
 which are described in link:jaxws.html#BNAYL[Chapter 31, "Building Web
-Services with JAX-WS"]. Big web services use XML messages that follow
+Services with Jakarta XML Web Services"]. Big web services use XML messages that follow
 the Simple Object Access Protocol (SOAP) standard, an XML language
 defining a message architecture and message formats. Such systems often
 contain a machine-readable description of the operations offered by the
 service, written in the Web Services Description Language (WSDL), an XML
 language for defining interfaces syntactically.
 
-*Note:* JAX-WS is moved to Java SE 8 and is not included in the Jakarta EE 8 platform. However, the JAX-WS API can still be used in EE applications. 
+*Note:* JAX-WS, the JCP predecessor of Jakarta XML Web Services, was moved to Java SE 8 and is not included in the Jakarta EE 8 platform. However, the JAX-WS API can still be used in EE applications. 
 
 The SOAP message format and the WSDL interface definition language have
 gained widespread adoption. Many development tools, such as NetBeans
@@ -69,15 +69,15 @@ leveraged out of the box.
 RESTful Web Services
 ~~~~~~~~~~~~~~~~~~~~
 
-In Jakarta EE, JAX-RS provides the functionality for Representational
+In Jakarta EE, Jakarta RESTful Web Services provides the functionality for Representational
 State Transfer (RESTful) web services. REST is well suited for basic, ad
 hoc integration scenarios. RESTful web services, often better integrated
 with HTTP than SOAP-based services are, do not require XML messages or
 WSDL service-API definitions.
 
-Project Jersey is the production-ready reference implementation for the
-JAX-RS specification. Jersey implements support for the annotations
-defined in the JAX-RS specification, making it easy for developers to
+Project Jersey is a production-ready implementation for the
+Jakarta RESTful Web Services specification. Jersey implements support for the annotations
+defined in the Jakarta RESTful Web Services specification, making it easy for developers to
 build RESTful web services with Java and the Java Virtual Machine (JVM).
 
 Because RESTful web services use existing well-known W3C and Internet
@@ -123,6 +123,6 @@ familiar with rather than having to start from scratch with new
 technology.
 
 RESTful web services are discussed in link:jaxrs.html#GIEPU[Chapter 32,
-"Building RESTful Web Services with JAX-RS"]. This chapter contains
+"Building RESTful Web Services with Jakarta RESTful Web Services"]. This chapter contains
 information about generating the skeleton of a RESTful web service using
 both NetBeans IDE and the Maven project-management tool.
