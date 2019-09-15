@@ -31,8 +31,8 @@ the cache modes as the value of the `shared-cache-mode` element in the
 a|
 Note:
 
-Because support for a second-level cache is not required by the Java
-Persistence API specification, setting the second-level cache mode in
+Because support for a second-level cache is not required by the Jakarta
+Persistence specification, setting the second-level cache mode in
 `persistence.xml` will have no effect when you use a persistence
 provider that does not implement a second-level cache.
 

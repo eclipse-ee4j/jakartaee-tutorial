@@ -68,7 +68,7 @@ Mapped Superclasses
 Entities may inherit from superclasses that contain persistent state and
 mapping information but are not entities. That is, the superclass is not
 decorated with the `@Entity` annotation and is not mapped as an entity
-by the Java Persistence provider. These superclasses are most often used
+by the Jakarta Persistence provider. These superclasses are most often used
 when you have state and mapping information common to multiple entity
 classes.
 
@@ -124,7 +124,7 @@ relationship annotations in non-entity superclasses are ignored.
 Entity Inheritance Mapping Strategies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can configure how the Java Persistence provider maps inherited
+You can configure how the Jakarta Persistence provider maps inherited
 entities to the underlying datastore by decorating the root class of the
 hierarchy with the annotation `javax.persistence.Inheritance`. The
 following mapping strategies are used to map the entity data to the
@@ -244,7 +244,7 @@ usually requires either SQL `UNION` queries or separate SQL queries for
 each subclass for queries that cover the entire entity class hierarchy.
 
 Support for this strategy is optional and may not be supported by all
-Java Persistence API providers. The default Java Persistence API
+Jakarta Persistence providers. The default Jakarta Persistence
 provider in GlassFish Server does not support this strategy.
 
 [[BNBQV]][[the-joined-subclass-strategy]]
@@ -267,7 +267,7 @@ class hierarchies. Similarly, queries that cover the entire class
 hierarchy require join operations between the subclass tables, resulting
 in decreased performance.
 
-Some Java Persistence API providers, including the default provider in
+Some Jakarta Persistence providers, including the default provider in
 GlassFish Server, require a discriminator column that corresponds to the
 root entity when using the joined subclass strategy. If you are not
 using automatic table creation in your application, make sure that the

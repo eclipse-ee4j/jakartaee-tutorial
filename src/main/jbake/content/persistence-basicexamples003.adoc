@@ -13,8 +13,8 @@ The roster Application
 ----------------------
 
 The `roster` application maintains the team rosters for players in
-recreational sports leagues. The application has four components: Java
-Persistence API entities (`Player`, `Team`, and `League`), a stateful
+recreational sports leagues. The application has four components: Jakarta
+Persistence entities (`Player`, `Team`, and `League`), a stateful
 session bean (`RequestBean`), an application client (`RosterClient`),
 and three helper classes (`PlayerDetails`, `TeamDetails`, and
 `LeagueDetails`).

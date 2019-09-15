@@ -52,14 +52,14 @@ Container-Managed Entity Managers
 With a container-managed entity manager, an `EntityManager` instance's
 persistence context is automatically propagated by the container to all
 application components that use the `EntityManager` instance within a
-single Java Transaction API (JTA) transaction.
+single Jakarta transaction.
 
-JTA transactions usually involve calls across application components. To
-complete a JTA transaction, these components usually need access to a
+Jakarta transactions usually involve calls across application components. To
+complete a Jakarta transaction, these components usually need access to a
 single persistence context. This occurs when an `EntityManager` is
 injected into the application components by means of the
 `javax.persistence.PersistenceContext` annotation. The persistence
-context is automatically propagated with the current JTA transaction,
+context is automatically propagated with the current Jakarta transaction,
 and `EntityManager` references that are mapped to the same persistence
 unit provide access to the persistence context within that transaction.
 By automatically propagating the persistence context, application
@@ -87,7 +87,7 @@ persistence context is not propagated to application components, and the
 lifecycle of `EntityManager` instances is managed by the application.
 
 Application-managed entity managers are used when applications need to
-access a persistence context that is not propagated with the JTA
+access a persistence context that is not propagated with the Jakarta
 transaction across `EntityManager` instances in a particular persistence
 unit. In this case, each `EntityManager` creates a new, isolated
 persistence context. The `EntityManager` and its associated persistence
@@ -119,8 +119,8 @@ EntityManager em = emf.createEntityManager();
 ----
 
 Application-managed entity managers don't automatically propagate the
-JTA transaction context. Such applications need to manually gain access
-to the JTA transaction manager and add transaction demarcation
+Jakarta transaction context. Such applications need to manually gain access
+to the Jakarta transaction manager and add transaction demarcation
 information when performing entity operations. The
 `javax.transaction.UserTransaction` interface defines methods to begin,
 commit, and roll back transactions. Inject an instance of
@@ -325,15 +325,15 @@ file. The following is an example `persistence.xml` file:
 ----
 
 This file defines a persistence unit named `OrderManagement`, which uses
-a JTA-aware data source, `jdbc/MyOrderDB`. The `jar-file` and `class`
+a Jakarta Transactions aware data source, `jdbc/MyOrderDB`. The `jar-file` and `class`
 elements specify managed persistence classes: entity classes, embeddable
 classes, and mapped superclasses. The `jar-file` element specifies JAR
 files that are visible to the packaged persistence unit that contain
 managed persistence classes, whereas the `class` element explicitly
 names managed persistence classes.
 
-The `jta-data-source` (for JTA-aware data sources) and
-`non-jta-data-source` (for non-JTA-aware data sources) elements specify
+The `jta-data-source` (for Jakarta Transactions aware data sources) and
+`non-jta-data-source` (for non Jakarta Transactions aware data sources) elements specify
 the global JNDI name of the data source to be used by the container.
 
 The JAR file or directory whose `META-INF` directory contains
@@ -342,12 +342,12 @@ of the persistence unit is determined by the persistence unit's root.
 Each persistence unit must be identified with a name that is unique to
 the persistence unit's scope.
 
-Persistent units can be packaged as part of a WAR or EJB JAR file or can
+Persistent units can be packaged as part of a WAR or enterprise bean JAR file or can
 be packaged as a JAR file that can then be included in an WAR or EAR
 file.
 
-* If you package the persistent unit as a set of classes in an EJB JAR
-file, `persistence.xml` should be put in the EJB JAR's `META-INF`
+* If you package the persistent unit as a set of classes in an enterprise bean JAR
+file, `persistence.xml` should be put in the enterprise bean JAR's `META-INF`
 directory.
 * If you package the persistence unit as a set of classes in a WAR file,
 `persistence.xml` should be located in the WAR file's

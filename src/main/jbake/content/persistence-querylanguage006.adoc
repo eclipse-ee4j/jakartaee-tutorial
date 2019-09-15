@@ -12,15 +12,15 @@ prev=persistence-querylanguage005.html
 Full Query Language Syntax
 --------------------------
 
-This section discusses the query language syntax, as defined in the Java
-Persistence API 2.0 specification available at
-`http://jcp.org/en/jsr/detail?id=317`. Much of the following material
+This section discusses the query language syntax, as defined in the Jakarta
+Persistence 2.2 specification available at
+`https://jakarta.ee/specifications/persistence/2.2/`. Much of the following material
 paraphrases or directly quotes the specification.
 
 The following topics are addressed here:
 
 * link:#BNBUG[BNF Symbols]
-* link:#BNBUI[BNF Grammar of the Java Persistence Query Language]
+* link:#BNBUI[BNF Grammar of the Jakarta Persistence Query Language]
 * link:#BNBUJ[FROM Clause]
 * link:#BNBUQ[Path Expressions]
 * link:#BNBUU[WHERE Clause]
@@ -71,8 +71,8 @@ or a line feed.
 
 [[BNBUI]][[bnf-grammar-of-the-java-persistence-query-language]]
 
-BNF Grammar of the Java Persistence Query Language
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+BNF Grammar of the Jakarta Persistence Query Language
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here is the entire BNF diagram for the query language:
 
@@ -795,7 +795,7 @@ floating-point literal, approximate numeric literals support numbers in
 the range of a Java `double`.
 * Boolean literals: A Boolean literal is either `TRUE` or `FALSE`. These
 keywords are not case-sensitive.
-* Enum literals: The Java Persistence query language supports the use of
+* Enum literals: The Jakarta Persistence query language supports the use of
 enum literals using the Java enum literal syntax. The enum class name
 must be specified as a fully qualified class name:
 +
