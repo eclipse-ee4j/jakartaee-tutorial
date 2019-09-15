@@ -12,7 +12,7 @@ Using Encoders and Decoders
 Using Encoders and Decoders
 ---------------------------
 
-The Java API for WebSocket provides support for converting between
+Jakarta WebSocket provides support for converting between
 WebSocket messages and custom Java types using encoders and decoders. An
 encoder takes a Java object and produces a representation that can be
 transmitted as a WebSocket message; for example, encoders typically
