@@ -13,7 +13,7 @@ Runtime Content Negotiation
 ---------------------------
 
 The `@Produces` and `@Consumes` annotations handle static content
-negotiation in JAX-RS. These annotations specify the content preferences
+negotiation in Jakarta REST. These annotations specify the content preferences
 of the server. HTTP headers such as `Accept`, `Content-Type`, and
 `Accept-Language` define the content negotiation preferences of the
 client.
@@ -79,7 +79,7 @@ and media types for the client and server.
 @Produces("text/plain", "text/xml")
 ----
 
-In addition to supporting static content negotiation, JAX-RS also
+In addition to supporting static content negotiation, Jakarta REST also
 supports runtime content negotiation using the
 `javax.ws.rs.core.Variant` class and `Request` objects. The `Variant`
 class specifies the resource representation of content negotiation. Each

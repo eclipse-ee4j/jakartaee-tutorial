@@ -1,18 +1,18 @@
 type=page
 status=published
-title=Using the Client API in the JAX-RS Example Applications
+title=Using the Client API in the Jakarta REST Example Applications
 next=jaxrs-client003.html
 prev=jaxrs-client001.html
 ~~~~~~
-Using the Client API in the JAX-RS Example Applications
-=======================================================
+Using the Client API in the Jakarta REST Example Applications
+=============================================================
 
 [[BABJCIJC]][[using-the-client-api-in-the-jax-rs-example-applications]]
 
-Using the Client API in the JAX-RS Example Applications
--------------------------------------------------------
+Using the Client API in the Jakarta REST Example Applications
+-------------------------------------------------------------
 
-The `rsvp` and `customer` examples use the Client API to call JAX-RS
+The `rsvp` and `customer` examples use the Client API to call Jakarta REST
 services. This section describes how each example application uses the
 Client API.
 
@@ -27,7 +27,7 @@ The Client API in the rsvp Example Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `rsvp` application allows users to respond to event invitations
-using JAX-RS resources, as explained in link:jaxrs003.html#the-rsvp-example-application[The rsvp Example Application]. The web application uses the Client
+using Jakarta REST resources, as explained in link:jaxrs003.html#the-rsvp-example-application[The rsvp Example Application]. The web application uses the Client
 API in CDI backing beans to interact with the service resources, and the
 Facelets web interface displays the results.
 
@@ -117,7 +117,7 @@ customers and retrieve all the customers. A Facelets web application
 acts as a client for the service resource, with a form for creating
 customers and displaying the list of customers in a table.
 
-The `CustomerBean` stateless session bean uses the JAX-RS Client API to
+The `CustomerBean` stateless session bean uses the Jakarta REST Client API to
 interface with the service resource. The `CustomerBean.createCustomer`
 method takes the `Customer` entity instance created by the Facelets form
 and makes a POST call to the service URI.

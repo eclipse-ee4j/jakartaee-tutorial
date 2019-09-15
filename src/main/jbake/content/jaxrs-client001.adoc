@@ -12,8 +12,8 @@ Overview of the Client API
 Overview of the Client API
 --------------------------
 
-The JAX-RS Client API provides a high-level API for accessing any REST
-resources, not just JAX-RS services. The Client API is defined in the
+The Jakarta REST Client API provides a high-level API for accessing any REST
+resources, not just Jakarta REST services. The Client API is defined in the
 `javax.ws.rs.client` package.
 
 The following topics are addressed here:
@@ -129,7 +129,7 @@ Setting Path Parameters in Targets
 
 Path parameters in client requests can be specified as URI template
 parameters, similar to the template parameters used when defining a
-resource URI in a JAX-RS service. Template parameters are specified by
+resource URI in a Jakarta REST service. Template parameters are specified by
 surrounding the template variable with braces (`{}`). Call the
 `resolveTemplate` method to substitute the `{username}`, and then call
 the `queryParam` method to add another variable to pass.

@@ -12,7 +12,7 @@ prev=jaxrs-client002.html
 Advanced Features of the Client API
 -----------------------------------
 
-This section describes some of the advanced features of the JAX-RS
+This section describes some of the advanced features of the Jakarta REST
 Client API.
 
 The following topics are addressed here:
@@ -205,7 +205,7 @@ performance of the application, particularly in long-running or
 complicated network calls. Asynchronous processing helps prevent
 blocking and makes better use of an application's resources.
 
-In the JAX-RS Client API, the `Invocation.Builder.async` method is used
+In the Jakarta REST Client API, the `Invocation.Builder.async` method is used
 when constructing a client request to indicate that the call to the
 service should be performed asynchronously. An asynchronous invocation
 returns control to the caller immediately, with a return type of
@@ -270,7 +270,7 @@ cases and when there are many independent calls to make. In nested
 calls, using custom callbacks becomes very difficult to implement,
 debug, and maintain.
 
-JAX-RS defines a new type of invoker called as `RxInvoker` and a default
+Jakarta REST defines a new type of invoker called as `RxInvoker` and a default
 implementation of this type is `CompletionStageRxInvoker`. The new `rx`
 method is used as in the following example:
 
@@ -349,10 +349,10 @@ Broadcasting Using SSE
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Broadcasting is the action of sending events to multiple clients
-simultaneously. JAX-RS SSE API provides `SseBroadcaster` to register all
+simultaneously. Jakarta REST SSE API provides `SseBroadcaster` to register all
 `SseEventSink` instances and send events to all registered event
 outputs. The life-cycle and scope of an `SseBroadcaster` is fully
-controlled by applications and not the JAX-RS runtime. The following
+controlled by applications and not the Jakarta REST runtime. The following
 example show the use of broadcasters:
 
 [source,oac_no_warn]
@@ -395,7 +395,7 @@ method is used to send an SSE event to all registered clients.
 Listening and Receiving Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JAX-RS SSE provides the `SseEventSource` interface for the client to
+Jakarta REST SSE provides the `SseEventSource` interface for the client to
 subscribe to notifications. The client can get asynchronously notified
 about incoming events by invoking one of the `subscribe` methods in
 `javax.ws.rs.sse.SseEventSource`.

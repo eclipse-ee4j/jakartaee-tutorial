@@ -1,21 +1,21 @@
 type=page
 status=published
-title=Example Applications for JAX-RS
+title=Example Applications for Jakarta REST
 next=jaxrs004.html
 prev=jaxrs002.html
 ~~~~~~
-= Example Applications for JAX-RS
+= Example Applications for Jakarta REST
 
 
 [[GIPZZ]][[example-applications-for-jax-rs]]
 
-Example Applications for JAX-RS
+Example Applications for Jakarta REST
 -------------------------------
 
 This section provides an introduction to creating, deploying, and
-running your own JAX-RS applications. This section demonstrates the
+running your own Jakarta REST applications. This section demonstrates the
 steps that are needed to create, build, deploy, and test a very simple
-web application that uses JAX-RS annotations.
+web application that uses Jakarta REST annotations.
 
 The following topics are addressed here:
 
@@ -98,12 +98,12 @@ http://localhost:8080/HelloWorldApplication/HelloWorldApplication
 A browser window opens and displays the return value of `Hello, World!!`
 
 For other sample applications that demonstrate deploying and running
-JAX-RS applications using NetBeans IDE, see link:#GJVBC[The rsvp Example
+Jakarta REST applications using NetBeans IDE, see link:#GJVBC[The rsvp Example
 Application] and Your First Cup: An Introduction to the Jakarta EE Platform
-at `http://docs.oracle.com/javaee/7/firstcup/doc/`. You may also look at
+at `https://eclipse-ee4j.github.io/jakartaee-firstcup/toc.html`. You may also look at
 the tutorials on the NetBeans IDE tutorial site, such as the one titled
 "Getting Started with RESTful Web Services" at
-`https://netbeans.org/kb/docs/websvc/rest.html`. This tutorial includes
+`https://netbeans.apache.org/kb/docs/websvc/rest.html`. This tutorial includes
 a section on creating a CRUD application from a database. Create, read,
 update, and delete (CRUD) are the four basic functions of persistent
 storage and relational databases.
@@ -116,7 +116,7 @@ The rsvp Example Application
 The `rsvp` example application, located in the
 `_tut-install_` `/examples/jaxrs/rsvp/` directory, allows invitees to an
 event to indicate whether they will attend. The events, people invited
-to the event, and the responses to the invite are stored in Apache Derby using the Java Persistence API. The JAX-RS resources in `rsvp`
+to the event, and the responses to the invite are stored in Apache Derby using the Jakarta Persistence. The Jakarta REST resources in `rsvp`
 are exposed in a stateless session enterprise bean.
 
 The following topics are addressed here:
@@ -136,7 +136,7 @@ The three enterprise beans in the `rsvp` example application are
 `ConfigBean` is a singleton session bean that initializes the data in
 the database.
 
-`StatusBean` exposes a JAX-RS resource for displaying the current status
+`StatusBean` exposes a Jakarta REST resource for displaying the current status
 of all invitees to an event. The URI path template is declared first on
 the class and then on the `getEvent` method:
 
@@ -167,7 +167,7 @@ The URI path variable `eventId` is a `@PathParam` variable in the
 annotated with `@GET`. The `eventId` variable is used to look up all the
 current responses in the database for that particular event.
 
-`ResponseBean` exposes a JAX-RS resource for setting an invitee's
+`ResponseBean` exposes a Jakarta REST resource for setting an invitee's
 response to a particular event. The URI path template for `ResponseBean`
 is declared as follows:
 
@@ -180,7 +180,7 @@ Two URI path variables are declared in the path template: `eventId` and
 `inviteId`. As in `StatusBean`, `eventId` is the unique ID for a
 particular event. Each invitee to that event has a unique ID for the
 invitation, and that is the `inviteId`. Both of these path variables are
-used in two JAX-RS methods in `ResponseBean`: `getResponse` and
+used in two Jakarta REST methods in `ResponseBean`: `getResponse` and
 `putResponse`. The `getResponse` method responds to HTTP GET requests
 and displays the invitee's current response and a form to change the
 response.
@@ -203,8 +203,8 @@ the HTTP POST request and stored as the `userResponse` string. The
 `putResponse` method uses `userResponse`, `eventId`, and `inviteId` to
 update the invitee's response in the database.
 
-The events, people, and responses in `rsvp` are encapsulated in Java
-Persistence API entities. The `rsvp.entity.Event`, `rsvp.entity.Person`,
+The events, people, and responses in `rsvp` are encapsulated in Jakarta
+Persistence entities. The `rsvp.entity.Event`, `rsvp.entity.Person`,
 and `rsvp.entity.Response` entities respectively represent events,
 invitees, and responses to an event.
 
@@ -212,7 +212,7 @@ The `rsvp.util.ResponseEnum` class declares an enumerated type that
 represents all the possible response statuses an invitee may have.
 
 The web application also includes two CDI managed beans, `StatusManager`
-and `EventManager`, which use the JAX-RS Client API to call the
+and `EventManager`, which use the Jakarta REST Client API to call the
 resources exposed in `StatusBean` and `ResponseBean`. For information on
 how the Client API is used in `rsvp`, see
 link:jaxrs-client002.html#BABEDFIG["The Client API in the rsvp Example

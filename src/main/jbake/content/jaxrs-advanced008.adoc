@@ -13,7 +13,7 @@ The customer Example Application
 --------------------------------
 
 This section describes how to build and run the `customer` example
-application. This application is a RESTful web service that uses JAXB to
+application. This application is a RESTful web service that uses Jakarta XML Binding to
 perform the create, read, update, delete (CRUD) operations for a
 specific entity.
 
@@ -27,7 +27,7 @@ The following topics are addressed here:
 * link:#GKOFO[Overview of the customer Example Application]
 * link:#CIHJFEJI[The Customer and Address Entity Classes]
 * link:#GKLGT[The CustomerService Class]
-* link:#GKQJQ[Using the JAX-RS Client in the CustomerBean Classes]
+* link:#GKQJQ[Using the Jakarta REST Client in the CustomerBean Classes]
 * link:#GKQKV[Running the customer Example]
 
 [[GKOFO]][[overview-of-the-customer-example-application]]
@@ -40,17 +40,17 @@ The source files of this application are at
 has three parts.
 
 * The `Customer` and `Address` entity classes. These classes model the
-data of the application and contain JAXB annotations.
-* The `CustomerService` resource class. This class contains JAX-RS
+data of the application and contain Jakarta XML Binding annotations.
+* The `CustomerService` resource class. This class contains Jakarta REST
 resource methods that perform operations on `Customer` instances
-represented as XML or JSON data using JAXB. See link:#GKLGT[The
+represented as XML or JSON data using Jakarta XML Binding. See link:#GKLGT[The
 CustomerService Class] for details.
 * The `CustomerBean` session bean that acts as a backing bean for the
-web client. `CustomerBean` uses the JAX-RS client API to call the
+web client. `CustomerBean` uses the Jakarta REST client API to call the
 methods of `CustomerService`.
 
 The `customer` example application shows you how to model your data
-entities as Java classes with JAXB annotations.
+entities as Java classes with Jakarta XML Binding annotations.
 
 [[CIHJFEJI]][[the-customer-and-address-entity-classes]]
 
@@ -143,7 +143,7 @@ public class Customer {
 }
 ----
 
-The `Customer` class contains the same JAXB annotations as the previous
+The `Customer` class contains the same Jakarta XML Binding annotations as the previous
 class, except for the `@XmlAttribute(required=true)` annotation, which
 maps a property to an attribute of the XML element representing the
 class.
@@ -153,7 +153,7 @@ the `Address` class. This mechanism allows you to define in Java code
 the hierarchical relationships between entities without having to write
 an `.xsd` file yourself.
 
-JAXB generates the following XML schema definition for the two preceding
+Jakarta XML Binding generates the following XML schema definition for the two preceding
 classes:
 
 [source,oac_no_warn]
@@ -254,7 +254,7 @@ and `@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})`
 annotations set the request and response media types to use the
 appropriate MIME client. These annotations can be applied to a resource
 method, a resource class, or even an entity provider. If you do not use
-these annotations, JAX-RS allows the use of any media type (`"*/*"`).
+these annotations, Jakarta REST allows the use of any media type (`"*/*"`).
 
 The following code snippet shows the implementation of the `getCustomer`
 and `findbyId` methods. The `getCustomer` method uses the `@Produces`
@@ -295,13 +295,13 @@ the client.
 
 [[GKQJQ]][[using-the-jax-rs-client-in-the-customerbean-classes]]
 
-Using the JAX-RS Client in the CustomerBean Classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using the Jakarta REST Client in the CustomerBean Classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the JAX-RS Client API to write a client for the `customer` example
+Use the Jakarta REST Client API to write a client for the `customer` example
 application.
 
-The `CustomerBean` enterprise bean class calls the JAX-RS Client API to
+The `CustomerBean` enterprise bean class calls the Jakarta REST Client API to
 test the `CustomerService` web service:
 
 [source,oac_no_warn]
