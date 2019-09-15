@@ -23,8 +23,7 @@ Jakarta EE deployment descriptors, the configuration settings in
 The settings in `beans.xml` override the annotation settings if there is
 a conflict. An archive must contain the `beans.xml` deployment
 descriptor only in certain limited situations, described in
-link:cdi-adv.html#GJEHI[Chapter 27, "Contexts and Dependency Injection
-for Jakarta EE: Advanced Topics"].
+link:cdi-adv.html#GJEHI[Chapter 27, "Jakarta Contexts and Dependency Injection: Advanced Topics"].
 
 For a web application, the `beans.xml` deployment descriptor, if
 present, must be in the `WEB-INF` directory. For EJB modules or JAR

@@ -20,8 +20,8 @@ following conditions.
 
 * It is not a nonstatic inner class.
 * It is a concrete class or is annotated `@Decorator`.
-* It is not annotated with an EJB component-defining annotation or
-declared as an EJB bean class in `ejb-jar.xml`.
+* It is not annotated with an enterprise bean component-defining annotation or
+declared as an enterprise bean class in `ejb-jar.xml`.
 * It has an appropriate constructor. That is, one of the following is
 the case.
 

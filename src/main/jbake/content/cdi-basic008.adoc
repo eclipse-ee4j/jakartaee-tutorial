@@ -39,7 +39,7 @@ means that an object exists to serve exactly one client (bean) and has
 the same lifecycle as that client (bean).
 
 |Conversation |`@ConversationScoped` |A user's interaction with a
-servlet, including JavaServer Faces applications. The conversation scope
+servlet, including Jakarta Server Faces applications. The conversation scope
 exists within developer-controlled boundaries that extend it across
 multiple requests for long-running conversations. All long-running
 conversations are scoped to a particular HTTP servlet session and may
@@ -47,7 +47,7 @@ not cross session boundaries.
 |=======================================================================
 
 
-The first three scopes are defined by both JSR 365 and the JavaServer
+The first three scopes are defined by both JSR 365 and the Jakarta Server
 Faces specification. The last two are defined by JSR 365.
 
 All predefined scopes except `@Dependent` are contextual scopes. CDI
@@ -74,7 +74,7 @@ Jakarta EE components, such as servlets and enterprise beans, and JavaBeans
 components do not by definition have a well-defined scope. These
 components are one of the following:
 
-* Singletons, such as Enterprise JavaBeans singleton beans, whose state
+* Singletons, such as enterprise singleton beans, whose state
 is shared among all clients
 * Stateless objects, such as servlets and stateless session beans, which
 do not contain client-visible state

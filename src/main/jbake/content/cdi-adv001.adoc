@@ -46,6 +46,6 @@ In an implicit archive, CDI can only manage and inject beans annotated
 with a scope type.
 
 For a web application, the `beans.xml` deployment descriptor, if
-present, must be in the `WEB-INF` directory. For EJB modules or JAR
+present, must be in the `WEB-INF` directory. For enterprise bean modules or JAR
 files, the `beans.xml` deployment descriptor, if present, must be in the
 `META-INF` directory.

@@ -19,5 +19,5 @@ The API for bootstrapping a CDI container in Java SE consists of the following e
 
 ** `initialize()` bootstraps the container. 
 
-* `javax.enterprise.inject.se.SeContainer` interface – Provides access to the `BeanManager` instance for programmatic lookup, as defined in the `SeContainer` interface, which is described at `http://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#se_container`.
+* `javax.enterprise.inject.se.SeContainer` interface – Provides access to the `BeanManager` instance for programmatic lookup, as defined in the `SeContainer` interface, which is described at `https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#se_container`.
 +

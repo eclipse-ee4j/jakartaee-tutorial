@@ -13,7 +13,7 @@ Beans as Injectable Objects
 ---------------------------
 
 The concept of injection has been part of Java technology for some time.
-Since the Jakarta EE 5 platform was introduced, annotations have made it
+Since the Java EE 5 platform was introduced, annotations have made it
 possible to inject resources and some other kinds of objects into
 container-managed objects. CDI makes it possible to inject more kinds of
 objects and to inject them into objects that are not container-managed.
@@ -24,7 +24,7 @@ The following kinds of objects can be injected:
 * Session beans
 * Jakarta EE resources: data sources, Java Message Service topics, queues,
 connection factories, and the like
-* Persistence contexts (Java Persistence API `EntityManager` objects)
+* Persistence contexts (Jakarta Persistence `EntityManager` objects)
 * Producer fields
 * Objects returned by producer methods
 * Web service references
