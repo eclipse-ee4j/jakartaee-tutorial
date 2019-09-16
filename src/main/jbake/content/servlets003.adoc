@@ -18,7 +18,7 @@ accomplish their tasks. Web components can do so by doing the following.
 * Using private helper objects (for example, JavaBeans components).
 * Sharing objects that are attributes of a public scope.
 * Using a database.
-* Invoking other web resources. The Java Servlet technology mechanisms
+* Invoking other web resources. The Jakarta Servlet technology mechanisms
 that allow a web component to invoke other web resources are described
 in link:servlets007.html#BNAGI[Invoking Other Web Resources].
 
@@ -50,7 +50,7 @@ link:servlets009.html#BNAGM[Maintaining Client State].
 |Request |Subtype of `javax.servlet.ServletRequest` |Web components
 handling the request.
 
-|Page |`javax.servlet.jsp.JspContext` |The JSP page that creates the
+|Page |`javax.servlet.jsp.JspContext` |The Jakarta Server Pages page that creates the
 object.
 |=======================================================================
 

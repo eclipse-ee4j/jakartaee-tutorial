@@ -142,5 +142,5 @@ public class XYZPUpgradeHandler implements HttpUpgradeHandler {
 The class that implements `HttpUpgradeHandler` uses the streams from the
 current connection to communicate with the client using the new
 protocol. See the Servlet 4.0 specification at
-`http://jcp.org/en/jsr/detail?id=369` for details on HTTP protocol
+`https://jakarta.ee/specifications/servlet/4.0` for details on HTTP protocol
 upgrade support.

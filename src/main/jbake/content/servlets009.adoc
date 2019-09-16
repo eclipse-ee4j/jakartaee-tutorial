@@ -17,7 +17,7 @@ associated with one another. For example, a web application can save the
 state of a user's shopping cart across requests. Web-based applications
 are responsible for maintaining such state, called a session, because
 HTTP is stateless. To support applications that need to maintain state,
-Java Servlet technology provides an API for managing sessions and allows
+Jakarta Servlet technology provides an API for managing sessions and allows
 several mechanisms for implementing sessions.
 
 [[BNAGN]][[accessing-a-session]]

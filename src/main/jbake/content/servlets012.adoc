@@ -28,7 +28,7 @@ data before building the response. For example, an application may need
 to query a database or access data from a remote web service before
 generating the response.
 * The thread needs to wait for an event before generating the response.
-For example, an application may have to wait for a JMS message, new
+For example, an application may have to wait for a Jakarta Messaging message, new
 information from another client, or new data available in a queue before
 generating the response.
 
