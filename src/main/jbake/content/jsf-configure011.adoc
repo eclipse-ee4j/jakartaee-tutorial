@@ -72,7 +72,7 @@ that a particular renderer can render. The `renderer-type` must match
 that returned by the `getRendererType` method of the tag handler class.
 
 By using the component family and renderer type to look up renderers for
-components, the JavaServer Faces implementation allows a component to be
+components, the Jakarta Server Faces implementation allows a component to be
 rendered by multiple renderers and allows a renderer to render multiple
 components.
 

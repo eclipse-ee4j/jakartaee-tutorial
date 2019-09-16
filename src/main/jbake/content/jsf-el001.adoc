@@ -26,7 +26,7 @@ compares 0 with the number of items in the session-scoped bean named
 ----
 
 See link:jsf-develop001.html#BNAQP[Using the EL to Reference Managed
-Beans] for more information on how to use the EL in JavaServer Faces
+Beans] for more information on how to use the EL in Jakarta Server Faces
 applications.
 
 To summarize, the EL provides a way to use simple expressions to perform
@@ -41,7 +41,7 @@ components
 * Dynamically construct collection objects and perform operations on
 collections
 
-In a JavaServer Faces page, an EL expression can be used either in
+In a Jakarta Server Faces page, an EL expression can be used either in
 static text or in the attribute of a custom tag or standard action.
 
 Finally, the EL provides a pluggable API for resolving expressions so

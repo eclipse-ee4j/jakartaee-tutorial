@@ -12,7 +12,7 @@ prev=jsf-facelets004.html
 Composite Components
 --------------------
 
-JavaServer Faces technology offers the concept of composite components
+Jakarta Server Faces technology offers the concept of composite components
 with Facelets. A composite component is a special type of template that
 acts as a component.
 
@@ -77,7 +77,7 @@ as the target of attached objects in the using page.
 
 
 For more information and a complete list of Facelets composite tags, see
-the JavaServer Faces Facelets Tag Library documentation.
+the Jakarta Server Faces Facelets Tag Library documentation.
 
 The following example shows a composite component that accepts an email
 address as input:
@@ -107,14 +107,14 @@ address as input:
 ----
 
 Note the use of `cc.attrs.value` when defining the value of the
-`inputText` component. The word `cc` in JavaServer Faces is a reserved
+`inputText` component. The word `cc` in Jakarta Server Faces is a reserved
 word for composite components. The `#{cc.attrs.`attribute-name`}`
 expression is used to access the attributes defined for the composite
 component's interface, which in this case happens to be `value`.
 
 The preceding example content is stored as a file named `email.xhtml` in
 a folder named `resources/emcomp`, under the application web root
-directory. This directory is considered a library by JavaServer Faces,
+directory. This directory is considered a library by Jakarta Server Faces,
 and a component can be accessed from such a library. For more
 information on resources, see link:jsf-facelets006.html#GIRGM[Web
 Resources].

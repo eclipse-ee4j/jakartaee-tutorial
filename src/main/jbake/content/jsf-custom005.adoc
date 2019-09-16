@@ -77,7 +77,7 @@ If your component extends `UICommand`, it automatically implements
 `ActionSource2`. If your component extends `UIOutput` or one of the
 component classes that extend `UIOutput`, it automatically implements
 `ValueHolder`. If your component extends `UIInput`, it automatically
-implements `EditableValueHolder` and `ValueHolder`. See the JavaServer
+implements `EditableValueHolder` and `ValueHolder`. See the Jakarta Server
 Faces API documentation to find out what the other component classes
 implement.
 
@@ -93,7 +93,7 @@ The Duke's Bookstore image map example has two component classes:
 `UICommand` and therefore implements `ActionSource2`, which means it can
 fire action events when a user clicks on the map. The `AreaComponent`
 class extends the standard component `UIOutput`. The `@FacesComponent`
-annotation registers the components with the JavaServer Faces
+annotation registers the components with the Jakarta Server Faces
 implementation:
 
 [source,oac_no_warn]
@@ -196,7 +196,7 @@ configuration.
 Performing Encoding
 ~~~~~~~~~~~~~~~~~~~
 
-During the Render Response phase, the JavaServer Faces implementation
+During the Render Response phase, the Jakarta Server Faces implementation
 processes the encoding methods of all components and their associated
 renderers in the view. The encoding methods convert the current local
 value of the component into the corresponding markup that represents it
@@ -215,7 +215,7 @@ the ending `map` tag. To accomplish this, the `MapRenderer` class
 renders the beginning `map` tag in `encodeBegin` and the rest of the
 `map` tag in `encodeEnd`.
 
-The JavaServer Faces implementation automatically invokes the
+The Jakarta Server Faces implementation automatically invokes the
 `encodeEnd` method of `AreaComponent`'s renderer after it invokes
 `MapRenderer`'s `encodeBegin` method and before it invokes
 `MapRenderer`'s `encodeEnd` method. If a component needs to perform the
@@ -313,7 +313,7 @@ parameters, you must also implement the `decode` method.
 Performing Decoding
 ~~~~~~~~~~~~~~~~~~~
 
-During the Apply Request Values phase, the JavaServer Faces
+During the Apply Request Values phase, the Jakarta Server Faces
 implementation processes the `decode` methods of all components in the
 tree. The `decode` method extracts a component's local value from
 incoming request parameters and uses a `javax.faces.convert.Converter`
@@ -355,7 +355,7 @@ attribute to the value of the `input` field.
 Enabling Component Properties to Accept Expressions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nearly all the attributes of the standard JavaServer Faces tags can
+Nearly all the attributes of the standard Jakarta Server Faces tags can
 accept expressions, whether they are value expressions or method
 expressions. It is recommended that you also enable your component
 attributes to accept expressions because it gives you much more
@@ -445,7 +445,7 @@ during the Restore View phase.
 
 Component classes that implement `StateHolder` may prefer to implement
 the `saveState(FacesContext)` and `restoreState(FacesContext, Object)`
-methods to help the JavaServer Faces implementation save and restore the
+methods to help the Jakarta Server Faces implementation save and restore the
 state of components across multiple requests.
 
 To save a set of values, you can implement the `saveState(FacesContext)`
@@ -473,7 +473,7 @@ implementation for `restoreState(FacesContext, Object)`, which restores
 the state of the component to that saved with the
 `saveState(FacesContext)` method. The
 `restoreState(FacesContext, Object)` method is called during the Restore
-View phase, during which the JavaServer Faces implementation checks
+View phase, during which the Jakarta Server Faces implementation checks
 whether there is any state that was saved during the last Render
 Response phase and needs to be restored in preparation for the next
 postback.

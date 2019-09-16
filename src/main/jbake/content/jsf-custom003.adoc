@@ -21,7 +21,7 @@ user to add either book (or none) to the shopping cart.
 
 The following topics are addressed here:
 
-* link:#GLPBD[Why Use JavaServer Faces Technology to Implement an Image
+* link:#GLPBD[Why Use Jakarta Server Faces Technology to Implement an Image
 Map?]
 * link:#GLPEM[Understanding the Rendered HTML]
 * link:#GLPCD[Understanding the Facelets Page]
@@ -30,10 +30,10 @@ Map?]
 
 [[GLPBD]][[why-use-javaserver-faces-technology-to-implement-an-image-map]]
 
-Why Use JavaServer Faces Technology to Implement an Image Map?
+Why Use Jakarta Server Faces Technology to Implement an Image Map?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JavaServer Faces technology is an ideal framework to use for
+Jakarta Server Faces technology is an ideal framework to use for
 implementing this kind of image map because it can perform the work that
 must be done on the server without requiring you to create a server-side
 image map.
@@ -47,7 +47,7 @@ However, in some situations, your image map might need to access the
 server to retrieve data or to change the appearance of nonform controls,
 tasks that a client-side image map cannot do.
 
-Because the image map custom component uses JavaServer Faces technology,
+Because the image map custom component uses Jakarta Server Faces technology,
 it has the best of both styles of image maps: It can handle the parts of
 the application that need to be performed on the server while allowing
 the other parts of the application to be performed on the client side.
@@ -193,7 +193,7 @@ scope is explained more in the next section.
 Configuring Model Data
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In a JavaServer Faces application, data such as the coordinates of a
+In a Jakarta Server Faces application, data such as the coordinates of a
 hotspot of an image map is retrieved from the `value` attribute through
 a bean. However, the shape and coordinates of a hotspot should be
 defined together because the coordinates are interpreted differently

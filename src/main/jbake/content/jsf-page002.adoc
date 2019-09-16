@@ -12,7 +12,7 @@ prev=jsf-page001.html
 Adding Components to a Page Using HTML Tag Library Tags
 -------------------------------------------------------
 
-The tags defined by the JavaServer Faces standard HTML tag library
+The tags defined by the Jakarta Server Faces standard HTML tag library
 represent HTML form components and other basic HTML elements. These
 components display data or accept data from the user. This data is
 collected as part of a form and is submitted to the server, usually when
@@ -114,7 +114,7 @@ For a standalone radio button, use the `group` attribute.
 
 The tags correspond to components in the `javax.faces.component`
 package. The components are discussed in more detail in
-link:jsf-develop.html#BNATX[Chapter 12, "Developing with JavaServer Faces
+link:jsf-develop.html#BNATX[Chapter 12, "Developing with Jakarta Server Faces
 Technology."]
 
 The next section explains the important attributes that are common to
@@ -124,7 +124,7 @@ Properties] explains how to write a bean property bound to that
 particular component or its value.
 
 For reference information about the tags and their attributes, see the
-olink:JSFTL[JavaServer Faces Facelets Tag Library documentation].
+olink:JSFTL[Jakarta Server Faces Facelets Tag Library documentation].
 
 [[BNARG]][[common-component-tag-attributes]]
 
@@ -177,9 +177,9 @@ The id Attribute
 
 The `id` attribute is not usually required for a component tag but is
 used when another component or a server-side class must refer to the
-component. If you don't include an `id` attribute, the JavaServer Faces
+component. If you don't include an `id` attribute, the Jakarta Server Faces
 implementation automatically generates a component ID. Unlike most other
-JavaServer Faces tag attributes, the `id` attribute takes expressions
+Jakarta Server Faces tag attributes, the `id` attribute takes expressions
 using only the evaluation syntax described in
 link:jsf-el002.html#BNAHS[Immediate Evaluation], which uses the `${}`
 delimiters. For more information on expression syntax, see
@@ -276,7 +276,7 @@ is not rendered if the cart contains no items:
 </h:commandLink>
 ----
 
-Unlike nearly every other JavaServer Faces tag attribute, the `rendered`
+Unlike nearly every other Jakarta Server Faces tag attribute, the `rendered`
 attribute is restricted to using rvalue expressions. As explained in
 link:jsf-el003.html#BNAHU[Value and Method Expressions], these rvalue
 expressions can only read data; they cannot write the data back to the
@@ -349,7 +349,7 @@ Adding HTML Head and Body Tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The HTML head (`h:head`) and body (`h:body`) tags add HTML page
-structure to JavaServer Faces web pages.
+structure to Jakarta Server Faces web pages.
 
 * The `h:head` tag represents the head element of an HTML page.
 * The `h:body` tag represents the body element of an HTML page.
@@ -420,7 +420,7 @@ components that display or collect data from the user, as shown here:
 [source,oac_no_warn]
 ----
 <h:form>
-... other JavaServer Faces tags and other content...
+... other Jakarta Server Faces tags and other content...
 </h:form>
 ----
 
@@ -457,8 +457,8 @@ image:img/jakartaeett_dt_068_txtcmpnts.png[
 "Comments" labels a multi-line field."]
 
 Text components can be categorized as either input or output. A
-JavaServer Faces output component, such as a label, is rendered as
-read-only text. A JavaServer Faces input component, such as a field, is
+Jakarta Server Faces output component, such as a label, is rendered as
+read-only text. A Jakarta Server Faces input component, such as a field, is
 rendered as editable text.
 
 The input and output components can each be rendered in various ways to
@@ -491,7 +491,7 @@ The input tags support the tag attributes shown in link:#GKCNH[Table
 10-4] in addition to those described in link:#BNARG[Common Component Tag
 Attributes]. Note that this table does not include all the attributes
 supported by the input tags but just those that are used most often. For
-the complete list of attributes, refer to the olink:JSFTL[JavaServer
+the complete list of attributes, refer to the olink:JSFTL[Jakarta Server
 Faces Facelets Tag Library documentation].
 
 [[sthref45]][[GKCNH]]
@@ -606,7 +606,7 @@ property in `CashierBean` will be set to the text entered in the field
 corresponding to this tag.
 
 The `required` attribute causes the page to reload, displaying errors,
-if the user does not enter a value in the `name` field. The JavaServer
+if the user does not enter a value in the `name` field. The Jakarta Server
 Faces implementation checks whether the value of the component is null
 or is an empty string.
 
@@ -772,7 +772,7 @@ Hello, Bill! You are visitor number 10 to the page.
 Using Command Component Tags for Performing Actions and Navigation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In JavaServer Faces applications, the button and link component tags are
+In Jakarta Server Faces applications, the button and link component tags are
 used to perform actions, such as submitting a form, and for navigating
 to another page. These tags are called command component tags because
 they perform an action when activated.
@@ -871,7 +871,7 @@ technology.
 Adding Graphics and Images with the h:graphicImage Tag
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a JavaServer Faces application, use the `h:graphicImage` tag to
+In a Jakarta Server Faces application, use the `h:graphicImage` tag to
 render an image on a page:
 
 [source,oac_no_warn]
@@ -917,7 +917,7 @@ header {
 Laying Out Components with the h:panelGrid and h:panelGroup Tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a JavaServer Faces application, you use a panel as a layout container
+In a Jakarta Server Faces application, you use a panel as a layout container
 for a set of other components. A panel is rendered as an HTML table.
 link:#BNASD[Table 10-6] lists the tags used to create panels.
 
@@ -1067,7 +1067,7 @@ image:img/jakartaeett_dt_067_slctn.png[
 Displaying a Check Box Using the h:selectBooleanCheckbox Tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `h:selectBooleanCheckbox` tag is the only tag that JavaServer Faces
+The `h:selectBooleanCheckbox` tag is the only tag that Jakarta Server Faces
 technology provides for representing a Boolean state.
 
 Here is an example that shows how to use the `h:selectBooleanCheckbox`
@@ -1338,7 +1338,7 @@ Using Data-Bound Table Components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Data-bound table components display relational data in a tabular format.
-In a JavaServer Faces application, the `h:dataTable` component tag
+In a Jakarta Server Faces application, the `h:dataTable` component tag
 supports binding to a collection of data objects and displays the data
 as an HTML table. The `h:column` tag represents a column of data within
 the table, iterating over each record in the data source, which is
@@ -1449,7 +1449,7 @@ following:
 * A `javax.sql.RowSet` object
 
 All data sources for data components have a `DataModel` wrapper. Unless
-you explicitly construct a `DataModel` wrapper, the JavaServer Faces
+you explicitly construct a `DataModel` wrapper, the Jakarta Server Faces
 implementation will create one around data of any of the other
 acceptable types. See link:jsf-develop002.html#BNATY[Writing Bean
 Properties] for more information on how to write properties for use with
@@ -1556,7 +1556,7 @@ message. In the example in this section, the text will be a shade of
 red, New Century Schoolbook, serif font family, and oblique style, and a
 line will appear over the text. The message and messages tags support
 many other attributes for defining styles. For more information on these
-attributes, refer to the olink:JSFTL[JavaServer Faces Facelets Tag
+attributes, refer to the olink:JSFTL[Jakarta Server Faces Facelets Tag
 Library documentation].
 
 Another attribute supported by the `h:messages` tag is the `layout`
@@ -1592,7 +1592,7 @@ parameters.
 In HTTP, most browsers by default send GET requests for URL retrieval
 and POST requests for data processing. The GET requests can have query
 parameters and can be cached, which is not advised for POST requests,
-which send data to servers for processing. The other JavaServer Faces
+which send data to servers for processing. The other Jakarta Server Faces
 tags capable of generating links use either simple GET requests, as in
 the case of `h:outputLink`, or POST requests, as in the case of
 `h:commandLink` or `h:commandButton` tags. GET requests with query
@@ -1698,7 +1698,7 @@ The bookmarks Example Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `bookmarks` example application modifies the `hello1` application
-described in link:webapp003.html#BNADX[A Web Module That Uses JavaServer
+described in link:webapp003.html#BNADX[A Web Module That Uses Jakarta Server
 Faces Technology: The hello1 Example] to use a bookmarkable URL that
 uses view parameters.
 
@@ -1795,7 +1795,7 @@ The name in the greeting changes to what you typed.
 Resource Relocation Using h:outputScript and h:outputStylesheet Tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Resource relocation refers to the ability of a JavaServer Faces
+Resource relocation refers to the ability of a Jakarta Server Faces
 application to specify the location where a resource can be rendered.
 Resource relocation can be defined with the following HTML tags:
 
@@ -1804,7 +1804,7 @@ Resource relocation can be defined with the following HTML tags:
 
 These tags have `name` and `target` attributes, which can be used to
 define the render location. For a complete list of attributes for these
-tags, see theolink:JSFTL[JavaServer Faces Facelets Tag Library
+tags, see theolink:JSFTL[Jakarta Server Faces Facelets Tag Library
 documentation].
 
 For the `h:outputScript` tag, the `name` and `target` attributes define

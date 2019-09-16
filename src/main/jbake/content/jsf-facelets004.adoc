@@ -12,7 +12,7 @@ prev=jsf-facelets003.html
 Using Facelets Templates
 ------------------------
 
-JavaServer Faces technology provides the tools to implement user
+Jakarta Server Faces technology provides the tools to implement user
 interfaces that are easy to extend and reuse. Templating is a useful
 Facelets feature that allows you to create a page that will act as the
 base, or template, for the other pages in an application. By using
@@ -62,7 +62,7 @@ or `h:dataTable.`
 
 
 For more information on Facelets templating tags, see the
-JavaServer Faces Facelets Tag Library documentation.
+Jakarta Server Faces Facelets Tag Library documentation.
 
 The Facelets tag library includes the main templating tag `ui:insert`. A
 template page that is created with this tag allows you to define a
