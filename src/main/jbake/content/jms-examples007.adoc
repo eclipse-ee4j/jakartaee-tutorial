@@ -18,7 +18,7 @@ messages asynchronously, you need to define a class that implements the
 `MessageListener` interface, create a `JMSConsumer`, and call the method
 `setMessageListener`.
 
-If you're writing an application to run in the Jakarta EE web or EJB
+If you're writing an application to run in the Jakarta EE web or enterprise bean
 container and want it to receive messages asynchronously, you also need
 to need to define a class that implements the `MessageListener`
 interface. However, instead of creating a `JMSConsumer` and calling the
@@ -27,7 +27,7 @@ class to be a message-driven bean. The application server will then take
 care of the rest.
 
 Message-driven beans can implement any messaging type. Most commonly,
-however, they implement the Java Message Service (JMS) technology.
+however, they implement the Jakarta Messaging technology.
 
 This section describes a simple message-driven bean example. Before
 proceeding, you should read the basic conceptual information in the
@@ -49,7 +49,7 @@ processes the messages that are sent to the queue
 
 link:#BNBPM[Figure 49-3] illustrates the structure of this application.
 The application client sends messages to the queue, which was created
-administratively using the Administration Console. The JMS provider (in
+administratively using the Administration Console. The Messaging provider (in
 this case, GlassFish Server) delivers the messages to the instances of
 the message-driven bean, which then processes the messages.
 
@@ -139,8 +139,8 @@ to an MDB] for examples of the `subscriptionDurability`, `clientId`,
 The onMessage Method
 ^^^^^^^^^^^^^^^^^^^^
 
-When the queue receives a message, the EJB container invokes the message
-listener method or methods. For a bean that uses JMS, this is the
+When the queue receives a message, the enterprise bean container invokes the message
+listener method or methods. For a bean that uses Jakarta Messaging, this is the
 `onMessage` method of the `MessageListener` interface.
 
 In the `SimpleMessageBean` class, the `onMessage` method casts the
@@ -191,14 +191,14 @@ Creating Resources for the simplemessage Example
 This example uses the queue named `jms/MyQueue` and the preconfigured
 default connection factory `java:comp/DefaultJMSConnectionFactory`.
 
-If you have run the simple JMS examples in
-link:jms-examples003.html#BNCFA[Writing Simple JMS Applications] and have
+If you have run the simple Jakarta Messaging examples in
+link:jms-examples003.html#BNCFA[Writing Simple Jakarta Messaging Applications] and have
 not deleted the resources, you already have the queue. Otherwise, follow
 the instructions in link:jms-examples003.html#BABHEFCB[To Create
 Resources for the Simple Examples] to create it.
 
-For more information on creating JMS resources, see
-link:jms-examples003.html#GKTJS[Creating JMS Administered Objects].
+For more information on creating Messaging resources, see
+link:jms-examples003.html#GKTJS[Creating Jakarta Messaging Administered Objects].
 
 [[CHDFBDDA]][[to-run-the-simplemessage-example-using-netbeans-ide]]
 

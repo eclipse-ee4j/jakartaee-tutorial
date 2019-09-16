@@ -1,19 +1,19 @@
 type=page
 status=published
-title=Writing More Advanced JMS Applications
+title=Writing More Advanced Jakarta Messaging Applications
 next=jms-examples005.html
 prev=jms-examples003.html
 ~~~~~~
-Writing More Advanced JMS Applications
-======================================
+Writing More Advanced Jakarta Messaging Applications
+====================================================
 
 [[GIWFH]][[writing-more-advanced-jms-applications]]
 
-Writing More Advanced JMS Applications
---------------------------------------
+Writing More Advanced Jakarta Messaging Applications
+----------------------------------------------------
 
-The following examples show how to use some of the more advanced
-features of the JMS API: durable subscriptions and transactions.
+The following examples show how to use some of the more advanced Jakarta Messaging
+features: durable subscriptions and transactions.
 
 The following topics are addressed here:
 
@@ -224,7 +224,7 @@ Using Local Transactions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `transactedexample` example demonstrates the use of local
-transactions in a JMS client application. It also demonstrates the use
+transactions in a Messaging client application. It also demonstrates the use
 of the request/reply messaging pattern described in
 link:jms-concepts004.html#BNCGB[Creating Temporary Destinations],
 although it uses permanent rather than temporary destinations. The
@@ -262,7 +262,7 @@ orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);
 2.  The vendor
 (`vendor/src/main/java/javaeetutorial/retailer/Vendor.java`) receives
 the retailer's order message and sends an order message to the supplier
-order topic in one transaction. This JMS transaction uses a single
+order topic in one transaction. This Jakarta Messaging transaction uses a single
 session, so you can combine a receive from a queue with a send to a
 topic. Here is the code that uses the same session to create a consumer
 for a queue:
@@ -295,7 +295,7 @@ receives the order from the order topic, checks its inventory, and then
 sends the items ordered to the queue named in the order message's
 `JMSReplyTo` field. If it does not have enough of the item in stock, the
 supplier sends what it has. The synchronous receive from the topic and
-the send to the queue take place in one JMS transaction:
+the send to the queue take place in one Jakarta Messaging transaction:
 +
 [source,oac_no_warn]
 ----
@@ -317,7 +317,7 @@ context.commit();
 4.  The vendor receives the suppliers' replies from its confirmation
 queue and updates the state of the order. Messages are processed by an
 asynchronous message listener, `VendorMessageListener`; this step shows
-the use of JMS transactions with a message listener:
+the use of Jakarta Messaging transactions with a message listener:
 +
 [source,oac_no_warn]
 ----
@@ -353,7 +353,7 @@ link:#BNCGK[Figure 49-1] illustrates these steps.
 
 [[BNCGK]]
 
-.*Figure 49-1 Transactions: JMS Client Example*
+.*Figure 49-1 Transactions: Messaging Client Example*
 
 image:img/jakartaeett_dt_034.png[
 "Diagram of steps in transaction example"]

@@ -13,7 +13,7 @@ Using an Entity to Join Messages from Two MDBs
 ----------------------------------------------
 
 This section explains how to write, compile, package, deploy, and run an
-application that uses the JMS API with an entity. The application uses
+application that uses the Jakarta Messaging with an entity. The application uses
 the following components:
 
 * An application client that both sends and receives messages
@@ -39,12 +39,12 @@ Overview of the clientmdbentity Example Application
 This application simulates, in a simplified way, the work flow of a
 company's human resources (HR) department when it processes a new hire.
 This application also demonstrates how to use the Jakarta EE platform to
-accomplish a task that many JMS applications need to perform.
+accomplish a task that many Messaging applications need to perform.
 
 A messaging client must often wait for several messages from various
 sources. It then uses the information in all these messages to assemble
 a message that it then sends to another destination. The common term for
-this design pattern (which is not specific to JMS) is joining messages.
+this design pattern (which is not specific to Jakarta Messaging) is joining messages.
 Such a task must be transactional, with all the receives and the send as
 a single transaction. If not all the messages are received successfully,
 the transaction can be rolled back. For an application client example
@@ -53,8 +53,8 @@ Local Transactions].
 
 A message-driven bean can process only one message at a time in a
 transaction. To provide the ability to join messages, an application can
-have the message-driven bean store the interim information in a Java
-Persistence API entity. The entity can then determine whether all the
+have the message-driven bean store the interim information in a Jakarta
+Persistence entity. The entity can then determine whether all the
 information has been received; when it has, the entity can report this
 back to one of the message-driven beans, which then creates and sends
 the message to the other destination. After it has completed its task,
@@ -129,7 +129,7 @@ The application client, `HumanResourceClient.java`, found under
 `clientmdbentity-app-client`, performs the following steps:
 
 1.  Defines a topic for the application, using the `java:app` namespace
-because the topic is used in both the application client and the EJB
+because the topic is used in both the application client and the Jakarta Enterprise Beans
 module
 2.  Injects `ConnectionFactory` and `Topic` resources
 3.  Creates a `TemporaryQueue` to receive notification of processing
@@ -187,7 +187,7 @@ Coding the Entity Class for the clientmdbentity Example
 
 The `SetupOffice.java` class, also under `clientmdbentity-ejb`, is an
 entity class. The entity and the message-driven beans are packaged
-together in an EJB JAR file. The entity class is declared as follows:
+together in an enterprise bean JAR file. The entity class is declared as follows:
 
 [source,oac_no_warn]
 ----
@@ -283,7 +283,7 @@ This command creates the following:
 ** An application client JAR file that contains the client class and
 listener class files, along with a manifest file that specifies the main
 class
-** An EJB JAR file that contains the message-driven beans and the entity
+** An enterprise bean JAR file that contains the message-driven beans and the entity
 class, along with the `persistence.xml` file
 ** An application EAR file that contains the two JAR files along with an
 `application.xml` file
@@ -322,7 +322,7 @@ This command creates the following:
 ** An application client JAR file that contains the client class and
 listener class files, along with a manifest file that specifies the main
 class
-** An EJB JAR file that contains the message-driven beans and the entity
+** An enterprise bean JAR file that contains the message-driven beans and the entity
 class, along with the `persistence.xml` file
 ** An application EAR file that contains the two JAR files along with an
 `application.xml` file
