@@ -39,9 +39,9 @@ bill to a text file.
 * A Java class (`CallRecordLogCreator`) that creates the log file for
 the batch job. This is an auxiliary component that does not demonstrate
 any key functionality in this example.
-* Two Java Persistence API (JPA) entities (`CallRecord` and `PhoneBill`)
+* Two Jakarta Persistence entities (`CallRecord` and `PhoneBill`)
 that represent call records and customer bills. The application uses a
-JPA entity manager to store instances of these entities in a database.
+Jakarta Persistence entity manager to store instances of these entities in a database.
 * Three batch artifacts (`CallRecordReader`, `CallRecordProcessor`, and
 `CallRecordWriter`) that implement the first step of the application.
 This step reads call records from the log file, associates them with a
@@ -159,7 +159,7 @@ The `id` field is generated automatically by the JPA implementation to
 store and retrieve `CallRecord` objects to and from a database.
 
 The second constructor creates a `CallRecord` object from an entry of
-JSON data in the log file using the JSON Processing API. Log entries
+JSON data in the log file using Jakarta JSON Processing. Log entries
 look as follows:
 
 [source,oac_no_warn]
@@ -212,9 +212,9 @@ from the database.
 The batch artifacts use instances of these two entities as items to
 read, process, and write.
 
-For more information on the Java Persistence API, see
-link:persistence-intro.html#BNBPZ[Chapter 40, "Introduction to the Java
-Persistence API"]. For more information on the JSON Processing API, see
+For more information on Jakarta Persistence, see
+link:persistence-intro.html#BNBPZ[Chapter 40, "Introduction to Jakarta
+Persistence"]. For more information on Jakarta JSON Processing, see
 link:jsonp.html#GLRBB[Chapter 20, "JSON Processing"].
 
 [[sthref290]][[the-call-records-chunk-step]]
@@ -389,7 +389,7 @@ public class BillReader implements ItemReader {
 }
 ----
 
-This artifact also obtains an iterator to read items from the JPA entity
+This artifact also obtains an iterator to read items from the Jakarta Persistence entity
 manager:
 
 [source,oac_no_warn]
@@ -408,7 +408,7 @@ The `BillWriter` artifact writes each bill to a plain text file.
 
 [[sthref291]][[the-javaserver-faces-pages]]
 
-The JavaServer Faces Pages
+The Jakarta Faces Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The `index.xhtml` page contains a text area that shows the log file of
@@ -485,7 +485,7 @@ public String getJobStatus() {
 ----
 
 The `getRowList` method of the bean creates a list of bills to be
-displayed on the `jobstarted.xhtml` JSF page using a table.
+displayed on the `jobstarted.xhtml` server faces page using a table.
 
 [[BABBGDAA]][[running-the-phonebilling-example-application]]
 
