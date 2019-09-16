@@ -174,7 +174,7 @@ executes the blocking operation in a different thread using the
 `ManagedExecutorService.submit` method from Concurrency Utilities for
 Jakarta EE.
 
-The Java API for WebSocket specification requires that Jakarta EE
+Jakarta WebSocket specification requires that Jakarta EE
 implementations instantiate endpoint classes once per connection. This
 facilitates the development of WebSocket endpoints, because you are
 guaranteed that only one thread is executing the code in a WebSocket

@@ -12,13 +12,13 @@ Creating WebSocket Applications in the Jakarta EE Platform
 Creating WebSocket Applications in the Jakarta EE Platform
 ----------------------------------------------------------
 
-The Jakarta EE platform includes the Java API for WebSocket (JSR 356),
+The Jakarta EE platform includes Jakarta WebSocket,
 which enables you to create, configure, and deploy WebSocket endpoints
-in web applications. The WebSocket client API specified in JSR 356 also
+in web applications. The WebSocket client API specified in Jakarta WebSocket also
 enables you to access remote WebSocket endpoints from any Java
 application.
 
-The Java API for WebSocket consists of the following packages.
+Jakarta WebSocket consists of the following packages.
 
 * The `javax.websocket.server` package contains annotations, classes,
 and interfaces to create and configure server endpoints.
@@ -27,7 +27,7 @@ interfaces, and exceptions that are common to client and server
 endpoints.
 
 WebSocket endpoints are instances of the `javax.websocket.Endpoint`
-class. The Java API for WebSocket enables you to create two kinds of
+class. Jakarta WebSocket enables you to create two kinds of
 endpoints: programmatic endpoints and annotated endpoints. To create a
 programmatic endpoint, you extend the `Endpoint` class and override its
 lifecycle methods. To create an annotated endpoint, you decorate a Java
