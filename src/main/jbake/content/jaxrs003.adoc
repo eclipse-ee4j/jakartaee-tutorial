@@ -116,7 +116,7 @@ The rsvp Example Application
 The `rsvp` example application, located in the
 `_tut-install_` `/examples/jaxrs/rsvp/` directory, allows invitees to an
 event to indicate whether they will attend. The events, people invited
-to the event, and the responses to the invite are stored in Apache Derby using the Jakarta Persistence. The Jakarta REST resources in `rsvp`
+to the event, and the responses to the invite are stored in Apache Derby using Jakarta Persistence. The Jakarta REST resources in `rsvp`
 are exposed in a stateless session enterprise bean.
 
 The following topics are addressed here:
