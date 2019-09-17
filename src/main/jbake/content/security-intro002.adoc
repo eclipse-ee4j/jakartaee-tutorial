@@ -205,6 +205,6 @@ relatively complex and adds some overhead to processing.
 
 GlassFish Server supports message security using Metro, a web services
 stack that uses Web Services Security (WSS) to secure messages. Because
-this message security is specific to Metro and is not a part of the Java
+this message security is specific to Metro and is not a part of the Jakarta
 EE platform, this tutorial does not discuss using WSS to secure
 messages. See the Metro User's Guide at `https://javaee.github.io/metro/`.
