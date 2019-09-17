@@ -117,7 +117,7 @@ locator that provides the `Employee` object, which services requests for
 
 If your HTTP request is `GET /employeeinfo/employees/as209/`, the
 `getEmployee` method returns an `Employee` object whose id is `as209`.
-At runtime, JAX-RS sends a `GET /employeeinfo/employees/as209/lastname`
+At runtime, Jakarta REST sends a `GET /employeeinfo/employees/as209/lastname`
 request to the `getEmployeeLastName` method. The `getEmployeeLastName`
 method retrieves and returns the last name of the employee whose id is
 `as209`.

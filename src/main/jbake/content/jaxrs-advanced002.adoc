@@ -12,7 +12,7 @@ prev=jaxrs-advanced001.html
 Validating Resource Data with Bean Validation
 ---------------------------------------------
 
-JAX-RS supports the Bean Validation to verify JAX-RS resource classes.
+Jakarta REST supports Bean Validation to verify Jakarta REST resource classes.
 This support consists of:
 
 * Adding constraint annotations to resource method parameters
@@ -219,10 +219,10 @@ Validation Exception Handling and Response Codes
 
 If a `javax.validation.ValidationException` or any subclass of
 `ValidationException` except `ConstraintValidationException` is thrown,
-the JAX-RS runtime will respond to the client request with a 500
+the Jakarta REST runtime will respond to the client request with a 500
 (Internal Server Error) HTTP status code.
 
-If a `ConstraintValidationException` is thrown, the JAX-RS runtime will
+If a `ConstraintValidationException` is thrown, the Jakarta REST runtime will
 respond to the client with one of the following HTTP status codes:
 
 * `500` (Internal Server Error) if the exception was thrown while

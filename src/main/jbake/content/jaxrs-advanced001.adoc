@@ -12,14 +12,14 @@ prev=jaxrs-advanced.html
 Annotations for Field and Bean Properties of Resource Classes
 -------------------------------------------------------------
 
-JAX-RS annotations for resource classes let you extract specific parts
+Jakarta REST annotations for resource classes let you extract specific parts
 or values from a Uniform Resource Identifier (URI) or request header.
 
-JAX-RS provides the annotations listed in link:#GKOBO[Table 32-1].
+Jakarta REST provides the annotations listed in link:#GKOBO[Table 32-1].
 
 [[sthref146]][[GKOBO]]
 
-*Table 32-1 Advanced JAX-RS Annotations*
+*Table 32-1 Advanced Jakarta REST Annotations*
 
 [width="99%",cols="5%,95%"]
 |=======================================================================
@@ -122,7 +122,7 @@ GET /employees?maxyear=2013&minyear=2003
 
 The `@DefaultValue` annotation defines a default value, which is to be
 used if no values are provided for the query parameters. By default,
-JAX-RS assigns a null value for `Object` values and zero for primitive
+Jakarta REST assigns a null value for `Object` values and zero for primitive
 data types. You can use the `@DefaultValue` annotation to eliminate null
 or zero values and define your own default values for a parameter.
 

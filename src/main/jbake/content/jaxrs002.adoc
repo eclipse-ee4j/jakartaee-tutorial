@@ -17,46 +17,46 @@ either annotated with `@Path` or have at least one method annotated with
 `@Path` or a request method designator, such as `@GET`, `@PUT`, `@POST`,
 or `@DELETE`. Resource methods are methods of a resource class annotated
 with a request method designator. This section explains how to use
-JAX-RS to annotate Java classes to create RESTful web services.
+Jakarta REST to annotate Java classes to create RESTful web services.
 
 The following topics are addressed here:
 
-* link:#GILRU[Developing RESTful Web Services with JAX-RS]
-* link:#GILQB[Overview of a JAX-RS Application]
+* link:#GILRU[Developing RESTful Web Services with Jakarta REST]
+* link:#GILQB[Overview of a Jakarta REST Application]
 * link:#GINPW[The @Path Annotation and URI Path Templates]
 * link:#GIPYS[Responding to HTTP Methods and Requests]
 * link:#GIPZH[Using @Consumes and @Produces to Customize Requests and
 Responses]
 * link:#GIPYW[Extracting Request Parameters]
-* link:#CIHEGAGI[Configuring JAX-RS Applications]
+* link:#CIHEGAGI[Configuring Jakarta REST Applications]
 
 [[GILRU]][[developing-restful-web-services-with-jax-rs]]
 
-Developing RESTful Web Services with JAX-RS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Developing RESTful Web Services with Jakarta REST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-JAX-RS is a Java programming language API designed to make it easy to
+Jakarta REST is a Java programming language API designed to make it easy to
 develop applications that use the REST architecture.
 
-The JAX-RS API uses Java programming language annotations to simplify
+The Jakarta REST API uses Java programming language annotations to simplify
 the development of RESTful web services. Developers decorate Java
-programming language class files with JAX-RS annotations to define
+programming language class files with Jakarta REST annotations to define
 resources and the actions that can be performed on those resources.
-JAX-RS annotations are runtime annotations; therefore, runtime
+Jakarta REST annotations are runtime annotations; therefore, runtime
 reflection will generate the helper classes and artifacts for the
-resource. A Jakarta EE application archive containing JAX-RS resource
+resource. A Jakarta EE application archive containing Jakarta REST resource
 classes will have the resources configured, the helper classes and
 artifacts generated, and the resource exposed to clients by deploying
 the archive to a Jakarta EE server.
 
 link:#GINNA[Table 30-1] lists some of the Java programming annotations
-that are defined by JAX-RS, with a brief description of how each is
-used. Further information on the JAX-RS APIs can be viewed at
-`https://javaee.github.io/javaee-spec/javadocs/`.
+that are defined by Jakarta REST, with a brief description of how each is
+used. Further information on the Jakarta REST APIs can be viewed at
+`https://jakarta.ee/specifications/platform/8/apidocs/`.
 
 [[sthref137]][[GINNA]]
 
-*Table 30-1 Summary of JAX-RS Annotations*
+*Table 30-1 Summary of Jakarta REST Annotations*
 
 [width="99%",cols="10%,90%"]
 |=======================================================================
@@ -129,7 +129,7 @@ media types of representations a resource can produce and send back to
 the client: for example, `"text/plain"`.
 
 |`@Provider` |The `@Provider` annotation is used for anything that is of
-interest to the JAX-RS runtime, such as `MessageBodyReader` and
+interest to the Jakarta REST runtime, such as `MessageBodyReader` and
 `MessageBodyWriter`. For HTTP requests, the `MessageBodyReader` is used
 to map an HTTP request entity body to method parameters. On the response
 side, a return value is mapped to an HTTP response entity body by using
@@ -148,11 +148,11 @@ the URL mapping for the application. The path specified by
 
 [[GILQB]][[overview-of-a-jax-rs-application]]
 
-Overview of a JAX-RS Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overview of a Jakarta REST Application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following code sample is a very simple example of a root resource
-class that uses JAX-RS annotations:
+class that uses Jakarta REST annotations:
 
 [source,oac_no_warn]
 ----
@@ -199,7 +199,7 @@ annotation, with a static URI path. Variables can be embedded in the
 URIs. URI path templates are URIs with variables embedded within the URI
 syntax.
 * The `@GET` annotation is a request method designator, along with
-`@POST`, `@PUT`, `@DELETE`, and `@HEAD`, defined by JAX-RS and
+`@POST`, `@PUT`, `@DELETE`, and `@HEAD`, defined by Jakarta REST and
 corresponding to the similarly named HTTP methods. In the example, the
 annotated Java method will process HTTP GET requests. The behavior of a
 resource is determined by the HTTP method to which the resource is
@@ -232,7 +232,7 @@ resource responds and is specified at the class or method level of a
 resource. The `@Path` annotation's value is a partial URI path template
 relative to the base URI of the server on which the resource is
 deployed, the context root of the application, and the URL pattern to
-which the JAX-RS runtime responds.
+which the Jakarta REST runtime responds.
 
 URI path templates are URIs with variables embedded within the URI
 syntax. These variables are substituted at runtime in order for a
@@ -246,7 +246,7 @@ are denoted by braces (`{` and `}`). For example, look at the following
 ----
 
 In this kind of example, a user is prompted to type his or her name, and
-then a JAX-RS web service configured to respond to requests to this URI
+then a Jakarta REST web service configured to respond to requests to this URI
 path template responds. For example, if the user types the user name
 "Galileo," the web service responds to the following URL:
 
@@ -290,7 +290,7 @@ does not match that template, a 404 (Not Found) response will be sent to
 the client.
 
 A `@Path` value isn't required to have leading or trailing slashes (/).
-The JAX-RS runtime parses URI path templates the same way, whether or
+The Jakarta REST runtime parses URI path templates the same way, whether or
 not they have leading or trailing slashes.
 
 A URI path template has one or more variables, with each variable name
@@ -315,7 +315,7 @@ public class SomeResource {
 }
 ----
 
-In this example, the URL pattern for the JAX-RS helper servlet,
+In this example, the URL pattern for the Jakarta REST helper servlet,
 specified in `web.xml`, is the default:
 
 [source,oac_no_warn]
@@ -396,11 +396,11 @@ The Request Method Designator Annotations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Request method designator annotations are runtime annotations, defined
-by JAX-RS, that correspond to the similarly named HTTP methods. Within a
+by Jakarta REST, that correspond to the similarly named HTTP methods. Within a
 resource class file, HTTP methods are mapped to Java programming
 language methods by using the request method designator annotations. The
 behavior of a resource is determined by which HTTP method the resource
-is responding to. JAX-RS defines a set of request method designators for
+is responding to. Jakarta REST defines a set of request method designators for
 the common HTTP methods GET, POST, PUT, DELETE, and HEAD; you can also
 create your own custom request method designators. Creating custom
 request method designators is outside the scope of this document.
@@ -429,12 +429,12 @@ public Response putContainer() {
 }
 ----
 
-By default, the JAX-RS runtime will automatically support the methods
+By default, the Jakarta REST runtime will automatically support the methods
 HEAD and OPTIONS if not explicitly implemented. For HEAD, the runtime
 will invoke the implemented GET method, if present, and ignore the
 response entity, if set. For OPTIONS, the `Allow` response header will
 be set to the set of HTTP methods supported by the resource. In
-addition, the JAX-RS runtime will return a Web Application Definition
+addition, the Jakarta REST runtime will return a Web Application Definition
 Language (WADL) document describing the resource; see
 `http://www.w3.org/Submission/wadl/` for more information.
 
@@ -507,7 +507,7 @@ Table 32-3 Types Supported for HTTP Request and Response Entity Bodies
 |`javax.xml.transform.Source` |XML media types (`text/xml`,
 `application/xml`, and `application/*+xml`)
 
-|`javax.xml.bind.JAXBElement` and application-supplied JAXB classes |XML
+|`javax.xml.bind.JAXBElement` and application-supplied Jakarta XML Binding classes |XML
 media types (`text/xml`, `application/xml`, and `application/*+xml`)
 
 |`MultivaluedMap<String, String>` |Form content
@@ -596,7 +596,7 @@ method level, the annotation overrides any `@Produces` annotations
 applied at the class level.
 
 If no methods in a resource are able to produce the MIME type in a
-client request, the JAX-RS runtime sends back an HTTP "406 Not
+client request, the Jakarta REST runtime sends back an HTTP "406 Not
 Acceptable" error.
 
 The value of `@Produces` is an array of `String` of MIME types or a
@@ -687,7 +687,7 @@ level, `@Consumes` overrides any `@Consumes` annotations applied at the
 class level.
 
 If a resource is unable to consume the MIME type of a client request,
-the JAX-RS runtime sends back an HTTP 415 ("Unsupported Media Type")
+the Jakarta REST runtime sends back an HTTP 415 ("Unsupported Media Type")
 error.
 
 The value of `@Consumes` is an array of `String` of acceptable MIME
@@ -880,9 +880,9 @@ extracted from the URI and cast to a `String`. The resulting `String` is
 then available to the method as the `userId` variable.
 
 If the URI path template variable cannot be cast to the specified type,
-the JAX-RS runtime returns an HTTP 400 ("Bad Request") error to the
+the Jakarta REST runtime returns an HTTP 400 ("Bad Request") error to the
 client. If the `@PathParam` annotation cannot be cast to the specified
-type, the JAX-RS runtime returns an HTTP 404 ("Not Found") error to the
+type, the Jakarta REST runtime returns an HTTP 404 ("Not Found") error to the
 client.
 
 The `@PathParam` parameter and the other parameter-based annotations
@@ -958,10 +958,10 @@ public void post(MultivaluedMap<String, String> formParams) {
 
 [[CIHEGAGI]][[configuring-jax-rs-applications]]
 
-Configuring JAX-RS Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuring Jakarta REST Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A JAX-RS application consists of at least one resource class packaged
+A Jakarta REST application consists of at least one resource class packaged
 within a WAR file. The base URI from which an application's resources
 respond to requests can be set one of two ways:
 
@@ -972,14 +972,14 @@ descriptor
 
 The following topics are addressed here:
 
-* link:#CIHFEBJF[Configuring a JAX-RS Application Using a Subclass of
+* link:#CIHFEBJF[Configuring a Jakarta REST Application Using a Subclass of
 Application]
 * link:#CIHDHAIJ[Configuring the Base URI in web.xml]
 
 [[CIHFEBJF]][[configuring-a-jax-rs-application-using-a-subclass-of-application]]
 
-Configuring a JAX-RS Application Using a Subclass of Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring a Jakarta REST Application Using a Subclass of Application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a subclass of `javax.ws.rs.core.Application` to manually
 configure the environment in which the REST resources defined in your
@@ -998,7 +998,7 @@ that all resources defined within the application are relative to
 
 By default, all the resources in an archive will be processed for
 resources. Override the `getClasses` method to manually register the
-resource classes in the application with the JAX-RS runtime.
+resource classes in the application with the Jakarta REST runtime.
 
 [source,oac_no_warn]
 ----
@@ -1016,7 +1016,7 @@ public Set<Class<?>> getClasses() {
 Configuring the Base URI in web.xml
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The base URI for a JAX-RS application can be set using a
+The base URI for a Jakarta REST application can be set using a
 `servlet-mapping` tag in the `web.xml` deployment descriptor, using the
 `Application` class name as the servlet.
 
