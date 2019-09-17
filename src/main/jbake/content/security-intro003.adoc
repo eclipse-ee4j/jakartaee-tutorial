@@ -72,8 +72,8 @@ descriptors discussed in this tutorial include the following.
 `web.xml`.
 +
 The schema for web component deployment descriptors is provided in
-Chapter 14 of the Java Servlet 4.0 specification (JSR 369), which can be
-downloaded from `http://jcp.org/en/jsr/detail?id=369`.
+Chapter 14 of the Jakarta Servlet 4.0 specification, which can be
+downloaded from `https://jakarta.ee/specifications/servlet/4.0/`.
 * Enterprise JavaBeans components may use an EJB deployment descriptor
 named `META-INF/ejb-jar.xml`, contained in the EJB JAR file.
 +

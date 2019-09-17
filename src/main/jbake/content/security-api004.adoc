@@ -21,9 +21,9 @@ Topics include:
 [[overview-of-the-built-in-database-identity-store-example]]
 Overview of the Built-In Database Identity Store Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-JSR 375 mandates that a Jakarta EE container MUST support a built-in `IdentityStore`
+Jakarta Security mandates that a Jakarta EE container MUST support a built-in `IdentityStore`
 backed by a database. To support this mandatory requirement, `DatabaseIdentityStore`
-is bundled with the GlassFish-RI.
+is bundled with GlassFish.
 
 This example demonstrates how you can configure a `DatabaseIdentityStore` to point
 to a backend database and then use it as an IdentityStore. The authentication mechanism used is
@@ -225,7 +225,7 @@ public class Servlet extends HttpServlet {
 }
 ----
 
-In GlassFish 5.0, group to role mapping is enabled by default. Therefore, you do
+In GlassFish 5.1, group to role mapping is enabled by default. Therefore, you do
 not need to bundle web.xml with the application to provide mapping between
 roles and groups.
 

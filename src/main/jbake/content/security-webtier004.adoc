@@ -22,7 +22,7 @@ The following topics are addressed here:
 * link:#the-hello2-basicauth-example-basic-authentication-with-a-servlet[The hello2-basicauth Example: Basic Authentication with a
 Servlet]
 * link:#the-hello1-formauth-example-form-based-authentication-with-a-javaserver-faces-application[The hello1-formauth Example: Form-Based Authentication
-with a JavaServer Faces Application]
+with a Jakarta Server Faces Application]
 
 [[CHDEBCHG]][[overview-of-examples-of-securing-web-applications]]
 
@@ -83,7 +83,7 @@ GlassFish Server].
 a|
 *Note:*
 
-The Jakarta EE Security API requires that
+Jakarta Security requires that
 group principal names are mapped
 to roles of the same name by default. Therefore, the *Default Principal To Role Mapping* setting
 is enabled by default on the Security page of
@@ -276,23 +276,23 @@ The application responds by saying "Hello" to the name you entered.
 
 [[BNCBY]][[the-hello1-formauth-example-form-based-authentication-with-a-javaserver-faces-application]]
 
-The hello1-formauth Example: Form-Based Authentication with a JavaServer Faces Application
+The hello1-formauth Example: Form-Based Authentication with a Jakarta Server Faces Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example explains how to use form-based authentication with a
-JavaServer Faces application. With form-based authentication, you can
+Jakarta Server Faces application. With form-based authentication, you can
 customize the login screen and error pages that are presented to the web
 client for authentication of the user name and password. When a user
 submits his or her name and password, the server determines whether the
 user name and password are those of an authorized user and, if
 authorized, sends the requested web resource.
 
-This example, `hello1-formauth`, adds security to the basic JavaServer
+This example, `hello1-formauth`, adds security to the basic Jakarta Server
 Faces application shown in link:webapp003.html#BNADX[A Web Module That
-Uses JavaServer Faces Technology: The hello1 Example].
+Uses Jakarta Server Faces Technology: The hello1 Example].
 
 In general, the steps necessary for adding form-based authentication to
-an unsecured JavaServer Faces application are similar to those described
+an unsecured Jakarta Server Faces application are similar to those described
 in link:#BNCCK[The hello2-basicauth Example: Basic Authentication with a
 Servlet]. The major difference is that you must use a deployment
 descriptor to specify the use of form-based authentication, as described
@@ -318,7 +318,7 @@ Example] shows how you specify these pages in the deployment descriptor.
 
 The login page can be an HTML page or a servlet, and it must return an
 HTML page containing a form that conforms to specific naming conventions
-(see the Java Servlet 4.0 specification for more information on these
+(see the Jakarta Servlet 4.0 specification for more information on these
 requirements). To do this, include the elements that accept user name
 and password information between `<form></form>` tags in your login
 page. The content of an HTML page or servlet for a login page should be
@@ -399,7 +399,7 @@ Specifying Security for the Form-Based Authentication Example
 
 This example takes a very simple servlet-based web application and adds
 form-based security. To specify form-based instead of basic
-authentication for a JavaServer Faces example, you must use the
+authentication for a Jakarta Server Faces example, you must use the
 deployment descriptor.
 
 The following sample code shows the security elements added to the

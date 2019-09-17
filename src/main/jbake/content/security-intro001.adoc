@@ -1,15 +1,15 @@
 type=page
 status=published
-title=Overview of Jakarta EE Security
+title=Overview of Jakarta Security
 next=security-intro002.html
 prev=security-intro.html
 ~~~~~~
-= Overview of Jakarta EE Security
+= Overview of Jakarta Security
 
 [[BNBWK]][[overview-of-jakarta-ee-security]]
 
-Overview of Jakarta EE Security
--------------------------------
+Overview of Jakarta Security
+----------------------------
 
 Every enterprise that has either sensitive resources that can be
 accessed by many users or resources that traverse unprotected, open
@@ -59,7 +59,7 @@ and mechanisms can be found in the chapter on security in the Jakarta EE 8
 specification.
 
 Other chapters in this Part discuss security requirements in web tier
-and enterprise tier applications, and the Jakarta EE Security API.
+and enterprise tier applications, and the Jakarta Security.
 
 * link:security-webtier.html#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] explains how to add security to web components, such
@@ -67,9 +67,9 @@ as servlets.
 * link:security-jakartaee.html#BNBYK[Chapter 52, "Getting Started Securing
 Enterprise Applications"] explains how to add security to Jakarta EE
 components, such as enterprise beans and application clients.
-* link:security-api.html#using-the-jakarta-ee-security-api[53 Using the Jakarta EE Security API]
+* link:security-api.html#using-the-jakarta-ee-security-api[53 Using Jakarta Security]
 describes the authentication and credential validation funtionality provided by
-the Jakarta EE security API, and provides examples.
+Jakarta Security, and provides examples.
 
 [[BNBWL]][[a-simple-application-security-walkthrough]]
 
@@ -182,7 +182,7 @@ The web page performs the remote method call to the enterprise bean,
 using the user's credential to establish a secure association between
 the web page and the enterprise bean, as shown in link:#BNBWV[Figure
 50-5]. The association is implemented as two related security contexts:
-one in the web server and one in the EJB container.
+one in the web server and one in the enterprise bean container.
 
 [[BNBWV]]
 
@@ -191,11 +191,11 @@ image:img/jakartaeett_dt_043.png[
 "Diagram of authorization process between web component and enterprise
 bean"]
 
-The EJB container is responsible for enforcing access control on the
+The enterprise container is responsible for enforcing access control on the
 enterprise bean method. The container consults the security policy
 associated with the enterprise bean to determine the security roles that
 are permitted access to the method. The security policy is derived from
-annotations or from the deployment descriptor. For each role, the EJB
+annotations or from the deployment descriptor. For each role, the enterprise bean
 container determines whether it can map the caller to the role by using
 the security context associated with the call.
 

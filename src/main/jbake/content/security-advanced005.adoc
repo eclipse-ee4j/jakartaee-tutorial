@@ -91,7 +91,7 @@ Using Programmatic Login
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Programmatic login enables the client code to supply user credentials.
-If you are using an EJB client, you can use the
+If you are using an enterprise bean client, you can use the
 `com.sun.appserv.security.ProgrammaticLogin` class with its convenient
 `login` and `logout` methods. Programmatic login is specific to a
 server.

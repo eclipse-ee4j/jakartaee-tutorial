@@ -69,7 +69,7 @@ invokes on it. The `IdentityStoreHandler`, in turn, looks up the available Ident
 and invokes on them to determine the aggregate result.
 
 There is a built-in `IdentityStoreHandler` that implements a standard algorithm
-defined by JSR-375. The JSR-375 specification provides a full description of
+defined by Jakarta Security. The Jakarta Security specification provides a full description of
 the algorithm, but it can be roughly summarized as follows:
 
 * Iterate over the available validating IdentityStores, in priority order,
@@ -229,7 +229,7 @@ application's `HttpAuthenticationMechanism`, which indicates that a
 A container-supplied interceptor then intercepts calls to the `HttpAuthenticationMechanism`,
 invokes the `RememberMeIdentityStore` as necessary before and after calls to the
 authentication mechanism, and ensures that the user's identity is correctly
-set for the session. The JSR-375 specification provides a detailed description
+set for the session. The Jakarta Security specification provides a detailed description
 of the required interceptor behavior.
 
 Implementations of `RememberMeIdentityStore` should take care to manage tokens
