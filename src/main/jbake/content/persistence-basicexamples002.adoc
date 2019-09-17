@@ -630,7 +630,7 @@ em.persist(part);
 
 The `ConfigBean` singleton session bean is used to initialize the data
 in `order`. `ConfigBean` is annotated with `@Startup`, which indicates
-that the enterprise bean should create `ConfigBean` when `order` is
+that the enterprise bean container should create `ConfigBean` when `order` is
 deployed. The `createData` method is annotated with `@PostConstruct` and
 creates the initial entities used by `order` by calling `RequestBean`'s
 business methods.
