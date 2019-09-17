@@ -61,7 +61,7 @@
 <h2 id="_adding_components_to_a_page_using_html_tag_library_tags">Adding Components to a Page Using HTML Tag Library Tags</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The tags defined by the JavaServer Faces standard HTML tag library
+<p>The tags defined by the Jakarta Server Faces standard HTML tag library
 represent HTML form components and other basic HTML elements. These
 components display data or accept data from the user. This data is
 collected as part of a form and is submitted to the server, usually when
@@ -280,7 +280,7 @@ items</p></td>
 <div class="paragraph">
 <p>The tags correspond to components in the <code>javax.faces.component</code>
 package. The components are discussed in more detail in
-<a href="jsf-develop.html#BNATX">Chapter 12, "Developing with JavaServer Faces
+<a href="jsf-develop.html#BNATX">Chapter 12, "Developing with Jakarta Server Faces
 Technology."</a></p>
 </div>
 <div class="paragraph">
@@ -292,7 +292,7 @@ particular component or its value.</p>
 </div>
 <div class="paragraph">
 <p>For reference information about the tags and their attributes, see the
-o<a href="JSFTL">JavaServer Faces Facelets Tag Library documentation</a>.</p>
+o<a href="JSFTL">Jakarta Server Faces Facelets Tag Library documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNARG"></a><a id="common-component-tag-attributes"></a></p>
@@ -372,9 +372,9 @@ then modified in the backing bean for the page.</p>
 <div class="paragraph">
 <p>The <code>id</code> attribute is not usually required for a component tag but is
 used when another component or a server-side class must refer to the
-component. If you don&#8217;t include an <code>id</code> attribute, the JavaServer Faces
+component. If you don&#8217;t include an <code>id</code> attribute, the Jakarta Server Faces
 implementation automatically generates a component ID. Unlike most other
-JavaServer Faces tag attributes, the <code>id</code> attribute takes expressions
+Jakarta Server Faces tag attributes, the <code>id</code> attribute takes expressions
 using only the evaluation syntax described in
 <a href="jsf-el002.html#BNAHS">Immediate Evaluation</a>, which uses the <code>${}</code>
 delimiters. For more information on expression syntax, see
@@ -482,7 +482,7 @@ is not rendered if the cart contains no items:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Unlike nearly every other JavaServer Faces tag attribute, the <code>rendered</code>
+<p>Unlike nearly every other Jakarta Server Faces tag attribute, the <code>rendered</code>
 attribute is restricted to using rvalue expressions. As explained in
 <a href="jsf-el003.html#BNAHU">Value and Method Expressions</a>, these rvalue
 expressions can only read data; they cannot write the data back to the
@@ -568,7 +568,7 @@ Component Instances</a>.</p>
 <h3 id="_adding_html_head_and_body_tags">Adding HTML Head and Body Tags</h3>
 <div class="paragraph">
 <p>The HTML head (<code>h:head</code>) and body (<code>h:body</code>) tags add HTML page
-structure to JavaServer Faces web pages.</p>
+structure to Jakarta Server Faces web pages.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -651,7 +651,7 @@ components that display or collect data from the user, as shown here:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;h:form&gt;
-... other JavaServer Faces tags and other content...
+... other Jakarta Server Faces tags and other content...
 &lt;/h:form&gt;</code></pre>
 </div>
 </div>
@@ -700,8 +700,8 @@ user enters</p>
 </div>
 <div class="paragraph">
 <p>Text components can be categorized as either input or output. A
-JavaServer Faces output component, such as a label, is rendered as
-read-only text. A JavaServer Faces input component, such as a field, is
+Jakarta Server Faces output component, such as a label, is rendered as
+read-only text. A Jakarta Server Faces input component, such as a field, is
 rendered as editable text.</p>
 </div>
 <div class="paragraph">
@@ -754,7 +754,7 @@ of text</p></td>
 10-4</a> in addition to those described in <a href="#BNARG">Common Component Tag
 Attributes</a>. Note that this table does not include all the attributes
 supported by the input tags but just those that are used most often. For
-the complete list of attributes, refer to the o<a href="JSFTL">JavaServer
+the complete list of attributes, refer to the o<a href="JSFTL">Jakarta Server
 Faces Facelets Tag Library documentation</a>.</p>
 </div>
 <div class="paragraph">
@@ -923,7 +923,7 @@ corresponding to this tag.</p>
 </div>
 <div class="paragraph">
 <p>The <code>required</code> attribute causes the page to reload, displaying errors,
-if the user does not enter a value in the <code>name</code> field. The JavaServer
+if the user does not enter a value in the <code>name</code> field. The Jakarta Server
 Faces implementation checks whether the value of the component is null
 or is an empty string.</p>
 </div>
@@ -1108,7 +1108,7 @@ expression. The message displayed in the page is now as follows:</p>
 <div class="sect2">
 <h3 id="_using_command_component_tags_for_performing_actions_and_navigation">Using Command Component Tags for Performing Actions and Navigation</h3>
 <div class="paragraph">
-<p>In JavaServer Faces applications, the button and link component tags are
+<p>In Jakarta Server Faces applications, the button and link component tags are
 used to perform actions, such as submitting a form, and for navigating
 to another page. These tags are called command component tags because
 they perform an action when activated.</p>
@@ -1231,7 +1231,7 @@ technology.</p>
 <div class="sect2">
 <h3 id="_adding_graphics_and_images_with_the_h_graphicimage_tag">Adding Graphics and Images with the h:graphicImage Tag</h3>
 <div class="paragraph">
-<p>In a JavaServer Faces application, use the <code>h:graphicImage</code> tag to
+<p>In a Jakarta Server Faces application, use the <code>h:graphicImage</code> tag to
 render an image on a page:</p>
 </div>
 <div class="listingblock">
@@ -1282,7 +1282,7 @@ found at <code>resources/img/top-background.jpg</code>:</p>
 <div class="sect2">
 <h3 id="_laying_out_components_with_the_h_panelgrid_and_h_panelgroup_tags">Laying Out Components with the h:panelGrid and h:panelGroup Tags</h3>
 <div class="paragraph">
-<p>In a JavaServer Faces application, you use a panel as a layout container
+<p>In a Jakarta Server Faces application, you use a panel as a layout container
 for a set of other components. A panel is rendered as an HTML table.
 <a href="#BNASD">Table 10-6</a> lists the tags used to create panels.</p>
 </div>
@@ -1471,7 +1471,7 @@ represents a Boolean state</p>
 <div class="sect3">
 <h4 id="_displaying_a_check_box_using_the_h_selectbooleancheckbox_tag">Displaying a Check Box Using the h:selectBooleanCheckbox Tag</h4>
 <div class="paragraph">
-<p>The <code>h:selectBooleanCheckbox</code> tag is the only tag that JavaServer Faces
+<p>The <code>h:selectBooleanCheckbox</code> tag is the only tag that Jakarta Server Faces
 technology provides for representing a Boolean state.</p>
 </div>
 <div class="paragraph">
@@ -1803,7 +1803,7 @@ list. (This tag is listed in <a href="jsf-facelets004.html#GJBFP">Table 8-2</a>.
 <h3 id="_using_data_bound_table_components">Using Data-Bound Table Components</h3>
 <div class="paragraph">
 <p>Data-bound table components display relational data in a tabular format.
-In a JavaServer Faces application, the <code>h:dataTable</code> component tag
+In a Jakarta Server Faces application, the <code>h:dataTable</code> component tag
 supports binding to a collection of data objects and displays the data
 as an HTML table. The <code>h:column</code> tag represents a column of data within
 the table, iterating over each record in the data source, which is
@@ -1940,7 +1940,7 @@ following:</p>
 </div>
 <div class="paragraph">
 <p>All data sources for data components have a <code>DataModel</code> wrapper. Unless
-you explicitly construct a <code>DataModel</code> wrapper, the JavaServer Faces
+you explicitly construct a <code>DataModel</code> wrapper, the Jakarta Server Faces
 implementation will create one around data of any of the other
 acceptable types. See <a href="jsf-develop002.html#BNATY">Writing Bean
 Properties</a> for more information on how to write properties for use with
@@ -2085,7 +2085,7 @@ message. In the example in this section, the text will be a shade of
 red, New Century Schoolbook, serif font family, and oblique style, and a
 line will appear over the text. The message and messages tags support
 many other attributes for defining styles. For more information on these
-attributes, refer to the o<a href="JSFTL">JavaServer Faces Facelets Tag
+attributes, refer to the o<a href="JSFTL">Jakarta Server Faces Facelets Tag
 Library documentation</a>.</p>
 </div>
 <div class="paragraph">
@@ -2127,7 +2127,7 @@ parameters.</p>
 <p>In HTTP, most browsers by default send GET requests for URL retrieval
 and POST requests for data processing. The GET requests can have query
 parameters and can be cached, which is not advised for POST requests,
-which send data to servers for processing. The other JavaServer Faces
+which send data to servers for processing. The other Jakarta Server Faces
 tags capable of generating links use either simple GET requests, as in
 the case of <code>h:outputLink</code>, or POST requests, as in the case of
 <code>h:commandLink</code> or <code>h:commandButton</code> tags. GET requests with query
@@ -2254,7 +2254,7 @@ parameter values are read is as follows:</p>
 <h3 id="_the_bookmarks_example_application">The bookmarks Example Application</h3>
 <div class="paragraph">
 <p>The <code>bookmarks</code> example application modifies the <code>hello1</code> application
-described in <a href="webapp003.html#BNADX">A Web Module That Uses JavaServer
+described in <a href="webapp003.html#BNADX">A Web Module That Uses Jakarta Server
 Faces Technology: The hello1 Example</a> to use a bookmarkable URL that
 uses view parameters.</p>
 </div>
@@ -2407,7 +2407,7 @@ Return.</p>
 <div class="sect2">
 <h3 id="_resource_relocation_using_h_outputscript_and_h_outputstylesheet_tags">Resource Relocation Using h:outputScript and h:outputStylesheet Tags</h3>
 <div class="paragraph">
-<p>Resource relocation refers to the ability of a JavaServer Faces
+<p>Resource relocation refers to the ability of a Jakarta Server Faces
 application to specify the location where a resource can be rendered.
 Resource relocation can be defined with the following HTML tags:</p>
 </div>
@@ -2424,7 +2424,7 @@ Resource relocation can be defined with the following HTML tags:</p>
 <div class="paragraph">
 <p>These tags have <code>name</code> and <code>target</code> attributes, which can be used to
 define the render location. For a complete list of attributes for these
-tags, see theo<a href="JSFTL">JavaServer Faces Facelets Tag Library
+tags, see theo<a href="JSFTL">Jakarta Server Faces Facelets Tag Library
 documentation</a>.</p>
 </div>
 <div class="paragraph">

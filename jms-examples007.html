@@ -68,7 +68,7 @@ messages asynchronously, you need to define a class that implements the
 <code>setMessageListener</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re writing an application to run in the Jakarta EE web or EJB
+<p>If you&#8217;re writing an application to run in the Jakarta EE web or enterprise bean
 container and want it to receive messages asynchronously, you also need
 to need to define a class that implements the <code>MessageListener</code>
 interface. However, instead of creating a <code>JMSConsumer</code> and calling the
@@ -78,7 +78,7 @@ care of the rest.</p>
 </div>
 <div class="paragraph">
 <p>Message-driven beans can implement any messaging type. Most commonly,
-however, they implement the Java Message Service (JMS) technology.</p>
+however, they implement the Jakarta Messaging technology.</p>
 </div>
 <div class="paragraph">
 <p>This section describes a simple message-driven bean example. Before
@@ -110,7 +110,7 @@ processes the messages that are sent to the queue</p>
 <div class="paragraph">
 <p><a href="#BNBPM">Figure 49-3</a> illustrates the structure of this application.
 The application client sends messages to the queue, which was created
-administratively using the Administration Console. The JMS provider (in
+administratively using the Administration Console. The Messaging provider (in
 this case, GlassFish Server) delivers the messages to the instances of
 the message-driven bean, which then processes the messages.</p>
 </div>
@@ -208,8 +208,8 @@ to an MDB</a> for examples of the <code>subscriptionDurability</code>, <code>cli
 <div class="sect3">
 <h4 id="_the_onmessage_method">The onMessage Method</h4>
 <div class="paragraph">
-<p>When the queue receives a message, the EJB container invokes the message
-listener method or methods. For a bean that uses JMS, this is the
+<p>When the queue receives a message, the enterprise bean container invokes the message
+listener method or methods. For a bean that uses Jakarta Messaging, this is the
 <code>onMessage</code> method of the <code>MessageListener</code> interface.</p>
 </div>
 <div class="paragraph">
@@ -276,15 +276,15 @@ incoming message to a <code>TextMessage</code> and displays the text:</p>
 default connection factory <code>java:comp/DefaultJMSConnectionFactory</code>.</p>
 </div>
 <div class="paragraph">
-<p>If you have run the simple JMS examples in
-<a href="jms-examples003.html#BNCFA">Writing Simple JMS Applications</a> and have
+<p>If you have run the simple Jakarta Messaging examples in
+<a href="jms-examples003.html#BNCFA">Writing Simple Jakarta Messaging Applications</a> and have
 not deleted the resources, you already have the queue. Otherwise, follow
 the instructions in <a href="jms-examples003.html#BABHEFCB">To Create
 Resources for the Simple Examples</a> to create it.</p>
 </div>
 <div class="paragraph">
-<p>For more information on creating JMS resources, see
-<a href="jms-examples003.html#GKTJS">Creating JMS Administered Objects</a>.</p>
+<p>For more information on creating Messaging resources, see
+<a href="jms-examples003.html#GKTJS">Creating Jakarta Messaging Administered Objects</a>.</p>
 </div>
 <div class="paragraph">
 <p><a id="CHDFBDDA"></a><a id="to-run-the-simplemessage-example-using-netbeans-ide"></a></p>

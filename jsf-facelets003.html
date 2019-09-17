@@ -62,7 +62,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes the general steps involved in developing a
-JavaServer Faces application. The following tasks are usually required:</p>
+Jakarta Server Faces application. The following tasks are usually required:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -121,7 +121,7 @@ tut-install`/examples/web/jsf/guessnumber-jsf/` directory.</p>
 <div class="sect3">
 <h4 id="_developing_a_managed_bean">Developing a Managed Bean</h4>
 <div class="paragraph">
-<p>In a typical JavaServer Faces application, each page of the application
+<p>In a typical Jakarta Server Faces application, each page of the application
 connects to a managed bean that serves as a backing bean. The backing
 bean defines the methods and properties that are associated with the
 components. In this example, both pages use the same backing bean.</p>
@@ -293,7 +293,7 @@ page:</p>
 <p>An <code>h:inputText</code> tag accepts user input and sets the value of the
 managed bean property <code>userNumber</code> through the EL expression
 <code>#{userNumberBean.userNumber}</code>. The input value is validated for value
-range by the JavaServer Faces standard validator tag
+range by the Jakarta Server Faces standard validator tag
 <code>f:validateLongRange</code>.</p>
 </div>
 <div class="paragraph">
@@ -350,7 +350,7 @@ for the Back button to send the user to the <code>greeting.xhtml</code> page.</p
 <div class="sect2">
 <h3 id="_configuring_the_application">Configuring the Application</h3>
 <div class="paragraph">
-<p>Configuring a JavaServer Faces application involves mapping the Faces
+<p>Configuring a Jakarta Server Faces application involves mapping the Faces
 Servlet in the web deployment descriptor file, such as a <code>web.xml</code> file,
 and possibly adding managed bean declarations, navigation rules, and
 resource bundle declarations to the application configuration resource
@@ -396,7 +396,7 @@ in bold.</p>
 </div>
 <div class="paragraph">
 <p>Note the use of the context parameter <code>PROJECT_STAGE</code>. This parameter
-identifies the status of a JavaServer Faces application in the software
+identifies the status of a Jakarta Server Faces application in the software
 lifecycle.</p>
 </div>
 <div class="paragraph">

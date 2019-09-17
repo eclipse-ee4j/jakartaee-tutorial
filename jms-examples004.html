@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Writing More Advanced JMS Applications</title>
+    <title>Writing More Advanced Jakarta Messaging Applications</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Writing More Advanced JMS Applications</b><br />
+  <b>Writing More Advanced Jakarta Messaging Applications</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,11 +58,11 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_writing_more_advanced_jms_applications">Writing More Advanced JMS Applications</h2>
+<h2 id="_writing_more_advanced_jakarta_messaging_applications">Writing More Advanced Jakarta Messaging Applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following examples show how to use some of the more advanced
-features of the JMS API: durable subscriptions and transactions.</p>
+<p>The following examples show how to use some of the more advanced Jakarta Messaging
+features: durable subscriptions and transactions.</p>
 </div>
 <div class="paragraph">
 <p>The following topics are addressed here:</p>
@@ -339,7 +339,7 @@ subscription.</p>
 <h3 id="_using_local_transactions">Using Local Transactions</h3>
 <div class="paragraph">
 <p>The <code>transactedexample</code> example demonstrates the use of local
-transactions in a JMS client application. It also demonstrates the use
+transactions in a Messaging client application. It also demonstrates the use
 of the request/reply messaging pattern described in
 <a href="jms-concepts004.html#BNCGB">Creating Temporary Destinations</a>,
 although it uses permanent rather than temporary destinations. The
@@ -383,7 +383,7 @@ orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);</code></pre
 <p>The vendor
 (<code>vendor/src/main/java/javaeetutorial/retailer/Vendor.java</code>) receives
 the retailer&#8217;s order message and sends an order message to the supplier
-order topic in one transaction. This JMS transaction uses a single
+order topic in one transaction. This Jakarta Messaging transaction uses a single
 session, so you can combine a receive from a queue with a send to a
 topic. Here is the code that uses the same session to create a consumer
 for a queue:</p>
@@ -420,7 +420,7 @@ receives the order from the order topic, checks its inventory, and then
 sends the items ordered to the queue named in the order message&#8217;s
 <code>JMSReplyTo</code> field. If it does not have enough of the item in stock, the
 supplier sends what it has. The synchronous receive from the topic and
-the send to the queue take place in one JMS transaction:</p>
+the send to the queue take place in one Jakarta Messaging transaction:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">receiver = context.createConsumer(SupplierOrderTopic);
@@ -444,7 +444,7 @@ context.commit();</code></pre>
 <p>The vendor receives the suppliers' replies from its confirmation
 queue and updates the state of the order. Messages are processed by an
 asynchronous message listener, <code>VendorMessageListener</code>; this step shows
-the use of JMS transactions with a message listener:</p>
+the use of Jakarta Messaging transactions with a message listener:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">MapMessage component = (MapMessage) message;
@@ -487,7 +487,7 @@ in the first order, so these steps are executed twice.</p>
 <p><a href="#BNCGK">Figure 49-1</a> illustrates these steps.</p>
 </div>
 <div id="BNCGK" class="paragraph">
-<div class="title"><strong>Figure 49-1 Transactions: JMS Client Example</strong></div>
+<div class="title"><strong>Figure 49-1 Transactions: Messaging Client Example</strong></div>
 <p><span class="image"><img src="img/jakartaeett_dt_034.png" alt="Diagram of steps in transaction example"></span></p>
 </div>
 <div class="paragraph">

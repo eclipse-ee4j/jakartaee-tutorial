@@ -61,8 +61,8 @@
 <h2 id="_ajax_request_lifecycle">Ajax Request Lifecycle</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An Ajax request varies from other typical JavaServer Faces requests, and
-its processing is also handled differently by the JavaServer Faces
+<p>An Ajax request varies from other typical Jakarta Server Faces requests, and
+its processing is also handled differently by the Jakarta Server Faces
 lifecycle.</p>
 </div>
 <div class="paragraph">
@@ -78,15 +78,15 @@ tree processing and rendering.</p>
 <div class="paragraph">
 <p>The <code>execute</code> attribute of the <code>f:ajax</code> tag identifies which segments of
 the server-side component tree should be processed. Because components
-can be uniquely identified in the JavaServer Faces component tree, it is
+can be uniquely identified in the Jakarta Server Faces component tree, it is
 easy to identify and process a single component, a few components, or a
 whole tree. This is made possible by the <code>visitTree</code> method of the
 <code>UIComponent</code> class. The identified components then run through the
-JavaServer Faces request lifecycle phases.</p>
+Jakarta Server Faces request lifecycle phases.</p>
 </div>
 <div class="paragraph">
 <p>Similar to the <code>execute</code> attribute, the <code>render</code> attribute identifies
-which segments of the JavaServer Faces component tree need to be
+which segments of the Jakarta Server Faces component tree need to be
 rendered during the render response phase.</p>
 </div>
 <div class="paragraph">

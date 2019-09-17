@@ -62,7 +62,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section explains how to write, compile, package, deploy, and run an
-application that uses the JMS API with an entity. The application uses
+application that uses the Jakarta Messaging with an entity. The application uses
 the following components:</p>
 </div>
 <div class="ulist">
@@ -109,13 +109,13 @@ Example</a></p>
 <p>This application simulates, in a simplified way, the work flow of a
 company&#8217;s human resources (HR) department when it processes a new hire.
 This application also demonstrates how to use the Jakarta EE platform to
-accomplish a task that many JMS applications need to perform.</p>
+accomplish a task that many Messaging applications need to perform.</p>
 </div>
 <div class="paragraph">
 <p>A messaging client must often wait for several messages from various
 sources. It then uses the information in all these messages to assemble
 a message that it then sends to another destination. The common term for
-this design pattern (which is not specific to JMS) is joining messages.
+this design pattern (which is not specific to Jakarta Messaging) is joining messages.
 Such a task must be transactional, with all the receives and the send as
 a single transaction. If not all the messages are received successfully,
 the transaction can be rolled back. For an application client example
@@ -125,8 +125,8 @@ Local Transactions</a>.</p>
 <div class="paragraph">
 <p>A message-driven bean can process only one message at a time in a
 transaction. To provide the ability to join messages, an application can
-have the message-driven bean store the interim information in a Java
-Persistence API entity. The entity can then determine whether all the
+have the message-driven bean store the interim information in a Jakarta
+Persistence entity. The entity can then determine whether all the
 information has been received; when it has, the entity can report this
 back to one of the message-driven beans, which then creates and sends
 the message to the other destination. After it has completed its task,
@@ -225,7 +225,7 @@ Example</a></p>
 <ol class="arabic">
 <li>
 <p>Defines a topic for the application, using the <code>java:app</code> namespace
-because the topic is used in both the application client and the EJB
+because the topic is used in both the application client and the Jakarta Enterprise Beans
 module</p>
 </li>
 <li>
@@ -327,7 +327,7 @@ message that contains the information stored in the entity.</p>
 <div class="paragraph">
 <p>The <code>SetupOffice.java</code> class, also under <code>clientmdbentity-ejb</code>, is an
 entity class. The entity and the message-driven beans are packaged
-together in an EJB JAR file. The entity class is declared as follows:</p>
+together in an enterprise bean JAR file. The entity class is declared as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -459,7 +459,7 @@ listener class files, along with a manifest file that specifies the main
 class</p>
 </li>
 <li>
-<p>An EJB JAR file that contains the message-driven beans and the entity
+<p>An enterprise bean JAR file that contains the message-driven beans and the entity
 class, along with the <code>persistence.xml</code> file</p>
 </li>
 <li>
@@ -520,7 +520,7 @@ listener class files, along with a manifest file that specifies the main
 class</p>
 </li>
 <li>
-<p>An EJB JAR file that contains the message-driven beans and the entity
+<p>An enterprise bean JAR file that contains the message-driven beans and the entity
 class, along with the <code>persistence.xml</code> file</p>
 </li>
 <li>

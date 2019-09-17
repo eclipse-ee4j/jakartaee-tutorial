@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Writing Simple JMS Applications</title>
+    <title>Writing Simple Jakarta Messaging Applications</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Writing Simple JMS Applications</b><br />
+  <b>Writing Simple Jakarta Messaging Applications</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,10 +58,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_writing_simple_jms_applications">Writing Simple JMS Applications</h2>
+<h2 id="_writing_simple_jakarta_messaging_applications">Writing Simple Jakarta Messaging Applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section shows how to create, package, and run simple JMS clients
+<p>This section shows how to create, package, and run simple Messaging clients
 that are packaged as application clients.</p>
 </div>
 <div class="paragraph">
@@ -70,13 +70,13 @@ that are packaged as application clients.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#CHDCEFGA">Overview of Writing Simple JMS Application</a></p>
+<p><a href="#CHDCEFGA">Overview of Writing Simple Jakarta Messaging Application</a></p>
 </li>
 <li>
-<p><a href="#BNCFD">Starting the JMS Provider</a></p>
+<p><a href="#BNCFD">Starting the Jakarta Messaging Provider</a></p>
 </li>
 <li>
-<p><a href="#GKTJS">Creating JMS Administered Objects</a></p>
+<p><a href="#GKTJS">Creating Jakarta Messaging Administered Objects</a></p>
 </li>
 <li>
 <p><a href="#BABEEABE">Building All the Simple Examples</a></p>
@@ -106,9 +106,9 @@ Delivery</a></p>
 <p><a id="CHDCEFGA"></a><a id="overview-of-writing-simple-jms-application"></a></p>
 </div>
 <div class="sect2">
-<h3 id="_overview_of_writing_simple_jms_application">Overview of Writing Simple JMS Application</h3>
+<h3 id="_overview_of_writing_simple_jakarta_messaging_application">Overview of Writing Simple Jakarta Messaging Application</h3>
 <div class="paragraph">
-<p>The clients demonstrate the basic tasks a JMS application must perform:</p>
+<p>The clients demonstrate the basic tasks a Jakarta Messaging application must perform:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -128,10 +128,10 @@ Delivery</a></p>
 receives them. You can run the clients in two terminal windows.</p>
 </div>
 <div class="paragraph">
-<p>When you write a JMS client to run in an enterprise bean application,
+<p>When you write a Messaging client to run in an enterprise bean application,
 you use many of the same methods in much the same sequence as for an
 application client. However, there are some significant differences.
-<a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
+<a href="jms-concepts005.html#BNCGL">Using Jakarta Messaging in Jakarta EE
 Applications</a> describes these differences, and this chapter provides
 examples that illustrate them.</p>
 </div>
@@ -156,9 +156,9 @@ create administered objects.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_starting_the_jms_provider">Starting the JMS Provider</h3>
+<h3 id="_starting_the_jakarta_messaging_provider">Starting the Jakarta Messaging Provider</h3>
 <div class="paragraph">
-<p>When you use GlassFish Server, your JMS provider is GlassFish Server.
+<p>When you use GlassFish Server, your Messaging provider is GlassFish Server.
 Start the server as described in
 <a href="usingexamples002.html#BNADI">Starting and Stopping GlassFish Server</a>.</p>
 </div>
@@ -167,9 +167,9 @@ Start the server as described in
 </div>
 </div>
 <div class="sect2">
-<h3 id="_creating_jms_administered_objects">Creating JMS Administered Objects</h3>
+<h3 id="_creating_jakarta_messaging_administered_objects">Creating Jakarta Messaging Administered Objects</h3>
 <div class="paragraph">
-<p>This example uses the following JMS administered objects:</p>
+<p>This example uses the following Jakarta Messaging administered objects:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -183,14 +183,14 @@ Start the server as described in
 </div>
 <div class="paragraph">
 <p>Before you run the applications, you can use the <code>asadmin add-resources</code>
-command to create needed JMS resources, specifying as the argument a
+command to create needed Messaging resources, specifying as the argument a
 file named <code>glassfish-resources.xml</code>. This file can be created in any
 project using NetBeans IDE, although you can also create it by hand. A
 file for the needed resources is present in the
 <code>jms/simple/producer/src/main/setup/</code> directory.</p>
 </div>
 <div class="paragraph">
-<p>The JMS examples use a connection factory with the logical JNDI lookup
+<p>The Jakarta Messaging examples use a connection factory with the logical JNDI lookup
 name <code>java:comp/DefaultJMSConnectionFactory</code>, which is preconfigured in
 GlassFish Server.</p>
 </div>
@@ -554,8 +554,8 @@ messages, the client sends one message.</p>
 <li>
 <p>Make sure that GlassFish Server has been started (see
 <a href="usingexamples002.html#BNADI">Starting and Stopping GlassFish Server</a>)
-and that you have created resources and built the simple JMS examples
-(see <a href="#GKTJS">Creating JMS Administered Objects</a> and
+and that you have created resources and built the simple Jakarta Messaging examples
+(see <a href="#GKTJS">Creating Jakarta Messaging Administered Objects</a> and
 <a href="#BABEEABE">Building All the Simple Examples</a>).</p>
 </li>
 <li>
@@ -1449,7 +1449,7 @@ subscription on the topic. Therefore, each of the clients receives all
 <div class="sect2">
 <h3 id="_acknowledging_messages">Acknowledging Messages</h3>
 <div class="paragraph">
-<p>JMS provides two alternative ways for a consuming client to ensure that
+<p>Jakarta Messaging provides two alternative ways for a consuming client to ensure that
 a message is not acknowledged until the application has finished
 processing the message:</p>
 </div>

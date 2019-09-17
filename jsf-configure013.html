@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Basic Requirements of a JavaServer Faces Application</title>
+    <title>Basic Requirements of a Jakarta Server Faces Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Basic Requirements of a JavaServer Faces Application</b><br />
+  <b>Basic Requirements of a Jakarta Server Faces Application</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,18 +58,18 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basic_requirements_of_a_javaserver_faces_application">Basic Requirements of a JavaServer Faces Application</h2>
+<h2 id="_basic_requirements_of_a_jakarta_server_faces_application">Basic Requirements of a Jakarta Server Faces Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In addition to configuring your application, you must satisfy other
-requirements of JavaServer Faces applications, including properly
+requirements of Jakarta Server Faces applications, including properly
 packaging all the necessary files and providing a deployment descriptor.
 This section describes how to perform these administrative tasks.</p>
 </div>
 <div class="paragraph">
-<p>JavaServer Faces applications can be packaged in a WAR file, which must
+<p>Jakarta Server Faces applications can be packaged in a WAR file, which must
 conform to specific requirements to execute across different containers.
-At a minimum, a WAR file for a JavaServer Faces application may contain
+At a minimum, a WAR file for a Jakarta Server Faces application may contain
 the following:</p>
 </div>
 <div class="ulist">
@@ -82,7 +82,7 @@ configure resources required by a web application (required)</p>
 <p>A specific set of JAR files containing essential classes (optional)</p>
 </li>
 <li>
-<p>A set of application classes, JavaServer Faces pages, and other
+<p>A set of application classes, Jakarta Server Faces pages, and other
 required resources, such as image files</p>
 </li>
 </ul>
@@ -134,13 +134,13 @@ directory of the WAR file.</p>
 <div class="paragraph">
 <p>Web applications are commonly configured using elements contained in the
 web application deployment descriptor, <code>web.xml</code>. The deployment
-descriptor for a JavaServer Faces application must specify certain
+descriptor for a Jakarta Server Faces application must specify certain
 configurations, including the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The servlet used to process JavaServer Faces requests</p>
+<p>The servlet used to process Jakarta Server Faces requests</p>
 </li>
 <li>
 <p>The servlet mapping for the processing servlet</p>
@@ -167,7 +167,7 @@ configurations, such as those that</p>
 <p>Compress state saved on the client</p>
 </li>
 <li>
-<p>Restrict access to pages containing JavaServer Faces tags</p>
+<p>Restrict access to pages containing Jakarta Server Faces tags</p>
 </li>
 <li>
 <p>Turn on XML validation</p>
@@ -191,18 +191,18 @@ using NetBeans IDE.</p>
 <div class="sect3">
 <h4 id="_identifying_the_servlet_for_lifecycle_processing">Identifying the Servlet for Lifecycle Processing</h4>
 <div class="paragraph">
-<p>A requirement of a JavaServer Faces application is that all requests to
-the application that reference previously saved JavaServer Faces
+<p>A requirement of a Jakarta Server Faces application is that all requests to
+the application that reference previously saved Jakarta Server Faces
 components must go through <code>javax.faces.webapp.FacesServlet</code>. A
 <code>FacesServlet</code> instance manages the request-processing lifecycle for web
-applications and initializes the resources required by JavaServer Faces
+applications and initializes the resources required by Jakarta Server Faces
 technology.</p>
 </div>
 <div class="paragraph">
-<p>Before a JavaServer Faces application can launch its first web page, the
+<p>Before a Jakarta Server Faces application can launch its first web page, the
 web container must invoke the <code>FacesServlet</code> instance in order for the
 application lifecycle process to start. See
-<a href="jsf-intro007.html#BNAQQ">The Lifecycle of a JavaServer Faces
+<a href="jsf-intro007.html#BNAQQ">The Lifecycle of a Jakarta Server Faces
 Application</a> for more information.</p>
 </div>
 <div class="paragraph">
@@ -221,7 +221,7 @@ Application</a> for more information.</p>
 <p>You will provide a mapping configuration entry to make sure that the
 <code>FacesServlet</code> instance is invoked. The mapping to <code>FacesServlet</code> can be
 a prefix mapping, such as <code>/faces/<strong></code>, or an extension mapping, such as
-<code></strong>.xhtml</code>. The mapping is used to identify a page as having JavaServer
+<code></strong>.xhtml</code>. The mapping is used to identify a page as having Jakarta Server
 Faces content. Because of this, the URL to the first page of the
 application must include the URL pattern mapping.</p>
 </div>
@@ -395,7 +395,7 @@ at the top of the editor window.</p>
 </div>
 <div class="paragraph">
 <p>If state is saved on the client, the state of the entire view is
-rendered to a hidden field on the page. The JavaServer Faces
+rendered to a hidden field on the page. The Jakarta Server Faces
 implementation saves the state on the server by default. Duke&#8217;s Forest
 saves its state on the client.</p>
 </div>
@@ -408,7 +408,7 @@ saves its state on the client.</p>
 <h3 id="_configuring_project_stage">Configuring Project Stage</h3>
 <div class="paragraph">
 <p>Project Stage is a context parameter identifying the status of a
-JavaServer Faces application in the software lifecycle. The stage of an
+Jakarta Server Faces application in the software lifecycle. The stage of an
 application can affect the behavior of the application. For example,
 error messages can be displayed during the Development stage but
 suppressed during the Production stage.</p>

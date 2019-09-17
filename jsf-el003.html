@@ -116,7 +116,7 @@ evaluation to a later time in the page lifecycle if the technology using
 this tag allows.</p>
 </div>
 <div class="paragraph">
-<p>In the case of JavaServer Faces technology, the latter tag&#8217;s expression
+<p>In the case of Jakarta Server Faces technology, the latter tag&#8217;s expression
 is evaluated immediately during an initial request for the page. During
 a postback request, this expression can be used to set the value of the
 <code>name</code> property with user input.</p>
@@ -163,7 +163,7 @@ bean called <code>customer</code>:</p>
 <p>You can use a custom EL resolver to alter the way variables are
 resolved. For instance, you can provide an EL resolver that intercepts
 objects with the name <code>customer</code>, so that <code>${customer}</code> returns a value
-in the EL resolver instead. (JavaServer Faces technology uses an EL
+in the EL resolver instead. (Jakarta Server Faces technology uses an EL
 resolver to handle managed beans.)</p>
 </div>
 <div class="paragraph">
@@ -346,7 +346,7 @@ rather than from user input to the method call:</p>
 <p>The preceding example uses a value expression.</p>
 </div>
 <div class="paragraph">
-<p>Consider the following example of a JavaServer Faces component tag that
+<p>Consider the following example of a Jakarta Server Faces component tag that
 uses a method expression:</p>
 </div>
 <div class="listingblock">
@@ -492,7 +492,7 @@ A method expression is used to refer to a public method of a bean and
 has the same syntax as an lvalue expression.</p>
 </div>
 <div class="paragraph">
-<p>In JavaServer Faces technology, a component tag represents a component
+<p>In Jakarta Server Faces technology, a component tag represents a component
 on a page. The component tag uses method expressions to specify methods
 that can be invoked to perform some processing for the component. These
 methods are necessary for handling events that the components generate
@@ -554,7 +554,7 @@ then be invoked later.</p>
 </div>
 <div class="paragraph">
 <p>Method expressions support literals primarily to support <code>action</code>
-attributes in JavaServer Faces technology. When the method referenced by
+attributes in Jakarta Server Faces technology. When the method referenced by
 this method expression is invoked, the method returns the <code>String</code>
 literal, which is then converted to the expected return type, as defined
 in the tag&#8217;s tag library descriptor.</p>

@@ -62,7 +62,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you want to produce user interface features for which HTML does not
-have its own elements, you can create a custom JavaServer Faces
+have its own elements, you can create a custom Jakarta Server Faces
 component and insert it in your Facelets page. This mechanism can cause
 a simple element to create complex web code. However, creating such a
 component is a significant task (see <a href="jsf-custom.html#BNAVG">Chapter
@@ -71,10 +71,10 @@ component is a significant task (see <a href="jsf-custom.html#BNAVG">Chapter
 <div class="paragraph">
 <p>HTML5 offers new elements and attributes that can make it unnecessary to
 write your own components. It also provides many new capabilities for
-existing components. JavaServer Faces technology supports HTML5 not by
+existing components. Jakarta Server Faces technology supports HTML5 not by
 introducing new UI components that imitate HTML5 ones but by allowing
-you to use HTML5 markup directly. It also allows you to use JavaServer
-Faces attributes within HTML5 elements. JavaServer Faces technology
+you to use HTML5 markup directly. It also allows you to use Jakarta Server
+Faces attributes within HTML5 elements. Jakarta Server Faces technology
 support for HTML5 falls into two categories:</p>
 </div>
 <div class="ulist">
@@ -91,7 +91,7 @@ support for HTML5 falls into two categories:</p>
 <p>The effect of the HTML5-friendly markup feature is to offer the Facelets
 page author almost complete control over the rendered page output,
 rather than having to pass this control off to component authors. You
-can mix and match JavaServer Faces and HTML5 components and elements as
+can mix and match Jakarta Server Faces and HTML5 components and elements as
 you see fit.</p>
 </div>
 <div class="paragraph">
@@ -101,11 +101,11 @@ you see fit.</p>
 <h3 id="_using_pass_through_elements">Using Pass-Through Elements</h3>
 <div class="paragraph">
 <p>Pass-through elements allow you to use HTML5 tags and attributes but to
-treat them as equivalent to JavaServer Faces components associated with
+treat them as equivalent to Jakarta Server Faces components associated with
 a server-side <code>UIComponent</code> instance.</p>
 </div>
 <div class="paragraph">
-<p>To make an element that is not a JavaServer Faces element a pass-through
+<p>To make an element that is not a Jakarta Server Faces element a pass-through
 element, specify at least one of its attributes using the
 <code><a href="http://xmlns.jcp.org/jsf" class="bare">http://xmlns.jcp.org/jsf</a></code> namespace. For example, the following code
 declares the namespace with the short name <code>jsf</code>:</p>
@@ -126,7 +126,7 @@ bean properties.</p>
 </div>
 <div class="paragraph">
 <p><a href="#BABJADGH">Table 8-4</a> shows how pass-through elements are rendered
-as Facelets tags. The JSF implementation uses the element name and the
+as Facelets tags. The server faces implementation uses the element name and the
 identifying attribute to determine the corresponding Facelets tag that
 will be used in the server-side processing. The browser, however,
 interprets the markup that the page author has written.</p>
@@ -339,18 +339,18 @@ interprets the markup that the page author has written.</p>
 <h3 id="_using_pass_through_attributes">Using Pass-Through Attributes</h3>
 <div class="paragraph">
 <p>Pass-through attributes are the converse of pass-through elements. They
-allow you to pass attributes that are not JavaServer Faces attributes
+allow you to pass attributes that are not Jakarta Server Faces attributes
 through to the browser without interpretation. If you specify a
-pass-through attribute in a JavaServer Faces <code>UIComponent</code>, the
+pass-through attribute in a Jakarta Server Faces <code>UIComponent</code>, the
 attribute name and value are passed straight through to the browser
-without being interpreted by JavaServer Faces components or renderers.
+without being interpreted by Jakarta Server Faces components or renderers.
 There are several ways to specify pass-through attributes.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Use the JavaServer Faces namespace for pass-through attributes to
-prefix the attribute names within a JavaServer Faces component. For
+<p>Use the Jakarta Server Faces namespace for pass-through attributes to
+prefix the attribute names within a Jakarta Server Faces component. For
 example, the following code declares the namespace with the short name
 <code>p</code>, then passes the <code>type</code>, <code>min</code>, <code>max</code>, <code>required</code>, and <code>title</code>
 attributes through to the HTML5 <code>input</code> component:</p>
@@ -472,7 +472,7 @@ Using NetBeans IDE</a></p>
 <h4 id="_the_facelets_pages_for_the_reservation_application">The Facelets Pages for the reservation Application</h4>
 <div class="paragraph">
 <p>The first important feature of the Facelets pages for the <code>reservation</code>
-application is the <code>DOCTYPE</code> header. Most Facelets pages in JavaServer
+application is the <code>DOCTYPE</code> header. Most Facelets pages in Jakarta Server
 Faces applications refer to the XHTML DTD. The facelets pages for this
 application begin simply with the following <code>DOCTYPE</code> header, which
 indicates an HTML5 page:</p>
@@ -545,7 +545,7 @@ field:</p>
 <p>The field for the price specifies the <code>number</code> type as a pass-through
 attribute of the <code>h:inputText</code> element, offering a range of four ticket
 prices. Here, the <code>p</code> prefix on the HTML5 attributes passes them through
-to the browser uninterpreted by the JavaServer Faces input component:</p>
+to the browser uninterpreted by the Jakarta Server Faces input component:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -563,7 +563,7 @@ to the browser uninterpreted by the JavaServer Faces input component:</p>
 <p>The output of the <code>calculateTotal</code> method that is specified as the
 listener for the Ajax event is rendered in the output element whose <code>id</code>
 and <code>name</code> value is <code>total</code>. See <a href="jsf-ajax.html#GKIOW">Chapter 13,
-"Using Ajax with JavaServer Faces Technology"</a>, for more information.</p>
+"Using Ajax with Jakarta Server Faces Technology"</a>, for more information.</p>
 </div>
 <div class="paragraph">
 <p>The second Facelets page, <code>confirmation.xhtml</code>, uses a pass-through

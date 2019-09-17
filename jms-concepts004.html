@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Using Advanced JMS Features</title>
+    <title>Using Advanced Jakarta Messaging Features</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Using Advanced JMS Features</b><br />
+  <b>Using Advanced Jakarta Messaging Features</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,14 +58,14 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_advanced_jms_features">Using Advanced JMS Features</h2>
+<h2 id="_using_advanced_jakarta_messaging_features">Using Advanced Jakarta Messaging Features</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how to use features of the JMS API to achieve the
+<p>This section explains how to use features of Jakarta Messaging to achieve the
 level of reliability and performance your application requires. Many
-people use JMS in their applications because they cannot tolerate
+people use Jakarta Messaging in their applications because they cannot tolerate
 dropped or duplicate messages and because they require that every
-message be received once and only once. The JMS API provides this
+message be received once and only once. Jakarta Messaging provides this
 functionality.</p>
 </div>
 <div class="paragraph">
@@ -73,8 +73,8 @@ functionality.</p>
 message, and to do so within a transaction.</p>
 </div>
 <div class="paragraph">
-<p>JMS messages are <code>PERSISTENT</code> by default; <code>PERSISTENT</code> messages will not
-be lost in the event of JMS provider failure. For details, see
+<p>Jakarta Messaging messages are <code>PERSISTENT</code> by default; <code>PERSISTENT</code> messages will not
+be lost in the event of Messaging provider failure. For details, see
 <a href="#BNCFY">Specifying Message Persistence</a>.</p>
 </div>
 <div class="paragraph">
@@ -84,14 +84,14 @@ receives to be combined with database reads and writes in an atomic
 transaction. A transaction is a unit of work into which you can group a
 series of operations, such as message sends and receives, so that the
 operations either all succeed or all fail. For details, see
-<a href="#BNCGH">Using JMS Local Transactions</a>.</p>
+<a href="#BNCGH">Using Jakarta Messaging Local Transactions</a>.</p>
 </div>
 <div class="paragraph">
 <p>The most reliable way to consume a message is to do so within a
 transaction, either from a queue or from a durable subscription to a
 topic. For details, see <a href="jms-concepts003.html#BNCGD">Creating Durable
 Subscriptions</a>, <a href="#BNCGB">Creating Temporary Destinations</a>, and
-<a href="#BNCGH">Using JMS Local Transactions</a>.</p>
+<a href="#BNCGH">Using Jakarta Messaging Local Transactions</a>.</p>
 </div>
 <div class="paragraph">
 <p>Some features primarily allow an application to improve performance. For
@@ -113,9 +113,9 @@ the duration of the connection in which they are created. See
 <div class="paragraph">
 <p>The following sections describe these features as they apply to
 application clients or Java SE clients. Some of the features work
-differently in the Jakarta EE web or EJB container; in these cases, the
+differently in the Jakarta EE web or enterprise bean container; in these cases, the
 differences are noted here and are explained in detail in
-<a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
+<a href="jms-concepts005.html#BNCGL">Using Jakarta Messaging in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
@@ -124,7 +124,7 @@ Applications</a>.</p>
 <div class="sect2">
 <h3 id="_controlling_message_acknowledgment">Controlling Message Acknowledgment</h3>
 <div class="paragraph">
-<p>Until a JMS message has been acknowledged, it is not considered to be
+<p>Until a Jakarta Messaging message has been acknowledged, it is not considered to be
 successfully consumed. The successful consumption of a message
 ordinarily takes place in three stages.</p>
 </div>
@@ -138,18 +138,18 @@ ordinarily takes place in three stages.</p>
 </li>
 <li>
 <p>The message is acknowledged. Acknowledgment is initiated either by
-the JMS provider or by the client, depending on the session
+the Messaging provider or by the client, depending on the session
 acknowledgment mode.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>In locally transacted sessions (see <a href="#BNCGH">Using JMS Local
+<p>In locally transacted sessions (see <a href="#BNCGH">Using Jakarta Messaging Local
 Transactions</a>), a message is acknowledged when the session is committed.
 If a transaction is rolled back, all consumed messages are redelivered.</p>
 </div>
 <div class="paragraph">
-<p>In a JTA transaction (in the Jakarta EE web or EJB container) a message is
+<p>In a Jakarta transaction (in the Jakarta EE web or enterprise bean container) a message is
 acknowledged when the transaction is committed.</p>
 </div>
 <div class="paragraph">
@@ -203,9 +203,9 @@ enterprise bean.</p>
 <li>
 <p><code>JMSContext.DUPS_OK_ACKNOWLEDGE</code>: This option instructs the
 <code>JMSContext</code> to lazily acknowledge the delivery of messages. This is
-likely to result in the delivery of some duplicate messages if the JMS
+likely to result in the delivery of some duplicate messages if the Messaging
 provider fails, so it should be used only by consumers that can tolerate
-duplicate messages. (If the JMS provider redelivers a message, it must
+duplicate messages. (If the Messaging provider redelivers a message, it must
 set the value of the <code>JMSRedelivered</code> message header to <code>true</code>.) This
 option can reduce session overhead by minimizing the work the session
 does to prevent duplicates.</p>
@@ -214,7 +214,7 @@ does to prevent duplicates.</p>
 </div>
 <div class="paragraph">
 <p>If messages have been received from a queue but not acknowledged when a
-<code>JMSContext</code> is closed, the JMS provider retains them and redelivers
+<code>JMSContext</code> is closed, the Messaging provider retains them and redelivers
 them when a consumer next accesses the queue. The provider also retains
 unacknowledged messages if an application closes a <code>JMSContext</code> that has
 been consuming messages from a durable subscription. (See
@@ -282,20 +282,20 @@ producer and call the <code>send</code> method.</p>
 <div class="sect3">
 <h4 id="_specifying_message_persistence">Specifying Message Persistence</h4>
 <div class="paragraph">
-<p>The JMS API supports two delivery modes specifying whether messages are
-lost if the JMS provider fails. These delivery modes are fields of the
+<p>Jakarta Messaging supports two delivery modes specifying whether messages are
+lost if the Messaging provider fails. These delivery modes are fields of the
 <code>DeliveryMode</code> interface.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The default delivery mode, <code>PERSISTENT</code>, instructs the JMS provider to
+<p>The default delivery mode, <code>PERSISTENT</code>, instructs the Messaging provider to
 take extra care to ensure that a message is not lost in transit in case
-of a JMS provider failure. A message sent with this delivery mode is
+of a Messaging provider failure. A message sent with this delivery mode is
 logged to stable storage when it is sent.</p>
 </li>
 <li>
-<p>The <code>NON_PERSISTENT</code> delivery mode does not require the JMS provider
+<p>The <code>NON_PERSISTENT</code> delivery mode does not require the Messaging provider
 to store the message or otherwise guarantee that it is not lost if the
 provider fails.</p>
 </li>
@@ -330,7 +330,7 @@ can afford to miss messages.</p>
 <div class="sect3">
 <h4 id="_setting_message_priority_levels">Setting Message Priority Levels</h4>
 <div class="paragraph">
-<p>You can use message priority levels to instruct the JMS provider to
+<p>You can use message priority levels to instruct the Messaging provider to
 deliver urgent messages first. Use the <code>setPriority</code> method of the
 <code>JMSProducer</code> interface to set the priority level for all messages sent
 by that producer.</p>
@@ -347,7 +347,7 @@ priority level of 7 for a producer and then sends a message:</p>
 </div>
 <div class="paragraph">
 <p>The ten levels of priority range from 0 (lowest) to 9 (highest). If you
-do not specify a priority level, the default level is 4. A JMS provider
+do not specify a priority level, the default level is 4. A Messaging provider
 tries to deliver higher-priority messages before lower-priority ones,
 but does not have to deliver messages in exact order of priority.</p>
 </div>
@@ -395,7 +395,7 @@ obsolete messages conserves storage and computing resources.</p>
 <h4 id="_specifying_a_delivery_delay">Specifying a Delivery Delay</h4>
 <div class="paragraph">
 <p>You can specify a length of time that must elapse after a message is
-sent before the JMS provider delivers the message. Use the
+sent before the Messaging provider delivers the message. Use the
 <code>setDeliveryDelay</code> method of the <code>JMSProducer</code> interface to set a
 delivery delay for all messages sent by that producer.</p>
 </div>
@@ -447,12 +447,12 @@ can also set message properties directly on a message.</p>
 <h3 id="_creating_temporary_destinations">Creating Temporary Destinations</h3>
 <div class="paragraph">
 <p>Normally, you create JMS destinations (queues and topics)
-administratively rather than programmatically. Your JMS provider
+administratively rather than programmatically. Your Messaging provider
 includes a tool to create and remove destinations, and it is common for
 destinations to be long-lasting.</p>
 </div>
 <div class="paragraph">
-<p>The JMS API also enables you to create destinations (<code>TemporaryQueue</code>
+<p>Jakarta Messaging also enables you to create destinations (<code>TemporaryQueue</code>
 and <code>TemporaryTopic</code> objects) that last only for the duration of the
 connection in which they are created. You create these destinations
 dynamically using the <code>JMSContext.createTemporaryQueue</code> and the
@@ -499,7 +499,7 @@ Join Messages from Two MDBs</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_jms_local_transactions">Using JMS Local Transactions</h3>
+<h3 id="_using_jakarta_messaging_local_transactions">Using Jakarta Messaging Local Transactions</h3>
 <div class="paragraph">
 <p>A transaction groups a series of operations into an atomic unit of work.
 If any one of the operations fails, the transaction can be rolled back,
@@ -538,13 +538,13 @@ session rolls back its transaction in progress, including any pending
 sends and receives.</p>
 </div>
 <div class="paragraph">
-<p>In an application running in the Jakarta EE web or EJB container, you
-cannot use local transactions. Instead, you use JTA transactions,
-described in <a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
+<p>In an application running in the Jakarta EE web or enterprise bean container, you
+cannot use local transactions. Instead, you use Jakarta Transactions,
+described in <a href="jms-concepts005.html#BNCGL">Using Jakarta Messaging in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can combine several sends and receives in a single JMS local
+<p>You can combine several sends and receives in a single Jakarta Messaging local
 transaction, so long as they are all performed using the same
 <code>JMSContext</code>.</p>
 </div>
@@ -573,18 +573,18 @@ receives that depend on that message&#8217;s having been sent.</p>
 <div class="paragraph">
 <p>The production and the consumption of a message cannot both be part of
 the same transaction. The reason is that the transactions take place
-between the clients and the JMS provider, which intervenes between the
+between the clients and the Messaging provider, which intervenes between the
 production and the consumption of the message. <a href="#BNCGI">Figure 48-8</a>
 illustrates this interaction.</p>
 </div>
 <div id="BNCGI" class="paragraph">
-<div class="title"><strong>Figure 48-8 Using JMS Local Transactions</strong></div>
+<div class="title"><strong>Figure 48-8 Using Jakarta Messaging Local Transactions</strong></div>
 <p><span class="image"><img src="img/jakartaeett_dt_033.png" alt="Diagram of local transactions, showing separate transactions for sending and consuming a message"></span></p>
 </div>
 <div class="paragraph">
 <p>The sending of one or more messages to one or more destinations by
 Client 1 can form a single transaction, because it forms a single set of
-interactions with the JMS provider using a single <code>JMSContext</code>.
+interactions with the Messaging provider using a single <code>JMSContext</code>.
 Similarly, the receiving of one or more messages from one or more
 destinations by Client 2 also forms a single transaction using a single
 <code>JMSContext</code>. But because the two clients have no direct interaction and
@@ -593,7 +593,7 @@ place between them.</p>
 </div>
 <div class="paragraph">
 <p>Another way of putting this is that a transaction is a contract between
-a client and a JMS provider that defines whether a message is sent to a
+a client and a Messaging provider that defines whether a message is sent to a
 destination or whether a message is received from the destination. It is
 not a contract between the sending client and the receiving client.</p>
 </div>
@@ -603,7 +603,7 @@ processing. Instead of tightly coupling the sender and the receiver of a
 message, JMS couples the sender of a message with the destination, and
 it separately couples the destination with the receiver of the message.
 Therefore, while the sends and receives each have a tight coupling with
-the JMS provider, they do not have any coupling with each other.</p>
+the Messaging provider, they do not have any coupling with each other.</p>
 </div>
 <div class="paragraph">
 <p>When you create a <code>JMSContext</code>, you can specify whether it is transacted
@@ -628,7 +628,7 @@ topic in the same transaction.</p>
 </div>
 <div class="paragraph">
 <p>The example in <a href="jms-examples004.html#BNCGJ">Using Local Transactions</a>
-shows how to use JMS local transactions.</p>
+shows how to use Jakarta Messaging local transactions.</p>
 </div>
 <div class="paragraph">
 <p><a id="BABFIFAJ"></a><a id="sending-messages-asynchronously"></a></p>
@@ -638,7 +638,7 @@ shows how to use JMS local transactions.</p>
 <h3 id="_sending_messages_asynchronously">Sending Messages Asynchronously</h3>
 <div class="paragraph">
 <p>Normally, when you send a persistent message, the <code>send</code> method blocks
-until the JMS provider confirms that the message was sent successfully.
+until the Messaging provider confirms that the message was sent successfully.
 The asynchronous send mechanism allows your application to send a
 message and continue work while waiting to learn whether the send
 completed.</p>

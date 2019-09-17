@@ -61,15 +61,15 @@
 <h2 id="_creating_and_using_a_custom_converter">Creating and Using a Custom Converter</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A JavaServer Faces converter class converts strings to objects and
+<p>A Jakarta Server Faces converter class converts strings to objects and
 objects to strings as required. Several standard converters are provided
-by JavaServer Faces for this purpose. See
+by Jakarta Server Faces for this purpose. See
 <a href="jsf-page-core001.html#BNAST">Using the Standard Converters</a> for more
 information on these included converters.</p>
 </div>
 <div class="paragraph">
 <p>As explained in <a href="jsf-intro005.html#BNAQI">Conversion Model</a>, if the
-standard converters included with JavaServer Faces cannot perform the
+standard converters included with Jakarta Server Faces cannot perform the
 data conversion that you need, you can create a custom converter to
 perform this specialized conversion. This implementation, at a minimum,
 must define how to convert data both ways between the two views of the
@@ -113,7 +113,7 @@ public class CreditCardConverter implements Converter {
 </div>
 <div class="paragraph">
 <p>The <code>@FacesConverter</code> annotation registers the custom converter class as
-a converter with the name of <code>ccno</code> with the JavaServer Faces
+a converter with the name of <code>ccno</code> with the Jakarta Server Faces
 implementation. Alternatively, you can register the converter with
 entries in the application configuration resource file, as shown in
 <a href="jsf-configure009.html#BNAXE">Registering a Custom Converter</a>.</p>
@@ -156,9 +156,9 @@ public Object getAsObject(FacesContext context,
 </div>
 <div class="paragraph">
 <p>During the Apply Request Values phase, when the components' <code>decode</code>
-methods are processed, the JavaServer Faces implementation looks up the
+methods are processed, the Jakarta Server Faces implementation looks up the
 component&#8217;s local value in the request and calls the <code>getAsObject</code>
-method. When calling this method, the JavaServer Faces implementation
+method. When calling this method, the Jakarta Server Faces implementation
 passes in the current <code>FacesContext</code> instance, the component whose data
 needs conversion, and the local value as a <code>String</code>. The method then
 writes the local value to a character array, trims the hyphens and
@@ -212,9 +212,9 @@ public String getAsString(FacesContext context,
 </div>
 <div class="paragraph">
 <p>During the Render Response phase, in which the components' <code>encode</code>
-methods are called, the JavaServer Faces implementation calls the
+methods are called, the Jakarta Server Faces implementation calls the
 <code>getAsString</code> method in order to generate the appropriate output. When
-the JavaServer Faces implementation calls this method, it passes in the
+the Jakarta Server Faces implementation calls this method, it passes in the
 current <code>FacesContext</code>, the <code>UIComponent</code> whose value needs to be
 converted, and the bean value to be converted. Because this converter
 does a <code>String</code>-to-<code>String</code> conversion, this method can cast the bean
@@ -252,7 +252,7 @@ invoked automatically.</p>
 <div class="paragraph">
 <p>A converter class can be a separate Java POJO class, as in the Duke&#8217;s
 Bookstore case study. If it needs to access objects defined in a managed
-bean class, however, it can be a subclass of a JavaServer Faces managed
+bean class, however, it can be a subclass of a Jakarta Server Faces managed
 bean, as in the <code>address-book</code> persistence example, in which the
 converters use an enterprise bean that is injected into the managed bean
 class.</p>
@@ -356,7 +356,7 @@ Validators to Managed Bean Properties</a>.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The JavaServer Faces implementation calls the converter&#8217;s <code>getAsObject</code>
+<p>The Jakarta Server Faces implementation calls the converter&#8217;s <code>getAsObject</code>
 method to strip spaces and hyphens from the input value. The
 <code>getAsString</code> method is called when the <code>bookcashier.xhtml</code> page is
 redisplayed; this happens if the user orders more than $100 worth of

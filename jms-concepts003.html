@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>The JMS API Programming Model</title>
+    <title>Jakarta Messaging Programming Model</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>The JMS API Programming Model</b><br />
+  <b>Jakarta Messaging Programming Model</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,10 +58,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_jms_api_programming_model">The JMS API Programming Model</h2>
+<h2 id="_jakarta_messaging_programming_model">Jakarta Messaging Programming Model</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The basic building blocks of a JMS application are</p>
+<p>The basic building blocks of a Jakarta Messaging application are</p>
 </div>
 <div class="ulist">
 <ul>
@@ -91,58 +91,58 @@ object</p>
 </div>
 <div class="paragraph">
 <p><a href="#BNCEI">Figure 48-5</a> shows how all these objects fit together in a
-JMS client application.</p>
+Messaging client application.</p>
 </div>
 <div id="BNCEI" class="paragraph">
-<div class="title"><strong>Figure 48-5 The JMS API Programming Model</strong></div>
-<p><span class="image"><img src="img/jakartaeett_dt_030.png" alt="Diagram of the JMS API programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"></span></p>
+<div class="title"><strong>Figure 48-5 Jakarta Messaging Programming Model</strong></div>
+<p><span class="image"><img src="img/jakartaeett_dt_030.png" alt="Diagram of Jakarta Messaging programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"></span></p>
 </div>
 <div class="paragraph">
-<p>JMS also provides queue browsers, objects that allow an application to
+<p>Jakarta Messaging also provides queue browsers, objects that allow an application to
 browse messages on a queue.</p>
 </div>
 <div class="paragraph">
 <p>This section describes all these objects briefly and provides sample
 commands and code snippets that show how to create and use the objects.
-The last subsection briefly describes JMS API exception handling.</p>
+The last subsection briefly describes Jakarta Messaging API exception handling.</p>
 </div>
 <div class="paragraph">
 <p>Examples that show how to combine all these objects in applications
 appear in <a href="jms-examples.html#BNCGV">Chapter 49, "Java Message Service
 Examples,"</a> beginning with <a href="jms-examples003.html#BNCFA">Writing Simple
-JMS Applications</a>. For more detail, see the JMS API documentation, part
+Jakarta Messaging Applications</a>. For more detail, see Jakarta Messaging documentation, part
 of the Jakarta EE API documentation.</p>
 </div>
 <div class="paragraph">
 <p><a id="BNCEJ"></a><a id="jms-administered-objects"></a></p>
 </div>
 <div class="sect2">
-<h3 id="_jms_administered_objects">JMS Administered Objects</h3>
+<h3 id="_jakarta_messaging_administered_objects">Jakarta Messaging Administered Objects</h3>
 <div class="paragraph">
-<p>Two parts of a JMS application, destinations and connection factories,
+<p>Two parts of a Jakarta Messaging application, destinations and connection factories,
 are commonly maintained administratively rather than programmatically.
 The technology underlying these objects is likely to be very different
-from one implementation of the JMS API to another. Therefore, the
+from one implementation of Jakarta Messaging to another. Therefore, the
 management of these objects belongs with other administrative tasks that
 vary from provider to provider.</p>
 </div>
 <div class="paragraph">
-<p>JMS clients access administered objects through interfaces that are
+<p>Messaging clients access administered objects through interfaces that are
 portable, so a client application can run with little or no change on
-more than one implementation of the JMS API. Ordinarily, an
+more than one implementation of Jakarta Messaging. Ordinarily, an
 administrator configures administered objects in a JNDI namespace, and
-JMS clients then access them by using resource injection.</p>
+Messaging clients then access them by using resource injection.</p>
 </div>
 <div class="paragraph">
 <p>With GlassFish Server, you can use the <code>asadmin create-jms-resource</code>
-command or the Administration Console to create JMS administered objects
+command or the Administration Console to create Jakarta Messaging administered objects
 in the form of connector resources. You can also specify the resources
 in a file named <code>glassfish-resources.xml</code> that you can bundle with an
 application.</p>
 </div>
 <div class="paragraph">
-<p>NetBeans IDE provides a wizard that allows you to create JMS resources
-for GlassFish Server. See <a href="jms-examples003.html#GKTJS">Creating JMS
+<p>NetBeans IDE provides a wizard that allows you to create Jakarta Messaging resources
+for GlassFish Server. See <a href="jms-examples003.html#GKTJS">Creating Jakarta Messaging
 Administered Objects</a> for details.</p>
 </div>
 <div class="paragraph">
@@ -158,7 +158,7 @@ override those specified by annotations.</p>
 <p><a id="BNCEK"></a><a id="jms-connection-factories"></a></p>
 </div>
 <div class="sect3">
-<h4 id="_jms_connection_factories">JMS Connection Factories</h4>
+<h4 id="_jakarta_messaging_connection_factories">Jakarta Messaging Connection Factories</h4>
 <div class="paragraph">
 <p>A connection factory is the object a client uses to create a connection
 to a provider. A connection factory encapsulates a set of connection
@@ -166,17 +166,17 @@ configuration parameters that has been defined by an administrator. Each
 connection factory is an instance of the <code>ConnectionFactory</code>,
 <code>QueueConnectionFactory</code>, or <code>TopicConnectionFactory</code> interface. To
 learn how to create connection factories, see
-<a href="jms-examples003.html#GKTJS">Creating JMS Administered Objects</a>.</p>
+<a href="jms-examples003.html#GKTJS">Creating Jakarta Messaging Administered Objects</a>.</p>
 </div>
 <div class="paragraph">
-<p>At the beginning of a JMS client program, you usually inject a
+<p>At the beginning of a Messaging client program, you usually inject a
 connection factory resource into a <code>ConnectionFactory</code> object. A Jakarta EE
-server must provide a JMS connection factory with the logical JNDI name
+server must provide a Jakarta Messaging connection factory with the logical JNDI name
 <code>java:comp/DefaultJMSConnectionFactory</code>. The actual JNDI name will be
 implementation-specific.</p>
 </div>
 <div class="paragraph">
-<p>For example, the following code fragment looks up the default JMS
+<p>For example, the following code fragment looks up the default Jakarta Messaging
 connection factory and assigns it to a <code>ConnectionFactory</code> object:</p>
 </div>
 <div class="listingblock">
@@ -190,22 +190,22 @@ private static ConnectionFactory connectionFactory;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_jms_destinations">JMS Destinations</h4>
+<h4 id="_jakarta_messaging_destinations">Jakarta Messaging Destinations</h4>
 <div class="paragraph">
 <p>A destination is the object a client uses to specify the target of
 messages it produces and the source of messages it consumes. In the PTP
 messaging style, destinations are called queues. In the pub/sub
-messaging style, destinations are called topics. A JMS application can
+messaging style, destinations are called topics. A Jakarta Messaging application can
 use multiple queues or topics (or both). To learn how to create
-destination resources, see <a href="jms-examples003.html#GKTJS">Creating JMS
+destination resources, see <a href="jms-examples003.html#GKTJS">Creating Jakarta Messaging
 Administered Objects</a>.</p>
 </div>
 <div class="paragraph">
-<p>To create a destination using GlassFish Server, you create a JMS
+<p>To create a destination using GlassFish Server, you create a Jakarta Messaging
 destination resource that specifies a JNDI name for the destination.</p>
 </div>
 <div class="paragraph">
-<p>In the GlassFish Server implementation of JMS, each destination resource
+<p>In the GlassFish Server implementation of Jakarta Messaging, each destination resource
 refers to a physical destination. You can create a physical destination
 explicitly, but if you do not, the Application Server creates it when it
 is needed and deletes it when you delete the destination resource.</p>
@@ -233,7 +233,7 @@ private static Topic topic;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In a Jakarta EE application, JMS administered objects are normally placed
+<p>In a Jakarta EE application, Jakarta Messaging administered objects are normally placed
 in the <code>jms</code> naming subcontext.</p>
 </div>
 <div class="paragraph">
@@ -253,7 +253,7 @@ factory you use.</p>
 <div class="sect2">
 <h3 id="_connections">Connections</h3>
 <div class="paragraph">
-<p>A connection encapsulates a virtual connection with a JMS provider. For
+<p>A connection encapsulates a virtual connection with a Messaging provider. For
 example, a connection could represent an open TCP/IP socket between a
 client and a provider service daemon. You use a connection to create one
 or more sessions.</p>
@@ -298,12 +298,12 @@ messages, queue browsers, and temporary destinations.</p>
 </div>
 <div class="paragraph">
 <p>Sessions serialize the execution of message listeners; for details, see
-<a href="#BNCEQ">JMS Message Listeners</a>.</p>
+<a href="#BNCEQ">Jakarta Messaging Message Listeners</a>.</p>
 </div>
 <div class="paragraph">
 <p>A session provides a transactional context with which to group a set of
 sends and receives into an atomic unit of work. For details, see
-<a href="jms-concepts004.html#BNCGH">Using JMS Local Transactions</a>.</p>
+<a href="jms-concepts004.html#BNCGH">Using Jakarta Messaging Local Transactions</a>.</p>
 </div>
 <div class="paragraph">
 <p><a id="BABGDFEA"></a><a id="jmscontext-objects"></a></p>
@@ -313,7 +313,7 @@ sends and receives into an atomic unit of work. For details, see
 <h3 id="_jmscontext_objects">JMSContext Objects</h3>
 <div class="paragraph">
 <p>A <code>JMSContext</code> object combines a connection and a session in a single
-object. That is, it provides both an active connection to a JMS provider
+object. That is, it provides both an active connection to a Messaging provider
 and a single-threaded context for sending and receiving messages.</p>
 </div>
 <div class="paragraph">
@@ -359,8 +359,8 @@ non-transacted session with an acknowledgment mode of
 <code>JMSContext.AUTO_ACKNOWLEDGE</code>. When called with no arguments from the
 web or EJB container when there is an active JTA transaction in
 progress, the <code>createContext</code> method creates a transacted session. For
-information about the way JMS transactions work in Jakarta EE applications,
-see <a href="jms-concepts005.html#BNCGL">Using the JMS API in Jakarta EE
+information about the way Jakarta Messaging transactions work in Jakarta EE applications,
+see <a href="jms-concepts005.html#BNCGL">Using Jakarta Messaging in Jakarta EE
 Applications</a>.</p>
 </div>
 <div class="paragraph">
@@ -376,7 +376,7 @@ to create a transacted session:</p>
 </div>
 <div class="paragraph">
 <p>The session uses local transactions; see
-<a href="jms-concepts004.html#BNCGH">Using JMS Local Transactions</a> for
+<a href="jms-concepts004.html#BNCGH">Using Jakarta Messaging Local Transactions</a> for
 details.</p>
 </div>
 <div class="paragraph">
@@ -386,13 +386,13 @@ more information.</p>
 </div>
 <div class="paragraph">
 <p>When you use a <code>JMSContext</code>, message delivery normally begins as soon as
-you create a consumer. See <a href="#BNCEP">JMS Message Consumers</a> for more
+you create a consumer. See <a href="#BNCEP">Jakarta Messaging Message Consumers</a> for more
 information.</p>
 </div>
 <div class="paragraph">
 <p>If you create a <code>JMSContext</code> in a <code>try</code>-with-resources block, you do not
 need to close it explicitly. It will be closed when the <code>try</code> block
-comes to an end. Make sure that your application completes all its JMS
+comes to an end. Make sure that your application completes all its Jakarta Messaging
 activity within the <code>try</code>-with-resources block. If you do not use a
 <code>try</code>-with-resources block, you must call the <code>close</code> method on the
 <code>JMSContext</code> to close the connection when the application has finished
@@ -403,7 +403,7 @@ its work.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jms_message_producers">JMS Message Producers</h3>
+<h3 id="_jakarta_messaging_message_producers">Jakarta Messaging Message Producers</h3>
 <div class="paragraph">
 <p>A message producer is an object that is created by a <code>JMSContext</code> or a
 session and used for sending messages to a destination. A message
@@ -439,7 +439,7 @@ Messages</a> for more information.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jms_message_consumers">JMS Message Consumers</h3>
+<h3 id="_jakarta_messaging_message_consumers">Jakarta Messaging Message Consumers</h3>
 <div class="paragraph">
 <p>A message consumer is an object that is created by a <code>JMSContext</code> or a
 session and used for receiving messages sent to a destination. A message
@@ -455,8 +455,8 @@ interface. The simplest way to create a message consumer is to use the
 </div>
 </div>
 <div class="paragraph">
-<p>A message consumer allows a JMS client to register interest in a
-destination with a JMS provider. The JMS provider manages the delivery
+<p>A message consumer allows a Messaging client to register interest in a
+destination with a Messaging provider. The Jakarta Messaging provider manages the delivery
 of messages from a destination to the registered consumers of the
 destination.</p>
 </div>
@@ -510,7 +510,7 @@ topics, you can also create shared consumers; see
 <p><a id="BNCEQ"></a><a id="jms-message-listeners"></a></p>
 </div>
 <div class="sect3">
-<h4 id="_jms_message_listeners">JMS Message Listeners</h4>
+<h4 id="_jakarta_messaging_message_listeners">Jakarta Messaging Message Listeners</h4>
 <div class="paragraph">
 <p>A message listener is an object that acts as an asynchronous event
 handler for messages. This object implements the <code>MessageListener</code>
@@ -531,7 +531,7 @@ consumer.setMessageListener(myListener);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When message delivery begins, the JMS provider automatically calls the
+<p>When message delivery begins, the Messaging provider automatically calls the
 message listener&#8217;s <code>onMessage</code> method whenever a message is delivered.
 The <code>onMessage</code> method takes one argument of type <code>Message</code>, which your
 implementation of the method can cast to another message subtype as
@@ -560,12 +560,12 @@ and message-driven beans.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_jms_message_selectors">JMS Message Selectors</h4>
+<h4 id="_jakarta_messaging_message_selectors">Jakarta Messaging Message Selectors</h4>
 <div class="paragraph">
 <p>If your messaging application needs to filter the messages it receives,
-you can use a JMS message selector, which allows a message consumer for
+you can use a Jakarta Messaging message selector, which allows a message consumer for
 a destination to specify the messages that interest it. Message
-selectors assign the work of filtering messages to the JMS provider
+selectors assign the work of filtering messages to the Messaging provider
 rather than to the application. For an example of an application that
 uses a message selector, see <a href="jms-examples008.html#BNCGW">Sending
 Messages from a Session Bean to an MDB</a>.</p>
@@ -610,8 +610,8 @@ Subscriptions may be durable or nondurable, and they may be shared or
 unshared.</p>
 </div>
 <div class="paragraph">
-<p>A subscription may be thought of as an entity within the JMS provider
-itself, whereas a consumer is a JMS object within the application.</p>
+<p>A subscription may be thought of as an entity within the Messaging provider
+itself, whereas a consumer is a Jakarta Messaging object within the application.</p>
 </div>
 <div class="paragraph">
 <p>A subscription will receive a copy of every message that is sent to the
@@ -623,7 +623,7 @@ properties match the message selector will be added to the subscription.</p>
 <p>Unshared subscriptions are restricted to a single consumer. In this
 case, all the messages in the subscription are delivered to that
 consumer. Shared subscriptions allow multiple consumers. In this case,
-each message in the subscription is delivered to only one consumer. JMS
+each message in the subscription is delivered to only one consumer. Jakarta Messaging
 does not define how messages are distributed between multiple consumers
 on the same subscription.</p>
 </div>
@@ -708,10 +708,10 @@ subscription can have only one active consumer at a time.</p>
 </div>
 <div class="paragraph">
 <p>A consumer identifies the durable subscription from which it consumes
-messages by specifying a unique identity that is retained by the JMS
+messages by specifying a unique identity that is retained by the Messaging
 provider. Subsequent consumer objects that have the same identity resume
 the subscription in the state in which it was left by the preceding
-consumer. If a durable subscription has no active consumer, the JMS
+consumer. If a durable subscription has no active consumer, the Messaging
 provider retains the subscription&#8217;s messages until they are received by
 the subscription or until they expire.</p>
 </div>
@@ -756,11 +756,11 @@ you might close the consumer:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The JMS provider stores the messages sent to the topic, as it would
+<p>The Messaging provider stores the messages sent to the topic, as it would
 store messages sent to a queue. If the program or another application
 calls <code>createDurableConsumer</code> using the same connection factory and its
 client ID, the same topic, and the same subscription name, then the
-subscription is reactivated and the JMS provider delivers the messages
+subscription is reactivated and the Messaging provider delivers the messages
 that were sent while the subscription was inactive.</p>
 </div>
 <div class="paragraph">
@@ -885,16 +885,16 @@ consumers.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jms_messages">JMS Messages</h3>
+<h3 id="_jakarta_messaging_messages">Jakarta Messaging Messages</h3>
 <div class="paragraph">
-<p>The ultimate purpose of a JMS application is to produce and consume
-messages that can then be used by other software applications. JMS
+<p>The ultimate purpose of a Jakarta Messaging application is to produce and consume
+messages that can then be used by other software applications. Jakarta Messaging
 messages have a basic format that is simple but highly flexible,
-allowing you to create messages that match formats used by non-JMS
+allowing you to create messages that match formats used by non-Jakarta Messaging
 applications on heterogeneous platforms.</p>
 </div>
 <div class="paragraph">
-<p>A JMS message can have three parts: a header, properties, and a body.
+<p>A Jakarta Messaging message can have three parts: a header, properties, and a body.
 Only the header is required. The following sections describe these
 parts.</p>
 </div>
@@ -926,9 +926,9 @@ documentation. For a list of possible message types, see
 <div class="sect3">
 <h4 id="_message_headers">Message Headers</h4>
 <div class="paragraph">
-<p>A JMS message header contains a number of predefined fields that contain
+<p>A Jakarta Messaging message header contains a number of predefined fields that contain
 values used by both clients and providers to identify and route
-messages. <a href="#BNCEU">Table 48-1</a> lists and describes the JMS message
+messages. <a href="#BNCEU">Table 48-1</a> lists and describes the Jakarta Messaging message
 header fields and indicates how their values are set. For example, every
 message has a unique identifier, which is represented in the header
 field <code>JMSMessageID</code>. The value of another header field,
@@ -946,7 +946,7 @@ values.</p>
 <p><a id="sthref196"></a><a id="BNCEU"></a></p>
 </div>
 <div class="paragraph">
-<p><strong>Table 48-1 How JMS Message Header Field Values Are Set</strong></p>
+<p><strong>Table 48-1 How Jakarta Messaging Message Header Field Values Are Set</strong></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 99%;">
 <colgroup>
@@ -970,7 +970,7 @@ provider <code>send</code> method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSDeliveryMode</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delivery mode specified when the message was sent
 (see <a href="jms-concepts004.html#BNCFY">Specifying Message Persistence</a>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JMS provider <code>send</code> method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Messaging provider <code>send</code> method</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSDeliveryTime</code></p></td>
@@ -991,20 +991,20 @@ provider <code>send</code> method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSPriority</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The priority of the message (see
 <a href="jms-concepts004.html#BNCFZ">Setting Message Priority Levels</a>)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JMS
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Messaging
 provider <code>send</code> method</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSMessageID</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value that uniquely identifies each message sent by a
 provider</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JMS provider <code>send</code> method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Messaging provider <code>send</code> method</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSTimestamp</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The time the message was handed off to a provider to be
 sent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JMS provider <code>send</code> method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Messaging provider <code>send</code> method</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSCorrelationID</code></p></td>
@@ -1026,7 +1026,7 @@ application</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JMSRedelivered</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Whether the message is being redelivered</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JMS
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jakarta Messaging
 provider prior to delivery</p></td>
 </tr>
 </tbody>
@@ -1041,14 +1041,14 @@ provider prior to delivery</p></td>
 <p>You can create and set properties for messages if you need values in
 addition to those provided by the header fields. You can use properties
 to provide compatibility with other messaging systems, or you can use
-them to create message selectors (see <a href="#BNCER">JMS Message
+them to create message selectors (see <a href="#BNCER">Jakarta Messaging Message
 Selectors</a>). For an example of setting a property to be used as a
 message selector, see <a href="jms-examples008.html#BNCGW">Sending Messages
 from a Session Bean to an MDB</a>.</p>
 </div>
 <div class="paragraph">
-<p>The JMS API provides some predefined property names that begin with
-<code>JMSX</code>. A JMS provider is required to implement only one of these,
+<p>Jakarta Messaging provides some predefined property names that begin with
+<code>JMSX</code>. A Messaging provider is required to implement only one of these,
 <code>JMSXDeliveryCount</code> (which specifies the number of times a message has
 been delivered); the rest are optional. The use of these predefined
 properties or of user-defined properties in applications is optional.</p>
@@ -1060,7 +1060,7 @@ properties or of user-defined properties in applications is optional.</p>
 <div class="sect3">
 <h4 id="_message_bodies">Message Bodies</h4>
 <div class="paragraph">
-<p>The JMS API defines six different types of messages. Each message type
+<p>Jakarta Messaging defines six different types of messages. Each message type
 corresponds to a different message body. These message types allow you
 to send and receive data in many different forms. <a href="#BNCEX">Table
 48-2</a> describes these message types.</p>
@@ -1069,7 +1069,7 @@ to send and receive data in many different forms. <a href="#BNCEX">Table
 <p><a id="sthref197"></a><a id="BNCEX"></a></p>
 </div>
 <div class="paragraph">
-<p><strong>Table 48-2 JMS Message Types</strong></p>
+<p><strong>Table 48-2 Jakarta Messaging Message Types</strong></p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 75%;">
 <colgroup>
@@ -1116,7 +1116,7 @@ message type is useful when a message body is not required.</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The JMS API provides methods for creating messages of each type and for
+<p>Jakarta Messaging provides methods for creating messages of each type and for
 filling in their contents. For example, to create and send a
 <code>TextMessage</code>, you might use the following statements:</p>
 </div>
@@ -1154,7 +1154,7 @@ if (m instanceof TextMessage) {
 </div>
 </div>
 <div class="paragraph">
-<p>The JMS API provides shortcuts for creating and receiving a
+<p>Jakarta Messaging provides shortcuts for creating and receiving a
 <code>TextMessage</code>, <code>BytesMessage</code>, <code>MapMessage</code>, or <code>ObjectMessage</code>. For
 example, you do not have to wrap a string in a <code>TextMessage</code>; instead,
 you can send and receive the string directly. For example, you can send
@@ -1182,7 +1182,7 @@ can be assigned to a particular type.</p>
 <div class="paragraph">
 <p>An empty <code>Message</code> can be useful if you want to send a message that is
 simply a signal to the application. Some of the examples in
-<a href="jms-examples.html#BNCGV">Chapter 49, "Java Message Service
+<a href="jms-examples.html#BNCGV">Chapter 49, "Jakarta Messaging
 Examples,"</a> send an empty message after sending a series of text
 messages. For example:</p>
 </div>
@@ -1196,8 +1196,8 @@ messages. For example:</p>
 all the messages sent have now been received.</p>
 </div>
 <div class="paragraph">
-<p>The examples in <a href="jms-examples.html#BNCGV">Chapter 49, "Java Message
-Service Examples,"</a> use messages of type <code>TextMessage</code>, <code>MapMessage</code>,
+<p>The examples in <a href="jms-examples.html#BNCGV">Chapter 49, "Jakarta Messaging
+Examples,"</a> use messages of type <code>TextMessage</code>, <code>MapMessage</code>,
 and <code>Message</code>.</p>
 </div>
 <div class="paragraph">
@@ -1206,10 +1206,10 @@ and <code>Message</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jms_queue_browsers">JMS Queue Browsers</h3>
+<h3 id="_jakarta_messaging_queue_browsers">Jakarta Messaging Queue Browsers</h3>
 <div class="paragraph">
 <p>Messages sent to a queue remain in the queue until the message consumer
-for that queue consumes them. The JMS API provides a <code>QueueBrowser</code>
+for that queue consumes them. Jakarta Messaging provides a <code>QueueBrowser</code>
 object that allows you to browse the messages in the queue and display
 the header values for each message. To create a <code>QueueBrowser</code> object,
 use the <code>JMSContext.createBrowser</code> method. For example:</p>
@@ -1226,14 +1226,14 @@ example of using a <code>QueueBrowser</code> object.</p>
 <div class="paragraph">
 <p>The <code>createBrowser</code> method allows you to specify a message selector as a
 second argument when you create a <code>QueueBrowser</code>. For information on
-message selectors, see <a href="#BNCER">JMS Message Selectors</a>.</p>
+message selectors, see <a href="#BNCER">Jakarta Messaging Message Selectors</a>.</p>
 </div>
 <div class="paragraph">
-<p>The JMS API provides no mechanism for browsing a topic. Messages usually
+<p>Jakarta Messaging provides no mechanism for browsing a topic. Messages usually
 disappear from a topic as soon as they appear: If there are no message
-consumers to consume them, the JMS provider removes them. Although
+consumers to consume them, the Messaging provider removes them. Although
 durable subscriptions allow messages to remain on a topic while the
-message consumer is not active, JMS does not define any facility for
+message consumer is not active, Jakarta Messaging does not define any facility for
 examining them.</p>
 </div>
 <div class="paragraph">
@@ -1241,15 +1241,15 @@ examining them.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jms_exception_handling">JMS Exception Handling</h3>
+<h3 id="_jakarta_messaging_exception_handling">Jakarta Messaging Exception Handling</h3>
 <div class="paragraph">
-<p>The root class for all checked exceptions in the JMS API is
-<code>JMSException</code>. The root cause for all unchecked exceptions in the JMS
+<p>The root class for all checked exceptions in Jakarta Messaging is
+<code>JMSException</code>. The root cause for all unchecked exceptions in the Jakarta Messaging
 API is <code>JMSRuntimeException</code>.</p>
 </div>
 <div class="paragraph">
 <p>Catching <code>JMSException</code> and <code>JMSRuntimeException</code> provides a generic way
-of handling all exceptions related to the JMS API.</p>
+of handling all exceptions related to Jakarta Messaging.</p>
 </div>
 <div class="paragraph">
 <p>The <code>JMSException</code> and <code>JMSRuntimeException</code> classes include the

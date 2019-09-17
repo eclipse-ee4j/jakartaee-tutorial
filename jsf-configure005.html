@@ -61,7 +61,7 @@
 <h2 id="_configuring_managed_beans">Configuring Managed Beans</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When a page references a managed bean for the first time, the JavaServer
+<p>When a page references a managed bean for the first time, the Jakarta Server
 Faces implementation initializes it either based on a <code>@Named</code>
 annotation and scope annotation in the bean class or according to its
 configuration in the application configuration resource file. For
@@ -71,7 +71,7 @@ Beans</a>.</p>
 </div>
 <div class="paragraph">
 <p>You can use either annotations or the application configuration resource
-file to instantiate managed beans that are used in a JavaServer Faces
+file to instantiate managed beans that are used in a Jakarta Server Faces
 application and to store them in scope. The managed bean creation
 facility is configured in the application configuration resource file
 using <code>managed-bean</code> XML elements to define each bean. This file is
@@ -80,7 +80,7 @@ facility, see <a href="#BNAWR">Using the managed-bean Element</a>.</p>
 </div>
 <div class="paragraph">
 <p>Managed beans created in the application configuration resource file are
-JavaServer Faces managed beans, not CDI managed beans.</p>
+Jakarta Server Faces managed beans, not CDI managed beans.</p>
 </div>
 <div class="paragraph">
 <p>With the managed bean creation facility, you can</p>
@@ -121,8 +121,8 @@ Methods</a> for information on programming managed beans.</p>
 <p>A managed bean is initiated in the application configuration resource
 file using a <code>managed-bean</code> element, which represents an instance of a
 bean class that must exist in the application. At runtime, the
-JavaServer Faces implementation processes the <code>managed-bean</code> element. If
-a page references the bean and no bean instance exists, the JavaServer
+Jakarta Server Faces implementation processes the <code>managed-bean</code> element. If
+a page references the bean and no bean instance exists, the Jakarta Server
 Faces implementation instantiates the bean as specified by the element
 configuration.</p>
 </div>
@@ -280,7 +280,7 @@ Values</strong></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>value</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines a single value, such as a <code>String</code>, <code>int</code>, or
-JavaServer Faces EL expression</p></td>
+Jakarta Server Faces EL expression</p></td>
 </tr>
 </tbody>
 </table>

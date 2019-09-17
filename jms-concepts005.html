@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Using the JMS API in Jakarta EE Applications</title>
+    <title>Using Jakarta Messaging in Jakarta EE Applications</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Using the JMS API in Jakarta EE Applications</b><br />
+  <b>Using Jakarta Messaging in Jakarta EE Applications</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,10 +58,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_the_jms_api_in_jakarta_ee_applications">Using the JMS API in Jakarta EE Applications</h2>
+<h2 id="_using_jakarta_messaging_in_jakarta_ee_applications">Using Jakarta Messaging in Jakarta EE Applications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes how using the JMS API in enterprise bean
+<p>This section describes how using Jakarta Messaging in enterprise bean
 applications or web applications differs from using it in application
 clients.</p>
 </div>
@@ -71,7 +71,7 @@ clients.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#CHDGICJB">Overview of Using the JMS API</a></p>
+<p><a href="#CHDGICJB">Overview of Using Jakarta Messaging</a></p>
 </li>
 <li>
 <p><a href="#BABHFBDH">Creating Resources for Jakarta EE Applications</a></p>
@@ -89,7 +89,7 @@ Receive Messages</a></p>
 Asynchronously</a></p>
 </li>
 <li>
-<p><a href="#BNCGS">Managing JTA Transactions</a></p>
+<p><a href="#BNCGS">Managing Jakarta Transactions</a></p>
 </li>
 </ul>
 </div>
@@ -97,11 +97,11 @@ Asynchronously</a></p>
 <p><a id="CHDGICJB"></a><a id="overview-of-using-the-jms-api"></a></p>
 </div>
 <div class="sect2">
-<h3 id="_overview_of_using_the_jms_api">Overview of Using the JMS API</h3>
+<h3 id="_overview_of_using_jakarta_messaging">Overview of Using Jakarta Messaging</h3>
 <div class="paragraph">
 <p>A general rule in the Jakarta EE platform specification applies to all Java
-EE components that use the JMS API within EJB or web containers:
-Application components in the web and EJB containers must not attempt to
+EE components that use Jakarta Messaging within enterprise bean or web containers:
+Application components in the web and enterprise bean containers must not attempt to
 create more than one active (not closed) <code>Session</code> object per
 connection. Multiple <code>JMSContext</code> objects are permitted, however, since
 they combine a single connection and a single session.</p>
@@ -222,7 +222,7 @@ modules in a single application</p>
 </li>
 <li>
 <p><code>java:module</code>: Makes the resource available to all components within a
-given module (for example, all enterprise beans within an EJB module)</p>
+given module (for example, all enterprise beans within a Jakarta Enterprise Beans module)</p>
 </li>
 <li>
 <p><code>java:comp</code>: Makes the resource available to a single component only
@@ -279,7 +279,7 @@ JNDI name is <code>java:comp/DefaultJMSConnectionFactory</code>.</p>
 </div>
 <div class="paragraph">
 <p>When you use resource injection in an application client component, you
-normally declare the JMS resource static:</p>
+normally declare the Messaging resource static:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -346,7 +346,7 @@ private JMSContext context2;</code></pre>
 <h3 id="_using_jakarta_ee_components_to_produce_and_to_synchronously_receive_messages">Using Jakarta EE Components to Produce and to Synchronously Receive Messages</h3>
 <div class="paragraph">
 <p>An application that produces messages or synchronously receives them can
-use a Jakarta EE web or EJB component, such as a managed bean, a servlet,
+use a Jakarta EE web or Jakarta Enterprise Beans component, such as a managed bean, a servlet,
 or a session bean, to perform these operations. The example in
 <a href="jms-examples008.html#BNCGW">Sending Messages from a Session Bean to
 an MDB</a> uses a stateless session bean to send messages to a topic. The
@@ -357,13 +357,13 @@ and to consume messages.</p>
 <div class="paragraph">
 <p>Because a synchronous receive with no specified timeout ties up server
 resources, this mechanism usually is not the best application design for
-a web or EJB component. Instead, use a synchronous receive that
+a web or Jakarta Enterprise Beans component. Instead, use a synchronous receive that
 specifies a timeout value, or use a message-driven bean to receive
 messages asynchronously. For details about synchronous receives, see
-<a href="jms-concepts003.html#BNCEP">JMS Message Consumers</a>.</p>
+<a href="jms-concepts003.html#BNCEP">Jakarta Messaging Message Consumers</a>.</p>
 </div>
 <div class="paragraph">
-<p>Using the JMS API in a Jakarta EE component is in many ways similar to
+<p>Using Jakarta Messaging in a Jakarta EE component is in many ways similar to
 using it in an application client. The main differences are the areas of
 resource management and transactions.</p>
 </div>
@@ -371,34 +371,34 @@ resource management and transactions.</p>
 <p><a id="BNCGO"></a><a id="managing-jms-resources-in-web-and-ejb-components"></a></p>
 </div>
 <div class="sect3">
-<h4 id="_managing_jms_resources_in_web_and_ejb_components">Managing JMS Resources in Web and EJB Components</h4>
+<h4 id="_managing_jakarta_messaging_resources_in_web_and_jakarta_enterprise_beans_components">Managing Jakarta Messaging Resources in Web and Jakarta Enterprise Beans Components</h4>
 <div class="paragraph">
-<p>The JMS resources are a connection and a session, usually combined in a
-<code>JMSContext</code> object. In general, it is important to release JMS
+<p>The Jakarta Messaging resources are a connection and a session, usually combined in a
+<code>JMSContext</code> object. In general, it is important to release Messaging
 resources when they are no longer being used. Here are some useful
 practices to follow.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you wish to maintain a JMS resource only for the life span of a
+<p>If you wish to maintain a Messaging resource only for the life span of a
 business method, use a <code>try</code>-with-resources statement to create the
 <code>JMSContext</code> so that it will be closed automatically at the end of the
 <code>try</code> block.</p>
 </li>
 <li>
-<p>To maintain a JMS resource for the duration of a transaction or
+<p>To maintain a Messaging resource for the duration of a transaction or
 request, inject the <code>JMSContext</code> as described in
 <a href="#BABCJBEE">Injecting a JMSContext Object</a>. This will also cause the
 resource to be released when it is no longer needed.</p>
 </li>
 <li>
-<p>If you would like to maintain a JMS resource for the life span of an
+<p>If you would like to maintain a Messaging resource for the life span of an
 enterprise bean instance, you can use a <code>@PostConstruct</code> callback method
 to create the resource and a <code>@PreDestroy</code> callback method to close the
 resource. However, there is normally no need to do this, since
 application servers usually maintain a pool of connections. If you use a
-stateful session bean and you wish to maintain the JMS resource in a
+stateful session bean and you wish to maintain the Messaging resource in a
 cached state, you must close the resource in a <code>@PrePassivate</code> callback
 method and set its value to <code>null</code>, and you must create it again in a
 <code>@PostActivate</code> callback method.</p>
@@ -412,10 +412,10 @@ method and set its value to <code>null</code>, and you must create it again in a
 <div class="sect3">
 <h4 id="_managing_transactions_in_session_beans">Managing Transactions in Session Beans</h4>
 <div class="paragraph">
-<p>Instead of using local transactions, you use JTA transactions. You can
+<p>Instead of using local transactions, you use Jakarta transactions. You can
 use either container-managed transactions or bean-managed transactions.
 Normally, you use container-managed transactions for bean methods that
-perform sends or receives, allowing the EJB container to handle
+perform sends or receives, allowing the enterprise bean container to handle
 transaction demarcation. Because container-managed transactions are the
 default, you do not have to specify them.</p>
 </div>
@@ -437,11 +437,11 @@ transactions.</p>
 <h3 id="_using_message_driven_beans_to_receive_messages_asynchronously">Using Message-Driven Beans to Receive Messages Asynchronously</h3>
 <div class="paragraph">
 <p>The sections <a href="ejb-intro003.html#GIPKO">What Is a Message-Driven Bean?</a>
-and <a href="jms-concepts001.html#BNCDW">How Does the JMS API Work with the
+and <a href="jms-concepts001.html#BNCDW">How Does Jakarta Messaging Work with the
 Jakarta EE Platform?</a> describe how the Jakarta EE platform supports a special
 kind of enterprise bean, the message-driven bean, which allows Jakarta EE
-applications to process JMS messages asynchronously. Other Jakarta EE web
-and EJB components allow you to send messages and to receive them
+applications to process Jakarta Messaging messages asynchronously. Other Jakarta EE web
+and Jakarta Enterprise Beans components allow you to send messages and to receive them
 synchronously but not asynchronously.</p>
 </div>
 <div class="paragraph">
@@ -472,7 +472,7 @@ not use a deployment descriptor.</p>
 <div class="paragraph">
 <p>It is recommended, but not required, that a message-driven bean class
 implement the message listener interface for the message type it
-supports. A bean that supports the JMS API implements the
+supports. A bean that supports Jakarta Messaging implements the
 <code>javax.jms.MessageListener</code> interface, which means that it must provide
 an <code>onMessage</code> method with the following signature:</p>
 </div>
@@ -498,7 +498,7 @@ listener in the following ways.</p>
 <p>In an application client, you must create a <code>JMSContext</code>, then create
 a <code>JMSConsumer</code>, then call <code>setMessageListener</code> to activate the
 listener. For a message-driven bean, you need only define the class and
-annotate it, and the EJB container creates it for you.</p>
+annotate it, and the enterprise bean container creates it for you.</p>
 </li>
 <li>
 <p>The bean class uses the <code>@MessageDriven</code> annotation, which typically
@@ -581,12 +581,12 @@ subscription</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageSelector</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A string that filters messages; see
-<a href="jms-concepts003.html#BNCER">JMS Message Selectors</a> for information</p></td>
+<a href="jms-concepts003.html#BNCER">Jakarta Messaging Message Selectors</a> for information</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>connectionFactoryLookup</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The lookup name of the connection factory to
-be used to connect to the JMS provider from which the bean will receive
+be used to connect to the Messaging provider from which the bean will receive
 messages</p></td>
 </tr>
 </tbody>
@@ -637,8 +637,8 @@ public class SimpleMessageBean implements MessageListener {
 </div>
 </div>
 <div class="paragraph">
-<p>If JMS is integrated with the application server using a resource
-adapter, the JMS resource adapter handles these tasks for the EJB
+<p>If Jakarta Messaging is integrated with the application server using a resource
+adapter, the Messaging resource adapter handles these tasks for the enterprise bean
 container.</p>
 </div>
 <div class="paragraph">
@@ -685,18 +685,18 @@ message-driven bean.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_managing_jta_transactions">Managing JTA Transactions</h3>
+<h3 id="_managing_jakarta_transactions">Managing JakartA Transactions</h3>
 <div class="paragraph">
 <p>Jakarta EE application clients and Java SE clients use JMS local
-transactions (described in <a href="jms-concepts004.html#BNCGH">Using JMS
+transactions (described in <a href="jms-concepts004.html#BNCGH">Using Jakarta Messaging
 Local Transactions</a>), which allow the grouping of sends and receives
-within a specific JMS session. Jakarta EE applications that run in the web
-or EJB container commonly use JTA transactions to ensure the integrity
-of accesses to external resources. The key difference between a JTA
-transaction and a JMS local transaction is that a JTA transaction is
-controlled by the application server&#8217;s transaction managers. JTA
+within a specific Messaging session. Jakarta EE applications that run in the web
+or enterprise bean container commonly use Jakarta Transactions to ensure the integrity
+of accesses to external resources. The key difference between a Jakarta
+transaction and a Jakarta Messaging local transaction is that a Jakarta transaction is
+controlled by the application server&#8217;s transaction managers. Jakarta
 transactions may be distributed, which means that they can encompass
-multiple resources in the same transaction, such as a JMS provider and a
+multiple resources in the same transaction, such as a Messaging provider and a
 database.</p>
 </div>
 <div class="paragraph">
@@ -705,19 +705,19 @@ perform atomic updates on the same database, and they allow a single
 application to perform atomic updates on multiple databases.</p>
 </div>
 <div class="paragraph">
-<p>In a Jakarta EE application that uses the JMS API, you can use transactions
+<p>In a Jakarta EE application that uses Jakarta Messaging, you can use transactions
 to combine message sends or receives with database updates and other
 resource manager operations. You can access resources from multiple
 application components within a single transaction. For example, a
 servlet can start a transaction, access multiple databases, invoke an
-enterprise bean that sends a JMS message, invoke another enterprise bean
+enterprise bean that sends a Jakarta Messaging message, invoke another enterprise bean
 that modifies an EIS system using the Connector Architecture, and
 finally commit the transaction. Your application cannot, however, both
-send a JMS message and receive a reply to it within the same
+send a Jakarta Messaging message and receive a reply to it within the same
 transaction.</p>
 </div>
 <div class="paragraph">
-<p>JTA transactions within the EJB and web containers can be either of two
+<p>Jakarta Transactions within the enterprise bean and web containers can be either of two
 kinds.</p>
 </div>
 <div class="ulist">
@@ -773,7 +773,7 @@ transaction has been marked for rollback.</p>
 </div>
 <div class="paragraph">
 <p>If you use bean-managed transactions, the delivery of a message to the
-<code>onMessage</code> method takes place outside the JTA transaction context. The
+<code>onMessage</code> method takes place outside the Jakarta transaction context. The
 transaction begins when you call the <code>UserTransaction.begin</code> method
 within the <code>onMessage</code> method, and it ends when you call
 <code>UserTransaction.commit</code> or <code>UserTransaction.rollback</code>. Any call to the
@@ -789,10 +789,10 @@ processed by the <code>onMessage</code> method within the same transaction. It i
 not possible to achieve this behavior with bean-managed transactions.</p>
 </div>
 <div class="paragraph">
-<p>When you create a <code>JMSContext</code> in a JTA transaction (in the web or EJB
+<p>When you create a <code>JMSContext</code> in a Jakarta transaction (in the web or enterprise bean
 container), the container ignores any arguments you specify, because it
 manages all transactional properties. When you create a <code>JMSContext</code> in
-the web or EJB container and there is no JTA transaction, the value (if
+the web or enterprise bean container and there is no Jakarta transaction, the value (if
 any) passed to the <code>createContext</code> method should be
 <code>JMSContext.AUTO_ACKNOWLEDGE</code> or <code>JMSContext.DUPS_OK_ACKNOWLEDGE</code>.</p>
 </div>
@@ -816,7 +816,7 @@ message received by the message-driven bean to be acknowledged.</p>
 </div>
 <div class="paragraph">
 <p>If the <code>onMessage</code> method throws a <code>RuntimeException</code>, the container
-does not acknowledge processing the message. In that case, the JMS
+does not acknowledge processing the message. In that case, the Messaging
 provider will redeliver the unacknowledged message in the future.</p>
 </div>
 </div>

@@ -162,7 +162,7 @@ If your component extends <code>UICommand</code>, it automatically implements
 <code>ActionSource2</code>. If your component extends <code>UIOutput</code> or one of the
 component classes that extend <code>UIOutput</code>, it automatically implements
 <code>ValueHolder</code>. If your component extends <code>UIInput</code>, it automatically
-implements <code>EditableValueHolder</code> and <code>ValueHolder</code>. See the JavaServer
+implements <code>EditableValueHolder</code> and <code>ValueHolder</code>. See the Jakarta Server
 Faces API documentation to find out what the other component classes
 implement.</p>
 </div>
@@ -180,7 +180,7 @@ doesn&#8217;t automatically implement this interface.</p>
 <code>UICommand</code> and therefore implements <code>ActionSource2</code>, which means it can
 fire action events when a user clicks on the map. The <code>AreaComponent</code>
 class extends the standard component <code>UIOutput</code>. The <code>@FacesComponent</code>
-annotation registers the components with the JavaServer Faces
+annotation registers the components with the Jakarta Server Faces
 implementation:</p>
 </div>
 <div class="listingblock">
@@ -318,7 +318,7 @@ configuration.</p>
 <div class="sect2">
 <h3 id="_performing_encoding">Performing Encoding</h3>
 <div class="paragraph">
-<p>During the Render Response phase, the JavaServer Faces implementation
+<p>During the Render Response phase, the Jakarta Server Faces implementation
 processes the encoding methods of all components and their associated
 renderers in the view. The encoding methods convert the current local
 value of the component into the corresponding markup that represents it
@@ -340,7 +340,7 @@ renders the beginning <code>map</code> tag in <code>encodeBegin</code> and the r
 <code>map</code> tag in <code>encodeEnd</code>.</p>
 </div>
 <div class="paragraph">
-<p>The JavaServer Faces implementation automatically invokes the
+<p>The Jakarta Server Faces implementation automatically invokes the
 <code>encodeEnd</code> method of <code>AreaComponent</code>'s renderer after it invokes
 <code>MapRenderer</code>'s <code>encodeBegin</code> method and before it invokes
 <code>MapRenderer</code>'s <code>encodeEnd</code> method. If a component needs to perform the
@@ -450,7 +450,7 @@ parameters, you must also implement the <code>decode</code> method.</p>
 <div class="sect2">
 <h3 id="_performing_decoding">Performing Decoding</h3>
 <div class="paragraph">
-<p>During the Apply Request Values phase, the JavaServer Faces
+<p>During the Apply Request Values phase, the Jakarta Server Faces
 implementation processes the <code>decode</code> methods of all components in the
 tree. The <code>decode</code> method extracts a component&#8217;s local value from
 incoming request parameters and uses a <code>javax.faces.convert.Converter</code>
@@ -497,7 +497,7 @@ attribute to the value of the <code>input</code> field.</p>
 <div class="sect2">
 <h3 id="_enabling_component_properties_to_accept_expressions">Enabling Component Properties to Accept Expressions</h3>
 <div class="paragraph">
-<p>Nearly all the attributes of the standard JavaServer Faces tags can
+<p>Nearly all the attributes of the standard Jakarta Server Faces tags can
 accept expressions, whether they are value expressions or method
 expressions. It is recommended that you also enable your component
 attributes to accept expressions because it gives you much more
@@ -594,7 +594,7 @@ during the Restore View phase.</p>
 <div class="paragraph">
 <p>Component classes that implement <code>StateHolder</code> may prefer to implement
 the <code>saveState(FacesContext)</code> and <code>restoreState(FacesContext, Object)</code>
-methods to help the JavaServer Faces implementation save and restore the
+methods to help the Jakarta Server Faces implementation save and restore the
 state of components across multiple requests.</p>
 </div>
 <div class="paragraph">
@@ -625,7 +625,7 @@ implementation for <code>restoreState(FacesContext, Object)</code>, which restor
 the state of the component to that saved with the
 <code>saveState(FacesContext)</code> method. The
 <code>restoreState(FacesContext, Object)</code> method is called during the Restore
-View phase, during which the JavaServer Faces implementation checks
+View phase, during which the Jakarta Server Faces implementation checks
 whether there is any state that was saved during the last Render
 Response phase and needs to be restored in preparation for the next
 postback.</p>

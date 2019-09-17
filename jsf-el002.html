@@ -73,10 +73,10 @@ the page&#8217;s lifecycle, whenever it is appropriate to do so.</p>
 Expressions whose evaluation is deferred use the <code>#{}</code> syntax.</p>
 </div>
 <div class="paragraph">
-<p>Because of its multiphase lifecycle, JavaServer Faces technology uses
+<p>Because of its multiphase lifecycle, Jakarta Server Faces technology uses
 mostly deferred evaluation expressions. During the lifecycle, component
 events are handled, data is validated, and other tasks are performed in
-a particular order. Therefore, a JavaServer Faces implementation must
+a particular order. Therefore, a Jakarta Server Faces implementation must
 defer evaluation of expressions until the appropriate point in the
 lifecycle.</p>
 </div>
@@ -105,7 +105,7 @@ retrieved from the backing bean named <code>catalog</code>:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The JavaServer Faces implementation evaluates the expression
+<p>The Jakarta Server Faces implementation evaluates the expression
 <code>${catalog.bookQuantity}</code>, converts it, and passes the returned value to
 the tag handler. The value is updated on the page.</p>
 </div>
@@ -118,13 +118,13 @@ the tag handler. The value is updated on the page.</p>
 <div class="paragraph">
 <p>Deferred evaluation expressions take the form <code>#{expr}</code> and can be
 evaluated at other phases of a page lifecycle as defined by whatever
-technology is using the expression. In the case of JavaServer Faces
+technology is using the expression. In the case of Jakarta Server Faces
 technology, its controller can evaluate the expression at different
 phases of the lifecycle, depending on how the expression is being used
 in the page.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows a JavaServer Faces <code>h:inputText</code> tag, which
+<p>The following example shows a Jakarta Server Faces <code>h:inputText</code> tag, which
 represents a field component into which a user enters a value. The
 <code>h:inputText</code> tag&#8217;s <code>value</code> attribute references a deferred evaluation
 expression that points to the <code>name</code> property of the <code>customer</code> bean:</p>
@@ -135,14 +135,14 @@ expression that points to the <code>name</code> property of the <code>customer</
 </div>
 </div>
 <div class="paragraph">
-<p>For an initial request of the page containing this tag, the JavaServer
+<p>For an initial request of the page containing this tag, the Jakarta Server
 Faces implementation evaluates the <code>#{customer.name}</code> expression during
 the render-response phase of the lifecycle. During this phase, the
 expression merely accesses the value of <code>name</code> from the <code>customer</code> bean,
 as is done in immediate evaluation.</p>
 </div>
 <div class="paragraph">
-<p>For a postback request, the JavaServer Faces implementation evaluates
+<p>For a postback request, the Jakarta Server Faces implementation evaluates
 the expression at different phases of the lifecycle, during which the
 value is retrieved from the request, validated, and propagated to the
 <code>customer</code> bean.</p>
