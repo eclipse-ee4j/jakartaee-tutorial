@@ -57,7 +57,7 @@ increase performance. When it requests a connection, an application
 obtains one from the pool. When an application closes a connection, the
 connection is returned to the pool.
 
-Applications that use the Persistence API specify the `DataSource`
+Applications that use Jakarta Persistence specify the `DataSource`
 object they are using in the `jta-data-source` element of the
 `persistence.xml` file:
 

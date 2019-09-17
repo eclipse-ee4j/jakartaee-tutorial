@@ -12,11 +12,11 @@ What Is a Resource Adapter?
 What Is a Resource Adapter?
 ---------------------------
 
-A resource adapter is a Jakarta EE component that implements the Jakarta EE
-Connector Architecture for a specific EIS. Examples of EISs include
+A resource adapter is a Jakarta EE component that implements the Jakarta Connectors API
+for a specific EIS. Examples of EISs include
 enterprise resource planning, mainframe transaction processing, and
-database systems. In a Jakarta EE server, the Java Message Server and
-JavaMail also act as EISs that you access using resource adapters. As
+database systems. In a Jakarta EE server, Jakarta Messaging and
+Jakarta Mail also act as EISs that you access using resource adapters. As
 illustrated in link:#GJTZO[Figure 55-1], the resource adapter
 facilitates communication between a Jakarta EE application and an EIS.
 
@@ -53,7 +53,7 @@ component.
 Management Contracts
 ~~~~~~~~~~~~~~~~~~~~
 
-The Jakarta EE Connector Architecture defines system contracts that enable
+Jakarta Connectors defines system contracts that enable
 resource adapter lifecycle and thread management.
 
 [[GIPHT]][[lifecycle-management]]
@@ -61,7 +61,7 @@ resource adapter lifecycle and thread management.
 Lifecycle Management
 ^^^^^^^^^^^^^^^^^^^^
 
-The Connector Architecture specifies a lifecycle management contract
+Jakarta Connectors specifies a lifecycle management contract
 that allows an application server to manage the lifecycle of a resource
 adapter. This contract provides a mechanism for the application server
 to bootstrap a resource adapter instance during the deployment or
@@ -75,7 +75,7 @@ place.
 Work Management Contract
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Connector Architecture work management contract ensures that
+Jakarta Connectors work management contract ensures that
 resource adapters use threads in the proper, recommended manner. This
 contract also enables an application server to manage threads for
 resource adapters.
