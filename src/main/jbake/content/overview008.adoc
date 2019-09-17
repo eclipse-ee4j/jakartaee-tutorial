@@ -142,13 +142,14 @@ Jakarta Server Pages Technology
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Jakarta Server Pages technology lets you put snippets of servlet code
-directly into a text-based document. A Jakarta page is a text-based document
+directly into a text-based document. A Jakarta Server Pages page is a text-based document
 that contains two types of text:
 
 * Static data, which can be expressed in any text-based format, such as
 HTML or XML
 * JSP elements, which determine how the page constructs dynamic content
 
+The Jakarta Server Pages technology is derived from and compatible with the JavaServer Pages (JSP) technology.
 For information about JSP technology, see _The Java EE 5 Tutorial_ at
 `http://docs.oracle.com/javaee/5/tutorial/doc/`.
 
@@ -273,7 +274,7 @@ The Jakarta EE 8 platform requires CDI 2.0.
 [[GJXVG]][[dependency-injection-for-java]]
 
 Jakarta Dependency Injection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Jakarta Dependency Injection defines a standard set of annotations (and
 one interface) for use on injectable classes.
@@ -432,7 +433,7 @@ Jakarta WebSocket
 ~~~~~~~~~~~~~~~~~
 
 WebSocket is an application protocol that provides full-duplex
-communications between two peers over TCP. The Jakarta WebSocket
+communications between two peers over TCP. Jakarta WebSocket
 enables Jakarta EE applications to create endpoints using annotations that
 specify the configuration parameters of the endpoint and designate its
 lifecycle callback methods.
@@ -470,7 +471,7 @@ The Jakarta EE 8 platform requires Jakarta JSON Processing 1.1.
 Jakarta JSON Binding
 ~~~~~~~~~~~~~~~~~~~~
 
-The Jakarta JSON Binding provides a binding layer for converting Java objects to and from JSON messages. Jakarta JSON Binding also supports the ability to customize the default mapping process used in this binding layer through the use of Java annotations for a given field, JavaBean property, type or package, or by providing an implementation of a property naming strategy.
+Jakarta JSON Binding provides a binding layer for converting Java objects to and from JSON messages. Jakarta JSON Binding also supports the ability to customize the default mapping process used in this binding layer through the use of Java annotations for a given field, JavaBean property, type or package, or by providing an implementation of a property naming strategy.
 
 Jakarta JSON Binding is new to the Jakarta EE 8 platform. The Jakarta EE 8 platform requires Jakarta JSON Binding 1.0.
 
