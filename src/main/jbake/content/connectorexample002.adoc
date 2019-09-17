@@ -50,7 +50,7 @@ provides and implements a custom client interface for Jakarta EE
 applications to use. This interface is simpler than the Common Client
 Interface (CCI).
 
-The `trading-war` module is a web application with a Jakarta Faces
+The `trading-war` module is a web application with a Jakarta Server Faces
 interface and a managed bean. This application enables clients to submit
 trades to the EIS using the resource adapter provided by the
 `trading-rar` module. The `trading-war` module uses the custom client
