@@ -12,9 +12,9 @@ prev=websocket013.html
 ------------------
 
 
-This chapter describes the Java API for JSON Processing (JSR 374). JSR 374
-is an incremental release over JSR 353. JSON is a data exchange format widely
-used in web services and other connected applications. JSR 374 provides an
+This chapter describes Jakarta JSON Processing.
+JSON is a data exchange format widely
+used in web services and other connected applications. Jakarta JSON Processing provides an
 API to parse, transform, and query JSON data using the object model or the
 streaming model.
 
@@ -27,5 +27,4 @@ The following topics are addressed here:
 * link:jsonp005.html#json-in-jakarta-ee-restful-web-services[JSON in Jakarta EE RESTful Web Services]
 * link:jsonp006.html#the-jsonpmodel-example-application[The jsonpmodel Example Application]
 * link:jsonp007.html#the-jsonpstreaming-example-application[The jsonpstreaming Example Application]
-* link:jsonp008.html#further-information-about-the-java-api-for-json-processing[Further Information about the Java API for
-JSON Processing]
+* link:jsonp008.html#further-information-about-the-java-api-for-json-processing[Further Information about Jakarta JSON Processing]

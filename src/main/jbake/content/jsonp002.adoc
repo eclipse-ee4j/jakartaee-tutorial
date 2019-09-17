@@ -10,10 +10,10 @@ prev=jsonp001.html
 JSON Processing in the Jakarta EE Platform
 ------------------------------------------
 
-Jakarta EE includes support for JSR 374, which provides an API to parse,
+Jakarta EE includes support for the Jakarta JSON Processing spec, which provides an API to parse,
 transform, and query JSON data using the object model or the streaming
 model described in link:jsonp001.html#BABJJACI[Generating and Parsing
-JSON Data]. The Java API for JSON Processing contains the following
+JSON Data]. Jakarta JSON Processing contains the following
 packages:
 
 * The `javax.json` package contains a reader interface, a writer
