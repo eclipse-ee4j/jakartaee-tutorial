@@ -104,9 +104,9 @@ the batch job. This is an auxiliary component that does not demonstrate
 any key functionality in this example.</p>
 </li>
 <li>
-<p>Two Java Persistence API (JPA) entities (<code>CallRecord</code> and <code>PhoneBill</code>)
+<p>Two Jakarta Persistence entities (<code>CallRecord</code> and <code>PhoneBill</code>)
 that represent call records and customer bills. The application uses a
-JPA entity manager to store instances of these entities in a database.</p>
+Jakarta Persistence entity manager to store instances of these entities in a database.</p>
 </li>
 <li>
 <p>Three batch artifacts (<code>CallRecordReader</code>, <code>CallRecordProcessor</code>, and
@@ -243,7 +243,7 @@ store and retrieve <code>CallRecord</code> objects to and from a database.</p>
 </div>
 <div class="paragraph">
 <p>The second constructor creates a <code>CallRecord</code> object from an entry of
-JSON data in the log file using the JSON Processing API. Log entries
+JSON data in the log file using Jakarta JSON Processing. Log entries
 look as follows:</p>
 </div>
 <div class="listingblock">
@@ -300,9 +300,9 @@ from the database.</p>
 read, process, and write.</p>
 </div>
 <div class="paragraph">
-<p>For more information on the Java Persistence API, see
-<a href="persistence-intro.html#BNBPZ">Chapter 40, "Introduction to the Java
-Persistence API"</a>. For more information on the JSON Processing API, see
+<p>For more information on Jakarta Persistence, see
+<a href="persistence-intro.html#BNBPZ">Chapter 40, "Introduction to Jakarta
+Persistence"</a>. For more information on Jakarta JSON Processing, see
 <a href="jsonp.html#GLRBB">Chapter 20, "JSON Processing"</a>.</p>
 </div>
 <div class="paragraph">
@@ -490,7 +490,7 @@ public class BillReader implements ItemReader {
 </div>
 </div>
 <div class="paragraph">
-<p>This artifact also obtains an iterator to read items from the JPA entity
+<p>This artifact also obtains an iterator to read items from the Jakarta Persistence entity
 manager:</p>
 </div>
 <div class="listingblock">
@@ -512,9 +512,10 @@ bill and calculates the tax and total amount due for each bill.</p>
 <div class="paragraph">
 <p><a id="sthref291"></a><a id="the-javaserver-faces-pages"></a></p>
 </div>
+<div class="paragraph">
+<p>The Jakarta Faces Pages
+<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
 </div>
-<div class="sect3">
-<h4 id="_the_javaserver_faces_pages">The JavaServer Faces Pages</h4>
 <div class="paragraph">
 <p>The <code>index.xhtml</code> page contains a text area that shows the log file of
 call records. The page provides a button for the user to submit the
@@ -597,7 +598,7 @@ public String getJobStatus() {
 </div>
 <div class="paragraph">
 <p>The <code>getRowList</code> method of the bean creates a list of bills to be
-displayed on the <code>jobstarted.xhtml</code> JSF page using a table.</p>
+displayed on the <code>jobstarted.xhtml</code> server faces page using a table.</p>
 </div>
 <div class="paragraph">
 <p><a id="BABBGDAA"></a><a id="running-the-phonebilling-example-application"></a></p>
