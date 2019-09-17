@@ -50,10 +50,10 @@ types of transactions.
 
 [[BNCIZ]][[jta-transactions]]
 
-Jakarta transactions
+Jakarta Transactions
 ~~~~~~~~~~~~~~~~~~~~
 
-Jakarta Transactions, allows you to demarcate transactions
+Jakarta Transactions allows you to demarcate transactions
 in a manner that is independent of the transaction manager
 implementation. GlassFish Server implements the transaction manager with
 the Java Transaction Service (JTS). However, your code doesn't call the
