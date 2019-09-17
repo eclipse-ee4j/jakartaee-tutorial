@@ -13,10 +13,10 @@ Design and Architecture of Duke's Bookstore
 -------------------------------------------
 
 Duke's Bookstore is a simple web application that uses many features of
-JavaServer Faces technology, in addition to other Jakarta EE features:
+Jakarta Faces technology, in addition to other Jakarta EE features:
 
-* JavaServer Faces technology, as well as Contexts and Dependency
-Injection for Jakarta EE (CDI)
+* Jakarta Faces technology, as well as Jakarta Contexts and Dependency
+Injection (CDI)
 
 ** A set of Facelets pages, along with a template, provides the user
 interface to the application.
@@ -25,7 +25,7 @@ interface to the application.
 
 ** A custom image map component on the front page allows you to select a
 book to enter the store. Each area of the map is represented by a
-JavaServer Faces managed bean. Text hyperlinks are also provided for
+Jakarta Faces managed bean. Text hyperlinks are also provided for
 accessibility.
 
 ** Action listeners are registered on the image map and the text links.
@@ -45,7 +45,7 @@ tag to ensure that the input is correctly formatted.
 following page, `bookreceipt.xhtml`, can access it.
 * Enterprise beans: Local, no-interface-view stateless session bean and
 singleton bean
-* A Java Persistence API entity
+* A Jakarta Persistence entity
 
 The packages of the Duke's Bookstore application, located in the
 tut-install`/examples/case-studies/dukes-bookstore/src/main/java/javaeetutorial/dukesbookstore/`

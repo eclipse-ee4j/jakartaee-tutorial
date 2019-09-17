@@ -27,24 +27,24 @@ and how they use the Events and Entities projects."]
 
 Duke's Forest uses the following Jakarta EE platform features:
 
-* Java Persistence API entities
+* Jakarta Persistence entities
 
 ** Bean Validation annotations on the entities for verifying data
 
-** XML annotations for Java API for XML binding (JAXB) serialization
+** XML annotations for Jakarta XML binding serialization
 * Web services
 
-** A JAX-RS web service for payment, with security constraints
+** A Jakarta REST web service for payment, with security constraints
 
-** A JAX-RS web service that is EJB based
+** A Jakarta REST web service based on Jakarta Enterprise Beans
 * Enterprise beans
 
 ** Local session beans
 
 ** All enterprise beans packaged within the WAR
-* Contexts and Dependency Injection (CDI)
+* Jakarta Contexts and Dependency Injection (CDI)
 
-** CDI annotations for JavaServer Faces components
+** CDI annotations for Jakarta Faces components
 
 ** A CDI managed bean used as a shopping cart, with conversation scoping
 
@@ -54,7 +54,7 @@ Duke's Forest uses the following Jakarta EE platform features:
 * Servlets
 
 ** A servlet for dynamic image presentation
-* JavaServer Faces technology, using Facelets for the web front end
+* Jakarta Faces technology, using Facelets for the web front end
 
 ** Templating
 
@@ -103,11 +103,11 @@ façade consisting of managed beans and stateless session beans, which in
 turn interact with the entities that represent database tables. The
 façade also interacts with web services APIs that access the Duke's
 Payment web service. When the payment for an order is approved, Duke's
-Store sends the order to a JMS queue. The administrator also interacts
+Store sends the order to a Jakarta Messaging queue. The administrator also interacts
 with the interface of Duke's Shipment, which can be accessed either
 directly through Duke's Shipment or from the administration interface of
 Duke's Store by means of a web service. When the administrator approves
-an order for shipping, Duke's Shipment consumes the order from the JMS
+an order for shipping, Duke's Shipment consumes the order from the Jakarta Messaging
 queue.
 
 The most fundamental building blocks of the application are the Events
@@ -165,12 +165,12 @@ separate project within the application.
 The entities Project
 ~~~~~~~~~~~~~~~~~~~~
 
-The `entities` project is a Java Persistence API (JPA) project used by
+The `entities` project is a Jakarta Persistence project used by
 both Duke's Store and Duke's Shipment. It is generated from the database
 schema shown in link:#GLNXD[Figure 62-3] and is also used as a base for
-the entities consumed and produced by the web services through JAXB.
+the entities consumed and produced by the web services through Jakarta XML Binding.
 Each entity has validation rules based on business requirements,
-specified using Bean Validation.
+specified using Jakarta Bean Validation.
 
 [[GLNXD]]
 
@@ -239,7 +239,7 @@ where a third-party payment service is used to validate credit cards or
 bank payments.
 
 The project uses HTTP Basic Authentication and JAAS (Java Authentication
-and Authorization Service) to authenticate a customer to a JAX-RS web
+and Authorization Service) to authenticate a customer to a Jakarta REST web
 service. The implementation itself exposes a simple method,
 `processPayment`, which receives an `OrderEvent` to evaluate and approve
 or deny the order payment. The method is called from the checkout
@@ -292,7 +292,7 @@ perform the following tasks:
 * Group maintenance (create, edit, update, delete)
 
 The project also uses stateless session beans as façades for
-interactions with the JPA entities described in link:#CIHFCIAC[The
+interactions with the Jakarta Persistence entities described in link:#CIHFCIAC[The
 entities Project], and CDI managed beans as controllers for interactions
 with Facelets pages. The project thus follows the MVC
 (Model-View-Controller) pattern and applies the same pattern to all
@@ -361,7 +361,7 @@ managed bean with conversation scope, which means that the request
 information will persist across multiple requests. Also, `ShoppingCart`
 is responsible for starting the event chain for customer orders, which
 invokes the RESTful web service in `dukes-payment` and publishes an
-order to the JMS queue for shipping approval if the payment is
+order to the Jakarta Messaging queue for shipping approval if the payment is
 successful.
 
 [[sthref305]][[facelets-files-used-in-the-main-interface-of-dukes-store]]
@@ -453,7 +453,7 @@ following helper classes, found in the `com.forest.web.util` package:
 managed beans
 * `ImageServlet`: A servlet class that retrieves the image content from
 the database and displays it
-* `JsfUtil`: Class used for JavaServer Faces operations, such as queuing
+* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
 messages on a `FacesContext` instance
 * `MD5Util`: Class used by the `CustomerController` managed bean to
 generate an encrypted password for a user
@@ -502,7 +502,7 @@ Deployment Descriptors Used in Duke's Store
 Duke's Store uses the following deployment descriptors, located in the
 `web/WEB-INF` directory:
 
-* `faces-config.xml`: The JavaServer Faces configuration file
+* `faces-config.xml`: The Jakarta Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file
@@ -514,7 +514,7 @@ The Duke's Shipment Project
 
 Duke's Shipment is a web application with a login page, a main Facelets
 page, and some other objects. This application, which is accessible only
-to administrators, consumes orders from a JMS queue and calls the
+to administrators, consumes orders from a Jakarta Messaging queue and calls the
 RESTful web service exposed by Duke's Store to update the order status.
 The main page of Duke's Shipment shows a list of orders pending shipping
 approval and a list of shipped orders. The administrator can approve or
@@ -546,10 +546,10 @@ the business logic for the application and is located in the
 
 Like Duke's Store, Duke's Shipment uses the `AbstractFacade` class. This
 class is not an enterprise bean but an abstract class that implements
-common operations for `Type<T>`, where `<T>` is a JPA entity.
+common operations for `Type<T>`, where `<T>` is a Jakarta Persistence entity.
 
 The `OrderBrowser` stateless session bean, located in the
-`com.forest.shipment.ejb` package, has one method that browses the JMS
+`com.forest.shipment.ejb` package, has one method that browses the Jakarta Messaging
 order queue and another that consumes an order message after the
 administrator approves or denies the order for shipment.
 
@@ -595,7 +595,7 @@ Helper Class Used in Duke's Shipment
 The Duke's Shipment managed beans use only one helper class, found in
 the `com.forest.shipment.web.util` package:
 
-* `JsfUtil`: Class used for JavaServer Faces operations, such as queuing
+* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
 messages on a `FacesContext` instance
 
 [[sthref315]][[qualifier-used-in-dukes-shipment]]
@@ -613,7 +613,7 @@ Deployment Descriptors Used in Duke's Shipment
 
 Duke's Shipment uses the following deployment descriptors:
 
-* `faces-config.xml`: The JavaServer Faces configuration file
+* `faces-config.xml`: The Jakarta Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file
