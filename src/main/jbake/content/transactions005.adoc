@@ -45,30 +45,30 @@ begin transaction
 
 When coding an application-managed transaction for session or
 message-driven beans, you must decide whether to use Java Database
-Connectivity or JTA transactions. The sections that follow discuss both
+Connectivity or Jakarta transactions. The sections that follow discuss both
 types of transactions.
 
 [[BNCIZ]][[jta-transactions]]
 
-JTA Transactions
-~~~~~~~~~~~~~~~~
+Jakarta Transactions
+~~~~~~~~~~~~~~~~~~~~
 
-JTA, or the Java Transaction API, allows you to demarcate transactions
+Jakarta Transactions allows you to demarcate transactions
 in a manner that is independent of the transaction manager
 implementation. GlassFish Server implements the transaction manager with
 the Java Transaction Service (JTS). However, your code doesn't call the
-JTS methods directly but instead invokes the JTA methods, which then
+JTS methods directly but instead invokes the Jakarta Transactions methods, which then
 call the lower-level JTS routines.
 
-A JTA transaction is controlled by the Jakarta EE transaction manager. You
-may want to use a JTA transaction because it can span updates to
+A Jakarta transaction is controlled by the Jakarta EE transaction manager. You
+may want to use a Jakarta transaction because it can span updates to
 multiple databases from different vendors. A particular DBMS's
 transaction manager may not work with heterogeneous databases. However,
 the Jakarta EE transaction manager does have one limitation: It does not
 support nested transactions. In other words, it cannot start a
 transaction for an instance until the preceding transaction has ended.
 
-To demarcate a JTA transaction, you invoke the `begin`, `commit`, and
+To demarcate a Jakarta transaction, you invoke the `begin`, `commit`, and
 `rollback` methods of the `javax.transaction.UserTransaction` interface.
 
 [[BNCJA]][[returning-without-committing]]
@@ -80,7 +80,7 @@ In a stateless session bean with bean-managed transactions, a business
 method must commit or roll back a transaction before returning. However,
 a stateful session bean does not have this restriction.
 
-In a stateful session bean with a JTA transaction, the association
+In a stateful session bean with a Jakarta transaction, the association
 between the bean instance and the transaction is retained across
 multiple client calls. Even if each business method called by the client
 opens and closes the database connection, the association is retained

@@ -13,7 +13,7 @@ Container-Managed Transactions
 ------------------------------
 
 In an enterprise bean with container-managed transaction demarcation,
-the EJB container sets the boundaries of the transactions. You can use
+the enterprise bean container sets the boundaries of the transactions. You can use
 container-managed transactions with any type of enterprise bean: session
 or message-driven. Container-managed transactions simplify development
 because the enterprise bean code does not explicitly mark the
