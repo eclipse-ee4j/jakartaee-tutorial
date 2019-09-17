@@ -84,12 +84,12 @@ the web tier and enterprise beans in the business tier."]
 The server and containers are as follows:
 
 * Jakarta EE server: The runtime portion of a Jakarta EE product. A Jakarta EE
-server provides EJB and web containers.
-* EJB container: Manages the execution of enterprise beans for Jakarta EE
+server provides enterprise and web containers.
+* Enterprise bean container: Manages the execution of enterprise beans for Jakarta EE
 applications. Enterprise beans and their container run on the Jakarta EE
 server.
 * Web container: Manages the execution of web pages, servlets, and some
-EJB components for Jakarta EE applications. Web components and their
+enterprise bean components for Jakarta EE applications. Web components and their
 container run on the Jakarta EE server.
 * Application client container: Manages the execution of application
 client components. Application clients and their container run on the

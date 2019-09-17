@@ -78,9 +78,9 @@ with other components.
 The Jakarta EE specification defines the following Jakarta EE components:
 
 * Application clients and applets are components that run on the client.
-* Java Servlet, JavaServer Faces, and JavaServer Pages (JSP) technology
+* Jakarta Servlet, Jakarta Server Faces, and Jakarta Server Pages technology
 components are web components that run on the server.
-* EJB components (enterprise beans) are business components that run on
+* Enterprise bean components (enterprise beans) are business components that run on
 the server.
 
 Jakarta EE components are written in the Java programming language and are
@@ -171,7 +171,7 @@ data flow between the following:
 server
 * Server components and a database
 
-JavaBeans components are not considered Jakarta EE components by the Java
+JavaBeans components are not considered Jakarta EE components by the Jakarta
 EE specification.
 
 JavaBeans components have properties and have `get` and `set` methods
@@ -205,11 +205,11 @@ Web Components
 ~~~~~~~~~~~~~~
 
 Jakarta EE web components are either servlets or web pages created using
-JavaServer Faces technology and/or JSP technology (JSP pages). Servlets
+Jakarta Server Faces technology and/or Jakarta Server Pages technology. Servlets
 are Java programming language classes that dynamically process requests
-and construct responses. JSP pages are text-based documents that execute
+and construct responses. Jakarta Server pages are text-based documents that execute
 as servlets but allow a more natural approach to creating static
-content. JavaServer Faces technology builds on servlets and JSP
+content. Jakarta Server Faces technology builds on servlets and Jakarta Server Pages
 technology and provides a user interface component framework for web
 applications.
 

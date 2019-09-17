@@ -21,17 +21,16 @@ the world of information technology, enterprise applications must be
 designed, built, and produced for less money, with greater speed, and
 with fewer resources.
 
-With the Java Platform, Enterprise Edition (Jakarta EE), development of
+With Jakarta EE, development of
 Java enterprise applications has never been easier or faster. The aim of
 the Jakarta EE platform is to provide developers with a powerful set of
 APIs while shortening development time, reducing application complexity,
 and improving application performance.
 
-The Jakarta EE platform is developed through the Java Community Process
-(JCP), which is responsible for all Java technologies. Expert groups
-composed of interested parties have created Java Specification Requests
-(JSRs) to define the various Jakarta EE technologies. The work of the Java
-Community under the JCP program helps to ensure Java technology's
+The Jakarta EE platform is developed through the Jakarta EE Specification Process.
+Expert groups composed of interested parties have created Jakarta Specifications
+to define the various Jakarta EE technologies. The work of the Jakarta
+Community under the Jakarta Specification Process program helps to ensure Java technology's
 standards of stability and cross-platform compatibility.
 
 The Jakarta EE platform uses a simplified programming model. XML deployment
@@ -46,7 +45,7 @@ the program element affected.
 In the Jakarta EE platform, dependency injection can be applied to all
 resources a component needs, effectively hiding the creation and lookup
 of resources from application code. Dependency injection can be used in
-Enterprise JavaBeans (EJB) containers, web containers, and application
+enterprise bean containers, web containers, and application
 clients. Dependency injection allows the Jakarta EE container to
 automatically insert references to other required components or
 resources, using annotations.
