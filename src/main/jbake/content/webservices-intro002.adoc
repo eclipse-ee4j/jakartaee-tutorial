@@ -32,16 +32,16 @@ The following topics are addressed here:
 "Big" Web Services
 ~~~~~~~~~~~~~~~~~~
 
-Jakarta XML Web Services provides the functionality for "big" web services,
+JAX-WS provides the functionality for "big" web services,
 which are described in link:jaxws.html#BNAYL[Chapter 31, "Building Web
-Services with Jakarta XML Web Services"]. Big web services use XML messages that follow
+Services with JAX-WS"]. Big web services use XML messages that follow
 the Simple Object Access Protocol (SOAP) standard, an XML language
 defining a message architecture and message formats. Such systems often
 contain a machine-readable description of the operations offered by the
 service, written in the Web Services Description Language (WSDL), an XML
 language for defining interfaces syntactically.
 
-*Note:* JAX-WS, the JCP predecessor of Jakarta XML Web Services, was moved to Java SE 8 and is not included in the Jakarta EE 8 platform. However, the JAX-WS API can still be used in EE applications. 
+*Note:* JAX-WS was moved to Java SE 8 and is not included in the Jakarta EE 8 platform. However, the JAX-WS API can still be used in EE applications. 
 
 The SOAP message format and the WSDL interface definition language have
 gained widespread adoption. Many development tools, such as NetBeans
