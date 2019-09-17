@@ -39,9 +39,9 @@ specified in the source code.
 .*Figure 5-1 EAR File Structure*
 image:img/jakartaeett_dt_010.png[
 "Diagram of EAR file structure. META-INF and web, application client,
-EJB, and resource adapter modules are under the assembly root."]
+enterprise bean, and resource adapter modules are under the assembly root."]
 
-The two types of deployment descriptors are Jakarta EE and runtime. A Java
+The two types of deployment descriptors are Jakarta EE and runtime. A Jakarta
 EE deployment descriptor is defined by a Jakarta EE specification and can
 be used to configure deployment settings on any Jakarta EE-compliant
 implementation. A runtime deployment descriptor is used to configure
@@ -62,8 +62,8 @@ module.
 
 Jakarta EE modules are of the following types:
 
-* EJB modules, which contain class files for enterprise beans and,
-optionally, an EJB deployment descriptor. EJB modules are packaged as
+* Enterprise bean modules, which contain class files for enterprise beans and,
+optionally, an enterprise bean deployment descriptor. Enterprise bean modules are packaged as
 JAR files with a `.jar` extension.
 * Web modules, which contain servlet class files, web files, supporting
 class files, GIF and HTML files, and, optionally, a web application
