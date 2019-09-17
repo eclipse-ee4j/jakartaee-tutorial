@@ -1,19 +1,19 @@
 type=page
 status=published
-title=Creating Queries Using the Java Persistence Query Language
+title=Creating Queries Using the Jakarta Persistence Query Language
 next=persistence-querylanguage004.html
 prev=persistence-querylanguage002.html
 ~~~~~~
-Creating Queries Using the Java Persistence Query Language
-==========================================================
+Creating Queries Using the Jakarta Persistence Query Language
+=============================================================
 
 [[BNBRG]][[creating-queries-using-the-java-persistence-query-language]]
 
-Creating Queries Using the Java Persistence Query Language
-----------------------------------------------------------
+Creating Queries Using the Jakarta Persistence Query Language
+-------------------------------------------------------------
 
 The `EntityManager.createQuery` and `EntityManager.createNamedQuery`
-methods are used to query the datastore by using Java Persistence query
+methods are used to query the datastore by using Jakarta Persistence query
 language queries.
 
 The `createQuery` method is used to create dynamic queries, which are

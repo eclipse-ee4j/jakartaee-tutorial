@@ -1,16 +1,16 @@
 type=page
 status=published
-title=Overview of the Java Persistence Query Language
+title=Overview of the Jakarta Persistence Query Language
 next=persistence-querylanguage002.html
 prev=persistence-querylanguage.html
 ~~~~~~
-Overview of the Java Persistence Query Language
-===============================================
+Overview of the Jakarta Persistence Query Language
+==================================================
 
 [[A1073303]][[overview-of-the-java-persistence-query-language]]
 
-Overview of the Java Persistence Query Language
------------------------------------------------
+Overview of the Jakarta Persistence Query Language
+--------------------------------------------------
 
 The query language uses the abstract persistence schemas of entities,
 including their relationships, for its data model and defines operators
@@ -22,6 +22,6 @@ relationships among them.
 
 This chapter relies on the material presented in earlier chapters. For
 conceptual information, see link:persistence-intro.html#BNBPZ[Chapter 40,
-"Introduction to the Java Persistence API"]. For code examples, see
+"Introduction to Jakarta Persistence"]. For code examples, see
 link:persistence-basicexamples.html#GIJST[Chapter 41, "Running the
 Persistence Examples."]

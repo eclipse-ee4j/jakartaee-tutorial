@@ -12,12 +12,12 @@ Querying Entities
 Querying Entities
 -----------------
 
-The Java Persistence API provides the following methods for querying
+Jakarta Persistence provides the following methods for querying
 entities.
 
-* The Java Persistence query language (JPQL) is a simple, string-based
+* The Jakarta Persistence query language (JPQL) is a simple, string-based
 language similar to SQL used to query entities and their relationships.
-See link:persistence-querylanguage.html#BNBTG[Chapter 42, "The Java
+See link:persistence-querylanguage.html#BNBTG[Chapter 42, "The Jakarta
 Persistence Query Language"] for more information.
 * The Criteria API is used to create typesafe queries using Java
 programming language APIs to query for entities and their relationships.

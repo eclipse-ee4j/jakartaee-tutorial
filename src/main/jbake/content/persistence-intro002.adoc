@@ -254,7 +254,7 @@ annotations must be set to the type of the `Map` value.
 Validating Persistent Fields and Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Java API for JavaBeans Validation (Bean Validation) provides a
+Jakarta Bean Validation provides a
 mechanism for validating application data. Bean Validation is integrated
 into the Jakarta EE containers, allowing the same validation logic to be
 used in any of the tiers of an enterprise application.
@@ -541,7 +541,7 @@ which `LineItem` instances refer to it.
 Queries and Relationship Direction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Java Persistence query language and Criteria API queries often navigate
+Jakarta Persistence query language and Criteria API queries often navigate
 across relationships. The direction of a relationship determines whether
 a query can navigate from one entity to another. For example, a query
 can navigate from `LineItem` to `Product` but cannot navigate in the
