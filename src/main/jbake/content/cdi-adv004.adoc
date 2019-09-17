@@ -15,7 +15,7 @@ Using Predefined Beans in CDI Applications
 Jakarta EE provides predefined beans that implement the following
 interfaces.
 
-* `javax.transaction.UserTransaction`: A Java Transaction API (JTA) user
+* `javax.transaction.UserTransaction`: A Jakarta Transactions user
 transaction.
 * `java.security.Principal`: The abstract notion of a principal, which
 represents any entity, such as an individual, a corporation, or a login

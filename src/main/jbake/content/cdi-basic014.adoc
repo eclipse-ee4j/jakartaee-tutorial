@@ -14,8 +14,7 @@ Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean Class
 
 CDI managed bean classes and their superclasses support the annotations
 for initializing and for preparing for the destruction of a bean. These
-annotations are defined in JSR 250: Common Annotations for the Java
-platform (`http://jcp.org/en/jsr/detail?id=250`).
+annotations are defined in Jakarta Annotations (`https://jakarta.ee/specifications/annotations/1.3/`).
 
 The following topics are addressed here:
 
