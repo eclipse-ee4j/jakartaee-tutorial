@@ -331,7 +331,7 @@ accessed. Here is the code of `CounterBean`:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.counter.ejb;
+package jakarta.tutorial.counter.ejb;
 
 import javax.ejb.Singleton;
 
@@ -365,7 +365,7 @@ preceding version:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.counter.ejb;
+package jakarta.tutorial.counter.ejb;
 
 import javax.ejb.Singleton;
 import javax.ejb.ConcurrencyManagement;

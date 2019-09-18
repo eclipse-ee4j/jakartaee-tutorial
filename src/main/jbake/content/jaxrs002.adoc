@@ -156,7 +156,7 @@ class that uses Jakarta REST annotations:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.hello;
+package jakarta.tutorial.hello;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

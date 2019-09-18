@@ -118,7 +118,7 @@ class also must define a default, public, no-argument constructor.
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.helloservice;
+package jakarta.tutorial.helloservice;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -283,7 +283,7 @@ file:
 +
 [source,oac_no_warn]
 ----
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
@@ -296,7 +296,7 @@ invoking `getHelloPort` on the service:
 +
 [source,oac_no_warn]
 ----
-javaeetutorial.helloservice.endpoint.Hello port = service.getHelloPort();
+jakarta.tutorial.helloservice.endpoint.Hello port = service.getHelloPort();
 ----
 +
 The port implements the SEI defined by the service.
@@ -310,14 +310,14 @@ return port.sayHello(arg0);
 
 Here is the full source of `HelloAppClient.java`, which is located in
 the
-`_tut-install_/examples/jaxws/hello-appclient/src/main/java/javaeetutorial/hello/appclient/`
+`_tut-install_/examples/jaxws/hello-appclient/src/main/java/jakarta/tutorial/hello/appclient/`
 directory:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.hello.appclient;
+package jakarta.tutorial.hello.appclient;
 
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
@@ -333,7 +333,7 @@ public class HelloAppClient {
     }
 
     private static String sayHello(java.lang.String arg0) {
-        javaeetutorial.helloservice.endpoint.Hello port =
+        jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }
@@ -434,7 +434,7 @@ annotation:
 +
 [source,oac_no_warn]
 ----
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 ...
 import javax.xml.ws.WebServiceRef;
 ----
@@ -454,7 +454,7 @@ calls the `sayHello` method on the port:
 private HelloService service;
 ...
 private String sayHello(java.lang.String arg0) {
-    javaeetutorial.helloservice.endpoint.Hello port =
+    jakarta.tutorial.helloservice.endpoint.Hello port =
             service.getHelloPort();
     return port.sayHello(arg0);
 }
@@ -468,14 +468,14 @@ out.println("<p>" + sayHello("world") + "</p>");
 
 The significant parts of the `HelloServlet` code follow. The code is
 located in the
-`_tut-install_/examples/jaxws/hello-webclient/src/java/javaeetutorial/hello/ webclient/`
+`_tut-install_/examples/jaxws/hello-webclient/src/java/jakarta/tutorial/hello/ webclient/`
 directory.
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.hello.webclient;
+package jakarta.tutorial.hello.webclient;
 
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -522,7 +522,7 @@ public class HelloServlet extends HttpServlet {
     //   getServletInfo method
 
     private String sayHello(java.lang.String arg0) {
-        javaeetutorial.helloservice.endpoint.Hello port =
+        jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }

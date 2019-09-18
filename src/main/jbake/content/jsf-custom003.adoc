@@ -214,7 +214,7 @@ corresponding to the South America hotspot:
     ...
     <managed-bean-name>Book201</managed-bean-name>
     <managed-bean-class>
-        javaeetutorial.dukesbookstore.model.ImageArea
+        jakarta.tutorial.dukesbookstore.model.ImageArea
     </managed-bean-class>
     <managed-bean-scope>application</managed-bean-scope>
     <managed-property>

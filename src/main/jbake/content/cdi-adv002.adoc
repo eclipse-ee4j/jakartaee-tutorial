@@ -68,7 +68,7 @@ that version is declared as follows in the `beans.xml` file:
 ----
 <beans ...>
     <alternatives>
-        <class>javaeetutorial.encoder.TestCoderImpl</class>
+        <class>jakarta.tutorial.encoder.TestCoderImpl</class>
     </alternatives>
 </beans>
 ----

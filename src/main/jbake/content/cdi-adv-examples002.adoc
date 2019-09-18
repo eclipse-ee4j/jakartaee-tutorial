@@ -19,7 +19,7 @@ example includes an interface and two implementations of it, a managed
 bean, a Facelets page, and configuration files.
 
 The source files are located in the
-`_tut-install_/examples/cdi/encoder/src/main/java/javaeetutorial/encoder/`
+`_tut-install_/examples/cdi/encoder/src/main/java/jakarta/tutorial/encoder/`
 directory.
 
 The following topics are addressed here:
@@ -77,7 +77,7 @@ element is commented out:
 ----
 <beans ...>
     <!--<alternatives>
-        <class>javaeetutorial.encoder.TestCoderImpl</class>
+        <class>jakarta.tutorial.encoder.TestCoderImpl</class>
     </alternatives>-->
 </beans>
 ----
@@ -246,7 +246,7 @@ element, so that it looks like this:
 [source,oac_no_warn]
 ----
 <alternatives>
-    <class>javaeetutorial.encoder.TestCoderImpl</class>
+    <class>jakarta.tutorial.encoder.TestCoderImpl</class>
 </alternatives>
 ----
 d.  Save the file.
@@ -326,7 +326,7 @@ element, so that it looks like this:
 [source,oac_no_warn]
 ----
 <alternatives>
-    <class>javaeetutorial.encoder.TestCoderImpl</class>
+    <class>jakarta.tutorial.encoder.TestCoderImpl</class>
 </alternatives>
 ----
 c.  Save and close the file.

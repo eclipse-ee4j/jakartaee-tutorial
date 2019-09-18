@@ -74,7 +74,7 @@ is as follows:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.helloservice.ejb;
+package jakarta.tutorial.helloservice.ejb;
 
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;

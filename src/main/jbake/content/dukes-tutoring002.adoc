@@ -104,7 +104,7 @@ link:cdi-adv005.html#GKHIC[Using Events in CDI Applications].
 WebSocket Endpoint Used in the Main Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `javaeetutorial.dukestutoring.web.websocket.StatusEndpoint` class is
+The `jakarta.tutorial.dukestutoring.web.websocket.StatusEndpoint` class is
 a WebSocket server endpoint that returns students and their status to
 client endpoints. The `StatusEndpoint.updateStatus` method is a CDI
 observer method for the `StatusEvent` event. When a student's status
@@ -193,7 +193,7 @@ Spanish locales.
 The `dukes-tutoring-common` project has the following resource bundle
 under `src/main/resources/`.
 
-* `javaeetutorial/dukestutoring/util/StatusMessages.properties`: Strings
+* `jakarta.tutorial/dukestutoring/util/StatusMessages.properties`: Strings
 for each of the status types defined in the `StatusType` enumerated type
 for the default locale. Each supported locale has a property file of the
 form `StatusMessages_`locale prefix`.properties` containing the
@@ -211,7 +211,7 @@ locale has a property file of the form `ValidationMessages_`locale
 prefix`.properties` containing the localized strings. For example, the
 strings for German-speaking locales are located in
 `ValidationMessages_de.properties`.
-* `javaeetutorial/dukestutoring/web/messages/Messages.properties`:
+* `jakarta.tutorial/dukestutoring/web/messages/Messages.properties`:
 Strings for the default locale for the main and administration Facelets
 interface. Each supported locale has a property file of the form
 `Messages_`locale prefix`.properties` containing the localized strings.
