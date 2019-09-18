@@ -74,7 +74,7 @@ descriptors discussed in this tutorial include the following.
 The schema for web component deployment descriptors is provided in
 Chapter 14 of the Jakarta Servlet 4.0 specification, which can be
 downloaded from `https://jakarta.ee/specifications/servlet/4.0/`.
-* Enterprise JavaBeans components may use an enterprise bean deployment descriptor
+* Jakarta Enterprise Beans components may use an enterprise bean deployment descriptor
 named `META-INF/ejb-jar.xml`, contained in the enterprise bean JAR file.
 +
 The schema for enterprise bean deployment descriptors is provided in
