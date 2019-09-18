@@ -106,7 +106,7 @@ the `LoggedInterceptor` class is specified as follows:
 [source,oac_no_warn]
 ----
 <interceptors>
-    <class>javaeetutorial.billpayment.interceptors.LoggedInterceptor</class>
+    <class>jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
 </interceptors>
 ----
 

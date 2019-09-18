@@ -97,7 +97,7 @@ configuration file. The setting for Duke's Bookstore looks like this:
 ----
 <resource-bundle>
     <base-name>
-        javaeetutorial.dukesbookstore.web.messages.Messages
+        jakarta.tutorial.dukesbookstore.web.messages.Messages
     </base-name>
     <var>bundle</var>
 </resource-bundle>
@@ -114,7 +114,7 @@ string appropriate for the selected locale:
 public String toString(Locale locale) {
     ResourceBundle res = 
         ResourceBundle.getBundle(
-            "javaeetutorial.dukesbookstore.web.messages.Messages", locale);
+            "jakarta.tutorial.dukesbookstore.web.messages.Messages", locale);
     return res.getString(name() + ".string");
 }
 ----
@@ -125,7 +125,7 @@ according to the locale stored in `FacesContext`.
 
 [source,oac_no_warn]
 ----
-<f:loadBundle basename="javaeetutorial.dukesbookstore.web.messages.Messages"
+<f:loadBundle basename="jakarta.tutorial.dukesbookstore.web.messages.Messages"
     var="bundle"/>
 ----
 

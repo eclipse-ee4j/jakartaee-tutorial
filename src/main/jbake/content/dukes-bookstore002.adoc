@@ -125,7 +125,7 @@ bookstore has no more copies of a book that was ordered.
 
 The application uses the following managed beans, which are located in
 the
-`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/javaeetutorial/dukesbookstore/web/managedbeans/`
+`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/jakarta/tutorial/dukesbookstore/web/managedbeans/`
 directory.
 
 * `AbstractBean`: Contains utility methods called by other managed
@@ -156,7 +156,7 @@ Custom Components and Other Custom Objects Used in Duke's Bookstore
 The map and area custom components for Duke's Bookstore, along with
 associated renderer, listener, and model classes, are defined in the
 following packages in the
-`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/javaeetutorial/dukesbookstore/`
+`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/jakarta/tutorial/dukesbookstore/`
 directory.
 
 * `components`: Contains the `MapComponent` and `AreaComponent` classes.
@@ -189,7 +189,7 @@ Properties Files Used in Duke's Bookstore
 The strings used in the Duke's Bookstore application are encapsulated
 into resource bundles to allow the display of localized strings in
 multiple locales. The properties files, located in the
-`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/javaeetutorial/dukesbookstore/web/messages/`
+`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/jakarta/tutorial/dukesbookstore/web/messages/`
 directory, consist of a default file containing English strings and
 three additional files for other locales. The files are as follows:
 
@@ -220,7 +220,7 @@ file:
 <application>
     <resource-bundle>
         <base-name>
-            javaeetutorial.dukesbookstore.web.messages.Messages
+            jakarta.tutorial.dukesbookstore.web.messages.Messages
         </base-name>
         <var>bundle</var>
     </resource-bundle>

@@ -57,7 +57,7 @@ The source code for the `Cart` business interface is as follows:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.cart.ejb;
+package jakarta.tutorial.cart.ejb;
 
 import cart.util.BookException;
 import java.util.List;
@@ -99,13 +99,13 @@ The source code for the `CartBean` class is as follows:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.cart.ejb;
+package jakarta.tutorial.cart.ejb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javaeetutorial.cart.util.BookException;
-import javaeetutorial.cart.util.IdVerifier;
+import jakarta.tutorial.cart.util.BookException;
+import jakarta.tutorial.cart.util.IdVerifier;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
 

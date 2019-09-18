@@ -129,7 +129,7 @@ expression provided by the managed bean, and a single button whose
     </h:body>
 </html>
 ----
-6.  Expand the Source Packages node, then the `javaeetutorial.hello1`
+6.  Expand the Source Packages node, then the `jakarta.tutorial.hello1`
 node.
 7.  [[CHDCABHC]]
 +
@@ -142,7 +142,7 @@ name, with the first letter in lowercase (`hello.name`).
 +
 [source,oac_no_warn]
 ----
-package javaeetutorial.hello1;
+package jakarta.tutorial.hello1;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;

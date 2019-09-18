@@ -36,7 +36,7 @@ the `ConverterBean` class is as follows:
 
 [source,oac_no_warn]
 ----
-package javaeetutorial.converter.ejb;
+package jakarta.tutorial.converter.ejb;
 
 import java.math.BigDecimal;
 import javax.ejb.*;
