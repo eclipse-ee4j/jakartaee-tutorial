@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Integrating JAX-RS with EJB Technology and CDI</title>
+    <title>Integrating Jakarta REST with Jakarta Enterprise Beans Technology and CDI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Integrating JAX-RS with EJB Technology and CDI</b><br />
+  <b>Integrating Jakarta REST with Jakarta Enterprise Beans Technology and CDI</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,21 +58,21 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_integrating_jax_rs_with_ejb_technology_and_cdi">Integrating JAX-RS with EJB Technology and CDI</h2>
+<h2 id="_integrating_jakarta_rest_with_jakarta_enterprise_beans_technology_and_cdi">Integrating Jakarta REST with Jakarta Enterprise Beans Technology and CDI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>JAX-RS works with Enterprise JavaBeans technology (enterprise beans) and
-Contexts and Dependency Injection for Jakarta EE (CDI).</p>
+<p>Jakarta REST works with Jakarta Enterprise Beans technology and
+Jakarta Contexts and Dependency Injection (CDI).</p>
 </div>
 <div class="paragraph">
-<p>In general, for JAX-RS to work with enterprise beans, you need to
+<p>In general, for Jakarta REST to work with enterprise beans, you need to
 annotate the class of a bean with <code>@Path</code> to convert it to a root
 resource class. You can use the <code>@Path</code> annotation with stateless
 session beans and singleton POJO beans.</p>
 </div>
 <div class="paragraph">
 <p>The following code snippet shows a stateless session bean and a
-singleton bean that have been converted to JAX-RS root resource classes.</p>
+singleton bean that have been converted to Jakarta REST root resource classes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -89,14 +89,14 @@ public class SingletonResource {...}</code></pre>
 <p>Session beans can also be used for subresources.</p>
 </div>
 <div class="paragraph">
-<p>JAX-RS and CDI have slightly different component models. By default,
-JAX-RS root resource classes are managed in the request scope, and no
+<p>Jakarta REST and CDI have slightly different component models. By default,
+Jakarta REST root resource classes are managed in the request scope, and no
 annotations are required for specifying the scope. CDI managed beans
 annotated with <code>@RequestScoped</code> or <code>@ApplicationScoped</code> can be converted
-to JAX-RS resource classes.</p>
+to Jakarta REST resource classes.</p>
 </div>
 <div class="paragraph">
-<p>The following code snippet shows a JAX-RS resource class.</p>
+<p>The following code snippet shows a Jakarta REST resource class.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -110,7 +110,7 @@ public final class EmpDetails {...}</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The following code snippet shows this JAX-RS resource class converted to
+<p>The following code snippet shows this Jakarta REST resource class converted to
 a CDI bean. The beans must be proxyable, so the <code>Employee</code> class
 requires a nonprivate constructor with no parameters, and the
 <code>EmpDetails</code> class must not be <code>final</code>.</p>

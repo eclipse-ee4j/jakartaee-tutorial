@@ -775,7 +775,7 @@ em.persist(part);</code></pre>
 <div class="paragraph">
 <p>The <code>ConfigBean</code> singleton session bean is used to initialize the data
 in <code>order</code>. <code>ConfigBean</code> is annotated with <code>@Startup</code>, which indicates
-that the EJB container should create <code>ConfigBean</code> when <code>order</code> is
+that the enterprise bean container should create <code>ConfigBean</code> when <code>order</code> is
 deployed. The <code>createData</code> method is annotated with <code>@PostConstruct</code> and
 creates the initial entities used by <code>order</code> by calling <code>RequestBean</code>'s
 business methods.</p>

@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Overview of Jakarta EE Security</title>
+    <title>Overview of Jakarta Security</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Overview of Jakarta EE Security</b><br />
+  <b>Overview of Jakarta Security</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,7 +58,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_overview_of_jakarta_ee_security">Overview of Jakarta EE Security</h2>
+<h2 id="_overview_of_jakarta_security">Overview of Jakarta Security</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Every enterprise that has either sensitive resources that can be
@@ -122,7 +122,7 @@ specification.</p>
 </div>
 <div class="paragraph">
 <p>Other chapters in this Part discuss security requirements in web tier
-and enterprise tier applications, and the Jakarta EE Security API.</p>
+and enterprise tier applications, and the Jakarta Security.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -137,9 +137,9 @@ Enterprise Applications"</a> explains how to add security to Jakarta EE
 components, such as enterprise beans and application clients.</p>
 </li>
 <li>
-<p><a href="security-api.html#using-the-jakarta-ee-security-api">53 Using the Jakarta EE Security API</a>
+<p><a href="security-api.html#using-the-jakarta-ee-security-api">53 Using Jakarta Security</a>
 describes the authentication and credential validation funtionality provided by
-the Jakarta EE security API, and provides examples.</p>
+Jakarta Security, and provides examples.</p>
 </li>
 </ul>
 </div>
@@ -257,18 +257,18 @@ Web Applications"</a> for more information on protecting web applications.</p>
 using the user&#8217;s credential to establish a secure association between
 the web page and the enterprise bean, as shown in <a href="#BNBWV">Figure
 50-5</a>. The association is implemented as two related security contexts:
-one in the web server and one in the EJB container.</p>
+one in the web server and one in the enterprise bean container.</p>
 </div>
 <div id="BNBWV" class="paragraph">
 <div class="title"><strong>Figure 50-5 Invoking an Enterprise Bean Business Method</strong></div>
 <p><span class="image"><img src="img/jakartaeett_dt_043.png" alt="Diagram of authorization process between web component and enterprise bean"></span></p>
 </div>
 <div class="paragraph">
-<p>The EJB container is responsible for enforcing access control on the
+<p>The enterprise container is responsible for enforcing access control on the
 enterprise bean method. The container consults the security policy
 associated with the enterprise bean to determine the security roles that
 are permitted access to the method. The security policy is derived from
-annotations or from the deployment descriptor. For each role, the EJB
+annotations or from the deployment descriptor. For each role, the enterprise bean
 container determines whether it can map the caller to the role by using
 the security context associated with the call.</p>
 </div>

@@ -61,7 +61,7 @@
 <h2 id="_validating_resource_data_with_bean_validation">Validating Resource Data with Bean Validation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>JAX-RS supports the Bean Validation to verify JAX-RS resource classes.
+<p>Jakarta REST supports Bean Validation to verify Jakarta REST resource classes.
 This support consists of:</p>
 </div>
 <div class="ulist">
@@ -300,11 +300,11 @@ constraints defined within the entity class.</p>
 <div class="paragraph">
 <p>If a <code>javax.validation.ValidationException</code> or any subclass of
 <code>ValidationException</code> except <code>ConstraintValidationException</code> is thrown,
-the JAX-RS runtime will respond to the client request with a 500
+the Jakarta REST runtime will respond to the client request with a 500
 (Internal Server Error) HTTP status code.</p>
 </div>
 <div class="paragraph">
-<p>If a <code>ConstraintValidationException</code> is thrown, the JAX-RS runtime will
+<p>If a <code>ConstraintValidationException</code> is thrown, the Jakarta REST runtime will
 respond to the client with one of the following HTTP status codes:</p>
 </div>
 <div class="ulist">

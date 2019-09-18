@@ -81,7 +81,7 @@ Servlet</a></p>
 </li>
 <li>
 <p><a href="#the-hello1-formauth-example-form-based-authentication-with-a-javaserver-faces-application">The hello1-formauth Example: Form-Based Authentication
-with a JavaServer Faces Application</a></p>
+with a Jakarta Server Faces Application</a></p>
 </li>
 </ul>
 </div>
@@ -187,7 +187,7 @@ GlassFish Server</a>.</p>
 <p><strong>Note:</strong></p>
 </div>
 <div class="paragraph">
-<p>The Jakarta EE Security API requires that
+<p>Jakarta Security requires that
 group principal names are mapped
 to roles of the same name by default. Therefore, the <strong>Default Principal To Role Mapping</strong> setting
 is enabled by default on the Security page of
@@ -475,13 +475,13 @@ application now.</p>
 <div class="paragraph">
 <p><a id="BNCBY"></a><a id="the-hello1-formauth-example-form-based-authentication-with-a-javaserver-faces-application"></a></p>
 </div>
+<div class="paragraph">
+<p>The hello1-formauth Example: Form-Based Authentication with a Jakarta Server Faces Application
+<sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub><sub>~</sub></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_the_hello1_formauth_example_form_based_authentication_with_a_javaserver_faces_application">The hello1-formauth Example: Form-Based Authentication with a JavaServer Faces Application</h3>
 <div class="paragraph">
 <p>This example explains how to use form-based authentication with a
-JavaServer Faces application. With form-based authentication, you can
+Jakarta Server Faces application. With form-based authentication, you can
 customize the login screen and error pages that are presented to the web
 client for authentication of the user name and password. When a user
 submits his or her name and password, the server determines whether the
@@ -489,13 +489,13 @@ user name and password are those of an authorized user and, if
 authorized, sends the requested web resource.</p>
 </div>
 <div class="paragraph">
-<p>This example, <code>hello1-formauth</code>, adds security to the basic JavaServer
+<p>This example, <code>hello1-formauth</code>, adds security to the basic Jakarta Server
 Faces application shown in <a href="webapp003.html#BNADX">A Web Module That
-Uses JavaServer Faces Technology: The hello1 Example</a>.</p>
+Uses Jakarta Server Faces Technology: The hello1 Example</a>.</p>
 </div>
 <div class="paragraph">
 <p>In general, the steps necessary for adding form-based authentication to
-an unsecured JavaServer Faces application are similar to those described
+an unsecured Jakarta Server Faces application are similar to those described
 in <a href="#BNCCK">The hello2-basicauth Example: Basic Authentication with a
 Servlet</a>. The major difference is that you must use a deployment
 descriptor to specify the use of form-based authentication, as described
@@ -511,6 +511,7 @@ Error Page</a>.</p>
 <div class="paragraph">
 <p><a id="BNCCA"></a><a id="creating-the-login-form-and-the-error-page"></a></p>
 </div>
+</div>
 <div class="sect3">
 <h4 id="_creating_the_login_form_and_the_error_page">Creating the Login Form and the Error Page</h4>
 <div class="paragraph">
@@ -524,7 +525,7 @@ Example</a> shows how you specify these pages in the deployment descriptor.</p>
 <div class="paragraph">
 <p>The login page can be an HTML page or a servlet, and it must return an
 HTML page containing a form that conforms to specific naming conventions
-(see the Java Servlet 4.0 specification for more information on these
+(see the Jakarta Servlet 4.0 specification for more information on these
 requirements). To do this, include the elements that accept user name
 and password information between <code>&lt;form&gt;&lt;/form&gt;</code> tags in your login
 page. The content of an HTML page or servlet for a login page should be
@@ -609,7 +610,7 @@ again. Here is the code for this page:</p>
 <div class="paragraph">
 <p>This example takes a very simple servlet-based web application and adds
 form-based security. To specify form-based instead of basic
-authentication for a JavaServer Faces example, you must use the
+authentication for a Jakarta Server Faces example, you must use the
 deployment descriptor.</p>
 </div>
 <div class="paragraph">

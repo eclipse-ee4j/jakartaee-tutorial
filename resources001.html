@@ -61,11 +61,11 @@
 <h2 id="_what_is_a_resource_adapter">What Is a Resource Adapter?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A resource adapter is a Jakarta EE component that implements the Jakarta EE
-Connector Architecture for a specific EIS. Examples of EISs include
+<p>A resource adapter is a Jakarta EE component that implements the Jakarta Connectors API
+for a specific EIS. Examples of EISs include
 enterprise resource planning, mainframe transaction processing, and
-database systems. In a Jakarta EE server, the Java Message Server and
-JavaMail also act as EISs that you access using resource adapters. As
+database systems. In a Jakarta EE server, Jakarta Messaging and
+Jakarta Mail also act as EISs that you access using resource adapters. As
 illustrated in <a href="#GJTZO">Figure 55-1</a>, the resource adapter
 facilitates communication between a Jakarta EE application and an EIS.</p>
 </div>
@@ -104,7 +104,7 @@ component.</p>
 <div class="sect2">
 <h3 id="_management_contracts">Management Contracts</h3>
 <div class="paragraph">
-<p>The Jakarta EE Connector Architecture defines system contracts that enable
+<p>Jakarta Connectors defines system contracts that enable
 resource adapter lifecycle and thread management.</p>
 </div>
 <div class="paragraph">
@@ -113,7 +113,7 @@ resource adapter lifecycle and thread management.</p>
 <div class="sect3">
 <h4 id="_lifecycle_management">Lifecycle Management</h4>
 <div class="paragraph">
-<p>The Connector Architecture specifies a lifecycle management contract
+<p>Jakarta Connectors specifies a lifecycle management contract
 that allows an application server to manage the lifecycle of a resource
 adapter. This contract provides a mechanism for the application server
 to bootstrap a resource adapter instance during the deployment or
@@ -129,7 +129,7 @@ place.</p>
 <div class="sect3">
 <h4 id="_work_management_contract">Work Management Contract</h4>
 <div class="paragraph">
-<p>The Connector Architecture work management contract ensures that
+<p>Jakarta Connectors work management contract ensures that
 resource adapters use threads in the proper, recommended manner. This
 contract also enables an application server to manage threads for
 resource adapters.</p>

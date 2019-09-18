@@ -70,7 +70,7 @@ out, and record when students are outside at the playground.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#GKAFJ">Java Persistence API Entities Used in the Main Interface</a></p>
+<p><a href="#GKAFJ">Jakarta Persistence Entities Used in the Main Interface</a></p>
 </li>
 <li>
 <p><a href="#GKAFC">Enterprise Beans Used in the Main Interface</a></p>
@@ -149,12 +149,12 @@ and came back from the park.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For information on creating Java Persistence API entities, see
-<a href="persistence-intro.html#BNBPZ">Chapter 40, "Introduction to the Java
-Persistence API."</a> For information on validating entity data, see
+<p>For information on creating Jakarta Persistence entities, see
+<a href="persistence-intro.html#BNBPZ">Chapter 40, "Introduction to the Jakarta
+Persistence."</a> For information on validating entity data, see
 <a href="persistence-intro002.html#GKAHQ">Validating Persistent Fields and
 Properties</a> and <a href="bean-validation-advanced.html#GKAHP">Chapter 24,
-"Bean Validation: Advanced Topics."</a></p>
+"Jakarta Bean Validation: Advanced Topics."</a></p>
 </div>
 <div class="paragraph">
 <p><a id="GKAFC"></a><a id="enterprise-beans-used-in-the-main-interface"></a></p>
@@ -172,7 +172,7 @@ business logic for Duke&#8217;s Tutoring, and are located in the
 <li>
 <p><code>ConfigBean</code> is a singleton session bean used to create the default
 students when the application is initially deployed, and to create an
-automatic EJB timer that creates tutoring session entities every
+automatic enterprise bean timer that creates tutoring session entities every
 weekday.</p>
 </li>
 <li>
@@ -210,14 +210,14 @@ out the status change to all the client endpoints registered with
 <code>StatusEndpoint</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>index.xhtml</code> JavaServer Faces page contains JavaScript code to
+<p>The <code>index.xhtml</code> Jakarta Faces page contains JavaScript code to
 connect to the WebSocket endpoint. The <code>onMessage</code> method on this page
-clicks a JavaServer Faces button, which makes an Ajax request to refresh
+clicks a Jakarta Faces button, which makes an Ajax request to refresh
 the table that shows the current status of the students.</p>
 </div>
 <div class="paragraph">
 <p>For more information on WebSocket endpoints, see
-<a href="websocket.html#GKJIQ5">Chapter 19, "Java API for WebSocket."</a> For
+<a href="websocket.html#GKJIQ5">Chapter 19, "Jakarta WebSocket."</a> For
 information on CDI events, see <a href="cdi-adv005.html#GKHIC">Using Events in
 CDI Applications</a>.</p>
 </div>
@@ -230,7 +230,7 @@ CDI Applications</a>.</p>
 <div class="paragraph">
 <p>The Duke&#8217;s Tutoring application uses Facelets to display the user
 interface, making extensive use of the templating features of Facelets.
-Facelets, the default display technology for JavaServer Faces
+Facelets, the default display technology for Jakarta Faces
 technology, consists of XHTML files located in the
 <code>_tut-install_/examples/case-studies/dukes-tutoring-war/src/main/webapp/</code>
 directory.</p>
@@ -389,7 +389,7 @@ located in <code>Messages_zh.properties</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>faces-config.xml</code>: The JavaServer Faces configuration file</p>
+<p><code>faces-config.xml</code>: The Jakarta Faces configuration file</p>
 </li>
 <li>
 <p><code>glassfish-web.xml</code>: The configuration file specific to GlassFish
@@ -408,7 +408,7 @@ project:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>persistence.xml</code>: The Java Persistence API configuration file</p>
+<p><code>persistence.xml</code>: The Jakarta Persistence configuration file</p>
 </li>
 </ul>
 </div>

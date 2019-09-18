@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Using JAX-RS with JAXB</title>
+    <title>Using Jakarta REST with JAXB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/96c4d89611.js"></script>
@@ -12,7 +12,7 @@
 <table id="doc-title" cellspacing="0" cellpadding="0">
   <tr>
   <td align="left" valign="top">
-  <b>Using JAX-RS with JAXB</b><br />
+  <b>Using Jakarta REST with JAXB</b><br />
       <p class="beta">DRAFT</p>
   </td>
   </tr>
@@ -58,35 +58,35 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_jax_rs_with_jaxb">Using JAX-RS with JAXB</h2>
+<h2 id="_using_jakarta_rest_with_jakarta_xml_binding">Using Jakarta REST with Jakarta XML Binding</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Java Architecture for XML Binding (JAXB) is an XML-to-Java binding
+<p>JAXB is an XML-to-Java binding
 technology that simplifies the development of web services by enabling
 transformations between schema and Java objects and between XML instance
 documents and Java object instances. An XML schema defines the data
-elements and structure of an XML document. You can use JAXB APIs and
-tools to establish mappings between Java classes and XML schema. JAXB
+elements and structure of an XML document. You can use Jakarta XML Binding APIs and
+tools to establish mappings between Java classes and XML schema. Jakarta XML Binding
 technology provides the tools that enable you to convert your XML
 documents to and from Java objects.</p>
 </div>
 <div class="paragraph">
-<p>By using JAXB, you can manipulate data objects in the following ways.</p>
+<p>By using Jakarta XML Binding, you can manipulate data objects in the following ways.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>You can start with an XML schema definition (XSD) and use <code>xjc</code>, the
-JAXB schema compiler tool, to create a set of JAXB-annotated Java
+Jakarta XML Binding schema compiler tool, to create a set of Jakarta XML Binding annotated Java
 classes that map to the elements and types defined in the XSD schema.</p>
 </li>
 <li>
-<p>You can start with a set of Java classes and use <code>schemagen</code>, the JAXB
+<p>You can start with a set of Java classes and use <code>schemagen</code>, the Jakarta XML Binding
 schema generator tool, to generate an XML schema.</p>
 </li>
 <li>
 <p>Once a mapping between the XML schema and the Java classes exists, you
-can use the JAXB binding runtime to marshal and unmarshal your XML
+can use the Jakarta XML Binding runtime to marshal and unmarshal your XML
 documents to and from Java objects and use the resulting Java classes to
 assemble a web services application.</p>
 </li>
@@ -95,15 +95,15 @@ assemble a web services application.</p>
 <div class="paragraph">
 <p>XML is a common media format that RESTful services consume and produce.
 To deserialize and serialize XML, you can represent requests and
-responses by JAXB annotated objects. Your JAX-RS application can use the
-JAXB objects to manipulate XML data. JAXB objects can be used as request
-entity parameters and response entities. The JAX-RS runtime environment
+responses by Jakarta XML Binding annotated objects. Your Jakarta REST application can use the
+Jakarta XML Binding objects to manipulate XML data. Jakarta XML Binding objects can be used as request
+entity parameters and response entities. The Jakarta REST runtime environment
 includes standard <code>MessageBodyReader</code> and <code>MessageBodyWriter</code> provider
-interfaces for reading and writing JAXB objects as entities.</p>
+interfaces for reading and writing Jakarta XML Binding objects as entities.</p>
 </div>
 <div class="paragraph">
-<p>With JAX-RS, you enable access to your services by publishing resources.
-Resources are just simple Java classes with some additional JAX-RS
+<p>With Jakarta REST, you enable access to your services by publishing resources.
+Resources are just simple Java classes with some additional Jakarta REST
 annotations. These annotations express the following:</p>
 </div>
 <div class="ulist">
@@ -125,7 +125,7 @@ annotations. These annotations express the following:</p>
 data you want to expose. You may already have a relational database that
 contains information you want to expose to users, or you may have static
 content that does not reside in a database but does need to be
-distributed as resources. Using JAX-RS, you can distribute content from
+distributed as resources. Using Jakarta REST, you can distribute content from
 multiple sources. RESTful web services can use various types of
 input/output formats for request and response. The <code>customer</code> example,
 described in <a href="jaxrs-advanced008.html#GKOIB">The customer Example
@@ -139,30 +139,30 @@ corresponding media type. For example, if a resource is going to return
 content formatted as XML, you can use <code>application/xml</code> as the
 associated media type in the HTTP message.Depending on the requirements
 of your application, resources can return representations in a preferred
-single format or in multiple formats. JAX-RS provides <code>@Consumes</code> and
+single format or in multiple formats. Jakarta REST provides <code>@Consumes</code> and
 <code>@Produces</code> annotations to declare the media types that are acceptable
 for a resource method to read and write.</p>
 </div>
 <div class="paragraph">
-<p>JAX-RS also maps Java types to and from resource representations using
+<p>Jakarta REST also maps Java types to and from resource representations using
 entity providers. A <code>MessageBodyReader</code> entity provider reads a request
 entity and deserializes the request entity into a Java type. A
 <code>MessageBodyWriter</code> entity provider serializes from a Java type into a
 response entity. For example, if a <code>String</code> value is used as the request
 entity parameter, the <code>MessageBodyReader</code> entity provider deserializes
-the request body into a new <code>String</code>. If a JAXB type is used as the
+the request body into a new <code>String</code>. If a Jakarta XML Binding type is used as the
 return type on a resource method, the <code>MessageBodyWriter</code> serializes the
-JAXB object into a response body.</p>
+Jakarta XML Binding object into a response body.</p>
 </div>
 <div class="paragraph">
-<p>By default, the JAX-RS runtime environment attempts to create and use a
-default <code>JAXBContext</code> class for JAXB classes.However, if the default
+<p>By default, the Jakarta REST runtime environment attempts to create and use a
+default <code>JAXBContext</code> class for Jakarta XML Binding classes. However, if the default
 <code>JAXBContext</code> class is not suitable, then you can supply a <code>JAXBContext</code>
-class for the application using a JAX-RS <code>ContextResolver</code> provider
+class for the application using a Jakarta REST <code>ContextResolver</code> provider
 interface.</p>
 </div>
 <div class="paragraph">
-<p>The following sections explain how to use JAXB with JAX-RS resource
+<p>The following sections explain how to use Jakarta XML Binding with Jakarta REST resource
 methods.</p>
 </div>
 <div class="paragraph">
@@ -172,8 +172,8 @@ methods.</p>
 <h3 id="_using_java_objects_to_model_your_data">Using Java Objects to Model Your Data</h3>
 <div class="paragraph">
 <p>If you do not have an XML schema definition for the data you want to
-expose, you can model your data as Java classes, add JAXB annotations to
-these classes, and use JAXB to generate an XML schema for your data. For
+expose, you can model your data as Java classes, add Jakarta XML Binding annotations to
+these classes, and use Jakarta XML Binding to generate an XML schema for your data. For
 example, if the data you want to expose is a collection of products and
 each product has an ID, a name, a description, and a price, you can
 model it as a Java class as follows:</p>
@@ -201,7 +201,7 @@ public class Product {
 </div>
 </div>
 <div class="paragraph">
-<p>Run the JAXB schema generator on the command line to generate the
+<p>Run the Jakarta XML Binding schema generator on the command line to generate the
 corresponding XML schema definition:</p>
 </div>
 <div class="listingblock">
@@ -232,8 +232,8 @@ corresponding XML schema definition:</p>
 </div>
 <div class="paragraph">
 <p>Once you have this mapping, you can create <code>Product</code> objects in your
-application, return them, and use them as parameters in JAX-RS resource
-methods. The JAX-RS runtime uses JAXB to convert the XML data from the
+application, return them, and use them as parameters in Jakarta REST resource
+methods. The Jakarta REST runtime uses Jakarta XML Binding to convert the XML data from the
 request into a <code>Product</code> object and to convert a <code>Product</code> object into
 XML data for the response. The following resource class provides a
 simple example:</p>
@@ -267,7 +267,7 @@ public class ProductService {
 <div class="paragraph">
 <p>Some IDEs, such as NetBeans IDE, will run the schema generator tool
 automatically during the build process if you add Java classes that have
-JAXB annotations to your project. For a detailed example, see
+Jakarta XML Binding annotations to your project. For a detailed example, see
 <a href="jaxrs-advanced008.html#GKOIB">The customer Example Application</a>. The
 <code>customer</code> example contains a more complex relationship between the Java
 classes that model the data, which results in a more hierarchical XML
@@ -281,7 +281,7 @@ representation.</p>
 <h3 id="_starting_from_an_existing_xml_schema_definition">Starting from an Existing XML Schema Definition</h3>
 <div class="paragraph">
 <p>If you already have an XML schema definition in an <code>.xsd</code> file for the
-data you want to expose, use the JAXB schema compiler tool. Consider
+data you want to expose, use the Jakarta XML Binding schema compiler tool. Consider
 this simple example of an <code>.xsd</code> file:</p>
 </div>
 <div class="listingblock">
@@ -321,7 +321,7 @@ getter and setter methods for these fields.</p>
 <div class="paragraph">
 <p>In this case, the schema compiler tool generates the classes
 <code>product.xml.Product</code> and <code>product.xml.ObjectFactory</code>. The <code>Product</code>
-class contains JAXB annotations, and its fields correspond to those in
+class contains Jakarta XML Binding annotations, and its fields correspond to those in
 the <code>.xsd</code> definition:</p>
 </div>
 <div class="listingblock">
@@ -350,7 +350,7 @@ public class Product {
 <p>You can create instances of the <code>Product</code> class from your application
 (for example, from a database). The generated class
 <code>product.xml.ObjectFactory</code> contains a method that allows you to convert
-these objects to JAXB elements that can be returned as XML inside JAX-RS
+these objects to Jakarta XML Binding elements that can be returned as XML inside Jakarta REST
 resource methods:</p>
 </div>
 <div class="listingblock">
@@ -363,7 +363,7 @@ public JAXBElement&lt;Product&gt; createProduct(Product value) {
 </div>
 <div class="paragraph">
 <p>The following code shows how to use the generated classes to return a
-JAXB element as XML in a JAX-RS resource method:</p>
+Jakarta XML Binding element as XML in a Jakarta REST resource method:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -385,7 +385,7 @@ public class ProductService {
 </div>
 <div class="paragraph">
 <p>For <code>@POST</code> and <code>@PUT</code> resource methods, you can use a <code>Product</code> object
-directly as a parameter. JAX-RS maps the XML data from the request into
+directly as a parameter. Jakarta REST maps the XML data from the request into
 a <code>Product</code> object.</p>
 </div>
 <div class="listingblock">
@@ -410,9 +410,9 @@ public class ProductService {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_json_with_jax_rs_and_jaxb">Using JSON with JAX-RS and JAXB</h3>
+<h3 id="_using_json_with_jakarta_rest_and_jakarta_xml_binding">Using JSON with Jakarta REST and Jakarta XML Binding</h3>
 <div class="paragraph">
-<p>JAX-RS can automatically read and write XML using JAXB, but it can also
+<p>Jakarta REST can automatically read and write XML using Jakarta XML Binding, but it can also
 work with JSON data. JSON is a simple text-based format for data
 exchange derived from JavaScript. For the preceding examples, the XML
 representation of a product is</p>
@@ -464,7 +464,7 @@ object if the client makes a <code>GET</code> request that includes this header:
 </div>
 </div>
 <div class="paragraph">
-<p>The resource methods can also accept JSON data for JAXB annotated
+<p>The resource methods can also accept JSON data for Jakarta XML Binding annotated
 classes:</p>
 </div>
 <div class="listingblock">

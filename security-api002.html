@@ -91,22 +91,21 @@ During bean discovery, the servlet container looks for a bean that implements
 if found, arranges for it to be deployed to authenticate the application&#8217;s callers.</p>
 </div>
 <div class="paragraph">
-<p>The servlet container leverages JASPIC, the Java Authentication Service
-Provider Interface for Containers, to deploy authentication mechanisms.
-The container provides a JASPIC Server Auth Module (SAM) that can delegate to an
+<p>The servlet container leverages Jakarta Authentication  to deploy authentication mechanisms.
+The container provides a Jakarta Authentication Server Auth Module (SAM) that can delegate to an
 <code>HttpAuthenticationMechanism</code>, and arranges for that "bridge" SAM to be registered
-with the JASPIC <code>AuthConfigFactory</code>. At runtime, normal JASPIC processing invokes
+with the Jakarta Authentication <code>AuthConfigFactory</code>. At runtime, normal Jakarta Authentication processing invokes
 the bridge SAM, which then delegates to the <code>HttpAuthenticationMechanism</code> to
 perform the authentication and drive any necessary dialog with the caller, or with
 third parties involved in the authentication protocol flow.</p>
 </div>
 <div class="paragraph">
 <p>The HttpAuthenticationMechanism interface defines the following three methods,
-which correspond to the three methods defined by the JASPIC ServerAuth interface.
-When one of the JASPIC methods is invoked on the bridge SAM, it delegates to the
+which correspond to the three methods defined by the Jakarta Authentication ServerAuth interface.
+When one of the Jakarta Authentication methods is invoked on the bridge SAM, it delegates to the
 corresponding method of the <code>HttpAuthenticationMechanism</code>. Although the method names
 are identical, the method signatures are not; the bridge SAM maps back and forth
-between the parameters passed to it by the JASPIC framework, and the parameters
+between the parameters passed to it by the Jakarta Authentication framework, and the parameters
 expected by an <code>HttpAuthenticationMechanism</code>.</p>
 </div>
 <div class="ulist">
@@ -134,7 +133,7 @@ often be sufficient.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>AutoApplySession</code>&#8201;&#8212;&#8201;indicates that the JASPIC <code>registerSession</code> functionality
+<p><code>AutoApplySession</code>&#8201;&#8212;&#8201;indicates that the Jakarta Authentication <code>registerSession</code> functionality
 should be enabled such that the the caller&#8217;s authenticated identity is
 persisted in the caller&#8217;s servlet session.</p>
 </li>

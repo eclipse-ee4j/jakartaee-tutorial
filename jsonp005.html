@@ -54,28 +54,23 @@
 <h2 id="json-in-jakarta-ee-restful-web-services">JSON in Jakarta EE RESTful Web Services</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how the Java API for JSON Processing is related to
+<p>This section explains how the Jakarta JSON Processing is related to
 other Jakarta EE packages that provide JSON support for RESTful web
 services. See <a href="jaxrs.html#GIEPU">Chapter 32, "Building RESTful Web
-Services with JAX-RS,"</a> for more information on RESTful web services.</p>
+Services with Jakarta RESTful Web Services,"</a> for more information on RESTful web services.</p>
 </div>
 <div class="paragraph">
-<p>Jersey, the reference implementation for JAX-RS (JSR 311) included in
+<p>Jersey, the Jakarta RESTful Web Services implementation included in
 GlassFish Server, provides support for binding JSON data from RESTful
-resource methods to Java objects using JAXB, as described in
-<a href="jaxrs-advanced007.html#GKKNJ">Using JAX-RS with JAXB</a> in
-<a href="jaxrs-advanced.html#GJJXE">Chapter 34, "JAX-RS: Advanced Topics and
-an Example"</a>. However, JSON support is not part of JAX-RS (JSR 311) or
-JAXB (JSR 222), so that procedure may not work for Jakarta EE
+resource methods to Java objects using Jakarta XML Binding, as described in
+<a href="jaxrs-advanced007.html#GKKNJ">Using Jakarta RESTful Web Services with JAXB</a> in
+<a href="jaxrs-advanced.html#GJJXE">Chapter 34, "Jakarta RESTful Web Services: Advanced Topics and
+an Example"</a>. However, JSON support is not part of Jakarta RESTful Web Services or
+Jakarta XML Binding, so that procedure may not work for Jakarta EE
 implementations other than GlassFish Server.</p>
 </div>
 <div class="paragraph">
-<p>The Java API for JSON Processing (JSR 374) does not explicitly support
-JSON binding in Java. A future JSR (JSON Binding) that is similar to
-JAXB for XML is under consideration for a future release of Jakarta EE.</p>
-</div>
-<div class="paragraph">
-<p>You can still use the Java API for JSON Processing with JAX-RS resource
+<p>You can still use the Jakarta JSON Processing with Jakarta RESTful Web Services resource
 methods. For more information, see the sample code for JSON Processing
 included with the Jakarta EE 8 SDK.</p>
 </div>

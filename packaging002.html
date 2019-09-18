@@ -61,13 +61,13 @@
 <h2 id="_packaging_enterprise_beans">Packaging Enterprise Beans</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how enterprise beans can be packaged in EJB JAR or
+<p>This section explains how enterprise beans can be packaged in enterprise bean JAR or
 WAR modules. It includes the following sections:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#packaging-enterprise-beans-in-ejb-jar-modules">Packaging Enterprise Beans in EJB JAR Modules</a></p>
+<p><a href="#packaging-enterprise-beans-in-ejb-jar-modules">Packaging Enterprise Beans in enterprise bean JAR Modules</a></p>
 </li>
 <li>
 <p><a href="#packaging-enterprise-beans-in-war-modules">Packaging Enterprise Beans in WAR Modules</a></p>
@@ -78,17 +78,17 @@ WAR modules. It includes the following sections:</p>
 <p><a id="CHDFCDBG"></a><a id="packaging-enterprise-beans-in-ejb-jar-modules"></a></p>
 </div>
 <div class="sect2">
-<h3 id="_packaging_enterprise_beans_in_ejb_jar_modules">Packaging Enterprise Beans in EJB JAR Modules</h3>
+<h3 id="_packaging_enterprise_beans_in_enterprise_bean_jar_modules">Packaging Enterprise Beans in enterprise bean JAR Modules</h3>
 <div class="paragraph">
-<p>An EJB JAR file is portable and can be used for various applications.</p>
+<p>An enterprise bean JAR file is portable and can be used for various applications.</p>
 </div>
 <div class="paragraph">
 <p>To assemble a Jakarta EE application, package one or more modules, such as
-EJB JAR files, into an EAR file, the archive file that holds the
+enterprise bean JAR files, into an EAR file, the archive file that holds the
 application. When deploying the EAR file that contains the enterprise
-bean&#8217;s EJB JAR file, you also deploy the enterprise bean to GlassFish
-Server. You can also deploy an EJB JAR that is not contained in an EAR
-file. <a href="#BCGFJIJI">Figure 5-2</a> shows the contents of an EJB JAR file.</p>
+bean&#8217;s enterprise bean JAR file, you also deploy the enterprise bean to GlassFish
+Server. You can also deploy an enterprise bean JAR that is not contained in an EAR
+file. <a href="#BCGFJIJI">Figure 5-2</a> shows the contents of an enterprise bean JAR file.</p>
 </div>
 <div id="BCGFJIJI" class="paragraph">
 <div class="title"><strong>Figure 5-2 Structure of an Enterprise Bean JAR</strong></div>
@@ -124,8 +124,8 @@ directory.</p>
 </div>
 <div class="paragraph">
 <p>JAR files that contain enterprise bean classes packaged within a WAR
-module are not considered EJB JAR files, even if the bundled JAR file
-conforms to the format of an EJB JAR file. The enterprise beans
+module are not considered enterprise bean JAR files, even if the bundled JAR file
+conforms to the format of an enterprise bean JAR file. The enterprise beans
 contained within the JAR file are semantically equivalent to enterprise
 beans located in the WAR module&#8217;s <code>WEB-INF/classes</code> directory, and the
 environment namespace of all the enterprise beans are scoped to the WAR

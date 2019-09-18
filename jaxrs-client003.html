@@ -61,7 +61,7 @@
 <h2 id="_advanced_features_of_the_client_api">Advanced Features of the Client API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some of the advanced features of the JAX-RS
+<p>This section describes some of the advanced features of the Jakarta REST
 Client API.</p>
 </div>
 <div class="paragraph">
@@ -291,7 +291,7 @@ complicated network calls. Asynchronous processing helps prevent
 blocking and makes better use of an application&#8217;s resources.</p>
 </div>
 <div class="paragraph">
-<p>In the JAX-RS Client API, the <code>Invocation.Builder.async</code> method is used
+<p>In the Jakarta REST Client API, the <code>Invocation.Builder.async</code> method is used
 when constructing a client request to indicate that the call to the
 service should be performed asynchronously. An asynchronous invocation
 returns control to the caller immediately, with a return type of
@@ -362,7 +362,7 @@ calls, using custom callbacks becomes very difficult to implement,
 debug, and maintain.</p>
 </div>
 <div class="paragraph">
-<p>JAX-RS defines a new type of invoker called as <code>RxInvoker</code> and a default
+<p>Jakarta REST defines a new type of invoker called as <code>RxInvoker</code> and a default
 implementation of this type is <code>CompletionStageRxInvoker</code>. The new <code>rx</code>
 method is used as in the following example:</p>
 </div>
@@ -453,10 +453,10 @@ details such as <code>event</code>, <code>data</code>, <code>id</code>, <code>re
 <h3 id="_broadcasting_using_sse">Broadcasting Using SSE</h3>
 <div class="paragraph">
 <p>Broadcasting is the action of sending events to multiple clients
-simultaneously. JAX-RS SSE API provides <code>SseBroadcaster</code> to register all
+simultaneously. Jakarta REST SSE API provides <code>SseBroadcaster</code> to register all
 <code>SseEventSink</code> instances and send events to all registered event
 outputs. The life-cycle and scope of an <code>SseBroadcaster</code> is fully
-controlled by applications and not the JAX-RS runtime. The following
+controlled by applications and not the Jakarta REST runtime. The following
 example show the use of broadcasters:</p>
 </div>
 <div class="listingblock">
@@ -502,7 +502,7 @@ method is used to send an SSE event to all registered clients.</p>
 <div class="sect2">
 <h3 id="_listening_and_receiving_events">Listening and Receiving Events</h3>
 <div class="paragraph">
-<p>JAX-RS SSE provides the <code>SseEventSource</code> interface for the client to
+<p>Jakarta REST SSE provides the <code>SseEventSource</code> interface for the client to
 subscribe to notifications. The client can get asynchronously notified
 about incoming events by invoking one of the <code>subscribe</code> methods in
 <code>javax.ws.rs.sse.SseEventSource</code>.</p>

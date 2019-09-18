@@ -63,7 +63,7 @@
 <div class="paragraph">
 <p>The <code>address-book</code> example application is a simple web application that
 stores contact data. It uses a single entity class, <code>Contact</code>, that uses
-the Java API for JavaBeans Validation (Bean Validation) to validate the
+Jakarta Bean Validation to validate the
 data stored in the persistent attributes of the entity, as described in
 <a href="persistence-intro002.html#GKAHQ">Validating Persistent Fields and
 Properties</a>.</p>
@@ -80,7 +80,7 @@ Properties</a>.</p>
 <p><a href="#GKANL">Specifying Error Messages for Constraints in address-book</a></p>
 </li>
 <li>
-<p><a href="#GKAON">Validating Contact Input from a JavaServer Faces
+<p><a href="#GKAON">Validating Contact Input from a Jakarta Server Faces
 Application</a></p>
 </li>
 <li>
@@ -209,13 +209,13 @@ Spanish-speaking locales.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_validating_contact_input_from_a_javaserver_faces_application">Validating Contact Input from a JavaServer Faces Application</h3>
+<h3 id="_validating_contact_input_from_a_jakarta_server_faces_application">Validating Contact Input from a Jakarta Server Faces Application</h3>
 <div class="paragraph">
-<p>The <code>address-book</code> application uses a JavaServer Faces web front end to
-allow users to enter contacts. While JavaServer Faces has a form input
+<p>The <code>address-book</code> application uses a Jakarta Server Faces web front end to
+allow users to enter contacts. While Jakarta Server Faces has a form input
 validation mechanism using tags in Facelets XHTML files, <code>address-book</code>
 doesn&#8217;t use these validation tags. Bean Validation constraints in
-JavaServer Faces managed beans, in this case in the <code>Contact</code> entity,
+Jakarta Server Faces managed beans, in this case in the <code>Contact</code> entity,
 automatically trigger validation when the forms are submitted.</p>
 </div>
 <div class="paragraph">
@@ -254,7 +254,7 @@ some of the input form for creating new <code>Contact</code> instances:</p>
 attributes in the <code>Contact</code> entity instance <code>selected</code> in the
 <code>ContactController</code> stateless session bean. Each <code>&lt;h:inputText&gt;</code> tag has
 an associated <code>&lt;h:message&gt;</code> tag that will display validation error
-messages. The form doesn&#8217;t require any JavaServer Faces validation tags,
+messages. The form doesn&#8217;t require any Jakarta Server Faces validation tags,
 however.</p>
 </div>
 <div class="paragraph">

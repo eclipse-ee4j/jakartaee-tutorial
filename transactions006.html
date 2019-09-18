@@ -66,7 +66,7 @@ Console to configure the transaction timeout interval. See
 <a href="usingexamples003.html#BNADJ">Starting the Administration Console</a>.</p>
 </div>
 <div class="paragraph">
-<p>For enterprise beans with bean-managed JTA transactions, you invoke the
+<p>For enterprise beans with bean-managed Jakarta transactions, you invoke the
 <code>setTransactionTimeout</code> method of the <code>UserTransaction</code> interface.</p>
 </div>
 <div class="paragraph">
@@ -85,7 +85,7 @@ expand the server-config node and select Transaction Service.</p>
 Timeout field to the value of your choice (for example, 5).</p>
 <div class="paragraph">
 <p>With this setting, if the transaction has not completed within 5
-seconds, the EJB container rolls it back.</p>
+seconds, the enterprise bean container rolls it back.</p>
 </div>
 <div class="paragraph">
 <p>The default value is 0, meaning that the transaction will not time out.</p>

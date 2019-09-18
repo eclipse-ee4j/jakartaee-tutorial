@@ -62,7 +62,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>To use the beans you create, you inject them into yet another
-bean that can then be used by an application, such as a JavaServer Faces
+bean that can then be used by an application, such as a Jakarta Server Faces
 application. For example, you might create a bean called <code>Printer</code> into
 which you would inject one of the <code>Greeting</code> beans:</p>
 </div>
@@ -94,14 +94,14 @@ public class Printer {
 </div>
 <div class="paragraph">
 <p>More is needed for the complete picture of this bean. Its use of scope
-needs to be understood. In addition, for a JavaServer Faces application,
+needs to be understood. In addition, for a Jakarta Server Faces application,
 the bean needs to be accessible through the EL.</p>
 </div>
 <div class="paragraph">
 <p>Now that you can identify the target of the injection, it is important to
-understand what can be injected and in what context. JSF 2.3 provides producers
-that enable most important JSF artifacts to be injected. For detailed information,
-see the package <a href="https://javaee.github.io/javaee-spec/">javadoc</a> for
+understand what can be injected and in what context. Faces 2.3 provides producers
+that enable most important Faces artifacts to be injected. For detailed information,
+see the package <a href="https://jakarta.ee/specifications/faces/2.3/apidocs/">javadoc</a> for
 <code>javax.faces.annotation</code>.</p>
 </div>
 </div>

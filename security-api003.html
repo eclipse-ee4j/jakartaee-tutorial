@@ -137,7 +137,7 @@ and invokes on them to determine the aggregate result.</p>
 </div>
 <div class="paragraph">
 <p>There is a built-in <code>IdentityStoreHandler</code> that implements a standard algorithm
-defined by JSR-375. The JSR-375 specification provides a full description of
+defined by Jakarta Security. The Jakarta Security specification provides a full description of
 the algorithm, but it can be roughly summarized as follows:</p>
 </div>
 <div class="ulist">
@@ -353,7 +353,7 @@ application&#8217;s <code>HttpAuthenticationMechanism</code>, which indicates th
 A container-supplied interceptor then intercepts calls to the <code>HttpAuthenticationMechanism</code>,
 invokes the <code>RememberMeIdentityStore</code> as necessary before and after calls to the
 authentication mechanism, and ensures that the user&#8217;s identity is correctly
-set for the session. The JSR-375 specification provides a detailed description
+set for the session. The Jakarta Security specification provides a detailed description
 of the required interceptor behavior.</p>
 </div>
 <div class="paragraph">

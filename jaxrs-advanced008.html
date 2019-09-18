@@ -62,7 +62,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes how to build and run the <code>customer</code> example
-application. This application is a RESTful web service that uses JAXB to
+application. This application is a RESTful web service that uses Jakarta XML Binding to
 perform the create, read, update, delete (CRUD) operations for a
 specific entity.</p>
 </div>
@@ -87,7 +87,7 @@ for basic information on building and running sample applications.</p>
 <p><a href="#GKLGT">The CustomerService Class</a></p>
 </li>
 <li>
-<p><a href="#GKQJQ">Using the JAX-RS Client in the CustomerBean Classes</a></p>
+<p><a href="#GKQJQ">Using the Jakarta REST Client in the CustomerBean Classes</a></p>
 </li>
 <li>
 <p><a href="#GKQKV">Running the customer Example</a></p>
@@ -108,24 +108,24 @@ has three parts.</p>
 <ul>
 <li>
 <p>The <code>Customer</code> and <code>Address</code> entity classes. These classes model the
-data of the application and contain JAXB annotations.</p>
+data of the application and contain Jakarta XML Binding annotations.</p>
 </li>
 <li>
-<p>The <code>CustomerService</code> resource class. This class contains JAX-RS
+<p>The <code>CustomerService</code> resource class. This class contains Jakarta REST
 resource methods that perform operations on <code>Customer</code> instances
-represented as XML or JSON data using JAXB. See <a href="#GKLGT">The
+represented as XML or JSON data using Jakarta XML Binding. See <a href="#GKLGT">The
 CustomerService Class</a> for details.</p>
 </li>
 <li>
 <p>The <code>CustomerBean</code> session bean that acts as a backing bean for the
-web client. <code>CustomerBean</code> uses the JAX-RS client API to call the
+web client. <code>CustomerBean</code> uses the Jakarta REST client API to call the
 methods of <code>CustomerService</code>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>The <code>customer</code> example application shows you how to model your data
-entities as Java classes with JAXB annotations.</p>
+entities as Java classes with Jakarta XML Binding annotations.</p>
 </div>
 <div class="paragraph">
 <p><a id="CIHJFEJI"></a><a id="the-customer-and-address-entity-classes"></a></p>
@@ -223,7 +223,7 @@ public class Customer {
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>Customer</code> class contains the same JAXB annotations as the previous
+<p>The <code>Customer</code> class contains the same Jakarta XML Binding annotations as the previous
 class, except for the <code>@XmlAttribute(required=true)</code> annotation, which
 maps a property to an attribute of the XML element representing the
 class.</p>
@@ -235,7 +235,7 @@ the hierarchical relationships between entities without having to write
 an <code>.xsd</code> file yourself.</p>
 </div>
 <div class="paragraph">
-<p>JAXB generates the following XML schema definition for the two preceding
+<p>Jakarta XML Binding generates the following XML schema definition for the two preceding
 classes:</p>
 </div>
 <div class="listingblock">
@@ -340,7 +340,7 @@ and <code>@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})</co
 annotations set the request and response media types to use the
 appropriate MIME client. These annotations can be applied to a resource
 method, a resource class, or even an entity provider. If you do not use
-these annotations, JAX-RS allows the use of any media type (<code>"*/*"</code>).</p>
+these annotations, Jakarta REST allows the use of any media type (<code>"*/*"</code>).</p>
 </div>
 <div class="paragraph">
 <p>The following code snippet shows the implementation of the <code>getCustomer</code>
@@ -385,13 +385,13 @@ the client.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_the_jax_rs_client_in_the_customerbean_classes">Using the JAX-RS Client in the CustomerBean Classes</h3>
+<h3 id="_using_the_jakarta_rest_client_in_the_customerbean_classes">Using the Jakarta REST Client in the CustomerBean Classes</h3>
 <div class="paragraph">
-<p>Use the JAX-RS Client API to write a client for the <code>customer</code> example
+<p>Use the Jakarta REST Client API to write a client for the <code>customer</code> example
 application.</p>
 </div>
 <div class="paragraph">
-<p>The <code>CustomerBean</code> enterprise bean class calls the JAX-RS Client API to
+<p>The <code>CustomerBean</code> enterprise bean class calls the Jakarta REST Client API to
 test the <code>CustomerService</code> web service:</p>
 </div>
 <div class="listingblock">
