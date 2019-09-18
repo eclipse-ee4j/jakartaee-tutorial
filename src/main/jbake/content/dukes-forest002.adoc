@@ -44,7 +44,7 @@ Duke's Forest uses the following Jakarta EE platform features:
 ** All enterprise beans packaged within the WAR
 * Jakarta Contexts and Dependency Injection (CDI)
 
-** CDI annotations for Jakarta Faces components
+** CDI annotations for Jakarta Server Faces components
 
 ** A CDI managed bean used as a shopping cart, with conversation scoping
 
@@ -54,7 +54,7 @@ Duke's Forest uses the following Jakarta EE platform features:
 * Servlets
 
 ** A servlet for dynamic image presentation
-* Jakarta Faces technology, using Facelets for the web front end
+* Jakarta Server Faces technology, using Facelets for the web front end
 
 ** Templating
 
@@ -453,7 +453,7 @@ following helper classes, found in the `com.forest.web.util` package:
 managed beans
 * `ImageServlet`: A servlet class that retrieves the image content from
 the database and displays it
-* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
+* `JsfUtil`: Class used for Jakarta Server Faces operations, such as queuing
 messages on a `FacesContext` instance
 * `MD5Util`: Class used by the `CustomerController` managed bean to
 generate an encrypted password for a user
@@ -502,7 +502,7 @@ Deployment Descriptors Used in Duke's Store
 Duke's Store uses the following deployment descriptors, located in the
 `web/WEB-INF` directory:
 
-* `faces-config.xml`: The Jakarta Faces configuration file
+* `faces-config.xml`: The Jakarta Server Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file
@@ -595,7 +595,7 @@ Helper Class Used in Duke's Shipment
 The Duke's Shipment managed beans use only one helper class, found in
 the `com.forest.shipment.web.util` package:
 
-* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
+* `JsfUtil`: Class used for Jakarta Server Faces operations, such as queuing
 messages on a `FacesContext` instance
 
 [[sthref315]][[qualifier-used-in-dukes-shipment]]
@@ -613,7 +613,7 @@ Deployment Descriptors Used in Duke's Shipment
 
 Duke's Shipment uses the following deployment descriptors:
 
-* `faces-config.xml`: The Jakarta Faces configuration file
+* `faces-config.xml`: The Jakarta Server Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file
