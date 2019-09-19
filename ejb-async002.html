@@ -69,7 +69,7 @@ contains two modules.</p>
 <ul>
 <li>
 <p>A web application (<code>async-war</code>) that contains a stateless session bean
-and a Jakarta Faces interface. The <code>MailerBean</code> stateless session
+and a Jakarta Server Faces interface. The <code>MailerBean</code> stateless session
 bean defines an asynchronous method, <code>sendMessage</code>, which uses the
 Jakarta Mail API to send an email to an specified email address.</p>
 </li>
@@ -92,7 +92,7 @@ module.</p>
 <h3 id="_architecture_of_the_async_war_module">Architecture of the async-war Module</h3>
 <div class="paragraph">
 <p>The <code>async-war</code> module consists of a single stateless session bean,
-<code>MailerBean</code>, and a Jakarta Faces web application front end that uses
+<code>MailerBean</code>, and a Jakarta Server Faces web application front end that uses
 Facelets tags in XHTML files to display a form for users to enter the
 email address for the recipient of an email. The status of the email is
 updated when the email is finally sent.</p>
