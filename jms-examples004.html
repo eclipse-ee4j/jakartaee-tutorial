@@ -346,7 +346,7 @@ although it uses permanent rather than temporary destinations. The
 example consists of three modules, <code>genericsupplier</code>, <code>retailer</code>, and
 <code>vendor</code>, which can be found under the
 tut-install`/examples/jms/transactedexample/` directory. The source code
-can be found in the <code>src/main/java/javaeetutorial</code> trees for each
+can be found in the <code>src/main/java/jakarta.tutorial</code> trees for each
 module. The <code>genericsupplier</code> and <code>retailer</code> modules each contain a
 single class, <code>genericsupplier/GenericSupplier.java</code> and
 <code>retailer/Retailer.java</code>, respectively. The <code>vendor</code> module is more
@@ -364,7 +364,7 @@ e-commerce application in which the following actions occur.</p>
 <ol class="arabic">
 <li>
 <p>A retailer
-(<code>retailer/src/main/java/javaeetutorial/retailer/Retailer.java</code>) sends a
+(<code>retailer/src/main/java/jakarta/tutorial/retailer/Retailer.java</code>) sends a
 <code>MapMessage</code> to a vendor order queue, ordering a quantity of computers,
 and waits for the vendor&#8217;s reply:</p>
 <div class="listingblock">
@@ -381,7 +381,7 @@ orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);</code></pre
 </li>
 <li>
 <p>The vendor
-(<code>vendor/src/main/java/javaeetutorial/retailer/Vendor.java</code>) receives
+(<code>vendor/src/main/java/jakarta/tutorial/retailer/Vendor.java</code>) receives
 the retailer&#8217;s order message and sends an order message to the supplier
 order topic in one transaction. This Jakarta Messaging transaction uses a single
 session, so you can combine a receive from a queue with a send to a
@@ -415,7 +415,7 @@ hard drives.</p>
 </li>
 <li>
 <p>Each supplier
-(<code>genericsupplier/src/main/java/javaeetutorial/retailer/GenericSupplier.java</code>)
+(<code>genericsupplier/src/main/java/jakarta/tutorial/retailer/GenericSupplier.java</code>)
 receives the order from the order topic, checks its inventory, and then
 sends the items ordered to the queue named in the order message&#8217;s
 <code>JMSReplyTo</code> field. If it does not have enough of the item in stock, the

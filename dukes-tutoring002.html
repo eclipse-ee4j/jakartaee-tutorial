@@ -200,7 +200,7 @@ to Create Queries."</a> For information on CDI events, see
 <div class="sect2">
 <h3 id="_websocket_endpoint_used_in_the_main_interface">WebSocket Endpoint Used in the Main Interface</h3>
 <div class="paragraph">
-<p>The <code>javaeetutorial.dukestutoring.web.websocket.StatusEndpoint</code> class is
+<p>The <code>jakarta.tutorial.dukestutoring.web.websocket.StatusEndpoint</code> class is
 a WebSocket server endpoint that returns students and their status to
 client endpoints. The <code>StatusEndpoint.updateStatus</code> method is a CDI
 observer method for the <code>StatusEvent</code> event. When a student&#8217;s status
@@ -337,7 +337,7 @@ under <code>src/main/resources/</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>javaeetutorial/dukestutoring/util/StatusMessages.properties</code>: Strings
+<p><code>jakarta.tutorial/dukestutoring/util/StatusMessages.properties</code>: Strings
 for each of the status types defined in the <code>StatusType</code> enumerated type
 for the default locale. Each supported locale has a property file of the
 form <code>StatusMessages_`locale prefix</code>.properties` containing the
@@ -363,7 +363,7 @@ strings for German-speaking locales are located in
 <code>ValidationMessages_de.properties</code>.</p>
 </li>
 <li>
-<p><code>javaeetutorial/dukestutoring/web/messages/Messages.properties</code>:
+<p><code>jakarta.tutorial/dukestutoring/web/messages/Messages.properties</code>:
 Strings for the default locale for the main and administration Facelets
 interface. Each supported locale has a property file of the form
 <code>Messages_`locale prefix</code>.properties` containing the localized strings.

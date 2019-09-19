@@ -217,7 +217,7 @@ class also must define a default, public, no-argument constructor.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package javaeetutorial.helloservice;
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package jakarta.tutorial.helloservice;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -456,7 +456,7 @@ which represents the service at the URI of the deployed service&#8217;s WSDL
 file:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">import javaeetutorial.helloservice.endpoint.HelloService;
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
@@ -471,7 +471,7 @@ public class HelloAppClient {
 invoking <code>getHelloPort</code> on the service:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">javaeetutorial.helloservice.endpoint.Hello port = service.getHelloPort();</code></pre>
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">jakarta.tutorial.helloservice.endpoint.Hello port = service.getHelloPort();</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -492,14 +492,14 @@ service:</p>
 <div class="paragraph">
 <p>Here is the full source of <code>HelloAppClient.java</code>, which is located in
 the
-<code><em>tut-install</em>/examples/jaxws/hello-appclient/src/main/java/javaeetutorial/hello/appclient/</code>
+<code><em>tut-install</em>/examples/jaxws/hello-appclient/src/main/java/jakarta/tutorial/hello/appclient/</code>
 directory:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package javaeetutorial.hello.appclient;
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package jakarta.tutorial.hello.appclient;
 
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
@@ -515,7 +515,7 @@ public class HelloAppClient {
     }
 
     private static String sayHello(java.lang.String arg0) {
-        javaeetutorial.helloservice.endpoint.Hello port =
+        jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }
@@ -662,7 +662,7 @@ makes this call through a port.</p>
 annotation:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">import javaeetutorial.helloservice.endpoint.HelloService;
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">import jakarta.tutorial.helloservice.endpoint.HelloService;
 ...
 import javax.xml.ws.WebServiceRef;</code></pre>
 </div>
@@ -686,7 +686,7 @@ calls the <code>sayHello</code> method on the port:</p>
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">private HelloService service;
 ...
 private String sayHello(java.lang.String arg0) {
-    javaeetutorial.helloservice.endpoint.Hello port =
+    jakarta.tutorial.helloservice.endpoint.Hello port =
             service.getHelloPort();
     return port.sayHello(arg0);
 }</code></pre>
@@ -706,14 +706,14 @@ private String sayHello(java.lang.String arg0) {
 <div class="paragraph">
 <p>The significant parts of the <code>HelloServlet</code> code follow. The code is
 located in the
-<code><em>tut-install</em>/examples/jaxws/hello-webclient/src/java/javaeetutorial/hello/ webclient/</code>
+<code><em>tut-install</em>/examples/jaxws/hello-webclient/src/java/jakarta/tutorial/hello/ webclient/</code>
 directory.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package javaeetutorial.hello.webclient;
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">package jakarta.tutorial.hello.webclient;
 
-import javaeetutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.HelloService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -760,7 +760,7 @@ public class HelloServlet extends HttpServlet {
     //   getServletInfo method
 
     private String sayHello(java.lang.String arg0) {
-        javaeetutorial.helloservice.endpoint.Hello port =
+        jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }

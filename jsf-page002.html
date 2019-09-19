@@ -905,7 +905,7 @@ tag is written in a similar way.</p>
              required="true"
              requiredMessage="#{bundle.ReqCustomerName}"&gt;
     &lt;f:valueChangeListener
-        type="javaeetutorial.dukesbookstore.listeners.NameChanged" /&gt;
+        type="jakarta.tutorial.dukesbookstore.listeners.NameChanged" /&gt;
  &lt;/h:inputText&gt;</code></pre>
 </div>
 </div>
@@ -1190,7 +1190,7 @@ an example:</p>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;h:commandLink id="Duke" action="bookstore"&gt;
     &lt;f:actionListener
-        type="javaeetutorial.dukesbookstore.listeners.LinkBookChangeListener" /&gt;
+        type="jakarta.tutorial.dukesbookstore.listeners.LinkBookChangeListener" /&gt;
     &lt;h:outputText value="#{bundle.Book201}"/&gt;
 /h:commandLink&gt;</code></pre>
 </div>
@@ -1359,7 +1359,7 @@ as its last child.</p>
                  required="true"
                  requiredMessage="#{bundle.ReqCustomerName}"&gt;
          &lt;f:valueChangeListener
-             type="javaeetutorial.dukesbookstore.listeners.NameChanged" /&gt;
+             type="jakarta.tutorial.dukesbookstore.listeners.NameChanged" /&gt;
     &lt;/h:inputText&gt;
     &lt;h:message styleClass="error-message" for="name"/&gt;
 
@@ -1833,7 +1833,7 @@ displayed as a row. Here is an example:</p>
                      title="#{bundle.ItemQuantity}"&gt;
             &lt;f:validateLongRange minimum="1"/&gt;
             &lt;f:valueChangeListener
-                type="javaeetutorial.dukesbookstore.listeners.QuantityChanged"/&gt;
+                type="jakarta.tutorial.dukesbookstore.listeners.QuantityChanged"/&gt;
         &lt;/h:inputText&gt;
     &lt;/h:column&gt;
     &lt;h:column&gt;

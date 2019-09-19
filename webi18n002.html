@@ -160,7 +160,7 @@ configuration file. The setting for Duke&#8217;s Bookstore looks like this:</p>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;resource-bundle&gt;
     &lt;base-name&gt;
-        javaeetutorial.dukesbookstore.web.messages.Messages
+        jakarta.tutorial.dukesbookstore.web.messages.Messages
     &lt;/base-name&gt;
     &lt;var&gt;bundle&lt;/var&gt;
 &lt;/resource-bundle&gt;</code></pre>
@@ -178,7 +178,7 @@ string appropriate for the selected locale:</p>
 <pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">public String toString(Locale locale) {
     ResourceBundle res =
         ResourceBundle.getBundle(
-            "javaeetutorial.dukesbookstore.web.messages.Messages", locale);
+            "jakarta.tutorial.dukesbookstore.web.messages.Messages", locale);
     return res.getString(name() + ".string");
 }</code></pre>
 </div>
@@ -190,7 +190,7 @@ according to the locale stored in <code>FacesContext</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;f:loadBundle basename="javaeetutorial.dukesbookstore.web.messages.Messages"
+<pre class="prettyprint highlight"><code class="language-oac_no_warn" data-lang="oac_no_warn">&lt;f:loadBundle basename="jakarta.tutorial.dukesbookstore.web.messages.Messages"
     var="bundle"/&gt;</code></pre>
 </div>
 </div>
