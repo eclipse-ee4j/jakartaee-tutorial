@@ -1,9 +1,5 @@
-= Conditionally Connecting WebSockets
-
-
 [[conditionally-connecting-websockets]]
-Conditionally Connecting WebSockets
------------------------------------
+==== Conditionally Connecting WebSockets
 
 You can use the optional connected attribute to control whether to
 auto-reconnect the WebSocket.
@@ -41,8 +37,7 @@ function someWebsocketListener(message) {
 ----
 
 [[websocket-events-server]]
-WebSocket Events: Server
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== WebSocket Events: Server
 
 When a session or view-scoped socket is automatically closed with close reason
 code `1000` by the server (and thus, not manually closed by the client
@@ -69,8 +64,7 @@ public void onClose(@Observes @Closed WebsocketEvent event) { String channel = e
 ----
 
 [[websocket-events-clients]]
-WebSocket Events: Clients
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== WebSocket Events: Clients
 
 You can use the optional `onopen` JavaScript listener function to listen for
 the open of a WebSocket on the client side. This function is invoked on the

@@ -1,10 +1,6 @@
-Packaging Applications
-======================
-
 [[BCGDJDFB]][[packaging-applications]]
 
-Packaging Applications
-----------------------
+==== Packaging Applications
 
 A Jakarta EE application is delivered in a Java Archive (JAR) file, a Web
 Archive (WAR) file, or an Enterprise Archive (EAR) file. A WAR or EAR
@@ -31,7 +27,7 @@ specified in the source code.
 [[BCGHHIIH]]
 
 .*Figure 5-1 EAR File Structure*
-image:img/jakartaeett_dt_010.png[
+image:jakartaeett_dt_010.png[
 "Diagram of EAR file structure. META-INF and web, application client,
 enterprise bean, and resource adapter modules are under the assembly root."]
 

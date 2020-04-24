@@ -1,10 +1,6 @@
-= Writing Bean Properties
-
-
 [[BNATY]][[writing-bean-properties]]
 
-Writing Bean Properties
------------------------
+==== Writing Bean Properties
 
 
 As explained in link:jsf-develop001.html#BNAQM[Managed Beans in
@@ -58,8 +54,7 @@ validator implementations.
 
 [[BNATZ]][[writing-properties-bound-to-component-values]]
 
-Writing Properties Bound to Component Values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Writing Properties Bound to Component Values
 
 To write a managed bean property that is bound to a component's value,
 you must match the property type to the component's value.
@@ -98,8 +93,7 @@ corresponding properties match the types of the components' values.
 
 [[BNAUB]][[uiinput-and-uioutput-properties]]
 
-UIInput and UIOutput Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== UIInput and UIOutput Properties
 
 The `UIInput` and `UIOutput` component classes are represented by the
 component tags that begin with `h:input` and `h:output`, respectively
@@ -165,8 +159,7 @@ public void setShipDate(Date shipDate) {
 
 [[BNAUC]][[uidata-properties]]
 
-UIData Properties
-^^^^^^^^^^^^^^^^^
+====== UIData Properties
 
 The `UIData` component class is represented by the `h:dataTable`
 component tag.
@@ -256,8 +249,7 @@ For UIData and UIRepeat, the supported types are:
 
 [[BNAUD]][[uiselectboolean-properties]]
 
-UISelectBoolean Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== UISelectBoolean Properties
 
 The `UISelectBoolean` component class is represented by the component
 tag `h:selectBooleanCheckbox`.
@@ -294,8 +286,7 @@ public boolean getReceiveEmails() {
 
 [[BNAUE]][[uiselectmany-properties]]
 
-UISelectMany Properties
-^^^^^^^^^^^^^^^^^^^^^^^
+====== UISelectMany Properties
 
 The `UISelectMany` component class is represented by the component tags
 that begin with `h:selectMany` (for example, `h:selectManyCheckbox` and
@@ -342,8 +333,7 @@ Properties] for information on writing the bean properties for the
 
 [[BNAUF]][[uiselectone-properties]]
 
-UISelectOne Properties
-^^^^^^^^^^^^^^^^^^^^^^
+====== UISelectOne Properties
 
 The `UISelectOne` component class is represented by the component tags
 that begin with `h:selectOne` (for example, `h:selectOneRadio` and
@@ -401,8 +391,7 @@ Properties].
 
 [[BNAUG]][[uiselectitem-properties]]
 
-UISelectItem Properties
-^^^^^^^^^^^^^^^^^^^^^^^
+====== UISelectItem Properties
 
 A `UISelectItem` component represents a single value in a set of values
 in a `UISelectMany` or a `UISelectOne` component. A `UISelectItem`
@@ -430,8 +419,7 @@ void setItemOne(SelectItem item) {
 
 [[BNAUH]][[uiselectitems-properties]]
 
-UISelectItems Properties
-^^^^^^^^^^^^^^^^^^^^^^^^
+====== UISelectItems Properties
 
 `UISelectItems` components are children of `UISelectMany` and
 `UISelectOne` components. Each `UISelectItems` component is composed of
@@ -474,8 +462,7 @@ the page.
 
 [[BNAUK]][[writing-properties-bound-to-component-instances]]]
 
-Writing Properties Bound to Component Instances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Writing Properties Bound to Component Instances
 
 A property bound to a component instance returns and accepts a component
 instance rather than a component value. The following components bind a
@@ -544,8 +531,7 @@ Navigation].
 
 [[BNAUL]][[writing-properties-bound-to-converters-listeners-or-validators]]
 
-Writing Properties Bound to Converters, Listeners, or Validators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Writing Properties Bound to Converters, Listeners, or Validators
 
 All the standard converter, listener, and validator tags included with
 Jakarta Server Faces technology support binding attributes that allow you to

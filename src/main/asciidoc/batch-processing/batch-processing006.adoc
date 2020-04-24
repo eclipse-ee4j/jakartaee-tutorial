@@ -1,10 +1,6 @@
-Submitting Jobs to the Batch Runtime
-====================================
-
 [[BCGCAHCB]][[submitting-jobs-to-the-batch-runtime]]
 
-Submitting Jobs to the Batch Runtime
-------------------------------------
+==== Submitting Jobs to the Batch Runtime
 
 The `JobOperator` interface in the `javax.batch.operations` package
 enables you to submit jobs to the batch runtime and obtain information
@@ -20,8 +16,7 @@ the `getJobOperator` factory method to obtain `JobOperator` objects.
 
 [[sthref282]][[starting-a-job]]
 
-Starting a Job
-~~~~~~~~~~~~~~
+===== Starting a Job
 
 The following example code demonstrates how to obtain a `JobOperator`
 object and submit a batch job:
@@ -43,8 +38,7 @@ is only known at runtime.
 
 [[BCGIBGFC]][[checking-the-status-of-a-job]]
 
-Checking the Status of a Job
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Checking the Status of a Job
 
 The `JobExecution` interface in the `javax.batch.runtime` package
 provides methods to obtain information about submitted jobs. This
@@ -66,8 +60,7 @@ String status = jobExec.getBatchStatus().toString();
 
 [[sthref283]][[invoking-the-batch-runtime-in-your-application]]
 
-Invoking the Batch Runtime in Your Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Invoking the Batch Runtime in Your Application
 
 The component from which you invoke the batch runtime depends on the
 architecture of your particular application. For example, you can invoke

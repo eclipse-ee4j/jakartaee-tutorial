@@ -1,18 +1,13 @@
-= Debugging Jakarta EE Applications
-
-
 [[BNADL]][[debugging-jakarta-ee-applications]]
 
-Debugging Jakarta EE Applications
----------------------------------
+==== Debugging Jakarta EE Applications
 
 This section explains how to determine what is causing an error in your
 application deployment or execution.
 
 [[BNADM]][[using-the-server-log]]
 
-Using the Server Log
-~~~~~~~~~~~~~~~~~~~~
+===== Using the Server Log
 
 One way to debug applications is to look at the server log in
 domain-dir`/logs/server.log`. The log contains output from GlassFish
@@ -34,8 +29,7 @@ viewer.
 
 [[GJSGH]][[to-use-the-administration-console-log-viewer]]
 
-To Use the Administration Console Log Viewer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Use the Administration Console Log Viewer
 
 1.  Select the *GlassFish Server* node.
 2.  Click *View Log Files*.
@@ -48,8 +42,7 @@ c.  Click Search at the top of the log viewer.
 
 [[BNADN]][[using-a-debugger]]
 
-Using a Debugger
-~~~~~~~~~~~~~~~~
+===== Using a Debugger
 
 GlassFish Server supports the Java Platform Debugger Architecture
 (JPDA). With JPDA, you can configure GlassFish Server to communicate
@@ -57,8 +50,7 @@ debugging information using a socket.
 
 [[GJQWL]][[to-debug-an-application-using-a-debugger]]
 
-To Debug an Application Using a Debugger
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Debug an Application Using a Debugger
 
 1.  Follow these steps to enable debugging in GlassFish Server using the
 Administration Console:

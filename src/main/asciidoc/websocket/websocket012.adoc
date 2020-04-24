@@ -1,10 +1,6 @@
-The websocketbot Example Application
-====================================
-
 [[BABCDBBC]][[the-websocketbot-example-application]]
 
-The websocketbot Example Application
-------------------------------------
+==== The websocketbot Example Application
 
 The `websocketbot` example application, located in the
 tut-install`/examples/web/websocket/websocketbot/` directory,
@@ -20,8 +16,7 @@ The following topics are addressed here:
 
 [[CIHICIDE]][[architecture-of-the-websocketbot-example-application]]
 
-Architecture of the websocketbot Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Architecture of the websocketbot Example Application
 
 The `websocketbot` example application consists of the following
 elements:
@@ -46,8 +41,7 @@ chat room
 
 [[CIHDAEHF]][[the-cdi-bean]]
 
-The CDI Bean
-^^^^^^^^^^^^
+====== The CDI Bean
 
 The CDI bean (`BotBean`) is a Java class that contains the `respond`
 method. This method compares the incoming chat message with a set of
@@ -63,8 +57,7 @@ public class BotBean {
 
 [[CIHJJJHG]][[the-websocket-endpoint]]
 
-The WebSocket Endpoint
-^^^^^^^^^^^^^^^^^^^^^^
+====== The WebSocket Endpoint
 
 The WebSocket endpoint (`BotEndpoint`) is an annotated endpoint that
 performs the following functions:
@@ -184,8 +177,7 @@ service and Concurrency Utilities for Jakarta EE.
 
 [[CIHFDGHG]][[the-application-messages]]
 
-The Application Messages
-^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Application Messages
 
 The classes that represent application messages (`Message`,
 `ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`) contain
@@ -204,8 +196,7 @@ public class ChatMessage extends Message {
 
 [[CIHGHHBD]][[the-encoder-classes]]
 
-The Encoder Classes
-^^^^^^^^^^^^^^^^^^^
+====== The Encoder Classes
 
 The encoder classes convert application message objects into JSON text
 using the Java API for JSON Processing. For example, the
@@ -235,8 +226,7 @@ Processing] for more information on the Java API for JSON Processing.
 
 [[CIHHFICG]][[the-message-decoder]]
 
-The Message Decoder
-^^^^^^^^^^^^^^^^^^^
+====== The Message Decoder
 
 The message decoder (`MessageDecoder`) class converts WebSocket text
 messages into application messages by parsing JSON text. It is
@@ -290,8 +280,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
 
 [[CIHGDBGF]][[the-html-page]]
 
-The HTML Page
-^^^^^^^^^^^^^
+====== The HTML Page
 
 The HTML page (`index.html`) contains a field for the user name. After
 the user types a name and clicks Join, three text areas are available:
@@ -306,8 +295,7 @@ client development with HTML5.
 
 [[CIHHJHDB]][[running-the-websocketbot-example-application]]
 
-Running the websocketbot Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the websocketbot Example Application
 
 This section describes how to run the `websocketbot` example application
 using NetBeans IDE and from the command line.
@@ -322,8 +310,7 @@ Maven]
 
 [[CIHFDDGE]][[to-run-the-websocketbot-example-application-using-netbeans-ide]]
 
-To Run the websocketbot Example Application Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the websocketbot Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -354,8 +341,7 @@ more information.
 
 [[CIHEDEHB]][[to-run-the-websocketbot-example-application-using-maven]]
 
-To Run the websocketbot Example Application Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the websocketbot Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -384,8 +370,7 @@ more information.
 
 [[BABDDAAG]][[to-test-the-websocketbot-example-application]]
 
-To Test the websocketbot Example Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Test the websocketbot Example Application
 
 1.  On the main page, type your name on the first text field and press
 the Enter key.

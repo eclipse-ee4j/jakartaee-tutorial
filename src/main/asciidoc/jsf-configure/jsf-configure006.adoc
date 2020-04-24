@@ -1,10 +1,6 @@
-Registering Application Messages
-================================
-
 [[BNAXB]][[registering-application-messages]]
 
-Registering Application Messages
---------------------------------
+==== Registering Application Messages
 
 Application messages can include any strings displayed to the user as
 well as custom error messages (which are displayed by the `message` and
@@ -78,8 +74,7 @@ alternative text of the image rendered by this tag.
 
 [[GKUHG]][[using-facesmessage-to-create-a-message]]
 
-Using FacesMessage to Create a Message
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using FacesMessage to Create a Message
 
 Instead of registering messages in the application configuration
 resource file, you can access the `java.util.ResourceBundle` directly
@@ -118,8 +113,7 @@ public static String loadErrorMessage(FacesContext context,
 
 [[BNASS]][[referencing-error-messages]]
 
-Referencing Error Messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Referencing Error Messages
 
 A Jakarta Server Faces page uses the `message` or `messages` tags to access
 error messages, as explained in link:jsf-page/jsf-page002.html#BNASO[Displaying

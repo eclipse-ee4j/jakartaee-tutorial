@@ -1,10 +1,6 @@
-What Is a Session Bean?
-=======================
-
 [[GIPJG]][[what-is-a-session-bean]]
 
-What Is a Session Bean?
------------------------
+==== What Is a Session Bean?
 
 A session bean encapsulates business logic that can be invoked
 programmatically by a client over local, remote, or web service client
@@ -26,8 +22,7 @@ The following topics are addressed here:
 
 [[GIPKR]][[types-of-session-beans]]
 
-Types of Session Beans
-~~~~~~~~~~~~~~~~~~~~~~
+===== Types of Session Beans
 
 Session beans are of three types: stateful, stateless, and singleton.
 
@@ -39,8 +34,7 @@ The following topics are addressed here:
 
 [[GIPNL]][[stateful-session-beans]]
 
-Stateful Session Beans
-^^^^^^^^^^^^^^^^^^^^^^
+====== Stateful Session Beans
 
 The state of an object consists of the values of its instance variables.
 In a stateful session bean, the instance variables represent the state
@@ -61,8 +55,7 @@ need to retain the state.
 
 [[GIPIN]][[stateless-session-beans]]
 
-Stateless Session Beans
-^^^^^^^^^^^^^^^^^^^^^^^
+====== Stateless Session Beans
 
 A stateless session bean does not maintain a conversational state with
 the client. When a client invokes the methods of a stateless bean, the
@@ -86,8 +79,7 @@ session bean cannot.
 
 [[GIPIM]][[singleton-session-beans]]
 
-Singleton Session Beans
-^^^^^^^^^^^^^^^^^^^^^^^
+====== Singleton Session Beans
 
 A singleton session bean is instantiated once per application and exists
 for the lifecycle of the application. Singleton session beans are
@@ -113,8 +105,7 @@ application.
 
 [[GIPMT]][[when-to-use-session-beans]]
 
-When to Use Session Beans
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== When to Use Session Beans
 
 Stateful session beans are appropriate if any of the following
 conditions are true.

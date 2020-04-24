@@ -1,10 +1,6 @@
-= The mood Example Application
-
-
 [[GKCPG]][[the-mood-example-application]]
 
-The mood Example Application
-----------------------------
+==== The mood Example Application
 
 The `mood` example application, located in the
 tut-install`/examples/web/servlet/mood/` directory, is a simple example
@@ -20,8 +16,7 @@ The following topics are addressed here:
 
 [[CHDEBFCB]][[components-of-the-mood-example-application]]
 
-Components of the mood Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Components of the mood Example Application
 
 The `mood` example application is comprised of three components:
 `mood.web.MoodServlet`, `mood.web.TimeOfDayFilter`, and
@@ -59,8 +54,7 @@ entries appear in the server log.
 
 [[GKCOJ]][[running-the-mood-example]]
 
-Running the mood Example
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the mood Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `mood` example.
@@ -72,8 +66,7 @@ The following topics are addressed here:
 
 [[GKCOB]][[to-run-the-mood-example-using-netbeans-ide]]
 
-To Run the mood Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the mood Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -103,8 +96,7 @@ string describing Duke's mood, and an illustrative graphic.
 
 [[GKCPJ]][[to-run-the-mood-example-using-maven]]
 
-To Run the mood Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the mood Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

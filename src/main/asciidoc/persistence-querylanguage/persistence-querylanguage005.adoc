@@ -1,10 +1,6 @@
-Example Queries
-===============
-
 [[BNBTL]][[example-queries]]
 
-Example Queries
----------------
+==== Example Queries
 
 The following queries are from the `Player` entity of the `roster`
 application, which is documented in
@@ -19,8 +15,7 @@ The following topics are addressed here:
 
 [[BNBTM]][[simple-queries]]
 
-Simple Queries
-~~~~~~~~~~~~~~
+===== Simple Queries
 
 If you are unfamiliar with the query language, these simple queries are
 a good place to start.
@@ -33,8 +28,7 @@ The following topics are addressed here:
 
 [[BNBTN]][[a-basic-select-query]]
 
-A Basic Select Query
-^^^^^^^^^^^^^^^^^^^^
+====== A Basic Select Query
 
 [source,oac_no_warn]
 ----
@@ -58,8 +52,7 @@ Variables].
 
 [[BNBTO]][[eliminating-duplicate-values]]
 
-Eliminating Duplicate Values
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Eliminating Duplicate Values
 
 [source,oac_no_warn]
 ----
@@ -81,8 +74,7 @@ Keyword].
 
 [[BNBTP]][[using-named-parameters]]
 
-Using Named Parameters
-^^^^^^^^^^^^^^^^^^^^^^
+====== Using Named Parameters
 
 [source,oac_no_warn]
 ----
@@ -101,8 +93,7 @@ input parameter is `:position`, the second is `:name`.
 
 [[BNBTQ]][[queries-that-navigate-to-related-entities]]
 
-Queries That Navigate to Related Entities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Queries That Navigate to Related Entities
 
 In the query language, an expression can traverse, or navigate, to
 related entities. These expressions are the primary difference between
@@ -119,8 +110,7 @@ The following topics are addressed here:
 
 [[BNBTR]][[a-simple-query-with-relationships]]
 
-A Simple Query with Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== A Simple Query with Relationships
 
 [source,oac_no_warn]
 ----
@@ -156,8 +146,7 @@ WHERE p.team IS NOT EMPTY
 
 [[BNBTS]][[navigating-to-single-valued-relationship-fields]]
 
-Navigating to Single-Valued Relationship Fields
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Navigating to Single-Valued Relationship Fields
 
 Use the `JOIN` clause statement to navigate to a single-valued
 relationship field:
@@ -174,8 +163,7 @@ soccer or football leagues.
 
 [[BNBTT]][[traversing-relationships-with-an-input-parameter]]
 
-Traversing Relationships with an Input Parameter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Traversing Relationships with an Input Parameter
 
 [source,oac_no_warn]
 ----
@@ -203,8 +191,7 @@ Expressions].
 
 [[BNBTU]][[traversing-multiple-relationships]]
 
-Traversing Multiple Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Traversing Multiple Relationships
 
 [source,oac_no_warn]
 ----
@@ -226,8 +213,7 @@ expression of the `WHERE` clause.
 
 [[BNBTV]][[navigating-according-to-related-fields]]
 
-Navigating According to Related Fields
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Navigating According to Related Fields
 
 [source,oac_no_warn]
 ----
@@ -246,8 +232,7 @@ field.
 
 [[BNBTW]][[queries-with-other-conditional-expressions]]
 
-Queries with Other Conditional Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Queries with Other Conditional Expressions
 
 Every `WHERE` clause must specify a conditional expression, of which
 there are several kinds. In the previous examples, the conditional
@@ -266,8 +251,7 @@ The following topics are addressed here:
 
 [[BNBTX]][[the-like-expression]]
 
-The LIKE Expression
-^^^^^^^^^^^^^^^^^^^
+====== The LIKE Expression
 
 [source,oac_no_warn]
 ----
@@ -287,8 +271,7 @@ Expressions].
 
 [[BNBTY]][[the-is-null-expression]]
 
-The IS NULL Expression
-^^^^^^^^^^^^^^^^^^^^^^
+====== The IS NULL Expression
 
 [source,oac_no_warn]
 ----
@@ -308,8 +291,7 @@ Values].
 
 [[BNBTZ]][[the-is-empty-expression]]
 
-The IS EMPTY Expression
-^^^^^^^^^^^^^^^^^^^^^^^
+====== The IS EMPTY Expression
 
 [source,oac_no_warn]
 ----
@@ -327,8 +309,7 @@ Comparison Expressions].
 
 [[BNBUA]][[the-between-expression]]
 
-The BETWEEN Expression
-^^^^^^^^^^^^^^^^^^^^^^
+====== The BETWEEN Expression
 
 [source,oac_no_warn]
 ----
@@ -353,8 +334,7 @@ Expressions].
 
 [[BNBUB]][[comparison-operators]]
 
-Comparison Operators
-^^^^^^^^^^^^^^^^^^^^
+====== Comparison Operators
 
 [source,oac_no_warn]
 ----
@@ -374,8 +354,7 @@ Variables].
 
 [[BNBUC]][[bulk-updates-and-deletes]]
 
-Bulk Updates and Deletes
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Bulk Updates and Deletes
 
 The following examples show how to use the `UPDATE` and `DELETE`
 expressions in queries. `UPDATE` and `DELETE` operate on multiple
@@ -390,8 +369,7 @@ The following topics are addressed here:
 
 [[BNBUD]][[update-queries]]
 
-Update Queries
-^^^^^^^^^^^^^^
+====== Update Queries
 
 [source,oac_no_warn]
 ----
@@ -406,8 +384,7 @@ specified in `inactiveThresholdDate`.
 
 [[BNBUE]][[delete-queries]]
 
-Delete Queries
-^^^^^^^^^^^^^^
+====== Delete Queries
 
 [source,oac_no_warn]
 ----

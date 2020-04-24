@@ -1,10 +1,6 @@
-= Using Annotations to Configure Managed Beans
-
-
 [[GIRCH]][[using-annotations-to-configure-managed-beans]]
 
-Using Annotations to Configure Managed Beans
---------------------------------------------
+==== Using Annotations to Configure Managed Beans
 
 
 [width="100%",cols="100%",]
@@ -56,8 +52,7 @@ Custom UI Components and Other Custom Objects"].
 
 [[GIRCR]][[using-managed-bean-scopes]]
 
-Using Managed Bean Scopes
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Managed Bean Scopes
 
 You can use annotations to define the scope in which the bean will be
 stored. You can specify one of the following scopes for a bean class.

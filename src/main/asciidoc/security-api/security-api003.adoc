@@ -1,16 +1,12 @@
-= Overview of the Identity Store Interfaces
-
 [[overview-of-the-identity-store-interfaces]]
-Overview of the Identity Store Interfaces
------------------------------------------
+==== Overview of the Identity Store Interfaces
 The Identity Store Interfaces are described in the following sections:
 
 * link:#the-identitystore-interface[The IdentityStore Interface]
 * link:#the-remembermeidentitystore-interface[The RememberMeIdentityStore Interface]
 
 [[the-identitystore-interface]]
-The IdentityStore Interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The IdentityStore Interface
 The `IdentityStore` interface defines an SPI for interacting with identity stores,
 which are directories or databases containing user account information.
 An implementation of the `IdentityStore` interface can validate users' credentials,
@@ -51,8 +47,7 @@ Multiple implementations of `IdentityStore` may be present. If so, they are invo
 under the control of an `IdentityStoreHandler`.
 
 [[identitystorehandler]]
-IdentityStoreHandler
-^^^^^^^^^^^^^^^^^^^^
+====== IdentityStoreHandler
 Authentication mechanisms do not interact with `IdentityStore` directly; instead,
 they call an `IdentityStoreHandler`. An implementation of the `IdentityStoreHandler`
 interface provides a single method, `validate(Credential)`, which, when invoked,
@@ -79,8 +74,7 @@ desired algorithm to select and invoke on IdentityStores, and return an
 aggregated (or non-aggregated) result.
 
 [[identitystoreinterface-methods]]
-IdentityStore Interface Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== IdentityStore Interface Methods
 
 The IdentityStore interface itself has four methods:
 
@@ -108,8 +102,7 @@ and the built-in IdentityStoreHandler invokes the `getCallerGroups()` method in
 the context of a `PrivilegedAction` block.
 
 [[the-passwordhash-interface]]
-The PasswordHash Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The PasswordHash Interface
 
 Unlike some types of identity stores, for example LDAP directories,
 databases can store and retrieve user passwords, but can't verify them natively.
@@ -174,8 +167,7 @@ the password value based on the timing of failed attempts.
 * A new random salt should be used each time a new password hash value is generated.
 
 [[the-remembermeidentitystore-interface]]
-The RememberMeIdentityStore Interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The RememberMeIdentityStore Interface
 The `RememberMeIdentityStore` interface represents a special type of identity store.
 It is not directly related to the `IdentityStore` interface; that is, it does not
 implement or extend it. It does, however, perform a similar, albeit specialized, function.

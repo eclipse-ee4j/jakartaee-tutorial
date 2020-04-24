@@ -1,10 +1,6 @@
-= Advanced Features of the Client API
-
-
 [[BABCDDGH]][[advanced-features-of-the-client-api]]
 
-Advanced Features of the Client API
------------------------------------
+==== Advanced Features of the Client API
 
 This section describes some of the advanced features of the Jakarta REST
 Client API.
@@ -16,8 +12,7 @@ The following topics are addressed here:
 
 [[CHDGBBCC]][[configuring-the-client-request]]
 
-Configuring the Client Request
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Configuring the Client Request
 
 Additional configuration options may be added to the client request
 after it is created but before it is invoked.
@@ -30,8 +25,7 @@ The following topics are addressed here:
 
 [[CHDHAFBG]][[setting-message-headers-in-the-client-request]]
 
-Setting Message Headers in the Client Request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Setting Message Headers in the Client Request
 
 You can set HTTP headers on the request by calling the
 `Invocation.Builder.header` method.
@@ -77,8 +71,7 @@ myHeaders.add("myHeader", values
 
 [[CHDHFFDJ]][[setting-cookies-in-the-client-request]]
 
-Setting Cookies in the Client Request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Setting Cookies in the Client Request
 
 You can add HTTP cookies to the request by calling the
 `Invocation.Builder.cookie` method, which takes a name-value pair as
@@ -112,8 +105,7 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
 
 [[CHDJEFID]][[adding-filters-to-the-client]]
 
-Adding Filters to the Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Adding Filters to the Client
 
 You can register custom filters with the client request or the response
 received from the target resource. To register filter classes when the
@@ -191,8 +183,7 @@ public void filter(ClientRequestContext requestContext) throws IOException {
 
 [[CHDEBIGG]][[asynchronous-invocations-in-the-client-api]]
 
-Asynchronous Invocations in the Client API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Asynchronous Invocations in the Client API
 
 In networked applications, network issues can affect the perceived
 performance of the application, particularly in long-running or
@@ -224,8 +215,7 @@ Future<String> response = myResource.request(MediaType.TEXT_PLAIN)
 
 [[sthref140]][[using-custom-callbacks-in-asynchronous-invocations]]
 
-Using Custom Callbacks in Asynchronous Invocations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Using Custom Callbacks in Asynchronous Invocations
 
 The `InvocationCallback` interface defines two methods, `completed` and
 `failed`, that are called when an asynchronous invocation either
@@ -256,8 +246,7 @@ Future<Customer> fCustomer = myResource.request(MediaType.TEXT_PLAIN)
 
 [[sthref141]][[using-reactive-approach-in-asynchronous-invocations]]
 
-Using Reactive Approach in Asynchronous Invocations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Using Reactive Approach in Asynchronous Invocations
 
 Using custom callbacks in asynchronous invocations is easy in simple
 cases and when there are many independent calls to make. In nested
@@ -280,8 +269,7 @@ the result is displayed. The `CompletionStage` that is returned can then be used
 
 [[sthref142]][[using-server-sent-events]]
 
-Using Server-Sent Events
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Server-Sent Events
 
 Server-sent Events (SSE) technology is used to asynchronously push
 notifications to the client over standard HTTP or HTTPS protocol.
@@ -298,8 +286,7 @@ send multiple events from the server.
 
 [[sthref143]][[overview-of-the-sse-api]]
 
-Overview of the SSE API
-~~~~~~~~~~~~~~~~~~~~~~~
+===== Overview of the SSE API
 
 The SSE API is defined in the `javax.ws.rs.sse` package that includes
 the interfaces `SseEventSink`, `SseEvent`, `Sse`, and `SseEventSource`.
@@ -339,8 +326,7 @@ details such as `event`, `data`, `id`, `retry`, and `comment`.
 
 [[sthref144]][[broadcasting-using-sse]]
 
-Broadcasting Using SSE
-~~~~~~~~~~~~~~~~~~~~~~
+===== Broadcasting Using SSE
 
 Broadcasting is the action of sending events to multiple clients
 simultaneously. Jakarta REST SSE API provides `SseBroadcaster` to register all
@@ -386,8 +372,7 @@ method is used to send an SSE event to all registered clients.
 
 [[sthref145]][[listening-and-receiving-events]]
 
-Listening and Receiving Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Listening and Receiving Events
 
 Jakarta REST SSE provides the `SseEventSource` interface for the client to
 subscribe to notifications. The client can get asynchronously notified

@@ -1,9 +1,5 @@
-= WebSocket Scopes and Users
-
-
 [[websocket-scopes-and-users]]
-WebSocket Scopes and Users
---------------------------
+==== WebSocket Scopes and Users
 
 By default, the WebSocket is application-scoped. For example, any view or
 session throughout the web application having the same WebSocket channel open

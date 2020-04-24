@@ -1,10 +1,6 @@
-= Configuring Managed Beans
-
-
 [[BNAWQ]][[configuring-managed-beans]]
 
-Configuring Managed Beans
--------------------------
+==== Configuring Managed Beans
 
 When a page references a managed bean for the first time, the Jakarta Server
 Faces implementation initializes it either based on a `@Named`
@@ -44,8 +40,7 @@ Methods] for information on programming managed beans.
 
 [[BNAWR]][[using-the-managed-bean-element]]
 
-Using the managed-bean Element
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using the managed-bean Element
 
 A managed bean is initiated in the application configuration resource
 file using a `managed-bean` element, which represents an instance of a
@@ -154,8 +149,7 @@ Properties] for an example of initializing a managed bean property.
 
 [[BNAWS]][[initializing-properties-using-the-managed-property-element]]
 
-Initializing Properties Using the managed-property Element
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Initializing Properties Using the managed-property Element
 
 A `managed-property` element must contain a `property-name` element,
 which must match the name of the corresponding property in the bean. A
@@ -195,8 +189,7 @@ initialization parameters.
 
 [[BNAWU]][[referencing-a-java-enum-type]]
 
-Referencing a Java Enum Type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Referencing a Java Enum Type
 
 A managed bean property can also be a Java `Enum` type (see
 `http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html`). In this
@@ -233,8 +226,7 @@ finds one that is exactly equal to the value from the `value` element.
 
 [[BNAWV]][[referencing-a-context-initialization-parameter]]
 
-Referencing a Context Initialization Parameter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Referencing a Context Initialization Parameter
 
 Another powerful feature of the managed bean creation facility is the
 ability to reference implicit objects from a managed bean property.
@@ -281,8 +273,7 @@ Values are retrieved from other implicit objects in a similar way.
 
 [[BNAWW]][[initializing-map-properties]]
 
-Initializing Map Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Initializing Map Properties
 
 The `map-entries` element is used to initialize the values of a bean
 property with a type of `Map` if the `map-entries` element is used
@@ -356,8 +347,7 @@ expression.
 
 [[BNAWX]][[initializing-array-and-list-properties]]
 
-Initializing Array and List Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Initializing Array and List Properties
 
 The `list-entries` element is used to initialize the values of an array
 or `List` property. Each individual value of the array or `List` is
@@ -391,8 +381,7 @@ property whose data type is a Java primitive, such as `int` or
 
 [[BNAWY]][[initializing-managed-bean-properties]]
 
-Initializing Managed Bean Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Initializing Managed Bean Properties
 
 Sometimes you might want to create a bean that also references other
 managed beans so that you can construct a graph or a tree of beans. For
@@ -483,8 +472,7 @@ points to the `AddressBean` objects.
 
 [[BNAXA]][[initializing-maps-and-lists]]
 
-Initializing Maps and Lists
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Initializing Maps and Lists
 
 In addition to configuring `Map` and `List` properties, you can also
 configure a `Map` and a `List` directly so that you can reference them

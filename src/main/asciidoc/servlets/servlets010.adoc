@@ -1,10 +1,6 @@
-Finalizing a Servlet
-====================
-
 [[BNAGS]][[finalizing-a-servlet]]
 
-Finalizing a Servlet
---------------------
+==== Finalizing a Servlet
 
 The web container may determine that a servlet should be removed from
 service (for example, when a container wants to reclaim memory resources
@@ -33,8 +29,7 @@ and, if necessary, stop working, clean up, and return.
 
 [[BNAGT]][[tracking-service-requests]]
 
-Tracking Service Requests
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Tracking Service Requests
 
 To track service requests:
 
@@ -85,8 +80,7 @@ protected void service(HttpServletRequest req,
 
 [[BNAGU]][[notifying-methods-to-shut-down]]
 
-Notifying Methods to Shut Down
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Notifying Methods to Shut Down
 
 To ensure a clean shutdown, your `destroy` method should not release any
 shared resources until all the service requests have completed:
@@ -136,8 +130,7 @@ public void destroy() {
 
 [[BNAGV]][[creating-polite-long-running-methods]]
 
-Creating Polite Long-Running Methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating Polite Long-Running Methods
 
 The final step in providing a clean shutdown is to make any long-running
 methods behave politely. Methods that might run for a long time should

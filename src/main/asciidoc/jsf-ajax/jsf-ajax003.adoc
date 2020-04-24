@@ -1,10 +1,6 @@
-= Using Ajax with Facelets
-
-
 [[GKABR]][[using-ajax-with-facelets]]
 
-Using Ajax with Facelets
-------------------------
+==== Using Ajax with Facelets
 
 As mentioned in the previous section, Jakarta Server Faces technology
 supports Ajax by using a built-in JavaScript resource library that is
@@ -25,8 +21,7 @@ server-side method via Ajax.
 
 [[GKAFN]][[using-the-fajax-tag]]
 
-Using the f:ajax Tag
-~~~~~~~~~~~~~~~~~~~~
+===== Using the f:ajax Tag
 
 The `f:ajax` tag is a Jakarta Server Faces core tag that provides Ajax
 functionality to any regular UI component when used in conjunction with

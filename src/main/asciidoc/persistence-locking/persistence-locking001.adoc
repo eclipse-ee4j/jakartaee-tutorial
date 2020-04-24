@@ -1,10 +1,6 @@
-Overview of Entity Locking and Concurrency
-==========================================
-
 [[GKJHZ]][[overview-of-entity-locking-and-concurrency]]
 
-Overview of Entity Locking and Concurrency
-------------------------------------------
+==== Overview of Entity Locking and Concurrency
 
 Entity data is concurrently accessed if the data in a data source is
 accessed at the same time by multiple applications. Ensure that the
@@ -54,8 +50,7 @@ modification may result in decreased application performance.
 
 [[GKJJC]][[using-optimistic-locking]]
 
-Using Optimistic Locking
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Optimistic Locking
 
 Use the `javax.persistence.Version` annotation to mark a persistent
 field or property as a version attribute of an entity. The version

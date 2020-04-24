@@ -1,10 +1,6 @@
-Using Jakarta REST with Jakarta XML Binding
-===========================================
-
 [[GKKNJ]][[using-jax-rs-with-jaxb]]
 
-Using Jakarta REST with Jakarta XML Binding
--------------------------------------------
+==== Using Jakarta REST with Jakarta XML Binding
 
 JAXB is an XML-to-Java binding
 technology that simplifies the development of web services by enabling
@@ -86,8 +82,7 @@ methods.
 
 [[sthref147]][[using-java-objects-to-model-your-data]]
 
-Using Java Objects to Model Your Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Java Objects to Model Your Data
 
 If you do not have an XML schema definition for the data you want to
 expose, you can model your data as Java classes, add Jakarta XML Binding annotations to
@@ -189,8 +184,7 @@ representation.
 
 [[sthref148]][[starting-from-an-existing-xml-schema-definition]]
 
-Starting from an Existing XML Schema Definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Starting from an Existing XML Schema Definition
 
 If you already have an XML schema definition in an `.xsd` file for the
 data you want to expose, use the Jakarta XML Binding schema compiler tool. Consider
@@ -313,8 +307,7 @@ public class ProductService {
 
 [[sthref149]][[using-json-with-jax-rs-and-jaxb]]
 
-Using JSON with Jakarta REST and Jakarta XML Binding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using JSON with Jakarta REST and Jakarta XML Binding
 
 Jakarta REST can automatically read and write XML using Jakarta XML Binding, but it can also
 work with JSON data. JSON is a simple text-based format for data

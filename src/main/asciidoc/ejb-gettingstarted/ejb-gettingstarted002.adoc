@@ -1,10 +1,6 @@
-Creating the Enterprise Bean
-============================
-
 [[GIPSS]][[creating-the-enterprise-bean]]
 
-Creating the Enterprise Bean
-----------------------------
+==== Creating the Enterprise Bean
 
 The enterprise bean in our example is a stateless session bean called
 `ConverterBean`. The source code for `ConverterBean` is in the
@@ -17,8 +13,7 @@ Creating `ConverterBean` requires these steps:
 
 [[GIPSX]][[coding-the-enterprise-bean-class]]
 
-Coding the Enterprise Bean Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Coding the Enterprise Bean Class
 
 The enterprise bean class for this example is called `ConverterBean`.
 This class implements two business methods: `dollarToYen` and
@@ -58,8 +53,7 @@ stateless session bean.
 
 [[GIPSI]][[creating-the-converter-web-client]]
 
-Creating the converter Web Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating the converter Web Client
 
 The web client is contained in the following servlet class under the
 `_tut-install_/examples/ejb/converter/src/main/java/` directory:
@@ -117,8 +111,7 @@ The results are displayed to the user.
 
 [[GIPVV]][[running-the-converter-example]]
 
-Running the converter Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the converter Example
 
 Now you are ready to compile the enterprise bean class
 (`ConverterBean.java`) and the servlet class (`ConverterServlet.java`)
@@ -133,8 +126,7 @@ The following topics are addressed here:
 
 [[GIPUM]][[to-run-the-converter-example-using-netbeans-ide]]
 
-To Run the converter Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the converter Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -163,8 +155,7 @@ A second page opens, showing the converted values.
 
 [[GIPVQ]][[to-run-the-converter-example-using-maven]]
 
-To Run the converter Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the converter Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

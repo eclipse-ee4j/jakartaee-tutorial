@@ -1,10 +1,6 @@
-Creating Custom Component Classes
-=================================
-
 [[BNAVU]][[creating-custom-component-classes]]
 
-Creating Custom Component Classes
----------------------------------
+==== Creating Custom Component Classes
 
 As explained in link:jsf-custom002.html#BNAVI[When to Use a Custom
 Component], a component class defines the state and behavior of a UI
@@ -159,8 +155,7 @@ Components] details how `MapComponent` handles events.
 
 [[BNAVV]][[specifying-the-component-family]]
 
-Specifying the Component Family
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Specifying the Component Family
 
 If your custom component class delegates rendering, it needs to override
 the `getFamily` method of `UIComponent` to return the identifier of a
@@ -187,8 +182,7 @@ configuration.
 
 [[BNAVW]][[performing-encoding]]
 
-Performing Encoding
-~~~~~~~~~~~~~~~~~~~
+===== Performing Encoding
 
 During the Render Response phase, the Jakarta Server Faces implementation
 processes the encoding methods of all components and their associated
@@ -304,8 +298,7 @@ parameters, you must also implement the `decode` method.
 
 [[BNAVX]][[performing-decoding]]
 
-Performing Decoding
-~~~~~~~~~~~~~~~~~~~
+===== Performing Decoding
 
 During the Apply Request Values phase, the Jakarta Server Faces
 implementation processes the `decode` methods of all components in the
@@ -346,8 +339,7 @@ attribute to the value of the `input` field.
 
 [[BNAVY]][[enabling-component-properties-to-accept-expressions]]
 
-Enabling Component Properties to Accept Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Enabling Component Properties to Accept Expressions
 
 Nearly all the attributes of the standard Jakarta Server Faces tags can
 accept expressions, whether they are value expressions or method
@@ -426,8 +418,7 @@ public void setAction(MethodExpression action) {
 
 [[BNAVZ]][[saving-and-restoring-state]]
 
-Saving and Restoring State
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Saving and Restoring State
 
 As described in link:#BNAVY[Enabling Component Properties to Accept
 Expressions], use of the `StateHelper` interface facilities allows you

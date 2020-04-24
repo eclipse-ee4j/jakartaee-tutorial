@@ -1,10 +1,6 @@
-Delegating Rendering to a Renderer
-==================================
-
 [[BNAWA]][[delegating-rendering-to-a-renderer]]
 
-Delegating Rendering to a Renderer
-----------------------------------
+==== Delegating Rendering to a Renderer
 
 Both `MapComponent` and `AreaComponent` delegate all of their rendering
 to a separate renderer. The section
@@ -21,8 +17,7 @@ topics:
 
 [[BNAWB]][[creating-the-renderer-class]]
 
-Creating the Renderer Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating the Renderer Class
 
 When delegating rendering to a renderer, you can delegate all encoding
 and decoding to the renderer, or you can choose to do part of it in the
@@ -135,8 +130,7 @@ identifies the component family as well as the renderer type.
 
 [[BNAWC]][[identifying-the-renderer-type]]
 
-Identifying the Renderer Type
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Identifying the Renderer Type
 
 Register the renderer with a render kit by using the `@FacesRenderer`
 annotation (or by using the application configuration resource file, as

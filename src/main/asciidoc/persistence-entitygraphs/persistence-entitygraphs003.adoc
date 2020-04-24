@@ -1,10 +1,6 @@
-Using Named Entity Graphs
-=========================
-
 [[BABFIGEI]][[using-named-entity-graphs]]
 
-Using Named Entity Graphs
--------------------------
+==== Using Named Entity Graphs
 
 Named entity graphs are created using annotations applied to entity
 classes or the `named-entity-graph` element and its sub-elements in the
@@ -15,8 +11,7 @@ be overridden using `named-entity-graph`.
 
 [[sthref186]][[applying-named-entity-graph-annotations-to-entity-classes]]
 
-Applying Named Entity Graph Annotations to Entity Classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Applying Named Entity Graph Annotations to Entity Classes
 
 The `javax.persistence.NamedEntityGraph` annotation defines a single
 named entity graph and is applied at the class level. Multiple
@@ -99,8 +94,7 @@ public class EmailMessage { ... }
 
 [[sthref187]][[obtaining-entitygraph-instances-from-named-entity-graphs]]
 
-Obtaining EntityGraph Instances from Named Entity Graphs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Obtaining EntityGraph Instances from Named Entity Graphs
 
 Use the `EntityManager.getEntityGraph` method, passing in the named
 entity graph name, to obtain `EntityGraph` instances for a named entity

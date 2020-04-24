@@ -1,10 +1,6 @@
-= The producerfields Example: Using Producer Fields to Generate Resources
-
-
 [[GKHRG]][[the-producerfields-example-using-producer-fields-to-generate-resources]]
 
-The producerfields Example: Using Producer Fields to Generate Resources
------------------------------------------------------------------------
+==== The producerfields Example: Using Producer Fields to Generate Resources
 
 The `producerfields` example, which allows you to create a to-do list,
 shows how to use a producer field to generate objects that can then be
@@ -30,8 +26,7 @@ The following topics are addressed here:
 
 [[GKHPP]][[the-producer-field-for-the-producerfields-example]]
 
-The Producer Field for the producerfields Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The Producer Field for the producerfields Example
 
 The most important component of the `producerfields` example is the
 smallest, the `db.UserDatabaseEntityManager` class, which isolates the
@@ -120,8 +115,7 @@ an application-managed entity manager.
 
 [[GKHPD]][[the-producerfields-entity-and-session-bean]]
 
-The producerfields Entity and Session Bean
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The producerfields Entity and Session Bean
 
 The `producerfields` example contains a simple entity class,
 `entity.ToDo`, and a stateful session bean, `ejb.RequestBean`, that uses
@@ -210,8 +204,7 @@ created so far by creating a query:
 
 [[GKHPF]][[the-producerfields-facelets-pages-and-managed-bean]]
 
-The producerfields Facelets Pages and Managed Bean
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The producerfields Facelets Pages and Managed Bean
 
 The `producerfields` example has two Facelets pages, `index.xhtml` and
 `todolist.xhtml`. The simple form on the `index.xhtml` page asks the
@@ -331,8 +324,7 @@ Back button returns the user to the `index.xhtml` page.
 
 [[GKHRH]][[running-the-producerfields-example]]
 
-Running the producerfields Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the producerfields Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `producerfields` application.
@@ -347,8 +339,7 @@ Using Maven]
 
 [[GKHPB]][[to-build-package-and-deploy-the-producerfields-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the producerfields Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the producerfields Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -374,8 +365,7 @@ deploys it to GlassFish Server.
 
 [[GKHRM]][[to-build-package-and-deploy-the-producerfields-example-using-maven]]
 
-To Build, Package, and Deploy the producerfields Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the producerfields Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -402,8 +392,7 @@ deploys it to GlassFish Server.
 
 [[GKHRR]][[to-run-the-producerfields-example]]
 
-To Run the producerfields Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the producerfields Example
 
 1.  In a web browser, enter the following URL:
 +

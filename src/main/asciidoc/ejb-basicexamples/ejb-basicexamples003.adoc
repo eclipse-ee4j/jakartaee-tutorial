@@ -1,10 +1,6 @@
-A Singleton Session Bean Example: counter
-=========================================
-
 [[GIPVI]][[a-singleton-session-bean-example-counter]]
 
-A Singleton Session Bean Example: counter
------------------------------------------
+==== A Singleton Session Bean Example: counter
 
 The `counter` example demonstrates how to create a singleton session
 bean.
@@ -17,8 +13,7 @@ The following topics are addressed here:
 
 [[GIPVC]][[creating-a-singleton-session-bean]]
 
-Creating a Singleton Session Bean
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Singleton Session Bean
 
 The `javax.ejb.Singleton` annotation is used to specify that the
 enterprise bean implementation class is a singleton session bean:
@@ -31,8 +26,7 @@ public class SingletonBean { ... }
 
 [[GIPPQ]][[initializing-singleton-session-beans]]
 
-Initializing Singleton Session Beans
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Initializing Singleton Session Beans
 
 The Enterprise Bean container is responsible for determining when to initialize a
 singleton session bean instance unless the singleton session bean
@@ -115,8 +109,7 @@ following order: `SecondaryBean`, `PrimaryBean`, `TertiaryBean`.
 
 [[GIPSZ]][[managing-concurrent-access-in-a-singleton-session-bean]]
 
-Managing Concurrent Access in a Singleton Session Bean
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Managing Concurrent Access in a Singleton Session Bean
 
 Singleton session beans are designed for concurrent access, situations
 in which many clients need to access a single instance of a session bean
@@ -300,8 +293,7 @@ public class AnotherSingletonBean { ... }
 
 [[GIPVD]][[handling-errors-in-a-singleton-session-bean]]
 
-Handling Errors in a Singleton Session Bean
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Handling Errors in a Singleton Session Bean
 
 If a singleton session bean encounters an error when initialized by the
 Enterprise Bean container, that singleton instance will be destroyed.
@@ -313,8 +305,7 @@ singleton instance is used throughout the application lifecycle.
 
 [[GIPXL]][[the-architecture-of-the-counter-example]]
 
-The Architecture of the counter Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The Architecture of the counter Example
 
 The `counter` example consists of a singleton session bean,
 `CounterBean`, and a JavaServer Faces Facelets web front end.
@@ -444,8 +435,7 @@ managed bean. Here is the content of `index.xhtml`:
 
 [[GIPVL]][[running-the-counter-example]]
 
-Running the counter Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the counter Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `counter` example.
@@ -459,8 +449,7 @@ The following topics are addressed here:
 
 [[GIPXT]][[to-run-the-counter-example-using-netbeans-ide]]
 
-To Run the counter Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the counter Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -483,8 +472,7 @@ displays the number of hits.
 
 [[GIPZW]][[to-run-the-counter-example-using-maven]]
 
-To Run the counter Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the counter Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

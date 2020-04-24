@@ -1,10 +1,6 @@
-# Using Jakarta Bean Validation Constraints
-
-
 [[GIRCZ]][[using-bean-validation-constraints]]
 
-Using Jakarta Bean Validation Constraints
-------------------------------------------
+==== Using Jakarta Bean Validation Constraints
 
 The Jakarta Bean Validation model is supported by constraints in the form of
 annotations placed on a field, method, or class of a JavaBeans
@@ -246,7 +242,7 @@ user-defined or custom constraint needs a validation implementation. In
 the preceding example, the `@USPhoneNumber` custom constraint needs an
 implementation class.
 
-== Repeating Annotations
+==== Repeating Annotations
 
 [[repeating_annotations]]
 

@@ -1,9 +1,6 @@
-= The simplegreeting CDI Example
-
 [[GJBJU]][[the-simplegreeting-cdi-example]]
 
-The simplegreeting CDI Example
-------------------------------
+==== The simplegreeting CDI Example
 
 The `simplegreeting` example illustrates some of the most basic features
 of CDI: scopes, qualifiers, bean injection, and accessing a managed bean
@@ -20,8 +17,7 @@ The following topics are addressed here:
 
 [[GJCQS]][[the-simplegreeting-source-files]]
 
-The simplegreeting Source Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The simplegreeting Source Files
 
 The four source files for the `simplegreeting` example are:
 
@@ -40,8 +36,7 @@ directory.
 
 [[GJDOJ]][[the-facelets-template-and-page]]
 
-The Facelets Template and Page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The Facelets Template and Page
 
 To use the managed bean in a simple Facelets application:
 
@@ -141,8 +136,7 @@ tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.cs
 
 [[GJCYM]][[running-the-simplegreeting-example]]
 
-Running the simplegreeting Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the simplegreeting Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `simplegreeting` application.
@@ -157,8 +151,7 @@ Using Maven]
 
 [[GJCXP]][[to-build-package-and-run-the-simplegreeting-example-using-netbeans-ide]]
 
-To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -194,8 +187,7 @@ deploys it to GlassFish Server.
 
 [[GJCZT]][[to-build-package-and-deploy-the-simplegreeting-example-using-maven]]
 
-To Build, Package, and Deploy the simplegreeting Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the simplegreeting Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -219,8 +211,7 @@ deploys it to GlassFish Server.
 
 [[GJCZE]][[to-run-the-simplegreeting-example]]
 
-To Run the simplegreeting Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the simplegreeting Example
 
 1.  In a web browser, enter the following URL:
 +

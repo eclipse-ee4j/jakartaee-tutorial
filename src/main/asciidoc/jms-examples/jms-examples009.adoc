@@ -1,10 +1,6 @@
-= Using an Entity to Join Messages from Two MDBs
-
-
 [[BNCHF]][[using-an-entity-to-join-messages-from-two-mdbs]]
 
-Using an Entity to Join Messages from Two MDBs
-----------------------------------------------
+==== Using an Entity to Join Messages from Two MDBs
 
 This section explains how to write, compile, package, deploy, and run an
 application that uses the Jakarta Messaging with an entity. The application uses
@@ -27,8 +23,7 @@ Example]
 
 [[BNCHG]][[overview-of-the-clientmdbentity-example-application]]
 
-Overview of the clientmdbentity Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Overview of the clientmdbentity Example Application
 
 This application simulates, in a simplified way, the work flow of a
 company's human resources (HR) department when it processes a new hire.
@@ -95,14 +90,13 @@ entity.
 
 .*Figure 49-5 An Enterprise Bean Application: Client to Message-Driven Beans to Entity*
 
-image:img/jakartaeett_dt_038.png[
+image:jakartaeett_dt_038.png[
 "Diagram of application showing an application client, two message-driven
 beans, and an entity, as well as the associated topic and queue"]
 
 [[BNCHI]][[writing-the-application-components-for-the-clientmdbentity-example]]
 
-Writing the Application Components for the clientmdbentity Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Writing the Application Components for the clientmdbentity Example
 
 Writing the components of the application involves coding the
 application client, the message-driven beans, and the entity class.
@@ -116,8 +110,7 @@ Example]
 
 [[BNCHJ]][[coding-the-application-client-humanresourceclient.java]]
 
-Coding the Application Client: HumanResourceClient.java
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Coding the Application Client: HumanResourceClient.java
 
 The application client, `HumanResourceClient.java`, found under
 `clientmdbentity-app-client`, performs the following steps:
@@ -143,8 +136,7 @@ listener notifies the `main` method, which then exits.
 
 [[BNCHK]][[coding-the-message-driven-beans-for-the-clientmdbentity-example]]
 
-Coding the Message-Driven Beans for the clientmdbentity Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Coding the Message-Driven Beans for the clientmdbentity Example
 
 This example uses two message-driven beans, both under
 `clientmdbentity-ejb`:
@@ -176,8 +168,7 @@ message that contains the information stored in the entity.
 
 [[BNCHL]][[coding-the-entity-class-for-the-clientmdbentity-example]]
 
-Coding the Entity Class for the clientmdbentity Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Coding the Entity Class for the clientmdbentity Example
 
 The `SetupOffice.java` class, also under `clientmdbentity-ejb`, is an
 entity class. The entity and the message-driven beans are packaged
@@ -233,8 +224,7 @@ settings:
 
 [[CHDEEDJH]][[running-the-clientmdbentity-example]]
 
-Running the clientmdbentity Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the clientmdbentity Example
 
 You can use either NetBeans IDE or Maven to build, deploy, and run the
 `clientmdbentity` example.
@@ -253,8 +243,7 @@ The following topics are addressed here:
 
 [[CHDIJDEE]][[to-run-clientmdbentity-using-netbeans-ide]]
 
-To Run clientmdbentity Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run clientmdbentity Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -290,8 +279,7 @@ runs the application client.
 
 [[CHDICHGH]][[to-run-clientmdbentity-using-maven]]
 
-To Run clientmdbentity Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run clientmdbentity Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -326,8 +314,7 @@ and runs the application client.
 
 [[CHDCDEEF]][[viewing-the-application-output]]
 
-Viewing the Application Output
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Viewing the Application Output
 
 The output in the NetBeans IDE output window or in the terminal window
 looks something like this (preceded by application client container

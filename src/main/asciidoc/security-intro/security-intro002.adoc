@@ -1,9 +1,6 @@
-= Security Mechanisms
-
 [[BNBWY]][[security-mechanisms]]
 
-Security Mechanisms
--------------------
+==== Security Mechanisms
 
 The characteristics of an application should be considered when deciding
 the layer and type of security to be provided for applications. The
@@ -19,8 +16,7 @@ The following topics are addressed here:
 
 [[BNBWZ]][[java-se-security-mechanisms]]
 
-Java SE Security Mechanisms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java SE Security Mechanisms
 
 Java SE provides support for a variety of security features and
 mechanisms.
@@ -63,8 +59,7 @@ For more information on Java SE security, visit
 
 [[BNBXA]][[jakarta-ee-security-mechanisms]]
 
-Jakarta EE Security Mechanisms
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Jakarta EE Security Mechanisms
 
 Jakarta EE security services are provided by the component container and
 can be implemented by using declarative or programmatic techniques (see
@@ -76,8 +71,7 @@ separate from the security mechanisms of the operating system.
 
 [[BNBXB]][[application-layer-security]]
 
-Application-Layer Security
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Application-Layer Security
 
 In Jakarta EE, component containers are responsible for providing
 application-layer security, security services for a specific application
@@ -117,8 +111,7 @@ link:security-intro003.html#BNBXE[Securing Containers].
 
 [[BNBXC]][[transport-layer-security]]
 
-Transport-Layer Security
-^^^^^^^^^^^^^^^^^^^^^^^^
+====== Transport-Layer Security
 
 Transport-layer security is provided by the transport mechanisms used to
 transmit information over the wire between clients and providers; thus,
@@ -170,8 +163,7 @@ SSL].
 
 [[BNBXD]][[message-layer-security]]
 
-Message-Layer Security
-^^^^^^^^^^^^^^^^^^^^^^
+====== Message-Layer Security
 
 In message-layer security, security information is contained within the
 SOAP message and/or SOAP message attachment, which allows security

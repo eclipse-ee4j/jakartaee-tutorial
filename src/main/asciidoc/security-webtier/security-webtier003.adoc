@@ -1,9 +1,6 @@
-= Using Programmatic Security with Web Applications
-
 [[GJIIE]][[using-programmatic-security-with-web-applications]]
 
-Using Programmatic Security with Web Applications
--------------------------------------------------
+==== Using Programmatic Security with Web Applications
 
 Programmatic security is used by security-aware applications when
 declarative security alone is not sufficient to express the security
@@ -19,8 +16,7 @@ The following topics are addressed here:
 
 [[GIRCJ]][[authenticating-users-programmatically]]
 
-Authenticating Users Programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Authenticating Users Programmatically
 
 You can use the `SecurityContext` and `HttpServletRequest` interfaces to
 authenticate users for a web application programmatically.
@@ -145,8 +141,7 @@ public class TestServlet extends HttpServlet {
 
 [[BNCBA]][[checking-caller-identity-programmatically]]
 
-Checking Caller Identity Programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Checking Caller Identity Programmatically
 
 In general, the container enforces security management in a
 manner that is transparent to the web component. Use the security APIs
@@ -209,8 +204,7 @@ information obtained using these APIs.
 
 
 [[testing-access-to-a-resource-programmatically]]
-Testing Access to a Resource Programmatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Testing Access to a Resource Programmatically
 
 The `SecurityContext` interface, as specified in the Jakarta Security API
 specification, defines the following method for programmatically testing
@@ -248,8 +242,7 @@ the caller is in role "foo".
 
 [[GJJLQ]][[example-code-for-programmatic-security]]
 
-Example Code for Programmatic Security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Example Code for Programmatic Security
 
 The following code demonstrates the use of programmatic security for the
 purposes of programmatic login. This servlet does the following.
@@ -330,8 +323,7 @@ public class LoginServlet extends HttpServlet {
 
 [[BNCBB]][[declaring-and-linking-role-references]]
 
-Declaring and Linking Role References
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Declaring and Linking Role References
 
 A security role reference is a mapping between the name of a role that
 is called from a web component using `isUserInRole(String role)` and the

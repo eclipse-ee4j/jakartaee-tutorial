@@ -1,10 +1,6 @@
-= Creating a Simple Web Service and Clients with JAX-WS
-
-
 [[BNAYN]][[creating-a-simple-web-service-and-clients-with-jax-ws]]
 
-Creating a Simple Web Service and Clients with JAX-WS
------------------------------------------------------
+==== Creating a Simple Web Service and Clients with JAX-WS
 
 This section shows how to build and deploy a simple web service and two
 clients: an application client and a web client. The source code for the
@@ -19,7 +15,7 @@ communication between a web service and a client.
 [[BNAYO]]
 
 .*Figure 31-1 Communication between a JAX-WS Web Service and a Client*
-image:img/jakartaeett_dt_019.png[
+image:jakartaeett_dt_019.png[
 "Diagram showing a client and web service communicating through a SOAP
 message."]
 
@@ -40,8 +36,7 @@ available in the endpoint implementation class.
 
 [[sthref133]][[basic-steps-for-creating-a-web-service-and-client]]
 
-Basic Steps for Creating a Web Service and Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Basic Steps for Creating a Web Service and Client
 
 The basic steps for creating a web service and client are as follows.
 
@@ -64,8 +59,7 @@ The sections that follow cover these steps in greater detail.
 
 [[BNAYP]][[requirements-of-a-jax-ws-endpoint]]
 
-Requirements of a JAX-WS Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Requirements of a JAX-WS Endpoint
 
 JAX-WS endpoints must follow these requirements.
 
@@ -99,8 +93,7 @@ is removed from operation.
 
 [[BNAYQ]][[coding-the-service-endpoint-implementation-class]]
 
-Coding the Service Endpoint Implementation Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Coding the Service Endpoint Implementation Class
 
 In this example, the implementation class, `Hello`, is annotated as a
 web service endpoint using the `@WebService` annotation. `Hello`
@@ -133,8 +126,7 @@ public class Hello {
 
 [[BNAYR]][[building-packaging-and-deploying-the-service]]
 
-Building, Packaging, and Deploying the Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Building, Packaging, and Deploying the Service
 
 You can use either NetBeans IDE or Maven to build, package, and deploy
 the `helloservice-war` application.
@@ -147,8 +139,7 @@ IDE]
 
 [[BNAYS]][[to-build-package-and-deploy-the-service-using-netbeans-ide]]
 
-To Build, Package, and Deploy the Service Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the Service Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -182,8 +173,7 @@ service.
 
 [[BNAYT]][[to-build-package-and-deploy-the-service-using-maven]]
 
-To Build, Package, and Deploy the Service Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the Service Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -215,8 +205,7 @@ service.
 
 [[GKAJL]][[testing-the-methods-of-a-web-service-endpoint]]
 
-Testing the Methods of a Web Service Endpoint
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Testing the Methods of a Web Service Endpoint
 
 GlassFish Server allows you to test the methods of a web service
 endpoint.
@@ -227,8 +216,7 @@ The following topics are addressed here:
 
 [[BNAYW]][[to-test-the-service-without-a-client]]
 
-To Test the Service without a Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Test the Service without a Client
 
 To test the `sayHello` method of `HelloService`, follow these steps.
 
@@ -249,8 +237,7 @@ Under Method returned, you'll see the response from the endpoint.
 
 [[BNAYX]][[a-simple-jax-ws-application-client]]
 
-A Simple JAX-WS Application Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== A Simple JAX-WS Application Client
 
 The `HelloAppClient` class is a stand-alone application client that
 accesses the `sayHello` method of `HelloService`. This call is made
@@ -265,8 +252,7 @@ The following topics are addressed here:
 
 [[BNAYY]][[coding-the-application-client]]
 
-Coding the Application Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Coding the Application Client
 
 When invoking the remote methods on the port, the client performs these
 steps.
@@ -336,8 +322,7 @@ public class HelloAppClient {
 
 [[BNAYZ]][[running-the-application-client]]
 
-Running the Application Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Running the Application Client
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `hello-appclient` application. To build the client, you must
@@ -404,8 +389,7 @@ Hello, world.
 
 [[GJYGB]][[a-simple-jax-ws-web-client]]
 
-A Simple JAX-WS Web Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== A Simple JAX-WS Web Client
 
 `HelloServlet` is a servlet that, like the Java client, calls the
 `sayHello` method of the web service. Like the application client, it
@@ -418,8 +402,7 @@ The following topics are addressed here:
 
 [[GJYFL]][[coding-the-servlet]]
 
-Coding the Servlet
-^^^^^^^^^^^^^^^^^^
+====== Coding the Servlet
 
 To invoke the method on the port, the client performs these steps.
 
@@ -525,8 +508,7 @@ public class HelloServlet extends HttpServlet {
 
 [[GJYGE]][[running-the-web-client]]
 
-Running the Web Client
-^^^^^^^^^^^^^^^^^^^^^^
+====== Running the Web Client
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `hello-webclient` application. To build the client, you must

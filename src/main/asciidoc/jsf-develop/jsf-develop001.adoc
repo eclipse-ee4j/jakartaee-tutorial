@@ -1,10 +1,6 @@
-= Managed Beans in Jakarta Server Faces Technology
-
-
 [[BNAQM]][[managed-beans-in-javaserver-faces-technology]]
 
-Managed Beans in Jakarta Server Faces Technology
-------------------------------------------------
+==== Managed Beans in Jakarta Server Faces Technology
 
 A typical Jakarta Server Faces application includes one or more managed
 beans, each of which can be associated with the components used in a
@@ -37,8 +33,7 @@ The following topics are addressed here:
 
 [[BNAQN]][[creating-a-managed-bean]]
 
-Creating a Managed Bean
-~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Managed Bean
 
 A managed bean is created with a constructor with no arguments, a set of
 properties, and a set of methods that perform functions for a component.
@@ -95,8 +90,7 @@ link:jsf-develop002.html#BNATY[Writing Bean Properties].
 
 [[BNAQP]][[using-the-el-to-reference-managed-beans]]
 
-Using the EL to Reference Managed Beans
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using the EL to Reference Managed Beans
 
 To bind component values and objects to managed bean properties or to
 reference managed bean methods from component tags, page authors use the

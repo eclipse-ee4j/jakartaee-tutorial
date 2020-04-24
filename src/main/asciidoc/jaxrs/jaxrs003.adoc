@@ -1,10 +1,6 @@
-= Example Applications for Jakarta REST
-
-
 [[GIPZZ]][[example-applications-for-jax-rs]]
 
-Example Applications for Jakarta REST
--------------------------------
+==== Example Applications for Jakarta REST
 
 This section provides an introduction to creating, deploying, and
 running your own Jakarta REST applications. This section demonstrates the
@@ -19,8 +15,7 @@ The following topics are addressed here:
 
 [[GIPYZ]][[creating-a-simple-restful-web-service]]
 
-Creating a Simple RESTful Web Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Simple RESTful Web Service
 
 This section explains how to use NetBeans IDE to create a RESTful web
 service using a Maven archetype. The archetype generates a skeleton for
@@ -36,8 +31,7 @@ The following topics are addressed here:
 
 [[GIQAA]][[to-create-a-restful-web-service-using-netbeans-ide]]
 
-To Create a RESTful Web Service Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Create a RESTful Web Service Using NetBeans IDE
 
 1.  Ensure you have installed the tutorial archetypes as described in
 link:usingexamples/usingexamples007.html#CHDJGCCA[Installing the Tutorial Archetypes].
@@ -104,8 +98,7 @@ storage and relational databases.
 
 [[GJVBC]][[the-rsvp-example-application]]
 
-The rsvp Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The rsvp Example Application
 
 The `rsvp` example application, located in the
 `_tut-install_` `/examples/jaxrs/rsvp/` directory, allows invitees to an
@@ -120,8 +113,7 @@ The following topics are addressed here:
 
 [[GJVAW]][[components-of-the-rsvp-example-application]]
 
-Components of the rsvp Example Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Components of the rsvp Example Application
 
 The three enterprise beans in the `rsvp` example application are
 `rsvp.ejb.ConfigBean`, `rsvp.ejb.StatusBean`, and
@@ -214,8 +206,7 @@ Application"].
 
 [[GKCCA]][[running-the-rsvp-example-application]]
 
-Running the rsvp Example Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Running the rsvp Example Application
 
 Both NetBeans IDE and Maven can be used to deploy and run the `rsvp`
 example application.
@@ -309,8 +300,7 @@ invitees and their response statuses.
 
 [[GIRCI]][[real-world-examples]]
 
-Real-World Examples
-~~~~~~~~~~~~~~~~~~~
+===== Real-World Examples
 
 Most blog sites use RESTful web services. These sites involve
 downloading XML files, in RSS or Atom format, that contain lists of

@@ -1,10 +1,6 @@
-= Using Faces Flows
-
-
 [[CHDGFCJF]][[using-faces-flows]]
 
-Using Faces Flows
------------------
+==== Using Faces Flows
 
 The Faces Flows feature of Jakarta Server Faces technology allows you to
 create a set of pages with a scope, `FlowScoped`, that is greater than
@@ -54,7 +50,7 @@ interact.
 [[CHDIHDCD]]
 
 .*Figure 16-1 Two Faces Flows and Their Interactions*
-image:img/jakartaeett_dt_017.png[
+image:jakartaeett_dt_017.png[
 "This figure shows two Faces flows, Flow A and Flow B. Each has a start
 node and two additional pages. Each has an associated managed bean. Each
 defines a return node, and each defines two parameters to be passed to
@@ -70,8 +66,7 @@ associated managed bean; the beans are `Flow_a_Bean` and `Flow_b_Bean`.
 
 [[sthref81]][[packaging-flows-in-an-application]]
 
-Packaging Flows in an Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Packaging Flows in an Application
 
 Typically, you package flows in a web application using a directory
 structure that modularizes the flows. In the `src/main/webapp` directory
@@ -108,8 +103,7 @@ while `flow-b` is defined by the configuration file `flow-b-flow.xml`.
 
 [[sthref82]][[the-simplest-possible-flow-the-simple-flow-example-application]]
 
-The Simplest Possible Flow: The simple-flow Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The Simplest Possible Flow: The simple-flow Example Application
 
 The `simple-flow` example application demonstrates the most basic
 building blocks of a Faces Flows application and illustrates some of the
@@ -203,8 +197,7 @@ need a managed bean.
 
 [[sthref83]][[to-build-package-and-deploy-the-simple-flow-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the simple-flow Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the simple-flow Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -227,8 +220,7 @@ deploys the application to the server.
 
 [[sthref84]][[to-build-package-and-deploy-the-simple-flow-example-using-maven]]
 
-To Build, Package, and Deploy the simple-flow Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the simple-flow Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -252,8 +244,7 @@ deploys the application to the server.
 
 [[sthref85]][[to-run-the-simple-flow-example]]
 
-To Run the simple-flow Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the simple-flow Example
 
 1.  Enter the following URL in your web browser:
 +
@@ -272,8 +263,7 @@ page.
 
 [[sthref86]][[the-checkout-module-example-application]]
 
-The checkout-module Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The checkout-module Example Application
 
 The `checkout-module` example application is considerably more complex
 than `simple-flow`. It shows how you might use the Faces Flows feature
@@ -332,8 +322,7 @@ the `index.html` page.
 
 [[sthref87]][[the-facelets-pages-for-the-checkout-module-example]]
 
-The Facelets Pages for the checkout-module Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Facelets Pages for the checkout-module Example
 
 The starting page for the example, `index.xhtml`, summarizes the
 contents of a hypothetical shopping cart. It allows the user to click
@@ -409,8 +398,7 @@ are defined in the configuration file `joinFlow-flow.xml`.
 
 [[sthref88]][[using-a-configuration-file-to-configure-a-flow]]
 
-Using a Configuration File to Configure a Flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Using a Configuration File to Configure a Flow
 
 If you use an application configuration resource file to configure a
 flow, it must be named flowName`-flow.xml`. In this example, the join
@@ -485,8 +473,7 @@ strings.
 
 [[sthref89]][[using-a-java-class-to-configure-a-flow]]
 
-Using a Java Class to Configure a Flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Using a Java Class to Configure a Flow
 
 If you use a Java class to configure a flow, it must have the name of
 the flow. The class for the checkout flow is called `CheckoutFlow.java`.
@@ -568,8 +555,7 @@ the result.
 
 [[sthref90]][[the-flow-scoped-managed-beans]]
 
-The Flow-Scoped Managed Beans
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Flow-Scoped Managed Beans
 
 Each of the two flows has a managed bean that defines properties for the
 pages within the flow. For example, the `CheckoutFlowBean` defines
@@ -591,8 +577,7 @@ For the `JoinFlowBean`, the return node is the `exithome.xhtml` page.
 
 [[sthref91]][[to-build-package-and-deploy-the-checkout-module-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the checkout-module Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the checkout-module Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -615,8 +600,7 @@ then deploys the application to the server.
 
 [[sthref92]][[to-build-package-and-deploy-the-checkout-module-example-using-maven]]
 
-To Build, Package, and Deploy the checkout-module Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the checkout-module Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -640,8 +624,7 @@ then deploys the application to the server.
 
 [[sthref93]][[to-run-the-checkout-module-example]]
 
-To Run the checkout-module Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the checkout-module Example
 
 1.  Enter the following URL in your web browser:
 +

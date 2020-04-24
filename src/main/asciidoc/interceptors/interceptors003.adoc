@@ -1,10 +1,6 @@
-The interceptor Example Application
-===================================
-
 [[GKECI]][[the-interceptor-example-application]]
 
-The interceptor Example Application
------------------------------------
+==== The interceptor Example Application
 
 The `interceptor` example demonstrates how to use an interceptor class,
 containing an `@AroundInvoke` interceptor method, with a stateless
@@ -61,8 +57,7 @@ displays the final name.
 
 [[sthref260]][[running-the-interceptor-example]]
 
-Running the interceptor Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the interceptor Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `interceptor` example.
@@ -74,8 +69,7 @@ The following topics are addressed here:
 
 [[GKEDF]][[to-run-the-interceptor-example-using-netbeans-ide]]
 
-To Run the interceptor Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the interceptor Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -105,8 +99,7 @@ defined in the `HelloInterceptor` class.
 
 [[GKECT]][[to-run-the-interceptor-example-using-maven]]
 
-To Run the interceptor Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the interceptor Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

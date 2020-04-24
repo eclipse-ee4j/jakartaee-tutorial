@@ -1,10 +1,6 @@
-Using Encoders and Decoders
-===========================
-
 [[BABGADFG]][[using-encoders-and-decoders]]
 
-Using Encoders and Decoders
----------------------------
+==== Using Encoders and Decoders
 
 Jakarta WebSocket provides support for converting between
 WebSocket messages and custom Java types using encoders and decoders. An
@@ -27,8 +23,7 @@ into Java Objects]
 
 [[CIHBIGBI]][[implementing-encoders-to-convert-java-objects-into-websocket-messages]]
 
-Implementing Encoders to Convert Java Objects into WebSocket Messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Implementing Encoders to Convert Java Objects into WebSocket Messages
 
 The procedure to implement and use encoders in endpoints follows.
 
@@ -96,8 +91,7 @@ instance at any given time.
 
 [[CIHGDJFG]][[implementing-decoders-to-convert-websocket-messages-into-java-objects]]
 
-Implementing Decoders to Convert WebSocket Messages into Java Objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Implementing Decoders to Convert WebSocket Messages into Java Objects
 
 The procedure to implement and use decoders in endpoints follows.
 

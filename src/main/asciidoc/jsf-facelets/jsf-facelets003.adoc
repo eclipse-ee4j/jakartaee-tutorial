@@ -1,10 +1,6 @@
-Developing a Simple Facelets Application: The guessnumber-jsf Example Application
-=================================================================================
-
 [[GIPOB]][[developing-a-simple-facelets-application-the-guessnumber-jsf-example-application]]
 
-Developing a Simple Facelets Application: The guessnumber-jsf Example Application
----------------------------------------------------------------------------------
+==== Developing a Simple Facelets Application: The guessnumber-jsf Example Application
 
 This section describes the general steps involved in developing a
 Jakarta Server Faces application. The following tasks are usually required:
@@ -23,8 +19,7 @@ The following topics are addressed here:
 
 [[GIQTE]][[creating-a-facelets-application]]
 
-Creating a Facelets Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Facelets Application
 
 The example used in this tutorial is the `guessnumber-jsf` application.
 The application presents you with a page that asks you to guess a number
@@ -37,8 +32,7 @@ tut-install`/examples/web/jsf/guessnumber-jsf/` directory.
 
 [[GIQQZ]][[developing-a-managed-bean]]
 
-Developing a Managed Bean
-^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Developing a Managed Bean
 
 In a typical Jakarta Server Faces application, each page of the application
 connects to a managed bean that serves as a backing bean. The backing
@@ -116,8 +110,7 @@ run the application.
 
 [[GJZPV]][[creating-facelets-views]]
 
-Creating Facelets Views
-^^^^^^^^^^^^^^^^^^^^^^^
+====== Creating Facelets Views
 
 To create a page or view, you add components to the pages, wire the
 components to backing bean values and properties, and register
@@ -242,8 +235,7 @@ for the Back button to send the user to the `greeting.xhtml` page.
 
 [[GJJKC]][[configuring-the-application]]
 
-Configuring the Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Configuring the Application
 
 Configuring a Jakarta Server Faces application involves mapping the Faces
 Servlet in the web deployment descriptor file, such as a `web.xml` file,
@@ -299,8 +291,7 @@ the user, the default project stage is `Production`.
 
 [[GIRGF]][[running-the-guessnumber-jsf-facelets-example]]
 
-Running the guessnumber-jsf Facelets Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the guessnumber-jsf Facelets Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `guessnumber-jsf` example.
@@ -315,8 +306,7 @@ Using Maven]
 
 [[GJQZL]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -338,8 +328,7 @@ GlassFish Server instance.
 
 [[GJQYU]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-maven]]
 
-To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -363,8 +352,7 @@ then deploys it to the server.
 
 [[GJQYX]][[to-run-the-guessnumber-jsf-example]]
 
-To Run the guessnumber-jsf Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the guessnumber-jsf Example
 
 1.  Open a web browser.
 2.  Enter the following URL in your web browser:

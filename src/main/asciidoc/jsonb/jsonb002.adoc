@@ -1,8 +1,5 @@
-= Overview of the JSON Binding API
-
 [[overview-of-the-json-binding-api]]
-Overview of the JSON Binding API
---------------------------------
+==== Overview of the JSON Binding API
 
 This section provides basic instructions for using the Jakarta JSON Binding client API. The instructions provide a
 basis for understanding the link:jsonb003.html[jsonbbasics Example Application].
@@ -18,8 +15,7 @@ The following topics are addressed here:
 
 
 [[creating-a-jasonb-instance]]
-Creating a jasonb Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a jasonb Instance
 
 A `jsonb` instance provides access to methods for binding objects to JSON.
 A single `jsonb` instance is required for most applications. A `jsonb` instance
@@ -33,8 +29,7 @@ Jsonb jsonb = JsonbBuilder.create();
 
 
 [[using-the-default-mapping]]
-Using the Default Mapping
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using the Default Mapping
 
 Jakarta JSON Binding provides default mappings for serializing and deserializing basic Java and Java SE types as well
 Java date and time classes. To use the default mappings and mapping behavior, create a josnb instance
@@ -59,8 +54,7 @@ person = jsonb.fromJson("{name:\"joe"\"}", Person.class);
 ----
 
 [[using-customizations]]
-Using Customizations
-~~~~~~~~~~~~~~~~~~~~
+===== Using Customizations
 Jakarta JSON Binding supports many ways to customize the default mapping behavior. For runtime
 customizations, a `JsonbConfig` configuration object is used when creating the `jsonbinstance`. The `JsonbConfig`
 class supports many configuration options and also includes advanced options for binding custom types. For
@@ -79,8 +73,7 @@ Jsonb jsonb = JsonbBuilder.create(config);
 ----
 
 [[using-annotations]]
-Using Annotations
-~~~~~~~~~~~~~~~~~
+===== Using Annotations
 Jakarta JSON Binding includes many annotations that can be used at compile time to customize the default mapping behavior.
 The following example uses the `@JsonbProperty` annotation to change the `name` field to `person-name` when
 the object is serialized to JSON.

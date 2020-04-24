@@ -1,10 +1,6 @@
-Overview of the Client API
-==========================
-
 [[BABBIHEJ]][[overview-of-the-client-api]]
 
-Overview of the Client API
---------------------------
+==== Overview of the Client API
 
 The Jakarta REST Client API provides a high-level API for accessing any REST
 resources, not just Jakarta REST services. The Client API is defined in the
@@ -20,8 +16,7 @@ The following topics are addressed here:
 
 [[CHDFCABB]][[creating-a-basic-client-request-using-the-client-api]]
 
-Creating a Basic Client Request Using the Client API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Basic Client Request Using the Client API
 
 The following steps are needed to access a REST resource using the
 Client API.
@@ -54,8 +49,7 @@ of the returned entity to `String`.
 
 [[CHDHBFHJ]][[obtaining-the-client-instance]]
 
-Obtaining the Client Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Obtaining the Client Instance
 
 The `Client` interface defines the actions and infrastructure a REST
 client requires to consume a RESTful web service. Instances of `Client`
@@ -83,8 +77,7 @@ your runtime environment.
 
 [[CHDDCICC]][[setting-the-client-target]]
 
-Setting the Client Target
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Setting the Client Target
 
 The target of a client, the REST resource at a particular URI, is
 represented by an instance of the `javax.ws.rs.client.WebTarget`
@@ -118,8 +111,7 @@ appending the current target URI with the path that was passed in.
 
 [[CHDDBFCG]][[setting-path-parameters-in-targets]]
 
-Setting Path Parameters in Targets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Setting Path Parameters in Targets
 
 Path parameters in client requests can be specified as URI template
 parameters, similar to the template parameters used when defining a
@@ -137,8 +129,7 @@ WebTarget myResource = client.target("http://example.com/webapi/read")
 
 [[CHDEFCDB]][[invoking-the-request]]
 
-Invoking the Request
-~~~~~~~~~~~~~~~~~~~~
+===== Invoking the Request
 
 After setting and applying any configuration options to the target, call
 one of the `WebTarget.request` methods to begin creating the request.

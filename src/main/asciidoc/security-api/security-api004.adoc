@@ -1,9 +1,5 @@
-= Running the Built-In Database Identity Store Example
-
-
 [[running-the-built-in-database-identity-store-example]]
-Running the Built-In Database Identity Store Example
-----------------------------------------------------
+==== Running the Built-In Database Identity Store Example
 The example described in this section demonstrates how to use the built-in database
 identity store for credential validation.
 
@@ -13,8 +9,7 @@ Topics include:
 * link:#running-the-built-in-db-id-store-example[Running the built-in-db-identity-store Example]
 
 [[overview-of-the-built-in-database-identity-store-example]]
-Overview of the Built-In Database Identity Store Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Overview of the Built-In Database Identity Store Example
 Jakarta Security mandates that a Jakarta EE container MUST support a built-in `IdentityStore`
 backed by a database. To support this mandatory requirement, `DatabaseIdentityStore`
 is bundled with GlassFish.
@@ -63,8 +58,7 @@ Content-Type: text/html
 
 
 [[define-the-users-and-groups-in-the-identity-store]]
-Define the Users and Groups in the Identity Store
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Define the Users and Groups in the Identity Store
 
 The following table shows the users, passwords, and groups used in this example.
 
@@ -131,8 +125,7 @@ public class DatabaseSetup {
 
 
 [[map-the-databaseidentitystore-to-the-default-data-source]]
-Map the DatabaseIdentityStore to the Default Data source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Map the DatabaseIdentityStore to the Default Data source
 Use the `@DatabaseIdentityStoreDefinition` annotation to map the built-in `DatabaseIdentityStore`
 to the `DefaultDataSource` in
 the `ApplicationConfig.java` file. This example also demonstrates the use of the
@@ -164,8 +157,7 @@ public class ApplicationConfig {
 }
 ----
 [[specify-the-authentication-mechanism]]
-Specify the Authentication Mechanism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Specify the Authentication Mechanism
 
 In this application, credentials are validated using the BASIC authentication mechanism.
 Specify the `@BasicAuthenticationMechanismDefinition` annotation in the `ApplicationConfig.java`
@@ -185,8 +177,7 @@ the credential from the request.
 ----
 
 [[declare-roles-in-the-servlet-container]]
-Declare Roles in the Servlet Container
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Declare Roles in the Servlet Container
 When a request is made to the application, the roles the user is in are returned
 as part of the response. Note that the container needs to be made aware of the
 supported roles, which are defined using the `@DeclareRoles({ "foo", "bar", "kaz" })`
@@ -224,8 +215,7 @@ not need to bundle web.xml with the application to provide mapping between
 roles and groups.
 
 [[running-the-built-in-db-identity-store-example]]
-Running the built-in-db-identity-store Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the built-in-db-identity-store Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `built-in-db-identity-store` application
 as described in the following topics:
@@ -236,8 +226,7 @@ as described in the following topics:
 
 
 [[to-build-package-and-deploy-the-built-in-db-identity-store-example-using-netbeans-ide]]
-To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE
 
 1. If you have not already done so, start the default database. This is necessary because
 we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
@@ -264,8 +253,7 @@ GlassFish Server instance.
 
 
 [[to-build-package-and-deploy-the-built-in-db-identity-store-example-using-using-maven]]
-To Build, Package, and Deploy the built-in-db-identity-store Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the built-in-db-identity-store Example Using Maven
 
 1. If you have not already done so, start the default database. This is necessary because
 we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
@@ -293,8 +281,7 @@ This command builds and packages the application into a WAR file,
 deploys the WAR file.
 
 [[to-run-the-built-in-db-identity-store-example]]
-To Run the built-in-db-identity-store Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the built-in-db-identity-store Example
 
 In this example, use the credentials of user Joe to make a request and
 to validate the response according to the credentials/roles defined in

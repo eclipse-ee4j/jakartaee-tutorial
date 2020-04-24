@@ -1,10 +1,6 @@
-= Entities
-
-
 [[BNBQA]][[entities]]
 
-Entities
---------
+==== Entities
 
 An entity is a lightweight persistence domain object. Typically, an
 entity represents a table in a relational database, and each entity
@@ -19,8 +15,7 @@ relationships to the relational data in the underlying data store.
 
 [[BNBQB]][[requirements-for-entity-classes]]
 
-Requirements for Entity Classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Requirements for Entity Classes
 
 An entity class must follow these requirements.
 
@@ -42,8 +37,7 @@ business methods.
 
 [[BNBQC]][[persistent-fields-and-properties-in-entity-classes]]
 
-Persistent Fields and Properties in Entity Classes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Persistent Fields and Properties in Entity Classes
 
 The persistent state of an entity can be accessed through either the
 entity's instance variables or properties. The fields or properties must
@@ -90,8 +84,7 @@ JavaBeans-style properties, the entity uses persistent properties.
 
 [[BNBQD]][[persistent-fields]]
 
-Persistent Fields
-^^^^^^^^^^^^^^^^^
+====== Persistent Fields
 
 If the entity class uses persistent fields, the Persistence runtime
 accesses entity-class instance variables directly. All fields not
@@ -101,8 +94,7 @@ mapping annotations must be applied to the instance variables.
 
 [[BNBQE]][[persistent-properties]]
 
-Persistent Properties
-^^^^^^^^^^^^^^^^^^^^^
+====== Persistent Properties
 
 If the entity uses persistent properties, the entity must follow the
 method conventions of JavaBeans components. JavaBeans-style properties
@@ -131,8 +123,7 @@ to fields or properties annotated `@Transient` or marked `transient`.
 
 [[GIQVN]][[using-collections-in-entity-fields-and-properties]]
 
-Using Collections in Entity Fields and Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Using Collections in Entity Fields and Properties
 
 Collection-valued persistent fields and properties must use the
 supported Java collection interfaces regardless of whether the entity
@@ -245,8 +236,7 @@ annotations must be set to the type of the `Map` value.
 
 [[GKAHQ]][[validating-persistent-fields-and-properties]]
 
-Validating Persistent Fields and Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Validating Persistent Fields and Properties
 
 Jakarta Bean Validation provides a
 mechanism for validating application data. Bean Validation is integrated
@@ -349,8 +339,7 @@ ensures that the value of `birthday` must be in the past.
 
 [[BNBQF]][[primary-keys-in-entities]]
 
-Primary Keys in Entities
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Primary Keys in Entities
 
 Each entity has a unique object identifier. A customer entity, for
 example, might be identified by a customer number. The unique
@@ -447,8 +436,7 @@ public final class LineItemKey implements Serializable {
 
 [[BNBQH]][[multiplicity-in-entity-relationships]]
 
-Multiplicity in Entity Relationships
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Multiplicity in Entity Relationships
 
 Multiplicities are of the following types.
 
@@ -481,8 +469,7 @@ persistent property or field.
 
 [[BNBQI]][[direction-in-entity-relationships]]
 
-Direction in Entity Relationships
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Direction in Entity Relationships
 
 The direction of a relationship can be either bidirectional or
 unidirectional. A bidirectional relationship has both an owning side and
@@ -492,8 +479,7 @@ makes updates to the relationship in the database.
 
 [[BNBQJ]][[bidirectional-relationships]]
 
-Bidirectional Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Bidirectional Relationships
 
 In a bidirectional relationship, each entity has a relationship field or
 property that refers to the other entity. Through the relationship field
@@ -520,8 +506,7 @@ owning side.
 
 [[BNBQK]][[unidirectional-relationships]]
 
-Unidirectional Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Unidirectional Relationships
 
 In a unidirectional relationship, only one entity has a relationship
 field or property that refers to the other. For example, `LineItem`
@@ -532,8 +517,7 @@ which `LineItem` instances refer to it.
 
 [[BNBQL]][[queries-and-relationship-direction]]
 
-Queries and Relationship Direction
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Queries and Relationship Direction
 
 Jakarta Persistence query language and Criteria API queries often navigate
 across relationships. The direction of a relationship determines whether
@@ -545,8 +529,7 @@ bidirectional relationship.
 
 [[BNBQM]][[cascade-operations-and-relationships]]
 
-Cascade Operations and Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Cascade Operations and Relationships
 
 Entities that use relationships often have dependencies on the existence
 of the other entity in the relationship. For example, a line item is
@@ -598,8 +581,7 @@ public Set<CustomerOrder> getOrders() { return orders; }
 
 [[GIQXY]][[orphan-removal-in-relationships]]
 
-Orphan Removal in Relationships
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Orphan Removal in Relationships
 
 When a target entity in a one-to-one or one-to-many relationship is
 removed from the relationship, it is often desirable to cascade the
@@ -625,8 +607,7 @@ public List<CustomerOrder> getOrders() { ... }
 
 [[GJIWZ]][[embeddable-classes-in-entities]]
 
-Embeddable Classes in Entities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Embeddable Classes in Entities
 
 Embeddable classes are used to represent the state of an entity but
 don't have a persistent identity of their own, unlike entity classes.

@@ -1,10 +1,6 @@
-Accessing the Web Context
-=========================
-
 [[BNAGL]][[accessing-the-web-context]]
 
-Accessing the Web Context
--------------------------
+==== Accessing the Web Context
 
 The context in which web components execute is an object that implements
 the `ServletContext` interface. You retrieve the web context by using

@@ -1,10 +1,6 @@
-= Loading JavaScript as a Resource
-
-
 [[GKAAM]][[loading-javascript-as-a-resource]]
 
-Loading JavaScript as a Resource
---------------------------------
+==== Loading JavaScript as a Resource
 
 The JavaScript resource file bundled with Jakarta Server Faces technology is
 named `jsf.js` and is available in the `javax.faces` library. This
@@ -28,8 +24,7 @@ topics:
 
 [[GKAFI]][[using-javascript-api-in-a-facelets-application]]
 
-Using JavaScript API in a Facelets Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using JavaScript API in a Facelets Application
 
 To use the JavaScript resource API directly in a web application, such
 as a Facelets page:
@@ -110,8 +105,7 @@ resource.
 
 [[GKIPX]][[using-the-resourcedependency-annotation-in-a-bean-class]]
 
-Using the @ResourceDependency Annotation in a Bean Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using the @ResourceDependency Annotation in a Bean Class
 
 Use the `javax.faces.application.ResourceDependency` annotation to cause
 the bean class to load the default `jsf.js` library.

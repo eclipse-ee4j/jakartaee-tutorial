@@ -1,10 +1,6 @@
-= The producermethods Example: Using a Producer Method to Choose a Bean Implementation
-
-
 [[GKHPY]][[the-producermethods-example-using-a-producer-method-to-choose-a-bean-implementation]]
 
-The producermethods Example: Using a Producer Method to Choose a Bean Implementation
-------------------------------------------------------------------------------------
+==== The producermethods Example: Using a Producer Method to Choose a Bean Implementation
 
 The `producermethods` example shows how to use a producer method to
 choose between two beans at runtime, as described in
@@ -24,8 +20,7 @@ The following topics are addressed here:
 
 [[GKHRO]][[components-of-the-producermethods-example]]
 
-Components of the producermethods Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Components of the producermethods Example
 
 The components of `producermethods` are very much like those for
 `encoder`, with some significant differences.
@@ -114,8 +109,7 @@ whose selected value is assigned to the property `coderBean.coderType`:
 
 [[GKHQE]][[running-the-producermethods-example]]
 
-Running the producermethods Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the producermethods Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `producermethods` application.
@@ -130,8 +124,7 @@ Using Maven]
 
 [[GKHPE]][[to-build-package-and-deploy-the-producermethods-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the producermethods Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the producermethods Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -154,8 +147,7 @@ deploys it to GlassFish Server.
 
 [[GKHPS]][[to-build-package-and-deploy-the-producermethods-example-using-maven]]
 
-To Build, Package, and Deploy the producermethods Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the producermethods Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -179,8 +171,7 @@ deploys it to GlassFish Server.
 
 [[GKHQG]][[to-run-the-producermethods-example]]
 
-To Run the producermethods Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the producermethods Example
 
 1.  In a web browser, enter the following URL:
 +

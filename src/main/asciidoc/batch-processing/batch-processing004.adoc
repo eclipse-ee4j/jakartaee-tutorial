@@ -1,10 +1,6 @@
-= Using the Job Specification Language
-
-
 [[BCGDDBBG]][[using-the-job-specification-language]]
 
-Using the Job Specification Language
-------------------------------------
+==== Using the Job Specification Language
 
 The Job Specification Language (JSL) enables you to define the steps in
 a job and their execution order using an XML file. The following example
@@ -60,8 +56,7 @@ child elements.
 
 [[sthref270]][[the-job-element]]
 
-The job Element
-~~~~~~~~~~~~~~~
+===== The job Element
 
 The `job` element is always the top-level element in a job definition
 file. Its main attributes are `id` and `restartable`. The `job` element
@@ -98,8 +93,7 @@ executes first.
 
 [[sthref271]][[the-step-element]]
 
-The step Element
-~~~~~~~~~~~~~~~~
+===== The step Element
 
 The `step` element can be a child of the `job` and `flow` elements. Its
 main attributes are `id` and `next`. The `step` element can contain the
@@ -178,8 +172,7 @@ The following is an example of a task step:
 
 [[sthref272]][[the-chunk-element]]
 
-The chunk Element
-^^^^^^^^^^^^^^^^^
+====== The chunk Element
 
 The `chunk` element is a child of the `step` element for chunk-oriented
 steps. The attributes of this element are listed in link:#BCGJCIEI[Table
@@ -305,8 +298,7 @@ attempts.
 
 [[sthref274]][[the-batchlet-element]]
 
-The batchlet Element
-^^^^^^^^^^^^^^^^^^^^
+====== The batchlet Element
 
 The `batchlet` element is a child of the `step` element for
 task-oriented steps. This element only has the `ref` attribute, which
@@ -330,8 +322,7 @@ This example defines a batch step and specifies its batch artifact.
 
 [[sthref275]][[the-partition-element]]
 
-The partition Element
-^^^^^^^^^^^^^^^^^^^^^
+====== The partition Element
 
 The `partition` element is a child of the `step` element. It indicates
 that a step is partitioned. Most partitioned steps are chunk steps where
@@ -471,8 +462,7 @@ interface.
 
 [[sthref276]][[the-flow-element]]
 
-The flow Element
-~~~~~~~~~~~~~~~~
+===== The flow Element
 
 The `flow` element can be a child of the `job`, `flow`, and `split`
 elements. Its attributes are `id` and `next`. Flows can transition to
@@ -507,8 +497,7 @@ last step does not have the `next` attribute. The flow transitions to
 
 [[sthref277]][[the-split-element]]
 
-The split Element
-~~~~~~~~~~~~~~~~~
+===== The split Element
 
 The `split` element can be a child of the `job` and `flow` elements. Its
 attributes are `id` and `next`. Splits can transition to splits, steps,
@@ -530,8 +519,7 @@ concurrently:
 
 [[sthref278]][[the-decision-element]]
 
-The decision Element
-~~~~~~~~~~~~~~~~~~~~
+===== The decision Element
 
 The `decision` element can be a child of the `job` and `flow` elements.
 Its attributes are `id` and `next`. Steps, flows, and splits can

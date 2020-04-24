@@ -1,10 +1,6 @@
-= Asynchronous Processing
-
-
 [[BEIGCFDF]][[asynchronous-processing]]
 
-Asynchronous Processing
------------------------
+==== Asynchronous Processing
 
 Web containers in application servers normally use a server thread per
 client request. Under heavy load conditions, containers need a large
@@ -33,8 +29,7 @@ with the request immediately to the container.
 
 [[sthref103]][[asynchronous-processing-in-servlets]]
 
-Asynchronous Processing in Servlets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Asynchronous Processing in Servlets
 
 Jakarta EE provides asynchronous processing support for servlets and
 filters. If a servlet or a filter reaches a potentially blocking
@@ -124,8 +119,7 @@ the blocking operation completes.
 
 [[sthref105]][[waiting-for-a-resource]]
 
-Waiting for a Resource
-~~~~~~~~~~~~~~~~~~~~~~
+===== Waiting for a Resource
 
 This section demonstrates how to use the functionality provided by the
 `AsyncContext` class for the following use case:

@@ -1,10 +1,6 @@
-The cart Example
-================
-
 [[BNBOD]][[the-cart-example]]
 
-The cart Example
-----------------
+==== The cart Example
 
 The `cart` example represents a shopping cart in an online bookstore and
 uses a stateful session bean to manage the operations of the shopping
@@ -27,8 +23,7 @@ The source code for this example is in the
 
 [[BNBOE]][[the-business-interface]]
 
-The Business Interface
-~~~~~~~~~~~~~~~~~~~~~~
+===== The Business Interface
 
 The `Cart` business interface is a plain Java interface that defines all
 the business methods implemented in the bean class. If the bean class
@@ -70,8 +65,7 @@ public interface Cart {
 
 [[BNBOF]][[session-bean-class]]
 
-Session Bean Class
-~~~~~~~~~~~~~~~~~~
+===== Session Bean Class
 
 The session bean class for this example is called `CartBean`. Like any
 stateful session bean, the `CartBean` class must meet the following
@@ -167,8 +161,7 @@ public class CartBean implements Cart {
 
 [[BNBOG]][[lifecycle-callback-methods]]
 
-Lifecycle Callback Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Lifecycle Callback Methods
 
 A method in the bean class may be declared as a lifecycle callback
 method by annotating the method with the following annotations.
@@ -192,8 +185,7 @@ Lifecycle callback methods must return `void` and have no parameters.
 
 [[BNBOH]][[business-methods]]
 
-Business Methods
-^^^^^^^^^^^^^^^^
+====== Business Methods
 
 The primary purpose of a session bean is to run business tasks for the
 client. The client invokes business methods on the object reference it
@@ -266,8 +258,7 @@ of the business method.
 
 [[BNBOI]][[the-remove-method]]
 
-The @Remove Method
-~~~~~~~~~~~~~~~~~~
+===== The @Remove Method
 
 Business methods annotated with `javax.ejb.Remove` in the stateful
 session bean class can be invoked by enterprise bean clients to remove
@@ -287,8 +278,7 @@ public void remove() {
 
 [[BNBOJ]][[helper-classes]]
 
-Helper Classes
-~~~~~~~~~~~~~~
+===== Helper Classes
 
 The `CartBean` session bean has two helper classes: `BookException` and
 `IdVerifier`. The `BookException` is thrown by the `removeBook` method,
@@ -301,8 +291,7 @@ a library JAR used by the application client and the EJB JAR.
 
 [[BNBOK]][[running-the-cart-example]]
 
-Running the cart Example
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the cart Example
 
 Now you are ready to compile the remote interface (`Cart.java`), the
 enterprise bean class (`CartBean.java`), the client class
@@ -319,8 +308,7 @@ The following topics are addressed here:
 
 [[BNBOL]][[to-run-the-cart-example-using-netbeans-ide]]
 
-To Run the cart Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the cart Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -357,8 +345,7 @@ Caught a BookException: "Gravity's Rainbow" not in cart.
 
 [[BNBON]][[to-run-the-cart-example-using-maven]]
 
-To Run the cart Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the cart Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

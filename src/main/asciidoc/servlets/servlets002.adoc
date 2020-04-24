@@ -1,10 +1,6 @@
-= Servlet Lifecycle
-
-
 [[BNAFI]][[servlet-lifecycle]]
 
-Servlet Lifecycle
------------------
+==== Servlet Lifecycle
 
 The lifecycle of a servlet is controlled by the container in which the
 servlet has been deployed. When a request is mapped to a servlet, the
@@ -26,8 +22,7 @@ link:servlets010.html#BNAGS[Finalizing a Servlet].
 
 [[BNAFJ]][[handling-servlet-lifecycle-events]]
 
-Handling Servlet Lifecycle Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Handling Servlet Lifecycle Events
 
 You can monitor and react to events in a servlet's lifecycle by defining
 listener objects whose methods get invoked when lifecycle events occur.
@@ -36,8 +31,7 @@ class.
 
 [[BNAFK]][[defining-the-listener-class]]
 
-Defining the Listener Class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Defining the Listener Class
 
 You define a listener class as an implementation of a listener
 interface. link:#BNAFL[Table 18-1] lists the events that can be
@@ -112,8 +106,7 @@ public class SimpleServletListener implements ServletContextListener,
 
 [[BNAFN]][[handling-servlet-errors]]
 
-Handling Servlet Errors
-~~~~~~~~~~~~~~~~~~~~~~~
+===== Handling Servlet Errors
 
 Any number of exceptions can occur when a servlet executes. When an
 exception occurs, the web container generates a default page containing

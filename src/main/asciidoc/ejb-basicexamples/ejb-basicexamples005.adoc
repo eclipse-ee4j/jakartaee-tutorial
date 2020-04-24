@@ -1,10 +1,6 @@
-= Using the Timer Service
-
-
 [[BNBOY]][[using-the-timer-service]]
 
-Using the Timer Service
------------------------
+==== Using the Timer Service
 
 Applications that model business work flows often rely on timed
 notifications. The timer service of the enterprise bean container
@@ -24,8 +20,7 @@ contains a method annotated with the `javax.ejb.Schedule` or
 
 [[GIQLK]][[creating-calendar-based-timer-expressions]]
 
-Creating Calendar-Based Timer Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating Calendar-Based Timer Expressions
 
 Timers can be set according to a calendar-based schedule, expressed
 using a syntax similar to the UNIX `cron` utility. Both programmatic and
@@ -93,8 +88,7 @@ of the month). For example: `dayOfMonth="–3"`.
 
 [[GIQMX]][[specifying-multiple-values-in-calendar-expressions]]
 
-Specifying Multiple Values in Calendar Expressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Specifying Multiple Values in Calendar Expressions
 
 You can specify multiple values in calendar expressions, as described in
 the following sections.
@@ -216,8 +210,7 @@ hour="12/2"
 
 [[GIQLT]][[programmatic-timers]]
 
-Programmatic Timers
-~~~~~~~~~~~~~~~~~~~
+===== Programmatic Timers
 
 When a programmatic timer expires (goes off), the container calls the
 method annotated `@Timeout` in the bean's implementation class. The
@@ -226,8 +219,7 @@ event.
 
 [[BNBOZ]][[the-timeout-method]]
 
-The @Timeout Method
-^^^^^^^^^^^^^^^^^^^
+====== The @Timeout Method
 
 Methods annotated `@Timeout` in the enterprise bean class must return
 `void` and optionally take a `javax.ejb.Timer` object as the only
@@ -243,8 +235,7 @@ public void timeout(Timer timer) {
 
 [[BNBPA]][[creating-programmatic-timers]]
 
-Creating Programmatic Timers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Creating Programmatic Timers
 
 To create a timer, the bean invokes one of the `create` methods of the
 `TimerService` interface. These methods allow single-action, interval,
@@ -331,8 +322,7 @@ hours, days, or longer durations.
 
 [[GIQMB]][[automatic-timers]]
 
-Automatic Timers
-~~~~~~~~~~~~~~~~
+===== Automatic Timers
 
 Automatic timers are created by the Enterprise Bean container when an enterprise
 bean that contains methods annotated with the `@Schedule` or
@@ -395,8 +385,7 @@ public void doPeriodicCleanup() { ... }
 
 [[BNBPB]][[canceling-and-saving-timers]]
 
-Canceling and Saving Timers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Canceling and Saving Timers
 
 Timers can be cancelled by the following events.
 
@@ -420,8 +409,7 @@ restriction.
 
 [[BNBPC]][[getting-timer-information]]
 
-Getting Timer Information
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Getting Timer Information
 
 In addition to defining the `cancel` and `getHandle` methods, the
 `Timer` interface defines methods for obtaining information about
@@ -445,8 +433,7 @@ collection of `Timer` objects.
 
 [[BNBPD]][[transactions-and-timers]]
 
-Transactions and Timers
-~~~~~~~~~~~~~~~~~~~~~~~
+===== Transactions and Timers
 
 An enterprise bean usually creates a timer within a transaction. If this
 transaction is rolled back, the timer creation also is rolled back.
@@ -463,8 +450,7 @@ method at least one more time.
 
 [[BNBPE]][[the-timersession-example]]
 
-The timersession Example
-~~~~~~~~~~~~~~~~~~~~~~~~
+===== The timersession Example
 
 The source code for this example is in the
 `_tut-install_/examples/ejb/timersession/src/main/java/` directory.
@@ -620,8 +606,7 @@ to virtual machine constraints.
 
 [[BNBPF]][[running-the-timersession-example]]
 
-Running the timersession Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the timersession Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `timersession` example.
@@ -635,8 +620,7 @@ Using Maven]
 
 [[GIQNI]][[to-run-the-timersession-example-using-netbeans-ide]]
 
-To Run the timersession Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the timersession Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -659,8 +643,7 @@ client.
 
 [[GIQNQ]][[to-build-package-and-deploy-the-timersession-example-using-maven]]
 
-To Build, Package, and Deploy the timersession Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the timersession Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -684,8 +667,7 @@ deploys this WAR file to your GlassFish Server instance.
 
 [[GIQOP]][[to-run-the-web-client]]
 
-To Run the Web Client
-^^^^^^^^^^^^^^^^^^^^^
+====== To Run the Web Client
 
 1.  Open a web browser to the following URL:
 +

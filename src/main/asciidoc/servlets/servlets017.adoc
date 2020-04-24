@@ -1,10 +1,6 @@
-The dukeetf Example Application
-===============================
-
 [[BEIFAIFF]][[the-dukeetf-example-application]]
 
-The dukeetf Example Application
--------------------------------
+==== The dukeetf Example Application
 
 The `dukeetf` example application, located in the
 tut-install`/examples/web/dukeetf/` directory, demonstrates how to use
@@ -19,8 +15,7 @@ The following topics are addressed here:
 
 [[CHDBBEDA]][[architecture-of-the-dukeetf-example-application]]
 
-Architecture of the dukeetf Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Architecture of the dukeetf Example Application
 
 The `dukeetf` example application consists of a servlet, an enterprise
 bean, and an HTML page.
@@ -47,8 +42,7 @@ the connection open until new data becomes available.
 
 [[sthref111]][[the-servlet]]
 
-The Servlet
-^^^^^^^^^^^
+====== The Servlet
 
 The `DukeETFServlet` class uses asynchronous processing:
 
@@ -130,8 +124,7 @@ public void doGet(HttpServletRequest request,
 
 [[sthref112]][[the-enterprise-bean]]
 
-The Enterprise Bean
-^^^^^^^^^^^^^^^^^^^
+====== The Enterprise Bean
 
 The `PriceVolumeBean` class is an enterprise bean that uses the timer
 service from the container to update the price and volume information
@@ -177,8 +170,7 @@ Bean Examples"] for more information on the timer service.
 
 [[sthref113]][[the-html-page]]
 
-The HTML Page
-^^^^^^^^^^^^^
+====== The HTML Page
 
 The HTML page consists of a table and some JavaScript code. The table
 contains two fields referenced from JavaScript code:
@@ -238,8 +230,7 @@ endpoint.
 
 [[CHDHBBBI]][[running-the-dukeetf-example-application]]
 
-Running the dukeetf Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the dukeetf Example Application
 
 This section describes how to run the `dukeetf` example application
 using NetBeans IDE and from the command line.
@@ -252,8 +243,7 @@ IDE]
 
 [[CHDCGCJD]][[to-run-the-dukeetf-example-application-using-netbeans-ide]]
 
-To Run the dukeetf Example Application Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the dukeetf Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -284,8 +274,7 @@ price and volume updates simultaneously.
 
 [[CHDHHAFG]][[to-run-the-dukeetf-example-application-using-maven]]
 
-To Run the dukeetf Example Application Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the dukeetf Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

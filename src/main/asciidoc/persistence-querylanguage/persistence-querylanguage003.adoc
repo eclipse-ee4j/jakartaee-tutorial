@@ -1,10 +1,6 @@
-Creating Queries Using the Jakarta Persistence Query Language
-=============================================================
-
 [[BNBRG]][[creating-queries-using-the-java-persistence-query-language]]
 
-Creating Queries Using the Jakarta Persistence Query Language
--------------------------------------------------------------
+==== Creating Queries Using the Jakarta Persistence Query Language
 
 The `EntityManager.createQuery` and `EntityManager.createNamedQuery`
 methods are used to query the datastore by using Jakarta Persistence query
@@ -53,8 +49,7 @@ customers = em.createNamedQuery("findAllCustomersWithName")
 
 [[BNBRH]][[named-parameters-in-queries]]
 
-Named Parameters in Queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Named Parameters in Queries
 
 Named parameters are query parameters that are prefixed with a colon
 (`:`). Named parameters in a query are bound to an argument by the
@@ -84,8 +79,7 @@ static queries.
 
 [[BNBRI]][[positional-parameters-in-queries]]
 
-Positional Parameters in Queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Positional Parameters in Queries
 
 You may use positional parameters instead of named parameters in
 queries. Positional parameters are prefixed with a question mark (`?`)

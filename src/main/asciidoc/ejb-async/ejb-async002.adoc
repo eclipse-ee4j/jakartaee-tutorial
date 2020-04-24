@@ -1,10 +1,6 @@
-The async Example Application
-=============================
-
 [[GKIEZ]][[the-async-example-application]]
 
-The async Example Application
------------------------------
+==== The async Example Application
 
 The `async` example demonstrates how to define an asynchronous business
 method on a session bean and call it from a web client. This example
@@ -24,8 +20,7 @@ module.
 
 [[GKIQJ]][[architecture-of-the-async-war-module]]
 
-Architecture of the async-war Module
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Architecture of the async-war Module
 
 The `async-war` module consists of a single stateless session bean,
 `MailerBean`, and a Jakarta Server Faces web application front end that uses
@@ -98,8 +93,7 @@ Facelets view.
 
 [[sthref158]]
 [[running-the-async-example]]
-Running the async Example
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the async Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `async` example.
@@ -111,8 +105,7 @@ The following topics are addressed here:
 
 [[GKINW]]
 [[to-run-the-async-example-application-using-netbeans-ide]]
-To Run the async Example Application Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the async Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -164,8 +157,7 @@ GlassFish Server server node.
 
 [[GKRFB]]
 [[to-run-the-async-example-application-using-maven]]
-To Run the async Example Application Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the async Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

@@ -1,10 +1,6 @@
-= Annotations for Field and Bean Properties of Resource Classes
-
-
 [[GKKRB]][[annotations-for-field-and-bean-properties-of-resource-classes]]
 
-Annotations for Field and Bean Properties of Resource Classes
--------------------------------------------------------------
+==== Annotations for Field and Bean Properties of Resource Classes
 
 Jakarta REST annotations for resource classes let you extract specific parts
 or values from a Uniform Resource Identifier (URI) or request header.
@@ -39,8 +35,7 @@ content type is `application/x-www-form-urlencoded`
 
 [[GKKYA]][[extracting-path-parameters]]
 
-Extracting Path Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Extracting Path Parameters
 
 URI path templates are URIs with variables embedded within the URI
 syntax. The `@PathParam` annotation lets you use variable URI path
@@ -86,8 +81,7 @@ is returned.
 
 [[GKKXJ]][[extracting-query-parameters]]
 
-Extracting Query Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Extracting Query Parameters
 
 Use the `@QueryParam` annotation to extract query parameters from the
 query component of the request URI.
@@ -122,8 +116,7 @@ or zero values and define your own default values for a parameter.
 
 [[GKKYC]][[extracting-form-data]]
 
-Extracting Form Data
-~~~~~~~~~~~~~~~~~~~~
+===== Extracting Form Data
 
 Use the `@FormParam` annotation to extract form parameters from HTML
 forms. For example, the following form accepts the name, address, and
@@ -169,8 +162,7 @@ public void post(MultivaluedMap<String, String> formParams) {
 
 [[GKLCQ]][[extracting-the-java-type-of-a-request-or-response]]
 
-Extracting the Java Type of a Request or Response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Extracting the Java Type of a Request or Response
 
 The `javax.ws.rs.core.Context` annotation retrieves the Java types
 related to a request or response.

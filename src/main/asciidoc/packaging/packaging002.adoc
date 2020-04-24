@@ -1,10 +1,6 @@
-Packaging Enterprise Beans
-==========================
-
 [[BCGECBIJ]][[packaging-enterprise-beans]]
 
-Packaging Enterprise Beans
---------------------------
+==== Packaging Enterprise Beans
 
 This section explains how enterprise beans can be packaged in enterprise bean JAR or
 WAR modules. It includes the following sections:
@@ -14,8 +10,7 @@ WAR modules. It includes the following sections:
 
 [[CHDFCDBG]][[packaging-enterprise-beans-in-ejb-jar-modules]]
 
-Packaging Enterprise Beans in enterprise bean JAR Modules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Packaging Enterprise Beans in enterprise bean JAR Modules
 
 An enterprise bean JAR file is portable and can be used for various applications.
 
@@ -29,14 +24,13 @@ file. link:#BCGFJIJI[Figure 5-2] shows the contents of an enterprise bean JAR fi
 [[BCGFJIJI]]
 
 .*Figure 5-2 Structure of an Enterprise Bean JAR*
-image:img/jakartaeett_dt_011.png[
+image:jakartaeett_dt_011.png[
 "Diagram showing the structure and contents of an enterprise bean JAR
 file."]
 
 [[CHDJABEJ]][[packaging-enterprise-beans-in-war-modules]]
 
-Packaging Enterprise Beans in WAR Modules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Packaging Enterprise Beans in WAR Modules
 
 Enterprise beans often provide the business logic of a web application.
 In these cases, packaging the enterprise bean within the web

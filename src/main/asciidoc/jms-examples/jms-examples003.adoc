@@ -1,10 +1,6 @@
-= Writing Simple Jakarta Messaging Applications
-
-
 [[BNCFA]][[writing-simple-jms-applications]]
 
-Writing Simple Jakarta Messaging Applications
----------------------------------------------
+==== Writing Simple Jakarta Messaging Applications
 
 This section shows how to create, package, and run simple Messaging clients
 that are packaged as application clients.
@@ -25,8 +21,7 @@ Delivery]
 
 [[CHDCEFGA]][[overview-of-writing-simple-jms-application]]
 
-Overview of Writing Simple Jakarta Messaging Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Overview of Writing Simple Jakarta Messaging Application
 
 The clients demonstrate the basic tasks a Jakarta Messaging application must perform:
 
@@ -59,8 +54,7 @@ create administered objects.
 
 [[BNCFD]][[starting-the-jms-provider]]
 
-Starting the Jakarta Messaging Provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Starting the Jakarta Messaging Provider
 
 When you use GlassFish Server, your Messaging provider is GlassFish Server.
 Start the server as described in
@@ -68,8 +62,7 @@ link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish S
 
 [[GKTJS]][[creating-jms-administered-objects]]
 
-Creating Jakarta Messaging Administered Objects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating Jakarta Messaging Administered Objects
 
 This example uses the following Jakarta Messaging administered objects:
 
@@ -93,8 +86,7 @@ names, and the `asadmin delete-jms-resource` command to remove them.
 
 [[BABHEFCB]][[to-create-resources-for-the-simple-examples]]
 
-To Create Resources for the Simple Examples
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Create Resources for the Simple Examples
 
 A `glassfish-resources.xml` file in one of the Maven projects can create
 all the resources needed for the simple examples.
@@ -139,8 +131,7 @@ resource is mapped to a connection factory named
 
 [[BABEEABE]][[building-all-the-simple-examples]]
 
-Building All the Simple Examples
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Building All the Simple Examples
 
 To run the simple examples using GlassFish Server, package each example
 in an application client JAR file. The application client JAR file
@@ -158,8 +149,7 @@ The following topics are addressed here:
 
 [[CHDJEJCD]][[to-build-all-the-simple-examples-using-netbeans-ide]]
 
-To Build All the Simple Examples Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build All the Simple Examples Using NetBeans IDE
 
 1.  From the File menu, choose Open Project.
 2.  In the Open Project dialog box, navigate to:
@@ -178,8 +168,7 @@ directories for the examples.
 
 [[CHDGHJAA]][[to-build-all-the-simple-examples-using-maven]]
 
-To Build All the Simple Examples Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build All the Simple Examples Using Maven
 
 1.  In a terminal window, go to the `simple` directory:
 +
@@ -199,8 +188,7 @@ directories for the examples.
 
 [[BABIHCAE]][[sending-messages]]
 
-Sending Messages
-~~~~~~~~~~~~~~~~
+===== Sending Messages
 
 This section describes how to use a client to send messages. The
 `Producer.java` client will send messages in all of these examples.
@@ -213,8 +201,7 @@ The following topics are addressed here:
 
 [[CHDGHJHH]][[general-steps-performed-in-the-example]]
 
-General Steps Performed in the Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== General Steps Performed in the Example
 
 General steps this example performs are as follows.
 
@@ -232,8 +219,7 @@ should expect no more messages.
 
 [[CHDFBABB]][[the-producer.java-client]]
 
-The Producer.java Client
-^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Producer.java Client
 
 The sending client, `Producer.java`, performs the following steps.
 
@@ -332,8 +318,7 @@ System.exit(0);
 
 [[CHDHIIHE]][[to-run-the-producer-client]]
 
-To Run the Producer Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the Producer Client
 
 You can run the client using the `appclient` command. The `Producer`
 client takes one or two command-line arguments: a destination type and,
@@ -388,8 +373,7 @@ complete.
 
 [[BNCFB]][[receiving-messages-synchronously]]
 
-Receiving Messages Synchronously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Receiving Messages Synchronously
 
 This section describes the receiving client, which uses the `receive`
 method to consume messages synchronously. This section then explains how
@@ -402,8 +386,7 @@ The following topics are addressed here:
 
 [[BNCFC]][[the-synchconsumer.java-client]]
 
-The SynchConsumer.java Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The SynchConsumer.java Client
 
 The receiving client, `SynchConsumer.java`, performs the following
 steps.
@@ -451,8 +434,7 @@ messages, calling `receive` with a timeout argument.
 
 [[BNCFG]][[to-run-the-synchconsumer-and-producer-clients]]
 
-To Run the SynchConsumer and Producer Clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the SynchConsumer and Producer Clients
 
 You can run the client using the `appclient` command. The
 `SynchConsumer` client takes one command-line argument, the destination
@@ -563,8 +545,7 @@ client receives them.
 
 [[BNCFH]][[using-a-message-listener-for-asynchronous-message-delivery]]
 
-Using a Message Listener for Asynchronous Message Delivery
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using a Message Listener for Asynchronous Message Delivery
 
 This section describes the receiving clients in an example that uses a
 message listener for asynchronous message delivery. This section then
@@ -592,8 +573,7 @@ Clients]
 
 [[BNCFI]][[writing-the-asynchconsumer.java-and-textlistener.java-clients]]
 
-Writing the AsynchConsumer.java and TextListener.java Clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Writing the AsynchConsumer.java and TextListener.java Clients
 
 The sending client is `Producer.java`, the same client used in
 link:#BABIHCAE[Sending Messages] and link:#BNCFB[Receiving Messages
@@ -654,8 +634,7 @@ examples using NetBeans IDE or Maven.
 
 [[BNCFK]][[to-run-the-asynchconsumer-and-producer-clients]]
 
-To Run the AsynchConsumer and Producer Clients
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the AsynchConsumer and Producer Clients
 
 You will need two terminal windows, as you did in link:#BNCFB[Receiving
 Messages Synchronously].
@@ -764,8 +743,7 @@ Message is not a TextMessage
 
 [[BNCFL]][[browsing-messages-on-a-queue]]
 
-Browsing Messages on a Queue
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Browsing Messages on a Queue
 
 This section describes an example that creates a `QueueBrowser` object
 to examine messages on a queue, as described in
@@ -780,8 +758,7 @@ The following topics are addressed here:
 
 [[BNCFM]][[the-messagebrowser.java-client]]
 
-The MessageBrowser.java Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The MessageBrowser.java Client
 
 To create a `QueueBrowser` for a queue, you call the
 `JMSContext.createBrowser` method with the queue as the argument. You
@@ -855,8 +832,7 @@ that you have already built and packaged all the examples.
 
 [[BNCFN]][[to-run-the-queuebrowser-client]]
 
-To Run the QueueBrowser Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the QueueBrowser Client
 
 To run the `MessageBrowser` example using the `appclient` command,
 follow these steps.
@@ -960,8 +936,7 @@ Messages received: 1
 
 [[BABDDHHC]][[running-multiple-consumers-on-the-same-destination]]
 
-Running Multiple Consumers on the Same Destination
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running Multiple Consumers on the Same Destination
 
 To illustrate further the way point-to-point and publish/subscribe
 messaging works, you can use the `Producer` and `SynchConsumer` examples
@@ -1018,8 +993,7 @@ subscription on the topic. Therefore, each of the clients receives all
 
 [[BNCFX]][[acknowledging-messages]]
 
-Acknowledging Messages
-~~~~~~~~~~~~~~~~~~~~~~
+===== Acknowledging Messages
 
 Jakarta Messaging provides two alternative ways for a consuming client to ensure that
 a message is not acknowledged until the application has finished
@@ -1109,8 +1083,7 @@ connection factory preconfigured with GlassFish Server
 
 [[GJSCG]][[to-run-the-clientackconsumer-client]]
 
-To Run the ClientAckConsumer Client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the ClientAckConsumer Client
 
 1.  In a terminal window, go to the following directory:
 +

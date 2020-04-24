@@ -1,9 +1,6 @@
-= Overview of Jakarta Security
-
 [[BNBWK]][[overview-of-jakarta-ee-security]]
 
-Overview of Jakarta Security
-----------------------------
+==== Overview of Jakarta Security
 
 Every enterprise that has either sensitive resources that can be
 accessed by many users or resources that traverse unprotected, open
@@ -67,8 +64,7 @@ Jakarta Security, and provides examples.
 
 [[BNBWL]][[a-simple-application-security-walkthrough]]
 
-A Simple Application Security Walkthrough
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== A Simple Application Security Walkthrough
 
 The security behavior of a Jakarta EE environment may be better understood
 by examining what happens in a simple application with a web client, a
@@ -81,8 +77,7 @@ client and using it to establish an authenticated session.
 
 [[BNBWM]][[step-1-initial-request]]
 
-Step 1: Initial Request
-^^^^^^^^^^^^^^^^^^^^^^^
+====== Step 1: Initial Request
 
 In the first step of this example, the web client requests the main
 application URL. This action is shown in link:#BNBWN[Figure 50-1].
@@ -90,7 +85,7 @@ application URL. This action is shown in link:#BNBWN[Figure 50-1].
 [[BNBWN]]
 
 .*Figure 50-1 Initial Request*
-image:img/jakartaeett_dt_039.png[
+image:jakartaeett_dt_039.png[
 "Diagram of initial request from web client to web server for access to a
 protected resource"]
 
@@ -103,8 +98,7 @@ link:security-intro002.html#BNBWY[Security Mechanisms].
 
 [[BNBWO]][[step-2-initial-authentication]]
 
-Step 2: Initial Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Step 2: Initial Authentication
 
 The web server returns a form that the web client uses to collect
 authentication data, such as user name and password, from the user. The
@@ -117,14 +111,13 @@ server sets a credential for the user.
 [[BNBWP]]
 
 .*Figure 50-2 Initial Authentication*
-image:img/jakartaeett_dt_040.png[
+image:jakartaeett_dt_040.png[
 "Diagram of initial authentication: server sends form to client, which
 sends authentication data to server for validation"]
 
 [[BNBWQ]][[step-3-url-authorization]]
 
-Step 3: URL Authorization
-^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Step 3: URL Authorization
 
 The credential is used for future determinations of whether the user is
 authorized to access restricted resources it may request. The web server
@@ -138,7 +131,7 @@ link:#BNBWR[Figure 50-3] shows this process.
 [[BNBWR]]
 
 .*Figure 50-3 URL Authorization*
-image:img/jakartaeett_dt_041.png[
+image:jakartaeett_dt_041.png[
 "Diagram of URL authorization"]
 
 The web server's evaluation stops with an "is authorized" outcome when
@@ -148,8 +141,7 @@ the permitted roles.
 
 [[BNBWS]][[step-4-fulfilling-the-original-request]]
 
-Step 4: Fulfilling the Original Request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Step 4: Fulfilling the Original Request
 
 If the user is authorized, the web server returns the result of the
 original URL request, as shown in link:#BNBWT[Figure 50-4].
@@ -157,7 +149,7 @@ original URL request, as shown in link:#BNBWT[Figure 50-4].
 [[BNBWT]]
 
 .*Figure 50-4 Fulfilling the Original Request*
-image:img/jakartaeett_dt_042.png[
+image:jakartaeett_dt_042.png[
 "Diagram of request fulfillment, showing server returning result to
 client"]
 
@@ -169,8 +161,7 @@ Web Applications"] for more information on protecting web applications.
 
 [[BNBWU]][[step-5-invoking-enterprise-bean-business-methods]]
 
-Step 5: Invoking Enterprise Bean Business Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Step 5: Invoking Enterprise Bean Business Methods
 
 The web page performs the remote method call to the enterprise bean,
 using the user's credential to establish a secure association between
@@ -181,7 +172,7 @@ one in the web server and one in the enterprise bean container.
 [[BNBWV]]
 
 .*Figure 50-5 Invoking an Enterprise Bean Business Method*
-image:img/jakartaeett_dt_043.png[
+image:jakartaeett_dt_043.png[
 "Diagram of authorization process between web component and enterprise
 bean"]
 
@@ -207,8 +198,7 @@ and the web client.
 
 [[BNBWW]][[features-of-a-security-mechanism]]
 
-Features of a Security Mechanism
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Features of a Security Mechanism
 
 A properly implemented security mechanism will provide the following
 functionality:
@@ -228,8 +218,7 @@ Ideally, properly implemented security mechanisms will also be
 
 [[BNBWX]][[characteristics-of-application-security]]
 
-Characteristics of Application Security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Characteristics of Application Security
 
 Jakarta EE applications consist of components that can contain both
 protected and unprotected resources. Often, you need to protect

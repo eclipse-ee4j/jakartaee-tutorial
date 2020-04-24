@@ -1,10 +1,6 @@
-= HTML5-Friendly Markup
-
-
 [[BABGECCJ]][[html5-friendly-markup]]
 
-HTML5-Friendly Markup
----------------------
+==== HTML5-Friendly Markup
 
 When you want to produce user interface features for which HTML does not
 have its own elements, you can create a custom Jakarta Server Faces
@@ -32,8 +28,7 @@ you see fit.
 
 [[sthref33]][[using-pass-through-elements]]
 
-Using Pass-Through Elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Pass-Through Elements
 
 Pass-through elements allow you to use HTML5 tags and attributes but to
 treat them as equivalent to Jakarta Server Faces components associated with
@@ -111,8 +106,7 @@ interprets the markup that the page author has written.
 
 [[sthref35]][[using-pass-through-attributes]]
 
-Using Pass-Through Attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Pass-Through Attributes
 
 Pass-through attributes are the converse of pass-through elements. They
 allow you to pass attributes that are not Jakarta Server Faces attributes
@@ -197,8 +191,7 @@ public Bean() {
 
 [[BABGGIAA]][[the-reservation-example-application]]
 
-The reservation Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The reservation Example Application
 
 The `reservation` example application provides a set of HTML5 `input`
 elements of various types to simulate purchasing tickets for a
@@ -218,8 +211,7 @@ Using NetBeans IDE]
 
 [[BABGCAHH]][[the-facelets-pages-for-the-reservation-application]]
 
-The Facelets Pages for the reservation Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Facelets Pages for the reservation Application
 
 The first important feature of the Facelets pages for the `reservation`
 application is the `DOCTYPE` header. Most Facelets pages in Jakarta Server
@@ -316,8 +308,7 @@ a Facelets `h:commandButton` tag to allow the user to return to the
 
 [[BABHFCCG]][[the-managed-bean-for-the-reservation-application]]
 
-The Managed Bean for the reservation Application
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Managed Bean for the reservation Application
 
 The session-scoped managed bean for the reservation application,
 `ReservationBean.java`, contains properties for all the elements on the
@@ -327,8 +318,7 @@ Facelets pages. It also contains two methods, `calculateTotal` and
 
 [[BABIHHGC]][[to-build-package-and-deploy-the-reservation-example-using-netbeans-ide]]
 
-To Build, Package, and Deploy the reservation Example Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -350,8 +340,7 @@ GlassFish Server instance.
 
 [[sthref36]][[to-build-package-and-deploy-the-reservation-example-using-maven]]
 
-To Build, Package, and Deploy the reservation Example Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Build, Package, and Deploy the reservation Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -375,8 +364,7 @@ deploys the WAR file to your GlassFish Server instance.
 
 [[sthref37]][[to-run-the-reservation-example]]
 
-To Run the reservation Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the reservation Example
 
 At the time of the publication of this tutorial, the browser that most
 fully implements HTML5 is Google Chrome, and it is recommended that you

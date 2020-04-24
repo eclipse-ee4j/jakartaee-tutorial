@@ -1,10 +1,6 @@
-The Duke's Bookstore Interface
-==============================
-
 [[GLQFD]][[the-dukes-bookstore-interface]]
 
-The Duke's Bookstore Interface
-------------------------------
+==== The Duke's Bookstore Interface
 
 This section provides additional detail regarding the components of the
 Duke's Bookstore example and how they interact.
@@ -21,8 +17,7 @@ Bookstore]
 
 [[GLQER]][[the-book-java-persistence-api-entity]]
 
-The Book Java Persistence API Entity
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The Book Java Persistence API Entity
 
 The `Book` entity, located in the `dukesbookstore.entity` package,
 encapsulates the book data stored by Duke's Bookstore.
@@ -43,8 +38,7 @@ The `Book` entity also defines a simple named query, `findBooks`.
 
 [[GLQEU]][[enterprise-beans-used-in-dukes-bookstore]]
 
-Enterprise Beans Used in Duke's Bookstore
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Enterprise Beans Used in Duke's Bookstore
 
 Two enterprise beans located in the `dukesbookstore.ejb` package provide
 the business logic for Duke's Bookstore.
@@ -60,8 +54,7 @@ the catalog when the application is initially deployed. It calls the
 
 [[GLQDP]][[facelets-pages-and-managed-beans-used-in-dukes-bookstore]]
 
-Facelets Pages and Managed Beans Used in Duke's Bookstore
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Facelets Pages and Managed Beans Used in Duke's Bookstore
 
 The Duke's Bookstore application uses Facelets and its templating
 features to display the user interface. The Facelets pages interact with
@@ -144,8 +137,7 @@ Specifies the name `showcart`.
 
 [[GLQDX]][[custom-components-and-other-custom-objects-used-in-dukes-bookstore]]
 
-Custom Components and Other Custom Objects Used in Duke's Bookstore
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Custom Components and Other Custom Objects Used in Duke's Bookstore
 
 The map and area custom components for Duke's Bookstore, along with
 associated renderer, listener, and model classes, are defined in the
@@ -177,8 +169,7 @@ link:jsf-custom/jsf-custom007.html#BNAUT[Implementing an Event Listener].
 
 [[GLQDG]][[properties-files-used-in-dukes-bookstore]]
 
-Properties Files Used in Duke's Bookstore
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Properties Files Used in Duke's Bookstore
 
 The strings used in the Duke's Bookstore application are encapsulated
 into resource bundles to allow the display of localized strings in
@@ -247,8 +238,7 @@ ChooseBook=Choose a Book from our Catalog
 
 [[GLQED]][[deployment-descriptors-used-in-dukes-bookstore]]
 
-Deployment Descriptors Used in Duke's Bookstore
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Deployment Descriptors Used in Duke's Bookstore
 
 The following deployment descriptors are used in Duke's Bookstore:
 

@@ -1,10 +1,6 @@
-Updating Multiple Databases
-===========================
-
 [[BNCJD]][[updating-multiple-databases]]
 
-Updating Multiple Databases
----------------------------
+==== Updating Multiple Databases
 
 The Jakarta EE transaction manager controls all enterprise bean
 transactions except for bean-managed JDBC transactions. The Jakarta EE
@@ -30,13 +26,13 @@ in the same transaction.
 [[BNCJE]]
 
 .*Figure 54-2 Updating Multiple Databases*
-image:img/jakartaeett_dt_051.png[
+image:jakartaeett_dt_051.png[
 "A diagram showing Bean-A updating databases X and Y, and Bean-B updating
 database Z."]
 
 [[BNCJF]]
 
 .*Figure 54-3 Updating Multiple Databases Across Jakarta EE Servers*
-image:img/jakartaeett_dt_052.png[
+image:jakartaeett_dt_052.png[
 "A diagram showing Bean-A on one Jakarta EE server updating database X, and
 Bean-B on another Jakarta EE server updating database Y."]

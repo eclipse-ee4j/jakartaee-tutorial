@@ -1,10 +1,6 @@
-Sending and Receiving Messages
-==============================
-
 [[BABFCGBJ]][[sending-and-receiving-messages]]
 
-Sending and Receiving Messages
-------------------------------
+==== Sending and Receiving Messages
 
 WebSocket endpoints can send and receive text and binary messages. In
 addition, they can also send ping frames and receive pong frames. This
@@ -19,8 +15,7 @@ The following topics are addressed here:
 
 [[CIHEHFCB]][[sending-messages]]
 
-Sending Messages
-~~~~~~~~~~~~~~~~
+===== Sending Messages
 
 Follow these steps to send messages in an endpoint.
 
@@ -67,8 +62,7 @@ message.
 
 [[BABIFBCG]][[sending-messages-to-all-peers-connected-to-an-endpoint]]
 
-Sending Messages to All Peers Connected to an Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Sending Messages to All Peers Connected to an Endpoint
 
 Each instance of an endpoint class is associated with one and only one
 connection and peer; however, there are cases in which an endpoint
@@ -96,8 +90,7 @@ public class EchoAllEndpoint {
 
 [[CIHIDFHD]][[receiving-messages]]
 
-Receiving Messages
-~~~~~~~~~~~~~~~~~~
+===== Receiving Messages
 
 The `OnMessage` annotation designates methods that handle incoming
 messages. You can have at most three methods annotated with `@OnMessage`

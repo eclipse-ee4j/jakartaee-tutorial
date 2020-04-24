@@ -1,10 +1,6 @@
-= Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean Classes
-
-
 [[BABJFEAI]][[using-the-postconstruct-and-predestroy-annotations-with-cdi-managed-bean-classes]]
 
-Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean Classes
-----------------------------------------------------------------------------------
+==== Using the @PostConstruct and @PreDestroy Annotations with CDI Managed Bean Classes
 
 CDI managed bean classes and their superclasses support the annotations
 for initializing and for preparing for the destruction of a bean. These
@@ -19,8 +15,7 @@ the @PreDestroy Annotation]
 
 [[CIHEHHCH]][[to-initialize-a-managed-bean-using-the-postconstruct-annotation]]
 
-To Initialize a Managed Bean Using the @PostConstruct Annotation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== To Initialize a Managed Bean Using the @PostConstruct Annotation
 
 Initializing a managed bean specifies the lifecycle callback method that
 the CDI framework should call after dependency injection but before the
@@ -66,8 +61,7 @@ public void reset () {
 
 [[CIHBAFAC]][[to-prepare-for-the-destruction-of-a-managed-bean-using-the-predestroy-annotation]]
 
-To Prepare for the Destruction of a Managed Bean Using the @PreDestroy Annotation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== To Prepare for the Destruction of a Managed Bean Using the @PreDestroy Annotation
 
 Preparing for the destruction of a managed bean specifies the lifecycle
 call back method that signals that an application component is about to

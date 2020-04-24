@@ -1,10 +1,6 @@
-= Handling Errors
-
-
 [[GKDCB]][[handling-errors]]
 
-Handling Errors
----------------
+==== Handling Errors
 
 Jakarta Server Faces handles Ajax errors through use of the `onerror`
 attribute of the `f:ajax` tag. The value of this attribute is the name

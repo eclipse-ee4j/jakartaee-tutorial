@@ -1,9 +1,5 @@
-= Introduction to JSON
-
-
 [[introduction-to-json]]
-Introduction to JSON
---------------------
+==== Introduction to JSON
 
 JSON is a text-based data exchange format derived from JavaScript that
 is used in web services and other connected applications. The following
@@ -18,8 +14,7 @@ The following topics are addressed here:
 * link:#generating-and-parsing-json-data[Generating and Parsing JSON Data]
 
 [[json-syntax]]
-JSON Syntax
-~~~~~~~~~~~
+===== JSON Syntax
 
 JSON defines only two data structures: objects and arrays. An object is
 a set of name-value pairs, and an array is a list of values. JSON
@@ -61,8 +56,7 @@ including another array or an object.
 a tree-like structure.
 
 [[uses-of-json]]
-Uses of JSON
-~~~~~~~~~~~~
+===== Uses of JSON
 
 JSON is often used as a common format to serialize and deserialize data
 in applications that communicate with each other over the Internet.
@@ -86,8 +80,7 @@ a widely accepted schema for defining and validating the structure of
 JSON data.
 
 [[generating-and-parsing-json-data]]
-Generating and Parsing JSON Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Generating and Parsing JSON Data
 
 For generating and parsing JSON data, there are two programming models,
 which are similar to those used for XML documents.

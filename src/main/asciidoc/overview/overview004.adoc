@@ -1,10 +1,6 @@
-Distributed Multitiered Applications
-====================================
-
 [[BNAAY]][[distributed-multitiered-applications]]
 
-Distributed Multitiered Applications
-------------------------------------
+==== Distributed Multitiered Applications
 
 The Jakarta EE platform uses a distributed multitiered application model
 for enterprise applications. Application logic is divided into
@@ -36,14 +32,13 @@ between the client application and back-end storage.
 [[BNAAZ]]
 
 .*Figure 1-1 Multitiered Applications*
-image:img/jakartaeett_dt_001.png[
+image:jakartaeett_dt_001.png[
 "Diagram of multitiered application structure, including client tier, web
 tier, business tier, and EIS tier."]
 
 [[BNABA]][[security]]
 
-Security
-~~~~~~~~
+===== Security
 
 Although other enterprise application models require platform-specific
 security measures in each application, the Jakarta EE security environment
@@ -61,8 +56,7 @@ variety of security environments without changing the source code.
 
 [[BNABB]][[jakarta-ee-components]]
 
-Jakarta EE Components
-~~~~~~~~~~~~~~~~~~~~~
+===== Jakarta EE Components
 
 Jakarta EE applications are made up of components. A Jakarta EE component is a
 self-contained functional software unit that is assembled into a Jakarta EE
@@ -87,16 +81,14 @@ Jakarta EE server.
 
 [[BNABC]][[jakarta-ee-clients]]
 
-Jakarta EE Clients
-~~~~~~~~~~~~~~~~~~
+===== Jakarta EE Clients
 
 A Jakarta EE client is usually either a web client or an application
 client.
 
 [[BNABD]][[web-clients]]
 
-Web Clients
-^^^^^^^^^^^
+====== Web Clients
 
 A web client consists of two parts:
 
@@ -114,8 +106,7 @@ reliability of Jakarta EE server-side technologies.
 
 [[BNABF]][[application-clients]]
 
-Application Clients
-^^^^^^^^^^^^^^^^^^^
+====== Application Clients
 
 An application client runs on a client machine and provides a way for
 users to handle tasks that require a richer user interface than can be
@@ -134,8 +125,7 @@ systems, clients, and non-Java languages.
 
 [[BNABE]][[applets]]
 
-Applets
-^^^^^^^
+====== Applets
 
 A web page received from the web tier can include an embedded applet.
 Written in the Java programming language, an applet is a small client
@@ -154,8 +144,7 @@ their jobs.
 
 [[BNABG]][[the-javabeans-component-architecture]]
 
-The JavaBeans Component Architecture
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The JavaBeans Component Architecture
 
 The server and client tiers might also include components based on the
 JavaBeans component architecture (JavaBeans components) to manage the
@@ -176,8 +165,7 @@ architecture.
 
 [[BNABH]][[jakarta-ee-server-communications]]
 
-Jakarta EE Server Communications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Jakarta EE Server Communications
 
 link:#BNABI[Figure 1-2] shows the various elements that can make up the
 client tier. The client communicates with the business tier running on
@@ -188,15 +176,14 @@ the web tier.
 [[BNABI]]
 
 .*Figure 1-2 Server Communication*
-image:img/jakartaeett_dt_002.png[
+image:jakartaeett_dt_002.png[
 "Diagram of client-server communication. Application clients access the
 business tier directly. Browsers, web pages, and applets access the web
 tier."]
 
 [[BNABJ]][[web-components]]
 
-Web Components
-~~~~~~~~~~~~~~
+===== Web Components
 
 Jakarta EE web components are either servlets or web pages created using
 Jakarta Server Faces technology and/or Jakarta Server Pages technology. Servlets
@@ -220,14 +207,13 @@ processing.
 [[BNABM]]
 
 .*Figure 1-3 Web Tier and Jakarta EE Applications*
-image:img/jakartaeett_dt_003.png[
+image:jakartaeett_dt_003.png[
 "Diagram of client-server communication showing detail of JavaBeans
 components and web pages in the web tier."]
 
 [[BNABK]][[business-components]]
 
-Business Components
-~~~~~~~~~~~~~~~~~~~
+===== Business Components
 
 Business code, which is logic that solves or meets the needs of a
 particular business domain such as banking, retail, or finance, is
@@ -241,14 +227,13 @@ it back to the client program.
 [[BNABN]]
 
 .*Figure 1-4 Business and EIS Tiers*
-image:img/jakartaeett_dt_004.png[
+image:jakartaeett_dt_004.png[
 "Diagram of client-server communication showing detail of entities,
 session beans, and message-driven beans in the business tier."]
 
 [[BNABL]][[enterprise-information-system-tier]]
 
-Enterprise Information System Tier
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Enterprise Information System Tier
 
 The enterprise information system tier handles EIS software and includes
 enterprise infrastructure systems, such as enterprise resource planning

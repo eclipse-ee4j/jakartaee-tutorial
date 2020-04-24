@@ -1,10 +1,6 @@
-= Lock Modes
-
-
 [[GKJIU]][[lock-modes]]
 
-Lock Modes
-----------
+==== Lock Modes
 
 The application may increase the level of locking for an entity by
 specifying the use of lock modes. Lock modes may be specified to
@@ -66,8 +62,7 @@ applications.
 
 [[GKJIK]][[setting-the-lock-mode]]
 
-Setting the Lock Mode
-~~~~~~~~~~~~~~~~~~~~~
+===== Setting the Lock Mode
 
 To specify the lock mode, use one of the following techniques:
 
@@ -120,8 +115,7 @@ q.setLockMode(LockModeType.PESSIMISTIC_FORCE_INCREMENT);
 
 [[GKJIL]][[using-pessimistic-locking]]
 
-Using Pessimistic Locking
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using Pessimistic Locking
 
 Versioned entities, as well as entities that do not have version
 attributes, can be locked pessimistically.
@@ -151,8 +145,7 @@ committed.
 
 [[GKJLQ]][[pessimistic-locking-timeouts]]
 
-Pessimistic Locking Timeouts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Pessimistic Locking Timeouts
 
 Use the `javax.persistence.lock.timeout` property to specify the length
 of time in milliseconds the persistence provider should wait to obtain a

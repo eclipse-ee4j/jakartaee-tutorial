@@ -1,10 +1,6 @@
-The webserverlog Example Application
-====================================
-
 [[BCGJHEHJ]][[the-webserverlog-example-application]]
 
-The webserverlog Example Application
-------------------------------------
+==== The webserverlog Example Application
 
 The `webserverlog` example application, located in the
 tut-install`/examples/batch/webserverlog/` directory, demonstrates how
@@ -19,8 +15,7 @@ The following topics are addressed here:
 
 [[BABCHDFB]][[architecture-of-the-webserverlog-example-application]]
 
-Architecture of the webserverlog Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Architecture of the webserverlog Example Application
 
 The `webserverlog` example application consists of the following
 elements:
@@ -52,8 +47,7 @@ the job, and reads the results from a text file.
 
 [[BABFGCEC]][[the-job-definition-file]]
 
-The Job Definition File
-^^^^^^^^^^^^^^^^^^^^^^^
+====== The Job Definition File
 
 The `webserverlog.xml` job definition file is located in the
 `WEB-INF/classes/META-INF/batch-jobs/` directory. The file specifies
@@ -117,8 +111,7 @@ implements it. This is the last step of the job.
 
 [[BABIHBFF]][[the-logline-and-logfilteredline-items]]
 
-The LogLine and LogFilteredLine Items
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The LogLine and LogFilteredLine Items
 
 The `LogLine` class represents entries in the web server log file and it
 is defined as follows:
@@ -140,8 +133,7 @@ fields: the IP address of the client and the URL.
 
 [[sthref284]][[the-chunk-step-batch-artifacts]]
 
-The Chunk Step Batch Artifacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Chunk Step Batch Artifacts
 
 The first step is composed of the `LogLineReader`, `LogLineProcessor`,
 and `LogFilteredLineWriter` batch artifacts.
@@ -249,8 +241,7 @@ public void writeItems(List<Object> items) throws Exception {
 
 [[BCGCCFAC]][[the-listener-batch-artifacts]]
 
-The Listener Batch Artifacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Listener Batch Artifacts
 
 The `InfoJobListener` batch artifact implements a simple listener that
 writes log messages when the job starts and when it ends:
@@ -291,8 +282,7 @@ public class InfoItemProcessListener implements ItemProcessListener {
 
 [[sthref285]][[the-task-step-batch-artifact]]
 
-The Task Step Batch Artifact
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Task Step Batch Artifact
 
 The task step is implemented by the `MobileBatchlet` artifact, which
 computes what percentage of the filtered log entries are purchases:
@@ -321,8 +311,7 @@ public String process() throws Exception {
 
 [[sthref286]][[the-javaserver-faces-pages]]
 
-The Jakarta Server Faces Pages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== The Jakarta Server Faces Pages
 
 The `index.xhtml` page contains a text area that shows the web server
 log. The page provides a button for the user to submit the batch job and
@@ -361,8 +350,7 @@ status of the batch job and displays the results when the job finishes:
 
 [[sthref287]][[the-managed-bean]]
 
-The Managed Bean
-^^^^^^^^^^^^^^^^
+====== The Managed Bean
 
 The `JsfBean` managed bean submits the job to the batch runtime, checks
 on the status of the job, and reads the results from a text file.
@@ -394,8 +382,7 @@ The `showResults` method reads the results from a text file.
 
 [[BABFIHJA]][[running-the-webserverlog-example-application]]
 
-Running the webserverlog Example Application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Running the webserverlog Example Application
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `webserverlog` example application.
@@ -409,8 +396,7 @@ Maven]
 
 [[BABHIJBE]][[to-run-the-webserverlog-example-application-using-netbeans-ide]]
 
-To Run the webserverlog Example Application Using NetBeans IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the webserverlog Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
@@ -438,8 +424,7 @@ http://localhost:8080/webserverlog/
 
 [[BABGACCD]][[to-run-the-webserverlog-example-application-using-maven]]
 
-To Run the webserverlog Example Application Using Maven
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Run the webserverlog Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish

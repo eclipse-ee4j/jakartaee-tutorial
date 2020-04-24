@@ -1,10 +1,6 @@
-Design and Architecture of Duke's Tutoring
-==========================================
-
 [[GKAEI]][[design-and-architecture-of-dukes-tutoring]]
 
-Design and Architecture of Duke's Tutoring
-------------------------------------------
+==== Design and Architecture of Duke's Tutoring
 
 Duke's Tutoring is a web application that incorporates several Jakarta EE
 technologies. It exposes both a main interface (for students, guardians,
@@ -18,7 +14,7 @@ application.
 [[CHDDJDCH]]
 
 .*Figure 61-1 Architecture of the Duke's Tutoring Example Application*
-image:img/jakartaeett_dt_061.png[
+image:jakartaeett_dt_061.png[
 "Architecture diagram of the Duke's Tutoring example application. Two
 clients access the main interface and the admin interface deployed in
 the web container. These interfaces communicate with enterprise beans

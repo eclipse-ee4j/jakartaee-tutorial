@@ -1,10 +1,6 @@
-# Validating Constructors and Methods
-
-
 [[CACJIBEJ]][[validating-constructors-and-methods]]
 
-Validating Constructors and Methods
------------------------------------
+==== Validating Constructors and Methods
 
 Jakarta Bean Validation constraints may be placed on the parameters of nonstatic
 methods and constructors and on the return values of nonstatic methods.
@@ -43,8 +39,7 @@ in Type Hierarchies] for more information.
 
 [[sthref122]][[cross-parameter-constraints]]
 
-Cross-Parameter Constraints
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Cross-Parameter Constraints
 
 Constraints that apply to multiple parameters are called cross-parameter
 constraints, and may be applied at the method or constructor level.
@@ -102,8 +97,7 @@ In this sample, `@Email` is an in-built constraint supported by Bean Validation,
 
 [[sthref123]][[identifying-parameter-constraint-violations]]
 
-Identifying Parameter Constraint Violations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Identifying Parameter Constraint Violations
 
 If a `ConstraintViolationException` occurs during a method call, the
 Bean Validation runtime returns a parameter index to identify which
@@ -113,8 +107,7 @@ starts at 0 for the first parameter of the method or constructor.
 
 [[sthref124]][[adding-constraints-to-method-return-values]]
 
-Adding Constraints to Method Return Values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Adding Constraints to Method Return Values
 
 To validate the return value for a method, you can apply constraints
 directly to the method or constructor declaration.

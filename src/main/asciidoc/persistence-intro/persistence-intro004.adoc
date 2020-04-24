@@ -1,10 +1,6 @@
-Managing Entities
-=================
-
 [[BNBQW]][[managing-entities]]
 
-Managing Entities
------------------
+==== Managing Entities
 
 Entities are managed by the entity manager, which is represented by
 `javax.persistence.EntityManager` instances. Each `EntityManager`
@@ -21,8 +17,7 @@ The following topics are addressed here:
 
 [[BNBQY]][[the-entitymanager-interface]]
 
-The EntityManager Interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== The EntityManager Interface
 
 The `EntityManager` API creates and removes persistent entity instances,
 finds entities by the entity's primary key, and allows queries to be run
@@ -40,8 +35,7 @@ The following topics are addressed here:
 
 [[BNBQZ]][[container-managed-entity-managers]]
 
-Container-Managed Entity Managers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Container-Managed Entity Managers
 
 With a container-managed entity manager, an `EntityManager` instance's
 persistence context is automatically propagated by the container to all
@@ -73,8 +67,7 @@ EntityManager em;
 
 [[BNBRA]][[application-managed-entity-managers]]
 
-Application-Managed Entity Managers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Application-Managed Entity Managers
 
 With an application-managed entity manager, on the other hand, the
 persistence context is not propagated to application components, and the
@@ -158,8 +151,7 @@ try {
 
 [[BNBRB]][[finding-entities-using-the-entitymanager]]
 
-Finding Entities Using the EntityManager
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Finding Entities Using the EntityManager
 
 The `EntityManager.find` method is used to look up entities in the data
 store by the entity's primary key:
@@ -177,8 +169,7 @@ public void enterOrder(int custID, CustomerOrder newOrder) {
 
 [[BNBRC]][[managing-an-entity-instances-lifecycle]]
 
-Managing an Entity Instance's Lifecycle
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Managing an Entity Instance's Lifecycle
 
 You manage entity instances by invoking operations on the entity by
 means of an `EntityManager` instance. Entity instances are in one of
@@ -196,8 +187,7 @@ store.
 
 [[BNBRD]][[persisting-entity-instances]]
 
-Persisting Entity Instances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Persisting Entity Instances
 
 New entity instances become managed and persistent either by invoking
 the `persist` method or by a cascading `persist` operation invoked from
@@ -241,8 +231,7 @@ public Collection<LineItem> getLineItems() {
 
 [[BNBRE]][[removing-entity-instances]]
 
-Removing Entity Instances
-^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Removing Entity Instances
 
 Managed entity instances are removed by invoking the `remove` method or
 by a cascading `remove` operation invoked from related entities that
@@ -272,8 +261,7 @@ public void removeOrder(Integer orderId) {
 
 [[BNBRF]][[synchronizing-entity-data-to-the-database]]
 
-Synchronizing Entity Data to the Database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Synchronizing Entity Data to the Database
 
 The state of persistent entities is synchronized to the database when
 the transaction with which the entity is associated commits. If a
@@ -292,8 +280,7 @@ from the data store.
 
 [[BNBRJ]][[persistence-units]]
 
-Persistence Units
-~~~~~~~~~~~~~~~~~
+===== Persistence Units
 
 A persistence unit defines a set of all entity classes that are managed
 by `EntityManager` instances in an application. This set of entity

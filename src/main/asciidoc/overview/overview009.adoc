@@ -1,12 +1,6 @@
-
-= Jakarta EE 8 APIs in the Java Platform, Standard Edition 8
-
-
-
 [[GIRDR]][[jakarta-ee-8-apis-in-the-java-platform-standard-edition-8]]
 
-Jakarta EE 8 APIs in the Java Platform, Standard Edition 8
-----------------------------------------------------------
+==== Jakarta EE 8 APIs in the Java Platform, Standard Edition 8
 
 Several APIs that are required by the Jakarta EE 8 platform are included in
 the Java Platform, Standard Edition 8 (Java SE 8) and are thus available
@@ -14,8 +8,7 @@ to Jakarta EE applications.
 
 [[BNADA]][[java-database-connectivity-api]]
 
-Java Database Connectivity API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java Database Connectivity API
 
 The Java Database Connectivity (JDBC) API lets you invoke SQL commands
 from Java programming language methods. You use the JDBC API in an
@@ -34,8 +27,7 @@ The Jakarta EE 8 platform requires JDBC 4.1.
 
 [[BNADC]][[java-naming-and-directory-interface-api]]
 
-Java Naming and Directory Interface API
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java Naming and Directory Interface API
 
 The Java Naming and Directory Interface (JNDI) API provides naming and
 directory functionality, enabling applications to access multiple naming
@@ -73,8 +65,7 @@ naming context or in any of its direct or indirect subcontexts.
 
 [[BNACT]][[javabeans-activation-framework]]
 
-JavaBeans Activation Framework
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== JavaBeans Activation Framework
 
 The JavaBeans Activation Framework (JAF) is used by the JavaMail API.
 JAF provides standard services to determine the type of an arbitrary
@@ -84,8 +75,7 @@ perform those operations.
 
 [[BNACU]][[java-api-for-xml-processing]]
 
-Java API for XML Processing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java API for XML Processing
 
 The Java API for XML Processing (JAXP), part of the Java SE platform,
 supports the processing of XML documents using Document Object Model
@@ -103,8 +93,7 @@ You can find information on the W3C schema at
 
 [[BNACW]][[java-architecture-for-xml-binding]]
 
-Java Architecture for XML Binding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java Architecture for XML Binding
 
 The Java Architecture for XML Binding (JAXB) provides a convenient way
 to bind an XML schema to a representation in Java language programs.
@@ -117,8 +106,7 @@ The Jakarta EE 8 platform requires JAXB 2.2.
 
 [[BNACV]][[java-api-for-xml-web-services]]
 
-Java API for XML Web Services
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java API for XML Web Services
 
 The Java API for XML Web Services (JAX-WS) specification provides
 support for web services that use the JAXB API for binding XML data to
@@ -143,8 +131,7 @@ The Jakarta EE 8 platform requires JAX-WS 2.2.
 
 [[BNACX]][[soap-with-attachments-api-for-java]]
 
-SOAP with Attachments API for Java
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== SOAP with Attachments API for Java
 
 The SOAP with Attachments API for Java (SAAJ) is a low-level API on
 which JAX-WS depends. SAAJ enables the production and consumption of
@@ -154,8 +141,7 @@ instead using the higher-level JAX-WS API.
 
 [[BNADD]][[java-authentication-and-authorization-service]]
 
-Java Authentication and Authorization Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Java Authentication and Authorization Service
 
 The Java Authentication and Authorization Service (JAAS) provides a way
 for a Jakarta EE application to authenticate and authorize a specific user
@@ -167,8 +153,7 @@ security architecture to support user-based authorization.
 
 [[sthref12]][[common-annotations-for-the-java-platform]]
 
-Common Annotations for the Java Platform
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Common Annotations for the Java Platform
 
 Annotations enable a declarative style of programming in the Java
 platform.

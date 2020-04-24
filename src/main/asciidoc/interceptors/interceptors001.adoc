@@ -1,10 +1,6 @@
-= Overview of Interceptors
-
-
 [[GKIGQ]][[overview-of-interceptors]]
 
-Overview of Interceptors
-------------------------
+==== Overview of Interceptors
 
 Interceptors are used in conjunction with Jakarta EE managed classes to
 allow developers to invoke interceptor methods on an associated target
@@ -71,8 +67,7 @@ method for pre-destroy lifecycle events
 
 [[GKECK]][[interceptor-classes]]
 
-Interceptor Classes
-~~~~~~~~~~~~~~~~~~~
+===== Interceptor Classes
 
 Interceptor classes may be designated with the optional
 `javax.interceptor.Interceptor` annotation, but interceptor classes are
@@ -92,8 +87,7 @@ the naming context of the associated target class, and before any
 
 [[GKEDY]][[interceptor-lifecycle]]
 
-Interceptor Lifecycle
-~~~~~~~~~~~~~~~~~~~~~
+===== Interceptor Lifecycle
 
 Interceptor classes have the same lifecycle as their associated target
 class. When a target class instance is created, an interceptor class
@@ -107,8 +101,7 @@ target class and interceptor class instances are destroyed.
 
 [[GKHSN]][[interceptors-and-cdi]]
 
-Interceptors and CDI
-~~~~~~~~~~~~~~~~~~~~
+===== Interceptors and CDI
 
 Jakarta Contexts and Dependency Injection (CDI) builds on the basic
 functionality of Jakarta EE interceptors. For information on CDI

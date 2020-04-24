@@ -1,10 +1,6 @@
-Working with Digital Certificates
-=================================
-
 [[BNBYB]][[working-with-digital-certificates]]
 
-Working with Digital Certificates
----------------------------------
+==== Working with Digital Certificates
 
 Digital certificates for GlassFish Server have already been generated
 and can be found in the directory domain-dir`/config/`. These digital
@@ -72,8 +68,7 @@ Advanced Security Topics] for a link to the `keytool` documentation.
 
 [[BNBYC]][[creating-a-server-certificate]]
 
-Creating a Server Certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating a Server Certificate
 
 A server certificate has already been created for GlassFish Server and
 can be found in the domain-dir`/config/` directory. The server
@@ -106,8 +101,7 @@ utility to perform these steps.
 
 [[GJRGY]][[to-use-keytool-to-create-a-server-certificate]]
 
-To Use keytool to Create a Server Certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Use keytool to Create a Server Certificate
 
 Run `keytool` to generate a new key pair in the default development
 keystore file, `keystore.jks`. This example uses the alias
@@ -202,8 +196,7 @@ Certificate was added to keystore
 
 [[GLIFW]][[adding-users-to-the-certificate-realm]]
 
-Adding Users to the Certificate Realm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Adding Users to the Certificate Realm
 
 In the `certificate` realm, user identity is set up in the GlassFish
 Server security context and populated with user data obtained from
@@ -213,8 +206,7 @@ link:#BNBYB[Working with Digital Certificates].
 
 [[BNBYF]][[using-a-different-server-certificate-with-glassfish-server]]
 
-Using a Different Server Certificate with GlassFish Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using a Different Server Certificate with GlassFish Server
 
 Follow the steps in link:#BNBYC[Creating a Server Certificate] to create
 your own server certificate, have it signed by a CA, and import the
@@ -231,8 +223,7 @@ change the default password to your keystore's password.
 
 [[sthref230]][[to-specify-a-different-server-certificate]]
 
-To Specify a Different Server Certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== To Specify a Different Server Certificate
 
 To specify that GlassFish Server should use the new keystore for
 authentication and authorization decisions, you must set the JVM options

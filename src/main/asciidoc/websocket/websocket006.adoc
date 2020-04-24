@@ -1,10 +1,6 @@
-Maintaining Client State
-========================
-
 [[BABGJCAD]][[maintaining-client-state]]
 
-Maintaining Client State
-------------------------
+==== Maintaining Client State
 
 Because the container creates an instance of the endpoint class for
 every connection, you can define and use instance variables to store

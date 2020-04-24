@@ -1,10 +1,6 @@
-Using the JDBC Realm for User Authentication
-============================================
-
 [[BABEJJDE]][[using-the-jdbc-realm-for-user-authentication]]
 
-Using the JDBC Realm for User Authentication
---------------------------------------------
+==== Using the JDBC Realm for User Authentication
 
 An authentication realm, sometimes called a security policy domain or
 security domain, is a scope over which an application server defines and
@@ -39,8 +35,7 @@ Example,"] use a JDBC realm for user authentication.
 
 [[sthref233]][[to-configure-a-jdbc-authentication-realm]]
 
-To Configure a JDBC Authentication Realm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== To Configure a JDBC Authentication Realm
 
 GlassFish Server enables administrators to specify a user's credentials
 (user name and password) in the JDBC realm instead of in the connection

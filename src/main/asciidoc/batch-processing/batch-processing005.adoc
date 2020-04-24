@@ -1,10 +1,6 @@
-= Creating Batch Artifacts
-
-
 [[BCGHDHGH]][[creating-batch-artifacts]]
 
-Creating Batch Artifacts
-------------------------
+==== Creating Batch Artifacts
 
 After you define a job in terms of its batch artifacts using the Job
 Specification Language (JSL), you create these artifacts as Java classes
@@ -23,8 +19,7 @@ The following topics are addressed here:
 
 [[BABDAIBI]][[batch-artifact-interfaces]]
 
-Batch Artifact Interfaces
-~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Batch Artifact Interfaces
 
 The following tables list the interfaces that you implement to create
 batch artifacts. The interface implementations are referenced from the
@@ -168,8 +163,7 @@ referenced from the `listener` element inside the `step` element.
 
 [[BCGIFJBB]][[dependency-injection-in-batch-artifacts]]
 
-Dependency Injection in Batch Artifacts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Dependency Injection in Batch Artifacts
 
 To ensure that Jakarta Contexts and Dependency Injection (CDI) works in your
 batch artifacts, follow these steps.
@@ -252,8 +246,7 @@ injected objects.
 
 [[BCGCJEEF]][[using-the-context-objects-from-the-batch-runtime]]
 
-Using the Context Objects from the Batch Runtime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Using the Context Objects from the Batch Runtime
 
 The batch runtime provides context objects that implement the
 `JobContext` and `StepContext` interfaces in the

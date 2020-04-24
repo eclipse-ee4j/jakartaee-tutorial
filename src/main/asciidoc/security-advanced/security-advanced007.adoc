@@ -1,9 +1,6 @@
-= Configuring Security Using Deployment Descriptors
-
 [[GKHRL]][[configuring-security-using-deployment-descriptors]]
 
-Configuring Security Using Deployment Descriptors
--------------------------------------------------
+==== Configuring Security Using Deployment Descriptors
 
 The recommended way to configure security in the Jakarta EE 8 platform is
 with annotations. If you wish to override the security settings at
@@ -21,8 +18,7 @@ Deployment Descriptor]
 
 [[BNCCM]][[specifying-security-for-basic-authentication-in-the-deployment-descriptor]]
 
-Specifying Security for Basic Authentication in the Deployment Descriptor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Specifying Security for Basic Authentication in the Deployment Descriptor
 
 The elements of the deployment descriptor that add basic authentication
 to an example tell the server or browser to perform the following tasks.
@@ -70,8 +66,7 @@ it from being read in transit.
 
 [[GKAFQ]][[specifying-non-default-principal-to-role-mapping-in-the-deployment-descriptor]]
 
-Specifying Non-Default Principal-to-Role Mapping in the Deployment Descriptor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Specifying Non-Default Principal-to-Role Mapping in the Deployment Descriptor
 
 Jakarta Security requires that group principal names be mapped to
 roles of the same name by default. GlassFish adheres to this standard, by default,

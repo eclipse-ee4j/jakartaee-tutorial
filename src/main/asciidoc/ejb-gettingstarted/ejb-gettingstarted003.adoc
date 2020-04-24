@@ -1,18 +1,13 @@
-Modifying the Jakarta EE Application
-=================================
-
 [[GIPTI]][[modifying-the-jakarta-ee-application]]
 
-Modifying the Jakarta EE Application
-------------------------------------
+==== Modifying the Jakarta EE Application
 
 GlassFish Server supports iterative development. Whenever you make a
 change to a Jakarta EE application, you must redeploy the application.
 
 [[GIPUK]][[to-modify-a-class-file]]
 
-To Modify a Class File
-~~~~~~~~~~~~~~~~~~~~~~
+===== To Modify a Class File
 
 To modify a class file in an enterprise bean, you change the source
 code, recompile it, and redeploy the application. For example, to update

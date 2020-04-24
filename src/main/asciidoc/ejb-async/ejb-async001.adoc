@@ -1,10 +1,6 @@
-Asynchronous Method Invocation
-==============================
-
 [[GKKQG]][[asynchronous-method-invocation]]
 
-Asynchronous Method Invocation
-------------------------------
+==== Asynchronous Method Invocation
 
 Session beans can implement asynchronous methods, business methods where
 control is returned to the client by the enterprise bean container
@@ -30,8 +26,7 @@ the invocation.
 
 [[GKIFJ]][[creating-an-asynchronous-business-method]]
 
-Creating an Asynchronous Business Method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Creating an Asynchronous Business Method
 
 Annotate a business method with `javax.ejb.Asynchronous` to mark that
 method as an asynchronous method, or apply `@Asynchronous` at the class
@@ -94,8 +89,7 @@ public Future<String> processPayment(Order order) throws PaymentException {
 
 [[GKIEM]]
 [[calling-asynchronous-methods-from-enterprise-bean-clients]]
-Calling Asynchronous Methods from Enterprise Bean Clients
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===== Calling Asynchronous Methods from Enterprise Bean Clients
 
 Session bean clients call asynchronous methods just like
 non-asynchronous business methods. If the asynchronous method returns a
@@ -107,8 +101,7 @@ the invocation was cancelled.
 
 [[GKICM]]
 [[retrieving-the-final-result-from-an-asynchronous-method-invocation]]
-Retrieving the Final Result from an Asynchronous Method Invocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Retrieving the Final Result from an Asynchronous Method Invocation
 
 The client may retrieve the result using one of the `Future<V>.get`
 methods. If processing hasn't been completed by the session bean
@@ -137,8 +130,7 @@ timeout value.
 
 [[GKIDB]]
 [[cancelling-an-asynchronous-method-invocation]]
-Cancelling an Asynchronous Method Invocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Cancelling an Asynchronous Method Invocation
 
 Call the `cancel(boolean mayInterruptIfRunning)` method on the
 `Future<V>` instance to attempt to cancel the method invocation. The
@@ -161,8 +153,7 @@ returns `true` if the invocation was cancelled.
 
 [[GKIEV]]
 [[checking-the-status-of-an-asynchronous-method-invocation]]
-Checking the Status of an Asynchronous Method Invocation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+====== Checking the Status of an Asynchronous Method Invocation
 
 The `Future<V>.isDone` method returns `true` if the session bean
 instance completed processing the method invocation. The `isDone` method
