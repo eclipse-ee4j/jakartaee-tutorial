@@ -30,7 +30,6 @@
     <name>Jakarta EE Tutorial</name>
 
     <properties>
-        <site.output.dir>${project.busild.directory}/taging</site.output.dir>
         <maven.site.skip>true</maven.site.skip>
         <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
         <!-- XXX - jbake needs an older version than this -->
