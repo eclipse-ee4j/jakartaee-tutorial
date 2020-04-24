@@ -30,7 +30,7 @@
     <name>Jakarta EE Tutorial</name>
 
     <properties>
-        <site.output.dir>${project.build.directory}/staging</site.output.dir>
+        <site.output.dir>${project.busild.directory}/taging</site.output.dir>
         <maven.site.skip>true</maven.site.skip>
         <asciidoctor.maven.plugin.version>1.5.7.1</asciidoctor.maven.plugin.version>
         <!-- XXX - jbake needs an older version than this -->
@@ -75,7 +75,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.glassfish.doc</groupId>
                 <artifactId>glassfish-doc-maven-plugin</artifactId>
                 <executions>
@@ -100,8 +100,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
+            </plugin>-->
+            <!--<plugin>
                 <groupId>com.blazebit</groupId>
                 <artifactId>jbake-maven-plugin</artifactId>
                 <version>1.0.0</version>
@@ -127,7 +127,7 @@
                         <version>1.5.5</version>
                     </dependency>
                 </dependencies>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -149,37 +149,28 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <sourceDirectory>${project.build.directory}/book</sourceDirectory>
-                    <sourceDocumentName>book.adoc</sourceDocumentName>
-                    <!-- XXX - below depends on running jbake first -->
-                    <imagesDir>${project.build.directory}/staging/</imagesDir>
-                    <backend>pdf</backend>
-                    <outputFile>JakartaEETutorial.pdf</outputFile>
-                    <attributes>
-                        <pdf-stylesdir>${project.basedir}/src/theme</pdf-stylesdir>
-                        <pdf-style>jakartaee</pdf-style>
-                        <doctype>book</doctype>
-                        <status>${status}</status>
-                        <data-uri />
-                        <icons>font</icons>
-                        <pagenums />
-                        <toc />
-                        <icons>font</icons>
-                        <sectanchors>true</sectanchors>
-                        <idprefix />
-                        <idseparator>-</idseparator>
-                        <docinfo1>true</docinfo1>
-                        <embedAssets>true</embedAssets>
-                    </attributes>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>generate-pdf-doc</id>
+                        <id>asciidoc-to-html</id>
                         <phase>generate-resources</phase>
                         <goals>
-                                <goal>process-asciidoc</goal>
+                            <goal>process-asciidoc</goal>
                         </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <attributes>
+                                <doctype>book</doctype>
+                                <status>${status}</status>
+                                <data-uri />
+                                <icons>font</icons>
+                                <toc>left</toc>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <idprefix />
+                                <idseparator>-</idseparator>
+                                <docinfo1>true</docinfo1>
+                            </attributes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -204,7 +195,7 @@
             <!--
                 This is the rule that builds the zip file for download.
             -->
-            <plugin>
+            <!--<plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <inherited>false</inherited>
                 <executions>
@@ -220,7 +211,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
 
         <pluginManagement>
