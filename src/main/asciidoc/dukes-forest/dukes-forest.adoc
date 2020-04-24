@@ -1,22 +1,16 @@
-Duke's Forest Case Study Example
-================================
+=== Duke's Forest Case Study Example
 
 [[GLNPW]][[dukes-forest-case-study-example]]
-
-63 Duke's Forest Case Study Example
------------------------------------
-
 
 This chapter describes Duke's Forest, a simple e-commerce application
 that contains several web applications and illustrates the use of
 multiple Jakarta EE APIs.
 
-The following topics are addressed here:
+include::dukes-forest001.adoc[]
 
-* link:dukes-forest001.html#A1256074[Overview of the Duke's Forest Case
-Study Example]
-* link:dukes-forest002.html#GLNRJ[Design and Architecture of Duke's
-Forest]
-* link:dukes-forest003.html#GLNQP[Building and Deploying the Duke's
-Forest Case Study Application]
-* link:dukes-forest004.html#GLNSX[Running the Duke's Forest Application]
+include::dukes-forest002.adoc[]
+
+include::dukes-forest003.adoc[]
+
+include::dukes-forest004.adoc[]
+

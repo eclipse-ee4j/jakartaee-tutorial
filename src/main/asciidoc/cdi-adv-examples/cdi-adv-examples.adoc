@@ -1,26 +1,20 @@
-= Running the Advanced Contexts and Dependency Injection Examples
+=== Running the Advanced Contexts and Dependency Injection Examples
 
 
 [[GKHRE]][[running-the-advanced-contexts-and-dependency-injection-examples]]
 
-29 Running the Advanced Contexts and Dependency Injection Examples
-------------------------------------------------------------------
-
-
 This chapter describes in detail how to build and run several advanced
 examples that use CDI.
 
-The following topics are addressed here:
+include::cdi-adv-examples001.adoc[]
 
-* link:cdi-adv-examples001.html#A1251406[Building and Running the CDI
-Advanced Examples]
-* link:cdi-adv-examples002.html#GKHPU[The encoder Example: Using
-Alternatives]
-* link:cdi-adv-examples003.html#GKHPY[The producermethods Example: Using
-a Producer Method to Choose a Bean Implementation]
-* link:cdi-adv-examples004.html#GKHRG[The producerfields Example: Using
-Producer Fields to Generate Resources]
-* link:cdi-adv-examples005.html#GKHPA[The billpayment Example: Using
-Events and Interceptors]
-* link:cdi-adv-examples006.html#GKPAX[The decorators Example: Decorating
-a Bean]
+include::cdi-adv-examples002.adoc[]
+
+include::cdi-adv-examples003.adoc[]
+
+include::cdi-adv-examples004.adoc[]
+
+include::cdi-adv-examples005.adoc[]
+
+include::cdi-adv-examples006.adoc[]
+

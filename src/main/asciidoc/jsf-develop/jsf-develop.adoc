@@ -1,22 +1,15 @@
-Developing with Jakarta Server Faces Technology
-===========================================
+=== Developing with Jakarta Server Faces Technology
 
 [[BNATX]][[developing-with-javaserver-faces-technology]]
-
-12 Developing with Jakarta Server Faces Technology
-----------------------------------------------
-
 
 This chapter provides an overview of managed beans and explains how to
 write methods and properties of managed beans that are used by a
 Jakarta Server Faces application. This chapter also introduces the Bean
 Validation feature.
 
-The following topics are addressed here:
+include::jsf-develop001.adoc[]
 
-* link:jsf-develop001.html#BNAQM[Managed Beans in Jakarta Server Faces
-Technology]
-* link:jsf-develop002.html#BNATY[Writing Bean Properties]
-* link:jsf-develop003.html#BNAVB[Writing Managed Bean Methods]
+include::jsf-develop002.adoc[]
 
+include::jsf-develop003.adoc[]
 

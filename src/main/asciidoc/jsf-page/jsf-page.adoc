@@ -1,11 +1,6 @@
-Using Jakarta Server Faces Technology in Web Pages
-==================================================
+=== Using Jakarta Server Faces Technology in Web Pages
 
 [[BNAQZ]][[using-javaserver-faces-technology-in-web-pages]]
-
-10 Using Jakarta Server Faces Technology in Web Pages
------------------------------------------------------
-
 
 Web pages (Facelets pages, in most cases) represent the presentation
 layer for web applications. The process of creating web pages for a
@@ -23,9 +18,9 @@ Many of the examples in this chapter are taken from
 link:dukes-bookstore/dukes-bookstore.html#GLNVI[Chapter 60, "Duke's Bookstore Case Study
 Example."]
 
-The following topics are addressed here:
+include::jsf-page001.adoc[]
 
-* link:jsf-page001.html#BNARB[Setting Up a Page]
-* link:jsf-page002.html#BNARF[Adding Components to a Page Using HTML Tag
-Library Tags]
-* link:jsf-page003.html#BNARC[Using Core Tags]
+include::jsf-page002.adoc[]
+
+include::jsf-page003.adoc[]
+

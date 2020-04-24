@@ -1,11 +1,6 @@
-= Jakarta Contexts and Dependency Injection: Advanced Topics
-
+=== Jakarta Contexts and Dependency Injection: Advanced Topics
 
 [[GJEHI]][[contexts-and-dependency-injection-for-jakarta-ee-advanced-topics]]
-
-27 Jakarta Contexts and Dependency Injection: Advanced Topics
--------------------------------------------------------------
-
 
 This chapter describes more advanced features of Jakarta Contexts and Dependency
 Injection. Specifically, it covers additional features
@@ -13,17 +8,23 @@ CDI provides to enable loose coupling of components with strong typing,
 in addition to those described in link:cdi-basic/cdi-basic002.html#GIWHL[Overview
 of CDI].
 
-The following topics are addressed here:
+include::cdi-adv001.adoc[]
 
-* link:cdi-adv001.html#CACDCFDE[Packaging CDI Applications]
-* link:cdi-adv002.html#GJSDF[Using Alternatives in CDI Applications]
-* link:cdi-adv003.html#GKGKV[Using Producer Methods, Producer Fields, and
-Disposer Methods in CDI Applications]
-* link:cdi-adv004.html#CJGHGDBA[Using Predefined Beans in CDI
-Applications]
-* link:cdi-adv005.html#GKHIC[Using Events in CDI Applications]
-* link:cdi-adv006.html#GKHJX[Using Interceptors in CDI Applications]
-* link:cdi-adv007.html#GKHQF[Using Decorators in CDI Applications]
-* link:cdi-adv008.html#GKHQC[Using Stereotypes in CDI Applications]
-* link:cdi-adv009.html#using-the-built-in-annotation-literals[Using the Built-In Annotation Literals]
-* link:cdi-adv010.html#using-the-configurators-interfaces[Using the Configurators Interfaces]
+include::cdi-adv002.adoc[]
+
+include::cdi-adv003.adoc[]
+
+include::cdi-adv004.adoc[]
+
+include::cdi-adv005.adoc[]
+
+include::cdi-adv006.adoc[]
+
+include::cdi-adv007.adoc[]
+
+include::cdi-adv008.adoc[]
+
+include::cdi-adv009.adoc[]
+
+include::cdi-adv010.adoc[]
+

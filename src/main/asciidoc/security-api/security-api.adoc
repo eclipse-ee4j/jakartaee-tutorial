@@ -1,21 +1,18 @@
-= Using Jakarta Security
-
-
+=== Using Jakarta Security
 
 [[using-the-jakarta-ee-security-api]]
-53 Using Jakarta Security
--------------------------
-
 
 This chapter describes the authentication and credential validation
 functionality provided by Jakarta Security. The API also
 defines a SecurityContext access point for programmatic security.
 
+include::security-api001.adoc[]
 
-The following topics are addressed here:
+include::security-api002.adoc[]
 
-* link:security-api001.html#about-the-jakarta-ee-security-api[About Jakarta Security]
-* link:security-api002.html#overview-of-the-http-auth-mech-int[Overview of the HTTP Authentication Mechanism Interface]
-* link:security-api003.html#overview-of-the-identity-store-interfaces[Overview of the Identity Store Interfaces]
-* link:security-api004.html#running-the-built-in-database-identity-store-example[Running the Built-In Database Identity Store Example]
-* link:security-api005.html#running-the-custom-identity-store-example[Running the Custom Identity Store Example]
+include::security-api003.adoc[]
+
+include::security-api004.adoc[]
+
+include::security-api005.adoc[]
+

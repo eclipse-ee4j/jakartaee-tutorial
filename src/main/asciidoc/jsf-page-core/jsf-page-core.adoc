@@ -1,11 +1,6 @@
-Using Converters, Listeners, and Validators
-===========================================
+=== Using Converters, Listeners, and Validators
 
 [[GJCUT]][[using-converters-listeners-and-validators]]
-
-11 Using Converters, Listeners, and Validators
-----------------------------------------------
-
 
 The previous chapter described components and explained how to add them
 to a web page. This chapter provides information on adding more
@@ -23,11 +18,11 @@ input components. Validators allow an application to express constraints
 on form input data to ensure that the necessary requirements are met
 before the input data is processed.
 
-The following topics are addressed here:
+include::jsf-page-core001.adoc[]
 
-* link:jsf-page-core001.html#BNAST[Using the Standard Converters]
-* link:jsf-page-core002.html#BNASZ[Registering Listeners on Components]
-* link:jsf-page-core003.html#BNATC[Using the Standard Validators]
-* link:jsf-page-core004.html#BNATN[Referencing a Managed Bean Method]
+include::jsf-page-core002.adoc[]
 
+include::jsf-page-core003.adoc[]
+
+include::jsf-page-core004.adoc[]
 

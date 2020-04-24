@@ -1,17 +1,13 @@
-= Getting Started Securing Enterprise Applications
+=== Getting Started Securing Enterprise Applications
 
 [[BNBYK]][[getting-started-securing-enterprise-applications]]
-
-52 Getting Started Securing Enterprise Applications
----------------------------------------------------
-
 
 This chapter describes how to administer security for enterprise
 applications.
 
-The following topics are addressed here:
+include::security-jakartaee001.adoc[]
 
-* link:security-jakartaee001.html#CACGIFHJ[Basic Security Tasks for
-Enterprise Applications]
-* link:security-jakartaee002.html#BNBYL[Securing Enterprise Beans]
-* link:security-jakartaee003.html#GKBSZ[Examples: Securing Enterprise Beans]
+include::security-jakartaee002.adoc[]
+
+include::security-jakartaee003.adoc[]
+

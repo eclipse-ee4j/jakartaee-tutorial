@@ -1,25 +1,20 @@
-= Jakarta Concurrency
-
+=== Jakarta Concurrency
 
 [[GKJIQ8]][[concurrency-utilities-for-jakarta-ee]]
 
-60 Jakarta Concurrency
----------------------------------------
-
-
 This chapter describes Jakarta Concurrency spec.
 
-This chapter covers the following topics:
+include::concurrency-utilities001.adoc[]
 
-* link:concurrency-utilities001.html#CIHDFGGG[Concurrency Basics]
-* link:concurrency-utilities002.html#CIHFBCFH[Main Components of the
-Concurrency Utilities]
-* link:concurrency-utilities003.html#CIHIDBDG[Concurrency and
-Transactions]
-* link:concurrency-utilities004.html#CIHCACAA[Concurrency and Security]
-* link:concurrency-utilities005.html#CIHCGGEG[The jobs Concurrency
-Example]
-* link:concurrency-utilities006.html#CIHBFEAE[The taskcreator Concurrency
-Example]
-* link:concurrency-utilities007.html#CHDBIHAA[Further Information about
-Jakarta Concurrency]
+include::concurrency-utilities002.adoc[]
+
+include::concurrency-utilities003.adoc[]
+
+include::concurrency-utilities004.adoc[]
+
+include::concurrency-utilities005.adoc[]
+
+include::concurrency-utilities006.adoc[]
+
+include::concurrency-utilities007.adoc[]
+

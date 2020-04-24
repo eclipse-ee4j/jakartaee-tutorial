@@ -1,11 +1,6 @@
-Batch Processing
-================
+=== Batch Processing
 
 [[GKJIQ6]][[batch-processing]]
-
-59 Batch Processing
--------------------
-
 
 This chapter describes Jakarta Batch,
 which provides support for defining, implementing, and running
@@ -13,21 +8,23 @@ batch jobs. Batch jobs are tasks that can be executed without user
 interaction. The batch framework is composed of a job specification
 language based on XML, a Java API, and a batch runtime.
 
-The following topics are addressed here:
+include::batch-processing001.adoc[]
 
-* link:batch-processing001.html#BCGJDEEH[Introduction to Batch
-Processing]
-* link:batch-processing002.html#BCGGIBHA[Batch Processing in Jakarta EE]
-* link:batch-processing003.html#BCGHBJIG[Simple Use Case]
-* link:batch-processing004.html#BCGDDBBG[Using the Job Specification
-Language]
-* link:batch-processing005.html#BCGHDHGH[Creating Batch Artifacts]
-* link:batch-processing006.html#BCGCAHCB[Submitting Jobs to the Batch
-Runtime]
-* link:batch-processing007.html#BCGBBGJI[Packaging Batch Applications]
-* link:batch-processing008.html#BCGJHEHJ[The webserverlog Example
-Application]
-* link:batch-processing009.html#BCGFCACD[The phonebilling Example
-Application]
-* link:batch-processing010.html#BCGHCHAJ[Further Information about Batch
-Processing]
+include::batch-processing002.adoc[]
+
+include::batch-processing003.adoc[]
+
+include::batch-processing004.adoc[]
+
+include::batch-processing005.adoc[]
+
+include::batch-processing006.adoc[]
+
+include::batch-processing007.adoc[]
+
+include::batch-processing008.adoc[]
+
+include::batch-processing009.adoc[]
+
+include::batch-processing010.adoc[]
+

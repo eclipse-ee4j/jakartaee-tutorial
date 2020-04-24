@@ -1,11 +1,6 @@
-Duke's Tutoring Case Study Example
-==================================
+=== Duke's Tutoring Case Study Example
 
 [[GKAEE]][[dukes-tutoring-case-study-example]]
-
-62 Duke's Tutoring Case Study Example
--------------------------------------
-
 
 The Duke's Tutoring example application is a tracking system for a
 tutoring center for students. Students can be checked in and out and can
@@ -13,11 +8,11 @@ visit the park. The tutoring center can track attendance and status
 updates and can store contact information for guardians and students.
 Administrators can maintain the tutoring center system.
 
-The following topics are addressed here:
+include::dukes-tutoring001.adoc[]
 
-* link:dukes-tutoring001.html#GKAEI[Design and Architecture of Duke's
-Tutoring]
-* link:dukes-tutoring002.html#GKAFH[Main Interface]
-* link:dukes-tutoring003.html#GKAFW[Administration Interface]
-* link:dukes-tutoring004.html#GKJNN[Running the Duke's Tutoring Case
-Study Application]
+include::dukes-tutoring002.adoc[]
+
+include::dukes-tutoring003.adoc[]
+
+include::dukes-tutoring004.adoc[]
+

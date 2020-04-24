@@ -173,6 +173,10 @@
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <sourceDocumentName>toc.adoc</sourceDocumentName>
+                    <sourceHighlighter>coderay</sourceHighlighter>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

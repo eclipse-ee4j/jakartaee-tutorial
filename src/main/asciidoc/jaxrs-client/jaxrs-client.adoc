@@ -1,11 +1,6 @@
-Accessing REST Resources with the Jakarta REST Client API
-=========================================================
+=== Accessing REST Resources with the Jakarta REST Client API
 
 [[BABEIGIH]][[accessing-rest-resources-with-the-jax-rs-client-api]]
-
-33 Accessing REST Resources with the Jakarta REST Client API
-------------------------------------------------------------
-
 
 This chapter describes the Jakarta REST Client API and includes examples of
 how to access REST resources using the Java programming language.
@@ -15,7 +10,9 @@ Java applications.
 
 The following topics are addressed here:
 
-* link:jaxrs-client001.html#BABBIHEJ[Overview of the Client API]
-* link:jaxrs-client002.html#BABJCIJC[Using the Client API in the Jakarta REST
-Example Applications]
-* link:jaxrs-client003.html#BABCDDGH[Advanced Features of the Client API]
+include::jaxrs-client001.adoc[]
+
+include::jaxrs-client002.adoc[]
+
+include::jaxrs-client003.adoc[]
+

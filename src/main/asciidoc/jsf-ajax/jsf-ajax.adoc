@@ -1,11 +1,6 @@
-Using Ajax with Jakarta Server Faces Technology
-===============================================
+=== Using Ajax with Jakarta Server Faces Technology
 
 [[GKIOW]][[using-ajax-with-javaserver-faces-technology]]
-
-13 Using Ajax with Jakarta Server Faces Technology
---------------------------------------------------
-
 
 This chapter describes using Ajax functionality in Jakarta Server Faces web
 applications. Ajax is an acronym for Asynchronous JavaScript and XML, a
@@ -15,21 +10,27 @@ content from the server without interfering with the display on the
 client. In the Jakarta EE platform, Jakarta Server Faces technology provides
 built-in support for Ajax.
 
-The following topics are addressed here:
+include::jsf-ajax001.adoc[]
 
-* link:jsf-ajax001.html#GKIGR[Overview of Ajax]
-* link:jsf-ajax002.html#GKINL[Using Ajax Functionality with Jakarta Server
-Faces Technology]
-* link:jsf-ajax003.html#GKABR[Using Ajax with Facelets]
-* link:jsf-ajax004.html#GKACE[Sending an Ajax Request]
-* link:jsf-ajax005.html#GKDDF[Monitoring Events on the Client]
-* link:jsf-ajax006.html#GKDCB[Handling Errors]
-* link:jsf-ajax007.html#GKDBR[Receiving an Ajax Response]
-* link:jsf-ajax008.html#GKUAR[Ajax Request Lifecycle]
-* link:jsf-ajax009.html#GKHYH[Grouping of Components]
-* link:jsf-ajax010.html#GKAAM[Loading JavaScript as a Resource]
-* link:jsf-ajax011.html#GKOKB[The ajaxguessnumber Example Application]
-* link:jsf-ajax012.html#GKSDK[Further Information about Ajax in
-Jakarta Server Faces Technology]
+include::jsf-ajax002.adoc[]
 
+include::jsf-ajax003.adoc[]
+
+include::jsf-ajax004.adoc[]
+
+include::jsf-ajax005.adoc[]
+
+include::jsf-ajax006.adoc[]
+
+include::jsf-ajax007.adoc[]
+
+include::jsf-ajax008.adoc[]
+
+include::jsf-ajax009.adoc[]
+
+include::jsf-ajax010.adoc[]
+
+include::jsf-ajax011.adoc[]
+
+include::jsf-ajax012.adoc[]
 

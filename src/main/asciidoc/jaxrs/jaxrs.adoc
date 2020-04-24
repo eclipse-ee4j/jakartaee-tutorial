@@ -1,11 +1,6 @@
-= Building RESTful Web Services with Jakarta REST
-
+=== Building RESTful Web Services with Jakarta REST
 
 [[GIEPU]][[building-restful-web-services-with-jax-rs]]
-
-32 Building RESTful Web Services with Jakarta REST
---------------------------------------------------
-
 
 This chapter describes the REST architecture, RESTful web services, and
 the Jakarta RESTful Web Services.
@@ -13,9 +8,11 @@ the Jakarta RESTful Web Services.
 Jakarta REST makes it easy for developers to build RESTful web services using
 the Java programming language.
 
-The following topics are addressed here:
+include::jaxrs001.adoc[]
 
-* link:jaxrs001.html#GIJQY[What Are RESTful Web Services?]
-* link:jaxrs002.html#GILIK[Creating a RESTful Root Resource Class]
-* link:jaxrs003.html#GIPZZ[Example Applications for Jakarta REST]
-* link:jaxrs004.html#GILIZ[Further Information about Jakarta REST]
+include::jaxrs002.adoc[]
+
+include::jaxrs003.adoc[]
+
+include::jaxrs004.adoc[]
+

@@ -1,22 +1,15 @@
-Composite Components: Advanced Topics and an Example
-====================================================
+=== Composite Components: Advanced Topics and an Example
 
 [[GKHXA]][[composite-components-advanced-topics-and-an-example]]
-
-14 Composite Components: Advanced Topics and an Example
--------------------------------------------------------
-
 
 This chapter describes the advanced features of composite components in
 Jakarta Server Faces technology.
 
-The following topics are addressed here:
+include::jsf-advanced-cc001.adoc[]
 
-* link:jsf-advanced-cc001.html#GKHWV[Attributes of a Composite Component]
-* link:jsf-advanced-cc002.html#GKHUO[Invoking a Managed Bean]
-* link:jsf-advanced-cc003.html#GKHWO[Validating Composite Component
-Values]
-* link:jsf-advanced-cc004.html#GKHVN[The compositecomponentexample
-Example Application]
+include::jsf-advanced-cc002.adoc[]
 
+include::jsf-advanced-cc003.adoc[]
+
+include::jsf-advanced-cc004.adoc[]
 

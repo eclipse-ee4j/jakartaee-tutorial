@@ -1,11 +1,6 @@
-Duke's Bookstore Case Study Example
-===================================
+=== Duke's Bookstore Case Study Example
 
 [[GLNVI]][[dukes-bookstore-case-study-example]]
-
-61 Duke's Bookstore Case Study Example
---------------------------------------
-
 
 The Duke's Bookstore example is a simple e-commerce application that
 illustrates some of the more advanced features of Jakarta Server Faces
@@ -14,10 +9,9 @@ technology in combination with Jakarta Contexts and Dependency Injection
 select books from an image map, view the bookstore catalog, and purchase
 books. No security is used in this application.
 
-The following topics are addressed here:
+include::dukes-bookstore001.adoc[]
 
-* link:dukes-bookstore001.html#GLOAW[Design and Architecture of Duke's
-Bookstore]
-* link:dukes-bookstore002.html#GLQFD[The Duke's Bookstore Interface]
-* link:dukes-bookstore003.html#GLPPQ[Running the Duke's Bookstore Case
-Study Application]
+include::dukes-bookstore002.adoc[]
+
+include::dukes-bookstore003.adoc[]
+

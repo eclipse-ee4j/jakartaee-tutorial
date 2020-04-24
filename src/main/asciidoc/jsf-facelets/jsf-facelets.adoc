@@ -1,10 +1,6 @@
-Introduction to Facelets
-========================
+=== Introduction to Facelets
 
 [[GIEPX]][[introduction-to-facelets]]
-
-8 Introduction to Facelets
---------------------------
 
 
 The term Facelets refers to the view declaration language for Jakarta Server
@@ -16,18 +12,21 @@ for Jakarta Server Faces, does not support all the new features available in
 Jakarta Server Faces in the Jakarta EE platform. Jakarta Server Pages technology is considered
 to be a deprecated presentation technology for Jakarta Server Faces.
 
-The following topics are addressed here:
+include::jsf-facelets001.adoc[]
 
-* link:jsf-facelets001.html#GIJTU[What Is Facelets?]
-* link:jsf-facelets002.html#GIPRR[The Lifecycle of a Facelets
-Application]
-* link:jsf-facelets003.html#GIPOB[Developing a Simple Facelets
-Application: The guessnumber-jsf Example Application]
-* link:jsf-facelets004.html#GIQXP[Using Facelets Templates]
-* link:jsf-facelets005.html#GIQZR[Composite Components]
-* link:jsf-facelets006.html#GIRGM[Web Resources]
-* link:jsf-facelets007.html#BABHGBJI[Relocatable Resources]
-* link:jsf-facelets008.html#BABHAHDF[Resource Library Contracts]
-* link:jsf-facelets009.html#BABGECCJ[HTML5-Friendly Markup]
+include::jsf-facelets002.adoc[]
 
+include::jsf-facelets003.adoc[]
+
+include::jsf-facelets004.adoc[]
+
+include::jsf-facelets005.adoc[]
+
+include::jsf-facelets006.adoc[]
+
+include::jsf-facelets007.adoc[]
+
+include::jsf-facelets008.adoc[]
+
+include::jsf-facelets009.adoc[]
 

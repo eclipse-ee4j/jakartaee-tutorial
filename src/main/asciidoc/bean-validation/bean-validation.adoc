@@ -1,21 +1,18 @@
-= Introduction to Jakarta Bean Validation
+=== Introduction to Jakarta Bean Validation
 
 
 [[CHDGJIIA]][[introduction-to-bean-validation]]
 
-23 Introduction to Jakarta Bean Validation
-------------------------------------------
-
-
 This chapter describes Jakarta Bean Validation available as part of the Jakarta EE platform and the facility for validating objects, object members,
 methods, and constructors.
 
-The following topics are addressed here:
+include::bean-validation001.adoc[]
 
-* link:bean-validation001.html#A1101988[Overview of Jakarta Bean Validation]
-* link:bean-validation002.html#GIRCZ[Using Jakarta Bean Validation Constraints]
-* link:bean-validation003.html#GKCRG[Validating Null and Empty Strings]
-* link:bean-validation004.html#CACJIBEJ[Validating Constructors and
-Methods]
-* link:bean-validation005.html#CACDECFE[Further Information about Jakarta Bean
-Validation]
+include::bean-validation002.adoc[]
+
+include::bean-validation003.adoc[]
+
+include::bean-validation004.adoc[]
+
+include::bean-validation005.adoc[]
+
