@@ -2,9 +2,9 @@
 
 ==== Using Resource Adapters with Jakarta Contexts and Dependency Injection (CDI)
 
-For details about CDI, see link:cdi-basic/cdi-basic.html#GIWHB[Chapter 25,
+For details about CDI, see link:#GIWHB[Chapter 25,
 "Introduction to Jakarta EE Contexts and Dependency Injection"] and
-link:cdi-adv/cdi-adv.html#GJEHI[Chapter 27, "Jakarta Contexts and Dependency Injection: Advanced Topics."]
+link:#GJEHI[Chapter 27, "Jakarta Contexts and Dependency Injection: Advanced Topics."]
 
 Do not specify the following classes in the resource adapter as CDI
 managed beans (that is, do not inject them), because the behavior of

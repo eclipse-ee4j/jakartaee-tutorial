@@ -192,13 +192,13 @@ dispatcher types:
 * REQUEST: Only when the request comes directly from the client
 * ASYNC: Only when the asynchronous request comes from the client
 * FORWARD: Only when the request has been forwarded to a component (see
-link:servlets007.html#BNAGK[Transferring Control to Another Web
+link:#BNAGK[Transferring Control to Another Web
 Component])
 * INCLUDE: Only when the request is being processed by a component that
-has been included (see link:servlets007.html#BNAGJ[Including Other
+has been included (see link:#BNAGJ[Including Other
 Resources in the Response])
 * ERROR: Only when the request is being processed with the error page
-mechanism (see link:servlets002.html#BNAFN[Handling Servlet Errors])
+mechanism (see link:#BNAFN[Handling Servlet Errors])
 +
 You can direct the filter to be applied to any combination of the
 preceding situations by selecting multiple dispatcher types. If no types

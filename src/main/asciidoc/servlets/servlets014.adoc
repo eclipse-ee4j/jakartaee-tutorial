@@ -74,14 +74,14 @@ the new protocol.
 `ServletInputStream getInputStream()`
 
 The `getInputStream` method provides access to the input stream of the
-connection. You can use link:servlets013.html#BEIHICDH[Nonblocking I/O]
+connection. You can use link:#BEIHICDH[Nonblocking I/O]
 with the returned stream to implement the new protocol.
 
 |`WebConnection` a|
 `ServletOutputStream getOutputStream()`
 
 The `getOutputStream` method provides access to the output stream of the
-connection. You can use link:servlets013.html#BEIHICDH[Nonblocking I/O]
+connection. You can use link:#BEIHICDH[Nonblocking I/O]
 with the returned stream to implement the new protocol.
 
 |=======================================================================

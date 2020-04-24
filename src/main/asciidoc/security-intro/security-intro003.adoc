@@ -26,14 +26,14 @@ application deployment descriptors.
 
 Specific annotations that can be used to specify security information
 within an enterprise bean class file are described in
-link:security-jakartaee/security-jakartaee002.html#GJGDI[Securing an Enterprise Bean Using
-Declarative Security]. link:security-webtier/security-webtier.html#BNCAS[Chapter 51,
+link:#GJGDI[Securing an Enterprise Bean Using
+Declarative Security]. link:#BNCAS[Chapter 51,
 "Getting Started Securing Web Applications"], describes how to use
 annotations to secure web applications where possible. Deployment
 descriptors are described only where necessary.
 
 For more information on annotations, see
-link:security-intro007.html#BNBYJ[Further Information about Security].
+link:#BNBYJ[Further Information about Security].
 
 [[BNBXF]][[using-deployment-descriptors-for-declarative-security]]
 
@@ -87,7 +87,7 @@ security role of the caller or remote user.
 Programmatic security is discussed in more detail in the following
 sections:
 
-* link:security-webtier/security-webtier003.html#GJIIE[Using Programmatic Security with
+* link:#GJIIE[Using Programmatic Security with
 Web Applications]
-* link:security-jakartaee/security-jakartaee002.html#GJGCS[Securing an Enterprise Bean
+* link:#GJGCS[Securing an Enterprise Bean
 Programmatically]

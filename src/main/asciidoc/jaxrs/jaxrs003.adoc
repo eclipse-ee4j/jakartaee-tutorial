@@ -34,7 +34,7 @@ The following topics are addressed here:
 ====== To Create a RESTful Web Service Using NetBeans IDE
 
 1.  Ensure you have installed the tutorial archetypes as described in
-link:usingexamples/usingexamples007.html#CHDJGCCA[Installing the Tutorial Archetypes].
+link:#CHDJGCCA[Installing the Tutorial Archetypes].
 2.  In NetBeans IDE, create a simple web application using the
 `jaxrs-service-archetype` Maven archetype. This archetype creates a very
 simple "Hello, World" web application.
@@ -201,7 +201,7 @@ The web application also includes two CDI managed beans, `StatusManager`
 and `EventManager`, which use the Jakarta REST Client API to call the
 resources exposed in `StatusBean` and `ResponseBean`. For information on
 how the Client API is used in `rsvp`, see
-link:jaxrs-client/jaxrs-client002.html#BABEDFIG["The Client API in the rsvp Example
+link:#BABEDFIG["The Client API in the rsvp Example
 Application"].
 
 [[GKCCA]][[running-the-rsvp-example-application]]
@@ -222,10 +222,10 @@ To Run the rsvp Example Application Using NetBeans IDE
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 1.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 2.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
@@ -262,10 +262,10 @@ To Run the rsvp Example Application Using Maven
 +++++++++++++++++++++++++++++++++++++++++++++++
 
 1.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 2.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 3.  In a terminal window, go to:
 +

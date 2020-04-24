@@ -37,7 +37,7 @@ Developer's Guide for Java Clients in the GlassFish Server documentation
 clients.
 * Administered objects are Jakarta Messaging objects configured for the use of
 clients. The two kinds of Jakarta Messaging administered objects are destinations and
-connection factories, described in link:jms-concepts003.html#BNCEJ[Jakarta Messaging
+connection factories, described in link:#BNCEJ[Jakarta Messaging
 Administered Objects]. An administrator can create objects that are
 available to all applications that use a particular installation of
 GlassFish Server; alternatively, a developer can use annotations to
@@ -120,9 +120,9 @@ subscription that is created. The consumer is a Jakarta Messaging object within 
 application, while the subscription is an entity within the Jakarta Messaging
 provider. Normally, a topic can have many consumers, but a subscription
 has only one subscriber. It is possible, however, to create shared
-subscriptions; see link:jms-concepts003.html#BABJCIGJ[Creating Shared
+subscriptions; see link:#BABJCIGJ[Creating Shared
 Subscriptions] for details. See
-link:jms-concepts003.html#BABEEJJJ[Consuming Messages from Topics] for
+link:#BABEEJJJ[Consuming Messages from Topics] for
 details on the semantics of pub/sub messaging.
 
 Pub/sub messaging has the following characteristics.
@@ -137,7 +137,7 @@ applications to create durable subscriptions, which receive messages
 sent while the consumers are not active. Durable subscriptions provide
 the flexibility and reliability of queues but still allow clients to
 send messages to many recipients. For more information about durable
-subscriptions, see link:jms-concepts003.html#BNCGD[Creating Durable
+subscriptions, see link:#BNCGD[Creating Durable
 Subscriptions].
 
 Use pub/sub messaging when each message can be processed by any number

@@ -7,7 +7,7 @@ Faces implementation initializes it either based on a `@Named`
 annotation and scope annotation in the bean class or according to its
 configuration in the application configuration resource file. For
 information on using annotations to initialize beans, see
-link:jsf-configure002.html#GIRCH[Using Annotations to Configure Managed
+link:#GIRCH[Using Annotations to Configure Managed
 Beans].
 
 You can use either annotations or the application configuration resource
@@ -34,8 +34,8 @@ is created
 result of evaluating another value expression
 
 This section shows you how to initialize beans using the managed bean
-creation facility. See link:jsf-develop/jsf-develop002.html#BNATY[Writing Bean
-Properties] and link:jsf-develop/jsf-develop003.html#BNAVB[Writing Managed Bean
+creation facility. See link:#BNATY[Writing Bean
+Properties] and link:#BNAVB[Writing Managed Bean
 Methods] for information on programming managed beans.
 
 [[BNAWR]][[using-the-managed-bean-element]]

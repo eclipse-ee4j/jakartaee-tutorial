@@ -253,7 +253,7 @@ generated primary key's field must be an integral type.
 ====== Compound Primary Keys
 
 A compound primary key is made up of multiple fields and follows the
-requirements described in link:persistence-intro/persistence-intro002.html#BNBQF[Primary
+requirements described in link:#BNBQF[Primary
 Keys in Entities]. To use a compound primary key, you must create a
 wrapper class.
 
@@ -744,10 +744,10 @@ The following topics are addressed here:
 ====== To Run the order Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
@@ -772,10 +772,10 @@ http://localhost:8080/order/
 ====== To Run the order Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  In a terminal window, go to:
 +

@@ -19,7 +19,7 @@ A deployment descriptor is an XML file that is external to the
 application and that expresses an application's security structure,
 including security roles, access control, and authentication
 requirements. For more information about deployment descriptors, read
-link:security-intro003.html#BNBXF[Using Deployment Descriptors for
+link:#BNBXF[Using Deployment Descriptors for
 Declarative Security].
 +
 Annotations, also called metadata, are used to specify information about
@@ -30,13 +30,13 @@ declarative information inside XML descriptors. Instead, you simply put
 annotations on the code, and the required information gets generated.
 For this tutorial, annotations are used for securing applications
 wherever possible. For more information about annotations, see
-link:security-intro003.html#BNBXG[Using Annotations to Specify Security
+link:#BNBXG[Using Annotations to Specify Security
 Information].
 * Programmatic security is embedded in an application and is used to
 make security decisions. Programmatic security is useful when
 declarative security alone is not sufficient to express the security
 model of an application. For more information about programmatic
-security, read link:security-intro003.html#BNBXH[Using Programmatic
+security, read link:#BNBXH[Using Programmatic
 Security].
 
 Jakarta EE 8 includes a Security API specification that defines portable,
@@ -52,13 +52,13 @@ specification.
 Other chapters in this Part discuss security requirements in web tier
 and enterprise tier applications, and the Jakarta Security.
 
-* link:security-webtier/security-webtier.html#BNCAS[Chapter 51, "Getting Started Securing
+* link:#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] explains how to add security to web components, such
 as servlets.
-* link:security-jakartaee/security-jakartaee.html#BNBYK[Chapter 52, "Getting Started Securing
+* link:#BNBYK[Chapter 52, "Getting Started Securing
 Enterprise Applications"] explains how to add security to Jakarta EE
 components, such as enterprise beans and application clients.
-* link:security-api/security-api.html#using-the-jakarta-ee-security-api[53 Using Jakarta Security]
+* link:#using-the-jakarta-ee-security-api[53 Using Jakarta Security]
 describes the authentication and credential validation funtionality provided by
 Jakarta Security, and provides examples.
 
@@ -94,7 +94,7 @@ environment, the server responsible for delivering the web portion of
 the application, hereafter referred to as the web server, detects this
 and invokes the appropriate authentication mechanism for this resource.
 For more information on these mechanisms, see
-link:security-intro002.html#BNBWY[Security Mechanisms].
+link:#BNBWY[Security Mechanisms].
 
 [[BNBWO]][[step-2-initial-authentication]]
 
@@ -156,7 +156,7 @@ client"]
 In our example, the response URL of a web page is returned, enabling the
 user to post form data that needs to be handled by the business-logic
 component of the application. See
-link:security-webtier/security-webtier.html#BNCAS[Chapter 51, "Getting Started Securing
+link:#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] for more information on protecting web applications.
 
 [[BNBWU]][[step-5-invoking-enterprise-bean-business-methods]]

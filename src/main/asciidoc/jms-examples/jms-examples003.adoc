@@ -35,7 +35,7 @@ receives them. You can run the clients in two terminal windows.
 When you write a Messaging client to run in an enterprise bean application,
 you use many of the same methods in much the same sequence as for an
 application client. However, there are some significant differences.
-link:jms-concepts/jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
+link:#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications] describes these differences, and this chapter provides
 examples that illustrate them.
 
@@ -58,7 +58,7 @@ create administered objects.
 
 When you use GlassFish Server, your Messaging provider is GlassFish Server.
 Start the server as described in
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish Server].
+link:#BNADI[Starting and Stopping GlassFish Server].
 
 [[GKTJS]][[creating-jms-administered-objects]]
 
@@ -92,7 +92,7 @@ A `glassfish-resources.xml` file in one of the Maven projects can create
 all the resources needed for the simple examples.
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a command window, go to the `Producer` example.
 +
@@ -212,7 +212,7 @@ specify the destination type and the number of messages on the command
 line when you run the program.
 3.  Create a `JMSContext`, then send the specified number of text
 messages in the form of strings, as described in
-link:jms-concepts/jms-concepts003.html#BNCEW[Message Bodies].
+link:#BNCEW[Message Bodies].
 4.  Send a final message of type `Message` to indicate that the consumer
 should expect no more messages.
 5.  Catch any exceptions.
@@ -328,7 +328,7 @@ messages, the client sends one message.
 You will use the client to send three messages to a queue.
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish Server])
+link:#BNADI[Starting and Stopping GlassFish Server])
 and that you have created resources and built the simple Jakarta Messaging examples
 (see link:#GKTJS[Creating Jakarta Messaging Administered Objects] and
 link:#BABEEABE[Building All the Simple Examples]).
@@ -517,8 +517,8 @@ appclient -client target/synchconsumer.jar topic
 The result, however, is different. Because you are using a subscription
 on a topic, messages that were sent before you created the subscription
 on the topic will not be added to the subscription and delivered to the
-consumer. (See link:jms-concepts/jms-concepts002.html#BNCED[Publish/Subscribe
-Messaging Style] and link:jms-concepts/jms-concepts003.html#BABEEJJJ[Consuming
+consumer. (See link:#BNCED[Publish/Subscribe
+Messaging Style] and link:#BABEEJJJ[Consuming
 Messages from Topics] for details.) Instead of receiving the messages,
 the client waits for messages to arrive.
 7.  Leave the `SynchConsumer` client running and run the `Producer`
@@ -576,7 +576,7 @@ Clients]
 ====== Writing the AsynchConsumer.java and TextListener.java Clients
 
 The sending client is `Producer.java`, the same client used in
-link:#BABIHCAE[Sending Messages] and link:#BNCFB[Receiving Messages
+link:#BNCFB[Receiving Messages
 Synchronously].
 
 An asynchronous consumer normally runs indefinitely. This one runs until
@@ -747,7 +747,7 @@ Message is not a TextMessage
 
 This section describes an example that creates a `QueueBrowser` object
 to examine messages on a queue, as described in
-link:jms-concepts/jms-concepts003.html#BNCEY[JMS Queue Browsers]. This section then
+link:#BNCEY[JMS Queue Browsers]. This section then
 explains how to compile, package, and run the example using GlassFish
 Server.
 
@@ -1024,7 +1024,7 @@ Listener for Asynchronous Message Delivery] demonstrates the second
 alternative.
 
 For information about message acknowledgment, see
-link:jms-concepts/jms-concepts004.html#BNCFW[Controlling Message Acknowledgment].
+link:#BNCFW[Controlling Message Acknowledgment].
 
 The following table describes four possible interactions between types
 of consumers and types of acknowledgment.

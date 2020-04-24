@@ -83,7 +83,7 @@ A batch job can contain one or more of the following elements:
 * Decision elements
 
 Steps are described in
-link:batch-processing001.html#BCGJDEEH[Introduction to Batch Processing],
+link:#BCGJDEEH[Introduction to Batch Processing],
 and can be chunk-oriented or task-oriented. Chunk-oriented steps can be
 partitioned steps. In a partitioned chunk step, the processing of one
 item does not depend on other items, so these steps can run in more than
@@ -113,9 +113,9 @@ the job from the business logic and to reuse batch artifacts in
 different job definition files.
 
 Specifying properties is described in
-link:batch-processing004.html#BCGDDBBG[Using the Job Specification
+link:#BCGDDBBG[Using the Job Specification
 Language], and accessing properties in batch artifacts is described in
-link:batch-processing005.html#BCGHDHGH[Creating Batch Artifacts].
+link:#BCGHDHGH[Creating Batch Artifacts].
 
 Jakarta EE applications can also pass parameters to a job when they submit
 it to the batch runtime. This enables you to specify dynamic parameters
@@ -124,10 +124,10 @@ partitioned steps, since each partition needs to know, for example, what
 range of items to process.
 
 Specifying parameters when submitting jobs is described in
-link:batch-processing006.html#BCGCAHCB[Submitting Jobs to the Batch
+link:#BCGCAHCB[Submitting Jobs to the Batch
 Runtime]. Specifying parameters for partitioned steps and accessing them
 in batch artifacts is demonstrated in
-link:batch-processing009.html#BCGFCACD[The phonebilling Example
+link:#BCGFCACD[The phonebilling Example
 Application].
 
 [[BABHJGDH]][[job-instances-and-job-executions]]
@@ -138,7 +138,7 @@ A job definition can have multiple instances, each with different
 parameters. A job execution is an attempt to run a job instance. The
 batch runtime maintains information about job instances and job
 executions, as described in
-link:batch-processing006.html#BCGIBGFC[Checking the Status of a Job].
+link:#BCGIBGFC[Checking the Status of a Job].
 
 [[BABBFGEF]][[batch-and-exit-status]]
 
@@ -168,12 +168,12 @@ link:#BCGJBGDF[Table 58-1]. They are represented as strings.
 
 Jakarta EE applications can submit jobs and access the batch status of a
 job using the `JobOperator` interface, as described in
-link:batch-processing006.html#BCGCAHCB[Submitting Jobs to the Batch
+link:#BCGCAHCB[Submitting Jobs to the Batch
 Runtime]. Job definition files can refer to batch status values using
 the Job Specification Language (JSL), as described in
-link:batch-processing004.html#BCGDDBBG[Using the Job Specification
+link:#BCGDDBBG[Using the Job Specification
 Language]. Batch artifacts can access batch status values using context
-objects, as described in link:batch-processing005.html#BCGCJEEF[Using the
+objects, as described in link:#BCGCJEEF[Using the
 Context Objects from the Batch Runtime].
 
 For flows, the batch status is that of its last step. For splits, the

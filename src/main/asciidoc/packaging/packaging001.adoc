@@ -65,7 +65,7 @@ are packaged as JAR files with a `.jar` extension.
 * Resource adapter modules, which contain all Java interfaces, classes,
 native libraries, and, optionally, a resource adapter deployment
 descriptor. Together, these implement the Connector architecture (see
-link:overview/overview008.html#BNACZ[Jakarta EE Connector Architecture]) for a
+link:#BNACZ[Jakarta EE Connector Architecture]) for a
 particular EIS. Resource adapter modules are packaged as JAR files with
 an `.rar` (resource adapter archive) extension.
 

@@ -35,9 +35,9 @@ the Facelets pages. This file also contains code that uses the JSON
 streaming API.
 
 The code used in `StreamingBean.java` to write JSON data to a file is
-similar to the example in link:jsonp004.html#BABGJEEF[Writing JSON Data
+similar to the example in link:#BABGJEEF[Writing JSON Data
 Using a Generator]. The code to parse JSON data from a file is similar
-to the example in link:jsonp004.html#BABGCHIG[Reading JSON Data Using a
+to the example in link:#BABGCHIG[Reading JSON Data Using a
 Parser].
 
 
@@ -58,7 +58,7 @@ Maven]
 ====== To Run the jsonpstreaming Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -91,7 +91,7 @@ lists the parser events for the JSON data in the text file.
 ====== To Run the jsonpstreaming Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

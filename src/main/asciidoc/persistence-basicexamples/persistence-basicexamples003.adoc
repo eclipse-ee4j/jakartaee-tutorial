@@ -104,7 +104,7 @@ public Collection<Team> getTeams() {
 ===== Entity Inheritance in the roster Application
 
 The `roster` application shows how to use entity inheritance, as
-described in link:persistence-intro/persistence-intro003.html#BNBQN[Entity Inheritance].
+described in link:#BNBQN[Entity Inheritance].
 
 The `League` entity in `roster` is an abstract entity with two concrete
 subclasses: `SummerLeague` and `WinterLeague`. Because `League` is an
@@ -353,10 +353,10 @@ The following topics are addressed here:
 ====== To Run the roster Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
@@ -403,10 +403,10 @@ P25 Frank Fletcher defender 399.0
 ====== To Run the roster Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it by following
-the instructions in link:usingexamples/usingexamples004.html#BNADK[Starting and
+the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  In a terminal window, go to:
 +

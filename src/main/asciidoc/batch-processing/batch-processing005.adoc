@@ -23,7 +23,7 @@ The following topics are addressed here:
 
 The following tables list the interfaces that you implement to create
 batch artifacts. The interface implementations are referenced from the
-elements described in link:batch-processing004.html#BCGDDBBG[Using the
+elements described in link:#BCGDDBBG[Using the
 Job Specification Language].
 
 link:#BCGGCIDC[Table 58-3] lists the interfaces to implement batch
@@ -222,8 +222,8 @@ public class MyItemReaderImpl implements ItemReader { ... }
 ----
 +
 For more information on bean archives, see
-link:cdi-adv/cdi-adv001.html#CACDCFDE[Packaging CDI Applications] in
-link:cdi-adv/cdi-adv.html#GJEHI[Chapter 27, "Jakarta Contexts and Dependency Injection: Advanced Topics"].
+link:#CACDCFDE[Packaging CDI Applications] in
+link:#GJEHI[Chapter 27, "Jakarta Contexts and Dependency Injection: Advanced Topics"].
 
 
 [width="100%",cols="100%",]

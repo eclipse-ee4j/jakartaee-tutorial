@@ -3,7 +3,7 @@
 ==== Writing Bean Properties
 
 
-As explained in link:jsf-develop001.html#BNAQM[Managed Beans in
+As explained in link:#BNAQM[Managed Beans in
 Jakarta Server Faces Technology], a managed bean property can be bound to
 one of the following items:
 
@@ -23,9 +23,9 @@ property by using its `value` attribute and binds the component's
 instance to a managed bean property by using its `binding` attribute.
 Likewise, all the converter, listener, and validator tags use their
 `binding` attributes to bind their associated implementations to managed
-bean properties. See link:jsf-custom/jsf-custom013.html#BNATG[Binding Component
+bean properties. See link:#BNATG[Binding Component
 Values and Instances to Managed Bean Properties] and
-link:jsf-custom/jsf-custom014.html#BNATM[Binding Converters, Listeners, and
+link:#BNATM[Binding Converters, Listeners, and
 Validators to Managed Bean Properties] for more information.
 
 To bind a component's value to a managed bean property, the type of the
@@ -48,7 +48,7 @@ must accept and return a `DateTimeConverter` instance.
 
 The rest of this section explains how to write properties that can be
 bound to component values, to component instances for the component
-objects described in link:jsf-page/jsf-page002.html#BNARF[Adding Components to a
+objects described in link:#BNARF[Adding Components to a
 Page Using HTML Tag Library Tags], and to converter, listener, and
 validator implementations.
 
@@ -126,11 +126,11 @@ public String getName() {
 }
 ----
 
-As described in link:jsf-page/jsf-page-core001.html#BNAST[Using the Standard
+As described in link:#BNAST[Using the Standard
 Converters], to convert the value of an input or output component you
 can either apply a converter or create the bean property bound to the
 component with the matching type. Here is the example tag, from
-link:jsf-page/jsf-page-core001.html#BNASV[Using DateTimeConverter], that displays
+link:#BNASV[Using DateTimeConverter], that displays
 the date on which items will be shipped.
 
 [source,oac_no_warn]
@@ -166,7 +166,7 @@ component tag.
 
 `UIData` components must be bound to one of the managed bean property
 types listed in link:#BNAUA[Table 12-1]. Data components are discussed
-in link:jsf-page/jsf-page002.html#BNARZ[Using Data-Bound Table Components]. Here
+in link:#BNARZ[Using Data-Bound Table Components]. Here
 is part of the start tag of `dataTable` from that section:
 
 [source,oac_no_warn]
@@ -257,7 +257,7 @@ tag `h:selectBooleanCheckbox`.
 Managed bean properties that hold a `UISelectBoolean` component's data
 must be of `boolean` or `Boolean` type. The example
 `selectBooleanCheckbox` tag from the section
-link:jsf-page/jsf-page002.html#BNASE[Displaying Components for Selecting One
+link:#BNASE[Displaying Components for Selecting One
 Value] binds a component to a property. The following example shows a
 tag that binds a component value to a `boolean` property:
 
@@ -298,7 +298,7 @@ of type `List` or `array`. This bean property represents the set of
 currently selected items from the list of available items.
 
 The following example of the `selectManyCheckbox` tag comes from
-link:jsf-page/jsf-page002.html#BNASI[Displaying Components for Selecting Multiple
+link:#BNASI[Displaying Components for Selecting Multiple
 Values]:
 
 [source,oac_no_warn]
@@ -327,7 +327,7 @@ public String[] getNewsletters() {
 
 The `UISelectItem` and `UISelectItems` components are used to represent
 all the values in a `UISelectMany` component. See
-link:#BNAUG[UISelectItem Properties] and link:#BNAUH[UISelectItems
+link:#BNAUH[UISelectItems
 Properties] for information on writing the bean properties for the
 `UISelectItem` and `UISelectItems` components.
 
@@ -345,7 +345,7 @@ single selected item from a set of items. This item can be any of the
 primitive types and anything else for which you can apply a converter.
 
 Here is an example of the `h:selectOneMenu` tag from
-link:jsf-page/jsf-page002.html#BNASH[Displaying a Menu Using the h:selectOneMenu
+link:#BNASH[Displaying a Menu Using the h:selectOneMenu
 Tag]:
 
 [source,oac_no_warn]
@@ -381,12 +381,12 @@ the list of items in the `UISelectOne` component.
 
 The `UISelectItem` and `UISelectItems` components are used to represent
 all the values in a `UISelectOne` component. This is explained in
-link:jsf-page/jsf-page002.html#BNASH[Displaying a Menu Using the h:selectOneMenu
+link:#BNASH[Displaying a Menu Using the h:selectOneMenu
 Tag].
 
 For information on how to write the managed bean properties for the
 `UISelectItem` and `UISelectItems` components, see
-link:#BNAUG[UISelectItem Properties] and link:#BNAUH[UISelectItems
+link:#BNAUH[UISelectItems
 Properties].
 
 [[BNAUG]][[uiselectitem-properties]]
@@ -517,16 +517,16 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 ----
 
 For more general information on component binding, see
-link:jsf-develop001.html#BNAQM[Managed Beans in Jakarta Server Faces
+link:#BNAQM[Managed Beans in Jakarta Server Faces
 Technology].
 
 For information on how to reference a managed bean method that performs
 navigation when a button is clicked, see
-link:jsf-page/jsf-page-core004.html#BNATP[Referencing a Method That Performs
+link:#BNATP[Referencing a Method That Performs
 Navigation].
 
 For more information on writing managed bean methods that handle
-navigation, see link:jsf-develop003.html#BNAVC[Writing a Method to Handle
+navigation, see link:#BNAVC[Writing a Method to Handle
 Navigation].
 
 [[BNAUL]][[writing-properties-bound-to-converters-listeners-or-validators]]

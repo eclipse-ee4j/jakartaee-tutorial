@@ -5,7 +5,7 @@
 Validating input received from the user to maintain data integrity is an
 important part of application logic. Validation of data can take place
 at different layers in even the simplest of applications, as shown in
-link:jsf-facelets/jsf-facelets003.html#GIPOB[Developing a Simple Facelets Application:
+link:#GIPOB[Developing a Simple Facelets Application:
 The guessnumber-jsf Example Application]. The `guessnumber-jsf` example
 application validates the user input (in the `h:inputText` tag) for
 numerical data at the presentation layer and for a valid range of

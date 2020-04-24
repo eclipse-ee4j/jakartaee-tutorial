@@ -70,7 +70,7 @@ The following example shows how to reference a navigation method:
                  action="#{cashierBean.submit}" />
 ----
 
-See link:jsf-develop/jsf-develop003.html#BNAVC[Writing a Method to Handle Navigation]
+See link:#BNAVC[Writing a Method to Handle Navigation]
 for information on how to write such a method.
 
 [[BNATQ]][[referencing-a-method-that-handles-an-action-event]]
@@ -93,7 +93,7 @@ The `actionListener` attribute of this component tag references the
 `chooseBookFromLink` method using a method expression. The
 `chooseBookFromLink` method handles the event when the user clicks the
 link rendered by this component. See
-link:jsf-develop/jsf-develop003.html#BNAVD[Writing a Method to Handle an Action
+link:#BNAVD[Writing a Method to Handle an Action
 Event] for information on how to write such a method.
 
 [[BNATR]][[referencing-a-method-that-performs-validation]]
@@ -105,7 +105,7 @@ managed bean method, refer to the method from the component's tag by
 using the `validator` attribute.
 
 The following simplified example from
-link:cdi-basic/cdi-basicexamples003.html#GJCXV[The guessnumber-cdi CDI Example]
+link:#GJCXV[The guessnumber-cdi CDI Example]
 shows how to reference a method that performs validation on
 `inputGuess`, an input component:
 
@@ -121,7 +121,7 @@ shows how to reference a method that performs validation on
 
 The managed bean method `validateNumberRange` verifies that the input
 value is within the valid range, which changes each time another guess
-is made. See link:jsf-develop/jsf-develop003.html#BNAVE[Writing a Method to Perform
+is made. See link:#BNAVE[Writing a Method to Perform
 Validation] for information on how to write such a method.
 
 [[BNATS]][[referencing-a-method-that-handles-a-value-change-event]]
@@ -148,6 +148,6 @@ The `valueChangeListener` attribute of this component tag references the
 expression. The `processValueChange` method handles the event of a user
 entering a name in the input field rendered by this component.
 
-link:jsf-develop/jsf-develop003.html#BNAVF[Writing a Method to Handle a Value-Change
+link:#BNAVF[Writing a Method to Handle a Value-Change
 Event] describes how to implement a method that handles a
 `ValueChangeEvent`.

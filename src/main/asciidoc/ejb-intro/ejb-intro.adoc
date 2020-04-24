@@ -5,7 +5,7 @@
 Enterprise beans are Jakarta EE components that implement Jakarta Enterprise Beans
 technology. Enterprise beans run in the Enterprise Bean container, a
 runtime environment within GlassFish Server (see
-link:overview/overview005.html#BNABQ[Container Types]). Although transparent to
+link:#BNABQ[Container Types]). Although transparent to
 the application developer, the Enterprise Bean container provides system-level
 services, such as transactions and security, to its enterprise beans.
 These services enable you to quickly build and deploy enterprise beans,

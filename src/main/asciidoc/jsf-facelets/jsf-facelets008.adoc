@@ -75,7 +75,7 @@ contract, however.
 ===== The hello1-rlc Example Application
 
 The `hello1-rlc` example modifies the simple `hello1` example from
-link:webapp/webapp003.html#BNADX[A Web Module That Uses Jakarta Server Faces
+link:#BNADX[A Web Module That Uses Jakarta Server Faces
 Technology: The hello1 Example] to use two resource library contracts.
 Each of the two pages in the application uses a different contract.
 
@@ -178,7 +178,7 @@ respect: the background color specified for the `body` element.
 ====== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -200,7 +200,7 @@ GlassFish Server instance.
 ====== To Build, Package, and Deploy the hello1-rlc Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

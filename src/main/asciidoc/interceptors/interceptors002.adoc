@@ -3,7 +3,7 @@
 ==== Using Interceptors
 
 To define an interceptor, use one of the interceptor metadata
-annotations listed in link:interceptors001.html#GKECC[Table 57-1] within
+annotations listed in link:#GKECC[Table 57-1] within
 the target class, or in a separate interceptor class. The following code
 declares an `@AroundTimeout` interceptor method within a target class:
 

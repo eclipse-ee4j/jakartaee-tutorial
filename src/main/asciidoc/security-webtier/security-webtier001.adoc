@@ -4,7 +4,7 @@
 
 A web application is accessed using a web browser over a network, such
 as the Internet or a company's intranet. As discussed in
-link:overview/overview004.html#BNAAY[Distributed Multitiered Applications], the
+link:#BNAAY[Distributed Multitiered Applications], the
 Jakarta EE platform uses a distributed multitiered application model, and
 web applications run in the web tier.
 
@@ -14,7 +14,7 @@ Internet. In such an environment, a substantial number of web
 applications will require some type of security.
 
 Securing applications and their clients in the business tier and the EIS
-tier is discussed in link:security-jakartaee/security-jakartaee.html#BNBYK[Chapter 52, "Getting
+tier is discussed in link:#BNBYK[Chapter 52, "Getting
 Started Securing Enterprise Applications"].
 
 In the Jakarta EE platform, web components provide the dynamic extension
@@ -35,17 +35,17 @@ following ways.
 
 * Declarative security can be implemented using either metadata
 annotations or an application's deployment descriptor. See
-link:security-intro/security-intro001.html#BNBWK[Overview of Jakarta Security] for more
+link:#BNBWK[Overview of Jakarta Security] for more
 information.
 +
 Declarative security for web applications is described in
-link:security-webtier002.html#GKBAA[Securing Web Applications].
+link:#GKBAA[Securing Web Applications].
 * Programmatic security is embedded in an application and can be used to
 make security decisions when declarative security alone is not
 sufficient to express the security model of an application. Declarative
 security alone may not be sufficient when conditional login in a
 particular work flow, instead of for all cases, is required in the
-middle of an application. See link:security-intro/security-intro001.html#BNBWK[Overview
+middle of an application. See link:#BNBWK[Overview
 of Jakarta Security] for more information.
 +
 Servlet 4.0 provides the `authenticate`, `login`, and `logout` methods
@@ -56,7 +56,7 @@ required for web applications but may still be used to further specify
 security requirements beyond the basic default values.
 +
 Programmatic security is discussed in
-link:security-webtier003.html#GJIIE[Using Programmatic Security with Web
+link:#GJIIE[Using Programmatic Security with Web
 Applications].
 * Message security works with web services and incorporates security
 features, such as digital signatures and encryption, into the header of
@@ -68,9 +68,9 @@ Some of the material in this chapter builds on material presented
 earlier in this tutorial. In particular, this chapter assumes that you
 are familiar with the information in the following chapters:
 
-* link:webapp/webapp.html#BNADR[Chapter 6, "Getting Started with Web
+* link:#BNADR[Chapter 6, "Getting Started with Web
 Applications"]
-* link:jsf-intro/jsf-intro.html#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]
-* link:servlets/servlets.html#BNAFD[Chapter 18, "Jakarta Servlet Technology"]
-* link:security-intro/security-intro.html#BNBWJ[Chapter 50, "Introduction to Security in
+* link:#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]
+* link:#BNAFD[Chapter 18, "Jakarta Servlet Technology"]
+* link:#BNBWJ[Chapter 50, "Introduction to Security in
 the Jakarta EE Platform"]

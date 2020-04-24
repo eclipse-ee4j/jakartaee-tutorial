@@ -4,7 +4,7 @@
 
 Both `MapComponent` and `AreaComponent` delegate all of their rendering
 to a separate renderer. The section
-link:jsf-custom005.html#BNAVW[Performing Encoding] explains how
+link:#BNAVW[Performing Encoding] explains how
 `MapRenderer` performs the encoding for `MapComponent`. This section
 explains in detail the process of delegating rendering to a renderer
 using `AreaRenderer`, which performs the rendering for `AreaComponent`.
@@ -51,7 +51,7 @@ ImageArea ia = (ImageArea)area.getValue();
 
 The attribute value is the `ImageArea` bean instance, which contains the
 `shape`, `coords`, and `alt` values associated with the `book203`
-`AreaComponent` instance. link:jsf-custom003.html#GLPBO[Configuring Model
+`AreaComponent` instance. link:#GLPBO[Configuring Model
 Data] describes how the application stores these values.
 
 After retrieving the `ImageArea` object, the method renders the values
@@ -134,7 +134,7 @@ identifies the component family as well as the renderer type.
 
 Register the renderer with a render kit by using the `@FacesRenderer`
 annotation (or by using the application configuration resource file, as
-explained in link:jsf-configure/jsf-configure011.html#BNAXH[Registering a Custom
+explained in link:#BNAXH[Registering a Custom
 Renderer with a Render Kit]). During the Render Response phase, the
 Jakarta Server Faces implementation calls the `getRendererType` method of
 the component's tag handler to determine which renderer to invoke, if

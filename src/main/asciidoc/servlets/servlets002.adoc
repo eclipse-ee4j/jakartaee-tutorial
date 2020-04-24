@@ -10,15 +10,15 @@ container performs the following steps.
 1.  Loads the servlet class
 2.  Creates an instance of the servlet class
 3.  Initializes the servlet instance by calling the `init` method
-(initialization is covered in link:servlets004.html#BNAFU[Creating and
+(initialization is covered in link:#BNAFU[Creating and
 Initializing a Servlet])
 2.  The container invokes the `service` method, passing request and
 response objects. Service methods are discussed in
-link:servlets005.html#BNAFV[Writing Service Methods].
+link:#BNAFV[Writing Service Methods].
 
 If it needs to remove the servlet, the container finalizes the servlet
 by calling the servlet's `destroy` method. For more information, see
-link:servlets010.html#BNAGS[Finalizing a Servlet].
+link:#BNAGS[Finalizing a Servlet].
 
 [[BNAFJ]][[handling-servlet-lifecycle-events]]
 

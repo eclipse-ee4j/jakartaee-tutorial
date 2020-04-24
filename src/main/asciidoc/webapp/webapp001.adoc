@@ -9,16 +9,16 @@ Web applications are of the following types:
 generates interactive web pages containing various types of markup
 language (HTML, XHTML, XML, and so on) and dynamic content in response
 to requests. Development of presentation-oriented web applications is
-covered in link:jsf-intro/jsf-intro.html#BNAPH[Chapter 7, "Jakarta Server Faces
-Technology,"] through link:servlets/servlets.html#BNAFD[Chapter 18, "Jakarta Servlet
+covered in link:#BNAPH[Chapter 7, "Jakarta Server Faces
+Technology,"] through link:#BNAFD[Chapter 18, "Jakarta Servlet
 Technology."]
 * Service-oriented: A service-oriented web application implements the
 endpoint of a web service. Presentation-oriented applications are often
 clients of service-oriented web applications. Development of
 service-oriented web applications is covered in
-link:jaxws/jaxws.html#BNAYL[Chapter 31, "Building Web Services with JAX-WS,"]
-and link:jaxrs/jaxrs.html#GIEPU[Chapter 32, "Building RESTful Web Services with
-Jakarta RESTful Web Services,"] in link:partwebsvcs.html#BNAYK[Part III, "Web Services."]
+link:#BNAYL[Chapter 31, "Building Web Services with JAX-WS,"]
+and link:#GIEPU[Chapter 32, "Building RESTful Web Services with
+Jakarta RESTful Web Services,"] in link:#BNAYK[Part III, "Web Services."]
 
 In the Jakarta EE platform, web components provide the dynamic extension
 capabilities for a web server. Web components can be Jakarta servlets, web

@@ -75,9 +75,9 @@ Programmatic security is discussed in link:#GJGCS[Securing an Enterprise
 Bean Programmatically].
 
 Some of the material in this chapter assumes that you have already read
-link:ejb-intro/ejb-intro.html#GIJSZ[Chapter 35, "Enterprise Beans"],
-link:ejb-gettingstarted/ejb-gettingstarted.html#GIJRE[Chapter 36, "Getting Started with
-Enterprise Beans"], and link:security-intro/security-intro.html#BNBWJ[Chapter 50,
+link:#GIJSZ[Chapter 35, "Enterprise Beans"],
+link:#GIJRE[Chapter 36, "Getting Started with
+Enterprise Beans"], and link:#BNBWJ[Chapter 50,
 "Introduction to Security in the Jakarta EE Platform"].
 
 This section discusses securing a Jakarta EE application where one or more
@@ -96,7 +96,7 @@ end and the application is packaged into a WAR module as a Java class
 file, security for the application can be handled in the application's
 `web.xml` file. The enterprise bean in the WAR file can have its own deployment
 descriptor, `ejb-jar.xml`, if required. Securing web applications using
-`web.xml` is discussed in link:security-webtier/security-webtier.html#BNCAS[Chapter 51,
+`web.xml` is discussed in link:#BNCAS[Chapter 51,
 "Getting Started Securing Web Applications"].
 
 The following sections describe declarative and programmatic security
@@ -148,7 +148,7 @@ you do not need to perform any additional steps to map the roles
 defined in the application to users, groups, and principals that are the
 components of the user database in the `file` realm.
 This mapping is set by default in the GlassFish Server Administration Console
-as described in link:security-intro/security-intro005.html#BNBXV[Mapping
+as described in link:#BNBXV[Mapping
 Roles to Users and Groups].
 
 The following sections show how an application developer uses
@@ -485,7 +485,7 @@ You would use programmatic security in this way to dynamically control
 access to a method, for example, when you want to deny access except
 during a particular time of day. An example application that uses the
 `getCallerPrincipal` and `isCallerInRole` methods is described in
-link:security-jakartaee003.html#BNCAA[The converter-secure Example: Securing
+link:#BNCAA[The converter-secure Example: Securing
 an Enterprise Bean with Programmatic Security].
 
 [[BNBYR]][[propagating-a-security-identity-run-as]]

@@ -7,7 +7,7 @@ inbound resource adapter that receives data from a legacy EIS using a
 TCP socket.
 
 The example is in the tut-install`/examples/connectors/traffic`
-directory. See link:usingexamples/usingexamples.html#GFIUD[Chapter 2, "Using the
+directory. See link:#GFIUD[Chapter 2, "Using the
 Tutorial Examples,"] for basic information on building and running
 sample applications.
 
@@ -256,7 +256,7 @@ The following topics are addressed here:
 ====== To Run the traffic Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -301,7 +301,7 @@ seconds.
 ====== To Run the traffic Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

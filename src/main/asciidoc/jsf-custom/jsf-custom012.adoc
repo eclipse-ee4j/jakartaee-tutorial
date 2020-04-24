@@ -5,14 +5,14 @@
 If the standard validators or Bean Validation don't perform the
 validation checking you need, you can create a custom validator to
 validate user input. As explained in
-link:jsf-intro/jsf-intro005.html#BNAQK[Validation Model], there are two ways to
+link:#BNAQK[Validation Model], there are two ways to
 implement validation code.
 
 * Implement a managed bean method that performs the validation.
 * Provide an implementation of the `javax.faces.validator.Validator`
 interface to perform the validation.
 
-link:jsf-develop/jsf-develop003.html#BNAVE[Writing a Method to Perform Validation]
+link:#BNAVE[Writing a Method to Perform Validation]
 explains how to implement a managed bean method to perform validation.
 The rest of this section explains how to implement the `Validator`
 interface.
@@ -30,7 +30,7 @@ Validator].
 
 You can also create a managed bean property that accepts and returns the
 `Validator` implementation you create, as described in
-link:jsf-develop/jsf-develop002.html#BNAUL[Writing Properties Bound to Converters,
+link:#BNAUL[Writing Properties Bound to Converters,
 Listeners, or Validators]. You can use the `f:validator` tag's binding
 attribute to bind the `Validator` implementation to the managed bean
 property.
@@ -42,7 +42,7 @@ After creating the resource bundle, you have two ways to make the
 messages available to the application. You can queue the error messages
 onto the `FacesContext` programmatically, or you can register the error
 messages in the application configuration resource file, as explained in
-link:jsf-configure/jsf-configure006.html#BNAXB[Registering Application Messages].
+link:#BNAXB[Registering Application Messages].
 
 For example, an e-commerce application might use a general-purpose
 custom validator called `FormatValidator.java` to validate input data
@@ -185,7 +185,7 @@ implement the `StateHolder` interface as well as the `Validator`
 interface. To implement `StateHolder`, you would need to implement its
 four methods: `saveState(FacesContext)`,
 `restoreState(FacesContext, Object)`, `isTransient`, and
-`setTransient(boolean)`. See link:jsf-custom005.html#BNAVZ[Saving and
+`setTransient(boolean)`. See link:#BNAVZ[Saving and
 Restoring State] for more information.
 
 [[BNAUY]][[specifying-a-custom-tag]]
@@ -274,7 +274,7 @@ validator that is defined in the application configuration resource
 file.
 * Bind the custom `Validator` implementation to a managed bean property
 using the `f:validator` tag's `binding` attribute, as described in
-link:jsf-custom014.html#BNATM[Binding Converters, Listeners, and
+link:#BNATM[Binding Converters, Listeners, and
 Validators to Managed Bean Properties].
 
 The following tag registers a hypothetical validator on a component

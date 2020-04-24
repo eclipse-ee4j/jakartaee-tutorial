@@ -34,7 +34,7 @@ constraint.
 
 If you add method constraints to classes in an object hierarchy, special
 care must be taken to avoid unintended behavior by subtypes. See
-link:bean-validation-advanced/bean-validation-advanced004.html#CIHGJBGI[Using Method Constraints
+link:#CIHGJBGI[Using Method Constraints
 in Type Hierarchies] for more information.
 
 [[sthref122]][[cross-parameter-constraints]]
@@ -91,7 +91,7 @@ List<@Email String> emails;
 public Map<@NotNull String, @USPhoneNumber String> getAddressesByType() { }
 
 ----
-In this sample, `@Email` is an in-built constraint supported by Bean Validation, and `@USPhoneNumber` is a user-defined constraint. See link:bean-validation-advanced/bean-validation-advanced001.html#GKAIA[Using the Built-In Constraints to Make a New Constraint].
+In this sample, `@Email` is an in-built constraint supported by Bean Validation, and `@USPhoneNumber` is a user-defined constraint. See link:#GKAIA[Using the Built-In Constraints to Make a New Constraint].
 
 `@USPhoneNumber` has `ElementType.TYPE_USE` as one of its `@Target`, and therefore it is possible to use `@USPhoneNumber` constraint for validating type arguments of parameterized types.
 
@@ -132,5 +132,5 @@ explicitly set the target of the validation constraint.
 public Employee getManager(Employee employee) { ... }
 ----
 
-See link:bean-validation-advanced/bean-validation-advanced001.html#CIHCICAI[Removing Ambiguity in
+See link:#CIHCICAI[Removing Ambiguity in
 Constraint Targets] for more information.

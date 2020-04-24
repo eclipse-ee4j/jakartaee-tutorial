@@ -18,7 +18,7 @@ The web components in a web module share an object that represents their
 application context. You can pass context parameters to the context, or
 you can pass initialization parameters to a servlet. Context parameters
 are available to the entire application. For information on
-initialization parameters, see link:servlets/servlets004.html#BNAFU[Creating and
+initialization parameters, see link:#BNAFU[Creating and
 Initializing a Servlet].
 
 [[GJSFJ]][[to-add-a-context-parameter-using-netbeans-ide]]
@@ -171,13 +171,13 @@ link:#BNAEV[Table 6-1].
 
 This section explains how to use a couple of the annotations supported
 by a web container to inject resources.
-link:persistence-basicexample/persistence-basicexamples.html#GIJST[Chapter 41, "Running the
+link:#GIJST[Chapter 41, "Running the
 Persistence Examples"], explains how web applications use annotations
 supported by Jakarta Persistence.
-link:security-webtier/security-webtier.html#BNCAS[Chapter 51, "Getting Started Securing
+link:#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"], explains how to use annotations to specify
 information about securing web applications. See
-link:resources/resources.html#BNCJH[Chapter 55, "Resource Adapters and Contracts"],
+link:#BNCJH[Chapter 55, "Resource Adapters and Contracts"],
 for more information on resources.
 
 [[sthref25]][[BNAEV]]
@@ -259,7 +259,7 @@ do not use the `@Resource` annotation to inject a data source. However,
 this API supports the `@PersistenceUnit` and `@PersistenceContext`
 annotations for injecting `EntityManagerFactory` and `EntityManager`
 instances, respectively.
-link:persistence-basicexample/persistence-basicexamples.html#GIJST[Chapter 41, "Running the
+link:#GIJST[Chapter 41, "Running the
 Persistence Examples"] describes these annotations and the use of the
 Jakarta Persistence in web applications.
 

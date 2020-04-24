@@ -3,7 +3,7 @@
 ==== Working with Realms, Users, Groups, and Roles
 
 You often need to protect resources to ensure that only authorized users
-have access. See link:security-intro001.html#BNBWX[Characteristics of
+have access. See link:#BNBWX[Characteristics of
 Application Security] for an introduction to the concepts of
 authentication, identification, and authorization.
 
@@ -14,7 +14,7 @@ authenticate a user, you need to follow these basic steps.
 
 1.  The application developer writes code to prompt for a user name and
 password. The various methods of authentication are discussed in
-link:security-webtier/security-webtier002.html#GKBSA[Specifying Authentication
+link:#GKBSA[Specifying Authentication
 Mechanisms].
 2.  The application developer communicates how to set up security for
 the deployed application by use of a metadata annotation or deployment
@@ -51,7 +51,7 @@ password have been entered, that information is passed to the server,
 which either authenticates the user and sends the protected resource or
 does not authenticate the user, in which case access to the protected
 resource is denied. This type of user authentication is discussed in
-link:security-webtier/security-webtier002.html#BNCBN[Specifying an Authentication
+link:#BNCBN[Specifying an Authentication
 Mechanism in the Deployment Descriptor].
 
 In some applications, authorized users are assigned to roles. In this
@@ -99,7 +99,7 @@ uses certificates with HTTPS to authenticate web clients. To verify the
 identity of a user in the `certificate` realm, the authentication
 service verifies an X.509 certificate. For step-by-step instructions for
 creating this type of certificate, see
-link:security-advanced/security-advanced001.html#BNBYB[Working with Digital Certificates].
+link:#BNBYB[Working with Digital Certificates].
 The common name field of the X.509 certificate is used as the principal
 name.
 
@@ -195,7 +195,7 @@ The following topics are addressed here:
 1.  Start GlassFish Server, if you haven't already done so.
 +
 Information on starting GlassFish Server is available in
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish Server].
+link:#BNADI[Starting and Stopping GlassFish Server].
 2.  Start the Administration Console, if you haven't already done so.
 +
 To start the Administration Console, open a web browser and specify the
@@ -216,7 +216,7 @@ administrators of GlassFish Server.
 You cannot add users to the `certificate` realm by using the
 Administration Console. In the `certificate` realm, you can add only
 certificates. For information on adding (importing) certificates to the
-`certificate` realm, see link:security-advanced/security-advanced001.html#GLIFW[Adding
+`certificate` realm, see link:#GLIFW[Adding
 Users to the Certificate Realm].
 7.  On the Edit Realm page, click Manage Users.
 8.  On the File Users or Admin Users page, click New to add a new user
@@ -310,9 +310,9 @@ public class GreetingServlet extends HttpServlet {
 ----
 
 These annotations are discussed in more detail in
-link:security-webtier/security-webtier004.html#GJRMH[Specifying Security for Basic
+link:#GJRMH[Specifying Security for Basic
 Authentication Using Annotations] and
-link:security-jakartaee/security-jakartaee002.html#GJGDI[Securing an Enterprise Bean Using
+link:#GJGDI[Securing an Enterprise Bean Using
 Declarative Security].
 
 After users have provided their login information and the application

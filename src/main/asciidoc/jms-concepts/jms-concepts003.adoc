@@ -32,8 +32,8 @@ commands and code snippets that show how to create and use the objects.
 The last subsection briefly describes Jakarta Messaging API exception handling.
 
 Examples that show how to combine all these objects in applications
-appear in link:jms-examples/jms-examples.html#BNCGV[Chapter 49, "Java Message Service
-Examples,"] beginning with link:jms-examples/jms-examples003.html#BNCFA[Writing Simple
+appear in link:#BNCGV[Chapter 49, "Java Message Service
+Examples,"] beginning with link:#BNCFA[Writing Simple
 Jakarta Messaging Applications]. For more detail, see Jakarta Messaging documentation, part
 of the Jakarta EE API documentation.
 
@@ -61,14 +61,14 @@ in a file named `glassfish-resources.xml` that you can bundle with an
 application.
 
 NetBeans IDE provides a wizard that allows you to create Jakarta Messaging resources
-for GlassFish Server. See link:jms-examples/jms-examples003.html#GKTJS[Creating Jakarta Messaging
+for GlassFish Server. See link:#GKTJS[Creating Jakarta Messaging
 Administered Objects] for details.
 
 The Jakarta EE platform specification allows a developer to create
 administered objects using annotations or deployment descriptor
 elements. Objects created in this way are specific to the application
 for which they are created. See
-link:jms-concepts005.html#BABHFBDH[Creating Resources for Jakarta EE
+link:#BABHFBDH[Creating Resources for Jakarta EE
 Applications] for details. Definitions in a deployment descriptor
 override those specified by annotations.
 
@@ -82,7 +82,7 @@ configuration parameters that has been defined by an administrator. Each
 connection factory is an instance of the `ConnectionFactory`,
 `QueueConnectionFactory`, or `TopicConnectionFactory` interface. To
 learn how to create connection factories, see
-link:jms-examples/jms-examples003.html#GKTJS[Creating Jakarta Messaging Administered Objects].
+link:#GKTJS[Creating Jakarta Messaging Administered Objects].
 
 At the beginning of a Messaging client program, you usually inject a
 connection factory resource into a `ConnectionFactory` object. A Jakarta EE
@@ -108,7 +108,7 @@ messages it produces and the source of messages it consumes. In the PTP
 messaging style, destinations are called queues. In the pub/sub
 messaging style, destinations are called topics. A Jakarta Messaging application can
 use multiple queues or topics (or both). To learn how to create
-destination resources, see link:jms-examples/jms-examples003.html#GKTJS[Creating Jakarta Messaging
+destination resources, see link:#GKTJS[Creating Jakarta Messaging
 Administered Objects].
 
 To create a destination using GlassFish Server, you create a Jakarta Messaging
@@ -193,7 +193,7 @@ link:#BNCEQ[Jakarta Messaging Message Listeners].
 
 A session provides a transactional context with which to group a set of
 sends and receives into an atomic unit of work. For details, see
-link:jms-concepts004.html#BNCGH[Using Jakarta Messaging Local Transactions].
+link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
 [[BABGDFEA]][[jmscontext-objects]]
 
@@ -210,7 +210,7 @@ You use the `JMSContext` to create the following objects:
 * Messages
 * Queue browsers
 * Temporary queues and topics (see
-link:jms-concepts004.html#BNCGB[Creating Temporary Destinations])
+link:#BNCGB[Creating Temporary Destinations])
 
 You can create a `JMSContext` in a `try`-with-resources block.
 
@@ -230,7 +230,7 @@ non-transacted session with an acknowledgment mode of
 web or EJB container when there is an active JTA transaction in
 progress, the `createContext` method creates a transacted session. For
 information about the way Jakarta Messaging transactions work in Jakarta EE applications,
-see link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
+see link:#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications].
 
 From an application client or a Java SE client, you can also call the
@@ -244,11 +244,11 @@ JMSContext context =
 ----
 
 The session uses local transactions; see
-link:jms-concepts004.html#BNCGH[Using Jakarta Messaging Local Transactions] for
+link:#BNCGH[Using Jakarta Messaging Local Transactions] for
 details.
 
 Alternatively, you can specify a non-default acknowledgment mode; see
-link:jms-concepts004.html#BNCFW[Controlling Message Acknowledgment] for
+link:#BNCFW[Controlling Message Acknowledgment] for
 more information.
 
 When you use a `JMSContext`, message delivery normally begins as soon as
@@ -386,15 +386,15 @@ needed (see link:#BNCEW[Message Bodies]).
 In the Jakarta EE web or EJB container, you use message-driven beans for
 asynchronous message delivery. A message-driven bean also implements the
 `MessageListener` interface and contains an `onMessage` method. For
-details, see link:jms-concepts005.html#BNCGQ[Using Message-Driven Beans
+details, see link:#BNCGQ[Using Message-Driven Beans
 to Receive Messages Asynchronously].
 
 Your `onMessage` method should handle all exceptions. Throwing a
 `RuntimeException` is considered a programming error.
 
 For a simple example of the use of a message listener, see
-link:jms-examples/jms-examples003.html#BNCFH[Using a Message Listener for Asynchronous
-Message Delivery]. link:jms-examples/jms-examples.html#BNCGV[Chapter 49, "Java Message
+link:#BNCFH[Using a Message Listener for Asynchronous
+Message Delivery]. link:#BNCGV[Chapter 49, "Java Message
 Service Examples,"] contains several more examples of message listeners
 and message-driven beans.
 
@@ -407,7 +407,7 @@ you can use a Jakarta Messaging message selector, which allows a message consume
 a destination to specify the messages that interest it. Message
 selectors assign the work of filtering messages to the Messaging provider
 rather than to the application. For an example of an application that
-uses a message selector, see link:jms-examples/jms-examples008.html#BNCGW[Sending
+uses a message selector, see link:#BNCGW[Sending
 Messages from a Session Bean to an MDB].
 
 A message selector is a `String` that contains an expression. The syntax
@@ -567,7 +567,7 @@ context.unsubscribe(subName);
 The `unsubscribe` method deletes the state the provider maintains for
 the subscription.
 
-link:#BNCGE[Figure 48-6] and link:#BNCGF[Figure 48-7] show the
+link:#BNCGF[Figure 48-7] show the
 difference between a nondurable and a durable subscription. With an
 ordinary, nondurable subscription, the consumer and the subscription
 begin and end at the same point and are, in effect, identical. When the
@@ -617,10 +617,10 @@ JMSConsumer consumer =
         context.createSharedDurableConsumer(topic, "MakeItLast");
 ----
 
-See link:jms-examples/jms-examples003.html#BNCFX[Acknowledging Messages],
-link:jms-examples/jms-examples004.html#BNCGG[Using Durable Subscriptions],
-link:jms-examples/jms-examples005.html#BABEJBHA[Using Shared Durable Subscriptions],
-and link:jms-examples/jms-examples008.html#BNCGW[Sending Messages from a Session Bean
+See link:#BNCFX[Acknowledging Messages],
+link:#BNCGG[Using Durable Subscriptions],
+link:#BABEJBHA[Using Shared Durable Subscriptions],
+and link:#BNCGW[Sending Messages from a Session Bean
 to an MDB] for examples of Jakarta EE applications that use durable
 subscriptions.
 
@@ -657,7 +657,7 @@ EE application client applications and Java SE applications.
 (Message-driven beans share the work of processing messages from a topic
 among multiple threads.)
 
-See link:jms-examples/jms-examples005.html#BABIBEAC[Using Shared Nondurable
+See link:#BABIBEAC[Using Shared Nondurable
 Subscriptions] for a simple example of using shared nondurable
 consumers.
 
@@ -720,20 +720,20 @@ values.
 provider `send` method
 
 |`JMSDeliveryMode` |Delivery mode specified when the message was sent
-(see link:jms-concepts004.html#BNCFY[Specifying Message Persistence])
+(see link:#BNCFY[Specifying Message Persistence])
 |Messaging provider `send` method
 
 |`JMSDeliveryTime` |The time the message was sent plus the delivery
 delay specified when the message was sent (see
-link:jms-concepts004.html#BABGEADH[Specifying a Delivery Delay] |JMS
+link:#BABGEADH[Specifying a Delivery Delay] |JMS
 provider `send` method
 
 |`JMSExpiration` |Expiration time of the message (see
-link:jms-concepts004.html#BNCGA[Allowing Messages to Expire]) |JMS
+link:#BNCGA[Allowing Messages to Expire]) |JMS
 provider `send` method
 
 |`JMSPriority` |The priority of the message (see
-link:jms-concepts004.html#BNCFZ[Setting Message Priority Levels]) |Jakarta Messaging
+link:#BNCFZ[Setting Message Priority Levels]) |Jakarta Messaging
 provider `send` method
 
 |`JMSMessageID` |Value that uniquely identifies each message sent by a
@@ -765,7 +765,7 @@ addition to those provided by the header fields. You can use properties
 to provide compatibility with other messaging systems, or you can use
 them to create message selectors (see link:#BNCER[Jakarta Messaging Message
 Selectors]). For an example of setting a property to be used as a
-message selector, see link:jms-examples/jms-examples008.html#BNCGW[Sending Messages
+message selector, see link:#BNCGW[Sending Messages
 from a Session Bean to an MDB].
 
 Jakarta Messaging provides some predefined property names that begin with
@@ -872,7 +872,7 @@ can be assigned to a particular type.
 
 An empty `Message` can be useful if you want to send a message that is
 simply a signal to the application. Some of the examples in
-link:jms-examples/jms-examples.html#BNCGV[Chapter 49, "Jakarta Messaging
+link:#BNCGV[Chapter 49, "Jakarta Messaging
 Examples,"] send an empty message after sending a series of text
 messages. For example:
 
@@ -884,7 +884,7 @@ context.createProducer().send(dest, context.createMessage());
 The consumer code can then interpret a non-text message as a signal that
 all the messages sent have now been received.
 
-The examples in link:jms-examples/jms-examples.html#BNCGV[Chapter 49, "Jakarta Messaging
+The examples in link:#BNCGV[Chapter 49, "Jakarta Messaging
 Examples,"] use messages of type `TextMessage`, `MapMessage`,
 and `Message`.
 
@@ -903,7 +903,7 @@ use the `JMSContext.createBrowser` method. For example:
 QueueBrowser browser = context.createBrowser(queue);
 ----
 
-See link:jms-examples/jms-examples003.html#BNCFL[Browsing Messages on a Queue] for an
+See link:#BNCFL[Browsing Messages on a Queue] for an
 example of using a `QueueBrowser` object.
 
 The `createBrowser` method allows you to specify a message selector as a

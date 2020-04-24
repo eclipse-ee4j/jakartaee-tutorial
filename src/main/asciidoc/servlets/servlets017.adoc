@@ -164,8 +164,8 @@ public class PriceVolumeBean {
 }
 ----
 
-See link:ejb-basicexamples/ejb-basicexamples005.html#BNBOY[Using the Timer Service] in
-link:ejb-basicexamples/ejb-basicexamples.html#GIJRB[Chapter 37, "Running the Enterprise
+See link:#BNBOY[Using the Timer Service] in
+link:#GIJRB[Chapter 37, "Running the Enterprise
 Bean Examples"] for more information on the timer service.
 
 [[sthref113]][[the-html-page]]
@@ -223,8 +223,8 @@ The `XMLHttpRequest` API is supported by most modern browsers, and it is
 widely used in Ajax web client development (Asynchronous JavaScript and
 XML).
 
-See link:websocket/websocket011.html#BABGCEHE[The dukeetf2 Example Application] in
-link:websocket/websocket.html#GKJIQ5[Chapter 19, "Jakarta WebSocket"] for an
+See link:#BABGCEHE[The dukeetf2 Example Application] in
+link:#GKJIQ5[Chapter 19, "Jakarta WebSocket"] for an
 equivalent version of this example implemented using a WebSocket
 endpoint.
 
@@ -246,7 +246,7 @@ IDE]
 ====== To Run the dukeetf Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -277,7 +277,7 @@ price and volume updates simultaneously.
 ====== To Run the dukeetf Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

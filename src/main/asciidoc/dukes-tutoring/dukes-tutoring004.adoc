@@ -30,14 +30,14 @@ The following topics are addressed here:
 Before You Begin
 
 You must have already configured GlassFish Server as a Jakarta EE server in
-NetBeans IDE, as described in link:usingexamples/usingexamples001.html#GIQZL[To Add
+NetBeans IDE, as described in link:#GIQZL[To Add
 GlassFish Server as a Server Using NetBeans IDE].
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it as described
-in link:usingexamples/usingexamples004.html#BNADK[Starting and Stopping Apache Derby].
+in link:#BNADK[Starting and Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
@@ -75,10 +75,10 @@ started.
 ====== To Build and Deploy Duke's Tutoring Using Maven
 
 1.  Make sure that GlassFish Server has started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  If the database server is not already running, start it as described
-in link:usingexamples/usingexamples004.html#BNADK[Starting and Stopping Apache Derby].
+in link:#BNADK[Starting and Stopping Apache Derby].
 3.  In a terminal window, go to:
 +
 [source,oac_no_warn]

@@ -7,7 +7,7 @@ request and send it to the server. The server then processes the
 request.
 
 The application uses the attributes of the `f:ajax` tag listed in
-link:jsf-ajax003.html#GKDER[Table 13-1] to create the Ajax request. The
+link:#GKDER[Table 13-1] to create the Ajax request. The
 following sections explain the process of creating and sending an Ajax
 request using some of these attributes.
 
@@ -125,7 +125,7 @@ on the server side in response to an Ajax action on the client. The
 listener's `javax.faces.event.AjaxBehaviorListener.processAjaxBehavior`
 method is called once during the Invoke Application phase of the
 lifecycle. In the following code from the `reservation` example
-application (see link:jsf-facelets/jsf-facelets009.html#BABGGIAA[The reservation
+application (see link:#BABGGIAA[The reservation
 Example Application]), a `listener` attribute is defined by an `f:ajax`
 tag, which refers to a method from the bean:
 

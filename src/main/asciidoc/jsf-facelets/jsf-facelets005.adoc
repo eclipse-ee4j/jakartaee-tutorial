@@ -106,7 +106,7 @@ The preceding example content is stored as a file named `email.xhtml` in
 a folder named `resources/emcomp`, under the application web root
 directory. This directory is considered a library by Jakarta Server Faces,
 and a component can be accessed from such a library. For more
-information on resources, see link:jsf-facelets006.html#GIRGM[Web
+information on resources, see link:#GIRGM[Web
 Resources].
 
 The web page that uses this composite component is generally called a
@@ -146,5 +146,5 @@ accessed with the following URL:
 http://localhost:8080/application-name/emuserpage.xhtml
 ----
 
-See link:jsf-advanced-cc/jsf-advanced-cc.html#GKHXA[Chapter 14, "Composite Components:
+See link:#GKHXA[Chapter 14, "Composite Components:
 Advanced Topics and an Example,"] for more information and an example.

@@ -14,7 +14,7 @@ Jakarta EE platform, you can use them with Jakarta EE managed objects of all
 kinds, including managed beans.
 
 For information on Jakarta EE interceptors, see
-link:interceptors/interceptors.html#GKEED[Chapter 57, "Using Jakarta EE Interceptors"].
+link:#GKEED[Chapter 57, "Using Jakarta EE Interceptors"].
 
 An interceptor class often contains a method annotated `@AroundInvoke`,
 which specifies the tasks the interceptor will perform when intercepted
@@ -52,7 +52,7 @@ An interceptor binding type may declare other interceptor bindings.
 
 The interceptor class is annotated with the interceptor binding as well
 as with the `@Interceptor` annotation. For an example, see
-link:cdi-adv-examples/cdi-adv-examples005.html#GKHRQ[The LoggedInterceptor Interceptor
+link:#GKHRQ[The LoggedInterceptor Interceptor
 Class].
 
 Every `@AroundInvoke` method takes a

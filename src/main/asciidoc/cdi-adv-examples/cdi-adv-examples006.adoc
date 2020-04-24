@@ -34,7 +34,7 @@ files.
 ===== Components of the decorators Example
 
 The `decorators` example is very similar to the `encoder` example
-described in link:cdi-adv-examples002.html#GKHPU[The encoder Example:
+described in link:#GKHPU[The encoder Example:
 Using Alternatives]. Instead of providing two implementations of the
 `Coder` interface, however, this example provides only the `CoderImpl`
 class. The decorator class, `CoderDecorator`, rather than simply return
@@ -107,7 +107,7 @@ Maven]
 ====== To Build, Package, and Deploy the decorators Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -130,7 +130,7 @@ to GlassFish Server.
 ====== To Build, Package, and Deploy the decorators Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

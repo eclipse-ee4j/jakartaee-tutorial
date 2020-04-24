@@ -65,7 +65,7 @@ In this case, the `{1}` substitution parameter is replaced by the
 component's label or `id`, and the `{0}` substitution parameter is
 replaced with the maximum value allowed by the validator.
 
-See link:jsf-page002.html#BNASO[Displaying Error Messages with the
+See link:#BNASO[Displaying Error Messages with the
 h:message and h:messages Tags] for information on how to display
 validation error messages on the page when validation fails.
 
@@ -73,7 +73,7 @@ Instead of using the standard validators, you can use Bean Validation to
 validate data. If you specify bean validation constraints on your
 managed bean properties, the constraints are automatically placed on the
 corresponding fields on your applications web pages. See
-link:bean-validation/bean-validation.html#CHDGJIIA[Chapter 23, "Introduction to Bean
+link:#CHDGJIIA[Chapter 23, "Introduction to Bean
 Validation"] for more information. You do not need to specify the
 `validateBean` tag to use Bean Validation, but the tag allows you to use
 more advanced Bean Validation features. For example, you can use the
@@ -81,7 +81,7 @@ more advanced Bean Validation features. For example, you can use the
 
 You can also create and register custom validators, although Bean
 Validation has made this feature less useful. For details, see
-link:jsf-custom/jsf-custom012.html#BNAUW[Creating and Using a Custom Validator].
+link:#BNAUW[Creating and Using a Custom Validator].
 
 [[BNATE]][[validating-a-components-value]]
 
@@ -101,12 +101,12 @@ tag's `validator` attribute.
 validator tag's `validatorId` attribute or its `binding` attribute to
 refer to the validator.
 
-See link:jsf-page-core004.html#BNATR[Referencing a Method That Performs
+See link:#BNATR[Referencing a Method That Performs
 Validation] for more information on using the `validator` attribute.
 
 The `validatorId` attribute works similarly to the `converterId`
 attribute of the `converter` tag, as described in
-link:jsf-page-core001.html#BNASU[Converting a Component's Value].
+link:#BNASU[Converting a Component's Value].
 
 Keep in mind that validation can be performed only on components that
 implement `EditableValueHolder`, because these components accept values

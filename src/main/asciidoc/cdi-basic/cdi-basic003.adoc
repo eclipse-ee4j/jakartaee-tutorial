@@ -12,10 +12,10 @@ to the lifecycle context model defined in the CDI specification.
 More specifically, a bean has the following attributes:
 
 * A (nonempty) set of bean types
-* A (nonempty) set of qualifiers (see link:cdi-basic006.html#GJBCK[Using
+* A (nonempty) set of qualifiers (see link:#GJBCK[Using
 Qualifiers])
-* A scope (see link:cdi-basic008.html#GJBBK[Using Scopes])
-* Optionally, a bean EL name (see link:cdi-basic009.html#GJBAK[Giving
+* A scope (see link:#GJBBK[Using Scopes])
+* Optionally, a bean EL name (see link:#GJBAK[Giving
 Beans EL Names])
 * A set of interceptor bindings
 * A bean implementation

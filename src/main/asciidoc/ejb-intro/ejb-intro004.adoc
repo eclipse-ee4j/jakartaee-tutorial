@@ -357,7 +357,7 @@ ExampleRemote example = (ExampleRemote)
 
 A web service client can access a Jakarta EE application in two ways.
 First, the client can access a web service created with Jakarta XML Web Services. (For
-more information on Jakarta XML Web Services, see link:jaxws/jaxws.html#BNAYL[Chapter 31,
+more information on Jakarta XML Web Services, see link:#BNAYL[Chapter 31,
 "Building Web Services with Jakarta XML Web Services"].) Second, a web service client can
 invoke the business methods of a stateless session bean. Message beans
 cannot be accessed by web service clients.
@@ -378,7 +378,7 @@ service methods. If the `@WebMethod` annotation is used to decorate the
 bean class's methods, only those methods decorated with `@WebMethod` are
 exposed to web service clients.
 
-For a code sample, see link:ejb-basicexamples/ejb-basicexamples004.html#BNBOR[A Web Service
+For a code sample, see link:#BNBOR[A Web Service
 Example: helloservice].
 
 [[GIPLY]][[method-parameters-and-access]]

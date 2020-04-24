@@ -37,7 +37,7 @@ this design pattern (which is not specific to Jakarta Messaging) is joining mess
 Such a task must be transactional, with all the receives and the send as
 a single transaction. If not all the messages are received successfully,
 the transaction can be rolled back. For an application client example
-that illustrates this task, see link:jms-examples004.html#BNCGJ[Using
+that illustrates this task, see link:#BNCGJ[Using
 Local Transactions].
 
 A message-driven bean can process only one message at a time in a
@@ -57,7 +57,7 @@ hire's name, employee ID, and position. It publishes the message to a
 topic because the message needs to be consumed by two message-driven
 beans. The client then creates a temporary queue, `ReplyQueue`, with a
 message listener that waits for a reply to the message. (See
-link:jms-concepts/jms-concepts004.html#BNCGB[Creating Temporary Destinations] for more
+link:#BNCGB[Creating Temporary Destinations] for more
 information.)
 2.  Two message-driven beans process each message: One bean,
 `OfficeMDB`, assigns the new hire's office number, and the other bean,
@@ -246,9 +246,9 @@ The following topics are addressed here:
 ====== To Run clientmdbentity Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]), as well as the database server (see
-link:usingexamples/usingexamples004.html#BNADK[Starting and Stopping Apache Derby]).
+link:#BNADK[Starting and Stopping Apache Derby]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
@@ -282,9 +282,9 @@ runs the application client.
 ====== To Run clientmdbentity Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]), as well as the database server (see
-link:usingexamples/usingexamples004.html#BNADK[Starting and Stopping Apache Derby]).
+link:#BNADK[Starting and Stopping Apache Derby]).
 2.  Go to the following directory:
 +
 [source,oac_no_warn]

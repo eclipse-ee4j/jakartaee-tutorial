@@ -5,15 +5,15 @@
 A Jakarta Server Faces converter class converts strings to objects and
 objects to strings as required. Several standard converters are provided
 by Jakarta Server Faces for this purpose. See
-link:jsf-page/jsf-page-core001.html#BNAST[Using the Standard Converters] for more
+link:#BNAST[Using the Standard Converters] for more
 information on these included converters.
 
-As explained in link:jsf-intro/jsf-intro005.html#BNAQI[Conversion Model], if the
+As explained in link:#BNAQI[Conversion Model], if the
 standard converters included with Jakarta Server Faces cannot perform the
 data conversion that you need, you can create a custom converter to
 perform this specialized conversion. This implementation, at a minimum,
 must define how to convert data both ways between the two views of the
-data described in link:jsf-intro/jsf-intro005.html#BNAQI[Conversion Model].
+data described in link:#BNAQI[Conversion Model].
 
 All custom converters must implement the `javax.faces.convert.Converter`
 interface. This section explains how to implement this interface to
@@ -50,7 +50,7 @@ The `@FacesConverter` annotation registers the custom converter class as
 a converter with the name of `ccno` with the Jakarta Server Faces
 implementation. Alternatively, you can register the converter with
 entries in the application configuration resource file, as shown in
-link:jsf-configure/jsf-configure009.html#BNAXE[Registering a Custom Converter].
+link:#BNAXE[Registering a Custom Converter].
 
 To define how the data is converted from the presentation view to the
 model view, the `Converter` implementation must implement the
@@ -153,7 +153,7 @@ value to a `String`.
 If the value cannot be converted to a `String`, the method throws an
 exception, passing an error message from the resource bundle that is
 registered with the application.
-link:jsf-configure/jsf-configure006.html#BNAXB[Registering Application Messages]
+link:#BNAXB[Registering Application Messages]
 explains how to register custom error messages with the application.
 
 If the value can be converted to a `String`, the method reads the
@@ -255,7 +255,7 @@ in `bookcashier.xhtml`:
 ----
 * Bind the `Converter` implementation to a managed bean property using
 the `f:converter` tag's `binding` attribute, as described in
-link:jsf-custom014.html#BNATM[Binding Converters, Listeners, and
+link:#BNATM[Binding Converters, Listeners, and
 Validators to Managed Bean Properties].
 
 The Jakarta Server Faces implementation calls the converter's `getAsObject`

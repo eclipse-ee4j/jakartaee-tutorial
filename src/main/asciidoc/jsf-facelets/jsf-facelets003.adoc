@@ -193,7 +193,7 @@ range by the Jakarta Server Faces standard validator tag
 
 The image file, `wave.med.gif`, is added to the page as a resource, as
 is the style sheet. For more details about the resources facility, see
-link:jsf-facelets006.html#GIRGM[Web Resources].
+link:#GIRGM[Web Resources].
 
 An `h:commandButton` tag with the ID `submit` starts validation of the
 input data when a user clicks the button. Using implicit navigation, the
@@ -309,7 +309,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -331,7 +331,7 @@ GlassFish Server instance.
 ====== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

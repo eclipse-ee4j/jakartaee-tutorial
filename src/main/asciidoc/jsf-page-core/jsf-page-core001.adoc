@@ -8,7 +8,7 @@ implementations that you can use to convert component data. The purpose
 of conversion is to take the String-based data coming in from the
 Servlet API and convert it to strongly typed Java objects suitable for
 the business domain. For more information on the conceptual details of
-the conversion model, see link:jsf-intro/jsf-intro005.html#BNAQI[Conversion Model].
+the conversion model, see link:#BNAQI[Conversion Model].
 
 The standard `Converter` implementations are located in the
 `javax.faces.convert` package. Normally, converters are implicitly
@@ -74,7 +74,7 @@ the standard converters in one of the following ways.
 
 * Nest one of the standard converter tags inside the component's tag.
 These tags are `f:convertDateTime` and `f:convertNumber`, which are
-described in link:#BNASV[Using DateTimeConverter] and link:#BNASX[Using
+described in link:#BNASX[Using
 NumberConverter], respectively.
 * Bind the value of the component to a managed bean property of the same
 type as the converter. This is the most common technique.
@@ -124,7 +124,7 @@ instance.
 
 You can also create custom converters and register them on components
 using the `f:converter` tag. For details, see
-link:jsf-custom/jsf-custom011.html#BNAUS[Creating and Using a Custom Converter].
+link:#BNAUS[Creating and Using a Custom Converter].
 
 [[BNASV]][[using-datetimeconverter]]
 

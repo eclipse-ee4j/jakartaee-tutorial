@@ -129,7 +129,7 @@ The following topics are addressed here:
 ====== To Run the converter Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -158,7 +158,7 @@ A second page opens, showing the converted values.
 ====== To Run the converter Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -176,7 +176,7 @@ mvn install
 This command compiles the source files for the enterprise bean and the
 servlet, packages the project into a WAR module (`converter.war`), and
 deploys the WAR to the server. For more information about Maven, see
-link:usingexamples/usingexamples005.html#BNAAN[Building the Examples].
+link:#BNAAN[Building the Examples].
 4.  Open a web browser to the following URL:
 +
 [source,oac_no_warn]

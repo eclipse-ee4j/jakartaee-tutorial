@@ -22,7 +22,7 @@ The following topics are addressed here:
 ===== "Big" Web Services
 
 JAX-WS provides the functionality for "big" web services,
-which are described in link:jaxws/jaxws.html#BNAYL[Chapter 31, "Building Web
+which are described in link:#BNAYL[Chapter 31, "Building Web
 Services with JAX-WS"]. Big web services use XML messages that follow
 the Simple Object Access Protocol (SOAP) standard, an XML language
 defining a message architecture and message formats. Such systems often
@@ -110,7 +110,7 @@ be more productive because they are adding to something they are already
 familiar with rather than having to start from scratch with new
 technology.
 
-RESTful web services are discussed in link:jaxrs/jaxrs.html#GIEPU[Chapter 32,
+RESTful web services are discussed in link:#GIEPU[Chapter 32,
 "Building RESTful Web Services with Jakarta RESTful Web Services"]. This chapter contains
 information about generating the skeleton of a RESTful web service using
 both NetBeans IDE and the Maven project-management tool.

@@ -56,31 +56,31 @@ You do not need to create a custom component in the following cases.
 * You need to aggregate components to create a new component that has
 its own unique behavior. In this situation, you can use a composite
 component to combine existing standard components. For more information
-on composite components, see link:jsf-facelets/jsf-facelets005.html#GIQZR[Composite
-Components] and link:jsf-advanced-cc/jsf-advanced-cc.html#GKHXA[Chapter 14, "Composite
+on composite components, see link:#GIQZR[Composite
+Components] and link:#GKHXA[Chapter 14, "Composite
 Components: Advanced Topics and an Example"].
 * You simply need to manipulate data on the component or add
 application-specific functionality to it. In this situation, you should
 create a managed bean for this purpose and bind it to the standard
 component rather than create a custom component. See
-link:jsf-develop/jsf-develop001.html#BNAQM[Managed Beans in Jakarta Server Faces
+link:#BNAQM[Managed Beans in Jakarta Server Faces
 Technology] for more information on managed beans.
 * You need to convert a component's data to a type not supported by its
-renderer. See link:jsf-page/jsf-page-core001.html#BNAST[Using the Standard
+renderer. See link:#BNAST[Using the Standard
 Converters] for more information about converting a component's data.
 * You need to perform validation on the component data. Standard
 validators and custom validators can be added to a component by using
 the validator tags from the page. See
-link:jsf-page/jsf-page-core003.html#BNATC[Using the Standard Validators] and
-link:jsf-custom012.html#BNAUW[Creating and Using a Custom Validator] for
+link:#BNATC[Using the Standard Validators] and
+link:#BNAUW[Creating and Using a Custom Validator] for
 more information about validating a component's data.
 * You need to register event listeners on components. You can either
 register event listeners on components using the `f:valueChangeListener`
 and `f:actionListener` tags, or you can point at an event-processing
 method on a managed bean using the component's `actionListener` or
 `valueChangeListener` attributes. See
-link:jsf-custom007.html#BNAUT[Implementing an Event Listener] and
-link:jsf-develop/jsf-develop003.html#BNAVB[Writing Managed Bean Methods] for more
+link:#BNAUT[Implementing an Event Listener] and
+link:#BNAVB[Writing Managed Bean Methods] for more
 information.
 
 [[BNAVJ]][[when-to-use-a-custom-renderer]]

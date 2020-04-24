@@ -18,7 +18,7 @@ An event consists of the following:
 * Zero or more qualifier types, the event qualifiers
 
 For example, in the `billpayment` example described in
-link:cdi-adv-examples/cdi-adv-examples005.html#GKHPA[The billpayment Example: Using Events
+link:#GKHPA[The billpayment Example: Using Events
 and Interceptors], a `PaymentEvent` bean defines an event using three
 properties, which have setter and getter methods:
 

@@ -9,7 +9,7 @@ users to submit tasks to be executed and displays information messages
 for each task. The example uses the Managed Executor Service to run
 tasks immediately and the Managed Scheduled Executor Service to run
 tasks periodically or after a fixed delay. (See
-link:concurrency-utilities002.html#CIHFBCFH[Main Components of the
+link:#CIHFBCFH[Main Components of the
 Concurrency Utilities] for information about these services.)
 
 The `taskcreator` example consists of the following components.
@@ -104,7 +104,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the taskcreator Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -125,7 +125,7 @@ This command builds and deploys the application.
 ====== To Build, Package, and Deploy the taskcreator Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

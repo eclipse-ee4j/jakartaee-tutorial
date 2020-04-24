@@ -6,7 +6,7 @@ An Ajax request varies from other typical Jakarta Server Faces requests, and
 its processing is also handled differently by the Jakarta Server Faces
 lifecycle.
 
-As described in link:jsf-intro/jsf-intro008.html#GKNOJ[Partial Processing and
+As described in link:#GKNOJ[Partial Processing and
 Partial Rendering], when an Ajax request is received, the state
 associated with that request is captured by the
 `javax.faces.context.PartialViewContext`. This object provides access to

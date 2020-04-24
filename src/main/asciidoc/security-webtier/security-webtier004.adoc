@@ -24,9 +24,9 @@ security to demonstrate adding security to existing web applications.
 Here are some other locations where you will find examples of securing
 various types of applications:
 
-* link:security-jakartaee/security-jakartaee003.html#BNBZK[The cart-secure Example: Securing an
+* link:#BNBZK[The cart-secure Example: Securing an
 Enterprise Bean with Declarative Security]
-* link:security-jakartaee/security-jakartaee003.html#BNCAA[The converter-secure Example:
+* link:#BNCAA[The converter-secure Example:
 Securing an Enterprise Bean with Programmatic Security]
 * Java EE 8 GlassFish samples: `https://javaee.github.io/glassfish-samples/`
 
@@ -39,10 +39,10 @@ configure a user database that the application can use for
 authenticating users. Before continuing, follow these steps.
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  Add an authorized user to GlassFish Server. For the examples in this
-chapter and in link:security-jakartaee/security-jakartaee.html#BNBYK[Chapter 52, "Getting
+chapter and in link:#BNBYK[Chapter 52, "Getting
 Started Securing Enterprise Applications"], add a user to the `file`
 realm of GlassFish Server, and assign the user to the group
 `TutorialUser`.
@@ -63,7 +63,7 @@ Be sure to write down the user name and password for the user you create
 so that you can use it for testing the example applications.
 Authentication is case sensitive for both the user name and password, so
 write down the user name and password exactly. This topic is discussed
-more in link:security-intro/security-intro005.html#BNBXR[Managing Users and Groups in
+more in link:#BNBXR[Managing Users and Groups in
 GlassFish Server].
 +
 [width="100%",cols="100%",]
@@ -92,7 +92,7 @@ requested web resource if the user is authorized to view it.
 
 In general, the following steps are necessary for adding basic
 authentication to an unsecured servlet, such as the ones described in
-link:webapp/webapp.html#BNADR[Chapter 6, "Getting Started with Web
+link:#BNADR[Chapter 6, "Getting Started with Web
 Applications"]. In the example application included with this tutorial,
 many of these steps have been completed for you and are listed here
 simply to show what needs to be done should you wish to create a similar
@@ -102,7 +102,7 @@ application. This application can be found in the
 1.  Follow the steps in link:#GJJLK[To Set Up Your System for Running
 the Security Examples].
 2.  Create a web module for the servlet example, `hello2`, as described
-in link:webapp/webapp.html#BNADR[Chapter 6, "Getting Started with Web
+in link:#BNADR[Chapter 6, "Getting Started with Web
 Applications"].
 3.  Add the appropriate security annotations to the servlet. The
 security annotations are described in link:#GJRMH[Specifying Security
@@ -270,7 +270,7 @@ user name and password are those of an authorized user and, if
 authorized, sends the requested web resource.
 
 This example, `hello1-formauth`, adds security to the basic Jakarta Server
-Faces application shown in link:webapp/webapp003.html#BNADX[A Web Module That
+Faces application shown in link:#BNADX[A Web Module That
 Uses Jakarta Server Faces Technology: The hello1 Example].
 
 In general, the steps necessary for adding form-based authentication to

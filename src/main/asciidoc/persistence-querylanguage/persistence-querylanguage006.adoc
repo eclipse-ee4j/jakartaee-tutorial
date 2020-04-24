@@ -505,7 +505,7 @@ FROM Player p1, Player p2
 ----
 
 For an example of such a query, see
-link:persistence-querylanguage005.html#BNBUB[Comparison Operators].
+link:#BNBUB[Comparison Operators].
 
 [[BNBUO]][[collection-member-declarations]]
 
@@ -519,7 +519,7 @@ relationships in the abstract schema. (For more information on path
 expressions, see link:#BNBUQ[Path Expressions].) Because a path
 expression can be based on another path expression, the navigation can
 traverse several relationships. See
-link:persistence-querylanguage005.html#BNBTU[Traversing Multiple
+link:#BNBTU[Traversing Multiple
 Relationships].
 
 A collection member declaration must include the `IN` operator but can
@@ -1101,7 +1101,7 @@ WHERE emp.salary > ALL (
 The query language includes several string, arithmetic, and date/time
 functions that may be used in the `SELECT`, `WHERE`, or `HAVING` clause
 of a query. The functions are listed in link:#BNBVP[Table 42-4],
-link:#BNBVQ[Table 42-5], and link:#GJJNL[Table 42-6].
+link:#GJJNL[Table 42-6].
 
 In link:#BNBVP[Table 42-4], the `start` and `length` arguments are of
 type `int` and designate positions in the `String` argument. The first
@@ -1260,7 +1260,7 @@ unknown value.
 single-valued relationship field to `TRUE`. The `IS NOT NULL` test
 converts them to `FALSE`.
 * Boolean operators and conditional tests use the three-valued logic
-defined by link:#BNBVS[Table 42-7] and link:#BNBVT[Table 42-8]. (In
+defined by link:#BNBVT[Table 42-8]. (In
 these tables, T stands for `TRUE`, F for `FALSE`, and U for unknown.)
 
 [[sthref175]][[BNBVS]]

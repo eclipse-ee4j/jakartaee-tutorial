@@ -6,7 +6,7 @@ When you want to produce user interface features for which HTML does not
 have its own elements, you can create a custom Jakarta Server Faces
 component and insert it in your Facelets page. This mechanism can cause
 a simple element to create complex web code. However, creating such a
-component is a significant task (see link:jsf-custom/jsf-custom.html#BNAVG[Chapter
+component is a significant task (see link:#BNAVG[Chapter
 15, "Creating Custom UI Components and Other Custom Objects"]).
 
 HTML5 offers new elements and attributes that can make it unnecessary to
@@ -240,7 +240,7 @@ namespaces:
 
 Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag
 within the `h:body` tag illustrates the use of a relocatable resource
-(as described in link:jsf-facelets007.html#BABHGBJI[Relocatable
+(as described in link:#BABHGBJI[Relocatable
 Resources]):
 
 [source,oac_no_warn]
@@ -298,7 +298,7 @@ to the browser uninterpreted by the Jakarta Server Faces input component:
 
 The output of the `calculateTotal` method that is specified as the
 listener for the Ajax event is rendered in the output element whose `id`
-and `name` value is `total`. See link:jsf-ajax/jsf-ajax.html#GKIOW[Chapter 13,
+and `name` value is `total`. See link:#GKIOW[Chapter 13,
 "Using Ajax with Jakarta Server Faces Technology"], for more information.
 
 The second Facelets page, `confirmation.xhtml`, uses a pass-through
@@ -321,7 +321,7 @@ Facelets pages. It also contains two methods, `calculateTotal` and
 ====== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -343,7 +343,7 @@ GlassFish Server instance.
 ====== To Build, Package, and Deploy the reservation Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

@@ -58,7 +58,7 @@ Predefined beans are injected with dependent scope and the predefined
 default qualifier `@Default`.
 
 For more information about injecting resources, see
-link:injection/injection001.html#BABHDCAI[Resource Injection].
+link:#BABHDCAI[Resource Injection].
 
 The following code snippet shows how to use the `@Resource` and
 `@Inject` annotations to inject predefined beans. This code snippet

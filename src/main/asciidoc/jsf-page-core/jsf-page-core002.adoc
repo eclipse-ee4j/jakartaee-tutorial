@@ -11,8 +11,8 @@ either an `f:valueChangeListener` tag or an `f:actionListener` tag and
 nest the tag inside the component tag to register the listener on the
 component.
 
-link:jsf-page-core004.html#BNATQ[Referencing a Method That Handles an
-Action Event] and link:jsf-page-core004.html#BNATS[Referencing a Method
+link:#BNATQ[Referencing a Method That Handles an
+Action Event] and link:#BNATS[Referencing a Method
 That Handles a Value-Change Event] explain how a page author uses the
 `valueChangeListener` and `actionListener` attributes to reference
 managed bean methods that handle events.
@@ -77,7 +77,7 @@ to the component.
 The `binding` attribute is used to bind a `ValueChangeListener`
 implementation to a managed bean property. This attribute works in a
 similar way to the `binding` attribute supported by the standard
-converter tags. See link:jsf-custom/jsf-custom013.html#BNATG[Binding Component
+converter tags. See link:#BNATG[Binding Component
 Values and Instances to Managed Bean Properties] for more information.
 
 [[BNATB]][[registering-an-action-listener-on-a-component]]
@@ -107,7 +107,7 @@ The `type` attribute of the `f:actionListener` tag specifies the fully
 qualified class name of the `ActionListener` implementation. Similarly
 to the `f:valueChangeListener` tag, the `f:actionListener` tag also
 supports the `binding` attribute. See
-link:jsf-custom/jsf-custom014.html#BNATM[Binding Converters, Listeners, and
+link:#BNATM[Binding Converters, Listeners, and
 Validators to Managed Bean Properties] for more information about
 binding listeners to managed bean properties.
 

@@ -26,7 +26,7 @@ link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
 The most reliable way to consume a message is to do so within a
 transaction, either from a queue or from a durable subscription to a
-topic. For details, see link:jms-concepts003.html#BNCGD[Creating Durable
+topic. For details, see link:#BNCGD[Creating Durable
 Subscriptions], link:#BNCGB[Creating Temporary Destinations], and
 link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
@@ -48,7 +48,7 @@ The following sections describe these features as they apply to
 application clients or Java SE clients. Some of the features work
 differently in the Jakarta EE web or enterprise bean container; in these cases, the
 differences are noted here and are explained in detail in
-link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
+link:#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications].
 
 [[BNCFW]][[controlling-message-acknowledgment]]
@@ -122,7 +122,7 @@ If messages have been received from a queue but not acknowledged when a
 them when a consumer next accesses the queue. The provider also retains
 unacknowledged messages if an application closes a `JMSContext` that has
 been consuming messages from a durable subscription. (See
-link:jms-concepts003.html#BNCGD[Creating Durable Subscriptions].)
+link:#BNCGD[Creating Durable Subscriptions].)
 Unacknowledged messages that have been received from a nondurable
 subscription will be dropped when the `JMSContext` is closed.
 
@@ -136,7 +136,7 @@ expired or if higher-priority messages have arrived. For a consumer on a
 nondurable subscription, the provider may drop unacknowledged messages
 when the `JMSContext.recover` method is called.
 
-The sample program in link:jms-examples/jms-examples003.html#BNCFX[Acknowledging
+The sample program in link:#BNCFX[Acknowledging
 Messages] demonstrates two ways to ensure that a message will not be
 acknowledged until processing of the message is complete.
 
@@ -337,7 +337,7 @@ replyMsg.setJMSCorrelationID(msg.getJMSMessageID());
 context.createProducer().send((Topic) msg.getJMSReplyTo(), replyMsg);
 ----
 
-For an example, see link:jms-examples/jms-examples009.html#BNCHF[Using an Entity to
+For an example, see link:#BNCHF[Using an Entity to
 Join Messages from Two MDBs].
 
 [[BNCGH]][[using-jms-local-transactions]]
@@ -378,7 +378,7 @@ sends and receives.
 
 In an application running in the Jakarta EE web or enterprise bean container, you
 cannot use local transactions. Instead, you use Jakarta Transactions,
-described in link:jms-concepts005.html#BNCGL[Using Jakarta Messaging in Jakarta EE
+described in link:#BNCGL[Using Jakarta Messaging in Jakarta EE
 Applications].
 
 You can combine several sends and receives in a single Jakarta Messaging local
@@ -458,7 +458,7 @@ session to perform the operations. For example, you can use the same
 `JMSContext` to receive a message from a queue and send a message to a
 topic in the same transaction.
 
-The example in link:jms-examples/jms-examples004.html#BNCGJ[Using Local Transactions]
+The example in link:#BNCGJ[Using Local Transactions]
 shows how to use Jakarta Messaging local transactions.
 
 [[BABFIFAJ]][[sending-messages-asynchronously]]

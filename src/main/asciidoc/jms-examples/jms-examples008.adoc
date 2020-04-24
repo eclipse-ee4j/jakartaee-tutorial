@@ -27,12 +27,12 @@ clientsessionmdb Example]
 
 This application demonstrates how to send messages from an enterprise
 bean (in this case, a session bean) rather than from an application
-client, as in the example in link:jms-examples007.html#BNBPK[Receiving
+client, as in the example in link:#BNBPK[Receiving
 Messages Asynchronously Using a Message-Driven Bean]. link:#BNCGY[Figure
 49-4] illustrates the structure of this application. Sending messages
 from an enterprise bean is very similar to sending messages from a
 managed bean, which was shown in
-link:jms-examples006.html#BABBABFC[Sending and Receiving Messages Using a
+link:#BABBABFC[Sending and Receiving Messages Using a
 Simple Web Application].
 
 [[BNCGY]]
@@ -62,7 +62,7 @@ published messages will be delivered to it.
 
 The application client, `MyAppClient.java`, found under
 `clientsessionmdb-app-client`, performs no Messaging operations and so is
-simpler than the client in link:jms-examples007.html#BNBPK[Receiving
+simpler than the client in link:#BNBPK[Receiving
 Messages Asynchronously Using a Message-Driven Bean]. The client uses
 dependency injection to obtain the Publisher enterprise bean's business
 interface:
@@ -121,7 +121,7 @@ the messages.
 
 The message-driven bean class, `MessageBean.java`, found under
 `clientsessionmdb-ejb`, is almost identical to the one in
-link:jms-examples007.html#BNBPK[Receiving Messages Asynchronously Using a
+link:#BNBPK[Receiving Messages Asynchronously Using a
 Message-Driven Bean]. However, the `@MessageDriven` annotation is
 different, because instead of a queue, the bean is using a topic, a
 durable subscription, and a message selector. The bean defines a topic
@@ -130,7 +130,7 @@ scope because both the session bean and the message-driven bean are in
 the same module. Because the destination is defined in the
 message-driven bean, the `@MessageDriven` annotation uses the
 `destinationLookup` activation config property. (See
-link:jms-concepts/jms-concepts005.html#BABHFBDH[Creating Resources for Jakarta EE
+link:#BABHFBDH[Creating Resources for Jakarta EE
 Applications] for more information.) The annotation also sets the
 activation config properties `messageSelector`,
 `subscriptionDurability`, `clientId`, and `subscriptionName`, as
@@ -187,7 +187,7 @@ The following topics are addressed here:
 ====== To Run clientsessionmdb Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -240,7 +240,7 @@ finished running it.
 ====== To Run clientsessionmdb Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  Go to the following directory:
 +

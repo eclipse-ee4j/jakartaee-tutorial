@@ -6,7 +6,7 @@ Web containers in application servers normally use a server thread per
 client request. To develop scalable web applications, you must ensure
 that threads associated with client requests are never sitting idle
 waiting for a blocking operation to complete.
-link:servlets012.html#BEIGCFDF[Asynchronous Processing] provides a
+link:#BEIGCFDF[Asynchronous Processing] provides a
 mechanism to execute application-specific blocking operations in a new
 thread, returning the thread associated with the request immediately to
 the container. Even if you use asynchronous processing for all the
@@ -26,7 +26,7 @@ how to use nonblocking I/O to process requests and write responses
 inside service methods.
 
 1.  Put the request in asynchronous mode as described in
-link:servlets012.html#BEIGCFDF[Asynchronous Processing].
+link:#BEIGCFDF[Asynchronous Processing].
 2.  Obtain an input stream and/or an output stream from the request and
 response objects in the service method.
 3.  Assign a read listener to the input stream and/or a write listener
@@ -34,7 +34,7 @@ to the output stream.
 4.  Process the request and the response inside the listener's callback
 methods.
 
-link:#BEIFDICJ[Table 18-4] and link:#BEIFIIIH[Table 18-5] describe the
+link:#BEIFIIIH[Table 18-5] describe the
 methods available in the servlet input and output streams for
 nonblocking I/O support. link:#BEIFGJCG[Table 18-6] describes the
 interfaces for read listeners and write listeners.
@@ -111,7 +111,7 @@ error.
 
 The code in this section shows how to read a large HTTP POST request
 inside a servlet by putting the request in asynchronous mode (as
-described in link:servlets012.html#BEIGCFDF[Asynchronous Processing]) and
+described in link:#BEIGCFDF[Asynchronous Processing]) and
 using the nonblocking I/O functionality from link:#BEIFDICJ[Table 18-4]
 and link:#BEIFGJCG[Table 18-6].
 

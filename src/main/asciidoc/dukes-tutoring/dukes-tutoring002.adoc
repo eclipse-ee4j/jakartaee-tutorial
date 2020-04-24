@@ -55,10 +55,10 @@ the park while they were at the tutoring center, and when they went to
 and came back from the park.
 
 For information on creating Jakarta Persistence entities, see
-link:persistence-intro/persistence-intro.html#BNBPZ[Chapter 40, "Introduction to the Jakarta
+link:#BNBPZ[Chapter 40, "Introduction to the Jakarta
 Persistence."] For information on validating entity data, see
-link:persistence-intro/persistence-intro002.html#GKAHQ[Validating Persistent Fields and
-Properties] and link:bean-validation/bean-validation-advanced.html#GKAHP[Chapter 24,
+link:#GKAHQ[Validating Persistent Fields and
+Properties] and link:#GKAHP[Chapter 24,
 "Jakarta Bean Validation: Advanced Topics."]
 
 [[GKAFC]][[enterprise-beans-used-in-the-main-interface]]
@@ -81,11 +81,11 @@ also injects a CDI event instance, `StatusEvent`. This event is fired
 from the business methods when the status of a student changes.
 
 For information on creating and using enterprise beans, see
-link:partentbeans.html#BNBLR[Enterprise Beans]. For information on
+link:#BNBLR[Enterprise Beans]. For information on
 creating strongly typed Criteria API queries, see
-link:persistence-criteria/persistence-criteria.html#GJITV[Chapter 43, "Using the Criteria API
+link:#GJITV[Chapter 43, "Using the Criteria API
 to Create Queries."] For information on CDI events, see
-link:cdi-adv/cdi-adv005.html#GKHIC[Using Events in CDI Applications].
+link:#GKHIC[Using Events in CDI Applications].
 
 [[BCGHHCDA]][[websocket-endpoint-used-in-the-main-interface]]
 
@@ -106,8 +106,8 @@ clicks a Jakarta Server Faces button, which makes an Ajax request to refresh
 the table that shows the current status of the students.
 
 For more information on WebSocket endpoints, see
-link:websocket/websocket.html#GKJIQ5[Chapter 19, "Jakarta WebSocket."] For
-information on CDI events, see link:cdi-adv/cdi-adv005.html#GKHIC[Using Events in
+link:#GKJIQ5[Chapter 19, "Jakarta WebSocket."] For
+information on CDI events, see link:#GKHIC[Using Events in
 CDI Applications].
 
 [[GKAET]][[facelets-files-used-in-the-main-interface]]
@@ -143,7 +143,7 @@ table displaying all students currently at the park
 interface's navigation bar
 
 For information on using Facelets, see
-link:jsf-facelets/jsf-facelets.html#GIEPX[Chapter 8, "Introduction to Facelets."]
+link:#GIEPX[Chapter 8, "Introduction to Facelets."]
 
 [[GKADH]][[helper-classes-used-in-the-main-interface]]
 
@@ -203,7 +203,7 @@ For example, the strings for simplified Chinese-speaking locales are
 located in `Messages_zh.properties`.
 
 For information on localizing web applications, see
-link:jsf-configure/jsf-configure006.html#BNAXB[Registering Application Messages].
+link:#BNAXB[Registering Application Messages].
 
 [[GKAEV]][[deployment-descriptors-used-in-dukes-tutoring]]
 

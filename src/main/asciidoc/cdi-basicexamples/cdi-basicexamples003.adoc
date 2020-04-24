@@ -7,7 +7,7 @@ The `guessnumber-cdi` example, somewhat more complex than the
 session and application scope. The example is a game in which you try to
 guess a number in fewer than ten attempts. It is similar to the
 `guessnumber-jsf` example described in
-link:jsf-facelets/jsf-facelets.html#GIEPX[Chapter 8, "Introduction to Facelets"],
+link:#GIEPX[Chapter 8, "Introduction to Facelets"],
 except that you can keep guessing until you get the right answer or
 until you use up your ten attempts.
 
@@ -353,7 +353,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the guessnumber-cdi Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the *File* menu, choose *Open Project*.
 3.  In the *Open Project* dialog box, navigate to:
@@ -376,7 +376,7 @@ deploys it to GlassFish Server.
 ====== To Build, Package, and Deploy the guessnumber-cdi Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, change to the following directory:
 +

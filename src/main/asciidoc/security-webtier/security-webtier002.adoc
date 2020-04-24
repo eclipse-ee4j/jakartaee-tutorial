@@ -133,7 +133,7 @@ except when default principal-to-role mapping is used.
 
 For more information about security roles, see link:#BNCAV[Declaring
 Security Roles]. For information on mapping security roles, see
-link:security-intro/security-intro005.html#BNBXV[Mapping Roles to Users and Groups].
+link:#BNBXV[Mapping Roles to Users and Groups].
 
 For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint`
 annotations accept a `rolesAllowed` element that specifies the
@@ -273,7 +273,7 @@ a|
 An alternative way to perform user authentication, including BASIC
 and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by 
 Jakarta Security, and documented in
-link:security-api/security-api.html#using-the-jakarta-ee-security-api[Chapter 53, "Using Jakarta Security"].
+link:#using-the-jakarta-ee-security-api[Chapter 53, "Using Jakarta Security"].
 |=======================================================================
 
 
@@ -293,7 +293,7 @@ method will apply to all constrained resources in an application.
 Before you can authenticate a user, you must have a database of user
 names, passwords, and roles configured on your web or application
 server. For information on setting up the user database, see
-link:security-intro/security-intro005.html#BNBXR[Managing Users and Groups in GlassFish
+link:#BNBXR[Managing Users and Groups in GlassFish
 Server].
 
 The Jakarta EE platform supports the following authentication mechanisms:
@@ -306,7 +306,7 @@ The Jakarta EE platform supports the following authentication mechanisms:
 
 Basic, form-based, and digest authentication are discussed in this
 section. Client and mutual authentication are discussed in
-link:security-advanced/security-advanced.html#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
+link:#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
 Topics"].
 
 HTTP basic authentication and form-based authentication are not very
@@ -388,7 +388,7 @@ image:jakartaeett_dt_046.png[
 "Diagram of four steps in form-based authentication between client and
 server"]
 
-The section link:security-webtier004.html#BNCBY[The hello1-formauth
+The section link:#BNCBY[The hello1-formauth
 Example: Form-Based Authentication with a Jakarta Server Faces Application]
 is an example application that uses form-based authentication.
 
@@ -446,7 +446,7 @@ a|
 
 Another way to specify form-based authentication is to use the
 `authenticate`, `login`, and `logout` methods of `HttpServletRequest`,
-as discussed in link:security-webtier003.html#GIRCJ[Authenticating Users
+as discussed in link:#GIRCJ[Authenticating Users
 Programmatically].
 
 |=======================================================================
@@ -478,7 +478,7 @@ your deployment descriptor:
 
 The login and error page locations are specified relative to the
 location of the deployment descriptor. Examples of login and error pages
-are shown in link:security-webtier004.html#BNCCA[Creating the Login Form
+are shown in link:#BNCCA[Creating the Login Form
 and the Error Page].
 
 The following example shows how to declare digest authentication in your

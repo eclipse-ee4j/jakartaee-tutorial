@@ -9,7 +9,7 @@ specific entity.
 
 The `customer` sample application is in the
 `_tut-install_/examples/jaxrs/customer/` directory. See
-link:usingexamples/usingexamples.html#GFIUD[Chapter 2, "Using the Tutorial Examples,"]
+link:#GFIUD[Chapter 2, "Using the Tutorial Examples,"]
 for basic information on building and running sample applications.
 
 The following topics are addressed here:
@@ -383,7 +383,7 @@ Maven]
 ====== To Build, Package, and Deploy the customer Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -414,7 +414,7 @@ The web client allows you to create and view customers.
 ====== To Build, Package, and Deploy the customer Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

@@ -146,15 +146,15 @@ following packages in the
 directory.
 
 * `components`: Contains the `MapComponent` and `AreaComponent` classes.
-See link:jsf-custom/jsf-custom005.html#BNAVU[Creating Custom Component Classes].
+See link:#BNAVU[Creating Custom Component Classes].
 * `listeners`: Contains the `AreaSelectedEvent` class, along with other
-listener classes. See link:jsf-custom/jsf-custom008.html#BNAWD[Handling Events for
+listener classes. See link:#BNAWD[Handling Events for
 Custom Components].
 * `model`: Contains the `ImageArea` class. See
-link:jsf-custom/jsf-custom003.html#GLPBO[Configuring Model Data] for more
+link:#GLPBO[Configuring Model Data] for more
 information.
 * `renderers`: Contains the `MapRenderer` and `AreaRenderer` classes.
-See link:jsf-custom/jsf-custom006.html#BNAWA[Delegating Rendering to a Renderer].
+See link:#BNAWA[Delegating Rendering to a Renderer].
 
 The
 `_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`
@@ -162,10 +162,10 @@ directory also contains a custom converter and other custom listeners
 not specifically tied to the custom components.
 
 * `converters`: Contains the `CreditCardConverter` class. See
-link:jsf-custom/jsf-custom011.html#BNAUS[Creating and Using a Custom Converter].
+link:#BNAUS[Creating and Using a Custom Converter].
 * `listeners`: Contains the `LinkBookChangeListener`,
 `MapBookChangeListener`, and `NameChanged` classes. See
-link:jsf-custom/jsf-custom007.html#BNAUT[Implementing an Event Listener].
+link:#BNAUT[Implementing an Event Listener].
 
 [[GLQDG]][[properties-files-used-in-dukes-bookstore]]
 
@@ -194,7 +194,7 @@ language setting from the `language` property of `LocaleBean`:
 ----
 
 For more information about resource bundles, see
-link:webi18n/webi18n.html#BNAXU[Chapter 22, "Internationalizing and Localizing
+link:#BNAXU[Chapter 22, "Internationalizing and Localizing
 Web Applications."]
 
 The resource bundle is configured as follows in the `faces-config.xml`

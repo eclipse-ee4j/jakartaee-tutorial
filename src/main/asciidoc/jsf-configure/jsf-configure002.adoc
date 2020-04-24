@@ -15,7 +15,7 @@ preferred approach.
 
 
 Jakarta Server Faces support for bean annotations is introduced in
-link:jsf-intro/jsf-intro.html#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]. Bean
+link:#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]. Bean
 annotations can be used for configuring Jakarta Server Faces applications.
 
 The `@Named` (`javax.inject.Named`) annotation in a class, along with a
@@ -47,7 +47,7 @@ Annotations are also available for other artifacts, such as components,
 converters, validators, and renderers, to be used in place of
 application configuration resource file entries. These are discussed,
 along with registration of custom listeners, custom validators, and
-custom converters, in link:jsf-custom/jsf-custom.html#BNAVG[Chapter 15, "Creating
+custom converters, in link:#BNAVG[Chapter 15, "Creating
 Custom UI Components and Other Custom Objects"].
 
 [[GIRCR]][[using-managed-bean-scopes]]
@@ -64,7 +64,7 @@ application.
 persists across multiple HTTP requests in a web application.
 * Flow (`javax.faces.flows.FlowScoped`): Flow scope persists during a
 user's interaction with a specific flow of a web application. See
-link:jsf-configure004.html#CHDGFCJF[Using Faces Flows] for more
+link:#CHDGFCJF[Using Faces Flows] for more
 information.
 * Request (`javax.enterprise.context.RequestScoped`): Request scope
 persists during a single HTTP request in a web application.

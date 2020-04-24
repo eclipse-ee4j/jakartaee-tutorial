@@ -5,7 +5,7 @@
 When you have more than one version of a bean that you use for different
 purposes, you can choose between them during the development phase by
 injecting one qualifier or another, as shown in
-link:cdi-basic/cdi-basicexamples002.html#GJBJU[The simplegreeting CDI Example].
+link:#GJBJU[The simplegreeting CDI Example].
 
 Instead of having to change the source code of your application,
 however, you can make the choice at deployment time by using
@@ -26,7 +26,7 @@ annotation and then use the `alternatives` element to specify it in the
 
 For example, you might want to create a full version of a bean and also
 a simpler version that you use only for certain kinds of testing. The
-example described in link:cdi-adv-examples/cdi-adv-examples002.html#GKHPU[The encoder
+example described in link:#GKHPU[The encoder
 Example: Using Alternatives] contains two such beans, `CoderImpl` and
 `TestCoderImpl`. The test bean is annotated as follows:
 

@@ -35,7 +35,7 @@ text messages as JSON data
 * link:#CIHHFICG[The Message Decoder] – A class (`MessageDecoder`) the
 parses WebSocket text messages as JSON data and decodes them into
 `JoinMessage` or `ChatMessage` objects
-* link:websocket011.html#CIHHIEFH[The HTML Page] – An HTML page
+* link:#CIHHIEFH[The HTML Page] – An HTML page
 (`index.html`) that uses JavaScript code to implement the client for the
 chat room
 
@@ -147,7 +147,7 @@ message, the endpoint forwards it to all connected clients.
 If a chat message is for the bot agent, the endpoint obtains a response
 using the `BotBean` instance and sends it to all connected clients. The
 `sendAll` method is similar to the example in
-link:websocket005.html#BABIFBCG[Sending Messages to All Peers Connected
+link:#BABIFBCG[Sending Messages to All Peers Connected
 to an Endpoint].
 
 Asynchronous Processing and Concurrency Considerations
@@ -171,7 +171,7 @@ accessed by more than one thread are thread safe. In this example, the
 code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method
 has been declared `synchronized`.
 
-Refer to link:concurrency-utilities/concurrency-utilities.html#GKJIQ8[Chapter 59, "Concurrency
+Refer to link:#GKJIQ8[Chapter 59, "Concurrency
 Utilities for Jakarta EE"] for more information on the managed executor
 service and Concurrency Utilities for Jakarta EE.
 
@@ -221,7 +221,7 @@ public class ChatMessageEncoder implements Encoder.Text<ChatMessage> {
 }
 ----
 
-See link:jsonp/jsonp.html#GLRBB[Chapter 20], link:jsonp/jsonp.html#GLRBB[JSON
+See link:#GLRBB[JSON
 Processing] for more information on the Java API for JSON Processing.
 
 [[CIHHFICG]][[the-message-decoder]]
@@ -313,7 +313,7 @@ Maven]
 ====== To Run the websocketbot Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -344,7 +344,7 @@ more information.
 ====== To Run the websocketbot Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

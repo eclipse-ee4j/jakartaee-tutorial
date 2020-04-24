@@ -130,8 +130,8 @@ same value as its lowercase equivalent.
 The bean specifies the minimum and maximum size of the `name` string,
 which is enforced by the Bean Validation `@Size` constraint. The bean
 uses the `@Model` annotation, a shortcut for `@Named` and
-`@RequestScoped`, as described in Step link:webapp/webapp003.html#CHDCABHC[7] of
-link:webapp/webapp003.html#GJWTV[To View the hello1 Web Module Using NetBeans
+`@RequestScoped`, as described in Step link:#CHDCABHC[7] of
+link:#GJWTV[To View the hello1 Web Module Using NetBeans
 IDE].
 
 [source,oac_no_warn]
@@ -169,7 +169,7 @@ compositecomponentexample Example Using Maven]
 ====== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -190,7 +190,7 @@ This command builds and deploys the application.
 ====== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

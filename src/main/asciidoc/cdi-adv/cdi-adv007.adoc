@@ -42,7 +42,7 @@ public abstract class CoderDecorator implements Coder {
 }
 ----
 
-See link:cdi-adv-examples/cdi-adv-examples006.html#GKPAX[The decorators Example:
+See link:#GKPAX[The decorators Example:
 Decorating a Bean] for an example that uses this decorator.
 
 This simple decorator returns more detailed output than the encoded

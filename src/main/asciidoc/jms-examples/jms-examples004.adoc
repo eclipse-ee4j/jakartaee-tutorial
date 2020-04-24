@@ -26,7 +26,7 @@ durable subscription after you have finished running the
 `durableconsumer` application.
 
 For information on durable subscriptions, see
-link:jms-concepts/jms-concepts003.html#BNCGD[Creating Durable Subscriptions].
+link:#BNCGD[Creating Durable Subscriptions].
 
 The main client, `DurableConsumer.java`, is under the
 `_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer`/
@@ -72,7 +72,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 ====== To Create Resources for the Durable Subscription Example
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a command window, go to the `durableconsumer` example.
 +
@@ -211,7 +211,7 @@ subscription.
 The `transactedexample` example demonstrates the use of local
 transactions in a Messaging client application. It also demonstrates the use
 of the request/reply messaging pattern described in
-link:jms-concepts/jms-concepts004.html#BNCGB[Creating Temporary Destinations],
+link:#BNCGB[Creating Temporary Destinations],
 although it uses permanent rather than temporary destinations. The
 example consists of three modules, `genericsupplier`, `retailer`, and
 `vendor`, which can be found under the
@@ -361,7 +361,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and
 ====== To Create Resources for the transactedexample Example
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a command window, go to the `genericsupplier` example:
 +
@@ -552,7 +552,7 @@ Hard Drive Supplier: Vendor ordered 8 Hard Drive(s)
 Hard Drive Supplier: Sent 1 Hard Drive(s)
   Hard Drive Supplier: Committed transaction
 ----
-11. Repeat steps link:#BABFCGBI[4] through link:#BABBIHCE[10] as many
+11. Repeat steps link:#BABBIHCE[10] as many
 times as you wish. Occasionally, the vendor will report an exception
 that causes a rollback:
 +

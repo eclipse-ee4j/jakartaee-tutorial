@@ -164,7 +164,7 @@ public class Employee extends Person {
     this.phone = phone;
   }
 ----
-The constraint definition `@USPhoneNumber` is define in the sample listed under link:bean-validation-advanced001.html#GKAIA[Using the Built-In Constraints to Make a New Constraint].
+The constraint definition `@USPhoneNumber` is define in the sample listed under link:#GKAIA[Using the Built-In Constraints to Make a New Constraint].
 In the sample, another constraint `@Pattern` is used to validate the phone number.
 
 ==== Using In-Built Value Extractors in Custom Containers

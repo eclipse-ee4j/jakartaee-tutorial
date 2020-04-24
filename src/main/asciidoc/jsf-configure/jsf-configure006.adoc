@@ -116,7 +116,7 @@ public static String loadErrorMessage(FacesContext context,
 ===== Referencing Error Messages
 
 A Jakarta Server Faces page uses the `message` or `messages` tags to access
-error messages, as explained in link:jsf-page/jsf-page002.html#BNASO[Displaying
+error messages, as explained in link:#BNASO[Displaying
 Error Messages with the h:message and h:messages Tags].
 
 The error messages these tags access include

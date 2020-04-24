@@ -90,7 +90,7 @@ technology.
 Before a Jakarta Server Faces application can launch its first web page, the
 web container must invoke the `FacesServlet` instance in order for the
 application lifecycle process to start. See
-link:jsf-intro/jsf-intro007.html#BNAQQ[The Lifecycle of a Jakarta Server Faces
+link:#BNAQQ[The Lifecycle of a Jakarta Server Faces
 Application] for more information.
 
 The following example shows the default configuration of the
@@ -167,7 +167,7 @@ create a web deployment descriptor.
 
 ====== To Specify a Path to an Application Configuration Resource File
 
-As explained in link:jsf-configure003.html#BNAWP[Application
+As explained in link:#BNAWP[Application
 Configuration Resource File], an application can have multiple
 application configuration resource files. If these files are not located
 in the directories that the implementation searches by default or the
@@ -200,7 +200,7 @@ deployment descriptor where you want the state to be saved, on either
 client or server. You do this by setting a context parameter in your
 deployment descriptor. By default, state is saved on the server, so you
 need to specify this context parameter only if you want to save state on
-the client. See link:jsf-custom/jsf-custom005.html#BNAVZ[Saving and Restoring State]
+the client. See link:#BNAVZ[Saving and Restoring State]
 for information on the advantages and disadvantages of each location.
 
 To specify where state is saved using NetBeans IDE, do the following.
@@ -269,7 +269,7 @@ directory.
 * All resource files are either under the root of the web application
 `/resources` directory or in the web application's classpath, the
 `META-INF/resources/`resourceIdentifier directory. For more information
-on resources, see link:jsf-facelets/jsf-facelets006.html#GIRGM[Web Resources].
+on resources, see link:#GIRGM[Web Resources].
 
 When packaging your own applications, you can use NetBeans IDE or you
 can use XML files such as those created for Maven. You can modify the

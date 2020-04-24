@@ -36,11 +36,11 @@ uses the JSON object model API.
 
 The code used in `ObjectModelBean.java` to create an object model from
 the data in the form is similar to the example in
-link:jsonp003.html#BABIGIAF[Creating an Object Model from Application
+link:#BABIGIAF[Creating an Object Model from Application
 Code]. The code to write JSON output from the model is similar to the
-example in link:jsonp003.html#BABHEJFF[Writing an Object Model to a
+example in link:#BABHEJFF[Writing an Object Model to a
 Stream]. The code to navigate the object model tree is similar to the
-example in link:jsonp003.html#BABJHEHG[Navigating an Object Model].
+example in link:#BABJHEHG[Navigating an Object Model].
 
 
 [[running-the-jsonpmodel-example-application]]
@@ -60,7 +60,7 @@ NetBeans IDE]
 ====== To Run the jsonpmodel Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -93,7 +93,7 @@ nodes of the object model tree.
 ====== To Run the jsonpmodel Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

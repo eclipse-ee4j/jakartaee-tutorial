@@ -45,7 +45,7 @@ application for which you create them.
 You can also use deployment descriptor elements to create these
 resources. Elements specified in the deployment descriptor override
 elements specified in annotations. See
-link:packaging/packaging001.html#BCGDJDFB[Packaging Applications] for basic
+link:#BCGDJDFB[Packaging Applications] for basic
 information about deployment descriptors. You must use a deployment
 descriptor to create application-specific resources for application
 clients.
@@ -127,10 +127,10 @@ given module (for example, all enterprise beans within a Jakarta Enterprise Bean
 (except in a web application, where it is equivalent to `java:module`)
 
 See the API documentation for details on these annotations. The examples
-in link:jms-examples/jms-examples006.html#BABBABFC[Sending and Receiving Messages
-Using a Simple Web Application], link:jms-examples/jms-examples008.html#BNCGW[Sending
+in link:#BABBABFC[Sending and Receiving Messages
+Using a Simple Web Application], link:#BNCGW[Sending
 Messages from a Session Bean to an MDB], and
-link:jms-examples/jms-examples009.html#BNCHF[Using an Entity to Join Messages from Two
+link:#BNCHF[Using an Entity to Join Messages from Two
 MDBs] all use the `@JMSDestinationDefinition` annotation. The other JMS
 examples do not use these annotations. The examples that consist only of
 application clients are not deployed in the application server and must
@@ -219,9 +219,9 @@ private JMSContext context2;
 An application that produces messages or synchronously receives them can
 use a Jakarta EE web or Jakarta Enterprise Beans component, such as a managed bean, a servlet,
 or a session bean, to perform these operations. The example in
-link:jms-examples/jms-examples008.html#BNCGW[Sending Messages from a Session Bean to
+link:#BNCGW[Sending Messages from a Session Bean to
 an MDB] uses a stateless session bean to send messages to a topic. The
-example in link:jms-examples/jms-examples006.html#BABBABFC[Sending and Receiving
+example in link:#BABBABFC[Sending and Receiving
 Messages Using a Simple Web Application] uses managed beans to produce
 and to consume messages.
 
@@ -230,7 +230,7 @@ resources, this mechanism usually is not the best application design for
 a web or Jakarta Enterprise Beans component. Instead, use a synchronous receive that
 specifies a timeout value, or use a message-driven bean to receive
 messages asynchronously. For details about synchronous receives, see
-link:jms-concepts003.html#BNCEP[Jakarta Messaging Message Consumers].
+link:#BNCEP[Jakarta Messaging Message Consumers].
 
 Using Jakarta Messaging in a Jakarta EE component is in many ways similar to
 using it in an application client. The main differences are the areas of
@@ -286,8 +286,8 @@ transactions.
 
 ===== Using Message-Driven Beans to Receive Messages Asynchronously
 
-The sections link:ejb-intro/ejb-intro003.html#GIPKO[What Is a Message-Driven Bean?]
-and link:jms-concepts001.html#BNCDW[How Does Jakarta Messaging Work with the
+The sections link:#GIPKO[What Is a Message-Driven Bean?]
+and link:#BNCDW[How Does Jakarta Messaging Work with the
 Jakarta EE Platform?] describe how the Jakarta EE platform supports a special
 kind of enterprise bean, the message-driven bean, which allows Jakarta EE
 applications to process Jakarta Messaging messages asynchronously. Other Jakarta EE web
@@ -338,7 +338,7 @@ contains an `activationConfig` element containing
 the bean or the connection factory. These properties can include the
 connection factory, a destination type, a durable subscription, a
 message selector, or an acknowledgment mode. Some of the examples in
-link:jms-examples/jms-examples.html#BNCGV[Chapter 49, "Java Message Service Examples"]
+link:#BNCGV[Chapter 49, "Java Message Service Examples"]
 set these properties. You can also set the properties in the deployment
 descriptor.
 * The application client container has only one instance of a
@@ -372,7 +372,7 @@ the bean will receive messages
 |`destinationType` |Either `javax.jms.Queue` or `javax.jms.Topic`
 
 |`subscriptionDurability` |For durable subscriptions, set the value to
-`Durable`; see link:jms-concepts003.html#BNCGD[Creating Durable
+`Durable`; see link:#BNCGD[Creating Durable
 Subscriptions] for more information
 
 |`clientId` |For durable subscriptions, the client ID for the connection
@@ -382,7 +382,7 @@ Subscriptions] for more information
 subscription
 
 |`messageSelector` |A string that filters messages; see
-link:jms-concepts003.html#BNCER[Jakarta Messaging Message Selectors] for information
+link:#BNCER[Jakarta Messaging Message Selectors] for information
 
 |`connectionFactoryLookup` |The lookup name of the connection factory to
 be used to connect to the Messaging provider from which the bean will receive
@@ -391,7 +391,7 @@ messages
 
 
 For example, here is the message-driven bean used in
-link:jms-examples/jms-examples007.html#BNBPK[Receiving Messages Asynchronously Using a
+link:#BNBPK[Receiving Messages Asynchronously Using a
 Message-Driven Bean]:
 
 [source,oac_no_warn]
@@ -470,14 +470,14 @@ to configure your application server to use just one instance of the
 message-driven bean.
 
 For details on the lifecycle of a message-driven bean, see
-link:ejb-intro/ejb-intro007.html#GIPKW[The Lifecycle of a Message-Driven Bean].
+link:#GIPKW[The Lifecycle of a Message-Driven Bean].
 
 [[BNCGS]][[managing-jta-transactions]]
 
 ===== Managing JakartA Transactions
 
 Jakarta EE application clients and Java SE clients use JMS local
-transactions (described in link:jms-concepts004.html#BNCGH[Using Jakarta Messaging
+transactions (described in link:#BNCGH[Using Jakarta Messaging
 Local Transactions]), which allow the grouping of sends and receives
 within a specific Messaging session. Jakarta EE applications that run in the web
 or enterprise bean container commonly use Jakarta Transactions to ensure the integrity
@@ -517,7 +517,7 @@ method is always part of a transaction. If a transaction is in progress
 when the method is called, the method will be part of that transaction;
 if not, a new transaction will be started before the method is called
 and will be committed when the method returns. See
-link:transactions/transactions004.html#BNCIK[Transaction Attributes] for more
+link:#BNCIK[Transaction Attributes] for more
 information.
 * Bean-managed transactions: You can use these in conjunction with the
 `javax.transaction.UserTransaction` interface, which provides its own

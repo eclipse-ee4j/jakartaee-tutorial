@@ -21,7 +21,7 @@ among different consumers. This section then explains how to compile and
 run the clients using GlassFish Server.
 
 You may wish to compare this example to the results of
-link:jms-examples003.html#BABDDHHC[Running Multiple Consumers on the Same
+link:#BABDDHHC[Running Multiple Consumers on the Same
 Destination] using an unshared consumer. In that example, messages are
 distributed among the consumers on a queue, but each consumer on the
 topic receives all the messages because each consumer on the topic is
@@ -70,7 +70,7 @@ The `TextListener.java` class is identical to the one for the
 `asynchconsumer` example.
 
 For this example, you will use the default connection factory and the
-topic you created in link:jms-examples003.html#BABHEFCB[To Create
+topic you created in link:#BABHEFCB[To Create
 Resources for the Simple Examples].
 
 [[sthref211]][[to-run-the-sharedconsumer-and-producer-clients]]
@@ -78,7 +78,7 @@ Resources for the Simple Examples].
 ====== To Run the SharedConsumer and Producer Clients
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  Open three command windows. In the first, go to the
 `simple/producer/` directory:

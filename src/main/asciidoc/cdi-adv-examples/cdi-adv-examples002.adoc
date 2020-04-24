@@ -4,7 +4,7 @@
 
 The `encoder` example shows how to use alternatives to choose between
 two beans at deployment time, as described in
-link:cdi-adv002.html#GJSDF[Using Alternatives in CDI Applications]. The
+link:#GJSDF[Using Alternatives in CDI Applications]. The
 example includes an interface and two implementations of it, a managed
 bean, a Facelets page, and configuration files.
 
@@ -187,7 +187,7 @@ run the `encoder` application.
 ====== To Build, Package, and Deploy the encoder Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -259,7 +259,7 @@ Result: input string is Java, shift value is 4
 ====== To Build, Package, and Deploy the encoder Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

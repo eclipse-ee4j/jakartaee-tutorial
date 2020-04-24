@@ -10,7 +10,7 @@ Constraints can be built in or user defined. User-defined constraints
 are called custom constraints. Several built-in constraints are
 available in the `javax.validation.constraints` package.
 link:#GKAGK[Table 23-1] lists all the built-in constraints. See
-link:bean-validation-advanced/bean-validation-advanced001.html#GKFGX[Creating Custom Constraints]
+link:#GKFGX[Creating Custom Constraints]
 for information on creating custom constraints.
 
 [[sthref121]][[GKAGK]]
@@ -309,9 +309,9 @@ application's web pages.
 
 For more information on using validation constraints, see the following:
 
-* link:bean-validation-advanced/bean-validation-advanced.html#GKAHP[Chapter 24, "Jakarta Bean Validation:
+* link:#GKAHP[Chapter 24, "Jakarta Bean Validation:
 Advanced Topics"]
-* link:jaxrs/jaxrs-advanced002.html#BABCJEDF[Validating Resource Data with Jakarta Bean
+* link:#BABCJEDF[Validating Resource Data with Jakarta Bean
 Validation]
-* link:persistence-intro/persistence-intro002.html#GKAHQ[Validating Persistent Fields and
+* link:#GKAHQ[Validating Persistent Fields and
 Properties]

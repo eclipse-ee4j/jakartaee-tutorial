@@ -44,7 +44,7 @@ class overrides the method.
 
 
 The `UserNumberBean` managed bean in
-link:cdi-basicexamples003.html#GJCXV[The guessnumber-cdi CDI Example]
+link:#GJCXV[The guessnumber-cdi CDI Example]
 uses `@PostConstruct` to annotate a method that resets all bean fields:
 
 [source,oac_no_warn]

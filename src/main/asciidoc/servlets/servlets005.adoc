@@ -107,7 +107,7 @@ with more time to set appropriate status codes and headers or forward to
 another web resource. The method must be called before any content is
 written or before the response is committed.
 * Set localization information, such as locale and character encoding.
-See link:webi18n/webi18n.html#BNAXU[Chapter 22, "Internationalizing and
+See link:#BNAXU[Chapter 22, "Internationalizing and
 Localizing Web Applications"] for details.
 
 HTTP response objects, `javax.servlet.http.HttpServletResponse`, have
@@ -117,5 +117,5 @@ fields representing HTTP headers, such as the following.
 satisfied or that a request has been redirected.
 * Cookies, which are used to store application-specific information at
 the client. Sometimes, cookies are used to maintain an identifier for
-tracking a user's session (see link:servlets009.html#BNAGR[Session
+tracking a user's session (see link:#BNAGR[Session
 Tracking]).

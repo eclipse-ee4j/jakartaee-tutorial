@@ -2,7 +2,7 @@
 
 ==== Creating Custom Component Classes
 
-As explained in link:jsf-custom002.html#BNAVI[When to Use a Custom
+As explained in link:#BNAVI[When to Use a Custom
 Component], a component class defines the state and behavior of a UI
 component. The state information includes the component's type,
 identifier, and local value. The behavior defined by the component class
@@ -135,7 +135,7 @@ tags to the `MapRenderer` class.
 `AreaComponent` is bound to a bean that stores the shape and coordinates
 of the region of the image map. You will see how all this data is
 accessed through the value expression in
-link:jsf-custom006.html#BNAWB[Creating the Renderer Class]. The behavior
+link:#BNAWB[Creating the Renderer Class]. The behavior
 of `AreaComponent` consists of the following:
 
 * Retrieving the shape and coordinate data from the bean
@@ -145,12 +145,12 @@ of `AreaComponent` consists of the following:
 
 Although these tasks are actually performed by `AreaRenderer`,
 `AreaComponent` must delegate the tasks to `AreaRenderer`. See
-link:jsf-custom006.html#BNAWA[Delegating Rendering to a Renderer] for
+link:#BNAWA[Delegating Rendering to a Renderer] for
 more information.
 
 The rest of this section describes the tasks that `MapComponent`
 performs as well as the encoding and decoding that it delegates to
-`MapRenderer`. link:jsf-custom008.html#BNAWD[Handling Events for Custom
+`MapRenderer`. link:#BNAWD[Handling Events for Custom
 Components] details how `MapComponent` handles events.
 
 [[BNAVV]][[specifying-the-component-family]]
@@ -174,9 +174,9 @@ public String getFamily() {
 The component family identifier, `Map`, must match that defined by the
 `component-family` elements included in the component and renderer
 configurations in the application configuration resource file.
-link:jsf-configure/jsf-configure011.html#BNAXH[Registering a Custom Renderer with a
+link:#BNAXH[Registering a Custom Renderer with a
 Render Kit] explains how to define the component family in the renderer
-configuration. link:jsf-configure/jsf-configure012.html#BNAXI[Registering a Custom
+configuration. link:#BNAXI[Registering a Custom
 Component] explains how to define the component family in the component
 configuration.
 

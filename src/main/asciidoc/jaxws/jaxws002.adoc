@@ -75,7 +75,7 @@ not be declared `static` or `final`.
 annotated with `javax.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
 JAXB-compatible parameters and return types. See the list of JAXB
-default data type bindings in link:jaxws003.html#BNAZC[Types Supported by
+default data type bindings in link:#BNAZC[Types Supported by
 JAX-WS].
 * The implementing class must not be declared `final` and must not be
 `abstract`.
@@ -142,7 +142,7 @@ IDE]
 ====== To Build, Package, and Deploy the Service Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -176,7 +176,7 @@ service.
 ====== To Build, Package, and Deploy the Service Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

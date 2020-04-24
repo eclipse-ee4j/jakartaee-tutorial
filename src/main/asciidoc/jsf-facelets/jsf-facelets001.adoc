@@ -100,11 +100,11 @@ HTML5-friendly markup
 
 
 Facelets provides two namespaces to support HTML5-friendly markup. For
-details, see link:jsf-facelets009.html#BABGECCJ[HTML5-Friendly Markup].
+details, see link:#BABGECCJ[HTML5-Friendly Markup].
 
 Facelets supports tags for composite components, for which you can
 declare custom prefixes. For more information on composite components,
-see link:jsf-facelets005.html#GIQZR[Composite Components].
+see link:#GIQZR[Composite Components].
 
 The namespace prefixes shown in the table are conventional, not
 mandatory. As is always the case when you declare an XML namespace, you
@@ -128,4 +128,4 @@ syntax, Facelets uses EL expressions to reference properties and methods
 of managed beans. EL expressions can be used to bind component objects
 or values to methods or properties of managed beans that are used as
 backing beans. For more information on using EL expressions, see
-link:jsf-develop/jsf-develop001.html#BNAQP[Using the EL to Reference Managed Beans].
+link:#BNAQP[Using the EL to Reference Managed Beans].

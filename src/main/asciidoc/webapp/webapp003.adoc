@@ -159,7 +159,7 @@ If you use the default name for the bean class, you can specify `@Model`
 as the annotation instead of having to specify both `@Named` and
 `@RequestScoped`. The `@Model` annotation is called a stereotype, a term
 for an annotation that encapsulates other annotations. It is described
-later in link:cdi-adv/cdi-adv008.html#GKHQC[Using Stereotypes in CDI
+later in link:#GKHQC[Using Stereotypes in CDI
 Applications]. Some examples will use `@Model` where it is appropriate.
 8.  Under the Web Pages node, expand the WEB-INF node and double-click
 the `web.xml` file to view it.
@@ -231,7 +231,7 @@ use session scope.
 all users' interactions with a web application.
 
 For more information on scopes in Jakarta Server Faces technology, see
-link:jsf-configure/jsf-configure002.html#GIRCR[Using Managed Bean Scopes].
+link:#GIRCR[Using Managed Bean Scopes].
 
 [[BNADZ]][[packaging-and-deploying-the-hello1-web-module]]
 
@@ -260,7 +260,7 @@ packaging and deploying.
 To build and package the `hello1` web module using NetBeans IDE:
 
 1.  Start GlassFish Server as described in
-link:usingexamples/usingexamples002.html#CHDCACDI[To Start GlassFish Server Using
+link:#CHDCACDI[To Start GlassFish Server Using
 NetBeans IDE], if you have not already done so.
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -281,7 +281,7 @@ Build. This command deploys the project to the server.
 To build and package the `hello1` web module using Maven:
 
 1.  Start GlassFish Server as described in
-link:usingexamples/usingexamples002.html#CHDBDDAF[To Start GlassFish Server Using the
+link:#CHDBDDAF[To Start GlassFish Server Using the
 Command Line], if you have not already done so.
 2.  In a terminal window, go to:
 +

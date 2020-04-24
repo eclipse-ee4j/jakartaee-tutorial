@@ -3,12 +3,12 @@
 ==== Sending and Receiving Messages Using a Simple Web Application
 
 Web applications can use Jakarta Messaging to send and receive messages, as
-noted in link:jms-concepts/jms-concepts005.html#BNCGN[Using Jakarta EE Components to
+noted in link:#BNCGN[Using Jakarta EE Components to
 Produce and to Synchronously Receive Messages]. This section describes
 the components of a very simple web application that uses Jakarta Messaging.
 
 This section assumes that you are familiar with the basics of Jakarta Server
-Faces technology, described in link:partwebtier.html#BNADP[Part IX, "The
+Faces technology, described in link:#BNADP[Part IX, "The
 Web Tier."]
 
 The example, `websimplemessage`, is under the
@@ -158,7 +158,7 @@ default connection factory `java:comp/DefaultJMSConnectionFactory`.
 ====== To Package and Deploy websimplemessage Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -179,7 +179,7 @@ This command builds and deploys the project.
 ====== To Package and Deploy websimplemessage Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

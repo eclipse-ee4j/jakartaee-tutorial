@@ -4,9 +4,9 @@
 
 The `producermethods` example shows how to use a producer method to
 choose between two beans at runtime, as described in
-link:cdi-adv003.html#GKGKV[Using Producer Methods, Producer Fields, and
+link:#GKGKV[Using Producer Methods, Producer Fields, and
 Disposer Methods in CDI Applications]. It is very similar to the
-`encoder` example described in link:cdi-adv-examples002.html#GKHPU[The
+`encoder` example described in link:#GKHPU[The
 encoder Example: Using Alternatives]. The example includes the same
 interface and two implementations of it, a managed bean, a Facelets
 page, and configuration files. It also contains a qualifier type. When
@@ -127,7 +127,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the producermethods Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -150,7 +150,7 @@ deploys it to GlassFish Server.
 ====== To Build, Package, and Deploy the producermethods Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

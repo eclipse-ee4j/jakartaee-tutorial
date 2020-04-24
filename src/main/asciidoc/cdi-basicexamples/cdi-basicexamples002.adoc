@@ -22,12 +22,12 @@ The following topics are addressed here:
 The four source files for the `simplegreeting` example are:
 
 * The default `Greeting` class, shown in
-link:cdi-basic005.html#GIZKS[Beans as Injectable Objects]
+link:#GIZKS[Beans as Injectable Objects]
 * The `@Informal` qualifier interface definition and the
 `InformalGreeting` class that implements the interface, both shown in
-link:cdi-basic006.html#GJBCK[Using Qualifiers]
+link:#GJBCK[Using Qualifiers]
 * The `Printer` managed bean class, which injects one of the two
-interfaces, shown in full in link:cdi-basic010.html#GJBBP[Adding Setter
+interfaces, shown in full in link:#GJBBP[Adding Setter
 and Getter Methods]
 
 The source files are located in the
@@ -154,7 +154,7 @@ Using Maven]
 ====== To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the *File* menu, choose *Open Project*.
 3.  In the *Open Project* dialog box, navigate to:
@@ -190,7 +190,7 @@ deploys it to GlassFish Server.
 ====== To Build, Package, and Deploy the simplegreeting Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

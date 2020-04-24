@@ -4,7 +4,7 @@
 
 For container-managed transactions, you can use the Administration
 Console to configure the transaction timeout interval. See
-link:usingexamples/usingexamples003.html#BNADJ[Starting the Administration Console].
+link:#BNADJ[Starting the Administration Console].
 
 For enterprise beans with bean-managed Jakarta transactions, you invoke the
 `setTransactionTimeout` method of the `UserTransaction` interface.

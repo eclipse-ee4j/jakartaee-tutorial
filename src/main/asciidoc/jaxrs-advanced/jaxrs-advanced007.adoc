@@ -47,7 +47,7 @@ content that does not reside in a database but does need to be
 distributed as resources. Using Jakarta REST, you can distribute content from
 multiple sources. RESTful web services can use various types of
 input/output formats for request and response. The `customer` example,
-described in link:jaxrs-advanced008.html#GKOIB[The customer Example
+described in link:#GKOIB[The customer Example
 Application], uses XML.
 
 Resources have representations. A resource representation is the content
@@ -177,7 +177,7 @@ public class ProductService {
 Some IDEs, such as NetBeans IDE, will run the schema generator tool
 automatically during the build process if you add Java classes that have
 Jakarta XML Binding annotations to your project. For a detailed example, see
-link:jaxrs-advanced008.html#GKOIB[The customer Example Application]. The
+link:#GKOIB[The customer Example Application]. The
 `customer` example contains a more complex relationship between the Java
 classes that model the data, which results in a more hierarchical XML
 representation.

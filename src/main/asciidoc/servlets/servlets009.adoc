@@ -28,7 +28,7 @@ attributes are accessible by any web component that belongs to the same
 web context and is handling a request that is part of the same session.
 
 Recall that your application can notify web context and session listener
-objects of servlet lifecycle events (link:servlets002.html#BNAFJ[Handling
+objects of servlet lifecycle events (link:#BNAFJ[Handling
 Servlet Lifecycle Events]). You can also notify objects of certain
 events related to their association with a session, such as the
 following.

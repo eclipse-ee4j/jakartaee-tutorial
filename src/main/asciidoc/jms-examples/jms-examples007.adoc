@@ -21,8 +21,8 @@ however, they implement the Jakarta Messaging technology.
 
 This section describes a simple message-driven bean example. Before
 proceeding, you should read the basic conceptual information in the
-section link:ejb-intro/ejb-intro003.html#GIPKO[What Is a Message-Driven Bean?] as
-well as link:jms-concepts/jms-concepts005.html#BNCGQ[Using Message-Driven Beans to
+section link:#GIPKO[What Is a Message-Driven Bean?] as
+well as link:#BNCGQ[Using Message-Driven Beans to
 Receive Messages Asynchronously].
 
 [[BNBPL]][[overview-of-the-simplemessage-example]]
@@ -97,7 +97,7 @@ for (int i = 0; i < NUM_MSGS; i++) {
 
 The code for the `SimpleMessageBean` class illustrates the requirements
 of a message-driven bean class described in
-link:jms-concepts/jms-concepts005.html#BNCGQ[Using Message-Driven Beans to Receive
+link:#BNCGQ[Using Message-Driven Beans to Receive
 Messages Asynchronously].
 
 The first few lines of the `SimpleMessageBean` class use the
@@ -114,10 +114,10 @@ configuration properties:
 })
 ----
 
-See link:jms-concepts/jms-concepts005.html#GJKOH[Table 48-3] for a list of the
+See link:#GJKOH[Table 48-3] for a list of the
 available properties.
 
-See link:jms-examples008.html#BNCGW[Sending Messages from a Session Bean
+See link:#BNCGW[Sending Messages from a Session Bean
 to an MDB] for examples of the `subscriptionDurability`, `clientId`,
 `subscriptionName`, and `messageSelector` properties.
 
@@ -176,20 +176,20 @@ This example uses the queue named `jms/MyQueue` and the preconfigured
 default connection factory `java:comp/DefaultJMSConnectionFactory`.
 
 If you have run the simple Jakarta Messaging examples in
-link:jms-examples003.html#BNCFA[Writing Simple Jakarta Messaging Applications] and have
+link:#BNCFA[Writing Simple Jakarta Messaging Applications] and have
 not deleted the resources, you already have the queue. Otherwise, follow
-the instructions in link:jms-examples003.html#BABHEFCB[To Create
+the instructions in link:#BABHEFCB[To Create
 Resources for the Simple Examples] to create it.
 
 For more information on creating Messaging resources, see
-link:jms-examples003.html#GKTJS[Creating Jakarta Messaging Administered Objects].
+link:#GKTJS[Creating Jakarta Messaging Administered Objects].
 
 [[CHDFBDDA]][[to-run-the-simplemessage-example-using-netbeans-ide]]
 
 ====== To Run the simplemessage Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -242,7 +242,7 @@ the Services tab.
 ====== To Run the simplemessage Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

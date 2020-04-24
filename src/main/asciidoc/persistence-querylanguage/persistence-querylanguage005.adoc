@@ -4,7 +4,7 @@
 
 The following queries are from the `Player` entity of the `roster`
 application, which is documented in
-link:persistence-basicexample/persistence-basicexamples003.html#GIQSQ[The roster Application].
+link:#GIQSQ[The roster Application].
 
 The following topics are addressed here:
 
@@ -47,7 +47,7 @@ FROM Player AS p
 ----
 +
 The `Player` element is the abstract schema name of the `Player` entity.
-* See also: link:persistence-querylanguage006.html#BNBUM[Identification
+* See also: link:#BNBUM[Identification
 Variables].
 
 [[BNBTO]][[eliminating-duplicate-values]]
@@ -68,8 +68,8 @@ parameter.
 The `WHERE` clause restricts the players retrieved by checking their
 `position`, a persistent field of the `Player` entity. The `?1` element
 denotes the input parameter of the query.
-* See also: link:persistence-querylanguage006.html#BNBVA[Input
-Parameters] and link:persistence-querylanguage006.html#BNBWB[The DISTINCT
+* See also: link:#BNBVA[Input
+Parameters] and link:#BNBWB[The DISTINCT
 Keyword].
 
 [[BNBTP]][[using-named-parameters]]
@@ -186,7 +186,7 @@ fields that are collections. In the syntax of an expression, a
 collection-valued field is a terminal symbol. Because the `teams` field
 is a collection, the `WHERE` clause cannot specify `p.teams.city` (an
 illegal expression).
-* See also: link:persistence-querylanguage006.html#BNBUQ[Path
+* See also: link:#BNBUQ[Path
 Expressions].
 
 [[BNBTU]][[traversing-multiple-relationships]]
@@ -239,7 +239,7 @@ there are several kinds. In the previous examples, the conditional
 expressions are comparison expressions that test for equality. The
 following examples demonstrate some of the other kinds of conditional
 expressions. For descriptions of all conditional expressions, see
-link:persistence-querylanguage006.html#BNBUU[WHERE Clause].
+link:#BNBUU[WHERE Clause].
 
 The following topics are addressed here:
 
@@ -266,7 +266,7 @@ for strings that match the wildcard pattern. In this case, the query
 uses the `LIKE` expression and the `%` wildcard to find all players
 whose names begin with the string "Mich." For example, "Michael" and
 "Michelle" both match the wildcard pattern.
-* See also: link:persistence-querylanguage006.html#BNBVG[LIKE
+* See also: link:#BNBVG[LIKE
 Expressions].
 
 [[BNBTY]][[the-is-null-expression]]
@@ -285,8 +285,8 @@ WHERE t.league IS NULL
 relationship has been set between two entities. In this case, the query
 checks whether the teams are associated with any leagues and returns the
 teams that do not have a league.
-* See also: link:persistence-querylanguage006.html#BNBVI[NULL Comparison
-Expressions] and link:persistence-querylanguage006.html#BNBVR[NULL
+* See also: link:#BNBVI[NULL Comparison
+Expressions] and link:#BNBVR[NULL
 Values].
 
 [[BNBTZ]][[the-is-empty-expression]]
@@ -304,7 +304,7 @@ WHERE p.teams IS EMPTY
 * Description: The `teams` relationship field of the `Player` entity is
 a collection. If a player does not belong to a team, the `teams`
 collection is empty, and the conditional expression is `TRUE`.
-* See also: link:persistence-querylanguage006.html#BNBVJ[Empty Collection
+* See also: link:#BNBVJ[Empty Collection
 Comparison Expressions].
 
 [[BNBUA]][[the-between-expression]]
@@ -329,7 +329,7 @@ expression is equivalent to the `BETWEEN` expression:
 ----
 p.salary >= :lowerSalary AND p.salary <= :higherSalary
 ----
-* See also: link:persistence-querylanguage006.html#BNBVE[BETWEEN
+* See also: link:#BNBVE[BETWEEN
 Expressions].
 
 [[BNBUB]][[comparison-operators]]
@@ -349,7 +349,7 @@ of the player with the specified name.
 (`p1` and `p2`) of the same type (`Player`). Two identification
 variables are needed because the `WHERE` clause compares the salary of
 one player (`p2`) with that of the other players (`p1`).
-* See also: link:persistence-querylanguage006.html#BNBUM[Identification
+* See also: link:#BNBUM[Identification
 Variables].
 
 [[BNBUC]][[bulk-updates-and-deletes]]

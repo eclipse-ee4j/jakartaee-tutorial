@@ -63,7 +63,7 @@ tool also allows users to cache the public keys, in the form of
 certificates, of their communicating peers.
 
 For a better understanding of `keytool` and public-key cryptography, see
-link:security-advanced008.html#BABBGBBF[Further Information about
+link:#BABBGBBF[Further Information about
 Advanced Security Topics] for a link to the `keytool` documentation.
 
 [[BNBYC]][[creating-a-server-certificate]]
@@ -233,7 +233,7 @@ follow these steps.
 
 1.  Start GlassFish Server if you haven't already done so. Information
 on starting the GlassFish Server can be found in
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish Server].
+link:#BNADI[Starting and Stopping GlassFish Server].
 2.  Open the GlassFish Server Administration Console in a web browser at
 `http://localhost:4848`.
 3.  Expand Configurations, then expand server-config, then click JVM

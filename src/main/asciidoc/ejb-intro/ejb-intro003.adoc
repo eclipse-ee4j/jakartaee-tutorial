@@ -24,7 +24,7 @@ Beans?]
 The most visible difference between message-driven beans and session
 beans is that clients do not access message-driven beans through
 interfaces. Interfaces are described in the section
-link:ejb-intro004.html#GIPJF[Accessing Enterprise Beans]. Unlike a
+link:#GIPJF[Accessing Enterprise Beans]. Unlike a
 session bean, a message-driven bean has only a bean class.
 
 In several respects, a message-driven bean resembles a stateless session
@@ -72,8 +72,8 @@ A message can be delivered to a message-driven bean within a transaction
 context, so all operations within the `onMessage` method are part of a
 single transaction. If message processing is rolled back, the message
 will be redelivered. For more information, see
-link:jms-examples/jms-examples007.html#BNBPK[Receiving Messages Asynchronously Using a
-Message-Driven Bean] and link:transactions/transactions.html#BNCIH[Chapter 54,
+link:#BNBPK[Receiving Messages Asynchronously Using a
+Message-Driven Bean] and link:#BNCIH[Chapter 54,
 "Transactions"].
 
 [[GIPJX]][[when-to-use-message-driven-beans]]

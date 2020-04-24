@@ -104,12 +104,12 @@ For a standalone radio button, use the `group` attribute.
 
 The tags correspond to components in the `javax.faces.component`
 package. The components are discussed in more detail in
-link:jsf-develop/jsf-develop.html#BNATX[Chapter 12, "Developing with Jakarta Server Faces
+link:#BNATX[Chapter 12, "Developing with Jakarta Server Faces
 Technology."]
 
 The next section explains the important attributes that are common to
 most component tags. For each of the components discussed in the
-following sections, link:jsf-develop/jsf-develop002.html#BNATY[Writing Bean
+following sections, link:#BNATY[Writing Bean
 Properties] explains how to write a bean property bound to that
 particular component or its value.
 
@@ -154,7 +154,7 @@ expression.
 
 
 All the tag attributes except `id` can accept expressions, as defined by
-the EL, described in link:jsf-el/jsf-el.html#GJDDD[Expression Language].
+the EL, described in link:#GJDDD[Expression Language].
 
 An attribute such as `rendered` or `value` can be set on the page and
 then modified in the backing bean for the page.
@@ -169,9 +169,9 @@ component. If you don't include an `id` attribute, the Jakarta Server Faces
 implementation automatically generates a component ID. Unlike most other
 Jakarta Server Faces tag attributes, the `id` attribute takes expressions
 using only the evaluation syntax described in
-link:jsf-el/jsf-el002.html#BNAHS[Immediate Evaluation], which uses the `${}`
+link:#BNAHS[Immediate Evaluation], which uses the `${}`
 delimiters. For more information on expression syntax, see
-link:jsf-el/jsf-el003.html#BNAHV[Value Expressions].
+link:#BNAHV[Value Expressions].
 
 [[BNARI]][[the-immediate-attribute]]
 
@@ -264,7 +264,7 @@ is not rendered if the cart contains no items:
 
 Unlike nearly every other Jakarta Server Faces tag attribute, the `rendered`
 attribute is restricted to using rvalue expressions. As explained in
-link:jsf-el/jsf-el003.html#BNAHU[Value and Method Expressions], these rvalue
+link:#BNAHU[Value and Method Expressions], these rvalue
 expressions can only read data; they cannot write the data back to the
 data source. Therefore, expressions used with `rendered` attributes can
 use the arithmetic operators and literals that rvalue expressions can
@@ -280,7 +280,7 @@ a|
 In this example and others, `bundle` refers to a
 `java.util.ResourceBundle` file that contains locale-specific strings to
 be displayed. Resource bundles are discussed in
-link:webi18n/webi18n.html#BNAXU[Chapter 22, "Internationalizing and Localizing
+link:#BNAXU[Chapter 22, "Internationalizing and Localizing
 Web Applications"].
 
 |=======================================================================
@@ -322,9 +322,9 @@ attributes to bind its component's value or instance, respectively, to a
 data object. The `value` attribute is used more commonly than the
 `binding` attribute, and examples appear throughout this chapter. For
 more information on these attributes, see
-link:jsf-develop/jsf-develop001.html#BNAQN[Creating a Managed Bean],
-link:jsf-develop/jsf-develop002.html#BNATZ[Writing Properties Bound to Component
-Values], and link:jsf-develop/jsf-develop002.html#BNAUK[Writing Properties Bound to
+link:#BNAQN[Creating a Managed Bean],
+link:#BNATZ[Writing Properties Bound to Component
+Values], and link:#BNAUK[Writing Properties Bound to
 Component Instances].
 
 [[GJDGQ]][[adding-html-head-and-body-tags]]
@@ -483,7 +483,7 @@ Faces Facelets Tag Library documentation].
 |=======================================================================
 |*Attribute* |*Description*
 |`converter` |Identifies a converter that will be used to convert the
-component's local data. See link:jsf-page-core/jsf-page-core001.html#BNAST[Using the
+component's local data. See link:#BNAST[Using the
 Standard Converters] for more information on how to use this attribute.
 
 |`converterMessage` |Specifies an error message to display when the
@@ -507,7 +507,7 @@ does not enter a value into the component.
 
 |`validator` |Identifies a method expression pointing to a managed bean
 method that performs validation on the component's data. See
-link:jsf-page-core/jsf-page-core004.html#BNATR[Referencing a Method That Performs
+link:#BNATR[Referencing a Method That Performs
 Validation] for an example of using the `f:validator` tag.
 
 |`validatorMessage` |Specifies an error message to display when the
@@ -516,7 +516,7 @@ local value.
 
 |`valueChangeListener` |Identifies a method expression that points to a
 managed bean method that handles the event of entering a value in this
-component. See link:jsf-page-core/jsf-page-core004.html#BNATS[Referencing a Method That
+component. See link:#BNATS[Referencing a Method That
 Handles a Value-Change Event] for an example of using
 `valueChangeListener`.
 |=======================================================================
@@ -548,7 +548,7 @@ The output tags support the `converter` tag attribute in addition to
 those listed in link:#BNARG[Common Component Tag Attributes].
 
 The rest of this section explains how to use some of the tags listed in
-link:#BNARQ[Table 10-3] and link:#GJFWE[Output Tags]. The other tags are
+link:#GJFWE[Output Tags]. The other tags are
 written in a similar way.
 
 [[BNARR]][[rendering-a-field-with-the-hinputtext-tag]]
@@ -598,7 +598,7 @@ string, no other validators that are registered on the tag are called.
 If your tag does not have a `required` attribute set to `true`, other
 validators that are registered on the tag are called, but those
 validators must handle the possibility of a null or zero-length string.
-See link:bean-validation/bean-validation003.html#GKCRG[Validating Null and Empty Strings]
+See link:#GKCRG[Validating Null and Empty Strings]
 for more information.
 
 [[BNARV]][[rendering-a-password-field-with-the-hinputsecret-tag]]
@@ -768,9 +768,9 @@ activated.
 method that processes an action event fired by the command component
 tag.
 
-See link:jsf-page-core/jsf-page-core004.html#BNATP[Referencing a Method That Performs
+See link:#BNATP[Referencing a Method That Performs
 Navigation] for more information on using the `action` attribute. See
-link:jsf-page-core/jsf-page-core004.html#BNATQ[Referencing a Method That Handles an
+link:#BNATQ[Referencing a Method That Handles an
 Action Event] for details on using the `actionListener` attribute.
 
 [[BNARX]][[rendering-a-button-with-the-hcommandbutton-tag]]
@@ -793,7 +793,7 @@ be invoked because the `action` attribute references this method. The
 
 The `value` attribute of the example `h:commandButton` tag references
 the button's label. For information on how to use the `action`
-attribute, see link:jsf-page-core/jsf-page-core004.html#BNATP[Referencing a Method That
+attribute, see link:#BNATP[Referencing a Method That
 Performs Navigation].
 
 [[GKBUJ]][[rendering-a-link-with-the-hcommandlink-tag]]
@@ -857,7 +857,7 @@ relative context path of the web application to the beginning of the
 path to the image.
 
 Alternatively, you can use the facility described in
-link:jsf-facelets/jsf-facelets006.html#GIRGM[Web Resources] to point to the image
+link:#GIRGM[Web Resources] to point to the image
 location. Here are two examples:
 
 [source,oac_no_warn]
@@ -1218,7 +1218,7 @@ The `value` attribute of the `f:selectItems` tag is bound to the managed
 bean property `cashierBean.newsletterItems`. The individual `SelectItem`
 objects are created programmatically in the managed bean.
 
-See link:jsf-develop/jsf-develop002.html#BNAUH[UISelectItems Properties] for
+See link:#BNAUH[UISelectItems Properties] for
 information on how to write a managed bean property for one of these
 tags.
 
@@ -1293,7 +1293,7 @@ so, you can retrieve the value of the `newsletters` property, the
 An introductory thank-you message is displayed only if the `newsletters`
 array is not empty. Then a `ui:repeat` tag, a simple way to show values
 in a loop, displays the contents of the selected items in an itemized
-list. (This tag is listed in link:jsf-facelets/jsf-facelets004.html#GJBFP[Table 8-2].)
+list. (This tag is listed in link:#GJBFP[Table 8-2].)
 
 [[BNARZ]][[using-data-bound-table-components]]
 
@@ -1413,7 +1413,7 @@ following:
 All data sources for data components have a `DataModel` wrapper. Unless
 you explicitly construct a `DataModel` wrapper, the Jakarta Server Faces
 implementation will create one around data of any of the other
-acceptable types. See link:jsf-develop/jsf-develop002.html#BNATY[Writing Bean
+acceptable types. See link:#BNATY[Writing Bean
 Properties] for more information on how to write properties for use with
 a data component.
 
@@ -1656,7 +1656,7 @@ parameter values are read is as follows:
 ===== The bookmarks Example Application
 
 The `bookmarks` example application modifies the `hello1` application
-described in link:webapp/webapp003.html#BNADX[A Web Module That Uses Jakarta Server
+described in link:#BNADX[A Web Module That Uses Jakarta Server
 Faces Technology: The hello1 Example] to use a bookmarkable URL that
 uses view parameters.
 
@@ -1683,7 +1683,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -1705,7 +1705,7 @@ GlassFish Server instance.
 ====== To Build, Package, and Deploy the bookmarks Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

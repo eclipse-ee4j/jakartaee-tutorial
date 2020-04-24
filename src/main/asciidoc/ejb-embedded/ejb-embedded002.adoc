@@ -161,7 +161,7 @@ Context ctx = ec.getContext();
 ----
 +
 References to session beans can then be obtained using the portable JNDI
-syntax detailed in link:ejb-intro/ejb-intro004.html#GIRGN[Portable JNDI Syntax].
+syntax detailed in link:#GIRGN[Portable JNDI Syntax].
 For example, to obtain a reference to `MySessionBean`, a local session
 bean with a no-interface view, use the following code:
 +

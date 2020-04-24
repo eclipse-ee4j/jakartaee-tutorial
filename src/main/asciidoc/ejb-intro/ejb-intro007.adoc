@@ -53,7 +53,7 @@ collection.
 Your code controls the invocation of only one lifecycle method: the
 method annotated `@Remove`. All other methods in link:#GIPMI[Figure
 35-2] are invoked by the Enterprise Bean container. See
-link:resources/resources.html#BNCJH[Chapter 55, "Resource Adapters and Contracts"]
+link:#BNCJH[Chapter 55, "Resource Adapters and Contracts"]
 for more information.
 
 [[GIPLM]][[the-lifecycle-of-a-stateless-session-bean]]

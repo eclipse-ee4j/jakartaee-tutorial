@@ -176,7 +176,7 @@ attribute of the component's tag:
 <h:outputText value="#{Book201.shape}" />
 ----
 
-See link:jsf-configure/jsf-configure005.html#BNAWQ[Configuring Managed Beans] for
+See link:#BNAWQ[Configuring Managed Beans] for
 information on how to configure beans in the application configuration
 resource file.
 
@@ -308,6 +308,6 @@ would therefore require additional code to access the components from
 the `FacesContext` instance to change the components' `rendered`
 properties.
 
-link:jsf-develop/jsf-develop002.html#BNAUK[Writing Properties Bound to Component
+link:#BNAUK[Writing Properties Bound to Component
 Instances] explains how to write the bean properties bound to the
 example components.

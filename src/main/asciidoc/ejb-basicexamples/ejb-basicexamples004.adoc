@@ -6,7 +6,7 @@ This example demonstrates a simple web service that generates a response
 based on information received from the client. `HelloServiceBean` is a
 stateless session bean that implements a single method: `sayHello`. This
 method matches the `sayHello` method invoked by the client described in
-link:jaxws/jaxws002.html#BNAYX[A Simple Jakarta XML Web Services Application Client].
+link:#BNAYX[A Simple Jakarta XML Web Services Application Client].
 
 The following topics are addressed here:
 
@@ -35,7 +35,7 @@ not be declared `static` or `final`.
 annotated with `javax.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
 Jakarta XML Binding-compatible parameters and return types. See the list of Jakarta XML Binding
-default data type bindings at link:jaxws/jaxws003.html#BNAZC[Types Supported by
+default data type bindings at link:#BNAZC[Types Supported by
 Jakarta XML Web Services].
 * The implementing class must not be declared `final` and must not be
 `abstract`.
@@ -103,7 +103,7 @@ Using Maven]
 ====== To Build, Package, and Deploy the helloservice Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -126,7 +126,7 @@ this EAR file to GlassFish Server.
 ====== To Build, Package, and Deploy the helloservice Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:usingexamples/usingexamples002.html#BNADI[Starting and Stopping GlassFish
+link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

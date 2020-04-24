@@ -85,7 +85,7 @@ example:
 The `listener` element specifies a batch artifact whose methods are
 invoked before and after the execution of the job. The batch artifact is
 an implementation of the `javax.batch.api.listener.JobListener`
-interface. See link:batch-processing008.html#BCGCCFAC[The Listener Batch
+interface. See link:#BCGCCFAC[The Listener Batch
 Artifacts] for an example of a job listener implementation.
 
 The first `step`, `flow`, or `split` element inside the `job` element
@@ -121,7 +121,7 @@ implementations of the following interfaces: `StepListener`,
 For task steps, the batch artifact for these listeners must be an
 implementation of the `StepListener` interface.
 +
-See link:batch-processing008.html#BCGCCFAC[The Listener Batch Artifacts]
+See link:#BCGCCFAC[The Listener Batch Artifacts]
 for an example of an item processor listener implementation.
 * One `partition` element (optional).
 +
@@ -363,8 +363,8 @@ properties to specify a range of items for each partition, and one that
 relies on a `PartitionMapper` implementation to determine
 partition-specific information.
 
-See link:batch-processing009.html#BCGGGAHB[The Phone Billing Chunk Step]
-in link:batch-processing009.html#BCGFCACD[The phonebilling Example
+See link:#BCGGGAHB[The Phone Billing Chunk Step]
+in link:#BCGFCACD[The phonebilling Example
 Application] for a complete example of a partitioned chunk step.
 
 The `partition` element can contain the following elements.
@@ -456,7 +456,7 @@ file:
 </step>
 ----
 
-Refer to link:batch-processing009.html#BCGFCACD[The phonebilling Example
+Refer to link:#BCGFCACD[The phonebilling Example
 Application] for an example implementation of the `PartitionMapper`
 interface.
 

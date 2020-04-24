@@ -62,7 +62,7 @@ stale reads, use any of these strategies:
 * Control which entities may be cached (see link:#GKJIW[Controlling
 whether Entities May Be Cached])
 * Change the cache's retrieval or store modes (see
-link:persistence-cache002.html#GKJDK[Setting the Cache Retrieval and
+link:#GKJDK[Setting the Cache Retrieval and
 Store Modes])
 
 Which of these strategies works best to avoid stale reads depends upon

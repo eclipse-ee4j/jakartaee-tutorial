@@ -19,13 +19,13 @@ manually for more complex applications as required.
 Jakarta Server Faces applications that use advanced features may require
 interaction with the lifecycle at certain phases. For example, Ajax
 applications use partial processing features of the lifecycle (see
-link:jsf-intro008.html#GKNOJ[Partial Processing and Partial Rendering]).
+link:#GKNOJ[Partial Processing and Partial Rendering]).
 A clearer understanding of the lifecycle phases is key to creating
 well-designed components.
 
 A simplified view of the Jakarta Server faces lifecycle, consisting of the
 two main phases of a Jakarta Server Faces web application, is introduced in
-link:jsf-intro004.html#GJAAM[A Simple Jakarta Server Faces Application]. This
+link:#GJAAM[A Simple Jakarta Server Faces Application]. This
 section examines the Jakarta Server Faces lifecycle in more detail.
 
 [[GLPRC]][[overview-of-the-javaserver-faces-lifecycle]]
@@ -163,7 +163,7 @@ If any events have been queued during this phase, the Jakarta Server Faces
 implementation broadcasts the events to interested listeners.
 
 If some components on the page have their `immediate` attributes (see
-link:jsf-page/jsf-page002.html#BNARI[The immediate Attribute]) set to `true`, then
+link:#BNARI[The immediate Attribute]) set to `true`, then
 the validations, conversions, and events associated with these
 components will be processed during this phase. If any conversion fails,
 an error message associated with the component is generated and queued
