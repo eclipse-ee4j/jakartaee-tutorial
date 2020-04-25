@@ -88,7 +88,7 @@ mapped to multiple tables.
 The following code snippet shows how to define a version attribute in an
 entity with persistent fields:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Version
 protected int version;
@@ -97,7 +97,7 @@ protected int version;
 The following code snippet shows how to define a version attribute in an
 entity with persistent properties:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Version
 protected Short getVersion() { ... }

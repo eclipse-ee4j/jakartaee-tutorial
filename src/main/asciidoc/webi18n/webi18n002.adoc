@@ -21,7 +21,7 @@ the corresponding key.
 The Duke's Bookstore application follows the second approach. Here are a
 few lines from the default resource bundle `messages`.`properties`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 TitleShoppingCart=Shopping Cart
 TitleReceipt=Receipt
@@ -49,7 +49,7 @@ default locale and also registers other supported locales. This element
 in Duke's Bookstore registers English as the default locale and
 indicates that German, French, and Spanish are supported locales.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <locale-config>
     <default-locale>en</default-locale>
@@ -62,7 +62,7 @@ indicates that German, French, and Spanish are supported locales.
 The `LocaleBean` in the Duke's Bookstore application uses the
 `getLocale` method to retrieve the locale.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 public class LocaleBean {
     
@@ -81,7 +81,7 @@ public class LocaleBean {
 The resource bundle is set with the `resource-bundle` element in the
 configuration file. The setting for Duke's Bookstore looks like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <resource-bundle>
     <base-name>
@@ -97,7 +97,7 @@ attribute (see link:#BNAGO[Associating Objects with a
 Session]) for use by other components or simply be used to return a text
 string appropriate for the selected locale:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String toString(Locale locale) {
     ResourceBundle res = 
@@ -111,7 +111,7 @@ Alternatively, an application could use the `f:loadBundle` tag to set
 the resource bundle. This tag loads the correct resource bundle
 according to the locale stored in `FacesContext`.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:loadBundle basename="jakarta.tutorial.dukesbookstore.web.messages.Messages"
     var="bundle"/>
@@ -132,7 +132,7 @@ link:#BNAXB[Registering Application Messages].
 A web component written in the Java programming language retrieves the
 resource bundle from the session:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ResourceBundle messages = (ResourceBundle)session.getAttribute("messages");
 ----
@@ -140,7 +140,7 @@ ResourceBundle messages = (ResourceBundle)session.getAttribute("messages");
 Then it looks up the string associated with the key `person.lastName` as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 messages.getString("person.lastName");
 ----
@@ -152,7 +152,7 @@ being registered on the component. The following example shows a
 input component if the validator registered on the component fails to
 validate the value the user enters into the component.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="userNo" value="#{UserNumberBean.userNumber}">
     <f:validateLongRange minimum="0" maximum="10" />
@@ -183,7 +183,7 @@ bundle, referred to by the `var` attribute.
 
 Here is an example from `bookcashier.xhtml` in Duke's Bookstore:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputLabel for="name" value="#{bundle.Name}" />
 ----

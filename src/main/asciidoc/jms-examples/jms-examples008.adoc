@@ -67,7 +67,7 @@ Messages Asynchronously Using a Message-Driven Bean]. The client uses
 dependency injection to obtain the Publisher enterprise bean's business
 interface:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @EJB(name="PublisherRemote")
 private static PublisherRemote publisher;
@@ -95,7 +95,7 @@ then injects a `JMSContext`, which uses the preconfigured default
 connection factory unless you specify otherwise. The bean class begins
 as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 @Remote({
@@ -136,7 +136,7 @@ activation config properties `messageSelector`,
 `subscriptionDurability`, `clientId`, and `subscriptionName`, as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @JMSDestinationDefinition(
         name = "java:module/jms/newsTopic",
@@ -192,7 +192,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/clientsessionmdb
 ----
@@ -222,7 +222,7 @@ runs the client.
 +
 The client displays these lines:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 To view the bean output,
  check <install_dir>/domains/domain1/logs/server.log.
@@ -244,14 +244,14 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  Go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/clientsessionmdb/
 ----
 3.  To compile the source files and package, deploy, and run the
 application, enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -273,7 +273,7 @@ runs the client.
 +
 The client displays these lines:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 To view the bean output,
  check <install_dir>/domains/domain1/logs/server.log.
@@ -285,7 +285,7 @@ Publisher session bean sends two sets of 18 messages numbered 0 through
 only the messages whose `NewsType` property is `Sports` or `Opinion`.
 4.  Undeploy the application after you have finished running it:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn cargo:undeploy
 ----

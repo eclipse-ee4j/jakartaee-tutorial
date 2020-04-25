@@ -91,7 +91,7 @@ example, if the data you want to expose is a collection of products and
 each product has an ID, a name, a description, and a price, you can
 model it as a Java class as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @XmlRootElement(name="product")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -116,14 +116,14 @@ public class Product {
 Run the Jakarta XML Binding schema generator on the command line to generate the
 corresponding XML schema definition:
 
-[source,oac_no_warn]
+[source,java]
 ----
 schemagen Product.java
 ----
 
 This command produces the XML schema as an `.xsd` file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -148,7 +148,7 @@ request into a `Product` object and to convert a `Product` object into
 XML data for the response. The following resource class provides a
 simple example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/product")
 public class ProductService {
@@ -190,7 +190,7 @@ If you already have an XML schema definition in an `.xsd` file for the
 data you want to expose, use the Jakarta XML Binding schema compiler tool. Consider
 this simple example of an `.xsd` file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <xs:schema targetNamespace="http://xml.product"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -210,7 +210,7 @@ this simple example of an `.xsd` file:
 
 Run the schema compiler tool on the command line as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 xjc Product.xsd
 ----
@@ -227,7 +227,7 @@ In this case, the schema compiler tool generates the classes
 class contains Jakarta XML Binding annotations, and its fields correspond to those in
 the `.xsd` definition:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Product", propOrder = {
@@ -255,7 +255,7 @@ You can create instances of the `Product` class from your application
 these objects to Jakarta XML Binding elements that can be returned as XML inside Jakarta REST
 resource methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @XmlElementDecl(namespace = "http://xml.product", name = "product")
 public JAXBElement<Product> createProduct(Product value) {
@@ -266,7 +266,7 @@ public JAXBElement<Product> createProduct(Product value) {
 The following code shows how to use the generated classes to return a
 Jakarta XML Binding element as XML in a Jakarta REST resource method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/product")
 public class ProductService {
@@ -288,7 +288,7 @@ For `@POST` and `@PUT` resource methods, you can use a `Product` object
 directly as a parameter. Jakarta REST maps the XML data from the request into
 a `Product` object.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/product")
 public class ProductService {
@@ -314,7 +314,7 @@ work with JSON data. JSON is a simple text-based format for data
 exchange derived from JavaScript. For the preceding examples, the XML
 representation of a product is
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <product>
@@ -327,7 +327,7 @@ representation of a product is
 
 The equivalent JSON representation is
 
-[source,oac_no_warn]
+[source,json]
 ----
 {
     "id":"1",
@@ -341,7 +341,7 @@ You can add the format `application/json` or
 `MediaType.APPLICATION_JSON` to the `@Produces` annotation in resource
 methods to produce responses with JSON data:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 @Path("/get")
@@ -352,7 +352,7 @@ public Product getProduct() { ... }
 In this example, the default response is XML, but the response is a JSON
 object if the client makes a `GET` request that includes this header:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Accept: application/json
 ----
@@ -360,7 +360,7 @@ Accept: application/json
 The resource methods can also accept JSON data for Jakarta XML Binding annotated
 classes:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Path("/create")
@@ -371,7 +371,7 @@ public Response createProduct(Product prod) { ... }
 The client should include the following header when submitting JSON data
 with a `POST` request:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Content-Type: application/json
 ----

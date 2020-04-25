@@ -37,7 +37,7 @@ To obtain an instance of the `CriteriaBuilder` interface, call the
 The following code shows how to obtain a `CriteriaBuilder` instance by
 using the `EntityManager.getCriteriaBuilder` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -46,7 +46,7 @@ CriteriaBuilder cb = em.getCriteriaBuilder();
 Criteria queries are constructed by obtaining an instance of the
 following interface:
 
-[source,oac_no_warn]
+[source,java]
 ----
 javax.persistence.criteria.CriteriaQuery
 ----
@@ -56,7 +56,7 @@ over one or more entities. Obtain `CriteriaQuery` instances by calling
 one of the `CriteriaBuilder.createQuery` methods. To create typesafe
 queries, call the `CriteriaBuilder.createQuery` method as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 ----
@@ -69,7 +69,7 @@ entity.
 The following code snippet creates a `CriteriaQuery` object for a query
 that returns a `String`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<String> cq = cb.createQuery(String.class);
 ----
@@ -88,7 +88,7 @@ the entity class or an `EntityType<T>` instance for the entity.
 
 The following code sets the query root to the `Pet` entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -97,7 +97,7 @@ Root<Pet> pet = cq.from(Pet.class);
 The following code sets the query root to the `Pet` class by using an
 `EntityType<T>` instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Metamodel m = em.getMetamodel();
@@ -110,7 +110,7 @@ when the query navigates from several entities.
 
 The following code has two `Root` instances:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet1 = cq.from(Pet.class);
@@ -134,7 +134,7 @@ the source entity and `Y` is the target of the join. In the following
 code snippet, `Pet` is the source entity, `Owner` is the target, and
 `Pet_` is a statically generated metamodel class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 
@@ -146,7 +146,7 @@ You can chain joins together to navigate to related entities of the
 target entity without having to create a `Join<X, Y>` instance for each
 join:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 
@@ -175,7 +175,7 @@ The `get` method is called on the query root, `pet`, with the `name`
 attribute of the `Pet` entity's Metamodel class, `Pet_`, as the
 argument:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<String> cq = cb.createQuery(String.class);
 
@@ -221,7 +221,7 @@ can use with `Expression` objects.
 The following query uses the `Expression.isNull` method to find all pets
 where the `color` attribute is null:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -231,7 +231,7 @@ cq.where(pet.get(Pet_.color).isNull());
 The following query uses the `Expression.in` method to find all brown
 and black pets:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -282,7 +282,7 @@ third expression in value
 
 The following code uses the `CriteriaBuilder.equal` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -291,7 +291,7 @@ cq.where(cb.equal(pet.get(Pet_.name), "Fido"));
 
 The following code uses the `CriteriaBuilder.gt` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -301,7 +301,7 @@ cq.where(cb.gt(pet.get(Pet_.birthday), date));
 
 The following code uses the `CriteriaBuilder.between` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -312,7 +312,7 @@ cq.where(cb.between(pet.get(Pet_.birthday), firstDate, secondDate));
 
 The following code uses the `CriteriaBuilder.like` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -338,7 +338,7 @@ link:#GJIWU[Table 43-3].
 
 The following code shows the use of compound predicates in queries:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -377,7 +377,7 @@ passed expression parameter. The `desc` method is used to order the
 results by descending value of the passed expression parameter. The
 following query shows the use of the `desc` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -391,7 +391,7 @@ pets born in May.
 
 The following query shows the use of the `asc` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -411,7 +411,7 @@ is determined by the order in which they appear in the argument list of
 
 The following code orders results by multiple criteria:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -430,7 +430,7 @@ owner's last name, then first name.
 The `CriteriaQuery.groupBy` method partitions the query results into
 groups. To set these groups, pass an expression to `groupBy`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -445,7 +445,7 @@ filter over the groups. The `having` method, which takes a conditional
 expression as a parameter, restricts the query result according to the
 conditional expression:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -476,7 +476,7 @@ the `TypedQuery<T>` object.
 Use the `TypedQuery<T>.getSingleResult` method to execute queries that
 return a single result:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 ...
@@ -491,7 +491,7 @@ Pet result = q.getSingleResult();
 Use the `TypedQuery<T>.getResultList` method to execute queries that
 return a collection of objects:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 ...

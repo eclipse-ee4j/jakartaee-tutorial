@@ -51,19 +51,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsonb/jsonbbasics
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Open a web browser window and enter the following address:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/jsonbbasics/
 ----

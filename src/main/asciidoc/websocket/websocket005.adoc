@@ -72,7 +72,7 @@ the `getOpenSessions` method for this purpose. The following example
 demonstrates how to use this method to forward incoming text messages to
 all connected peers:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/echoall")
 public class EchoAllEndpoint {
@@ -98,7 +98,7 @@ in an endpoint, one for each message type: text, binary, and pong. The
 following example demonstrates how to designate methods to receive all
 three types of messages:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/receive")
 public class ReceiveEndpoint {

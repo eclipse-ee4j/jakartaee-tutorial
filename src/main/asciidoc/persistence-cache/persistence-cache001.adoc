@@ -81,7 +81,7 @@ and changing the value.
 To specify that an entity may be cached, add a `@Cacheable` annotation
 at the class level:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Cacheable
 @Entity
@@ -91,7 +91,7 @@ public class Person { ... }
 By default, the `@Cacheable` annotation is `true`. The following example
 is equivalent:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Cacheable(true)
 @Entity
@@ -101,7 +101,7 @@ public class Person{ ... }
 To specify that an entity must not be cached, add a `@Cacheable`
 annotation and set it to `false`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Cacheable(false)
 @Entity

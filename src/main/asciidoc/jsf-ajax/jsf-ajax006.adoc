@@ -40,7 +40,7 @@ one of the valid error values listed in link:#GKGOU[Table 13-4].
 In the following example, any errors that occurred in processing the
 Ajax request are handled by the `handlemyajaxerror` JavaScript function:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax event="click" render="errormessage" onerror="handlemyajaxerror"/>
 ----

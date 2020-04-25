@@ -9,7 +9,7 @@ those dependencies for you.
 
 For example, consider the following servlet:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet("/cdiservlet")
 public class NewServlet extends HttpServlet {
@@ -31,7 +31,7 @@ public class NewServlet extends HttpServlet {
 This servlet needs an instance of an object that implements the
 `Message` interface:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public interface Message {
     public String get();
@@ -40,7 +40,7 @@ public interface Message {
 
 The servlet creates itself an instance of the following object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MessageB implements Message {
     public MessageB() { }
@@ -56,7 +56,7 @@ Using CDI, this servlet can declare its dependency on a `Message`
 instance and have it injected automatically by the CDI runtime. The new
 servlet code is the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet("/cdiservlet")
 public class NewServlet extends HttpServlet {
@@ -79,7 +79,7 @@ to process an HTTP request; the instance can then be garbage collected.
 This is specified using the `javax.enterprise.context.RequestScoped`
 annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @RequestScoped
 public class MessageB implements Message { ... }

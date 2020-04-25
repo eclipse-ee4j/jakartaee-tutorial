@@ -51,7 +51,7 @@ Applications that use Jakarta Persistence specify the `DataSource`
 object they are using in the `jta-data-source` element of the
 `persistence.xml` file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <jta-data-source>jdbc/MyOrderDB</jta-data-source>
 ----

@@ -31,7 +31,7 @@ The composite component file is an XHTML file,
 section that declares the labels for the name and a command button. It
 also declares a managed bean, which defines properties for the name.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <composite:interface>
     <composite:attribute name="namePrompt"
@@ -52,7 +52,7 @@ bean, as well as the format of error messages. The sum value is rendered
 only after it has been calculated, and the report of whether the sum is
 prime or not is rendered only if the input value is validated.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <composite:implementation>
     <h:form id="form">
@@ -106,7 +106,7 @@ The using page in this example application, `web/index.xhtml`, is an
 XHTML file that invokes the `PrimePanel.xhtml` composite component file
 along with the managed bean. It validates the user's input.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <div id="compositecomponent">
     <ez:PrimePanel primeBean="#{primeBean}"
@@ -134,7 +134,7 @@ uses the `@Model` annotation, a shortcut for `@Named` and
 link:#GJWTV[To View the hello1 Web Module Using NetBeans
 IDE].
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Model
 public class PrimeBean implements Serializable {
@@ -174,7 +174,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf
 ----
@@ -194,13 +194,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf/compositecomponentexample/
 ----
 3.  Enter the following command to build and deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -211,7 +211,7 @@ mvn install
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/compositecomponentexample
 ----

@@ -60,7 +60,7 @@ The `HelloServiceBean` class implements the `sayHello` method, which is
 annotated `@WebMethod`. The source code for the `HelloServiceBean` class
 is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.helloservice.ejb;
 
@@ -108,7 +108,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -130,13 +130,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/helloservice/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -160,7 +160,7 @@ methods of a web service endpoint. To test the `sayHello` method of
 1.  Open the Administration Console by opening the following URL in a
 web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:4848/
 ----
@@ -169,7 +169,7 @@ http://localhost:4848/
 4.  In the Modules and Components table, click the View Endpoint link.
 5.  On the Web Service Endpoint Information page, click the Tester link:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 /HelloServiceBeanService/HelloServiceBean?Tester
 ----

@@ -45,7 +45,7 @@ size is unlimited.
 For, example, the `@MultipartConfig` annotation could be constructed as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MultipartConfig(location="/tmp", fileSizeThreshold=1024*1024,
     maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
@@ -56,7 +56,7 @@ attributes in your file upload servlet, you could add the following as a
 child element of the servlet configuration element in the `web.xml`
 file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <multipart-config>
     <location>/tmp</location>

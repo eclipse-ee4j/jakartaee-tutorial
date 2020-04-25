@@ -33,7 +33,7 @@ an email message to an address specified by the user. The message is
 created, modified, and sent using the Jakarta Mail API. The session bean
 looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @Stateless
@@ -113,7 +113,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -125,7 +125,7 @@ select Run.
 The SMTP server simulator starts accepting connections. The async-smptd
 output tab shows the following message:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 [Test SMTP server listening on port 3025]
 ----
@@ -137,7 +137,7 @@ administrative command and builds, packages, and deploys the `async-war`
 module.
 7.  Open the following URL in a web browser window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/async-war
 ----
@@ -164,27 +164,27 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/async/async-smtpd/
 ----
 3.  Enter the following command to build and package the SMTP server
 simulator:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Enter the following command to start the STMP server simulator:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn exec:java
 ----
 +
 The following message appears:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 [Test SMTP server listening on port 3025]
 ----
@@ -192,20 +192,20 @@ The following message appears:
 Keep this terminal window open.
 5.  In a new terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/async/async-war
 ----
 6.  Enter the following command to configure the Jakarta Mail resource and
 to build, package, and deploy the `async-war` module:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 7.  Open the following URL in a web browser window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/async-war
 ----
@@ -219,7 +219,7 @@ on the first terminal window, including its headers.
 which you issued the command to start the STMP server simulator.
 10. To delete the Jakarta Mail session resource, type the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin delete-javamail-resource mail/myExampleSession
 ----

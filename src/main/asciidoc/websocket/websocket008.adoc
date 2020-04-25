@@ -6,7 +6,7 @@ The `ServerEndpoint` annotation enables you to use URI templates to
 specify parts of an endpoint deployment URI as application parameters.
 For example, consider this endpoint:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/chatrooms/{room-name}")
 public class ChatEndpoint {
@@ -18,7 +18,7 @@ If the endpoint is deployed inside a web application called `chatapp` at
 a local Jakarta EE server in port 8080, clients can connect to the endpoint
 using any of the following URIs:
 
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/chatapp/chatrooms/currentnews
 http://localhost:8080/chatapp/chatrooms/music
@@ -31,7 +31,7 @@ annotated with `@OnOpen`, `@OnMessage`, and `@OnClose`. In this example,
 the endpoint uses the parameter in the `@OnOpen` method to determine
 which chat room the client wants to join:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/chatrooms/{room-name}")
 public class ChatEndpoint {

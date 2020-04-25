@@ -17,7 +17,7 @@ validation exceptions with `Employee` objects.
 The following code shows an incorrect use of method parameter
 constraints within a class hierarchy:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class Person {
 ...
@@ -41,7 +41,7 @@ Similarly, the return values from method calls should not be weakened in
 subtypes. The following code shows an incorrect use of constraints on
 method return values in a class hierarchy:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class Person {
 ...
@@ -73,7 +73,7 @@ signature, known as parallel types, need to be aware of the constraints
 applied to the interfaces that they implement to avoid strengthening the
 preconditions. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public interface PaymentService {
   void processOrder(Order order, double amount);

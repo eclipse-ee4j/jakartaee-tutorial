@@ -20,7 +20,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies
 ----
@@ -42,13 +42,13 @@ Server]), as well as the database server (see
 link:#BNADK[Starting and Stopping Apache Derby]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies/dukes-bookstore/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -63,7 +63,7 @@ It then deploys the application to GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukes-bookstore/
 ----

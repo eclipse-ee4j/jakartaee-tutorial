@@ -39,7 +39,7 @@ element, specify at least one of its attributes using the
 `http://xmlns.jcp.org/jsf` namespace. For example, the following code
 declares the namespace with the short name `jsf`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html ... xmlns:jsf="http://xmlns.jcp.org/jsf"
 ...
@@ -122,7 +122,7 @@ example, the following code declares the namespace with the short name
 `p`, then passes the `type`, `min`, `max`, `required`, and `title`
 attributes through to the HTML5 `input` component:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <html ... xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 ...
@@ -137,7 +137,7 @@ attributes through to the HTML5 `input` component:
 This will cause the following markup to be rendered (assuming that
 `bean.nights` has a default value set to 1):
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <input id="nights" type="number" value="1" min="1" max="30"
        required="required"
@@ -146,7 +146,7 @@ This will cause the following markup to be rendered (assuming that
 * To pass a single attribute, nest the `f:passThroughAttribute` tag
 within a component tag. For example:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{user.email}">
     <f:passThroughAttribute name="type" value="email" />
@@ -155,7 +155,7 @@ within a component tag. For example:
 +
 This code would be rendered similarly to the following:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <input value="me@me.com" type="email" />
 ----
@@ -163,7 +163,7 @@ This code would be rendered similarly to the following:
 within a component tag, specifying an EL value that must evaluate to a
 `Map<String, Object>`. For example:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{bean.nights">
     <f:passThroughAttributes value="#{bean.nameValuePairs}" />
@@ -174,7 +174,7 @@ If the bean used the following `Map` declaration and initialized the map
 in the constructor as follows, the markup would be similar to the output
 of the code that uses the pass-through attribute namespace:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 private Map<String, Object> nameValuePairs;
 ...
@@ -219,7 +219,7 @@ Faces applications refer to the XHTML DTD. The facelets pages for this
 application begin simply with the following `DOCTYPE` header, which
 indicates an HTML5 page:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html>
 ----
@@ -228,7 +228,7 @@ The namespace declarations in the `html` element of the
 `reservation.xhtml` page specify both the `jsf` and the `passthrough`
 namespaces:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -243,7 +243,7 @@ within the `h:body` tag illustrates the use of a relocatable resource
 (as described in link:#BABHGBJI[Relocatable
 Resources]):
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:head>
 </h:head>
@@ -258,7 +258,7 @@ following element renders both a date format and a calendar from which
 you can choose a date. The `jsf` prefix on the `id` attribute makes the
 element a pass-through one:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <input type="date" jsf:id="date" name="date"
            value="#{reservationBean.date}" required="required"
@@ -270,7 +270,7 @@ The field for the number of tickets, however, uses the
 bean. It also recalculates the total in response to a change in the
 field:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h:inputText id="tickets" value="#{reservationBean.tickets}">
         <f:passThroughAttributes value="#{reservationBean.ticketAttrs}"/>
@@ -284,7 +284,7 @@ attribute of the `h:inputText` element, offering a range of four ticket
 prices. Here, the `p` prefix on the HTML5 attributes passes them through
 to the browser uninterpreted by the Jakarta Server Faces input component:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h:inputText id="price" p:type="number"
                  value="#{reservationBean.price}"
@@ -326,7 +326,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf
 ----
@@ -347,13 +347,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf/reservation/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -373,7 +373,7 @@ may work equally well by the time you read this.
 
 1.  Enter the following URL in your web browser:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 http://localhost:8080/reservation
 ----

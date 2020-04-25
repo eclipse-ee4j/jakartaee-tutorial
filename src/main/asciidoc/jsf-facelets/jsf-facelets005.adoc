@@ -72,7 +72,7 @@ the Jakarta Server Faces Facelets Tag Library documentation.
 The following example shows a composite component that accepts an email
 address as input:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -113,7 +113,7 @@ The web page that uses this composite component is generally called a
 using page. The using page includes a reference to the composite
 component, in the `xml` namespace declarations:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -141,7 +141,7 @@ content can be stored as a web page named `emuserpage.xhtml` under the
 web root directory. When compiled and deployed on a server, it can be
 accessed with the following URL:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 http://localhost:8080/application-name/emuserpage.xhtml
 ----

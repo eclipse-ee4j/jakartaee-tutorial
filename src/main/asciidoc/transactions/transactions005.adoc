@@ -15,7 +15,7 @@ you can obtain with application-managed transactions. By checking
 various conditions, the pseudocode decides whether to start or stop
 certain transactions within the business method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 begin transaction
 ...

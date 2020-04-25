@@ -13,7 +13,7 @@ that specifies that the provider should drop all database artifacts
 using a provided script, create the artifacts with a provided script,
 and load data from a provided script when the application is deployed:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
@@ -74,7 +74,7 @@ In this example, the persistence provider will delete any remaining
 database artifacts and then create the artifacts when the application is
 deployed:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <property name="javax.persistence.schema-generation.database.action"
            value="drop-and-create"/>
@@ -113,7 +113,7 @@ artifacts.
 In this example, the persistence provider will use a script packaged
 within the application to create the database artifacts:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <property name="javax.persistence.schema-generation.create-source"
            value="script"/>
@@ -125,7 +125,7 @@ location of the script using the
 `javax.persistence.schema-generation.drop-script-source` property. The
 location of the script is relative to the root of the persistence unit:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <property name="javax.persistence.schema-generation.create-script-source"
            value="META-INF/sql/create.sql" />
@@ -148,7 +148,7 @@ unit.
 In this example, the load script is a file called `data.sql` in the
 `META-INF/sql` directory relative to the root of the persistence unit:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <property name="javax.persistence.sql-load-script-source"
           value="META-INF/sql/data.sql" />

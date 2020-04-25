@@ -59,7 +59,7 @@ The many-to-many relationship between `Player` and `Team` is specified
 by using the `@ManyToMany` annotation. In `Team.java`, the `@ManyToMany`
 annotation decorates the `getPlayers` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ManyToMany
 @JoinTable(
@@ -91,7 +91,7 @@ arbitrary.
 In `Player.java`, the `@ManyToMany` annotation decorates the `getTeams`
 method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ManyToMany(mappedBy="players")
 public Collection<Team> getTeams() {
@@ -110,7 +110,7 @@ The `League` entity in `roster` is an abstract entity with two concrete
 subclasses: `SummerLeague` and `WinterLeague`. Because `League` is an
 abstract class, it cannot be instantiated:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 @Table(name = "PERSISTENCE_ROSTER_LEAGUE")
@@ -123,7 +123,7 @@ properties defined in `League` and add only a constructor that verifies
 that the sport parameter matches the type of sport allowed in that
 seasonal league. For example, here is the `SummerLeague` entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 @Entity
@@ -155,7 +155,7 @@ required. If you want to use a different mapping strategy, decorate
 `League` with `@Inheritance` and specify the mapping strategy in the
 `strategy` element:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 @Inheritance(strategy=JOINED)
@@ -172,7 +172,7 @@ inherited entity used to create the league. If you want to use a
 different name for the discriminator column, decorate `League` with
 `@DiscriminatorColumn` and set the `name` element:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 @DiscriminatorColumn(name="DISCRIMINATOR")
@@ -211,7 +211,7 @@ Each persistent field or property in the entity class has a
 corresponding attribute in the entity's metamodel class. For the
 `Player` entity, the corresponding metamodel class is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @StaticMetamodel(Player.class)
 public class Player_ {
@@ -232,7 +232,7 @@ objects and create expressions for modifying those query objects.
 `RequestBean` creates an instance of `CriteriaBuilder` by using a
 `@PostConstruct` method, `init`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 private EntityManager em;
@@ -258,7 +258,7 @@ Many of the business methods in `RequestBean` define Criteria queries.
 One business method, `getPlayersByPosition`, returns a list of players
 who play a particular position on a team:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public List<PlayerDetails> getPlayersByPosition(String position) {
     logger.info("getPlayersByPosition");
@@ -318,7 +318,7 @@ the database tables used by `roster`. This is done by setting the
 `javax.persistence.schema-generation.database.action` property to
 `drop-and-create` in `persistence.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1"
@@ -361,7 +361,7 @@ Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence
 ----
@@ -376,7 +376,7 @@ This will compile, package, and deploy the EAR to GlassFish Server.
 You will see the following partial output from the application client in
 the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 List all players in team T2:
 P6 Ian Carlyle goalkeeper 555.0
@@ -410,13 +410,13 @@ the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence/roster/roster-ear/
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -434,7 +434,7 @@ with GlassFish Server.
 +
 You will see the output, which begins as follows:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 [echo] running application client container.
 [exec] List all players in team T2:

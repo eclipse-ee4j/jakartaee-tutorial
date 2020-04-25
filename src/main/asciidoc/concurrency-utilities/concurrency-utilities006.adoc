@@ -48,7 +48,7 @@ task execution log is available."]
 The `TaskEJB` class obtains the default executor service objects from
 the application server as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(name="java:comp/DefaultManagedExecutorService")
 ManagedExecutorService mExecService;
@@ -60,7 +60,7 @@ ManagedScheduledExecutorService sExecService;
 The `submitTask` method in `TaskEJB` uses these objects to submit tasks
 for execution as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void submitTask(Task task, String type) {
     /* Use the managed executor objects from the app server */
@@ -109,7 +109,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/concurrency
 ----
@@ -129,13 +129,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/concurrency/taskcreator
 ----
 3.  Enter the following command to build and deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -146,7 +146,7 @@ mvn install
 
 1.  Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/taskcreator/
 ----
@@ -157,7 +157,7 @@ form to cancel periodic tasks.
 Submit button. Messages like the following appear in the task execution
 log:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 12:40:47 - IMMEDIATE Task TaskA finished
 12:40:45 - IMMEDIATE Task TaskA started
@@ -166,7 +166,7 @@ log:
 the Submit button. Messages like the following appear in the task
 execution log:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 12:43:26 - DELAYED Task TaskB finished
 12:43:25 - DELAYED Task TaskB started
@@ -176,7 +176,7 @@ execution log:
 the Submit button. Messages like the following appear in the task
 execution log:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 12:45:25 - PERIODIC Task TaskC finished run #2
 12:45:23 - PERIODIC Task TaskC started run #2

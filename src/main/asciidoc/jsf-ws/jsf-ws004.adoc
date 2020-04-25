@@ -34,7 +34,7 @@ framework or library:
 Or, when you have a custom user entity accessible via EL, such as
 `#{someLoggedInUser}` which has an `id` property representing its identifier:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <f:websocket channel="someChannel"
 user="#{someLoggedInUser.id}" ... />
@@ -47,7 +47,7 @@ On the server side, the push message can be targeted to the user specified in
 the `user` attribute using `PushContext.send(Object, Serializable)`. The push
 message can be sent by all users and the application.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @Push
 private PushContext someChannel;
@@ -60,7 +60,7 @@ public void sendMessage(Object message, User recipientUser) { Long recipientUser
 Multiple users can be targeted by passing a `Collection` holding user
 identifiers to `PushContext.send(Object, Collection)`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void sendMessage(Object message, Group recipientGroup) {
 Collection<Long> recipientUserIds = recipientGroup.getUserIds();

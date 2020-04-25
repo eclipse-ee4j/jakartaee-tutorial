@@ -22,7 +22,7 @@ A single `jsonb` instance is required for most applications. A `jsonb` instance
 is created using the `JsonbBuilder` interface, which is a client's entry point
 to the JSON Binding API. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Jsonb jsonb = JsonbBuilder.create();
 ----
@@ -36,7 +36,7 @@ Java date and time classes. To use the default mappings and mapping behavior, cr
 and use the `toJson` method to serialize to JSON and the `fromJson` method to deserialize back to an
 object. The following example binds a simple `Person` object that contains a single `name` field.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Jsonb jsonb = JsonbBuilder.create();
 
@@ -64,7 +64,7 @@ The following example creates a configuration object that sets the `FORMATTING` 
 whether or not the serialized JSON data is formatted with linefeeds and indentation.
 
 
-[source,oac_no_warn]
+[source,java]
 ----
 JsonbConfig config = new JsonbConfig()
     .withFormatting(true);
@@ -78,7 +78,7 @@ Jakarta JSON Binding includes many annotations that can be used at compile time 
 The following example uses the `@JsonbProperty` annotation to change the `name` field to `person-name` when
 the object is serialized to JSON.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class Person {
     @JsonbProperty("person-name")
@@ -88,7 +88,7 @@ public class Person {
 
 The resulting JSON document is written as:
 
-[source,oac_no_warn]
+[source,java]
 ----
 
 

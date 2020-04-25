@@ -25,7 +25,7 @@ The following example shows JSON data for a sample object that contains
 name-value pairs. The value for the name `"phoneNumbers"` is an array
 whose elements are two objects.
 
-[source,oac_no_warn]
+[source,java]
 ----
 {
    "firstName": "Duke",
@@ -69,7 +69,7 @@ RESTful web services use JSON extensively as the format for the data
 inside requests and responses. The HTTP header used to indicate that the
 content of a request or a response is JSON data is
 
-[source,oac_no_warn]
+[source,java]
 ----
 Content-Type: application/json
 ----

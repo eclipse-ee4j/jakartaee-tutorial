@@ -29,7 +29,7 @@ character's 16-bit representation in hexadecimal. For example, the
 Spanish version of a message file could use Unicode for non-ASCII
 characters, as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 admin.nav.main=P\u00e1gina principal de administraci\u00f3n
 ----

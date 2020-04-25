@@ -27,7 +27,7 @@ fetched.
 For example, the following `EmailMessage` entity specifies that some
 fields will be fetched eagerly:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class EmailMessage implements Serializable {
@@ -83,7 +83,7 @@ fetch graph consists of only the fields explicitly specified in the
 In the following example, the default entity graph is ignored, and only
 the `body` field is included in the dynamically created fetch graph:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityGraph<EmailMessage> eg = em.createEntityGraph(EmailMessage.class);
 eg.addAttributeNodes("body");
@@ -105,7 +105,7 @@ instance plus any fields in the default entity graph.
 In the following example, the dynamically created load graph contains
 all the fields in the default entity graph plus the `body` field:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityGraph<EmailMessage> eg = em.createEntityGraph(EmailMessage.class);
 eg.addAttributeNodes("body");

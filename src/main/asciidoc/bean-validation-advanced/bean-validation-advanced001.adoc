@@ -24,7 +24,7 @@ applied to component attributes with a single annotation.
 
 [[GKAJU]]
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Pattern.List({
   /* A number of format “+1-NNN-NNN-NNNN” */
@@ -67,7 +67,7 @@ USPhoneNumber[] value();
 
 You can also implement a `Constraint Validator` to validate the constraint `@USPhoneNumber`. For more information about using `Constraint Validator`, see `javax.validation.ConstraintValidator`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @USPhoneNumber
 protected String phone;
@@ -81,7 +81,7 @@ Custom constraints that can be applied to both return values and method
 parameters require a `validationAppliesTo` element to identify the
 target of the constraint.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Constraint(validatedBy=MyConstraintValidator.class)
 @Target({ METHOD, FIELD, TYPE, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
@@ -97,7 +97,7 @@ public @interface MyConstraint {
 This constraint sets the `validationAppliesTo` target by default to the
 method parameters.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MyConstraint(validationAppliesTo=ConstraintTarget.RETURN_TYPE)
 public String doSomething(String param1, String param2) { ... }
@@ -111,7 +111,7 @@ method.
 [[implementing-temporal-constraints-using-clockprovider]]
 
 In Jakarta Bean Validation 2.0, a Clock instance is available for validator implementations to validate any temporal date or time based constraints.
-[source,oac_no_warn]
+[source,java]
 ----
 ValidatorFactory validatorFactory = Validation.
 	buildDefaultValidatorFactory();
@@ -119,7 +119,7 @@ ClockProvider clockProvider = validatorFactory.getClockProvider();
 java.time.Clock Clock = clockProvider.getClock();
 ----
 You can also register a custom `ClockProvider` with a `ValidatorFactory`:
-[source,oac_no_warn]
+[source,java]
 ----
 //Register a custom clock provider implementation with validator factory
 ValidatorFactory factory = Validation
@@ -144,7 +144,7 @@ See ClockProvider in `https://jakarta.ee/specifications/platform/8/apidocs/`.
 
 [[custom-constraints]]
 Consider an employee in a firm located in U.S.A. When you register the phone number of an employee or modify the phone number, the phone number needs to be validated to ensure that the phone number conforms to US phone number pattern.
-[source,oac_no_warn]
+[source,java]
 ----
 public class Employee extends Person {
 
@@ -172,7 +172,7 @@ In the sample, another constraint `@Pattern` is used to validate the phone numbe
 Cascading validation:
 
 Bean Validation supports cascading validation for various entities. You can specify `@Valid` on a member of the object that is validated to ensure that the member is also validated in a cascading fashion. You can validate type arguments, for example, parameterized types and its members if the members have the specified `@Valid` annotation.
-[source,oac_no_warn]
+[source,java]
 ----
 public class Department {
     private List<@Valid Employee> employeesList;
@@ -189,7 +189,7 @@ While validating the object or the object graph, it may be necessary to validate
 Jakarta Bean validation provides in-built value extractors for most commonly used container types such as List, Iterable, and others. However, it is also possible to implement and register value-extractor implementations for custom container types or override the in-built value-extractor implementations.
 
 Consider a Statistics Calculator for a group of 'Person' entity and 'Employee' is one of the sub-type of the entity 'Person'.
-[source,oac_no_warn]
+[source,java]
 ----
 public class StatsCalculator<T extends Person> {
 
@@ -235,7 +235,7 @@ public class StatsCalculator<T extends Person> {
 When the `StatsCalculator` is validated, the "members" field is also validated. The in-built value extractor for `List` is used to extract the values of `List` to validate the elements in `List`. In the case of an employee based List, each "Employee” element is validated. For example, an employee’s "phone" is validated using the `@USPhoneNumber` constraint.
 
 In the following example, let us consider a `StatisticsPrinter` that prints the statistics or displays the statistics on screen.
-[source,oac_no_warn]
+[source,java]
 ----
 public class StatisticsPrinter {
     private StatsCalculator<@Valid Employee> calculator;
@@ -255,7 +255,7 @@ public class StatisticsPrinter {
   }
 ----
 The container `StatisticsPrinter` uses `StatisticsCalculator`. When `StatisticsPrinter` is validated, the `StatisticsCalculator` is also validated by using the cascading validation such as `@Valid` annotation. However, in order to retrieve the values of `StatsCalculator` container type, a value extractor is required. An implementation of `ValueExtractor` for `StatsCalculator` is as follows:
-[source,oac_no_warn]
+[source,java]
 ----
 public class ExtractorForStatsCalculator implements ValueExtractor<StatsCalculator<@ExtractedValue ?>>{
 
@@ -269,7 +269,7 @@ public class ExtractorForStatsCalculator implements ValueExtractor<StatsCalculat
   }
 ----
 There are multiple mechanisms to register the `ValueExtractor` with Jakarta Bean Validation. See, “Registering ValueExtractor” implementations section in the Jakarta Bean Validation specification `http://www.jcp.org/en/jsr/detail?id=380`. One of the mechanisms is to register the value extractor with Jakarta Bean Validation Context.
-[source,oac_no_warn]
+[source,java]
 ----
 ValidatorFactory validatorFactory = Validation
         .buildDefaultValidatorFactory();

@@ -6,7 +6,7 @@ The following example shows how to create the same endpoint from
 link:#BABGJEIG[Programmatic Endpoints] using annotations
 instead:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/echo")
 public class EchoEndpoint {
@@ -40,7 +40,7 @@ parameters are allowed in each case.
 |========================================
 |*Annotation* |*Event* |*Example*
 |`OnOpen` |Connection opened a|
-[source,oac_no_warn]
+[source,java]
 ----
 @OnOpen
 public void open(Session session,
@@ -48,7 +48,7 @@ public void open(Session session,
 ----
 
 |`OnMessage` |Message received a|
-[source,oac_no_warn]
+[source,java]
 ----
 @OnMessage
 public void message(Session session,
@@ -56,7 +56,7 @@ public void message(Session session,
 ----
 
 |`OnError` |Connection error a|
-[source,oac_no_warn]
+[source,java]
 ----
 @OnError
 public void error(Session session,
@@ -64,7 +64,7 @@ public void error(Session session,
 ----
 
 |`OnClose` |Connection closed a|
-[source,oac_no_warn]
+[source,java]
 ----
 @OnClose
 public void close(Session session,

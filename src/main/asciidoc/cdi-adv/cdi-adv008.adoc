@@ -21,7 +21,7 @@ to many beans.
 For example, you might create a stereotype named `Action`, using the
 `javax.enterprise.inject.Stereotype` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @RequestScoped
 @Secure
@@ -39,7 +39,7 @@ naming, and have the interceptor bindings `@Transactional` and
 
 You could also create a stereotype named `Mock`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Alternative
 @Stereotype
@@ -53,7 +53,7 @@ All beans with this annotation are alternatives.
 It is possible to apply multiple stereotypes to the same bean, so you
 can annotate a bean as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Action
 @Mock
@@ -65,7 +65,7 @@ simply by specifying a different scope for the bean. The following
 declaration gives the `MockLoginAction` bean session scope instead of
 request scope:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @SessionScoped
 @Action
@@ -78,7 +78,7 @@ intended for use with beans that define the model layer of a
 model-view-controller application architecture. This stereotype
 specifies that a bean is both `@Named` and `@RequestScoped`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @RequestScoped

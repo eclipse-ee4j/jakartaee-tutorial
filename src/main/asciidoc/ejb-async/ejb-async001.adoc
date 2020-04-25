@@ -39,7 +39,7 @@ the `Future<V>` interface. Asynchronous methods that return `void` can't
 declare application exceptions, but if they return `Future<V>`, they may
 declare application exceptions. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Asynchronous
 public Future<String> processPayment(Order order) throws PaymentException { ... }
@@ -57,7 +57,7 @@ a parameter, making it easy to create `Future<V>` implementations. For
 example, the `processPayment` method would use `AsyncResult` to return
 the status as a `String`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Asynchronous
 public Future<String> processPayment(Order order) throws PaymentException {
@@ -73,7 +73,7 @@ to the client. The session bean can check whether the client requested
 that the invocation be cancelled by calling the
 `javax.ejb.SessionContext.wasCancelled` method. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Asynchronous
 public Future<String> processPayment(Order order) throws PaymentException {

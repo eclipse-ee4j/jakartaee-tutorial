@@ -52,7 +52,7 @@ The project is created.
 `//TODO` comment with the following text, so that the finished product
 resembles the following method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 @Produces("text/html")
@@ -78,7 +78,7 @@ and select Run.
 This will build and deploy the application to GlassFish Server.
 5.  In a browser, open the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/HelloWorldApplication/HelloWorldApplication
 ----
@@ -126,7 +126,7 @@ the database.
 of all invitees to an event. The URI path template is declared first on
 the class and then on the `getEvent` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 @Named
@@ -143,7 +143,7 @@ public class StatusBean {
 The combination of the two `@Path` annotations results in the following
 URI path template:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/status/{eventId}/")
 ----
@@ -157,7 +157,7 @@ current responses in the database for that particular event.
 response to a particular event. The URI path template for `ResponseBean`
 is declared as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/{eventId}/{inviteId}")
 ----
@@ -175,7 +175,7 @@ The `jakarta.tutorial.rsvp.rest.RsvpApplication` class defines the root
 application path for the resources by applying the
 `javax.ws.rs.ApplicationPath` annotation at the class level.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ApplicationPath("/webapi")
 public class RsvpApplication extends Application {
@@ -230,7 +230,7 @@ Server]).
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxrs
 ----
@@ -241,7 +241,7 @@ tut-install/examples/jaxrs
 The project will be compiled, assembled, and deployed to GlassFish
 Server. A web browser window will open to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/rsvp/index.xhtml
 ----
@@ -269,13 +269,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxrs/rsvp/
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -283,7 +283,7 @@ mvn install
 This command builds, assembles, and deploys `rsvp` to GlassFish Server.
 5.  Open a web browser window to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/rsvp/
 ----

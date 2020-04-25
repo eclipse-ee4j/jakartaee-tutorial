@@ -15,7 +15,7 @@ Renderer Class], or by using the `render-kit` element of the application
 configuration resource file. Here is a hypothetical configuration of
 `AreaRenderer`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <render-kit>
     <renderer>
@@ -77,7 +77,7 @@ use facets to aid in the rendering process. These facets allow the
 custom component developer to control some aspects of rendering the
 component. Consider this custom component tag example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <d:dataScroller>
     <f:facet name="header">
@@ -102,7 +102,7 @@ the header and a component that will render the Next button. If the
 renderer associated with this component renders the facets, you can
 include the following `facet` elements in the `renderer` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <facet>
     <description>This facet renders as the header of the table. It should be

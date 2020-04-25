@@ -103,7 +103,7 @@ service clients. The `sayHello` method returns a greeting to the client,
 using the name passed to it to compose the greeting. The implementation
 class also must define a default, public, no-argument constructor.
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.helloservice;
 
@@ -147,7 +147,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws
 ----
@@ -180,13 +180,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws/helloservice-war/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -223,7 +223,7 @@ To test the `sayHello` method of `HelloService`, follow these steps.
 1.  Open the web service test interface by entering the following URL in
 a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/helloservice-war/HelloService?Tester
 ----
@@ -261,7 +261,7 @@ steps.
 which represents the service at the URI of the deployed service's WSDL
 file:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
@@ -274,7 +274,7 @@ public class HelloAppClient {
 2.  It retrieves a proxy to the service, also known as a port, by
 invoking `getHelloPort` on the service:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 jakarta.tutorial.helloservice.endpoint.Hello port = service.getHelloPort();
 ----
@@ -283,7 +283,7 @@ The port implements the SEI defined by the service.
 3.  It invokes the port's `sayHello` method, passing a string to the
 service:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 return port.sayHello(arg0);
 ----
@@ -293,7 +293,7 @@ the
 `_tut-install_/examples/jaxws/hello-appclient/src/main/java/jakarta/tutorial/hello/appclient/`
 directory:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.hello.appclient;
 
@@ -341,7 +341,7 @@ To Run the Application Client Using NetBeans IDE
 1.  From the File menu, choose Open Project.
 2.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws
 ----
@@ -354,7 +354,7 @@ This command runs the `wsimport` goal, then builds, packages, and runs
 the client. You will see the output of the application client in the
 hello-appclient output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 --- exec-maven-plugin:1.2.1:exec (run-appclient) @ hello-appclient ---
 Hello, world.
@@ -367,13 +367,13 @@ To Run the Application Client Using Maven
 
 1.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws/hello-appclient/
 ----
 2.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -381,7 +381,7 @@ mvn install
 This command runs the `wsimport` goal, then builds, packages, and runs
 the client. The application client output looks like this:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 --- exec-maven-plugin:1.2.1:exec (run-appclient) @ hello-appclient ---
 Hello, world.
@@ -409,7 +409,7 @@ To invoke the method on the port, the client performs these steps.
 1.  It imports the `HelloService` endpoint and the `WebServiceRef`
 annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 import jakarta.tutorial.helloservice.endpoint.HelloService;
 ...
@@ -418,7 +418,7 @@ import javax.xml.ws.WebServiceRef;
 2.  It defines a reference to the web service by specifying the WSDL
 location:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServiceRef(wsdlLocation =
   "http://localhost:8080/helloservice-war/HelloService?WSDL")
@@ -426,7 +426,7 @@ location:
 3.  It declares the web service, then defines a private method that
 calls the `sayHello` method on the port:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 private HelloService service;
 ...
@@ -438,7 +438,7 @@ private String sayHello(java.lang.String arg0) {
 ----
 4.  In the servlet, it calls this private method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 out.println("<p>" + sayHello("world") + "</p>");
 ----
@@ -448,7 +448,7 @@ located in the
 `_tut-install_/examples/jaxws/hello-webclient/src/java/jakarta/tutorial/hello/ webclient/`
 directory.
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.hello.webclient;
 
@@ -528,7 +528,7 @@ To Run the Web Client Using NetBeans IDE
 1.  From the File menu, choose Open Project.
 2.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws
 ----
@@ -542,7 +542,7 @@ into a WAR file, `hello-webclient.war`, located in the `target`
 directory, and deploys it to GlassFish Server.
 6.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/hello-webclient/HelloServlet
 ----
@@ -556,13 +556,13 @@ To Run the Web Client Using Maven
 
 1.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxws/hello-webclient/
 ----
 2.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -572,7 +572,7 @@ application into a WAR file, `hello-webclient.war`, located in the
 `target` directory. The WAR file is then deployed to GlassFish Server.
 3.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/hello-webclient/HelloServlet
 ----

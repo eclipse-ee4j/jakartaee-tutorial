@@ -28,7 +28,7 @@ functionality to any regular UI component when used in conjunction with
 that component. In the following example, Ajax behavior is added to an
 input component by including the `f:ajax` core tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{bean.message}">
     <f:ajax />

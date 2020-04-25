@@ -37,7 +37,7 @@ traffic status updates for several cities to any subscribed client. The
 program sends the updates in JSON format over a TCP socket. For example,
 a traffic update looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 {"report":[
     {"city":"City1", "access":"AccessA", "status":"GOOD"},
@@ -83,7 +83,7 @@ in the Jakarta Connectors specification; it is specific to the EIS.
 
 The MDB in this example is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MessageDriven(
     activationConfig = {
@@ -108,7 +108,7 @@ addition to this interface, the resource adapter provides the
 `TrafficCommand` annotation and uses reflection to discover which
 methods in the MDB are decorated with this annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MessageDriven(...)
 public class TrafficMdb implements TrafficListener {
@@ -168,7 +168,7 @@ When an MDB activates the inbound resource adapter, the container
 invokes the `endpointActivation` method in the `TrafficResourceAdapter`
 class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Connector(...)
 public class TrafficResourceAdapter implements ResourceAdapter, Serializable {
@@ -198,7 +198,7 @@ subscriber thread that receives traffic updates from the EIS. The
 resource adapter obtains the `WorkManager` instance from the bootstrap
 context as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 WorkManager workManager;
 ...
@@ -211,7 +211,7 @@ public void start(BootstrapContext ctx) ... {
 The resource adapter schedules the traffic service subscriber thread
 using the work manager:
 
-[source,oac_no_warn]
+[source,java]
 ----
 tSubscriber = new TrafficServiceSubscriber(tSpec, endpoint);
 workManager.scheduleWork(tSubscriber);
@@ -223,7 +223,7 @@ The `TrafficServiceSubscriber` class implements the
 The traffic service subscriber thread uses reflection to invoke the
 methods in the MDB:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private String callMdb(MessageEndpoint mdb, Method command,
                        String... params) ... {
@@ -261,7 +261,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/connectors
 ----
@@ -273,7 +273,7 @@ tut-install/examples/connectors
 +
 The messages from the EIS appear on the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Traffic EIS accepting connections on port 4008
 ----
@@ -286,7 +286,7 @@ the call sequence that activates the resource adapter and the filtered
 traffic updates for City1.
 10. Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/traffic/
 ----
@@ -305,13 +305,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/connectors/traffic/traffic-eis/
 ----
 3.  Enter the following command in the terminal window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -319,14 +319,14 @@ mvn install
 This command builds and packages the traffic EIS.
 4.  Enter the following command in the terminal window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn exec:java
 ----
 +
 The messages from the EIS appear in the terminal window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Traffic EIS accepting connections on port 4008
 ----
@@ -334,13 +334,13 @@ Traffic EIS accepting connections on port 4008
 Leave this terminal window open.
 5.  Open a new terminal window and go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/connectors/traffic/
 ----
 6.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -351,7 +351,7 @@ the call sequence that activates the resource adapter and the filtered
 traffic updates for City1.
 7.  Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/traffic/
 ----

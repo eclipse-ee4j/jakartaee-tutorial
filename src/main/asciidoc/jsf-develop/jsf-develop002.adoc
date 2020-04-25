@@ -102,7 +102,7 @@ component tags that begin with `h:input` and `h:output`, respectively
 In the following example, an `h:inputText` tag binds the `name`
 component to the `name` property of a managed bean called `CashierBean`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:inputText id="name"
              size="30"
@@ -114,7 +114,7 @@ component to the `name` property of a managed bean called `CashierBean`.
 The following code snippet from the managed bean `CashierBean` shows the
 bean property type bound by the preceding component tag:
 
-[source,oac_no_warn]
+[source,java]
 ----
 protected String name = null;
 
@@ -133,7 +133,7 @@ component with the matching type. Here is the example tag, from
 link:#BNASV[Using DateTimeConverter], that displays
 the date on which items will be shipped.
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:outputText value="#{cashierBean.shipDate}">
     <f:convertDateTime type="date" dateStyle="full" />
@@ -145,7 +145,7 @@ The bean property represented by this tag must have a type of
 property, from the managed bean `CashierBean`, that is bound by the
 tag's value in the preceding example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private Date shipDate;
 
@@ -169,7 +169,7 @@ types listed in link:#BNAUA[Table 12-1]. Data components are discussed
 in link:#BNARZ[Using Data-Bound Table Components]. Here
 is part of the start tag of `dataTable` from that section:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:dataTable id="items"
     ...
@@ -186,7 +186,7 @@ The `getItems` method from the `cart` bean populates a `List` with
 `ShoppingCartItem` instances that are saved in the `items` map when the
 customer adds books to the cart, as shown in the following code segment:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public synchronized List<ShoppingCartItem> getItems() {
     List<ShoppingCartItem> results = new ArrayList<ShoppingCartItem>();
@@ -200,7 +200,7 @@ properties of the `cart` bean that is bound to the entire `UIData`
 component. For example, here is the `h:outputText` tag that displays the
 book title in the table:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:commandLink action="#{showcart.details}">
     <h:outputText value="#{item.item.title}"/>
@@ -218,7 +218,7 @@ of `ShoppingCartItem`, which returns an `Object` (in this case, a
 property of `Book`. The value of the `UIOutput` component corresponding
 to this tag is bound to the `title` property of the `Book` entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private String title;
 ...
@@ -261,7 +261,7 @@ link:#BNASE[Displaying Components for Selecting One
 Value] binds a component to a property. The following example shows a
 tag that binds a component value to a `boolean` property:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:selectBooleanCheckbox title="#{bundle.receiveEmails}"
                          value="#{custFormBean.receiveEmails}">
@@ -272,7 +272,7 @@ tag that binds a component value to a `boolean` property:
 Here is an example property that can be bound to the component
 represented by the example tag:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private boolean receiveEmails = false;
 ...
@@ -301,7 +301,7 @@ The following example of the `selectManyCheckbox` tag comes from
 link:#BNASI[Displaying Components for Selecting Multiple
 Values]:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:selectManyCheckbox id="newslettercheckbox"
                       layout="pageDirection"
@@ -313,7 +313,7 @@ Values]:
 Here is the bean property that maps to the `value` of the
 `selectManyCheckbox` tag from the preceding example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private String[] newsletters;
 
@@ -348,7 +348,7 @@ Here is an example of the `h:selectOneMenu` tag from
 link:#BNASH[Displaying a Menu Using the h:selectOneMenu
 Tag]:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:selectOneMenu id="shippingOption"
                  required="true"
@@ -364,7 +364,7 @@ Tag]:
 
 Here is the bean property corresponding to this tag:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private String shippingOption = "2";
 
@@ -405,7 +405,7 @@ contains `selectItem` tags that set the values of the list of items in
 the page. Here is an example of a bean property that can set the values
 for this list in the bean:
 
-[source,oac_no_warn]
+[source,java]
 ----
 SelectItem itemOne = null;
 
@@ -429,7 +429,7 @@ such as an array, a list, or even POJOs.
 The following code snippet from `CashierBean` shows how to write the
 properties for `selectItems` tags containing `SelectItem` instances.
 
-[source,oac_no_warn]
+[source,java]
 ----
 private String[] newsletters;
 private static final SelectItem[] newsletterItems = {
@@ -468,7 +468,7 @@ A property bound to a component instance returns and accepts a component
 instance rather than a component value. The following components bind a
 component instance to a managed bean property:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectBooleanCheckbox id="fanClub"
                          rendered="false"
@@ -496,7 +496,7 @@ types. This means that the `specialOfferText` property must be of type
 `UIOutput`, and the `specialOffer` property must be of type
 `UISelectBoolean`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 UIOutput specialOfferText = null;
 UISelectBoolean specialOffer = null;
@@ -543,7 +543,7 @@ value expression with its `binding` attribute to bind the
 `javax.faces.convert.DateTimeConverter` instance to the `convertDate`
 property of `LoginBean`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{loginBean.birthDate}">
     <f:convertDateTime binding="#{loginBean.convertDate}" />
@@ -553,7 +553,7 @@ property of `LoginBean`:
 The `convertDate` property must therefore accept and return a
 `DateTimeConverter` object, as shown here:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private DateTimeConverter convertDate;
 public DateTimeConverter getConvertDate() {

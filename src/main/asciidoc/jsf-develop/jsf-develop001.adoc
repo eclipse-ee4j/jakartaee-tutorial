@@ -57,7 +57,7 @@ application must navigate
 As with all JavaBeans components, a property consists of a private data
 field and a set of accessor methods, as shown by this code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private Integer userNumber = null;
 ...
@@ -122,7 +122,7 @@ component data.
 To illustrate a Jakarta Server Faces tag using the EL, the following tag
 references a method that validates user input:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="inputGuess"
     value="#{userNumberBean.userNumber}"
@@ -148,7 +148,7 @@ Another use of value expressions is to bind a component instance to a
 managed bean property. A page author does this by referencing the
 property from the `binding` attribute:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputLabel for="fanClub"
                rendered="false"

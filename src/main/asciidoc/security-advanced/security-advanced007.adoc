@@ -33,7 +33,7 @@ descriptor that could be used in the example of basic authentication
 found in the tut-install`/examples/security/hello2_basicauth/`
 directory:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <security-constraint>
         <display-name>SecurityConstraint</display-name>
@@ -82,7 +82,7 @@ security role used in the application and one or more groups or
 principals defined for the applicable realm of GlassFish Server. An
 example for the `glassfish-web.xml` file is shown below:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <glassfish-web-app>
     <security-role-mapping>

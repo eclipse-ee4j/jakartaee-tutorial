@@ -68,7 +68,7 @@ predefined bean that implements the `javax.transaction.UserTransaction`
 interface. The context object is an instance of the predefined bean that
 implements the `javax.servlet.ServletContext` interface.
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.annotation.Resource;
 import javax.inject.Inject;

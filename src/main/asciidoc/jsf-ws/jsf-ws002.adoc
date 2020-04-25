@@ -4,11 +4,11 @@
 To configure WebSockets for use in server faces web applications, first enable the
 WebSocket endpoint using the context parameter in `web.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <context-param>
-<param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
-<param-value>true</param-value>
+    <param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+    <param-value>true</param-value>
 </context-param>
 ----
 
@@ -17,11 +17,11 @@ port than the HTTP container, you can use the optional
 `javax.faces.WEBSOCKET_ENDPOINT_PORT` integer context parameter
 to explicitly specify the port:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <context-param>
-<param-name>javax.faces.WEBSOCKET_ENDPOINT_PORT</param-name>
-<param-value>8000</param-value>
+    <param-name>javax.faces.WEBSOCKET_ENDPOINT_PORT</param-name>
+    <param-value>8000</param-value>
 </context-param>
 ----
 
@@ -33,24 +33,20 @@ an `onmessage` JavaScript listener function.
 
 The following example refers to an existing JavaScript listener function:
 
-[source,oac_no_warn]
+[source,xml]
 ----
-<f:websocket channel="someChannel"
-onmessage="someWebsocketListener" />
+<f:websocket channel="someChannel" onmessage="someWebsocketListener" />
 
 function someWebsocketListener(message, channel, event) { console.log(message);
 
 }
-<f:websocket channel="someChannel"
-onmessage="
 ----
 
 This example declares an inline JavaScript listener function:
 
-[source,oac_no_warn]
+[source,xml]
 ----
-<f:websocket channel="someChannel"
-onmessage="function(m){console.log(m);}" />
+<f:websocket channel="someChannel" onmessage="function(m){console.log(m);}" />
 ----
 
 The `onmessage` JavaScript listener function is invoked with three arguments:
@@ -76,12 +72,13 @@ or `@WebServlet`, where you want to send a push message. Then invoke
 
 For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @Push
 private PushContext someChannel;
+
 public void sendMessage(Object message) {
-someChannel.send(message);
+    someChannel.send(message);
 }
 ----
 

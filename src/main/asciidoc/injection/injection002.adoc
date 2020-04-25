@@ -19,7 +19,7 @@ within a session (such as a shopping cart).
 You can define managed objects (also called managed beans) that you can
 later inject by assigning a scope to a regular class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @javax.enterprise.context.RequestScoped
 public class CurrencyConverter { ... }
@@ -28,7 +28,7 @@ public class CurrencyConverter { ... }
 Use the `javax.inject.Inject` annotation to inject managed beans; for
 example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MyServlet extends HttpServlet {
     @Inject CurrencyConverter cc;

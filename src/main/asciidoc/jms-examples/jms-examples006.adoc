@@ -57,7 +57,7 @@ The two managed beans for the example are as follows.
 annotated with `@JMSDestinationDefinition` to create a component-private
 queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @JMSDestinationDefinition(
         name = "java:comp/jms/webappQueue",
@@ -73,7 +73,7 @@ connection factory) and the queue, creates a producer, sends the message
 the user typed on the Facelets page, and creates a `FacesMessage` to
 display on the Facelets page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 private JMSContext context;
@@ -102,7 +102,7 @@ connection factory) and the queue that was defined in `SenderBean`,
 creates a consumer, receives the message, and creates a `FacesMessage`
 to display on the Facelets page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 private JMSContext context;
@@ -163,7 +163,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms
 ----
@@ -183,14 +183,14 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/websimplemessage/
 ----
 3.  To compile the source files and package and deploy the application,
 use the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -201,7 +201,7 @@ mvn install
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/websimplemessage
 ----
@@ -210,7 +210,7 @@ http://localhost:8080/websimplemessage
 If, for example, you enter "Hello, Duke", the following appears below
 the buttons:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Sent message: Message from producer: Hello, Duke
 ----
@@ -219,7 +219,7 @@ Sent message: Message from producer: Hello, Duke
 +
 The following appears below the buttons:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Reading message: Message from producer: Hello, Duke
 ----

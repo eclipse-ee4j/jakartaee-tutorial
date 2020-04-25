@@ -55,7 +55,7 @@ property of the session-scoped attribute named `cart`
 the `departments` map
 
 a|
-[source,oac_no_warn]
+[source,java]
 ----
 ${requestScope['javax.servlet.forward.servlet_path']}
 ----

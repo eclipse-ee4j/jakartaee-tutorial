@@ -8,7 +8,7 @@ To make the state of the managed bean accessible, add setter and getter methods 
 Once the setter and getter methods have been added, the bean is
 complete. The final code looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package greetings;
 

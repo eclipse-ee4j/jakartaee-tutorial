@@ -22,7 +22,7 @@ preceding listed locations, in that order.
 Resource identifiers are unique strings that conform to the following
 format (all on one line):
 
-[source,oac_no_warn]
+[source,java]
 ----
 [locale-prefix/][library-name/][library-version/]resource-name[/resource-version]
 ----
@@ -33,7 +33,7 @@ required element. For example, the most common way to specify a style
 sheet, image, or script is to use the `library` and `name` attributes,
 as in the following tag from the `guessnumber-jsf` example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputStylesheet library="css" name="default.css"/>
 ----
@@ -44,7 +44,7 @@ directory `web/resources/css`.
 You can also specify the location of an image using the following
 syntax, also from the `guessnumber-jsf` example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:graphicImage value="#{resource['images:wave.med.gif']}"/>
 ----

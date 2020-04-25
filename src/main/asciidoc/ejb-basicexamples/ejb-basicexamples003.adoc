@@ -18,7 +18,7 @@ The following topics are addressed here:
 The `javax.ejb.Singleton` annotation is used to specify that the
 enterprise bean implementation class is a singleton session bean:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 public class SingletonBean { ... }
@@ -41,7 +41,7 @@ example, application startup tasks.
 The following singleton session bean stores the status of an application
 and is eagerly initialized:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Startup
 @Singleton
@@ -69,7 +69,7 @@ container will initialize the target singleton session beans.
 The following singleton session bean, `PrimaryBean`, should be started
 up first:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 public class PrimaryBean { ... }
@@ -77,7 +77,7 @@ public class PrimaryBean { ... }
 
 `SecondaryBean` depends on `PrimaryBean`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 @DependsOn("PrimaryBean")
@@ -90,7 +90,7 @@ before `SecondaryBean`.
 The following singleton session bean, `TertiaryBean`, depends on
 `PrimaryBean` and `SecondaryBean`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 @DependsOn({"PrimaryBean", "SecondaryBean"})
@@ -164,7 +164,7 @@ Although by default singletons use container-managed concurrency, the
 level of the singleton to explicitly set the concurrency management
 type:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER) 
 @Singleton
@@ -193,7 +193,7 @@ simultaneously change the `state` variable of `ExampleSingletonBean`.
 The `getData` and `getStatus` methods in the following singleton are of
 type `READ`, and the `setStatus` method is of type `WRITE`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 @Lock(LockType.READ)
@@ -239,7 +239,7 @@ milliseconds, or 2 minutes. The `doTediousOperation` method overrides
 the default access timeout and sets the value to 360,000 milliseconds,
 or 6 minutes:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 @AccessTimeout(value=120000)
@@ -262,7 +262,7 @@ public class StatusSingletonBean {
 The following singleton has a default access timeout value of 60
 seconds, specified using the `TimeUnit.SECONDS` constant:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Singleton
 @AccessTimeout(value=60, unit=TimeUnit.SECONDS)
@@ -284,7 +284,7 @@ Add a `@ConcurrencyManagement` annotation with the type set to
 `ConcurrencyManagementType.BEAN` at the class level of the singleton to
 specify bean-managed concurrency:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ConcurrencyManagement(ConcurrencyManagementType.BEAN) 
 @Singleton
@@ -314,7 +314,7 @@ The `counter` example consists of a singleton session bean,
 returns an integer representing the number of times a web page has been
 accessed. Here is the code of `CounterBean`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.counter.ejb;
 
@@ -348,7 +348,7 @@ default of container-managed concurrency access is applied. There is no
 The following version of `CounterBean` is functionally equivalent to the
 preceding version:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.counter.ejb;
 
@@ -385,7 +385,7 @@ method is called to return the current number of page hits.
 
 Here's the `Count` managed bean class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @ConversationScoped
@@ -416,7 +416,7 @@ Facelets view that displays the number of hits to that view. The
 `#{count.hitCount}`, to access the `hitCount` property of the `Count`
 managed bean. Here is the content of `index.xhtml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -457,7 +457,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -479,13 +479,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/counter/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -493,7 +493,7 @@ mvn install
 This will build and deploy `counter` to your GlassFish Server instance.
 4.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/counter
 ----

@@ -30,7 +30,7 @@ HTTP-based infrastructure: web servers interpret it as an HTTP
 connection upgrade request. An example handshake from a client looks
 like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /path/to/websocket/endpoint HTTP/1.1
 Host: localhost
@@ -44,7 +44,7 @@ Sec-WebSocket-Version: 13
 An example handshake from the server in response to the client looks
 like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
@@ -67,7 +67,7 @@ a ping frame). Ping and pong frames may also contain application data.
 WebSocket endpoints are represented by URIs that have the following
 form:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ws://host:port/path?query
 wss://host:port/path?query

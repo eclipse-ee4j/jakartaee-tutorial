@@ -24,7 +24,7 @@ The following code snippet illustrates a `Runnable` task that obtains a
 interacting with other transactional components, such as an enterprise
 bean and a database:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MyTransactionalTask implements Runnable {
 

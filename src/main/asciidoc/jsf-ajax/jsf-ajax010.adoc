@@ -34,7 +34,7 @@ of the `h:outputScript` tag.
 +
 For example, consider the following section of a Facelets page:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
@@ -48,7 +48,7 @@ functionality.
 3.  Add the Ajax functionality to the component by using the JavaScript
 API. For example, consider the following:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     <h:outputScript name="jsf.js" library="javax.faces" target="head">
@@ -128,7 +128,7 @@ renderer for a component.
 +
 The following example shows how the resource is loaded in a bean class:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @ResourceDependency(name="jsf.js" library="javax.faces" target="head")
 ----

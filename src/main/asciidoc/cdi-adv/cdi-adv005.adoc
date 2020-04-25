@@ -22,7 +22,7 @@ link:#GKHPA[The billpayment Example: Using Events
 and Interceptors], a `PaymentEvent` bean defines an event using three
 properties, which have setter and getter methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
     public String paymentType;
     public BigDecimal value;
@@ -54,7 +54,7 @@ declare qualifiers.
 The event handler for the `billpayment` example, `PaymentHandler`,
 defines two observer methods, one for each type of `PaymentEvent`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void creditPayment(@Observes @Credit PaymentEvent event) {
     ...
@@ -75,7 +75,7 @@ instance of the bean that defines the observer method already exists in
 the current context. To declare a conditional observer method, specify
 `notifyObserver=IF_EXISTS` as an argument to `@Observes`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Observes(notifyObserver=IF_EXISTS)
 ----
@@ -89,7 +89,7 @@ occur only after the transaction has completed successfully or
 unsuccessfully. To specify a transactional observer method, use any of
 the following arguments to `@Observes`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Observes(during=BEFORE_COMPLETION)
 
@@ -118,7 +118,7 @@ called.
 
 Before a certain observer event notification is generated, the container determines the order in which observer methods for that event are invoked. Observer method order is established through the declaration of the `@Priority` annotation on an event parameter of an observer method, as in the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 void afterLogin(@Observes @Priority(javax.interceptor.Interceptor.Priority.APPLICATION) LoggedInEvent event) { ... }
 ----
@@ -147,7 +147,7 @@ and two for the payload. The managed bean injects the two event beans.
 The `pay` method uses a `switch` statement to choose which event to
 fire, using `new` to create the payload.
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Inject
     @Credit
@@ -191,7 +191,7 @@ payload. The fired event is then consumed by the observer methods.
 
 To activate an event asynchronously, call the `javax.enterprise.event.Event.fireAsync` method. This method calls all resolved asynchronous observers in one or more different threads.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject Event<LoggedInEvent> loggedInEvent;
 

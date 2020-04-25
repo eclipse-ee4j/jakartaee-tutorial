@@ -54,7 +54,7 @@ the following steps.
 3.  Creates a consumer on a shared nondurable subscription, specifying a
 subscription name:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 consumer = context.createSharedConsumer(topic, "SubName");
 ----
@@ -83,34 +83,34 @@ Server]).
 2.  Open three command windows. In the first, go to the
 `simple/producer/` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/examples/jms/simple/producer/
 ----
 3.  In the second and third command windows, go to the
 `shared/sharedconsumer/` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/examples/jms/shared/sharedconsumer/
 ----
 4.  In one of the `sharedconsumer` windows, build the example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 5.  In each of the two `sharedconsumer` windows, start running the
 client. You do not need to specify a `topic` argument:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/sharedconsumer.jar
 ----
 +
 Wait until you see the following output in both windows:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Waiting for messages on topic
 To end program, enter Q or q, then <return>
@@ -118,7 +118,7 @@ To end program, enter Q or q, then <return>
 6.  In the `producer` window, run the client, specifying the topic and a
 number of messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 20
 ----
@@ -150,7 +150,7 @@ factory that does not have a client identifier, as is recommended for
 shared durable subscriptions. It uses the `createSharedDurableConsumer`
 method with a subscription name to establish the subscription:
 
-[source,oac_no_warn]
+[source,java]
 ----
 consumer = context.createSharedDurableConsumer(topic, "MakeItLast");
 ----
@@ -163,25 +163,25 @@ You run the example in combination with the `Producer.java` client.
 
 1.  In a terminal window, go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/shared/shareddurableconsumer
 ----
 2.  To compile and package the client, enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 3.  Run the client first to establish the durable subscription:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/shareddurableconsumer.jar
 ----
 4.  The client displays the following and pauses:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Waiting for messages on topic
 To end program, enter Q or q, then <return>
@@ -192,14 +192,14 @@ running.
 6.  Open another terminal window and go to the `producer` example
 directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/examples/jms/simple/producer
 ----
 7.  Run the `producer` example, sending a number of messages to the
 topic:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 6
 ----
@@ -209,14 +209,14 @@ window and go to the `shareddurableconsumer` directory.
 Whichever client starts first will receive all the messages that were
 sent when there was no active subscriber:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/shareddurableconsumer.jar
 ----
 10. With both `shareddurableconsumer` clients still running, go to the
 `producer` window and send a larger number of messages to the topic:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 25
 ----

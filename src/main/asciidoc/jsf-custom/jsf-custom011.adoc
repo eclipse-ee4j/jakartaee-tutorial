@@ -38,7 +38,7 @@ they can be converted to and from a `UISelectItems` input component.
 
 The `CreditCardConverter` custom converter class is created as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesConverter("ccno")
 public class CreditCardConverter implements Converter {
@@ -58,7 +58,7 @@ model view, the `Converter` implementation must implement the
 `Converter` interface. Here is the implementation of this method from
 `CreditCardConverter`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public Object getAsObject(FacesContext context,
@@ -102,7 +102,7 @@ presentation view, the `Converter` implementation must implement the
 `getAsString(FacesContext, UIComponent, Object)` method from the
 `Converter` interface. Here is an implementation of this method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public String getAsString(FacesContext context,
@@ -164,7 +164,7 @@ You can also create a custom converter with a `@FacesConverter`
 annotation that specifies the `forClass` attribute, as shown in the
 following example from the Duke's Tutoring case study:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesConverter(forClass=Guardian.class, value="guardian")
 public class GuardianConverter extends EntityConverter implements Converter { ...
@@ -203,7 +203,7 @@ converter.
 The identifier for the credit card converter class is `ccno`, the value
 specified in the `@FacesConverter` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesConverter("ccno")
 public class CreditCardConverter implements Converter {
@@ -213,7 +213,7 @@ public class CreditCardConverter implements Converter {
 Therefore, the `CreditCardConverter` instance can be registered on the
 `ccno` component as shown in the following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="ccno"
              size="19"
@@ -241,7 +241,7 @@ implementation's identifier defined in the `@FacesConverter` annotation
 or in the application configuration resource file. This method is shown
 in `bookcashier.xhtml`:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="ccno" 
              size="19"
@@ -270,7 +270,7 @@ whenever that class is specified by a `value` attribute of an input
 component. In the following example, the `itemValue` attribute
 (highlighted in bold) calls the converter for the `Guardian` class:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectManyListbox id="selectGuardiansMenu"
                      title="#{bundle['action.add.guardian']}"

@@ -8,7 +8,7 @@ of the following conditional tag is supplied with an EL expression that
 compares 0 with the number of items in the session-scoped bean named
 `cart`.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <c:if test="${sessionScope.cart.numberOfItems > 0}">
   ...

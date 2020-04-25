@@ -21,7 +21,7 @@ the `configurator` parameter of the `ServerEndpoint` annotation.
 For example, the following configurator class makes the handshake
 request object available to endpoint instances:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class CustomConfigurator extends ServerEndpointConfig.Configurator {
 
@@ -40,7 +40,7 @@ The following endpoint class configures endpoint instances with the
 custom configurator, which enables them to access the handshake request
 object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint(
     value = "/myendpoint",

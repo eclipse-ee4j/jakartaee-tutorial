@@ -12,7 +12,7 @@ using the new protocol.
 For example, a client can make an HTTP request to switch to the XYZP
 protocol as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /xyzpresource HTTP/1.1
 Host: localhost:8080
@@ -26,7 +26,7 @@ The client can specify parameters for the new protocol using HTTP
 headers. The server can accept the request and generate a response as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 HTTP/1.1 101 Switching Protocols
 Upgrade: XYZP
@@ -90,7 +90,7 @@ with the returned stream to implement the new protocol.
 The following code demonstrates how to accept an HTTP protocol upgrade
 request from a client:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/xyzpresource"})
 public class XYZPUpgradeServlet extends HttpServlet {
@@ -115,7 +115,7 @@ public class XYZPUpgradeServlet extends HttpServlet {
 
 The `XYZPUpgradeHandler` class handles the connection:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class XYZPUpgradeHandler implements HttpUpgradeHandler {
    @Override

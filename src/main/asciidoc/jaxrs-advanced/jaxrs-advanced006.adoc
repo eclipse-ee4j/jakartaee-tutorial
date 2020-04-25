@@ -14,7 +14,7 @@ For more details on the HTTP headers for content negotiation, see HTTP
 
 The following code snippet shows the server content preferences:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces("text/plain")
 @Path("/employee")
@@ -32,7 +32,7 @@ public class Employee {
 The `getEmployeeAddressText` method is called for an HTTP request that
 looks like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /employee
 Accept: text/plain
@@ -40,7 +40,7 @@ Accept: text/plain
 
 This will produce the following response:
 
-[source,oac_no_warn]
+[source,java]
 ----
 500 Oracle Parkway, Redwood Shores, CA
 ----
@@ -48,7 +48,7 @@ This will produce the following response:
 The `getEmployeeAddressXml` method is called for an HTTP request that
 looks like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /employee
 Accept: text/xml
@@ -56,7 +56,7 @@ Accept: text/xml
 
 This will produce the following response:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <address street="500 Oracle Parkway, Redwood Shores, CA" country="USA"/>
 ----
@@ -64,7 +64,7 @@ This will produce the following response:
 With static content negotiation, you can also define multiple content
 and media types for the client and server.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces("text/plain", "text/xml")
 ----
@@ -82,7 +82,7 @@ representation variants.
 The following code snippet shows how to create a list of resource
 representation variants:
 
-[source,oac_no_warn]
+[source,java]
 ----
 List<Variant> vs = Variant.mediatypes("application/xml", "application/json")
         .languages("en", "fr").build();
@@ -98,7 +98,7 @@ in the `mediatypes`, `languages`, and `encodings` methods.
 In this example, the size of the `vs` object as defined in this code
 snippet is 4, and the contents are as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 [["application/xml","en"], ["application/json","en"],
     ["application/xml","fr"],["application/json","fr"]]
@@ -114,7 +114,7 @@ The following code snippet shows how to use the `selectVariant` method
 to select the most acceptable `Variant` from the values in the client
 request:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public Response get(@Context Request r) { 

@@ -10,7 +10,7 @@ and is appended after the local defined validators. Here is an example
 of a default validator registered in the application configuration
 resource file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config>
     <application>

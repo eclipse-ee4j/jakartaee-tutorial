@@ -174,7 +174,7 @@ the `Named` annotation.
 For example, define an item reader implementation in a chunk step as
 follows:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Named("MyItemReaderImpl")
 public class MyItemReaderImpl implements ItemReader {
@@ -186,7 +186,7 @@ artifacts.
 +
 For example, provide the following constructor for the artifact above:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 public MyItemReaderImpl() {}
 ----
@@ -195,7 +195,7 @@ file, instead of using the fully qualified name of the class.
 +
 For example, define the step for the artifact above as follows:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepA" next="stepB">
   <chunk>
@@ -214,7 +214,7 @@ or by including an empty `beans.xml` deployment description with your
 application. For example, the following batch artifact is annotated with
 `@Dependent`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyItemReaderImpl")
@@ -266,7 +266,7 @@ writers, batchlets, listeners, and so on. The following example
 demonstrates how to access property values from the job definition file
 in an item reader implementation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyItemReaderImpl")

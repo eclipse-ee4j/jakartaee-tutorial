@@ -9,7 +9,7 @@ are included in the `Default` constraint group.
 
 Constraint groups are represented by interfaces.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public interface Employee {}
 
@@ -18,7 +18,7 @@ public interface Contractor {}
 
 Constraint groups can inherit from other groups.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public interface Manager extends Employee {}
 ----
@@ -27,7 +27,7 @@ When a constraint is added to an element, the constraint declares the
 groups to which that constraint belongs by specifying the class name of
 the group interface name in the `groups` element of the constraint.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NotNull(groups=Employee.class)
 Phone workPhone;
@@ -36,7 +36,7 @@ Phone workPhone;
 Multiple groups can be declared by surrounding the groups with braces
 (`{` and `}`) and separating the groups' class names with commas.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NotNull(groups={ Employee.class, Contractor.class })
 Phone workPhone;
@@ -60,7 +60,7 @@ To set the validation order for a group, add a
 `javax.validation.GroupSequence` annotation to the interface definition,
 listing the order in which the validation should occur.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GroupSequence({Default.class, ExpensiveValidationGroup.class})
 public interface FullValidationGroup {}

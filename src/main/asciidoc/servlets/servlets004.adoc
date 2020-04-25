@@ -16,7 +16,7 @@ Classes annotated with `@WebServlet` must extend the
 `javax.servlet.http.HttpServlet` class. For example, the following code
 snippet defines a servlet with the URL pattern `/report`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

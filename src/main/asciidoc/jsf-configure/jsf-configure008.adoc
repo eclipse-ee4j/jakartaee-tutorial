@@ -10,7 +10,7 @@ link:#BNAUX[Implementing the Validator Interface], or
 by using the `validator` XML element in the application configuration
 resource file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <validator>
     ...

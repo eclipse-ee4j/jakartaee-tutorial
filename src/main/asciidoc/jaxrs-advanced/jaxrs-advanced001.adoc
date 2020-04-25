@@ -44,7 +44,7 @@ fragments when you call a method.
 The following code snippet shows how to extract the last name of an
 employee when the employee's email address is provided:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employees/{firstname}.{lastname}@{domain}.com")
 public class EmpResource {
@@ -71,7 +71,7 @@ You can declare a regular expression with a URI variable. For example,
 if it is required that the last name must consist only of lowercase and
 uppercase characters, you can declare the following regular expression:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employees/{firstname}.{lastname[a-zA-Z]*}@{domain}.com")
 ----
@@ -89,7 +89,7 @@ query component of the request URI.
 For instance, to query all employees who have joined within a specific
 range of years, use a method signature like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employees/")
 @GET
@@ -103,7 +103,7 @@ This code snippet defines two query parameters, `minyear` and `maxyear`.
 The following HTTP request would query for all employees who have joined
 between 2003 and 2013:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /employees?maxyear=2013&minyear=2003
 ----
@@ -122,7 +122,7 @@ Use the `@FormParam` annotation to extract form parameters from HTML
 forms. For example, the following form accepts the name, address, and
 manager's name of an employee:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <FORM action="http://example.com/employees/" method="post">
   <p>
@@ -138,7 +138,7 @@ manager's name of an employee:
 Use the following code snippet to extract the manager name from this
 HTML form:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("application/x-www-form-urlencoded")
@@ -151,7 +151,7 @@ public void post(@FormParam("managername") String managername) {
 To obtain a map of form parameter names to values, use a code snippet
 like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("application/x-www-form-urlencoded")
@@ -171,7 +171,7 @@ The `javax.ws.rs.core.UriInfo` interface provides information about the
 components of a request URI. The following code snippet shows how to
 obtain a map of query and path parameter names to values:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public String getParams(@Context UriInfo ui) {
@@ -184,7 +184,7 @@ The `javax.ws.rs.core.HttpHeaders` interface provides information about
 request headers and cookies. The following code snippet shows how to
 obtain a map of header and cookie parameter names to values:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public String getHeaders(@Context HttpHeaders hh) {

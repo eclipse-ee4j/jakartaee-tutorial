@@ -96,19 +96,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a command window, go to the `Producer` example.
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/jms/simple/producer
 ----
 3.  Create the resources using the `asadmin add-resources` command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin add-resources src/main/setup/glassfish-resources.xml
 ----
 4.  Verify the creation of the resources:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin list-jms-resources
 ----
@@ -117,7 +117,7 @@ The command lists the two destinations and connection factory specified
 in the `glassfish-resources.xml` file in addition to the platform
 default connection factory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 jms/MyQueue
 jms/MyTopic
@@ -154,7 +154,7 @@ The following topics are addressed here:
 1.  From the File menu, choose Open Project.
 2.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms
 ----
@@ -172,13 +172,13 @@ directories for the examples.
 
 1.  In a terminal window, go to the `simple` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/jms/simple/
 ----
 2.  Enter the following command to build all the projects:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -225,7 +225,7 @@ The sending client, `Producer.java`, performs the following steps.
 
 1.  Injects resources for a connection factory, queue, and topic:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "java:comp/DefaultJMSConnectionFactory")
 private static ConnectionFactory connectionFactory;
@@ -237,7 +237,7 @@ private static Topic topic;
 2.  Retrieves and verifies command-line arguments that specify the
 destination type and the number of arguments:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 final int NUM_MSGS;
 String destType = args[0];
@@ -255,7 +255,7 @@ if (args.length == 2){
 3.  Assigns either the queue or the topic to a destination object, based
 on the specified destination type:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination dest = null;
 try {
@@ -271,7 +271,7 @@ try {
 ----
 4.  Within a `try`-with-resources block, creates a `JMSContext`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 try (JMSContext context = connectionFactory.createContext();) {
 ----
@@ -279,7 +279,7 @@ try (JMSContext context = connectionFactory.createContext();) {
 sends one or more messages to the destination and increments the count.
 Messages in the form of strings are of the `TextMessage` message type:
 +
-[source,oac_no_warn]
+[source,java]
 ----
     int count = 0;
     for (int i = 0; i < NUM_MSGS; i++) {
@@ -295,7 +295,7 @@ Messages in the form of strings are of the `TextMessage` message type:
 6.  Sends an empty control message to indicate the end of the message
 stream:
 +
-[source,oac_no_warn]
+[source,java]
 ----
     context.createProducer().send(dest, context.createMessage());
 ----
@@ -307,7 +307,7 @@ arrived.
 `try`-with-resources block automatically causes the `JMSContext` to be
 closed:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 } catch (Exception e) {
     System.err.println("Exception occurred: " + e.toString());
@@ -334,13 +334,13 @@ and that you have created resources and built the simple Jakarta Messaging examp
 link:#BABEEABE[Building All the Simple Examples]).
 2.  In a terminal window, go to the `producer` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd producer
 ----
 3.  Run the `Producer` program, sending three messages to the queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar queue 3
 ----
@@ -348,7 +348,7 @@ appclient -client target/producer.jar queue 3
 The output of the program looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 Sending message: This is message 1 from producer
@@ -397,14 +397,14 @@ on the specified destination type.
 3.  Within a `try`-with-resources block, creates a `JMSContext`.
 4.  Creates a `JMSConsumer`, starting message delivery:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 consumer = context.createConsumer(dest);
 ----
 5.  Receives the messages sent to the destination until the
 end-of-message-stream control message is received:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 int count = 0;
 while (true) {
@@ -447,13 +447,13 @@ both a queue and a topic. The steps assume you already ran the
 1.  In the same terminal window where you ran `Producer`, go to the
 `synchconsumer` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd ../synchconsumer
 ----
 2.  Run the `SynchConsumer` client, specifying the queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar queue
 ----
@@ -461,7 +461,7 @@ appclient -client target/synchconsumer.jar queue
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 Reading message: This is message 1 from producer
@@ -472,7 +472,7 @@ Messages received: 3
 3.  Now try running the clients in the opposite order. Run the
 `SynchConsumer` client:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar queue
 ----
@@ -480,7 +480,7 @@ appclient -client target/synchconsumer.jar queue
 The client displays the destination type and then waits for messages.
 4.  Open a new terminal window and run the `Producer` client:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/jms/simple/producer
 appclient -client target/producer.jar queue 3
@@ -490,7 +490,7 @@ When the messages have been sent, the `SynchConsumer` client receives
 them and exits.
 5.  Now run the `Producer` client using a topic instead of a queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 3
 ----
@@ -498,7 +498,7 @@ appclient -client target/producer.jar topic 3
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is topic
 Sending message: This is message 1 from producer
@@ -509,7 +509,7 @@ Text messages sent: 3
 6.  Now, in the other terminal window, run the `SynchConsumer` client
 using the topic:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar topic
 ----
@@ -524,14 +524,14 @@ the client waits for messages to arrive.
 7.  Leave the `SynchConsumer` client running and run the `Producer`
 client again:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 3
 ----
 +
 Now the `SynchConsumer` client receives the messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is topic
 Reading message: This is message 1 from producer
@@ -591,7 +591,7 @@ on the specified destination type.
 5.  Creates an instance of the `TextListener` class and registers it as
 the message listener for the `JMSConsumer`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 listener = new TextListener();
 consumer.setMessageListener(listener);
@@ -609,7 +609,7 @@ automatically.
 its content as a string value. If the message is not a text message, it
 reports this fact:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 public void onMessage(Message m) {
     try {
@@ -642,14 +642,14 @@ Messages Synchronously].
 1.  In the terminal window where you ran the `SynchConsumer` client, go
 to the `asynchconsumer` example directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/jms/simple/asynchconsumer
 ----
 2.  Run the `AsynchConsumer` client, specifying the `topic` destination
 type:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/asynchconsumer.jar topic
 ----
@@ -657,7 +657,7 @@ appclient -client target/asynchconsumer.jar topic
 The client displays the following lines (along with some additional
 output) and then waits for messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is topic
 To end program, enter Q or q, then <return>
@@ -665,7 +665,7 @@ To end program, enter Q or q, then <return>
 3.  In the terminal window where you ran the `Producer` client
 previously, run the client again, sending three messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 3
 ----
@@ -673,7 +673,7 @@ appclient -client target/producer.jar topic 3
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is topic
 Sending message: This is message 1 from producer
@@ -685,7 +685,7 @@ Text messages sent: 3
 In the other window, the `AsynchConsumer` client displays the following
 (along with some additional output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is topic
 To end program, enter Q or q, then <return>
@@ -705,14 +705,14 @@ In this case, as with the synchronous example, you can run the
 `Producer` client first, because there is no timing dependency between
 the sender and receiver:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar queue 3
 ----
 +
 The output of the client looks like this:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 Sending message: This is message 1 from producer
@@ -722,7 +722,7 @@ Text messages sent: 3
 ----
 6.  In the other window, run the `AsynchConsumer` client:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/asynchconsumer.jar queue
 ----
@@ -730,7 +730,7 @@ appclient -client target/asynchconsumer.jar queue
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 To end program, enter Q or q, then <return>
@@ -772,20 +772,20 @@ The `MessageBrowser.java` client performs the following steps.
 2.  In a `try`-with-resources block, creates a `JMSContext`.
 3.  Creates a `QueueBrowser`:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 QueueBrowser browser = context.createBrowser(queue);
 ----
 4.  Retrieves the `Enumeration` that contains the messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Enumeration msgs = browser.getEnumeration();
 ----
 5.  Verifies that the `Enumeration` contains messages, then displays the
 contents of the messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 if ( !msgs.hasMoreElements() ) {
     System.out.println("No messages in queue");
@@ -805,7 +805,7 @@ body and properties in a format that depends on the implementation of
 the `toString` method. In GlassFish Server, the message format looks
 something like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Text:   This is message 3 from producer
 Class:                  com.sun.messaging.jmq.jmsclient.TextMessageImpl
@@ -845,14 +845,14 @@ To run the clients, you need two terminal windows.
 
 1.  In a terminal window, go to the `producer` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/examples/jms/simple/producer/
 ----
 2.  Run the `Producer` client, sending one message to the queue, along
 with the non-text control message:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar queue
 ----
@@ -860,7 +860,7 @@ appclient -client target/producer.jar queue
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 Sending message: This is message 1 from producer
@@ -868,13 +868,13 @@ Text messages sent: 1
 ----
 3.  In another terminal window, go to the `messagebrowser` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd tut-install/jms/simple/messagebrowser
 ----
 4.  Run the `MessageBrowser` client using the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/messagebrowser.jar
 ----
@@ -882,7 +882,7 @@ appclient -client target/messagebrowser.jar
 The output of the client looks something like this (along with some
 additional output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Message:
 Text:   This is message 1 from producer
@@ -919,7 +919,7 @@ control message.
 5.  Go to the `synchconsumer` directory.
 6.  Run the `SynchConsumer` client to consume the messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar queue
 ----
@@ -927,7 +927,7 @@ appclient -client target/synchconsumer.jar queue
 The output of the client looks like this (along with some additional
 output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Destination type is queue
 Reading message: This is message 1 from producer
@@ -948,7 +948,7 @@ In the other two, go to the `synchconsumer` directory.
 2.  In each of the `synchconsumer` windows, start running the client,
 receiving messages from a queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar queue
 ----
@@ -958,7 +958,7 @@ windows.
 3.  In the `producer` window, run the client, sending 20 or so messages
 to the queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar queue 20
 ----
@@ -972,7 +972,7 @@ control message, enter Control-C to exit the program.
 6.  Next, run the `synchconsumer` clients using a topic. In each window,
 run the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/synchconsumer.jar topic
 ----
@@ -982,7 +982,7 @@ windows.
 7.  In the `producer` window, run the client, sending 20 or so messages
 to the topic:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar topic 20
 ----
@@ -1058,7 +1058,7 @@ tut-install`/examples/jms/simple/clientackconsumer/` directory.
 The example client, `ClientAckConsumer.java`, creates a `JMSContext`
 that specifies client acknowledgment:
 
-[source,oac_no_warn]
+[source,java]
 ----
 try (JMSContext context =
       connectionFactory.createContext(JMSContext.CLIENT_ACKNOWLEDGE);) {
@@ -1069,7 +1069,7 @@ The client uses a `while` loop almost identical to that used by
 `SynchConsumer.java`, with the exception that after processing each
 message, it calls the `acknowledge` method on the `JMSContext`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 context.acknowledge();
 ----
@@ -1087,32 +1087,32 @@ connection factory preconfigured with GlassFish Server
 
 1.  In a terminal window, go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/simple/producer/
 ----
 2.  Run the `Producer` client, sending some messages to the queue:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/producer.jar queue 3
 ----
 3.  In another terminal window, go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/simple/clientackconsumer/
 ----
 4.  To run the client, use the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client target/clientackconsumer.jar
 ----
 +
 The client output looks like this (along with some additional output):
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Created client-acknowledge JMSContext
 Reading message: This is message 1 from producer

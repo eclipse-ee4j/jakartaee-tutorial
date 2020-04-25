@@ -27,7 +27,7 @@ replies to trading requests with a status value, a confirmation number,
 and the dollar amounts for the requested shares and fees. For example, a
 request-response pair would look like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 >> BUY 1000 ZZZZ MARKET
 << EXECUTED #1234567 TOTAL 50400.00 FEE 252.00
@@ -100,7 +100,7 @@ The `ResourceAccessBean` managed bean in the `trading-war` module
 configures a connection factory for the `trading-rar` resource adapter
 by using the `@ConnectionFactoryDefinition` annotation as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @SessionScoped
@@ -148,7 +148,7 @@ application server. However, this is a vendor-specific procedure.
 The managed bean obtains a connection factory object using resource
 injection as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 public class ResourceAccessBean implements Serializable {
@@ -161,7 +161,7 @@ public class ResourceAccessBean implements Serializable {
 The managed bean uses the connection factory to obtain connection
 handles as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 TradeConnection connection = connectionFactory.getConnection();
 ----
@@ -170,7 +170,7 @@ The resource adapter returns a connection handle associated with a
 physical connection to the EIS. Once a connection handle is available,
 the managed bean submits a trade and obtains the response as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 TradeOrder order = new TradeOrder();
 order.setNShares(1000);
@@ -271,7 +271,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/connectors
 ----
@@ -283,7 +283,7 @@ tut-install/examples/connectors
 +
 The messages from the EIS appear in the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Trade execution server listening on port 4004.
 ----
@@ -293,7 +293,7 @@ This command packages the resource adapter and the web application in an
 EAR file and deploys it to GlassFish Server.
 10. Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/trading/
 ----
@@ -313,13 +313,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/connectors/trading/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -328,26 +328,26 @@ This command builds and packages the resource adapter and the web
 application into an EAR archive and deploys it to GlassFish Server.
 4.  In the same terminal window, go to the `trading-eis` directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 cd trading-eis
 ----
 5.  Enter the following command to run the trade execution platform:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn exec:java
 ----
 +
 The messages from the EIS appear in the terminal window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Trade execution server listening on port 4004.
 ----
 6.  Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/trading/
 ----

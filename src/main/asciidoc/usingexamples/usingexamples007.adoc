@@ -22,7 +22,7 @@ You can install the archetypes using NetBeans IDE or Maven.
 1.  From the *File* menu, choose *Open Project*.
 2.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples
 ----
@@ -37,13 +37,13 @@ tut-install/examples
 
 1.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/archetypes/
 ----
 2.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----

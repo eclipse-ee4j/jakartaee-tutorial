@@ -19,7 +19,7 @@ case study are defined in `bookstore.taglib.xml`. The `ui:composition`
 tag on the `index.xhtml` page declares the namespace defined in the tag
 library:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -36,7 +36,7 @@ The Duke's Bookstore case study includes a custom image map component on
 the `index.xhtml` page. This component allows you to select a book by
 clicking on a region of the image map:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ...
 <h:graphicImage id="mapImage"

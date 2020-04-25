@@ -18,7 +18,7 @@ to the `MapBookChangeListener` class. The listener class's
 `processAction` method processes the event of clicking the image map.
 Here is the `processAction` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void processAction(ActionEvent actionEvent)
@@ -52,7 +52,7 @@ class itself. This class is very simple to write; you have it extend
 which the event is queued and a method that returns the component. Here
 is the `AreaSelectedEvent` class used with the image map:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class AreaSelectedEvent extends ActionEvent {
     public AreaSelectedEvent(MapComponent map) {

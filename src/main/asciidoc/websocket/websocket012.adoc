@@ -47,7 +47,7 @@ The CDI bean (`BotBean`) is a Java class that contains the `respond`
 method. This method compares the incoming chat message with a set of
 predefined questions and returns a chat response.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 public class BotBean {
@@ -72,7 +72,7 @@ decoders using the `ServerEndpoint` annotation. The endpoint obtains an
 instance of the `BotBean` class and a managed executor service resource
 through dependency injection:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint(
    value = "/websocketbot",
@@ -102,7 +102,7 @@ decoder converts incoming text messages into `JoinMessage` or
 `ChatMessage` objects, which inherit from the `Message` class. The
 `message` method receives a `Message` object as a parameter:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OnMessage
 public void message(Session session, Message msg) {
@@ -184,7 +184,7 @@ The classes that represent application messages (`Message`,
 only properties and getter and setter methods. For example, the
 `ChatMessage` class looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class ChatMessage extends Message {
     private String name;
@@ -202,7 +202,7 @@ The encoder classes convert application message objects into JSON text
 using the Java API for JSON Processing. For example, the
 `ChatMessageEncoder` class is implemented as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 /* Encode a ChatMessage as JSON.
  * For example, (new ChatMessage("Peter","Duke","How are you?"))
@@ -232,7 +232,7 @@ The message decoder (`MessageDecoder`) class converts WebSocket text
 messages into application messages by parsing JSON text. It is
 implemented as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 /* Decode a JSON message into a JoinMessage or a ChatMessage.
  * For example, the incoming message
@@ -318,7 +318,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/websocket
 ----
@@ -331,7 +331,7 @@ This command builds and packages the application into a WAR file,
 `websocketbot.war`, located in the `target/` directory; deploys it to
 the server; and launches a web browser window with the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/websocketbot/
 ----
@@ -348,19 +348,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/websocket/websocketbot/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Open a web browser window and type the following address:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/websocketbot/
 ----
@@ -381,7 +381,7 @@ text area on the left is the chat room.
 type the messages in bold and press enter to obtain responses similar to
 the following:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 [--Peter has joined the chat--]
 Duke: @Peter Hi there!!

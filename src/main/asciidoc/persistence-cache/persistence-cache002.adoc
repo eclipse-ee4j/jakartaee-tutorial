@@ -6,7 +6,7 @@ To adjust the cache mode settings for a persistence unit, specify one of
 the cache modes as the value of the `shared-cache-mode` element in the
 `persistence.xml` deployment descriptor (shown in bold):
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <persistence-unit name="examplePU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
@@ -33,7 +33,7 @@ Alternatively, you can specify the shared cache mode by setting the
 `javax.persistence.sharedCache.mode` property to one of the shared cache
 mode settings:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManagerFactory emf =
     Persistence.createEntityManagerFactory(
@@ -106,7 +106,7 @@ To set the cache retrieval or store mode for the persistence context,
 call the `EntityManager.setProperty` method with the property name and
 value pair:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 em.setProperty("javax.persistence.cache.storeMode", "BYPASS");
@@ -116,7 +116,7 @@ To set the cache retrieval or store mode when calling the
 `EntityManager.find` or `EntityManager.refresh` methods, first create a
 `Map<String, Object>` instance and add a name/value pair as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Map<String, Object> props = new HashMap<String, Object>();
@@ -142,7 +142,7 @@ To set the retrieval or store mode when using queries, call the
 `Query.setHint` or `TypedQuery.setHint` methods, depending on the type
 of query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 CriteriaQuery<Person> cq = ...;
@@ -205,7 +205,7 @@ cache:
 `true` if the entity's data is cached, and `false` if the data is not in
 the cache:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Cache cache = em.getEntityManagerFactory().getCache();
@@ -228,7 +228,7 @@ second-level cache:
 1.  To remove a particular entity from the cache, call the `evict`
 method and pass in the entity class and the primary key of the entity:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Cache cache = em.getEntityManagerFactory().getCache();
@@ -238,7 +238,7 @@ cache.evict(Person.class, personPK);
 2.  To remove all instances of a particular entity class, including
 subclasses, call the `evict` method and specify the entity class:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Cache cache = em.getEntityManagerFactory().getCache();
@@ -256,7 +256,7 @@ well.
 
 To completely clear the second-level cache, call the `Cache.evictAll` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Cache cache = em.getEntityManagerFactory().getCache();

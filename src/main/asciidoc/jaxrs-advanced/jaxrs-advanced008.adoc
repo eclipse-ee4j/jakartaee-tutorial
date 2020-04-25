@@ -47,7 +47,7 @@ entities as Java classes with Jakarta XML Binding annotations.
 
 The following class represents a customer's address:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 @Table(name="CUSTOMER_ADDRESS")
@@ -91,7 +91,7 @@ an element must be present in the XML representation.
 
 The following class represents a customer:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 @Table(name="CUSTOMER_CUSTOMER")
@@ -144,7 +144,7 @@ an `.xsd` file yourself.
 Jakarta XML Binding generates the following XML schema definition for the two preceding
 classes:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -185,7 +185,7 @@ The `CustomerService` class has a `createCustomer` method that creates a
 customer resource based on the `Customer` class and returns a URI for
 the new resource.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 @Path("/Customer")
@@ -249,7 +249,7 @@ annotation and returns a `Customer` object, which is converted to an XML
 or JSON representation depending on the `Accept:` header specified by
 the client.
 
-[source,oac_no_warn]
+[source,java]
 ----
     @GET
     @Path("{id}")
@@ -290,7 +290,7 @@ application.
 The `CustomerBean` enterprise bean class calls the Jakarta REST Client API to
 test the `CustomerService` web service:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @Stateless
@@ -388,7 +388,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxrs
 ----
@@ -402,7 +402,7 @@ This command builds and packages the application into a WAR file,
 deployed to GlassFish Server.
 7.  Open the web client in a browser at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/customer/
 ----
@@ -418,13 +418,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jaxrs/customer/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -434,7 +434,7 @@ This command builds and packages the application into a WAR file,
 deployed to GlassFish Server.
 4.  Open the web client in a browser at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/customer/
 ----

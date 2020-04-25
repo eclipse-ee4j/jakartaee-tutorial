@@ -5,16 +5,15 @@ If you want to perform complex UI updates depending on the received push
 message, you can nest the `f:ajax` tag inside the `f:websocket` tag. See the
 following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:panelGroup id="foo">
-... (some complex UI here) ...
+    ... (some complex UI here) ...
 </h:panelGroup>
 <h:form>
-<f:websocket channel="someChannel" scope="view">
-<f:ajax event="someEvent"
-listener="#{bean.pushed}" render=":foo" />
-</f:websocket>
+    <f:websocket channel="someChannel" scope="view">
+        <f:ajax event="someEvent" listener="#{bean.pushed}" render=":foo" />
+    </f:websocket>
 </h:form>
 ----
 
@@ -28,16 +27,14 @@ The `<f:websocket onmessage>` references exactly the `<h:commandScript name>`.
 
 For example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:panelGroup id="foo">
-... (some complex UI here) ...
+    ... (some complex UI here) ...
 </h:panelGroup>
-<f:websocket channel="someChannel" scope="view"
-onmessage="pushed" />
+<f:websocket channel="someChannel" scope="view" onmessage="pushed" />
 <h:form>
-<h:commandScript name="pushed"
-action="#{bean.pushed}" render=":foo" />
+    <h:commandScript name="pushed" action="#{bean.pushed}" render=":foo" />
 </h:form>
 ----
 

@@ -30,7 +30,7 @@ The Client API is designed to be fluent, with method invocations chained
 together to configure and submit a request to a REST resource in only a
 few lines of code.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 String name = client.target("http://example.com/webapi/hello")
@@ -55,7 +55,7 @@ The `Client` interface defines the actions and infrastructure a REST
 client requires to consume a RESTful web service. Instances of `Client`
 are obtained by calling the `ClientBuilder.newClient` method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 ----
@@ -63,7 +63,7 @@ Client client = ClientBuilder.newClient();
 Use the `close` method to close `Client` instances after all the
 invocations for the target resource have been performed:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 ...
@@ -85,7 +85,7 @@ interface. You obtain a `WebTarget` instance by calling the
 `Client.target` method and passing in the URI of the target REST
 resource.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi");
@@ -96,7 +96,7 @@ instances of `WebTarget`. In the following example, a base target is
 used to construct several other targets that represent different
 services provided by a REST resource.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget base = client.target("http://example.com/webapi");
@@ -120,7 +120,7 @@ surrounding the template variable with braces (`{}`). Call the
 `resolveTemplate` method to substitute the `{username}`, and then call
 the `queryParam` method to add another variable to pass.
 
-[source,oac_no_warn]
+[source,java]
 ----
 WebTarget myResource = client.target("http://example.com/webapi/read")
         .path("{userName}")
@@ -140,7 +140,7 @@ The `WebTarget.request` method returns an instance of
 `javax.ws.rs.client.Invocation.Builder`, a helper object that provides
 methods for preparing the client request.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -150,7 +150,7 @@ Invocation.Builder builder = myResource.request(MediaType.TEXT_PLAIN);
 Using a `MediaType` constant is equivalent to using the string defining
 the MIME type.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Invocation.Builder builder = myResource.request("text/plain");
 ----
@@ -171,7 +171,7 @@ For example, if the target REST resource is for an HTTP GET request,
 call the `Invocation.Builder.get` method. The return type should
 correspond to the entity returned by the target REST resource.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -182,7 +182,7 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
 If the target REST resource is expecting an HTTP POST request, call the
 `Invocation.Builder.post` method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 StoreOrder order = new StoreOrder(...);
@@ -200,7 +200,7 @@ If the return type is a collection, use
 `javax.ws.rs.core.GenericType<T>` as the response type parameter, where
 `T` is the collection type:
 
-[source,oac_no_warn]
+[source,java]
 ----
 List<StoreOrder> orders = client.target("http://example.com/webapi/read")
         .path("allOrders")

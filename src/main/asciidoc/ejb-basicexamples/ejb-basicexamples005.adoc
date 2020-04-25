@@ -100,14 +100,14 @@ allowable values for the attribute.
 
 The following expression represents every minute:
 
-[source,oac_no_warn]
+[source,java]
 ----
 minute="*"
 ----
 
 The following expression represents every day of the week:
 
-[source,oac_no_warn]
+[source,java]
 ----
 dayOfWeek="*"
 ----
@@ -123,7 +123,7 @@ Duplicates within a list are ignored.
 The following expression sets the day of the week to Tuesday and
 Thursday:
 
-[source,oac_no_warn]
+[source,java]
 ----
 dayOfWeek="Tue, Thu"
 ----
@@ -131,7 +131,7 @@ dayOfWeek="Tue, Thu"
 The following expression represents 4:00 a.m., every hour from 9:00 a.m.
 to 5:00 p.m. using a range, and 10:00 p.m.:
 
-[source,oac_no_warn]
+[source,java]
 ----
 hour="4,9-17,22"
 ----
@@ -148,14 +148,14 @@ the allowable values, and continues up to `y`.
 
 The following expression represents 9:00 a.m. to 5:00 p.m.:
 
-[source,oac_no_warn]
+[source,java]
 ----
 hour="9-17"
 ----
 
 The following expression represents Friday through Monday:
 
-[source,oac_no_warn]
+[source,java]
 ----
 dayOfWeek="5-1"
 ----
@@ -164,14 +164,14 @@ The following expression represents the twenty-fifth day of the month to
 the end of the month, and the beginning of the month to the fifth day of
 the month:
 
-[source,oac_no_warn]
+[source,java]
 ----
 dayOfMonth="25-5"
 ----
 
 It is equivalent to the following expression:
 
-[source,oac_no_warn]
+[source,java]
 ----
 dayOfMonth="25-Last,1-5"
 ----
@@ -189,21 +189,21 @@ Intervals may be set only for `second`, `minute`, and `hour` attributes.
 
 The following expression represents every 10 minutes within the hour:
 
-[source,oac_no_warn]
+[source,java]
 ----
 minute="*/10"
 ----
 
 It is equivalent to:
 
-[source,oac_no_warn]
+[source,java]
 ----
 minute="0,10,20,30,40,50"
 ----
 
 The following expression represents every 2 hours starting at noon:
 
-[source,oac_no_warn]
+[source,java]
 ----
 hour="12/2"
 ----
@@ -225,7 +225,7 @@ Methods annotated `@Timeout` in the enterprise bean class must return
 `void` and optionally take a `javax.ejb.Timer` object as the only
 parameter. They may not throw application exceptions:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Timeout
 public void timeout(Timer timer) {
@@ -251,7 +251,7 @@ and pass it to the `TimerService.createSingleActionTimer` or the
 The following code sets a programmatic timer that will expire in 1
 minute (60,000 milliseconds):
 
-[source,oac_no_warn]
+[source,java]
 ----
 long duration = 60000;
 Timer timer =
@@ -261,7 +261,7 @@ Timer timer =
 The following code sets a programmatic timer that will expire at 12:05
 p.m. on May 1, 2015, specified as a `java.util.Date`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 SimpleDateFormatter formatter =
     new SimpleDateFormatter("MM/dd/yyyy 'at' HH:mm");
@@ -279,7 +279,7 @@ Calendar-Based Timer Expressions].
 The following code creates a programmatic timer using the
 `ScheduleExpression` helper class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ScheduleExpression schedule = new ScheduleExpression();
 schedule.dayOfWeek("Mon");
@@ -294,7 +294,7 @@ documentation at
 The bean described in link:#BNBPE[The timersession Example] creates a
 timer as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Timer timer = timerService.createTimer(intervalDuration,
         "Created new programmatic timer");
@@ -360,7 +360,7 @@ of the timer. A timer's information can be retrieved later by using
 The following timeout method uses `@Schedule` to set a timer that will
 expire every Sunday at midnight:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Schedule(dayOfWeek="Sun", hour="0")
 public void cleanupWeekData() { ... }
@@ -374,7 +374,7 @@ multiple calendar-based timer expressions. The first expression sets a
 timer to expire on the last day of every month. The second expression
 sets a timer to expire every Friday at 11:00 p.m.:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Schedules ({
     @Schedule(dayOfMonth="Last"),
@@ -415,7 +415,7 @@ In addition to defining the `cancel` and `getHandle` methods, the
 `Timer` interface defines methods for obtaining information about
 timers:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public long getTimeRemaining();
 public java.util.Date getNextTimeout();
@@ -469,7 +469,7 @@ creates a new timer by invoking the `createTimer` method of
 the `programmaticTimeout` method of `TimerSessionBean` when the timer
 expires, in about 8 seconds:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
     public void setTimer(long intervalDuration) {
@@ -493,7 +493,7 @@ expires, in about 8 seconds:
 and is set by using a calendar-based timer expression in the `@Schedule`
 annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
     @Schedule(minute = "*/1", hour = "*", persistent = false)
@@ -511,7 +511,7 @@ programmatic timer and automatic timer, respectively.
 
 Here's the source code for the `TimerSessionBean` class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.timersession.ejb;
 
@@ -628,7 +628,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -650,13 +650,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/timersession/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -671,7 +671,7 @@ deploys this WAR file to your GlassFish Server instance.
 
 1.  Open a web browser to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/timersession
 ----

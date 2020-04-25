@@ -43,7 +43,7 @@ to another servlet.
 To enable asynchronous processing on a servlet, set the parameter
 `asyncSupported` to `true` on the `@WebServlet` annotation as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/asyncservlet"}, asyncSupported=true)
 public class AsyncServlet extends HttpServlet { ... }
@@ -54,7 +54,7 @@ you need to perform asynchronous processing inside service methods. To
 obtain an instance of `AsyncContext`, call the `startAsync()` method on
 the request object of your service method; for example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void doGet(HttpServletRequest req, HttpServletResponse resp) {
    ...
@@ -133,7 +133,7 @@ can be slow at times, so this may be a blocking operation.
 The following code shows a basic servlet that does not use asynchronous
 processing:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/syncservlet"})
 public class SyncServlet extends HttpServlet {
@@ -156,7 +156,7 @@ public class SyncServlet extends HttpServlet {
 
 The following code shows the same servlet using asynchronous processing:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/asyncservlet"}, asyncSupported=true)
 public class AsyncServlet extends HttpServlet {

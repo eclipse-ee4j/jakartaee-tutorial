@@ -142,7 +142,7 @@ the URL mapping for the application. The path specified by
 The following code sample is a very simple example of a root resource
 class that uses Jakarta REST annotations:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.hello;
 
@@ -201,7 +201,7 @@ resource can consume that were sent by the client. The example could be
 modified to set the message returned by the `getHtml` method, as shown
 in this code example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("text/plain")
@@ -227,7 +227,7 @@ resource to respond to a request based on the substituted URI. Variables
 are denoted by braces (`{` and `}`). For example, look at the following
 `@Path` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/users/{username}")
 ----
@@ -237,7 +237,7 @@ then a Jakarta REST web service configured to respond to requests to this URI
 path template responds. For example, if the user types the user name
 "Galileo," the web service responds to the following URL:
 
-[source,oac_no_warn]
+[source,java]
 ----
 http://example.com/users/Galileo
 ----
@@ -246,7 +246,7 @@ To obtain the value of the user name, the `@PathParam` annotation may be
 used on the method parameter of a request method, as shown in the
 following code example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/users/{username}")
 public class UserResource {
@@ -265,7 +265,7 @@ regular expression after the variable name. For example, if a user name
 must consist only of lowercase and uppercase alphanumeric characters,
 override the default regular expression in the variable definition:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("users/{username: [a-zA-Z][a-zA-Z_0-9]*}")
 ----
@@ -294,7 +294,7 @@ first deploy the application to a Jakarta EE server that responds to
 requests to the `http://example.com/myContextRoot` URI and then decorate
 your resource with the following `@Path` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/{name1}/{name2}/")
 public class SomeResource {
@@ -305,7 +305,7 @@ public class SomeResource {
 In this example, the URL pattern for the Jakarta REST helper servlet,
 specified in `web.xml`, is the default:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <servlet-mapping>
       <servlet-name>javax.ws.rs.core.Application</servlet-name>
@@ -393,7 +393,7 @@ request method designators is outside the scope of this document.
 The following example shows the use of the PUT method to create or
 update a storage container:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PUT
 public Response putContainer() {
@@ -504,7 +504,7 @@ media types (`text/xml`, `application/xml`, and `application/*+xml`)
 The following example shows how to use `MessageBodyReader` with the
 `@Consumes` and `@Provider` annotations:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Consumes("application/x-www-form-urlencoded")
 @Provider
@@ -514,7 +514,7 @@ public class FormReader implements MessageBodyReader<NameValuePair> {
 The following example shows how to use `MessageBodyWriter` with the
 `@Produces` and `@Provider` annotations:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces("text/html")
 @Provider
@@ -524,7 +524,7 @@ public class FormWriter implements
 
 The following example shows how to use `ResponseBuilder`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public Response getItem() {
@@ -584,7 +584,7 @@ Acceptable" error.
 The value of `@Produces` is an array of `String` of MIME types or a
 comma-separated list of `MediaType` constants. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces({"image/jpeg,image/png"})
 ----
@@ -592,7 +592,7 @@ comma-separated list of `MediaType` constants. For example:
 The following example shows how to apply `@Produces` at both the class
 and method levels:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/myResource")
 @Produces("text/plain")
@@ -620,7 +620,7 @@ specifies that the method can produce HTML rather than plain text.
 example, specifying `MediaType.APPLICATION_XML` is equivalent to
 specifying `"application/xml"`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces(MediaType.APPLICATION_XML)
 @GET
@@ -640,7 +640,7 @@ but prefers the latter, the `doGetAsHtml` method will be invoked.
 More than one media type may be declared in the same `@Produces`
 declaration. The following code example shows how this is done:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces({"application/xml", "application/json"})
 public String doGetAsXmlOrJson() {
@@ -674,14 +674,14 @@ error.
 The value of `@Consumes` is an array of `String` of acceptable MIME
 types, or a comma-separated list of `MediaType` constants. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Consumes({"text/plain,text/html"})
 ----
 
 This is the equivalent of:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Consumes({MediaType.TEXT_PLAIN,MediaType.TEXT_HTML})
 ----
@@ -689,7 +689,7 @@ This is the equivalent of:
 The following example shows how to apply `@Consumes` at both the class
 and method levels:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/myResource")
 @Consumes("multipart/related")
@@ -719,7 +719,7 @@ The `HelloWorld` example discussed previously in this section can be
 modified to set the message by using `@Consumes`, as shown in the
 following code example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("text/html")
@@ -759,7 +759,7 @@ method parameter arguments. The following example demonstrates using
 `@QueryParam` to extract query parameters from the `Query` component of
 the request URL:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("smooth")
 @GET
@@ -786,7 +786,7 @@ User-defined Java programming language types may be used as query
 parameters. The following code example shows the `ColorParam` class used
 in the preceding query parameter example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class ColorParam extends Color {
     public ColorParam(String s) {
@@ -840,7 +840,7 @@ specified using the `javax.ws.rs.PathParam` annotation in the method
 parameter arguments. The following example shows how to use `@Path`
 variables and the `@PathParam` annotation in a method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/{username}")
 public class MyResourceBean {
@@ -889,7 +889,7 @@ forms.
 The following example extracts the `name` form parameter from the POST
 form data:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("application/x-www-form-urlencoded")
@@ -901,7 +901,7 @@ public void post(@FormParam("name") String name) {
 To obtain a general map of parameter names and values for query and path
 parameters, use the following code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public String get(@Context UriInfo ui) {
@@ -913,7 +913,7 @@ public String get(@Context UriInfo ui) {
 The following method extracts header and cookie parameter names and
 values into a map:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 public String get(@Context HttpHeaders hh) {
@@ -927,7 +927,7 @@ related to the request or response.
 
 For form parameters, it is possible to do the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Consumes("application/x-www-form-urlencoded")
@@ -964,7 +964,7 @@ configure the environment in which the REST resources defined in your
 resource classes are run, including the base URI. Add a class-level
 `@ApplicationPath` annotation to set the base URI.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ApplicationPath("/webapi")
 public class MyApplication extends Application { ... }
@@ -978,7 +978,7 @@ By default, all the resources in an archive will be processed for
 resources. Override the `getClasses` method to manually register the
 resource classes in the application with the Jakarta REST runtime.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public Set<Class<?>> getClasses() {
@@ -997,7 +997,7 @@ The base URI for a Jakarta REST application can be set using a
 `servlet-mapping` tag in the `web.xml` deployment descriptor, using the
 `Application` class name as the servlet.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet-mapping>
     <servlet-name>javax.ws.rs.core.Application</servlet-name>
@@ -1008,7 +1008,7 @@ The base URI for a Jakarta REST application can be set using a
 This setting will also override the path set by `@ApplicationPath` when
 using an `Application` subclass.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet-mapping>
    <servlet-name>com.example.rest.MyApplication</servlet-name>

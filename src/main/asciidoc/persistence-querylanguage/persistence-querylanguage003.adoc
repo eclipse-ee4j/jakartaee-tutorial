@@ -9,7 +9,7 @@ language queries.
 The `createQuery` method is used to create dynamic queries, which are
 queries defined directly within an application's business logic:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public List findWithName(String name) {
 return em.createQuery(
@@ -27,7 +27,7 @@ queries that are defined in metadata by using the
 `createNamedQuery` method. The `query` element of `@NamedQuery` is the
 query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedQuery(
     name="findAllCustomersWithName",
@@ -37,7 +37,7 @@ query:
 
 Here's an example of `createNamedQuery`, which uses the `@NamedQuery`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 public EntityManager em;
@@ -55,7 +55,7 @@ Named parameters are query parameters that are prefixed with a colon
 (`:`). Named parameters in a query are bound to an argument by the
 following method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 javax.persistence.Query.setParameter(String name, Object value)
 ----
@@ -64,7 +64,7 @@ In the following example, the `name` argument to the `findWithName`
 business method is bound to the `:custName` named parameter in the query
 by calling `Query.setParameter`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public List findWithName(String name) {
     return em.createQuery(
@@ -90,7 +90,7 @@ set the parameter values.
 In the following example, the `findWithName` business method is
 rewritten to use input parameters:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public List findWithName(String name) {
     return em.createQuery(

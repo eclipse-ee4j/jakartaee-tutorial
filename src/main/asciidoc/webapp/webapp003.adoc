@@ -26,7 +26,7 @@ To view the `hello1` web module using NetBeans IDE:
 1.  From the File menu, choose Open Project.
 2.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
@@ -39,7 +39,7 @@ application. In a typical Facelets application, web pages are created in
 XHTML. For this application, the page uses simple tag markup to display
 a form with a graphic image, a header, a field, and two command buttons:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -97,7 +97,7 @@ response page contains a graphic image, a header that displays the
 expression provided by the managed bean, and a single button whose
 `action` element transfers you back to the `index.xhtml` page:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -129,7 +129,7 @@ setter methods for the `name` property used in the Facelets page
 expressions. By default, the expression language refers to the class
 name, with the first letter in lowercase (`hello.name`).
 +
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.hello1;
 
@@ -170,7 +170,7 @@ when you use NetBeans IDE to create an application.
 
 * A context parameter specifying the project stage:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
@@ -185,7 +185,7 @@ context parameters that an application can use.
 * A `servlet` element and its `servlet-mapping` element specifying the
 `FacesServlet`. All files with the `.xhtml` suffix will be matched:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -200,7 +200,7 @@ context parameters that an application can use.
 * A `welcome-file-list` element specifying the location of the landing
 page:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
@@ -265,7 +265,7 @@ NetBeans IDE], if you have not already done so.
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
@@ -285,13 +285,13 @@ link:#CHDBDDAF[To Start GlassFish Server Using the
 Command Line], if you have not already done so.
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf/hello1/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 mvn install
 ----
@@ -325,7 +325,7 @@ The deployed web modules appear in the Deployed Applications table.
 
 Enter the following command:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 asadmin list-applications
 ----
@@ -354,7 +354,7 @@ To run the deployed `hello1` web module:
 1.  Open a web browser.
 2.  Enter the following URL:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 http://localhost:8080/hello1/
 ----
@@ -412,20 +412,20 @@ To undeploy the `hello1` web module using Maven:
 
 1.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf/hello1/
 ----
 2.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 mvn cargo:undeploy
 ----
 3.  To delete the class files and other build artifacts, enter the
 following command:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 mvn clean
 ----

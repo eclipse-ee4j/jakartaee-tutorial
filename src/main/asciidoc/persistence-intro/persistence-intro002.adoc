@@ -111,7 +111,7 @@ called `firstName`, the class defines a `getFirstName` and
 The method signatures for single-valued persistent properties are as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Type getProperty()
 void setProperty(Type type)
@@ -141,7 +141,7 @@ variants of these collection types may also be used. For example, if it
 has a persistent property that contains a set of phone numbers, the
 `Customer` entity would have the following methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Set<PhoneNumber> getPhoneNumbers() { ... }
 void setPhoneNumbers(Set<PhoneNumber>) { ... }
@@ -166,7 +166,7 @@ which is a collection of `String` classes that will be fetched eagerly.
 The `targetClass` element is not required, because it uses generics to
 define the field:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class Person {
@@ -277,7 +277,7 @@ annotation, ConstraintName`.List`, for grouping multiple constraints of
 the same type on the same field or property. For example, the following
 persistent field has two `@Pattern` constraints:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Pattern.List({
     @Pattern(regexp="..."),
@@ -288,7 +288,7 @@ persistent field has two `@Pattern` constraints:
 The following entity class, `Contact`, has Bean Validation constraints
 applied to its persistent fields:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class Contact implements Serializable {
@@ -391,7 +391,7 @@ The following primary key class is a composite key, and the
 `customerOrder` and `itemId` fields together uniquely identify an
 entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public final class LineItemKey implements Serializable {
     private Integer customerOrder;
@@ -573,7 +573,7 @@ Cascade delete relationships are specified using the `cascade=REMOVE`
 element specification for `@OneToOne` and `@OneToMany` relationships.
 For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToMany(cascade=REMOVE, mappedBy="customer")
 public Set<CustomerOrder> getOrders() { return orders; }
@@ -599,7 +599,7 @@ Boolean value and is by default false.
 The following example will cascade the remove operation to the orphaned
 `order` entity when the `customer` entity is deleted:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToMany(mappedBy="customer", orphanRemoval="true")
 public List<CustomerOrder> getOrders() { ... }
@@ -623,7 +623,7 @@ annotated with the `javax.persistence.Embeddable` annotation instead of
 The following embeddable class, `ZipCode`, has the fields `zip` and
 `plusFour`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Embeddable
 public class ZipCode {
@@ -635,7 +635,7 @@ public class ZipCode {
 
 This embeddable class is used by the `Address` entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class Address {

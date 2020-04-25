@@ -49,7 +49,7 @@ The `@Past` constraint is applied to the birthday field, which must be a
 
 Here are the relevant parts of the `Contact` entity class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class Contact implements Serializable {
@@ -86,7 +86,7 @@ public class Contact implements Serializable {
 Some of the constraints in the `Contact` entity specify an optional
 message:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
         message = "{invalid.phonenumber}")
@@ -96,7 +96,7 @@ protected String homePhone;
 The optional message element in the `@Pattern` constraint overrides the
 default validation message. The message can be specified directly:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
         message = "Invalid phone number!")
@@ -129,7 +129,7 @@ automatically trigger validation when the forms are submitted.
 The following code snippet from the `Create.xhtml` Facelets file shows
 some of the input form for creating new `Contact` instances:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     <table columns="3" role="presentation">
@@ -188,7 +188,7 @@ Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence
 ----
@@ -200,7 +200,7 @@ select Run.
 After the application has been deployed, a web browser window appears at
 the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/address-book/
 ----
@@ -223,13 +223,13 @@ the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence/address-book/
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -238,7 +238,7 @@ This will compile and assemble the `address-book` application into a
 WAR. The WAR file is then deployed to GlassFish Server.
 5.  Open a web browser window and enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/address-book/
 ----

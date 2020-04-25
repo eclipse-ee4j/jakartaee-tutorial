@@ -59,7 +59,7 @@ managers.
 To obtain an `EntityManager` instance, inject the entity manager into
 the application component:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 EntityManager em;
@@ -92,7 +92,7 @@ To obtain an `EntityManager` instance, you first must obtain an
 component by means of the `javax.persistence.PersistenceUnit`
 annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceUnit
 EntityManagerFactory emf;
@@ -100,7 +100,7 @@ EntityManagerFactory emf;
 
 Then obtain an `EntityManager` from the `EntityManagerFactory` instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = emf.createEntityManager();
 ----
@@ -114,7 +114,7 @@ commit, and roll back transactions. Inject an instance of
 `UserTransaction` by creating an instance variable annotated with
 `@Resource`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource
 UserTransaction utx;
@@ -129,7 +129,7 @@ transaction.
 The following example shows how to manage transactions in an application
 that uses an application-managed entity manager:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceUnit
 EntityManagerFactory emf;
@@ -156,7 +156,7 @@ try {
 The `EntityManager.find` method is used to look up entities in the data
 store by the entity's primary key:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 EntityManager em;
@@ -203,7 +203,7 @@ managed. If the entity is detached, either `persist` will throw an
 `IllegalArgumentException`, or the transaction commit will fail. The
 following method performs a `persist` operation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 EntityManager em;
@@ -221,7 +221,7 @@ The `persist` operation is propagated to all entities related to the
 calling entity that have the `cascade` element set to `ALL` or `PERSIST`
 in the relationship annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToMany(cascade=ALL, mappedBy="order")
 public Collection<LineItem> getLineItems() {
@@ -250,7 +250,7 @@ In the following example, all `LineItem` entities associated with the
 order are also removed, as `CustomerOrder.getLineItems` has
 `cascade=ALL` set in the relationship annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void removeOrder(Integer orderId) {
     try {
@@ -289,7 +289,7 @@ classes represents the data contained within a single data store.
 Persistence units are defined by the `persistence.xml` configuration
 file. The following is an example `persistence.xml` file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <persistence>
     <persistence-unit name="OrderManagement">

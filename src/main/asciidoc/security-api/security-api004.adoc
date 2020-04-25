@@ -43,7 +43,7 @@ Note that in GlassFish, if the user provides the wrong credentials when using
 `BasicAuthenticationMechanism`, then the `realmName`
 is presented to user, as a hint.
 
-[source,oac_no_warn]
+[source,java]
 ----
 curl -I -u Joe http://localhost:8080/built-in-db-identity-store/servlet
 Enter host password for user 'Joe':
@@ -78,7 +78,7 @@ users in the  `DatabaseSetup.java` file.
 With `@Startup` annotation, this singleton enterprise bean is initialized during
 application startup and the credentials are set in the underlying database.
 
-[source,oac_no_warn]
+[source,java]
 ----
 
 import java.sql.Connection;
@@ -131,7 +131,7 @@ to the `DefaultDataSource` in
 the `ApplicationConfig.java` file. This example also demonstrates the use of the
 `Pbkdf2PasswordHash` interface.
 
-[source,oac_no_warn]
+[source,java]
 ----
 
 // Database Definition for built-in DatabaseIdentityStore
@@ -169,7 +169,7 @@ to `org.glassfish.soteria.mechanisms.jaspic.HttpBridgeServerAuthModule`,
 which then invokes the `BasicAuthenticationMechanism#validateRequest` method, and gets
 the credential from the request.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @BasicAuthenticationMechanismDefinition(
         realmName = "file"
@@ -183,7 +183,7 @@ as part of the response. Note that the container needs to be made aware of the
 supported roles, which are defined using the `@DeclareRoles({ "foo", "bar", "kaz" })`
 annotation as shown below.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet("/servlet")
 @DeclareRoles({ "foo", "bar", "kaz" })
@@ -239,7 +239,7 @@ link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Ser
 
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/security-api
 ----
@@ -265,13 +265,13 @@ link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Ser
 
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/security-api/built-in-db-identity-store
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -292,7 +292,7 @@ the following request URL in your web browser:
 +
 Request URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/built-in-db-identity-store/servlet
 ----
@@ -323,7 +323,7 @@ in question and the following response is returned to the end user.
 +
 Response:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 web username: Joe
 web user has role "foo": true
@@ -337,7 +337,7 @@ in your web browser:
 +
 Request URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/built-in-db-identity-store/servlet
 ----
@@ -352,7 +352,7 @@ You are promted to enter the credentials again, but you are not authenticated.
 When you click Cancel in the Authentication required window, the following
 response is returned:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 HTTP Status 401 - Unauthorized
 

@@ -12,7 +12,7 @@ about the capabilities of the resource adapter. Optionally, you can
 provide a JavaBeans component implementing the `ResourceAdapter`
 interface, as in the following example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Connector(
     displayName = "TrafficResourceAdapter",
@@ -28,7 +28,7 @@ public class TrafficResourceAdapter implements ResourceAdapter,
 interfaces and classes pertaining to a particular connection type, as in
 the following example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @ConnectionDefinition(
     connectionFactory = ConnectionFactory.class,
@@ -46,7 +46,7 @@ as an administered object.
 pertaining to inbound connectivity from an EIS instance, as in the
 following example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Activation(
         messageListeners = { TrafficListener.class }

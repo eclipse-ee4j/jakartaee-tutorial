@@ -5,7 +5,7 @@
 To designate a method that handles errors in an annotated WebSocket
 endpoint, decorate it with `@OnError`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/testendpoint")
 public class TestEndpoint {

@@ -20,7 +20,7 @@ Java SE 8.
 
 For example, you can construct a set as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 {1,2,3}
 ----
@@ -28,7 +28,7 @@ For example, you can construct a set as follows:
 You can construct a list as follows; a list can contain various types of
 items:
 
-[source,oac_no_warn]
+[source,java]
 ----
 [1,2,3]
 [1, "two", [three,four]]
@@ -37,7 +37,7 @@ items:
 You can construct a map by using a colon to define the entries, as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 {"one":1, "two":2, "three":3}
 ----
@@ -62,7 +62,7 @@ collection object.
 For example, you might generate a list of titles of history books as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 books.stream().filter(b->b.category == 'history')
               .map(b->b.title)
@@ -72,7 +72,7 @@ books.stream().filter(b->b.category == 'history')
 The following simpler example returns a sorted version of the original
 list:
 
-[source,oac_no_warn]
+[source,java]
 ----
 [1,3,5,2].stream().sorted().toList()
 ----

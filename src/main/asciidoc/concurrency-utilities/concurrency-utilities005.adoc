@@ -94,7 +94,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/concurrency
 ----
@@ -114,13 +114,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/concurrency/jobs
 ----
 3.  Enter the following command to build and deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -134,7 +134,7 @@ these steps:
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/jobs
 ----
@@ -143,14 +143,14 @@ field, enter nothing in the Enter a Token field, then click Submit Job.
 +
 The following message should be displayed at the bottom of the page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Job 1 successfully submitted
 ----
 +
 The server log includes the following messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO:   Invalid or missing token!
 INFO:   Task started LOW-1
@@ -163,14 +163,14 @@ another job for 10 seconds. If you try to do so, the RESTful API will
 return a service unavailable (HTTP 503) response and the following
 message will be displayed at the bottom of the page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Job 2 was NOT submitted
 ----
 +
 The server log will include the following messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO:   Invalid or missing token!
 INFO:   Job 1 successfully submitted
@@ -189,7 +189,7 @@ these steps:
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/jobs
 ----
@@ -203,14 +203,14 @@ The page that displays the token will open in a new tab.
 A message like the following should be displayed at the bottom of the
 page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Job 11 successfully submitted
 ----
 +
 The server log includes the following messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO:   Token accepted. Execution with high priority.
 INFO:   Task started HIGH-11
@@ -224,7 +224,7 @@ restriction that the low priority submitters face. If you submit 3 jobs
 with tokens in rapid succession, messages like the following will be
 displayed at the bottom of the page:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Job 1 was submitted
 Job 2 was submitted
@@ -233,7 +233,7 @@ Job 3 was submitted
 +
 The server log will include the following messages:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO:   Token accepted. Execution with high priority.
 INFO:   Task started HIGH-1

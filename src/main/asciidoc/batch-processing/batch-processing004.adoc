@@ -7,7 +7,7 @@ a job and their execution order using an XML file. The following example
 shows how to define a simple job that contains one chunk step and one
 task step:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <job id="loganalysis" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
                       version="1.0">
@@ -64,7 +64,7 @@ can contain one `properties` element and zero or more of each of the
 following elements: `listener`, `step`, `flow`, and `split`. For
 example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <job id="jobname" restartable="true">
   <listeners>
@@ -143,7 +143,7 @@ step, a flow, a split, or a decision element.
 
 The following is an example of a chunk step:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepA" next="stepB">
   <properties> ... </properties>
@@ -161,7 +161,7 @@ The following is an example of a chunk step:
 
 The following is an example of a task step:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepB" next="stepC">
   <batchlet ...> ... </batchlet>
@@ -269,7 +269,7 @@ rolled back by default when an exception occurs.
 
 The following is an example of a chunk-oriented step:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepC" next="stepD">
   <chunk checkpoint-policy="item" item-count="5" time-limit="180"
@@ -307,7 +307,7 @@ specifies a batch artifact that implements the `Batchlet` interface. The
 
 The following is an example of a task-oriented step:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepD" next="stepE">
   <batchlet ref="pkg.MyBatchletImpl">
@@ -405,7 +405,7 @@ implementation of the `PartitionAnalyzer` interface.
 The following is an example of a partitioned step using the `plan`
 element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepE" next="stepF">
   <chunk>
@@ -439,7 +439,7 @@ element. The `PartitionMapper` implementation dynamically provides the
 same information as the `plan` element provides in the job definition
 file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="stepE" next="stepF">
   <chunk>
@@ -480,7 +480,7 @@ elements outside the flow.
 
 The following is an example of the `flow` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <flow id="flowA" next="stepE">
   <step id="flowAstepA" next="flowAstepB">...</step>
@@ -508,7 +508,7 @@ elements in the split.
 The following is an example of a split with three flows that execute
 concurrently:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <split id="splitA" next="stepB">
   <flow id="splitAflowA">...</flow>
@@ -543,7 +543,7 @@ This element sets the batch status to `FAILED`.
 
 The following is an example of the `decider` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <decision id="decisionA" ref="MyDeciderImpl">
   <fail on="FAILED" exit-status="FAILED_AT_DECIDER"/>

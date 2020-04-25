@@ -44,7 +44,7 @@ length.
 The `CoderDecorator` class, like `CoderImpl`, implements the business
 method of the `Coder` interface, `codeString`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Decorator
 public abstract class CoderDecorator implements Coder {
@@ -77,7 +77,7 @@ classes are identical to the versions in the `encoder` example.
 
 The `beans.xml` file specifies both the decorator and the interceptor:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <decorators>
         <class>jakarta.tutorial.decorators.CoderDecorator</class>
@@ -112,7 +112,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi
 ----
@@ -134,13 +134,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/decorators/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -155,7 +155,7 @@ to GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/decorators
 ----
@@ -165,7 +165,7 @@ of letters to shift by, and then click Encode.
 The output from the decorator method appears in blue on the Result line.
 For example, if you entered `Java` and `4`, you would see the following:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 "Java" becomes "Neze", 4 characters in length
 ----
@@ -176,7 +176,7 @@ tab. Otherwise, view domain-dir`/logs/server.log`.
 +
 The output from the interceptors appears:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO: Entering method: encodeString in class jakarta.tutorial.decorators.CoderBean
 INFO: Entering method: codeString in class jakarta.tutorial.decorators.CoderImpl

@@ -52,7 +52,7 @@ returned are necessary to determine the correct page to access.
 Here is a navigation rule that could be used with the example just
 described:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <navigation-rule>
     <from-view-id>/login.xhtml</from-view-id>
@@ -91,7 +91,7 @@ also allows wildcard matching patterns. For example, this `from-view-id`
 element says that the navigation rule applies to all the pages in the
 `books` directory:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <from-view-id>/books/*</from-view-id>
 ----

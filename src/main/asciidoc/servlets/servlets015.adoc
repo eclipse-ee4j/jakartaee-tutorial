@@ -26,7 +26,7 @@ The `mood` example application is comprised of three components:
 Duke's mood in a graphic, based on the time of day. The `@WebServlet`
 annotation specifies the URL pattern:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet("/report")
 public class MoodServlet extends HttpServlet {
@@ -36,7 +36,7 @@ public class MoodServlet extends HttpServlet {
 `TimeOfDayFilter` sets an initialization parameter indicating that Duke
 is awake:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebFilter(filterName = "TimeOfDayFilter",
 urlPatterns = {"/*"},
@@ -74,7 +74,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet
 ----
@@ -84,7 +84,7 @@ tut-install/examples/web/servlet
 Build.
 7.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/mood/report
 ----
@@ -103,19 +103,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet/mood/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/mood/report
 ----

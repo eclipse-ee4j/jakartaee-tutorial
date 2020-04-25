@@ -49,7 +49,7 @@ When referencing the property using the component tag's `value`
 attribute, you need to use the proper syntax. For example, suppose a
 managed bean called `MyBean` has this `int` property:
 
-[source,oac_no_warn]
+[source,java]
 ----
 protected int currentOption = null;
 public int getCurrentOption(){...}
@@ -59,7 +59,7 @@ public void setCurrentOption(int option){...}
 The `value` attribute that references this property must have this
 value-binding expression:
 
-[source,oac_no_warn]
+[source,java]
 ----
 #{myBean.currentOption}
 ----
@@ -115,7 +115,7 @@ in `bookcatalog.xhtml` sets the value of the component to the value of
 the `books` property of the `BookstoreBean` backing bean, whose name is
 `store`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:dataTable id="books"
              value="#{store.books}"
@@ -143,7 +143,7 @@ For example, consider this managed bean configuration, which configures
 the `ImageArea` bean corresponding to the top-left book in the image map
 on the `index.html` page of the Duke's Bookstore case study:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean eager="true">
     ...
@@ -171,7 +171,7 @@ to an `ImageArea` property (they bind to the bean itself), you could
 refer to the property using a value expression from the `value`
 attribute of the component's tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{Book201.shape}" />
 ----
@@ -190,7 +190,7 @@ implicit object.
 The `bookreceipt.xhtml` page of the Duke's Bookstore case study has a
 reference to an implicit object:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputFormat title="thanks"
                 value="#{bundle.ThankYouParam}">
@@ -203,7 +203,7 @@ inserts it into the parameterized message at the key `ThankYouParam`
 from the resource bundle. For example, if the name of the customer is
 Gwen Canigetit, this tag will render:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Thank you, Gwen Canigetit, for purchasing your books from us.
 ----
@@ -268,7 +268,7 @@ property if the bean must dynamically change the component's attributes.
 Here are two tags from the `bookcashier.xhtml` page that bind components
 to bean properties:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectBooleanCheckbox id="fanClub"
                          rendered="false"
@@ -287,7 +287,7 @@ representing the check box's label to the `specialOfferText` property of
 the `cashier` bean. If the application's locale is English, the
 `h:outputLabel` tag renders
 
-[source,oac_no_warn]
+[source,java]
 ----
 I'd like to join the Duke Fan Club, free with my purchase of over $100
 ----

@@ -33,7 +33,7 @@ interceptor named `LoggedInterceptor`. The interceptor binding type
 declaration looks something like a qualifier declaration, but it is
 annotated with `javax.interceptor.InterceptorBinding`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inherited
 @InterceptorBinding
@@ -69,7 +69,7 @@ specific methods. For example, in the `billpayment` example, the
 invocation of its business methods will cause the interceptor's
 `@AroundInvoke` method to be invoked:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Logged
 @SessionScoped
@@ -80,7 +80,7 @@ However, in the `PaymentBean` bean, only the `pay` and `reset` methods
 have the `@Logged` annotation, so the interceptor is invoked only when
 these methods are invoked:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Logged
 public String pay() {...}
@@ -93,7 +93,7 @@ In order for an interceptor to be invoked in a CDI application, it must,
 like an alternative, be specified in the `beans.xml` file. For example,
 the `LoggedInterceptor` class is specified as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <interceptors>
     <class>jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
@@ -108,7 +108,7 @@ classes in the same archive. Use the `@Priority` annotation to specify
 interceptors globally for an application that consists of multiple
 modules, as in the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Logged
 @Interceptor

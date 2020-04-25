@@ -266,7 +266,7 @@ employee payroll data.
 
 The enterprise bean would be annotated as shown in the following code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.annotation.security.DeclareRoles;
 import javax.annotation.security.RolesAllowed;
@@ -300,7 +300,7 @@ For a servlet, you can use the `@HttpConstraint` annotation within the
 access the servlet. For example, a servlet might be annotated as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(name = "PayrollServlet", urlPatterns = {"/payroll"})
 @ServletSecurity(
@@ -349,7 +349,7 @@ specify the mapping. The following example demonstrates how to do this
 mapping in the `glassfish-web.xml` file, which is the file used for web
 applications:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <glassfish-web-app>
     ...

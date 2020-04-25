@@ -79,7 +79,7 @@ For testing purposes and to verify that SSL support has been correctly
 installed, load the default introduction page with a URL that connects
 to the port defined in the server deployment descriptor:
 
-[source,oac_no_warn]
+[source,java]
 ----
 https://localhost:8181/
 ----

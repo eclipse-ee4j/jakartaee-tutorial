@@ -7,7 +7,7 @@ GlassFish Server includes Apache Derby.
 To start Derby from the command line, open a terminal
 window or command prompt, change to the `_as-install_/bin` directory, and execute:
 
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin start-database
 ----
@@ -15,7 +15,7 @@ asadmin start-database
 To stop Derby from the command line, open a terminal window
 or command prompt, change to the `_as-install_/bin` directory, and execute:
 
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin stop-database
 ----

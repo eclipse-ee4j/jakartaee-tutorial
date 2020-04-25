@@ -69,7 +69,7 @@ To specify the lock mode, use one of the following techniques:
 1.  Call the `EntityManager.lock` method, passing in one of the lock
 modes:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Person person = ...;
@@ -78,7 +78,7 @@ em.lock(person, LockModeType.OPTIMISTIC);
 2.  Call one of the `EntityManager.find` methods that take the lock mode
 as a parameter:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 String personPK = ...;
@@ -88,7 +88,7 @@ Person person = em.find(Person.class, personPK,
 3.  Call one of the `EntityManager.refresh` methods that take the lock
 mode as a parameter:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 String personPK = ...;
@@ -99,14 +99,14 @@ em.refresh(person, LockModeType.OPTIMISTIC_FORCE_INCREMENT);
 4.  Call the `Query.setLockMode` or `TypedQuery.setLockMode` method,
 passing the lock mode as the parameter:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Query q = em.createQuery(...);
 q.setLockMode(LockModeType.PESSIMISTIC_FORCE_INCREMENT);
 ----
 5.  Add a `lockMode` element to the `@NamedQuery` annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedQuery(name="lockPersonQuery",
   query="SELECT p FROM Person p WHERE p.name LIKE :name",

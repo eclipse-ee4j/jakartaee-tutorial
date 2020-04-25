@@ -12,7 +12,7 @@ string. The `setName` business method has an `@Interceptors` annotation
 that specifies an interceptor class, `HelloInterceptor`, for that
 method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Interceptors(HelloInterceptor.class)
 public void setName(String name) {
@@ -24,7 +24,7 @@ The `HelloInterceptor` class defines an `@AroundInvoke` interceptor
 method, `modifyGreeting`, that converts the string passed to
 `HelloBean.setName` to lowercase:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @AroundInvoke
 public Object modifyGreeting(InvocationContext ctx) throws Exception {
@@ -77,7 +77,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -88,7 +88,7 @@ select Run.
 This will compile, deploy, and run the `interceptor` example, opening a
 web browser to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/interceptor/
 ----
@@ -106,14 +106,14 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  Go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/interceptor/
 ----
 3.  To compile the source files and package the application, use the
 following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -123,7 +123,7 @@ This command builds and packages the application into a WAR file,
 then deployed to GlassFish Server.
 4.  Open the following URL in a web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/interceptor/
 ----

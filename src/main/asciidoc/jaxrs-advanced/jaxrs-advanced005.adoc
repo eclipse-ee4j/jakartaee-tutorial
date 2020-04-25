@@ -19,7 +19,7 @@ Conditional HTTP requests can be used with the `Last-Modified` and
 `ETag` headers. The `Last-Modified` header can represent dates with
 granularity of one second.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employee/{joiningdate}")
 public class Employee {

@@ -47,7 +47,7 @@ converter's error message will display on the page. For example, the
 following error message appears if `BigIntegerConverter` fails to
 convert a value:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 {0} must be a number consisting of one or more digits
 ----
@@ -88,7 +88,7 @@ As an example of the second technique, if you want a component's data to
 be converted to an `Integer`, you can simply bind the component's value
 to a managed bean property. Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Integer age = 0;
 public Integer getAge(){ return age;}
@@ -110,7 +110,7 @@ The `converterId` attribute must reference the converter's ID. Here is
 an example that uses one of the converter IDs listed in
 link:#CHDIHIIC[Table 11-1]:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{loginBean.age}">
     <f:converter converterId="javax.faces.Integer" />
@@ -137,7 +137,7 @@ of the data. link:#BNASW[Table 11-2] lists the attributes.
 
 Here is a simple example of a `convertDateTime` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{cashierBean.shipDate}">
     <f:convertDateTime type="date" dateStyle="full" />
@@ -151,7 +151,7 @@ be of type `java.util.Date`.
 
 The example tag can display the following output:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Saturday, September 21, 2013
 ----
@@ -159,7 +159,7 @@ Saturday, September 21, 2013
 You can also display the same date and time by using the following tag
 in which the date format is specified:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{cashierBean.shipDate}">
     <f:convertDateTime pattern="EEEEEEEE, MMM dd, yyyy" />
@@ -169,7 +169,7 @@ in which the date format is specified:
 If you want to display the example date in Spanish, you can use the
 `locale` attribute:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{cashierBean.shipDate}">
     <f:convertDateTime dateStyle="full"
@@ -180,7 +180,7 @@ If you want to display the example date in Spanish, you can use the
 
 This tag would display the following output:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 jueves 24 de octubre de 2013 15:07:04 GMT
 ----
@@ -287,7 +287,7 @@ of the data. link:#BNASY[Table 11-4] lists the attributes.
 The following example uses a `convertNumber` tag to display the total
 prices of the contents of a shopping cart:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{cart.total}">
     <f:convertNumber currencySymbol="$" type="currency"/>
@@ -301,7 +301,7 @@ type or has a type of `java.lang.Number`. In the preceding example,
 
 Here is an example of a number that this tag can display:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 $934
 ----
@@ -309,7 +309,7 @@ $934
 This result can also be displayed by using the following tag in which
 the currency pattern is specified:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText id="cartTotal" value="#{cart.total}">
     <f:convertNumber pattern="$####" />

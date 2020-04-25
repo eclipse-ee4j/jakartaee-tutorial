@@ -16,7 +16,7 @@ configuration resource file
 Here is the section of the `faces-config.xml` file that registers the
 messages for the Duke's Bookstore case study application:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <application>
     <resource-bundle>
@@ -59,7 +59,7 @@ references the key of the message from the resource bundle.
 You can pull localized text into an `alt` tag for a graphic image, as in
 the following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:graphicImage id="mapImage" 
                 name="book_all.jpg"
@@ -81,7 +81,7 @@ resource file, you can access the `java.util.ResourceBundle` directly
 from managed bean code. The code snippet below locates an email error
 message:
 
-[source,oac_no_warn]
+[source,java]
 ----
 String message = "";
 ...
@@ -95,7 +95,7 @@ context.addMessage(toValidate.getClientId(context),
 These lines call the bean's `loadErrorMessage` method to get the message
 from the `ResourceBundle`. Here is the `loadErrorMessage` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public static String loadErrorMessage(FacesContext context,
      String basename, String key) {
@@ -161,7 +161,7 @@ converter or validator being registered on the component.
 The following tags show how to specify the `requiredMessage` attribute
 using a value expression to reference an error message:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="ccno" size="19"
     required="true"

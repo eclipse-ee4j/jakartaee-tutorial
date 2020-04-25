@@ -21,7 +21,7 @@ the `getJobOperator` factory method to obtain `JobOperator` objects.
 The following example code demonstrates how to obtain a `JobOperator`
 object and submit a batch job:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JobOperator jobOperator = BatchRuntime.getJobOperator();
 Properties props = new Properties();
@@ -52,7 +52,7 @@ interface provides the following functionality.
 The following example code demonstrates how to obtain the batch status
 of a job using its execution ID:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JobExecution jobExec = jobOperator.getJobExecution(execID);
 String status = jobExec.getBatchStatus().toString();

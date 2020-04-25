@@ -50,7 +50,7 @@ against a format pattern that is specified in the custom validator tag.
 This validator would be used with a Credit Card Number field on a
 Facelets page. Here is the custom validator tag:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <mystore:formatValidator
  formatPatterns="9999999999999999|9999 9999 9999 9999|9999-9999-9999-9999"/>
@@ -82,7 +82,7 @@ acceptable format patterns for input into the fields. The setter method
 calls the `parseFormatPatterns` method, which separates the components
 of the pattern string into a string array, `formatPatternsList`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String getFormatPatterns() {
     return (this.formatPatterns);
@@ -106,7 +106,7 @@ validate only data of a component that implements
 
 Here is an implementation of the `validate` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesValidator
 public class FormatValidator implements Validator, StateHolder {
@@ -160,7 +160,7 @@ generates an error message. It then creates a
 `FacesContext` for display, using a `String` that represents the key in
 the `Properties` file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public static final String FORMAT_INVALID_MESSAGE_ID =
      "FormatInvalid";
@@ -174,7 +174,7 @@ When the error message is displayed, the format pattern will be
 substituted for the `{0}` in the error message, which, in English, is as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Input must match one of the following patterns: {0}
 ----
@@ -206,7 +206,7 @@ properties of the validator from the page.
 To create a custom tag, you need to add the tag to the tag library
 descriptor for the application, `bookstore.taglib.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <tag>
     <tag-name>validator</tag-name>
@@ -243,7 +243,7 @@ and reference the custom `Validator` implementation from the
 Here is a hypothetical custom `formatValidator` tag for the Credit Card
 Number field, nested within the `h:inputText` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="ccno" size="19"
   ...
@@ -280,7 +280,7 @@ Validators to Managed Bean Properties].
 The following tag registers a hypothetical validator on a component
 using an `f:validator` tag and references the ID of the validator:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name" value="#{CustomerBean.name}"
             size="10" ...>

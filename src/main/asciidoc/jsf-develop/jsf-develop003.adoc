@@ -61,7 +61,7 @@ If the user does not purchase more than $100 worth of books or if the
 `bookreceipt`. The Jakarta Server Faces implementation loads the
 `bookreceipt.xhtml` page after this method returns:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String submit() {
     ...
@@ -89,7 +89,7 @@ outcome defined by the `Enum` class.
 The following example uses an `Enum` class to encapsulate all logical
 outcomes:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public enum Navigation  {
     main, accountHist, accountList, atm, atmAck, transferFunds,
@@ -100,7 +100,7 @@ public enum Navigation  {
 When it returns an outcome, an action method uses the dot notation to
 reference the outcome from the `Enum` class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public Object submit(){
     ...
@@ -128,7 +128,7 @@ In the following example, a method from a managed bean named
 `ActionBean` processes the event of a user clicking one of the links on
 the page:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void chooseBookFromLink(ActionEvent event) {
     String current = event.getComponent().getId();
@@ -166,7 +166,7 @@ Here is an example of a managed bean method that validates user input,
 from link:#GJCXV[The guessnumber-cdi CDI
 Example]:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void validateNumberRange(FacesContext context,
                                 UIComponent toValidate, 
@@ -224,7 +224,7 @@ a value-change event is generated, and the
 `processValueChange(ValueChangeEvent)` method of the
 `ValueChangeListener` class is invoked:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name"
              size="30"
@@ -244,7 +244,7 @@ bean method to handle this event. To do this, you move the
 Here is the managed bean method that processes the event of entering a
 value in the `name` field on the page:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void processValueChange(ValueChangeEvent event)
         throws AbortProcessingException {

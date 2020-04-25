@@ -23,7 +23,7 @@ their logic is specific to a particular application.
 For example, instead of using an alternative `TestCoderImpl` class for
 the `encoder` example, you could create a decorator as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Decorator
 public abstract class CoderDecorator implements Coder {
@@ -57,7 +57,7 @@ In order for a decorator to be invoked in a CDI application, it must,
 like an interceptor or an alternative, be specified in the `beans.xml`
 file. For example, the `CoderDecorator` class is specified as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <decorators>
     <class>jakarta.tutorial.decorators.CoderDecorator</class>
@@ -77,7 +77,7 @@ classes in the same archive. Use the `@Priority` annotation to specify
 decorators globally for an application that consists of multiple
 modules, as in the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Decorator
 @Priority(Interceptor.Priority.APPLICATION)

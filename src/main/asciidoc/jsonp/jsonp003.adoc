@@ -20,7 +20,7 @@ The following topics are addressed here:
 The following code demonstrates how to create an object model from JSON
 data in a text file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import java.io.FileReader;
 import javax.json.Json;
@@ -44,7 +44,7 @@ to write it to a stream as JSON data.
 The following code demonstrates how to create an object model from
 application code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -72,7 +72,7 @@ created by nesting calls to the `add` methods and built by calling the
 `build` method. The `JsonObjectBuilder` class contains the following
 `add` methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JsonObjectBuilder add(String name, BigDecimal value)
 JsonObjectBuilder add(String name, BigInteger value)
@@ -102,7 +102,7 @@ link:#BABGHEHG[JSON Syntax].
 The following code demonstrates a simple approach to navigating an
 object model:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.json.JsonValue;
 import javax.json.JsonObject;
@@ -148,7 +148,7 @@ link:#BABBHEBA[Creating an Object Model from JSON Data] and
 link:#BABIGIAF[Creating an Object Model from Application Code] as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 navigateTree(model, null);
 ----
@@ -172,7 +172,7 @@ instances of `JsonArray`, as shown in this example.
 The `navigateTree` method for the model built in link:#BABIGIAF[Creating
 an Object Model from Application Code] produces the following output:
 
-[source,oac_no_warn]
+[source,java]
 ----
 OBJECT
 Key firstName: STRING Duke
@@ -199,7 +199,7 @@ from JSON Data] and link:#BABIGIAF[Creating an Object Model from
 Application Code] can be written to a stream using the `JsonWriter`
 class as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import java.io.StringWriter;
 import javax.json.JsonWriter;
@@ -220,7 +220,7 @@ The `JsonWriter.writeObject` method writes the object to the stream. The
 The following example uses `try`-with-resources to close the JSON writer
 automatically:
 
-[source,oac_no_warn]
+[source,java]
 ----
 StringWriter stWriter = new StringWriter();
 try (JsonWriter jsonWriter = Json.createWriter(stWriter)) {

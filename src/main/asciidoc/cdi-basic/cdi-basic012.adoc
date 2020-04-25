@@ -9,7 +9,7 @@ value defined by a qualifier named `@MaxNumber`, then you can define the
 value in a managed bean and then define a producer method,
 `getMaxNumber`, for it:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private int maxNumber = 100;
 ...
@@ -22,7 +22,7 @@ When you inject the object in another managed bean, the container
 automatically invokes the producer method, initializing the value to
 100:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @MaxNumber private int maxNumber;
 ----
@@ -31,7 +31,7 @@ If the value can vary at runtime, then the process is slightly different. For
 example, the following code defines a producer method that generates a
 random number defined by a qualifier called `@Random`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private java.util.Random random =
     new java.util.Random( System.currentTimeMillis() );
@@ -48,14 +48,14 @@ java.util.Random getRandom() {
 When you inject this object in another managed bean, you declare a
 contextual instance of the object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @Random Instance<Integer> randomInt;
 ----
 
 You then call the `get` method of the `Instance`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 this.number = randomInt.get();
 ----

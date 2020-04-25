@@ -75,7 +75,7 @@ JDBC realm.
 For example, for a hypothetical application, the `web.xml` file could
 specify the `jdbcRealm` realm, as follows:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <login-config>
     <auth-method>FORM</auth-method>
@@ -105,7 +105,7 @@ To assign a security role to a group or to a user, add a
 security-role-mapping element to the application server-specific
 deployment descriptor, in this case `glassfish-web.xml`:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <security-role-mapping>
     <role-name>USERS</role-name>

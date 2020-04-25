@@ -33,7 +33,7 @@ The following code snippet shows how a subresource method can be used to
 extract the last name of an employee when the employee's email address
 is provided:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employeeinfo")
 public class EmployeeInfo {
@@ -52,7 +52,7 @@ public class EmployeeInfo {
 The `getEmployeeLastName` method returns `doe` for the following `GET`
 request:
 
-[source,oac_no_warn]
+[source,java]
 ----
 GET /employeeinfo/employees/john.doe@example.com
 ----
@@ -69,7 +69,7 @@ resolution.
 
 The following code snippet shows a subresource locator:
 
-[source,oac_no_warn]
+[source,java]
 ----
 // Root resource class
 @Path("/employeeinfo")

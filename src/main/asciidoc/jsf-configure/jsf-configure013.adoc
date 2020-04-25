@@ -27,7 +27,7 @@ application resources
 For example, a Java Server Faces web application WAR file using Facelets
 typically has the following directory structure:
 
-[source,oac_no_warn]
+[source,java]
 ----
 $PROJECT_DIR
 [Web Pages]
@@ -96,7 +96,7 @@ Application] for more information.
 The following example shows the default configuration of the
 `FacesServlet`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet>
     <servlet-name>Faces Servlet</servlet-name>
@@ -113,7 +113,7 @@ application must include the URL pattern mapping.
 
 The following elements specify a prefix mapping:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
@@ -128,7 +128,7 @@ The following elements specify a prefix mapping:
 The following elements, used in the tutorial examples, specify an
 extension mapping:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
@@ -143,7 +143,7 @@ extension mapping:
 When you use this mechanism, users access the application as shown in
 the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/guessNumber
 ----
@@ -242,7 +242,7 @@ The possible Project Stage values are as follows:
 Project Stage is configured through a context parameter in the web
 deployment descriptor file. Here is an example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <context-param>
     <param-name>javax.faces.PROJECT_STAGE</param-name>

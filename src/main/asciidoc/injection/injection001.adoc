@@ -16,7 +16,7 @@ For example, the following code injects a data source object that
 provides connections to the default Apache Derby database shipped with
 GlassFish Server:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MyServlet extends HttpServlet {
     @Resource(name="java:comp/DefaultDataSource")
@@ -28,7 +28,7 @@ public class MyServlet extends HttpServlet {
 In addition to field-based injection as in the preceding example, you
 can inject resources using method-based injection:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MyServlet extends HttpServlet {
     private javax.sql.DataSource dsc;

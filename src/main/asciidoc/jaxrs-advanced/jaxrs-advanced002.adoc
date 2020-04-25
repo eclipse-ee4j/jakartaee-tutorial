@@ -23,7 +23,7 @@ Bean Validation constraint annotations may be applied to parameters for
 a resource. The server will validate the parameters and either pass or
 throw a `javax.validation.ValidationException`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @POST
 @Path("/createUser")
@@ -43,7 +43,7 @@ by the `email` form field is correctly formatted.
 
 The constraints may also be applied to fields within a resource class.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/createUser")
 public class CreateUserResource {
@@ -74,7 +74,7 @@ fields. The behavior is the same in both examples.
 Constraints may also be applied to a resource class's JavaBeans
 properties by adding the constraint annotations to the getter method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/createuser")
 public class CreateUserResource {
@@ -98,7 +98,7 @@ following example, `@PhoneRequired` is a user-defined constraint that
 ensures that a user enters at least one phone number. That is, either
 `homePhone` or `mobilePhone` can be null, but not both.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/createUser")
 @PhoneRequired
@@ -122,7 +122,7 @@ use the `@Valid` annotation on the method parameter. For example, the
 following class is a user-defined class containing both standard and
 user-defined validation constraints.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PhoneRequired
 public class User {
@@ -138,7 +138,7 @@ public class User {
 
 This entity class is used as a parameter to a resource method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/createUser")
 public class CreateUserResource {
@@ -156,7 +156,7 @@ The `@Valid` annotation ensures that the entity class is validated at
 runtime. Additional user-defined constraints can also trigger validation
 of an entity.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/createUser")
 public class CreateUserResource {
@@ -178,7 +178,7 @@ If a resource method returns an entity class, validation may be
 triggered by applying the `@Valid` or any other user-defined constraint
 annotation to the resource method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/getUser")
 public class GetUserResource {

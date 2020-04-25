@@ -34,7 +34,7 @@ in the example described in link:#GKHPY[The
 producermethods Example: Using a Producer Method to Choose a Bean
 Implementation], the managed bean defines the following producer method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces
 @Chosen
@@ -56,7 +56,7 @@ Here, `getCoder` becomes in effect a getter method, and when the `coder`
 property is injected with the same qualifier and other annotations as
 the method, the selected version of the interface is used.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 @Chosen
@@ -82,7 +82,7 @@ by the container. For example, you could create a `@UserDatabase`
 qualifier and then declare a producer field for an entity manager as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Produces
 @UserDatabase
@@ -93,7 +93,7 @@ private EntityManager em;
 The `@UserDatabase` qualifier can be used when you inject the object
 into another bean, `RequestBean`, elsewhere in the application:
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Inject
     @UserDatabase
@@ -119,7 +119,7 @@ that needs to be removed when its work is completed. If you do, you need
 a corresponding disposer method, annotated with a `@Disposes`
 annotation. For example, you can close the entity manager as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void close(@Disposes @UserDatabase EntityManager em) {
     em.close();

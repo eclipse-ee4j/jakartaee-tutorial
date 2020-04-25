@@ -150,7 +150,7 @@ roles.
 For the `hello2-basicauth` application, the `GreetingServlet` has the
 following annotations:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(name = "GreetingServlet", urlPatterns = {"/greeting"})
 @ServletSecurity(
@@ -178,7 +178,7 @@ the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security
 ----
@@ -198,13 +198,13 @@ GlassFish Server instance.
 the Security Examples].
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/hello2-basicauth/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -219,7 +219,7 @@ deploys the WAR file.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 https://localhost:8181/hello2-basicauth/greeting
 ----
@@ -305,7 +305,7 @@ and password information between `<form></form>` tags in your login
 page. The content of an HTML page or servlet for a login page should be
 coded as follows:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <form method="post" action="j_security_check">
     <input type="text" name="j_username">
@@ -317,7 +317,7 @@ The full code for the login page used in this example can be found at
 `_tut-install_/examples/security/hello1-formauth/src/main/webapp/login.html`.
 Here is the code for this page:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <html lang="en">
     <head>
@@ -355,7 +355,7 @@ For this example, the login error page explains the reason for receiving
 the error page and provides a link that will allow the user to try
 again. Here is the code for this page:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <html lang="en">
     <head>
@@ -386,7 +386,7 @@ The following sample code shows the security elements added to the
 deployment descriptor for this example, which can be found in
 `_tut-install_/examples/security/hello1-formauth/src/main/webapp/WEB-INF/web.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <security-constraint>
         <display-name>Constraint1</display-name>
@@ -425,7 +425,7 @@ the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security
 ----
@@ -445,14 +445,14 @@ GlassFish Server instance, then opens it in a browser.
 the Security Examples].
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/hello1-formauth/
 ----
 3.  Enter the following command at the terminal window or command
 prompt:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -469,7 +469,7 @@ To run the web client for `hello1-formauth`, follow these steps.
 
 1.  Open a web browser to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/hello1-formauth/
 ----

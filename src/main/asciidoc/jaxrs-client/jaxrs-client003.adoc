@@ -30,7 +30,7 @@ The following topics are addressed here:
 You can set HTTP headers on the request by calling the
 `Invocation.Builder.header` method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -45,7 +45,7 @@ If you need to set multiple headers on the request, call the
 the HTTP headers. Calling the `headers` method replaces all the existing
 headers with the headers supplied in the `MultivaluedMap` instance.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -60,7 +60,7 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
 The `MultivaluedMap` interface allows you to specify multiple values for
 a given key.
 
-[source,oac_no_warn]
+[source,java]
 ----
 MultivaluedMap<String, Object> myHeaders =
     new MultivaluedMap<String, Object>();
@@ -77,7 +77,7 @@ You can add HTTP cookies to the request by calling the
 `Invocation.Builder.cookie` method, which takes a name-value pair as
 parameters.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -92,7 +92,7 @@ specification version of the cookie. In the following example, the
 `Cookie` object is configured with a name-value pair, a path, and a
 domain.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -111,7 +111,7 @@ You can register custom filters with the client request or the response
 received from the target resource. To register filter classes when the
 `Client` instance is created, call the `Client.register` method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient().register(MyLoggingFilter.class);
 ----
@@ -122,7 +122,7 @@ instance have the `MyLoggingFilter` filter registered with them.
 You can also register the filter classes on the target by calling
 `WebTarget.register`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient().register(MyLoggingFilter.class);
 WebTarget target = client.target("http://example.com/webapi/secure")
@@ -141,7 +141,7 @@ be annotated with `javax.ws.rs.ext.Provider`.
 The following class is a logging filter for both client requests and
 client responses.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Provider
 public class MyLoggingFilter implements ClientRequestFilter,
@@ -170,7 +170,7 @@ If the invocation must be stopped while the filter is active, call the
 context object's `abortWith` method, and pass in a
 `javax.ws.rs.core.Response` instance from within the filter.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void filter(ClientRequestContext requestContext) throws IOException {
@@ -204,7 +204,7 @@ been cancelled.
 The following example shows how to invoke an asynchronous request on a
 resource.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -226,7 +226,7 @@ when specifying the request method.
 The following example shows how to register a callback object on an
 asynchronous invocation.
 
-[source,oac_no_warn]
+[source,java]
 ----
 Client client = ClientBuilder.newClient();
 WebTarget myResource = client.target("http://example.com/webapi/read");
@@ -257,7 +257,7 @@ Jakarta REST defines a new type of invoker called as `RxInvoker` and a default
 implementation of this type is `CompletionStageRxInvoker`. The new `rx`
 method is used as in the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CompletionStage<String> csf = client.target("forecast/{destination}") resolveTemplate("destination", "mars").request().rx().get(String.class);
 csf.thenAccept(System.out::println);
@@ -297,7 +297,7 @@ To accept connections and send events to one or more clients, inject an
 The following example shows how to accept the SSE connections and to
 send events to the clients:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @GET
 @Path("eventStream")
@@ -335,33 +335,35 @@ outputs. The life-cycle and scope of an `SseBroadcaster` is fully
 controlled by applications and not the Jakarta REST runtime. The following
 example show the use of broadcasters:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/")
 @Singleton
 public class SseResource {
-@Context
-private Sse sse;
-private volatile SseBroadcaster sseBroadcaster;
-@PostConstruct
-public init() {
-this.sseBroadcaster = sse.newBroadcaster();
-}
+    @Context
+    private Sse sse;
+    
+    private volatile SseBroadcaster sseBroadcaster;
 
-@GET
-@Path("register")
-@Produces(MediaType.SERVER_SENT_EVENTS)
-public void register(@Context SseEventSink eventSink) {
-eventSink.send(sse.newEvent("welcome!"));
-sseBroadcaster.register(eventSink);
-}
+    @PostConstruct
+    public init() {
+        this.sseBroadcaster = sse.newBroadcaster();
+    }
 
-@POST
-@Path("broadcast")
-@Consumes(MediaType.MULTIPART_FORM_DATA)
-public void broadcast(@FormParam("event") String event) {
-sseBroadcaster.broadcast(sse.newEvent(event));
-}
+    @GET
+    @Path("register")
+    @Produces(MediaType.SERVER_SENT_EVENTS)
+        public void register(@Context SseEventSink eventSink) {
+        eventSink.send(sse.newEvent("welcome!"));
+        sseBroadcaster.register(eventSink);
+    }
+
+    @POST
+    @Path("broadcast")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public void broadcast(@FormParam("event") String event) {
+        sseBroadcaster.broadcast(sse.newEvent(event));
+    }
 }
 ----
 
@@ -382,15 +384,15 @@ about incoming events by invoking one of the `subscribe` methods in
 The following example shows how to use the `SseEventSource` API to open
 an SSE connection and read some of the messages for a period:
 
-[source,oac_no_warn]
+[source,java]
 ----
 WebTarget target = client.target("http://...");
 try (SseEventSource source = SseEventSource.target(target).build()) {
-source.register(System.out::println);
-source.open();
-Thread.sleep(500); // Consume events for just 500 ms
-source.close();
+    source.register(System.out::println);
+    source.open();
+    Thread.sleep(500); // Consume events for just 500 ms
+    source.close();
 } catch (InterruptedException e) {
-// falls through
+    // falls through
 }
 ----

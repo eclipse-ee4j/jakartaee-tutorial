@@ -9,7 +9,7 @@ that application and others. You can then use the `asadmin` command,
 specifying as the argument a file named `glassfish-resources.xml`, to
 create the resources administratively, as shown.
 
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin add-resources glassfish-resources.xml
 ----

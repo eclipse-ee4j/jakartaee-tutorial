@@ -7,7 +7,7 @@ classes directly as strings, instead of specifying the attributes of the
 metamodel class. For example, this query finds all `Pet` entities where
 the value of the `name` attribute is `Fido`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -17,7 +17,7 @@ cq.where(cb.equal(pet.get("name"), "Fido"));
 The name of the attribute is specified as a string. This query is the
 equivalent of the following metamodel query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Metamodel m = em.getMetamodel();
@@ -41,7 +41,7 @@ type mismatches will be caught at compile time.
 
 Joins are specified in the same way:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -54,7 +54,7 @@ also be used in string-based queries. In each case, the attributes are
 specified using strings. For example, here is a string-based query that
 uses the `in` expression:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);
@@ -64,7 +64,7 @@ cq.where(pet.get("color").in("brown", "black"));
 Here is a string-based query that orders the results in descending order
 by date:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 Root<Pet> pet = cq.from(Pet.class);

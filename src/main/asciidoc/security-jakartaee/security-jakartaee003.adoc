@@ -67,7 +67,7 @@ resulting file can be found in the file
 
 The code snippet is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.cartsecure.ejb;
 
@@ -170,7 +170,7 @@ Your System for Running the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security
 ----
@@ -191,7 +191,7 @@ group `TutorialUser`; then click OK.
 If the user name and password you enter are authenticated, the output of
 the application client appears in the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 Retrieving book title from cart: Infinite Jest
@@ -214,7 +214,7 @@ reappears until you enter correct values.
 Your System for Running the Security Examples].
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/cart-secure/
 ----
@@ -222,7 +222,7 @@ tut-install/examples/security/cart-secure/
 `cart-secure-ear/target` subdirectory, deploy it, and run it, enter the
 following command at the terminal window or command prompt:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -233,7 +233,7 @@ group `TutorialUser`; then click OK.
 If the user name and password you enter are authenticated, the output of
 the application client appears in the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 Retrieving book title from cart: Infinite Jest
@@ -305,7 +305,7 @@ result as `0`. The code example can be found in
 
 The code snippet (with modifications shown in bold) is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.convertersecure.ejb;
 
@@ -358,7 +358,7 @@ public class ConverterBean{
 The following annotations specify security for the `converter` web
 client, `ConverterServlet`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns = {"/"})
 @ServletSecurity(
@@ -375,7 +375,7 @@ Your System for Running the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security
 ----
@@ -394,13 +394,13 @@ GlassFish Server instance.
 Your System for Running the Security Examples].
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/security/converter-secure/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -415,7 +415,7 @@ deploys the WAR file.
 
 1.  Open a web browser to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/converter-secure
 ----

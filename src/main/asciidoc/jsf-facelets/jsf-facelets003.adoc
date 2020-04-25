@@ -42,7 +42,7 @@ components. In this example, both pages use the same backing bean.
 The following managed bean class, `UserNumberBean.java`, generates a
 random number from 0 to 10 inclusive:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.guessnumber;
 
@@ -124,7 +124,7 @@ information.
 The first section of the web page declares the content type for the
 page, which is XHTML:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -134,7 +134,7 @@ The next section specifies the language of the XHTML page and then
 declares the XML namespace for the tag libraries that are used in the
 web page:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -145,7 +145,7 @@ web page:
 The next section uses various tags to insert components into the web
 page:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h:head>
         <h:outputStylesheet library="css" name="default.css"/>
@@ -204,7 +204,7 @@ default causes the server to look for `response.xhtml`.
 You can now create the second page, `response.xhtml`, with the following
 content:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -249,7 +249,7 @@ change the default greeting page, which is `index.xhtml`, to
 `greeting.xhtml`. Here is an example `web.xml` file, showing this change
 in bold.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
@@ -314,7 +314,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf
 ----
@@ -335,13 +335,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf/guessnumber-jsf/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -357,7 +357,7 @@ then deploys it to the server.
 1.  Open a web browser.
 2.  Enter the following URL in your web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/guessnumber-jsf
 ----

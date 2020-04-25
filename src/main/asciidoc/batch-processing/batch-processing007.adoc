@@ -17,7 +17,7 @@ if you define a job as follows, and you are packaging your application
 as a WAR file, include the job definition file in
 `WEB-INF/classes/META-INF/batch-jobs/simplejob.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <job id="simplejob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
                     version="1.0">

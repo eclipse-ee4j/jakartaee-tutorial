@@ -14,7 +14,7 @@ for this attribute are as follows.
 For example, the following `h:outputScript` tag is placed within an
 `h:form` element, but it renders the JavaScript in the `head` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     <h:outputScript name="myscript.js" library="mylibrary" target="head"/>

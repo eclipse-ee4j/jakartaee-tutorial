@@ -24,7 +24,7 @@ The `StatusManager` CDI backing bean retrieves all the current events in
 the system. The client instance used in the backing bean is obtained in
 the constructor:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public StatusManager() {
     this.client = ClientBuilder.newClient();
@@ -37,7 +37,7 @@ current events in the system by calling the resource at
 document with entries for each event. The Client API automatically
 unmarshals the XML and creates a `List<Event>` instance.
 
-[source,oac_no_warn]
+[source,java]
 ----
     public List<Event> getEvents() {
         List<Event> returnedEvents = null;
@@ -64,7 +64,7 @@ The `StatusManager.changeStatus` method is used to update the attendee's
 response. It creates an HTTP `POST` request to the service with the new
 response. The body of the request is an XML document.
 
-[source,oac_no_warn]
+[source,java]
 ----
     public String changeStatus(ResponseEnum userResponse,
             Person person, Event event) {
@@ -110,7 +110,7 @@ interface with the service resource. The `CustomerBean.createCustomer`
 method takes the `Customer` entity instance created by the Facelets form
 and makes a POST call to the service URI.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String createCustomer(Customer customer) {
     if (customer == null) {
@@ -147,7 +147,7 @@ The `CustomerBean.retrieveCustomer` method retrieves a `Customer` entity
 instance from the service by appending the customer's ID to the service
 URI.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String retrieveCustomer(String id) {
     String navigation;
@@ -169,7 +169,7 @@ The `CustomerBean.retrieveAllCustomers` method retrieves a collection of
 customers as a `List<Customer>` instance. This list is then displayed as
 a table in the Facelets web application.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public List<Customer> retrieveAllCustomers() {
     List<Customer> customers =

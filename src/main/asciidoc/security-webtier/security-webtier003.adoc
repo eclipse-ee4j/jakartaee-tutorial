@@ -57,7 +57,7 @@ request.
 The following example code shows how to use the `login` and `logout`
 methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package test;
 
@@ -115,7 +115,7 @@ public class TutorialServlet extends HttpServlet {
 
 The following example code shows how to use the `authenticate` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package com.example.test;
 
@@ -225,14 +225,14 @@ access to resources in a different application.
 
 For example, consider the following Servlet definition:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet("/protectedServlet")
 @ServletSecurity(@HttpConstraint(rolesAllowed = "foo"))
 public class ProtectedServlet extends HttpServlet { ... }
 ----
 And the following call to `hasAccessToWebResource()`:
-[source,oac_no_warn]
+[source,java]
 ----
 securityContext.hasAccessToWebResource("/protectedServlet", GET)
 ----
@@ -255,7 +255,7 @@ purposes of programmatic login. This servlet does the following.
 5.  It prints out the information again to demonstrate the effect of the
 `logout` method.
 
-[source,oac_no_warn]
+[source,java]
 ----
 package enterprise.programmatic_login;
 
@@ -348,7 +348,7 @@ of the call.
 For example, to map the security role reference `cust` to the security
 role with role name `bankCustomer`, the elements would look like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <servlet>
 ...
@@ -367,7 +367,7 @@ The `role-link` element in the `security-role-ref` element must match a
 `role-name` defined in the `security-role` element of the same `web.xml`
 deployment descriptor, as shown here:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <security-role>
     <role-name>bankCustomer</role-name>

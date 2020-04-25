@@ -62,7 +62,7 @@ name the user entered in the field corresponding to the name component.
 The `bookreceipt.xhtml` subsequently retrieves the name from the session
 scope:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputFormat title="thanks"
                 value="#{bundle.ThankYouParam}">
@@ -73,14 +73,14 @@ scope:
 When the `bookreceipt.xhtml` page is loaded, it displays the name inside
 the message:
 
-[source,oac_no_warn]
+[source,java]
 ----
 "Thank you, {0}, for purchasing your books from us."
 ----
 
 Here is part of the `NameChanged` listener implementation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class NameChanged extends Object implements ValueChangeListener {
 

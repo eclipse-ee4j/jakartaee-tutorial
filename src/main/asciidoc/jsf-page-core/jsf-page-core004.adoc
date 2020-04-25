@@ -40,7 +40,7 @@ tag attribute's definition in the olink:JSFTL[Jakarta Server Faces Facelets
 Tag Library documentation]. For example, the definition of the
 `validator` attribute of the `inputText` tag is the following:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 void validate(javax.faces.context.FacesContext,
               javax.faces.component.UIComponent, java.lang.Object)
@@ -64,7 +64,7 @@ returns a logical outcome `String`
 
 The following example shows how to reference a navigation method:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton value="#{bundle.Submit}"
                  action="#{cashierBean.submit}" />
@@ -83,7 +83,7 @@ the component's `actionListener` attribute.
 
 The following example shows how such a method could be referenced:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandLink id="Duke" action="bookstore"
                actionListener="#{actionBean.chooseBookFromLink}">
@@ -109,7 +109,7 @@ link:#GJCXV[The guessnumber-cdi CDI Example]
 shows how to reference a method that performs validation on
 `inputGuess`, an input component:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="inputGuess"
     value="#{userNumberBean.userNumber}"
@@ -133,7 +133,7 @@ and you want that event to be handled by a managed bean method instead
 of a `ValueChangeListener` implementation, you refer to the method by
 using the component's `valueChangeListener` attribute:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name"
              size="30"

@@ -7,7 +7,7 @@ steps. A financial program, for example, might transfer funds from a
 checking account to a savings account by using the steps listed in the
 following pseudocode:
 
-[source,oac_no_warn]
+[source,java]
 ----
 begin transaction
     debit checking account

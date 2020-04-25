@@ -235,7 +235,7 @@ section.
 The following code snippet demonstrates how to use the
 `@TransactionAttribute` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @TransactionAttribute(NOT_SUPPORTED)
 @Stateful

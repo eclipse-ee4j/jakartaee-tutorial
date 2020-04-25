@@ -227,7 +227,7 @@ HTTP methods while leaving other HTTP methods unprotected. An example of
 a deployment descriptor that would demonstrate this functionality is the
 following:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!-- SECURITY CONSTRAINT #1 -->
 <security-constraint>
@@ -402,7 +402,7 @@ requiring the server to specify the action field of the outbound form.
 The following code snippet shows how the form should be coded into the
 HTML page:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <form method="POST" action="j_security_check">
 <input type="text" name="j_username">
@@ -464,7 +464,7 @@ authentication mechanism, authentication of the user is not required.
 The following example shows how to declare form-based authentication in
 your deployment descriptor:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <login-config>
     <auth-method>FORM</auth-method>
@@ -484,7 +484,7 @@ and the Error Page].
 The following example shows how to declare digest authentication in your
 deployment descriptor:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <login-config>
     <auth-method>DIGEST</auth-method>
@@ -505,7 +505,7 @@ will be used in an application using the `security-role` element and
 specifies which of these roles is authorized to access protected
 resources using the `auth-constraint` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <security-constraint>
     <web-resource-collection>

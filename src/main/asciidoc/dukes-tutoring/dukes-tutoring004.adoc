@@ -41,7 +41,7 @@ in link:#BNADK[Starting and Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies
 ----
@@ -81,13 +81,13 @@ Server]).
 in link:#BNADK[Starting and Stopping Apache Derby].
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies/dukes-tutoring/
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -108,7 +108,7 @@ To Use the Main Interface of Duke's Tutoring
 
 1.  In a web browser, open the main interface at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukes-tutoring-war/
 ----
@@ -125,7 +125,7 @@ clicking Administration main page in the left menu.
 +
 This redirects you to the login page at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukes-tutoring-war/admin/index.xhtml
 ----

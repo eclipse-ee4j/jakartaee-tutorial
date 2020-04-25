@@ -76,7 +76,7 @@ for each flow would be in a separate directory, and the Java files would
 be under `src/main/java`. For example, the files for the application
 shown in link:#CHDIHDCD[Figure 16-1] might look like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 src/main/webapp/
     index.xhtml
@@ -120,7 +120,7 @@ tut-install`/examples/web/jsf/simple-flow/` directory.
 
 The file layout of the `simple-flow` example looks like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 src/main/webapp
     index.xhtml
@@ -147,7 +147,7 @@ This example has only four Facelets pages.
 * `index.xhtml`, the start page, which contains almost nothing but a
 button that navigates to the first page of the flow:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <p><h:commandButton value="Enter Flow" action="simple-flow"/></p>
 ----
@@ -162,7 +162,7 @@ flow. It can be thought of as the home page of the flow.
 The `simple-flow.xhtml` page asks you to enter a flow-scoped value and
 provides a button that navigates to the next page of the flow:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>Value: <h:inputText id="input" value="#{flowScope.value}" /></p>
 
@@ -172,7 +172,7 @@ provides a button that navigates to the next page of the flow:
 The second page, which can have any name, displays the flow-scoped value
 and provides a button that navigates to the return page:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>Value: #{flowScope.value}</p>
 
@@ -184,7 +184,7 @@ the flow. This page displays the flow-scoped value, to show that it has
 no value outside of the flow, and provides a link that navigates to the
 `index.xhtml` page:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>Value (should be empty):
     "<h:outputText id="output" value="#{flowScope.value}" />"</p>
@@ -205,7 +205,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
@@ -227,13 +227,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf/simple-flow/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 mvn install
 ----
@@ -248,7 +248,7 @@ deploys the application to the server.
 
 1.  Enter the following URL in your web browser:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 http://localhost:8080/simple-flow
 ----
@@ -282,7 +282,7 @@ For the `checkout-module` application, the directory structure is as
 follows (there is also a `src/main/webapp/resources` directory with a
 stylesheet and an image):
 
-[source,oac_no_warn]
+[source,xml]
 ----
 src/main/webapp/
     index.xhtml
@@ -328,7 +328,7 @@ The starting page for the example, `index.xhtml`, summarizes the
 contents of a hypothetical shopping cart. It allows the user to click
 either of two buttons to enter one of the two flows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p><h:commandButton value="Check Out" action="checkoutFlow"/></p>
 ...
@@ -348,7 +348,7 @@ proceed to the next page or, in some cases, to return from the flow. The
 the join flow through the flow scope. These appear as empty quotation
 marks if you have not called the checkout flow from the join flow.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>If you called this flow from the Join flow, you can see these parameters:
     "<h:outputText value="#{flowScope.param1Value}"/>" and
@@ -360,7 +360,7 @@ Only `checkoutFlow2.xhtml` has a button to return to the previous page,
 but moving between pages is generally permitted within flows. Here are
 the buttons for c`heckoutFlow2.xhtml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p><h:commandButton value="Continue" action="checkoutFlow3"/></p>
 <p><h:commandButton value="Go Back" action="checkoutFlow"/></p>
@@ -373,7 +373,7 @@ source code file, `CheckoutFlow.java`.
 The final page of the checkout flow, `checkoutFlow4.xhtml`, contains a
 button that calls the join flow:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p><h:commandButton value="Join" action="calljoin"/></p>
 <p><h:commandButton value="Exit Flow" action="returnFromCheckoutFlow"/></p>
@@ -387,7 +387,7 @@ The two pages in the join flow, `joinFlow.xhtml` and `joinFlow2.xhtml`,
 are similar to those in the checkout flow. The second page has a button
 to call the checkout flow as well as one to return from the join flow:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p><h:commandButton value="Check Out" action="callcheckoutFlow"/></p>
 <p><h:commandButton value="Exit Flow" action="returnFromJoinFlow"/></p>
@@ -414,7 +414,7 @@ specify any outbound parameters.
 
 The configuration file for the join flow looks like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -478,7 +478,7 @@ strings.
 If you use a Java class to configure a flow, it must have the name of
 the flow. The class for the checkout flow is called `CheckoutFlow.java`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 import java.io.Serializable;
 import javax.enterprise.inject.Produces;
@@ -566,7 +566,7 @@ Each managed bean has a `getReturnValue` method that sets the value of
 the return node. For the `CheckoutFlowBean`, the return node is the
 `index.xhtml` page, specified using implicit navigation:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 public String getReturnValue() {
     return "index";
@@ -585,7 +585,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
@@ -607,13 +607,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 tut-install/examples/web/jsf/checkout-module/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 mvn install
 ----
@@ -628,7 +628,7 @@ then deploys the application to the server.
 
 1.  Enter the following URL in your web browser:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 http://localhost:8080/checkout-module
 ----

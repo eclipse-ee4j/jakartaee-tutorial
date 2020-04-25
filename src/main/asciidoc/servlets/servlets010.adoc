@@ -39,7 +39,7 @@ service methods that are running.
 The field should have synchronized access methods to increment,
 decrement, and return its value:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 public class ShutdownExample extends HttpServlet {
     private int serviceCounter = 0;
@@ -64,7 +64,7 @@ should override the `service` method. The new method should call
 `super.service` to preserve the functionality of the original `service`
 method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 protected void service(HttpServletRequest req,
                        HttpServletResponse resp)
@@ -91,7 +91,7 @@ shared resources until all the service requests have completed:
 For this notification, another field is required. The field should have
 the usual access methods:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 public class ShutdownExample extends HttpServlet {
     private boolean shuttingDown;
@@ -109,7 +109,7 @@ public class ShutdownExample extends HttpServlet {
 Here is an example of the `destroy` method using these fields to provide
 a clean shutdown:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 public void destroy() {
     /* Check to see whether there are still service methods /*
@@ -137,7 +137,7 @@ methods behave politely. Methods that might run for a long time should
 check the value of the field that notifies them of shutdowns and should
 interrupt their work, if necessary:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void doPost(...) {
     ...

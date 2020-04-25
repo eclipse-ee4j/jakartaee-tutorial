@@ -7,7 +7,7 @@ bean that can then be used by an application, such as a Jakarta Server Faces
 application. For example, you might create a bean called `Printer` into
 which you would inject one of the `Greeting` beans:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.inject.Inject;
 
@@ -21,7 +21,7 @@ public class Printer {
 This code injects the `@Default` `Greeting` implementation into the
 bean. The following code injects the `@Informal` implementation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.inject.Inject;
 

@@ -11,7 +11,7 @@ For example, you could declare an `@Informal` qualifier type and apply
 it to another class that extends the `Greeting` class. To declare this
 qualifier type, use the following code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package greetings;
 
@@ -36,7 +36,7 @@ public @interface Informal {}
 You can then define a bean class that extends the `Greeting` class and
 uses this qualifier:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package greetings;
 
@@ -54,7 +54,7 @@ If you define a bean with no qualifier, then the bean automatically has the
 qualifier `@Default`. The unannotated `Greeting` class could be declared
 as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package greetings;
 

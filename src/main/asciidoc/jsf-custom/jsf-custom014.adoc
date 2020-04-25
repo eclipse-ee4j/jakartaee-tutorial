@@ -42,7 +42,7 @@ component by nesting the `f:convertDateTime` tag within the component
 tag. Then, the page references the property with the `binding` attribute
 of the `f:convertDateTime` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{loginBean.birthDate}">
     <f:convertDateTime binding="#{loginBean.convertDate}" />
@@ -51,7 +51,7 @@ of the `f:convertDateTime` tag:
 
 The `convertDate` property would look something like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 private DateTimeConverter convertDate;
 public DateTimeConverter getConvertDate() {

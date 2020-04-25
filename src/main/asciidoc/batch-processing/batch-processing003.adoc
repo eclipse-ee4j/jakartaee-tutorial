@@ -10,7 +10,7 @@ detailed descriptions of the elements in the batch framework.
 The following job definition specifies a chunk step and a task step as
 follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <job id="simplejob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
@@ -41,7 +41,7 @@ In most cases, you have to implement a checkpoint class for
 chunk-oriented steps. The following class just keeps track of the line
 number in a text file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MyCheckpoint implements Serializable {
     private long lineNum = 0;
@@ -55,7 +55,7 @@ file from the provided checkpoint if the job was restarted. The items
 consist of each line in the text file (in more complex scenarios, the
 items are custom Java types and the input source can be a database):
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyReader")
@@ -97,7 +97,7 @@ In the following case, the item processor only converts the line to
 uppercase. More complex examples can process items in different ways or
 transform them into custom output Java types:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyProcessor")
@@ -128,7 +128,7 @@ The item writer writes the processed items to the output file. It
 overwrites the output file if no checkpoint is provided; otherwise, it
 resumes writing at the end of the file. Items are written in chunks:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyWriter")
@@ -168,7 +168,7 @@ The task step displays the length of the output file. In more complex
 scenarios, task steps perform any task that does not fit the chunk
 processing programming model:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("MyBatchlet")

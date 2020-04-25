@@ -30,7 +30,7 @@ The following topics are addressed here:
 
 ====== A Basic Select Query
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p
@@ -41,7 +41,7 @@ FROM Player p
 named `p`, omitting the optional keyword `AS`. If the `AS` keyword were
 included, the clause would be written as follows:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player AS p
 ----
@@ -54,7 +54,7 @@ Variables].
 
 ====== Eliminating Duplicate Values
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -76,7 +76,7 @@ Keyword].
 
 ====== Using Named Parameters
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -112,7 +112,7 @@ The following topics are addressed here:
 
 ====== A Simple Query with Relationships
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) t
@@ -129,7 +129,7 @@ The period in the `p.teams` expression is the navigation operator.
 +
 You may also use the `JOIN` statement to write the same query:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p JOIN p.teams t
@@ -137,7 +137,7 @@ FROM Player p JOIN p.teams t
 +
 This query could also be rewritten as:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -151,7 +151,7 @@ WHERE p.team IS NOT EMPTY
 Use the `JOIN` clause statement to navigate to a single-valued
 relationship field:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Team t JOIN t.league l
@@ -165,7 +165,7 @@ soccer or football leagues.
 
 ====== Traversing Relationships with an Input Parameter
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) AS t
@@ -193,7 +193,7 @@ Expressions].
 
 ====== Traversing Multiple Relationships
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) t
@@ -215,7 +215,7 @@ expression of the `WHERE` clause.
 
 ====== Navigating According to Related Fields
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) t
@@ -253,7 +253,7 @@ The following topics are addressed here:
 
 ====== The LIKE Expression
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p
@@ -273,7 +273,7 @@ Expressions].
 
 ====== The IS NULL Expression
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Team t
@@ -293,7 +293,7 @@ Values].
 
 ====== The IS EMPTY Expression
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p
@@ -311,7 +311,7 @@ Comparison Expressions].
 
 ====== The BETWEEN Expression
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -325,7 +325,7 @@ expressions: a persistent field (`p.salary`) and the two input
 parameters (`:lowerSalary` and `:higherSalary`). The following
 expression is equivalent to the `BETWEEN` expression:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 p.salary >= :lowerSalary AND p.salary <= :higherSalary
 ----
@@ -336,7 +336,7 @@ Expressions].
 
 ====== Comparison Operators
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p1
 FROM Player p1, Player p2
@@ -371,7 +371,7 @@ The following topics are addressed here:
 
 ====== Update Queries
 
-[source,oac_no_warn]
+[source,sql]
 ----
 UPDATE Player p
 SET p.status = 'inactive'
@@ -386,7 +386,7 @@ specified in `inactiveThresholdDate`.
 
 ====== Delete Queries
 
-[source,oac_no_warn]
+[source,sql]
 ----
 DELETE
 FROM Player p

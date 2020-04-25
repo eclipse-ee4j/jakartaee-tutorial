@@ -8,7 +8,7 @@ component at a time by grouping them together on a page. The following
 example shows how a number of components can be grouped by using the
 `f:ajax` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax>
     <h:form>
@@ -23,7 +23,7 @@ In the example, neither component is associated with any Ajax `event` or
 user input. You can associate the above components with an `event` and a
 `render` attribute as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax event="click" render="@all">
     <h:form>
@@ -39,7 +39,7 @@ fine-tune the Ajax action by adding specific events to each of the
 components, in which case Ajax functionality becomes cumulative.
 Consider the following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax event="click" render="@all">
     ...

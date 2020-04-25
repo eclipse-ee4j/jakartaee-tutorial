@@ -10,7 +10,7 @@ the `converter` XML element in the application configuration resource
 file. Here is a hypothetical `converter` configuration for
 `CreditCardConverter` from the Duke's Bookstore case study:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <converter>
     <description>

@@ -27,7 +27,7 @@ Server instance and select Stop.
 To start GlassFish Server from the command line, open a terminal window
 or command prompt and execute the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin start-domain --verbose
 ----
@@ -58,7 +58,7 @@ domain-dir`/logs/server.log`.
 To stop GlassFish Server, open a terminal window or command prompt and
 execute:
 
-[source,oac_no_warn]
+[source,java]
 ----
 asadmin stop-domain domain1
 ----

@@ -46,7 +46,7 @@ the connection open until new data becomes available.
 
 The `DukeETFServlet` class uses asynchronous processing:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/dukeetf"}, asyncSupported=true)
 public class DukeETFServlet extends HttpServlet {
@@ -60,7 +60,7 @@ provides the price and volume updates. The `send` method gets called
 once per second by the `PriceVolumeBean` to send updates and close the
 connection:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void init(ServletConfig config) {
@@ -96,7 +96,7 @@ writing a response or when there is an error. Finally, the service
 method adds the request to the request queue created in the `init`
 method. The service method is the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void doGet(HttpServletRequest request,
@@ -130,7 +130,7 @@ The `PriceVolumeBean` class is an enterprise bean that uses the timer
 service from the container to update the price and volume information
 and call the servlet's `send` method once every second:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Startup
 @Singleton
@@ -175,7 +175,7 @@ Bean Examples"] for more information on the timer service.
 The HTML page consists of a table and some JavaScript code. The table
 contains two fields referenced from JavaScript code:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>...</head>
@@ -199,7 +199,7 @@ callback method. When the server provides a response, the callback
 method updates the fields in the table and makes a new request. The
 JavaScript code is the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 var ajaxRequest;
 function updatePage() {
@@ -251,7 +251,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet
 ----
@@ -264,7 +264,7 @@ This command builds and packages the application into a WAR file
 (`dukeetf.war`) located in the `target` directory, deploys it to the
 server, and launches a web browser window with the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukeetf/
 ----
@@ -281,19 +281,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet/dukeetf/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Open a web browser window and type the following address:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukeetf/
 ----

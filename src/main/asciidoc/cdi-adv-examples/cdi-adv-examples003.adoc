@@ -38,7 +38,7 @@ The bean declares two constants that specify whether the coder type is
 the test implementation or the implementation that actually shifts
 letters:
 
-[source,oac_no_warn]
+[source,java]
 ----
     private final static int TEST = 1;
     private final static int SHIFT = 2;
@@ -50,7 +50,7 @@ The producer method, annotated with `@Produces` and `@Chosen` as well as
 request and response), returns one of the two implementations based on
 the `coderType` supplied by the user.
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Produces
     @Chosen
@@ -72,7 +72,7 @@ Finally, the managed bean injects the chosen implementation, specifying
 the same qualifier as that returned by the producer method to resolve
 ambiguities:
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Inject
     @Chosen
@@ -83,7 +83,7 @@ ambiguities:
 The Facelets page contains modified instructions and a pair of options
 whose selected value is assigned to the property `coderBean.coderType`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h2>String Encoder</h2>
         <p>Select Test or Shift, type a string and an integer, then click
@@ -132,7 +132,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi
 ----
@@ -154,13 +154,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/producermethods/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -175,7 +175,7 @@ deploys it to GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/producermethods
 ----

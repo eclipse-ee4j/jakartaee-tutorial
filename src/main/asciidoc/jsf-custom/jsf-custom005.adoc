@@ -86,7 +86,7 @@ class extends the standard component `UIOutput`. The `@FacesComponent`
 annotation registers the components with the Jakarta Server Faces
 implementation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesComponent("DemoMap")
 public class MapComponent extends UICommand {...}
@@ -98,7 +98,7 @@ public class AreaComponent extends UIOutput {...}
 The `MapComponent` class represents the component corresponding to the
 `bookstore:map` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <bookstore:map id="bookMap" 
                current="map1" 
@@ -111,7 +111,7 @@ The `MapComponent` class represents the component corresponding to the
 The `AreaComponent` class represents the component corresponding to the
 `bookstore:area` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <bookstore:area id="map1" value="#{Book201}" 
                 onmouseover="resources/images/book_201.jpg" 
@@ -164,7 +164,7 @@ components that can be rendered by a renderer or set of renderers. The
 component family is used along with the renderer type to look up
 renderers that can render the component:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public String getFamily() {
     return ("Map");
@@ -211,7 +211,7 @@ rendering for its children, it does this in the `encodeChildren` method.
 
 Here are the `encodeBegin` and `encodeEnd` methods of `MapRenderer`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void encodeBegin(FacesContext context, UIComponent component) 
@@ -278,7 +278,7 @@ a renderer if there is one, include the following lines in the encoding
 method to check whether there is a renderer associated with this
 component:
 
-[source,oac_no_warn]
+[source,java]
 ----
 if (getRendererType() != null) {
     super.encodeEnd(context);
@@ -313,7 +313,7 @@ events. The component queues the event by calling `queueEvent`.
 
 Here is the `decode` method of `MapRenderer`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void decode(FacesContext context, UIComponent component) {
@@ -362,7 +362,7 @@ supported attributes. For both components, the simple getter and setter
 methods store and retrieve the key values and state for the attributes,
 as shown in this code fragment from `AreaComponent`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 enum PropertyKeys {
     alt, coords, shape, targetImage;
@@ -383,7 +383,7 @@ attributes that are enabled to accept expressions. For example, you
 could include a method that gets the `ValueExpression` instance for the
 `immediate` attribute:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public boolean isImmediate() {
     if (this.immediateSet) {
@@ -406,7 +406,7 @@ For example, if `MapComponent` extended `UIComponentBase` instead of
 `UICommand`, it would need to provide an `action` property that returns
 and accepts a `MethodExpression` object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public MethodExpression getAction() {
     return (this.action);
@@ -439,7 +439,7 @@ which the state of the response is saved for processing on subsequent
 requests. Here is a hypothetical method from `MapComponent`, which has
 only one attribute, `current`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public Object saveState(FacesContext context) {
@@ -466,7 +466,7 @@ postback.
 Here is a hypothetical `restoreState(FacesContext, Object)` method from
 `MapComponent`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public void restoreState(FacesContext context, Object state) {
     Object values[] = (Object[]) state;

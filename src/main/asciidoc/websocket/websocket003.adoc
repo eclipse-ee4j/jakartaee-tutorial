@@ -5,7 +5,7 @@
 The following example shows how to create an endpoint by extending the
 `Endpoint` class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class EchoEndpoint extends Endpoint {
    @Override
@@ -40,7 +40,7 @@ receives a text message.
 To deploy this programmatic endpoint, use the following code in your
 Jakarta EE application:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ServerEndpointConfig.Builder.create(EchoEndpoint.class, "/echo").build();
 ----

@@ -18,7 +18,7 @@ following example, in which the string `testString` is a bean variable
 that will be set using input entered by the user. In this case, the user
 input for the field is not required.
 
-[source,oac_no_warn]
+[source,java]
 ----
 if (testString==null) {
     doSomething();
@@ -36,12 +36,10 @@ the context parameter
 `javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL` to `true`
 in the web deployment descriptor file, `web.xml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <context-param>
-    <param-name>
-        javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL
-    </param-name>
+    <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
     <param-value>true</param-value>
 </context-param>
 ----

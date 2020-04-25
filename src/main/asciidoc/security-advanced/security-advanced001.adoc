@@ -130,7 +130,7 @@ From the directory in which you want to create the key pair, run
 +
 Enter the `keytool` command all on one line:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java-home/bin/keytool -genkey -alias server-alias -keyalg RSA 
 -keypass changeit -storepass changeit -keystore keystore.jks
@@ -147,7 +147,7 @@ file `server.cer`.
 +
 Enter the `keytool` command all on one line:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java-home/bin/keytool -export -alias server-alias -storepass changeit 
 -file server.cer -keystore keystore.jks
@@ -160,7 +160,7 @@ server certificate.
 +
 Use the following parameters:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java-home/bin/keytool -import -v -trustcacerts -alias server-alias 
 -file server.cer -keystore cacerts.jks -keypass changeit 
@@ -169,7 +169,7 @@ java-home/bin/keytool -import -v -trustcacerts -alias server-alias
 +
 Information on the certificate, such as that shown next, will appear:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Owner: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US
 Issuer: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US
@@ -188,7 +188,7 @@ Trust this certificate? [no]:
 +
 The following information appears:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Certificate was added to keystore
 [Storing cacerts.jks]
@@ -242,7 +242,7 @@ Settings.
 5.  Change the following JVM options so that they point to the location
 and name of the new keystore. The current settings are shown below:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 -Djavax.net.ssl.keyStore=${com.sun.aas.instanceRoot}/config/keystore.jks
 -Djavax.net.ssl.trustStore=${com.sun.aas.instanceRoot}/config/cacerts.jks
@@ -250,7 +250,7 @@ and name of the new keystore. The current settings are shown below:
 6.  If you've changed the keystore password from its default value, you
 need to add the password option as well:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 -Djavax.net.ssl.keyStorePassword=your-new-password 
 ----

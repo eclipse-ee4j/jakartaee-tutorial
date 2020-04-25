@@ -13,7 +13,7 @@ session beans and singleton POJO beans.
 The following code snippet shows a stateless session bean and a
 singleton bean that have been converted to Jakarta REST root resource classes.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 @Path("stateless-bean")
@@ -34,7 +34,7 @@ to Jakarta REST resource classes.
 
 The following code snippet shows a Jakarta REST resource class.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employee/{id}")
 public class Employee {
@@ -50,7 +50,7 @@ a CDI bean. The beans must be proxyable, so the `Employee` class
 requires a nonprivate constructor with no parameters, and the
 `EmpDetails` class must not be `final`.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Path("/employee/{id}")
 @RequestScoped

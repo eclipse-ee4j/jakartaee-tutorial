@@ -30,7 +30,7 @@ example described in link:#GKHPU[The encoder
 Example: Using Alternatives] contains two such beans, `CoderImpl` and
 `TestCoderImpl`. The test bean is annotated as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Alternative
 public class TestCoderImpl implements Coder { ... }
@@ -38,14 +38,14 @@ public class TestCoderImpl implements Coder { ... }
 
 The full version is not annotated:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class CoderImpl implements Coder { ... }
 ----
 
 The managed bean injects an instance of the `Coder` interface:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 Coder coder;
@@ -54,7 +54,7 @@ Coder coder;
 The alternative version of the bean is used by the application only if
 that version is declared as follows in the `beans.xml` file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <beans ...>
     <alternatives>
@@ -77,7 +77,7 @@ classes in the same archive. Use the `@Priority` annotation to specify
 alternatives globally for an application that consists of multiple
 modules, as in the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Alternative
 @Priority(Interceptor.Priority.APPLICATION+10)
@@ -98,7 +98,7 @@ allows you to substitute one bean for another. However, you might want
 to make one bean override the other in all cases. Suppose you defined
 the following two beans:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Default @Asynchronous
 public class AsynchronousService implements Service { ... }
@@ -111,7 +111,7 @@ If you then declared `MockAsynchronousService` as an alternative in your
 `beans.xml` file, the following injection point would resolve to
 `MockAsynchronousService`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject Service service;
 ----
@@ -120,7 +120,7 @@ The following, however, would resolve to `AsynchronousService` rather
 than `MockAsynchronousService`, because `MockAsynchronousService` does
 not have the `@Asynchronous` qualifier:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @Asynchronous Service service;
 ----
@@ -142,7 +142,7 @@ You specialize a bean by giving it the
 `javax.enterprise.inject.Specializes` annotation. For example, you might
 declare a bean as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Specializes
 public class MockAsynchronousService extends AsynchronousService { ... }

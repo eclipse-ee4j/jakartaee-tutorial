@@ -16,7 +16,7 @@ The streaming API is the most efficient approach for parsing JSON text.
 The following code demonstrates how to create a `JsonParser` object and
 how to parse JSON data using events:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.json.Json;
 import javax.json.stream.JsonParser;
@@ -71,7 +71,7 @@ interface for more information.
 
 The output of this example is the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 START_OBJECT
 KEY_NAME firstName - VALUE_STRING Duke
@@ -101,7 +101,7 @@ END_OBJECT
 The following code demonstrates how to write JSON data to a file using
 the streaming API:
 
-[source,oac_no_warn]
+[source,java]
 ----
 FileWriter writer = new FileWriter("test.txt");
 JsonGenerator gen = Json.createGenerator(writer);

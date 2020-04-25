@@ -64,7 +64,7 @@ or a line feed.
 
 Here is the entire BNF diagram for the query language:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 QL_statement ::= select_statement | update_statement | delete_statement
 select_statement ::= select_clause from_clause [where_clause] [groupby_clause]
@@ -428,7 +428,7 @@ has been previously declared (to the left). In the following `FROM`
 clause, the variable `t` references the previously declared variable
 `p`:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player p, IN (p.teams) AS t
 ----
@@ -438,7 +438,7 @@ variable's declaration can affect the results of the query. For example,
 compare the next two queries. The following query returns all players,
 whether or not they belong to a team:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p
@@ -447,7 +447,7 @@ FROM Player p
 In contrast, because it declares the `t` identification variable, the
 next query fetches all players who belong to a team:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p, IN (p.teams) AS t
@@ -456,7 +456,7 @@ FROM Player p, IN (p.teams) AS t
 The following query returns the same results as the preceding query, but
 the `WHERE` clause makes it easier to read:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Player p
@@ -478,14 +478,14 @@ variable can range over the abstract schema type of an entity. In the
 following example, an identification variable named `p` represents the
 abstract schema named `Player`:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player p
 ----
 
 A range variable declaration can include the optional `AS` operator:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player AS p
 ----
@@ -499,7 +499,7 @@ If the query compares multiple values of the same abstract schema type,
 the `FROM` clause must declare multiple identification variables for the
 abstract schema:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player p1, Player p2
 ----
@@ -530,7 +530,7 @@ named `Player` has a relationship field called `teams`. The
 identification variable called `t` represents a single member of the
 `teams` collection:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player p, IN (p.teams) t
 ----
@@ -545,7 +545,7 @@ entities and is functionally similar to the `IN` operator.
 In the following example, the query joins over the relationship between
 customers and orders:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c
 FROM Customer c JOIN c.orders o
@@ -554,7 +554,7 @@ WHERE c.status = 1 AND o.totalPrice > 10000
 
 The `INNER` keyword is optional:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c
 FROM Customer c INNER JOIN c.orders o
@@ -564,7 +564,7 @@ WHERE c.status = 1 AND o.totalPrice > 10000
 These examples are equivalent to the following query, which uses the
 `IN` operator:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c
 FROM Customer c, IN (c.orders) o
@@ -573,7 +573,7 @@ WHERE c.status = 1 AND o.totalPrice > 10000
 
 You can also join a single-valued relationship:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Team t JOIN t.league l
@@ -584,7 +584,7 @@ A `LEFT JOIN` or `LEFT OUTER JOIN` retrieves a set of entities where
 matching values in the join condition may be absent. The `OUTER` keyword
 is optional:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c.name, o.totalPrice
 FROM CustomerOrder o LEFT JOIN o.customer c
@@ -596,7 +596,7 @@ returns a set of departments and, as a side effect, the associated
 employees of the departments, even though the employees were not
 explicitly retrieved by the `SELECT` clause:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT d
 FROM Department d LEFT JOIN FETCH d.employees
@@ -630,7 +630,7 @@ Here, the `WHERE` clause contains a `single_valued_path_expression`; the
 `p` is an identification variable, and `salary` is a persistent field of
 `Player`:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -642,7 +642,7 @@ Here, the `WHERE` clause also contains a
 `league` is a single-valued relationship field, and `sport` is a
 persistent field of `league`:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) t
@@ -653,7 +653,7 @@ Here, the `WHERE` clause contains a `collection_valued_path_expression`;
 `p` is an identification variable, and `teams` designates a
 collection-valued relationship field:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT p
 FROM Player p
@@ -695,7 +695,7 @@ collection-valued relationship field. For example, the expression
 relationship field. To reach the `sport` field, the `FROM` clause could
 define an identification variable named `t` for the `teams` field:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 FROM Player AS p, IN (p.teams) t
 WHERE t.league.sport = 'soccer'
@@ -712,7 +712,7 @@ Although usually specified, the `WHERE` clause is optional. If the
 `WHERE` clause is omitted, the query returns all values. The high-level
 syntax for the `WHERE` clause is as follows:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 where_clause ::= WHERE conditional_expression
 ----
@@ -743,7 +743,7 @@ There are four kinds of literals: string, numeric, Boolean, and enum.
 
 * String literals: A string literal is enclosed in single quotes:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 'Duke'
 ----
@@ -751,7 +751,7 @@ There are four kinds of literals: string, numeric, Boolean, and enum.
 If a string literal contains a single quote, you indicate the quote by
 using two single quotes:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 'Duke''s'
 ----
@@ -775,7 +775,7 @@ keywords are not case-sensitive.
 enum literals using the Java enum literal syntax. The enum class name
 must be specified as a fully qualified class name:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT e
 FROM Employee e
@@ -877,7 +877,7 @@ within a range of values.
 
 These two expressions are equivalent:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 p.age BETWEEN 15 AND 19
 p.age >= 15 AND p.age <= 19
@@ -885,7 +885,7 @@ p.age >= 15 AND p.age <= 19
 
 The following two expressions also are equivalent:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 p.age NOT BETWEEN 15 AND 19
 p.age < 15 OR p.age > 19
@@ -908,14 +908,14 @@ unknown.
 In the following example, the expression is `TRUE` if the country is
 `UK` , but `FALSE` if the country is `Peru`:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 o.country IN ('UK', 'US', 'France')
 ----
 
 You may also use input parameters:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 o.country IN ('UK', 'US', 'France', :country)
 ----
@@ -968,7 +968,7 @@ expression or an input parameter has a `NULL` value. Usually, the `NULL`
 comparison expression is used to test whether a single-valued
 relationship has been set:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Team t
@@ -978,7 +978,7 @@ WHERE t.league IS NULL
 This query selects all teams where the league relationship is not set.
 Note that the following query is not equivalent:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Team t
@@ -1003,7 +1003,7 @@ comparison expression has a `NULL` value.
 Here is an example that finds all orders that do not have any line
 items:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT o
 FROM CustomerOrder o
@@ -1027,7 +1027,7 @@ The `OF` keyword is optional.
 
 The following example tests whether a line item is part of an order:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT o
 FROM CustomerOrder o
@@ -1044,7 +1044,7 @@ Subqueries must be surrounded by parentheses.
 The following example finds all customers who have placed more than ten
 orders:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c
 FROM Customer c
@@ -1060,7 +1060,7 @@ or more values; otherwise, it is false.
 The following example finds all employees whose spouses are also
 employees:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT DISTINCT emp
 FROM Employee emp
@@ -1084,7 +1084,7 @@ The `ALL` and `ANY` expressions are used with the `=`, `<`, `<=`, `>`,
 The following example finds all employees whose salaries are higher than
 the salaries of the managers in the employee's department:
 +
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT emp
 FROM Employee emp
@@ -1214,7 +1214,7 @@ is `Student`, the string `kid` is returned. If the subtype is `Guardian`
 or `Staff`, the string `adult` is returned. If the entity is some other
 subtype of `Person`, the string `unknown` is returned:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p.name
 CASE TYPE(p)
@@ -1231,7 +1231,7 @@ Gold-level customers get a 20% discount, silver-level customers get a
 15% discount, bronze-level customers get a 10% discount, and everyone
 else gets a 5% discount:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 UPDATE Customer c
 SET c.discount =
@@ -1368,7 +1368,7 @@ example, the `SELECT` clause `p.teams` is invalid because `teams` is a
 collection. However, the clause in the following query is valid because
 `t` is a single element of the `teams` collection:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT t
 FROM Player p, IN (p.teams) t
@@ -1377,7 +1377,7 @@ FROM Player p, IN (p.teams) t
 The following query is an example of a query with multiple expressions
 in the `SELECT` clause:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c.name, c.country.name
 FROM customer c
@@ -1432,7 +1432,7 @@ function can be applied.
 
 The following example returns the average order quantity:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT AVG(o.quantity)
 FROM CustomerOrder o
@@ -1441,7 +1441,7 @@ FROM CustomerOrder o
 The following example returns the total cost of the items ordered by
 Roxane Coss:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT SUM(l.price)
 FROM CustomerOrder o JOIN o.lineItems l JOIN o.customer c
@@ -1450,7 +1450,7 @@ WHERE c.lastname = 'Coss' AND c.firstname = 'Roxane'
 
 The following example returns the total number of orders:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT COUNT(o)
 FROM CustomerOrder o
@@ -1459,7 +1459,7 @@ FROM CustomerOrder o
 The following example returns the total number of items that have prices
 in Hal Incandenza's order:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT COUNT(l.price)
 FROM CustomerOrder o JOIN o.lineItems l JOIN o.customer c
@@ -1486,7 +1486,7 @@ matching the `WHERE` clause. A `CustomerDetail` stores the customer name
 and customer's country name. So the query returns a `List` of
 `CustomerDetail` instances:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT NEW com.example.CustomerDetail(c.name, c.country.name)
 FROM customer c
@@ -1512,7 +1512,7 @@ objects for values or objects not returned by the `SELECT` clause. For
 example, the following query is valid because the `ORDER BY` clause uses
 the objects returned by the `SELECT` clause:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT o
 FROM Customer c JOIN c.orders o JOIN c.address a
@@ -1523,7 +1523,7 @@ ORDER BY o.quantity, o.totalcost
 The following example is not valid, because the `ORDER BY` clause uses a
 value not returned by the `SELECT` clause:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p.product_name
 FROM CustomerOrder o, IN(o.lineItems) l JOIN o.customer c
@@ -1541,7 +1541,7 @@ properties.
 The following query groups the customers by their country and returns
 the number of customers per country:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c.country, COUNT(c)
 FROM Customer c GROUP BY c.country
@@ -1556,7 +1556,7 @@ where the corresponding customers have the same status. In addition, it
 considers only customers with status `1`, `2`, or `3`, so orders of
 other customers are not taken into account:
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT c.status, AVG(o.totalPrice)
 FROM CustomerOrder o JOIN o.customer c

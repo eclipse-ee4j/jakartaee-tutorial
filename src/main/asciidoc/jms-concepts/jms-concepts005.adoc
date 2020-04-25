@@ -53,7 +53,7 @@ clients.
 To create a destination, use a `@JMSDestinationDefinition` annotation
 like the following on a class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @JMSDestinationDefinition(
     name = "java:app/jms/myappTopic",
@@ -70,7 +70,7 @@ annotation, separated by commas.
 To create a connection factory, use a `@JMSConnectionFactoryDefinition`
 annotation like the following on a class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @JMSConnectionFactoryDefinition(
     name="java:app/jms/MyConnectionFactory"
@@ -108,7 +108,7 @@ When you inject the resource into a component, use the value of the
 `name` element in the definition annotation as the value of the `lookup`
 element in the `@Resource` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "java:app/jms/myappTopic")
 private Topic topic;
@@ -162,7 +162,7 @@ JNDI name is `java:comp/DefaultJMSConnectionFactory`.
 When you use resource injection in an application client component, you
 normally declare the Messaging resource static:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "java:comp/DefaultJMSConnectionFactory")
 private static ConnectionFactory connectionFactory;
@@ -175,7 +175,7 @@ However, when you use this annotation in a session bean, a
 message-driven bean, or a web component, do not declare the resource
 static:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "java:comp/DefaultJMSConnectionFactory")
 private ConnectionFactory connectionFactory;
@@ -197,7 +197,7 @@ a `JMSContext`, you can use the `@Inject` and `@JMSConnectionFactory`
 annotations to inject a `JMSContext`. To use the default connection
 factory, use code like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 private JMSContext context1;
@@ -205,7 +205,7 @@ private JMSContext context1;
 
 To use your own connection factory, use code like the following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject
 @JMSConnectionFactory("jms/MyConnectionFactory")
@@ -314,7 +314,7 @@ supports. A bean that supports Jakarta Messaging implements the
 `javax.jms.MessageListener` interface, which means that it must provide
 an `onMessage` method with the following signature:
 
-[source,oac_no_warn]
+[source,java]
 ----
 void onMessage(Message inMessage)
 ----
@@ -394,7 +394,7 @@ For example, here is the message-driven bean used in
 link:#BNBPK[Receiving Messages Asynchronously Using a
 Message-Driven Bean]:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MessageDriven(activationConfig = {
     @ActivationConfigProperty(propertyName = "destinationLookup",
@@ -442,7 +442,7 @@ The bean class commonly injects a `MessageDrivenContext` resource, which
 provides some additional methods you can use for transaction management
 (`setRollbackOnly`, for example):
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Resource
     private MessageDrivenContext mdc;

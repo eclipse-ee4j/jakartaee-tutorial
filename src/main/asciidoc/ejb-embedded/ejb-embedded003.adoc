@@ -30,7 +30,7 @@ that acts as a client to `StandaloneBean` using the embedded container.
 view with a single business method, `returnMessage`, which returns
 "Greetings!" as a `String`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 public class StandaloneBean {
@@ -50,7 +50,7 @@ and initial context are created within the `setUp` method, which is
 annotated with `org.junit.Before` to indicate that the method should be
 executed before the test methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Before
 public void setUp() {
@@ -67,7 +67,7 @@ result using a JUnit assertion, `assertEquals`. If the string returned
 from `StandaloneBean.returnMessage` is equal to "Greetings!" the test
 passes:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Test
 public void testReturnMessage() throws Exception {
@@ -84,7 +84,7 @@ Finally, the `tearDown` method, annotated with `org.junit.After` to
 indicate that the method should be executed after all the unit tests
 have run, closes the embedded container instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @After
 public void tearDown() {
@@ -104,7 +104,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -123,13 +123,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/standalone/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----

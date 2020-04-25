@@ -187,7 +187,7 @@ The language setting in the user's web browser determines which locale
 is used. The `html` tag in `bookstoreTemplate.xhtml` retrieves the
 language setting from the `language` property of `LocaleBean`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html lang="#{localeBean.language}"
 ...
@@ -200,7 +200,7 @@ Web Applications."]
 The resource bundle is configured as follows in the `faces-config.xml`
 file:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <application>
     <resource-bundle>
@@ -223,7 +223,7 @@ retrieved using the prefix `bundle` with the key found in the
 `Messages_`locale`.properties` file, as in the following example from
 the `index.xhtml` page:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText style="font-weight:bold"
               value="#{bundle.ChooseBook}" />
@@ -231,7 +231,7 @@ the `index.xhtml` page:
 
 In `Messages.properties`, the key string is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ChooseBook=Choose a Book from our Catalog
 ----

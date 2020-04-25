@@ -125,7 +125,7 @@ The application supports the following qualifiers:
 The following code snippet from the `PaymentHandler` class of Duke's
 Store shows how the `@Paid` event is handled:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inject @Paid Event<OrderEvent> eventManager;
 
@@ -297,7 +297,7 @@ data will be displayed.
 
 `ProductBean` begins as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless
 public class ProductBean extends AbstractFacade<Product> {
@@ -502,7 +502,7 @@ There is also a gear icon on the Pending list that makes an Ajax call to
 the Order Service to refresh the list without refreshing the page. The
 code looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:commandLink>
     <h:graphicImage library="img" title="Check for new orders"

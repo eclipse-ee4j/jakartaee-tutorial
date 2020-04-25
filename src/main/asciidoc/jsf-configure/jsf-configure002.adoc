@@ -26,7 +26,7 @@ is a CDI managed bean.
 The following shows the use of the `@Named` and `@SessionScoped`
 annotations in a class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named("cart")
 @SessionScoped

@@ -23,7 +23,7 @@ but the `WHERE`, `GROUP BY`, `HAVING`, and `ORDER BY` clauses are
 optional. Here is the high-level BNF syntax of a query language select
 query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 QL_statement ::= select_clause from_clause 
   [where_clause][groupby_clause][having_clause][orderby_clause]
@@ -63,7 +63,7 @@ query into a specified order.
 Update and delete statements provide bulk operations over sets of
 entities. These statements have the following syntax:
 
-[source,oac_no_warn]
+[source,java]
 ----
 update_statement :: = update_clause [where_clause] 
 delete_statement :: = delete_clause [where_clause]

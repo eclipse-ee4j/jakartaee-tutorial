@@ -48,7 +48,7 @@ applied. The default event is `action` for
 the button component, and the event that triggers the Ajax action is a
 mouse click:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton id="submit" value="Submit">
     <f:ajax event="click" />
@@ -92,7 +92,7 @@ to the component within which the `f:ajax` tag is nested.
 The following code specifies that the `h:inputText` component with the
 `id` value of `userNo` should be executed when the button is clicked:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="userNo"
              title="Type a number from 0 to 10:"
@@ -129,7 +129,7 @@ application (see link:#BABGGIAA[The reservation
 Example Application]), a `listener` attribute is defined by an `f:ajax`
 tag, which refers to a method from the bean:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax event="change" render="total"
         listener="#{reservationBean.calculateTotal}"/>

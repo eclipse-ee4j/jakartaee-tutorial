@@ -44,7 +44,7 @@ all are executed in the same virtual machine using the same classpath.
 As a result, developers can run an application that uses the embedded
 container just like a typical Java SE application, as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 java -classpath mySessionBean.jar:containerProviderRuntime.jar:myClient.jar \
 com.example.ejb.client.Main
@@ -72,7 +72,7 @@ method is used to create and initialize an embedded container instance.
 The following code snippet shows how to create an embedded container
 that is initialized with the container provider's default settings:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EJBContainer ec = EJBContainer.createEJBContainer();
 ----
@@ -94,7 +94,7 @@ An alternate version of the `EJBContainer.createEJBContainer` method
 takes a `Map` of properties and settings for customizing the embeddable
 container instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Properties props = new Properties();
 props.setProperty(...);
@@ -121,7 +121,7 @@ a `String` array containing the module names. The embedded container
 searches the virtual machine classpath for enterprise bean modules
 matching the specified names:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Properties props = new Properties();
 props.setProperty(EJBContainer.MODULES, "mySessionBean");
@@ -133,7 +133,7 @@ classpath, set `EJBContainer.MODULES` to a `java.io.File` object or an
 array of `File` objects. Each `File` object refers to an enterprise bean JAR file,
 or a directory containing an expanded enterprise bean JAR file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Properties props = new Properties();
 File ejbJarFile = new File(...);
@@ -154,7 +154,7 @@ container:
 Call the `EJBContainer.getContext` method to retrieve the `Context`
 object:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EJBContainer ec = EJBContainer.createEJBContainer();
 Context ctx = ec.getContext();
@@ -165,7 +165,7 @@ syntax detailed in link:#GIRGN[Portable JNDI Syntax].
 For example, to obtain a reference to `MySessionBean`, a local session
 bean with a no-interface view, use the following code:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 MySessionBean msb = (MySessionBean)
             ctx.lookup("java:global/mySessionBean/MySessionBean");
@@ -180,7 +180,7 @@ To shut down the embedded container:
 1.  From the client, call the `close` method of the instance of
 `EJBContainer`.
 +
-[source,oac_no_warn]
+[source,java]
 ----
 EJBContainer ec = EJBContainer.createEJBContainer();
 ...

@@ -17,7 +17,7 @@ example, the `render` attribute identifies an output component to be
 displayed when the button component is clicked (the default event for a
 command button):
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton id="submit" value="Submit">
     <f:ajax execute="userNo" render="result" />

@@ -48,7 +48,7 @@ the other parts of the application to be performed on the client side.
 Here is an abbreviated version of the form part of the HTML page that
 the application needs to render:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <form id="j_idt13" name="j_idt13" method="post"
         action="/dukesbookstore/index.xhtml" ...>
@@ -104,7 +104,7 @@ component uses to generate the HTML page shown in the preceding section.
 It uses custom `bookstore:map` and `bookstore:area` tags to represent
 the custom components:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     ...
@@ -194,7 +194,7 @@ initialized into application scope by the managed bean creation facility
 Here is part of the managed bean declaration for the `ImageArea` bean
 corresponding to the South America hotspot:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean eager="true">
     ...
@@ -230,7 +230,7 @@ The `value` attributes of the `bookstore:area` tags refer to the beans
 in the application scope, as shown in this `bookstore:area` tag from
 `index.xhtml`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <bookstore:area id="map1" value="#{Book201}"
                 onmouseover="resources/images/book_201.jpg"
@@ -248,7 +248,7 @@ class, which needs to render the `alt`, `shape`, and `coords` values
 from the `ImageArea` object, calls the `getValue` method of
 `AreaComponent` to retrieve the `ImageArea` object.
 
-[source,oac_no_warn]
+[source,java]
 ----
 ImageArea iarea = (ImageArea) area.getValue();
 ----

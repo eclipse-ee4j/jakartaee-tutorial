@@ -11,17 +11,16 @@ which has already restricted an example page, `/user/foo.xhtml`, to logged-in
 users with the example role, `USER`, on the example URL pattern, `/user/*`, in
 `web.xml`, see below:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <security-constraint>
-<web-resource-collection>
-<web-resource-name>Restrict access to role USER.
-</web-resource-name>
-<url-pattern>/user/*</url-pattern>
-</web-resource-collection>
-<auth-constraint>
-<role-name>USER</role-name>
-</auth-constraint>
+    <web-resource-collection>
+        <web-resource-name>Restrict access to role USER.</web-resource-name>
+        <url-pattern>/user/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>USER</role-name>
+    </auth-constraint>
 </security-constraint>
 ----
 
@@ -29,18 +28,17 @@ If the page, `/user/foo.xhtml`, contains `<f:websocket channel="foo">`, then you
 must add a restriction on the push handshake request URL pattern of
 `/javax.faces.push/foo`, as shown next:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <security-constraint>
-<web-resource-collection>
-<web-resource-name>Restrict access to role USER.
-</web-resource-name>
-<url-pattern>/user/*</url-pattern>
-<url-pattern>/javax.faces.push/foo</url-pattern>
-</web-resource-collection>
-<auth-constraint>
-<role-name>USER</role-name>
-</auth-constraint>
+    <web-resource-collection>
+        <web-resource-name>Restrict access to role USER.</web-resource-name>
+        <url-pattern>/user/*</url-pattern>
+        <url-pattern>/javax.faces.push/foo</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>USER</role-name>
+    </auth-constraint>
 </security-constraint>
 ----
 

@@ -22,7 +22,7 @@ link:#BNADK[Starting and Stopping Apache Derby]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies
 ----
@@ -49,7 +49,7 @@ Server]), as well as the database server (see
 link:#BNADK[Starting and Stopping Apache Derby]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/case-studies/dukes-forest/
 ----
@@ -58,7 +58,7 @@ populate the database, build all the subprojects, assemble them into JAR
 and WAR files, and deploy the `dukes-payment`, `dukes-store,` and
 `dukes-shipment` applications:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----

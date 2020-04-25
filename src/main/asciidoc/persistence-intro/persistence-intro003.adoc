@@ -30,7 +30,7 @@ Abstract entities can be queried just like concrete entities. If an
 abstract entity is the target of a query, the query operates on all the
 concrete subclasses of the abstract entity:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public abstract class Employee {
@@ -63,7 +63,7 @@ classes.
 Mapped superclasses are specified by decorating the class with the
 annotation `javax.persistence.MappedSuperclass`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @MappedSuperclass
 public class Employee {
@@ -126,7 +126,7 @@ The strategy is configured by setting the `strategy` element of
 `@Inheritance` to one of the options defined in the
 `javax.persistence.InheritanceType` enumerated type:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public enum InheritanceType {
     SINGLE_TABLE,
@@ -183,7 +183,7 @@ the type of the discriminator column in the database by setting the
 `discriminatorType` element of `@DiscriminatorColumn` to one of the
 defined types. `DiscriminatorType` is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public enum DiscriminatorType {
     STRING,

@@ -111,14 +111,14 @@ mandatory. As is always the case when you declare an XML namespace, you
 can specify any prefix in your Facelets page. For example, you can
 declare the prefix for the composite component tag library as
 
-[source,oac_no_warn]
+[source,java]
 ----
 xmlns:composite="http://java.sun.com/jsf/composite"
 ----
 
 instead of as
 
-[source,oac_no_warn]
+[source,java]
 ----
 xmlns:cc="http://java.sun.com/jsf/composite"
 ----

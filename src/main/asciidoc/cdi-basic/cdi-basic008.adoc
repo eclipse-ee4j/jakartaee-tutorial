@@ -79,7 +79,7 @@ context.
 The web application for the `Printer` bean will use a simple request and
 response mechanism, so the managed bean can be annotated as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

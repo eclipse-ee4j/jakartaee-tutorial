@@ -53,7 +53,7 @@ configuration.
 Here is an example managed bean configuration from the Duke's Bookstore
 case study:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean eager="true">
     <managed-bean-name>Book201</managed-bean-name>
@@ -100,7 +100,7 @@ In the following example, the `newsletters` managed bean, representing a
 represents a set of `SelectItem` objects. Each `SelectItem` object is in
 turn configured as a managed bean with properties:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean>
     <managed-bean-name>newsletters</managed-bean-name>
@@ -201,7 +201,7 @@ returned if you were to call `valueOf(Class, String)` on `enum`, where
 subelement. For example, suppose the managed bean property is the
 following:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public enum Suit { Hearts, Spades, Diamonds, Clubs }
  ...
@@ -212,7 +212,7 @@ Assuming you want to configure this property in the application
 configuration resource file, the corresponding `managed-property`
 element looks like this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-property>
     <property-name>Suit</property-name>
@@ -247,7 +247,7 @@ parameter the name `defaultAreaCode` and the value `650`.
 Next, write a `managed-bean` declaration that configures a property that
 references the parameter:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean>
     <managed-bean-name>customer</managed-bean-name>
@@ -264,7 +264,7 @@ references the parameter:
 To access the area code at the time the page is rendered, refer to the
 property from the `area` component tag's `value` attribute:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id=area value="#{customer.areaCode}"
 ----
@@ -285,7 +285,7 @@ Each of the `map-entry` elements must contain a `key` element and either
 a `null-value` or `value` element. Here is an example that uses the
 `map-entries` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean>
     ...
@@ -310,7 +310,7 @@ default, all the keys and values are converted to `String`. If you want
 to specify a different type for the keys in the map, embed the
 `key-class` element just inside the `map-entries` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <map-entries>
     <key-class>java.math.BigDecimal</key-class>
@@ -326,7 +326,7 @@ converted to a `BigDecimal`, because it is a `String`.
 If you want to specify a different type for all the values in the map,
 include the `value-class` element after the `key-class` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <map-entries>
     <key-class>int</key-class>
@@ -353,7 +353,7 @@ The `list-entries` element is used to initialize the values of an array
 or `List` property. Each individual value of the array or `List` is
 initialized using a `value` or `null-value` element. Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean>
     ...
@@ -393,7 +393,7 @@ representing the mailing address and the other representing the street
 address. This declaration results in a tree of beans with `CustomerBean`
 as its root and the two `AddressBean` objects as children.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean>
     <managed-bean-name>customer</managed-bean-name>

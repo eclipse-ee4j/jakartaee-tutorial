@@ -39,7 +39,7 @@ getter and setter methods for the payload components: a `String` for the
 payment type, a `BigDecimal` for the payment amount, and a `Date` for
 the timestamp.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class PaymentEvent implements Serializable {
 
@@ -72,7 +72,7 @@ interception of its getter and setter methods.
 The event listener, `listener.PaymentHandler`, contains two observer
 methods, one for each of the two event types:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Logged
 @SessionScoped
@@ -114,7 +114,7 @@ The `billpayment` example contains two Facelets pages, `index.xhtml` and
 the very simple `response.xhtml`. The body of `index.xhtml` looks like
 this:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h:body>
         <h3>Bill Payment Options</h3>
@@ -153,7 +153,7 @@ the Reset button's action is set to the `paymentBean.reset` method.
 The `payment.PaymentBean` managed bean uses qualifiers to differentiate
 between the two kinds of payment event:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @SessionScoped
@@ -175,7 +175,7 @@ package along with `PaymentBean`.
 Next, the `PaymentBean` defines the properties it obtains from the
 Facelets page and will pass on to the event:
 
-[source,oac_no_warn]
+[source,java]
 ----
     public static final int DEBIT = 1;
     public static final int CREDIT = 2;
@@ -199,7 +199,7 @@ constructor for the `PaymentEvent` and calling the event's setter
 methods, using the bean properties as arguments. It then fires the
 event.
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Logged
     public String pay() {
@@ -233,7 +233,7 @@ The `PaymentBean` class also contains a `reset` method that empties the
 value field on the `index.xhtml` page and sets the payment option to the
 default:
 
-[source,oac_no_warn]
+[source,java]
 ----
     @Logged
     public void reset() {
@@ -247,7 +247,7 @@ In this bean, only the `pay` and `reset` methods are intercepted.
 The `response.xhtml` page displays the amount paid. It uses a `rendered`
 expression to display the payment method:
 
-[source,oac_no_warn]
+[source,xml]
 ----
     <h:body>
         <h:form>
@@ -274,7 +274,7 @@ The interceptor class, `LoggedInterceptor`, and its interceptor binding,
 `Logged`, are both defined in the `interceptor` package. The `Logged`
 interceptor binding is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Inherited
 @InterceptorBinding
@@ -286,7 +286,7 @@ public @interface Logged {
 
 The `LoggedInterceptor` class looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Logged
 @Interceptor
@@ -317,7 +317,7 @@ of the method being invoked as well as its class.
 
 To enable the interceptor, the `beans.xml` file defines it as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <interceptors>
     <class>jakarta.tutorial.billpayment.interceptor.LoggedInterceptor</class>
@@ -354,7 +354,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi
 ----
@@ -376,13 +376,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/billpayment/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -397,7 +397,7 @@ it to GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/billpayment
 ----
@@ -406,7 +406,7 @@ http://localhost:8080/billpayment
 The amount can contain up to 10 digits and include up to two decimal
 places. For example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 9876.54
 ----
@@ -415,7 +415,7 @@ places. For example:
 The Bill Payment: Result page opens, displaying the amount paid and the
 method of payment:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Amount Paid with Credit Card: $9,876.34
 ----
@@ -430,7 +430,7 @@ tab. Otherwise, view domain-dir`/logs/server.log`.
 The output from each interceptor appears in the log, followed by the
 additional logger output defined by the constructor and methods:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 INFO: Entering method: pay in class billpayment.payment.PaymentBean
 INFO: PaymentHandler created.

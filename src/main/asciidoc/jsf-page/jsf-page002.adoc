@@ -208,7 +208,7 @@ component's data is updated when certain buttons are clicked. The
 `quantity` field for each book does not set the `immediate` attribute,
 so the value is `false` (the default).
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="quantity"
              size="4"
@@ -223,7 +223,7 @@ The `immediate` attribute of the Continue Shopping hyperlink is set to
 `true`, while the `immediate` attribute of the Update Quantities
 hyperlink is set to `false`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandLink id="continue"
                action="bookcatalog"
@@ -252,13 +252,10 @@ attribute to determine whether the component will be rendered. For
 example, the `commandLink` component in the following section of a page
 is not rendered if the cart contains no items:
 
-[source,oac_no_warn]
+[source,xml]
 ----
-<h:commandLink id="check"
-    ...
-    rendered="#{cart.numberOfItems > 0}">
-    <h:outputText
-        value="#{bundle.CartCheck}"/>
+<h:commandLink id="check" ... rendered="#{cart.numberOfItems > 0}">
+    <h:outputText value="#{bundle.CartCheck}"/>
 </h:commandLink>
 ----
 
@@ -299,7 +296,7 @@ A component tag can instead refer to a CSS class.
 The following example shows the use of a `dataTable` tag that references
 the style class `list-background`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:dataTable id="items"
              ...
@@ -340,7 +337,7 @@ structure to Jakarta Server Faces web pages.
 The following is an example of an XHTML page using the usual head and
 body markup tags:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -357,7 +354,7 @@ body markup tags:
 The following is an example of an XHTML page using `h:head` and `h:body`
 tags:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -399,7 +396,7 @@ image:jakartaeett_dt_065_frmcmpnt.png[
 The `h:form` tag represents the form on the page and encloses all the
 components that display or collect data from the user, as shown here:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
 ... other Jakarta Server Faces tags and other content...
@@ -562,7 +559,7 @@ tag is written in a similar way.
 
 Here is an example of an `h:inputText` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name"
              label="Customer Name"
@@ -609,10 +606,9 @@ The `h:inputSecret` tag renders an `<input type="password">` HTML tag.
 When the user types a string into this field, a row of asterisks is
 displayed instead of the text entered by the user. Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
-<h:inputSecret redisplay="false"
-               value="#{loginBean.password}" />
+<h:inputSecret redisplay="false" value="#{loginBean.password}" />
 ----
 
 In this example, the `redisplay` attribute is set to `false`. This will
@@ -627,7 +623,7 @@ The `h:outputLabel` tag is used to attach a label to a specified input
 field for the purpose of making it accessible. The following page uses
 an `h:outputLabel` tag to render the label of a check box:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectBooleanCheckbox id="fanClub"
                          rendered="false"
@@ -656,7 +652,7 @@ The following code snippet shows what the previous code snippet would
 look like if it used the `value` attribute of the `h:outputLabel` tag to
 specify the text of the label:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectBooleanCheckbox id="fanClub"
                          rendered="false"
@@ -680,7 +676,7 @@ specified by the `h:outputLink` tag's `value` attribute to open and do
 not want any processing to be performed when the user clicks the link.
 Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputLink value="javadocs">
     Documentation for this demo
@@ -699,7 +695,7 @@ The `h:outputFormat` tag allows display of concatenated messages as a
 `java.text.MessageFormat`. Here is an example of an `h:outputFormat`
 tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputFormat value="Hello, {0}!">
     <f:param value="#{hello.name}"/>
@@ -712,7 +708,7 @@ value of the parameter replaces the `{0}` in the sentence. If the value
 of `"#{hello.name}"` is "Bill", the message displayed in the page is as
 follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Hello, Bill!
 ----
@@ -724,7 +720,7 @@ one message, make sure that you put the `f:param` tags in the proper
 order so that the data is inserted in the correct place in the message.
 Here is the preceding example modified with an additional parameter:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputFormat value="Hello, {0}! You are visitor number {1} to the page.">
     <f:param value="#{hello.name}" />
@@ -738,7 +734,7 @@ of the managed bean `bean` keeps track of visitors to the page. This is
 an example of a value-expression-enabled tag attribute accepting an EL
 expression. The message displayed in the page is now as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Hello, Bill! You are visitor number 10 to the page.
 ----
@@ -781,7 +777,7 @@ If you are using an `h:commandButton` component tag, the data from the
 current page is processed when a user clicks the button, and the next
 page is opened. Here is an example of the `h:commandButton` tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton value="Submit"
                  action="#{cashierBean.submit}"/>
@@ -807,7 +803,7 @@ An `h:commandLink` tag must include a nested `h:outputText` tag, which
 represents the text that the user clicks to generate the event. Here is
 an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandLink id="Duke" action="bookstore">
     <f:actionListener
@@ -818,7 +814,7 @@ an example:
 
 This tag will render HTML that looks something like the following:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <a id="_idt16:Duke" href="#"
      onclick="mojarra.jsfcljs(document.getElementById('j_idt16'),
@@ -846,7 +842,7 @@ technology.
 In a Jakarta Server Faces application, use the `h:graphicImage` tag to
 render an image on a page:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:graphicImage id="mapImage" url="/resources/images/book_all.jpg"/>
 ----
@@ -860,7 +856,7 @@ Alternatively, you can use the facility described in
 link:#GIRGM[Web Resources] to point to the image
 location. Here are two examples:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:graphicImage id="mapImage"
                 name="book_all.jpg"
@@ -875,7 +871,7 @@ You can use similar syntax to refer to an image in a style sheet. The
 following syntax in a style sheet specifies that the image is to be
 found at `resources/img/top-background.jpg`:
 
-[source,oac_no_warn]
+[source,css]
 ----
 header {
     position: relative;
@@ -925,7 +921,7 @@ as its last child.
 
 Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:panelGrid columns="2"
              headerClass="list-header"
@@ -968,7 +964,7 @@ components in which a customer inputs personal information. This
 `h:panelGrid` tag uses style sheet classes to format the table. The
 following code shows the `list-header` definition:
 
-[source,oac_no_warn]
+[source,css]
 ----
 .list-header {
     background-color: #ffffff;
@@ -1042,7 +1038,7 @@ technology provides for representing a Boolean state.
 Here is an example that shows how to use the `h:selectBooleanCheckbox`
 tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectBooleanCheckbox id="fanClub"
                          rendered="false"
@@ -1079,17 +1075,12 @@ sometimes known as a drop-down list or a combo box. The following code
 snippet shows how the `h:selectOneMenu` tag is used to allow the user to
 select a shipping method:
 
-[source,oac_no_warn]
+[source,xml]
 ----
-<h:selectOneMenu id="shippingOption"
-                 required="true"
-                 value="#{cashierBean.shippingOption}">
-    <f:selectItem itemValue="2"
-                  itemLabel="#{bundle.QuickShip}"/>
-    <f:selectItem itemValue="5"
-                  itemLabel="#{bundle.NormalShip}"/>
-    <f:selectItem itemValue="7"
-                  itemLabel="#{bundle.SaverShip}"/>
+<h:selectOneMenu id="shippingOption" required="true" value="#{cashierBean.shippingOption}">
+    <f:selectItem itemValue="2" itemLabel="#{bundle.QuickShip}"/>
+    <f:selectItem itemValue="5" itemLabel="#{bundle.NormalShip}"/>
+    <f:selectItem itemValue="7" itemLabel="#{bundle.SaverShip}"/>
  </h:selectOneMenu>
 ----
 
@@ -1138,7 +1129,7 @@ for scrolling through any remaining items in the list.
 The `h:selectManyCheckbox` tag renders a group of check boxes, with each
 check box representing one value that can be selected:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectManyCheckbox id="newslettercheckbox"
                       layout="pageDirection"
@@ -1205,7 +1196,7 @@ The following example from link:#BNASI[Displaying Components for
 Selecting Multiple Values] shows how to use the `h:selectManyCheckbox`
 tag:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectManyCheckbox id="newslettercheckbox"
                       layout="pageDirection"
@@ -1230,7 +1221,7 @@ The `f:selectItem` tag represents a single item in a list of items. Here
 is the example from link:#BNASH[Displaying a Menu Using the
 h:selectOneMenu Tag] once again:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:selectOneMenu id="shippingOption"
                  required="true"
@@ -1267,7 +1258,7 @@ bound to the `specialOffer` property of `CashierBean`, a
 `UISelectBoolean` value, you can call the `isSelected` method of the
 property to determine whether to render a thank-you message:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{bundle.DukeFanClubThanks}"
               rendered="#{cashierBean.specialOffer.isSelected()}"/>
@@ -1279,7 +1270,7 @@ link:#BNASI[Displaying Components for Selecting Multiple Values]. To do
 so, you can retrieve the value of the `newsletters` property, the
 `String` array that holds the selected items:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{bundle.NewsletterThanks}"
               rendered="#{!empty cashierBean.newsletters}"/>
@@ -1306,7 +1297,7 @@ as an HTML table. The `h:column` tag represents a column of data within
 the table, iterating over each record in the data source, which is
 displayed as a row. Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:dataTable id="items"
              captionClass="list-caption
@@ -1486,7 +1477,7 @@ tag displays the error messages for the entire page.
 Here is an example `h:message` tag from the `guessnumber-jsf`
 application:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>
     <h:inputText id="userNo"
@@ -1565,7 +1556,7 @@ To create a bookmarkable URL, use an `h:link` or `h:button` tag. Both of
 these tags can generate a link based on the `outcome` attribute of the
 component. For example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:link outcome="somepage" value="Message" />
 ----
@@ -1575,7 +1566,7 @@ The `h:link` tag will generate a URL link that points to the
 generated from the preceding tag, assuming that the application name is
 `simplebookmark`:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <a href="/simplebookmark/somepage.xhtml>Message</a>
 ----
@@ -1594,7 +1585,7 @@ an `f:param` tag to specify the name and value to be passed. Here the
 `h:link` tag specifies the outcome page as `personal.xhtml` and provides
 a parameter named `Result` whose value is a managed bean property:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:body>
     <h:form>
@@ -1616,7 +1607,7 @@ If the `includeViewParams` attribute is set on the component, the view
 parameters are added to the hyperlink. Therefore, the resulting URL will
 look something like this if the value of `hello.name` is `Timmy`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/bookmarks/personal.xhtml?Result=Timmy
 ----
@@ -1626,7 +1617,7 @@ On the outcome page, specify the core tags `f:metadata` and
 parameters are declared as part of `f:metadata` for a page, as shown in
 the following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:metadata>
     <f:viewParam name="Result" value="#{hello.name}"/>
@@ -1635,7 +1626,7 @@ the following example:
 
 This allows you to specify the bean property value on the page:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:outputText value="Howdy, #{hello.name}!" />
 ----
@@ -1688,7 +1679,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf
 ----
@@ -1709,13 +1700,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/jsf/bookmarks/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -1730,7 +1721,7 @@ deploys the WAR file to your GlassFish Server instance.
 
 1.  Enter the following URL in your web browser:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/bookmarks
 ----
@@ -1764,7 +1755,7 @@ documentation].
 For the `h:outputScript` tag, the `name` and `target` attributes define
 where the output of a resource may appear. Here is an example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
@@ -1786,7 +1777,7 @@ sheet `hello.css` is rendered in the head element of the page, and the
 
 Here is the HTML generated by the preceding code:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -1809,7 +1800,7 @@ If you set the `target` attribute for the `h:outputScript` tag, the
 incoming GET request provides the location parameter. Here is an
 example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
@@ -1833,7 +1824,7 @@ style sheet and the script will be rendered in the `head` element.
 
 The HTML generated by the preceding code is as follows:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>

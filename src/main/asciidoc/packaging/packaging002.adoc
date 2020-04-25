@@ -63,7 +63,7 @@ enterprise bean, a credit card–processing enterprise bean, and a Java
 servlet front end. The shopping cart bean exposes a local, no-interface
 view and is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package com.example.cart;
 
@@ -74,7 +74,7 @@ public class CartBean { ... }
 The credit card–processing bean is packaged within its own JAR file,
 `cc.jar`, exposes a local, no-interface view, and is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package com.example.cc;
 
@@ -86,7 +86,7 @@ The servlet, `com.example.web.StoreServlet`, handles the web front end
 and uses both `CartBean` and `CreditCardBean`. The WAR module layout for
 this application is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 WEB-INF/classes/com/example/cart/CartBean.class
 WEB-INF/classes/com/example/web/StoreServlet

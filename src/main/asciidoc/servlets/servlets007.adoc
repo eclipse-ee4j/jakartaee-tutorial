@@ -30,7 +30,7 @@ content or copyright information, in the response returned from a web
 component. To include another resource, invoke the `include` method of a
 `RequestDispatcher` object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 include(request, response);
 ----
@@ -62,7 +62,7 @@ method of a `RequestDispatcher`. When a request is forwarded, the
 request URL is set to the path of the forwarded page. The original URI
 and its constituent parts are saved as the following request attributes:
 
-[source,oac_no_warn]
+[source,java]
 ----
 javax.servlet.forward.request_uri
 javax.servlet.forward.context_path

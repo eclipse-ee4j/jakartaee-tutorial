@@ -12,7 +12,7 @@ An application can use date/time and number converters to format dates
 and numbers in a locale-sensitive manner. For example, a shipping date
 could be converted as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:outputText value="#{cashier.shipDate}">
     <f:convertDateTime dateStyle="full"/>

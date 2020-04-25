@@ -34,7 +34,7 @@ The following example shows a tag whose `value` attribute references an
 immediate evaluation expression that updates the quantity of books
 retrieved from the backing bean named `catalog`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <h:outputText value="${catalog.bookQuantity}" />
 ----
@@ -59,7 +59,7 @@ represents a field component into which a user enters a value. The
 `h:inputText` tag's `value` attribute references a deferred evaluation
 expression that points to the `name` property of the `customer` bean:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name" value="#{customer.name}" />
 ----

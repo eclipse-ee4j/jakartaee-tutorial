@@ -28,7 +28,7 @@ will ever happen. Expressions whose evaluation can be deferred use the
 the expression is an lvalue expression, it can be assigned a new value.
 Consider the following two value expressions:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${customer.name}
 
@@ -64,7 +64,7 @@ To refer to these objects, you write an expression using a variable that
 is the name of the object. The following expression references a managed
 bean called `customer`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${customer}
 ----
@@ -79,7 +79,7 @@ An `enum` constant is a special case of a static field, and you can
 reference such a constant directly. For example, consider this `enum`
 class:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 public enum Suit {hearts, spades, diamonds, clubs}
 ----
@@ -87,7 +87,7 @@ public enum Suit {hearts, spades, diamonds, clubs}
 In the following expression, in which `mySuit` is an instance of `Suit`,
 you can compare `suit.hearts` to the instance:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${mySuit == suit.hearts}
 ----
@@ -111,7 +111,7 @@ expression, not just literals.
 You can use double or single quotes for the `String` literal. You can
 also combine the `[]` and `.` notations, as shown here:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${customer.address["street"]}
 ----
@@ -119,7 +119,7 @@ ${customer.address["street"]}
 You can reference a static field or method using the syntax
 classname.field, as in the following example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Boolean.FALSE
 ----
@@ -134,7 +134,7 @@ expression that can be converted to `int`. The following example
 references the first of the customer orders, assuming that
 `customer.orders` is a `List`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${customer.orders[1]}
 ----
@@ -144,7 +144,7 @@ the `Map`. If the key is a `String` literal, the dot (`.)` notation can
 be used. Assuming that `customer.orders` is a `Map` with a `String` key,
 the following examples reference the item with the key `"socks"`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ${customer.orders["socks"]}
 
@@ -196,7 +196,7 @@ expressions. In the following example, which is a modified tag from the
 `guessnumber` application, a random number is provided as an argument
 rather than from user input to the method call:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText value="#{userNumberBean.userNumber('5')}">
 ----
@@ -206,7 +206,7 @@ The preceding example uses a value expression.
 Consider the following example of a Jakarta Server Faces component tag that
 uses a method expression:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton action="#{trader.buy}" value="buy"/>
 ----
@@ -215,7 +215,7 @@ The EL expression `trader.buy` calls the `trader` bean's `buy` method.
 You can modify the tag to pass on a parameter. Here is the revised tag
 in which a parameter is passed:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton action="#{trader.buy('SOMESTOCK')}" value="buy"/>
 ----
@@ -236,7 +236,7 @@ The value of an expression in static text is computed and inserted into
 the current output. Here is an example of an expression embedded in
 static text:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag>
     some text ${expr} some text
@@ -247,7 +247,7 @@ A tag attribute can be set in the following ways.
 
 * With a single expression construct:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="${expr}"/>
 
@@ -258,7 +258,7 @@ These expressions are evaluated, and the result is converted to the
 attribute's expected type.
 * With one or more expressions separated or surrounded by text:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="some${expr}${expr}text${expr}"/>
 
@@ -272,7 +272,7 @@ text. The resulting `String` is then converted to the attribute's
 expected type.
 * With text only:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="sometext"/>
 ----
@@ -284,14 +284,14 @@ You can use the string concatenation operator += to create a single
 expression from what would otherwise be a composite expression. For
 example, you could change the composite expression
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="sometext ${expr} moretext"/>
 ----
 
 to
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="${sometext += expr += moretext}"/>
 ----
@@ -302,7 +302,7 @@ does not match the expected type exactly, a type conversion will be
 performed. For example, the expression `${1.2E4}` provided as the value
 of an attribute of type `float` will result in the following conversion:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 Float.valueOf("1.2E4").floatValue()
 ----
@@ -321,7 +321,7 @@ that can be invoked to perform some processing for the component. These
 methods are necessary for handling events that the components generate
 and for validating component data, as shown in this example:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:form>
     <h:inputText id="name"
@@ -351,7 +351,7 @@ following ways:
 * With a single expression construct, where bean refers to a JavaBeans
 component and method refers to a method of the JavaBeans component:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="#{bean.method}"/>
 ----
@@ -361,7 +361,7 @@ the tag handler. The method represented by the method expression can
 then be invoked later.
 * With text only:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <some:tag value="sometext"/>
 ----
@@ -403,7 +403,7 @@ The body, to the right of the operator, must be an EL expression. The
 lambda parameters are enclosed in parentheses; the parentheses can be
 omitted if there is only one parameter. Here are some examples:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 x -> x+1
 (x, y) -> x + y
@@ -413,7 +413,7 @@ x -> x+1
 A lambda expression behaves like a function. It can be invoked
 immediately. For example, the following invocation evaluates to 7:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 ((x, y) -> x + y)(3, 4)
 ----
@@ -423,7 +423,7 @@ semicolon operators. For example, the following code assigns the
 previous lambda expression to a variable and then invokes it. The result
 is again 7:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 v = (x, y) -> x + y; v(3, 4)
 ----

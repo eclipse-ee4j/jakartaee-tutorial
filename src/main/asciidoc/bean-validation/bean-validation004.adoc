@@ -6,7 +6,7 @@ Jakarta Bean Validation constraints may be placed on the parameters of nonstatic
 methods and constructors and on the return values of nonstatic methods.
 Static methods and constructors will not be validated.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class Employee {
 ...
@@ -44,7 +44,7 @@ in Type Hierarchies] for more information.
 Constraints that apply to multiple parameters are called cross-parameter
 constraints, and may be applied at the method or constructor level.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ConsistentPhoneParameters
 @NotNull
@@ -85,7 +85,7 @@ validation constraint.
 [[validating_type_arguments_of_parameterized_types]]
 In Jakarta Bean Validation 2.0, you can apply constraints to the type arguments of parameterized types. For example: `List<@NotNull Long> numbers;`
 Constraints can be applied to elements of container types such as `List`, `Map`, `Optional`, and others.
-[source,oac_no_warn]
+[source,java]
 ----
 List<@Email String> emails;
 public Map<@NotNull String, @USPhoneNumber String> getAddressesByType() { }
@@ -112,7 +112,7 @@ starts at 0 for the first parameter of the method or constructor.
 To validate the return value for a method, you can apply constraints
 directly to the method or constructor declaration.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NotNull
 public Employee getEmployee() { ... }
@@ -126,7 +126,7 @@ annotation definition with the default set to either
 `ConstraintTarget.RETURN_VALUE` or `ConstraintTarget.PARAMETERS` to
 explicitly set the target of the validation constraint.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Manager(validationAppliesTo=ConstraintTarget.RETURN_VALUE)
 public Employee getManager(Employee employee) { ... }

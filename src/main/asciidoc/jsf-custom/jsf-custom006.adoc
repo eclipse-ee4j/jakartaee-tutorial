@@ -26,7 +26,7 @@ component class. The `AreaComponent` class delegates encoding to the
 
 The renderer class begins with a `@FacesRenderer` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @FacesRenderer(componentFamily = "Area", rendererType = "DemoArea")
 public class AreaRenderer extends Renderer {
@@ -44,7 +44,7 @@ Suppose that the `area` tag currently being rendered has a `value`
 attribute value of `"book203"`. The following line from `encodeEnd` gets
 the value of the attribute `"book203"` from the `FacesContext` instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ImageArea ia = (ImageArea)area.getValue();
 ----
@@ -60,7 +60,7 @@ accessor methods and passing the returned values to the `ResponseWriter`
 instance, as shown by these lines of code, which write out the shape and
 coordinates:
 
-[source,oac_no_warn]
+[source,java]
 ----
 writer.startElement("area", area);
 writer.writeAttribute("alt", iarea.getAlt(), "alt");
@@ -73,7 +73,7 @@ The `encodeEnd` method also renders the JavaScript for the `onmouseout`,
 provide only the path to the images that are to be loaded during an
 `onmouseover` or `onmouseout` action:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <bookstore:area id="map3" value="#{Book203}" 
                 onmouseover="resources/images/book_203.jpg" 
@@ -87,7 +87,7 @@ JavaScript that `AreaRenderer` generates for the `onclick` action sets
 the value of the hidden field to the value of the current area's
 component ID and submits the page.
 
-[source,oac_no_warn]
+[source,java]
 ----
 sb = new StringBuffer("document.forms[0]['").append(targetImageId).
         append("'].src='");

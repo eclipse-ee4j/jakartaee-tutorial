@@ -11,7 +11,7 @@ of the entity class.
 The following entity class, `com.example.Pet`, has four persistent
 fields: `id`, `name`, `color`, and `owners`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package com.example;
 ...
@@ -29,7 +29,7 @@ public class Pet {
 
 The corresponding Metamodel class is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package com.example;
 ...
@@ -53,7 +53,7 @@ the managed entity classes and their persistent state and relationships.
 Metamodel classes that correspond to entity classes are of the following
 type:
 
-[source,oac_no_warn]
+[source,java]
 ----
 javax.persistence.metamodel.EntityType<T>
 ----
@@ -74,7 +74,7 @@ entity type to the instance's `entity` method
 The following code snippet shows how to obtain the `Pet` entity's
 metamodel class by calling `Root<T>.getModel`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -88,7 +88,7 @@ metamodel class by first obtaining a metamodel instance by using
 `EntityManager.getMetamodel` and then calling `entity` on the metamodel
 instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 Metamodel m = em.getMetamodel();

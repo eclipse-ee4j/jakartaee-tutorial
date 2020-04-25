@@ -174,7 +174,7 @@ The `SetupOffice.java` class, also under `clientmdbentity-ejb`, is an
 entity class. The entity and the message-driven beans are packaged
 together in an enterprise bean JAR file. The entity class is declared as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Entity
 public class SetupOffice implements Serializable {
@@ -186,7 +186,7 @@ and setter methods for the employee ID, name, office number, and
 equipment list. The getter method for the employee ID has the `@Id`
 annotation to indicate that this field is the primary key:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Id
 public String getEmployeeId() {
@@ -203,7 +203,7 @@ methods.
 The `persistence.xml` file for the entity specifies the most basic
 settings:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1"
@@ -252,7 +252,7 @@ link:#BNADK[Starting and Stopping Apache Derby]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/clientmdbentity
 ----
@@ -287,14 +287,14 @@ Server]), as well as the database server (see
 link:#BNADK[Starting and Stopping Apache Derby]).
 2.  Go to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/jms/clientmdbentity/
 ----
 3.  To compile the source files and package, deploy, and run the
 application, enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -320,7 +320,7 @@ The output in the NetBeans IDE output window or in the terminal window
 looks something like this (preceded by application client container
 output and Maven output):
 
-[source,oac_no_warn]
+[source,java]
 ----
 SENDER: Setting hire ID to 50, name Bill Tudor, position Programmer
 SENDER: Setting hire ID to 51, name Carol Jones, position Senior Programmer

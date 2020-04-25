@@ -53,7 +53,7 @@ implementation.
 The following example shows a value-change listener registered on a
 component:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:inputText id="name"
              size="30"
@@ -94,7 +94,7 @@ listener.
 Here is an example of an `h:commandLink` tag that references an
 `ActionListener` implementation:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandLink id="Duke" action="bookstore">
     <f:actionListener
@@ -124,7 +124,7 @@ The `bookcatalog.xhtml` page of the Duke's Bookstore application uses
 component used to link to the `bookdetails.xhtml` page and the
 `h:commandButton` component used to add a book to the cart:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:dataTable id="books"
     value="#{store.books}"

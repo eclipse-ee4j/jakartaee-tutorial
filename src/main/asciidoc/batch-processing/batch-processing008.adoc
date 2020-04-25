@@ -53,7 +53,7 @@ The `webserverlog.xml` job definition file is located in the
 `WEB-INF/classes/META-INF/batch-jobs/` directory. The file specifies
 seven job-level properties and two steps:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <job id="webserverlog" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
@@ -77,7 +77,7 @@ seven job-level properties and two steps:
 
 The first step is defined as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <step id="mobilefilter" next="mobileanalyzer">
     <listeners>
@@ -98,7 +98,7 @@ with `@Named`.
 
 The second step is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <step id="mobileanalyzer">
     <batchlet ref="MobileBatchlet"></batchlet>
@@ -116,7 +116,7 @@ implements it. This is the last step of the job.
 The `LogLine` class represents entries in the web server log file and it
 is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class LogLine {
     private final String datetime;
@@ -140,7 +140,7 @@ and `LogFilteredLineWriter` batch artifacts.
 
 The `LogLineReader` artifact reads records from the web server log file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("LogLineReader")
@@ -163,7 +163,7 @@ file with a buffered reader. In this example, the log file has been
 included with the application under
 `webserverlog/WEB-INF/classes/log1.txt`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 fileName = jobCtx.getProperties().getProperty("log_file_name");
 ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -179,7 +179,7 @@ from the last committed chunk.
 The `readItem` method returns a new `LogLine` object or null at the end
 of the log file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public Object readItem() throws Exception {
@@ -196,7 +196,7 @@ public Object readItem() throws Exception {
 The `LogLineProcessor` artifact obtains a list of browsers from the job
 properties and filters the log entries according to the list:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public Object processItem(Object item) {
@@ -226,7 +226,7 @@ If a checkpoint object is provided, the artifact continues writing at
 the end of the file; otherwise, it overwrites the file if it exists. The
 `writeItems` method writes filtered items to the output file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void writeItems(List<Object> items) throws Exception {
@@ -246,7 +246,7 @@ public void writeItems(List<Object> items) throws Exception {
 The `InfoJobListener` batch artifact implements a simple listener that
 writes log messages when the job starts and when it ends:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("InfoJobListener")
@@ -265,7 +265,7 @@ public class InfoJobListener implements JobListener {
 The `InfoItemProcessListener` batch artifact implements the
 `ItemProcessListener` interface for chunk steps:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Dependent
 @Named("InfoItemProcessListener")
@@ -287,7 +287,7 @@ public class InfoItemProcessListener implements ItemProcessListener {
 The task step is implemented by the `MobileBatchlet` artifact, which
 computes what percentage of the filtered log entries are purchases:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public String process() throws Exception {
@@ -317,7 +317,7 @@ The `index.xhtml` page contains a text area that shows the web server
 log. The page provides a button for the user to submit the batch job and
 navigate to the next page:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <body>
     ...
@@ -337,7 +337,7 @@ submit the batch job.
 The `jobstarted.xhtml` page provides a button to check the current
 status of the batch job and displays the results when the job finishes:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <p>Current Status of the Job: <b>#{jsfBean.jobStatus}</b></p>
 <p>#{jsfBean.showResults()}</p>
@@ -357,7 +357,7 @@ on the status of the job, and reads the results from a text file.
 
 The `startBatchJob` method submits the job to the batch runtime:
 
-[source,oac_no_warn]
+[source,java]
 ----
 /* Submit the batch job to the batch runtime.
  * JSF Navigation method (return the name of the next page) */
@@ -370,7 +370,7 @@ public String startBatchJob() {
 
 The `getJobStatus` method checks the status of the job:
 
-[source,oac_no_warn]
+[source,java]
 ----
 /* Get the status of the job from the batch runtime */
 public String getJobStatus() {
@@ -404,7 +404,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/batch
 ----
@@ -417,7 +417,7 @@ This command builds and packages the application into a WAR file,
 `webserverlog.war`, located in the `target/` directory; deploys it to
 the server; and launches a web browser window at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/webserverlog/
 ----
@@ -431,19 +431,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/batch/webserverlog/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Open a web browser window at the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/webserverlog/
 ----

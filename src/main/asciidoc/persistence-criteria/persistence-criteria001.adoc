@@ -17,7 +17,7 @@ syntax will find equivalent object-level operations in the Criteria API.
 The following simple Criteria query returns all instances of the `Pet`
 entity in the data source:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityManager em = ...;
 CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -30,7 +30,7 @@ List<Pet> allPets = q.getResultList();
 
 The equivalent JPQL query is
 
-[source,oac_no_warn]
+[source,sql]
 ----
 SELECT p
 FROM Pet p
@@ -59,14 +59,14 @@ chapter.
 To create a `CriteriaBuilder` instance, call the `getCriteriaBuilder`
 method on the `EntityManager` instance:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaBuilder cb = em.getCriteriaBuilder();
 ----
 
 Use the `CriteriaBuilder` instance to create a query object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 ----
@@ -78,7 +78,7 @@ typesafe query, specify the type of the query when you create the
 Call the `from` method of the query object to set the `FROM` clause of
 the query and to specify the root of the query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Root<Pet> pet = cq.from(Pet.class);
 ----
@@ -86,7 +86,7 @@ Root<Pet> pet = cq.from(Pet.class);
 Call the `select` method of the query object, passing in the query root,
 to set the `SELECT` clause of the query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 cq.select(pet);
 ----
@@ -95,7 +95,7 @@ Now, use the query object to create a `TypedQuery<T>` object that can be
 executed against the data source. The modifications to the query object
 are captured to create a ready-to-execute query:
 
-[source,oac_no_warn]
+[source,java]
 ----
 TypedQuery<Pet> q = em.createQuery(cq);
 ----
@@ -104,7 +104,7 @@ Execute this typed query object by calling its `getResultList` method,
 because this query will return multiple entity instances. The following
 statement stores the results in a `List<Pet>` collection-valued object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 List<Pet> allPets = q.getResultList();
 ----

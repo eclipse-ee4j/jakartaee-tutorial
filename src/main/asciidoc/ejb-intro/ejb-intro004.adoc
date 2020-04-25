@@ -79,7 +79,7 @@ Three JNDI namespaces are used for portable JNDI lookups: `java:global`,
 enterprise beans using JNDI lookups. JNDI addresses are of the following
 form:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java:global[/application name]/module name /enterprise bean name[/interface name ]
 ----
@@ -93,7 +93,7 @@ interface.
 within the same module. JNDI addresses using the `java:module` namespace
 are of the following form:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java:module/enterprise bean name/[interface name]
 ----
@@ -105,7 +105,7 @@ packaged within the same application. That is, the enterprise bean is
 packaged within an EAR file containing multiple Jakarta EE modules. JNDI
 addresses using the `java:app` namespace are of the following form:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 java:app[/module name]/enterprise bean name [/interface name]
 ----
@@ -200,7 +200,7 @@ are not required to, do one of the following.
 a business interface, indicating that the bean exposes a no-interface
 view to clients. For example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Session
 public class MyBean { ... }
@@ -208,7 +208,7 @@ public class MyBean { ... }
 * Annotate the business interface of the enterprise bean as a `@Local`
 interface. For example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Local
 public interface InterfaceName { ... }
@@ -216,7 +216,7 @@ public interface InterfaceName { ... }
 * Specify the interface by decorating the bean class with `@Local` and
 specify the interface name. For example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Local(InterfaceName.class)
 public class BeanName implements InterfaceName  { ... }
@@ -233,7 +233,7 @@ view is accomplished through either dependency injection or JNDI lookup.
 through dependency injection, use the `javax.ejb.EJB` annotation and
 specify the enterprise bean's implementation class:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @EJB
 ExampleBean exampleBean;
@@ -242,7 +242,7 @@ ExampleBean exampleBean;
 through JNDI lookup, use the `javax.naming.InitialContext` interface's
 `lookup` method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ExampleBean exampleBean = (ExampleBean)
         InitialContext.lookup("java:module/ExampleBean");
@@ -263,7 +263,7 @@ lookup.
 bean through dependency injection, use the `javax.ejb.EJB` annotation
 and specify the enterprise bean's local business interface name:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @EJB
 Example example;
@@ -272,7 +272,7 @@ Example example;
 bean through JNDI lookup, use the `javax.naming.InitialContext`
 interface's `lookup` method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ExampleLocal example = (ExampleLocal)
          InitialContext.lookup("java:module/ExampleLocal");
@@ -300,7 +300,7 @@ To create an enterprise bean that allows remote access, you must either
 * Decorate the business interface of the enterprise bean with the
 `@Remote` annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Remote
 public interface InterfaceName { ... }
@@ -308,7 +308,7 @@ public interface InterfaceName { ... }
 * Or decorate the bean class with `@Remote`, specifying the business
 interface or interfaces:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Remote(InterfaceName.class)
 public class BeanName implements InterfaceName { ... }
@@ -336,7 +336,7 @@ enterprise bean through dependency injection, use the `javax.ejb.EJB`
 annotation and specify the enterprise bean's remote business interface
 name:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @EJB
 Example example;
@@ -345,7 +345,7 @@ Example example;
 bean through JNDI lookup, use the `javax.naming.InitialContext`
 interface's `lookup` method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ExampleRemote example = (ExampleRemote)
         InitialContext.lookup("java:global/myApp/ExampleRemote");

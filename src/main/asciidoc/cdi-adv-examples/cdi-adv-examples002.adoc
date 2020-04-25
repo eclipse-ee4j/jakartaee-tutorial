@@ -26,7 +26,7 @@ The `Coder` interface contains just one method, `codeString`, that takes
 two arguments: a string, and an integer value that specifies how the
 letters in the string should be transposed.
 
-[source,oac_no_warn]
+[source,java]
 ----
 public interface Coder {
 
@@ -44,7 +44,7 @@ generals.) The implementation in `TestCoderImpl` merely displays the
 values of the arguments. The `TestCoderImpl` implementation is annotated
 `@Alternative`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.enterprise.inject.Alternative;
 
@@ -62,7 +62,7 @@ The `beans.xml` file for the `encoder` example contains an
 `alternatives` element for the `TestCoderImpl` class, but by default the
 element is commented out:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <beans ...>
     <!--<alternatives>
@@ -84,7 +84,7 @@ the user to enter the string and integer values and passes them to the
 managed bean, `CoderBean`, as `coderBean.inputString` and
 `coderBean.transVal`:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -133,7 +133,7 @@ if the user enters an invalid value, a default error message appears on
 the Facelets page. The bean also injects an instance of the `Coder`
 interface:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named
 @RequestScoped
@@ -157,7 +157,7 @@ the Facelets page. This method sets the `codedString` property to the
 value returned by a call to the `codeString` method of the `Coder`
 implementation:
 
-[source,oac_no_warn]
+[source,java]
 ----
     public void encodeString() {
         setCodedString(coder.codeString(inputString, transVal));
@@ -167,7 +167,7 @@ implementation:
 Finally, the bean defines the `reset` method to empty the fields of the
 Facelets page:
 
-[source,oac_no_warn]
+[source,java]
 ----
     public void reset() {
         setInputString("");
@@ -192,7 +192,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi
 ----
@@ -211,7 +211,7 @@ GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/encoder
 ----
@@ -228,7 +228,7 @@ b.  Double-click the `beans.xml` file to open it.
 c.  Remove the comment characters that surround the `alternatives`
 element, so that it looks like this:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 <alternatives>
     <class>jakarta.tutorial.encoder.TestCoderImpl</class>
@@ -239,7 +239,7 @@ d.  Save the file.
 5.  In the web browser, reenter the URL to show the String Encoder page
 for the redeployed project:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/encoder/
 ----
@@ -249,7 +249,7 @@ Encode.
 This time, the Result line displays your arguments. For example, if you
 enter `Java` and `4`, the result is:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Result: input string is Java, shift value is 4
 ----
@@ -263,13 +263,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/encoder/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -284,7 +284,7 @@ GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/encoder/
 ----
@@ -299,14 +299,14 @@ you enter `Java` and `4`, the result is `Neze`.
 implementation of `Coder`.
 a.  In a text editor, open the following file:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/encoder/src/main/webapp/WEB-INF/beans.xml
 ----
 b.  Remove the comment characters that surround the `alternatives`
 element, so that it looks like this:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 <alternatives>
     <class>jakarta.tutorial.encoder.TestCoderImpl</class>
@@ -315,14 +315,14 @@ element, so that it looks like this:
 c.  Save and close the file.
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn clean install
 ----
 5.  In the web browser, reenter the URL to show the String Encoder page
 for the redeployed project:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/encoder
 ----
@@ -332,7 +332,7 @@ Encode.
 This time, the Result line displays your arguments. For example, if you
 enter `Java` and `4`, the result is:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 Result: input string is Java, shift value is 4
 ----

@@ -45,7 +45,7 @@ you want to send as text messages, implement the
 `Encoder.Text<MessageA>` and `Encoder.Text<MessageB>` interfaces as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MessageATextEncoder implements Encoder.Text<MessageA> {
    @Override
@@ -63,7 +63,7 @@ public class MessageATextEncoder implements Encoder.Text<MessageA> {
 Implement `Encoder.Text<MessageB>` similarly. Then, add the `encoders`
 parameter to the `ServerEndpoint` annotation as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint(
    value = "/myendpoint",
@@ -75,7 +75,7 @@ public class EncEndpoint { ... }
 Now, you can send `MessageA` and `MessageB` objects as WebSocket
 messages using the `sendObject` method as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 MessageA msgA = new MessageA(...);
 MessageB msgB = new MessageB(...);
@@ -126,7 +126,7 @@ extend a common class (`Message`). Because you can only define one
 decoder for text messages, implement a decoder for the `Message` class
 as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public class MessageTextDecoder implements Decoder.Text<Message> {
    @Override
@@ -153,7 +153,7 @@ public class MessageTextDecoder implements Decoder.Text<Message> {
 Then, add the `decoder` parameter to the `ServerEndpoint` annotation as
 follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint(
    value = "/myendpoint",
@@ -166,7 +166,7 @@ public class EncDecEndpoint { ... }
 Now, define a method in the endpoint class that receives `MessageA` and
 `MessageB` objects as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OnMessage
 public void message(Session session, Message msg) {

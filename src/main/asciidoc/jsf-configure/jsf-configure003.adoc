@@ -26,13 +26,13 @@ following order:
 
 * The XML version number, usually with an `encoding` attribute:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version="1.0" encoding='UTF-8'?>
 ----
 * A `faces-config` tag enclosing all the other declarations:
 +
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -91,14 +91,14 @@ to `true`, as shown in the following examples.
 
 The `faces-config.xml` file declaration is as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <managed-bean eager="true">
 ----
 
 The annotation is as follows:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 @ManagedBean(eager=true)
 @ApplicationScoped
@@ -124,7 +124,7 @@ example shows an entry for absolute ordering.
 
 File `my-faces-config.xml` contains the following elements:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config>
     <name>myJSF</name>
@@ -155,7 +155,7 @@ application configuration resource files.
 
 File `config-A` contains the following elements:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config>
     <name>config-A</name>
@@ -172,7 +172,7 @@ elements.
 
 File `config-C` contains the following elements:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <faces-config>
     <name>config-C</name>

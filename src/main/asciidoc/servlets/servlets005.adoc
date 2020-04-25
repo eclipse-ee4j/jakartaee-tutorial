@@ -50,7 +50,7 @@ HTTP servlets are passed an HTTP request object, `HttpServletRequest`,
 which contains the request URL, HTTP headers, query string, and so on.
 An HTTP request URL contains the following parts:
 
-[source,oac_no_warn]
+[source,java]
 ----
 http://[host]:[port][request-path]?[query-string]
 ----

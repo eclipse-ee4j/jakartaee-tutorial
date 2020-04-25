@@ -41,7 +41,7 @@ pass any sign-on security information to the `getConnection()` method.
 The security information is supplied by the container, as shown in the
 following example (the method call is highlighted in bold):
 
-[source,oac_no_warn]
+[source,java]
 ----
 // Business method in an application component
 Context initctx = new InitialContext();
@@ -65,7 +65,7 @@ the `getConnection` method. For example, security information might be a
 user name and password, as shown here (the method call is highlighted in
 bold):
 
-[source,oac_no_warn]
+[source,java]
 ----
 // Method in an application component
 Context initctx = new InitialContext();
@@ -107,7 +107,7 @@ edit the resource adapter descriptor file, `ra.xml`. Here is an example
 of the part of an `ra.xml` file that configures security properties for
 a resource adapter:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <authentication-mechanism>
     <authentication-mechanism-type>
@@ -134,14 +134,14 @@ There are two supported mechanism types:
 
 ** `BasicPassword`, which supports the following interface:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 javax.resource.spi.security.PasswordCredential
 ----
 
 ** `Kerbv5`, which supports the following interface:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 javax.resource.spi.security.GenericCredential
 ----

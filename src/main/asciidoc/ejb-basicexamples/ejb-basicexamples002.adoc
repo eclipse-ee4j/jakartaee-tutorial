@@ -44,7 +44,7 @@ determining whether the bean class implements more than one interface:
 
 The source code for the `Cart` business interface is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.cart.ejb;
 
@@ -85,7 +85,7 @@ practice to implement the bean's business interface.
 
 The source code for the `CartBean` class is as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.cart.ejb;
 
@@ -194,7 +194,7 @@ perspective, the business methods appear to run locally, although they
 run remotely in the session bean. The following code snippet shows how
 the `CartClient` program invokes the business methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 cart.initialize("Duke DeEarl", "123");
 ...
@@ -208,7 +208,7 @@ cart.removeBook("Gravity's Rainbow");
 The `CartBean` class implements the business methods in the following
 code:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Override
 public void addBook(String title) {
@@ -267,7 +267,7 @@ the bean instance. The container will remove the enterprise bean after a
 
 In `CartBean`, the `remove` method is a `@Remove` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Remove
 @Override
@@ -316,7 +316,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb
 ----
@@ -333,7 +333,7 @@ file to your GlassFish Server instance.
 You will see the output of the `cart-app-client` application client in
 the Output tab:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 Retrieving book title from cart: Infinite Jest
@@ -352,13 +352,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/ejb/cart/
 ----
 3.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -370,7 +370,7 @@ your GlassFish Server instance.
 Then, the client stubs are retrieved and run. This is equivalent to
 running the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 appclient -client cart-ear/target/cart-earClient.jar
 ----
@@ -386,7 +386,7 @@ case the reference to the `Cart` enterprise bean.
 You will see the output of the `cart-app-client` application client in
 the terminal window:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 Retrieving book title from cart: Infinite Jest

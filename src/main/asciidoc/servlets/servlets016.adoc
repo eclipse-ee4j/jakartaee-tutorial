@@ -69,7 +69,7 @@ in the specified destination.
 
 The HTML form in `index.html` is as follows:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <!DOCTYPE html>
 <html lang="en">
@@ -107,7 +107,7 @@ This is what submitted data from the `fileupload` form looks like, after
 selecting `sample.txt` as the file that will be uploaded to the `tmp`
 directory on the local file system:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 POST /fileupload/upload HTTP/1.1
 Host: localhost:8080
@@ -128,7 +128,7 @@ Content-Disposition: form-data; name="upload"
 
 The servlet `FileUploadServlet.java` begins as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/upload"})
 @MultipartConfig
@@ -151,7 +151,7 @@ section of the method catches and handles some of the most common
 reasons why a file would not be found. The `processRequest` and
 `getFileName` methods look like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 protected void processRequest(HttpServletRequest request,
         HttpServletResponse response)
@@ -240,7 +240,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet
 ----
@@ -258,13 +258,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/servlet/fileupload/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -275,7 +275,7 @@ mvn install
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/fileupload/
 ----

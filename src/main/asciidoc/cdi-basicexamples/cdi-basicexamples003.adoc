@@ -42,7 +42,7 @@ directory.
 
 The `@MaxNumber` qualifier interface is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package guessnumber;
 
@@ -66,7 +66,7 @@ public @interface MaxNumber {
 
 The `@Random` qualifier interface is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package guessnumber;
 
@@ -97,7 +97,7 @@ application. The bean has the `@ApplicationScoped` annotation to specify
 that its context extends for the duration of the user's interaction with
 the application:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package guessnumber;
 
@@ -149,7 +149,7 @@ user's input is correct
 
 The bean is defined as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package guessnumber;
 
@@ -266,7 +266,7 @@ public class UserNumberBean implements Serializable {
 This example uses the same template that the `simplegreeting` example
 uses. The `index.xhtml` file, however, is more complex.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -358,7 +358,7 @@ Server]).
 2.  From the *File* menu, choose *Open Project*.
 3.  In the *Open Project* dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi
 ----
@@ -380,13 +380,13 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, change to the following directory:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/cdi/guessnumber-cdi/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -401,7 +401,7 @@ deploys it to GlassFish Server.
 
 1.  In a web browser, enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/guessnumber-cdi
 ----

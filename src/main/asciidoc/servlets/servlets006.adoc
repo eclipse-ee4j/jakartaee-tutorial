@@ -54,7 +54,7 @@ attribute of the `@WebFilter` annotation. The `initParams` attribute
 contains a `@WebInitParam` annotation. The following code snippet
 defines a filter, specifying an initialization parameter:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.servlet.Filter;
 import javax.servlet.annotation.WebFilter;

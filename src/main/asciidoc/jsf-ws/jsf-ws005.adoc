@@ -15,13 +15,12 @@ You can also explicitly set it to `false` and manually open the push
 connection on the client side by invoking `jsf.push.open(clientId)`,
 passing the component's client ID.
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <h:commandButton ... onclick="jsf.push.open('foo')">
-<f:ajax ... />
+    <f:ajax ... />
 </h:commandButton>
-<f:websocket id="foo" channel="bar" scope="view" ...
-connected="false" />
+<f:websocket id="foo" channel="bar" scope="view" ... connected="false" />
 ----
 
 If you intend to have a one-time push and do not expect more messages,
@@ -29,7 +28,7 @@ you can optionally explicitly close the push connection from the client side
 by invoking `jsf.push.close(clientId)`, passing the component's client ID.
 For example, in the `onmessage` JavaScript listener function, as seen below:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 function someWebsocketListener(message) {
 // ... jsf.push.close('foo');
@@ -43,23 +42,24 @@ When a session or view-scoped socket is automatically closed with close reason
 code `1000` by the server (and thus, not manually closed by the client
   via `jsf.push.close(clientId)`), it means that the session or view has expired.
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ApplicationScoped
 public class WebsocketObserver {
 
-public void onOpen(@Observes @Opened WebsocketEvent event) { String channel = event.getChannel();
-// Returns <f:websocket channel>. Long userId = event.getUser();
-// Returns <f:websocket user>, if any.
-// ...
+    public void onOpen(@Observes @Opened WebsocketEvent event) {
+        String channel = event.getChannel();
+        // Returns <f:websocket channel>. Long userId = event.getUser();
+        // Returns <f:websocket user>, if any.
+        // ...
+    }
 
-}
-
-public void onClose(@Observes @Closed WebsocketEvent event) { String channel = event.getChannel();
-// Returns <f:websocket channel>. Long userId = event.getUser();
-// Returns <f:websocket user>, if any. CloseCode code = event.getCloseCode();
-// Returns close reason code.
-// ...
+    public void onClose(@Observes @Closed WebsocketEvent event) { String channel = event.getChannel();
+        // Returns <f:websocket channel>. Long userId = event.getUser();
+        // Returns <f:websocket user>, if any. CloseCode code = event.getCloseCode();
+        // Returns close reason code.
+       // ...
+    }
 }
 ----
 
@@ -72,7 +72,7 @@ very first connection attempt, regardless of whether it will be successful.
 It will not be invoked when the WebSocket auto-reconnects a broken connection
 after the first successful connection.
 
-[source,oac_no_warn]
+[source,java]
 ----
 <f:websocket ... onopen="websocketOpenListener" />
 function websocketOpenListener(channel) {
@@ -92,17 +92,17 @@ reconnect attempts have been exceeded. It will not be invoked if the WebSocket
 makes an auto-reconnect attempt on a broken connection after the first
 successful connection.
 
-[source,oac_no_warn]
+[source,java]
 ----
 <f:websocket ... onclose="websocketCloseListener" />
-function websocketCloseListener(code, channel, event) { if (code == -1) {
-// Websockets not supported by client.
-} else if (code == 1000) {
-// Normal close (as result of expired session or view).
-} else {
-// Abnormal close reason (as result of an error).
-}
-
+function websocketCloseListener(code, channel, event) {
+    if (code == -1) {
+        // Websockets not supported by client.
+    } else if (code == 1000) {
+        // Normal close (as result of expired session or view).
+    } else {
+        // Abnormal close reason (as result of an error).
+    }
 }
 ----
 

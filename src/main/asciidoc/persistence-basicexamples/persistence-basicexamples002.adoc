@@ -74,7 +74,7 @@ the `partNumber` and `revision` fields. This key is mapped to the
 `PARTNUMBER` and `REVISION` columns in the `PERSISTENCE_ORDER_PART`
 table:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 @ManyToOne
@@ -103,7 +103,7 @@ vendor part, and vice versa.
 
 Here is the relationship mapping in `Part`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToOne(mappedBy="part")
 public VendorPart getVendorPart() {
@@ -113,7 +113,7 @@ public VendorPart getVendorPart() {
 
 Here is the relationship mapping in `VendorPart`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToOne
 @JoinColumns({
@@ -150,7 +150,7 @@ again as a relationship field, `order`.
 
 Here is the relationship mapping in `CustomerOrder`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToMany(cascade=ALL, mappedBy="customerOrder")
 public Collection<LineItem> getLineItems() {
@@ -160,7 +160,7 @@ public Collection<LineItem> getLineItems() {
 
 Here is the relationship mapping in `LineItem`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Id
 @ManyToOne
@@ -178,7 +178,7 @@ public CustomerOrder getCustomerOrder() {
 many-to-one relationship with `VendorPart`. That is, there is no field
 in the target entity in this relationship:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @JoinColumn(name="VENDORPARTNUMBER")
 @ManyToOne
@@ -213,7 +213,7 @@ entity will use a generated primary key.
 In `VendorPart`, the following code specifies the settings for
 generating primary key values:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @TableGenerator(
     name="vendorPartGen",
@@ -269,7 +269,7 @@ encapsulates this primary key.
 
 This is the `LineItemKey` compound primary key wrapper class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 package jakarta.tutorial.order.entity;
 
@@ -335,7 +335,7 @@ public final class LineItemKey implements Serializable {
 The `@IdClass` annotation is used to specify the primary key class in
 the entity class. In `LineItem`, `@IdClass` is used as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @IdClass(LineItemKey.class)
 @Entity
@@ -348,7 +348,7 @@ public class LineItem implements Serializable {
 The two fields in `LineItem` are tagged with the `@Id` annotation to
 mark those fields as part of the compound primary key:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Id
 public int getItemId() {
@@ -374,7 +374,7 @@ Foreign Keys]). That is, `customerOrder` will be set by the
 In `LineItem`'s constructor, the line item number (`LineItem.itemId`) is
 set using the `CustomerOrder.getNextId` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 public LineItem(CustomerOrder order, int quantity, VendorPart vendorPart) {
     this.customerOrder = order;
@@ -387,7 +387,7 @@ public LineItem(CustomerOrder order, int quantity, VendorPart vendorPart) {
 `CustomerOrder.getNextId` counts the number of current line items, adds
 1, and returns that number:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Transient
 public int getNextId() {
@@ -399,7 +399,7 @@ public int getNextId() {
 `Part`'s compound primary key, because `Part`'s compound primary key is
 an overlapping primary key/foreign key:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @IdClass(PartKey.class)
 @Entity
@@ -431,7 +431,7 @@ public class Part implements Serializable {
 schematics for the part. The `@SecondaryTable` annotation is used to
 specify the secondary table:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 @Entity
@@ -481,7 +481,7 @@ relationship. The cascade element is set to `ALL` in the case of
 
 Here is the relationship mapping in `CustomerOrder`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @OneToMany(cascade=ALL, mappedBy="customerOrder")
 public Collection<LineItem> getLineItems() {
@@ -491,7 +491,7 @@ public Collection<LineItem> getLineItems() {
 
 Here is the relationship mapping in `LineItem`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Id
 @ManyToOne
@@ -511,7 +511,7 @@ storing binary data, such as an image. The `DRAWING` column is mapped to
 the field `Part.drawing` of type `java.io.Serializable`. The `@Lob`
 annotation is used to denote that the field is a large object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Column(table="PERSISTENCE_ORDER_PART_DETAIL")
 @Lob
@@ -527,7 +527,7 @@ to store string data too large to be stored in a `VARCHAR` column.
 `java.lang.String`. The `@Lob` annotation is also used here to denote
 that the field is a large object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Column(table="PERSISTENCE_ORDER_PART_DETAIL")
 @Lob
@@ -557,7 +557,7 @@ type `javax.persistence.TemporalType`. The possible values are
 
 Here is the relevant section of `CustomerOrder`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Temporal(TIMESTAMP)
 public Date getLastUpdate() {
@@ -575,7 +575,7 @@ manages the entities of `order`. `RequestBean` uses the
 which is used to manage `order`'s entities in `RequestBean`'s business
 methods:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PersistenceContext
 private EntityManager em;
@@ -593,7 +593,7 @@ The `RequestBean.createPart` business method creates a new `Part`
 entity. The `EntityManager.persist` method is used to persist the newly
 created entity to the database:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Part part = new Part(partNumber,
         revision,
@@ -619,7 +619,7 @@ The `RequestBean.getOrderPrice` business method returns the price of a
 given order based on the `orderId`. The `EntityManager.find` method is
 used to retrieve the entity from the database:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CustomerOrder order = em.find(CustomerOrder.class, orderId);
 ----
@@ -638,7 +638,7 @@ The `RequestBean.createVendorPart` business method creates a
 `Vendor.setVendorPart` methods are used to associate the `VendorPart`
 with the `Vendor`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 PartKey pkey = new PartKey();
 pkey.setPartNumber(partNumber);
@@ -662,7 +662,7 @@ The `RequestBean.adjustOrderDiscount` business method updates the
 discount applied to all orders. This method uses the `findAllOrders`
 named query, defined in `CustomerOrder`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedQuery(
     name="findAllOrders",
@@ -675,7 +675,7 @@ The `EntityManager.createNamedQuery` method is used to run the query.
 Because the query returns a `List` of all the orders, the
 `Query.getResultList` method is used:
 
-[source,oac_no_warn]
+[source,java]
 ----
 List orders = em.createNamedQuery(
         "findAllOrders")
@@ -687,7 +687,7 @@ total price of all the parts for a particular vendor. This method uses a
 named parameter, `id`, defined in the named query
 `findTotalVendorPartPricePerVendor` defined in `VendorPart`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedQuery(
     name="findTotalVendorPartPricePerVendor",
@@ -701,7 +701,7 @@ When running the query, the `Query.setParameter` method is used to set
 the named parameter `id` to the value of `vendorId`, the parameter to
 `RequestBean.getTotalPricePerVendor`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 return (Double) em.createNamedQuery(
     "findTotalVendorPartPricePerVendor")
@@ -720,7 +720,7 @@ The `RequestBean.removeOrder` business method deletes a given order from
 the database. This method uses the `EntityManager.remove` method to
 delete the entity from the database:
 
-[source,oac_no_warn]
+[source,java]
 ----
 CustomerOrder order = em.find(CustomerOrder.class, orderId);
 em.remove(order);
@@ -752,7 +752,7 @@ Stopping Apache Derby].
 3.  From the File menu, choose Open Project.
 4.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence
 ----
@@ -762,7 +762,7 @@ tut-install/examples/persistence
 +
 NetBeans IDE opens a web browser to the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/order/
 ----
@@ -779,13 +779,13 @@ the instructions in link:#BNADK[Starting and
 Stopping Apache Derby].
 3.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/persistence/order/
 ----
 4.  Enter the following command:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
@@ -797,7 +797,7 @@ file is deployed to your GlassFish Server instance.
 5.  To create and update the order data, open a web browser to the
 following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/order/
 ----

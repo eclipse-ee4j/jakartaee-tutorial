@@ -4,7 +4,7 @@
 
 To make a bean accessible through the EL, use the `@Named` built-in qualifier:
 
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -26,7 +26,7 @@ would refer to the bean as `printer`.
 You can specify an argument to the `@Named` qualifier to use a
 nondefault name:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Named("MyPrinter")
 ----

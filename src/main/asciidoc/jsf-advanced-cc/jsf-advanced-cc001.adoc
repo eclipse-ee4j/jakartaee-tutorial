@@ -53,14 +53,14 @@ The default type of an attribute is `java.lang.Object.`
 The following code snippet defines a composite component attribute and
 assigns it a default value:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <composite:attribute name="username" default="admin"/>
 ----
 
 The following code snippet uses the `method-signature` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <composite:attribute name="myaction"
                      method-signature="java.lang.String action()"/>
@@ -68,7 +68,7 @@ The following code snippet uses the `method-signature` element:
 
 The following code snippet uses the `type` element:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <composite:attribute name="dateofjoining" type="java.util.Date"/>
 ----

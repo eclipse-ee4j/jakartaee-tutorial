@@ -115,7 +115,7 @@ described in link:#BEIGCFDF[Asynchronous Processing]) and
 using the nonblocking I/O functionality from link:#BEIFDICJ[Table 18-4]
 and link:#BEIFGJCG[Table 18-6].
 
-[source,oac_no_warn]
+[source,java]
 ----
 @WebServlet(urlPatterns={"/asyncioservlet"}, asyncSupported=true)
 public class AsyncIOServlet extends HttpServlet {

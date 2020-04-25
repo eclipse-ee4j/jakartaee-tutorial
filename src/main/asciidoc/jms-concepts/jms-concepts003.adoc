@@ -93,7 +93,7 @@ implementation-specific.
 For example, the following code fragment looks up the default Jakarta Messaging
 connection factory and assigns it to a `ConnectionFactory` object:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "java:comp/DefaultJMSConnectionFactory")
 private static ConnectionFactory connectionFactory;
@@ -130,7 +130,7 @@ The following code specifies two resources, a queue and a topic. The
 resource names are mapped to destination resources created in the JNDI
 namespace:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource(lookup = "jms/MyQueue")
 private static Queue queue;
@@ -217,7 +217,7 @@ You can create a `JMSContext` in a `try`-with-resources block.
 To create a `JMSContext`, call the `createContext` method on the
 connection factory:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JMSContext context = connectionFactory.createContext();
 ----
@@ -237,7 +237,7 @@ From an application client or a Java SE client, you can also call the
 `createContext` method with the argument `JMSContext.SESSION_TRANSACTED`
 to create a transacted session:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JMSContext context =
         connectionFactory.createContext(JMSContext.SESSION_TRANSACTED);
@@ -272,7 +272,7 @@ session and used for sending messages to a destination. A message
 producer created by a `JMSContext` implements the `JMSProducer`
 interface. You could create it this way:
 
-[source,oac_no_warn]
+[source,java]
 ----
 try (JMSContext context = connectionFactory.createContext();) {
     JMSProducer producer = context.createProducer();
@@ -285,7 +285,7 @@ significant resources. For this reason, you do not need to save the
 a message. You send messages to a specific destination by using the
 `send` method. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 context.createProducer().send(dest, message);
 ----
@@ -304,7 +304,7 @@ producer created by a `JMSContext` implements the `JMSConsumer`
 interface. The simplest way to create a message consumer is to use the
 `JMSContext.createConsumer` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 try (JMSContext context = connectionFactory.createContext();) {
     JMSConsumer consumer = context.createConsumer(dest);
@@ -330,7 +330,7 @@ use this method at any time after you create the consumer.
 If you specify no arguments or an argument of `0`, the method blocks
 indefinitely until a message arrives:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Message m = consumer.receive();
 Message m = consumer.receive(0);
@@ -341,7 +341,7 @@ message might not be available, use a synchronous receive with a
 timeout: Call the `receive` method with a timeout argument greater than
 `0`. One second is a recommended timeout value:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Message m = consumer.receive(1000); // time out after a second
 ----
@@ -371,7 +371,7 @@ listener with a specific message consumer by using the
 `Listener` that implements the `MessageListener` interface, you can
 register the message listener as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Listener myListener = new Listener();
 consumer.setMessageListener(myListener);
@@ -416,7 +416,7 @@ expression syntax. The message selector in the example selects any
 message that has a `NewsType` property that is set to the value
 `'Sports'` or `'Opinion'`:
 
-[source,oac_no_warn]
+[source,java]
 ----
 NewsType = 'Sports' OR NewsType = 'Opinion'
 ----
@@ -534,7 +534,7 @@ After using this connection factory to create the `JMSContext`, you call
 the `createDurableConsumer` method with two arguments: the topic and a
 string that specifies the name of the subscription:
 
-[source,oac_no_warn]
+[source,java]
 ----
 String subName = "MySub";
 JMSConsumer consumer = context.createDurableConsumer(myTopic, subName);
@@ -543,7 +543,7 @@ JMSConsumer consumer = context.createDurableConsumer(myTopic, subName);
 The subscription becomes active after you create the consumer. Later,
 you might close the consumer:
 
-[source,oac_no_warn]
+[source,java]
 ----
 consumer.close();
 ----
@@ -558,7 +558,7 @@ that were sent while the subscription was inactive.
 To delete a durable subscription, first close the consumer, then call
 the `unsubscribe` method with the subscription name as the argument:
 
-[source,oac_no_warn]
+[source,java]
 ----
 consumer.close();
 context.unsubscribe(subName);
@@ -611,7 +611,7 @@ have a client identifier. To create a shared durable subscription, call
 the `JMSContext.createSharedDurableConsumer` method, specifying the
 topic and subscription name:
 
-[source,oac_no_warn]
+[source,java]
 ----
 JMSConsumer consumer =
         context.createSharedDurableConsumer(topic, "MakeItLast");
@@ -639,7 +639,7 @@ It is, however, possible to create a nondurable shared subscription to a
 topic by using the `createSharedConsumer` method and specifying not only
 a destination but a subscription name:
 
-[source,oac_no_warn]
+[source,java]
 ----
 consumer = context.createSharedConsumer(topicName, "SubName");
 ----
@@ -816,7 +816,7 @@ Jakarta Messaging provides methods for creating messages of each type and for
 filling in their contents. For example, to create and send a
 `TextMessage`, you might use the following statements:
 
-[source,oac_no_warn]
+[source,java]
 ----
 TextMessage message = context.createTextMessage();
 message.setText(msg_text);     // msg_text is a String
@@ -836,7 +836,7 @@ Instead of casting the message to a message type, you can call the
 an argument. For example, you can retrieve a `TextMessage` as a
 `String`. The following code fragment uses the `getBody` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 Message m = consumer.receive();
 if (m instanceof TextMessage) {
@@ -853,7 +853,7 @@ example, you do not have to wrap a string in a `TextMessage`; instead,
 you can send and receive the string directly. For example, you can send
 a string as follows:
 
-[source,oac_no_warn]
+[source,java]
 ----
 String message = "This is a message";
 context.createProducer().send(dest, message);
@@ -861,7 +861,7 @@ context.createProducer().send(dest, message);
 
 You can receive the message by using the `receiveBody` method:
 
-[source,oac_no_warn]
+[source,java]
 ----
 String message = receiver.receiveBody(String.class);
 ----
@@ -876,7 +876,7 @@ link:#BNCGV[Chapter 49, "Jakarta Messaging
 Examples,"] send an empty message after sending a series of text
 messages. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 context.createProducer().send(dest, context.createMessage());
 ----
@@ -898,7 +898,7 @@ object that allows you to browse the messages in the queue and display
 the header values for each message. To create a `QueueBrowser` object,
 use the `JMSContext.createBrowser` method. For example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 QueueBrowser browser = context.createBrowser(queue);
 ----

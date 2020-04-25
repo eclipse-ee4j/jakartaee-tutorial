@@ -186,7 +186,7 @@ same as the parameter value.
 The following example code demonstrates the use of the `@DeclareRoles`
 annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @DeclareRoles("BusinessAdmin")
 public class Calculator {
@@ -197,7 +197,7 @@ public class Calculator {
 The syntax for declaring more than one role is as shown in the following
 example:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @DeclareRoles({"Administrator", "Manager", "Employee"})
 ----
@@ -219,7 +219,7 @@ combined set of security roles is used by the application.
 The following example code demonstrates the use of the `@RolesAllowed`
 annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @DeclareRoles({"Administrator", "Manager", "Employee"})
 public class Calculator {
@@ -243,7 +243,7 @@ applies to only that method.
 The following example code demonstrates the use of the `@PermitAll`
 annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.annotation.security.*;
 @RolesAllowed("RestrictedUsers")
@@ -266,7 +266,7 @@ excluded from execution in the Jakarta EE container.
 The following example code demonstrates the use of the `@DenyAll`
 annotation:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 import javax.annotation.security.*;
 @RolesAllowed("Users")
@@ -289,7 +289,7 @@ annotation with the `isCallerInRole` method. In this example, the
 `isCallerInRole("payroll")` to verify that the caller is authorized to
 change salary data:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @DeclareRoles("payroll")
 @Stateless public class PayrollBean implements Payroll {
@@ -314,7 +314,7 @@ change salary data:
 The following example code illustrates the use of the `@RolesAllowed`
 annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @RolesAllowed("admin")
 public class SomeClass {
@@ -415,7 +415,7 @@ returns null for an unauthenticated caller.
 The following code sample illustrates the use of the
 `getCallerPrincipal` method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless public class EmployeeServiceBean implements EmployeeService {
     @Resource SessionContext ctx;
@@ -460,7 +460,7 @@ groups that exist in the operational environment.
 The following code sample illustrates the use of the `isCallerInRole`
 method:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 @Stateless public class PayrollBean implements Payroll {
      @Resource SessionContext ctx;
@@ -548,7 +548,7 @@ name of a security role as its parameter.
 
 The following code demonstrates the use of the `@RunAs` annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @RunAs("Admin")
 public class Calculator {

@@ -38,7 +38,7 @@ current status of the Ajax request and monitor its progress. In the
 following example, `monitormyajaxevent` is a JavaScript function that
 monitors the Ajax request sent by the event:
 
-[source,oac_no_warn]
+[source,xml]
 ----
 <f:ajax event="click" render="statusmessage" onevent="monitormyajaxevent"/>
 ----

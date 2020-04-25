@@ -36,7 +36,7 @@ The WebSocket endpoint is implemented in the `ETFEndpoint` class, which
 stores all connected sessions in a queue and provides a method that the
 enterprise bean calls when there is new information available to send:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/dukeetf")
 public class ETFEndpoint {
@@ -64,7 +64,7 @@ public class ETFEndpoint {
 The lifecycle methods of the endpoint add and remove sessions to and
 from the queue:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/dukeetf")
 public class ETFEndpoint {
@@ -100,7 +100,7 @@ public class ETFEndpoint {
 The enterprise bean uses the timer service to generate new price and
 volume information every second:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Startup
 @Singleton
@@ -143,7 +143,7 @@ service.
 The HTML page consists of a table and some JavaScript code. The table
 contains two fields referenced from JavaScript code:
 
-[source,oac_no_warn]
+[source,html]
 ----
 <!DOCTYPE html>
 <html>
@@ -165,7 +165,7 @@ The JavaScript code uses the WebSocket API to connect to the server
 endpoint and to designate a callback method for incoming messages. The
 callback method updates the page with the new information.
 
-[source,oac_no_warn]
+[source,java]
 ----
 var wsocket;
 function connect() {
@@ -206,7 +206,7 @@ Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/websocket
 ----
@@ -219,7 +219,7 @@ This command builds and packages the application into a WAR file
 (`dukeetf2.war`) located in the `target/` directory, deploys it to the
 server, and launches a web browser window with the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukeetf2/
 ----
@@ -236,19 +236,19 @@ link:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 tut-install/examples/web/websocket/dukeetf2/
 ----
 3.  Enter the following command to deploy the application:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 mvn install
 ----
 4.  Open a web browser window and enter the following URL:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 http://localhost:8080/dukeetf2/
 ----

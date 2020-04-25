@@ -9,7 +9,7 @@ method provides a modifiable map to store user properties. For example,
 the following endpoint replies to incoming text messages with the
 contents of the previous message from each client:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @ServerEndpoint("/delayedecho")
 public class DelayedEchoEndpoint {

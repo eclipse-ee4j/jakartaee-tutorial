@@ -88,7 +88,7 @@ listing.
 You specify welcome files in the `web.xml` file. The welcome file
 specification for the `hello1` example looks like this:
 
-[source,oac_no_warn]
+[source,java]
 ----
 <welcome-file-list>
     <welcome-file>index.xhtml</welcome-file>
@@ -225,7 +225,7 @@ data source into a component that needs to make a connection to the data
 source, as is done when using JDBC technology to access a relational
 database:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resource javax.sql.DataSource catalogDS;
 public getProductsByCategory() {
@@ -244,7 +244,7 @@ If you have multiple resources that you need to inject into one
 component, you need to use the `@Resources` annotation to contain them,
 as shown by the following example:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @Resources ({
     @Resource(name="myDB" type=javax.sql.DataSource.class),
@@ -273,7 +273,7 @@ declare a reference to a web service. `WebServiceRef` uses the
 `wsdlLocation` element to specify the URI of the deployed service's WSDL
 file:
 
-[source,oac_no_warn]
+[source,java]
 ----
 ...
 import javax.xml.ws.WebServiceRef;

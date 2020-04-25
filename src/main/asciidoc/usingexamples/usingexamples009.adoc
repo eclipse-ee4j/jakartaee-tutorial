@@ -57,7 +57,7 @@ Administration Console:
 a.  Expand the *Configurations* node, then expand the *server-config* node.
 b.  Select the *JVM Settings* node. The default debug options are set to:
 +
-[source,oac_no_warn]
+[source,java]
 ----
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9009
 ----

@@ -25,7 +25,7 @@ operation has as its root entity the `EmailMessage` class, the named
 entity graph used in the operation must be defined in the `EmailMessage`
 class:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedEntityGraph
 @Entity
@@ -52,7 +52,7 @@ graph by specifying them in the `attributeNodes` element of
 `@NamedEntityGraph` with a `javax.persistence.NamedAttributeNode`
 annotation:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedEntityGraph(name="emailEntityGraph", attributeNodes={
     @NamedAttributeNode("subject"),
@@ -73,7 +73,7 @@ In the following example, two entity graphs are defined on the
 sender, subject, and body of the message. The other is for a full view
 of the message, including any message attachments:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @NamedEntityGraphs({
     @NamedEntityGraph(name="previewEmailEntityGraph", attributeNodes={
@@ -100,7 +100,7 @@ Use the `EntityManager.getEntityGraph` method, passing in the named
 entity graph name, to obtain `EntityGraph` instances for a named entity
 graph:
 
-[source,oac_no_warn]
+[source,java]
 ----
 EntityGraph<EmailMessage> eg = em.getEntityGraph("emailEntityGraph");
 ----

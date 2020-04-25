@@ -47,7 +47,7 @@ The `UserNumberBean` managed bean in
 link:#GJCXV[The guessnumber-cdi CDI Example]
 uses `@PostConstruct` to annotate a method that resets all bean fields:
 
-[source,oac_no_warn]
+[source,java]
 ----
 @PostConstruct
 public void reset () {
