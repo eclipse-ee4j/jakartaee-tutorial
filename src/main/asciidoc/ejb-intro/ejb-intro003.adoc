@@ -1,6 +1,6 @@
 [[GIPKO]][[what-is-a-message-driven-bean]]
 
-==== What Is a Message-Driven Bean?
+== What Is a Message-Driven Bean?
 
 A message-driven bean is an enterprise bean that allows Jakarta EE
 applications to process messages asynchronously. This type of bean
@@ -19,7 +19,7 @@ Beans?]
 
 [[GIPMJ]][[what-makes-message-driven-beans-different-from-session-beans]]
 
-===== What Makes Message-Driven Beans Different from Session Beans?
+=== What Makes Message-Driven Beans Different from Session Beans?
 
 The most visible difference between message-driven beans and session
 beans is that clients do not access message-driven beans through
@@ -78,7 +78,7 @@ Message-Driven Bean] and link:#BNCIH[Chapter 54,
 
 [[GIPJX]][[when-to-use-message-driven-beans]]
 
-===== When to Use Message-Driven Beans
+=== When to Use Message-Driven Beans
 
 Session beans allow you to send Jakarta Messaging messages and to receive them
 synchronously but not asynchronously. To avoid tying up server

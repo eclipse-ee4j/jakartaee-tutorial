@@ -1,6 +1,6 @@
 [[GKHVN]][[the-compositecomponentexample-example-application]]
 
-==== The compositecomponentexample Example Application
+== The compositecomponentexample Example Application
 
 The `compositecomponentexample` application creates a composite
 component that accepts a name (or any other string). The component
@@ -24,7 +24,7 @@ The following topics are addressed here:
 
 [[GKHUU]][[the-composite-component-file]]
 
-===== The Composite Component File
+=== The Composite Component File
 
 The composite component file is an XHTML file,
 `/web/resources/ezcomp/PrimePanel.xhtml`. It has a `composite:interface`
@@ -100,7 +100,7 @@ prime or not is rendered only if the input value is validated.
 
 [[GKHVX]][[the-using-page]]
 
-===== The Using Page
+=== The Using Page
 
 The using page in this example application, `web/index.xhtml`, is an
 XHTML file that invokes the `PrimePanel.xhtml` composite component file
@@ -117,7 +117,7 @@ along with the managed bean. It validates the user's input.
 
 [[GKHVQ]][[the-managed-bean]]
 
-===== The Managed Bean
+=== The Managed Bean
 
 The managed bean, `PrimeBean.java`, defines a method called `calculate`,
 which performs the calculations on the input string and sets properties
@@ -151,7 +151,7 @@ public class PrimeBean implements Serializable {
 
 [[GLECV]][[running-the-compositecomponentexample-example]]
 
-===== Running the compositecomponentexample Example
+=== Running the compositecomponentexample Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `compositecomponentexample` example.
@@ -166,7 +166,7 @@ compositecomponentexample Example Using Maven]
 
 [[GKHVC]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
+==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -187,7 +187,7 @@ This command builds and deploys the application.
 
 [[GLEAE]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-maven]]
 
-====== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
+==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -207,7 +207,7 @@ mvn install
 
 [[GLEEU]][[to-run-the-compositecomponentexample-example]]
 
-====== To Run the compositecomponentexample Example
+==== To Run the compositecomponentexample Example
 
 1.  In a web browser, enter the following URL:
 +

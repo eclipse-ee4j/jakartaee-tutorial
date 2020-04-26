@@ -1,6 +1,6 @@
 [[GJSDF]][[using-alternatives-in-cdi-applications]]
 
-==== Using Alternatives in CDI Applications
+== Using Alternatives in CDI Applications
 
 When you have more than one version of a bean that you use for different
 purposes, you can choose between them during the development phase by
@@ -91,7 +91,7 @@ alternative beans that implement the same interface are annotated with
 
 [[GKHPO]][[using-specialization]]
 
-===== Using Specialization
+=== Using Specialization
 
 Specialization has a function similar to that of alternatives in that it
 allows you to substitute one bean for another. However, you might want

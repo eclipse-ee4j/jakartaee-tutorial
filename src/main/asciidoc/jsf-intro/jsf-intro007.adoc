@@ -1,6 +1,6 @@
 [[BNAQQ]][[the-lifecycle-of-a-javaserver-faces-application]]
 
-==== The Lifecycle of a Jakarta Server Faces Application
+== The Lifecycle of a Jakarta Server Faces Application
 
 The lifecycle of an application refers to the various stages of
 processing of that application, from its initiation to its conclusion.
@@ -30,7 +30,7 @@ section examines the Jakarta Server Faces lifecycle in more detail.
 
 [[GLPRC]][[overview-of-the-javaserver-faces-lifecycle]]
 
-===== Overview of the Jakarta Server Faces Lifecycle
+=== Overview of the Jakarta Server Faces Lifecycle
 
 The lifecycle of a Jakarta Server Faces application begins when the client
 makes an HTTP request for a page and ends when the server responds with
@@ -123,7 +123,7 @@ following subphases:
 
 [[BNAQS]][[restore-view-phase]]
 
-===== Restore View Phase
+=== Restore View Phase
 
 When a request for a Jakarta Server Faces page is made, usually by an
 action, such as when a link or a button component is clicked, the
@@ -148,7 +148,7 @@ information saved on the client or the server.
 
 [[BNAQT]][[apply-request-values-phase]]
 
-===== Apply Request Values Phase
+=== Apply Request Values Phase
 
 After the component tree is restored during a postback request, each
 component in the tree extracts its new value from the request parameters
@@ -185,7 +185,7 @@ method is applied.
 
 [[GJSBP]][[process-validations-phase]]
 
-===== Process Validations Phase
+=== Process Validations Phase
 
 During this phase, the Jakarta Server Faces implementation processes all
 validators registered on the components in the tree by using its
@@ -220,7 +220,7 @@ method is applied.
 
 [[BNAQV]][[update-model-values-phase]]
 
-===== Update Model Values Phase
+=== Update Model Values Phase
 
 After the Jakarta Server Faces implementation determines that the data is
 valid, it traverses the component tree and sets the corresponding
@@ -250,7 +250,7 @@ method is applied.
 
 [[BNAQW]][[invoke-application-phase]]
 
-===== Invoke Application Phase
+=== Invoke Application Phase
 
 During this phase, the Jakarta Server Faces implementation handles any
 application-level events, such as submitting a form or linking to
@@ -270,7 +270,7 @@ Render Response phase.
 
 [[BNAQX]][[render-response-phase]]
 
-===== Render Response Phase
+=== Render Response Phase
 
 During this phase, Jakarta Server Faces builds the view and delegates
 authority to the appropriate resource for rendering the pages.

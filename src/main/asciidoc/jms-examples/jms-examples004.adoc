@@ -1,6 +1,6 @@
 [[GIWFH]][[writing-more-advanced-jms-applications]]
 
-==== Writing More Advanced Jakarta Messaging Applications
+== Writing More Advanced Jakarta Messaging Applications
 
 The following examples show how to use some of the more advanced Jakarta Messaging
 features: durable subscriptions and transactions.
@@ -12,7 +12,7 @@ The following topics are addressed here:
 
 [[BNCGG]][[using-durable-subscriptions]]
 
-===== Using Durable Subscriptions
+=== Using Durable Subscriptions
 
 The `durablesubscriptionexample` example shows how unshared durable
 subscriptions work. It demonstrates that a durable subscription
@@ -69,7 +69,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 
 [[sthref206]][[to-create-resources-for-the-durable-subscription-example]]
 
-====== To Create Resources for the Durable Subscription Example
+==== To Create Resources for the Durable Subscription Example
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -110,7 +110,7 @@ Command list-jms-resources executed successfully.
 
 [[GJSCI]][[to-run-the-durable-subscription-example]]
 
-====== To Run the Durable Subscription Example
+==== To Run the Durable Subscription Example
 
 1.  In a terminal window, go to the following directory:
 +
@@ -183,7 +183,7 @@ Message is not a TextMessage
 
 [[sthref207]][[to-run-the-unsubscriber-example]]
 
-====== To Run the unsubscriber Example
+==== To Run the unsubscriber Example
 
 After you have finished running the `DurableConsumer` client, run the
 `unsubscriber` example to unsubscribe from the durable subscription.
@@ -206,7 +206,7 @@ subscription.
 
 [[BNCGJ]][[using-local-transactions]]
 
-===== Using Local Transactions
+=== Using Local Transactions
 
 The `transactedexample` example demonstrates the use of local
 transactions in a Messaging client application. It also demonstrates the use
@@ -358,7 +358,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and
 
 [[sthref209]][[to-create-resources-for-the-transactedexample-example]]
 
-====== To Create Resources for the transactedexample Example
+==== To Create Resources for the transactedexample Example
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -401,7 +401,7 @@ Command list-jms-resources executed successfully.
 
 [[GJSHA]][[to-run-the-transactedexample-clients]]
 
-====== To Run the transactedexample Clients
+==== To Run the transactedexample Clients
 
 You will need four terminal windows to run the clients. Make sure that
 you start the clients in the correct order.

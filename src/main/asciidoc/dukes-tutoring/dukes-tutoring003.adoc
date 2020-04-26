@@ -1,6 +1,6 @@
 [[GKAFW]][[administration-interface]]
 
-==== Administration Interface
+== Administration Interface
 
 The administration interface of Duke's Tutoring is used by the tutoring
 center staff to manage the data employed by the main interface: the
@@ -18,7 +18,7 @@ The following topics are addressed here:
 
 [[GKAEN]][[enterprise-beans-used-in-the-administration-interface]]
 
-===== Enterprise Beans Used in the Administration Interface
+=== Enterprise Beans Used in the Administration Interface
 
 The following enterprise bean, in the `dukestutoring.ejb` package of the
 `dukes-tutoring-war` project, is used in the administration interface.
@@ -29,7 +29,7 @@ invocation of the business methods only by authorized users.
 
 [[GKACB]][[facelets-files-used-in-the-administration-interface]]
 
-===== Facelets Files Used in the Administration Interface
+=== Facelets Files Used in the Administration Interface
 
 The following Facelets files, under `src/main/webapp/`, are used in the
 administration interface:
@@ -53,7 +53,7 @@ administration interface's navigation bar
 
 [[BCGHIDEG]][[cdi-managed-beans-used-in-the-administration-interface]]
 
-===== CDI Managed Beans Used in the Administration Interface
+=== CDI Managed Beans Used in the Administration Interface
 
 The CDI managed beans used in the administration interface are located
 in the `dukestutoring.web` package in the `dukes-tutoring-war` project.
@@ -76,7 +76,7 @@ annotation to ensure that the data is properly formed.
 
 [[BCGFFFCA]][[helper-classes-used-in-the-administration-interface]]
 
-===== Helper Classes Used in the Administration Interface
+=== Helper Classes Used in the Administration Interface
 
 The following helper classes, found in the `dukes-tutoring-war`
 project's `dukestutoring.web.util` package, are used in the

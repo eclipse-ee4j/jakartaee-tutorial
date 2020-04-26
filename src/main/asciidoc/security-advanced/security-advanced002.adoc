@@ -1,6 +1,6 @@
 [[GLIEN]][[authentication-mechanisms]]
 
-==== Authentication Mechanisms
+== Authentication Mechanisms
 
 This section discusses the client authentication and mutual
 authentication mechanisms.
@@ -12,7 +12,7 @@ The following topics are addressed here:
 
 [[GLIEQ]][[client-authentication]]
 
-===== Client Authentication
+=== Client Authentication
 
 With client authentication, the web server authenticates the client by
 using the client's public key certificate. Client authentication is a
@@ -48,7 +48,7 @@ the HTTP Authentication Mechanism Interface].
 
 [[GLIEL]][[mutual-authentication]]
 
-===== Mutual Authentication
+=== Mutual Authentication
 
 With mutual authentication, the server and the client authenticate each
 other. Mutual authentication is of two types:
@@ -100,7 +100,7 @@ password"]
 
 [[BNBYH]][[enabling-mutual-authentication-over-ssl]]
 
-====== Enabling Mutual Authentication over SSL
+==== Enabling Mutual Authentication over SSL
 
 This section discusses setting up client-side authentication. Enabling
 both server-side and client-side authentication is called mutual, or
@@ -133,7 +133,7 @@ authentication will be performed twice.
 
 [[BNBYI]][[creating-a-client-certificate-for-mutual-authentication]]
 
-====== Creating a Client Certificate for Mutual Authentication
+==== Creating a Client Certificate for Mutual Authentication
 
 If you have a certificate signed by a trusted Certificate Authority (CA)
 such as Verisign, and the GlassFish Server `cacerts.jks` file already

@@ -1,6 +1,6 @@
 [[BNAXW]][[providing-localized-messages-and-labels]]
 
-==== Providing Localized Messages and Labels
+== Providing Localized Messages and Labels
 
 Messages and labels should be tailored according to the conventions of a
 user's language and region. There are two approaches to providing
@@ -34,7 +34,7 @@ What=What We\'re Reading
 
 [[GKUIA]][[establishing-the-locale]]
 
-===== Establishing the Locale
+=== Establishing the Locale
 
 To get the correct strings for a given user, a web application either
 retrieves the locale (set by a browser language preference) from the
@@ -76,7 +76,7 @@ public class LocaleBean {
 
 [[BNAXY]][[setting-the-resource-bundle]]
 
-===== Setting the Resource Bundle
+=== Setting the Resource Bundle
 
 The resource bundle is set with the `resource-bundle` element in the
 configuration file. The setting for Duke's Bookstore looks like this:
@@ -127,7 +127,7 @@ link:#BNAXB[Registering Application Messages].
 
 [[GKUFC]][[retrieving-localized-messages]]
 
-===== Retrieving Localized Messages
+=== Retrieving Localized Messages
 
 A web component written in the Java programming language retrieves the
 resource bundle from the session:

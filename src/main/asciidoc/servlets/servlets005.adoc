@@ -1,6 +1,6 @@
 [[BNAFV]][[writing-service-methods]]
 
-==== Writing Service Methods
+== Writing Service Methods
 
 The service provided by a servlet is implemented in the `service` method
 of a `GenericServlet`, in the `do`Method methods (where Method can take
@@ -26,7 +26,7 @@ describe how to get information from requests and generate responses.
 
 [[BNAFW]][[getting-information-from-requests]]
 
-===== Getting Information from Requests
+=== Getting Information from Requests
 
 A request contains data passed between a client and the servlet. All
 requests implement the `ServletRequest` interface. This interface
@@ -81,7 +81,7 @@ method is submitted.
 
 [[BNAFZ]][[constructing-responses]]
 
-===== Constructing Responses
+=== Constructing Responses
 
 A response contains data passed between a server and the client. All
 responses implement the `ServletResponse` interface. This interface

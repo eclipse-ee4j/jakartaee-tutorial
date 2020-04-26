@@ -1,6 +1,6 @@
 [[BNABO]][[jakarta-ee-containers]]
 
-==== Jakarta EE Containers
+== Jakarta EE Containers
 
 Normally, thin-client multitiered applications are hard to write because
 they involve many lines of intricate code to handle transaction and
@@ -15,7 +15,7 @@ hand.
 
 [[BNABP]][[container-services]]
 
-===== Container Services
+=== Container Services
 
 Containers are the interface between a component and the low-level,
 platform-specific functionality that supports the component. Before it
@@ -57,7 +57,7 @@ link:#BNACJ[Jakarta EE 8 APIs]).
 
 [[BNABQ]][[container-types]]
 
-===== Container Types
+=== Container Types
 
 The deployment process installs Jakarta EE application components in the
 Jakarta EE containers, as illustrated in link:#BNABR[Figure 1-5].

@@ -1,6 +1,6 @@
 [[BABDGFJJ]][[the-fileupload-example-application]]
 
-==== The fileupload Example Application
+== The fileupload Example Application
 
 The `fileupload` example, located in the
 tut-install`/examples/web/servlet/fileupload/` directory, illustrates
@@ -44,7 +44,7 @@ The following topics are addressed here:
 
 [[CHDFGBGI]][[architecture-of-the-fileupload-example-application]]
 
-===== Architecture of the fileupload Example Application
+=== Architecture of the fileupload Example Application
 
 The `fileupload` example application consists of a single servlet and an
 HTML form that makes a file upload request to the servlet.
@@ -217,7 +217,7 @@ private String getFileName(final Part part) {
 
 [[CHDIHJCI]][[running-the-fileupload-example]]
 
-===== Running the fileupload Example
+=== Running the fileupload Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `fileupload` example.
@@ -232,7 +232,7 @@ Using Maven]
 
 [[CHDGDJCI]][[to-build-package-and-deploy-the-fileupload-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the fileupload Example Using NetBeans IDE
+==== To Build, Package, and Deploy the fileupload Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -251,7 +251,7 @@ Build.
 
 [[CHDCFADG]][[to-build-package-and-deploy-the-fileupload-example-using-maven]]
 
-====== To Build, Package, and Deploy the fileupload Example Using Maven
+==== To Build, Package, and Deploy the fileupload Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -271,7 +271,7 @@ mvn install
 
 [[CHDDDAAJ]][[to-run-the-fileupload-example]]
 
-====== To Run the fileupload Example
+==== To Run the fileupload Example
 
 1.  In a web browser, enter the following URL:
 +

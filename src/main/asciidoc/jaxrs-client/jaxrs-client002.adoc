@@ -1,6 +1,6 @@
 [[BABJCIJC]][[using-the-client-api-in-the-jax-rs-example-applications]]
 
-==== Using the Client API in the Jakarta REST Example Applications
+== Using the Client API in the Jakarta REST Example Applications
 
 The `rsvp` and `customer` examples use the Client API to call Jakarta REST
 services. This section describes how each example application uses the
@@ -13,7 +13,7 @@ The following topics are addressed here:
 
 [[BABEDFIG]][[the-client-api-in-the-rsvp-example-application]]
 
-===== The Client API in the rsvp Example Application
+=== The Client API in the rsvp Example Application
 
 The `rsvp` application allows users to respond to event invitations
 using Jakarta REST resources, as explained in link:#the-rsvp-example-application[The rsvp Example Application]. The web application uses the Client
@@ -95,7 +95,7 @@ response. The body of the request is an XML document.
 
 [[CHDGBGID]][[the-client-api-in-the-customer-example-application]]
 
-===== The Client API in the customer Example Application
+=== The Client API in the customer Example Application
 
 The `customer` example application stores customer data in a database
 and exposes the resource as XML, as explained in

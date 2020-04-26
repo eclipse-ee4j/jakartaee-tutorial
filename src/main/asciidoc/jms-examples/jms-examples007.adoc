@@ -1,6 +1,6 @@
 [[BNBPK]][[receiving-messages-asynchronously-using-a-message-driven-bean]]
 
-==== Receiving Messages Asynchronously Using a Message-Driven Bean
+== Receiving Messages Asynchronously Using a Message-Driven Bean
 
 If you are writing an application to run in the Jakarta EE application
 client container or on the Java SE platform, and you want to receive
@@ -27,7 +27,7 @@ Receive Messages Asynchronously].
 
 [[BNBPL]][[overview-of-the-simplemessage-example]]
 
-===== Overview of the simplemessage Example
+=== Overview of the simplemessage Example
 
 The `simplemessage` application has the following components:
 
@@ -54,7 +54,7 @@ tut-install`/examples/jms/simplemessage/` directory.
 
 [[BNBPN]][[the-simplemessage-application-client]]
 
-===== The simplemessage Application Client
+=== The simplemessage Application Client
 
 The `SimpleMessageClient` sends messages to the queue that the
 `SimpleMessageBean` listens to. The client starts by injecting the
@@ -93,7 +93,7 @@ for (int i = 0; i < NUM_MSGS; i++) {
 
 [[BNBPO]][[the-simplemessage-message-driven-bean-class]]
 
-===== The simplemessage Message-Driven Bean Class
+=== The simplemessage Message-Driven Bean Class
 
 The code for the `SimpleMessageBean` class illustrates the requirements
 of a message-driven bean class described in
@@ -123,7 +123,7 @@ to an MDB] for examples of the `subscriptionDurability`, `clientId`,
 
 [[BNBPP]][[the-onmessage-method]]
 
-====== The onMessage Method
+==== The onMessage Method
 
 When the queue receives a message, the enterprise bean container invokes the message
 listener method or methods. For a bean that uses Jakarta Messaging, this is the
@@ -157,7 +157,7 @@ public void onMessage(Message inMessage) {
 
 [[BNBPQ]][[running-the-simplemessage-example]]
 
-===== Running the simplemessage Example
+=== Running the simplemessage Example
 
 You can use either NetBeans IDE or Maven to build, deploy, and run the
 `simplemessage` example.
@@ -170,7 +170,7 @@ The following topics are addressed here:
 
 [[BNBPR]][[creating-resources-for-the-simplemessage-example]]
 
-====== Creating Resources for the simplemessage Example
+==== Creating Resources for the simplemessage Example
 
 This example uses the queue named `jms/MyQueue` and the preconfigured
 default connection factory `java:comp/DefaultJMSConnectionFactory`.
@@ -186,7 +186,7 @@ link:#GKTJS[Creating Jakarta Messaging Administered Objects].
 
 [[CHDFBDDA]][[to-run-the-simplemessage-example-using-netbeans-ide]]
 
-====== To Run the simplemessage Example Using NetBeans IDE
+==== To Run the simplemessage Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -239,7 +239,7 @@ the Services tab.
 
 [[BNBPT]][[to-run-the-simplemessage-example-using-maven]]
 
-====== To Run the simplemessage Example Using Maven
+==== To Run the simplemessage Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

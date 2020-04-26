@@ -1,6 +1,6 @@
 [[GKPAX]][[the-decorators-example-decorating-a-bean]]
 
-==== The decorators Example: Decorating a Bean
+== The decorators Example: Decorating a Bean
 
 The `decorators` example, which is yet another variation on the
 `encoder` example, shows how to use a decorator to implement additional
@@ -18,7 +18,7 @@ The following topics are addressed here:
 
 [[CHDDDFCI]][[overview-of-the-decorators-example]]
 
-===== Overview of the decorators Example
+=== Overview of the decorators Example
 
 Instead of having the user choose between two alternative
 implementations of an interface at deployment time or runtime, a
@@ -31,7 +31,7 @@ files.
 
 [[GKPAQ]][[components-of-the-decorators-example]]
 
-===== Components of the decorators Example
+=== Components of the decorators Example
 
 The `decorators` example is very similar to the `encoder` example
 described in link:#GKHPU[The encoder Example:
@@ -89,7 +89,7 @@ The `beans.xml` file specifies both the decorator and the interceptor:
 
 [[GKPBK]][[running-the-decorators-example]]
 
-===== Running the decorators Example
+=== Running the decorators Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `decorators` application.
@@ -104,7 +104,7 @@ Maven]
 
 [[GKPAG]][[to-build-package-and-deploy-the-decorators-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the decorators Example Using NetBeans IDE
+==== To Build, Package, and Deploy the decorators Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -127,7 +127,7 @@ to GlassFish Server.
 
 [[GKPAJ]][[to-build-package-and-deploy-the-decorators-example-using-maven]]
 
-====== To Build, Package, and Deploy the decorators Example Using Maven
+==== To Build, Package, and Deploy the decorators Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -151,7 +151,7 @@ to GlassFish Server.
 
 [[GKPAN]][[to-run-the-decorators-example]]
 
-====== To Run the decorators Example
+==== To Run the decorators Example
 
 1.  In a web browser, enter the following URL:
 +

@@ -1,6 +1,6 @@
 [[GLIFD]][[securing-enterprise-information-systems-applications]]
 
-==== Securing Enterprise Information Systems Applications
+== Securing Enterprise Information Systems Applications
 
 In Enterprise Information Systems (EIS) applications, components request
 a connection to an EIS resource.
@@ -16,7 +16,7 @@ Applications]
 
 [[BABBJHIC]][[overview-of-securing-enterprise-information-systems-applications]]
 
-===== Overview of Securing Enterprise Information Systems Applications
+=== Overview of Securing Enterprise Information Systems Applications
 
 As part of this connection, the EIS can require a sign-on for the
 requester to access the resource. The application component provider has
@@ -34,7 +34,7 @@ link:#GLIGS[Configuring Resource Adapter Security].
 
 [[GLIHL]][[container-managed-sign-on]]
 
-===== Container-Managed Sign-On
+=== Container-Managed Sign-On
 
 In container-managed sign-on, an application component does not have to
 pass any sign-on security information to the `getConnection()` method.
@@ -57,7 +57,7 @@ javax.resource.cci.Connection cx = cxf.getConnection();
 
 [[GLIDP]][[component-managed-sign-on]]
 
-===== Component-Managed Sign-On
+=== Component-Managed Sign-On
 
 In component-managed sign-on, an application component is responsible
 for passing the needed sign-on security information for the resource to
@@ -88,7 +88,7 @@ javax.resource.cci.Connection cx =
 
 [[GLIGS]][[configuring-resource-adapter-security]]
 
-===== Configuring Resource Adapter Security
+=== Configuring Resource Adapter Security
 
 A resource adapter is a system-level software component that typically
 implements network connectivity to an external resource manager. A
@@ -176,7 +176,7 @@ various principals or user groups in the application.
 
 [[GLIGW]][[mapping-an-application-principal-to-eis-principals]]
 
-===== Mapping an Application Principal to EIS Principals
+=== Mapping an Application Principal to EIS Principals
 
 When using GlassFish Server, you can use security maps to map the caller
 identity of the application (principal or user group) to a suitable EIS

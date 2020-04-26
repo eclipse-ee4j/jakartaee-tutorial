@@ -1,6 +1,6 @@
 [[BNCDR]][[overview-of-the-jms-api]]
 
-==== Jakarta Messaging Overview
+== Jakarta Messaging Overview
 
 This overview defines the concept of messaging, describes Jakarta Messaging
 and where it can be used, and explains how Jakarta Messaging works within the
@@ -15,7 +15,7 @@ The following topics are addressed here:
 
 [[BNCDS]][[what-is-messaging]]
 
-===== What Is Messaging?
+=== What Is Messaging?
 
 Messaging is a method of communication between software components or
 applications. A messaging system is a peer-to-peer facility: A messaging
@@ -43,7 +43,7 @@ applications or software components.
 
 [[BNCDT]][[what-is-the-jms-api]]
 
-===== What Is Jakarta Messaging?
+=== What Is Jakarta Messaging?
 
 Jakarta Messaging is a Java API that allows applications to
 create, send, receive, and read messages. Jakarta Messaging defines a common
@@ -71,7 +71,7 @@ The current version of the Jakarta Messaging specification is Version 2.0.
 
 [[BNCDU]][[when-can-you-use-the-jms-api]]
 
-===== When Can You Use Jakarta Messaging?
+=== When Can You Use Jakarta Messaging?
 
 An enterprise application provider is likely to choose a messaging API
 over a tightly coupled API, such as a remote procedure call (RPC), under
@@ -117,7 +117,7 @@ services applications, and many others can make use of messaging.
 
 [[BNCDW]][[how-does-the-jms-api-work-with-the-jakarta-ee-platform]]
 
-===== How Does Jakarta Messaging Work with the Jakarta EE Platform?
+=== How Does Jakarta Messaging Work with the Jakarta EE Platform?
 
 When JMS was first introduced, its most important purpose was to
 allow Java applications to access existing messaging-oriented middleware

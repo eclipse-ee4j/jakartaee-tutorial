@@ -1,6 +1,6 @@
 [[BNAVH]][[determining-whether-you-need-a-custom-component-or-renderer]]
 
-==== Determining Whether You Need a Custom Component or Renderer
+== Determining Whether You Need a Custom Component or Renderer
 
 The Jakarta Server Faces implementation supports a very basic set of
 components and associated renderers. This section helps you to decide
@@ -15,7 +15,7 @@ The following topics are addressed here:
 
 [[BNAVI]][[when-to-use-a-custom-component]]
 
-===== When to Use a Custom Component
+=== When to Use a Custom Component
 
 A component class defines the state and behavior of a UI component. This
 behavior includes converting the value of a component to the appropriate
@@ -85,7 +85,7 @@ information.
 
 [[BNAVJ]][[when-to-use-a-custom-renderer]]
 
-===== When to Use a Custom Renderer
+=== When to Use a Custom Renderer
 
 A renderer, which generates the markup to display a component on a web
 page, allows you to separate the semantics of a component from its
@@ -129,7 +129,7 @@ renderer if there is one.
 
 [[BNAVK]][[component-renderer-and-tag-combinations]]
 
-===== Component, Renderer, and Tag Combinations
+=== Component, Renderer, and Tag Combinations
 
 When you create a custom component, you can create a custom renderer to
 go with it. To associate the component with the renderer and to

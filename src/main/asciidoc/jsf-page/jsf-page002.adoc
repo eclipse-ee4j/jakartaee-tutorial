@@ -1,6 +1,6 @@
 [[BNARF]][[adding-components-to-a-page-using-html-tag-library-tags]]
 
-==== Adding Components to a Page Using HTML Tag Library Tags
+== Adding Components to a Page Using HTML Tag Library Tags
 
 The tags defined by the Jakarta Server Faces standard HTML tag library
 represent HTML form components and other basic HTML elements. These
@@ -118,7 +118,7 @@ olink:JSFTL[Jakarta Server Faces Facelets Tag Library documentation].
 
 [[BNARG]][[common-component-tag-attributes]]
 
-===== Common Component Tag Attributes
+=== Common Component Tag Attributes
 
 Most of the component tags support the attributes shown in
 link:#GKCKS[Table 10-2].
@@ -161,7 +161,7 @@ then modified in the backing bean for the page.
 
 [[BNARH]][[the-id-attribute]]
 
-====== The id Attribute
+==== The id Attribute
 
 The `id` attribute is not usually required for a component tag but is
 used when another component or a server-side class must refer to the
@@ -175,7 +175,7 @@ link:#BNAHV[Value Expressions].
 
 [[BNARI]][[the-immediate-attribute]]
 
-====== The immediate Attribute
+==== The immediate Attribute
 
 Input components and command components (those that implement the
 `ActionSource` interface, such as buttons and links) can set the
@@ -245,7 +245,7 @@ will be updated in the shopping cart.
 
 [[BNARJ]][[the-rendered-attribute]]
 
-====== The rendered Attribute
+==== The rendered Attribute
 
 A component tag uses a Boolean EL expression along with the `rendered`
 attribute to determine whether the component will be rendered. For
@@ -285,7 +285,7 @@ Web Applications"].
 
 [[BNARK]][[the-style-and-styleclass-attributes]]
 
-====== The style and styleClass Attributes
+==== The style and styleClass Attributes
 
 The `style` and `styleClass` attributes allow you to specify CSS styles
 for the rendered output of your tags. link:#BNASO[Displaying Error
@@ -312,7 +312,7 @@ see the Cascading Style Sheets specifications and drafts at
 
 [[BNARL]][[the-value-and-binding-attributes]]
 
-====== The value and binding Attributes
+==== The value and binding Attributes
 
 A tag representing an output component uses the `value` and `binding`
 attributes to bind its component's value or instance, respectively, to a
@@ -326,7 +326,7 @@ Component Instances].
 
 [[GJDGQ]][[adding-html-head-and-body-tags]]
 
-===== Adding HTML Head and Body Tags
+=== Adding HTML Head and Body Tags
 
 The HTML head (`h:head`) and body (`h:body`) tags add HTML page
 structure to Jakarta Server Faces web pages.
@@ -377,7 +377,7 @@ h:outputStylesheet Tags].
 
 [[BNARM]][[adding-a-form-component]]
 
-===== Adding a Form Component
+=== Adding a Form Component
 
 An `h:form` tag represents an input form, which includes child
 components that can contain data that is either presented to the user or
@@ -413,7 +413,7 @@ form submitted by the user will be included in the postback request.
 
 [[BNARO]][[using-text-components]]
 
-===== Using Text Components
+=== Using Text Components
 
 Text components allow users to view and edit text in web applications.
 The basic types of text components are as follows:
@@ -550,7 +550,7 @@ written in a similar way.
 
 [[BNARR]][[rendering-a-field-with-the-hinputtext-tag]]
 
-====== Rendering a Field with the h:inputText Tag
+==== Rendering a Field with the h:inputText Tag
 
 The `h:inputText` tag is used to display a field. A similar tag, the
 `h:outputText` tag, displays a read-only, single-line string. This
@@ -600,7 +600,7 @@ for more information.
 
 [[BNARV]][[rendering-a-password-field-with-the-hinputsecret-tag]]
 
-====== Rendering a Password Field with the h:inputSecret Tag
+==== Rendering a Password Field with the h:inputSecret Tag
 
 The `h:inputSecret` tag renders an `<input type="password">` HTML tag.
 When the user types a string into this field, a row of asterisks is
@@ -617,7 +617,7 @@ source file of the resulting HTML page.
 
 [[BNARS]][[rendering-a-label-with-the-houtputlabel-tag]]
 
-====== Rendering a Label with the h:outputLabel Tag
+==== Rendering a Label with the h:outputLabel Tag
 
 The `h:outputLabel` tag is used to attach a label to a specified input
 field for the purpose of making it accessible. The following page uses
@@ -667,7 +667,7 @@ specify the text of the label:
 
 [[BNART]][[rendering-a-link-with-the-houtputlink-tag]]
 
-====== Rendering a Link with the h:outputLink Tag
+==== Rendering a Link with the h:outputLink Tag
 
 The `h:outputLink` tag is used to render a link that, when clicked,
 loads another page but does not generate an action event. You should use
@@ -688,7 +688,7 @@ the user clicks to get to the next page.
 
 [[BNARU]][[displaying-a-formatted-message-with-the-houtputformat-tag]]
 
-====== Displaying a Formatted Message with the h:outputFormat Tag
+==== Displaying a Formatted Message with the h:outputFormat Tag
 
 The `h:outputFormat` tag allows display of concatenated messages as a
 `MessageFormat` pattern, as described in the API documentation for
@@ -741,7 +741,7 @@ Hello, Bill! You are visitor number 10 to the page.
 
 [[BNARW]][[using-command-component-tags-for-performing-actions-and-navigation]]
 
-===== Using Command Component Tags for Performing Actions and Navigation
+=== Using Command Component Tags for Performing Actions and Navigation
 
 In Jakarta Server Faces applications, the button and link component tags are
 used to perform actions, such as submitting a form, and for navigating
@@ -771,7 +771,7 @@ Action Event] for details on using the `actionListener` attribute.
 
 [[BNARX]][[rendering-a-button-with-the-hcommandbutton-tag]]
 
-====== Rendering a Button with the h:commandButton Tag
+==== Rendering a Button with the h:commandButton Tag
 
 If you are using an `h:commandButton` component tag, the data from the
 current page is processed when a user clicks the button, and the next
@@ -794,7 +794,7 @@ Performs Navigation].
 
 [[GKBUJ]][[rendering-a-link-with-the-hcommandlink-tag]]
 
-====== Rendering a Link with the h:commandLink Tag
+==== Rendering a Link with the h:commandLink Tag
 
 The `h:commandLink` tag represents an HTML link and is rendered as an
 HTML `<a>` element.
@@ -837,7 +837,7 @@ technology.
 
 [[BNASB]][[adding-graphics-and-images-with-the-hgraphicimage-tag]]
 
-===== Adding Graphics and Images with the h:graphicImage Tag
+=== Adding Graphics and Images with the h:graphicImage Tag
 
 In a Jakarta Server Faces application, use the `h:graphicImage` tag to
 render an image on a page:
@@ -882,7 +882,7 @@ header {
 
 [[BNASC]][[laying-out-components-with-the-hpanelgrid-and-hpanelgroup-tags]]
 
-===== Laying Out Components with the h:panelGrid and h:panelGroup Tags
+=== Laying Out Components with the h:panelGrid and h:panelGroup Tags
 
 In a Jakarta Server Faces application, you use a panel as a layout container
 for a set of other components. A panel is rendered as an HTML table.
@@ -1008,7 +1008,7 @@ components, that component will be in the 5 modulo 2 column, or column
 
 [[BNASE]][[displaying-components-for-selecting-one-value]]
 
-===== Displaying Components for Selecting One Value
+=== Displaying Components for Selecting One Value
 
 Another commonly used component is one that allows a user to select one
 value, whether it is the only value available or one of a set of
@@ -1030,7 +1030,7 @@ image:jakartaeett_dt_067_slctn.png[
 
 [[BNASG]][[displaying-a-check-box-using-the-hselectbooleancheckbox-tag]]
 
-====== Displaying a Check Box Using the h:selectBooleanCheckbox Tag
+==== Displaying a Check Box Using the h:selectBooleanCheckbox Tag
 
 The `h:selectBooleanCheckbox` tag is the only tag that Jakarta Server Faces
 technology provides for representing a Boolean state.
@@ -1059,7 +1059,7 @@ check box. The label text is represented by the `value` attribute.
 
 [[BNASH]][[displaying-a-menu-using-the-hselectonemenu-tag]]
 
-====== Displaying a Menu Using the h:selectOneMenu Tag
+==== Displaying a Menu Using the h:selectOneMenu Tag
 
 A component that allows the user to select one value from a set of
 values can be rendered as a box or a set of options. This section
@@ -1097,7 +1097,7 @@ and f:selectItems Tags] describes these tags.
 
 [[BNASI]][[displaying-components-for-selecting-multiple-values]]
 
-===== Displaying Components for Selecting Multiple Values
+=== Displaying Components for Selecting Multiple Values
 
 In some cases, you need to allow your users to select multiple values
 rather than just one value from a list of choices. You can do this using
@@ -1159,7 +1159,7 @@ more detail.
 
 [[BNASK]][[using-the-fselectitem-and-fselectitems-tags]]
 
-===== Using the f:selectItem and f:selectItems Tags
+=== Using the f:selectItem and f:selectItems Tags
 
 The `f:selectItem` and `f:selectItems` tags represent components that
 can be nested inside a component that allows you to select one or
@@ -1190,7 +1190,7 @@ The rest of this section shows you how to use the `f:selectItems` and
 
 [[BNASM]][[using-the-fselectitems-tag]]
 
-====== Using the f:selectItems Tag
+==== Using the f:selectItems Tag
 
 The following example from link:#BNASI[Displaying Components for
 Selecting Multiple Values] shows how to use the `h:selectManyCheckbox`
@@ -1215,7 +1215,7 @@ tags.
 
 [[BNASN]][[using-the-fselectitem-tag]]
 
-====== Using the f:selectItem Tag
+==== Using the f:selectItem Tag
 
 The `f:selectItem` tag represents a single item in a list of items. Here
 is the example from link:#BNASH[Displaying a Menu Using the
@@ -1246,7 +1246,7 @@ shown in the example `h:selectOneMenu` tag.
 
 [[sthref50]][[displaying-the-results-from-selection-components]]
 
-===== Displaying the Results from Selection Components
+=== Displaying the Results from Selection Components
 
 If you display components that allow a user to select values, you may
 also want to display the result of the selection.
@@ -1288,7 +1288,7 @@ list. (This tag is listed in link:#GJBFP[Table 8-2].)
 
 [[BNARZ]][[using-data-bound-table-components]]
 
-===== Using Data-Bound Table Components
+=== Using Data-Bound Table Components
 
 Data-bound table components display relational data in a tabular format.
 In a Jakarta Server Faces application, the `h:dataTable` component tag
@@ -1467,7 +1467,7 @@ columns or rows will be assigned styles starting from the first style.
 
 [[BNASO]][[displaying-error-messages-with-the-hmessage-and-hmessages-tags]]
 
-===== Displaying Error Messages with the h:message and h:messages Tags
+=== Displaying Error Messages with the h:message and h:messages Tags
 
 The `h:message` and `h:messages` tags are used to display error messages
 when conversion or validation fails. The `h:message` tag displays error
@@ -1534,7 +1534,7 @@ validators by registering custom error messages with the application.
 
 [[GIQZD]][[creating-bookmarkable-urls-with-the-hbutton-and-hlink-tags]]
 
-===== Creating Bookmarkable URLs with the h:button and h:link Tags
+=== Creating Bookmarkable URLs with the h:button and h:link Tags
 
 The ability to create bookmarkable URLs refers to the ability to
 generate links based on a specified navigation outcome and on component
@@ -1577,7 +1577,7 @@ functionality of the `h:link` tag, use view parameters.
 
 [[GIQWQ]][[using-view-parameters-to-configure-bookmarkable-urls]]
 
-===== Using View Parameters to Configure Bookmarkable URLs
+=== Using View Parameters to Configure Bookmarkable URLs
 
 To pass a parameter from one page to another, use the
 `includeViewParams` attribute in your `h:link` tag and, in addition, use
@@ -1644,7 +1644,7 @@ parameter values are read is as follows:
 
 [[sthref52]][[the-bookmarks-example-application]]
 
-===== The bookmarks Example Application
+=== The bookmarks Example Application
 
 The `bookmarks` example application modifies the `hello1` application
 described in link:#BNADX[A Web Module That Uses Jakarta Server
@@ -1671,7 +1671,7 @@ Using Maven]
 
 [[CHDIEHEB]][[to-build-package-and-deploy-the-bookmarks-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
+==== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -1693,7 +1693,7 @@ GlassFish Server instance.
 
 [[CHDEFJEF]][[to-build-package-and-deploy-the-bookmarks-example-using-maven]]
 
-====== To Build, Package, and Deploy the bookmarks Example Using Maven
+==== To Build, Package, and Deploy the bookmarks Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -1717,7 +1717,7 @@ deploys the WAR file to your GlassFish Server instance.
 
 [[CHDGEBCB]][[to-run-the-bookmarks-example]]
 
-====== To Run the bookmarks Example
+==== To Run the bookmarks Example
 
 1.  Enter the following URL in your web browser:
 +
@@ -1738,7 +1738,7 @@ The name in the greeting changes to what you typed.
 
 [[GJGEP]][[resource-relocation-using-houtputscript-and-houtputstylesheet-tags]]
 
-===== Resource Relocation Using h:outputScript and h:outputStylesheet Tags
+=== Resource Relocation Using h:outputScript and h:outputStylesheet Tags
 
 Resource relocation refers to the ability of a Jakarta Server Faces
 application to specify the location where a resource can be rendered.

@@ -1,6 +1,6 @@
 [[BNAXJ]][[basic-requirements-of-a-javaserver-faces-application]]
 
-==== Basic Requirements of a Jakarta Server Faces Application
+== Basic Requirements of a Jakarta Server Faces Application
 
 In addition to configuring your application, you must satisfy other
 requirements of Jakarta Server Faces applications, including properly
@@ -46,7 +46,7 @@ directory of the WAR file.
 
 [[BNAXK]][[configuring-an-application-with-a-web-deployment-descriptor]]
 
-===== Configuring an Application with a Web Deployment Descriptor
+=== Configuring an Application with a Web Deployment Descriptor
 
 Web applications are commonly configured using elements contained in the
 web application deployment descriptor, `web.xml`. The deployment
@@ -74,7 +74,7 @@ using NetBeans IDE.
 
 [[GLPOO]][[identifying-the-servlet-for-lifecycle-processing]]
 
-====== Identifying the Servlet for Lifecycle Processing
+==== Identifying the Servlet for Lifecycle Processing
 
 A requirement of a Jakarta Server Faces application is that all requests to
 the application that reference previously saved Jakarta Server Faces
@@ -161,7 +161,7 @@ create a web deployment descriptor.
 
 [[BNAXM]][[to-specify-a-path-to-an-application-configuration-resource-file]]
 
-====== To Specify a Path to an Application Configuration Resource File
+==== To Specify a Path to an Application Configuration Resource File
 
 As explained in link:#BNAWP[Application
 Configuration Resource File], an application can have multiple
@@ -186,7 +186,7 @@ To specify these paths using NetBeans IDE, do the following.
 
 [[BNAXN]][[to-specify-where-state-is-saved]]
 
-====== To Specify Where State Is Saved
+==== To Specify Where State Is Saved
 
 For all the components in a web application, you can specify in your
 deployment descriptor where you want the state to be saved, on either
@@ -216,7 +216,7 @@ saves its state on the client.
 
 [[GIQXL]][[configuring-project-stage]]
 
-===== Configuring Project Stage
+=== Configuring Project Stage
 
 Project Stage is a context parameter identifying the status of a
 Jakarta Server Faces application in the software lifecycle. The stage of an
@@ -247,7 +247,7 @@ can also add custom stages according to your requirements.
 
 [[BNAXT]][[including-the-classes-pages-and-other-resources]]
 
-===== Including the Classes, Pages, and Other Resources
+=== Including the Classes, Pages, and Other Resources
 
 When packaging web applications using the included build scripts, you'll
 notice that the scripts package resources in the following ways.

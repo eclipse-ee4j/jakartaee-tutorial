@@ -1,6 +1,6 @@
 [[GKAGV]][[grouping-constraints]]
 
-==== Grouping Constraints
+== Grouping Constraints
 
 Constraints may be added to one or more groups. Constraint groups are
 used to create subsets of constraints so that only certain constraints
@@ -49,7 +49,7 @@ being validated, because `Employee` is a superinterface of `Manager`.
 
 [[GKAGU]][[customizing-group-validation-order]]
 
-===== Customizing Group Validation Order
+=== Customizing Group Validation Order
 
 By default, constraint groups are validated in no particular order.
 There are cases in which some groups should be validated before others.

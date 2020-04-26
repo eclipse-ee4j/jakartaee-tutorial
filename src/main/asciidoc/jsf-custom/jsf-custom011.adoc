@@ -1,6 +1,6 @@
 [[BNAUS]][[creating-and-using-a-custom-converter]]
 
-==== Creating and Using a Custom Converter
+== Creating and Using a Custom Converter
 
 A Jakarta Server Faces converter class converts strings to objects and
 objects to strings as required. Several standard converters are provided
@@ -34,7 +34,7 @@ they can be converted to and from a `UISelectItems` input component.
 
 [[GLPHB]][[creating-a-custom-converter]]
 
-===== Creating a Custom Converter
+=== Creating a Custom Converter
 
 The `CreditCardConverter` custom converter class is created as follows:
 
@@ -184,7 +184,7 @@ class.
 
 [[BNATU]][[using-a-custom-converter]]
 
-===== Using a Custom Converter
+=== Using a Custom Converter
 
 To apply the data conversion performed by a custom converter to a
 particular component's value, you must do one of the following.

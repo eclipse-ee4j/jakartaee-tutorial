@@ -1,6 +1,6 @@
 [[BNAHU]][[value-and-method-expressions]]
 
-==== Value and Method Expressions
+== Value and Method Expressions
 
 The EL defines two kinds of expressions: value expressions and method
 expressions. Value expressions can be evaluated to yield a value, and
@@ -14,7 +14,7 @@ The following topics are addressed here:
 
 [[BNAHV]][[value-expressions]]
 
-===== Value Expressions
+=== Value Expressions
 
 Value expressions can be further categorized into rvalue and lvalue
 expressions. An lvalue expression can specify a target, such as an
@@ -49,7 +49,7 @@ a postback request, this expression can be used to set the value of the
 
 [[BNAHW]][[referencing-objects]]
 
-====== Referencing Objects
+==== Referencing Objects
 
 A top-level identifier (such as `customer` in the expression
 `customer.name`) can refer to the following objects:
@@ -94,7 +94,7 @@ ${mySuit == suit.hearts}
 
 [[BNAHX]][[referencing-object-properties-or-collection-elements]]
 
-====== Referencing Object Properties or Collection Elements
+==== Referencing Object Properties or Collection Elements
 
 To refer to properties of a bean, static fields or methods of a class,
 or items of a collection, you use the `.` or `[]` notation. The same
@@ -153,7 +153,7 @@ ${customer.orders.socks}
 
 [[sthref38]][[referencing-literals]]
 
-====== Referencing Literals
+==== Referencing Literals
 
 The EL defines the following literals:
 
@@ -172,7 +172,7 @@ Here are some examples:
 
 [[GJHBZ]][[parameterized-method-calls]]
 
-====== Parameterized Method Calls
+==== Parameterized Method Calls
 
 The EL offers support for parameterized method calls.
 
@@ -225,7 +225,7 @@ stock symbol) as a parameter to the `buy` method.
 
 [[BNAHY]][[where-value-expressions-can-be-used]]
 
-====== Where Value Expressions Can Be Used
+==== Where Value Expressions Can Be Used
 
 Value expressions using the `${}` delimiters can be used
 
@@ -309,7 +309,7 @@ Float.valueOf("1.2E4").floatValue()
 
 [[BNAHZ]][[method-expressions]]
 
-===== Method Expressions
+=== Method Expressions
 
 Another feature of the EL is its support of deferred method expressions.
 A method expression is used to refer to a public method of a bean and
@@ -374,7 +374,7 @@ in the tag's tag library descriptor.
 
 [[BEIHCBAH]][[lambda-expressions]]
 
-===== Lambda Expressions
+=== Lambda Expressions
 
 A lambda expression is a value expression with parameters. The syntax is
 similar to that of the lambda expression in the Java programming

@@ -1,6 +1,6 @@
 [[GKJIO]][[overview-of-the-second-level-cache]]
 
-==== Overview of the Second-Level Cache
+== Overview of the Second-Level Cache
 
 A second-level cache is a local store of entity data managed by the
 persistence provider to improve application performance. A second-level
@@ -70,7 +70,7 @@ the application.
 
 [[GKJIW]][[controlling-whether-entities-may-be-cached]]
 
-===== Controlling whether Entities May Be Cached
+=== Controlling whether Entities May Be Cached
 
 The `javax.persistence.Cacheable` annotation is used to specify that an
 entity class, and any subclasses, may be cached when using the

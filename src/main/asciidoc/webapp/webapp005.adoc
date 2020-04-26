@@ -1,6 +1,6 @@
 [[CHDHGJIA]][[configuring-web-applications]]
 
-==== Configuring Web Applications
+== Configuring Web Applications
 
 This section describes the following tasks involved with configuring web
 applications:
@@ -12,7 +12,7 @@ applications:
 
 [[BNAES]][[setting-context-parameters]]
 
-===== Setting Context Parameters
+=== Setting Context Parameters
 
 The web components in a web module share an object that represents their
 application context. You can pass context parameters to the context, or
@@ -23,7 +23,7 @@ Initializing a Servlet].
 
 [[GJSFJ]][[to-add-a-context-parameter-using-netbeans-ide]]
 
-====== To Add a Context Parameter Using NetBeans IDE
+==== To Add a Context Parameter Using NetBeans IDE
 
 These steps apply generally to web applications but do not apply
 specifically to the examples in this chapter.
@@ -48,7 +48,7 @@ context object.
 
 [[GKIHH]][[to-create-a-web.xml-file-using-netbeans-ide]]
 
-====== To Create a web.xml File Using NetBeans IDE
+==== To Create a web.xml File Using NetBeans IDE
 
 To create a `web.xml` file using NetBeans IDE:
 
@@ -62,7 +62,7 @@ A basic `web.xml` file appears in `web/WEB-INF/`.
 
 [[BNAER]][[declaring-welcome-files]]
 
-===== Declaring Welcome Files
+=== Declaring Welcome Files
 
 The welcome files mechanism allows you to specify a list of files that
 the web container can append to a request for a URL (called a valid
@@ -104,7 +104,7 @@ pattern `/greeting`.
 
 [[GKBKW]][[mapping-errors-to-error-screens]]
 
-===== Mapping Errors to Error Screens
+=== Mapping Errors to Error Screens
 
 When an error occurs during execution of a web application, you can have
 the application display a specific error screen according to the type of
@@ -119,7 +119,7 @@ error page to open. This error page can be the same for any number of
 
 [[BNAET]][[to-set-up-error-mapping-using-netbeans-ide]]
 
-====== To Set Up Error Mapping Using NetBeans IDE
+==== To Set Up Error Mapping Using NetBeans IDE
 
 These steps apply generally to web applications but do not apply
 specifically to the examples in this chapter.
@@ -149,7 +149,7 @@ throwable errors and exceptions, enter `java.lang.Throwable`.
 
 [[BNAEU]][[declaring-resource-references]]
 
-===== Declaring Resource References
+=== Declaring Resource References
 
 If your web component uses such objects as enterprise beans, data
 sources, or web services, you use Jakarta EE annotations to inject these
@@ -210,7 +210,7 @@ for more information on resources.
 
 [[BNAEW]][[declaring-a-reference-to-a-resource]]
 
-====== Declaring a Reference to a Resource
+==== Declaring a Reference to a Resource
 
 The `@Resource` annotation is used to declare a reference to a resource,
 such as a data source, an enterprise bean, or an environment entry.
@@ -265,7 +265,7 @@ Jakarta Persistence in web applications.
 
 [[BNAEX]][[declaring-a-reference-to-a-web-service]]
 
-====== Declaring a Reference to a Web Service
+==== Declaring a Reference to a Web Service
 
 The `@WebServiceRef` annotation provides a reference to a web service.
 The following example shows uses the `@WebServiceRef` annotation to

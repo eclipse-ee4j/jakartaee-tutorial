@@ -1,5 +1,5 @@
 [[the-jsonpstreaming-example-application]]
-==== The jsonpstreaming Example Application
+== The jsonpstreaming Example Application
 
 This section describes how to build and run the `jsonpstreaming` example
 application. This example is a web application that demonstrates how to
@@ -16,7 +16,7 @@ The following topics are addressed here:
 
 
 [[components-of-the-jsonpstreaming-example-application]]
-===== Components of the jsonpstreaming Example Application
+=== Components of the jsonpstreaming Example Application
 
 The `jsonpstreaming` example application contains the following files.
 
@@ -42,7 +42,7 @@ Parser].
 
 
 [[running-the-jsonpstreaming-example-application]]
-===== Running the jsonpstreaming Example Application
+=== Running the jsonpstreaming Example Application
 
 This section describes how to run the `jsonpstreaming` example
 application using NetBeans IDE and from the command line.
@@ -55,7 +55,7 @@ NetBeans IDE]
 Maven]
 
 [[to-run-the-jsonpstreaming-example-application-using-netbeans-ide]]
-====== To Run the jsonpstreaming Example Application Using NetBeans IDE
+==== To Run the jsonpstreaming Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -88,7 +88,7 @@ lists the parser events for the JSON data in the text file.
 
 
 [[to-run-the-jsonpstreaming-example-application-using-maven]]
-====== To Run the jsonpstreaming Example Application Using Maven
+==== To Run the jsonpstreaming Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

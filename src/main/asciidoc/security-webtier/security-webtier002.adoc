@@ -1,6 +1,6 @@
 [[GKBAA]][[securing-web-applications]]
 
-==== Securing Web Applications
+== Securing Web Applications
 
 Web applications are created by application developers who give, sell,
 or otherwise transfer the application to an application deployer for
@@ -17,7 +17,7 @@ Descriptor]
 
 [[CHDBIBHI]][[overview-of-securing-web-applications]]
 
-===== Overview of Securing Web Applications
+=== Overview of Securing Web Applications
 
 Application developers communicate how to set up security for the
 deployed application by using annotations or deployment descriptors.
@@ -35,7 +35,7 @@ annotations cannot be used.
 
 [[BNCBK]][[specifying-security-constraints]]
 
-===== Specifying Security Constraints
+=== Specifying Security Constraints
 
 A security constraint is used to define the access privileges to a
 collection of resources using their URL mapping.
@@ -71,7 +71,7 @@ Connection].
 
 [[GJJCD]][[specifying-a-web-resource-collection]]
 
-====== Specifying a Web Resource Collection
+==== Specifying a Web Resource Collection
 
 A web resource collection consists of the following subelements.
 
@@ -112,7 +112,7 @@ elements, none of which names the HTTP method
 
 [[GJJCG]][[specifying-an-authorization-constraint]]
 
-====== Specifying an Authorization Constraint
+==== Specifying an Authorization Constraint
 
 An authorization constraint (`auth-constraint`) contains the `role-name`
 element. You can use as many `role-name` elements as needed here.
@@ -141,7 +141,7 @@ authorized roles.
 
 [[BNCBM]][[specifying-a-secure-connection]]
 
-====== Specifying a Secure Connection
+==== Specifying a Secure Connection
 
 A user data constraint (`user-data-constraint` in the deployment
 descriptor) contains the `transport-guarantee` subelement. A user data
@@ -215,7 +215,7 @@ easily implemented by using a filter.
 
 [[BNCBL]][[specifying-security-constraints-for-resources]]
 
-====== Specifying Security Constraints for Resources
+==== Specifying Security Constraints for Resources
 
 You can create security constraints for resources within your
 application. For example, you could allow users with the role of
@@ -260,7 +260,7 @@ following:
 
 [[GKBSA]][[specifying-authentication-mechanisms]]
 
-===== Specifying Authentication Mechanisms
+=== Specifying Authentication Mechanisms
 
 This section describes built-in authentication mechanisms defined by
 the Servlet specification.
@@ -327,7 +327,7 @@ the elements described in link:#BNCBM[Specifying a Secure Connection].
 
 [[BNCBO]][[http-basic-authentication]]
 
-====== HTTP Basic Authentication
+==== HTTP Basic Authentication
 
 Specifying HTTP basic authentication requires that the server request a
 user name and password from the web client and verify that the user name
@@ -358,7 +358,7 @@ server"]
 
 [[BNCBQ]][[form-based-authentication]]
 
-====== Form-Based Authentication
+==== Form-Based Authentication
 
 Form-based authentication allows the developer to control the look and
 feel of the login authentication screens by customizing the login screen
@@ -412,7 +412,7 @@ HTML page:
 
 [[BNCBW]][[digest-authentication]]
 
-====== Digest Authentication
+==== Digest Authentication
 
 Like basic authentication, digest authentication authenticates a user
 based on a user name and a password. However, unlike basic
@@ -425,7 +425,7 @@ validate received authenticators by calculating the expected digest.
 
 [[BNCBN]][[specifying-an-authentication-mechanism-in-the-deployment-descriptor]]
 
-===== Specifying an Authentication Mechanism in the Deployment Descriptor
+=== Specifying an Authentication Mechanism in the Deployment Descriptor
 
 To specify an authentication mechanism, use the `login-config` element.
 It can contain the following subelements.
@@ -493,7 +493,7 @@ deployment descriptor:
 
 [[BNCAV]][[declaring-security-roles]]
 
-===== Declaring Security Roles
+=== Declaring Security Roles
 
 You can declare security role names used in web applications by using
 the `security-role` element of the deployment descriptor. Use this

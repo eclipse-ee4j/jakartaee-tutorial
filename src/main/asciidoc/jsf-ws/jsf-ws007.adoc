@@ -1,5 +1,5 @@
 [[using-ajax-with-websockets]]
-==== Using Ajax With WebSockets
+== Using Ajax With WebSockets
 
 If you want to perform complex UI updates depending on the received push
 message, you can nest the `f:ajax` tag inside the `f:websocket` tag. See the

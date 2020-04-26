@@ -1,6 +1,6 @@
 [[BNAZC]][[types-supported-by-jax-ws]]
 
-==== Types Supported by JAX-WS
+== Types Supported by JAX-WS
 
 JAX-WS delegates the mapping of Java programming language types to and
 from XML definitions to JAXB. Application developers don't need to know
@@ -16,7 +16,7 @@ Java-to-schema data type bindings:
 
 [[BNAZT]][[schema-to-java-mapping]]
 
-===== Schema-to-Java Mapping
+=== Schema-to-Java Mapping
 
 The Java language provides a richer set of data types than XML schema.
 link:#BNAZU[Table 31-1] lists the mapping of XML data types to Java data
@@ -58,7 +58,7 @@ types in JAXB.
 
 [[BNAZW]][[java-to-schema-mapping]]
 
-===== Java-to-Schema Mapping
+=== Java-to-Schema Mapping
 
 link:#BNAZX[Table 31-2] shows the default mapping of Java classes to XML
 data types.

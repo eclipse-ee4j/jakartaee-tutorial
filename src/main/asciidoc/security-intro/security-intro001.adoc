@@ -1,6 +1,6 @@
 [[BNBWK]][[overview-of-jakarta-ee-security]]
 
-==== Overview of Jakarta Security
+== Overview of Jakarta Security
 
 Every enterprise that has either sensitive resources that can be
 accessed by many users or resources that traverse unprotected, open
@@ -64,7 +64,7 @@ Jakarta Security, and provides examples.
 
 [[BNBWL]][[a-simple-application-security-walkthrough]]
 
-===== A Simple Application Security Walkthrough
+=== A Simple Application Security Walkthrough
 
 The security behavior of a Jakarta EE environment may be better understood
 by examining what happens in a simple application with a web client, a
@@ -77,7 +77,7 @@ client and using it to establish an authenticated session.
 
 [[BNBWM]][[step-1-initial-request]]
 
-====== Step 1: Initial Request
+==== Step 1: Initial Request
 
 In the first step of this example, the web client requests the main
 application URL. This action is shown in link:#BNBWN[Figure 50-1].
@@ -98,7 +98,7 @@ link:#BNBWY[Security Mechanisms].
 
 [[BNBWO]][[step-2-initial-authentication]]
 
-====== Step 2: Initial Authentication
+==== Step 2: Initial Authentication
 
 The web server returns a form that the web client uses to collect
 authentication data, such as user name and password, from the user. The
@@ -117,7 +117,7 @@ sends authentication data to server for validation"]
 
 [[BNBWQ]][[step-3-url-authorization]]
 
-====== Step 3: URL Authorization
+==== Step 3: URL Authorization
 
 The credential is used for future determinations of whether the user is
 authorized to access restricted resources it may request. The web server
@@ -141,7 +141,7 @@ the permitted roles.
 
 [[BNBWS]][[step-4-fulfilling-the-original-request]]
 
-====== Step 4: Fulfilling the Original Request
+==== Step 4: Fulfilling the Original Request
 
 If the user is authorized, the web server returns the result of the
 original URL request, as shown in link:#BNBWT[Figure 50-4].
@@ -161,7 +161,7 @@ Web Applications"] for more information on protecting web applications.
 
 [[BNBWU]][[step-5-invoking-enterprise-bean-business-methods]]
 
-====== Step 5: Invoking Enterprise Bean Business Methods
+==== Step 5: Invoking Enterprise Bean Business Methods
 
 The web page performs the remote method call to the enterprise bean,
 using the user's credential to establish a secure association between
@@ -198,7 +198,7 @@ and the web client.
 
 [[BNBWW]][[features-of-a-security-mechanism]]
 
-===== Features of a Security Mechanism
+=== Features of a Security Mechanism
 
 A properly implemented security mechanism will provide the following
 functionality:
@@ -218,7 +218,7 @@ Ideally, properly implemented security mechanisms will also be
 
 [[BNBWX]][[characteristics-of-application-security]]
 
-===== Characteristics of Application Security
+=== Characteristics of Application Security
 
 Jakarta EE applications consist of components that can contain both
 protected and unprotected resources. Often, you need to protect

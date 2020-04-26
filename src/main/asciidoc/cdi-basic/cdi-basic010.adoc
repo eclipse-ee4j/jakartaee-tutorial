@@ -1,6 +1,6 @@
 [[GJBBP]][[adding-setter-and-getter-methods]]
 
-==== Adding Setter and Getter Methods
+== Adding Setter and Getter Methods
 
 To make the state of the managed bean accessible, add setter and getter methods for that state. The `createSalutation` method calls the bean's `greet` method, and the
 `getSalutation` method retrieves the result.

@@ -1,6 +1,6 @@
 [[GKANQ]][[the-address-book-application]]
 
-==== The address-book Application
+== The address-book Application
 
 The `address-book` example application is a simple web application that
 stores contact data. It uses a single entity class, `Contact`, that uses
@@ -19,7 +19,7 @@ Application]
 
 [[GKAOJ]][[bean-validation-constraints-in-address-book]]
 
-===== Bean Validation Constraints in address-book
+=== Bean Validation Constraints in address-book
 
 The `Contact` entity uses the `@NotNull`, `@Pattern`, and `@Past`
 constraints on the persistent attributes.
@@ -81,7 +81,7 @@ public class Contact implements Serializable {
 
 [[GKANL]][[specifying-error-messages-for-constraints-in-address-book]]
 
-===== Specifying Error Messages for Constraints in address-book
+=== Specifying Error Messages for Constraints in address-book
 
 Some of the constraints in the `Contact` entity specify an optional
 message:
@@ -117,7 +117,7 @@ Spanish-speaking locales.
 
 [[GKAON]][[validating-contact-input-from-a-javaserver-faces-application]]
 
-===== Validating Contact Input from a Jakarta Server Faces Application
+=== Validating Contact Input from a Jakarta Server Faces Application
 
 The `address-book` application uses a Jakarta Server Faces web front end to
 allow users to enter contacts. While Jakarta Server Faces has a form input
@@ -165,7 +165,7 @@ however.
 
 [[GKAOP]][[running-the-address-book-example]]
 
-===== Running the address-book Example
+=== Running the address-book Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `address-book` application.
@@ -177,7 +177,7 @@ The following topics are addressed here:
 
 [[GKAOD]][[to-run-the-address-book-example-using-netbeans-ide]]
 
-====== To Run the address-book Example Using NetBeans IDE
+==== To Run the address-book Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -213,7 +213,7 @@ values.
 
 [[GKANZ]][[to-run-the-address-book-example-using-maven]]
 
-====== To Run the address-book Example Using Maven
+==== To Run the address-book Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

@@ -1,5 +1,5 @@
 [[configuring-the-cdi-container]]
-==== Configuring the CDI Container
+== Configuring the CDI Container
 
 The configuration of the `SeContainerInitializer` instance allows the explicit addition of elements into an internal *synthetic bean archive*. The synthetic bean archive represents the set of beans that have been loaded while initializing the container. The contents of the synthetic bean archive depend on whether discovery is enabled: 
 

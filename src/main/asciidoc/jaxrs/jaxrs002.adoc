@@ -1,6 +1,6 @@
 [[GILIK]][[creating-a-restful-root-resource-class]]
 
-==== Creating a RESTful Root Resource Class
+== Creating a RESTful Root Resource Class
 
 Root resource classes are "plain old Java objects" (POJOs) that are
 either annotated with `@Path` or have at least one method annotated with
@@ -22,7 +22,7 @@ Responses]
 
 [[GILRU]][[developing-restful-web-services-with-jax-rs]]
 
-===== Developing RESTful Web Services with Jakarta REST
+=== Developing RESTful Web Services with Jakarta REST
 
 Jakarta REST is a Java programming language API designed to make it easy to
 develop applications that use the REST architecture.
@@ -137,7 +137,7 @@ the URL mapping for the application. The path specified by
 
 [[GILQB]][[overview-of-a-jax-rs-application]]
 
-===== Overview of a Jakarta REST Application
+=== Overview of a Jakarta REST Application
 
 The following code sample is a very simple example of a root resource
 class that uses Jakarta REST annotations:
@@ -212,7 +212,7 @@ public void postHtml(String message) {
 
 [[GINPW]][[the-path-annotation-and-uri-path-templates]]
 
-===== The @Path Annotation and URI Path Templates
+=== The @Path Annotation and URI Path Templates
 
 The `@Path` annotation identifies the URI path template to which the
 resource responds and is specified at the class or method level of a
@@ -365,7 +365,7 @@ The value of the `name3` variable is an empty string.
 
 [[GIPYS]][[responding-to-http-methods-and-requests]]
 
-===== Responding to HTTP Methods and Requests
+=== Responding to HTTP Methods and Requests
 
 The behavior of a resource is determined by the HTTP methods (typically,
 GET, POST, PUT, or DELETE) to which the resource is responding.
@@ -378,7 +378,7 @@ Entity Bodies]
 
 [[GIPXS]][[the-request-method-designator-annotations]]
 
-====== The Request Method Designator Annotations
+==== The Request Method Designator Annotations
 
 Request method designator annotations are runtime annotations, defined
 by Jakarta REST, that correspond to the similarly named HTTP methods. Within a
@@ -452,7 +452,7 @@ the web service declares the URI for the newly created resource.
 
 [[GIPZE]][[using-entity-providers-to-map-http-response-and-request-entity-bodies]]
 
-====== Using Entity Providers to Map HTTP Response and Request Entity Bodies
+==== Using Entity Providers to Map HTTP Response and Request Entity Bodies
 
 Entity providers supply mapping services between representations and
 their associated Java types. The two types of entity providers are
@@ -547,7 +547,7 @@ public Response getItem() {
 
 [[GIPZH]][[using-consumes-and-produces-to-customize-requests-and-responses]]
 
-===== Using @Consumes and @Produces to Customize Requests and Responses
+=== Using @Consumes and @Produces to Customize Requests and Responses
 
 The information sent to a resource and then passed back to the client is
 specified as a MIME media type in the headers of an HTTP request or
@@ -568,7 +568,7 @@ The following topics are addressed here:
 
 [[GIPXF]][[the-produces-annotation]]
 
-====== The @Produces Annotation
+==== The @Produces Annotation
 
 The `@Produces` annotation is used to specify the MIME media types or
 representations a resource can produce and send back to the client. If
@@ -658,7 +658,7 @@ for the constant field values of `javax.ws.rs.core.MediaType`.
 
 [[GIPYT]][[the-consumes-annotation]]
 
-====== The @Consumes Annotation
+==== The @Consumes Annotation
 
 The `@Consumes` annotation is used to specify which MIME media types of
 representations a resource can accept, or consume, from the client. If
@@ -735,7 +735,7 @@ response with a status code of HTTP 204 ("No Content") will be returned.
 
 [[GIPYW]][[extracting-request-parameters]]
 
-===== Extracting Request Parameters
+=== Extracting Request Parameters
 
 Parameters of a resource method may be annotated with parameter-based
 annotations to extract information from a request. A previous example
@@ -938,7 +938,7 @@ public void post(MultivaluedMap<String, String> formParams) {
 
 [[CIHEGAGI]][[configuring-jax-rs-applications]]
 
-===== Configuring Jakarta REST Applications
+=== Configuring Jakarta REST Applications
 
 A Jakarta REST application consists of at least one resource class packaged
 within a WAR file. The base URI from which an application's resources
@@ -957,7 +957,7 @@ Application]
 
 [[CIHFEBJF]][[configuring-a-jax-rs-application-using-a-subclass-of-application]]
 
-====== Configuring a Jakarta REST Application Using a Subclass of Application
+==== Configuring a Jakarta REST Application Using a Subclass of Application
 
 Create a subclass of `javax.ws.rs.core.Application` to manually
 configure the environment in which the REST resources defined in your
@@ -991,7 +991,7 @@ public Set<Class<?>> getClasses() {
 
 [[CIHDHAIJ]][[configuring-the-base-uri-in-web.xml]]
 
-====== Configuring the Base URI in web.xml
+==== Configuring the Base URI in web.xml
 
 The base URI for a Jakarta REST application can be set using a
 `servlet-mapping` tag in the `web.xml` deployment descriptor, using the

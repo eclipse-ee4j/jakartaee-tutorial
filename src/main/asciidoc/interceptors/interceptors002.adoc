@@ -1,6 +1,6 @@
 [[GKEDM]][[using-interceptors]]
 
-==== Using Interceptors
+== Using Interceptors
 
 To define an interceptor, use one of the interceptor metadata
 annotations listed in link:#GKECC[Table 57-1] within
@@ -48,7 +48,7 @@ public class OrderBean {
 
 [[GKECY]][[intercepting-method-invocations]]
 
-===== Intercepting Method Invocations
+=== Intercepting Method Invocations
 
 Use the `@AroundInvoke` annotation to designate interceptor methods for
 managed object methods. Only one around-invoke interceptor method per
@@ -84,7 +84,7 @@ catch and suppress exceptions, and then recover by calling the
 
 [[GKHMH]][[using-multiple-method-interceptors]]
 
-====== Using Multiple Method Interceptors
+==== Using Multiple Method Interceptors
 
 Use the `@Interceptors` annotation to declare multiple interceptors for
 a target method or class:
@@ -135,7 +135,7 @@ in the target class.
 
 [[GKHOV]][[accessing-target-method-parameters-from-an-interceptor-class]]
 
-====== Accessing Target Method Parameters from an Interceptor Class
+==== Accessing Target Method Parameters from an Interceptor Class
 
 You can use the `InvocationContext` instance passed to each
 around-invoke method to access and modify the parameters of the target
@@ -159,7 +159,7 @@ methods, respectively.
 
 [[GKECR]][[intercepting-lifecycle-callback-events]]
 
-===== Intercepting Lifecycle Callback Events
+=== Intercepting Lifecycle Callback Events
 
 Interceptors for lifecycle callback events (around-construct,
 post-construct, and pre-destroy) may be defined in the target class or
@@ -216,7 +216,7 @@ event (post-create and pre-destroy) is allowed per class.
 
 [[sthref254]][[using-aroundconstruct-interceptor-methods]]
 
-====== Using AroundConstruct Interceptor Methods
+==== Using AroundConstruct Interceptor Methods
 
 `@AroundConstruct` methods are interposed on the invocation of the
 target class's constructor. Methods decorated with `@AroundConstruct`
@@ -255,7 +255,7 @@ call `Invocation.proceed`, the target instance will not be created.
 
 [[GKHNI]][[using-multiple-lifecycle-callback-interceptors]]
 
-====== Using Multiple Lifecycle Callback Interceptors
+==== Using Multiple Lifecycle Callback Interceptors
 
 You can define multiple lifecycle interceptors for a target class by
 specifying the interceptor classes in the `@Interceptors` annotation:
@@ -273,7 +273,7 @@ sharable across different lifecycle events.
 
 [[GKEDU]][[intercepting-timeout-events]]
 
-===== Intercepting Timeout Events
+=== Intercepting Timeout Events
 
 You can define interceptors for Enterprise Bean timer service timeout methods by
 using the `@AroundTimeout` annotation on methods in the target class or
@@ -308,7 +308,7 @@ target timeout method through the `InvocationContext` instance's
 
 [[GKHLA]][[using-multiple-timeout-interceptors]]
 
-====== Using Multiple Timeout Interceptors
+==== Using Multiple Timeout Interceptors
 
 You can define multiple timeout interceptors for a given target class by
 specifying the interceptor classes containing `@AroundTimeout`
@@ -340,7 +340,7 @@ finally the `last` method defined in the target class.
 
 [[sthref255]][[binding-interceptors-to-components]]
 
-===== Binding Interceptors to Components
+=== Binding Interceptors to Components
 
 Interceptor binding types are annotations that may be applied to
 components to associate them with a particular interceptor. Interceptor
@@ -375,7 +375,7 @@ public @interface Secured { ... }
 
 [[sthref256]][[declaring-the-interceptor-bindings-on-an-interceptor-class]]
 
-====== Declaring the Interceptor Bindings on an Interceptor Class
+==== Declaring the Interceptor Bindings on an Interceptor Class
 
 Annotate the interceptor class with the interceptor binding type and
 `@Interceptor` to associate the interceptor binding with the interceptor
@@ -401,7 +401,7 @@ declare interceptor binding types with `Target(TYPE)`, or in the case of
 
 [[sthref257]][[binding-a-component-to-an-interceptor]]
 
-====== Binding a Component to an Interceptor
+==== Binding a Component to an Interceptor
 
 Add the interceptor binding type annotation to the target component's
 class, method, or constructor. Interceptor binding types are applied
@@ -425,7 +425,7 @@ it, it must not be `final`, and the component class cannot be `final`.
 
 [[sthref258]][[ordering-interceptors]]
 
-===== Ordering Interceptors
+=== Ordering Interceptors
 
 The order in which multiple interceptors are invoked is determined by
 the following rules.

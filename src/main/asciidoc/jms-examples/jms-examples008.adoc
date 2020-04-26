@@ -1,6 +1,6 @@
 [[BNCGW]][[sending-messages-from-a-session-bean-to-an-mdb]]
 
-==== Sending Messages from a Session Bean to an MDB
+== Sending Messages from a Session Bean to an MDB
 
 This section explains how to write, compile, package, deploy, and run an
 application that uses Jakarta Messaging in conjunction with a session bean.
@@ -23,7 +23,7 @@ clientsessionmdb Example]
 
 [[BNCGX]][[writing-the-application-components-for-the-clientsessionmdb-example]]
 
-===== Writing the Application Components for the clientsessionmdb Example
+=== Writing the Application Components for the clientsessionmdb Example
 
 This application demonstrates how to send messages from an enterprise
 bean (in this case, a session bean) rather than from an application
@@ -58,7 +58,7 @@ published messages will be delivered to it.
 
 [[BNCGZ]][[coding-the-application-client-myappclient.java]]
 
-====== Coding the Application Client: MyAppClient.java
+==== Coding the Application Client: MyAppClient.java
 
 The application client, `MyAppClient.java`, found under
 `clientsessionmdb-app-client`, performs no Messaging operations and so is
@@ -77,7 +77,7 @@ The client then calls the bean's business method twice.
 
 [[BNCHA]][[coding-the-publisher-session-bean]]
 
-====== Coding the Publisher Session Bean
+==== Coding the Publisher Session Bean
 
 The Publisher bean is a stateless session bean that has one business
 method. The Publisher bean uses a remote interface rather than a local
@@ -117,7 +117,7 @@ the messages.
 
 [[BNCHB]][[coding-the-message-driven-bean-messagebean.java]]
 
-====== Coding the Message-Driven Bean: MessageBean.java
+==== Coding the Message-Driven Bean: MessageBean.java
 
 The message-driven bean class, `MessageBean.java`, found under
 `clientsessionmdb-ejb`, is almost identical to the one in
@@ -168,7 +168,7 @@ durable subscription.
 
 [[CHDDFAHA]][[running-the-clientsessionmdb-example]]
 
-===== Running the clientsessionmdb Example
+=== Running the clientsessionmdb Example
 
 You can use either NetBeans IDE or Maven to build, deploy, and run the
 `simplemessage` example.
@@ -184,7 +184,7 @@ The following topics are addressed here:
 
 [[CHDGGAIB]][[to-run-clientsessionmdb-using-netbeans-ide]]
 
-====== To Run clientsessionmdb Using NetBeans IDE
+==== To Run clientsessionmdb Using NetBeans IDE
 
 .  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -223,7 +223,7 @@ The output from the enterprise beans appears in the server log file. The Publish
 
 [[CHDDDHBE]][[to-run-clientsessionmdb-using-maven]]
 
-====== To Run clientsessionmdb Using Maven
+==== To Run clientsessionmdb Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

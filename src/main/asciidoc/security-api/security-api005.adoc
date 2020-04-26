@@ -1,5 +1,5 @@
 [[running-the-custom-identity-store-example]]
-==== Running the Custom Identity Store Example
+== Running the Custom Identity Store Example
 The example described in this section demonstrates how to bundle and use a custom
 identity store in your application for credential validation.
 
@@ -9,7 +9,7 @@ Topics include:
 * link:#running-the-custom-id-store-example[Running the custom-identity-store Example]
 
 [[overview-of-the-custom-identity-store-example]]
-===== Overview of the Custom Identity Store Example
+=== Overview of the Custom Identity Store Example
 As an alternative to using a built-in identity store, an application can provide
 its own IdentityStore. When bundled with the application,
 this custom identity store can then be used for authentication and authorization.
@@ -56,7 +56,7 @@ Content-Type: text/html
 
 [[define-the-users-and-groups-in-the-identity-store-2]]
 
-====== Define the Users and Groups in the Identity Store
+==== Define the Users and Groups in the Identity Store
 
 The following table shows the user, password, and group used in this example.
 
@@ -79,7 +79,7 @@ if (usernamePasswordCredential.compareTo("Joe", "secret1")) {
 
 [[specify-the-authentication-mechanism-2]]
 
-====== Specify the Authentication Mechanism
+==== Specify the Authentication Mechanism
 
 In this application, credentials are validated using the BASIC authentication mechanism.
 Specify the `@BasicAuthenticationMechanismDefinition` annotation in the `ApplicationConfig.java`
@@ -104,7 +104,7 @@ public class ApplicationConfig {
 
 [[declare-roles-in-the-servlet-container-2]]
 
-====== Declare Roles in the Servlet Container
+==== Declare Roles in the Servlet Container
 
 When a request is made to the application, the roles the user is in are
 returned as part of the response. Note that the container needs to be made aware
@@ -142,7 +142,7 @@ not need to bundle `web.xml` with the application to provide mapping between rol
 and groups.
 
 [[running-the-custom-id-store-example]]
-===== Running the custom-identity-store Example
+=== Running the custom-identity-store Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `custom-identity-store` application
 as described in the following topics:
@@ -153,7 +153,7 @@ as described in the following topics:
 
 
 [[to-build-package-and-deploy-the-custom-identity-store-example-using-netbeans-ide]]
-====== To Build, Package, and Deploy the custom-identity-store Example Using NetBeans IDE
+==== To Build, Package, and Deploy the custom-identity-store Example Using NetBeans IDE
 
 1.  If you have not already done so, start the GlassFish server. See
 link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Server].
@@ -174,7 +174,7 @@ GlassFish Server instance.
 
 [[to-build-package-and-deploy-the-custom-identity-store-example-using-using-maven]]
 
-====== To Build, Package, and Deploy the custom-identity-store Example Using Maven
+==== To Build, Package, and Deploy the custom-identity-store Example Using Maven
 
 1.  If you have not already done so, start the GlassFish server. See
 link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Server]..
@@ -196,7 +196,7 @@ This command builds and packages the application into a WAR file,
 deploys the WAR file.
 
 [[to-run-the-custom-identity-store-example]]
-====== To Run the custom-identity-store Example
+==== To Run the custom-identity-store Example
 In this example, use the credentials of user `Joe` to make a request and
 to validate the response according to the credentials defined in `TestIdentityStore`.
 

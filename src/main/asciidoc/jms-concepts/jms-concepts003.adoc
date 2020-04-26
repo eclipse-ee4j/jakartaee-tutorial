@@ -1,6 +1,6 @@
 [[BNCEH]][[the-jms-api-programming-model]]
 
-==== Jakarta Messaging Programming Model
+== Jakarta Messaging Programming Model
 
 The basic building blocks of a Jakarta Messaging application are
 
@@ -39,7 +39,7 @@ of the Jakarta EE API documentation.
 
 [[BNCEJ]][[jms-administered-objects]]
 
-===== Jakarta Messaging Administered Objects
+=== Jakarta Messaging Administered Objects
 
 Two parts of a Jakarta Messaging application, destinations and connection factories,
 are commonly maintained administratively rather than programmatically.
@@ -74,7 +74,7 @@ override those specified by annotations.
 
 [[BNCEK]][[jms-connection-factories]]
 
-====== Jakarta Messaging Connection Factories
+==== Jakarta Messaging Connection Factories
 
 A connection factory is the object a client uses to create a connection
 to a provider. A connection factory encapsulates a set of connection
@@ -101,7 +101,7 @@ private static ConnectionFactory connectionFactory;
 
 [[BNCEL]][[jms-destinations]]
 
-====== Jakarta Messaging Destinations
+==== Jakarta Messaging Destinations
 
 A destination is the object a client uses to specify the target of
 messages it produces and the source of messages it consumes. In the PTP
@@ -152,7 +152,7 @@ factory you use.
 
 [[BNCEM]][[connections]]
 
-===== Connections
+=== Connections
 
 A connection encapsulates a virtual connection with a Messaging provider. For
 example, a connection could represent an open TCP/IP socket between a
@@ -178,7 +178,7 @@ link:#BABGDFEA[JMSContext Objects] for details.
 
 [[BNCEN]][[sessions]]
 
-===== Sessions
+=== Sessions
 
 A session is a single-threaded context for producing and consuming
 messages.
@@ -197,7 +197,7 @@ link:#BNCGH[Using Jakarta Messaging Local Transactions].
 
 [[BABGDFEA]][[jmscontext-objects]]
 
-===== JMSContext Objects
+=== JMSContext Objects
 
 A `JMSContext` object combines a connection and a session in a single
 object. That is, it provides both an active connection to a Messaging provider
@@ -265,7 +265,7 @@ its work.
 
 [[BNCEO]][[jms-message-producers]]
 
-===== Jakarta Messaging Message Producers
+=== Jakarta Messaging Message Producers
 
 A message producer is an object that is created by a `JMSContext` or a
 session and used for sending messages to a destination. A message
@@ -296,7 +296,7 @@ Messages] for more information.
 
 [[BNCEP]][[jms-message-consumers]]
 
-===== Jakarta Messaging Message Consumers
+=== Jakarta Messaging Message Consumers
 
 A message consumer is an object that is created by a `JMSContext` or a
 session and used for receiving messages sent to a destination. A message
@@ -358,7 +358,7 @@ link:#BABJCIGJ[Creating Shared Subscriptions].
 
 [[BNCEQ]][[jms-message-listeners]]
 
-====== Jakarta Messaging Message Listeners
+==== Jakarta Messaging Message Listeners
 
 A message listener is an object that acts as an asynchronous event
 handler for messages. This object implements the `MessageListener`
@@ -400,7 +400,7 @@ and message-driven beans.
 
 [[BNCER]][[jms-message-selectors]]
 
-====== Jakarta Messaging Message Selectors
+==== Jakarta Messaging Message Selectors
 
 If your messaging application needs to filter the messages it receives,
 you can use a Jakarta Messaging message selector, which allows a message consumer for
@@ -432,7 +432,7 @@ messages on the basis of the content of the message body.
 
 [[BABEEJJJ]][[consuming-messages-from-topics]]
 
-====== Consuming Messages from Topics
+==== Consuming Messages from Topics
 
 The semantics of consuming messages from topics are more complex than
 the semantics of consuming messages from queues.
@@ -488,7 +488,7 @@ details.
 
 [[BNCGD]][[creating-durable-subscriptions]]
 
-====== Creating Durable Subscriptions
+==== Creating Durable Subscriptions
 
 To ensure that a pub/sub application receives all sent messages, use
 durable subscriptions for the consumers on the topic.
@@ -626,7 +626,7 @@ subscriptions.
 
 [[BABJCIGJ]][[creating-shared-subscriptions]]
 
-====== Creating Shared Subscriptions
+==== Creating Shared Subscriptions
 
 A topic subscription created by the `createConsumer` or
 `createDurableConsumer` method can have only one consumer (although a
@@ -667,7 +667,7 @@ link:#BNCGD[Creating Durable Subscriptions].
 
 [[BNCES]][[jms-messages]]
 
-===== Jakarta Messaging Messages
+=== Jakarta Messaging Messages
 
 The ultimate purpose of a Jakarta Messaging application is to produce and consume
 messages that can then be used by other software applications. Jakarta Messaging
@@ -692,7 +692,7 @@ The following topics are addressed here:
 
 [[BNCET]][[message-headers]]
 
-====== Message Headers
+==== Message Headers
 
 A Jakarta Messaging message header contains a number of predefined fields that contain
 values used by both clients and providers to identify and route
@@ -758,7 +758,7 @@ provider prior to delivery
 
 [[BNCEV]][[message-properties]]
 
-====== Message Properties
+==== Message Properties
 
 You can create and set properties for messages if you need values in
 addition to those provided by the header fields. You can use properties
@@ -776,7 +776,7 @@ properties or of user-defined properties in applications is optional.
 
 [[BNCEW]][[message-bodies]]
 
-====== Message Bodies
+==== Message Bodies
 
 Jakarta Messaging defines six different types of messages. Each message type
 corresponds to a different message body. These message types allow you
@@ -890,7 +890,7 @@ and `Message`.
 
 [[BNCEY]][[jms-queue-browsers]]
 
-===== Jakarta Messaging Queue Browsers
+=== Jakarta Messaging Queue Browsers
 
 Messages sent to a queue remain in the queue until the message consumer
 for that queue consumes them. Jakarta Messaging provides a `QueueBrowser`
@@ -919,7 +919,7 @@ examining them.
 
 [[BNCEZ]][[jms-exception-handling]]
 
-===== Jakarta Messaging Exception Handling
+=== Jakarta Messaging Exception Handling
 
 The root class for all checked exceptions in Jakarta Messaging is
 `JMSException`. The root cause for all unchecked exceptions in the Jakarta Messaging

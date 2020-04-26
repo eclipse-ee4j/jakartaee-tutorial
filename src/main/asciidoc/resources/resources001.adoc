@@ -1,6 +1,6 @@
 [[GIPGL]][[what-is-a-resource-adapter]]
 
-==== What Is a Resource Adapter?
+== What Is a Resource Adapter?
 
 A resource adapter is a Jakarta EE component that implements the Jakarta Connectors API
 for a specific EIS. Examples of EISs include
@@ -40,14 +40,14 @@ component.
 
 [[GIPGY]][[management-contracts]]
 
-===== Management Contracts
+=== Management Contracts
 
 Jakarta Connectors defines system contracts that enable
 resource adapter lifecycle and thread management.
 
 [[GIPHT]][[lifecycle-management]]
 
-====== Lifecycle Management
+==== Lifecycle Management
 
 Jakarta Connectors specifies a lifecycle management contract
 that allows an application server to manage the lifecycle of a resource
@@ -60,7 +60,7 @@ place.
 
 [[GIPIG]][[work-management-contract]]
 
-====== Work Management Contract
+==== Work Management Contract
 
 Jakarta Connectors work management contract ensures that
 resource adapters use threads in the proper, recommended manner. This
@@ -109,7 +109,7 @@ thread executes.
 
 [[GIPMK]][[generic-work-context-contract]]
 
-===== Generic Work Context Contract
+=== Generic Work Context Contract
 
 The work management contract between the application server and a
 resource adapter enables a resource adapter to do a task, such as
@@ -129,7 +129,7 @@ and the security context.
 
 [[GKCKI]][[outbound-and-inbound-contracts]]
 
-===== Outbound and Inbound Contracts
+=== Outbound and Inbound Contracts
 
 The Connector Architecture defines the following outbound contracts,
 system-level contracts between an application server and an EIS that

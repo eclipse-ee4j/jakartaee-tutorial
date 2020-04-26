@@ -1,6 +1,6 @@
 [[CHDBEGIC]][[database-schema-creation]]
 
-==== Database Schema Creation
+== Database Schema Creation
 
 The persistence provider can be configured to automatically create the
 database tables, load data into the tables, and remove the tables during
@@ -42,7 +42,7 @@ and load data from a provided script when the application is deployed:
 
 [[sthref161]][[configuring-an-application-to-create-or-drop-database-tables]]
 
-===== Configuring an Application to Create or Drop Database Tables
+=== Configuring an Application to Create or Drop Database Tables
 
 The `javax.persistence.schema-generation.database.action` property is
 used to specify the action taken by the persistence provider when an
@@ -137,7 +137,7 @@ the persistence unit.
 
 [[sthref166]][[loading-data-using-sql-scripts]]
 
-===== Loading Data Using SQL Scripts
+=== Loading Data Using SQL Scripts
 
 If you want to populate the database tables with data before the
 application loads, specify the location of a load script in the

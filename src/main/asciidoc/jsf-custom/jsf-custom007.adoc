@@ -1,6 +1,6 @@
 [[BNAUT]][[implementing-an-event-listener]]
 
-==== Implementing an Event Listener
+== Implementing an Event Listener
 
 The Jakarta Server Faces technology supports action events and value-change
 events for components.
@@ -45,7 +45,7 @@ information on how to manage page navigation.
 
 [[BNAUU]][[implementing-value-change-listeners]]
 
-===== Implementing Value-Change Listeners
+=== Implementing Value-Change Listeners
 
 A `javax.faces.event.ValueChangeListener` implementation must include a
 `processValueChange(ValueChangeEvent)` method. This method processes the
@@ -108,7 +108,7 @@ Component] explains how to register this listener onto a component.
 
 [[BNAUV]][[implementing-action-listeners]]
 
-===== Implementing Action Listeners
+=== Implementing Action Listeners
 
 A `javax.faces.event.ActionListener` implementation must include a
 `processAction(ActionEvent)` method. The `processAction(ActionEvent)`

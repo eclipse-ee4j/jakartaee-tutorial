@@ -1,5 +1,5 @@
 [[configuring-websockets]]
-==== Configuring WebSockets
+== Configuring WebSockets
 
 To configure WebSockets for use in server faces web applications, first enable the
 WebSocket endpoint using the context parameter in `web.xml`:
@@ -26,7 +26,7 @@ to explicitly specify the port:
 ----
 
 [[websocket-usage-client-side]]
-===== WebSocket Usage: Client Side
+=== WebSocket Usage: Client Side
 
 Declare the `f:websocket tag` in the server faces view with a channel name and
 an `onmessage` JavaScript listener function.
@@ -63,7 +63,7 @@ first connection attempt fails. The WebSocket will be implicitly closed after
 the document is unloaded.
 
 [[websocket-usage-server-side]]
-===== WebSocket Usage: Server Side
+=== WebSocket Usage: Server Side
 
 On the Java programming side, inject a `PushContext` using the `@Push` annotation
 on the given channel in any CDI or container managed artifact, such as `@Named`,

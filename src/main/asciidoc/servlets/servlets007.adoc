@@ -1,6 +1,6 @@
 [[BNAGI]][[invoking-other-web-resources]]
 
-==== Invoking Other Web Resources
+== Invoking Other Web Resources
 
 Web components can invoke other web resources both indirectly and
 directly. A web component indirectly invokes another web resource by
@@ -23,7 +23,7 @@ null. Your servlet should be prepared to deal with this condition.
 
 [[BNAGJ]][[including-other-resources-in-the-response]]
 
-===== Including Other Resources in the Response
+=== Including Other Resources in the Response
 
 It is often useful to include another web resource, such as banner
 content or copyright information, in the response returned from a web
@@ -49,7 +49,7 @@ affects the headers of the response.
 
 [[BNAGK]][[transferring-control-to-another-web-component]]
 
-===== Transferring Control to Another Web Component
+=== Transferring Control to Another Web Component
 
 In some applications, you might want to have one web component do
 preliminary processing of a request and have another component generate

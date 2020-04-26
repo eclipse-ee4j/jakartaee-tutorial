@@ -1,6 +1,6 @@
 [[GLPCB]][[understanding-the-image-map-example]]
 
-==== Understanding the Image Map Example
+== Understanding the Image Map Example
 
 Duke's Bookstore includes a custom image map component on the
 `index.xhtml` page. This image map displays a selection of six book
@@ -20,7 +20,7 @@ Map?]
 
 [[GLPBD]][[why-use-javaserver-faces-technology-to-implement-an-image-map]]
 
-===== Why Use Jakarta Server Faces Technology to Implement an Image Map?
+=== Why Use Jakarta Server Faces Technology to Implement an Image Map?
 
 Jakarta Server Faces technology is an ideal framework to use for
 implementing this kind of image map because it can perform the work that
@@ -43,7 +43,7 @@ the other parts of the application to be performed on the client side.
 
 [[GLPEM]][[understanding-the-rendered-html]]
 
-===== Understanding the Rendered HTML
+=== Understanding the Rendered HTML
 
 Here is an abbreviated version of the form part of the HTML page that
 the application needs to render:
@@ -97,7 +97,7 @@ to the region that was selected.
 
 [[GLPCD]][[understanding-the-facelets-page]]
 
-===== Understanding the Facelets Page
+=== Understanding the Facelets Page
 
 Here is an abbreviated form of the Facelets page that the image map
 component uses to generate the HTML page shown in the preceding section.
@@ -177,7 +177,7 @@ scope is explained more in the next section.
 
 [[GLPBO]][[configuring-model-data]]
 
-===== Configuring Model Data
+=== Configuring Model Data
 
 In a Jakarta Server Faces application, data such as the coordinates of a
 hotspot of an image map is retrieved from the `value` attribute through
@@ -260,7 +260,7 @@ Class] explains how to do this in the `AreaRenderer` class.
 
 [[GLPEL]][[summary-of-the-image-map-application-classes]]
 
-===== Summary of the Image Map Application Classes
+=== Summary of the Image Map Application Classes
 
 link:#GLPEK[Table 15-2] summarizes all the classes needed to implement
 the image map component.

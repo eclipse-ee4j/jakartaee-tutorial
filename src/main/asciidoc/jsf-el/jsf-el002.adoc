@@ -1,6 +1,6 @@
 [[BNAHR]][[immediate-and-deferred-evaluation-syntax]]
 
-==== Immediate and Deferred Evaluation Syntax
+== Immediate and Deferred Evaluation Syntax
 
 The EL supports both immediate and deferred evaluation of expressions.
 Immediate evaluation means that the expression is evaluated and the
@@ -24,7 +24,7 @@ deferred expressions.
 
 [[BNAHS]][[immediate-evaluation]]
 
-===== Immediate Evaluation
+=== Immediate Evaluation
 
 All expressions using the `${}` syntax are evaluated immediately. These
 expressions can appear as part of a template (static) text or as the
@@ -45,7 +45,7 @@ the tag handler. The value is updated on the page.
 
 [[BNAHT]][[deferred-evaluation]]
 
-===== Deferred Evaluation
+=== Deferred Evaluation
 
 Deferred evaluation expressions take the form `#{expr}` and can be
 evaluated at other phases of a page lifecycle as defined by whatever

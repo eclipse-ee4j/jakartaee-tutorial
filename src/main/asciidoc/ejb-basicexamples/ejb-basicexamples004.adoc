@@ -1,6 +1,6 @@
 [[BNBOR]][[a-web-service-example-helloservice]]
 
-==== A Web Service Example: helloservice
+== A Web Service Example: helloservice
 
 This example demonstrates a simple web service that generates a response
 based on information received from the client. `HelloServiceBean` is a
@@ -16,7 +16,7 @@ The following topics are addressed here:
 
 [[BNBOS]][[the-web-service-endpoint-implementation-class]]
 
-===== The Web Service Endpoint Implementation Class
+=== The Web Service Endpoint Implementation Class
 
 `HelloServiceBean` is the endpoint implementation class, typically the
 primary programming artifact for enterprise bean web service endpoints.
@@ -54,7 +54,7 @@ is removed from operation.
 
 [[BNBOT]][[stateless-session-bean-implementation-class]]
 
-===== Stateless Session Bean Implementation Class
+=== Stateless Session Bean Implementation Class
 
 The `HelloServiceBean` class implements the `sayHello` method, which is
 annotated `@WebMethod`. The source code for the `HelloServiceBean` class
@@ -84,7 +84,7 @@ public class HelloServiceBean {
 
 [[BNBOU]][[running-the-helloservice-example]]
 
-===== Running the helloservice Example
+=== Running the helloservice Example
 
 You can use either NetBeans IDE or Maven to build, package, and deploy
 the `helloservice` example. You can then use the Administration Console
@@ -100,7 +100,7 @@ Using Maven]
 
 [[BNBOV]][[to-build-package-and-deploy-the-helloservice-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the helloservice Example Using NetBeans IDE
+==== To Build, Package, and Deploy the helloservice Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -123,7 +123,7 @@ this EAR file to GlassFish Server.
 
 [[BNBOW]][[to-build-package-and-deploy-the-helloservice-example-using-maven]]
 
-====== To Build, Package, and Deploy the helloservice Example Using Maven
+==== To Build, Package, and Deploy the helloservice Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -151,7 +151,7 @@ required for web service invocation, including the WSDL file.
 
 [[BNBOX]][[to-test-the-service-without-a-client]]
 
-====== To Test the Service without a Client
+==== To Test the Service without a Client
 
 The GlassFish Server Administration Console allows you to test the
 methods of a web service endpoint. To test the `sayHello` method of

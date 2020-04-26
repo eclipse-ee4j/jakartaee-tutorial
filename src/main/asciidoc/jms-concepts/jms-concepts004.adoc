@@ -1,6 +1,6 @@
 [[BNCFU]][[using-advanced-jms-features]]
 
-==== Using Advanced Jakarta Messaging Features
+== Using Advanced Jakarta Messaging Features
 
 This section explains how to use features of Jakarta Messaging to achieve the
 level of reliability and performance your application requires. Many
@@ -53,7 +53,7 @@ Applications].
 
 [[BNCFW]][[controlling-message-acknowledgment]]
 
-===== Controlling Message Acknowledgment
+=== Controlling Message Acknowledgment
 
 Until a Jakarta Messaging message has been acknowledged, it is not considered to be
 successfully consumed. The successful consumption of a message
@@ -142,7 +142,7 @@ acknowledged until processing of the message is complete.
 
 [[BNCFV]][[specifying-options-for-sending-messages]]
 
-===== Specifying Options for Sending Messages
+=== Specifying Options for Sending Messages
 
 You can set a number of options when you send a message. These options
 enable you to perform the tasks described in the following topics:
@@ -164,7 +164,7 @@ producer and call the `send` method.
 
 [[BNCFY]][[specifying-message-persistence]]
 
-====== Specifying Message Persistence
+==== Specifying Message Persistence
 
 Jakarta Messaging supports two delivery modes specifying whether messages are
 lost if the Messaging provider fails. These delivery modes are fields of the
@@ -199,7 +199,7 @@ can afford to miss messages.
 
 [[BNCFZ]][[setting-message-priority-levels]]
 
-====== Setting Message Priority Levels
+==== Setting Message Priority Levels
 
 You can use message priority levels to instruct the Messaging provider to
 deliver urgent messages first. Use the `setPriority` method of the
@@ -222,7 +222,7 @@ but does not have to deliver messages in exact order of priority.
 
 [[BNCGA]][[allowing-messages-to-expire]]
 
-====== Allowing Messages to Expire
+==== Allowing Messages to Expire
 
 By default, a message never expires. If a message will become obsolete
 after a certain period, however, you may want to set an expiration time.
@@ -251,7 +251,7 @@ obsolete messages conserves storage and computing resources.
 
 [[BABGEADH]][[specifying-a-delivery-delay]]
 
-====== Specifying a Delivery Delay
+==== Specifying a Delivery Delay
 
 You can specify a length of time that must elapse after a message is
 sent before the Messaging provider delivers the message. Use the
@@ -269,7 +269,7 @@ context.createProducer().setDeliveryDelay(3000).send(dest, msg);
 
 [[BABJFIAD]][[using-jmsproducer-method-chaining]]
 
-====== Using JMSProducer Method Chaining
+==== Using JMSProducer Method Chaining
 
 The setter methods on the `JMSProducer` interface return `JMSProducer`
 objects, so you can use method chaining to create a producer, set
@@ -294,7 +294,7 @@ can also set message properties directly on a message.
 
 [[BNCGB]][[creating-temporary-destinations]]
 
-===== Creating Temporary Destinations
+=== Creating Temporary Destinations
 
 Normally, you create JMS destinations (queues and topics)
 administratively rather than programmatically. Your Messaging provider
@@ -342,7 +342,7 @@ Join Messages from Two MDBs].
 
 [[BNCGH]][[using-jms-local-transactions]]
 
-===== Using Jakarta Messaging Local Transactions
+=== Using Jakarta Messaging Local Transactions
 
 A transaction groups a series of operations into an atomic unit of work.
 If any one of the operations fails, the transaction can be rolled back,
@@ -463,7 +463,7 @@ shows how to use Jakarta Messaging local transactions.
 
 [[BABFIFAJ]][[sending-messages-asynchronously]]
 
-===== Sending Messages Asynchronously
+=== Sending Messages Asynchronously
 
 Normally, when you send a persistent message, the `send` method blocks
 until the Messaging provider confirms that the message was sent successfully.

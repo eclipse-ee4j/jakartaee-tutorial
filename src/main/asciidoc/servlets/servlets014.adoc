@@ -1,6 +1,6 @@
 [[BEIJHCDJ]][[protocol-upgrade-processing]]
 
-==== Protocol Upgrade Processing
+== Protocol Upgrade Processing
 
 In HTTP/1.1, clients can request to switch to a different protocol on
 the current connection by using the `Upgrade` header field. If the

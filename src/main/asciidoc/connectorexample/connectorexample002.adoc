@@ -1,6 +1,6 @@
 [[CHDFHAID]][[the-trading-example]]
 
-==== The trading Example
+== The trading Example
 
 The `trading` example demonstrates how to implement and use a simple
 outbound resource adapter that submits requests to a legacy EIS using a
@@ -49,7 +49,7 @@ EIS.
 
 [[CHDFADJD]][[using-the-outbound-resource-adapter]]
 
-===== Using the Outbound Resource Adapter
+=== Using the Outbound Resource Adapter
 
 In most cases, Jakarta EE application developers use outbound resource
 adapters developed by a third party. Outbound resource adapters either
@@ -186,7 +186,7 @@ try {
 
 [[sthref243]][[implementing-the-outbound-resource-adapter]]
 
-===== Implementing the Outbound Resource Adapter
+=== Implementing the Outbound Resource Adapter
 
 The `trading-rar` module implements the outbound contract and a custom
 client interface for the simple legacy stock trading platform EIS used
@@ -251,7 +251,7 @@ module.
 
 [[sthref246]][[running-the-trading-example]]
 
-===== Running the trading Example
+=== Running the trading Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `trading` example.
@@ -263,7 +263,7 @@ The following topics are addressed here:
 
 [[BABCHDDC]][[to-run-the-trading-example-using-netbeans-ide]]
 
-====== To Run the trading Example Using NetBeans IDE
+==== To Run the trading Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -306,7 +306,7 @@ sequence that provides connection handles from the resource adapter.
 
 [[BABFJAAG]][[to-run-the-trading-example-using-maven]]
 
-====== To Run the trading Example Using Maven
+==== To Run the trading Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

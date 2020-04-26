@@ -1,6 +1,6 @@
 [[CIHBFEAE]][[the-taskcreator-concurrency-example]]
 
-==== The taskcreator Concurrency Example
+== The taskcreator Concurrency Example
 
 The `taskcreator` example demonstrates how to use Jakarta Concurrency
 to run tasks immediately, periodically, or after a fixed
@@ -86,7 +86,7 @@ object, so that the user can cancel the task at any time.
 
 [[sthref296]][[running-the-taskcreator-example]]
 
-===== Running the taskcreator Example
+=== Running the taskcreator Example
 
 This section describes how to build, package, deploy, and run the
 `taskcreator` example using NetBeans IDE or Maven.
@@ -101,7 +101,7 @@ Using Maven]
 
 [[CHDCCJHB]][[to-build-package-and-deploy-the-taskcreator-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the taskcreator Example Using NetBeans IDE
+==== To Build, Package, and Deploy the taskcreator Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -122,7 +122,7 @@ This command builds and deploys the application.
 
 [[CHDHJBDD]][[to-build-package-and-deploy-the-taskcreator-example-using-maven]]
 
-====== To Build, Package, and Deploy the taskcreator Example Using Maven
+==== To Build, Package, and Deploy the taskcreator Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -142,7 +142,7 @@ mvn install
 
 [[CHDBJGID]][[to-run-the-taskcreator-example]]
 
-====== To Run the taskcreator Example
+==== To Run the taskcreator Example
 
 1.  Open the following URL in a web browser:
 +

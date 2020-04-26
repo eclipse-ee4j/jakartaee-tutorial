@@ -1,6 +1,6 @@
 [[BCGGIBHA]][[batch-processing-in-jakarta-ee]]
 
-==== Batch Processing in Jakarta EE
+== Batch Processing in Jakarta EE
 
 This section lists the components of the batch processing framework in
 Jakarta EE and provides an overview of the steps you have to follow to
@@ -17,7 +17,7 @@ The following topics are addressed here:
 
 [[BABEAFJI]][[the-batch-processing-framework]]
 
-===== The Batch Processing Framework
+=== The Batch Processing Framework
 
 Jakarta EE includes a batch processing framework that consists of the
 following elements:
@@ -39,7 +39,7 @@ Java classes to run the jobs in a batch application.
 
 [[BABCGDHJ]][[creating-batch-applications]]
 
-===== Creating Batch Applications
+=== Creating Batch Applications
 
 The process for creating a batch application in Jakarta EE is the
 following.
@@ -59,7 +59,7 @@ the batch processing framework in Jakarta EE to create batch applications.
 
 [[BABDGDJB]][[elements-of-a-batch-job]]
 
-===== Elements of a Batch Job
+=== Elements of a Batch Job
 
 A batch job can contain one or more of the following elements:
 
@@ -89,7 +89,7 @@ the next step or to terminate the batch job.
 
 [[BABHJEJC]][[properties-and-parameters]]
 
-===== Properties and Parameters
+=== Properties and Parameters
 
 Jobs and steps can have a number of properties associated with them. You
 define properties in the job definition file, and batch artifacts access
@@ -118,7 +118,7 @@ Application].
 
 [[BABHJGDH]][[job-instances-and-job-executions]]
 
-===== Job Instances and Job Executions
+=== Job Instances and Job Executions
 
 A job definition can have multiple instances, each with different
 parameters. A job execution is an attempt to run a job instance. The
@@ -128,7 +128,7 @@ link:#BCGIBGFC[Checking the Status of a Job].
 
 [[BABBFGEF]][[batch-and-exit-status]]
 
-===== Batch and Exit Status
+=== Batch and Exit Status
 
 The state of jobs, steps, splits, and flows is represented in the batch
 runtime as a batch status value. Batch status values are listed

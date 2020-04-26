@@ -1,5 +1,5 @@
 [[using-the-object-model-api]]
-==== Using the Object Model API
+== Using the Object Model API
 
 This section describes four use cases of the object model API: creating
 an object model from JSON data, creating an object model from
@@ -15,7 +15,7 @@ The following topics are addressed here:
 
 
 [[creating-an-object-model-from-json-data]]
-===== Creating an Object Model from JSON Data
+=== Creating an Object Model from JSON Data
 
 The following code demonstrates how to create an object model from JSON
 data in a text file:
@@ -39,7 +39,7 @@ to write it to a stream as JSON data.
 
 
 [[creating-an-object-model-from-application-code]]
-===== Creating an Object Model from Application Code
+=== Creating an Object Model from Application Code
 
 The following code demonstrates how to create an object model from
 application code:
@@ -97,7 +97,7 @@ link:#BABGHEHG[JSON Syntax].
 
 
 [[navigating-an-object-model]]
-===== Navigating an Object Model
+=== Navigating an Object Model
 
 The following code demonstrates a simple approach to navigating an
 object model:
@@ -192,7 +192,7 @@ Key number: STRING 222-222-2222
 ----
 
 [[writing-an-object-model-to-a-stream]]
-===== Writing an Object Model to a Stream
+=== Writing an Object Model to a Stream
 
 The object models created in link:#BABBHEBA[Creating an Object Model
 from JSON Data] and link:#BABIGIAF[Creating an Object Model from

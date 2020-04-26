@@ -1,10 +1,12 @@
-== Security
+= Security
 
 [[GIJRP]][[JEETT00133]]
 
 [[part-x-security]]
 
 Part X explores security concepts and examples.
+
+:leveloffset: +1
 
 include::security-intro/security-intro.adoc[]
 
@@ -15,3 +17,5 @@ include::security-jakartaee/security-jakartaee.adoc[]
 include::security-api/security-api.adoc[]
 
 include::security-advanced/security-advanced.adoc[]
+
+:leveloffset: -1

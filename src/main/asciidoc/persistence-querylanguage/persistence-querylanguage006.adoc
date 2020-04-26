@@ -1,6 +1,6 @@
 [[BNBUF]][[full-query-language-syntax]]
 
-==== Full Query Language Syntax
+== Full Query Language Syntax
 
 This section discusses the query language syntax, as defined in the Jakarta
 Persistence 2.2 specification available at
@@ -20,7 +20,7 @@ The following topics are addressed here:
 
 [[BNBUG]][[bnf-symbols]]
 
-===== BNF Symbols
+=== BNF Symbols
 
 link:#BNBUH[Table 42-1] describes the BNF symbols used in this chapter.
 
@@ -60,7 +60,7 @@ or a line feed.
 
 [[BNBUI]][[bnf-grammar-of-the-java-persistence-query-language]]
 
-===== BNF Grammar of the Jakarta Persistence Query Language
+=== BNF Grammar of the Jakarta Persistence Query Language
 
 Here is the entire BNF diagram for the query language:
 
@@ -287,7 +287,7 @@ trim_specification ::= LEADING | TRAILING | BOTH
 
 [[BNBUJ]][[from-clause]]
 
-===== FROM Clause
+=== FROM Clause
 
 The `FROM` clause defines the domain of the query by declaring
 identification variables.
@@ -302,7 +302,7 @@ The following topics are addressed here:
 
 [[BNBUK]][[identifiers]]
 
-====== Identifiers
+==== Identifiers
 
 An identifier is a sequence of one or more characters. The first
 character must be a valid first character (letter, `$`, `_`) in an
@@ -407,7 +407,7 @@ words in the future.
 
 [[BNBUM]][[identification-variables]]
 
-====== Identification Variables
+==== Identification Variables
 
 An identification variable is an identifier declared in the `FROM`
 clause. Although they can reference identification variables, the
@@ -470,7 +470,7 @@ member.
 
 [[BNBUN]][[range-variable-declarations]]
 
-====== Range Variable Declarations
+==== Range Variable Declarations
 
 To declare an identification variable as an abstract schema type, you
 specify a range variable declaration. In other words, an identification
@@ -509,7 +509,7 @@ link:#BNBUB[Comparison Operators].
 
 [[BNBUO]][[collection-member-declarations]]
 
-====== Collection Member Declarations
+==== Collection Member Declarations
 
 In a one-to-many relationship, the multiple side consists of a
 collection of entities. An identification variable can represent a
@@ -537,7 +537,7 @@ FROM Player p, IN (p.teams) t
 
 [[BNBUP]][[joins]]
 
-====== Joins
+==== Joins
 
 The `JOIN` operator is used to traverse over relationships between
 entities and is functionally similar to the `IN` operator.
@@ -605,7 +605,7 @@ WHERE d.deptno = 1
 
 [[BNBUQ]][[path-expressions]]
 
-===== Path Expressions
+=== Path Expressions
 
 Path expressions are important constructs in the syntax of the query
 language for several reasons. First, path expressions define navigation
@@ -624,7 +624,7 @@ The following topics are addressed here:
 
 [[BNBUR]][[examples-of-path-expressions]]
 
-====== Examples of Path Expressions
+==== Examples of Path Expressions
 
 Here, the `WHERE` clause contains a `single_valued_path_expression`; the
 `p` is an identification variable, and `salary` is a persistent field of
@@ -662,7 +662,7 @@ WHERE p.teams IS EMPTY
 
 [[BNBUS]][[expression-types]]
 
-====== Expression Types
+==== Expression Types
 
 The type of a path expression is the type of the object represented by
 the ending element, which can be one of the following:
@@ -683,7 +683,7 @@ see link:#BNBVY[Return Types].
 
 [[BNBUT]][[navigation]]
 
-====== Navigation
+==== Navigation
 
 A path expression enables the query to navigate to related entities. The
 terminating elements of an expression determine whether navigation is
@@ -703,7 +703,7 @@ WHERE t.league.sport = 'soccer'
 
 [[BNBUU]][[where-clause]]
 
-===== WHERE Clause
+=== WHERE Clause
 
 The `WHERE` clause specifies a conditional expression that limits the
 values returned by the query. The query returns all corresponding values
@@ -737,7 +737,7 @@ The following topics are addressed here:
 
 [[BNBUV]][[literals]]
 
-====== Literals
+==== Literals
 
 There are four kinds of literals: string, numeric, Boolean, and enum.
 
@@ -784,7 +784,7 @@ WHERE e.status = com.example.EmployeeStatus.FULL_TIME
 
 [[BNBVA]][[input-parameters]]
 
-====== Input Parameters
+==== Input Parameters
 
 An input parameter can be either a named parameter or a positional
 parameter.
@@ -805,7 +805,7 @@ single query.
 
 [[BNBVB]][[conditional-expressions]]
 
-====== Conditional Expressions
+==== Conditional Expressions
 
 A `WHERE` clause consists of a conditional expression, which is
 evaluated from left to right within a precedence level. You can change
@@ -813,7 +813,7 @@ the order of evaluation by using parentheses.
 
 [[BNBVC]][[operators-and-their-precedence]]
 
-====== Operators and Their Precedence
+==== Operators and Their Precedence
 
 link:#BNBVD[Table 42-2] lists the query language operators in order of
 decreasing precedence.
@@ -870,7 +870,7 @@ decreasing precedence.
 
 [[BNBVE]][[between-expressions]]
 
-====== BETWEEN Expressions
+==== BETWEEN Expressions
 
 A `BETWEEN` expression determines whether an arithmetic expression falls
 within a range of values.
@@ -896,7 +896,7 @@ If an arithmetic expression has a `NULL` value, the value of the
 
 [[BNBVF]][[in-expressions]]
 
-====== IN Expressions
+==== IN Expressions
 
 An `IN` expression determines whether a string belongs to a set of
 string literals or whether a number belongs to a set of number values.
@@ -922,7 +922,7 @@ o.country IN ('UK', 'US', 'France', :country)
 
 [[BNBVG]][[like-expressions]]
 
-====== LIKE Expressions
+==== LIKE Expressions
 
 A `LIKE` expression determines whether a wildcard pattern matches a
 string.
@@ -961,7 +961,7 @@ sample `LIKE` expressions.
 
 [[BNBVI]][[null-comparison-expressions]]
 
-====== NULL Comparison Expressions
+==== NULL Comparison Expressions
 
 A `NULL` comparison expression tests whether a single-valued path
 expression or an input parameter has a `NULL` value. Usually, the `NULL`
@@ -991,7 +991,7 @@ second query will always return an empty result.
 
 [[BNBVJ]][[empty-collection-comparison-expressions]]
 
-====== Empty Collection Comparison Expressions
+==== Empty Collection Comparison Expressions
 
 The `IS [NOT] EMPTY` comparison expression tests whether a
 collection-valued path expression has no elements. In other words, it
@@ -1012,7 +1012,7 @@ WHERE o.lineItems IS EMPTY
 
 [[BNBVK]][[collection-member-expressions]]
 
-====== Collection Member Expressions
+==== Collection Member Expressions
 
 The `[NOT]` `MEMBER [OF]` collection member expression determines
 whether a value is a member of a collection. The value and the
@@ -1036,7 +1036,7 @@ WHERE :lineItem MEMBER OF o.lineItems
 
 [[BNBVL]][[subqueries]]
 
-====== Subqueries
+==== Subqueries
 
 Subqueries may be used in the `WHERE` or `HAVING` clause of a query.
 Subqueries must be surrounded by parentheses.
@@ -1096,7 +1096,7 @@ WHERE emp.salary > ALL (
 
 [[BNBVO]][[functional-expressions]]
 
-====== Functional Expressions
+==== Functional Expressions
 
 The query language includes several string, arithmetic, and date/time
 functions that may be used in the `SELECT`, `WHERE`, or `HAVING` clause
@@ -1199,7 +1199,7 @@ time, or timestamp on the database server.
 
 [[GJJND]][[case-expressions]]
 
-====== Case Expressions
+==== Case Expressions
 
 Case expressions change based on a condition, similar to the `case`
 keyword of the Java programming language. The `CASE` keyword indicates
@@ -1245,7 +1245,7 @@ SET c.discount =
 
 [[BNBVR]][[null-values]]
 
-====== NULL Values
+==== NULL Values
 
 If the target of a reference is not in the persistent store, the target
 is `NULL`. For conditional expressions containing `NULL`, the query
@@ -1291,7 +1291,7 @@ these tables, T stands for `TRUE`, F for `FALSE`, and U for unknown.)
 
 [[BNBVU]][[equality-semantics]]
 
-====== Equality Semantics
+==== Equality Semantics
 
 In the query language, only values of the same type can be compared.
 However, this rule has one exception: Exact and approximate numeric
@@ -1342,7 +1342,7 @@ truth values of conditional tests.
 
 [[BNBVX]][[select-clause]]
 
-===== SELECT Clause
+=== SELECT Clause
 
 The `SELECT` clause defines the types of the objects or values returned
 by the query.
@@ -1355,7 +1355,7 @@ The following topics are addressed here:
 
 [[BNBVY]][[return-types]]
 
-====== Return Types
+==== Return Types
 
 The return type of the `SELECT` clause is defined by the result types of
 the select expressions contained within it. If multiple expressions are
@@ -1468,7 +1468,7 @@ WHERE c.lastname = 'Incandenza' AND c.firstname = 'Hal'
 
 [[BNBWB]][[the-distinct-keyword]]
 
-====== The DISTINCT Keyword
+==== The DISTINCT Keyword
 
 The `DISTINCT` keyword eliminates duplicate return values. If a query
 returns a `java.util.Collection`, which allows duplicates, you must
@@ -1476,7 +1476,7 @@ specify the `DISTINCT` keyword to eliminate duplicates.
 
 [[BNBWC]][[constructor-expressions]]
 
-====== Constructor Expressions
+==== Constructor Expressions
 
 Constructor expressions allow you to return Java instances that store a
 query result element instead of an `Object[]`.
@@ -1495,7 +1495,7 @@ WHERE c.lastname = 'Coss' AND c.firstname = 'Roxane'
 
 [[BNBWD]][[order-by-clause]]
 
-===== ORDER BY Clause
+=== ORDER BY Clause
 
 As its name suggests, the `ORDER BY` clause orders the values or objects
 returned by the query.
@@ -1533,7 +1533,7 @@ ORDER BY o.quantity
 
 [[BNBWE]][[group-by-and-having-clauses]]
 
-===== GROUP BY and HAVING Clauses
+=== GROUP BY and HAVING Clauses
 
 The `GROUP BY` clause allows you to group values according to a set of
 properties.

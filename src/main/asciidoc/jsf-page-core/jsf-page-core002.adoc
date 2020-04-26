@@ -1,6 +1,6 @@
 [[BNASZ]][[registering-listeners-on-components]]
 
-==== Registering Listeners on Components
+== Registering Listeners on Components
 
 An application developer can implement listeners as classes or as
 managed bean methods. If a listener is a managed bean method, the page
@@ -24,7 +24,7 @@ listeners.
 
 [[BNATA]][[registering-a-value-change-listener-on-a-component]]
 
-===== Registering a Value-Change Listener on a Component
+=== Registering a Value-Change Listener on a Component
 
 A page author can register a `ValueChangeListener` implementation on a
 component that implements `EditableValueHolder` by nesting an
@@ -82,7 +82,7 @@ Values and Instances to Managed Bean Properties] for more information.
 
 [[BNATB]][[registering-an-action-listener-on-a-component]]
 
-===== Registering an Action Listener on a Component
+=== Registering an Action Listener on a Component
 
 A page author can register an `ActionListener` implementation on a
 command component by nesting an `f:actionListener` tag within the

@@ -1,6 +1,6 @@
 [[BNCIJ]][[container-managed-transactions]]
 
-==== Container-Managed Transactions
+== Container-Managed Transactions
 
 In an enterprise bean with container-managed transaction demarcation,
 the enterprise bean container sets the boundaries of the transactions. You can use
@@ -36,7 +36,7 @@ must not use the `javax.transaction.UserTransaction` interface.
 
 [[BNCIK]][[transaction-attributes]]
 
-===== Transaction Attributes
+=== Transaction Attributes
 
 A transaction attribute controls the scope of a transaction.
 link:#BNCIL[Figure 54-1] illustrates why controlling the scope is
@@ -63,7 +63,7 @@ A transaction attribute can have one of the following values:
 
 [[BNCIM]][[required-attribute]]
 
-====== Required Attribute
+==== Required Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the method executes within the client's transaction. If
@@ -78,7 +78,7 @@ attributes are declarative, you can easily change them later.
 
 [[BNCIN]][[requiresnew-attribute]]
 
-====== RequiresNew Attribute
+==== RequiresNew Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the container takes the following steps:
@@ -96,7 +96,7 @@ the method always runs within a new transaction.
 
 [[BNCIO]][[mandatory-attribute]]
 
-====== Mandatory Attribute
+==== Mandatory Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the method executes within the client's transaction. If
@@ -108,7 +108,7 @@ the transaction of the client.
 
 [[BNCIP]][[notsupported-attribute]]
 
-====== NotSupported Attribute
+==== NotSupported Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the container suspends the client's transaction before
@@ -124,7 +124,7 @@ improve performance.
 
 [[BNCIQ]][[supports-attribute]]
 
-====== Supports Attribute
+==== Supports Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the method executes within the client's transaction. If
@@ -136,7 +136,7 @@ use the `Supports` attribute with caution.
 
 [[BNCIR]][[never-attribute]]
 
-====== Never Attribute
+==== Never Attribute
 
 If the client is running within a transaction and invokes the enterprise
 bean's method, the container throws a `RemoteException`. If the client
@@ -145,7 +145,7 @@ transaction before running the method.
 
 [[BNCIS]][[summary-of-transaction-attributes]]
 
-====== Summary of Transaction Attributes
+==== Summary of Transaction Attributes
 
 link:#BNCIT[Table 54-1] summarizes the effects of the transaction
 attributes. Both the `T1` and the `T2` transactions are controlled by
@@ -198,7 +198,7 @@ Transaction
 
 [[BNCIU]][[setting-transaction-attributes]]
 
-====== Setting Transaction Attributes
+==== Setting Transaction Attributes
 
 Transaction attributes are specified by decorating the enterprise bean
 class or method with a `javax.ejb.TransactionAttribute` annotation and
@@ -264,7 +264,7 @@ transaction or start a new transaction. Calls to `thirdMethod` or
 
 [[BNCIV]][[rolling-back-a-container-managed-transaction]]
 
-===== Rolling Back a Container-Managed Transaction
+=== Rolling Back a Container-Managed Transaction
 
 There are two ways to roll back a container-managed transaction. First,
 if a system exception is thrown, the container will automatically roll
@@ -276,7 +276,7 @@ to `setRollbackOnly`.
 
 [[BNCIW]][[synchronizing-a-session-beans-instance-variables]]
 
-===== Synchronizing a Session Bean's Instance Variables
+=== Synchronizing a Session Bean's Instance Variables
 
 The `SessionSynchronization` interface, which is optional, allows
 stateful session bean instances to receive transaction synchronization
@@ -302,7 +302,7 @@ back.
 
 [[BNCIX]][[methods-not-allowed-in-container-managed-transactions]]
 
-===== Methods Not Allowed in Container-Managed Transactions
+=== Methods Not Allowed in Container-Managed Transactions
 
 You should not invoke any method that might interfere with the
 transaction boundaries set by the container. The following methods are

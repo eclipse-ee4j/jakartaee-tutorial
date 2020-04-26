@@ -1,6 +1,6 @@
 [[GKOIB]][[the-customer-example-application]]
 
-==== The customer Example Application
+== The customer Example Application
 
 This section describes how to build and run the `customer` example
 application. This application is a RESTful web service that uses Jakarta XML Binding to
@@ -22,7 +22,7 @@ The following topics are addressed here:
 
 [[GKOFO]][[overview-of-the-customer-example-application]]
 
-===== Overview of the customer Example Application
+=== Overview of the customer Example Application
 
 The source files of this application are at
 `_tut-install_/examples/jaxrs/customer/src/main/java/`. The application
@@ -43,7 +43,7 @@ entities as Java classes with Jakarta XML Binding annotations.
 
 [[CIHJFEJI]][[the-customer-and-address-entity-classes]]
 
-===== The Customer and Address Entity Classes
+=== The Customer and Address Entity Classes
 
 The following class represents a customer's address:
 
@@ -179,7 +179,7 @@ classes:
 
 [[GKLGT]][[the-customerservice-class]]
 
-===== The CustomerService Class
+=== The CustomerService Class
 
 The `CustomerService` class has a `createCustomer` method that creates a
 customer resource based on the `Customer` class and returns a URI for
@@ -282,7 +282,7 @@ the client.
 
 [[GKQJQ]][[using-the-jax-rs-client-in-the-customerbean-classes]]
 
-===== Using the Jakarta REST Client in the CustomerBean Classes
+=== Using the Jakarta REST Client in the CustomerBean Classes
 
 Use the Jakarta REST Client API to write a client for the `customer` example
 application.
@@ -366,7 +366,7 @@ status codes, see
 
 [[GKQKV]][[running-the-customer-example]]
 
-===== Running the customer Example
+=== Running the customer Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `customer` application.
@@ -380,7 +380,7 @@ Maven]
 
 [[GKQLY]][[to-build-package-and-deploy-the-customer-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the customer Example Using NetBeans IDE
+==== To Build, Package, and Deploy the customer Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -411,7 +411,7 @@ The web client allows you to create and view customers.
 
 [[GKQJV]][[to-build-package-and-deploy-the-customer-example-using-maven]]
 
-====== To Build, Package, and Deploy the customer Example Using Maven
+==== To Build, Package, and Deploy the customer Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
