@@ -1,6 +1,6 @@
 [[BNBYL]][[securing-enterprise-beans]]
 
-==== Securing Enterprise Beans
+== Securing Enterprise Beans
 
 Enterprise beans are Jakarta EE components that implement enterprise bean technology.
 Enterprise beans run in the enterprise bean container, a runtime environment within
@@ -112,7 +112,7 @@ beans.
 
 [[GJGDI]][[securing-an-enterprise-bean-using-declarative-security]]
 
-===== Securing an Enterprise Bean Using Declarative Security
+=== Securing an Enterprise Bean Using Declarative Security
 
 Declarative security enables the application developer to specify which
 users are authorized to access which methods of the enterprise beans and
@@ -157,7 +157,7 @@ security view to pass along to the deployer.
 
 [[GJGCQ]][[specifying-authorized-users-by-declaring-security-roles]]
 
-====== Specifying Authorized Users by Declaring Security Roles
+==== Specifying Authorized Users by Declaring Security Roles
 
 This section discusses how to use annotations to specify the method
 permissions for the methods of a bean class. For more information on
@@ -345,7 +345,7 @@ inherited by the subclass.
 
 [[BNBYU]][[specifying-an-authentication-mechanism-and-secure-connection]]
 
-====== Specifying an Authentication Mechanism and Secure Connection
+==== Specifying an Authentication Mechanism and Secure Connection
 
 When method permissions are specified, basic user name/password
 authentication will be invoked by GlassFish Server.
@@ -356,7 +356,7 @@ deployment descriptor.
 
 [[GJGCS]][[securing-an-enterprise-bean-programmatically]]
 
-===== Securing an Enterprise Bean Programmatically
+=== Securing an Enterprise Bean Programmatically
 
 Programmatic security, code that is embedded in a business method, is
 used to access a caller's identity programmatically and uses this
@@ -490,7 +490,7 @@ an Enterprise Bean with Programmatic Security].
 
 [[BNBYR]][[propagating-a-security-identity-run-as]]
 
-===== Propagating a Security Identity (Run-As)
+=== Propagating a Security Identity (Run-As)
 
 You can specify whether a caller's security identity should be used for
 the execution of specified methods of an enterprise bean or whether a
@@ -536,7 +536,7 @@ bean that might be called in turn.
 
 [[BNBZB]][[configuring-a-components-propagated-security-identity]]
 
-====== Configuring a Component's Propagated Security Identity
+==== Configuring a Component's Propagated Security Identity
 
 You can configure an enterprise bean's run-as, or propagated, security
 identity by using the `@RunAs` annotation, which defines the role of the
@@ -562,7 +562,7 @@ user principal.
 
 [[BNBZC]][[trust-between-containers]]
 
-====== Trust between Containers
+==== Trust between Containers
 
 When an enterprise bean is designed so that either the original caller
 identity or a designated identity is used to call a target bean, the
@@ -583,7 +583,7 @@ any special steps to set up a trust relationship.
 
 [[BNBZG]][[deploying-secure-enterprise-beans]]
 
-===== Deploying Secure Enterprise Beans
+=== Deploying Secure Enterprise Beans
 
 The deployer is responsible for ensuring that an assembled application
 is secure after it has been deployed in the target operational

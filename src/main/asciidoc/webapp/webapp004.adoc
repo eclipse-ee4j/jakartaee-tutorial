@@ -1,6 +1,6 @@
 [[BNAEO]][[a-web-module-that-uses-java-servlet-technology-the-hello2-example]]
 
-==== A Web Module That Uses Jakarta Servlet Technology: The hello2 Example
+== A Web Module That Uses Jakarta Servlet Technology: The hello2 Example
 
 The `hello2` application is a web module that uses Jakarta Servlet
 technology to display a greeting and response. You can use a text editor
@@ -17,7 +17,7 @@ The following topics are addressed here:
 
 [[BNAEP]][[mapping-urls-to-web-components]]
 
-===== Mapping URLs to Web Components
+=== Mapping URLs to Web Components
 
 When it receives a request, the web container must determine which web
 component should handle the request. The web container does so by
@@ -56,7 +56,7 @@ the URL pattern.
 
 [[GJWWG]][[examining-the-hello2-web-module]]
 
-===== Examining the hello2 Web Module
+=== Examining the hello2 Web Module
 
 The `hello2` application behaves almost identically to the `hello1`
 application, but it is implemented using Jakarta Servlet technology instead
@@ -65,7 +65,7 @@ application files, or you can use NetBeans IDE.
 
 [[GJWWA]][[to-view-the-hello2-web-module-using-netbeans-ide]]
 
-====== To View the hello2 Web Module Using NetBeans IDE
+==== To View the hello2 Web Module Using NetBeans IDE
 
 To view the `hello2` web module using NetBeans IDE:
 
@@ -160,7 +160,7 @@ public class ResponseServlet extends HttpServlet {
 
 [[GKBLH]][[running-the-hello2-example]]
 
-===== Running the hello2 Example
+=== Running the hello2 Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `hello2` example.
@@ -172,7 +172,7 @@ The following topics are addressed here:
 
 [[GJSED]][[to-run-the-hello2-example-using-netbeans-ide]]
 
-====== To Run the hello2 Example Using NetBeans IDE
+==== To Run the hello2 Example Using NetBeans IDE
 
 To run the `hello2` example using NetBeans IDE:
 
@@ -205,7 +205,7 @@ greeting, not on a separate page.
 
 [[GJSHX]][[to-run-the-hello2-example-using-maven]]
 
-====== To Run the hello2 Example Using Maven
+==== To Run the hello2 Example Using Maven
 
 To run the `hello2` example using Maven:
 

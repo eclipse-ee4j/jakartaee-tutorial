@@ -1,6 +1,6 @@
 [[BNATG]][[binding-component-values-and-instances-to-managed-bean-properties]]
 
-==== Binding Component Values and Instances to Managed Bean Properties
+== Binding Component Values and Instances to Managed Bean Properties
 
 A component tag can wire its data to a managed bean by one of the
 following methods:
@@ -100,7 +100,7 @@ property.
 
 [[BNATI]][[binding-a-component-value-to-a-property]]
 
-===== Binding a Component Value to a Property
+=== Binding a Component Value to a Property
 
 To bind a component's value to a managed bean property, you specify the
 name of the bean and the property using the `value` attribute.
@@ -182,7 +182,7 @@ resource file.
 
 [[BNATJ]][[binding-a-component-value-to-an-implicit-object]]
 
-===== Binding a Component Value to an Implicit Object
+=== Binding a Component Value to an Implicit Object
 
 One external data source that a `value` attribute can refer to is an
 implicit object.
@@ -258,7 +258,7 @@ the `FacesRequest` for this request
 
 [[BNATL]][[binding-a-component-instance-to-a-bean-property]]
 
-===== Binding a Component Instance to a Bean Property
+=== Binding a Component Instance to a Bean Property
 
 A component instance can be bound to a bean property using a value
 expression with the `binding` attribute of the component's tag. You

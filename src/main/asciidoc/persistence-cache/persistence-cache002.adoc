@@ -1,6 +1,6 @@
 [[GKJJJ]][[specifying-the-cache-mode-settings-to-improve-performance]]
 
-==== Specifying the Cache Mode Settings to Improve Performance
+== Specifying the Cache Mode Settings to Improve Performance
 
 To adjust the cache mode settings for a persistence unit, specify one of
 the cache modes as the value of the `shared-cache-mode` element in the
@@ -43,7 +43,7 @@ EntityManagerFactory emf =
 
 [[GKJDK]][[setting-the-cache-retrieval-and-store-modes]]
 
-===== Setting the Cache Retrieval and Store Modes
+=== Setting the Cache Retrieval and Store Modes
 
 If you have enabled the second-level cache for a persistence unit by
 setting the shared cache mode, you can further modify the behavior of
@@ -57,7 +57,7 @@ on a per-`EntityManager` operation (`EntityManager.find` or
 
 [[GKJDR]][[cache-retrieval-mode]]
 
-====== Cache Retrieval Mode
+==== Cache Retrieval Mode
 
 The cache retrieval mode, set by the `javax.persistence.retrieveMode`
 property, controls how data is read from the cache for calls to the
@@ -76,7 +76,7 @@ and a call to the database is made to retrieve the data.
 
 [[GKJDD]][[cache-store-mode]]
 
-====== Cache Store Mode
+==== Cache Store Mode
 
 The cache store mode, set by the `javax.persistence.storeMode` property,
 controls how data is stored in the cache.
@@ -100,7 +100,7 @@ refresh is forced on data in the cache upon database reads.
 
 [[GKJDS]][[setting-the-cache-retrieval-or-store-mode]]
 
-====== Setting the Cache Retrieval or Store Mode
+==== Setting the Cache Retrieval or Store Mode
 
 To set the cache retrieval or store mode for the persistence context,
 call the `EntityManager.setProperty` method with the property name and
@@ -157,7 +157,7 @@ setting of the entity manager.
 
 [[GKJEB]][[controlling-the-second-level-cache-programmatically]]
 
-===== Controlling the Second-Level Cache Programmatically
+=== Controlling the Second-Level Cache Programmatically
 
 The `javax.persistence.Cache` interface defines methods for interacting
 with the second-level cache programmatically.
@@ -171,7 +171,7 @@ The following topics are addressed here:
 
 [[CHDEECCF]][[overview-of-the-javax.persistence.cache-interface]]
 
-====== Overview of the javax.persistence.Cache Interface
+==== Overview of the javax.persistence.Cache Interface
 
 The `Cache` interface defines methods to do the following:
 
@@ -196,7 +196,7 @@ always return `false`.
 
 [[GKJDZ]][[checking-whether-an-entitys-data-is-cached]]
 
-====== Checking whether an Entity's Data Is Cached
+==== Checking whether an Entity's Data Is Cached
 
 To find out whether a given entity is currently in the second-level
 cache:
@@ -219,7 +219,7 @@ if (cache.contains(Person.class, personPK)) {
 
 [[GKJDQ]][[removing-an-entity-from-the-cache]]
 
-====== Removing an Entity from the Cache
+==== Removing an Entity from the Cache
 
 To remove a particular entity or all entities of a given type from the
 second-level cache:
@@ -250,7 +250,7 @@ well.
 
 [[GKJDA]][[removing-all-data-from-the-cache]]
 
-====== Removing All Data from the Cache
+==== Removing All Data from the Cache
 
 To completely clear the second-level cache, call the `Cache.evictAll` method:
 

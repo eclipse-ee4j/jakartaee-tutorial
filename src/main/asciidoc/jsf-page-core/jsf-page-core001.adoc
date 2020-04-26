@@ -1,6 +1,6 @@
 [[BNAST]][[using-the-standard-converters]]
 
-==== Using the Standard Converters
+== Using the Standard Converters
 
 
 The Jakarta Server Faces implementation provides a set of `Converter`
@@ -66,7 +66,7 @@ standard converters with a component.
 
 [[BNASU]][[converting-a-components-value]]
 
-===== Converting a Component's Value
+=== Converting a Component's Value
 
 To use a particular converter to convert a component's value, you need
 to register the converter onto the component. You can register any of
@@ -128,7 +128,7 @@ link:#BNAUS[Creating and Using a Custom Converter].
 
 [[BNASV]][[using-datetimeconverter]]
 
-===== Using DateTimeConverter
+=== Using DateTimeConverter
 
 You can convert a component's data to a `java.util.Date` by nesting the
 `convertDateTime` tag inside the component tag. The `convertDateTime`
@@ -277,7 +277,7 @@ See link:#CFHEABEI[Table 11-3] for additional information.
 
 [[BNASX]][[using-numberconverter]]
 
-===== Using NumberConverter
+=== Using NumberConverter
 
 You can convert a component's data to a `java.lang.Number` by nesting
 the `convertNumber` tag inside the component tag. The `convertNumber`

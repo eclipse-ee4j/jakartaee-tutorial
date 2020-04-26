@@ -1,6 +1,6 @@
 [[BCGJDEEH]][[introduction-to-batch-processing]]
 
-==== Introduction to Batch Processing
+== Introduction to Batch Processing
 
 Some enterprise applications contain tasks that can be executed without
 user interaction. These tasks are executed periodically or when resource
@@ -38,7 +38,7 @@ other common characteristics of batch frameworks.
 
 [[sthref261]][[steps-in-batch-jobs]]
 
-===== Steps in Batch Jobs
+=== Steps in Batch Jobs
 
 A step is an independent and sequential phase of a batch job. Batch jobs
 contain chunk-oriented steps and task-oriented steps.
@@ -98,7 +98,7 @@ files from the bills generated for the previous month.
 
 [[sthref263]][[parallel-processing]]
 
-===== Parallel Processing
+=== Parallel Processing
 
 Batch jobs often process large amounts of data or perform
 computationally expensive operations. Batch applications can benefit
@@ -115,7 +115,7 @@ run in parallel.
 
 [[sthref264]][[status-and-decision-elements]]
 
-===== Status and Decision Elements
+=== Status and Decision Elements
 
 Batch frameworks keep track of a status for every step in a job. The
 status indicates if a step is running or if it has completed. If the
@@ -147,7 +147,7 @@ ends."]
 
 [[sthref266]][[batch-framework-functionality]]
 
-===== Batch Framework Functionality
+=== Batch Framework Functionality
 
 Batch applications have the following common requirements.
 

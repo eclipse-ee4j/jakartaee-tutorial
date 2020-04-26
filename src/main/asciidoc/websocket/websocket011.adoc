@@ -1,6 +1,6 @@
 [[BABGCEHE]][[the-dukeetf2-example-application]]
 
-==== The dukeetf2 Example Application
+== The dukeetf2 Example Application
 
 The `dukeetf2` example application, located in the
 tut-install`/examples/web/websocket/dukeetf2/` directory, demonstrates
@@ -15,7 +15,7 @@ The following topics are addressed here:
 
 [[CIHJHJCD]][[architecture-of-the-dukeetf2-sample-application]]
 
-===== Architecture of the dukeetf2 Sample Application
+=== Architecture of the dukeetf2 Sample Application
 
 The `dukeetf2` example application consists of a WebSocket endpoint, an
 enterprise bean, and an HTML page.
@@ -30,7 +30,7 @@ information without reloading the page.
 
 [[sthref116]][[the-endpoint]]
 
-====== The Endpoint
+==== The Endpoint
 
 The WebSocket endpoint is implemented in the `ETFEndpoint` class, which
 stores all connected sessions in a queue and provides a method that the
@@ -95,7 +95,7 @@ public class ETFEndpoint {
 
 [[sthref117]][[the-enterprise-bean]]
 
-====== The Enterprise Bean
+==== The Enterprise Bean
 
 The enterprise bean uses the timer service to generate new price and
 volume information every second:
@@ -138,7 +138,7 @@ service.
 
 [[CIHHIEFH]][[the-html-page]]
 
-====== The HTML Page
+==== The HTML Page
 
 The HTML page consists of a table and some JavaScript code. The table
 contains two fields referenced from JavaScript code:
@@ -185,7 +185,7 @@ used in HTML5 web client development.
 
 [[CIHHBAIC]][[running-the-dukeetf2-example-application]]
 
-===== Running the dukeetf2 Example Application
+=== Running the dukeetf2 Example Application
 
 This section describes how to run the `dukeetf2` example application
 using NetBeans IDE and from the command line.
@@ -198,7 +198,7 @@ IDE]
 
 [[CIHEBIAH]][[to-run-the-dukeetf2-example-application-using-netbeans-ide]]
 
-====== To Run the dukeetf2 Example Application Using NetBeans IDE
+==== To Run the dukeetf2 Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -229,7 +229,7 @@ both pages get price and volume updates simultaneously.
 
 [[CIHDJCGJ]][[to-run-the-dukeetf2-example-application-using-maven]]
 
-====== To Run the dukeetf2 Example Application Using Maven
+==== To Run the dukeetf2 Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

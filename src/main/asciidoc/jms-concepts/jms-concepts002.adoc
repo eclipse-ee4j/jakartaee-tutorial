@@ -1,6 +1,6 @@
 [[BNCDX]][[basic-jms-api-concepts]]
 
-==== Basic Jakarta Messaging Concepts
+== Basic Jakarta Messaging Concepts
 
 This section introduces the most basic Jakarta Messaging concepts, the ones you
 must know to get started writing simple application clients that use the
@@ -18,7 +18,7 @@ The following topics are addressed here:
 
 [[BNCDY]][[jms-api-architecture]]
 
-===== Jakarta Messaging Architecture
+=== Jakarta Messaging Architecture
 
 A Jakarta Messaging application is composed of the following parts.
 
@@ -58,7 +58,7 @@ client, JNDI namespace, and JMS provider"]
 
 [[BNCEA]][[messaging-styles]]
 
-===== Messaging Styles
+=== Messaging Styles
 
 Before the Jakarta Messaging existed, most messaging products supported either the
 point-to-point or the publish/subscribe style of messaging. The Jakarta Messaging
@@ -78,7 +78,7 @@ coding approach, using the greatly simplified API provided by Jakarta Messaging 
 
 [[BNCEB]][[point-to-point-messaging-style]]
 
-====== Point-to-Point Messaging Style
+==== Point-to-Point Messaging Style
 
 A point-to-point (PTP) product or application is built on the concept of
 message queues, senders, and receivers. Each message is addressed to a
@@ -105,7 +105,7 @@ successfully by one consumer.
 
 [[BNCED]][[publishsubscribe-messaging-style]]
 
-====== Publish/Subscribe Messaging Style
+==== Publish/Subscribe Messaging Style
 
 In a publish/subscribe (pub/sub) product or application, clients address
 messages to a topic, which functions somewhat like a bulletin board.
@@ -154,7 +154,7 @@ topic, and the message being delivered to two consumers to the topic"]
 
 [[BNCEG]][[message-consumption]]
 
-===== Message Consumption
+=== Message Consumption
 
 Messaging products are inherently asynchronous: There is no fundamental
 timing dependency between the production and the consumption of a

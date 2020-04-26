@@ -1,6 +1,6 @@
 [[BABCJBCG]][[entity-graph-basics]]
 
-==== Entity Graph Basics
+== Entity Graph Basics
 
 You can create entity graphs statically by using annotations or a
 deployment descriptor, or dynamically by using standard interfaces.
@@ -16,7 +16,7 @@ be explicitly added to an entity graph.
 
 [[sthref184]][[the-default-entity-graph]]
 
-===== The Default Entity Graph
+=== The Default Entity Graph
 
 By default, all fields in an entity are fetched lazily unless the
 `fetch` attribute of the entity metadata is set to
@@ -50,7 +50,7 @@ fields.
 
 [[sthref185]][[using-entity-graphs-in-persistence-operations]]
 
-===== Using Entity Graphs in Persistence Operations
+=== Using Entity Graphs in Persistence Operations
 
 Entity graphs are used by creating an instance of the
 `javax.persistence.EntityGraph` interface by calling either
@@ -73,7 +73,7 @@ The following topics are addressed here:
 
 [[BABGEFCG]][[fetch-graphs]]
 
-====== Fetch Graphs
+==== Fetch Graphs
 
 To specify a fetch graph, set the `javax.persistence.fetchgraph`
 property when you execute an `EntityManager.find` or query operation. A
@@ -95,7 +95,7 @@ EmailMessage message = em.find(EmailMessage.class, id, props);
 
 [[BABHJBHG]][[load-graphs]]
 
-====== Load Graphs
+==== Load Graphs
 
 To specify a load graph, set the `javax.persistence.loadgraph` property
 when you execute an `EntityManager.find` or query operation. A load

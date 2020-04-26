@@ -1,6 +1,6 @@
 [[BNAQD]][[user-interface-component-model]]
 
-==== User Interface Component Model
+== User Interface Component Model
 
 In addition to the lifecycle description, an overview of Jakarta Server
 Faces architecture provides better understanding of the technology.
@@ -33,7 +33,7 @@ architecture.
 
 [[BNAQE]][[user-interface-component-classes]]
 
-===== User Interface Component Classes
+=== User Interface Component Classes
 
 Jakarta Server Faces technology provides a set of UI component classes and
 associated behavioral interfaces that specify all the UI component
@@ -135,7 +135,7 @@ tags.
 
 [[BNAQF]][[component-rendering-model]]
 
-===== Component Rendering Model
+=== Component Rendering Model
 
 The Jakarta Server Faces component architecture is designed such that the
 functionality of the components is defined by the component classes,
@@ -181,7 +181,7 @@ rendering components in HTML.
 
 [[BNAQI]][[conversion-model]]
 
-===== Conversion Model
+=== Conversion Model
 
 A Jakarta Server Faces application can optionally associate a component with
 server-side object data. This object is a JavaBeans component, such as a
@@ -225,7 +225,7 @@ converter creation is covered in link:#BNAVG[Chapter 15,
 
 [[GIREH]][[event-and-listener-model]]
 
-===== Event and Listener Model
+=== Event and Listener Model
 
 The Jakarta Server Faces event and listener model is similar to the
 JavaBeans event model in that it has strongly typed event classes and
@@ -310,7 +310,7 @@ Events for Custom Components] explains how to do this.
 
 [[BNAQK]][[validation-model]]
 
-===== Validation Model
+=== Validation Model
 
 Jakarta Server Faces technology supports a mechanism for validating the
 local data of editable components (such as text fields). This validation

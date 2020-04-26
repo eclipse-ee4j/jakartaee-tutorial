@@ -1,6 +1,6 @@
 [[BABFGCHB]][[uploading-files-with-java-servlet-technology]]
 
-==== Uploading Files with Jakarta Servlet Technology
+== Uploading Files with Jakarta Servlet Technology
 
 Supporting file uploads is a very basic and common requirement for many
 web applications. In prior versions of the Servlet specification,
@@ -21,7 +21,7 @@ a given `multipart/form-data` request by calling the
 
 [[sthref101]][[the-multipartconfig-annotation]]
 
-===== The @MultipartConfig Annotation
+=== The @MultipartConfig Annotation
 
 The `@MultipartConfig` annotation supports the following optional
 attributes.
@@ -68,7 +68,7 @@ file:
 
 [[sthref102]][[the-getparts-and-getpart-methods]]
 
-===== The getParts and getPart Methods
+=== The getParts and getPart Methods
 
 The Servlet specification supports two additional `HttpServletRequest`
 methods:

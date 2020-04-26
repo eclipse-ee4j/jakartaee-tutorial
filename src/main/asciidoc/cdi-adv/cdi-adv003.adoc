@@ -1,6 +1,6 @@
 [[GKGKV]][[using-producer-methods-producer-fields-and-disposer-methods-in-cdi-applications]]
 
-==== Using Producer Methods, Producer Fields, and Disposer Methods in CDI Applications
+== Using Producer Methods, Producer Fields, and Disposer Methods in CDI Applications
 
 A producer method generates an object that can then be injected.
 Typically, you use producer methods in the following situations:
@@ -26,7 +26,7 @@ A producer method or field is annotated with the
 
 [[sthref127]][[using-producer-methods]]
 
-===== Using Producer Methods
+=== Using Producer Methods
 
 A producer method can allow you to select a bean implementation at
 runtime instead of at development time or deployment time. For example,
@@ -72,7 +72,7 @@ dependency.
 
 [[sthref128]][[using-producer-fields-to-generate-resources]]
 
-===== Using Producer Fields to Generate Resources
+=== Using Producer Fields to Generate Resources
 
 A common use of a producer field is to generate an object such as a JDBC
 `DataSource` or a Jakarta Persistence `EntityManager` (see
@@ -112,7 +112,7 @@ the object wherever in the application you need it.
 
 [[sthref129]][[using-a-disposer-method]]
 
-===== Using a Disposer Method
+=== Using a Disposer Method
 
 You can use a producer method or a producer field to generate an object
 that needs to be removed when its work is completed. If you do, you need

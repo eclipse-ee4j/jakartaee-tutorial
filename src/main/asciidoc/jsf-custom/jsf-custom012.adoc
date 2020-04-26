@@ -1,6 +1,6 @@
 [[BNAUW]][[creating-and-using-a-custom-validator]]
 
-==== Creating and Using a Custom Validator
+== Creating and Using a Custom Validator
 
 If the standard validators or Bean Validation don't perform the
 validation checking you need, you can create a custom validator to
@@ -70,7 +70,7 @@ the page author could register the validator on a component.
 
 [[BNAUX]][[implementing-the-validator-interface]]
 
-===== Implementing the Validator Interface
+=== Implementing the Validator Interface
 
 A `Validator` implementation must contain a constructor, a set of
 accessor methods for any attributes on the tag, and a `validate` method,
@@ -190,7 +190,7 @@ Restoring State] for more information.
 
 [[BNAUY]][[specifying-a-custom-tag]]
 
-===== Specifying a Custom Tag
+=== Specifying a Custom Tag
 
 If you implemented a `Validator` interface rather than implementing a
 managed bean method that performs the validation, you need to do one of
@@ -229,7 +229,7 @@ validator tag on the page.
 
 [[BNATV]][[using-a-custom-validator]]
 
-===== Using a Custom Validator
+=== Using a Custom Validator
 
 To register a custom validator on a component, you must do one of the
 following.

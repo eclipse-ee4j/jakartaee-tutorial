@@ -1,6 +1,6 @@
 [[GKCRR]][[developing-embeddable-enterprise-bean-applications]]
 
-==== Developing Embeddable Enterprise Bean Applications
+== Developing Embeddable Enterprise Bean Applications
 
 All embeddable enterprise bean containers support the features listed in
 link:#GKCQC[Table 38-1].
@@ -37,7 +37,7 @@ service endpoints, or remote business interfaces.
 
 [[GKCQI]][[running-embedded-applications]]
 
-===== Running Embedded Applications
+=== Running Embedded Applications
 
 The embedded container, the enterprise bean components, and the client
 all are executed in the same virtual machine using the same classpath.
@@ -62,7 +62,7 @@ embedded container is `glassfish-embedded-all.jar`.
 
 [[GKCOV]][[creating-the-enterprise-bean-container]]
 
-===== Creating the Enterprise Bean Container
+=== Creating the Enterprise Bean Container
 
 The `javax.ejb.embedded.EJBContainer` abstract class represents an
 instance of the enterprise bean container and includes factory methods
@@ -104,7 +104,7 @@ EJBContainer ec = EJBContainer.createEJBContainer(props);
 
 [[GKCRP]][[explicitly-specifying-enterprise-bean-modules-to-be-initialized]]
 
-====== Explicitly Specifying Enterprise Bean Modules to Be Initialized
+==== Explicitly Specifying Enterprise Bean Modules to Be Initialized
 
 Developers can specify exactly which enterprise bean modules the
 embedded container will initialize. To explicitly specify the enterprise
@@ -143,7 +143,7 @@ EJBContainer ec = EJBContainer.createEJBContainer(props);
 
 [[GLHUR]][[looking-up-session-bean-references]]
 
-===== Looking Up Session Bean References
+=== Looking Up Session Bean References
 
 To look up session bean references in an application using the embedded
 container:
@@ -173,7 +173,7 @@ MySessionBean msb = (MySessionBean)
 
 [[GKCRE]][[shutting-down-the-enterprise-bean-container]]
 
-===== Shutting Down the Enterprise Bean Container
+=== Shutting Down the Enterprise Bean Container
 
 To shut down the embedded container:
 

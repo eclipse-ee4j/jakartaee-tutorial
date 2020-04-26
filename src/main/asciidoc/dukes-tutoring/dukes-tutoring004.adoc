@@ -1,6 +1,6 @@
 [[GKJNN]][[running-the-dukes-tutoring-case-study-application]]
 
-==== Running the Duke's Tutoring Case Study Application
+== Running the Duke's Tutoring Case Study Application
 
 This section describes how to build, package, deploy, and run the Duke's
 Tutoring application.
@@ -11,7 +11,7 @@ The following topics are addressed here:
 
 [[GKJOA]][[running-dukes-tutoring]]
 
-===== Running Duke's Tutoring
+=== Running Duke's Tutoring
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run Duke's Tutoring.
@@ -24,7 +24,7 @@ The following topics are addressed here:
 
 [[GKJNR]][[to-build-and-deploy-dukes-tutoring-using-netbeans-ide]]
 
-====== To Build and Deploy Duke's Tutoring Using NetBeans IDE
+==== To Build and Deploy Duke's Tutoring Using NetBeans IDE
 
 
 Before You Begin
@@ -72,7 +72,7 @@ started.
 
 [[GKJOG]][[to-build-and-deploy-dukes-tutoring-using-maven]]
 
-====== To Build and Deploy Duke's Tutoring Using Maven
+==== To Build and Deploy Duke's Tutoring Using Maven
 
 1.  Make sure that GlassFish Server has started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -98,7 +98,7 @@ projects, and deploys `dukes-tutoring-war` to GlassFish Server.
 
 [[GKJOC]][[using-dukes-tutoring]]
 
-====== Using Duke's Tutoring
+==== Using Duke's Tutoring
 
 Once Duke's Tutoring is running on GlassFish Server, use the main
 interface to experiment with checking students in and out or sending

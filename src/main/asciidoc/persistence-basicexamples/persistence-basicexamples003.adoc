@@ -1,6 +1,6 @@
 [[GIQSQ]][[the-roster-application]]
 
-==== The roster Application
+== The roster Application
 
 The `roster` application maintains the team rosters for players in
 recreational sports leagues. The application has four components: Jakarta
@@ -36,7 +36,7 @@ omitted from the table names.
 
 [[GIQSO]][[relationships-in-the-roster-application]]
 
-===== Relationships in the roster Application
+=== Relationships in the roster Application
 
 A recreational sports system has the following relationships.
 
@@ -53,7 +53,7 @@ between the `Player`, `Team`, and `League` entities.
 
 [[GIQQK]][[the-many-to-many-relationship-in-roster]]
 
-====== The Many-To-Many Relationship in roster
+==== The Many-To-Many Relationship in roster
 
 The many-to-many relationship between `Player` and `Team` is specified
 by using the `@ManyToMany` annotation. In `Team.java`, the `@ManyToMany`
@@ -101,7 +101,7 @@ public Collection<Team> getTeams() {
 
 [[GIQRF]][[entity-inheritance-in-the-roster-application]]
 
-===== Entity Inheritance in the roster Application
+=== Entity Inheritance in the roster Application
 
 The `roster` application shows how to use entity inheritance, as
 described in link:#BNBQN[Entity Inheritance].
@@ -182,7 +182,7 @@ public abstract class League implements Serializable { ... }
 
 [[GJJFL]][[criteria-queries-in-the-roster-application]]
 
-===== Criteria Queries in the roster Application
+=== Criteria Queries in the roster Application
 
 The `roster` application uses Criteria API queries, as opposed to the
 JPQL queries used in `order`. Criteria queries are Java programming
@@ -198,7 +198,7 @@ Methods]
 
 [[GJJEX]][[metamodel-classes-in-the-roster-application]]
 
-====== Metamodel Classes in the roster Application
+==== Metamodel Classes in the roster Application
 
 Metamodel classes model an entity's attributes and are used by Criteria
 queries to navigate to an entity's attributes. Each entity class in
@@ -225,7 +225,7 @@ public class Player_ {
 
 [[GJJFN]][[obtaining-a-criteriabuilder-instance-in-requestbean]]
 
-====== Obtaining a CriteriaBuilder Instance in RequestBean
+==== Obtaining a CriteriaBuilder Instance in RequestBean
 
 The `CriteriaBuilder` interface defines methods to create criteria query
 objects and create expressions for modifying those query objects.
@@ -252,7 +252,7 @@ instance has been injected by the enterprise bean container.
 
 [[GJJFF]][[creating-criteria-queries-in-requestbeans-business-methods]]
 
-====== Creating Criteria Queries in RequestBean's Business Methods
+==== Creating Criteria Queries in RequestBean's Business Methods
 
 Many of the business methods in `RequestBean` define Criteria queries.
 One business method, `getPlayersByPosition`, returns a list of players
@@ -311,7 +311,7 @@ is called, and a `List<Player>` collection is returned.
 
 [[GIQRX]][[automatic-table-generation-in-the-roster-application]]
 
-===== Automatic Table Generation in the roster Application
+=== Automatic Table Generation in the roster Application
 
 At deployment time, GlassFish Server will automatically drop and create
 the database tables used by `roster`. This is done by setting the
@@ -338,7 +338,7 @@ the database tables used by `roster`. This is done by setting the
 
 [[GIQUZ]][[running-the-roster-example]]
 
-===== Running the roster Example
+=== Running the roster Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `roster` application.
@@ -350,7 +350,7 @@ The following topics are addressed here:
 
 [[GIQUG]][[to-run-the-roster-example-using-netbeans-ide]]
 
-====== To Run the roster Example Using NetBeans IDE
+==== To Run the roster Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -400,7 +400,7 @@ P25 Frank Fletcher defender 399.0
 
 [[GIQSJ]][[to-run-the-roster-example-using-maven]]
 
-====== To Run the roster Example Using Maven
+==== To Run the roster Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

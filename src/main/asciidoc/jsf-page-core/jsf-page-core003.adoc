@@ -1,6 +1,6 @@
 [[BNATC]][[using-the-standard-validators]]
 
-==== Using the Standard Validators
+== Using the Standard Validators
 
 
 Jakarta Server Faces technology provides a set of standard classes and
@@ -85,7 +85,7 @@ link:#BNAUW[Creating and Using a Custom Validator].
 
 [[BNATE]][[validating-a-components-value]]
 
-===== Validating a Component's Value
+=== Validating a Component's Value
 
 To validate a component's value using a particular validator, you need
 to register that validator on the component. You can do this in one of
@@ -114,7 +114,7 @@ that can be validated.
 
 [[BNATF]][[using-validator-tags]]
 
-===== Using Validator Tags
+=== Using Validator Tags
 
 The following example shows how to use the `f:validateLongRange`
 validator tag on an input component named `quantity`:

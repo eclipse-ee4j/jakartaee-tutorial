@@ -1,6 +1,6 @@
 [[GKAFH]][[main-interface]]
 
-==== Main Interface
+== Main Interface
 
 The main interface allows students and staff to check students in and
 out, and record when students are outside at the playground.
@@ -17,7 +17,7 @@ The following topics are addressed here:
 
 [[GKAFJ]][[java-persistence-api-entities-used-in-the-main-interface]]
 
-===== Java Persistence API Entities Used in the Main Interface
+=== Java Persistence API Entities Used in the Main Interface
 
 The following entities used in the main interface encapsulate data
 stored and manipulated by Duke's Tutoring, and are located in the
@@ -63,7 +63,7 @@ Properties] and link:#GKAHP[Chapter 24,
 
 [[GKAFC]][[enterprise-beans-used-in-the-main-interface]]
 
-===== Enterprise Beans Used in the Main Interface
+=== Enterprise Beans Used in the Main Interface
 
 The following enterprise beans used in the main interface provide the
 business logic for Duke's Tutoring, and are located in the
@@ -89,7 +89,7 @@ link:#GKHIC[Using Events in CDI Applications].
 
 [[BCGHHCDA]][[websocket-endpoint-used-in-the-main-interface]]
 
-===== WebSocket Endpoint Used in the Main Interface
+=== WebSocket Endpoint Used in the Main Interface
 
 The `jakarta.tutorial.dukestutoring.web.websocket.StatusEndpoint` class is
 a WebSocket server endpoint that returns students and their status to
@@ -112,7 +112,7 @@ CDI Applications].
 
 [[GKAET]][[facelets-files-used-in-the-main-interface]]
 
-===== Facelets Files Used in the Main Interface
+=== Facelets Files Used in the Main Interface
 
 The Duke's Tutoring application uses Facelets to display the user
 interface, making extensive use of the templating features of Facelets.
@@ -147,7 +147,7 @@ link:#GIEPX[Chapter 8, "Introduction to Facelets."]
 
 [[GKADH]][[helper-classes-used-in-the-main-interface]]
 
-===== Helper Classes Used in the Main Interface
+=== Helper Classes Used in the Main Interface
 
 The following helper classes, found in the `dukes-tutoring-common`
 project's `dukestutoring.util` package, are used in the main interface.
@@ -165,7 +165,7 @@ the status based on the locale.
 
 [[GKADA]][[properties-files]]
 
-===== Properties Files
+=== Properties Files
 
 The strings used in the main interface are encapsulated into resource
 bundles to allow the display of localized strings in multiple locales.
@@ -207,7 +207,7 @@ link:#BNAXB[Registering Application Messages].
 
 [[GKAEV]][[deployment-descriptors-used-in-dukes-tutoring]]
 
-===== Deployment Descriptors Used in Duke's Tutoring
+=== Deployment Descriptors Used in Duke's Tutoring
 
 Duke's Tutoring uses these deployment descriptors in the
 `src/main/webapp/WEB-INF` directory of the `dukes-tutoring-war` project:

@@ -1,6 +1,6 @@
 [[GIQST]][[the-order-application]]
 
-==== The order Application
+== The order Application
 
 The `order` application is a simple inventory and ordering application
 for maintaining a catalog of parts and placing an itemized order of
@@ -45,7 +45,7 @@ omitted from the table names.
 
 [[GIQRH]][[entity-relationships-in-the-order-application]]
 
-===== Entity Relationships in the order Application
+=== Entity Relationships in the order Application
 
 The `order` application demonstrates several types of entity
 relationships: self-referential, one-to-one, one-to-many, many-to-one,
@@ -61,7 +61,7 @@ Foreign Keys]
 
 [[GIQQR]][[self-referential-relationships]]
 
-====== Self-Referential Relationships
+==== Self-Referential Relationships
 
 A self-referential relationship occurs between relationship fields in
 the same entity. `Part` has a field, `bomPart`, which has a one-to-many
@@ -95,7 +95,7 @@ public Collection<Part> getParts() {
 
 [[GIQSR]][[one-to-one-relationships]]
 
-====== One-to-One Relationships
+==== One-to-One Relationships
 
 `Part` has a field, `vendorPart`, that has a one-to-one relationship
 with `VendorPart`'s `part` field. That is, each part has exactly one
@@ -134,7 +134,7 @@ column.
 
 [[GIQTJ]][[one-to-many-relationship-mapped-to-overlapping-primary-and-foreign-keys]]
 
-====== One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys
+==== One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys
 
 `CustomerOrder` has a field, `lineItems`, that has a one-to-many
 relationship with `LineItem`'s field `customerOrder`. That is, each
@@ -172,7 +172,7 @@ public CustomerOrder getCustomerOrder() {
 
 [[GIQUD]][[unidirectional-relationships]]
 
-====== Unidirectional Relationships
+==== Unidirectional Relationships
 
 `LineItem` has a field, `vendorPart`, that has a unidirectional
 many-to-one relationship with `VendorPart`. That is, there is no field
@@ -189,7 +189,7 @@ public VendorPart getVendorPart() {
 
 [[GIQQY]][[primary-keys-in-the-order-application]]
 
-===== Primary Keys in the order Application
+=== Primary Keys in the order Application
 
 The `order` application uses several types of primary keys:
 single-valued primary keys, generated primary keys, and compound primary
@@ -202,7 +202,7 @@ The following topics are addressed here:
 
 [[GIQUV]][[generated-primary-keys]]
 
-====== Generated Primary Keys
+==== Generated Primary Keys
 
 `VendorPart` uses a generated primary key value. That is, the
 application does not assign primary key values for the entities but
@@ -250,7 +250,7 @@ generated primary key's field must be an integral type.
 
 [[GIQUF]][[compound-primary-keys]]
 
-====== Compound Primary Keys
+==== Compound Primary Keys
 
 A compound primary key is made up of multiple fields and follows the
 requirements described in link:#BNBQF[Primary
@@ -423,7 +423,7 @@ public class Part implements Serializable {
 
 [[GIQTL]][[entity-mapped-to-more-than-one-database-table]]
 
-===== Entity Mapped to More Than One Database Table
+=== Entity Mapped to More Than One Database Table
 
 `Part`'s fields map to more than one database table:
 `PERSISTENCE_ORDER_PART` and `PERSISTENCE_ORDER_PART_DETAIL`. The
@@ -459,7 +459,7 @@ are the same: `PARTNUMBER` and `REVISION`, respectively.
 
 [[GIQUE]][[cascade-operations-in-the-order-application]]
 
-===== Cascade Operations in the order Application
+=== Cascade Operations in the order Application
 
 Entities that have relationships to other entities often have
 dependencies on the existence of the other entity in the relationship.
@@ -503,7 +503,7 @@ public CustomerOrder getCustomerOrder() {
 
 [[GIQSC]][[blob-and-clob-database-types-in-the-order-application]]
 
-===== BLOB and CLOB Database Types in the order Application
+=== BLOB and CLOB Database Types in the order Application
 
 The `PARTDETAIL` table in the database has a column, `DRAWING`, of type
 `BLOB`. `BLOB` stands for binary large objects, which are used for
@@ -541,7 +541,7 @@ element to the secondary table.
 
 [[GIQUM]][[temporal-types-in-the-order-application]]
 
-===== Temporal Types in the order Application
+=== Temporal Types in the order Application
 
 The `CustomerOrder.lastUpdate` persistent property, which is of type
 `java.util.Date`, is mapped to the
@@ -567,7 +567,7 @@ public Date getLastUpdate() {
 
 [[GIQQV]][[managing-the-order-applications-entities]]
 
-===== Managing the order Application's Entities
+=== Managing the order Application's Entities
 
 The `RequestBean` stateful session bean contains the business logic and
 manages the entities of `order`. `RequestBean` uses the
@@ -587,7 +587,7 @@ the container takes care of all the transactions involved in managing
 
 [[GIQRR]][[creating-entities]]
 
-====== Creating Entities
+==== Creating Entities
 
 The `RequestBean.createPart` business method creates a new `Part`
 entity. The `EntityManager.persist` method is used to persist the newly
@@ -613,7 +613,7 @@ business methods.
 
 [[GIQQC]][[finding-entities]]
 
-====== Finding Entities
+==== Finding Entities
 
 The `RequestBean.getOrderPrice` business method returns the price of a
 given order based on the `orderId`. The `EntityManager.find` method is
@@ -629,7 +629,7 @@ second is the primary key.
 
 [[GIQUK]][[setting-entity-relationships]]
 
-====== Setting Entity Relationships
+==== Setting Entity Relationships
 
 The `RequestBean.createVendorPart` business method creates a
 `VendorPart` associated with a particular `Vendor`. The
@@ -656,7 +656,7 @@ vendorPart.setVendor(vendor);
 
 [[GIQSV]][[using-queries]]
 
-====== Using Queries
+==== Using Queries
 
 The `RequestBean.adjustOrderDiscount` business method updates the
 discount applied to all orders. This method uses the `findAllOrders`
@@ -714,7 +714,7 @@ query returns a single value.
 
 [[GIQTW]][[removing-entities]]
 
-====== Removing Entities
+==== Removing Entities
 
 The `RequestBean.removeOrder` business method deletes a given order from
 the database. This method uses the `EntityManager.remove` method to
@@ -728,7 +728,7 @@ em.remove(order);
 
 [[GIQUP]][[running-the-order-example]]
 
-===== Running the order Example
+=== Running the order Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `order` application. First, you will create the database tables
@@ -741,7 +741,7 @@ The following topics are addressed here:
 
 [[GIQSG]][[to-run-the-order-example-using-netbeans-ide]]
 
-====== To Run the order Example Using NetBeans IDE
+==== To Run the order Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -769,7 +769,7 @@ http://localhost:8080/order/
 
 [[GIQTY]][[to-run-the-order-example-using-maven]]
 
-====== To Run the order Example Using Maven
+==== To Run the order Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

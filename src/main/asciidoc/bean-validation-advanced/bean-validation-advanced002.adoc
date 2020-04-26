@@ -1,6 +1,6 @@
 [[GKAHI]][[customizing-validator-messages]]
 
-==== Customizing Validator Messages
+== Customizing Validator Messages
 
 Jakarta Bean Validation includes a resource bundle of default messages for the
 built-in constraints. These messages can be customized and can be
@@ -12,7 +12,7 @@ The following topics are addressed here:
 
 [[GKAGY]][[the-validationmessages-resource-bundle]]
 
-===== The ValidationMessages Resource Bundle
+=== The ValidationMessages Resource Bundle
 
 The `ValidationMessages` resource bundle and the locale variants of this
 resource bundle contain strings that override the default validation
@@ -22,7 +22,7 @@ of an application.
 
 [[GKAIQ]][[localizing-validation-messages]]
 
-====== Localizing Validation Messages
+==== Localizing Validation Messages
 
 Locale variants of `ValidationMessages.properties` are added by
 appending an underscore and the locale prefix to the base name of the

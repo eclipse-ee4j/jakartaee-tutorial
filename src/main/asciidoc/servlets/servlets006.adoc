@@ -1,6 +1,6 @@
 [[BNAGB]][[filtering-requests-and-responses]]
 
-==== Filtering Requests and Responses
+== Filtering Requests and Responses
 
 A filter is an object that can transform the header and content (or
 both) of a request or response. Filters differ from web components in
@@ -29,7 +29,7 @@ when a web container loads the component.
 
 [[BNAGC]][[programming-filters]]
 
-===== Programming Filters
+=== Programming Filters
 
 The filtering API is defined by the `Filter`, `FilterChain`, and
 `FilterConfig` interfaces in the `javax.servlet` package. You define a
@@ -85,7 +85,7 @@ filter, you retrieve them from the `FilterConfig` object passed to
 
 [[BNAGD]][[programming-customized-requests-and-responses]]
 
-===== Programming Customized Requests and Responses
+=== Programming Customized Requests and Responses
 
 There are many ways for a filter to modify a request or a response. For
 example, a filter can add an attribute to the request or can insert data
@@ -110,7 +110,7 @@ extends either `ServletResponseWrapper` or `HttpServletResponseWrapper`.
 
 [[BNAGF]][[specifying-filter-mappings]]
 
-===== Specifying Filter Mappings
+=== Specifying Filter Mappings
 
 A web container uses filter mappings to decide how to apply filters to
 web resources. A filter mapping matches a filter to a web component by
@@ -152,7 +152,7 @@ F1's `doFilter` method.
 
 [[GJSLC]][[to-specify-filter-mappings-using-netbeans-ide]]
 
-====== To Specify Filter Mappings Using NetBeans IDE
+==== To Specify Filter Mappings Using NetBeans IDE
 
 .  Expand the application's project node in the Project tab.
 .  Expand the Web Pages and WEB-INF nodes under the project node.

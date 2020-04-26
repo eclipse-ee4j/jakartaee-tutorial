@@ -1,6 +1,6 @@
 [[BNAYA]][[date-and-number-formatting]]
 
-==== Date and Number Formatting
+== Date and Number Formatting
 
 Java programs use the `DateFormat.getDateInstance(int,` `locale)` method
 to parse and format dates in a locale-sensitive manner. Java programs

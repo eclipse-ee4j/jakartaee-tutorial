@@ -1,6 +1,6 @@
 [[CIHCGGEG]][[the-jobs-concurrency-example]]
 
-==== The jobs Concurrency Example
+== The jobs Concurrency Example
 
 This section describes a very basic example that shows how to use some
 of the basic concurrency features in an enterprise application.
@@ -35,7 +35,7 @@ Managed Executor Services, one for each type of request.
 
 [[sthref294]][[running-the-jobs-example]]
 
-===== Running the jobs Example
+=== Running the jobs Example
 
 After configuring GlassFish Server by adding two Managed Executor
 Services, you can use either NetBeans IDE or Maven to build, package,
@@ -56,7 +56,7 @@ Priority]
 
 [[CHDCIBBD]][[to-configure-glassfish-server-for-the-basic-concurrency-example]]
 
-====== To Configure GlassFish Server for the Basic Concurrency Example
+==== To Configure GlassFish Server for the Basic Concurrency Example
 
 To configure GlassFish Server, follow these steps.
 
@@ -86,7 +86,7 @@ values for other settings):
 
 [[CHDFBAHJ]][[to-build-package-and-deploy-the-jobs-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the jobs Example Using NetBeans IDE
+==== To Build, Package, and Deploy the jobs Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -107,7 +107,7 @@ This command builds and deploys the application.
 
 [[CHDECFFF]][[to-build-package-and-deploy-the-jobs-example-using-maven]]
 
-====== To Build, Package, and Deploy the jobs Example Using Maven
+==== To Build, Package, and Deploy the jobs Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -127,7 +127,7 @@ mvn install
 
 [[CHDFHHAF]][[to-run-the-jobs-example-and-submit-jobs-with-low-priority]]
 
-====== To Run the jobs Example and Submit Jobs with Low Priority
+==== To Run the jobs Example and Submit Jobs with Low Priority
 
 To run the example as a user who submits jobs with low priority, follow
 these steps:
@@ -182,7 +182,7 @@ INFO:   Task finished LOW-1
 
 [[CHDHEABJ]][[to-run-the-jobs-example-and-submit-jobs-with-high-priority]]
 
-====== To Run the jobs Example and Submit Jobs with High Priority
+==== To Run the jobs Example and Submit Jobs with High Priority
 
 To run the example as a user who submits jobs with high priority, follow
 these steps:

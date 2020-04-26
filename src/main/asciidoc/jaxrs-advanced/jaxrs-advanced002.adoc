@@ -1,6 +1,6 @@
 [[BABCJEDF]][[validating-resource-data-with-bean-validation]]
 
-==== Validating Resource Data with Bean Validation
+== Validating Resource Data with Bean Validation
 
 Jakarta REST supports Bean Validation to verify Jakarta REST resource classes.
 This support consists of:
@@ -17,7 +17,7 @@ The following topics are addressed here:
 
 [[CIHJAFGI]][[using-constraint-annotations-on-resource-methods]]
 
-===== Using Constraint Annotations on Resource Methods
+=== Using Constraint Annotations on Resource Methods
 
 Bean Validation constraint annotations may be applied to parameters for
 a resource. The server will validate the parameters and either pass or
@@ -114,7 +114,7 @@ public class CreateUserResource {
 
 [[CIHFDCBI]][[validating-entity-data]]
 
-===== Validating Entity Data
+=== Validating Entity Data
 
 Classes that contain validation constraint annotations may be used in
 method parameters in a resource class. To validate these entity classes,
@@ -202,7 +202,7 @@ constraints defined within the entity class.
 
 [[CIHCHEFH]][[validation-exception-handling-and-response-codes]]
 
-===== Validation Exception Handling and Response Codes
+=== Validation Exception Handling and Response Codes
 
 If a `javax.validation.ValidationException` or any subclass of
 `ValidationException` except `ConstraintValidationException` is thrown,

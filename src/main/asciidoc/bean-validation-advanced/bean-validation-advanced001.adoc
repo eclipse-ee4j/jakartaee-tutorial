@@ -1,6 +1,6 @@
 [[GKFGX]][[creating-custom-constraints]]
 
-==== Creating Custom Constraints
+== Creating Custom Constraints
 
 Jakarta Bean Validation defines annotations, interfaces, and classes to allow
 developers to create custom constraints.
@@ -14,7 +14,7 @@ The following topics are addressed here:
 
 [[GKAIA]][[using-the-built-in-constraints-to-make-a-new-constraint]]
 
-===== Using the Built-In Constraints to Make a New Constraint
+=== Using the Built-In Constraints to Make a New Constraint
 
 Jakarta Bean Validation includes several built-in constraints that can be
 combined to create new, reusable constraints. This can simplify
@@ -75,7 +75,7 @@ protected String phone;
 
 [[CIHCICAI]][[removing-ambiguity-in-constraint-targets]]
 
-===== Removing Ambiguity in Constraint Targets
+=== Removing Ambiguity in Constraint Targets
 
 Custom constraints that can be applied to both return values and method
 parameters require a `validationAppliesTo` element to identify the
@@ -108,7 +108,7 @@ method.
 
 [[implementing-temporal-constraints-using-clockprovider]]
 
-==== Implementing Temporal Constraints Using ClockProvider
+== Implementing Temporal Constraints Using ClockProvider
 
 In Jakarta Bean Validation 2.0, a Clock instance is available for validator implementations to validate any temporal date or time based constraints.
 [source,java]
@@ -141,7 +141,7 @@ public class CustomConstraintValidator implements ConstraintValidator<CustomCons
 See ClockProvider in `https://jakarta.ee/specifications/platform/8/apidocs/`.
 
 [[custom-constraints]]
-==== Custom Constraints
+== Custom Constraints
 
 Consider an employee in a firm located in U.S.A. When you register the phone number of an employee or modify the phone number, the phone number needs to be validated to ensure that the phone number conforms to US phone number pattern.
 [source,java]
@@ -169,7 +169,7 @@ In the sample, another constraint `@Pattern` is used to validate the phone numbe
 
 [[using-in-built-value-extractors-in-custom-containers]]
 
-==== Using In-Built Value Extractors in Custom Containers
+== Using In-Built Value Extractors in Custom Containers
 
 Cascading validation:
 

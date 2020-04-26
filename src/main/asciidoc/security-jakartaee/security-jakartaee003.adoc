@@ -1,6 +1,6 @@
 [[GKBSZ]][[examples-securing-enterprise-beans]]
 
-==== Examples: Securing Enterprise Beans
+== Examples: Securing Enterprise Beans
 
 The following examples show how to secure enterprise beans using
 declarative and programmatic security.
@@ -14,7 +14,7 @@ with Programmatic Security]
 
 [[BNBZK]][[the-cart-secure-example-securing-an-enterprise-bean-with-declarative-security]]
 
-===== The cart-secure Example: Securing an Enterprise Bean with Declarative Security
+=== The cart-secure Example: Securing an Enterprise Bean with Declarative Security
 
 This section discusses how to configure an enterprise bean for basic
 user name/password authentication. When a bean that is constrained in
@@ -58,7 +58,7 @@ cart-secure Example Using Maven].
 
 [[BNBZL]][[annotating-the-bean]]
 
-====== Annotating the Bean
+==== Annotating the Bean
 
 The source code for the original `cart` application was modified as
 shown in the following code snippet (modifications in bold). The
@@ -163,7 +163,7 @@ type of authentication will be user name/password authentication.
 
 [[BNBZN]][[to-run-the-cart-secure-example-using-netbeans-ide]]
 
-====== To Run the cart-secure Example Using NetBeans IDE
+==== To Run the cart-secure Example Using NetBeans IDE
 
 1.  Follow the steps in link:#GJJLK[To Set Up
 Your System for Running the Security Examples].
@@ -208,7 +208,7 @@ reappears until you enter correct values.
 
 [[BNBZO]][[to-run-the-cart-secure-example-using-maven]]
 
-====== To Run the cart-secure Example Using Maven
+==== To Run the cart-secure Example Using Maven
 
 1.  Follow the steps in link:#GJJLK[To Set Up
 Your System for Running the Security Examples].
@@ -250,7 +250,7 @@ reappears until you enter correct values.
 
 [[BNCAA]][[the-converter-secure-example-securing-an-enterprise-bean-with-programmatic-security]]
 
-===== The converter-secure Example: Securing an Enterprise Bean with Programmatic Security
+=== The converter-secure Example: Securing an Enterprise Bean with Programmatic Security
 
 This example demonstrates how to use the `getCallerPrincipal` and
 `isCallerInRole` methods with an enterprise bean. This example starts
@@ -293,7 +293,7 @@ Authentication Using Annotations].
 
 [[BNCAB]][[modifying-converterbean]]
 
-====== Modifying ConverterBean
+==== Modifying ConverterBean
 
 The source code for the original `ConverterBean` class was modified to
 add the `if..else` clause that tests whether the caller is in the role
@@ -353,7 +353,7 @@ public class ConverterBean{
 
 [[GKBSI]][[modifying-converterservlet]]
 
-====== Modifying ConverterServlet
+==== Modifying ConverterServlet
 
 The following annotations specify security for the `converter` web
 client, `ConverterServlet`:
@@ -368,7 +368,7 @@ client, `ConverterServlet`:
 
 [[BNCAD]][[to-run-the-converter-secure-example-using-netbeans-ide]]
 
-====== To Run the converter-secure Example Using NetBeans IDE
+==== To Run the converter-secure Example Using NetBeans IDE
 
 1.  Follow the steps in link:#GJJLK[To Set Up
 Your System for Running the Security Examples].
@@ -388,7 +388,7 @@ GlassFish Server instance.
 
 [[BNCAE]][[to-run-the-converter-secure-example-using-maven]]
 
-====== To Run the converter-secure Example Using Maven
+==== To Run the converter-secure Example Using Maven
 
 1.  Follow the steps in link:#GJJLK[To Set Up
 Your System for Running the Security Examples].
@@ -411,7 +411,7 @@ deploys the WAR file.
 
 [[GJTDP]][[to-run-the-converter-secure-example]]
 
-====== To Run the converter-secure Example
+==== To Run the converter-secure Example
 
 1.  Open a web browser to the following URL:
 +

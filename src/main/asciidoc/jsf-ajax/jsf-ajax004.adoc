@@ -1,6 +1,6 @@
 [[GKACE]][[sending-an-ajax-request]]
 
-==== Sending an Ajax Request
+== Sending an Ajax Request
 
 To activate Ajax functionality, the web application must create an Ajax
 request and send it to the server. The server then processes the
@@ -33,7 +33,7 @@ The following topics are addressed here:
 
 [[GKHVT]][[using-the-event-attribute]]
 
-===== Using the event Attribute
+=== Using the event Attribute
 
 The `event` attribute defines the event that triggers the Ajax action.
 Some of the possible values for this attribute are `click`, `keyup`,
@@ -74,7 +74,7 @@ actually need to specify `event="click"` to obtain the desired behavior.
 
 [[GKHUZ]][[using-the-execute-attribute]]
 
-===== Using the execute Attribute
+=== Using the execute Attribute
 
 The `execute` attribute defines the component or components to be
 executed on the server. The component is identified by its `id`
@@ -106,7 +106,7 @@ The following code specifies that the `h:inputText` component with the
 
 [[GKHWM]][[using-the-immediate-attribute]]
 
-===== Using the immediate Attribute
+=== Using the immediate Attribute
 
 The `immediate` attribute indicates whether user inputs are to be
 processed early in the application lifecycle or later. If the attribute
@@ -118,7 +118,7 @@ If not defined, the default value of this attribute is `false`.
 
 [[GKHZS]][[using-the-listener-attribute]]
 
-===== Using the listener Attribute
+=== Using the listener Attribute
 
 The `listener` attribute refers to a method expression that is executed
 on the server side in response to an Ajax action on the client. The

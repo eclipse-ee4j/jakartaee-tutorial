@@ -1,6 +1,6 @@
 [[GKJDB]][[executing-string-based-queries]]
 
-==== Executing String-Based Queries
+== Executing String-Based Queries
 
 String-based queries are executed similarly to strongly typed Criteria
 queries. First create a `javax.persistence.TypedQuery` object by passing

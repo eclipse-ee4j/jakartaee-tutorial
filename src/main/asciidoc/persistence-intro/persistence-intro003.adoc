@@ -1,6 +1,6 @@
 [[BNBQN]][[entity-inheritance]]
 
-==== Entity Inheritance
+== Entity Inheritance
 
 Entities support class inheritance, polymorphic associations, and
 polymorphic queries. Entity classes can extend non-entity classes, and
@@ -20,7 +20,7 @@ The following topics are addressed here:
 
 [[BNBQO]][[abstract-entities]]
 
-===== Abstract Entities
+=== Abstract Entities
 
 An abstract class may be declared an entity by decorating the class with
 `@Entity`. Abstract entities are like concrete entities but cannot be
@@ -51,7 +51,7 @@ public class PartTimeEmployee extends Employee {
 
 [[BNBQP]][[mapped-superclasses]]
 
-===== Mapped Superclasses
+=== Mapped Superclasses
 
 Entities may inherit from superclasses that contain persistent state and
 mapping information but are not entities. That is, the superclass is not
@@ -97,7 +97,7 @@ the underlying tables would be `FULLTIMEEMPLOYEE` and
 
 [[BNBQQ]][[non-entity-superclasses]]
 
-===== Non-Entity Superclasses
+=== Non-Entity Superclasses
 
 Entities may have non-entity superclasses, and these superclasses can be
 either abstract or concrete. The state of non-entity superclasses is
@@ -108,7 +108,7 @@ relationship annotations in non-entity superclasses are ignored.
 
 [[BNBQR]][[entity-inheritance-mapping-strategies]]
 
-===== Entity Inheritance Mapping Strategies
+=== Entity Inheritance Mapping Strategies
 
 You can configure how the Jakarta Persistence provider maps inherited
 entities to the underlying datastore by decorating the root class of the
@@ -141,7 +141,7 @@ entity hierarchy.
 
 [[BNBQS]][[the-single-table-per-class-hierarchy-strategy]]
 
-====== The Single Table per Class Hierarchy Strategy
+==== The Single Table per Class Hierarchy Strategy
 
 With this strategy, which corresponds to the default
 `InheritanceType.SINGLE_TABLE`, all classes in the hierarchy are mapped
@@ -215,7 +215,7 @@ state of subclasses to be nullable.
 
 [[BNBQU]][[the-table-per-concrete-class-strategy]]
 
-====== The Table per Concrete Class Strategy
+==== The Table per Concrete Class Strategy
 
 In this strategy, which corresponds to
 `InheritanceType.TABLE_PER_CLASS`, each concrete class is mapped to a
@@ -233,7 +233,7 @@ provider in GlassFish Server does not support this strategy.
 
 [[BNBQV]][[the-joined-subclass-strategy]]
 
-====== The Joined Subclass Strategy
+==== The Joined Subclass Strategy
 
 In this strategy, which corresponds to `InheritanceType.JOINED`, the
 root of the class hierarchy is represented by a single table, and each

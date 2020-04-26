@@ -1,6 +1,6 @@
 [[GJIVM]][[using-the-criteria-api-and-metamodel-api-to-create-basic-typesafe-queries]]
 
-==== Using the Criteria API and Metamodel API to Create Basic Typesafe Queries
+== Using the Criteria API and Metamodel API to Create Basic Typesafe Queries
 
 The basic semantics of a Criteria query consists of a `SELECT` clause, a
 `FROM` clause, and an optional `WHERE` clause, similar to a JPQL query.
@@ -19,7 +19,7 @@ The following topics are addressed here:
 
 [[GJIVS]][[creating-a-criteria-query]]
 
-===== Creating a Criteria Query
+=== Creating a Criteria Query
 
 The `javax.persistence.criteria.CriteriaBuilder` interface is used to
 construct
@@ -76,7 +76,7 @@ CriteriaQuery<String> cq = cb.createQuery(String.class);
 
 [[GJIVQ]][[query-roots]]
 
-===== Query Roots
+=== Query Roots
 
 For a particular `CriteriaQuery` object, the root entity of the query,
 from which all navigation originates, is called the query root. It is
@@ -119,7 +119,7 @@ Root<Pet> pet2 = cq.from(Pet.class);
 
 [[GJIUV]][[querying-relationships-using-joins]]
 
-===== Querying Relationships Using Joins
+=== Querying Relationships Using Joins
 
 For queries that navigate to related entity classes, the query must
 define a join to the related entity by calling one of the `From.join`
@@ -156,7 +156,7 @@ Join<Owner, Address> address = pet.join(Pet_.owners).join(Owner_.addresses);
 
 [[GJIVE]][[path-navigation-in-criteria-queries]]
 
-===== Path Navigation in Criteria Queries
+=== Path Navigation in Criteria Queries
 
 `Path` objects, which are used in the `SELECT` and `WHERE` clauses of a
 Criteria query, can be query root entities, join entities, or other
@@ -185,7 +185,7 @@ cq.select(pet.get(Pet_.name));
 
 [[GJIVI]][[restricting-criteria-query-results]]
 
-===== Restricting Criteria Query Results
+=== Restricting Criteria Query Results
 
 Conditions that are set by calling the `CriteriaQuery.where` method can
 restrict the results of a query on the `CriteriaQuery` object. Calling
@@ -199,7 +199,7 @@ and `CriteriaBuilder` interfaces.
 
 [[GJIWN]][[the-expression-interface-methods]]
 
-====== The Expression Interface Methods
+==== The Expression Interface Methods
 
 An `Expression` object is used in a query's `SELECT`, `WHERE`, or
 `HAVING` clause. link:#GJIWW[Table 43-1] shows conditional methods you
@@ -243,7 +243,7 @@ collection.
 
 [[GJIXA]][[expression-methods-in-the-criteriabuilder-interface]]
 
-====== Expression Methods in the CriteriaBuilder Interface
+==== Expression Methods in the CriteriaBuilder Interface
 
 The `CriteriaBuilder` interface defines additional methods for creating
 expressions. These methods correspond to the arithmetic, string, date,
@@ -348,7 +348,7 @@ cq.where(cb.equal(pet.get(Pet_.name), "Fido")
 
 [[GJIXE]][[managing-criteria-query-results]]
 
-===== Managing Criteria Query Results
+=== Managing Criteria Query Results
 
 For queries that return more than one result, it is often helpful to
 organize those results. The `CriteriaQuery` interface defines the
@@ -367,7 +367,7 @@ The following topics are addressed here:
 
 [[GJIWO]][[ordering-results]]
 
-====== Ordering Results
+==== Ordering Results
 
 To order the results of a query, call the `CriteriaQuery.orderBy`
 method, passing in an `Order` object. To create an `Order` object, call
@@ -425,7 +425,7 @@ owner's last name, then first name.
 
 [[GJIXG]][[grouping-results]]
 
-====== Grouping Results
+==== Grouping Results
 
 The `CriteriaQuery.groupBy` method partitions the query results into
 groups. To set these groups, pass an expression to `groupBy`:
@@ -460,7 +460,7 @@ as in the preceding example. However, the only returned groups will be
 
 [[GJIVY]][[executing-queries]]
 
-===== Executing Queries
+=== Executing Queries
 
 To prepare a query for execution, create a `TypedQuery<T>` object with
 the type of the query result, passing the `CriteriaQuery` object to
@@ -471,7 +471,7 @@ the `TypedQuery<T>` object.
 
 [[GJIUR]][[single-valued-query-results]]
 
-====== Single-Valued Query Results
+==== Single-Valued Query Results
 
 Use the `TypedQuery<T>.getSingleResult` method to execute queries that
 return a single result:
@@ -486,7 +486,7 @@ Pet result = q.getSingleResult();
 
 [[GJIVP]][[collection-valued-query-results]]
 
-====== Collection-Valued Query Results
+==== Collection-Valued Query Results
 
 Use the `TypedQuery<T>.getResultList` method to execute queries that
 return a collection of objects:

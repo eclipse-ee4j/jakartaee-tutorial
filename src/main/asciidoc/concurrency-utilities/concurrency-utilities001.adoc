@@ -1,6 +1,6 @@
 [[CIHDFGGG]][[concurrency-basics]]
 
-==== Concurrency Basics
+== Concurrency Basics
 
 Concurrency is the concept of executing two or more tasks at the same
 time (in parallel). Tasks may include methods (functions), parts of a
@@ -15,7 +15,7 @@ concurrency was provided by the `java.util.concurrent` package.
 
 [[sthref293]][[threads-and-processes]]
 
-===== Threads and Processes
+=== Threads and Processes
 
 The two main concurrency concepts are processes and threads.
 

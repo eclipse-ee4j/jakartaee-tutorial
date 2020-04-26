@@ -1,6 +1,6 @@
 [[GKHPU]][[the-encoder-example-using-alternatives]]
 
-==== The encoder Example: Using Alternatives
+== The encoder Example: Using Alternatives
 
 The `encoder` example shows how to use alternatives to choose between
 two beans at deployment time, as described in
@@ -20,7 +20,7 @@ The following topics are addressed here:
 
 [[GKHQA]][[the-coder-interface-and-implementations]]
 
-===== The Coder Interface and Implementations
+=== The Coder Interface and Implementations
 
 The `Coder` interface contains just one method, `codeString`, that takes
 two arguments: a string, and an integer value that specifies how the
@@ -77,7 +77,7 @@ used.
 
 [[GKHPM]][[the-encoder-facelets-page-and-managed-bean]]
 
-===== The encoder Facelets Page and Managed Bean
+=== The encoder Facelets Page and Managed Bean
 
 The simple Facelets page for the `encoder` example, `index.xhtml`, asks
 the user to enter the string and integer values and passes them to the
@@ -177,14 +177,14 @@ Facelets page:
 
 [[GKHQQ]][[running-the-encoder-example]]
 
-===== Running the encoder Example
+=== Running the encoder Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `encoder` application.
 
 [[GKHOW]][[to-build-package-and-deploy-the-encoder-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the encoder Example Using NetBeans IDE
+==== To Build, Package, and Deploy the encoder Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -207,7 +207,7 @@ GlassFish Server.
 
 [[GKHQU]][[to-run-the-encoder-example-using-netbeans-ide]]
 
-====== To Run the encoder Example Using NetBeans IDE
+==== To Run the encoder Example Using NetBeans IDE
 
 1.  In a web browser, enter the following URL:
 +
@@ -256,7 +256,7 @@ Result: input string is Java, shift value is 4
 
 [[GKHQL]][[to-build-package-and-deploy-the-encoder-example-using-maven]]
 
-====== To Build, Package, and Deploy the encoder Example Using Maven
+==== To Build, Package, and Deploy the encoder Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -280,7 +280,7 @@ GlassFish Server.
 
 [[GKHOL]][[to-run-the-encoder-example-using-maven]]
 
-====== To Run the encoder Example Using Maven
+==== To Run the encoder Example Using Maven
 
 1.  In a web browser, enter the following URL:
 +

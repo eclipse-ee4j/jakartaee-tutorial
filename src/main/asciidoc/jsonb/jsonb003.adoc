@@ -1,5 +1,5 @@
 [[running-the-jsonbbasics-example-application]]
-==== Running the jsonbbasics Example Application
+== Running the jsonbbasics Example Application
 
 This section describes how to build and run the `jsonbbasics` example
 application. This example is a web application that demonstrates how to
@@ -15,7 +15,7 @@ The following topics are addressed here:
 * link:#running-the-jsonbbasics-example-application-2[Running the jsonbbasics Example Application]
 
 [[components-of-the-jsonbbasics-example-application]]
-===== Components of the jsonbbasics Example Application
+=== Components of the jsonbbasics Example Application
 
 The `jsonbbasics` example application contains the following files.
 
@@ -25,7 +25,7 @@ The `jsonbbasics` example application contains the following files.
 * The `jsonbBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages. This file contains code that uses the JSON Binding API.
 
 [[running-the-jsonbbasics-example-application-2]]
-===== Running the jsonbbasics Example Application
+=== Running the jsonbbasics Example Application
 
 This section describes how to run the `jsonbbasics` example application
 from the command line using Maven.

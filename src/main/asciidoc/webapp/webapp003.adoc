@@ -1,6 +1,6 @@
 [[BNADX]][[a-web-module-that-uses-javaserver-faces-technology-the-hello1-example]]
 
-==== A Web Module That Uses Jakarta Server Faces Technology: The hello1 Example
+== A Web Module That Uses Jakarta Server Faces Technology: The hello1 Example
 
 The `hello1` application is a web module that uses Jakarta Server Faces
 technology to display a greeting and response. You can use a text editor
@@ -19,7 +19,7 @@ The following topics are addressed here:
 
 [[GJWTV]][[to-view-the-hello1-web-module-using-netbeans-ide]]
 
-===== To View the hello1 Web Module Using NetBeans IDE
+=== To View the hello1 Web Module Using NetBeans IDE
 
 To view the `hello1` web module using NetBeans IDE:
 
@@ -209,7 +209,7 @@ page:
 
 [[GLQLK]][[introduction-to-scopes]]
 
-====== Introduction to Scopes
+==== Introduction to Scopes
 
 In the `Hello.java` class, the annotations `javax.inject.Named` and
 `javax.enterprise.context.RequestScoped` identify the class as a managed
@@ -235,7 +235,7 @@ link:#GIRCR[Using Managed Bean Scopes].
 
 [[BNADZ]][[packaging-and-deploying-the-hello1-web-module]]
 
-===== Packaging and Deploying the hello1 Web Module
+=== Packaging and Deploying the hello1 Web Module
 
 A web module must be packaged into a WAR in certain deployment scenarios
 and whenever you want to distribute the web module. You can package a
@@ -255,7 +255,7 @@ packaging and deploying.
 
 [[GJRGN]][[to-build-and-package-the-hello1-web-module-using-netbeans-ide]]
 
-====== To Build and Package the hello1 Web Module Using NetBeans IDE
+==== To Build and Package the hello1 Web Module Using NetBeans IDE
 
 To build and package the `hello1` web module using NetBeans IDE:
 
@@ -276,7 +276,7 @@ Build. This command deploys the project to the server.
 
 [[GJRKN]][[to-build-and-package-the-hello1-web-module-using-maven]]
 
-====== To Build and Package the hello1 Web Module Using Maven
+==== To Build and Package the hello1 Web Module Using Maven
 
 To build and package the `hello1` web module using Maven:
 
@@ -302,7 +302,7 @@ project to the server.
 
 [[BNAEI]][[viewing-deployed-web-modules]]
 
-===== Viewing Deployed Web Modules
+=== Viewing Deployed Web Modules
 
 GlassFish Server provides two ways to view the deployed web modules: the
 Administration Console and the `asadmin` command. You can also use
@@ -310,7 +310,7 @@ NetBeans IDE to view deployed modules.
 
 [[GJSGR]][[to-view-deployed-web-modules-using-the-administration-console]]
 
-====== To View Deployed Web Modules Using the Administration Console
+==== To View Deployed Web Modules Using the Administration Console
 
 To view deployed web modules using the Administration Console:
 
@@ -321,7 +321,7 @@ The deployed web modules appear in the Deployed Applications table.
 
 [[GJSEW]][[to-view-deployed-web-modules-using-the-asadmin-command]]
 
-====== To View Deployed Web Modules Using the asadmin Command
+==== To View Deployed Web Modules Using the asadmin Command
 
 Enter the following command:
 
@@ -332,7 +332,7 @@ asadmin list-applications
 
 [[sthref24]][[to-view-deployed-web-modules-using-netbeans-ide]]
 
-====== To View Deployed Web Modules Using NetBeans IDE
+==== To View Deployed Web Modules Using NetBeans IDE
 
 To view deployed web modules using NetBeans IDE:
 
@@ -342,7 +342,7 @@ GlassFish Server node.
 
 [[BCEBEGED]][[running-the-deployed-hello1-web-module]]
 
-===== Running the Deployed hello1 Web Module
+=== Running the Deployed hello1 Web Module
 
 Now that the web module is deployed, you can view it by opening the
 application in a web browser. By default, the application is deployed to
@@ -365,7 +365,7 @@ again.
 
 [[BNAEM]][[dynamic-reloading-of-deployed-modules]]
 
-====== Dynamic Reloading of Deployed Modules
+==== Dynamic Reloading of Deployed Modules
 
 If dynamic reloading is enabled, you do not have to redeploy an
 application or module when you change its code or deployment
@@ -386,14 +386,14 @@ In GlassFish Server, dynamic reloading is enabled by default.
 
 [[BNAEN]][[undeploying-the-hello1-web-module]]
 
-===== Undeploying the hello1 Web Module
+=== Undeploying the hello1 Web Module
 
 You can undeploy web modules and other types of enterprise applications
 by using either NetBeans IDE or Maven.
 
 [[GJSEJ]][[to-undeploy-the-hello1-web-module-using-netbeans-ide]]
 
-====== To Undeploy the hello1 Web Module Using NetBeans IDE
+==== To Undeploy the hello1 Web Module Using NetBeans IDE
 
 To undeploy the `hello1` web module using NetBeans IDE:
 
@@ -406,7 +406,7 @@ Projects tab, right-click the project, and select Clean.
 
 [[GJSHH]][[to-undeploy-the-hello1-web-module-using-maven]]
 
-====== To Undeploy the hello1 Web Module Using Maven
+==== To Undeploy the hello1 Web Module Using Maven
 
 To undeploy the `hello1` web module using Maven:
 

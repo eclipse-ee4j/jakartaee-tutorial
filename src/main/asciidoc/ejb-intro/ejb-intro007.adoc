@@ -1,6 +1,6 @@
 [[GIPLJ]][[the-lifecycles-of-enterprise-beans]]
 
-==== The Lifecycles of Enterprise Beans
+== The Lifecycles of Enterprise Beans
 
 An enterprise bean goes through various stages during its lifetime, or
 lifecycle. Each type of enterprise bean (stateful session, stateless
@@ -21,7 +21,7 @@ The following topics are addressed here:
 
 [[GIPLN]][[the-lifecycle-of-a-stateful-session-bean]]
 
-===== The Lifecycle of a Stateful Session Bean
+=== The Lifecycle of a Stateful Session Bean
 
 link:#GIPMI[Figure 35-2] illustrates the stages that a stateful session
 bean passes through during its lifetime. The client initiates the
@@ -58,7 +58,7 @@ for more information.
 
 [[GIPLM]][[the-lifecycle-of-a-stateless-session-bean]]
 
-===== The Lifecycle of a Stateless Session Bean
+=== The Lifecycle of a Stateless Session Bean
 
 Because a stateless session bean is never passivated, its lifecycle has
 only two stages: nonexistent and ready for the invocation of business
@@ -83,7 +83,7 @@ for garbage collection.
 
 [[GIPRX]][[the-lifecycle-of-a-singleton-session-bean]]
 
-===== The Lifecycle of a Singleton Session Bean
+=== The Lifecycle of a Singleton Session Bean
 
 Like a stateless session bean, a singleton session bean is never
 passivated and has only two stages, nonexistent and ready for the
@@ -102,7 +102,7 @@ ready for garbage collection.
 
 [[GIPKW]][[the-lifecycle-of-a-message-driven-bean]]
 
-===== The Lifecycle of a Message-Driven Bean
+=== The Lifecycle of a Message-Driven Bean
 
 link:#GIPLR[Figure 35-4] illustrates the stages in the lifecycle of a
 message-driven bean.

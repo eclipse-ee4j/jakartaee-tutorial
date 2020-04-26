@@ -1,6 +1,6 @@
 [[CHDJEADB]][[the-traffic-example]]
 
-==== The traffic Example
+== The traffic Example
 
 The `traffic` example demonstrates how to implement and use a simple
 inbound resource adapter that receives data from a legacy EIS using a
@@ -66,7 +66,7 @@ and sends them to the clients using a WebSocket endpoint.
 
 [[sthref248]][[using-the-inbound-resource-adapter]]
 
-===== Using the Inbound Resource Adapter
+=== Using the Inbound Resource Adapter
 
 In most cases, Jakarta EE application developers use inbound resource
 adapters developed by a third party. To use an inbound resource adapter,
@@ -125,7 +125,7 @@ resource adapter module.
 
 [[sthref249]][[implementing-the-inbound-resource-adapter]]
 
-===== Implementing the Inbound Resource Adapter
+=== Implementing the Inbound Resource Adapter
 
 The `traffic-rar` module implements the Jakarta Connectors inbound resource adapter
 contract for the simple traffic
@@ -241,7 +241,7 @@ For more details, see the code and the comments in the traffic-rar module.
 
 [[sthref252]][[running-the-traffic-example]]
 
-===== Running the traffic Example
+=== Running the traffic Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `traffic` example.
@@ -253,7 +253,7 @@ The following topics are addressed here:
 
 [[BABIJJEH]][[to-run-the-traffic-example-using-netbeans-ide]]
 
-====== To Run the traffic Example Using NetBeans IDE
+==== To Run the traffic Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -298,7 +298,7 @@ seconds.
 
 [[BABBBGBA]][[to-run-the-traffic-example-using-maven]]
 
-====== To Run the traffic Example Using Maven
+==== To Run the traffic Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish

@@ -1,6 +1,6 @@
 [[BNAVB]][[writing-managed-bean-methods]]
 
-==== Writing Managed Bean Methods
+== Writing Managed Bean Methods
 
 Methods of a managed bean can perform several application-specific
 functions for components on the page. These functions include
@@ -12,7 +12,7 @@ functions for components on the page. These functions include
 
 [[sthref68]][[why-use-managed-beans]]
 
-===== Why Use Managed Beans
+=== Why Use Managed Beans
 
 By using a managed bean to perform these functions, you eliminate the
 need to implement the `javax.faces.validator.Validator` interface to
@@ -32,7 +32,7 @@ bean methods.
 
 [[BNAVC]][[writing-a-method-to-handle-navigation]]
 
-===== Writing a Method to Handle Navigation
+=== Writing a Method to Handle Navigation
 
 An action method, a managed bean method that handles navigation
 processing, must be a public method that takes no parameters and returns
@@ -116,7 +116,7 @@ to which the components are bound.
 
 [[BNAVD]][[writing-a-method-to-handle-an-action-event]]
 
-===== Writing a Method to Handle an Action Event
+=== Writing a Method to Handle an Action Event
 
 A managed bean method that handles an action event must be a public
 method that accepts an action event and returns `void`. This method is
@@ -149,7 +149,7 @@ Action Event] explains how a component tag references this method.
 
 [[BNAVE]][[writing-a-method-to-perform-validation]]
 
-===== Writing a Method to Perform Validation
+=== Writing a Method to Perform Validation
 
 Instead of implementing the `javax.faces.validator.Validator` interface
 to perform validation for a component, you can include a method in a
@@ -206,7 +206,7 @@ method.
 
 [[BNAVF]][[writing-a-method-to-handle-a-value-change-event]]
 
-===== Writing a Method to Handle a Value-Change Event
+=== Writing a Method to Handle a Value-Change Event
 
 A managed bean that handles a value-change event must use a public
 method that accepts a value-change event and returns `void`. This method

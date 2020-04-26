@@ -1,6 +1,6 @@
 [[BABHAHDF]][[resource-library-contracts]]
 
-==== Resource Library Contracts
+== Resource Library Contracts
 
 Resource library contracts allow you to define a different look and feel
 for different parts of one or more applications, instead of either
@@ -72,7 +72,7 @@ contract, however.
 
 [[sthref32]][[the-hello1-rlc-example-application]]
 
-===== The hello1-rlc Example Application
+=== The hello1-rlc Example Application
 
 The `hello1-rlc` example modifies the simple `hello1` example from
 link:#BNADX[A Web Module That Uses Jakarta Server Faces
@@ -98,7 +98,7 @@ Using Maven]
 
 [[BABGEDEB]][[configuring-the-hello1-rlc-example]]
 
-====== Configuring the hello1-rlc Example
+==== Configuring the hello1-rlc Example
 
 The `faces-config.xml` file for the `hello1-rlc` example contains the
 following elements:
@@ -155,7 +155,7 @@ page uses the `hello` contract, whereas
 
 [[BABDHCFG]][[the-facelets-pages-for-the-hello1-rlc-example]]
 
-====== The Facelets Pages for the hello1-rlc Example
+==== The Facelets Pages for the hello1-rlc Example
 
 The `greeting.xhtml` and `response.xhtml` pages have identical code
 calling in their templates:
@@ -175,7 +175,7 @@ respect: the background color specified for the `body` element.
 
 [[BABBGFFF]][[to-build-package-and-deploy-the-hello1-rlc-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
+==== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -197,7 +197,7 @@ GlassFish Server instance.
 
 [[BABJAGFB]][[to-build-package-and-deploy-the-hello1-rlc-example-using-maven]]
 
-====== To Build, Package, and Deploy the hello1-rlc Example Using Maven
+==== To Build, Package, and Deploy the hello1-rlc Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -221,7 +221,7 @@ deploys it to your GlassFish Server instance.
 
 [[BABFCHEB]][[to-run-the-hello1-rlc-example]]
 
-====== To Run the hello1-rlc Example
+==== To Run the hello1-rlc Example
 
 1.  Enter the following URL in your web browser:
 +

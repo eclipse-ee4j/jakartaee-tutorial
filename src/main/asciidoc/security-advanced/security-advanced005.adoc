@@ -1,6 +1,6 @@
 [[GLIGC]][[securing-application-clients]]
 
-==== Securing Application Clients
+== Securing Application Clients
 
 The Jakarta EE authentication requirements for application clients are the
 same as for other Jakarta EE components, and the same authentication
@@ -37,7 +37,7 @@ package.
 
 [[GLIDW]][[using-login-modules]]
 
-===== Using Login Modules
+=== Using Login Modules
 
 An application client can use the Java Authentication and Authorization
 Service (JAAS) to create login modules for authentication. A JAAS-based
@@ -76,7 +76,7 @@ Advanced Security Topics].
 
 [[GLIHQ]][[using-programmatic-login]]
 
-===== Using Programmatic Login
+=== Using Programmatic Login
 
 Programmatic login enables the client code to supply user credentials.
 If you are using an enterprise bean client, you can use the

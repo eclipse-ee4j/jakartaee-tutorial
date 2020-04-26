@@ -1,6 +1,6 @@
 [[BABBABFC]][[sending-and-receiving-messages-using-a-simple-web-application]]
 
-==== Sending and Receiving Messages Using a Simple Web Application
+== Sending and Receiving Messages Using a Simple Web Application
 
 Web applications can use Jakarta Messaging to send and receive messages, as
 noted in link:#BNCGN[Using Jakarta EE Components to
@@ -30,7 +30,7 @@ the queue."]
 
 [[sthref215]][[the-websimplemessage-facelets-pages]]
 
-===== The websimplemessage Facelets Pages
+=== The websimplemessage Facelets Pages
 
 The Facelets pages for the example are as follows.
 
@@ -48,7 +48,7 @@ sender.xhtml page appears again.
 
 [[sthref216]][[the-websimplemessage-managed-beans]]
 
-===== The websimplemessage Managed Beans
+=== The websimplemessage Managed Beans
 
 The two managed beans for the example are as follows.
 
@@ -133,7 +133,7 @@ public void getMessage() {
 
 [[sthref217]][[running-the-websimplemessage-example]]
 
-===== Running the websimplemessage Example
+=== Running the websimplemessage Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `websimplemessage` application.
@@ -148,14 +148,14 @@ IDE]
 
 [[CHDHEHAB]][[creating-resources-for-the-websimplemessage-example]]
 
-====== Creating Resources for the websimplemessage Example
+==== Creating Resources for the websimplemessage Example
 
 This example uses an annotation-defined queue and the preconfigured
 default connection factory `java:comp/DefaultJMSConnectionFactory`.
 
 [[CHDBADGA]][[to-package-and-deploy-websimplemessage-using-netbeans-ide]]
 
-====== To Package and Deploy websimplemessage Using NetBeans IDE
+==== To Package and Deploy websimplemessage Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -176,7 +176,7 @@ This command builds and deploys the project.
 
 [[CHDBBBEI]][[to-package-and-deploy-websimplemessage-using-maven]]
 
-====== To Package and Deploy websimplemessage Using Maven
+==== To Package and Deploy websimplemessage Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -197,7 +197,7 @@ mvn install
 
 [[CHDIFEHC]][[to-run-the-websimplemessage-example]]
 
-====== To Run the websimplemessage Example
+==== To Run the websimplemessage Example
 
 1.  In a web browser, enter the following URL:
 +

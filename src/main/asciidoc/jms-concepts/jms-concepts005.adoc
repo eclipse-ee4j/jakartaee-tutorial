@@ -1,6 +1,6 @@
 [[BNCGL]][[using-the-jms-api-in-jakarta-ee-applications]]
 
-==== Using Jakarta Messaging in Jakarta EE Applications
+== Using Jakarta Messaging in Jakarta EE Applications
 
 This section describes how using Jakarta Messaging in enterprise bean
 applications or web applications differs from using it in application
@@ -20,7 +20,7 @@ Asynchronously]
 
 [[CHDGICJB]][[overview-of-using-the-jms-api]]
 
-===== Overview of Using Jakarta Messaging
+=== Overview of Using Jakarta Messaging
 
 A general rule in the Jakarta EE platform specification applies to all Java
 EE components that use Jakarta Messaging within enterprise bean or web containers:
@@ -35,7 +35,7 @@ connection.
 
 [[BABHFBDH]][[creating-resources-for-jakarta-ee-applications]]
 
-===== Creating Resources for Jakarta EE Applications
+=== Creating Resources for Jakarta EE Applications
 
 You can use annotations to create application-specific connection
 factories and destinations for Jakarta EE enterprise bean or web
@@ -139,7 +139,7 @@ resources that exist outside of individual applications.
 
 [[BNCGM]][[using-resource-injection-in-enterprise-bean-or-web-components]]
 
-===== Using Resource Injection in Enterprise Bean or Web Components
+=== Using Resource Injection in Enterprise Bean or Web Components
 
 You may use resource injection to inject both administered objects and
 `JMSContext` objects in Jakarta EE applications.
@@ -151,7 +151,7 @@ The following topics are addressed here:
 
 [[CHDCHDIJ]][[injecting-a-connectionfactory-queue-or-topic]]
 
-====== Injecting a ConnectionFactory, Queue, or Topic
+==== Injecting a ConnectionFactory, Queue, or Topic
 
 Normally, you use the `@Resource` annotation to inject a
 `ConnectionFactory`, `Queue`, or `Topic` into your Jakarta EE application.
@@ -189,7 +189,7 @@ will result.
 
 [[BABCJBEE]][[injecting-a-jmscontext-object]]
 
-====== Injecting a JMSContext Object
+==== Injecting a JMSContext Object
 
 To access a `JMSContext` object in an enterprise bean or web component,
 instead of injecting the `ConnectionFactory` resource and then creating
@@ -214,7 +214,7 @@ private JMSContext context2;
 
 [[BNCGN]][[using-jakarta-ee-components-to-produce-and-to-synchronously-receive-messages]]
 
-===== Using Jakarta EE Components to Produce and to Synchronously Receive Messages
+=== Using Jakarta EE Components to Produce and to Synchronously Receive Messages
 
 An application that produces messages or synchronously receives them can
 use a Jakarta EE web or Jakarta Enterprise Beans component, such as a managed bean, a servlet,
@@ -238,7 +238,7 @@ resource management and transactions.
 
 [[BNCGO]][[managing-jms-resources-in-web-and-ejb-components]]
 
-====== Managing Jakarta Messaging Resources in Web and Jakarta Enterprise Beans Components
+==== Managing Jakarta Messaging Resources in Web and Jakarta Enterprise Beans Components
 
 The Jakarta Messaging resources are a connection and a session, usually combined in a
 `JMSContext` object. In general, it is important to release Messaging
@@ -265,7 +265,7 @@ method and set its value to `null`, and you must create it again in a
 
 [[BNCGP]][[managing-transactions-in-session-beans]]
 
-====== Managing Transactions in Session Beans
+==== Managing Transactions in Session Beans
 
 Instead of using local transactions, you use Jakarta transactions. You can
 use either container-managed transactions or bean-managed transactions.
@@ -284,7 +284,7 @@ transactions.
 
 [[BNCGQ]][[using-message-driven-beans-to-receive-messages-asynchronously]]
 
-===== Using Message-Driven Beans to Receive Messages Asynchronously
+=== Using Message-Driven Beans to Receive Messages Asynchronously
 
 The sections link:#GIPKO[What Is a Message-Driven Bean?]
 and link:#BNCDW[How Does Jakarta Messaging Work with the
@@ -474,7 +474,7 @@ link:#GIPKW[The Lifecycle of a Message-Driven Bean].
 
 [[BNCGS]][[managing-jta-transactions]]
 
-===== Managing JakartA Transactions
+=== Managing JakartA Transactions
 
 Jakarta EE application clients and Java SE clients use JMS local
 transactions (described in link:#BNCGH[Using Jakarta Messaging

@@ -1,6 +1,6 @@
 [[GKHPA]][[the-billpayment-example-using-events-and-interceptors]]
 
-==== The billpayment Example: Using Events and Interceptors
+== The billpayment Example: Using Events and Interceptors
 
 The `billpayment` example shows how to use both events and interceptors.
 
@@ -19,7 +19,7 @@ The following topics are addressed here:
 
 [[CHDIBGDF]][[overview-of-the-billpayment-example]]
 
-===== Overview of the billpayment Example
+=== Overview of the billpayment Example
 
 The example simulates paying an amount using a debit card or credit
 card. When the user chooses a payment method, the managed bean creates
@@ -31,7 +31,7 @@ two methods of another class.
 
 [[GKHOK]][[the-paymentevent-event-class]]
 
-===== The PaymentEvent Event Class
+=== The PaymentEvent Event Class
 
 The event class, `event.PaymentEvent`, is a simple bean class that
 contains a no-argument constructor. It also has a `toString` method and
@@ -67,7 +67,7 @@ interception of its getter and setter methods.
 
 [[GKHRB]][[the-paymenthandler-event-listener]]
 
-===== The PaymentHandler Event Listener
+=== The PaymentHandler Event Listener
 
 The event listener, `listener.PaymentHandler`, contains two observer
 methods, one for each of the two event types:
@@ -108,7 +108,7 @@ can be intercepted.
 
 [[GKHRJ]][[the-billpayment-facelets-pages-and-managed-bean]]
 
-===== The billpayment Facelets Pages and Managed Bean
+=== The billpayment Facelets Pages and Managed Bean
 
 The `billpayment` example contains two Facelets pages, `index.xhtml` and
 the very simple `response.xhtml`. The body of `index.xhtml` looks like
@@ -268,7 +268,7 @@ expression to display the payment method:
 
 [[GKHRQ]][[the-loggedinterceptor-interceptor-class]]
 
-===== The LoggedInterceptor Interceptor Class
+=== The LoggedInterceptor Interceptor Class
 
 The interceptor class, `LoggedInterceptor`, and its interceptor binding,
 `Logged`, are both defined in the `interceptor` package. The `Logged`
@@ -331,7 +331,7 @@ annotated `@Logged`, so all their methods are intercepted. In
 
 [[GKHPK]][[running-the-billpayment-example]]
 
-===== Running the billpayment Example
+=== Running the billpayment Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `billpayment` application.
@@ -346,7 +346,7 @@ Using Maven]
 
 [[GKHQS]][[to-build-package-and-deploy-the-billpayment-example-using-netbeans-ide]]
 
-====== To Build, Package, and Deploy the billpayment Example Using NetBeans IDE
+==== To Build, Package, and Deploy the billpayment Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -369,7 +369,7 @@ it to GlassFish Server.
 
 [[GKHPX]][[to-build-package-and-deploy-the-billpayment-example-using-maven]]
 
-====== To Build, Package, and Deploy the billpayment Example Using Maven
+==== To Build, Package, and Deploy the billpayment Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -393,7 +393,7 @@ it to GlassFish Server.
 
 [[GKHPT]][[to-run-the-billpayment-example]]
 
-====== To Run the billpayment Example
+==== To Run the billpayment Example
 
 1.  In a web browser, enter the following URL:
 +

@@ -1,6 +1,6 @@
 [[CIHGJBGI]][[using-method-constraints-in-type-hierarchies]]
 
-==== Using Method Constraints in Type Hierarchies
+== Using Method Constraints in Type Hierarchies
 
 If you add validation constraints to objects in an inheritance
 hierarchy, take special care to avoid unintended errors when using
@@ -102,7 +102,7 @@ of a subtype and will result in a `ConstraintDeclarationException`.
 
 [[sthref125]][[rules-for-using-method-constraints-in-type-hierarchies]]
 
-===== Rules for Using Method Constraints in Type Hierarchies
+=== Rules for Using Method Constraints in Type Hierarchies
 
 The following rules define how method validation constraints should be
 used in type hierarchies.

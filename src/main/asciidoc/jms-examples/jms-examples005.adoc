@@ -1,6 +1,6 @@
 [[BABGEFHC]][[writing-high-performance-and-scalable-jms-applications]]
 
-==== Writing High Performance and Scalable Jakarta Messaging Applications
+== Writing High Performance and Scalable Jakarta Messaging Applications
 
 This section describes how to use Jakarta Messaging to write applications that
 can handle high volumes of messages robustly. These examples use both
@@ -13,7 +13,7 @@ The following topics are addressed here:
 
 [[BABIBEAC]][[using-shared-nondurable-subscriptions]]
 
-===== Using Shared Nondurable Subscriptions
+=== Using Shared Nondurable Subscriptions
 
 This section describes the receiving clients in an example that shows
 how to use a shared consumer to distribute messages sent to a topic
@@ -40,7 +40,7 @@ subscription will be delivered to only one of those consumers.
 
 [[sthref210]][[writing-the-clients-for-the-shared-consumer-example]]
 
-====== Writing the Clients for the Shared Consumer Example
+==== Writing the Clients for the Shared Consumer Example
 
 The sending client is `Producer.java`, the same client used in previous
 examples.
@@ -75,7 +75,7 @@ Resources for the Simple Examples].
 
 [[sthref211]][[to-run-the-sharedconsumer-and-producer-clients]]
 
-====== To Run the SharedConsumer and Producer Clients
+==== To Run the SharedConsumer and Producer Clients
 
 1.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
@@ -131,7 +131,7 @@ report of the number of text messages received.
 
 [[BABEJBHA]][[using-shared-durable-subscriptions]]
 
-===== Using Shared Durable Subscriptions
+=== Using Shared Durable Subscriptions
 
 The `shareddurableconsumer` client shows how to use shared durable
 subscriptions. It shows how shared durable subscriptions combine the
@@ -159,7 +159,7 @@ You run the example in combination with the `Producer.java` client.
 
 [[sthref212]][[to-run-the-shareddurableconsumer-and-producer-clients]]
 
-====== To Run the SharedDurableConsumer and Producer Clients
+==== To Run the SharedDurableConsumer and Producer Clients
 
 1.  In a terminal window, go to the following directory:
 +

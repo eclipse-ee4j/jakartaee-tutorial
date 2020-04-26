@@ -1,6 +1,6 @@
 [[BNCJC]][[transaction-timeouts]]
 
-==== Transaction Timeouts
+== Transaction Timeouts
 
 For container-managed transactions, you can use the Administration
 Console to configure the transaction timeout interval. See
@@ -11,7 +11,7 @@ For enterprise beans with bean-managed Jakarta transactions, you invoke the
 
 [[sthref237]][[to-set-a-transaction-timeout]]
 
-===== To Set a Transaction Timeout
+=== To Set a Transaction Timeout
 
 1.  In the Administration Console, expand the Configurations node, then
 expand the server-config node and select Transaction Service.

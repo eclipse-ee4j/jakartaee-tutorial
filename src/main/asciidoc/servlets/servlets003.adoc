@@ -1,6 +1,6 @@
 [[BNAFO]][[sharing-information]]
 
-==== Sharing Information
+== Sharing Information
 
 Web components, like most objects, usually work with other objects to
 accomplish their tasks. Web components can do so by doing the following.
@@ -14,7 +14,7 @@ in link:#BNAGI[Invoking Other Web Resources].
 
 [[BNAFP]][[using-scope-objects]]
 
-===== Using Scope Objects
+=== Using Scope Objects
 
 Collaborating web components share information by means of objects that
 are maintained as attributes of four scope objects. You access these
@@ -46,7 +46,7 @@ object.
 
 [[BNAFS]][[controlling-concurrent-access-to-shared-resources]]
 
-===== Controlling Concurrent Access to Shared Resources
+=== Controlling Concurrent Access to Shared Resources
 
 In a multithreaded server, shared resources can be accessed
 concurrently. In addition to scope object attributes, shared resources

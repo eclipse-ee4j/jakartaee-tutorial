@@ -1,6 +1,6 @@
 [[BNBTI]][[simplified-query-language-syntax]]
 
-==== Simplified Query Language Syntax
+== Simplified Query Language Syntax
 
 This section briefly describes the syntax of the query language so that
 you can quickly move on to
@@ -15,7 +15,7 @@ The following topics are addressed here:
 
 [[BNBTJ]][[select-statements]]
 
-===== Select Statements
+=== Select Statements
 
 A select query has six clauses: `SELECT`, `FROM`, `WHERE`, `GROUP BY`,
 `HAVING`, and `ORDER BY`. The `SELECT` and `FROM` clauses are required,
@@ -58,7 +58,7 @@ query into a specified order.
 
 [[BNBTK]][[update-and-delete-statements]]
 
-===== Update and Delete Statements
+=== Update and Delete Statements
 
 Update and delete statements provide bulk operations over sets of
 entities. These statements have the following syntax:

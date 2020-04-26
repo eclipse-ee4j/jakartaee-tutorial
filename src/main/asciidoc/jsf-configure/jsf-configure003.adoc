@@ -1,6 +1,6 @@
 [[BNAWP]][[application-configuration-resource-file]]
 
-==== Application Configuration Resource File
+== Application Configuration Resource File
 
 Jakarta Server Faces technology provides a portable configuration format (as
 an XML document) for configuring application resources. One or more XML
@@ -77,7 +77,7 @@ resource file.
 
 [[GIREP]][[configuring-eager-application-scoped-managed-beans]]
 
-===== Configuring Eager Application-Scoped Managed Beans
+=== Configuring Eager Application-Scoped Managed Beans
 
 Jakarta Server Faces managed beans (either specified in the
 f`aces-config.xml` file or annotated with
@@ -106,7 +106,7 @@ The annotation is as follows:
 
 [[GIQCK]][[ordering-of-application-configuration-resource-files]]
 
-===== Ordering of Application Configuration Resource Files
+=== Ordering of Application Configuration Resource Files
 
 Because Jakarta Server Faces technology allows the use of multiple
 application configuration resource files stored in different locations,
