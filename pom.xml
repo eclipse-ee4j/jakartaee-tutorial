@@ -59,25 +59,37 @@
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
+                            <sourceDocumentName>index.adoc</sourceDocumentName>
                             <backend>html5</backend>
-                            <attributes>
-                                <doctype>book</doctype>
-                                <status>${status}</status>
-                                <data-uri />
-                                <icons>font</icons>
-                                <toc>left</toc>
-                                <icons>font</icons>
-                                <sectanchors>true</sectanchors>
-                                <idprefix />
-                                <idseparator>-</idseparator>
-                                <docinfo1>true</docinfo1>
-                            </attributes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>asciidoc-guides-to-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${basedir}/src/main/asciidoc/_guides</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-docs/guides</outputDirectory>
+                            <backend>html5</backend>
                         </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceDocumentName>index.adoc</sourceDocumentName>
                     <sourceHighlighter>coderay</sourceHighlighter>
+                    <attributes>
+                        <doctype>book</doctype>
+                        <status>${status}</status>
+                        <data-uri />
+                        <icons>font</icons>
+                        <toc>left</toc>
+                        <icons>font</icons>
+                        <sectanchors>true</sectanchors>
+                        <idprefix />
+                        <idseparator>-</idseparator>
+                        <docinfo1>true</docinfo1>
+                    </attributes>
                 </configuration>
             </plugin>
             <plugin>
