@@ -61,6 +61,18 @@
                         <configuration>
                             <sourceDocumentName>index.adoc</sourceDocumentName>
                             <backend>html5</backend>
+                            <attributes>
+                                <doctype>book</doctype>
+                                <status>${status}</status>
+                                <data-uri />
+                                <icons>font</icons>
+                                <toc>left</toc>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <idprefix />
+                                <idseparator>-</idseparator>
+                                <docinfo1>true</docinfo1>
+                            </attributes>
                         </configuration>
                     </execution>
                     <execution>
@@ -73,23 +85,15 @@
                             <sourceDirectory>${basedir}/src/main/asciidoc/_guides</sourceDirectory>
                             <outputDirectory>${project.build.directory}/generated-docs/guides</outputDirectory>
                             <backend>html5</backend>
+                            <attributes>
+                                <imagesdir>../images</imagesdir>
+                                <sectnums>true</sectnums>
+                            </attributes>
                         </configuration>
                     </execution>
                 </executions>
                 <configuration>
                     <sourceHighlighter>coderay</sourceHighlighter>
-                    <attributes>
-                        <doctype>book</doctype>
-                        <status>${status}</status>
-                        <data-uri />
-                        <icons>font</icons>
-                        <toc>left</toc>
-                        <icons>font</icons>
-                        <sectanchors>true</sectanchors>
-                        <idprefix />
-                        <idseparator>-</idseparator>
-                        <docinfo1>true</docinfo1>
-                    </attributes>
                 </configuration>
             </plugin>
             <plugin>
