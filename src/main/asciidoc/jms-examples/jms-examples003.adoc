@@ -13,8 +13,7 @@ The following topics are addressed here:
 * link:#BABEEABE[Building All the Simple Examples]
 * link:#BABIHCAE[Sending Messages]
 * link:#BNCFB[Receiving Messages Synchronously]
-* link:#BNCFH[Using a Message Listener for Asynchronous Message
-Delivery]
+* link:#BNCFH[Using a Message Listener for Asynchronous Message Delivery]
 * link:#BNCFL[Browsing Messages on a Queue]
 * link:#BABDDHHC[Running Multiple Consumers on the Same Destination]
 * link:#BNCFX[Acknowledging Messages]
@@ -582,30 +581,28 @@ Synchronously].
 An asynchronous consumer normally runs indefinitely. This one runs until
 the user types the character `q` or `Q` to stop the client.
 
-1.  The client, `AsynchConsumer.java`, performs the following steps.
-1.  Injects resources for a connection factory, queue, and topic.
-2.  Assigns either the queue or the topic to a destination object, based
-on the specified destination type.
-3.  In a `try`-with-resources block, creates a `JMSContext`.
-4.  Creates a `JMSConsumer`.
-5.  Creates an instance of the `TextListener` class and registers it as
-the message listener for the `JMSConsumer`:
+.  The client, `AsynchConsumer.java`, performs the following steps.
+..  Injects resources for a connection factory, queue, and topic.
+..  Assigns either the queue or the topic to a destination object, based on the specified destination type.
+..  In a `try`-with-resources block, creates a `JMSContext`.
+..  Creates a `JMSConsumer`.
+..  Creates an instance of the `TextListener` class and registers it asthe message listener for the `JMSConsumer`:
 +
 [source,java]
 ----
 listener = new TextListener();
 consumer.setMessageListener(listener);
 ----
-6.  Listens for the messages sent to the destination, stopping when the
+..  Listens for the messages sent to the destination, stopping when the
 user types the character `q` or `Q` (it uses a
 `java.io.InputStreamReader` to do this).
-7.  Catches and handles any exceptions. The end of the
+..  Catches and handles any exceptions. The end of the
 `try`-with-resources block automatically causes the `JMSContext` to be
 closed, thus stopping delivery of messages to the message listener.
-2.  The message listener, `TextListener.java`, follows these steps:
-1.  When a message arrives, the `onMessage` method is called
+.  The message listener, `TextListener.java`, follows these steps:
+..  When a message arrives, the `onMessage` method is called
 automatically.
-2.  If the message is a `TextMessage`, the `onMessage` method displays
+..  If the message is a `TextMessage`, the `onMessage` method displays
 its content as a string value. If the message is not a text message, it
 reports this fact:
 +

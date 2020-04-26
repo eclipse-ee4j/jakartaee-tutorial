@@ -186,39 +186,29 @@ The following topics are addressed here:
 
 ====== To Run clientsessionmdb Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
+.  Make sure that GlassFish Server has been started (see
 link:#BNADI[Starting and Stopping GlassFish
 Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+.  From the File menu, choose Open Project.
+.  In the Open Project dialog box, navigate to:
 +
 [source,java]
 ----
 tut-install/examples/jms/clientsessionmdb
 ----
-4.  Select the `clientsessionmdb` folder.
-5.  Make sure that the Open Required Projects check box is selected,
-then click Open Project.
-6.  In the Projects tab, right-click the `clientsessionmdb` project and
-select Build. (If NetBeans IDE suggests that you run a priming build,
-click the box to do so.)
+.  Select the `clientsessionmdb` folder.
+.  Make sure that the Open Required Projects check box is selected, then click Open Project.
+.  In the Projects tab, right-click the `clientsessionmdb` project and select Build. (If NetBeans IDE suggests that you run a priming build, click the box to do so.)
 +
 This command creates the following:
+.. An application client JAR file that contains the client class file and the session bean's remote interface, along with a manifest file that specifies the main class and places the Jakarta Enterprise Beans JAR file in its classpath
+.. An enterprise bean JAR file that contains both the session bean and the message-driven bean
 
-** An application client JAR file that contains the client class file and
-the session bean's remote interface, along with a manifest file that
-specifies the main class and places the Jakarta Enterprise Beans JAR file in its classpath
-
-** An enterprise bean JAR file that contains both the session bean and the
-message-driven bean
-
-** An application EAR file that contains the two JAR files
+.. An application EAR file that contains the two JAR files
 +
-The `clientsessionmdb.ear` file is created in the
-`clientsessionmdb-ear/target/` directory.
+The `clientsessionmdb.ear` file is created in the `clientsessionmdb-ear/target/` directory.
 +
-The command then deploys the EAR file, retrieves the client stubs, and
-runs the client.
+The command then deploys the EAR file, retrieves the client stubs, andruns the client.
 +
 The client displays these lines:
 +
@@ -228,12 +218,8 @@ To view the bean output,
  check <install_dir>/domains/domain1/logs/server.log.
 ----
 +
-The output from the enterprise beans appears in the server log file. The
-Publisher session bean sends two sets of 18 messages numbered 0 through
-17. Because of the message selector, the message-driven bean receives
-only the messages whose `NewsType` property is `Sports` or `Opinion`.
-7.  Use the Services tab to undeploy the application after you have
-finished running it.
+The output from the enterprise beans appears in the server log file. The Publisher session bean sends two sets of 18 messages numbered 0 through 17. Because of the message selector, the message-driven bean receives only the messages whose `NewsType` property is `Sports` or `Opinion`.
+. Use the Services tab to undeploy the application after you have finished running it.
 
 [[CHDDDHBE]][[to-run-clientsessionmdb-using-maven]]
 

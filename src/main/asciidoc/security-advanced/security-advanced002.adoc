@@ -162,36 +162,25 @@ the certificate name to the host name from which it originates.
 To create a keystore named `client_keystore.jks` that contains a client
 certificate named `client.cer`, follow these steps.
 
-1.  Create a backup copy of the server truststore file. To do this,
-1.  Change to the directory containing the server's keystore and
-truststore files, domain-dir`\config`.
-2.  Copy `cacerts.jks` to `cacerts.backup.jks`.
-3.  Copy `keystore.jks` to `keystore.backup.jks`.
+.  Create a backup copy of the server truststore file. To do this,
+..  Change to the directory containing the server's keystore and truststore files, domain-dir`\config`.
+..  Copy `cacerts.jks` to `cacerts.backup.jks`.
+..  Copy `keystore.jks` to `keystore.backup.jks`.
 +
-Do not put client certificates in the `cacerts.jks` file. Any
-certificate you add to the `cacerts` file effectively can be a trusted
-root for any and all certificate chains. After you have completed
-development, delete the development version of the `cacerts` file and
-replace it with the original copy.
-2.  Generate the client certificate. Enter the following command from
-the directory where you want to generate the client certificate:
+Do not put client certificates in the `cacerts.jks` file. Any certificate you add to the `cacerts` file effectively can be a trusted root for any and all certificate chains. After you have completed development, delete the development version of the `cacerts` file and replace it with the original copy.
+.  Generate the client certificate. Enter the following command from the directory where you want to generate the client certificate:
 +
 [source,xml]
 ----
-java-home\bin\keytool -genkey -alias client-alias -keyalg RSA
--keypass changeit -storepass changeit -keystore client_keystore.jks
+java-home\bin\keytool -genkey -alias client-alias -keyalg RSA -keypass changeit -storepass changeit -keystore client_keystore.jks
 ----
-3.  Export the generated client certificate into the file `client.cer`:
+.  Export the generated client certificate into the file `client.cer`:
 +
 [source,xml]
 ----
-java-home\bin\keytool -export -alias client-alias -storepass changeit
--file client.cer -keystore client_keystore.jks
+java-home\bin\keytool -export -alias client-alias -storepass changeit -file client.cer -keystore client_keystore.jks
 ----
-4.  Add the certificate to the truststore file
-domain-dir`/config/cacerts.jks`. Run `keytool` from the directory where
-you created the keystore and client certificate. Use the following
-parameters:
+.  Add the certificate to the truststore file domain-dir`/config/cacerts.jks`. Run `keytool` from the directory where you created the keystore and client certificate. Use the following parameters:
 +
 [source,xml]
 ----
@@ -217,4 +206,4 @@ Trust this certificate? [no]: yes
 Certificate was added to keystore
 [Storing cacerts.jks]
 ----
-5.  Restart GlassFish Server.
+.  Restart GlassFish Server.

@@ -38,26 +38,23 @@ To set up your system for running the security examples, you need to
 configure a user database that the application can use for
 authenticating users. Before continuing, follow these steps.
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  Add an authorized user to GlassFish Server. For the examples in this
+.  Make sure that GlassFish Server has been started (see link:#BNADI[Starting and Stopping GlassFish Server]).
+.  Add an authorized user to GlassFish Server. For the examples in this
 chapter and in link:#BNBYK[Chapter 52, "Getting
 Started Securing Enterprise Applications"], add a user to the `file`
 realm of GlassFish Server, and assign the user to the group
 `TutorialUser`.
-1.  From the Administration Console, expand the Configurations node,
+..  From the Administration Console, expand the Configurations node,
 then expand the server-config node.
-2.  Expand the Security node.
-3.  Expand the Realms node.
-4.  Select the File node.
-5.  On the Edit Realm page, click Manage Users.
-6.  On the File Users page, click New.
-7.  In the User ID field, enter a user ID.
-8.  In the Group List field, enter `TutorialUser`.
-9.  In the New Password and Confirm New Password fields, enter a
-password.
-10. Click OK.
+..  Expand the Security node.
+..  Expand the Realms node.
+..  Select the File node.
+..  On the Edit Realm page, click Manage Users.
+..  On the File Users page, click New.
+..  In the User ID field, enter a user ID.
+..  In the Group List field, enter `TutorialUser`.
+..  In the New Password and Confirm New Password fields, enter a password.
+.. Click OK.
 +
 Be sure to write down the user name and password for the user you create
 so that you can use it for testing the example applications.

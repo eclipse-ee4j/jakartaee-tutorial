@@ -14,10 +14,8 @@ The main tasks that a filter can perform are as follows.
 
 * Query the request and act accordingly.
 * Block the request-and-response pair from passing any further.
-* Modify the request headers and data. You do this by providing a
-customized version of the request.
-* Modify the response headers and data. You do this by providing a
-customized version of the response.
+* Modify the request headers and data. You do this by providing a customized version of the request.
+* Modify the response headers and data. You do this by providing a customized version of the response.
 * Interact with external resources.
 
 Applications of filters include authentication, logging, image
@@ -73,20 +71,9 @@ is passed request, response, and filter chain objects. This method can
 perform the following actions.
 
 * Examine the request headers.
-* Customize the request object if the filter wishes to modify request
-headers or data.
-* Customize the response object if the filter wishes to modify response
-headers or data.
-* Invoke the next entity in the filter chain. If the current filter is
-the last filter in the chain that ends with the target web component or
-static resource, the next entity is the resource at the end of the
-chain; otherwise, it is the next filter that was configured in the WAR.
-The filter invokes the next entity by calling the `doFilter` method on
-the chain object, passing in the request and response it was called with
-or the wrapped versions it may have created. Alternatively, the filter
-can choose to block the request by not making the call to invoke the
-next entity. In the latter case, the filter is responsible for filling
-out the response.
+* Customize the request object if the filter wishes to modify request headers or data.
+* Customize the response object if the filter wishes to modify response headers or data.
+* Invoke the next entity in the filter chain. If the current filter is the last filter in the chain that ends with the target web component or static resource, the next entity is the resource at the end of the chain; otherwise, it is the next filter that was configured in the WAR. The filter invokes the next entity by calling the `doFilter` method on the chain object, passing in the request and response it was called with or the wrapped versions it may have created. Alternatively, the filter can choose to block the request by not making the call to invoke the next entity. In the latter case, the filter is responsible for filling out the response.
 * Examine response headers after invoking the next filter in the chain.
 * Throw an exception to indicate an error in processing.
 
@@ -167,39 +154,31 @@ F1's `doFilter` method.
 
 ====== To Specify Filter Mappings Using NetBeans IDE
 
-1.  Expand the application's project node in the Project tab.
-2.  Expand the Web Pages and WEB-INF nodes under the project node.
-3.  Double-click `web.xml`.
-4.  Click Filters at the top of the editor window.
-5.  Expand the Servlet Filters node in the editor window.
-6.  Click Add Filter Element to map the filter to a web resource by name
-or by URL pattern.
-7.  In the Add Servlet Filter dialog box, enter the name of the filter
-in the Filter Name field.
-8.  Click Browse to locate the servlet class to which the filter
-applies.
+.  Expand the application's project node in the Project tab.
+.  Expand the Web Pages and WEB-INF nodes under the project node.
+.  Double-click `web.xml`.
+.  Click Filters at the top of the editor window.
+.  Expand the Servlet Filters node in the editor window.
+.  Click Add Filter Element to map the filter to a web resource by name or by URL pattern.
+.  In the Add Servlet Filter dialog box, enter the name of the filter in the Filter Name field.
+.  Click Browse to locate the servlet class to which the filter applies.
 +
-You can include wildcard characters so that you can apply the filter to
-more than one servlet.
-9.  Click OK.
-10. To constrain how the filter is applied to requests, follow these
-steps.
-1.  Expand the Filter Mappings node.
-2.  Select the filter from the list of filters.
-3.  Click Add.
-4.  In the Add Filter Mapping dialog box, select one of the following
-dispatcher types:
-* REQUEST: Only when the request comes directly from the client
-* ASYNC: Only when the asynchronous request comes from the client
-* FORWARD: Only when the request has been forwarded to a component (see
-link:#BNAGK[Transferring Control to Another Web
-Component])
-* INCLUDE: Only when the request is being processed by a component that
-has been included (see link:#BNAGJ[Including Other
-Resources in the Response])
-* ERROR: Only when the request is being processed with the error page
-mechanism (see link:#BNAFN[Handling Servlet Errors])
+--
+You can include wildcard characters so that you can apply the filter to more than one servlet.
+--
+.  Click OK.
+. To constrain how the filter is applied to requests, follow these steps:
 +
-You can direct the filter to be applied to any combination of the
-preceding situations by selecting multiple dispatcher types. If no types
-are specified, the default option is REQUEST.
+--
+..  Expand the Filter Mappings node.
+..  Select the filter from the list of filters.
+..  Click Add.
+..  In the Add Filter Mapping dialog box, select one of the following dispatcher types:
+... REQUEST: Only when the request comes directly from the client
+... ASYNC: Only when the asynchronous request comes from the client
+... FORWARD: Only when the request has been forwarded to a component (see link:#BNAGK[Transferring Control to Another Web Component])
+... INCLUDE: Only when the request is being processed by a component that has been included (see link:#BNAGJ[Including Other Resources in the Response])
+... ERROR: Only when the request is being processed with the error page mechanism (see link:#BNAFN[Handling Servlet Errors])
+
+You can direct the filter to be applied to any combination of the preceding situations by selecting multiple dispatcher types. If no types are specified, the default option is REQUEST.
+--

@@ -44,28 +44,14 @@ Java classes to run the jobs in a batch application.
 The process for creating a batch application in Jakarta EE is the
 following.
 
-1.  Design the batch application.
-1.  Identify the input sources, the format of the input data, the
-desired final result, and the required processing phases.
-2.  Organize the application as a job with chunk-oriented steps,
-task-oriented steps, and decision elements. Determine the dependencies
-between them.
-3.  Determine the order of execution in terms of transitions between
-steps.
-4.  Identify steps that can run in parallel and steps that can run in
-more than one thread.
-2.  Create the batch artifacts as Java classes by implementing the
-interfaces specified by the framework for steps, decision elements, and
-so on. These Java classes contain the code to read data from input
-sources, format items, process items, and store results. Batch artifacts
-can access context objects from the batch runtime using dependency
-injection.
-3.  Define jobs, steps, and their execution flow in XML files using the
-Job Specification Language. The elements in the XML files reference
-batch artifacts implemented as Java classes. The batch artifacts can
-access properties declared in the XML files, such as names of files and
-databases.
-4.  Use the Java API provided by the batch runtime to launch the batch
+.  Design the batch application.
+..  Identify the input sources, the format of the input data, the desired final result, and the required processing phases.
+..  Organize the application as a job with chunk-oriented steps, task-oriented steps, and decision elements. Determine the dependencies between them.
+..  Determine the order of execution in terms of transitions between steps.
+..  Identify steps that can run in parallel and steps that can run in more than one thread.
+.  Create the batch artifacts as Java classes by implementing the interfaces specified by the framework for steps, decision elements, and so on. These Java classes contain the code to read data from input sources, format items, process items, and store results. Batch artifacts can access context objects from the batch runtime using dependency injection.
+.  Define jobs, steps, and their execution flow in XML files using the Job Specification Language. The elements in the XML files reference batch artifacts implemented as Java classes. The batch artifacts can access properties declared in the XML files, such as names of files and databases.
+.  Use the Java API provided by the batch runtime to launch the batch
 application.
 
 The following sections describe in detail how to use the components of

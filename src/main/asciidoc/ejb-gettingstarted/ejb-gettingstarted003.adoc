@@ -16,18 +16,16 @@ the exchange rate in the `dollarToYen` business method of the
 
 To modify `ConverterServlet`, the procedure is the same.
 
-1.  Edit `ConverterBean.java` and save the file.
-2.  Recompile the source file.
-* To recompile `ConverterBean.java` in NetBeans IDE, right-click the
+.  Edit `ConverterBean.java` and save the file.
+.  Recompile the source file.
+.. To recompile `ConverterBean.java` in NetBeans IDE, right-click the
 `converter` project and select Run.
 +
-This recompiles the `ConverterBean.java` file, replaces the old class
-file in the build directory, and redeploys the application to GlassFish
-Server.
-* Recompile `ConverterBean.java` using Maven.
-1.  In a terminal window, go to the
+This recompiles the `ConverterBean.java` file, replaces the old class file in the build directory, and redeploys the application to GlassFish Server.
+.. Recompile `ConverterBean.java` using Maven.
+...  In a terminal window, go to the
 tut-install`/examples/ejb/converter/` directory.
-2.  Enter the following command:
+...  Enter the following command:
 +
 [source,java]
 ----
@@ -35,5 +33,3 @@ mvn install
 ----
 +
 This command repackages and deploys the application.
-
-

@@ -287,7 +287,7 @@ In this example, use the credentials of user Joe to make a request and
 to validate the response according to the credentials/roles defined in
 `DatabaseSetup.java`.
 
-1. Make a request to the deployed application by entering
+. Make a request to the deployed application by entering
 the following request URL in your web browser:
 +
 Request URL:
@@ -300,7 +300,7 @@ http://localhost:8080/built-in-db-identity-store/servlet
 Because BASIC authentication is being used here, the container responds back
 prompting for username and password.
 
-2. Enter the username `Joe`, and the password `secret1` at the prompt.
+. Enter the username `Joe`, and the password `secret1` at the prompt.
 +
 Once you provide the credentials, the following process occurs:
 +
@@ -331,7 +331,7 @@ web user has role "bar": true
 web user has role "kaz": false
 ----
 
-3. Test the authentication using invalid credentials. Make a request to the
+. Test the authentication using invalid credentials. Make a request to the
 deployed application by entering the following request URL
 in your web browser:
 +
@@ -345,9 +345,8 @@ http://localhost:8080/built-in-db-identity-store/servlet
 Again, because BASIC authentication is being used here, the container responds back
 prompting for username and password.
 
-2. Enter an invalid username and password.
+. Enter an invalid username and password.
 You are promted to enter the credentials again, but you are not authenticated.
-
 +
 When you click Cancel in the Authentication required window, the following
 response is returned:

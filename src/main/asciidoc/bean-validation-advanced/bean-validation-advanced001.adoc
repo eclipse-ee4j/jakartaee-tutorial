@@ -106,9 +106,9 @@ public String doSomething(String param1, String param2) { ... }
 In the preceding example, the target is set to the return value of the
 method.
 
-==== Implementing Temporal Constraints Using ClockProvider
-
 [[implementing-temporal-constraints-using-clockprovider]]
+
+==== Implementing Temporal Constraints Using ClockProvider
 
 In Jakarta Bean Validation 2.0, a Clock instance is available for validator implementations to validate any temporal date or time based constraints.
 [source,java]
@@ -140,9 +140,9 @@ public class CustomConstraintValidator implements ConstraintValidator<CustomCons
 ----
 See ClockProvider in `https://jakarta.ee/specifications/platform/8/apidocs/`.
 
+[[custom-constraints]]
 ==== Custom Constraints
 
-[[custom-constraints]]
 Consider an employee in a firm located in U.S.A. When you register the phone number of an employee or modify the phone number, the phone number needs to be validated to ensure that the phone number conforms to US phone number pattern.
 [source,java]
 ----
@@ -167,8 +167,10 @@ public class Employee extends Person {
 The constraint definition `@USPhoneNumber` is define in the sample listed under link:#GKAIA[Using the Built-In Constraints to Make a New Constraint].
 In the sample, another constraint `@Pattern` is used to validate the phone number.
 
-==== Using In-Built Value Extractors in Custom Containers
 [[using-in-built-value-extractors-in-custom-containers]]
+
+==== Using In-Built Value Extractors in Custom Containers
+
 Cascading validation:
 
 Bean Validation supports cascading validation for various entities. You can specify `@Valid` on a member of the object that is validated to ensure that the member is also validated in a cascading fashion. You can validate type arguments, for example, parameterized types and its members if the members have the specified `@Valid` annotation.

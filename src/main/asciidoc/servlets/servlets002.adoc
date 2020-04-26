@@ -6,15 +6,11 @@ The lifecycle of a servlet is controlled by the container in which the
 servlet has been deployed. When a request is mapped to a servlet, the
 container performs the following steps.
 
-1.  If an instance of the servlet does not exist, the web container:
-1.  Loads the servlet class
-2.  Creates an instance of the servlet class
-3.  Initializes the servlet instance by calling the `init` method
-(initialization is covered in link:#BNAFU[Creating and
-Initializing a Servlet])
-2.  The container invokes the `service` method, passing request and
-response objects. Service methods are discussed in
-link:#BNAFV[Writing Service Methods].
+.  If an instance of the servlet does not exist, the web container:
+.  Loads the servlet class
+.  Creates an instance of the servlet class
+.  Initializes the servlet instance by calling the `init` method (initialization is covered in link:#BNAFU[Creating and Initializing a Servlet])
+.  The container invokes the `service` method, passing request and response objects. Service methods are discussed in link:#BNAFV[Writing Service Methods].
 
 If it needs to remove the servlet, the container finalizes the servlet
 by calling the servlet's `destroy` method. For more information, see

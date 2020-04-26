@@ -33,24 +33,15 @@ The following topics are addressed here:
 
 ====== To Create a RESTful Web Service Using NetBeans IDE
 
-1.  Ensure you have installed the tutorial archetypes as described in
-link:#CHDJGCCA[Installing the Tutorial Archetypes].
-2.  In NetBeans IDE, create a simple web application using the
-`jaxrs-service-archetype` Maven archetype. This archetype creates a very
-simple "Hello, World" web application.
-1.  From the File menu, choose New Project.
-2.  From Categories, select Maven. From Projects, select Project From
-Archetype. Click Next.
-3.  Under Search enter `jaxrs-service`, select the
-`jaxrs-service-archetype`, and click Next.
-4.  Under Project Name enter `HelloWorldApplication`, set the Project
-Location, and set the Package name to `jakarta.tutorial.hello`, and click
-Finish.
+.  Ensure you have installed the tutorial archetypes as described in link:#CHDJGCCA[Installing the Tutorial Archetypes].
+.  In NetBeans IDE, create a simple web application using the `jaxrs-service-archetype` Maven archetype. This archetype creates a very simple "Hello, World" web application.
+..  From the File menu, choose New Project.
+..  From Categories, select Maven. From Projects, select Project From Archetype. Click Next.
+..  Under Search enter `jaxrs-service`, select the `jaxrs-service-archetype`, and click Next.
+..  Under Project Name enter `HelloWorldApplication`, set the Project Location, and set the Package name to `jakarta.tutorial.hello`, and click Finish.
 +
 The project is created.
-3.  In `HelloWorld.java`, find the `getHtml()` method. Replace the
-`//TODO` comment with the following text, so that the finished product
-resembles the following method:
+.  In `HelloWorld.java`, find the `getHtml()` method. Replace the `//TODO` comment with the following text, so that the finished product resembles the following method:
 +
 [source,java]
 ----
@@ -72,11 +63,10 @@ return statement.
 
 |=======================================================================
 
-4.  Right-click the `HelloWorldApplication` project in the Projects pane
-and select Run.
+.  Right-click the `HelloWorldApplication` project in the Projects pane and select Run.
 +
 This will build and deploy the application to GlassFish Server.
-5.  In a browser, open the following URL:
+.  In a browser, open the following URL:
 +
 [source,java]
 ----
@@ -245,13 +235,10 @@ Server. A web browser window will open to the following URL:
 ----
 http://localhost:8080/rsvp/index.xhtml
 ----
-8.  In the web browser window, click the Event status link for the
-Duke's Birthday event.
+8.  In the web browser window, click the Event status link for the Duke's Birthday event.
 +
 You'll see the current invitees and their responses.
-9.  Click the current response of one of the invitees in the Status
-column of the table, select a new response, and click Update your
-status.
+9.  Click the current response of one of the invitees in the Status column of the table, select a new response, and click Update your status.
 +
 The invitee's new status should now be displayed in the table of
 invitees and their response statuses.
@@ -261,12 +248,8 @@ invitees and their response statuses.
 To Run the rsvp Example Application Using Maven
 +++++++++++++++++++++++++++++++++++++++++++++++
 
-1.  If the database server is not already running, start it by following
-the instructions in link:#BNADK[Starting and
-Stopping Apache Derby].
-2.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
+1.  If the database server is not already running, start it by following the instructions in link:#BNADK[Starting and Stopping Apache Derby].
+2.  Make sure that GlassFish Server has been started (see link:#BNADI[Starting and Stopping GlassFish Server]).
 3.  In a terminal window, go to:
 +
 [source,java]
@@ -287,16 +270,12 @@ This command builds, assembles, and deploys `rsvp` to GlassFish Server.
 ----
 http://localhost:8080/rsvp/
 ----
-6.  In the web browser window, click the Event status link for the
-Duke's Birthday event.
+6.  In the web browser window, click the Event status link for the Duke's Birthday event.
 +
 You'll see the current invitees and their responses.
-7.  Click the current response of one of the invitees in the Status
-column of the table, select a new response, and click Update your
-status.
+7.  Click the current response of one of the invitees in the Status column of the table, select a new response, and click Update your status.
 +
-The invitee's new status should now be displayed in the table of
-invitees and their response statuses.
+The invitee's new status should now be displayed in the table of invitees and their response statuses.
 
 [[GIRCI]][[real-world-examples]]
 

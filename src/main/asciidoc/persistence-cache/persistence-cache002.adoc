@@ -224,9 +224,8 @@ if (cache.contains(Person.class, personPK)) {
 To remove a particular entity or all entities of a given type from the
 second-level cache:
 
-1.  Call one of the `Cache.evict` methods .
-1.  To remove a particular entity from the cache, call the `evict`
-method and pass in the entity class and the primary key of the entity:
+.  Call one of the `Cache.evict` methods .
+..  To remove a particular entity from the cache, call the `evict` method and pass in the entity class and the primary key of the entity:
 +
 [source,java]
 ----
@@ -235,8 +234,7 @@ Cache cache = em.getEntityManagerFactory().getCache();
 String personPK = ...;
 cache.evict(Person.class, personPK);
 ----
-2.  To remove all instances of a particular entity class, including
-subclasses, call the `evict` method and specify the entity class:
+..  To remove all instances of a particular entity class, including subclasses, call the `evict` method and specify the entity class:
 +
 [source,java]
 ----

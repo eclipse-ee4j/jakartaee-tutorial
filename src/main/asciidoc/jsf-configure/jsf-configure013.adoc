@@ -12,16 +12,13 @@ conform to specific requirements to execute across different containers.
 At a minimum, a WAR file for a Jakarta Server Faces application may contain
 the following:
 
-* A web application deployment descriptor, called `web.xml`, to
-configure resources required by a web application (required)
+* A web application deployment descriptor, called `web.xml`, to configure resources required by a web application (required)
 * A specific set of JAR files containing essential classes (optional)
-* A set of application classes, Jakarta Server Faces pages, and other
-required resources, such as image files
+* A set of application classes, Jakarta Server Faces pages, and other required resources, such as image files
 
 A WAR file may also contain:
 
-* An application configuration resource file, which configures
-application resources
+* An application configuration resource file, which configures application resources
 * A set of tag library descriptor files
 
 For example, a Java Server Faces web application WAR file using Facelets
@@ -58,8 +55,7 @@ configurations, including the following:
 
 * The servlet used to process Jakarta Server Faces requests
 * The servlet mapping for the processing servlet
-* The path to the configuration resource file, if it exists and is not
-located in a default location
+* The path to the configuration resource file, if it exists and is not located in a default location
 
 The deployment descriptor can also include other, optional
 configurations, such as those that
@@ -176,20 +172,17 @@ these files.
 
 To specify these paths using NetBeans IDE, do the following.
 
-1.  Expand the node of your project in the Projects tab.
-2.  Expand the Web Pages and WEB-INF nodes that are under the project
-node.
-3.  Double-click `web.xml`.
-4.  After the `web.xml` file appears in the editor, click General at the
-top of the editor window.
-5.  Expand the Context Parameters node.
-6.  Click Add.
-7.  In the Add Context Parameter dialog box:
-1.  Enter `javax.faces.CONFIG_FILES` in the Parameter Name field.
-2.  Enter the path to your configuration file in the Parameter Value
-field.
-3.  Click OK.
-8.  Repeat steps 1 through 7 for each configuration file.
+.  Expand the node of your project in the Projects tab.
+.  Expand the Web Pages and WEB-INF nodes that are under the project node.
+.  Double-click `web.xml`.
+.  After the `web.xml` file appears in the editor, click General at the top of the editor window.
+.  Expand the Context Parameters node.
+.  Click Add.
+.  In the Add Context Parameter dialog box:
+..  Enter `javax.faces.CONFIG_FILES` in the Parameter Name field.
+..  Enter the path to your configuration file in the Parameter Value field.
+..  Click OK.
+..  Repeat steps 1 through 7 for each configuration file.
 
 [[BNAXN]][[to-specify-where-state-is-saved]]
 
@@ -205,17 +198,16 @@ for information on the advantages and disadvantages of each location.
 
 To specify where state is saved using NetBeans IDE, do the following.
 
-1.  Expand the node of your project in the Projects tab.
-2.  Expand the Web Pages and WEB-INF nodes under the project node.
-3.  Double-click `web.xml`.
-4.  After the `web.xml` file appears in the editor window, click General
-at the top of the editor window.
-5.  Expand the Context Parameters node.
-6.  Click Add.
-7.  In the Add Context Parameter dialog box:
-1.  Enter `javax.faces.STATE_SAVING_METHOD` in the Parameter Name field.
-2.  Enter `client` or `server` in the Parameter Value field.
-3.  Click OK.
+.  Expand the node of your project in the Projects tab.
+.  Expand the Web Pages and WEB-INF nodes under the project node.
+.  Double-click `web.xml`.
+.  After the `web.xml` file appears in the editor window, click General at the top of the editor window.
+.  Expand the Context Parameters node.
+.  Click Add.
+.  In the Add Context Parameter dialog box:
+..  Enter `javax.faces.STATE_SAVING_METHOD` in the Parameter Name field.
+..  Enter `client` or `server` in the Parameter Value field.
+..  Click OK.
 
 If state is saved on the client, the state of the entire view is
 rendered to a hidden field on the page. The Jakarta Server Faces
@@ -261,15 +253,10 @@ When packaging web applications using the included build scripts, you'll
 notice that the scripts package resources in the following ways.
 
 * All web pages are placed at the top level of the WAR file.
-* The `faces-config.xml` file and the `web.xml` file are packaged in the
-`WEB-INF` directory.
+* The `faces-config.xml` file and the `web.xml` file are packaged in the `WEB-INF` directory.
 * All packages are stored in the `WEB-INF/classes/` directory.
-* All application JAR files are packaged in the `WEB-INF/lib/`
-directory.
-* All resource files are either under the root of the web application
-`/resources` directory or in the web application's classpath, the
-`META-INF/resources/`resourceIdentifier directory. For more information
-on resources, see link:#GIRGM[Web Resources].
+* All application JAR files are packaged in the `WEB-INF/lib/` directory.
+* All resource files are either under the root of the web application `/resources` directory or in the web application's classpath, the `META-INF/resources/`resourceIdentifier directory. For more information on resources, see link:#GIRGM[Web Resources].
 
 When packaging your own applications, you can use NetBeans IDE or you
 can use XML files such as those created for Maven. You can modify the
