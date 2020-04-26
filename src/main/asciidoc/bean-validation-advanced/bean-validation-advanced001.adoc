@@ -285,8 +285,8 @@ ValidatorFactory validatorFactory = Validation
 ----
 Using this validator, `StatsisticsPrinter` is validated in the following sequence of operations:
 
-1.	`StatisticsPrinter` is validated.
-a.	The members of `StatisticsPrinter` that need cascading validation are validated.
-b.	For container types, value extractor is determined. In the case of `StatsCalculator`, `ExtractorForStatsCalculator` is found and then values are retrieved for validation.
-c.	`StatsCalculator` and its members such as `List` are validated.
-i.	In-built `ValueExtractor` for `java.util.List` is  used to retrieve the values of elements of the list and the validated. In this case, Employee and the field "phone" that is annotated with `@USPhoneNumber` constraint is validated.
+. `StatisticsPrinter` is validated.
+.. The members of `StatisticsPrinter` that need cascading validation are validated.
+.. For container types, value extractor is determined. In the case of `StatsCalculator`, `ExtractorForStatsCalculator` is found and then values are retrieved for validation.
+.. `StatsCalculator` and its members such as `List` are validated.
+.. In-built `ValueExtractor` for `java.util.List` is  used to retrieve the values of elements of the list and the validated. In this case, Employee and the field "phone" that is annotated with `@USPhoneNumber` constraint is validated.

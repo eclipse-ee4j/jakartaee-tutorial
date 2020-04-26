@@ -12,7 +12,7 @@ The `jsonbbasics` example application is in the
 The following topics are addressed here:
 
 * link:#components-of-the-jsonbbasics-example-application[Components of the jsonbbasics Example Application]
-* link:#running-the-jsonbbasics-example-application[Running the jsonbbasics Example Application]
+* link:#running-the-jsonbbasics-example-application-2[Running the jsonbbasics Example Application]
 
 [[components-of-the-jsonbbasics-example-application]]
 ===== Components of the jsonbbasics Example Application
@@ -24,7 +24,7 @@ The `jsonbbasics` example application contains the following files.
 ** The `jsongenerated.xhtml` page contains a text area that displays the data in JSON format.
 * The `jsonbBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages. This file contains code that uses the JSON Binding API.
 
-[[running-the-jsonbbasics-example-application]]
+[[running-the-jsonbbasics-example-application-2]]
 ===== Running the jsonbbasics Example Application
 
 This section describes how to run the `jsonbbasics` example application

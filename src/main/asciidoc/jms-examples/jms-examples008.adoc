@@ -266,9 +266,7 @@ To view the bean output,
 ----
 +
 The output from the enterprise beans appears in the server log file. The
-Publisher session bean sends two sets of 18 messages numbered 0 through
-17. Because of the message selector, the message-driven bean receives
-only the messages whose `NewsType` property is `Sports` or `Opinion`.
+Publisher session bean sends two sets of 18 messages numbered 0 through 17. Because of the message selector, the message-driven bean receives only the messages whose `NewsType` property is `Sports` or `Opinion`.
 4.  Undeploy the application after you have finished running it:
 +
 [source,java]

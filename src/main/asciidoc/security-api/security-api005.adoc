@@ -26,9 +26,9 @@ the `TestIdentityStore`. Note that the configuration described in these sections
 already been completed in the application files, but is provided here to illustrate
 what you need to do to use a custom identity store.
 
-* link:#define-the-users-and-groups-in-the-identity-store[Define the Users and Groups in the Identity Store]
-* link:#specify-the-authentication-mechanism[Specify the Authentication Mechanism]
-* link:#declare-roles-in-the-servlet-container[Declare Roles in the Servlet Container]
+* link:#define-the-users-and-groups-in-the-identity-store-2[Define the Users and Groups in the Identity Store]
+* link:#specify-the-authentication-mechanism-2[Specify the Authentication Mechanism]
+* link:#declare-roles-in-the-servlet-container-2[Declare Roles in the Servlet Container]
 
 When a request that includes credentials is sent to the application, the configured
 authentication mechanism comes into effect and authentication is performed
@@ -54,7 +54,8 @@ Content-Language:
 Content-Type: text/html
 ----
 
-[[define-the-users-and-groups-in-the-identity-store]]
+[[define-the-users-and-groups-in-the-identity-store-2]]
+
 ====== Define the Users and Groups in the Identity Store
 
 The following table shows the user, password, and group used in this example.
@@ -75,7 +76,9 @@ if (usernamePasswordCredential.compareTo("Joe", "secret1")) {
     return new CredentialValidationResult("Joe", new HashSet<>(asList("foo", "bar")));
 }
 ----
-[[specify-the-authentication-mechanism]]
+
+[[specify-the-authentication-mechanism-2]]
+
 ====== Specify the Authentication Mechanism
 
 In this application, credentials are validated using the BASIC authentication mechanism.
@@ -99,8 +102,10 @@ public class ApplicationConfig {
 ----
 
 
-[[declare-roles-in-the-servlet-container]]
+[[declare-roles-in-the-servlet-container-2]]
+
 ====== Declare Roles in the Servlet Container
+
 When a request is made to the application, the roles the user is in are
 returned as part of the response. Note that the container needs to be made aware
 of the supported roles, which are defined using the `@Declareroles({ "foo", "bar", "kaz" })`
@@ -167,7 +172,7 @@ select Build.
 This command builds and deploys the example application to your
 GlassFish Server instance.
 
-[[GJQZH]][[to-build-package-and-deploy-the-custom-identity-store-example-using-using-maven]]
+[[to-build-package-and-deploy-the-custom-identity-store-example-using-using-maven]]
 
 ====== To Build, Package, and Deploy the custom-identity-store Example Using Maven
 

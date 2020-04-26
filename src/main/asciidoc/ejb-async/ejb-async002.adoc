@@ -107,53 +107,40 @@ The following topics are addressed here:
 [[to-run-the-async-example-application-using-netbeans-ide]]
 ====== To Run the async Example Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+.  Make sure that GlassFish Server has been started (see link:#BNADI[Starting and Stopping GlassFish Server]).
+.  From the File menu, choose Open Project.
+.  In the Open Project dialog box, navigate to:
 +
 [source,java]
 ----
 tut-install/examples/ejb
 ----
-4.  Select the `async` folder, select Open Required Projects, and click
-Open Project.
-5.  In the Projects tab, right-click the `async-smtpd` project and
-select Run.
+.  Select the `async` folder, select Open Required Projects, and click Open Project.
+.  In the Projects tab, right-click the `async-smtpd` project and select Run.
 +
-The SMTP server simulator starts accepting connections. The async-smptd
-output tab shows the following message:
+The SMTP server simulator starts accepting connections. The async-smptd output tab shows the following message:
 +
 [source,java]
 ----
 [Test SMTP server listening on port 3025]
 ----
-6.  In the Projects tab, right-click the `async-war` project and select
-Build.
+. In the Projects tab, right-click the `async-war` project and select Build.
 +
-This command configures the Jakarta Mail resource using a GlassFish Server
-administrative command and builds, packages, and deploys the `async-war`
-module.
-7.  Open the following URL in a web browser window:
+This command configures the Jakarta Mail resource using a GlassFish Server administrative command and builds, packages, and deploys the `async-war` module.
+. Open the following URL in a web browser window:
 +
 [source,java]
 ----
 http://localhost:8080/async-war
 ----
-8.  In the web browser window, enter an email address and click Send
-email.
+. In the web browser window, enter an email address and click Send email.
 +
-The `MailerBean` stateless bean uses the Jakarta Mail API to deliver an
-email to the SMTP server simulator. The async-smptd output window in
-NetBeans IDE shows the resulting email message, including its headers.
-9.  To stop the SMTP server simulator, click the X button on the right
-side of the status bar in NetBeans IDE.
-10. Delete the Jakarta Mail session resource.
-1.  In the Services tab, expand the Servers node, then expand the
-GlassFish Server server node.
-2.  Expand the Resources node, then expand the Jakarta Mail Sessions node.
-3.  Right-click mail/myExampleSession and select Unregister.
+The `MailerBean` stateless bean uses the Jakarta Mail API to deliver an email to the SMTP server simulator. The async-smptd output window in NetBeans IDE shows the resulting email message, including its headers.
+.  To stop the SMTP server simulator, click the X button on the right side of the status bar in NetBeans IDE.
+. Delete the Jakarta Mail session resource.
+.. In the Services tab, expand the Servers node, then expand the GlassFish Server server node.
+.. Expand the Resources node, then expand the Jakarta Mail Sessions node.
+.. Right-click mail/myExampleSession and select Unregister.
 
 [[GKRFB]]
 [[to-run-the-async-example-application-using-maven]]

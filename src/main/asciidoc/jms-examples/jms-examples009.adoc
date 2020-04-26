@@ -146,25 +146,25 @@ This example uses two message-driven beans, both under
 
 The beans take the following steps.
 
-1.  They inject a `MessageDrivenContext` resource, an `EntityManager`,
+.  They inject a `MessageDrivenContext` resource, an `EntityManager`,
 and a `JMSContext`.
-2.  The `onMessage` method retrieves the information in the message. The
+.  The `onMessage` method retrieves the information in the message. The
 `EquipmentMDB`'s `onMessage` method chooses equipment, based on the new
 hire's position; the `OfficeMDB`'s `onMessage` method randomly generates
 an office number.
-3.  After a slight delay to simulate real world processing hitches, the
+.  After a slight delay to simulate real world processing hitches, the
 `onMessage` method calls a helper method, `compose`.
-4.  The `compose` method takes the following steps.
-1.  It either creates and persists the `SetupOffice` entity or finds it
+.  The `compose` method takes the following steps.
+..  It either creates and persists the `SetupOffice` entity or finds it
 by primary key.
-2.  It uses the entity to store the equipment or the office information
+..  It uses the entity to store the equipment or the office information
 in the database, calling either the `doEquipmentList` or the
 `doOfficeNumber` business method.
-3.  If the business method returns `true`, meaning that all of the
+..  If the business method returns `true`, meaning that all of the
 information has been stored, it retrieves the reply destination
 information from the message, creates a `JMSProducer`, and sends a reply
 message that contains the information stored in the entity.
-4.  It removes the entity.
+..  It removes the entity.
 
 [[BNCHL]][[coding-the-entity-class-for-the-clientmdbentity-example]]
 
