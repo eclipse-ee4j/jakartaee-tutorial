@@ -8,11 +8,6 @@ to use the batch framework in Jakarta EE to analyze the log file from a web
 server. This example application reads a log file and finds what
 percentage of page views from tablet devices are product sales.
 
-The following topics are addressed here:
-
-* link:#BABCHDFB[Architecture of the webserverlog Example Application]
-* link:#BABFIHJA[Running the webserverlog Example Application]
-
 [[BABCHDFB]][[architecture-of-the-webserverlog-example-application]]
 
 === Architecture of the webserverlog Example Application
@@ -386,13 +381,6 @@ The `showResults` method reads the results from a text file.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `webserverlog` example application.
-
-The following topics are addressed here:
-
-* link:#BABHIJBE[To Run the webserverlog Example Application Using
-NetBeans IDE]
-* link:#BABGACCD[To Run the webserverlog Example Application Using
-Maven]
 
 [[BABHIJBE]][[to-run-the-webserverlog-example-application-using-netbeans-ide]]
 

@@ -6,25 +6,12 @@ The following queries are from the `Player` entity of the `roster`
 application, which is documented in
 link:#GIQSQ[The roster Application].
 
-The following topics are addressed here:
-
-* link:#BNBTM[Simple Queries]
-* link:#BNBTQ[Queries That Navigate to Related Entities]
-* link:#BNBTW[Queries with Other Conditional Expressions]
-* link:#BNBUC[Bulk Updates and Deletes]
-
 [[BNBTM]][[simple-queries]]
 
 === Simple Queries
 
 If you are unfamiliar with the query language, these simple queries are
 a good place to start.
-
-The following topics are addressed here:
-
-* link:#BNBTN[A Basic Select Query]
-* link:#BNBTO[Eliminating Duplicate Values]
-* link:#BNBTP[Using Named Parameters]
 
 [[BNBTN]][[a-basic-select-query]]
 
@@ -99,14 +86,6 @@ In the query language, an expression can traverse, or navigate, to
 related entities. These expressions are the primary difference between
 the Jakarta Persistence query language and SQL. Queries navigates to
 related entities, whereas SQL joins tables.
-
-The following topics are addressed here:
-
-* link:#BNBTR[A Simple Query with Relationships]
-* link:#BNBTS[Navigating to Single-Valued Relationship Fields]
-* link:#BNBTT[Traversing Relationships with an Input Parameter]
-* link:#BNBTU[Traversing Multiple Relationships]
-* link:#BNBTV[Navigating According to Related Fields]
 
 [[BNBTR]][[a-simple-query-with-relationships]]
 
@@ -241,14 +220,6 @@ following examples demonstrate some of the other kinds of conditional
 expressions. For descriptions of all conditional expressions, see
 link:#BNBUU[WHERE Clause].
 
-The following topics are addressed here:
-
-* link:#BNBTX[The LIKE Expression]
-* link:#BNBTY[The IS NULL Expression]
-* link:#BNBTZ[The IS EMPTY Expression]
-* link:#BNBUA[The BETWEEN Expression]
-* link:#BNBUB[Comparison Operators]
-
 [[BNBTX]][[the-like-expression]]
 
 ==== The LIKE Expression
@@ -361,11 +332,6 @@ expressions in queries. `UPDATE` and `DELETE` operate on multiple
 entities according to the condition or conditions set in the `WHERE`
 clause. The `WHERE` clause in `UPDATE` and `DELETE` queries follows the
 same rules as `SELECT` queries.
-
-The following topics are addressed here:
-
-* link:#BNBUD[Update Queries]
-* link:#BNBUE[Delete Queries]
 
 [[BNBUD]][[update-queries]]
 

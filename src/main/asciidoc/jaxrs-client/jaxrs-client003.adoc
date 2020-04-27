@@ -5,23 +5,12 @@
 This section describes some of the advanced features of the Jakarta REST
 Client API.
 
-The following topics are addressed here:
-
-* link:#CHDGBBCC[Configuring the Client Request]
-* link:#CHDEBIGG[Asynchronous Invocations in the Client API]
-
 [[CHDGBBCC]][[configuring-the-client-request]]
 
 === Configuring the Client Request
 
 Additional configuration options may be added to the client request
 after it is created but before it is invoked.
-
-The following topics are addressed here:
-
-* link:#CHDHAFBG[Setting Message Headers in the Client Request]
-* link:#CHDHFFDJ[Setting Cookies in the Client Request]
-* link:#CHDJEFID[Adding Filters to the Client]
 
 [[CHDHAFBG]][[setting-message-headers-in-the-client-request]]
 

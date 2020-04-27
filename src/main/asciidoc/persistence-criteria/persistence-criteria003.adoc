@@ -7,16 +7,6 @@ The basic semantics of a Criteria query consists of a `SELECT` clause, a
 Criteria queries set these clauses by using Java programming language
 objects, so the query can be created in a typesafe manner.
 
-The following topics are addressed here:
-
-* link:#GJIVS[Creating a Criteria Query]
-* link:#GJIVQ[Query Roots]
-* link:#GJIUV[Querying Relationships Using Joins]
-* link:#GJIVE[Path Navigation in Criteria Queries]
-* link:#GJIVI[Restricting Criteria Query Results]
-* link:#GJIXE[Managing Criteria Query Results]
-* link:#GJIVY[Executing Queries]
-
 [[GJIVS]][[creating-a-criteria-query]]
 
 === Creating a Criteria Query
@@ -359,11 +349,6 @@ an entity
 * The `groupBy` method groups the results of a query together according
 to attributes of an entity, and the `having` method restricts those
 groups according to a condition
-
-The following topics are addressed here:
-
-* link:#GJIWO[Ordering Results]
-* link:#GJIXG[Grouping Results]
 
 [[GJIWO]][[ordering-results]]
 

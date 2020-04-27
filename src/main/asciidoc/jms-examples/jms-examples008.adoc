@@ -15,12 +15,6 @@ You will find the source files for this section in the
 tut-install`/examples/jms/clientsessionmdb/` directory. Path names in
 this section are relative to this directory.
 
-The following topics are addressed here:
-
-* link:#BNCGX[Writing the Application Components for the
-clientsessionmdb Example]
-* link:#CHDDFAHA[Running the clientsessionmdb Example]
-
 [[BNCGX]][[writing-the-application-components-for-the-clientsessionmdb-example]]
 
 === Writing the Application Components for the clientsessionmdb Example
@@ -176,11 +170,6 @@ You can use either NetBeans IDE or Maven to build, deploy, and run the
 This example uses an annotation-defined topic and the preconfigured
 default connection factory `java:comp/DefaultJMSConnectionFactory`, so
 you do not have to create resources for it.
-
-The following topics are addressed here:
-
-* link:#CHDGGAIB[To Run clientsessionmdb Using NetBeans IDE]
-* link:#CHDDDHBE[To Run clientsessionmdb Using Maven]
 
 [[CHDGGAIB]][[to-run-clientsessionmdb-using-netbeans-ide]]
 

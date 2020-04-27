@@ -7,17 +7,6 @@ Persistence 2.2 specification available at
 `https://jakarta.ee/specifications/persistence/2.2/`. Much of the following material
 paraphrases or directly quotes the specification.
 
-The following topics are addressed here:
-
-* link:#BNBUG[BNF Symbols]
-* link:#BNBUI[BNF Grammar of the Jakarta Persistence Query Language]
-* link:#BNBUJ[FROM Clause]
-* link:#BNBUQ[Path Expressions]
-* link:#BNBUU[WHERE Clause]
-* link:#BNBVX[SELECT Clause]
-* link:#BNBWD[ORDER BY Clause]
-* link:#BNBWE[GROUP BY and HAVING Clauses]
-
 [[BNBUG]][[bnf-symbols]]
 
 === BNF Symbols
@@ -291,14 +280,6 @@ trim_specification ::= LEADING | TRAILING | BOTH
 
 The `FROM` clause defines the domain of the query by declaring
 identification variables.
-
-The following topics are addressed here:
-
-* link:#BNBUK[Identifiers]
-* link:#BNBUM[Identification Variables]
-* link:#BNBUN[Range Variable Declarations]
-* link:#BNBUO[Collection Member Declarations]
-* link:#BNBUP[Joins]
 
 [[BNBUK]][[identifiers]]
 
@@ -616,12 +597,6 @@ path expressions can appear in any of the main clauses of a query
 `ORDER BY`). Finally, although much of the query language is a subset of
 SQL, path expressions are extensions not found in SQL.
 
-The following topics are addressed here:
-
-* link:#BNBUR[Examples of Path Expressions]
-* link:#BNBUS[Expression Types]
-* link:#BNBUT[Navigation]
-
 [[BNBUR]][[examples-of-path-expressions]]
 
 ==== Examples of Path Expressions
@@ -716,24 +691,6 @@ syntax for the `WHERE` clause is as follows:
 ----
 where_clause ::= WHERE conditional_expression
 ----
-
-The following topics are addressed here:
-
-* link:#BNBUV[Literals]
-* link:#BNBVA[Input Parameters]
-* link:#BNBVB[Conditional Expressions]
-* link:#BNBVC[Operators and Their Precedence]
-* link:#BNBVE[BETWEEN Expressions]
-* link:#BNBVF[IN Expressions]
-* link:#BNBVG[LIKE Expressions]
-* link:#BNBVI[NULL Comparison Expressions]
-* link:#BNBVJ[Empty Collection Comparison Expressions]
-* link:#BNBVK[Collection Member Expressions]
-* link:#BNBVL[Subqueries]
-* link:#BNBVO[Functional Expressions]
-* link:#GJJND[Case Expressions]
-* link:#BNBVR[NULL Values]
-* link:#BNBVU[Equality Semantics]
 
 [[BNBUV]][[literals]]
 
@@ -1346,12 +1303,6 @@ truth values of conditional tests.
 
 The `SELECT` clause defines the types of the objects or values returned
 by the query.
-
-The following topics are addressed here:
-
-* link:#BNBVY[Return Types]
-* link:#BNBWB[The DISTINCT Keyword]
-* link:#BNBWC[Constructor Expressions]
 
 [[BNBVY]][[return-types]]
 

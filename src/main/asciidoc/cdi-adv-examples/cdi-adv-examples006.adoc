@@ -10,12 +10,6 @@ The source files are located in the
 `_tut-install_/examples/cdi/decorators/src/main/java/jakarta/tutorial/decorators/`
 directory.
 
-The following topics are addressed here:
-
-* link:#CHDDDFCI[Overview of the decorators Example]
-* link:#GKPAQ[Components of the decorators Example]
-* link:#GKPBK[Running the decorators Example]
-
 [[CHDDDFCI]][[overview-of-the-decorators-example]]
 
 === Overview of the decorators Example
@@ -93,14 +87,6 @@ The `beans.xml` file specifies both the decorator and the interceptor:
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `decorators` application.
-
-The following topics are addressed here:
-
-* link:#GKPAG[To Build, Package, and Deploy the decorators Example Using
-NetBeans IDE]
-* link:#GKPAJ[To Build, Package, and Deploy the decorators Example Using
-Maven]
-* link:#GKPAN[To Run the decorators Example]
 
 [[GKPAG]][[to-build-package-and-deploy-the-decorators-example-using-netbeans-ide]]
 

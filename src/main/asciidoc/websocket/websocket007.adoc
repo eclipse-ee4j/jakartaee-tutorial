@@ -14,13 +14,6 @@ This mechanism simplifies WebSocket applications, because it decouples
 the business logic from the serialization and deserialization of
 objects.
 
-The following topics are addressed here:
-
-* link:#CIHBIGBI[Implementing Encoders to Convert Java Objects into
-WebSocket Messages]
-* link:#CIHGDJFG[Implementing Decoders to Convert WebSocket Messages
-into Java Objects]
-
 [[CIHBIGBI]][[implementing-encoders-to-convert-java-objects-into-websocket-messages]]
 
 === Implementing Encoders to Convert Java Objects into WebSocket Messages

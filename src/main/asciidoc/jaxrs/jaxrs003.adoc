@@ -7,12 +7,6 @@ running your own Jakarta REST applications. This section demonstrates the
 steps that are needed to create, build, deploy, and test a very simple
 web application that uses Jakarta REST annotations.
 
-The following topics are addressed here:
-
-* link:#GIPYZ[Creating a Simple RESTful Web Service]
-* link:#GJVBC[The rsvp Example Application]
-* link:#GIRCI[Real-World Examples]
-
 [[GIPYZ]][[creating-a-simple-restful-web-service]]
 
 === Creating a Simple RESTful Web Service
@@ -24,10 +18,6 @@ method.
 
 You can find a version of this application at
 `_tut-install_/examples/jaxrs/hello/`.
-
-The following topics are addressed here:
-
-* link:#GIQAA[To Create a RESTful Web Service Using NetBeans IDE]
 
 [[GIQAA]][[to-create-a-restful-web-service-using-netbeans-ide]]
 
@@ -95,11 +85,6 @@ The `rsvp` example application, located in the
 event to indicate whether they will attend. The events, people invited
 to the event, and the responses to the invite are stored in Apache Derby using Jakarta Persistence. The Jakarta REST resources in `rsvp`
 are exposed in a stateless session enterprise bean.
-
-The following topics are addressed here:
-
-* link:#GJVAW[Components of the rsvp Example Application]
-* link:#GKCCA[Running the rsvp Example Application]
 
 [[GJVAW]][[components-of-the-rsvp-example-application]]
 
@@ -200,11 +185,6 @@ Application"].
 
 Both NetBeans IDE and Maven can be used to deploy and run the `rsvp`
 example application.
-
-The following topics are addressed here:
-
-* link:#CIHEFEHA[To Run the rsvp Example Application Using NetBeans IDE]
-* link:#CIHHHIEI[To Run the rsvp Example Application Using Maven]
 
 [[CIHEFEHA]][[to-run-the-rsvp-example-application-using-netbeans-ide]]
 

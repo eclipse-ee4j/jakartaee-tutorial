@@ -8,11 +8,6 @@ to use the batch framework in Jakarta EE to implement a phone billing
 system. This example application processes a log file of phone calls and
 creates a bill for each customer.
 
-The following topics are addressed here:
-
-* link:#BABDEIFG[Architecture of the phonebilling Example Application]
-* link:#BABBGDAA[Running the phonebilling Example Application]
-
 [[BABDEIFG]][[architecture-of-the-phonebilling-example-application]]
 
 === Architecture of the phonebilling Example Application
@@ -476,13 +471,6 @@ displayed on the `jobstarted.xhtml` server faces page using a table.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `phonebilling` example application.
-
-The following topics are addressed here:
-
-* link:#BABIBBBG[To Run the phonebilling Example Application Using
-NetBeans IDE]
-* link:#BABFHIIB[To Run the phonebilling Example Application Using
-Maven]
 
 [[BABIBBBG]][[to-run-the-phonebilling-example-application-using-netbeans-ide]]
 

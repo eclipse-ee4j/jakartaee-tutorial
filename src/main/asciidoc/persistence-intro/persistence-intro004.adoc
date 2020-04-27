@@ -10,11 +10,6 @@ context defines the scope under which particular entity instances are
 created, persisted, and removed. The `EntityManager` interface defines
 the methods that are used to interact with the persistence context.
 
-The following topics are addressed here:
-
-* link:#BNBQY[The EntityManager Interface]
-* link:#BNBRJ[Persistence Units]
-
 [[BNBQY]][[the-entitymanager-interface]]
 
 === The EntityManager Interface
@@ -22,16 +17,6 @@ The following topics are addressed here:
 The `EntityManager` API creates and removes persistent entity instances,
 finds entities by the entity's primary key, and allows queries to be run
 on entities.
-
-The following topics are addressed here:
-
-* link:#BNBQZ[Container-Managed Entity Managers]
-* link:#BNBRA[Application-Managed Entity Managers]
-* link:#BNBRB[Finding Entities Using the EntityManager]
-* link:#BNBRC[Managing an Entity Instance's Lifecycle]
-* link:#BNBRD[Persisting Entity Instances]
-* link:#BNBRE[Removing Entity Instances]
-* link:#BNBRF[Synchronizing Entity Data to the Database]
 
 [[BNBQZ]][[container-managed-entity-managers]]
 

@@ -8,12 +8,6 @@ stateless session bean that implements a single method: `sayHello`. This
 method matches the `sayHello` method invoked by the client described in
 link:#BNAYX[A Simple Jakarta XML Web Services Application Client].
 
-The following topics are addressed here:
-
-* link:#BNBOS[The Web Service Endpoint Implementation Class]
-* link:#BNBOT[Stateless Session Bean Implementation Class]
-* link:#BNBOU[Running the helloservice Example]
-
 [[BNBOS]][[the-web-service-endpoint-implementation-class]]
 
 === The Web Service Endpoint Implementation Class
@@ -89,14 +83,6 @@ public class HelloServiceBean {
 You can use either NetBeans IDE or Maven to build, package, and deploy
 the `helloservice` example. You can then use the Administration Console
 to test the web service endpoint methods.
-
-The following topics are addressed here:
-
-* link:#BNBOV[To Build, Package, and Deploy the helloservice Example
-Using NetBeans IDE]
-* link:#BNBOW[To Build, Package, and Deploy the helloservice Example
-Using Maven]
-* link:#BNBOX[To Test the Service without a Client]
 
 [[BNBOV]][[to-build-package-and-deploy-the-helloservice-example-using-netbeans-ide]]
 

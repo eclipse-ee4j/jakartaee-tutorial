@@ -8,11 +8,6 @@ how to use a WebSocket endpoint to provide data updates to web clients.
 The example resembles a service that provides periodic updates on the
 price and trading volume of an electronically traded fund (ETF).
 
-The following topics are addressed here:
-
-* link:#CIHJHJCD[Architecture of the dukeetf2 Sample Application]
-* link:#CIHHBAIC[Running the dukeetf2 Example Application]
-
 [[CIHJHJCD]][[architecture-of-the-dukeetf2-sample-application]]
 
 === Architecture of the dukeetf2 Sample Application
@@ -189,12 +184,6 @@ used in HTML5 web client development.
 
 This section describes how to run the `dukeetf2` example application
 using NetBeans IDE and from the command line.
-
-The following topics are addressed here:
-
-* link:#CIHEBIAH[To Run the dukeetf2 Example Application Using NetBeans
-IDE]
-* link:#CIHDJCGJ[To Run the dukeetf2 Example Application Using Maven]
 
 [[CIHEBIAH]][[to-run-the-dukeetf2-example-application-using-netbeans-ide]]
 

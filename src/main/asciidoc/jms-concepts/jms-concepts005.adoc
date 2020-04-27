@@ -6,18 +6,6 @@ This section describes how using Jakarta Messaging in enterprise bean
 applications or web applications differs from using it in application
 clients.
 
-The following topics are addressed here:
-
-* link:#CHDGICJB[Overview of Using Jakarta Messaging]
-* link:#BABHFBDH[Creating Resources for Jakarta EE Applications]
-* link:#BNCGM[Using Resource Injection in Enterprise Bean or Web
-Components]
-* link:#BNCGN[Using Jakarta EE Components to Produce and to Synchronously
-Receive Messages]
-* link:#BNCGQ[Using Message-Driven Beans to Receive Messages
-Asynchronously]
-* link:#BNCGS[Managing Jakarta Transactions]
-
 [[CHDGICJB]][[overview-of-using-the-jms-api]]
 
 === Overview of Using Jakarta Messaging
@@ -143,11 +131,6 @@ resources that exist outside of individual applications.
 
 You may use resource injection to inject both administered objects and
 `JMSContext` objects in Jakarta EE applications.
-
-The following topics are addressed here:
-
-* link:#CHDCHDIJ[Injecting a ConnectionFactory, Queue, or Topic]
-* link:#BABCJBEE[Injecting a JMSContext Object]
 
 [[CHDCHDIJ]][[injecting-a-connectionfactory-queue-or-topic]]
 

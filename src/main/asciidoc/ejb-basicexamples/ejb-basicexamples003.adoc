@@ -5,12 +5,6 @@
 The `counter` example demonstrates how to create a singleton session
 bean.
 
-The following topics are addressed here:
-
-* link:#GIPVC[Creating a Singleton Session Bean]
-* link:#GIPXL[The Architecture of the counter Example]
-* link:#GIPVL[Running the counter Example]
-
 [[GIPVC]][[creating-a-singleton-session-bean]]
 
 === Creating a Singleton Session Bean
@@ -439,13 +433,6 @@ managed bean. Here is the content of `index.xhtml`:
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `counter` example.
-
-The following topics are addressed here:
-
-The following topics are addressed here:
-
-* link:#GIPXT[To Run the counter Example Using NetBeans IDE]
-* link:#GIPZW[To Run the counter Example Using Maven]
 
 [[GIPXT]][[to-run-the-counter-example-using-netbeans-ide]]
 

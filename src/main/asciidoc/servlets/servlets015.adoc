@@ -9,11 +9,6 @@ example shows how to develop a simple application by using the
 `@WebServlet`, `@WebFilter`, and `@WebListener` annotations to create a
 servlet, a listener, and a filter.
 
-The following topics are addressed here:
-
-* link:#CHDEBFCB[Components of the mood Example Application]
-* link:#GKCOJ[Running the mood Example]
-
 [[CHDEBFCB]][[components-of-the-mood-example-application]]
 
 === Components of the mood Example Application
@@ -58,11 +53,6 @@ entries appear in the server log.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `mood` example.
-
-The following topics are addressed here:
-
-* link:#GKCOB[To Run the mood Example Using NetBeans IDE]
-* link:#GKCPJ[To Run the mood Example Using Maven]
 
 [[GKCOB]][[to-run-the-mood-example-using-netbeans-ide]]
 

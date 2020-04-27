@@ -131,12 +131,6 @@ public class Hello {
 You can use either NetBeans IDE or Maven to build, package, and deploy
 the `helloservice-war` application.
 
-The following topics are addressed here:
-
-* link:#BNAYS[To Build, Package, and Deploy the Service Using NetBeans
-IDE]
-* link:#BNAYT[To Build, Package, and Deploy the Service Using Maven]
-
 [[BNAYS]][[to-build-package-and-deploy-the-service-using-netbeans-ide]]
 
 ==== To Build, Package, and Deploy the Service Using NetBeans IDE
@@ -210,10 +204,6 @@ service.
 GlassFish Server allows you to test the methods of a web service
 endpoint.
 
-The following topics are addressed here:
-
-* link:#BNAYW[To Test the Service without a Client]
-
 [[BNAYW]][[to-test-the-service-without-a-client]]
 
 ==== To Test the Service without a Client
@@ -244,11 +234,6 @@ accesses the `sayHello` method of `HelloService`. This call is made
 through a port, a local object that acts as a proxy for the remote
 service. The port is created at development time by the `wsimport` Maven
 goal, which generates JAX-WS portable artifacts based on a WSDL file.
-
-The following topics are addressed here:
-
-* link:#BNAYY[Coding the Application Client]
-* link:#BNAYZ[Running the Application Client]
 
 [[BNAYY]][[coding-the-application-client]]
 
@@ -329,10 +314,6 @@ run the `hello-appclient` application. To build the client, you must
 first have deployed `helloservice-war`, as described in
 link:#BNAYR[Building, Packaging, and Deploying the Service].
 
-The following topics are addressed here:
-
-* link:#CIHBGFGA[To Run the Application Client Using NetBeans IDE]
-
 [[CIHBGFGA]][[to-run-the-application-client-using-netbeans-ide]]
 
 To Run the Application Client Using NetBeans IDE
@@ -394,11 +375,6 @@ Hello, world.
 `HelloServlet` is a servlet that, like the Java client, calls the
 `sayHello` method of the web service. Like the application client, it
 makes this call through a port.
-
-The following topics are addressed here:
-
-* link:#GJYFL[Coding the Servlet]
-* link:#GJYGE[Running the Web Client]
 
 [[GJYFL]][[coding-the-servlet]]
 
@@ -514,11 +490,6 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `hello-webclient` application. To build the client, you must
 first have deployed `helloservice-war`, as described in
 link:#BNAYR[Building, Packaging, and Deploying the Service].
-
-The following topics are addressed here:
-
-* link:#CIHHFFEC[To Run the Web Client Using NetBeans IDE]
-* link:#CIHHDCEH[To Run the Web Client Using Maven]
 
 [[CIHHFFEC]][[to-run-the-web-client-using-netbeans-ide]]
 

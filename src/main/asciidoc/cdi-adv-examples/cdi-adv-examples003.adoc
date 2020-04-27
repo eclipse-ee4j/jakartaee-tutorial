@@ -13,11 +13,6 @@ page, and configuration files. It also contains a qualifier type. When
 you run it, you do not need to edit the `beans.xml` file and redeploy
 the application to change its behavior.
 
-The following topics are addressed here:
-
-* link:#GKHRO[Components of the producermethods Example]
-* link:#GKHQE[Running the producermethods Example]
-
 [[GKHRO]][[components-of-the-producermethods-example]]
 
 === Components of the producermethods Example
@@ -113,14 +108,6 @@ whose selected value is assigned to the property `coderBean.coderType`:
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `producermethods` application.
-
-The following topics are addressed here:
-
-* link:#GKHPE[To Build, Package, and Deploy the producermethods Example
-Using NetBeans IDE]
-* link:#GKHPS[To Build, Package, and Deploy the producermethods Example
-Using Maven]
-* link:#GKHQG[To Run the producermethods Example]
 
 [[GKHPE]][[to-build-package-and-deploy-the-producermethods-example-using-netbeans-ide]]
 

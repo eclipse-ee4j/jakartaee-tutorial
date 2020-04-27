@@ -9,12 +9,6 @@ button that presents either a formal or an informal greeting, depending
 on how you edited one of the classes. The example includes four source
 files, a Facelets page and template, and configuration files.
 
-The following topics are addressed here:
-
-* link:#GJCQS[The simplegreeting Source Files]
-* link:#GJDOJ[The Facelets Template and Page]
-* link:#GJCYM[Running the simplegreeting Example]
-
 [[GJCQS]][[the-simplegreeting-source-files]]
 
 === The simplegreeting Source Files
@@ -140,14 +134,6 @@ tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.cs
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `simplegreeting` application.
-
-The following topics are addressed here:
-
-* link:#GJCXP[To Build, Package, and Run the simplegreeting Example
-Using NetBeans IDE]
-* link:#GJCZT[To Build, Package, and Deploy the simplegreeting Example
-Using Maven]
-* link:#GJCZE[To Run the simplegreeting Example]
 
 [[GJCXP]][[to-build-package-and-run-the-simplegreeting-example-using-netbeans-ide]]
 

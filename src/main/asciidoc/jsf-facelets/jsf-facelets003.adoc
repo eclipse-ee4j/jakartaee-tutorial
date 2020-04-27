@@ -11,12 +11,6 @@ Jakarta Server Faces application. The following tasks are usually required:
 * Mapping the `FacesServlet` instance
 * Adding managed bean declarations
 
-The following topics are addressed here:
-
-* link:#creating-a-facelets-application[Creating a Facelets Application]
-* link:#configuring-the-application[Configuring the Application]
-* link:#running-the-guessnumber-jsf-facelets Example[Running the guessnumber-jsf Facelets Example]
-
 [[GIQTE]][[creating-a-facelets-application]]
 
 === Creating a Facelets Application
@@ -295,14 +289,6 @@ the user, the default project stage is `Production`.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `guessnumber-jsf` example.
-
-The following topics are addressed here:
-
-* link:#GJQZL[To Build, Package, and Deploy the guessnumber-jsf Example
-Using NetBeans IDE]
-* link:#GJQYU[To Build, Package, and Deploy the guessnumber-jsf Example
-Using Maven]
-* link:#GJQYX[To Run the guessnumber-jsf Example]
 
 [[GJQZL]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-netbeans-ide]]
 

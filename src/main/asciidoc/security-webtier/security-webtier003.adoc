@@ -6,14 +6,6 @@ Programmatic security is used by security-aware applications when
 declarative security alone is not sufficient to express the security
 model of the application.
 
-The following topics are addressed here:
-
-* link:#authenticating-users-programmatically[Authenticating Users Programmatically]
-* link:#checking-caller-identity-programmatically[Checking Caller Identity Programmatically]
-* link:#testing-access-to-a-resource-programmatically[Testing Access to a Resource Programmatically]
-* link:#example-code-for-programmatic-security[Example Code for Programmatic Security]
-* link:#declaring-and-linking-role-references[Declaring and Linking Role References]
-
 [[GIRCJ]][[authenticating-users-programmatically]]
 
 === Authenticating Users Programmatically

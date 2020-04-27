@@ -5,13 +5,6 @@
 Jakarta Bean Validation defines annotations, interfaces, and classes to allow
 developers to create custom constraints.
 
-The following topics are addressed here:
-
-* link:#GKAIA[Using the Built-In Constraints to Make a New Constraint]
-* link:#CIHCICAI[Removing Ambiguity in Constraint Targets]
-* link:#implementing-temporal-constraints-using-clockprovider[Implementing Temporal Constraints Using ClockProvider]
-* link:#custom-constraints[Custom Constraints]
-
 [[GKAIA]][[using-the-built-in-constraints-to-make-a-new-constraint]]
 
 === Using the Built-In Constraints to Make a New Constraint

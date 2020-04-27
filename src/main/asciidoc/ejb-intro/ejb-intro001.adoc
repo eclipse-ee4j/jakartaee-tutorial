@@ -10,12 +10,6 @@ enterprise beans might implement the business logic in methods called
 `checkInventoryLevel` and `orderProduct`. By invoking these methods,
 clients can access the inventory services provided by the application.
 
-The following topics are addressed here:
-
-* link:#GIPLK[Benefits of Enterprise Beans]
-* link:#GIPKN[When to Use Enterprise Beans]
-* link:#GIPNM[Types of Enterprise Beans]
-
 [[GIPLK]][[benefits-of-enterprise-beans]]
 
 === Benefits of Enterprise Beans

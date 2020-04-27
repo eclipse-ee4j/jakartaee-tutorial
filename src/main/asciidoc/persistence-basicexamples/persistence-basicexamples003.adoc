@@ -189,13 +189,6 @@ JPQL queries used in `order`. Criteria queries are Java programming
 language, typesafe queries defined in the business tier of `roster`, in
 the `RequestBean` stateful session bean.
 
-The following topics are addressed here:
-
-* link:#GJJEX[Metamodel Classes in the roster Application]
-* link:#GJJFN[Obtaining a CriteriaBuilder Instance in RequestBean]
-* link:#GJJFF[Creating Criteria Queries in RequestBean's Business
-Methods]
-
 [[GJJEX]][[metamodel-classes-in-the-roster-application]]
 
 ==== Metamodel Classes in the roster Application
@@ -342,11 +335,6 @@ the database tables used by `roster`. This is done by setting the
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `roster` application.
-
-The following topics are addressed here:
-
-* link:#GIQUG[To Run the roster Example Using NetBeans IDE]
-* link:#GIQSJ[To Run the roster Example Using Maven]
 
 [[GIQUG]][[to-run-the-roster-example-using-netbeans-ide]]
 

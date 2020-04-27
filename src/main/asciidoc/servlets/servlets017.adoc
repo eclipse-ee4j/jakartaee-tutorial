@@ -8,11 +8,6 @@ asynchronous processing in a servlet to provide data updates to web
 clients. The example resembles a service that provides periodic updates
 on the price and trading volume of an electronically traded fund (ETF).
 
-The following topics are addressed here:
-
-* link:#CHDBBEDA[Architecture of the dukeetf Example Application]
-* link:#CHDHBBBI[Running the dukeetf Example Application]
-
 [[CHDBBEDA]][[architecture-of-the-dukeetf-example-application]]
 
 === Architecture of the dukeetf Example Application
@@ -234,12 +229,6 @@ endpoint.
 
 This section describes how to run the `dukeetf` example application
 using NetBeans IDE and from the command line.
-
-The following topics are addressed here:
-
-* link:#CHDCGCJD[To Run the dukeetf Example Application Using NetBeans
-IDE]
-* link:#CHDHHAFG[To Run the dukeetf Example Application Using Maven]
 
 [[CHDCGCJD]][[to-run-the-dukeetf-example-application-using-netbeans-ide]]
 

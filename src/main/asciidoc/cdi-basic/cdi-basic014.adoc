@@ -6,13 +6,6 @@ CDI managed bean classes and their superclasses support the annotations
 for initializing and for preparing for the destruction of a bean. These
 annotations are defined in Jakarta Annotations (`https://jakarta.ee/specifications/annotations/1.3/`).
 
-The following topics are addressed here:
-
-* link:#CIHEHHCH[To Initialize a Managed Bean Using the @PostConstruct
-Annotation]
-* link:#CIHBAFAC[To Prepare for the Destruction of a Managed Bean Using
-the @PreDestroy Annotation]
-
 [[CIHEHHCH]][[to-initialize-a-managed-bean-using-the-postconstruct-annotation]]
 
 === To Initialize a Managed Bean Using the @PostConstruct Annotation

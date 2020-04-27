@@ -9,14 +9,6 @@ data stored in the persistent attributes of the entity, as described in
 link:#GKAHQ[Validating Persistent Fields and
 Properties].
 
-The following topics are addressed here:
-
-* link:#GKAOJ[Bean Validation Constraints in address-book]
-* link:#GKANL[Specifying Error Messages for Constraints in address-book]
-* link:#GKAON[Validating Contact Input from a Jakarta Server Faces
-Application]
-* link:#GKAOP[Running the address-book Example]
-
 [[GKAOJ]][[bean-validation-constraints-in-address-book]]
 
 === Bean Validation Constraints in address-book
@@ -169,11 +161,6 @@ however.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `address-book` application.
-
-The following topics are addressed here:
-
-* link:#GKAOD[To Run the address-book Example Using NetBeans IDE]
-* link:#GKANZ[To Run the address-book Example Using Maven]
 
 [[GKAOD]][[to-run-the-address-book-example-using-netbeans-ide]]
 

@@ -14,13 +14,6 @@ You will find the source files for this section in the
 tut-install`/examples/jms/clientmdbentity/` directory. Path names in
 this section are relative to this directory.
 
-The following topics are addressed here:
-
-* link:#BNCHG[Overview of the clientmdbentity Example Application]
-* link:#BNCHI[Writing the Application Components for the clientmdbentity
-Example]
-* link:#CHDEEDJH[Running the clientmdbentity Example]
-
 [[BNCHG]][[overview-of-the-clientmdbentity-example-application]]
 
 === Overview of the clientmdbentity Example Application
@@ -100,13 +93,6 @@ beans, and an entity, as well as the associated topic and queue"]
 
 Writing the components of the application involves coding the
 application client, the message-driven beans, and the entity class.
-
-The following topics are addressed here:
-
-* link:#BNCHJ[Coding the Application Client: HumanResourceClient.java]
-* link:#BNCHK[Coding the Message-Driven Beans for the clientmdbentity
-Example]
-* link:#BNCHL[Coding the Entity Class for the clientmdbentity Example]
 
 [[BNCHJ]][[coding-the-application-client-humanresourceclient.java]]
 
@@ -234,12 +220,6 @@ the preconfigured default connection factory
 `java:comp/DefaultJMSConnectionFactory` and the preconfigured default
 JDBC resource `java:comp/DefaultDataSource`, you do not need to create
 resources for it.
-
-The following topics are addressed here:
-
-* link:#CHDIJDEE[To Run clientmdbentity Using NetBeans IDE]
-* link:#CHDICHGH[To Run clientmdbentity Using Maven]
-* link:#CHDCDEEF[Viewing the Application Output]
 
 [[CHDIJDEE]][[to-run-clientmdbentity-using-netbeans-ide]]
 

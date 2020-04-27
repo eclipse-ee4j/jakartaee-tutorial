@@ -17,13 +17,6 @@ The source files are located in the
 `_tut-install_/examples/cdi/producerfields/src/main/java/jakarta/tutorial/producerfields/`
 directory.
 
-The following topics are addressed here:
-
-* link:#GKHPP[The Producer Field for the producerfields Example]
-* link:#GKHPD[The producerfields Entity and Session Bean]
-* link:#GKHPF[The producerfields Facelets Pages and Managed Bean]
-* link:#GKHRH[Running the producerfields Example]
-
 [[GKHPP]][[the-producer-field-for-the-producerfields-example]]
 
 === The Producer Field for the producerfields Example
@@ -328,14 +321,6 @@ Back button returns the user to the `index.xhtml` page.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `producerfields` application.
-
-The following topics are addressed here:
-
-* link:#GKHPB[To Build, Package, and Deploy the producerfields Example
-Using NetBeans IDE]
-* link:#GKHRM[To Build, Package, and Deploy the producerfields Example
-Using Maven]
-* link:#GKHRR[To Run the producerfields Example]
 
 [[GKHPB]][[to-build-package-and-deploy-the-producerfields-example-using-netbeans-ide]]
 

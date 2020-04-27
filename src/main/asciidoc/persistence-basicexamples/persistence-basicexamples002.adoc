@@ -51,14 +51,6 @@ The `order` application demonstrates several types of entity
 relationships: self-referential, one-to-one, one-to-many, many-to-one,
 and unidirectional relationships.
 
-The following topics are addressed here:
-
-* link:#GIQQR[Self-Referential Relationships]
-* link:#GIQSR[One-to-One Relationships]
-* link:#GIQTJ[One-to-Many Relationship Mapped to Overlapping Primary and
-Foreign Keys]
-* link:#GIQUD[Unidirectional Relationships]
-
 [[GIQQR]][[self-referential-relationships]]
 
 ==== Self-Referential Relationships
@@ -194,11 +186,6 @@ public VendorPart getVendorPart() {
 The `order` application uses several types of primary keys:
 single-valued primary keys, generated primary keys, and compound primary
 keys.
-
-The following topics are addressed here:
-
-* link:#GIQUV[Generated Primary Keys]
-* link:#GIQUF[Compound Primary Keys]
 
 [[GIQUV]][[generated-primary-keys]]
 
@@ -733,11 +720,6 @@ em.remove(order);
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `order` application. First, you will create the database tables
 in Apache Derby.
-
-The following topics are addressed here:
-
-* link:#GIQSG[To Run the order Example Using NetBeans IDE]
-* link:#GIQTY[To Run the order Example Using Maven]
 
 [[GIQSG]][[to-run-the-order-example-using-netbeans-ide]]
 

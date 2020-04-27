@@ -37,11 +37,6 @@ data that results from the download or use of content.
 |=======================================================================
 
 
-The following topics are addressed here:
-
-* link:#CHDFGBGI[Architecture of the fileupload Example Application]
-* link:#CHDIHJCI[Running the fileupload Example]
-
 [[CHDFGBGI]][[architecture-of-the-fileupload-example-application]]
 
 === Architecture of the fileupload Example Application
@@ -221,14 +216,6 @@ private String getFileName(final Part part) {
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `fileupload` example.
-
-The following topics are addressed here:
-
-* link:#CHDGDJCI[To Build, Package, and Deploy the fileupload Example
-Using NetBeans IDE]
-* link:#CHDCFADG[To Build, Package, and Deploy the fileupload Example
-Using Maven]
-* link:#CHDDDAAJ[To Run the fileupload Example]
 
 [[CHDGDJCI]][[to-build-package-and-deploy-the-fileupload-example-using-netbeans-ide]]
 

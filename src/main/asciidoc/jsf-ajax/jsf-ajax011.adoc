@@ -13,22 +13,11 @@ rather than by form submission.
 The source code for this application is in the
 tut-install`/examples/web/jsf/ajaxguessnumber/` directory.
 
-The following topics are addressed here:
-
-* link:#GKOIJ[The ajaxguessnumber Source Files]
-* link:#GKOKE[Running the ajaxguessnumber Example]
-
 [[GKOIJ]][[the-ajaxguessnumber-source-files]]
 
 === The ajaxguessnumber Source Files
 
 The changes to the `guessnumber` application occur in two source files.
-
-The following topics are addressed here:
-
-* link:#GKOFW[The ajaxgreeting.xhtml Facelets Page]
-* link:#GKOHN[The UserNumberBean Backing Bean]
-* link:#CHDGAIGJ[The DukesNumberBean CDI Managed Bean]
 
 [[GKOFW]][[the-ajaxgreeting.xhtml-facelets-page]]
 
@@ -141,14 +130,6 @@ You will learn more about CDI in link:#GIWHB[Chapter 25,
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `ajaxguessnumber` application.
-
-The following topics are addressed here:
-
-* link:#GLHVU[To Build, Package, and Deploy the ajaxguessnumber Example
-Using NetBeans IDE]
-* link:#GLHVQ[To Build, Package, and Deploy the ajaxguessnumber Example
-Using Maven]
-* link:#GLHWE[To Run the ajaxguessnumber Example]
 
 [[GLHVU]][[to-build-package-and-deploy-the-ajaxguessnumber-example-using-netbeans-ide]]
 

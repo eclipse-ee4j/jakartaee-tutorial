@@ -5,19 +5,6 @@
 This section shows how to create, package, and run simple Messaging clients
 that are packaged as application clients.
 
-The following topics are addressed here:
-
-* link:#CHDCEFGA[Overview of Writing Simple Jakarta Messaging Application]
-* link:#BNCFD[Starting the Jakarta Messaging Provider]
-* link:#GKTJS[Creating Jakarta Messaging Administered Objects]
-* link:#BABEEABE[Building All the Simple Examples]
-* link:#BABIHCAE[Sending Messages]
-* link:#BNCFB[Receiving Messages Synchronously]
-* link:#BNCFH[Using a Message Listener for Asynchronous Message Delivery]
-* link:#BNCFL[Browsing Messages on a Queue]
-* link:#BABDDHHC[Running Multiple Consumers on the Same Destination]
-* link:#BNCFX[Acknowledging Messages]
-
 [[CHDCEFGA]][[overview-of-writing-simple-jms-application]]
 
 === Overview of Writing Simple Jakarta Messaging Application
@@ -141,11 +128,6 @@ The `pom.xml` file for each example specifies a plugin that creates an
 application client JAR file. You can build the examples using either
 NetBeans IDE or Maven.
 
-The following topics are addressed here:
-
-* link:#CHDJEJCD[To Build All the Simple Examples Using NetBeans IDE]
-* link:#CHDGHJAA[To Build All the Simple Examples Using Maven]
-
 [[CHDJEJCD]][[to-build-all-the-simple-examples-using-netbeans-ide]]
 
 ==== To Build All the Simple Examples Using NetBeans IDE
@@ -191,12 +173,6 @@ directories for the examples.
 
 This section describes how to use a client to send messages. The
 `Producer.java` client will send messages in all of these examples.
-
-The following topics are addressed here:
-
-* link:#CHDGHJHH[General Steps Performed in the Example]
-* link:#CHDFBABB[The Producer.java Client]
-* link:#CHDHIIHE[To Run the Producer Client]
 
 [[CHDGHJHH]][[general-steps-performed-in-the-example]]
 
@@ -377,11 +353,6 @@ complete.
 This section describes the receiving client, which uses the `receive`
 method to consume messages synchronously. This section then explains how
 to run the clients using GlassFish Server.
-
-The following topics are addressed here:
-
-* link:#BNCFC[The SynchConsumer.java Client]
-* link:#BNCFG[To Run the SynchConsumer and Producer Clients]
 
 [[BNCFC]][[the-synchconsumer.java-client]]
 
@@ -564,12 +535,6 @@ message-driven bean, shown in later examples in this chapter.
 |=======================================================================
 
 
-The following topics are addressed here:
-
-* link:#BNCFI[Writing the AsynchConsumer.java and TextListener.java
-Clients]
-* link:#BNCFK[To Run the AsynchConsumer and Producer Clients]
-
 [[BNCFI]][[writing-the-asynchconsumer.java-and-textlistener.java-clients]]
 
 ==== Writing the AsynchConsumer.java and TextListener.java Clients
@@ -747,11 +712,6 @@ to examine messages on a queue, as described in
 link:#BNCEY[JMS Queue Browsers]. This section then
 explains how to compile, package, and run the example using GlassFish
 Server.
-
-The following topics are addressed here:
-
-* link:#BNCFM[The MessageBrowser.java Client]
-* link:#BNCFN[To Run the QueueBrowser Client]
 
 [[BNCFM]][[the-messagebrowser.java-client]]
 

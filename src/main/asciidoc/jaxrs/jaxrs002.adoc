@@ -9,17 +9,6 @@ or `@DELETE`. Resource methods are methods of a resource class annotated
 with a request method designator. This section explains how to use
 Jakarta REST to annotate Java classes to create RESTful web services.
 
-The following topics are addressed here:
-
-* link:#GILRU[Developing RESTful Web Services with Jakarta REST]
-* link:#GILQB[Overview of a Jakarta REST Application]
-* link:#GINPW[The @Path Annotation and URI Path Templates]
-* link:#GIPYS[Responding to HTTP Methods and Requests]
-* link:#GIPZH[Using @Consumes and @Produces to Customize Requests and
-Responses]
-* link:#GIPYW[Extracting Request Parameters]
-* link:#CIHEGAGI[Configuring Jakarta REST Applications]
-
 [[GILRU]][[developing-restful-web-services-with-jax-rs]]
 
 === Developing RESTful Web Services with Jakarta REST
@@ -370,12 +359,6 @@ The value of the `name3` variable is an empty string.
 The behavior of a resource is determined by the HTTP methods (typically,
 GET, POST, PUT, or DELETE) to which the resource is responding.
 
-The following topics are addressed here:
-
-* link:#GIPXS[The Request Method Designator Annotations]
-* link:#GIPZE[Using Entity Providers to Map HTTP Response and Request
-Entity Bodies]
-
 [[GIPXS]][[the-request-method-designator-annotations]]
 
 ==== The Request Method Designator Annotations
@@ -560,11 +543,6 @@ resource can respond to or produce by using the following annotations:
 By default, a resource class can respond to and produce all MIME media
 types of representations specified in the HTTP request and response
 headers.
-
-The following topics are addressed here:
-
-* link:#GIPXF[The @Produces Annotation]
-* link:#GIPYT[The @Consumes Annotation]
 
 [[GIPXF]][[the-produces-annotation]]
 
@@ -948,12 +926,6 @@ respond to requests can be set one of two ways:
 `javax.ws.rs.core.Application` packaged within the WAR
 * Using the `servlet-mapping` tag within the WAR's `web.xml` deployment
 descriptor
-
-The following topics are addressed here:
-
-* link:#CIHFEBJF[Configuring a Jakarta REST Application Using a Subclass of
-Application]
-* link:#CIHDHAIJ[Configuring the Base URI in web.xml]
 
 [[CIHFEBJF]][[configuring-a-jax-rs-application-using-a-subclass-of-application]]
 
