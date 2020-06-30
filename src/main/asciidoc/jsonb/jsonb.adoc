@@ -1,0 +1,21 @@
+[[json-binding]]
+
+= JSON Binding
+
+This chapter describes the Jakarta JSON Binding. JSON is a data exchange format widely used
+in web services and other connected applications. For a brief overview of JSON, see
+link:#introduction-to-json[Introduction to JSON].
+
+The link:https://jakarta.ee/specifications/json-binding/[Jakarta JSON Binding] specification provides a standard
+binding layer (metadata and runtime) between Java classes and JSON documents. One Jakarta JSON Binding reference
+implementation is Yasson, which is developed through Eclipse.org and is included as part of GlassFish Server.
+You can learn more about Yasson at https://projects.eclipse.org/projects/ee4j.yasson.
+
+include::jsonb001.adoc[]
+
+include::jsonb002.adoc[]
+
+include::jsonb003.adoc[]
+
+include::jsonb004.adoc[]
+

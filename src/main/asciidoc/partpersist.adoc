@@ -1,0 +1,27 @@
+= Persistence
+
+[[BNBPY]][[JEETT00132]]
+
+[[part-viii-persistence]]
+
+Part VIII explores Jakartaa Persistence.
+
+:leveloffset: +1
+
+include::persistence-intro/persistence-intro.adoc[]
+
+include::persistence-basicexamples/persistence-basicexamples.adoc[]
+
+include::persistence-querylanguage/persistence-querylanguage.adoc[]
+
+include::persistence-criteria/persistence-criteria.adoc[]
+
+include::persistence-string-queries/persistence-string-queries.adoc[]
+
+include::persistence-locking/persistence-locking.adoc[]
+
+include::persistence-entitygraphs/persistence-entitygraphs.adoc[]
+
+include::persistence-cache/persistence-cache.adoc[]
+
+:leveloffset: -1

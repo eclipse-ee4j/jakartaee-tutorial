@@ -1,0 +1,80 @@
+[[BABEFBHJ]][[overview-of-the-jms-examples]]
+
+== Overview of the Jakarta Messaging Examples
+
+The following tables list the examples used in this chapter, describe
+what they do, and link to the section that describes them fully. The
+example directory for each example is relative to the
+`_tut-install_/examples/jms/` directory.
+
+[[sthref200]][sthref201]]
+
+*Table 49-1 Jakarta Messaging Examples That Show the Use of Jakarta EE Application Clients*
+
+[width="80%",cols="20%,60%s"]
+|=======================================================================
+|*Example Directory* |*Description*
+|`simple/producer` |Using an application client to send messages; see
+link:#BABIHCAE[Sending Messages]
+
+|`simple/synchconsumer` |Using an application client to receive messages
+synchronously; see link:#BNCFB[Receiving Messages
+Synchronously]
+
+|`simple/asynchconsumer` |Using an application client to receive
+messages asynchronously; see link:#BNCFH[Using a
+Message Listener for Asynchronous Message Delivery]
+
+|`simple/messagebrowser` |Using an application client to use a
+`QueueBrowser` to browse a queue; see
+link:#BNCFL[Browsing Messages on a Queue]
+
+|`simple/clientackconsumer` |Using an application client to acknowledge
+messages received synchronously; see
+link:#BNCFX[Acknowledging Messages]
+
+|`durablesubscriptionexample` |Using an application client to create a
+durable subscription on a topic; see
+link:#BNCGG[Using Durable Subscriptions]
+
+|`transactedexample` |Using an application client to send and receive
+messages in local transactions (also uses request-reply messaging); see
+link:#BNCGJ[Using Local Transactions]
+
+|`shared/sharedconsumer` |Using an application client to create shared
+nondurable topic subscriptions; see
+link:#BABIBEAC[Using Shared Nondurable Subscriptions]
+
+|`shared/shareddurableconsumer` |Using an application client to create
+shared durable topic subscriptions; see
+link:#BABEJBHA[Using Shared Durable Subscriptions]
+|=======================================================================
+
+
+[[sthref202]][[sthref203]]
+
+*Table 49-2 Jakarta Messaging Examples That Show the Use of Jakarta EE Web and Enterprise Bean
+Components*
+
+[width="80%",cols="20%,60%s"]
+|=======================================================================
+|*Example Directory* |*Description*
+|`websimplemessage` |Using managed beans to send messages and to receive
+messages synchronously; see link:#BABBABFC[Sending
+and Receiving Messages Using a Simple Web Application]
+
+|`simplemessage` |Using an application client to send messages, and
+using a message-driven bean to receive messages asynchronously; see
+link:#BNBPK[Receiving Messages Asynchronously Using a
+Message-Driven Bean]
+
+|`clientsessionmdb` |Using a session bean to send messages, and using a
+message-driven bean to receive messages; see
+link:#BNCGW[Sending Messages from a Session Bean to
+an MDB]
+
+|`clientmdbentity` |Using an application client, two message-driven
+beans, and JPA persistence to create a simple HR application; see
+link:#BNCHF[Using an Entity to Join Messages from Two
+MDBs]
+|=======================================================================

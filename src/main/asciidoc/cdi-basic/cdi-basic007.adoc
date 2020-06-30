@@ -1,0 +1,43 @@
+[[GJBAN]][[injecting-beans]]
+
+== Injecting Beans
+
+To use the beans you create, you inject them into yet another
+bean that can then be used by an application, such as a Jakarta Server Faces
+application. For example, you might create a bean called `Printer` into
+which you would inject one of the `Greeting` beans:
+
+[source,java]
+----
+import javax.inject.Inject;
+
+public class Printer {
+
+    @Inject Greeting greeting;
+    ...
+}
+----
+
+This code injects the `@Default` `Greeting` implementation into the
+bean. The following code injects the `@Informal` implementation:
+
+[source,java]
+----
+import javax.inject.Inject;
+
+public class Printer {
+
+    @Inject @Informal Greeting greeting;
+    ...
+}
+----
+
+More is needed for the complete picture of this bean. Its use of scope
+needs to be understood. In addition, for a Jakarta Server Faces application,
+the bean needs to be accessible through the EL.
+
+Now that you can identify the target of the injection, it is important to
+understand what can be injected and in what context. Faces 2.3 provides producers
+that enable most important Faces artifacts to be injected. For detailed information,
+see the package https://jakarta.ee/specifications/faces/2.3/apidocs/[javadoc] for
+`javax.faces.annotation`.

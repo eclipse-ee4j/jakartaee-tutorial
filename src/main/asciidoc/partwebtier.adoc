@@ -1,0 +1,45 @@
+= The Web Tier
+
+[[BNADP]][[JEETT00128]]
+
+[[part-iii-the-web-tier]]
+
+Part III explores the technologies in the web tier.
+
+:leveloffset: +1
+
+include::webapp/webapp.adoc[]
+
+include::jsf-intro/jsf-intro.adoc[]
+
+include::jsf-facelets/jsf-facelets.adoc[]
+
+include::jsf-el/jsf-el.adoc[]
+
+include::jsf-page/jsf-page.adoc[]
+
+include::jsf-page-core/jsf-page-core.adoc[]
+
+include::jsf-develop/jsf-develop.adoc[]
+
+include::jsf-ajax/jsf-ajax.adoc[]
+
+include::jsf-advanced-cc/jsf-advanced-cc.adoc[]
+
+include::jsf-custom/jsf-custom.adoc[]
+
+include::jsf-configure/jsf-configure.adoc[]
+
+include::jsf-ws/jsf-ws.adoc[]
+
+include::servlets/servlets.adoc[]
+
+include::websocket/websocket.adoc[]
+
+include::jsonp/jsonp.adoc[]
+
+include::jsonb/jsonb.adoc[]
+
+include::webi18n/webi18n.adoc[]
+
+:leveloffset: -1

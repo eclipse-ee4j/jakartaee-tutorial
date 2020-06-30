@@ -1,0 +1,74 @@
+[[BABFEBGA]][[annotated-endpoints]]
+
+== Annotated Endpoints
+
+The following example shows how to create the same endpoint from
+link:#BABGJEIG[Programmatic Endpoints] using annotations
+instead:
+
+[source,java]
+----
+@ServerEndpoint("/echo")
+public class EchoEndpoint {
+   @OnMessage
+   public void onMessage(Session session, String msg) {
+      try {
+         session.getBasicRemote().sendText(msg);
+      } catch (IOException e) { ... }
+   }
+}
+----
+
+The annotated endpoint is simpler than the equivalent programmatic
+endpoint, and it is deployed automatically with the application to the
+relative path defined in the `ServerEndpoint` annotation. Instead of
+having to create an additional class for the message handler, this
+example uses the `OnMessage` annotation to designate the method invoked
+to handle messages.
+
+link:#BABDGEJH[Table 19-1] lists the annotations available in the
+`javax.websocket` package to designate the methods that handle lifecycle
+events. The examples in the table show the most common parameters for
+these methods. See the API reference for details on what combinations of
+parameters are allowed in each case.
+
+[[sthref115]][[BABDGEJH]]
+
+*Table 19-1 WebSocket Endpoint Lifecycle Annotations*
+
+[width="80%",cols="20%,20%,60"]
+|========================================
+|*Annotation* |*Event* |*Example*
+|`OnOpen` |Connection opened a|
+[source,java]
+----
+@OnOpen
+public void open(Session session,
+                 EndpointConfig conf) { }
+----
+
+|`OnMessage` |Message received a|
+[source,java]
+----
+@OnMessage
+public void message(Session session,
+                    String msg) { }
+----
+
+|`OnError` |Connection error a|
+[source,java]
+----
+@OnError
+public void error(Session session,
+                  Throwable error) { }
+----
+
+|`OnClose` |Connection closed a|
+[source,java]
+----
+@OnClose
+public void close(Session session,
+                  CloseReason reason) { }
+----
+
+|========================================

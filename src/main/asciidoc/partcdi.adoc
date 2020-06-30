@@ -1,0 +1,21 @@
+= Jakarta EE Contexts and Dependency Injection
+
+[[GJBNR]][[JEETT00131]]
+
+[[part-v-contexts-and-dependency-injection-for-jakarta-ee]]
+
+Part V explores Jakarta EE Contexts and Dependency Injection (CDI).
+
+:leveloffset: +1
+
+include::cdi-basic/cdi-basic.adoc[]
+
+include::cdi-basicexamples/cdi-basicexamples.adoc[]
+
+include::cdi-adv/cdi-adv.adoc[]
+
+include::cdi-bootstrap-se8/cdi-bootstrap-se8.adoc[]
+
+include::cdi-adv-examples/cdi-adv-examples.adoc[]
+
+:leveloffset: -1

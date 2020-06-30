@@ -1,0 +1,18 @@
+= Packaging
+
+[[GKJIQ4]][[packaging]]
+
+This chapter describes packaging. A Jakarta EE application is packaged into
+one or more standard units for deployment to any Jakarta EE
+platform-compliant system. Each unit contains a functional component or
+components, such as an enterprise bean, web page, servlet, or applet,
+and an optional deployment descriptor that describes its content.
+
+include::packaging001.adoc[]
+
+include::packaging002.adoc[]
+
+include::packaging003.adoc[]
+
+include::packaging004.adoc[]
+

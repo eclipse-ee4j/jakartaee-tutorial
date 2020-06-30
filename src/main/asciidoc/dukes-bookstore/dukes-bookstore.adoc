@@ -1,0 +1,17 @@
+= Duke's Bookstore Case Study Example
+
+[[GLNVI]][[dukes-bookstore-case-study-example]]
+
+The Duke's Bookstore example is a simple e-commerce application that
+illustrates some of the more advanced features of Jakarta Server Faces
+technology in combination with Jakarta Contexts and Dependency Injection 
+(CDI), enterprise beans, and the Jakarta Persistence. Users can
+select books from an image map, view the bookstore catalog, and purchase
+books. No security is used in this application.
+
+include::dukes-bookstore001.adoc[]
+
+include::dukes-bookstore002.adoc[]
+
+include::dukes-bookstore003.adoc[]
+

@@ -1,0 +1,23 @@
+= Jakarta EE Supporting Technologies
+
+[[GIJUE]][[JEETT00134]]
+
+[[part-xi-jakarta-ee-supporting-technologies]]
+
+Part XI explores several technologies that support the Jakarta EE platform.
+
+:leveloffset: +1
+
+include::transactions/transactions.adoc[]
+
+include::resources/resources.adoc[]
+
+include::connectorexample/connectorexample.adoc[]
+
+include::interceptors/interceptors.adoc[]
+
+include::batch-processing/batch-processing.adoc[]
+
+include::concurrency-utilities/concurrency-utilities.adoc[]
+
+:leveloffset: -1

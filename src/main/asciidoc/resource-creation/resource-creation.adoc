@@ -1,0 +1,18 @@
+= Resource Creation
+
+[[GKJIQ2]][[resource-creation]]
+
+A resource is a program object that provides connections to such systems
+as database servers and messaging systems. Jakarta EE components can access
+a wide variety of resources, including databases, mail sessions, Jakarta
+Messaging objects, and URLs. The Jakarta EE platform provides
+mechanisms that allow you to access all these resources in a similar
+manner. This chapter examines several types of resources and explains
+how to create them.
+
+include::resource-creation001.adoc[]
+
+include::resource-creation002.adoc[]
+
+include::resource-creation003.adoc[]
+
