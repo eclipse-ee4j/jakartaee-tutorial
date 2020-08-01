@@ -66,7 +66,7 @@ with other components.
 The Jakarta EE specification defines the following Jakarta EE components:
 
 * Application clients and applets are components that run on the client.
-* Jakarta Servlet, Jakarta Server Faces, and Jakarta Server Pages technology
+* Jakarta Servlet, Jakarta Faces, and Jakarta Server Pages technology
 components are web components that run on the server.
 * Enterprise bean components (enterprise beans) are business components that run on
 the server.
@@ -186,11 +186,11 @@ tier."]
 === Web Components
 
 Jakarta EE web components are either servlets or web pages created using
-Jakarta Server Faces technology and/or Jakarta Server Pages technology. Servlets
+Jakarta Faces technology and/or Jakarta Server Pages technology. Servlets
 are Java programming language classes that dynamically process requests
-and construct responses. Jakarta Server pages are text-based documents that execute
+and construct responses. Jakarta Server Pages are text-based documents that execute
 as servlets but allow a more natural approach to creating static
-content. Jakarta Server Faces technology builds on servlets and Jakarta Server Pages
+content. Jakarta Faces technology builds on servlets and Jakarta Server Pages
 technology and provides a user interface component framework for web
 applications.
 
