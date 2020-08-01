@@ -64,7 +64,7 @@ asynchronously. Commonly, these are Jakarta Messaging messages.
 The Jakarta EE 8 platform requires Jakarta Enterprise Beans 3.2 and
 Interceptors 1.2.
 
-[[BNACM]][[java-servlet-technology]]
+[[BNACM]][[jakarta-servlet-technology]]
 
 === Jakarta Servlet Technology
 
@@ -82,7 +82,7 @@ the following:
 
 The Jakarta EE 8 platform requires Servlet 4.0.
 
-[[BNACP]][[javaserver-faces-technology]]
+[[BNACP]][[jakarta-faces-technology]]
 
 === Jakarta Server Faces Technology
 
@@ -193,7 +193,7 @@ back, and commits.
 
 The Jakarta EE 8 platform requires Jakarta Transactions 1.2.
 
-[[GIRBT]][[java-api-for-restful-web-services]]
+[[GIRBT]][[jakarta-restful-web-services]]
 
 === Jakarta RESTful Web Services
 
@@ -230,7 +230,7 @@ The Managed Beans specification is part of the Jakarta EE 8 platform
 specification. The Jakarta EE 8 platform requires Managed Beans
 1.0.
 
-[[GJXVO]][[contexts-and-dependency-injection-for-jakarta-ee]]
+[[GJXVO]][[jakarta-context-and-dependency-injection]]
 
 === Jakarta Contexts and Dependency Injection
 
@@ -264,9 +264,9 @@ application.
 
 The Jakarta EE 8 platform requires Jakarta Dependency Injection 1.0.
 
-[[GJXTY]][[bean-validation]]
+[[GJXTY]][[jakarta-bean-validation]]
 
-=== Bean Validation
+=== Jakarta Bean Validation
 
 The Bean Validation specification defines a metadata model and API for
 validating data in JavaBeans components. Instead of distributing
@@ -411,7 +411,7 @@ lifecycle callback methods.
 
 The Jakarta EE 8 platform requires Jakarta WebSocket 1.1.
 
-[[CJAGIEEI]][[java-api-for-json-processing]]
+[[CJAGIEEI]][[jakarta-json-processing]]
 
 === Jakarta JSON Processing
 
@@ -437,7 +437,7 @@ Defines a format and processing rules for applying operations to a JSON document
 
 The Jakarta EE 8 platform requires Jakarta JSON Processing 1.1.
 
-[[java-api-for-json-binding]]
+[[jakarta-api-for-json-binding]]
 === Jakarta JSON Binding
 
 Jakarta JSON Binding provides a binding layer for converting Java objects to and from JSON messages. Jakarta JSON Binding also supports the ability to customize the default mapping process used in this binding layer through the use of Java annotations for a given field, JavaBean property, type or package, or by providing an implementation of a property naming strategy.
