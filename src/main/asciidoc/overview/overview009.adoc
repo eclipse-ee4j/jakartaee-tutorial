@@ -63,12 +63,12 @@ context in `InitialContext` under the name `java:comp/env`. A
 component's naming environment is stored directly in the environment
 naming context or in any of its direct or indirect subcontexts.
 
-[[BNACT]][[javabeans-activation-framework]]
+[[BNACT]][[jakarta-activation]]
 
-=== JavaBeans Activation Framework
+=== Jakarta Activation
 
-The JavaBeans Activation Framework (JAF) is used by the JavaMail API.
-JAF provides standard services to determine the type of an arbitrary
+The Jakarta Activation is used by the Jakarta Mail.
+Jakarta Activation provides standard services to determine the type of an arbitrary
 piece of data, encapsulate access to it, discover the operations
 available on it, and create the appropriate JavaBeans component to
 perform those operations.
@@ -97,47 +97,47 @@ You can find information on the W3C schema at
 
 The Java Architecture for XML Binding (JAXB) provides a convenient way
 to bind an XML schema to a representation in Java language programs.
-JAXB can be used independently or in combination with JAX-WS, in which
+JAXB can be used independently or in combination with Jakarta XML Web Services, in which
 case it provides a standard data binding for web service messages. All
-Jakarta EE application client containers, web containers, and EJB
+Jakarta EE application client containers, web containers, and Jakarta Enterprise Beans
 containers support the JAXB API.
 
 The Jakarta EE 8 platform requires JAXB 2.2.
 
-[[BNACV]][[java-api-for-xml-web-services]]
+[[BNACV]][[jakarta-xml-web-services]]
 
-=== Java API for XML Web Services
+=== Jakarta XML Web Services
 
-The Java API for XML Web Services (JAX-WS) specification provides
+The Jakarta XML Web Services specification provides
 support for web services that use the JAXB API for binding XML data to
-Java objects. The JAX-WS specification defines client APIs for accessing
+Java objects. The Jakarta XML Web Services specification defines client APIs for accessing
 web services as well as techniques for implementing web service
 endpoints. The Implementing Enterprise Web Services specification
-describes the deployment of JAX-WS-based services and clients. The EJB
-and Java Servlet specifications also describe aspects of such
-deployment. JAX-WS-based applications can be deployed using any of these
+describes the deployment of Jakarta XML Web Services based services and clients. The Jakarta Enterprise Beans
+and Jakarta Servlet specifications also describe aspects of such
+deployment. Jakarta XML Web Services based applications can be deployed using any of these
 deployment models.
 
-The JAX-WS specification describes the support for message handlers that
+The Jakarta XML Web Services specification describes the support for message handlers that
 can process message requests and responses. In general, these message
 handlers execute in the same container and with the same privileges and
-execution context as the JAX-WS client or endpoint component with which
+execution context as the Jakarta XML Web Services client or endpoint component with which
 they are associated. These message handlers have access to the same JNDI
 namespace as their associated component. Custom serializers and
 deserializers, if supported, are treated in the same way as message
 handlers.
 
-The Jakarta EE 8 platform requires JAX-WS 2.2.
+The Jakarta EE 8 platform requires Jakarta XML Web Services 2.2.
 
-[[BNACX]][[soap-with-attachments-api-for-java]]
+[[BNACX]][[jakarta-soap-with-attachments]]
 
-=== SOAP with Attachments API for Java
+=== Jakarta SOAP with Attachments
 
-The SOAP with Attachments API for Java (SAAJ) is a low-level API on
-which JAX-WS depends. SAAJ enables the production and consumption of
+The Jakarta SOAP with Attachments is a low-level API on
+which Jakarta XML Web Services depends. Jakarta SOAP with Attachments enables the production and consumption of
 messages that conform to the SOAP 1.1 and 1.2 specifications and the
-SOAP with Attachments note. Most developers do not use the SAAJ API,
-instead using the higher-level JAX-WS API.
+Jakarta SOAP with Attachments note. Most developers do not use the Jakarta SOAP with Attachments,
+instead using the higher-level Jakarta XML Web Services API.
 
 [[BNADD]][[java-authentication-and-authorization-service]]
 
@@ -151,12 +151,11 @@ JAAS is a Java programming language version of the standard Pluggable
 Authentication Module (PAM) framework, which extends the Java platform
 security architecture to support user-based authorization.
 
-[[sthref12]][[common-annotations-for-the-java-platform]]
+[[sthref12]][[jakarta-annotations]]
 
-=== Common Annotations for the Java Platform
+=== Jakarta Annotations
 
 Annotations enable a declarative style of programming in the Java
 platform.
 
-The Jakarta EE 8 platform requires Common Annotations for the Java Platform
-1.2.
+The Jakarta EE 8 platform requires Jakarta Annotations 1.2.
