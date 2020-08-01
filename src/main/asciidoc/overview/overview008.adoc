@@ -62,7 +62,7 @@ message listener, allowing a business component to receive messages
 asynchronously. Commonly, these are Jakarta Messaging messages.
 
 The Jakarta EE 8 platform requires Jakarta Enterprise Beans 3.2 and
-Interceptors 1.2.
+Jakarta Interceptors 1.2.
 
 [[BNACM]][[jakarta-servlet-technology]]
 
@@ -84,10 +84,10 @@ The Jakarta EE 8 platform requires Servlet 4.0.
 
 [[BNACP]][[jakarta-faces-technology]]
 
-=== Jakarta Server Faces Technology
+=== Jakarta Faces Technology
 
-Jakarta Server Faces technology is a user interface framework for building
-web applications. The main components of Jakarta Server Faces technology are
+Jakarta Faces technology is a user interface framework for building
+web applications. The main components of Jakarta Faces technology are
 as follows:
 
 * A GUI component framework.
@@ -104,26 +104,26 @@ The following features support the GUI components:
 * Data conversion between model objects and components
 * Managed model object creation
 * Page navigation configuration
-* Expression Language
+* Jakarta Expression Language
 
 All this functionality is available using standard Java APIs and
 XML-based configuration files.
 
-In the Jakarta EE 8 platform, new features of Jakarta Server Faces technology
+In the Jakarta EE 8 platform, new features of Jakarta Faces technology
 include the following:
 
 * Direct support for WebSockets via the new `<f:websocket>` tag
 * Class-level bean validation via the new `<f:validateWholeBean>` tag
-* A CDI-compatible `@ManagedProperty` annotation
+* A Jakarta Contexts and Dependency Injection compatible `@ManagedProperty` annotation
 * Enhanced component search expression framework
 
-The Jakarta EE 8 platform requires Jakarta Server Faces 2.3 and Jakarta Expression
+The Jakarta EE 8 platform requires Jakarta Faces 2.3 and Jakarta Expression
 Language 3.0.
 
-For an excellent summary of what's new in Jakarta Server Faces 2.3,
+For an excellent summary of what's new in Jakarta Faces 2.3,
 see `https://javaserverfaces.github.io/users.html`.
 
-[[BNACN]][[javaserver-pages-technology]]
+[[BNACN]][[jakarta-server-pages-technology]]
 
 === Jakarta Server Pages Technology
 
@@ -143,11 +143,11 @@ The Jakarta EE 8 platform requires Jakarta Server Pages 2.3 for compatibility
 with earlier releases but recommends the use of Facelets as the display
 technology in new applications.
 
-[[BNACO]][[javaserver-pages-standard-tag-library]]
+[[BNACO]][[jakarta-standard-tag-library]]
 
-=== Jakarta Server Pages Standard Tag Library
+=== Jakarta Standard Tag Library
 
-The Jakarta Server Pages Standard Tag Library encapsulates core
+The Jakarta Standard Tag Library encapsulates core
 functionality common to many Jakarta Server Pages applications. Instead of mixing tags
 from numerous vendors in your Jakarta Server Pages applications, you use a single,
 standard set of tags. This standardization allows you to deploy your
@@ -160,24 +160,24 @@ accessing databases using SQL, and tags for commonly used functions.
 
 The Jakarta EE 8 platform requires Jakarta Standard Tag Library 1.2.
 
-[[BNADB]][[java-persistence-api]]
+[[BNADB]][[jakarta-persistence]]
 
 === Jakarta Persistence
 
-Jakarta persistence is a Java standards–based solution for
+Jakarta Persistence is a Java standards–based solution for
 persistence. Persistence uses an object/relational mapping approach to
 bridge the gap between an object-oriented model and a relational
-database. The Java Persistence API can also be used in Java SE
+database. The Jakarta Persistence can also be used in Java SE
 applications outside of the Jakarta EE environment. Jakarta Persistence
 consists of the following areas:
 
-* The Jakarta Persistence API
+* The Jakarta Persistence
 * The query language
 * Object/relational mapping metadata
 
 The Jakarta EE 8 platform requires Jakarta Persistence 2.2.
 
-[[BNACR]][[java-transaction-api]]
+[[BNACR]][[jakarta-transactions]]
 
 === Jakarta Transactions
 
@@ -187,7 +187,7 @@ auto commit to handle transaction commits and rollbacks. An auto commit
 means that any other applications that are viewing data will see the
 updated data after each database read or write operation. However, if
 your application performs two separate database access operations that
-depend on each other, you will want to use the Jakarta Transactions API to demarcate
+depend on each other, you will want to use the Jakarta Transactions to demarcate
 where the entire transaction, including both operations, begins, rolls
 back, and commits.
 
@@ -211,23 +211,24 @@ When the results of an invocation on a target resource are received, enhancement
 * Enhancements in support for server-sent events
 +
 Clients may subscribe to server-issued event notifications using a long-running connection. Support for a new media type, text/event-stream, has been added.
-* Support for Jakarta JSON Binding objects, and improved integration with CDI, Servlet, and Bean Validation technologies
+* Support for Jakarta JSON Binding objects, and improved integration with Jakarta Contexts and Dependency Injection,
+Jakarta Servlet, and Jakarta Bean Validation technologies
 
 The Jakarta EE 8 platform requires Jakarta RESTful Web Services 2.1.
 
-[[GJXSD]][[managed-beans]]
+[[GJXSD]][[jakarta-managed-beans]]
 
-=== Managed Beans
+=== Jakarta Managed Beans
 
-Managed Beans, lightweight container-managed objects (POJOs) with
+Jakarta Managed Beans, lightweight container-managed objects (POJOs) with
 minimal requirements, support a small set of basic services, such as
 resource injection, lifecycle callbacks, and interceptors. Managed Beans
-represent a generalization of the managed beans specified by Jakarta Server
-Faces technology and can be used anywhere in a Jakarta EE application, not
+represent a generalization of the managed beans specified by Jakarta Faces
+technology and can be used anywhere in a Jakarta EE application, not
 just in web modules.
 
-The Managed Beans specification is part of the Jakarta EE 8 platform
-specification. The Jakarta EE 8 platform requires Managed Beans
+The Jakarta Managed Beans specification is part of the Jakarta EE 8 platform
+specification. The Jakarta EE 8 platform requires Jakarta Managed Beans
 1.0.
 
 [[GJXVO]][[jakarta-context-and-dependency-injection]]
@@ -236,7 +237,7 @@ specification. The Jakarta EE 8 platform requires Managed Beans
 
 Jakarta Contexts and Dependency Injection (CDI) defines a set of
 contextual services, provided by Jakarta EE containers, that make it easy
-for developers to use enterprise beans along with Jakarta Server Faces
+for developers to use enterprise beans along with Jakarta Faces
 technology in web applications. Designed for use with stateful objects,
 CDI also has many broader uses, allowing developers a great deal of
 flexibility to integrate different kinds of components in a loosely
@@ -249,9 +250,9 @@ In the Jakarta EE 8 platform, new CDI features include the following:
 * Configurators interfaces, which are used for dynamically defining and modifying CDI objects
 * Built-in annotation literals, a convenience feature for creating instances of annotations, and more
 
-The Jakarta EE 8 platform requires CDI 2.0.
+The Jakarta EE 8 platform requires Jakarta Contexts and Dependency Injection 2.0.
 
-[[GJXVG]][[dependency-injection-for-java]]
+[[GJXVG]][[jakarta-dependency-injection]]
 
 === Jakarta Dependency Injection
 
@@ -268,21 +269,21 @@ The Jakarta EE 8 platform requires Jakarta Dependency Injection 1.0.
 
 === Jakarta Bean Validation
 
-The Bean Validation specification defines a metadata model and API for
+The Jakarta Bean Validation specification defines a metadata model and API for
 validating data in JavaBeans components. Instead of distributing
 validation of data over several layers, such as the browser and the
 server side, you can define the validation constraints in one place and
 share them across the different layers.
 
-In the Jakarta EE 8 platform, new Bean Validation features include the following:
+In the Jakarta EE 8 platform, new Jakarta Bean Validation features include the following:
 
 * Support for new features in Java SE 8, such as the Date-Time API
-* Addition of new built-in Bean Validation constraints
+* Addition of new built-in Jakarta Bean Validation constraints
 
 
-The Jakarta EE 8 platform requires Bean Validation 2.0.
+The Jakarta EE 8 platform requires Jakarta Bean Validation 2.0.
 
-[[BNACQ]][[java-message-service-api]]
+[[BNACQ]][[jakarta-messaging]]
 
 === Jakarta Messaging
 
@@ -293,7 +294,7 @@ reliable, and asynchronous.
 
 The Jakarta EE 8 platform requires Jakarta Messaging 2.0.
 
-[[BNACZ]][[jakarta-ee-connector-architecture]]
+[[BNACZ]][[jakarta-connectors]]
 
 === Jakarta Connectors
 
@@ -311,14 +312,14 @@ secure, scalable, and message-based transactional integration of Jakarta EE
 platform-based web services with existing EISs that can be either
 synchronous or asynchronous. Existing applications and EISs integrated
 through the Jakarta Connectors into the Jakarta EE platform can
-be exposed as XML-based web services by using JAX-WS and Jakarta EE
-component models. Thus JAX-WS and the Jakarta Connectors are
+be exposed as XML-based web services by using Jakarta XML Web Services and Jakarta EE
+component models. Thus Jakarta XML Web Services and the Jakarta Connectors are
 complementary technologies for enterprise application integration (EAI)
 and end-to-end business integration.
 
 The Jakarta EE 8 platform requires Jakarta Connectors 1.7.
 
-[[BNACS]][[javamail-api]]
+[[BNACS]][[jakarta-mail]]
 
 === Jakarta Mail
 
@@ -334,7 +335,7 @@ that allows application components to send Internet mail.
 
 The Jakarta EE 8 platform requires Jakarta Mail 1.6.
 
-[[GIRBE]][[java-authorization-contract-for-containers]]
+[[GIRBE]][[jakarta-authorization]]
 
 === Jakarta Authorization
 
@@ -353,7 +354,7 @@ of roles.
 
 The Jakarta EE 8 platform requires Jakarta Authorization 1.5.
 
-[[GIRGP]][[java-authentication-service-provider-interface-for-containers]]
+[[GIRGP]][[jakarta-authentication]]
 
 === Jakarta Authentication
 
@@ -372,7 +373,7 @@ as a result of the message authentication.
 
 The Jakarta EE 8 platform requires Jakarta Authentication 1.1.
 
-[[jakarta-ee-security-api]]
+[[jakarta-security]]
 === Jakarta Security
 Jakarta Security specification defines portable, plug-in interfaces for
 HTTP authentication and identity stores, and an injectable SecurityContext interface
@@ -399,7 +400,7 @@ for default group-to-role mapping, and defines a principal type called
 
 The Jakarta EE 8 platform requires Jakarta Security 1.0.
 
-[[CJAHDJBJ]][[java-api-for-websocket]]
+[[CJAHDJBJ]][[jakarta-websocket]]
 
 === Jakarta WebSocket
 
@@ -437,14 +438,14 @@ Defines a format and processing rules for applying operations to a JSON document
 
 The Jakarta EE 8 platform requires Jakarta JSON Processing 1.1.
 
-[[jakarta-api-for-json-binding]]
+[[jakarta-json-binding]]
 === Jakarta JSON Binding
 
 Jakarta JSON Binding provides a binding layer for converting Java objects to and from JSON messages. Jakarta JSON Binding also supports the ability to customize the default mapping process used in this binding layer through the use of Java annotations for a given field, JavaBean property, type or package, or by providing an implementation of a property naming strategy.
 
 Jakarta JSON Binding is new to the Jakarta EE 8 platform. The Jakarta EE 8 platform requires Jakarta JSON Binding 1.0.
 
-[[CJAFGFCJ]][[concurrency-utilities-for-jakarta-ee]]
+[[CJAFGFCJ]][[jakarta-concurrency]]
 
 === Jakarta Concurrency
 
@@ -455,7 +456,7 @@ executor service, managed thread factory, and context service.
 
 The Jakarta EE 8 platform requires Jakarta Concurrency 1.0.
 
-[[CJAJHGIH]][[batch-applications-for-the-java-platform]]
+[[CJAJHGIH]][[jakarta-batch]]
 
 === Jakarta Batch
 
