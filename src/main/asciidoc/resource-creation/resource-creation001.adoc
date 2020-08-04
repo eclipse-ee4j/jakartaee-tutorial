@@ -14,13 +14,13 @@ such as database servers and messaging systems. (A Java Database
 Connectivity resource is sometimes referred to as a data source.) Each
 resource object is identified by a unique, people-friendly name, called
 the JNDI name. For example, the JNDI name of the preconfigured JDBC
-resource for Apache Derby shipped with GlassFish Server
+resource for Apache Derby shipped with Eclipse GlassFish Server
 is `java:comp/DefaultDataSource`.
 
-An administrator creates resources in a JNDI namespace. In GlassFish
+An administrator creates resources in a JNDI namespace. In Eclipse GlassFish
 Server, you can use either the Administration Console or the `asadmin`
 command to create resources. Applications then use annotations to inject
-the resources. If an application uses resource injection, GlassFish
+the resources. If an application uses resource injection, Eclipse GlassFish
 Server invokes the JNDI API, and the application is not required to do
 so. However, it is also possible for an application to locate resources
 by making direct calls to the JNDI API.
