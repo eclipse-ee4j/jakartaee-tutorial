@@ -2,7 +2,7 @@
 
 == Starting and Stopping Apache Derby
 
-GlassFish Server includes Apache Derby.
+Eclipse GlassFish Server includes Apache Derby.
 
 To start Derby from the command line, open a terminal
 window or command prompt, change to the `_as-install_/bin` directory, and execute:
@@ -23,11 +23,11 @@ asadmin stop-database
 For information about Apache Derby included with GlassFish Server, see
 the Release Notes that are located in the `_as-install_/javadb/` directory.
 
-[[GJSFS]][[to-start-the-database-server-using-netbeans-ide]]
+[[GJSFS]][[to-start-the-database-server-using-apache-netbeans-ide]]
 
-=== To Start Derby Using NetBeans IDE
+=== To Start Derby Using Apache NetBeans IDE
 
-When you start GlassFish Server using NetBeans IDE, the database server
+When you start Eclipse GlassFish Server using Apache NetBeans IDE, the database server
 starts automatically. If you ever need to start the server manually,
 however, follow these steps.
 
@@ -38,5 +38,5 @@ however, follow these steps.
 
 Next Steps
 
-To stop the database using NetBeans IDE, right-click Java DB and select
+To stop the database using Apache NetBeans IDE, right-click Java DB and select
 Stop Server.
