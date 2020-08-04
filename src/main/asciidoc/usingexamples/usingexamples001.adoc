@@ -5,9 +5,9 @@
 The following software is required to run the examples:
 
 * link:#java-platform-standard-edition[Java Platform, Standard Edition]
-* link:#jakarta-ee-8-software-development-kit[Jakarta EE 8 Software Development Kit]
-* link:#sdk-installation-tips[GlassFish Server Installation Tips]
-* link:#jakarta-ee-8-tutorial-component[Jakarta EE 8 Tutorial Component]
+* link:#eclipse-glassfish[Eclipse GlassFish]
+* link:#eclipse-glassfish-installation-tips[GlassFish Server Installation Tips]
+* link:#jakarta-ee-8-tutorial-examples[Jakarta EE 8 Tutorial Component]
 * link:#netbeans-ide[NetBeans IDE]
 * link:#apache-maven[Apache Maven]
 
@@ -21,20 +21,20 @@ Update 65 or above or JDK 8 Update 20 or above. You can download JDK
 software from
 `http://www.oracle.com/technetwork/java/javase/downloads/index.html`.
 
-[[GEXAB]][[jakarta-ee-8-software-development-kit]]
+[[GEXAB]][[eclipse-glassfish]]
 
-=== Jakarta EE 8 Software Development Kit
+=== Eclipse GlassFish
 
-GlassFish Server 5.1 is targeted as the build and
+Eclipse GlassFish Server 5.1 is targeted as the build and
 runtime environment for the tutorial examples. To build, deploy, and run
 the examples, you need a copy of GlassFish Server and, optionally,
-NetBeans IDE. You can download GlassFish Server from
+NetBeans IDE. You can download Eclipse GlassFish Server from
 `https://eclipse-ee4j.github.io/glassfish/download`.
 
 
-[[GEXBC]][[sdk-installation-tips]]
+[[GEXBC]][[eclipse-glassfish-installation-tips]]
 
-==== GlassFish Server Installation Tips
+==== Eclipse GlassFish Server Installation Tips
 
 GlassFish Server is installed from a ZIP file. It sets the
 default administration user name as `admin` with no required password.
@@ -73,46 +73,46 @@ Tutorial].
 
 [[GEXAZ]][[netbeans-ide]]
 
-=== NetBeans IDE
+=== Apache NetBeans IDE
 
-The NetBeans integrated development environment (IDE) is a free,
+The Apache NetBeans integrated development environment (IDE) is a free,
 open-source IDE for developing Java applications, including enterprise
-applications. NetBeans IDE supports the Jakarta EE platform. You can build,
-package, deploy, and run the tutorial examples from within NetBeans IDE.
+applications. Apache NetBeans IDE supports the Jakarta EE platform. You can build,
+package, deploy, and run the tutorial examples from within Apache NetBeans IDE.
 
-To run the tutorial examples, you need the latest version of NetBeans
-IDE. You can download NetBeans IDE from
+To run the tutorial examples, you need the latest version of Apache NetBeans
+IDE. You can download Apache NetBeans IDE from
 `https://netbeans.apache.org/downloads/index.html`. Make sure that you download
 the Jakarta EE bundle.
 
-[[GJSEQ]][[to-install-netbeans-ide-without-glassfish-server]]
+[[GJSEQ]][[to-install-apache-netbeans-ide-without-glassfish-server]]
 
-==== To Install NetBeans IDE without GlassFish Server
+==== To Install Apache NetBeans IDE without GlassFish Server
 
-When you install NetBeans IDE, do not install the version of GlassFish
-Server that comes with NetBeans IDE. To skip the installation of
+When you install Apache NetBeans IDE, do not install the version of GlassFish
+Server that comes with Apache NetBeans IDE. To skip the installation of
 GlassFish Server, follow these steps.
 
 1.  On the first page of the NetBeans IDE Installer wizard, deselect the
-check box for GlassFish Server and click OK.
+check box for Eclipse GlassFish Server and click OK.
 2.  Accept both the License Agreement and the Junit License Agreement.
 +
 A few of the tutorial examples use the Junit library, so you should
 install it.
 3.  Continue with the installation of NetBeans IDE.
 
-[[GIQZL]][[to-add-glassfish-server-as-a-server-using-netbeans-ide]]
+[[GIQZL]][[to-add-eclipse-glassfish-server-as-a-server-using-apache-netbeans-ide]]
 
-==== To Add GlassFish Server as a Server Using NetBeans IDE
+==== To Add Eclipse GlassFish Server as a Server Using Apache NetBeans IDE
 
-To run the tutorial examples in NetBeans IDE, you must add your
-GlassFish Server as a server in NetBeans IDE. Follow these instructions
+To run the tutorial examples in Apache NetBeans IDE, you must add your
+Eclipse GlassFish Server as a server in NetBeans IDE. Follow these instructions
 to add GlassFish Server to NetBeans IDE.
 
 1.  From the Tools menu, choose Servers.
 2.  In the Servers wizard, click Add Server.
 3.  Under Choose Server, select GlassFish Server and click Next.
-4.  Under Server Location, browse to the GlassFish Server installation
+4.  Under Server Location, browse to the Eclipse GlassFish Server installation
 and click Next.
 5.  Under Domain Location, select Register Local Domain.
 6.  Click Finish.
@@ -131,5 +131,5 @@ install it from:
 
 Be sure to add the maven-install`/bin` directory to your path.
 
-If you are using NetBeans IDE to build and run the examples, it includes
+If you are using Apache NetBeans IDE to build and run the examples, it includes
 a copy of Maven.
