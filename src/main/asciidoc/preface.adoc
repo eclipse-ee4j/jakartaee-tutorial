@@ -39,7 +39,7 @@ Server Open Source Edition is hereafter referred to as GlassFish Server.
 This tutorial is intended for programmers interested in developing and
 deploying Jakarta EE 8 applications. It covers the technologies comprising
 the Jakarta EE platform and describes how to develop Jakarta EE components and
-deploy them on the Jakarta EE Software Development Kit (SDK).
+deploy them on the Eclipse GlassFish.
 
 [[CIAHFICG]][[BNAAC]][[before-you-read-this-book]]
 
@@ -124,7 +124,7 @@ used in this book.
 |=======================================================================
 |*Placeholder* |*Description* |*Default Value*
 |`_as-install_` |Represents the base installation directory for GlassFish
-Server or the SDK of which GlassFish Server is a part. a|
+Server. a|
 Installations on the Solaris operating system, Linux operating system,
 and Mac operating system:
 
@@ -146,8 +146,7 @@ Windows, all installations:
 `_SystemDrive_:\glassfish5`
 
 |`_tut-install_` |Represents the base installation directory for the Jakarta EE
-Tutorial after you install GlassFish Server or the SDK and run the
-Update Tool. |`_as-install-parent_/docs/jakartaee-tutorial`
+Tutorial after you download it. |`_as-install-parent_/docs/jakartaee-tutorial`
 
 |`_domain-dir_` |Represents the directory in which a domain's configuration
 is stored. |`_as-install_/domains/domain1`
