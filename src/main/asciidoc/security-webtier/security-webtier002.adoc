@@ -320,8 +320,8 @@ the elements described in link:#BNCBM[Specifying a Secure Connection].
 
 ==== HTTP Basic Authentication
 
-Specifying HTTP basic authentication requires that the server request a
-user name and password from the web client and verify that the user name
+Specifying HTTP basic authentication requires that the server requests a
+user name and a password from the web client and verifies that the user name
 and password are valid by comparing them against a database of
 authorized users in the specified or default realm.
 
