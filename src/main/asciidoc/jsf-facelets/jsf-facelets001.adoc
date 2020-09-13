@@ -113,14 +113,14 @@ declare the prefix for the composite component tag library as
 
 [source,java]
 ----
-xmlns:composite="http://java.sun.com/jsf/composite"
+xmlns:composite="http://xmlns.jcp.org/jsf/composite"
 ----
 
 instead of as
 
 [source,java]
 ----
-xmlns:cc="http://java.sun.com/jsf/composite"
+xmlns:cc="http://xmlns.jcp.org/jsf/composite"
 ----
 
 Based on the Jakarta Server Faces support for Expression Language (EL)
