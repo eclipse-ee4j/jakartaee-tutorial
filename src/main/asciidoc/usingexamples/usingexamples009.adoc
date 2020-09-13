@@ -10,7 +10,7 @@ application deployment or execution.
 === Using the Server Log
 
 One way to debug applications is to look at the server log in
-domain-dir`/logs/server.log`. The log contains output from GlassFish
+`_domain-dir_/logs/server.log`. The log contains output from GlassFish
 Server and your applications. You can log messages from any Java class
 in your application with `System.out.println` and the Java Logging APIs
 (documented at

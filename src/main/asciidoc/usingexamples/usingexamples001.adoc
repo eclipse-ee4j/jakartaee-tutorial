@@ -5,9 +5,9 @@
 The following software is required to run the examples:
 
 * link:#java-platform-standard-edition[Java Platform, Standard Edition]
-* link:#jakarta-ee-8-software-development-kit[Jakarta EE 8 Software Development Kit]
+* link:#eclipse-glassfish-server[Eclipse Glassfish Server]
 * link:#sdk-installation-tips[GlassFish Server Installation Tips]
-* link:#jakarta-ee-8-tutorial-component[Jakarta EE 8 Tutorial Component]
+* link:#jakarta-ee-8-tutorial-examples[Jakarta EE 8 Tutorial Examples]
 * link:#netbeans-ide[NetBeans IDE]
 * link:#apache-maven[Apache Maven]
 
@@ -16,14 +16,13 @@ The following software is required to run the examples:
 === Java Platform, Standard Edition
 
 To build, deploy, and run the examples, you need a copy of the Java
-Platform, Standard Edition Development Kit (JDK). You must use JDK 7
-Update 65 or above or JDK 8 Update 20 or above. You can download JDK
+Platform, Standard Edition Development Kit (JDK). You must use JDK 8 Update 20 or above. You can download JDK
 software from
 `http://www.oracle.com/technetwork/java/javase/downloads/index.html`.
 
-[[GEXAB]][[jakarta-ee-8-software-development-kit]]
+[[GEXAB]][[eclipse-glassfish-server]]
 
-=== Jakarta EE 8 Software Development Kit
+=== Eclipse Glassfish Server
 
 GlassFish Server 5.1 is targeted as the build and
 runtime environment for the tutorial examples. To build, deploy, and run
@@ -57,12 +56,11 @@ as-install-parent/bin
 as-install/bin
 ----
 
-[[GEXBA]][[jakarta-ee-8-tutorial-component]]
+[[GEXBA]][[jakarta-ee-8-tutorial-examples]]
 
-=== Jakarta EE 8 Tutorial Component
+=== Jakarta EE 8 Tutorial Examples
 
-The tutorial component, including the documentation and example source,
-is contained in GlassFish Server.
+The tutorial example codes are located at https://github.com/eclipse-ee4j/jakartaee-tutorial-examples.
 
 ////
 Updates to the Jakarta EE Tutorial are published periodically. For
