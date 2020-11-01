@@ -121,7 +121,7 @@ sends authentication data to server for validation"]
 The credential is used for future determinations of whether the user is
 authorized to access restricted resources it may request. The web server
 consults the security policy associated with the web resource to
-determine the security roles that are permitted access to the resource.
+determine the security roles that are permitted to access the resource.
 The security policy is derived from annotations or from the deployment
 descriptor. The web container then tests the user's credential against
 each role to determine whether it can map the user to the role.
