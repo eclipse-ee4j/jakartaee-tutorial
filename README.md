@@ -74,8 +74,8 @@ When making a release on GitHub, this zip file should be added to the release.
 
 ## Links
 
-- [JBake maven plugin documentation](https://github.com/Blazebit/jbake-maven-plugin)
-- [JBake documentation](http://jbake.org/docs/2.5.1)
-- [Freemarker documentation](http://freemarker.org/docs)
+- [Asciidoctor Maven Plugin](https://asciidoctor.org/docs/asciidoctor-maven-plugin/)
+
 - [AsciiDoc User Guide](http://asciidoc.org/userguide.html)
+
 - [Asciidoctor quick reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
