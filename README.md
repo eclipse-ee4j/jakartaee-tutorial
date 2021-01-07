@@ -1,13 +1,11 @@
 # Jakarta EE Tutorial
 
+![ build](https://github.com/eclipse-ee4j/jakartaee-tutorial/workflows/build/badge.svg)
+
 This repository contains the source files that are used to build the
 _Jakarta Enterprise Edition (Jakarta EE) Tutorial_. The source files
 are authored in [AsciiDoc](http://asciidoc.org/).  AsciiDoc is similar
-to markdown but is particularly suited for user documentation.  This
-project also uses [JBake](http://jbake.org/). JBake is a static site
-generator that is inspired from Jekyll and written in Java.  JBake uses
-templates for the structure of the page and the body of the page is
-generated from AsciiDoc content.
+to markdown but is particularly suited for user documentation.  
 
 Note that the Jakarta EE Tutorial code examples are located in a
 separate repository
@@ -54,33 +52,6 @@ output.
 mvn generate-resources
 ```
 
-You can also invoke the JBake plugin directly:
-
-```
-mvn jbake:build
-```
-
-#### Rebuild the Site on Changes
-
-The following command builds the site and, if kept running, detects
-changes to the sources and incrementally renders the site. This is
-convenient when writing content.
-
-```
-mvn jbake:watch
-```
-
-#### Serve the Site locally
-
-If a web server is required (for example, absolute paths are used), you
-can use the following command to start a Jetty web server at
-`http://localhost:8820`. The command also watches for changes and
-rebuilds incrementally.
-
-```
-mvn jbake:serve
-```
-
 
 ### Deploy the Site to Github Pages
 
@@ -89,7 +60,7 @@ If you want to manually push a build to the gh-pages branch, use:
 ```
 mvn deploy -Ppublish-site
 ```
-Never commit changes to the gh-pages branch directly.
+Never commit changes to the *gh-pages* branch directly.
 
 ### Produce a Zip File for Download
 
