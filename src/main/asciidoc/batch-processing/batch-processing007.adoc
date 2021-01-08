@@ -19,7 +19,7 @@ as a WAR file, include the job definition file in
 
 [source,xml]
 ----
-<job id="simplejob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+<job id="simplejob" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
                     version="1.0">
   ...
 </job>
