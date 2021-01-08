@@ -7,7 +7,7 @@ The `decorators` example, which is yet another variation on the
 business logic for a bean.
 
 The source files are located in the
-`_tut-install_/examples/cdi/decorators/src/main/java/jakarta/tutorial/decorators/`
+`_tut-install_/examples/cdi/decorators/src/main/java/ee/jakarta/tutorial/decorators/`
 directory.
 
 [[CHDDDFCI]][[overview-of-the-decorators-example]]
@@ -74,10 +74,10 @@ The `beans.xml` file specifies both the decorator and the interceptor:
 [source,xml]
 ----
     <decorators>
-        <class>jakarta.tutorial.decorators.CoderDecorator</class>
+        <class>ee.jakarta.tutorial.decorators.CoderDecorator</class>
     </decorators>
     <interceptors>
-        <class>jakarta.tutorial.decorators.LoggedInterceptor</class>
+        <class>ee.jakarta.tutorial.decorators.LoggedInterceptor</class>
     </interceptors>
 ----
 
@@ -164,6 +164,6 @@ The output from the interceptors appears:
 +
 [source,java]
 ----
-INFO: Entering method: encodeString in class jakarta.tutorial.decorators.CoderBean
-INFO: Entering method: codeString in class jakarta.tutorial.decorators.CoderImpl
+INFO: Entering method: encodeString in class ee.jakarta.tutorial.decorators.CoderBean
+INFO: Entering method: codeString in class ee.jakarta.tutorial.decorators.CoderImpl
 ----

@@ -118,7 +118,7 @@ different outcomes depending on the result of the processing it
 performs.
 2.  Cases specifying only a `from-outcome` value. The `from-outcome`
 element must match either the outcome defined by the `action` attribute
-of the `javax.faces.component.UICommand` component or the outcome
+of the `jakarta.faces.component.UICommand` component or the outcome
 returned by the method referred to by the `UICommand` component.
 3.  Cases specifying only a `from-action` value. This value must match
 the `action` expression specified by the component tag.

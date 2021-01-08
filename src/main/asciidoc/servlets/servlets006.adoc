@@ -32,7 +32,7 @@ when a web container loads the component.
 === Programming Filters
 
 The filtering API is defined by the `Filter`, `FilterChain`, and
-`FilterConfig` interfaces in the `javax.servlet` package. You define a
+`FilterConfig` interfaces in the `jakarta.servlet` package. You define a
 filter by implementing the `Filter` interface.
 
 Use the `@WebFilter` annotation to define a filter in a web application.
@@ -45,7 +45,7 @@ the annotation is the URL pattern; use the `urlPatterns` attribute when
 other attributes are also used.
 
 Classes annotated with the `@WebFilter` annotation must implement the
-`javax.servlet.Filter` interface.
+`jakarta.servlet.Filter` interface.
 
 To add configuration data to the filter, specify the `initParams`
 attribute of the `@WebFilter` annotation. The `initParams` attribute
@@ -54,9 +54,9 @@ defines a filter, specifying an initialization parameter:
 
 [source,java]
 ----
-import javax.servlet.Filter;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
+import jakarta.servlet.Filter;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.annotation.WebInitParam;
 
 @WebFilter(filterName = "TimeOfDayFilter",
 urlPatterns = {"/*"},

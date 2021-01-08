@@ -104,13 +104,13 @@ attribute, as shown by this example:
 
 When the user clicks the button represented by this tag, the
 corresponding component generates an action event. This event is handled
-by the default `javax.faces.event.ActionListener` instance, which calls
+by the default `jakarta.faces.event.ActionListener` instance, which calls
 the action method referenced by the component that triggered the event.
 The action method returns a logical outcome to the action listener.
 
 The listener passes the logical outcome and a reference to the action
 method that produced the outcome to the default
-`javax.faces.application.NavigationHandler`. The `NavigationHandler`
+`jakarta.faces.application.NavigationHandler`. The `NavigationHandler`
 selects the page to display next by matching the outcome or the action
 method reference against the navigation rules in the application
 configuration resource file by the following process.
@@ -118,7 +118,7 @@ configuration resource file by the following process.
 1.  The `NavigationHandler` selects the navigation rule that matches the
 page currently displayed.
 2.  It matches the outcome or the action method reference that it
-received from the default `javax.faces.event.ActionListener` with those
+received from the default `jakarta.faces.event.ActionListener` with those
 defined by the navigation cases.
 3.  It tries to match both the method reference and the outcome against
 the same navigation case.

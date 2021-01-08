@@ -49,22 +49,22 @@ when no `event` attribute is specified, the default event is
 [width="99%",cols="15%,25%,60%"]
 |=======================================================================
 |*Name* |*Type* |*Description*
-|`disabled` |`javax.el.ValueExpression` that evaluates to a `Boolean` |A
+|`disabled` |`jakarta.el.ValueExpression` that evaluates to a `Boolean` |A
 `Boolean` value that identifies the tag status. A value of `true`
 indicates that the Ajax behavior should not be rendered. A value of
 `false` indicates that the Ajax behavior should be rendered. The default
 value is `false`.
 
-|`event` |`javax.el.ValueExpression` that evaluates to a `String` |A
+|`event` |`jakarta.el.ValueExpression` that evaluates to a `String` |A
 `String` that identifies the type of event to which the Ajax action will
 apply. If specified, it must be one of the events supported by the
 component. If not specified, the default event (the event that triggers
 the Ajax request) is determined for the component. The default event is
-`action` for `javax.faces.component.ActionSource` components and
-`valueChange` for `javax.faces.component.EditableValueHolder`
+`action` for `jakarta.faces.component.ActionSource` components and
+`valueChange` for `jakarta.faces.component.EditableValueHolder`
 components.
 
-|`execute` |`javax.el.ValueExpression` that evaluates to an `Object` |A
+|`execute` |`jakarta.el.ValueExpression` that evaluates to an `Object` |A
 `Collection` that identifies a list of components to be executed on the
 server. If a literal is specified, it must be a space-delimited `String`
 of component identifiers and/or one of the keywords. If a
@@ -72,23 +72,23 @@ of component identifiers and/or one of the keywords. If a
 a `Collection` of `String` objects. If not specified, the default value
 is `@this`.
 
-|`immediate` |`javax.el.ValueExpression` that evaluates to a `Boolean`
+|`immediate` |`jakarta.el.ValueExpression` that evaluates to a `Boolean`
 |A `Boolean` value that indicates whether inputs are to be processed
 early in the lifecycle. If `true`, behavior events generated from this
 behavior are broadcast during the Apply Request Values phase. Otherwise,
 the events will be broadcast during the Invoke Application phase.
 
-|`listener` |`javax.el.MethodExpression` |The name of the listener
-method that is called when a `javax.faces.event.AjaxBehaviorEvent` has
+|`listener` |`jakarta.el.MethodExpression` |The name of the listener
+method that is called when a `jakarta.faces.event.AjaxBehaviorEvent` has
 been broadcast for the listener.
 
-|`onevent` |`javax.el.ValueExpression` that evaluates to a `String` |The
+|`onevent` |`jakarta.el.ValueExpression` that evaluates to a `String` |The
 name of the JavaScript function that handles UI events.
 
-|`onerror` |`javax.el.ValueExpression` that evaluates to a `String` |The
+|`onerror` |`jakarta.el.ValueExpression` that evaluates to a `String` |The
 name of the JavaScript function that handles errors.
 
-|`render` |`javax.el.ValueExpression` that evaluates to an `Object` |A
+|`render` |`jakarta.el.ValueExpression` that evaluates to an `Object` |A
 `Collection` that identifies a list of components to be rendered on the
 client. If a literal is specified, it must be a space-delimited `String`
 of component identifiers and/or one of the keywords. If a

@@ -31,7 +31,7 @@ interceptor with target beans or methods. For example, the `billpayment`
 example contains an interceptor binding type named `@Logged` and an
 interceptor named `LoggedInterceptor`. The interceptor binding type
 declaration looks something like a qualifier declaration, but it is
-annotated with `javax.interceptor.InterceptorBinding`:
+annotated with `jakarta.interceptor.InterceptorBinding`:
 
 [source,java]
 ----
@@ -56,7 +56,7 @@ link:#GKHRQ[The LoggedInterceptor Interceptor
 Class].
 
 Every `@AroundInvoke` method takes a
-`javax.interceptor.InvocationContext` argument, returns a
+`jakarta.interceptor.InvocationContext` argument, returns a
 `java.lang.Object`, and throws an `Exception`. It can call
 `InvocationContext` methods. The `@AroundInvoke` method must call the
 `proceed` method, which causes the target class method to be invoked.
@@ -96,7 +96,7 @@ the `LoggedInterceptor` class is specified as follows:
 [source,xml]
 ----
 <interceptors>
-    <class>jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
+    <class>ee.jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
 </interceptors>
 ----
 

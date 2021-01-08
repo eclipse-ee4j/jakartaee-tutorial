@@ -15,7 +15,7 @@ functions for components on the page. These functions include
 === Why Use Managed Beans
 
 By using a managed bean to perform these functions, you eliminate the
-need to implement the `javax.faces.validator.Validator` interface to
+need to implement the `jakarta.faces.validator.Validator` interface to
 handle the validation or one of the listener interfaces to handle
 events. Also, by using a managed bean instead of a `Validator`
 implementation to perform validation, you eliminate the need to create a
@@ -121,7 +121,7 @@ to which the components are bound.
 A managed bean method that handles an action event must be a public
 method that accepts an action event and returns `void`. This method is
 referenced using the component tag's `actionListener` attribute. Only
-components that implement `javax.faces.component.ActionSource` can refer
+components that implement `jakarta.faces.component.ActionSource` can refer
 to this method.
 
 In the following example, a method from a managed bean named
@@ -151,11 +151,11 @@ Action Event] explains how a component tag references this method.
 
 === Writing a Method to Perform Validation
 
-Instead of implementing the `javax.faces.validator.Validator` interface
+Instead of implementing the `jakarta.faces.validator.Validator` interface
 to perform validation for a component, you can include a method in a
 managed bean to take care of validating input for the component. A
 managed bean method that performs validation must accept a
-`javax.faces.context.FacesContext`, the component whose data must be
+`jakarta.faces.context.FacesContext`, the component whose data must be
 validated, and the data to be validated, just as the `validate` method
 of the `Validator` interface does. A component refers to the managed
 bean method by using its `validator` attribute. Only values of `UIInput`
@@ -212,7 +212,7 @@ A managed bean that handles a value-change event must use a public
 method that accepts a value-change event and returns `void`. This method
 is referenced using the component's `valueChangeListener` attribute.
 This section explains how to write a managed bean method to replace the
-`javax.faces.event.ValueChangeListener` implementation.
+`jakarta.faces.event.ValueChangeListener` implementation.
 
 The following example tag comes from
 link:#BNATA[Registering a Value-Change Listener on a
@@ -232,7 +232,7 @@ a value-change event is generated, and the
              required="true"
              requiredMessage="#{bundle.ReqCustomerName}">    
      <f:valueChangeListener
-         type="jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
+         type="ee.jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
 </h:inputText>
 ----
 

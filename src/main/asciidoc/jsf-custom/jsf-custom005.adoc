@@ -16,14 +16,14 @@ value)
 * Processing validation on the local value
 * Queueing events
 
-The `javax.faces.component.UIComponentBase` class defines the default
+The `jakarta.faces.component.UIComponentBase` class defines the default
 behavior of a component class. All the classes representing the standard
 components extend from `UIComponentBase`. These classes add their own
 behavior definitions, as your custom component class will do.
 
 Your custom component class must either extend `UIComponentBase`
 directly or extend a class representing one of the standard components.
-These classes are located in the `javax.faces.component` package, and
+These classes are located in the `jakarta.faces.component` package, and
 their names begin with `UI`.
 
 If your custom component serves the same purpose as a standard
@@ -37,10 +37,10 @@ functionality you need to define is to make the menu editable.
 Whether you decide to have your component extend `UIComponentBase` or a
 standard component, you might also want your component to implement one
 or more of these behavioral interfaces defined in the
-`javax.faces.component` package:
+`jakarta.faces.component` package:
 
 * `ActionSource`: Indicates that the component can fire a
-`javax.faces.event.ActionEvent`
+`jakarta.faces.event.ActionEvent`
 * `ActionSource2`: Extends `ActionSource` and allows component
 properties referencing methods that handle action events to use method
 expressions as defined by the EL
@@ -245,12 +245,12 @@ Notice that `encodeBegin` renders only the beginning `map` tag. The
 `encodeEnd` method renders the `input` tag and the ending `map` tag.
 
 The encoding methods accept a `UIComponent` argument and a
-`javax.faces.context.FacesContext` argument. The `FacesContext` instance
+`jakarta.faces.context.FacesContext` argument. The `FacesContext` instance
 contains all the information associated with the current request. The
 `UIComponent` argument is the component that needs to be rendered.
 
 The rest of the method renders the markup to the
-`javax.faces.context.ResponseWriter` instance, which writes out the
+`jakarta.faces.context.ResponseWriter` instance, which writes out the
 markup to the current response. This basically involves passing the HTML
 tag names and attribute names to the `ResponseWriter` instance as
 strings, retrieving the values of the component attributes, and passing
@@ -303,7 +303,7 @@ parameters, you must also implement the `decode` method.
 During the Apply Request Values phase, the Jakarta Server Faces
 implementation processes the `decode` methods of all components in the
 tree. The `decode` method extracts a component's local value from
-incoming request parameters and uses a `javax.faces.convert.Converter`
+incoming request parameters and uses a `jakarta.faces.convert.Converter`
 implementation to convert the value to a type that is acceptable to the
 component class.
 
@@ -481,7 +481,7 @@ method sets the component's properties to the values saved in the
 `Object` array.
 
 Whether or not you implement these methods in your component class, you
-can use the `javax.faces.STATE_SAVING_METHOD` context parameter to
+can use the `jakarta.faces.STATE_SAVING_METHOD` context parameter to
 specify in the deployment descriptor where you want the state to be
 saved: either `client` or `server`. If state is saved on the client, the
 state of the entire view is rendered to a hidden field on the page. By

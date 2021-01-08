@@ -45,27 +45,27 @@ contains an `HttpSession`.
 |=======================================================================
 |*Object* |*Event* |*Listener Interface and Event Class*
 |Web context |Initialization and destruction
-|`javax.servlet.ServletContextListener` and `ServletContextEvent`
+|`jakarta.servlet.ServletContextListener` and `ServletContextEvent`
 
 |Web context |Attribute added, removed, or replaced
-|`javax.servlet.ServletContextAttributeListener` and
+|`jakarta.servlet.ServletContextAttributeListener` and
 `ServletContextAttributeEvent`
 
 |Session |Creation, invalidation, activation, passivation, and timeout
-|`javax.servlet.http.HttpSessionListener`,
-`javax.servlet.http.HttpSessionActivationListener`, and
+|`jakarta.servlet.http.HttpSessionListener`,
+`jakarta.servlet.http.HttpSessionActivationListener`, and
 `HttpSessionEvent`
 
 |Session |Attribute added, removed, or replaced
-|`javax.servlet.http.HttpSessionAttributeListener` and
+|`jakarta.servlet.http.HttpSessionAttributeListener` and
 `HttpSessionBindingEvent`
 
 |Request |A servlet request has started being processed by web
-components |`javax.servlet.ServletRequestListener` and
+components |`jakarta.servlet.ServletRequestListener` and
 `ServletRequestEvent`
 
 |Request |Attribute added, removed, or replaced
-|`javax.servlet.ServletRequestAttributeListener` and
+|`jakarta.servlet.ServletRequestAttributeListener` and
 `ServletRequestAttributeEvent`
 |=======================================================================
 
@@ -77,12 +77,12 @@ interfaces:
 
 [source,java]
 ----
-javax.servlet.ServletContextListener
-javax.servlet.ServletContextAttributeListener
-javax.servlet.ServletRequestListener
-javax.servlet.ServletRequestAttributeListener
-javax.servlet..http.HttpSessionListener
-javax.servlet..http.HttpSessionAttributeListener
+jakarta.servlet.ServletContextListener
+jakarta.servlet.ServletContextAttributeListener
+jakarta.servlet.ServletRequestListener
+jakarta.servlet.ServletRequestAttributeListener
+jakarta.servlet..http.HttpSessionListener
+jakarta.servlet..http.HttpSessionAttributeListener
 ----
 
 For example, the following code snippet defines a listener that
@@ -90,9 +90,9 @@ implements two of these interfaces:
 
 [source,java]
 ----
-import javax.servlet.ServletContextAttributeListener;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
+import jakarta.servlet.ServletContextAttributeListener;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
 
 @WebListener()
 public class SimpleServletListener implements ServletContextListener,

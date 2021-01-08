@@ -28,7 +28,7 @@ the invocation.
 
 === Creating an Asynchronous Business Method
 
-Annotate a business method with `javax.ejb.Asynchronous` to mark that
+Annotate a business method with `jakarta.ejb.Asynchronous` to mark that
 method as an asynchronous method, or apply `@Asynchronous` at the class
 level to mark all the business methods of the session bean as
 asynchronous methods. Session bean methods that expose web services
@@ -50,7 +50,7 @@ the status as a `String`. Even if the payment processor takes a long
 time, the client can continue working, and display the result when the
 processing finally completes.
 
-The `javax.ejb.AsyncResult<V>` class is a concrete implementation of the
+The `jakarta.ejb.AsyncResult<V>` class is a concrete implementation of the
 `Future<V>` interface provided as a helper class for returning
 asynchronous results. `AsyncResult` has a constructor with the result as
 a parameter, making it easy to create `Future<V>` implementations. For
@@ -71,7 +71,7 @@ The result is returned to the enterprise bean container, not directly to
 the client, and the enterprise bean container makes the result available
 to the client. The session bean can check whether the client requested
 that the invocation be cancelled by calling the
-`javax.ejb.SessionContext.wasCancelled` method. For example:
+`jakarta.ejb.SessionContext.wasCancelled` method. For example:
 
 [source,java]
 ----

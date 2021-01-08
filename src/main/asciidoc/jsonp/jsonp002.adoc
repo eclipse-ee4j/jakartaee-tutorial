@@ -7,7 +7,7 @@ model described in link:#BABJJACI[Generating and Parsing
 JSON Data]. Jakarta JSON Processing contains the following
 packages:
 
-* The `javax.json` package contains a reader interface, a writer
+* The `jakarta.json` package contains a reader interface, a writer
 interface, a model builder interface for the object model, and utility
 classes and Java types for JSON elements. This package also includes
 several classes that implement other JSON-related standards: link:http://tools.ietf.org/html/rfc6901[JSON Pointer],
@@ -15,17 +15,17 @@ link:http://tools.ietf.org/html/rfc6902[JSON Patch], and link:http://tools.ietf.
 These standards are used to retrieve, transform or manipulate values
 in an object model. link:#CHDJJCBE[Table 20-1] lists the main classes
 and interfaces in this package.
-* The `javax.json.stream` package contains a parser interface and a
+* The `jakarta.json.stream` package contains a parser interface and a
 generator interface for the streaming model. link:#CHDIHCEG[Table 20-2]
 lists the main classes and interfaces in this package.
-* The `javax.json.spi` package contains a Service Provider Interface (SPI)
+* The `jakarta.json.spi` package contains a Service Provider Interface (SPI)
 to plug in implementations for JSON processing objects. This package
 contains the `JsonProvider` class, which contains the methods that a service
 provider implements.
 
 [[sthref118]][[CHDJJCBE]]
 
-*Table 20-1 Main Classes and Interfaces in javax.json*
+*Table 20-1 Main Classes and Interfaces in jakarta.json*
 [width=99%,cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
@@ -69,7 +69,7 @@ processing.
 
 [[sthref119]][[CHDIHCEG]]
 
-*Table 20-2 Main Classes and Interfaces in javax.json.stream*
+*Table 20-2 Main Classes and Interfaces in jakarta.json.stream*
 
 [width=99%,cols="25%,75%"]
 |=======================================================================

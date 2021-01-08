@@ -22,7 +22,7 @@ read. This is accomplished by a version column in the database table,
 with a corresponding version attribute in the entity class. When a row
 is modified, the version value is incremented. The original transaction
 checks the version attribute, and if the data has been modified by
-another transaction, a `javax.persistence.OptimisticLockException` will
+another transaction, a `jakarta.persistence.OptimisticLockException` will
 be thrown, and the original transaction will be rolled back. When the
 application specifies optimistic lock modes, the persistence provider
 verifies that a particular entity has not changed since it was read from
@@ -52,7 +52,7 @@ modification may result in decreased application performance.
 
 === Using Optimistic Locking
 
-Use the `javax.persistence.Version` annotation to mark a persistent
+Use the `jakarta.persistence.Version` annotation to mark a persistent
 field or property as a version attribute of an entity. The version
 attribute enables the entity for optimistic concurrency control. The
 persistence provider reads and updates the version attribute when an

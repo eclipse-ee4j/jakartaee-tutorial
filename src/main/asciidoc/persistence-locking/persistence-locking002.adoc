@@ -17,7 +17,7 @@ provider is to immediately acquire long-term read or write locks for the
 database data corresponding to entity state.
 
 You can set the lock mode for an entity operation by specifying one of
-the lock modes defined in the `javax.persistence.LockModeType`
+the lock modes defined in the `jakarta.persistence.LockModeType`
 enumerated type, listed in link:#GKJIE[Table 45-1].
 
 [[sthref183]][[GKJIE]]
@@ -147,7 +147,7 @@ committed.
 
 ==== Pessimistic Locking Timeouts
 
-Use the `javax.persistence.lock.timeout` property to specify the length
+Use the `jakarta.persistence.lock.timeout` property to specify the length
 of time in milliseconds the persistence provider should wait to obtain a
 lock on the database tables. If the time it takes to obtain a lock
 exceeds the value of this property, a `LockTimeoutException` will be
@@ -162,9 +162,9 @@ a|
 Note:
 
 Portable applications should not rely on the setting of
-`javax.persistence.lock.timeout`, because the locking strategy and
+`jakarta.persistence.lock.timeout`, because the locking strategy and
 underlying database may mean that the timeout value cannot be used. The
-value of `javax.persistence.lock.timeout` is a hint, not a contract.
+value of `jakarta.persistence.lock.timeout` is a hint, not a contract.
 
 |=======================================================================
 
@@ -176,7 +176,7 @@ This property may be set programmatically by passing it to the
 `Persistence.createEntityManagerFactory` method. It may also be set as a
 property in the `persistence.xml` deployment descriptor.
 
-If `javax.persistence.lock.timeout` is set in multiple places, the value
+If `jakarta.persistence.lock.timeout` is set in multiple places, the value
 will be determined in the following order:
 
 1.  The argument to one of the `EntityManager` or `Query` methods

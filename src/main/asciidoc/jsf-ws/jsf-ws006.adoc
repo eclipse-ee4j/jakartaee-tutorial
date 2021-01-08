@@ -5,7 +5,7 @@ If the WebSocket is declared in a page which is restricted to logged-in users
 only with a specific role, then you might want to add the push handshake request
 URL to the set of restricted URLs.
 
-The push handshake request URL is composed of the URI prefix, `/javax.faces.push/`,
+The push handshake request URL is composed of the URI prefix, `/jakarta.faces.push/`,
 followed by the channel name. In the example of container managed security,
 which has already restricted an example page, `/user/foo.xhtml`, to logged-in
 users with the example role, `USER`, on the example URL pattern, `/user/*`, in
@@ -26,7 +26,7 @@ users with the example role, `USER`, on the example URL pattern, `/user/*`, in
 
 If the page, `/user/foo.xhtml`, contains `<f:websocket channel="foo">`, then you
 must add a restriction on the push handshake request URL pattern of
-`/javax.faces.push/foo`, as shown next:
+`/jakarta.faces.push/foo`, as shown next:
 
 [source,xml]
 ----
@@ -34,7 +34,7 @@ must add a restriction on the push handshake request URL pattern of
     <web-resource-collection>
         <web-resource-name>Restrict access to role USER.</web-resource-name>
         <url-pattern>/user/*</url-pattern>
-        <url-pattern>/javax.faces.push/foo</url-pattern>
+        <url-pattern>/jakarta.faces.push/foo</url-pattern>
     </web-resource-collection>
     <auth-constraint>
         <role-name>USER</role-name>

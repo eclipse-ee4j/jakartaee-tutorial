@@ -64,7 +64,7 @@ public class Contact implements Serializable {
     @Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
             message = "{invalid.phonenumber}")
     protected String homePhone;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(jakarta.persistence.TemporalType.DATE)
     @Past
     protected Date birthday;
     ...

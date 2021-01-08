@@ -20,7 +20,7 @@ image:jakartaeett_dt_019.png[
 message."]
 
 The starting point for developing a JAX-WS web service is a Java class
-annotated with the `javax.jws.WebService` annotation. The `@WebService`
+annotated with the `jakarta.jws.WebService` annotation. The `@WebService`
 annotation defines the class as a web service endpoint.
 
 A service endpoint interface or service endpoint implementation (SEI) is
@@ -64,7 +64,7 @@ The sections that follow cover these steps in greater detail.
 JAX-WS endpoints must follow these requirements.
 
 * The implementing class must be annotated with either the
-`javax.jws.WebService` or the `javax.jws.WebServiceProvider` annotation.
+`jakarta.jws.WebService` or the `jakarta.jws.WebServiceProvider` annotation.
 * The implementing class may explicitly reference an SEI through the
 `endpointInterface` element of the `@WebService` annotation but is not
 required to do so. If no `endpointInterface` is specified in
@@ -72,7 +72,7 @@ required to do so. If no `endpointInterface` is specified in
 * The business methods of the implementing class must be public and must
 not be declared `static` or `final`.
 * Business methods that are exposed to web service clients must be
-annotated with `javax.jws.WebMethod`.
+annotated with `jakarta.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
 JAXB-compatible parameters and return types. See the list of JAXB
 default data type bindings in link:#BNAZC[Types Supported by
@@ -81,8 +81,8 @@ JAX-WS].
 `abstract`.
 * The implementing class must have a default public constructor.
 * The implementing class must not define the `finalize` method.
-* The implementing class may use the `javax.annotation.PostConstruct` or
-the `javax.annotation.PreDestroy` annotations on its methods for
+* The implementing class may use the `jakarta.annotation.PostConstruct` or
+the `jakarta.annotation.PreDestroy` annotations on its methods for
 lifecycle event callbacks.
 +
 The `@PostConstruct` method is called by the container before the
@@ -105,10 +105,10 @@ class also must define a default, public, no-argument constructor.
 
 [source,java]
 ----
-package jakarta.tutorial.helloservice;
+package ee.jakarta.tutorial.helloservice;
 
-import javax.jws.WebService;
-import javax.jws.WebMethod;
+import jakarta.jws.WebService;
+import jakarta.jws.WebMethod;
 
 @WebService
 public class Hello {
@@ -248,8 +248,8 @@ file:
 +
 [source,java]
 ----
-import jakarta.tutorial.helloservice.endpoint.HelloService;
-import javax.xml.ws.WebServiceRef;
+import ee.jakarta.tutorial.helloservice.endpoint.HelloService;
+import jakarta.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
     @WebServiceRef(wsdlLocation =
@@ -261,7 +261,7 @@ invoking `getHelloPort` on the service:
 +
 [source,java]
 ----
-jakarta.tutorial.helloservice.endpoint.Hello port = service.getHelloPort();
+ee.jakarta.tutorial.helloservice.endpoint.Hello port = service.getHelloPort();
 ----
 +
 The port implements the SEI defined by the service.
@@ -275,15 +275,15 @@ return port.sayHello(arg0);
 
 Here is the full source of `HelloAppClient.java`, which is located in
 the
-`_tut-install_/examples/jaxws/hello-appclient/src/main/java/jakarta/tutorial/hello/appclient/`
+`_tut-install_/examples/jaxws/hello-appclient/src/main/java/ee/jakarta/tutorial/hello/appclient/`
 directory:
 
 [source,java]
 ----
-package jakarta.tutorial.hello.appclient;
+package ee.jakarta.tutorial.hello.appclient;
 
-import jakarta.tutorial.helloservice.endpoint.HelloService;
-import javax.xml.ws.WebServiceRef;
+import ee.jakarta.tutorial.helloservice.endpoint.HelloService;
+import jakarta.xml.ws.WebServiceRef;
 
 public class HelloAppClient {
     @WebServiceRef(wsdlLocation =
@@ -298,7 +298,7 @@ public class HelloAppClient {
     }
 
     private static String sayHello(java.lang.String arg0) {
-        jakarta.tutorial.helloservice.endpoint.Hello port =
+        ee.jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }
@@ -387,9 +387,9 @@ annotation:
 +
 [source,java]
 ----
-import jakarta.tutorial.helloservice.endpoint.HelloService;
+import ee.jakarta.tutorial.helloservice.endpoint.HelloService;
 ...
-import javax.xml.ws.WebServiceRef;
+import jakarta.xml.ws.WebServiceRef;
 ----
 2.  It defines a reference to the web service by specifying the WSDL
 location:
@@ -407,7 +407,7 @@ calls the `sayHello` method on the port:
 private HelloService service;
 ...
 private String sayHello(java.lang.String arg0) {
-    jakarta.tutorial.helloservice.endpoint.Hello port =
+    ee.jakarta.tutorial.helloservice.endpoint.Hello port =
             service.getHelloPort();
     return port.sayHello(arg0);
 }
@@ -421,22 +421,22 @@ out.println("<p>" + sayHello("world") + "</p>");
 
 The significant parts of the `HelloServlet` code follow. The code is
 located in the
-`_tut-install_/examples/jaxws/hello-webclient/src/java/jakarta/tutorial/hello/ webclient/`
+`_tut-install_/examples/jaxws/hello-webclient/src/java/ee/jakarta/tutorial/hello/ webclient/`
 directory.
 
 [source,java]
 ----
-package jakarta.tutorial.hello.webclient;
+package ee.jakarta.tutorial.hello.webclient;
 
-import jakarta.tutorial.helloservice.endpoint.HelloService;
+import ee.jakarta.tutorial.helloservice.endpoint.HelloService;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.ws.WebServiceRef;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.xml.ws.WebServiceRef;
 
 @WebServlet(name="HelloServlet", urlPatterns={"/HelloServlet"})
 public class HelloServlet extends HttpServlet {
@@ -475,7 +475,7 @@ public class HelloServlet extends HttpServlet {
     //   getServletInfo method
 
     private String sayHello(java.lang.String arg0) {
-        jakarta.tutorial.helloservice.endpoint.Hello port =
+        ee.jakarta.tutorial.helloservice.endpoint.Hello port =
                 service.getHelloPort();
         return port.sayHello(arg0);
     }

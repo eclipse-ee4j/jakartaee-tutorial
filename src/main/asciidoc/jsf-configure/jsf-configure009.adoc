@@ -27,7 +27,7 @@ file. Here is a hypothetical `converter` configuration for
 Attributes specified in a `converter` tag override any settings in the
 `@FacesConverter` annotation.
 
-The `converter` element represents a `javax.faces.convert.Converter`
+The `converter` element represents a `jakarta.faces.convert.Converter`
 implementation and contains required `converter-id` and
 `converter-class` elements.
 

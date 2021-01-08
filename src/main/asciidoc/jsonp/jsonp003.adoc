@@ -15,9 +15,9 @@ data in a text file:
 [source,java]
 ----
 import java.io.FileReader;
-import javax.json.Json;
-import javax.json.JsonReader;
-import javax.json.JsonStructure;
+import jakarta.json.Json;
+import jakarta.json.JsonReader;
+import jakarta.json.JsonStructure;
 ...
 JsonReader reader = Json.createReader(new FileReader("jsondata.txt"));
 JsonStructure jsonst = reader.read();
@@ -38,8 +38,8 @@ application code:
 
 [source,java]
 ----
-import javax.json.Json;
-import javax.json.JsonObject;
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
 ...
 JsonObject model = Json.createObjectBuilder()
    .add("firstName", "Duke")
@@ -96,11 +96,11 @@ object model:
 
 [source,java]
 ----
-import javax.json.JsonValue;
-import javax.json.JsonObject;
-import javax.json.JsonArray;
-import javax.json.JsonNumber;
-import javax.json.JsonString;
+import jakarta.json.JsonValue;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonNumber;
+import jakarta.json.JsonString;
 ...
 public static void navigateTree(JsonValue tree, String key) {
    if (key != null)
@@ -194,7 +194,7 @@ class as follows:
 [source,java]
 ----
 import java.io.StringWriter;
-import javax.json.JsonWriter;
+import jakarta.json.JsonWriter;
 ...
 StringWriter stWriter = new StringWriter();
 JsonWriter jsonWriter = Json.createWriter(stWriter);

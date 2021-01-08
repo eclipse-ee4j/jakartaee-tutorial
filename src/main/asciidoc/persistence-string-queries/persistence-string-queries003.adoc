@@ -3,7 +3,7 @@
 == Executing String-Based Queries
 
 String-based queries are executed similarly to strongly typed Criteria
-queries. First create a `javax.persistence.TypedQuery` object by passing
+queries. First create a `jakarta.persistence.TypedQuery` object by passing
 the criteria query object to the `EntityManager.createQuery` method,
 then call either `getSingleResult` or `getResultList` on the query
 object to execute the query:

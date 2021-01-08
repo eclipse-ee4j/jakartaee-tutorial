@@ -17,7 +17,7 @@ class is put into service.
 1.  In the managed bean class or any of its superclasses, define a
 method that performs the initialization that you require.
 2.  Annotate the declaration of the method with the
-`javax.annotation.PostConstruct` annotation.
+`jakarta.annotation.PostConstruct` annotation.
 
 When the managed bean is injected into a component, CDI calls the method
 after all injection has occurred and after all initializers have been
@@ -66,6 +66,6 @@ the destruction of the managed bean.
 In this method, perform any cleanup that is required before the bean is
 destroyed, such as releasing a resource that the bean has been holding.
 2.  Annotate the declaration of the method with the
-`javax.annotation.PreDestroy` annotation.
+`jakarta.annotation.PreDestroy` annotation.
 
 CDI calls this method before starting to destroy the bean.

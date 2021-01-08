@@ -8,7 +8,7 @@ well as custom error messages (which are displayed by the `message` and
 messages available at application startup time, do one of the following:
 
 * Queue an individual message onto the
-`javax.faces.context.FacesContext` instance programmatically, as
+`jakarta.faces.context.FacesContext` instance programmatically, as
 described in link:#GKUHG[Using FacesMessage to Create a Message]
 * Register all the messages with your application using the application
 configuration resource file
@@ -21,7 +21,7 @@ messages for the Duke's Bookstore case study application:
 <application>
     <resource-bundle>
         <base-name>
-            jakarta.tutorial.dukesbookstore.web.messages.Messages
+            ee.jakarta.tutorial.dukesbookstore.web.messages.Messages
         </base-name>
         <var>bundle</var>
     </resource-bundle>

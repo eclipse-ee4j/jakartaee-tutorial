@@ -10,7 +10,7 @@ Facelets-based application.
 
 1.  When a client, such as a browser, makes a new request to a page that
 is created using Facelets, a new component tree or
-`javax.faces.component.UIViewRoot` is created and placed in the
+`jakarta.faces.component.UIViewRoot` is created and placed in the
 `FacesContext`.
 2.  [[BABGCBAJ]]
 +

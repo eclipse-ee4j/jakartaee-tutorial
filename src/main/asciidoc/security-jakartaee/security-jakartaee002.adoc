@@ -245,7 +245,7 @@ annotation:
 +
 [source,java]
 ----
-import javax.annotation.security.*;
+import jakarta.annotation.security.*;
 @RolesAllowed("RestrictedUsers")
 public class Calculator {
 
@@ -268,7 +268,7 @@ annotation:
 +
 [source,java]
 ----
-import javax.annotation.security.*;
+import jakarta.annotation.security.*;
 @RolesAllowed("Users")
 public class Calculator {
     @RolesAllowed("Administrator")
@@ -399,7 +399,7 @@ but the result must be the same as if the corresponding container-specific call
 had been made (for example `EJBContext.isCallerInRole()`), and must be consistent with
 the result implied by specifications that prescribe role-mapping behavior.
 
-The `javax.ejb.EJBContext` interface provides two methods that allow the
+The `jakarta.ejb.EJBContext` interface provides two methods that allow the
 bean provider to access security information about the enterprise bean's
 caller.
 

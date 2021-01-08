@@ -25,10 +25,10 @@ the `ConverterBean` class is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.converter.ejb;
+package ee.jakarta.tutorial.converter.ejb;
 
 import java.math.BigDecimal;
-import javax.ejb.*;
+import jakarta.ejb.*;
 
 @Stateless
 public class ConverterBean {
@@ -66,7 +66,7 @@ converter/web/ConverterServlet.java
 A Jakarta servlet is a web component that responds to HTTP requests.
 
 The `ConverterServlet` class uses dependency injection to obtain a
-reference to `ConverterBean`. The `javax.ejb.EJB` annotation is added to
+reference to `ConverterBean`. The `jakarta.ejb.EJB` annotation is added to
 the declaration of the private member variable `converter`, which is of
 type `ConverterBean`. `ConverterBean` exposes a local, no-interface
 view, so the enterprise bean implementation class is the variable type:

@@ -5,7 +5,7 @@
 In addition to the validators you declare on the components, you can
 also specify zero or more default validators in the application
 configuration resource file. The default validator applies to all
-`javax.faces.component.UIInput` instances in a view or component tree
+`jakarta.faces.component.UIInput` instances in a view or component tree
 and is appended after the local defined validators. Here is an example
 of a default validator registered in the application configuration
 resource file:
@@ -15,7 +15,7 @@ resource file:
 <faces-config>
     <application>
         <default-validators>
-            <validator-id>javax.faces.Bean</validator-id>
+            <validator-id>jakarta.faces.Bean</validator-id>
         </default-validators>
     <application/>
 </faces-config>

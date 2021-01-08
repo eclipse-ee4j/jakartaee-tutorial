@@ -11,7 +11,7 @@ particular component may be rendered back to the client.
 
 Once such a partial request enters the Jakarta Server Faces lifecycle, the
 information is identified and processed by a
-`javax.faces.context.PartialViewContext` object. The Jakarta Server Faces
+`jakarta.faces.context.PartialViewContext` object. The Jakarta Server Faces
 lifecycle is still aware of such Ajax requests and modifies the
 component tree accordingly.
 

@@ -9,7 +9,7 @@ link:#BNAQK[Validation Model], there are two ways to
 implement validation code.
 
 * Implement a managed bean method that performs the validation.
-* Provide an implementation of the `javax.faces.validator.Validator`
+* Provide an implementation of the `jakarta.faces.validator.Validator`
 interface to perform the validation.
 
 link:#BNAVE[Writing a Method to Perform Validation]
@@ -102,7 +102,7 @@ The `validate` method performs the actual validation of the data. It
 takes the `FacesContext` instance, the component whose data needs to be
 validated, and the value that needs to be validated. A validator can
 validate only data of a component that implements
-`javax.faces.component.EditableValueHolder`.
+`jakarta.faces.component.EditableValueHolder`.
 
 Here is an implementation of the `validate` method:
 
@@ -156,7 +156,7 @@ While iterating over the list, this method checks the pattern of the
 component's local value against the patterns in the list. If the pattern
 of the local value does not match any pattern in the list, this method
 generates an error message. It then creates a
-`javax.faces.application.FacesMessage` and queues it on the
+`jakarta.faces.application.FacesMessage` and queues it on the
 `FacesContext` for display, using a `String` that represents the key in
 the `Properties` file:
 
@@ -168,7 +168,7 @@ public static final String FORMAT_INVALID_MESSAGE_ID =
 ----
 
 Finally, the method passes the message to the constructor of
-`javax.faces.validator.ValidatorException`.
+`jakarta.faces.validator.ValidatorException`.
 
 When the error message is displayed, the format pattern will be
 substituted for the `{0}` in the error message, which, in English, is as

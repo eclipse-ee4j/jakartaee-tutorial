@@ -110,7 +110,7 @@ configuration properties:
     @ActivationConfigProperty(propertyName = "destinationLookup",
             propertyValue = "jms/MyQueue"),
     @ActivationConfigProperty(propertyName = "destinationType",
-            propertyValue = "javax.jms.Queue")
+            propertyValue = "jakarta.jms.Queue")
 })
 ----
 

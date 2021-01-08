@@ -29,11 +29,11 @@ component once but create multiple renderers, each of which defines a
 different way to render the component to a particular kind of client
 device.
 
-A `javax.faces.component.UIComponent` is a Java class that is
+A `jakarta.faces.component.UIComponent` is a Java class that is
 responsible for representing a self-contained piece of the user
 interface during the request-processing lifecycle. It is intended to
 represent the meaning of the component; the visual representation of the
-component is the responsibility of the `javax.faces.render.Renderer`.
+component is the responsibility of the `jakarta.faces.render.Renderer`.
 There can be multiple instances of the same `UIComponent` class in any
 given Jakarta Server Faces view, just as there can be multiple instances of
 any Java class in any given Java program.
@@ -55,7 +55,7 @@ group of renderers is placed, and the `render-kit-id` identifies the
 group. Most Jakarta Server Faces component libraries provide their own
 render kits.
 
-A `javax.faces.view.facelets.Tag` object is a helper to the
+A `jakarta.faces.view.facelets.Tag` object is a helper to the
 `UIComponent` and `Renderer` that allows the page author to include an
 instance of a `UIComponent` in a Jakarta Server Faces view. A tag represents
 a specific combination of `component-type` and `renderer-type`.

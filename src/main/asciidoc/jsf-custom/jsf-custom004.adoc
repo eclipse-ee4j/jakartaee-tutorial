@@ -14,7 +14,7 @@ component.
 .  [[CDECBJAE]] Delegate rendering to a renderer if your component does not handle the rendering. To do this:
 +
 --
-..  Create a custom renderer class by extending `javax.faces.render.Renderer`.
+..  Create a custom renderer class by extending `jakarta.faces.render.Renderer`.
 ..  Register the renderer to a render kit.
 ..  Register the component.
 ..  Create an event handler if your component generates events.

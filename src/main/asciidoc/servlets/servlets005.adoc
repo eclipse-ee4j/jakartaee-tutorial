@@ -110,7 +110,7 @@ written or before the response is committed.
 See link:#BNAXU[Chapter 22, "Internationalizing and
 Localizing Web Applications"] for details.
 
-HTTP response objects, `javax.servlet.http.HttpServletResponse`, have
+HTTP response objects, `jakarta.servlet.http.HttpServletResponse`, have
 fields representing HTTP headers, such as the following.
 
 * Status codes, which are used to indicate the reason a request is not

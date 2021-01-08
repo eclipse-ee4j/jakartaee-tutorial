@@ -61,7 +61,7 @@ component:
              required="true"
              requiredMessage="#{bundle.ReqCustomerName}">
     <f:valueChangeListener
-        type="jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
+        type="ee.jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
 </h:inputText>
 ----
 
@@ -98,7 +98,7 @@ Here is an example of an `h:commandLink` tag that references an
 ----
 <h:commandLink id="Duke" action="bookstore">
     <f:actionListener
-        type="jakarta.tutorial.dukesbookstore.listeners.LinkBookChangeListener" />
+        type="ee.jakarta.tutorial.dukesbookstore.listeners.LinkBookChangeListener" />
     <h:outputText value="#{bundle.Book201}"/>
 </h:commandLink>
 ----

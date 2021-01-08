@@ -46,21 +46,21 @@ link:#GKECC[Table 57-1].
 [width="80%",cols="20%,60%"]
 |=======================================================================
 |*Interceptor Metadata Annotation* |*Description*
-|`javax.interceptor.AroundConstruct` |Designates the method as an
+|`jakarta.interceptor.AroundConstruct` |Designates the method as an
 interceptor method that receives a callback after the target class is
 constructed
 
-|`javax.interceptor.AroundInvoke` |Designates the method as an
+|`jakarta.interceptor.AroundInvoke` |Designates the method as an
 interceptor method
 
-|`javax.interceptor.AroundTimeout` |Designates the method as a timeout
+|`jakarta.interceptor.AroundTimeout` |Designates the method as a timeout
 interceptor for interposing on timeout methods for enterprise bean
 timers
 
-|`javax.annotation.PostConstruct` |Designates the method as an
+|`jakarta.annotation.PostConstruct` |Designates the method as an
 interceptor method for post-construct lifecycle events
 
-|`javax.annotation.PreDestroy` |Designates the method as an interceptor
+|`jakarta.annotation.PreDestroy` |Designates the method as an interceptor
 method for pre-destroy lifecycle events
 |=======================================================================
 
@@ -70,14 +70,14 @@ method for pre-destroy lifecycle events
 === Interceptor Classes
 
 Interceptor classes may be designated with the optional
-`javax.interceptor.Interceptor` annotation, but interceptor classes are
+`jakarta.interceptor.Interceptor` annotation, but interceptor classes are
 not required to be so annotated. An interceptor class must have a
 public, no-argument constructor.
 
 The target class can have any number of interceptor classes associated
 with it. The order in which the interceptor classes are invoked is
 determined by the order in which the interceptor classes are defined in
-the `javax.interceptor.Interceptors` annotation. However, this order can
+the `jakarta.interceptor.Interceptors` annotation. However, this order can
 be overridden in the deployment descriptor.
 
 Interceptor classes may be targets of dependency injection. Dependency

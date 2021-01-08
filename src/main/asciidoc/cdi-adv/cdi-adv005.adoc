@@ -120,24 +120,24 @@ Before a certain observer event notification is generated, the container determi
 
 [source,java]
 ----
-void afterLogin(@Observes @Priority(javax.interceptor.Interceptor.Priority.APPLICATION) LoggedInEvent event) { ... }
+void afterLogin(@Observes @Priority(jakarta.interceptor.Interceptor.Priority.APPLICATION) LoggedInEvent event) { ... }
 ----
 
 Note the following:
 
-* If the `@Priority` annotation is not specified, the default value is `javax.interceptor.Interceptor.Priority.APPLICATION + 500`.
+* If the `@Priority` annotation is not specified, the default value is `jakarta.interceptor.Interceptor.Priority.APPLICATION + 500`.
 * If two or more observer methods are assigned the same priority, the order in which they are invoked is undefined and is therefore unpredictable.
 
 [[GKHIH]][[firing-events]]
 
 === Firing Events
 
-Beans fire events by implementing an instance of the `javax.enterprise.event.Event` interface. Events can be fired synchronously or asynchronously.
+Beans fire events by implementing an instance of the `jakarta.enterprise.event.Event` interface. Events can be fired synchronously or asynchronously.
 
 [[firing-events-synchronously]]
 ==== Firing Events Synchronously
 
-To activate an event synchronously, call the `javax.enterprise.event.Event.fire`
+To activate an event synchronously, call the `jakarta.enterprise.event.Event.fire`
 method. This method fires an event and notifies any observer methods.
 
 In the `billpayment` example, a managed bean called `PaymentBean` fires
@@ -189,7 +189,7 @@ payload. The fired event is then consumed by the observer methods.
 [[firing-events-asynchronously]]
 ==== Firing Events Asynchronously
 
-To activate an event asynchronously, call the `javax.enterprise.event.Event.fireAsync` method. This method calls all resolved asynchronous observers in one or more different threads.
+To activate an event asynchronously, call the `jakarta.enterprise.event.Event.fireAsync` method. This method calls all resolved asynchronous observers in one or more different threads.
 
 [source,java]
 ----

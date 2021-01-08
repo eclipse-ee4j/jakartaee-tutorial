@@ -4,7 +4,7 @@
 
 The Jakarta REST Client API provides a high-level API for accessing any REST
 resources, not just Jakarta REST services. The Client API is defined in the
-`javax.ws.rs.client` package.
+`jakarta.ws.rs.client` package.
 
 [[CHDFCABB]][[creating-a-basic-client-request-using-the-client-api]]
 
@@ -13,7 +13,7 @@ resources, not just Jakarta REST services. The Client API is defined in the
 The following steps are needed to access a REST resource using the
 Client API.
 
-1.  Obtain an instance of the `javax.ws.rs.client.Client` interface.
+1.  Obtain an instance of the `jakarta.ws.rs.client.Client` interface.
 2.  Configure the `Client` instance with a target.
 3.  Create a request based on the target.
 4.  Invoke the request.
@@ -31,11 +31,11 @@ String name = client.target("http://example.com/webapi/hello")
 ----
 
 In this example, the client instance is first created by calling the
-`javax.ws.rs.client.ClientBuilder.newClient` method. Then, the request
+`jakarta.ws.rs.client.ClientBuilder.newClient` method. Then, the request
 is configured and invoked by chaining method calls together in one line
 of code. The `Client.target` method sets the target based on a URI. The
-`javax.ws.rs.client.WebTarget.request` method sets the media type for
-the returned entity. The `javax.ws.rs.client.Invocation.Builder.get`
+`jakarta.ws.rs.client.WebTarget.request` method sets the media type for
+the returned entity. The `jakarta.ws.rs.client.Invocation.Builder.get`
 method invokes the service using an HTTP `GET` request, setting the type
 of the returned entity to `String`.
 
@@ -72,7 +72,7 @@ your runtime environment.
 === Setting the Client Target
 
 The target of a client, the REST resource at a particular URI, is
-represented by an instance of the `javax.ws.rs.client.WebTarget`
+represented by an instance of the `jakarta.ws.rs.client.WebTarget`
 interface. You obtain a `WebTarget` instance by calling the
 `Client.target` method and passing in the URI of the target REST
 resource.
@@ -127,9 +127,9 @@ After setting and applying any configuration options to the target, call
 one of the `WebTarget.request` methods to begin creating the request.
 This is usually accomplished by passing to `WebTarget.request` the
 accepted media response type for the request either as a string of the
-MIME type or using one of the constants in `javax.ws.rs.core.MediaType`.
+MIME type or using one of the constants in `jakarta.ws.rs.core.MediaType`.
 The `WebTarget.request` method returns an instance of
-`javax.ws.rs.client.Invocation.Builder`, a helper object that provides
+`jakarta.ws.rs.client.Invocation.Builder`, a helper object that provides
 methods for preparing the client request.
 
 [source,java]
@@ -189,7 +189,7 @@ retrieved by setting the type in the
 method as a parameter.
 
 If the return type is a collection, use
-`javax.ws.rs.core.GenericType<T>` as the response type parameter, where
+`jakarta.ws.rs.core.GenericType<T>` as the response type parameter, where
 `T` is the collection type:
 
 [source,java]

@@ -13,10 +13,10 @@ be overridden using `named-entity-graph`.
 
 === Applying Named Entity Graph Annotations to Entity Classes
 
-The `javax.persistence.NamedEntityGraph` annotation defines a single
+The `jakarta.persistence.NamedEntityGraph` annotation defines a single
 named entity graph and is applied at the class level. Multiple
 `@NamedEntityGraph` annotations may be defined for a class by adding
-them within a `javax.persistence.NamedEntityGraphs` class-level
+them within a `jakarta.persistence.NamedEntityGraphs` class-level
 annotation.
 
 The `@NamedEntityGraph` annotation must be applied on the root of the
@@ -49,7 +49,7 @@ that will be eagerly fetched in either a load graph or fetch graph is
 The attributes of a named entity graph are the fields of the entity that
 should be included in the entity graph. Add the fields to the entity
 graph by specifying them in the `attributeNodes` element of
-`@NamedEntityGraph` with a `javax.persistence.NamedAttributeNode`
+`@NamedEntityGraph` with a `jakarta.persistence.NamedAttributeNode`
 annotation:
 
 [source,java]

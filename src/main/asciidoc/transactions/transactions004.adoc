@@ -28,11 +28,11 @@ not use any transaction-management methods that interfere with the
 container's transaction demarcation boundaries. Examples of such methods
 are the `commit`, `setAutoCommit`, and `rollback` methods of
 `java.sql.Connection` or the `commit` and `rollback` methods of
-`javax.jms.Session`. If you require control over the transaction
+`jakarta.jms.Session`. If you require control over the transaction
 demarcation, you must use application-managed transaction demarcation.
 
 Enterprise beans that use container-managed transaction demarcation also
-must not use the `javax.transaction.UserTransaction` interface.
+must not use the `jakarta.transaction.UserTransaction` interface.
 
 [[BNCIK]][[transaction-attributes]]
 
@@ -201,8 +201,8 @@ Transaction
 ==== Setting Transaction Attributes
 
 Transaction attributes are specified by decorating the enterprise bean
-class or method with a `javax.ejb.TransactionAttribute` annotation and
-setting it to one of the `javax.ejb.TransactionAttributeType` constants.
+class or method with a `jakarta.ejb.TransactionAttribute` annotation and
+setting it to one of the `jakarta.ejb.TransactionAttributeType` constants.
 
 If you decorate the enterprise bean class with `@TransactionAttribute`,
 the specified `TransactionAttributeType` is applied to all the business
@@ -310,8 +310,8 @@ prohibited:
 
 * The `commit`, `setAutoCommit`, and `rollback` methods of
 `java.sql.Connection`
-* The `getUserTransaction` method of `javax.ejb.EJBContext`
-* Any method of `javax.transaction.UserTransaction`
+* The `getUserTransaction` method of `jakarta.ejb.EJBContext`
+* Any method of `jakarta.transaction.UserTransaction`
 
 You can, however, use these methods to set boundaries in
 application-managed transactions.

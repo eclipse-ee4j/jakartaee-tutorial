@@ -7,20 +7,20 @@ WebSocket endpoint using the context parameter in `web.xml`:
 [source,xml]
 ----
 <context-param>
-    <param-name>javax.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
+    <param-name>jakarta.faces.ENABLE_WEBSOCKET_ENDPOINT</param-name>
     <param-value>true</param-value>
 </context-param>
 ----
 
 If your server is configured to run a WebSocket container on a different TCP
 port than the HTTP container, you can use the optional
-`javax.faces.WEBSOCKET_ENDPOINT_PORT` integer context parameter
+`jakarta.faces.WEBSOCKET_ENDPOINT_PORT` integer context parameter
 to explicitly specify the port:
 
 [source,xml]
 ----
 <context-param>
-    <param-name>javax.faces.WEBSOCKET_ENDPOINT_PORT</param-name>
+    <param-name>jakarta.faces.WEBSOCKET_ENDPOINT_PORT</param-name>
     <param-value>8000</param-value>
 </context-param>
 ----

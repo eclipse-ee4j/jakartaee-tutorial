@@ -29,7 +29,7 @@ The `Cart` business interface is a plain Java interface that defines all
 the business methods implemented in the bean class. If the bean class
 implements a single interface, that interface is assumed to the business
 interface. The business interface is a local interface unless it is
-annotated with the `javax.ejb.Remote` annotation; the `javax.ejb.Local`
+annotated with the `jakarta.ejb.Remote` annotation; the `jakarta.ejb.Local`
 annotation is optional in this case.
 
 The bean class may implement more than one interface. In that case, the
@@ -40,17 +40,17 @@ determining whether the bean class implements more than one interface:
 
 * `java.io.Serializable`
 * `java.io.Externalizable`
-* Any of the interfaces defined by the `javax.ejb` package
+* Any of the interfaces defined by the `jakarta.ejb` package
 
 The source code for the `Cart` business interface is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.cart.ejb;
+package ee.jakarta.tutorial.cart.ejb;
 
 import cart.util.BookException;
 import java.util.List;
-import javax.ejb.Remote;
+import jakarta.ejb.Remote;
 
 @Remote
 public interface Cart {
@@ -87,15 +87,15 @@ The source code for the `CartBean` class is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.cart.ejb;
+package ee.jakarta.tutorial.cart.ejb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.tutorial.cart.util.BookException;
-import jakarta.tutorial.cart.util.IdVerifier;
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
+import ee.jakarta.tutorial.cart.util.BookException;
+import ee.jakarta.tutorial.cart.util.IdVerifier;
+import jakarta.ejb.Remove;
+import jakarta.ejb.Stateful;
 
 @Stateful
 public class CartBean implements Cart {
@@ -166,17 +166,17 @@ public class CartBean implements Cart {
 A method in the bean class may be declared as a lifecycle callback
 method by annotating the method with the following annotations.
 
-* `javax.annotation.PostConstruct`: Methods annotated with
+* `jakarta.annotation.PostConstruct`: Methods annotated with
 `@PostConstruct` are invoked by the container on newly constructed bean
 instances after all dependency injection has completed and before the
 first business method is invoked on the enterprise bean.
-* `javax.annotation.PreDestroy`: Methods annotated with `@PreDestroy`
+* `jakarta.annotation.PreDestroy`: Methods annotated with `@PreDestroy`
 are invoked after any method annotated `@Remove` has completed and
 before the container removes the enterprise bean instance.
-* `javax.ejb.PostActivate`: Methods annotated with `@PostActivate` are
+* `jakarta.ejb.PostActivate`: Methods annotated with `@PostActivate` are
 invoked by the container after the container moves the bean from
 secondary storage to active status.
-* `javax.ejb.PrePassivate`: Methods annotated with `@PrePassivate` are
+* `jakarta.ejb.PrePassivate`: Methods annotated with `@PrePassivate` are
 invoked by the container before it passivates the enterprise bean,
 meaning that the container temporarily removes the bean from the
 environment and saves it to secondary storage.
@@ -250,7 +250,7 @@ application. The `removeBook` method, for example, throws a
 `BookException` if the book is not in the cart.
 
 To indicate a system-level problem, such as the inability to connect to
-a database, a business method should throw a `javax.ejb.EJBException`.
+a database, a business method should throw a `jakarta.ejb.EJBException`.
 The container will not wrap application exceptions, such as
 `BookException`. Because `EJBException` is a subclass of
 `RuntimeException`, you do not need to include it in the `throws` clause
@@ -260,7 +260,7 @@ of the business method.
 
 === The @Remove Method
 
-Business methods annotated with `javax.ejb.Remove` in the stateful
+Business methods annotated with `jakarta.ejb.Remove` in the stateful
 session bean class can be invoked by enterprise bean clients to remove
 the bean instance. The container will remove the enterprise bean after a
 `@Remove` method completes, either normally or abnormally.

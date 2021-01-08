@@ -57,11 +57,11 @@ the `departments` map
 a|
 [source,java]
 ----
-${requestScope['javax.servlet.forward.servlet_path']}
+${requestScope['jakarta.servlet.forward.servlet_path']}
 ----
 
  |The value of the request-scoped attribute named
-`javax.servlet.forward.servlet_path`
+`jakarta.servlet.forward.servlet_path`
 
 |`#{customer.lName}` |Gets the value of the property `lName` from the
 `customer` bean during an initial request; sets the value of `lName`

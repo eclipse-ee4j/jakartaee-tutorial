@@ -11,7 +11,7 @@ the business domain. For more information on the conceptual details of
 the conversion model, see link:#BNAQI[Conversion Model].
 
 The standard `Converter` implementations are located in the
-`javax.faces.convert` package. Normally, converters are implicitly
+`jakarta.faces.convert` package. Normally, converters are implicitly
 assigned based on the type of the EL expression pointed to by the value
 of the component. However, these converters can also be accessed by a
 converter ID. link:#CHDIHIIC[Table 11-1] shows the converter classes and
@@ -23,20 +23,20 @@ their associated converter IDs.
 
 [width="60%",cols="30%,30%"]
 |======================================================
-|*Class in the javax.faces.convert Package* |*Converter ID*
-|`BigDecimalConverter` |`javax.faces.BigDecimal`
-|`BigIntegerConverter` |`javax.faces.BigInteger`
-|`BooleanConverter` |`javax.faces.Boolean`
-|`ByteConverter` |`javax.faces.Byte`
-|`CharacterConverter` |`javax.faces.Character`
-|`DateTimeConverter` |`javax.faces.DateTime`
-|`DoubleConverter` |`javax.faces.Double`
-|`EnumConverter` |`javax.faces.Enum`
-|`FloatConverter` |`javax.faces.Float`
-|`IntegerConverter` |`javax.faces.Integer`
-|`LongConverter` |`javax.faces.Long`
-|`NumberConverter` |`javax.faces.Number`
-|`ShortConverter` |`javax.faces.Short`
+|*Class in the jakarta.faces.convert Package* |*Converter ID*
+|`BigDecimalConverter` |`jakarta.faces.BigDecimal`
+|`BigIntegerConverter` |`jakarta.faces.BigInteger`
+|`BooleanConverter` |`jakarta.faces.Boolean`
+|`ByteConverter` |`jakarta.faces.Byte`
+|`CharacterConverter` |`jakarta.faces.Character`
+|`DateTimeConverter` |`jakarta.faces.DateTime`
+|`DoubleConverter` |`jakarta.faces.Double`
+|`EnumConverter` |`jakarta.faces.Enum`
+|`FloatConverter` |`jakarta.faces.Float`
+|`IntegerConverter` |`jakarta.faces.Integer`
+|`LongConverter` |`jakarta.faces.Long`
+|`NumberConverter` |`jakarta.faces.Number`
+|`ShortConverter` |`jakarta.faces.Short`
 |======================================================
 
 
@@ -113,7 +113,7 @@ link:#CHDIHIIC[Table 11-1]:
 [source,xml]
 ----
 <h:inputText value="#{loginBean.age}">
-    <f:converter converterId="javax.faces.Integer" />
+    <f:converter converterId="jakarta.faces.Integer" />
 </h:inputText>
 ----
 

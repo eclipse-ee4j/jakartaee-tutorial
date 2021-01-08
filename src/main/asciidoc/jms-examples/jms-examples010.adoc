@@ -31,8 +31,8 @@ field, enter the name of the resource.
 By convention, Messaging resource names begin with `jms/`.
 5.  Select the option for the resource type.
 +
-Normally, this is either `javax.jms.Queue`, `javax.jms.Topic`, or
-`javax.jms.ConnectionFactory`.
+Normally, this is either `jakarta.jms.Queue`, `jakarta.jms.Topic`, or
+`jakarta.jms.ConnectionFactory`.
 6.  Click Next.
 7.  On the JMS Properties page, for a queue or topic, enter a name for a
 physical queue in the Value field for the Name property.

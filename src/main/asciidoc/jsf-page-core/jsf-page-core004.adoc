@@ -42,8 +42,8 @@ Tag Library documentation]. For example, the definition of the
 
 [source,xml]
 ----
-void validate(javax.faces.context.FacesContext,
-              javax.faces.component.UIComponent, java.lang.Object)
+void validate(jakarta.faces.context.FacesContext,
+              jakarta.faces.component.UIComponent, java.lang.Object)
 ----
 
 The following sections give examples of how to use the attributes.

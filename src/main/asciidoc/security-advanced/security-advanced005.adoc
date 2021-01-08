@@ -29,10 +29,10 @@ started or when a protected resource is accessed.
 
 An application client can provide a class, called a login module, to
 gather authentication data. If so, the
-`javax.security.auth.callback.CallbackHandler` interface must be
+`jakarta.security.auth.callback.CallbackHandler` interface must be
 implemented, and the class name must be specified in its deployment
 descriptor. The application's callback handler must fully support
-`Callback` objects specified in the `javax.security.auth.callback`
+`Callback` objects specified in the `jakarta.security.auth.callback`
 package.
 
 [[GLIDW]][[using-login-modules]]
@@ -42,7 +42,7 @@ package.
 An application client can use the Java Authentication and Authorization
 Service (JAAS) to create login modules for authentication. A JAAS-based
 application implements the
-`javax.security.auth.callback.CallbackHandler` interface so that it can
+`jakarta.security.auth.callback.CallbackHandler` interface so that it can
 interact with users to enter specific authentication data, such as user
 names or passwords, or to display error and warning messages.
 

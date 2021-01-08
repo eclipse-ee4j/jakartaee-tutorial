@@ -81,8 +81,8 @@ response mechanism, so the managed bean can be annotated as follows:
 
 [source,java]
 ----
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 
 @RequestScoped
 public class Printer {

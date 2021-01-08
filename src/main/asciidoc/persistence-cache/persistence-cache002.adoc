@@ -30,7 +30,7 @@ provider that does not implement a second-level cache.
 
 
 Alternatively, you can specify the shared cache mode by setting the
-`javax.persistence.sharedCache.mode` property to one of the shared cache
+`jakarta.persistence.sharedCache.mode` property to one of the shared cache
 mode settings:
 
 [source,java]
@@ -38,7 +38,7 @@ mode settings:
 EntityManagerFactory emf =
     Persistence.createEntityManagerFactory(
         "myExamplePU", new Properties().add(
-            "javax.persistence.sharedCache.mode", "ENABLE_SELECTIVE"));
+            "jakarta.persistence.sharedCache.mode", "ENABLE_SELECTIVE"));
 ----
 
 [[GKJDK]][[setting-the-cache-retrieval-and-store-modes]]
@@ -48,8 +48,8 @@ EntityManagerFactory emf =
 If you have enabled the second-level cache for a persistence unit by
 setting the shared cache mode, you can further modify the behavior of
 the second-level cache by setting the
-`javax.persistence.cache.retrieveMode` and
-`javax.persistence.cache.storeMode` properties. You can set these
+`jakarta.persistence.cache.retrieveMode` and
+`jakarta.persistence.cache.storeMode` properties. You can set these
 properties at the persistence context level by passing the property name
 and value to the `EntityManager.setProperty` method, or you can set them
 on a per-`EntityManager` operation (`EntityManager.find` or
@@ -59,12 +59,12 @@ on a per-`EntityManager` operation (`EntityManager.find` or
 
 ==== Cache Retrieval Mode
 
-The cache retrieval mode, set by the `javax.persistence.retrieveMode`
+The cache retrieval mode, set by the `jakarta.persistence.retrieveMode`
 property, controls how data is read from the cache for calls to the
 `EntityManager.find` method and from queries.
 
 You can set the `retrieveMode` property to one of the constants defined
-by the `javax.persistence.CacheRetrieveMode` enumerated type, either
+by the `jakarta.persistence.CacheRetrieveMode` enumerated type, either
 `USE` (the default) or `BYPASS`.
 
 When the property is set to `USE`, data is retrieved from the
@@ -78,11 +78,11 @@ and a call to the database is made to retrieve the data.
 
 ==== Cache Store Mode
 
-The cache store mode, set by the `javax.persistence.storeMode` property,
+The cache store mode, set by the `jakarta.persistence.storeMode` property,
 controls how data is stored in the cache.
 
 The `storeMode` property can be set to one of the constants defined by
-the `javax.persistence.CacheStoreMode` enumerated type: either `USE`
+the `jakarta.persistence.CacheStoreMode` enumerated type: either `USE`
 (the default), `BYPASS`, or `REFRESH`.
 
 When the property is set to `USE`, the cache data is created or updated
@@ -109,7 +109,7 @@ value pair:
 [source,java]
 ----
 EntityManager em = ...;
-em.setProperty("javax.persistence.cache.storeMode", "BYPASS");
+em.setProperty("jakarta.persistence.cache.storeMode", "BYPASS");
 ----
 
 To set the cache retrieval or store mode when calling the
@@ -120,7 +120,7 @@ To set the cache retrieval or store mode when calling the
 ----
 EntityManager em = ...;
 Map<String, Object> props = new HashMap<String, Object>();
-props.put("javax.persistence.cache.retrieveMode", "BYPASS");
+props.put("jakarta.persistence.cache.retrieveMode", "BYPASS");
 String personPK = ...;
 Person person = em.find(Person.class, personPK, props);
 ----
@@ -147,7 +147,7 @@ of query:
 EntityManager em = ...;
 CriteriaQuery<Person> cq = ...;
 TypedQuery<Person> q = em.createQuery(cq);
-q.setHint("javax.persistence.cache.storeMode", "REFRESH");
+q.setHint("jakarta.persistence.cache.storeMode", "REFRESH");
 ...
 ----
 
@@ -159,12 +159,12 @@ setting of the entity manager.
 
 === Controlling the Second-Level Cache Programmatically
 
-The `javax.persistence.Cache` interface defines methods for interacting
+The `jakarta.persistence.Cache` interface defines methods for interacting
 with the second-level cache programmatically.
 
-[[CHDEECCF]][[overview-of-the-javax.persistence.cache-interface]]
+[[CHDEECCF]][[overview-of-the-jakarta.persistence.cache-interface]]
 
-==== Overview of the javax.persistence.Cache Interface
+==== Overview of the jakarta.persistence.Cache Interface
 
 The `Cache` interface defines methods to do the following:
 

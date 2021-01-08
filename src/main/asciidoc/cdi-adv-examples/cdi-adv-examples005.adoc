@@ -5,7 +5,7 @@
 The `billpayment` example shows how to use both events and interceptors.
 
 The source files are located in the
-`_tut-install_/examples/cdi/billpayment/src/main/java/jakarta/tutorial/billpayment/`
+`_tut-install_/examples/cdi/billpayment/src/main/java/ee/jakarta/tutorial/billpayment/`
 directory.
 
 [[CHDIBGDF]][[overview-of-the-billpayment-example]]
@@ -311,7 +311,7 @@ To enable the interceptor, the `beans.xml` file defines it as follows:
 [source,xml]
 ----
 <interceptors>
-    <class>jakarta.tutorial.billpayment.interceptor.LoggedInterceptor</class>
+    <class>ee.jakarta.tutorial.billpayment.interceptor.LoggedInterceptor</class>
 </interceptors>
 ----
 

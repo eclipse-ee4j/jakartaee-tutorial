@@ -11,7 +11,7 @@ different threads, CPU cores, physical machines, and networks.
 Ensuring that a rollback operation will successfully execute in such a
 scenario is crucial. Concurrency Utilities relies on Jakarta
 Transactions to implement and support transactions on its
-components through `javax.transaction.UserTransaction`, allowing
+components through `jakarta.transaction.UserTransaction`, allowing
 application developers to explicitly manage transaction boundaries. More
 information is available in the Jakarta Transactions specification.
 

@@ -14,7 +14,7 @@ It also contains a single entity, a stateful session bean, a Facelets
 page, and a managed bean.
 
 The source files are located in the
-`_tut-install_/examples/cdi/producerfields/src/main/java/jakarta/tutorial/producerfields/`
+`_tut-install_/examples/cdi/producerfields/src/main/java/ee/jakarta/tutorial/producerfields/`
 directory.
 
 [[GKHPP]][[the-producer-field-for-the-producerfields-example]]
@@ -43,7 +43,7 @@ public class UserDatabaseEntityManager {
 
 The class does not explicitly produce a persistence unit field, but the
 application has a `persistence.xml` file that specifies a persistence
-unit. The class is annotated `javax.inject.Singleton` to specify that
+unit. The class is annotated `jakarta.inject.Singleton` to specify that
 the injector should instantiate it only once.
 
 The `db.UserDatabaseEntityManager` class also contains commented-out
@@ -267,12 +267,12 @@ public List<ToDo> getToDos() {
 
 To force the Facelets page to recognize an empty string as a null value
 and return an error, the `web.xml` file sets the context parameter
-`javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL` to `true`:
+`jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL` to `true`:
 
 [source,xml]
 ----
 <context-param>
-  <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+  <param-name>jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
   <param-value>true</param-value>
 </context-param>
 ----

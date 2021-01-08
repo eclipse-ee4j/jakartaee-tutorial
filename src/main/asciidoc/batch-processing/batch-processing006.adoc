@@ -2,7 +2,7 @@
 
 == Submitting Jobs to the Batch Runtime
 
-The `JobOperator` interface in the `javax.batch.operations` package
+The `JobOperator` interface in the `jakarta.batch.operations` package
 enables you to submit jobs to the batch runtime and obtain information
 about existing jobs. This interface provides the following
 functionality.
@@ -11,7 +11,7 @@ functionality.
 * Start, stop, restart, and abandon jobs.
 * Obtain job instances and job executions.
 
-The `BatchRuntime` class in the `javax.batch.runtime` package provides
+The `BatchRuntime` class in the `jakarta.batch.runtime` package provides
 the `getJobOperator` factory method to obtain `JobOperator` objects.
 
 [[sthref282]][[starting-a-job]]
@@ -40,7 +40,7 @@ is only known at runtime.
 
 === Checking the Status of a Job
 
-The `JobExecution` interface in the `javax.batch.runtime` package
+The `JobExecution` interface in the `jakarta.batch.runtime` package
 provides methods to obtain information about submitted jobs. This
 interface provides the following functionality.
 

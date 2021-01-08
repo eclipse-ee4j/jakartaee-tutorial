@@ -4,7 +4,7 @@
 
 After you define a job in terms of its batch artifacts using the Job
 Specification Language (JSL), you create these artifacts as Java classes
-that implement the interfaces in the `javax.batch.api` package and its
+that implement the interfaces in the `jakarta.batch.api` package and its
 subpackages.
 
 This section lists the main batch artifact interfaces, demonstrates how
@@ -37,26 +37,26 @@ artifacts for job and step listeners.
 [width="99%",cols="15%,15%,70%"]
 |=======================================================================
 |*Package* |*Interface* |*Description*
-|`javax.batch.api` |`Batchlet` |Implements the business logic of a
+|`jakarta.batch.api` |`Batchlet` |Implements the business logic of a
 task-oriented step. It is referenced from the `batchlet` element.
 
-|`javax.batch.api` |`Decider` |Decides the next step, flow, or split to
+|`jakarta.batch.api` |`Decider` |Decides the next step, flow, or split to
 execute based on information from the execution of the previous step,
 flow, or split. It is referenced from the `decision` element.
 
-|`javax.batch.api.chunk` |`CheckPointAlgorithm` |Implements a custom
+|`jakarta.batch.api.chunk` |`CheckPointAlgorithm` |Implements a custom
 checkpoint policy for chunk steps. It is referenced from the
 `checkpoint-algorithm` element inside the `chunk` element.
 
-|`javax.batch.api.chunk` |`ItemReader` |Reads items from an input source
+|`jakarta.batch.api.chunk` |`ItemReader` |Reads items from an input source
 in a chunk step. It is referenced from the `reader` element inside the
 `chunk` element.
 
-|`javax.batch.api.chunk` |`ItemProcessor` |Processes input items to
+|`jakarta.batch.api.chunk` |`ItemProcessor` |Processes input items to
 obtain output items in chunk steps. It is referenced from the
 `processor` element inside the `chunk` element.
 
-|`javax.batch.api.chunk` |`ItemWriter` |Writes output items in chunk
+|`jakarta.batch.api.chunk` |`ItemWriter` |Writes output items in chunk
 steps. It is referenced from the `writer` element inside the `chunk`
 element.
 |=======================================================================
@@ -70,24 +70,24 @@ Table 58-4 Partition Batch Artifact Interfaces
 [width="99%",cols="15%,15%,70%"]
 |=======================================================================
 |*Package* |*Interface* |*Description*
-|`javax.batch.api.partition` |`PartitionPlan` |Provides details on how
+|`jakarta.batch.api.partition` |`PartitionPlan` |Provides details on how
 to execute a partitioned step, such as the number of partitions, the
 number of threads, and the parameters for each partition. This artifact
 is not referenced directly from the job definition file.
 
-|`javax.batch.api.partition` |`PartitionMapper` |Provides a
+|`jakarta.batch.api.partition` |`PartitionMapper` |Provides a
 `PartitionPlan` object. It is referenced from the `mapper` element
 inside the `partition` element.
 
-|`javax.batch.api.partition` |`PartitionReducer` |Receives control when
+|`jakarta.batch.api.partition` |`PartitionReducer` |Receives control when
 a partitioned step begins, ends, or rolls back. It is referenced from
 the `reducer` element inside the `partition` element.
 
-|`javax.batch.api.partition` |`PartitionCollector` |Sends intermediary
+|`jakarta.batch.api.partition` |`PartitionCollector` |Sends intermediary
 results from each partition to a partition analyzer. It is referenced
 from the `collector` element inside the `partition` element.
 
-|`javax.batch.api.partition` |`PartitionAnalyzer` |Processes data and
+|`jakarta.batch.api.partition` |`PartitionAnalyzer` |Processes data and
 final results from each partition. It is referenced from the `analyzer`
 element inside the `partition` element.
 |=======================================================================
@@ -101,55 +101,55 @@ element inside the `partition` element.
 [width="99%",cols="15%,15%,70%"]
 |=======================================================================
 |*Package* |*Interface* |*Description*
-|`javax.batch.api.listener` |`JobListener` |Intercepts job execution
+|`jakarta.batch.api.listener` |`JobListener` |Intercepts job execution
 before and after running a job. It is referenced from the `listener`
 element inside the `job` element.
 
-|`javax.batch.api.listener` |`StepListener` |Intercepts step execution
+|`jakarta.batch.api.listener` |`StepListener` |Intercepts step execution
 before and after running a step. It is referenced from the `listener`
 element inside the `step` element
 
-|`javax.batch.api.chunk.listener` |`ChunkListener` |Intercepts chunk
+|`jakarta.batch.api.chunk.listener` |`ChunkListener` |Intercepts chunk
 processing in chunk steps before and after processing each chunk, and on
 errors. It is referenced from the `listener` element inside the `step`
 element.
 
-|`javax.batch.api.chunk.listener` |`ItemReadListener` |Intercepts item
+|`jakarta.batch.api.chunk.listener` |`ItemReadListener` |Intercepts item
 reading in chunk steps before and after reading each item, and on
 errors. It is referenced from the `listener` element inside the `step`
 element.
 
-|`javax.batch.api.chunk.listener` |`ItemProcessListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`ItemProcessListener` |Intercepts
 item processing in chunk steps before and after processing each item,
 and on errors. It is referenced from the `listener` element inside the
 `step` element.
 
-|`javax.batch.api.chunk.listener` |`ItemWriteListener` |Intercepts item
+|`jakarta.batch.api.chunk.listener` |`ItemWriteListener` |Intercepts item
 writing in chunk steps before and after writing each item, and on
 errors. It is referenced from the `listener` element inside the `step`
 element.
 
-|`javax.batch.api.chunk.listener` |`RetryReadListener` |Intercepts retry
+|`jakarta.batch.api.chunk.listener` |`RetryReadListener` |Intercepts retry
 item reading in chunk steps when an exception occurs. It is referenced
 from the `listener` element inside the `step` element.
 
-|`javax.batch.api.chunk.listener` |`RetryProcessListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`RetryProcessListener` |Intercepts
 retry item processing in chunk steps when an exception occurs. It is
 referenced from the `listener` element inside the `step` element.
 
-|`javax.batch.api.chunk.listener` |`RetryWriteListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`RetryWriteListener` |Intercepts
 retry item writing in chunk steps when an exception occurs. It is
 referenced from the `listener` element inside the `step` element.
 
-|`javax.batch.api.chunk.listener` |`SkipReadListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`SkipReadListener` |Intercepts
 skippable exception handling for item readers in chunk steps. It is
 referenced from the `listener` element inside the `step` element.
 
-|`javax.batch.api.chunk.listener` |`SkipProcessListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`SkipProcessListener` |Intercepts
 skippable exception handling for item processors in chunk steps. It is
 referenced from the `listener` element inside the `step` element.
 
-|`javax.batch.api.chunk.listener` |`SkipWriteListener` |Intercepts
+|`jakarta.batch.api.chunk.listener` |`SkipWriteListener` |Intercepts
 skippable exception handling for item writers in chunk steps. It is
 referenced from the `listener` element inside the `step` element.
 |=======================================================================
@@ -203,7 +203,7 @@ This example uses the CDI name (`MyItemReaderImpl`) instead of the fully
 qualified name of the class (`com.example.pkg.MyItemReaderImpl`) to
 specify a batch artifact.
 4.  Ensure that your module is a CDI bean archive by annotating your
-batch artifacts with the `javax.enterprise.context.Dependent` annotation
+batch artifacts with the `jakarta.enterprise.context.Dependent` annotation
 or by including an empty `beans.xml` deployment description with your
 application. For example, the following batch artifact is annotated with
 `@Dependent`:
@@ -244,7 +244,7 @@ injected objects.
 
 The batch runtime provides context objects that implement the
 `JobContext` and `StepContext` interfaces in the
-`javax.batch.runtime.context` package. These objects are associated with
+`jakarta.batch.runtime.context` package. These objects are associated with
 the current job and step, respectively, and enable you to do the
 following:
 

@@ -43,10 +43,10 @@ configuration resource file. Here is a hypothetical configuration of
 Attributes specified in a `renderer` tag override any settings in the
 `@FacesRenderer` annotation.
 
-The `render-kit` element represents a javax.faces.render.`RenderKit`
+The `render-kit` element represents a jakarta.faces.render.`RenderKit`
 implementation. If no `render-kit-id` is specified, the default HTML
 render kit is assumed. The `renderer` element represents a
-`javax.faces.render.Renderer` implementation. By nesting the `renderer`
+`jakarta.faces.render.Renderer` implementation. By nesting the `renderer`
 element inside the `render-kit` element, you are registering the
 renderer with the `RenderKit` implementation associated with the
 `render-kit` element.

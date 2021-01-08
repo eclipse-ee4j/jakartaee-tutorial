@@ -3,11 +3,11 @@
 == Using Decorators in CDI Applications
 
 A decorator is a Java class that is annotated
-`javax.decorator.Decorator` and that has a corresponding `decorators`
+`jakarta.decorator.Decorator` and that has a corresponding `decorators`
 element in the `beans.xml` file.
 
 A decorator bean class must also have a delegate injection point, which
-is annotated `javax.decorator.Delegate`. This injection point can be a
+is annotated `jakarta.decorator.Delegate`. This injection point can be a
 field, a constructor parameter, or an initializer method parameter of
 the decorator class.
 
@@ -60,7 +60,7 @@ file. For example, the `CoderDecorator` class is specified as follows:
 [source,xml]
 ----
 <decorators>
-    <class>jakarta.tutorial.decorators.CoderDecorator</class>
+    <class>ee.jakarta.tutorial.decorators.CoderDecorator</class>
 </decorators>
 ----
 

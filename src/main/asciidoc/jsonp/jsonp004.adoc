@@ -12,8 +12,8 @@ how to parse JSON data using events:
 
 [source,java]
 ----
-import javax.json.Json;
-import javax.json.stream.JsonParser;
+import jakarta.json.Json;
+import jakarta.json.stream.JsonParser;
 ...
 JsonParser parser = Json.createParser(new StringReader(jsonData));
 while (parser.hasNext()) {
@@ -60,7 +60,7 @@ content of the element by calling the method `JsonParser.getString`. For
 * `JsonParser.getLong`
 * `JsonParser.getBigDecimal`
 
-See the Jakarta EE API reference for the `javax.json.stream.JsonParser`
+See the Jakarta EE API reference for the `jakarta.json.stream.JsonParser`
 interface for more information.
 
 The output of this example is the following:

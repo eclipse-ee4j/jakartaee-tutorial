@@ -81,7 +81,7 @@ data types.
 |`javax.xml.datatype.Duration` |`xs:duration`
 |`java.lang.Object` |`xs:anyType`
 |`java.awt.Image` |`xs:base64Binary`
-|`javax.activation.DataHandler` |`xs:base64Binary`
+|`jakarta.activation.DataHandler` |`xs:base64Binary`
 |`javax.xml.transform.Source` |`xs:base64Binary`
 |`java.util.UUID` |`xs:string`
 |=============================================================

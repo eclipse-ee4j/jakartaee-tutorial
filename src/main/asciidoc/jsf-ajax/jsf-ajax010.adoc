@@ -3,7 +3,7 @@
 == Loading JavaScript as a Resource
 
 The JavaScript resource file bundled with Jakarta Server Faces technology is
-named `jsf.js` and is available in the `javax.faces` library. This
+named `jsf.js` and is available in the `jakarta.faces` library. This
 resource library supports Ajax functionality in Jakarta Server Faces
 applications.
 
@@ -19,7 +19,7 @@ topics:
 * link:#GKAFI[Using JavaScript API in a Facelets Application] – Uses the
 `h:outputScript` tag directly in a Facelets page
 * link:#GKIPX[Using the @ResourceDependency Annotation in a Bean Class]
-– Uses the `javax.faces.application.ResourceDependency` annotation on a
+– Uses the `jakarta.faces.application.ResourceDependency` annotation on a
 `UIComponent` Java class
 
 [[GKAFI]][[using-javascript-api-in-a-facelets-application]]
@@ -37,7 +37,7 @@ For example, consider the following section of a Facelets page:
 [source,xml]
 ----
 <h:form>
-    <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
+    <h:outputScript name="jsf.js" library="jakarta.faces" target="head"/>
 </h:form>
 ----
 +
@@ -51,7 +51,7 @@ API. For example, consider the following:
 [source,xml]
 ----
 <h:form>
-    <h:outputScript name="jsf.js" library="javax.faces" target="head">
+    <h:outputScript name="jsf.js" library="jakarta.faces" target="head">
     <h:inputText id="inputname" value="#{userBean.name}"/>
     <h:outputText id="outputname" value="#{userBean.name}"/>
     <h:commandButton id="submit" value="Submit"
@@ -107,7 +107,7 @@ resource.
 
 === Using the @ResourceDependency Annotation in a Bean Class
 
-Use the `javax.faces.application.ResourceDependency` annotation to cause
+Use the `jakarta.faces.application.ResourceDependency` annotation to cause
 the bean class to load the default `jsf.js` library.
 
 To load the Ajax resource from the server side:
@@ -130,5 +130,5 @@ The following example shows how the resource is loaded in a bean class:
 +
 [source,java]
 ----
-@ResourceDependency(name="jsf.js" library="javax.faces" target="head")
+@ResourceDependency(name="jsf.js" library="jakarta.faces" target="head")
 ----

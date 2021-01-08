@@ -77,7 +77,7 @@ Usually, the first request for a Jakarta Server Faces page comes in from a
 client, as a result of clicking a link or button component on a
 Jakarta Server Faces page. To render a response that is another Jakarta Server
 Faces page, the application creates a new view and stores it in the
-`javax.faces.context.FacesContext` instance, which represents all of the
+`jakarta.faces.context.FacesContext` instance, which represents all of the
 information associated with processing an incoming request and creating
 a response. The application then acquires object references needed by
 the view and calls the `FacesContext.renderResponse` method, which

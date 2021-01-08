@@ -76,7 +76,7 @@ injects it into the servlet at runtime. To manage the lifecycle of the
 new instance, the CDI runtime needs to know what the scope of the
 instance should be. In this example, the servlet only needs the instance
 to process an HTTP request; the instance can then be garbage collected.
-This is specified using the `javax.enterprise.context.RequestScoped`
+This is specified using the `jakarta.enterprise.context.RequestScoped`
 annotation:
 
 [source,java]

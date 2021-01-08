@@ -20,7 +20,7 @@ be explicitly added to an entity graph.
 
 By default, all fields in an entity are fetched lazily unless the
 `fetch` attribute of the entity metadata is set to
-`javax.persistence.FetchType.EAGER`. The default entity graph consists
+`jakarta.persistence.FetchType.EAGER`. The default entity graph consists
 of all the fields of an entity whose fields are set to be eagerly
 fetched.
 
@@ -53,7 +53,7 @@ fields.
 === Using Entity Graphs in Persistence Operations
 
 Entity graphs are used by creating an instance of the
-`javax.persistence.EntityGraph` interface by calling either
+`jakarta.persistence.EntityGraph` interface by calling either
 `EntityManager.getEntityGraph` for named entity graphs or
 `EntityManager.createEntityGraph` for creating dynamic entity graphs.
 
@@ -70,7 +70,7 @@ The created entity graph can be either a fetch graph or a load graph.
 
 ==== Fetch Graphs
 
-To specify a fetch graph, set the `javax.persistence.fetchgraph`
+To specify a fetch graph, set the `jakarta.persistence.fetchgraph`
 property when you execute an `EntityManager.find` or query operation. A
 fetch graph consists of only the fields explicitly specified in the
 `EntityGraph` instance, and ignores the default entity graph settings.
@@ -84,7 +84,7 @@ EntityGraph<EmailMessage> eg = em.createEntityGraph(EmailMessage.class);
 eg.addAttributeNodes("body");
 ...
 Properties props = new Properties();
-props.put("javax.persistence.fetchgraph", eg);
+props.put("jakarta.persistence.fetchgraph", eg);
 EmailMessage message = em.find(EmailMessage.class, id, props);
 ----
 
@@ -92,7 +92,7 @@ EmailMessage message = em.find(EmailMessage.class, id, props);
 
 ==== Load Graphs
 
-To specify a load graph, set the `javax.persistence.loadgraph` property
+To specify a load graph, set the `jakarta.persistence.loadgraph` property
 when you execute an `EntityManager.find` or query operation. A load
 graph consists of the fields explicitly specified in the `EntityGraph`
 instance plus any fields in the default entity graph.
@@ -106,7 +106,7 @@ EntityGraph<EmailMessage> eg = em.createEntityGraph(EmailMessage.class);
 eg.addAttributeNodes("body");
 ...
 Properties props = new Properties();
-props.put("javax.persistence.loadgraph", eg);
+props.put("jakarta.persistence.loadgraph", eg);
 EmailMessage message = em.find(EmailMessage.class, id, props);
 ----
 

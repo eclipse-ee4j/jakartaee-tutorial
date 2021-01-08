@@ -51,7 +51,7 @@ seven job-level properties and two steps:
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<job id="webserverlog" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+<job id="webserverlog" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
      version="1.0">
     <properties>
         <property name="log_file_name" value="log1.txt"/>

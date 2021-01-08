@@ -49,7 +49,7 @@ clicking on a region of the image map:
                immediate="true"
                action="bookstore">
     <f:actionListener
-        type="jakarta.tutorial.dukesbookstore.listeners.MapBookChangeListener" />
+        type="ee.jakarta.tutorial.dukesbookstore.listeners.MapBookChangeListener" />
     <bookstore:area id="map1" value="#{Book201}" 
                     onmouseover="resources/images/book_201.jpg" 
                     onmouseout="resources/images/book_all.jpg" 

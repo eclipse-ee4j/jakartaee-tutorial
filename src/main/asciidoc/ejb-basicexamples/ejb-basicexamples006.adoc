@@ -9,7 +9,7 @@ A system exception indicates a problem with the services that support an
 application. For example, a connection to an external resource cannot be
 obtained, or an injected resource cannot be found. If it encounters a
 system-level problem, your enterprise bean should throw a
-`javax.ejb.EJBException`. Because the `EJBException` is a subclass of
+`jakarta.ejb.EJBException`. Because the `EJBException` is a subclass of
 `RuntimeException`, you do not have to specify it in the `throws` clause
 of the method declaration. If a system exception is thrown, the Jakarta Enterprise Beans
 container might destroy the bean instance. Therefore, a system exception

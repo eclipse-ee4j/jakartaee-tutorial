@@ -45,7 +45,7 @@ like the following on a class:
 ----
 @JMSDestinationDefinition(
     name = "java:app/jms/myappTopic",
-    interfaceName = "javax.jms.Topic",
+    interfaceName = "jakarta.jms.Topic",
     destinationName = "MyPhysicalAppTopic"
   )
 ----
@@ -69,7 +69,7 @@ The `name` element is required. You can optionally specify a number of
 other elements, such as `clientId` if you want to use the connection
 factory for durable subscriptions, or `description`. If you do not
 specify the `interfaceName` element, the default interface is
-`javax.jms.ConnectionFactory`. To create multiple connection factories,
+`jakarta.jms.ConnectionFactory`. To create multiple connection factories,
 enclose them in a `@JMSConnectionFactoryDefinitions` annotation,
 separated by commas.
 
@@ -258,7 +258,7 @@ transaction demarcation. Because container-managed transactions are the
 default, you do not have to specify them.
 
 You can use bean-managed transactions and the
-`javax.transaction.UserTransaction` interface's transaction demarcation
+`jakarta.transaction.UserTransaction` interface's transaction demarcation
 methods, but you should do so only if your application has special
 requirements and you are an expert in using transactions. Usually,
 container-managed transactions produce the most efficient and correct
@@ -294,7 +294,7 @@ not use a deployment descriptor.
 It is recommended, but not required, that a message-driven bean class
 implement the message listener interface for the message type it
 supports. A bean that supports Jakarta Messaging implements the
-`javax.jms.MessageListener` interface, which means that it must provide
+`jakarta.jms.MessageListener` interface, which means that it must provide
 an `onMessage` method with the following signature:
 
 [source,java]
@@ -352,7 +352,7 @@ is also permitted)
 |`destinationLookup` |The lookup name of the queue or topic from which
 the bean will receive messages
 
-|`destinationType` |Either `javax.jms.Queue` or `javax.jms.Topic`
+|`destinationType` |Either `jakarta.jms.Queue` or `jakarta.jms.Topic`
 
 |`subscriptionDurability` |For durable subscriptions, set the value to
 `Durable`; see link:#BNCGD[Creating Durable
@@ -383,7 +383,7 @@ Message-Driven Bean]:
     @ActivationConfigProperty(propertyName = "destinationLookup",
             propertyValue = "jms/MyQueue"),
     @ActivationConfigProperty(propertyName = "destinationType",
-            propertyValue = "javax.jms.Queue")
+            propertyValue = "jakarta.jms.Queue")
 })
 public class SimpleMessageBean implements MessageListener {
 
@@ -503,7 +503,7 @@ and will be committed when the method returns. See
 link:#BNCIK[Transaction Attributes] for more
 information.
 * Bean-managed transactions: You can use these in conjunction with the
-`javax.transaction.UserTransaction` interface, which provides its own
+`jakarta.transaction.UserTransaction` interface, which provides its own
 `commit` and `rollback` methods you can use to delimit transaction
 boundaries. Bean-managed transactions are recommended only for those who
 are experienced in programming transactions.

@@ -9,7 +9,7 @@ bean.
 
 === Creating a Singleton Session Bean
 
-The `javax.ejb.Singleton` annotation is used to specify that the
+The `jakarta.ejb.Singleton` annotation is used to specify that the
 enterprise bean implementation class is a singleton session bean:
 
 [source,java]
@@ -24,7 +24,7 @@ public class SingletonBean { ... }
 
 The Enterprise Bean container is responsible for determining when to initialize a
 singleton session bean instance unless the singleton session bean
-implementation class is annotated with the `javax.ejb.Startup`
+implementation class is annotated with the `jakarta.ejb.Startup`
 annotation. In this case, sometimes called eager initialization, the EJB
 container must initialize the singleton session bean upon application
 startup. The singleton session bean is initialized before the EJB
@@ -52,7 +52,7 @@ public class StatusBean {
 
 Sometimes multiple singleton session beans are used to initialize data
 for an application and therefore must be initialized in a specific
-order. In these cases, use the `javax.ejb.DependsOn` annotation to
+order. In these cases, use the `jakarta.ejb.DependsOn` annotation to
 declare the startup dependencies of the singleton session bean. The
 `@DependsOn` annotation's `value` attribute is one or more strings that
 specify the name of the target singleton session bean. If more than one
@@ -116,11 +116,11 @@ When creating a singleton session bean, concurrent access to the
 singleton's business methods can be controlled in two ways:
 container-managed concurrency and bean-managed concurrency.
 
-The `javax.ejb.ConcurrencyManagement` annotation is used to specify
+The `jakarta.ejb.ConcurrencyManagement` annotation is used to specify
 container-managed or bean-managed concurrency for the singleton. With
 `@ConcurrencyManagement`, a type attribute must be set to either
-`javax.ejb.ConcurrencyManagementType.CONTAINER` or
-`javax.ejb.ConcurrencyManagementType.BEAN`. If no
+`jakarta.ejb.ConcurrencyManagementType.CONTAINER` or
+`jakarta.ejb.ConcurrencyManagementType.BEAN`. If no
 `@ConcurrencyManagement` annotation is present on the singleton
 implementation class, the Enterprise Bean container default of container-managed
 concurrency is used.
@@ -129,7 +129,7 @@ Container-Managed Concurrency
 
 If a singleton uses container-managed concurrency, the Enterprise Bean container
 controls client access to the business methods of the singleton. The
-`javax.ejb.Lock` annotation and a `javax.ejb.LockType` type are used to
+`jakarta.ejb.Lock` annotation and a `jakarta.ejb.LockType` type are used to
 specify the access level of the singleton's business methods or
 `@Timeout` methods. The `LockType` enumerated types are `READ` and
 `WRITE`.
@@ -213,8 +213,8 @@ public class SharedSingletonBean {
 If a method is of locking type `WRITE`, client access to all the
 singleton's methods is blocked until the current client finishes its
 method call or an access timeout occurs. When an access timeout occurs,
-the Enterprise Bean container throws a `javax.ejb.ConcurrentAccessTimeoutException`.
-The `javax.ejb.AccessTimeout` annotation is used to specify the number
+the Enterprise Bean container throws a `jakarta.ejb.ConcurrentAccessTimeoutException`.
+The `jakarta.ejb.AccessTimeout` annotation is used to specify the number
 of milliseconds before an access timeout occurs. If added at the class
 level of a singleton, `@AccessTimeout` specifies the access timeout
 value for all methods in the singleton unless a method explicitly
@@ -310,9 +310,9 @@ accessed. Here is the code of `CounterBean`:
 
 [source,java]
 ----
-package jakarta.tutorial.counter.ejb;
+package ee.jakarta.tutorial.counter.ejb;
 
-import javax.ejb.Singleton;
+import jakarta.ejb.Singleton;
 
 /**
  * CounterBean is a simple singleton session bean that records the number
@@ -344,13 +344,13 @@ preceding version:
 
 [source,java]
 ----
-package jakarta.tutorial.counter.ejb;
+package ee.jakarta.tutorial.counter.ejb;
 
-import javax.ejb.Singleton;
-import javax.ejb.ConcurrencyManagement;
-import static javax.ejb.ConcurrencyManagementType.CONTAINER;
-import javax.ejb.Lock;
-import javax.ejb.LockType.WRITE;
+import jakarta.ejb.Singleton;
+import jakarta.ejb.ConcurrencyManagement;
+import static jakarta.ejb.ConcurrencyManagementType.CONTAINER;
+import jakarta.ejb.Lock;
+import jakarta.ejb.LockType.WRITE;
 
 /**
  * CounterBean is a simple singleton session bean that records the number

@@ -9,7 +9,7 @@ task step:
 
 [source,xml]
 ----
-<job id="loganalysis" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+<job id="loganalysis" xmlns="https://jakarta.ee/xml/ns/jakartaee"
                       version="1.0">
   <properties>
     <property name="input_file" value="input1.txt"/>
@@ -84,7 +84,7 @@ example:
 
 The `listener` element specifies a batch artifact whose methods are
 invoked before and after the execution of the job. The batch artifact is
-an implementation of the `javax.batch.api.listener.JobListener`
+an implementation of the `jakarta.batch.api.listener.JobListener`
 interface. See link:#BCGCCFAC[The Listener Batch
 Artifacts] for an example of a job listener implementation.
 

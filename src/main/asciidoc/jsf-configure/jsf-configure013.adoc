@@ -78,7 +78,7 @@ using NetBeans IDE.
 
 A requirement of a Jakarta Server Faces application is that all requests to
 the application that reference previously saved Jakarta Server Faces
-components must go through `javax.faces.webapp.FacesServlet`. A
+components must go through `jakarta.faces.webapp.FacesServlet`. A
 `FacesServlet` instance manages the request-processing lifecycle for web
 applications and initializes the resources required by Jakarta Server Faces
 technology.
@@ -96,7 +96,7 @@ The following example shows the default configuration of the
 ----
 <servlet>
     <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
 </servlet>
 ----
 
@@ -179,7 +179,7 @@ To specify these paths using NetBeans IDE, do the following.
 .  Expand the Context Parameters node.
 .  Click Add.
 .  In the Add Context Parameter dialog box:
-..  Enter `javax.faces.CONFIG_FILES` in the Parameter Name field.
+..  Enter `jakarta.faces.CONFIG_FILES` in the Parameter Name field.
 ..  Enter the path to your configuration file in the Parameter Value field.
 ..  Click OK.
 ..  Repeat steps 1 through 7 for each configuration file.
@@ -205,7 +205,7 @@ To specify where state is saved using NetBeans IDE, do the following.
 .  Expand the Context Parameters node.
 .  Click Add.
 .  In the Add Context Parameter dialog box:
-..  Enter `javax.faces.STATE_SAVING_METHOD` in the Parameter Name field.
+..  Enter `jakarta.faces.STATE_SAVING_METHOD` in the Parameter Name field.
 ..  Enter `client` or `server` in the Parameter Value field.
 ..  Click OK.
 
@@ -237,7 +237,7 @@ deployment descriptor file. Here is an example:
 [source,java]
 ----
 <context-param>
-    <param-name>javax.faces.PROJECT_STAGE</param-name>
+    <param-name>jakarta.faces.PROJECT_STAGE</param-name>
     <param-value>Development</param-value>
 </context-param>
 ----

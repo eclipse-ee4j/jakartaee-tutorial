@@ -49,7 +49,7 @@ To enable asynchronous processing on a servlet, set the parameter
 public class AsyncServlet extends HttpServlet { ... }
 ----
 
-The `javax.servlet.AsyncContext` class provides the functionality that
+The `jakarta.servlet.AsyncContext` class provides the functionality that
 you need to perform asynchronous processing inside service methods. To
 obtain an instance of `AsyncContext`, call the `startAsync()` method on
 the request object of your service method; for example:

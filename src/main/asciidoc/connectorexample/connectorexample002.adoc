@@ -72,7 +72,7 @@ consists of the classes listed in link:#CHDCHJAC[Table 56-1].
 [[sthref242]][[CHDCHJAC]]
 
 
-*Table 56-1 Classes and Interfaces in the jakarta.tutorial.trading.rar.api
+*Table 56-1 Classes and Interfaces in the ee.jakarta.tutorial.trading.rar.api
 Package*
 
 
@@ -106,7 +106,7 @@ by using the `@ConnectionFactoryDefinition` annotation as follows:
 @SessionScoped
 @ConnectionFactoryDefinition(
     name = "java:comp/env/eis/TradeConnectionFactory",
-    interfaceName = "jakarta.tutorial.trading.rar.api.TradeConnectionFactory",
+    interfaceName = "ee.jakarta.tutorial.trading.rar.api.TradeConnectionFactory",
     resourceAdapter = "#trading-rar",
     minPoolSize = 5,
     transactionSupport =
@@ -212,14 +212,14 @@ link:#CHDIBBIC[Table 56-2].
 [width="99%",cols="20%,20%,60%"]
 |=======================================================================
 |*Package* |*Interface* |*Description*
-|`javax.resource.spi` |`ResourceAdapter` |Defines the lifecycle methods
+|`jakarta.resource.spi` |`ResourceAdapter` |Defines the lifecycle methods
 of the resource adapter
 
-|`javax.resource.spi` |`ManagedConnectionFactory` |Defines a connection
+|`jakarta.resource.spi` |`ManagedConnectionFactory` |Defines a connection
 factory that the connection manager from the application server uses to
 obtain physical connections to the EIS
 
-|`javax.resource.spi` |`ManagedConnection` |Defines a physical
+|`jakarta.resource.spi` |`ManagedConnection` |Defines a physical
 connection to the EIS that can be managed by the connection manager
 
 |`trading.rar.api` |`TradeConnectionFactory` |Defines a connection

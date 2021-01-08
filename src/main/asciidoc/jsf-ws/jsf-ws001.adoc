@@ -7,5 +7,5 @@ When the communication is received, an `onmessage`, client-side JavaScript
 event handler can be set that is called whenever a push arrives from the server.
 
 The server side of a WebSocket communication has the ability to push out messages.
-You can do this using `javax.faces.push.PushContext`, which is an injectable
+You can do this using `jakarta.faces.push.PushContext`, which is an injectable
 context, allowing a server push to a named channel.

@@ -9,22 +9,22 @@ implementations.
 
 Jakarta Security contains the following packages:
 
-* The `javax.security.enterprise` package is the main Jakarta Security package
+* The `jakarta.security.enterprise` package is the main Jakarta Security package
 and contains classes and interfaces that span authentication, authorization, and
 identity concerns. link:#main-classes-and-interfaces-in-enterprise[Table 51-1] lists
 the main class and interfaces in this package.
 
-* The `javax.security.enterprise.authentication.mechanism.http` package contains
+* The `jakarta.security.enterprise.authentication.mechanism.http` package contains
 classes and interfaces associated with HTTP-based authentication mechanisms that
 can interact with a caller or third-parties as part of an authentication protocol.
 link:#main-classes-and-interfaces-in-authentication[Table 51-2] lists the main classes
 and interfaces in this package.
 
-* The `javax.javax.security.enterprise.credential` package contains classes and
+* The `jakarta.security.enterprise.credential` package contains classes and
 interfaces for representing user credentials. link:#main-classes-and-interfaces-in-credential[Table 51-3]
 lists the main classes and interfaces in this package.
 
-* The `javax.security.enterprise.identitystore` package contains classes and
+* The `jakarta.security.enterprise.identitystore` package contains classes and
 interfaces associated with identity stores that validate a caller's credentials
 and lookup caller groups. link:#main-classes-and-interfaces-in-identitystore[Table 51-4]
 lists the main classes and interfaces in this package.
@@ -33,7 +33,7 @@ lists the main classes and interfaces in this package.
 
 [[main-classes-and-interfaces-in-enterprise]]
 
-*Table 51-1  Main Classes and Interfaces in javax.security.enterprise*
+*Table 51-1  Main Classes and Interfaces in jakarta.security.enterprise*
 
 [width="99%",cols="25%,75%"]
 |=======================================================================
@@ -55,7 +55,7 @@ authentication process.
 [[main-classes-and-interfaces-in-authentication]]
 
 
-*Table 51-2 Main Classes and Interfaces in javax.security.enterprise.authentication.mechanism.http*
+*Table 51-2 Main Classes and Interfaces in jakarta.security.enterprise.authentication.mechanism.http*
 [width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
@@ -77,7 +77,7 @@ customize `HttpMessageContext` behavior.
 |=======================================================================
 a|
 *Note:*
-The `javax.security.enterprise.authentication.mechanism.http` package also includes
+The `jakarta.security.enterprise.authentication.mechanism.http` package also includes
 a number of annotation classes that are used to configure/enable the built-in
 authentication mechanisms or to modify the behavior of an authentication mechanism.
 |=======================================================================
@@ -86,7 +86,7 @@ authentication mechanisms or to modify the behavior of an authentication mechani
 
 [[main-classes-and-interfaces-in-credential]]
 
-*Table 51-3 Main Classes and Interfaces in javax.security.enterprise.credential*
+*Table 51-3 Main Classes and Interfaces in jakarta.security.enterprise.credential*
 [width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*
@@ -115,7 +115,7 @@ used by standard caller name/password authentication.
 
 [[main-classes-and-interfaces-in-identitystore]]
 
-*Table 51-4 Main Classes and Interfaces in javax.security.enterprise.identitystore*
+*Table 51-4 Main Classes and Interfaces in jakarta.security.enterprise.identitystore*
 [width="99%",cols="25%,75%"]
 |=======================================================================
 |*Class or Interface* |*Description*

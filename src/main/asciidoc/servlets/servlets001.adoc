@@ -9,7 +9,7 @@ type of request, they are commonly used to extend the applications
 hosted by web servers. For such applications, Jakarta Servlet technology
 defines HTTP-specific servlet classes.
 
-The `javax.servlet` and `javax.servlet.http` packages provide interfaces
+The `jakarta.servlet` and `jakarta.servlet.http` packages provide interfaces
 and classes for writing servlets. All servlets must implement the
 `Servlet` interface, which defines lifecycle methods. When implementing
 a generic service, you can use or extend the `GenericServlet` class
