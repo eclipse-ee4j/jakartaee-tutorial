@@ -1,153 +1,134 @@
-= Preface
-[[GEXAF]][[preface]]
-
-
-[NOTE]
-========================================================================
-
-This documentation is part of the Java Enterprise Edition contribution 
-to the Eclipse Foundation and is not intended for use in relation to 
-Java Enterprise Edition or Orace GlassFish. The documentation is in the 
-process of being revised to reflect the new Jakarta EE branding. 
-Additional changes will be made as requirements and procedures evolve 
-for Jakarta EE. Where applicable, references to Java EE or Java
-Enterprise Edition should be considered references to Jakarta EE. 
-
-Please see the Title page for additional license information.
-========================================================================
+[preface]
+== Preface
 
 This tutorial is a guide to developing enterprise applications for the
-Jakarta EE 8 Platform, using Eclipse GlassFish Server.
+Jakarta EE 9 Platform, using Eclipse GlassFish Server.
 
-Eclipse GlassFish Server is the leading open-source and
-open-community platform for building and deploying next-generation
-applications and services. Eclipse GlassFish Server,
-developed by the Eclipse GlassFish project open-source community at
-`https://projects.eclipse.org/projects/ee4j.glassfish`, is a  
-compatible implementation of
-the Jakarta EE 8 platform specification. This lightweight, flexible, and
-open-source application server enables organizations not only to
-leverage the new capabilities introduced within the Jakarta EE 8
-specification, but also to add to their existing capabilities through a
-faster and more streamlined development and deployment cycle. GlassFish
-Server Open Source Edition is hereafter referred to as GlassFish Server.
+Eclipse GlassFish Server is the leading open-source and open-community
+platform for building and deploying next-generation applications and
+services. Eclipse GlassFish Server, developed by the Eclipse GlassFish
+project open-source community at
+https://projects.eclipse.org/projects/ee4j.glassfish[^], is a compatible
+implementation of the Jakarta EE 9 platform specification. This
+lightweight, flexible, and open-source application server enables
+organizations not only to leverage the new capabilities introduced
+within the Jakarta EE 9 specification, but also to add to their
+existing capabilities through a faster and more streamlined development
+and deployment cycle. GlassFish Server Open Source Edition is hereafter
+referred to as GlassFish Server.
 
-[[CIACGIBD]][[audience]]
-
-== Audience
+=== Audience
 
 This tutorial is intended for programmers interested in developing and
-deploying Jakarta EE 8 applications. It covers the technologies comprising
-the Jakarta EE platform and describes how to develop Jakarta EE components and
-deploy them on the Eclipse GlassFish.
+deploying Jakarta EE 9 applications. It covers the technologies
+comprising the Jakarta EE platform and describes how to develop Jakarta
+EE components and deploy them on the Eclipse GlassFish.
 
-[[CIAHFICG]][[BNAAC]][[before-you-read-this-book]]
-
-== Before You Read This Book
+=== Before You Read This Book
 
 Before proceeding with this tutorial, you should have a good knowledge
 of the Java programming language. A good way to get to that point is to
-work through the Java Tutorials
-(`http://docs.oracle.com/javase/tutorial/index.html`).
+work through the Java(TM) Tutorials 
+http://docs.oracle.com/javase/tutorial/index.html[^].
 
-[[GIPRL]][[related-documentation]]
+=== Related Documentation
 
-== Related Documentation
+The GlassFish Server documentation set describes deployment planning
+and system installation. To obtain the GlassFish Server documentation,
+go to https://glassfish.org/docs[^].
 
-The GlassFish Server documentation set describes deployment planning and
-system installation. To obtain the GlassFish Server documentation, go to `https://eclipse-ee4j.github.io/glassfish/documentation`.
-
-The Jakarta EE 8 API specification can be viewed at
-`https://jakarta.ee/specifications/platform/8/`.
+The Jakarta EE 9 API specification can be viewed at
+https://jakarta.ee/specifications/platform/9/[^].
 
 Additionally, the Jakarta EE Specifications at
-`https://jakarta.ee/specifications` might be
-useful.
+https://jakarta.ee/specifications[^] might be useful.
 
 For information about creating enterprise applications in the NetBeans
 Integrated Development Environment (IDE), see
-`https://netbeans.apache.org/kb/`.
+https://netbeans.apache.org/kb/[^].
 
-For information about Apache Derby for use with GlassFish
-Server, see
-`http://db.apache.org/derby/docs/10.14/adminguide/`.
+For information about Apache Derby for use with GlassFish Server, see
+http://db.apache.org/derby/docs/10.14/adminguide/[^].
 
 The GlassFish Samples project is a collection of sample applications
-that demonstrate a broad range of Jakarta EE technologies. The (Java EE 8) GlassFish
-Samples are available from the GlassFish Samples project page at
-`https://javaee.github.io/glassfish-samples/`.
+that demonstrate a broad range of Jakarta EE technologies. The
+GlassFish Samples are available from the GlassFish Samples project page
+at https://github.com/eclipse-ee4j/glassfish-samples/[^].
 
-[[GKVTF]][[conventions]]
-
-== Conventions
+=== Conventions
 
 The following table describes the typographic conventions that are used
 in this book.
 
 [width="99%",cols="20%,38%,37%"]
-|=======================================================================
+|===
 |*Convention* |*Meaning* |*Example*
-|*Boldface* |Boldface type indicates graphical user interface elements
-associated with an action or terms defined in text. a|
-From the *File* menu, choose *Open Project*.
+|*Boldface*   
+|Boldface type indicates graphical user interface elements associated
+with an action or terms defined in text.
+a|From the *File* menu, choose *Open Project*.
 
 A *cache* is a copy that is stored locally.
 
-|`Monospace` |Monospace type indicates the names of files and
-directories, commands within a paragraph, URLs, code in examples, text
-that appears on the screen, or text that you enter. a|
-Edit your `.login` file.
+|`Monospace`  
+|Monospace type indicates the names of files and directories, commands
+within a paragraph, URLs, code in examples, text that appears on the
+screen, or text that you enter. 
+a|Edit your `.login` file.
 
 Use `ls -a` to list all files.
 
 `_machine_name_% you have mail.`
 
-|_Italic_ |Italic type indicates book titles, emphasis, or placeholder
-variables for which you supply particular values. a|
-Read Chapter 6 in the _User's Guide_.
+|_Italic_ 
+|Italic type indicates book titles, emphasis, or placeholder variables
+for which you supply particular values.
+a|Read Chapter 6 in the _User's Guide_.
 
 Do _not_ save the file.
 
 The command to remove a file is `rm _filename_`.
+|===
 
-|=======================================================================
-
-
-[[GFIRK]][[default-paths-and-file-names]]
-
-== Default Paths and File Names
+=== Default Paths and File Names
 
 The following table describes the default paths and file names that are
 used in this book.
 
-[width="99%",cols="20%,38%,38%"]
-|=======================================================================
+[width="99%",cols="20%a,38%,38%a"]
+|===
 |*Placeholder* |*Description* |*Default Value*
-|`_as-install_` |Represents the base installation directory for GlassFish
-Server. a|
-Installations on the Solaris operating system, Linux operating system,
+|`_as-install_` 
+|Represents the base installation directory for GlassFish
+Server. 
+| Installations on the Solaris operating system, Linux operating system,
 and Mac operating system:
 
-`_user's-home-directory_/glassfish5/glassfish`
+`_user's-home-directory_/glassfish6/glassfish`
 
 Windows, all installations:
 
-`_SystemDrive_:\glassfish5\glassfish`
+`_SystemDrive_:\glassfish6\glassfish`
 
-|`_as-install-parent_` |Represents the parent of the base installation
-directory for GlassFish Server. a|
-Installations on the Solaris operating system, Linux operating system,
+|`_as-install-parent_` 
+|Represents the parent of the base installation
+directory for GlassFish Server. 
+|Installations on the Solaris operating system, Linux operating system,
 and Mac operating system:
 
-`_user's-home-directory_/glassfish5`
+`_user's-home-directory_/glassfish6`
 
 Windows, all installations:
 
-`_SystemDrive_:\glassfish5`
+`_SystemDrive_:\glassfish6`
 
-|`_tut-install_` |Represents the base installation directory for the Jakarta EE
-Tutorial after you download it. |`_as-install-parent_/docs/jakartaee-tutorial`
+|`_tut-install_` 
+|Represents the base installation directory for the Jakarta EE
+Tutorial after you download it. 
+|`_as-install-parent_/docs/jakartaee-tutorial`
 
-|`_domain-dir_` |Represents the directory in which a domain's configuration
-is stored. |`_as-install_/domains/domain1`
-|=======================================================================
+|`_domain-dir_` 
+|Represents the directory in which a domain's configuration
+is stored. 
+|`_as-install_/domains/domain1`
+|===
