@@ -1,15 +1,25 @@
-= The Jakarta EE 8 Tutorial
-
+= The Jakarta(R) EE Tutorial
+:authors: Jakarta Platform Team, https://projects.eclipse.org/projects/ee4j.jakartaee-platform
+:email: https://accounts.eclipse.org/mailing-list/jakartaee-platform-dev
+:revnumber: Release 9
+:revdate: January 2021
+:revremark: DRAFT
+:version-label!:
+:doctype: book
+:license: Eclipse Public License v. 2.0
+:source-highlighter: coderay
 :toc: left
-:toclevels: 4
-:sectnumlevels: 4
-:sectnums:
-:leveloffset: +1
+:toclevels: 2
+:sectnumlevels: 1
+:partnums:
+:part-signifier: Part
 
+:sectnums!:
 include::title.adoc[]
 
 include::preface.adoc[]
 
+:sectnums:
 include::partintro.adoc[]
 
 include::partplatform.adoc[]
