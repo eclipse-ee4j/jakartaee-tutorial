@@ -56,23 +56,23 @@ cart-secure Example Using Maven].
 The source code for the original `cart` application was modified as
 shown in the following code snippet (modifications in bold). The
 resulting file can be found in the file
-`_tut-install_/examples/security/cart-secure/cart-secure-ejb/src/main/java/jakarta/tutorial/cart/ejb/CartBean.java`.
+`_tut-install_/examples/security/cart-secure/cart-secure-ejb/src/main/java/ee/jakarta/tutorial/cart/ejb/CartBean.java`.
 
 The code snippet is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.cartsecure.ejb;
+package ee.jakarta.tutorial.cartsecure.ejb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.tutorial.cart.util.BookException;
-import jakarta.tutorial.cart.util.IdVerifier;
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.security.RolesAllowed;
+import ee.jakarta.tutorial.cart.util.BookException;
+import ee.jakarta.tutorial.cart.util.IdVerifier;
+import jakarta.ejb.Remove;
+import jakarta.ejb.Stateful;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.security.RolesAllowed;
 
 @Stateful
 @DeclareRoles("TutorialUser")
@@ -294,21 +294,21 @@ of `TutorialUser`. If the user is in the correct role, the currency
 conversion is computed and displayed. If the user is not in the correct
 role, the computation is not performed, and the application displays the
 result as `0`. The code example can be found in
-`_tut-install_/examples/security/converter-secure/converter-secure-ejb/src/main/java/jakarta/tutorial/converter/ejb/ConverterBean.java`.
+`_tut-install_/examples/security/converter-secure/converter-secure-ejb/src/main/java/ee/jakarta/tutorial/converter/ejb/ConverterBean.java`.
 
 The code snippet (with modifications shown in bold) is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.convertersecure.ejb;
+package ee.jakarta.tutorial.convertersecure.ejb;
 
 import java.math.BigDecimal;
 import java.security.Principal;
-import javax.ejb.Stateless;
-import javax.annotation.Resource;
-import javax.ejb.SessionContext;
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.security.RolesAllowed;
+import jakarta.ejb.Stateless;
+import jakarta.annotation.Resource;
+import jakarta.ejb.SessionContext;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.security.RolesAllowed;
 
 @Stateless()
 @DeclareRoles("TutorialUser")

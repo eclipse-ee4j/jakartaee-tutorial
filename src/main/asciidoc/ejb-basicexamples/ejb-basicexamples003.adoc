@@ -310,9 +310,9 @@ accessed. Here is the code of `CounterBean`:
 
 [source,java]
 ----
-package jakarta.tutorial.counter.ejb;
+package ee.jakarta.tutorial.counter.ejb;
 
-import javax.ejb.Singleton;
+import jakarta.ejb.Singleton;
 
 /**
  * CounterBean is a simple singleton session bean that records the number
@@ -344,13 +344,13 @@ preceding version:
 
 [source,java]
 ----
-package jakarta.tutorial.counter.ejb;
+package ee.jakarta.tutorial.counter.ejb;
 
-import javax.ejb.Singleton;
-import javax.ejb.ConcurrencyManagement;
+import jakarta.ejb.Singleton;
+import jakarta.ejb.ConcurrencyManagement;
 import static javax.ejb.ConcurrencyManagementType.CONTAINER;
-import javax.ejb.Lock;
-import javax.ejb.LockType.WRITE;
+import jakarta.ejb.Lock;
+import jakarta.ejb.LockType.WRITE;
 
 /**
  * CounterBean is a simple singleton session bean that records the number

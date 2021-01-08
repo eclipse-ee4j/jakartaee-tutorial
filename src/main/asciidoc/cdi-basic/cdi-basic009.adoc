@@ -6,9 +6,9 @@ To make a bean accessible through the EL, use the `@Named` built-in qualifier:
 
 [source,java]
 ----
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 @Named
 @RequestScoped

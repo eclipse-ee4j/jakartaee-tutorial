@@ -92,7 +92,7 @@ src/main/webapp/
         flow-b-flow.xml
         next_b1.xhtml
         next_b2.xhtml
-src/main/java/jakarta/tutorial/flowexample
+src/main/java/ee/jakarta/tutorial/flowexample
             FlowA.java
             Flow_a_Bean.java
             Flow_b_Bean.java
@@ -299,7 +299,7 @@ src/main/webapp/
         joinFlow-flow.xml
         joinFlow.xhtml
         joinFlow2.xhtml
-src/main/java/jakarta/tutorial/checkoutmodule
+src/main/java/ee/jakarta/tutorial/checkoutmodule
             CheckoutBean.java
             CheckoutFlow.java
             CheckoutFlowBean.java
@@ -481,11 +481,11 @@ the flow. The class for the checkout flow is called `CheckoutFlow.java`.
 [source,java]
 ----
 import java.io.Serializable;
-import javax.enterprise.inject.Produces;
-import javax.faces.flow.Flow;
-import javax.faces.flow.builder.FlowBuilder;
-import javax.faces.flow.builder.FlowBuilderParameter;
-import javax.faces.flow.builder.FlowDefinition;
+import jakarta.enterprise.inject.Produces;
+import jakarta.faces.flow.Flow;
+import jakarta.faces.flow.builder.FlowBuilder;
+import jakarta.faces.flow.builder.FlowBuilderParameter;
+import jakarta.faces.flow.builder.FlowDefinition;
 
 class CheckoutFlow implements Serializable {
 

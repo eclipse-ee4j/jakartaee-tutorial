@@ -46,11 +46,11 @@ The source code for the `Cart` business interface is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.cart.ejb;
+package ee.jakarta.tutorial.cart.ejb;
 
 import cart.util.BookException;
 import java.util.List;
-import javax.ejb.Remote;
+import jakarta.ejb.Remote;
 
 @Remote
 public interface Cart {
@@ -87,15 +87,15 @@ The source code for the `CartBean` class is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.cart.ejb;
+package ee.jakarta.tutorial.cart.ejb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.tutorial.cart.util.BookException;
-import jakarta.tutorial.cart.util.IdVerifier;
-import javax.ejb.Remove;
-import javax.ejb.Stateful;
+import ee.jakarta.tutorial.cart.util.BookException;
+import ee.jakarta.tutorial.cart.util.IdVerifier;
+import jakarta.ejb.Remove;
+import jakarta.ejb.Stateful;
 
 @Stateful
 public class CartBean implements Cart {

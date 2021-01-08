@@ -211,7 +211,7 @@ although it uses permanent rather than temporary destinations. The
 example consists of three modules, `genericsupplier`, `retailer`, and
 `vendor`, which can be found under the
 tut-install`/examples/jms/transactedexample/` directory. The source code
-can be found in the `src/main/java/jakarta.tutorial` trees for each
+can be found in the `src/main/java/ee.jakarta.tutorial` trees for each
 module. The `genericsupplier` and `retailer` modules each contain a
 single class, `genericsupplier/GenericSupplier.java` and
 `retailer/Retailer.java`, respectively. The `vendor` module is more
@@ -225,7 +225,7 @@ constructor function. The example represents a highly simplified
 e-commerce application in which the following actions occur.
 
 1.  A retailer
-(`retailer/src/main/java/jakarta/tutorial/retailer/Retailer.java`) sends a
+(`retailer/src/main/java/ee/jakarta/tutorial/retailer/Retailer.java`) sends a
 `MapMessage` to a vendor order queue, ordering a quantity of computers,
 and waits for the vendor's reply:
 +
@@ -240,7 +240,7 @@ System.out.println("Retailer: ordered " + quantity + " computer(s)");
 orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);
 ----
 2.  The vendor
-(`vendor/src/main/java/jakarta/tutorial/retailer/Vendor.java`) receives
+(`vendor/src/main/java/ee/jakarta/tutorial/retailer/Vendor.java`) receives
 the retailer's order message and sends an order message to the supplier
 order topic in one transaction. This Jakarta Messaging transaction uses a single
 session, so you can combine a receive from a queue with a send to a
@@ -270,7 +270,7 @@ context.commit();
 For simplicity, there are only two suppliers, one for CPUs and one for
 hard drives.
 3.  Each supplier
-(`genericsupplier/src/main/java/jakarta/tutorial/retailer/GenericSupplier.java`)
+(`genericsupplier/src/main/java/ee/jakarta/tutorial/retailer/GenericSupplier.java`)
 receives the order from the order topic, checks its inventory, and then
 sends the items ordered to the queue named in the order message's
 `JMSReplyTo` field. If it does not have enough of the item in stock, the

@@ -232,7 +232,7 @@ a value-change event is generated, and the
              required="true"
              requiredMessage="#{bundle.ReqCustomerName}">    
      <f:valueChangeListener
-         type="jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
+         type="ee.jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
 </h:inputText>
 ----
 

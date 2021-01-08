@@ -264,8 +264,8 @@ The enterprise bean would be annotated as shown in the following code:
 
 [source,java]
 ----
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.security.RolesAllowed;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.security.RolesAllowed;
 ...
 @DeclareRoles({"DEPT-ADMIN", "DIRECTOR"})
 @Stateless public class PayrollBean implements Payroll {

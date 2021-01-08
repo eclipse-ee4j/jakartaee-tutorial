@@ -276,7 +276,7 @@ file:
 [source,java]
 ----
 ...
-import javax.xml.ws.WebServiceRef;
+import jakarta.xml.ws.WebServiceRef;
 ...
 public class ResponseServlet extends HTTPServlet {
 @WebServiceRef(wsdlLocation="http://localhost:8080/helloservice/hello?wsdl")

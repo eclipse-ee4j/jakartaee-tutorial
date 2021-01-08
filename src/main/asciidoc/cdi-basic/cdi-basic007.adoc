@@ -9,7 +9,7 @@ which you would inject one of the `Greeting` beans:
 
 [source,java]
 ----
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class Printer {
 
@@ -23,7 +23,7 @@ bean. The following code injects the `@Informal` implementation:
 
 [source,java]
 ----
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 public class Printer {
 

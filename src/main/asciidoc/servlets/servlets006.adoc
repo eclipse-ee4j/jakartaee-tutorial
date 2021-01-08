@@ -54,9 +54,9 @@ defines a filter, specifying an initialization parameter:
 
 [source,java]
 ----
-import javax.servlet.Filter;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
+import jakarta.servlet.Filter;
+import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.annotation.WebInitParam;
 
 @WebFilter(filterName = "TimeOfDayFilter",
 urlPatterns = {"/*"},

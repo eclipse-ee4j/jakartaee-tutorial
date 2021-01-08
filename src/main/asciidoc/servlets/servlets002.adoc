@@ -90,9 +90,9 @@ implements two of these interfaces:
 
 [source,java]
 ----
-import javax.servlet.ServletContextAttributeListener;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
+import jakarta.servlet.ServletContextAttributeListener;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
 
 @WebListener()
 public class SimpleServletListener implements ServletContextListener,

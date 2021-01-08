@@ -245,7 +245,7 @@ annotation:
 +
 [source,java]
 ----
-import javax.annotation.security.*;
+import jakarta.annotation.security.*;
 @RolesAllowed("RestrictedUsers")
 public class Calculator {
 
@@ -268,7 +268,7 @@ annotation:
 +
 [source,java]
 ----
-import javax.annotation.security.*;
+import jakarta.annotation.security.*;
 @RolesAllowed("Users")
 public class Calculator {
     @RolesAllowed("Administrator")

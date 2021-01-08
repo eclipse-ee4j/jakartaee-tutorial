@@ -9,7 +9,7 @@ example includes an interface and two implementations of it, a managed
 bean, a Facelets page, and configuration files.
 
 The source files are located in the
-`_tut-install_/examples/cdi/encoder/src/main/java/jakarta/tutorial/encoder/`
+`_tut-install_/examples/cdi/encoder/src/main/java/ee/jakarta/tutorial/encoder/`
 directory.
 
 [[GKHQA]][[the-coder-interface-and-implementations]]
@@ -40,7 +40,7 @@ values of the arguments. The `TestCoderImpl` implementation is annotated
 
 [source,java]
 ----
-import javax.enterprise.inject.Alternative;
+import jakarta.enterprise.inject.Alternative;
 
 @Alternative
 public class TestCoderImpl implements Coder {
@@ -60,7 +60,7 @@ element is commented out:
 ----
 <beans ...>
     <!--<alternatives>
-        <class>jakarta.tutorial.encoder.TestCoderImpl</class>
+        <class>ee.jakarta.tutorial.encoder.TestCoderImpl</class>
     </alternatives>-->
 </beans>
 ----
@@ -225,7 +225,7 @@ element, so that it looks like this:
 [source,java]
 ----
 <alternatives>
-    <class>jakarta.tutorial.encoder.TestCoderImpl</class>
+    <class>ee.jakarta.tutorial.encoder.TestCoderImpl</class>
 </alternatives>
 ----
 d.  Save the file.
@@ -303,7 +303,7 @@ element, so that it looks like this:
 [source,java]
 ----
 <alternatives>
-    <class>jakarta.tutorial.encoder.TestCoderImpl</class>
+    <class>ee.jakarta.tutorial.encoder.TestCoderImpl</class>
 </alternatives>
 ----
 c.  Save and close the file.

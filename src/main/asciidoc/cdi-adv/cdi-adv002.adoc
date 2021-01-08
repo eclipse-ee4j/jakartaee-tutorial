@@ -58,7 +58,7 @@ that version is declared as follows in the `beans.xml` file:
 ----
 <beans ...>
     <alternatives>
-        <class>jakarta.tutorial.encoder.TestCoderImpl</class>
+        <class>ee.jakarta.tutorial.encoder.TestCoderImpl</class>
     </alternatives>
 </beans>
 ----

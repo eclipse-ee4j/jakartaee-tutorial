@@ -28,7 +28,7 @@ You can find a version of this application at
 ..  From the File menu, choose New Project.
 ..  From Categories, select Maven. From Projects, select Project From Archetype. Click Next.
 ..  Under Search enter `jaxrs-service`, select the `jaxrs-service-archetype`, and click Next.
-..  Under Project Name enter `HelloWorldApplication`, set the Project Location, and set the Package name to `jakarta.tutorial.hello`, and click Finish.
+..  Under Project Name enter `HelloWorldApplication`, set the Project Location, and set the Package name to `ee.jakarta.tutorial.hello`, and click Finish.
 +
 The project is created.
 .  In `HelloWorld.java`, find the `getHtml()` method. Replace the `//TODO` comment with the following text, so that the finished product resembles the following method:
@@ -146,7 +146,7 @@ used in two Jakarta REST methods in `ResponseBean`: `getResponse` and
 and displays the invitee's current response and a form to change the
 response.
 
-The `jakarta.tutorial.rsvp.rest.RsvpApplication` class defines the root
+The `ee.jakarta.tutorial.rsvp.rest.RsvpApplication` class defines the root
 application path for the resources by applying the
 `javax.ws.rs.ApplicationPath` annotation at the class level.
 

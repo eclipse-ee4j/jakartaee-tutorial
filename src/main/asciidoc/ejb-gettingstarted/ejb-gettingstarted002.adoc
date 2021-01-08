@@ -25,10 +25,10 @@ the `ConverterBean` class is as follows:
 
 [source,java]
 ----
-package jakarta.tutorial.converter.ejb;
+package ee.jakarta.tutorial.converter.ejb;
 
 import java.math.BigDecimal;
-import javax.ejb.*;
+import jakarta.ejb.*;
 
 @Stateless
 public class ConverterBean {

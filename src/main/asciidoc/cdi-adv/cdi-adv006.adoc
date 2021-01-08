@@ -96,7 +96,7 @@ the `LoggedInterceptor` class is specified as follows:
 [source,xml]
 ----
 <interceptors>
-    <class>jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
+    <class>ee.jakarta.tutorial.billpayment.interceptors.LoggedInterceptor</class>
 </interceptors>
 ----
 

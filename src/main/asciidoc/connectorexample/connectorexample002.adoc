@@ -72,7 +72,7 @@ consists of the classes listed in link:#CHDCHJAC[Table 56-1].
 [[sthref242]][[CHDCHJAC]]
 
 
-*Table 56-1 Classes and Interfaces in the jakarta.tutorial.trading.rar.api
+*Table 56-1 Classes and Interfaces in the ee.jakarta.tutorial.trading.rar.api
 Package*
 
 
@@ -106,7 +106,7 @@ by using the `@ConnectionFactoryDefinition` annotation as follows:
 @SessionScoped
 @ConnectionFactoryDefinition(
     name = "java:comp/env/eis/TradeConnectionFactory",
-    interfaceName = "jakarta.tutorial.trading.rar.api.TradeConnectionFactory",
+    interfaceName = "ee.jakarta.tutorial.trading.rar.api.TradeConnectionFactory",
     resourceAdapter = "#trading-rar",
     minPoolSize = 5,
     transactionSupport =

@@ -70,10 +70,10 @@ implements the `javax.servlet.ServletContext` interface.
 
 [source,java]
 ----
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import javax.servlet.http.HttpServlet;
-import javax.transaction.UserTransaction;
+import jakarta.annotation.Resource;
+import jakarta.inject.Inject;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.transaction.UserTransaction;
 ...
 public class TransactionServlet extends HttpServlet {
     @Resource UserTransaction transaction;
