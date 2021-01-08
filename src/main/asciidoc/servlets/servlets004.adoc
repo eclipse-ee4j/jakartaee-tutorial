@@ -13,7 +13,7 @@ otherwise, use the `urlPatterns` attribute when other attributes are
 also used.
 
 Classes annotated with `@WebServlet` must extend the
-`javax.servlet.http.HttpServlet` class. For example, the following code
+`jakarta.servlet.http.HttpServlet` class. For example, the following code
 snippet defines a servlet with the URL pattern `/report`:
 
 [source,java]

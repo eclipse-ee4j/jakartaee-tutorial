@@ -165,7 +165,7 @@ when you use NetBeans IDE to create an application.
 [source,xml]
 ----
     <context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-name>jakarta.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
 ----
@@ -181,7 +181,7 @@ context parameters that an application can use.
 ----
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -203,8 +203,8 @@ page:
 
 ==== Introduction to Scopes
 
-In the `Hello.java` class, the annotations `javax.inject.Named` and
-`javax.enterprise.context.RequestScoped` identify the class as a managed
+In the `Hello.java` class, the annotations `jakarta.inject.Named` and
+`jakarta.enterprise.context.RequestScoped` identify the class as a managed
 bean using request scope. Scope defines how application data persists
 and is shared.
 

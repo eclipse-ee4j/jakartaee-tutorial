@@ -148,7 +148,7 @@ response.
 
 The `ee.jakarta.tutorial.rsvp.rest.RsvpApplication` class defines the root
 application path for the resources by applying the
-`javax.ws.rs.ApplicationPath` annotation at the class level.
+`jakarta.ws.rs.ApplicationPath` annotation at the class level.
 
 [source,java]
 ----

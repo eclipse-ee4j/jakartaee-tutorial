@@ -522,11 +522,11 @@ class CheckoutFlow implements Serializable {
 The class performs actions that are almost identical to those performed
 by the configuration file `joinFlow-flow.xml`. It contains a single
 method, `defineFlow`, as a producer method with the `@FlowDefinition`
-qualifier that returns a `javax.faces.flow.Flow` class. The `defineFlow`
+qualifier that returns a `jakarta.faces.flow.Flow` class. The `defineFlow`
 method takes one parameter, a `FlowBuilder` with the qualifier
 `@FlowBuilderParameter`, which is passed in from the Jakarta Server Faces
 implementation. The method then calls methods from the
-`javax.faces.flow.Builder.FlowBuilder` class to configure the flow.
+`jakarta.faces.flow.Builder.FlowBuilder` class to configure the flow.
 
 First, the method defines the flow `id` as `checkoutFlow`. Then, it
 explicitly defines the start node for the flow. By default, this is the

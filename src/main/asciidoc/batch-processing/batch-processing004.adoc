@@ -84,7 +84,7 @@ example:
 
 The `listener` element specifies a batch artifact whose methods are
 invoked before and after the execution of the job. The batch artifact is
-an implementation of the `javax.batch.api.listener.JobListener`
+an implementation of the `jakarta.batch.api.listener.JobListener`
 interface. See link:#BCGCCFAC[The Listener Batch
 Artifacts] for an example of a job listener implementation.
 

@@ -10,13 +10,13 @@ application.
 
 Jakarta WebSocket consists of the following packages.
 
-* The `javax.websocket.server` package contains annotations, classes,
+* The `jakarta.websocket.server` package contains annotations, classes,
 and interfaces to create and configure server endpoints.
-* The `javax.websocket` package contains annotations, classes,
+* The `jakarta.websocket` package contains annotations, classes,
 interfaces, and exceptions that are common to client and server
 endpoints.
 
-WebSocket endpoints are instances of the `javax.websocket.Endpoint`
+WebSocket endpoints are instances of the `jakarta.websocket.Endpoint`
 class. Jakarta WebSocket enables you to create two kinds of
 endpoints: programmatic endpoints and annotated endpoints. To create a
 programmatic endpoint, you extend the `Endpoint` class and override its

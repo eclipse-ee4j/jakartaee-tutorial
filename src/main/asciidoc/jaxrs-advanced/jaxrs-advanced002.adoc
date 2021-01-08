@@ -15,7 +15,7 @@ parameter
 
 Bean Validation constraint annotations may be applied to parameters for
 a resource. The server will validate the parameters and either pass or
-throw a `javax.validation.ValidationException`.
+throw a `jakarta.validation.ValidationException`.
 
 [source,java]
 ----
@@ -198,7 +198,7 @@ constraints defined within the entity class.
 
 === Validation Exception Handling and Response Codes
 
-If a `javax.validation.ValidationException` or any subclass of
+If a `jakarta.validation.ValidationException` or any subclass of
 `ValidationException` except `ConstraintValidationException` is thrown,
 the Jakarta REST runtime will respond to the client request with a 500
 (Internal Server Error) HTTP status code.

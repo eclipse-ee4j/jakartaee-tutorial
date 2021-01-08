@@ -20,7 +20,7 @@ country-specific sales tax business logic)
 * To create dummy (mock) versions of beans to be used for testing
 
 To make a bean available for lookup, injection, or EL resolution using
-this mechanism, give it a `javax.enterprise.inject.Alternative`
+this mechanism, give it a `jakarta.enterprise.inject.Alternative`
 annotation and then use the `alternatives` element to specify it in the
 `beans.xml` file.
 
@@ -139,7 +139,7 @@ bean. If the first bean is produced by means of a producer method, you
 must also override the producer method.
 
 You specialize a bean by giving it the
-`javax.enterprise.inject.Specializes` annotation. For example, you might
+`jakarta.enterprise.inject.Specializes` annotation. For example, you might
 declare a bean as follows:
 
 [source,java]

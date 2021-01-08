@@ -58,7 +58,7 @@ USPhoneNumber[] value();
 }
 ----
 
-You can also implement a `Constraint Validator` to validate the constraint `@USPhoneNumber`. For more information about using `Constraint Validator`, see `javax.validation.ConstraintValidator`.
+You can also implement a `Constraint Validator` to validate the constraint `@USPhoneNumber`. For more information about using `Constraint Validator`, see `jakarta.validation.ConstraintValidator`.
 
 [source,java]
 ----

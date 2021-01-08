@@ -34,9 +34,9 @@ Some of the possible values for this attribute are `click`, `keyup`,
 
 If not specified, a default event based on the parent component will be
 applied. The default event is `action` for
-`javax.faces.component.ActionSource` components, such as a
+`jakarta.faces.component.ActionSource` components, such as a
 `commandButton`, and `valueChange` for
-`javax.faces.component.EditableValueHolder` components, such as
+`jakarta.faces.component.EditableValueHolder` components, such as
 `inputText`. In the following example, an Ajax tag is associated with
 the button component, and the event that triggers the Ajax action is a
 mouse click:
@@ -115,7 +115,7 @@ If not defined, the default value of this attribute is `false`.
 
 The `listener` attribute refers to a method expression that is executed
 on the server side in response to an Ajax action on the client. The
-listener's `javax.faces.event.AjaxBehaviorListener.processAjaxBehavior`
+listener's `jakarta.faces.event.AjaxBehaviorListener.processAjaxBehavior`
 method is called once during the Invoke Application phase of the
 lifecycle. In the following code from the `reservation` example
 application (see link:#BABGGIAA[The reservation

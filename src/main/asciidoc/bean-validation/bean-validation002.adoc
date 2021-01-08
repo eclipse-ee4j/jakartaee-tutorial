@@ -8,7 +8,7 @@ component, such as a managed bean.
 
 Constraints can be built in or user defined. User-defined constraints
 are called custom constraints. Several built-in constraints are
-available in the `javax.validation.constraints` package.
+available in the `jakarta.validation.constraints` package.
 link:#GKAGK[Table 23-1] lists all the built-in constraints. See
 link:#GKFGX[Creating Custom Constraints]
 for information on creating custom constraints.
@@ -256,7 +256,7 @@ public class Account {
 }
 
 ----
-All in-built constraints from `javax .validation.constraints` package support repeatable annotations. Similarly, custom constraints can use `@Repeatable` annotation. In the following sample, depending on whether the group is `PeakHour` or `NonPeakHour`, the car instance is validated as either two passengers or three passengers based car, and then listed as eligible in the car pool lane:
+All in-built constraints from `jakarta.validation.constraints` package support repeatable annotations. Similarly, custom constraints can use `@Repeatable` annotation. In the following sample, depending on whether the group is `PeakHour` or `NonPeakHour`, the car instance is validated as either two passengers or three passengers based car, and then listed as eligible in the car pool lane:
 
 [source,java]
 ----

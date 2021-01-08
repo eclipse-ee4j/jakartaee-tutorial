@@ -22,7 +22,7 @@ return em.createQuery(
 
 The `createNamedQuery` method is used to create static queries, or
 queries that are defined in metadata by using the
-`javax.persistence.NamedQuery` annotation. The `name` element of
+`jakarta.persistence.NamedQuery` annotation. The `name` element of
 `@NamedQuery` specifies the name of the query that will be used with the
 `createNamedQuery` method. The `query` element of `@NamedQuery` is the
 query:
@@ -57,7 +57,7 @@ following method:
 
 [source,java]
 ----
-javax.persistence.Query.setParameter(String name, Object value)
+jakarta.persistence.Query.setParameter(String name, Object value)
 ----
 
 In the following example, the `name` argument to the `findWithName`

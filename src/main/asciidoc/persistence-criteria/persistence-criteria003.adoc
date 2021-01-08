@@ -11,7 +11,7 @@ objects, so the query can be created in a typesafe manner.
 
 === Creating a Criteria Query
 
-The `javax.persistence.criteria.CriteriaBuilder` interface is used to
+The `jakarta.persistence.criteria.CriteriaBuilder` interface is used to
 construct
 
 * Criteria queries
@@ -38,7 +38,7 @@ following interface:
 
 [source,java]
 ----
-javax.persistence.criteria.CriteriaQuery
+jakarta.persistence.criteria.CriteriaQuery
 ----
 
 `CriteriaQuery` objects define a particular query that will navigate

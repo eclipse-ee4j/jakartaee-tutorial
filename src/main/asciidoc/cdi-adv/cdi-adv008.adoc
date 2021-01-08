@@ -19,7 +19,7 @@ specified annotations, so you do not have to apply the same annotations
 to many beans.
 
 For example, you might create a stereotype named `Action`, using the
-`javax.enterprise.inject.Stereotype` annotation:
+`jakarta.enterprise.inject.Stereotype` annotation:
 
 [source,java]
 ----

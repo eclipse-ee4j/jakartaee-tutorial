@@ -3,7 +3,7 @@
 == Managing Entities
 
 Entities are managed by the entity manager, which is represented by
-`javax.persistence.EntityManager` instances. Each `EntityManager`
+`jakarta.persistence.EntityManager` instances. Each `EntityManager`
 instance is associated with a persistence context: a set of managed
 entity instances that exist in a particular data store. A persistence
 context defines the scope under which particular entity instances are
@@ -31,7 +31,7 @@ Jakarta transactions usually involve calls across application components. To
 complete a Jakarta transaction, these components usually need access to a
 single persistence context. This occurs when an `EntityManager` is
 injected into the application components by means of the
-`javax.persistence.PersistenceContext` annotation. The persistence
+`jakarta.persistence.PersistenceContext` annotation. The persistence
 context is automatically propagated with the current Jakarta transaction,
 and `EntityManager` references that are mapped to the same persistence
 unit provide access to the persistence context within that transaction.
@@ -70,11 +70,11 @@ done because `EntityManager` instances are not thread-safe.
 
 Applications create `EntityManager` instances in this case by using the
 `createEntityManager` method of
-`javax.persistence.EntityManagerFactory`.
+`jakarta.persistence.EntityManagerFactory`.
 
 To obtain an `EntityManager` instance, you first must obtain an
 `EntityManagerFactory` instance by injecting it into the application
-component by means of the `javax.persistence.PersistenceUnit`
+component by means of the `jakarta.persistence.PersistenceUnit`
 annotation:
 
 [source,java]
@@ -94,7 +94,7 @@ Application-managed entity managers don't automatically propagate the
 Jakarta transaction context. Such applications need to manually gain access
 to the Jakarta transaction manager and add transaction demarcation
 information when performing entity operations. The
-`javax.transaction.UserTransaction` interface defines methods to begin,
+`jakarta.transaction.UserTransaction` interface defines methods to begin,
 commit, and roll back transactions. Inject an instance of
 `UserTransaction` by creating an instance variable annotated with
 `@Resource`:

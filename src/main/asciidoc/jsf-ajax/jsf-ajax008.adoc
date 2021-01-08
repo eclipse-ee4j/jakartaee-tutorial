@@ -9,7 +9,7 @@ lifecycle.
 As described in link:#GKNOJ[Partial Processing and
 Partial Rendering], when an Ajax request is received, the state
 associated with that request is captured by the
-`javax.faces.context.PartialViewContext`. This object provides access to
+`jakarta.faces.context.PartialViewContext`. This object provides access to
 information such as which components are targeted for
 processing/rendering. The `processPartial` method of
 `PartialViewContext` uses this information to perform partial component

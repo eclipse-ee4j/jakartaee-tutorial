@@ -536,7 +536,7 @@ The `CustomerOrder.lastUpdate` persistent property, which is of type
 the SQL type `TIMESTAMP`. To ensure the proper mapping between these
 types, you must use the `@Temporal` annotation with the proper temporal
 type specified in `@Temporal`'s element. `@Temporal`'s elements are of
-type `javax.persistence.TemporalType`. The possible values are
+type `jakarta.persistence.TemporalType`. The possible values are
 
 * `DATE`, which maps to `java.sql.Date`
 * `TIME`, which maps to `java.sql.Time`

@@ -72,7 +72,7 @@ the application.
 
 === Controlling whether Entities May Be Cached
 
-The `javax.persistence.Cacheable` annotation is used to specify that an
+The `jakarta.persistence.Cacheable` annotation is used to specify that an
 entity class, and any subclasses, may be cached when using the
 `ENABLE_SELECTIVE` or `DISABLE_SELECTIVE` cache modes. Subclasses may
 override the `@Cacheable` setting by adding a `@Cacheable` annotation

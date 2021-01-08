@@ -58,7 +58,7 @@ support nested transactions. In other words, it cannot start a
 transaction for an instance until the preceding transaction has ended.
 
 To demarcate a Jakarta transaction, you invoke the `begin`, `commit`, and
-`rollback` methods of the `javax.transaction.UserTransaction` interface.
+`rollback` methods of the `jakarta.transaction.UserTransaction` interface.
 
 [[BNCJA]][[returning-without-committing]]
 

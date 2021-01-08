@@ -134,13 +134,13 @@ follows:
 ----
 @JMSDestinationDefinition(
         name = "java:module/jms/newsTopic",
-        interfaceName = "javax.jms.Topic",
+        interfaceName = "jakarta.jms.Topic",
         destinationName = "PhysicalNewsTopic")
 @MessageDriven(activationConfig = {
     @ActivationConfigProperty(propertyName = "destinationLookup",
             propertyValue = "java:module/jms/newsTopic"),
     @ActivationConfigProperty(propertyName = "destinationType",
-            propertyValue = "javax.jms.Topic"),
+            propertyValue = "jakarta.jms.Topic"),
     @ActivationConfigProperty(propertyName = "messageSelector",
             propertyValue = "NewsType = 'Sports' OR NewsType = 'Opinion'"),
     @ActivationConfigProperty(propertyName = "subscriptionDurability",

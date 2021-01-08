@@ -74,7 +74,7 @@ information on which types are accepted by which component tags.
 
 When a bean property is bound to a component instance, the property's
 type must be the same as the component object. For example, if a
-`javax.faces.component.UISelectBoolean` component is bound to the
+`jakarta.faces.component.UISelectBoolean` component is bound to the
 property, the property must accept and return a `UISelectBoolean`
 object. Likewise, if the property is bound to a converter, validator, or
 listener instance, the property must be of the appropriate converter,
@@ -154,7 +154,7 @@ property from the `binding` attribute:
 
 In addition to using expressions with the standard component tags, you
 can configure your custom component properties to accept expressions by
-creating `javax.el.ValueExpression` or `javax.el.MethodExpression`
+creating `jakarta.el.ValueExpression` or `jakarta.el.MethodExpression`
 instances for them.
 
 For information on the EL, see link:#GJDDD[Chapter 9,

@@ -54,7 +54,7 @@ containing some components and renderers. In addition, any file with a
 name that ends in `faces-config.xml` is also considered a configuration
 resource and is loaded as such.
 * A context initialization parameter,
-`javax.faces.application.CONFIG_FILES`, in your web deployment
+`jakarta.faces.application.CONFIG_FILES`, in your web deployment
 descriptor file that specifies one or more (comma-delimited) paths to
 multiple configuration files for your web application. This method is
 most often used for enterprise-scale applications that delegate to
@@ -66,7 +66,7 @@ available in this way.
 
 To access the resources registered with the application, an application
 developer can use an instance of the
-`javax.faces.application.Application` class, which is automatically
+`jakarta.faces.application.Application` class, which is automatically
 created for each application. The `Application` instance acts as a
 centralized factory for resources that are defined in the XML file.
 
@@ -81,7 +81,7 @@ resource file.
 
 Jakarta Server Faces managed beans (either specified in the
 f`aces-config.xml` file or annotated with
-`javax.faces.bean.ManagedBean`) are lazily instantiated. That is, that
+`jakarta.faces.bean.ManagedBean`) are lazily instantiated. That is, that
 they are instantiated when a request is made from the application.
 
 To force an application-scoped bean to be instantiated and placed in the

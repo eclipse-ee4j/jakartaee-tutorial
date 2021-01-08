@@ -45,7 +45,7 @@ the application needs to render:
         action="/dukesbookstore/index.xhtml" ...>
     ...
     <img id="j_idt13:mapImage"
-         src="/dukesbookstore/javax.faces.resource/book_all.jpg?ln=images"
+         src="/dukesbookstore/jakarta.faces.resource/book_all.jpg?ln=images"
          alt="Choose a Book from our Catalog"
          usemap="#bookMap" />
     ...
@@ -83,7 +83,7 @@ currently selected area between client-server exchanges so that the
 server-side component classes can retrieve the value.
 
 The server-side objects retrieve the value of `bookMap_current` and set
-the locale in the `javax.faces.context.FacesContext` instance according
+the locale in the `jakarta.faces.context.FacesContext` instance according
 to the region that was selected.
 
 [[GLPCD]][[understanding-the-facelets-page]]
@@ -140,7 +140,7 @@ information on navigation, see
 link:#BNAXF[Configuring Navigation Rules].
 
 The `immediate` attribute of the `bookstore:map` tag is set to `true`,
-which indicates that the default `javax.faces.event.ActionListener`
+which indicates that the default `jakarta.faces.event.ActionListener`
 implementation should execute during the Apply Request Values phase of
 the request-processing lifecycle, instead of waiting for the Invoke
 Application phase. Because the request resulting from clicking the map
@@ -263,7 +263,7 @@ the image map component.
 [width="60%",cols="15%,45%"]
 |=======================================================================
 |*Class* |*Function*
-|`AreaSelectedEvent` |The `javax.faces.event.ActionEvent` indicating
+|`AreaSelectedEvent` |The `jakarta.faces.event.ActionEvent` indicating
 that an `AreaComponent` from the `MapComponent` has been selected.
 
 |`AreaComponent` |The class that defines `AreaComponent`, which
@@ -272,7 +272,7 @@ corresponds to the `bookstore:area` custom tag.
 |`MapComponent` |The class that defines `MapComponent`, which
 corresponds to the `bookstore:map` custom tag.
 
-|`AreaRenderer` |This `javax.faces.render.Renderer` performs the
+|`AreaRenderer` |This `jakarta.faces.render.Renderer` performs the
 delegated rendering for `AreaComponent`.
 
 |`ImageArea` |The bean that stores the shape and coordinates of the

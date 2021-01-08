@@ -107,7 +107,7 @@ turn configured as a managed bean with properties:
     <managed-bean-class>java.util.ArrayList</managed-bean-class>
     <managed-bean-scope>application</managed-bean-scope>
     <list-entries>
-        <value-class>javax.faces.model.SelectItem</value-class>
+        <value-class>jakarta.faces.model.SelectItem</value-class>
         <value>#{newsletter0}</value>
         <value>#{newsletter1}</value>
         <value>#{newsletter2}</value>
@@ -116,7 +116,7 @@ turn configured as a managed bean with properties:
 </managed-bean>
 <managed-bean>
     <managed-bean-name>newsletter0</managed-bean-name>
-    <managed-bean-class>javax.faces.model.SelectItem</managed-bean-class>
+    <managed-bean-class>jakarta.faces.model.SelectItem</managed-bean-class>
     <managed-bean-scope>none</managed-bean-scope>
     <managed-property>
         <property-name>label</property-name>

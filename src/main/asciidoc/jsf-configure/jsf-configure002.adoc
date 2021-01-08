@@ -18,7 +18,7 @@ Jakarta Server Faces support for bean annotations is introduced in
 link:#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]. Bean
 annotations can be used for configuring Jakarta Server Faces applications.
 
-The `@Named` (`javax.inject.Named`) annotation in a class, along with a
+The `@Named` (`jakarta.inject.Named`) annotation in a class, along with a
 scope annotation, automatically registers that class as a resource with
 the Jakarta Server Faces implementation. A bean that uses these annotations
 is a CDI managed bean.
@@ -57,18 +57,18 @@ Custom UI Components and Other Custom Objects"].
 You can use annotations to define the scope in which the bean will be
 stored. You can specify one of the following scopes for a bean class.
 
-* Application (`javax.enterprise.context.ApplicationScoped`):
+* Application (`jakarta.enterprise.context.ApplicationScoped`):
 Application scope persists across all users' interactions with a web
 application.
-* Session (`javax.enterprise.context.SessionScoped`): Session scope
+* Session (`jakarta.enterprise.context.SessionScoped`): Session scope
 persists across multiple HTTP requests in a web application.
-* Flow (`javax.faces.flows.FlowScoped`): Flow scope persists during a
+* Flow (`jakarta.faces.flows.FlowScoped`): Flow scope persists during a
 user's interaction with a specific flow of a web application. See
 link:#CHDGFCJF[Using Faces Flows] for more
 information.
-* Request (`javax.enterprise.context.RequestScoped`): Request scope
+* Request (`jakarta.enterprise.context.RequestScoped`): Request scope
 persists during a single HTTP request in a web application.
-* Dependent (`javax.enterprise.context.Dependent`): Indicates that the
+* Dependent (`jakarta.enterprise.context.Dependent`): Indicates that the
 bean depends on some other bean.
 
 You may want to use `@Dependent` when a managed bean references another
@@ -81,7 +81,7 @@ If your managed bean is referenced by the `binding` attribute of a
 component tag, you should define the bean with a request scope. If you
 placed the bean in session or application scope instead, the bean would
 need to take precautions to ensure thread safety, because
-`javax.faces.component.UIComponent` instances each depend on running
+`jakarta.faces.component.UIComponent` instances each depend on running
 inside of a single thread.
 
 If you are configuring a bean that allows attributes to be associated

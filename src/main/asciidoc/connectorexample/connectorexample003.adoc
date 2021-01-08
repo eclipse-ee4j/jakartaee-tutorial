@@ -151,14 +151,14 @@ link:#CHDEDEAF[Table 56-3].
 [width="99%",cols="20%,20%,60%"]
 |=======================================================================
 |*Package* |*Interface* |*Description*
-|`javax.resource.spi` |`ResourceAdapter` |Defines the lifecycle methods
+|`jakarta.resource.spi` |`ResourceAdapter` |Defines the lifecycle methods
 of the resource adapter.
 
-|`javax.resource.spi` |`ActivationSpec` |Defines the configuration
+|`jakarta.resource.spi` |`ActivationSpec` |Defines the configuration
 parameters that the MDB provides to activate the inbound resource
 adapter.
 
-|`javax.resource.spi` |`Work` |The traffic service subscriber implements
+|`jakarta.resource.spi` |`Work` |The traffic service subscriber implements
 this interface from the work management contract to wait for traffic
 updates on a separate thread.
 |=======================================================================
@@ -218,7 +218,7 @@ workManager.scheduleWork(tSubscriber);
 ----
 
 The `TrafficServiceSubscriber` class implements the
-`javax.resource.spi.Work` interface from the work management contract.
+`jakarta.resource.spi.Work` interface from the work management contract.
 
 The traffic service subscriber thread uses reflection to invoke the
 methods in the MDB:

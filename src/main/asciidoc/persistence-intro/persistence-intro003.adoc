@@ -54,7 +54,7 @@ when you have state and mapping information common to multiple entity
 classes.
 
 Mapped superclasses are specified by decorating the class with the
-annotation `javax.persistence.MappedSuperclass`:
+annotation `jakarta.persistence.MappedSuperclass`:
 
 [source,java]
 ----
@@ -105,7 +105,7 @@ relationship annotations in non-entity superclasses are ignored.
 
 You can configure how the Jakarta Persistence provider maps inherited
 entities to the underlying datastore by decorating the root class of the
-hierarchy with the annotation `javax.persistence.Inheritance`. The
+hierarchy with the annotation `jakarta.persistence.Inheritance`. The
 following mapping strategies are used to map the entity data to the
 underlying database:
 
@@ -117,7 +117,7 @@ that are common to the parent class
 
 The strategy is configured by setting the `strategy` element of
 `@Inheritance` to one of the options defined in the
-`javax.persistence.InheritanceType` enumerated type:
+`jakarta.persistence.InheritanceType` enumerated type:
 
 [source,java]
 ----
@@ -144,7 +144,7 @@ represented by the row belongs.
 
 The discriminator column, whose elements are shown in link:#BNBQT[Table
 40-2], can be specified by using the
-`javax.persistence.DiscriminatorColumn` annotation on the root of the
+`jakarta.persistence.DiscriminatorColumn` annotation on the root of the
 entity class hierarchy.
 
 [[sthref160]][[BNBQT]]
@@ -171,7 +171,7 @@ default is 31. This element is optional.
 |=======================================================================
 
 
-The `javax.persistence.DiscriminatorType` enumerated type is used to set
+The `jakarta.persistence.DiscriminatorType` enumerated type is used to set
 the type of the discriminator column in the database by setting the
 `discriminatorType` element of `@DiscriminatorColumn` to one of the
 defined types. `DiscriminatorType` is defined as follows:
@@ -190,7 +190,7 @@ hierarchy and a discriminator column is required, the Persistence
 provider assumes a default column name of `DTYPE` and column type of
 `DiscriminatorType.STRING`.
 
-The `javax.persistence.DiscriminatorValue` annotation may be used to set
+The `jakarta.persistence.DiscriminatorValue` annotation may be used to set
 the value entered into the discriminator column for each entity in a
 class hierarchy. You may decorate only concrete entity classes with
 `@DiscriminatorValue`.

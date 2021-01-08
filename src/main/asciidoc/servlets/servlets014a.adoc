@@ -20,5 +20,5 @@ start sending the bytes of these assets along with the bytes of the `index.html`
 To use server push, obtain a reference to a `PushBuilder` from an `HttpServletRequest`,
 edit the builder as desired, then call `push()`. See the
 https://jakarta.ee/specifications/platform/8/apidocs/[javadoc] for the class
-`javax.servlet.http.PushBuilder` and the method
-`javax.servlet.http.HttpServletRequest.newPushBuilder()`.
+`jakarta.servlet.http.PushBuilder` and the method
+`jakarta.servlet.http.HttpServletRequest.newPushBuilder()`.

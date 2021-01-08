@@ -187,22 +187,22 @@ for more information on resources.
 [width="50%",cols="20%,30%"]
 |================================================
 |*Component* |*Interface/Class*
-|Servlets |`javax.servlet.Servlet`
-|Servlet filters |`javax.servlet.ServletFilter`
+|Servlets |`jakarta.servlet.Servlet`
+|Servlet filters |`jakarta.servlet.ServletFilter`
 |Event listeners a|
-`javax.servlet.ServletContextListener`
+`jakarta.servlet.ServletContextListener`
 
-`javax.servlet.ServletContextAttributeListener`
+`jakarta.servlet.ServletContextAttributeListener`
 
-`javax.servlet.ServletRequestListener`
+`jakarta.servlet.ServletRequestListener`
 
-`javax.servlet.ServletRequestAttributeListener`
+`jakarta.servlet.ServletRequestAttributeListener`
 
-`javax.servlet.http.HttpSessionListener`
+`jakarta.servlet.http.HttpSessionListener`
 
-`javax.servlet.http.HttpSessionAttributeListener`
+`jakarta.servlet.http.HttpSessionAttributeListener`
 
-`javax.servlet.http.HttpSessionBindingListener`
+`jakarta.servlet.http.HttpSessionBindingListener`
 
 |Managed beans |Plain Old Java Objects
 |================================================
@@ -248,7 +248,7 @@ as shown by the following example:
 ----
 @Resources ({
     @Resource(name="myDB" type=javax.sql.DataSource.class),
-    @Resource(name="myMQ" type=javax.jms.ConnectionFactory.class)
+    @Resource(name="myMQ" type=jakarta.jms.ConnectionFactory.class)
 })
 ----
 

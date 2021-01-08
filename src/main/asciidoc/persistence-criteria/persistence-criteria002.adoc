@@ -55,7 +55,7 @@ type:
 
 [source,java]
 ----
-javax.persistence.metamodel.EntityType<T>
+jakarta.persistence.metamodel.EntityType<T>
 ----
 
 Annotation processors typically generate metamodel classes either at

@@ -64,7 +64,7 @@ embedded container is `glassfish-embedded-all.jar`.
 
 === Creating the Enterprise Bean Container
 
-The `javax.ejb.embedded.EJBContainer` abstract class represents an
+The `jakarta.ejb.embedded.EJBContainer` abstract class represents an
 instance of the enterprise bean container and includes factory methods
 for creating a container instance. The `EJBContainer.createEJBContainer`
 method is used to create and initialize an embedded container instance.

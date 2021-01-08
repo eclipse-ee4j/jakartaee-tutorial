@@ -17,8 +17,8 @@ primary programming artifact for enterprise bean web service endpoints.
 The web service endpoint implementation class has the following
 requirements.
 
-* The class must be annotated with either the `javax.jws.WebService` or
-the `javax.jws.WebServiceProvider` annotation.
+* The class must be annotated with either the `jakarta.jws.WebService` or
+the `jakarta.jws.WebServiceProvider` annotation.
 * The implementing class may explicitly reference an SEI through the
 `endpointInterface` element of the `@WebService` annotation but is not
 required to do so. If no `endpointInterface` is specified in
@@ -26,7 +26,7 @@ required to do so. If no `endpointInterface` is specified in
 * The business methods of the implementing class must be public and must
 not be declared `static` or `final`.
 * Business methods that are exposed to web service clients must be
-annotated with `javax.jws.WebMethod`.
+annotated with `jakarta.jws.WebMethod`.
 * Business methods that are exposed to web service clients must have
 Jakarta XML Binding-compatible parameters and return types. See the list of Jakarta XML Binding
 default data type bindings at link:#BNAZC[Types Supported by
@@ -36,8 +36,8 @@ Jakarta XML Web Services].
 * The implementing class must have a default public constructor.
 * The endpoint class must be annotated `@Stateless`.
 * The implementing class must not define the `finalize` method.
-* The implementing class may use the `javax.annotation.PostConstruct` or
-`javax.annotation.PreDestroy` annotations on its methods for lifecycle
+* The implementing class may use the `jakarta.annotation.PostConstruct` or
+`jakarta.annotation.PreDestroy` annotations on its methods for lifecycle
 event callbacks.
 +
 The `@PostConstruct` method is called by the container before the

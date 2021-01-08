@@ -15,7 +15,7 @@ perform this specialized conversion. This implementation, at a minimum,
 must define how to convert data both ways between the two views of the
 data described in link:#BNAQI[Conversion Model].
 
-All custom converters must implement the `javax.faces.convert.Converter`
+All custom converters must implement the `jakarta.faces.convert.Converter`
 interface. This section explains how to implement this interface to
 perform a custom data conversion.
 

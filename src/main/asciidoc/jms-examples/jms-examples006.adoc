@@ -61,7 +61,7 @@ queue:
 ----
 @JMSDestinationDefinition(
         name = "java:comp/jms/webappQueue",
-        interfaceName = "javax.jms.Queue",
+        interfaceName = "jakarta.jms.Queue",
         destinationName = "PhysicalWebappQueue")
 @Named
 @RequestScoped

@@ -553,7 +553,7 @@ that causes a rollback:
 +
 [source,java]
 ----
-Vendor: JMSException occurred: javax.jms.JMSException: Simulated
+Vendor: JMSException occurred: jakarta.jms.JMSException: Simulated
 database concurrent access exception
   Vendor: Rolled back transaction 1
 ----

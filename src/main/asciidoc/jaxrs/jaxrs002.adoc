@@ -120,7 +120,7 @@ return a `Response` that wraps the entity and that can be built using
 the URL mapping for the application. The path specified by
 `@ApplicationPath` is the base URI for all resource URIs specified by
 `@Path` annotations in the resource class. You may only apply
-`@ApplicationPath` to a subclass of `javax.ws.rs.core.Application`.
+`@ApplicationPath` to a subclass of `jakarta.ws.rs.core.Application`.
 |=======================================================================
 
 
@@ -297,7 +297,7 @@ specified in `web.xml`, is the default:
 [source,java]
 ----
 <servlet-mapping>
-      <servlet-name>javax.ws.rs.core.Application</servlet-name>
+      <servlet-name>jakarta.ws.rs.core.Application</servlet-name>
       <url-pattern>/resources/*</url-pattern>
 </servlet-mapping>
 ----
@@ -407,7 +407,7 @@ Language (WADL) document describing the resource; see
 `http://www.w3.org/Submission/wadl/` for more information.
 
 Methods decorated with request method designators must return `void`, a
-Java programming language type, or a `javax.ws.rs.core.Response` object.
+Java programming language type, or a `jakarta.ws.rs.core.Response` object.
 Multiple parameters may be extracted from the URI by using the
 `@PathParam` or `@QueryParam` annotations, as described in
 link:#GIPYW[Extracting Request Parameters]. Conversion between Java
@@ -469,12 +469,12 @@ Table 32-3 Types Supported for HTTP Request and Response Entity Bodies
 
 |`java.io.File` |All media types (`*/*`)
 
-|`javax.activation.DataSource` |All media types (`*/*`)
+|`jakarta.activation.DataSource` |All media types (`*/*`)
 
 |`javax.xml.transform.Source` |XML media types (`text/xml`,
 `application/xml`, and `application/*+xml`)
 
-|`javax.xml.bind.JAXBElement` and application-supplied Jakarta XML Binding classes |XML
+|`jakarta.xml.bind.JAXBElement` and application-supplied Jakarta XML Binding classes |XML
 media types (`text/xml`, `application/xml`, and `application/*+xml`)
 
 |`MultivaluedMap<String, String>` |Form content
@@ -537,8 +537,8 @@ specified as a MIME media type in the headers of an HTTP request or
 response. You can specify which MIME media types of representations a
 resource can respond to or produce by using the following annotations:
 
-* `javax.ws.rs.Consumes`
-* `javax.ws.rs.Produces`
+* `jakarta.ws.rs.Consumes`
+* `jakarta.ws.rs.Produces`
 
 By default, a resource class can respond to and produce all MIME media
 types of representations specified in the HTTP request and response
@@ -594,7 +594,7 @@ The `doGetAsPlainText` method defaults to the MIME media type of the
 specifies that the method can produce HTML rather than plain text.
 
 `@Produces` can also use the constants defined in the
-`javax.ws.rs.core.MediaType` class to specify the media type. For
+`jakarta.ws.rs.core.MediaType` class to specify the media type. For
 example, specifying `MediaType.APPLICATION_XML` is equivalent to
 specifying `"application/xml"`.
 
@@ -632,7 +632,7 @@ equally acceptable, the former will be chosen because it occurs first.
 The preceding examples refer explicitly to MIME media types for clarity.
 It is possible to refer to constant values, which may reduce
 typographical errors. For more information, see the API documentation
-for the constant field values of `javax.ws.rs.core.MediaType`.
+for the constant field values of `jakarta.ws.rs.core.MediaType`.
 
 [[GIPYT]][[the-consumes-annotation]]
 
@@ -732,7 +732,7 @@ resource class:
 * Matrix
 
 Query parameters are extracted from the request URI query parameters and
-are specified by using the `javax.ws.rs.QueryParam` annotation in the
+are specified by using the `jakarta.ws.rs.QueryParam` annotation in the
 method parameter arguments. The following example demonstrates using
 `@QueryParam` to extract query parameters from the `Query` component of
 the request URL:
@@ -814,7 +814,7 @@ object types; and the default for primitive types.
 URI path parameters are extracted from the request URI, and the
 parameter names correspond to the URI path template variable names
 specified in the `@Path` class-level annotation. URI parameters are
-specified using the `javax.ws.rs.PathParam` annotation in the method
+specified using the `jakarta.ws.rs.PathParam` annotation in the method
 parameter arguments. The following example shows how to use `@Path`
 variables and the `@PathParam` annotation in a method:
 
@@ -848,15 +848,15 @@ The `@PathParam` parameter and the other parameter-based annotations
 the same rules as `@QueryParam`.
 
 Cookie parameters, indicated by decorating the parameter with
-`javax.ws.rs.CookieParam`, extract information from the cookies declared
+`jakarta.ws.rs.CookieParam`, extract information from the cookies declared
 in cookie-related HTTP headers. Header parameters, indicated by
-decorating the parameter with `javax.ws.rs.HeaderParam`, extract
+decorating the parameter with `jakarta.ws.rs.HeaderParam`, extract
 information from the HTTP headers. Matrix parameters, indicated by
-decorating the parameter with `javax.ws.rs.MatrixParam`, extract
+decorating the parameter with `jakarta.ws.rs.MatrixParam`, extract
 information from URL path segments.
 
 Form parameters, indicated by decorating the parameter with
-`javax.ws.rs.FormParam`, extract information from a request
+`jakarta.ws.rs.FormParam`, extract information from a request
 representation that is of the MIME media type
 `application/x-www-form-urlencoded` and conforms to the encoding
 specified by HTML forms, as described in
@@ -923,7 +923,7 @@ within a WAR file. The base URI from which an application's resources
 respond to requests can be set one of two ways:
 
 * Using the `@ApplicationPath` annotation in a subclass of
-`javax.ws.rs.core.Application` packaged within the WAR
+`jakarta.ws.rs.core.Application` packaged within the WAR
 * Using the `servlet-mapping` tag within the WAR's `web.xml` deployment
 descriptor
 
@@ -931,7 +931,7 @@ descriptor
 
 ==== Configuring a Jakarta REST Application Using a Subclass of Application
 
-Create a subclass of `javax.ws.rs.core.Application` to manually
+Create a subclass of `jakarta.ws.rs.core.Application` to manually
 configure the environment in which the REST resources defined in your
 resource classes are run, including the base URI. Add a class-level
 `@ApplicationPath` annotation to set the base URI.
@@ -972,7 +972,7 @@ The base URI for a Jakarta REST application can be set using a
 [source,xml]
 ----
 <servlet-mapping>
-    <servlet-name>javax.ws.rs.core.Application</servlet-name>
+    <servlet-name>jakarta.ws.rs.core.Application</servlet-name>
     <url-pattern>/webapi/*</url-pattern>
 </servlet-mapping>
 ----

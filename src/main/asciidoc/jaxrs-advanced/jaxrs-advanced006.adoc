@@ -71,7 +71,7 @@ and media types for the client and server.
 
 In addition to supporting static content negotiation, Jakarta REST also
 supports runtime content negotiation using the
-`javax.ws.rs.core.Variant` class and `Request` objects. The `Variant`
+`jakarta.ws.rs.core.Variant` class and `Request` objects. The `Variant`
 class specifies the resource representation of content negotiation. Each
 instance of the `Variant` class may contain a media type, a language,
 and an encoding. The `Variant` object defines the resource
@@ -104,7 +104,7 @@ snippet is 4, and the contents are as follows:
     ["application/xml","fr"],["application/json","fr"]]
 ----
 
-The `javax.ws.rs.core.Request.selectVariant` method accepts a list of
+The `jakarta.ws.rs.core.Request.selectVariant` method accepts a list of
 `Variant` objects and chooses the `Variant` object that matches the HTTP
 request. This method compares its list of `Variant` objects with the
 `Accept`, `Accept-Encoding`, `Accept-Language`, and `Accept-Charset`

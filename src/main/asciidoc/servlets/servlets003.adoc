@@ -29,17 +29,17 @@ objects.
 [width="90%",cols="15%,25%,50"]
 |=======================================================================
 |*Scope Object* |*Class* |*Accessible From*
-|Web context |`javax.servlet.ServletContext` |Web components within a
+|Web context |`jakarta.servlet.ServletContext` |Web components within a
 web context. See link:#BNAGL[Accessing the Web Context].
 
-|Session |`javax.servlet.http.HttpSession` |Web components handling a
+|Session |`jakarta.servlet.http.HttpSession` |Web components handling a
 request that belongs to the session. See
 link:#BNAGM[Maintaining Client State].
 
-|Request |Subtype of `javax.servlet.ServletRequest` |Web components
+|Request |Subtype of `jakarta.servlet.ServletRequest` |Web components
 handling the request.
 
-|Page |`javax.servlet.jsp.JspContext` |The Jakarta Server Pages page that creates the
+|Page |`jakarta.servlet.jsp.JspContext` |The Jakarta Server Pages page that creates the
 object.
 |=======================================================================
 

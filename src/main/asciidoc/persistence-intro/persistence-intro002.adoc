@@ -19,7 +19,7 @@ relationships to the relational data in the underlying data store.
 
 An entity class must follow these requirements.
 
-* The class must be annotated with the `javax.persistence.Entity`
+* The class must be annotated with the `jakarta.persistence.Entity`
 annotation.
 * The class must have a public or protected, no-argument constructor.
 The class may have other constructors.
@@ -88,7 +88,7 @@ JavaBeans-style properties, the entity uses persistent properties.
 
 If the entity class uses persistent fields, the Persistence runtime
 accesses entity-class instance variables directly. All fields not
-annotated `javax.persistence.Transient` or not marked as Java
+annotated `jakarta.persistence.Transient` or not marked as Java
 `transient` will be persisted to the data store. The object/relational
 mapping annotations must be applied to the instance variables.
 
@@ -149,7 +149,7 @@ void setPhoneNumbers(Set<PhoneNumber>) { ... }
 
 If a field or property of an entity consists of a collection of basic
 types or embeddable classes, use the
-`javax.persistence.ElementCollection` annotation on the field or
+`jakarta.persistence.ElementCollection` annotation on the field or
 property.
 
 The two attributes of `@ElementCollection` are `targetClass` and
@@ -157,7 +157,7 @@ The two attributes of `@ElementCollection` are `targetClass` and
 basic or embeddable class and is optional if the field or property is
 defined using Java programming language generics. The optional `fetch`
 attribute is used to specify whether the collection should be retrieved
-lazily or eagerly, using the `javax.persistence.FetchType` constants of
+lazily or eagerly, using the `jakarta.persistence.FetchType` constants of
 either `LAZY` or `EAGER`, respectively. By default, the collection will
 be fetched lazily.
 
@@ -191,16 +191,16 @@ an embeddable class, or an entity.
 * Use the `Map` type on only one side of a bidirectional relationship.
 
 If the key type of a `Map` is a Java programming language basic type,
-use the annotation `javax.persistence.MapKeyColumn` to set the column
+use the annotation `jakarta.persistence.MapKeyColumn` to set the column
 mapping for the key. By default, the `name` attribute of `@MapKeyColumn`
 is of the form RELATIONSHIP-FIELD/PROPERTY-NAME`_KEY`. For example, if
 the referencing relationship field name is `image`, the default `name`
 attribute is `IMAGE_KEY`.
 
 If the key type of a `Map` is an entity, use the
-`javax.persistence.MapKeyJoinColumn` annotation. If the multiple columns
+`jakarta.persistence.MapKeyJoinColumn` annotation. If the multiple columns
 are needed to set the mapping, use the annotation
-`javax.persistence.MapKeyJoinColumns` to include multiple
+`jakarta.persistence.MapKeyJoinColumns` to include multiple
 `@MapKeyJoinColumn` annotations. If no `@MapKeyJoinColumn` is present,
 the mapping column name is by default set to
 RELATIONSHIP-FIELD/PROPERTY-NAME`_KEY`. For example, if the relationship
@@ -209,10 +209,10 @@ field name is `employee`, the default `name` attribute is
 
 If Java programming language generic types are not used in the
 relationship field or property, the key class must be explicitly set
-using the `javax.persistence.MapKeyClass` annotation.
+using the `jakarta.persistence.MapKeyClass` annotation.
 
 If the `Map` key is the primary key or a persistent field or property of
-the entity that is the `Map` value, use the `javax.persistence.MapKey`
+the entity that is the `Map` value, use the `jakarta.persistence.MapKey`
 annotation. The `@MapKeyClass` and `@MapKey` annotations cannot be used
 on the same field or property.
 
@@ -268,7 +268,7 @@ constraint annotations on the class's fields. If the class uses property
 access, apply the constraints on the getter methods.
 
 link:#GKAGK[Table 22-1] lists Bean Validation's
-built-in constraints, defined in the `javax.validation.constraints`
+built-in constraints, defined in the `jakarta.validation.constraints`
 package.
 
 All the built-in constraints listed in
@@ -311,7 +311,7 @@ public class Contact implements Serializable {
     @Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$",
             message = "{invalid.phonenumber}")
     protected String homePhone;
-    @Temporal(javax.persistence.TemporalType.DATE)
+    @Temporal(jakarta.persistence.TemporalType.DATE)
     @Past
     protected Date birthday;
     ...
@@ -347,14 +347,14 @@ identifier, or primary key, enables clients to locate a particular
 entity instance. Every entity must have a primary key. An entity may
 have either a simple or a composite primary key.
 
-Simple primary keys use the `javax.persistence.Id` annotation to denote
+Simple primary keys use the `jakarta.persistence.Id` annotation to denote
 the primary key property or field.
 
 Composite primary keys are used when a primary key consists of more than
 one attribute, which corresponds to a set of single persistent
 properties or fields. Composite primary keys must be defined in a
 primary key class. Composite primary keys are denoted using the
-`javax.persistence.EmbeddedId` and `javax.persistence.IdClass`
+`jakarta.persistence.EmbeddedId` and `jakarta.persistence.IdClass`
 annotations.
 
 The primary key, or the property or field of a composite primary key,
@@ -444,27 +444,27 @@ Multiplicities are of the following types.
 another entity. For example, to model a physical warehouse in which each
 storage bin contains a single widget, `StorageBin` and `Widget` would
 have a one-to-one relationship. One-to-one relationships use the
-`javax.persistence.OneToOne` annotation on the corresponding persistent
+`jakarta.persistence.OneToOne` annotation on the corresponding persistent
 property or field.
 * One-to-many: An entity instance can be related to multiple instances
 of the other entities. A sales order, for example, can have multiple
 line items. In the order application, `CustomerOrder` would have a
 one-to-many relationship with `LineItem`. One-to-many relationships use
-the `javax.persistence.OneToMany` annotation on the corresponding
+the `jakarta.persistence.OneToMany` annotation on the corresponding
 persistent property or field.
 * Many-to-one: Multiple instances of an entity can be related to a
 single instance of the other entity. This multiplicity is the opposite
 of a one-to-many relationship. In the example just mentioned, the
 relationship to `CustomerOrder` from the perspective of `LineItem` is
 many-to-one. Many-to-one relationships use the
-`javax.persistence.ManyToOne` annotation on the corresponding persistent
+`jakarta.persistence.ManyToOne` annotation on the corresponding persistent
 property or field.
 * Many-to-many: The entity instances can be related to multiple
 instances of each other. For example, each college course has many
 students, and every student may take several courses. Therefore, in an
 enrollment application, `Course` and `Student` would have a many-to-many
 relationship. Many-to-many relationships use the
-`javax.persistence.ManyToMany` annotation on the corresponding
+`jakarta.persistence.ManyToMany` annotation on the corresponding
 persistent property or field.
 
 [[BNBQI]][[direction-in-entity-relationships]]
@@ -536,7 +536,7 @@ of the other entity in the relationship. For example, a line item is
 part of an order; if the order is deleted, the line item also should be
 deleted. This is called a cascade delete relationship.
 
-The `javax.persistence.CascadeType` enumerated type defines the cascade
+The `jakarta.persistence.CascadeType` enumerated type defines the cascade
 operations that are applied in the `cascade` element of the relationship
 annotations. link:#GJJNJ[Table 40-1] lists the cascade operations for
 entities.
@@ -617,7 +617,7 @@ An entity may have single-valued or collection-valued embeddable class
 attributes.
 
 Embeddable classes have the same rules as entity classes but are
-annotated with the `javax.persistence.Embeddable` annotation instead of
+annotated with the `jakarta.persistence.Embeddable` annotation instead of
 `@Entity`.
 
 The following embeddable class, `ZipCode`, has the fields `zip` and
@@ -653,7 +653,7 @@ public class Address {
 ----
 
 Entities that own embeddable classes as part of their persistent state
-may annotate the field or property with the `javax.persistence.Embedded`
+may annotate the field or property with the `jakarta.persistence.Embedded`
 annotation but are not required to do so.
 
 Embeddable classes may themselves use other embeddable classes to

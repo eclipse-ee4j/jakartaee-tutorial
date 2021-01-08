@@ -21,11 +21,11 @@ later inject by assigning a scope to a regular class:
 
 [source,java]
 ----
-@javax.enterprise.context.RequestScoped
+@jakarta.enterprise.context.RequestScoped
 public class CurrencyConverter { ... }
 ----
 
-Use the `javax.inject.Inject` annotation to inject managed beans; for
+Use the `jakarta.inject.Inject` annotation to inject managed beans; for
 example:
 
 [source,java]

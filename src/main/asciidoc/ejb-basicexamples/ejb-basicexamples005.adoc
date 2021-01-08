@@ -15,8 +15,8 @@ Enterprise bean timers are either programmatic timers or automatic
 timers. Programmatic timers are set by explicitly calling one of the
 timer creation methods of the `TimerService` interface. Automatic timers
 are created upon the successful deployment of an enterprise bean that
-contains a method annotated with the `javax.ejb.Schedule` or
-`javax.ejb.Schedules` annotations.
+contains a method annotated with the `jakarta.ejb.Schedule` or
+`jakarta.ejb.Schedules` annotations.
 
 [[GIQLK]][[creating-calendar-based-timer-expressions]]
 
@@ -222,7 +222,7 @@ event.
 ==== The @Timeout Method
 
 Methods annotated `@Timeout` in the enterprise bean class must return
-`void` and optionally take a `javax.ejb.Timer` object as the only
+`void` and optionally take a `jakarta.ejb.Timer` object as the only
 parameter. They may not throw application exceptions:
 
 [source,java]
@@ -270,7 +270,7 @@ Timer timer = timerService.createSingleActionTimer(date, new TimerConfig());
 ----
 
 For calendar-based timers, the expiration of the timer is expressed as a
-`javax.ejb.ScheduleExpression` object, passed as a parameter to the
+`jakarta.ejb.ScheduleExpression` object, passed as a parameter to the
 `TimerService.createCalendarTimer` method. The `ScheduleExpression`
 class represents calendar-based timer expressions and has methods that
 correspond to the attributes described in link:#GIQLK[Creating
@@ -289,7 +289,7 @@ Timer timer = timerService.createCalendarTimer(schedule);
 
 For details on the method signatures, see the `TimerService` API
 documentation at
-`https://jakarta.ee/specifications/platform/8/apidocs/javax/ejb/TimerService.html`.
+`https://jakarta.ee/specifications/platform/8/apidocs/jakarta.ejb/TimerService.html`.
 
 The bean described in link:#BNBPE[The timersession Example] creates a
 timer as follows:
@@ -395,7 +395,7 @@ associated timeout method and then cancels the timer.
 the container cancels the timer.
 
 If a method is invoked on a cancelled timer, the container throws the
-`javax.ejb.NoSuchObjectLocalException`.
+`jakarta.ejb.NoSuchObjectLocalException`.
 
 To save a `Timer` object for future reference, invoke its `getHandle`
 method and store the `TimerHandle` object in a database. (A

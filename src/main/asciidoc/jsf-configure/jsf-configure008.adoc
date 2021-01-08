@@ -3,7 +3,7 @@
 == Registering a Custom Validator
 
 If the application developer provides an implementation of the
-`javax.faces.validator.Validator` interface to perform validation, you
+`jakarta.faces.validator.Validator` interface to perform validation, you
 must register this custom validator either by using the
 `@FacesValidator` annotation, as described in
 link:#BNAUX[Implementing the Validator Interface], or

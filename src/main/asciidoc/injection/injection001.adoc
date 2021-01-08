@@ -44,7 +44,7 @@ To use method-based injection, the setter method must follow the
 JavaBeans conventions for property names: The method name must begin
 with `set`, have a `void` return type, and have only one parameter.
 
-The `@Resource` annotation is in the `javax.annotation` package and is
+The `@Resource` annotation is in the `jakarta.annotation` package and is
 defined in the Jakarta Annotations spec. Resource
 injection resolves by name, so it is not typesafe: the type of the
 resource object is not known at compile time, so you can get runtime

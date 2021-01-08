@@ -43,7 +43,7 @@ Similarly, to bind a converter, listener, or validator implementation to
 a managed bean property, the property must accept and return the same
 type of converter, listener, or validator object. For example, if you
 are using the `convertDateTime` tag to bind a
-`javax.faces.convert.DateTimeConverter` to a property, that property
+`jakarta.faces.convert.DateTimeConverter` to a property, that property
 must accept and return a `DateTimeConverter` instance.
 
 The rest of this section explains how to write properties that can be
@@ -59,7 +59,7 @@ validator implementations.
 To write a managed bean property that is bound to a component's value,
 you must match the property type to the component's value.
 
-link:#BNAUA[Table 12-1] lists the `javax.faces.component` classes and
+link:#BNAUA[Table 12-1] lists the `jakarta.faces.component` classes and
 the acceptable types of their values.
 
 [[sthref67]][[BNAUA]]
@@ -71,11 +71,11 @@ the acceptable types of their values.
 |*Component Class* |*Acceptable Types of Component Values*
 |`UIInput`, `UIOutput`, `UISelectItem`, `UISelectOne` |Any of the basic
 primitive and numeric types or any Java programming language object type
-for which an appropriate `javax.faces.convert.Converter` implementation
+for which an appropriate `jakarta.faces.convert.Converter` implementation
 is available
 
 |`UIData` |`array` of beans, `List` of beans, single bean,
-`java.sql.ResultSet`, `javax.servlet.jsp.jstl.sql.Result`,
+`java.sql.ResultSet`, `jakarta.servlet.jsp.jstl.sql.Result`,
 `javax.sql.RowSet`
 
 |`UISelectBoolean` |`boolean` or `Boolean`
@@ -237,11 +237,11 @@ interfaces, as well as custom types.
 For UIData and UIRepeat, the supported types are:
 
 * `null` (becomes empty list)
-* `javax.faces.model.DataMode`
+* `jakarta.faces.model.DataMode`
 * `java.util.List`
 * `java.lang.Object`[]
 * `java.sql.ResultSet`
-* `javax.servlet.jsp.jstl.sql.Result`
+* `jakarta.servlet.jsp.jstl.sql.Result`
 * `java.util.Collection`
 * `java.lang.Iterable`
 * `java.util.Map`
@@ -396,7 +396,7 @@ Properties].
 A `UISelectItem` component represents a single value in a set of values
 in a `UISelectMany` or a `UISelectOne` component. A `UISelectItem`
 component must be bound to a managed bean property of type
-`javax.faces.model.SelectItem`. A `SelectItem` object is composed of an
+`jakarta.faces.model.SelectItem`. A `SelectItem` object is composed of an
 `Object` representing the value along with two `Strings` representing
 the label and the description of the `UISelectItem` object.
 
@@ -540,7 +540,7 @@ properties.
 
 The following example shows a standard `convertDateTime` tag using a
 value expression with its `binding` attribute to bind the
-`javax.faces.convert.DateTimeConverter` instance to the `convertDate`
+`jakarta.faces.convert.DateTimeConverter` instance to the `convertDate`
 property of `LoginBean`:
 
 [source,xml]

@@ -37,12 +37,12 @@ following example (the method call is highlighted in bold):
 // Business method in an application component
 Context initctx = new InitialContext();
 // Perform JNDI lookup to obtain a connection factory
-javax.resource.cci.ConnectionFactory cxf =
-    (javax.resource.cci.ConnectionFactory)initctx.lookup(
+jakarta.resource.cci.ConnectionFactory cxf =
+    (jakarta.resource.cci.ConnectionFactory)initctx.lookup(
     "java:comp/env/eis/MainframeCxFactory");
 // Invoke factory to obtain a connection. The security
 // information is not passed in the getConnection method
-javax.resource.cci.Connection cx = cxf.getConnection();
+jakarta.resource.cci.Connection cx = cxf.getConnection();
 ...
 ----
 
@@ -62,8 +62,8 @@ bold):
 Context initctx = new InitialContext();
 
 // Perform JNDI lookup to obtain a connection factory
-javax.resource.cci.ConnectionFactory cxf =
-    (javax.resource.cci.ConnectionFactory)initctx.lookup(
+jakarta.resource.cci.ConnectionFactory cxf =
+    (jakarta.resource.cci.ConnectionFactory)initctx.lookup(
     "java:comp/env/eis/MainframeCxFactory");
 
 // Get a new ConnectionSpec
@@ -72,7 +72,7 @@ com.myeis.ConnectionSpecImpl properties = //..
 // Invoke factory to obtain a connection
 properties.setUserName("...");
 properties.setPassword("...");
-javax.resource.cci.Connection cx =
+jakarta.resource.cci.Connection cx =
     cxf.getConnection(properties);
 ...
 ----
@@ -105,7 +105,7 @@ a resource adapter:
         BasicPassword
     </authentication-mechanism-type>
     <credential-interface>
-        javax.resource.spi.security.PasswordCredential
+        jakarta.resource.spi.security.PasswordCredential
     </credential-interface>
 </authentication-mechanism>
 <reauthentication-support>false</reauthentication-support>
@@ -127,14 +127,14 @@ There are two supported mechanism types:
 +
 [source,java]
 ----
-javax.resource.spi.security.PasswordCredential
+jakarta.resource.spi.security.PasswordCredential
 ----
 
 ** `Kerbv5`, which supports the following interface:
 +
 [source,java]
 ----
-javax.resource.spi.security.GenericCredential
+jakarta.resource.spi.security.GenericCredential
 ----
 +
 GlassFish Server does not currently support this mechanism type.

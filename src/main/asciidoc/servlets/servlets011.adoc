@@ -12,7 +12,7 @@ web container that implements the specification can parse multipart
 requests and make mime attachments available through the
 `HttpServletRequest` object.
 
-A new annotation, `javax.servlet.annotation.MultipartConfig`, is used to
+A new annotation, `jakarta.servlet.annotation.MultipartConfig`, is used to
 indicate that the servlet on which it is declared expects requests to be
 made using the `multipart/form-data` MIME type. Servlets that are
 annotated with `@MultipartConfig` can retrieve the `Part` components of
@@ -84,7 +84,7 @@ Alternatively, the `getParts()` method, which returns an
 `Iterable<Part>`, can be used to get an `Iterator` over all the `Part`
 objects.
 
-The `javax.servlet.http.Part` interface is a simple one, providing
+The `jakarta.servlet.http.Part` interface is a simple one, providing
 methods that allow introspection of each `Part`. The methods do the
 following:
 

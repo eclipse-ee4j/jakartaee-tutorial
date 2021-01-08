@@ -17,7 +17,7 @@ table composed of multiple components.
 Jakarta Server Faces technology provides a rich, flexible component
 architecture that includes the following:
 
-* A set of `javax.faces.component.UIComponent` classes for specifying
+* A set of `jakarta.faces.component.UIComponent` classes for specifying
 the state and behavior of UI components
 * A rendering model that defines how to render the components in various
 ways
@@ -47,7 +47,7 @@ link:#BNAVG[Chapter 15, "Creating Custom UI Components and
 Other Custom Objects"] for more information.
 
 The abstract base class for all components is
-`javax.faces.component.UIComponent`. Jakarta Server Faces UI component
+`jakarta.faces.component.UIComponent`. Jakarta Server Faces UI component
 classes extend the `UIComponentBase` class (a subclass of
 `UIComponent`), which defines the default state and behavior of a
 component. The following set of component classes is included with
@@ -57,7 +57,7 @@ Jakarta Server Faces technology.
 component.
 * `UICommand`: Represents a control that fires actions when activated.
 * `UIData`: Represents a data binding to a collection of data
-represented by a `javax.faces.model.DataModel` instance.
+represented by a `jakarta.faces.model.DataModel` instance.
 * `UIForm`: Represents an input form to be presented to the user. Its
 child components represent (among other things) the input fields to be
 included when the form is submitted. This component is analogous to the
@@ -89,7 +89,7 @@ implement one or more behavioral interfaces, each of which defines
 certain behavior for a set of components whose classes implement the
 interface.
 
-These behavioral interfaces, all defined in the `javax.faces.component`
+These behavioral interfaces, all defined in the `jakarta.faces.component`
 package unless otherwise stated, are as follows.
 
 * `ActionSource`: Indicates that the component can fire an action event.
@@ -109,11 +109,11 @@ component have a unique ID.
 between requests.
 * `ValueHolder`: Indicates that the component maintains a local value as
 well as the option of accessing data in the model tier.
-* `javax.faces.event.SystemEventListenerHolder`: Maintains a list of
-`javax.faces.event.SystemEventListener` instances for each type of
-`javax.faces.event.SystemEvent` defined by that class.
-* `javax.faces.component.behavior.ClientBehaviorHolder`: Adds the
-ability to attach `javax.faces.component.behavior.ClientBehavior`
+* `jakarta.faces.event.SystemEventListenerHolder`: Maintains a list of
+`jakarta.faces.event.SystemEventListener` instances for each type of
+`jakarta.faces.event.SystemEvent` defined by that class.
+* `jakarta.faces.component.behavior.ClientBehaviorHolder`: Adds the
+ability to attach `jakarta.faces.component.behavior.ClientBehavior`
 instances, such as a reusable script.
 
 `UICommand` implements `ActionSource2` and `StateHolder`. `UIOutput` and
@@ -154,7 +154,7 @@ are appropriate for a particular client. The Jakarta Server Faces
 implementation includes a standard HTML render kit for rendering to an
 HTML client.
 
-The render kit defines a set of `javax.faces.render.Renderer` classes
+The render kit defines a set of `jakarta.faces.render.Renderer` classes
 for each component that it supports. Each `Renderer` class defines a
 different way to render the particular component to the output defined
 by the render kit. For example, a `UISelectOne` component has three
@@ -213,7 +213,7 @@ component must be bound to a property of type `boolean` or
 Sometimes you might want to convert a component's data to a type other
 than a standard type, or you might want to convert the format of the
 data. To facilitate this, Jakarta Server Faces technology allows you to
-register a `javax.faces.convert.Converter` implementation on `UIOutput`
+register a `jakarta.faces.convert.Converter` implementation on `UIOutput`
 components and components whose classes subclass `UIOutput`. If you
 register the `Converter` implementation on a component, the `Converter`
 implementation converts the component's data between the two views.
@@ -250,11 +250,11 @@ listener method that processes the event.
 Jakarta Server Faces supports two kinds of application events: action events
 and value-change events.
 
-An action event (class `javax.faces.event.ActionEvent`) occurs when the
+An action event (class `jakarta.faces.event.ActionEvent`) occurs when the
 user activates a component that implements `ActionSource`. These
 components include buttons and links.
 
-A value-change event (class `javax.faces.event.ValueChangeEvent`) occurs
+A value-change event (class `jakarta.faces.event.ValueChangeEvent`) occurs
 when the user changes the value of a component represented by `UIInput`
 or one of its subclasses. An example is selecting a check box, an action
 that results in the component's value changing to `true`. The component
@@ -320,7 +320,7 @@ value.
 Like the conversion model, the validation model defines a set of
 standard classes for performing common data validation checks. The
 Jakarta Server Faces core tag library also defines a set of tags that
-correspond to the standard `javax.faces.validator.Validator`
+correspond to the standard `jakarta.faces.validator.Validator`
 implementations. See link:#BNATC[Using the Standard
 Validators] for a list of all the standard validation classes and
 corresponding tags.

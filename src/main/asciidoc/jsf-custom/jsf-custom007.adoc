@@ -6,20 +6,20 @@ The Jakarta Server Faces technology supports action events and value-change
 events for components.
 
 Action events occur when the user activates a component that implements
-`javax.faces.component.ActionSource`. These events are represented by
-the class `javax.faces.event.ActionEvent`.
+`jakarta.faces.component.ActionSource`. These events are represented by
+the class `jakarta.faces.event.ActionEvent`.
 
 Value-change events occur when the user changes the value of a component
-that implements `javax.faces.component.EditableValueHolder`. These
+that implements `jakarta.faces.component.EditableValueHolder`. These
 events are represented by the class
-`javax.faces.event.ValueChangeEvent`.
+`jakarta.faces.event.ValueChangeEvent`.
 
 One way to handle events is to implement the appropriate listener
 classes. Listener classes that handle the action events in an
 application must implement the interface
-`javax.faces.event.ActionListener`. Similarly, listeners that handle the
+`jakarta.faces.event.ActionListener`. Similarly, listeners that handle the
 value-change events must implement the interface
-`javax.faces.event.ValueChangeListener`.
+`jakarta.faces.event.ValueChangeListener`.
 
 This section explains how to implement the two listener classes.
 
@@ -47,7 +47,7 @@ information on how to manage page navigation.
 
 === Implementing Value-Change Listeners
 
-A `javax.faces.event.ValueChangeListener` implementation must include a
+A `jakarta.faces.event.ValueChangeListener` implementation must include a
 `processValueChange(ValueChangeEvent)` method. This method processes the
 specified value-change event and is invoked by the Jakarta Server Faces
 implementation when the value-change event occurs. The
@@ -110,7 +110,7 @@ Component] explains how to register this listener onto a component.
 
 === Implementing Action Listeners
 
-A `javax.faces.event.ActionListener` implementation must include a
+A `jakarta.faces.event.ActionListener` implementation must include a
 `processAction(ActionEvent)` method. The `processAction(ActionEvent)`
 method processes the specified action event. The Jakarta Server Faces
 implementation invokes the `processAction(ActionEvent)` method when the

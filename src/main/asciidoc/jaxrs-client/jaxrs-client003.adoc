@@ -30,7 +30,7 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
 
 If you need to set multiple headers on the request, call the
 `Invocation.Builder.headers` method and pass in a
-`javax.ws.rs.core.MultivaluedMap` instance with the name-value pairs of
+`jakarta.ws.rs.core.MultivaluedMap` instance with the name-value pairs of
 the HTTP headers. Calling the `headers` method replaces all the existing
 headers with the headers supplied in the `MultivaluedMap` instance.
 
@@ -75,7 +75,7 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
         .get(String.class);
 ----
 
-The `javax.ws.rs.core.Cookie` class encapsulates the attributes of an
+The `jakarta.ws.rs.core.Cookie` class encapsulates the attributes of an
 HTTP cookie, including the name, value, path, domain, and RFC
 specification version of the cookie. In the following example, the
 `Cookie` object is configured with a name-value pair, a path, and a
@@ -122,10 +122,10 @@ In the preceding example, both the `MyLoggingFilter` and
 `MyAuthenticationFilter` filters are attached to the invocation.
 
 Request and response filter classes implement the
-`javax.ws.rs.client.ClientRequestFilter` and
-`javax.ws.rs.client.ClientResponseFilter` interfaces, respectively. Both
+`jakarta.ws.rs.client.ClientRequestFilter` and
+`jakarta.ws.rs.client.ClientResponseFilter` interfaces, respectively. Both
 of these interfaces define a single method, `filter`. All filters must
-be annotated with `javax.ws.rs.ext.Provider`.
+be annotated with `jakarta.ws.rs.ext.Provider`.
 
 The following class is a logging filter for both client requests and
 client responses.
@@ -157,7 +157,7 @@ public class MyLoggingFilter implements ClientRequestFilter,
 
 If the invocation must be stopped while the filter is active, call the
 context object's `abortWith` method, and pass in a
-`javax.ws.rs.core.Response` instance from within the filter.
+`jakarta.ws.rs.core.Response` instance from within the filter.
 
 [source,java]
 ----
@@ -277,7 +277,7 @@ send multiple events from the server.
 
 === Overview of the SSE API
 
-The SSE API is defined in the `javax.ws.rs.sse` package that includes
+The SSE API is defined in the `jakarta.ws.rs.sse` package that includes
 the interfaces `SseEventSink`, `SseEvent`, `Sse`, and `SseEventSource`.
 To accept connections and send events to one or more clients, inject an
 `SseEventSink` in the resource method that produces the media type
@@ -368,7 +368,7 @@ method is used to send an SSE event to all registered clients.
 Jakarta REST SSE provides the `SseEventSource` interface for the client to
 subscribe to notifications. The client can get asynchronously notified
 about incoming events by invoking one of the `subscribe` methods in
-`javax.ws.rs.sse.SseEventSource`.
+`jakarta.ws.rs.sse.SseEventSource`.
 
 The following example shows how to use the `SseEventSource` API to open
 an SSE connection and read some of the messages for a period:

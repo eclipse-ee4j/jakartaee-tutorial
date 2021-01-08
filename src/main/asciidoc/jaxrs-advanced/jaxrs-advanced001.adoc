@@ -164,10 +164,10 @@ public void post(MultivaluedMap<String, String> formParams) {
 
 === Extracting the Java Type of a Request or Response
 
-The `javax.ws.rs.core.Context` annotation retrieves the Java types
+The `jakarta.ws.rs.core.Context` annotation retrieves the Java types
 related to a request or response.
 
-The `javax.ws.rs.core.UriInfo` interface provides information about the
+The `jakarta.ws.rs.core.UriInfo` interface provides information about the
 components of a request URI. The following code snippet shows how to
 obtain a map of query and path parameter names to values:
 
@@ -180,7 +180,7 @@ public String getParams(@Context UriInfo ui) {
 }
 ----
 
-The `javax.ws.rs.core.HttpHeaders` interface provides information about
+The `jakarta.ws.rs.core.HttpHeaders` interface provides information about
 request headers and cookies. The following code snippet shows how to
 obtain a map of header and cookie parameter names to values:
 

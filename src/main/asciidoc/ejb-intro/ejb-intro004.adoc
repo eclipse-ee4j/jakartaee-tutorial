@@ -61,7 +61,7 @@ Dependency injection is the simplest way of obtaining an enterprise bean
 reference. Clients that run within a Jakarta EE server-managed environment,
 Jakarta Server Faces web applications, Jakarta RESTful web services, other enterprise
 beans, or Jakarta EE application clients support dependency injection using
-the `javax.ejb.EJB` annotation.
+the `jakarta.ejb.EJB` annotation.
 
 Applications that run outside a Jakarta EE server-managed environment, such
 as Java SE applications, must perform an explicit lookup. JNDI supports
@@ -230,7 +230,7 @@ Client access to an enterprise bean that exposes a local, no-interface
 view is accomplished through either dependency injection or JNDI lookup.
 
 * To obtain a reference to the no-interface view of an enterprise bean
-through dependency injection, use the `javax.ejb.EJB` annotation and
+through dependency injection, use the `jakarta.ejb.EJB` annotation and
 specify the enterprise bean's implementation class:
 +
 [source,java]
@@ -260,7 +260,7 @@ interfaces is accomplished through either dependency injection or JNDI
 lookup.
 
 * To obtain a reference to the local business interface of an enterprise
-bean through dependency injection, use the `javax.ejb.EJB` annotation
+bean through dependency injection, use the `jakarta.ejb.EJB` annotation
 and specify the enterprise bean's local business interface name:
 +
 [source,java]
@@ -332,7 +332,7 @@ interface is accomplished through either dependency injection or JNDI
 lookup.
 
 * To obtain a reference to the remote business interface of an
-enterprise bean through dependency injection, use the `javax.ejb.EJB`
+enterprise bean through dependency injection, use the `jakarta.ejb.EJB`
 annotation and specify the enterprise bean's remote business interface
 name:
 +
