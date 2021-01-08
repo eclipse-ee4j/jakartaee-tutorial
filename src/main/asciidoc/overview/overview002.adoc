@@ -1,25 +1,37 @@
-[[GIQVH]][[jakarta-ee-8-platform-highlights]]
-
 == Jakarta EE 8 Platform Highlights
 
-The key goals of the Jakarta EE 8 platform are to modernize the infrastructure for enterprise Java for the cloud and microservices environments, emphasize HTML5 and HTTP/2 support, enhance ease of development through new Contexts and Dependency Injection features, and further enhance security and reliability of the platform.
+The key goals of the Jakarta EE 8 platform are to modernize the
+infrastructure for enterprise Java for the cloud and microservices
+environments, emphasize HTML5 and HTTP/2 support, enhance ease of
+development through new Contexts and Dependency Injection features, and
+further enhance security and reliability of the platform.
 
 The Jakarta EE 8 platform includes the following new features:
 
 * New technologies, including the following:
 
-** link:#jakarta-json-binding[Jakarta JSON Binding]
-** link:#jakarta-security[Jakarta Security]
+** <<jakarta-json-binding>>
+** <<jakarta-security>>
 
 * New object model improvements for JSON Processing (see
-link:#jakarta-json-processing[Jakarta JSON Processing] for details), including support for the following:
+<<jakarta-json-processing>> for details), including support for the
+following:
 
 ** JSON Pointer
 ** JSON Patch
 ** JSON Merge Patch
 
-* New features for RESTful web services (see link:#jakarta-restful-web-services[Jakarta RESTful Web Services] for details)
-* New features for servlets (see link:#jakarta-servlet-technology[Jakarta Servlet Technology] for details)
-* New features for Jakarta Server Faces components (see link:#jakarta-faces-technology[Jakarta Server Faces Technology] for details)
-* New Contexts and Dependency Injection features (see link:#jakarta-context-and-dependency-injection[Jakarta Contexts and Dependency Injection] for details)
-* New Jakarta Bean Validation features (see link:#jakarta-bean-validation[Jakarta Bean Validation] for details)
+* New features for RESTful web services (see
+<<jakarta-restful-web-services>> for details)
+
+* New features for servlets (see <<jakarta-servlet-technology>> for
+details)
+
+* New features for Jakarta Server Faces components (see
+<<jakarta-faces-technology>> for details)
+
+* New Contexts and Dependency Injection features (see
+<<jakarta-contexts-and-dependency-injection>> for details)
+
+* New Jakarta Bean Validation features (see <<jakarta-bean-validation>>
+for details)
