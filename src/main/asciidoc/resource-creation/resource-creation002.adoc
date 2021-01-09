@@ -1,11 +1,9 @@
-[[BNCJJ]][[datasource-objects-and-connection-pools]]
-
 == DataSource Objects and Connection Pools
 
 To store, organize, and retrieve data, most applications use a
 relational database. Jakarta EE components may access relational
 databases through the JDBC API. For information on this API, see
-http://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/[`http://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/`].
+http://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/[^].
 
 In the JDBC API, databases are accessed by using `DataSource` objects. A
 `DataSource` has a set of properties that identify and describe the

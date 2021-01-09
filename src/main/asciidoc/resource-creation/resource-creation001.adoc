@@ -1,13 +1,11 @@
-[[BNCJI]][[resources-and-jndi-naming]]
-
 == Resources and JNDI Naming
 
-In a distributed application, components need to access other components
-and resources, such as databases. For example, a servlet might invoke
-remote methods on an enterprise bean that retrieves information from a
-database. In the Jakarta EE platform, the Java Naming and Directory
-Interface (JNDI) naming service enables components to locate other
-components and resources.
+In a distributed application, components need to access other
+components and resources, such as databases. For example, a servlet
+might invoke remote methods on an enterprise bean that retrieves
+information from a database. In the Jakarta EE platform, the Java
+Naming and Directory Interface (JNDI) naming service enables components
+to locate other components and resources.
 
 A resource is a program object that provides connections to systems,
 such as database servers and messaging systems. (A Java Database
