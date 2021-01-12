@@ -60,6 +60,9 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
+                            <requires>
+                                <require>./src/main/ruby/autoxref-treeprocessor.rb</require>
+                            </requires>
                             <attributes>
                                 <doctype>book</doctype>
                                 <status>${status}</status>

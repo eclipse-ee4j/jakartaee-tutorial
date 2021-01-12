@@ -14,6 +14,10 @@
 :partnums:
 :part-signifier: Part
 :chapter-signifier: Chapter
+:autoxref-chapter: 1
+:autoxref-chaptersectlevel: 1
+:autoxref-imagecaption: Figure %d-%d
+:autoxref-tablecaption: Table %d-%d
 
 :sectnums!:
 include::title.adoc[]

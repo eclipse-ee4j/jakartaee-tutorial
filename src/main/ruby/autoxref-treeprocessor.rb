@@ -1,7 +1,7 @@
 # coding: utf-8
 # autoxref-treeprocessor.rb: Automatic cross-reference generator.
 #
-# Copyright (c) 2016 Takahiro Yoshimura <altakey@gmail.com>
+# Copyright (c) 2016, 2021 Takahiro Yoshimura <altakey@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -78,7 +78,7 @@ class AutoXrefTreeprocessor < Extensions::Treeprocessor
 
     # Scan for chapters.
     document.find_by(context: :section).each do |chapter|
-      next unless not seen or chapter.level == chapter_section_level
+      next unless not seen or chapter.numbered && chapter.level == chapter_section_level
       seen = true
 
       # XXX crude care for chapterless documents
@@ -106,6 +106,7 @@ class AutoXrefTreeprocessor < Extensions::Treeprocessor
               replaced = captions[type] % [chap, get_and_tally_counter_of(type, counter)]
               replaced_caption = replaced + ' '
               el.attributes['caption'] = replaced_caption
+              el.attributes['reftext'] = replaced
               el.caption = replaced_caption
               document.references[:ids][el.attributes['id']] = replaced
             end
