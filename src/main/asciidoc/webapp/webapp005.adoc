@@ -1,27 +1,21 @@
-[[CHDHGJIA]][[configuring-web-applications]]
-
 == Configuring Web Applications
 
-This section describes the following tasks involved with configuring web
-applications:
+This section describes the following tasks involved with configuring
+web applications:
 
 * Setting context parameters
 * Declaring welcome files
 * Mapping errors to error screens
 * Declaring resource references
 
-[[BNAES]][[setting-context-parameters]]
-
 === Setting Context Parameters
 
-The web components in a web module share an object that represents their
-application context. You can pass context parameters to the context, or
-you can pass initialization parameters to a servlet. Context parameters
-are available to the entire application. For information on
-initialization parameters, see link:#BNAFU[Creating and
-Initializing a Servlet].
-
-[[GJSFJ]][[to-add-a-context-parameter-using-netbeans-ide]]
+The web components in a web module share an object that represents
+their application context. You can pass context parameters to the
+context, or you can pass initialization parameters to a servlet.
+Context parameters are available to the entire application. For
+information on initialization parameters, see
+<<creating-and-initializing-a-servlet>>.
 
 ==== To Add a Context Parameter Using NetBeans IDE
 
@@ -31,36 +25,32 @@ specifically to the examples in this chapter.
 To add a context parameter using NetBeans IDE:
 
 1.  Open the project.
-2.  Expand the project's node in the Projects tree.
-3.  Expand the Web Pages node and then the WEB-INF node.
+2.  Expand the project's node in the *Projects* tree.
+3.  Expand the *Web Pages* node and then the *WEB-INF* node.
 4.  Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
-the steps in link:#GKIHH[To Create a web.xml File Using NetBeans IDE].
-5.  Click General at the top of the editor window.
-6.  Expand the Context Parameters node.
-7.  Click Add.
-8.  In the Add Context Parameter dialog box, in the Parameter Name
+the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
+5.  Click *General* at the top of the editor window.
+6.  Expand the *Context Parameters* node.
+7.  Click *Add*.
+8.  In the *Add Context Parameter* dialog box, in the *Parameter Name*
 field, enter the name that specifies the context object.
-9.  In the Parameter Value field, enter the parameter to pass to the
+9.  In the *Parameter Value* field, enter the parameter to pass to the
 context object.
-10. Click OK.
-
-[[GKIHH]][[to-create-a-web.xml-file-using-netbeans-ide]]
+10. Click *OK*.
 
 ==== To Create a web.xml File Using NetBeans IDE
 
 To create a `web.xml` file using NetBeans IDE:
 
-1.  From the File menu, choose New File.
-2.  In the New File wizard, select the Web category, then select
-Standard Deployment Descriptor under File Types.
-3.  Click Next.
-4.  Click Finish.
+1.  From the *File* menu, choose *New File*.
+2.  In the New File wizard, select the *Web* category, then select
+*Standard Deployment Descriptor* under *File Types*.
+3.  Click *Next*.
+4.  Click *Finish*.
 +
 A basic `web.xml` file appears in `web/WEB-INF/`.
-
-[[BNAER]][[declaring-welcome-files]]
 
 === Declaring Welcome Files
 
@@ -68,10 +58,9 @@ The welcome files mechanism allows you to specify a list of files that
 the web container can append to a request for a URL (called a valid
 partial request) that is not mapped to a web component. For example,
 suppose that you define a welcome file `welcome.html`. When a client
-requests a URL such as `_host:port/webapp/directory_`, where `_directory_`
-is not mapped to a servlet or XHTML page, the file
-`_host:port/webapp/directory/_`welcome.html` is returned to the
-client.
+requests a URL such as `_host:port/webapp/directory_`, where
+`_directory_` is not mapped to a servlet or XHTML page, the file
+`__host:port/webapp/directory/__welcome.html` is returned to the client.
 
 If a web container receives a valid partial request, the web container
 examines the welcome file list, appends to the partial request each
@@ -99,25 +88,21 @@ A specified welcome file must not have a leading or trailing slash
 (`/`).
 
 The `hello2` example does not specify a welcome file, because the URL
-request is mapped to the `GreetingServlet` web component through the URL
-pattern `/greeting`.
-
-[[GKBKW]][[mapping-errors-to-error-screens]]
+request is mapped to the `GreetingServlet` web component through the
+URL pattern `/greeting`.
 
 === Mapping Errors to Error Screens
 
-When an error occurs during execution of a web application, you can have
-the application display a specific error screen according to the type of
-error. In particular, you can specify a mapping between the status code
-returned in an HTTP response or a Java programming language exception
-returned by any web component and any type of error screen.
+When an error occurs during execution of a web application, you can
+have the application display a specific error screen according to the
+type of error. In particular, you can specify a mapping between the
+status code returned in an HTTP response or a Java programming language
+exception returned by any web component and any type of error screen.
 
 You can have multiple `error-page` elements in your deployment
 descriptor. Each element identifies a different error that causes an
 error page to open. This error page can be the same for any number of
 `error-page` elements.
-
-[[BNAET]][[to-set-up-error-mapping-using-netbeans-ide]]
 
 ==== To Set Up Error Mapping Using NetBeans IDE
 
@@ -127,16 +112,16 @@ specifically to the examples in this chapter.
 To set up error mapping using NetBeans IDE:
 
 1.  Open the project.
-2.  Expand the project's node in the Projects tab.
-3.  Expand the Web Pages node and then the WEB-INF node.
+2.  Expand the project's node in the *Projects* tab.
+3.  Expand the *Web Pages* node and then the *WEB-INF* node.
 4.  Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
-the steps in link:#GKIHH[To Create a web.xml File Using NetBeans IDE].
-5.  Click Pages at the top of the editor window.
-6.  Expand the Error Pages node.
-7.  Click Add.
-8.  In the Add Error Page dialog box, click Browse to locate the page
+the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
+5.  Click *Pages* at the top of the editor window.
+6.  Expand the *Error Pages* node.
+7.  Click *Add*.
+8.  In the Add Error Page dialog box, click *Browse* to locate the page
 that you want to act as the error page.
 9.  Specify either an error code or an exception type.
 * To specify an error code, in the Error Code field enter the HTTP
@@ -145,51 +130,45 @@ field blank to include all error codes.
 * To specify an exception type, in the Exception Type field enter the
 exception that will cause the error page to load. To specify all
 throwable errors and exceptions, enter `java.lang.Throwable`.
-10. Click OK.
-
-[[BNAEU]][[declaring-resource-references]]
+10. Click *OK*.
 
 === Declaring Resource References
 
 If your web component uses such objects as enterprise beans, data
-sources, or web services, you use Jakarta EE annotations to inject these
-resources into your application. Annotations eliminate a lot of the
-boilerplate lookup code and configuration elements that previous
+sources, or web services, you use Jakarta EE annotations to inject
+these resources into your application. Annotations eliminate a lot of
+the boilerplate lookup code and configuration elements that previous
 versions of Jakarta EE required.
 
-Although resource injection using annotations can be more convenient for
-the developer, there are some restrictions on using it in web
+Although resource injection using annotations can be more convenient
+for the developer, there are some restrictions on using it in web
 applications. First, you can inject resources only into
 container-managed objects, because a container must have control over
 the creation of a component so that it can perform the injection into a
-component. As a result, you cannot inject resources into such objects as
-simple JavaBeans components. However, managed beans are managed by the
-container; therefore, they can accept resource injections.
+component. As a result, you cannot inject resources into such objects
+as simple JavaBeans components. However, managed beans are managed by
+the container; therefore, they can accept resource injections.
 
 Components that can accept resource injections are listed in
-link:#BNAEV[Table 6-1].
+xref:web-components-that-accept-resource-injections[xrefstyle=short].
 
 This section explains how to use a couple of the annotations supported
 by a web container to inject resources.
-link:#GIJST[Chapter 41, "Running the
-Persistence Examples"], explains how web applications use annotations
-supported by Jakarta Persistence.
-link:#BNCAS[Chapter 51, "Getting Started Securing
-Web Applications"], explains how to use annotations to specify
-information about securing web applications. See
-link:#BNCJH[Chapter 55, "Resource Adapters and Contracts"],
-for more information on resources.
+xref:running-the-persistence-examples[xrefstyle=full], explains how web
+applications use annotations supported by Jakarta Persistence.
+xref:getting-started-securing-web-applications[xrefstyle=full],
+explains how to use annotations to specify information about securing
+web applications. See
+xref:resource-adapters-and-contracts[xrefstyle=full], for more
+information on resources.
 
-[[sthref25]][[BNAEV]]
-
-*Table 6-1 Web Components That Accept Resource Injections*
-
-[width="50%",cols="20%,30%"]
-|================================================
+[[web-components-that-accept-resource-injections]]
+[width="50%",cols="20%,30%a", title="Web Components That Accept Resource Injections"]
+|===
 |*Component* |*Interface/Class*
 |Servlets |`jakarta.servlet.Servlet`
 |Servlet filters |`jakarta.servlet.ServletFilter`
-|Event listeners a|
+|Event listeners |
 `jakarta.servlet.ServletContextListener`
 
 `jakarta.servlet.ServletContextAttributeListener`
@@ -205,25 +184,23 @@ for more information on resources.
 `jakarta.servlet.http.HttpSessionBindingListener`
 
 |Managed beans |Plain Old Java Objects
-|================================================
-
-
-[[BNAEW]][[declaring-a-reference-to-a-resource]]
+|===
 
 ==== Declaring a Reference to a Resource
 
-The `@Resource` annotation is used to declare a reference to a resource,
-such as a data source, an enterprise bean, or an environment entry.
+The `@Resource` annotation is used to declare a reference to a
+resource, such as a data source, an enterprise bean, or an environment
+entry.
 
 The `@Resource` annotation is specified on a class, a method, or a
 field. The container is responsible for injecting references to
 resources declared by the `@Resource` annotation and mapping it to the
 proper JNDI resources.
 
-In the following example, the `@Resource` annotation is used to inject a
-data source into a component that needs to make a connection to the data
-source, as is done when using JDBC technology to access a relational
-database:
+In the following example, the `@Resource` annotation is used to inject
+a data source into a component that needs to make a connection to the
+data source, as is done when using JDBC technology to access a
+relational database:
 
 [source,java]
 ----
@@ -254,24 +231,21 @@ as shown by the following example:
 
 The web application examples in this tutorial use Jakarta Persistence
 to access relational databases. This API does not require you to
-explicitly create a connection to a data source. Therefore, the examples
-do not use the `@Resource` annotation to inject a data source. However,
-this API supports the `@PersistenceUnit` and `@PersistenceContext`
-annotations for injecting `EntityManagerFactory` and `EntityManager`
-instances, respectively.
-link:#GIJST[Chapter 41, "Running the
-Persistence Examples"] describes these annotations and the use of the
-Jakarta Persistence in web applications.
-
-[[BNAEX]][[declaring-a-reference-to-a-web-service]]
+explicitly create a connection to a data source. Therefore, the
+examples do not use the `@Resource` annotation to inject a data source.
+However, this API supports the `@PersistenceUnit` and
+`@PersistenceContext` annotations for injecting `EntityManagerFactory`
+and `EntityManager` instances, respectively.
+<<running-the-persistence-examples>> describes these annotations and
+the use of the Jakarta Persistence in web applications.
 
 ==== Declaring a Reference to a Web Service
 
 The `@WebServiceRef` annotation provides a reference to a web service.
 The following example shows uses the `@WebServiceRef` annotation to
 declare a reference to a web service. `WebServiceRef` uses the
-`wsdlLocation` element to specify the URI of the deployed service's WSDL
-file:
+`wsdlLocation` element to specify the URI of the deployed service's
+WSDL file:
 
 [source,java]
 ----

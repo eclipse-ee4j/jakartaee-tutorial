@@ -123,9 +123,8 @@ same value as its lowercase equivalent.
 The bean specifies the minimum and maximum size of the `name` string,
 which is enforced by the Bean Validation `@Size` constraint. The bean
 uses the `@Model` annotation, a shortcut for `@Named` and
-`@RequestScoped`, as described in Step link:#CHDCABHC[7] of
-link:#GJWTV[To View the hello1 Web Module Using NetBeans
-IDE].
+`@RequestScoped`, as described in <<hello1-nb-step-7>> of
+<<to-view-the-hello1-web-module-using-netbeans-ide>>.
 
 [source,java]
 ----
