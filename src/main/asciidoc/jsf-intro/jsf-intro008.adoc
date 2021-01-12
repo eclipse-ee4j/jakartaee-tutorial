@@ -1,5 +1,3 @@
-[[GKNOJ]][[partial-processing-and-partial-rendering]]
-
 == Partial Processing and Partial Rendering
 
 The Jakarta Server Faces lifecycle spans all of the execute and render
@@ -17,7 +15,7 @@ component tree accordingly.
 
 The `execute` and `render` attributes of the `f:ajax` tag are used to
 identify which components may be executed and rendered. For more
-information on these attributes, see link:#GKIOW[Chapter 13,
-"Using Ajax with Jakarta Server Faces Technology"].
+information on these attributes, see
+xref:using-ajax-with-jakarta-server-faces-technology[xrefstyle=full].
 
 

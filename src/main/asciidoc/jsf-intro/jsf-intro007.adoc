@@ -1,5 +1,3 @@
-[[BNAQQ]][[the-lifecycle-of-a-javaserver-faces-application]]
-
 == The Lifecycle of a Jakarta Server Faces Application
 
 The lifecycle of an application refers to the various stages of
@@ -16,19 +14,16 @@ The Jakarta Server Faces web application framework manages lifecycle phases
 automatically for simple applications or allows you to manage them
 manually for more complex applications as required.
 
-Jakarta Server Faces applications that use advanced features may require
-interaction with the lifecycle at certain phases. For example, Ajax
-applications use partial processing features of the lifecycle (see
-link:#GKNOJ[Partial Processing and Partial Rendering]).
-A clearer understanding of the lifecycle phases is key to creating
-well-designed components.
+Jakarta Server Faces applications that use advanced features may
+require interaction with the lifecycle at certain phases. For example,
+Ajax applications use partial processing features of the lifecycle (see
+<<partial-processing-and-partial-rendering>>). A clearer understanding
+of the lifecycle phases is key to creating well-designed components.
 
-A simplified view of the Jakarta Server faces lifecycle, consisting of the
-two main phases of a Jakarta Server Faces web application, is introduced in
-link:#GJAAM[A Simple Jakarta Server Faces Application]. This
+A simplified view of the Jakarta Server faces lifecycle, consisting of
+the two main phases of a Jakarta Server Faces web application, is
+introduced in <<a-simple-jakarta-server-faces-application>>. This
 section examines the Jakarta Server Faces lifecycle in more detail.
-
-[[GLPRC]][[overview-of-the-javaserver-faces-lifecycle]]
 
 === Overview of the Jakarta Server Faces Lifecycle
 
@@ -50,17 +45,13 @@ Faces implementation performs several tasks, such as validating the data
 input of components in the view and converting input data to types
 specified on the server side.
 
-The Jakarta Server Faces implementation performs all these tasks as a series
-of steps in the Jakarta Server Faces request-response lifecycle.
-link:#BNAQR[Figure 7-3] illustrates these steps.
+The Jakarta Server Faces implementation performs all these tasks as a
+series of steps in the Jakarta Server Faces request-response lifecycle.
+<<jakarta-server-faces-standard-request-response-lifecycle>>
+illustrates these steps.
 
-[[BNAQR]]
-
-.*Figure 7-3 Jakarta Server Faces Standard Request-Response Lifecycle*
-image:jakartaeett_dt_016.png[
-"Flow diagram of Faces request and Faces response, including event and
-validation processing, error handling, model updating, application
-invocation."]
+[[jakarta-server-faces-standard-request-response-lifecycle]]
+image::jakartaeett_dt_016.png["Flow diagram of Faces request and Faces response, including event and validation processing, error handling, model updating, application invocation.", title="Jakarta Server Faces Standard Request-Response Lifecycle"]
 
 The request-response lifecycle handles two kinds of requests: initial
 requests and postbacks. An initial request occurs when a user makes a
@@ -73,17 +64,18 @@ Restore View and Render Response phases, because there is no user input
 or action to process. Conversely, when the lifecycle handles a postback,
 it executes all of the phases.
 
-Usually, the first request for a Jakarta Server Faces page comes in from a
-client, as a result of clicking a link or button component on a
-Jakarta Server Faces page. To render a response that is another Jakarta Server
-Faces page, the application creates a new view and stores it in the
-`jakarta.faces.context.FacesContext` instance, which represents all of the
-information associated with processing an incoming request and creating
-a response. The application then acquires object references needed by
-the view and calls the `FacesContext.renderResponse` method, which
-forces immediate rendering of the view by skipping to the
-link:#BNAQX[Render Response Phase] of the lifecycle, as is shown by the
-arrows labelled Render Response in link:#BNAQR[Figure 7-3].
+Usually, the first request for a Jakarta Server Faces page comes in
+from a client, as a result of clicking a link or button component on a
+Jakarta Server Faces page. To render a response that is another Jakarta
+Server Faces page, the application creates a new view and stores it in
+the `jakarta.faces.context.FacesContext` instance, which represents all
+of the information associated with processing an incoming request and
+creating a response. The application then acquires object references
+needed by the view and calls the `FacesContext.renderResponse` method,
+which forces immediate rendering of the view by skipping to the
+<<render-response-phase>> of the lifecycle, as is shown by the arrows
+labelled Render Response in
+<<jakarta-server-faces-standard-request-response-lifecycle>>.
 
 Sometimes, an application might need to redirect to a different web
 application resource, such as a web service, or generate a response that
@@ -101,27 +93,24 @@ validations, and model updates and to generate the response.
 There is one exception to the lifecycle described in this section. When
 a component's `immediate` attribute is set to `true`, the validation,
 conversion, and events associated with these components are processed
-during the link:#BNAQT[Apply Request Values Phase] rather than in a
-later phase.
+during the <<apply-request-values-phase>> rather than in a later phase.
 
 The details of the lifecycle explained in the following sections are
 primarily intended for developers who need to know information such as
 when validations, conversions, and events are usually handled and ways
 to change how and when they are handled. For more information on each of
 the lifecycle phases, download the latest Jakarta Server Faces Specification
-documentation from `https://jakarta.ee/specifications/faces/`.
+documentation from https://jakarta.ee/specifications/faces/[^].
 
 The Jakarta Server Faces application lifecycle Execute phase contains the
 following subphases:
 
-* link:#BNAQS[Restore View Phase]
-* link:#BNAQT[Apply Request Values Phase]
-* link:#GJSBP[Process Validations Phase]
-* link:#BNAQV[Update Model Values Phase]
-* link:#BNAQW[Invoke Application Phase]
-* link:#BNAQX[Render Response Phase]
-
-[[BNAQS]][[restore-view-phase]]
+* <<restore-view-phase>>
+* <<apply-request-values-phase>>
+* <<process-validations-phase>>
+* <<update-model-values-phase>>
+* <<invoke-application-phase>>
+* <<render-response-phase>>
 
 === Restore View Phase
 
@@ -146,8 +135,6 @@ page already exists in the `FacesContext` instance. During this phase,
 the Jakarta Server Faces implementation restores the view by using the state
 information saved on the client or the server.
 
-[[BNAQT]][[apply-request-values-phase]]
-
 === Apply Request Values Phase
 
 After the component tree is restored during a postback request, each
@@ -163,11 +150,11 @@ If any events have been queued during this phase, the Jakarta Server Faces
 implementation broadcasts the events to interested listeners.
 
 If some components on the page have their `immediate` attributes (see
-link:#BNARI[The immediate Attribute]) set to `true`, then
-the validations, conversions, and events associated with these
-components will be processed during this phase. If any conversion fails,
-an error message associated with the component is generated and queued
-on `FacesContext`. This message will be displayed during the Render
+<<the-immediate-attribute>>) set to `true`, then the validations,
+conversions, and events associated with these components will be
+processed during this phase. If any conversion fails, an error message
+associated with the component is generated and queued on
+`FacesContext`. This message will be displayed during the Render
 Response phase, along with any validation errors resulting from the
 Process Validations phase.
 
@@ -183,28 +170,26 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[GJSBP]][[process-validations-phase]]
-
 === Process Validations Phase
 
-During this phase, the Jakarta Server Faces implementation processes all
-validators registered on the components in the tree by using its
+During this phase, the Jakarta Server Faces implementation processes
+all validators registered on the components in the tree by using its
 `validate` (`processValidators`) method. It examines the component
 attributes that specify the rules for the validation and compares these
-rules to the local value stored for the component. The Jakarta Server Faces
-implementation also completes conversions for input components that do
-not have the `immediate` attribute set to true.
+rules to the local value stored for the component. The Jakarta Server
+Faces implementation also completes conversions for input components
+that do not have the `immediate` attribute set to true.
 
-If the local value is invalid, or if any conversion fails, the
-Jakarta Server Faces implementation adds an error message to the
-`FacesContext` instance, and the lifecycle advances directly to the
-Render Response phase so that the page is rendered again with the error
-messages displayed. If there were conversion errors from the Apply
-Request Values phase, the messages for these errors are also displayed.
+If the local value is invalid, or if any conversion fails, the Jakarta
+Server Faces implementation adds an error message to the `FacesContext`
+instance, and the lifecycle advances directly to the Render Response
+phase so that the page is rendered again with the error messages
+displayed. If there were conversion errors from the Apply Request
+Values phase, the messages for these errors are also displayed.
 
 If any `validate` methods or event listeners have called the
-`renderResponse` method on the current `FacesContext`, the Jakarta Server
-Faces implementation skips to the Render Response phase.
+`renderResponse` method on the current `FacesContext`, the Jakarta
+Server Faces implementation skips to the Render Response phase.
 
 At this point, if the application needs to redirect to a different web
 application resource or generate a response that does not contain any
@@ -218,16 +203,14 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[BNAQV]][[update-model-values-phase]]
-
 === Update Model Values Phase
 
-After the Jakarta Server Faces implementation determines that the data is
-valid, it traverses the component tree and sets the corresponding
+After the Jakarta Server Faces implementation determines that the data
+is valid, it traverses the component tree and sets the corresponding
 server-side object properties to the components' local values. The
-Jakarta Server Faces implementation updates only the bean properties pointed
-at by an input component's `value` attribute. If the local data cannot
-be converted to the types specified by the bean properties, the
+Jakarta Server Faces implementation updates only the bean properties
+pointed at by an input component's `value` attribute. If the local data
+cannot be converted to the types specified by the bean properties, the
 lifecycle advances directly to the Render Response phase so that the
 page is re-rendered with errors displayed. This is similar to what
 happens with validation errors.
@@ -248,8 +231,6 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[BNAQW]][[invoke-application-phase]]
-
 === Invoke Application Phase
 
 During this phase, the Jakarta Server Faces implementation handles any
@@ -267,8 +248,6 @@ events are broadcast to interested listeners.
 
 Finally, the Jakarta Server Faces implementation transfers control to the
 Render Response phase.
-
-[[BNAQX]][[render-response-phase]]
 
 === Render Response Phase
 

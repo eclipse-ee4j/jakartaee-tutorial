@@ -1,5 +1,3 @@
-[[BNAQL]][[navigation-model]]
-
 == Navigation Model
 
 The Jakarta Server Faces navigation model makes it easy to define page
@@ -34,7 +32,7 @@ follows:
 [source,xml]
 ----
 <navigation-rule>
-    <description></description
+    <description></description>
     <from-view-id></from-view-id>
     <navigation-case>
         <from-action></from-action>
@@ -173,14 +171,12 @@ After the student is created, the user is returned to the Administration
 index page.
 
 For more information on how to define navigation rules, see
-link:#BNAXF[Configuring Navigation Rules].
+<<configuring-navigation-rules>>.
 
 For more information on how to implement action methods to handle
-navigation, see link:#BNAVD[Writing a Method to Handle
-an Action Event].
+navigation, see <<writing-a-method-to-handle-an-action-event>>.
 
 For more information on how to reference outcomes or action methods from
-component tags, see link:#BNATP[Referencing a Method
-That Performs Navigation].
+component tags, see <<referencing-a-method-that-performs-navigation>>.
 
 

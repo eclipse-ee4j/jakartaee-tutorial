@@ -1,5 +1,3 @@
-[[BNAQD]][[user-interface-component-model]]
-
 == User Interface Component Model
 
 In addition to the lifecycle description, an overview of Jakarta Server
@@ -31,8 +29,6 @@ component
 This section briefly describes each of these pieces of the component
 architecture.
 
-[[BNAQE]][[user-interface-component-classes]]
-
 === User Interface Component Classes
 
 Jakarta Server Faces technology provides a set of UI component classes and
@@ -43,8 +39,8 @@ standard components.
 
 The component classes are completely extensible, allowing component
 writers to create their own custom components. See
-link:#BNAVG[Chapter 15, "Creating Custom UI Components and
-Other Custom Objects"] for more information.
+xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full]
+for more information.
 
 The abstract base class for all components is
 `jakarta.faces.component.UIComponent`. Jakarta Server Faces UI component
@@ -133,8 +129,6 @@ The next section explains how the rendering model works and how page
 authors can choose to render the components by selecting the appropriate
 tags.
 
-[[BNAQF]][[component-rendering-model]]
-
 === Component Rendering Model
 
 The Jakarta Server Faces component architecture is designed such that the
@@ -172,25 +166,24 @@ Each custom tag defined in the standard HTML render kit is composed of
 the component functionality (defined in the `UIComponent` class) and the
 rendering attributes (defined by the `Renderer` class).
 
-The section link:#BNARF[Adding Components to a Page Using
-HTML Tag Library Tags] lists all supported component tags and
-illustrates how to use the tags in an example.
+The section
+<<adding-components-to-a-page-using-html-tag-library-tags>> lists all
+supported component tags and illustrates how to use the tags in an
+example.
 
 The Jakarta Server Faces implementation provides a custom tag library for
 rendering components in HTML.
 
-[[BNAQI]][[conversion-model]]
-
 === Conversion Model
 
-A Jakarta Server Faces application can optionally associate a component with
-server-side object data. This object is a JavaBeans component, such as a
-managed bean. An application gets and sets the object data for a
-component by calling the appropriate object properties for that
+A Jakarta Server Faces application can optionally associate a component
+with server-side object data. This object is a JavaBeans component,
+such as a managed bean. An application gets and sets the object data
+for a component by calling the appropriate object properties for that
 component.
 
-When a component is bound to an object, the application has two views of
-the component's data.
+When a component is bound to an object, the application has two views
+of the component's data.
 
 * The model view, in which data is represented as data types, such as
 `int` or `long`.
@@ -199,31 +192,30 @@ can be read or modified by the user. For example, a `java.util.Date`
 might be represented as a text string in the format `mm/dd/yy` or as a
 set of three text strings.
 
-The Jakarta Server Faces implementation automatically converts component
-data between these two views when the bean property associated with the
-component is of one of the types supported by the component's data. For
-example, if a `UISelectBoolean` component is associated with a bean
-property of type `java.lang.Boolean`, the Jakarta Server Faces
-implementation will automatically convert the component's data from
-`String` to `Boolean`. In addition, some component data must be bound to
-properties of a particular type. For example, a `UISelectBoolean`
-component must be bound to a property of type `boolean` or
-`java.lang.Boolean`.
+The Jakarta Server Faces implementation automatically converts
+component data between these two views when the bean property
+associated with the component is of one of the types supported by the
+component's data. For example, if a `UISelectBoolean` component is
+associated with a bean property of type `java.lang.Boolean`, the
+Jakarta Server Faces implementation will automatically convert the
+component's data from `String` to `Boolean`. In addition, some
+component data must be bound to properties of a particular type. For
+example, a `UISelectBoolean` component must be bound to a property of
+type `boolean` or `java.lang.Boolean`.
 
 Sometimes you might want to convert a component's data to a type other
 than a standard type, or you might want to convert the format of the
 data. To facilitate this, Jakarta Server Faces technology allows you to
-register a `jakarta.faces.convert.Converter` implementation on `UIOutput`
-components and components whose classes subclass `UIOutput`. If you
-register the `Converter` implementation on a component, the `Converter`
-implementation converts the component's data between the two views.
+register a `jakarta.faces.convert.Converter` implementation on
+`UIOutput` components and components whose classes subclass `UIOutput`.
+If you register the `Converter` implementation on a component, the
+`Converter` implementation converts the component's data between the
+two views.
 
-You can either use the standard converters supplied with the Jakarta Server
-Faces implementation or create your own custom converter. Custom
-converter creation is covered in link:#BNAVG[Chapter 15,
-"Creating Custom UI Components and Other Custom Objects"].
-
-[[GIREH]][[event-and-listener-model]]
+You can either use the standard converters supplied with the Jakarta
+Server Faces implementation or create your own custom converter. Custom
+converter creation is covered in
+xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full].
 
 === Event and Listener Model
 
@@ -263,11 +255,11 @@ types that can generate these types of events are the `UIInput`,
 Value-change events are fired only if no validation errors are detected.
 
 Depending on the value of the `immediate` property (see
-link:#BNARI[The immediate Attribute]) of the component
-emitting the event, action events can be processed during the Invoke
-Application phase or the Apply Request Values phase, and value-change
-events can be processed during the Process Validations phase or the
-Apply Request Values phase.
+<<the-immediate-attribute>>) of the component emitting the event,
+action events can be processed during the Invoke Application phase or
+the Apply Request Values phase, and value-change events can be
+processed during the Process Validations phase or the Apply Request
+Values phase.
 
 System events are generated by an `Object` rather than a `UIComponent`.
 They are generated during the execution of an application at predefined
@@ -288,57 +280,52 @@ component tag.
 the method with a method expression from the appropriate attribute of
 the component's tag.
 
-See link:#BNAUT[Implementing an Event Listener] for
-information on how to implement an event listener. See
-link:#BNASZ[Registering Listeners on Components] for
-information on how to register the listener on a component.
+See <<implementing-an-event-listener>> for information on how to
+implement an event listener. See
+<<registering-listeners-on-components>> for information on how to
+register the listener on a component.
 
-See link:#BNAVD[Writing a Method to Handle an Action
-Event] and link:#BNAVF[Writing a Method to Handle a
-Value-Change Event] for information on how to implement managed bean
-methods that handle these events.
+See <<writing-a-method-to-handle-an-action-event>> and
+<<writing-a-method-to-handle-a-value-change-event>> for information on
+how to implement managed bean methods that handle these events.
 
-See link:#BNATN[Referencing a Managed Bean Method]
-for information on how to refer to the managed bean method from the
-component tag.
+See <<referencing-a-managed-bean-method>> for information on how to
+refer to the managed bean method from the component tag.
 
 When emitting events from custom components, you must implement the
-appropriate event class and manually queue the event on the component in
-addition to implementing an event listener class or a managed bean
-method that handles the event. link:#BNAWD[Handling
-Events for Custom Components] explains how to do this.
-
-[[BNAQK]][[validation-model]]
+appropriate event class and manually queue the event on the component
+in addition to implementing an event listener class or a managed bean
+method that handles the event.
+<<handling-events-for-custom-components>> explains how to do this.
 
 === Validation Model
 
 Jakarta Server Faces technology supports a mechanism for validating the
-local data of editable components (such as text fields). This validation
-occurs before the corresponding model data is updated to match the local
-value.
+local data of editable components (such as text fields). This
+validation occurs before the corresponding model data is updated to
+match the local value.
 
 Like the conversion model, the validation model defines a set of
 standard classes for performing common data validation checks. The
 Jakarta Server Faces core tag library also defines a set of tags that
 correspond to the standard `jakarta.faces.validator.Validator`
-implementations. See link:#BNATC[Using the Standard
-Validators] for a list of all the standard validation classes and
-corresponding tags.
+implementations. See <<using-the-standard-validators>> for a list of
+all the standard validation classes and corresponding tags.
 
 Most of the tags have a set of attributes for configuring the
-validator's properties, such as the minimum and maximum allowable values
-for the component's data. The page author registers the validator on a
-component by nesting the validator's tag within the component's tag.
+validator's properties, such as the minimum and maximum allowable
+values for the component's data. The page author registers the
+validator on a component by nesting the validator's tag within the
+component's tag.
 
 In addition to validators that are registered on the component, you can
 declare a default validator that is registered on all `UIInput`
 components in the application. For more information on default
-validators, see link:#GIREB[Using Default
-Validators].
+validators, see <<using-default-validators>>.
 
-The validation model also allows you to create your own custom validator
-and corresponding tag to perform custom validation. The validation model
-provides two ways to implement custom validation.
+The validation model also allows you to create your own custom
+validator and corresponding tag to perform custom validation. The
+validation model provides two ways to implement custom validation.
 
 * Implement a `Validator` interface that performs the validation.
 * Implement a managed bean method that performs the validation.
@@ -353,7 +340,6 @@ validator on the component.
 In the previously described standard validation model, the validator is
 defined for each input component on a page. The Bean Validation model
 allows the validator to be applied to all fields in a page. See
-link:#CHDGJIIA[Chapter 23, "Introduction to Bean
-Validation"] and link:#GKAHP[Chapter 24,
-"Bean Validation: Advanced Topics"] for more information on Bean
-Validation.
+xref:introduction-to-jakarta-bean-validation[xrefstyle=full] and
+xref:bean-validation-advanced-topics[xrefstyle=full] for more
+information on Bean Validation.

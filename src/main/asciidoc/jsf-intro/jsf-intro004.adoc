@@ -1,12 +1,10 @@
-[[GJAAM]][[a-simple-javaserver-faces-application]]
-
 == A Simple Jakarta Server Faces Application
 
-Jakarta Server Faces technology provides an easy and user-friendly process
-for creating web applications. Developing a simple Jakarta Server Faces
-application typically requires the following tasks, which have already
-been described in link:#BNADX[A Web Module That Uses
-Jakarta Server Faces Technology: The hello1 Example]:
+Jakarta Server Faces technology provides an easy and user-friendly
+process for creating web applications. Developing a simple Jakarta
+Server Faces application typically requires the following tasks, which
+have already been described in
+<<a-web-module-that-uses-jakarta-server-faces-technology-the-hello1-example>>:
 
 * Creating web pages using component tags
 * Developing managed beans
@@ -17,12 +15,11 @@ When accessed by a client, the first web page asks the user for his or
 her name, and the second page responds by providing a greeting.
 
 For details on Facelets technology, see
-link:#GIEPX[Chapter 8, "Introduction to Facelets"]. For
-details on using EL expressions, see link:#GJDDD[Chapter 9,
-"Expression Language"]. For details on the Jakarta Server Faces programming
-model and building web pages using Jakarta Server Faces technology, see
-link:#BNAQZ[Chapter 10, "Using Jakarta Server Faces Technology
-in Web Pages"].
+xref:introduction-to-facelets[xrefstyle=full]. For details on using EL
+expressions, see xref:expression-language[xrefstyle=full]. For details
+on the Jakarta Server Faces programming model and building web pages
+using Jakarta Server Faces technology, see
+xref:using-jakarta-server-faces-technology-in-web-pages[xrefstyle=full].
 
 Every web application has a lifecycle. Common tasks, such as handling
 incoming requests, decoding parameters, modifying and saving state, and
@@ -79,7 +76,6 @@ bean property associated with it, represented by the EL expression
 8.  On subsequent (postback) requests, the component tree is rebuilt,
 and the saved state is applied.
 
-For full details on the lifecycle, see link:#BNAQQ[The
-Lifecycle of a Jakarta Server Faces Application].
-
+For full details on the lifecycle, see
+<<the-lifecycle-of-a-jakarta-server-faces-application>>.
 
