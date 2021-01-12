@@ -9,7 +9,7 @@ the same components. No extra coding is needed; it is only a matter of
 assembling (or packaging) various Jakarta EE modules into Jakarta EE
 JAR, WAR, or EAR files.
 
-An EAR file (see <<figure-5-1>>) contains Jakarta EE modules and,
+An EAR file (see <<ear-file-structure>>) contains Jakarta EE modules and,
 optionally, deployment descriptors. A deployment descriptor, an XML
 document with an `.xml` extension, describes the deployment settings of
 an application, a module, or a component. Because deployment descriptor
@@ -22,11 +22,8 @@ Deployment information is most commonly specified in the source code by
 annotations. Deployment descriptors, if present, override what is
 specified in the source code.
 
-[[figure-5-1, Figure 5-1]]
-.*Figure 5-1 EAR File Structure*
-image:jakartaeett_dt_010.png["Diagram of EAR file structure. META-INF
-and web, application client, enterprise bean, and resource adapter
-modules are under the assembly root."]
+[[ear-file-structure]]
+image::jakartaeett_dt_010.png["Diagram of EAR file structure. META-INF and web, application client, enterprise bean, and resource adapter modules are under the assembly root.", title="EAR File Structure"]
 
 The two types of deployment descriptors are Jakarta EE and runtime. A
 Jakarta EE deployment descriptor is defined by a Jakarta EE

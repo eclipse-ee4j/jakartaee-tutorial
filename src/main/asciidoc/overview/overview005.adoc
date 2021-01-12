@@ -58,13 +58,11 @@ persistence, and access to the Jakarta EE platform APIs (see
 === Container Types
 
 The deployment process installs Jakarta EE application components in
-the Jakarta EE containers, as illustrated in <<figure-1-5>>.
+the Jakarta EE containers, as illustrated in
+<<jakarta-ee-server-and-containers>>.
 
-[[figure-1-5, Figure 1-5]]
-.*Figure 1-5 Jakarta EE Server and Containers*
-image:jakartaeett_dt_005.png["Diagram of client-server communication
-showing servlets and web pages in the web tier and enterprise beans in
-the business tier."]
+[[jakarta-ee-server-and-containers]]
+image::jakartaeett_dt_005.png["Diagram of client-server communication showing servlets and web pages in the web tier and enterprise beans in the business tier.", title="Jakarta EE Server and Containers"]
 
 The server and containers are as follows:
 

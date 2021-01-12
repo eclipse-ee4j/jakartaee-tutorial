@@ -16,13 +16,11 @@ as enterprise bean JAR files, into an EAR file, the archive file that
 holds the application. When deploying the EAR file that contains the
 enterprise bean's JAR file, you also deploy the enterprise bean to
 GlassFish Server. You can also deploy an enterprise bean JAR that is
-not contained in an EAR file. <<figure-5-2>> shows the contents of an
-enterprise bean JAR file.
+not contained in an EAR file. <<structure-of-an-enterprise-bean-jar>>
+shows the contents of an enterprise bean JAR file.
 
-[[figure-5-2, Figure 5-2]]
-.*Figure 5-2 Structure of an Enterprise Bean JAR*
-image:jakartaeett_dt_011.png["Diagram showing the structure and
-contents of an enterprise bean JAR file."]
+[[structure-of-an-enterprise-bean-jar]]
+image::jakartaeett_dt_011.png["Diagram showing the structure and contents of an enterprise bean JAR file.", title="Structure of an Enterprise Bean JAR"]
 
 === Packaging Enterprise Beans in WAR Modules
 

@@ -7,10 +7,10 @@ make up a Jakarta EE application are installed on various machines
 depending on the tier in the multitiered Jakarta EE environment to which
 the application component belongs.
 
-<<figure-1-1>> shows two multitiered Jakarta EE applications divided
-into the tiers described in the following list. The Jakarta EE
-application parts shown in <<figure-1-1>> are presented in
-<<jakarta-ee-components>>.
+<<multitiered-applications>> shows two multitiered Jakarta EE
+applications divided into the tiers described in the following list.
+The Jakarta EE application parts shown in <<multitiered-applications>>
+are presented in <<jakarta-ee-components>>.
 
 * Client-tier components run on the client machine.
 * Web-tier components run on the Jakarta EE server.
@@ -19,19 +19,16 @@ application parts shown in <<figure-1-1>> are presented in
 server.
 
 Although a Jakarta EE application can consist of all tiers shown in
-<<figure-1-1>>, Jakarta EE multitiered applications are generally
-considered to be three-tiered applications because they are distributed
-over three locations: client machines, the Jakarta EE server machine,
-and the database or legacy machines at the back end. Three-tiered
-applications that run in this way extend the standard two-tiered
-client-and-server model by placing a multithreaded application server
-between the client application and back-end storage.
+<<multitiered-applications>>, Jakarta EE multitiered applications are
+generally considered to be three-tiered applications because they are
+distributed over three locations: client machines, the Jakarta EE
+server machine, and the database or legacy machines at the back end.
+Three-tiered applications that run in this way extend the standard
+two-tiered client-and-server model by placing a multithreaded
+application server between the client application and back-end storage.
 
-[[figure-1-1, Figure 1-1]] 
-.*Figure 1-1 Multitiered Applications*
-image:jakartaeett_dt_001.png[ "Diagram of multitiered application
-structure, including client tier, web tier, business tier, and EIS
-tier."]
+[[multitiered-applications]] 
+image::jakartaeett_dt_001.png[ "Diagram of multitiered application structure, including client tier, web tier, business tier, and EIS tier.", title="Multitiered Applications"]
 
 === Security
 
@@ -153,17 +150,14 @@ architecture.
 
 ==== Jakarta EE Server Communications
 
-<<figure-1-2>> shows the various elements that can make up the client
-tier. The client communicates with the business tier running on the
-Jakarta EE server either directly or, as in the case of a client
+<<server-communication>> shows the various elements that can make up
+the client tier. The client communicates with the business tier running
+on the Jakarta EE server either directly or, as in the case of a client
 running in a browser, by going through web pages or servlets running in
 the web tier.
 
-[[figure-1-2, Figure 1-2]] 
-.*Figure 1-2 Server Communication*
-image:jakartaeett_dt_002.png["Diagram of client-server communication.
-Application clients access the business tier directly. Browsers, web
-pages, and applets access the web tier."]
+[[server-communication]] 
+image::jakartaeett_dt_002.png["Diagram of client-server communication. Application clients access the business tier directly. Browsers, web pages, and applets access the web tier.", title="Server Communication"]
 
 === Web Components
 
@@ -181,31 +175,27 @@ application assembly but are not considered web components by the Java
 EE specification. Server-side utility classes can also be bundled with
 web components and, like HTML pages, are not considered web components.
 
-As shown in <<figure-1-3>>, the web tier, like the client tier, might
-include a JavaBeans component to manage the user input and send that
-input to enterprise beans running in the business tier for processing.
+As shown in <<web-tier-and-jakarta-ee-applications>>, the web tier,
+like the client tier, might include a JavaBeans component to manage the
+user input and send that input to enterprise beans running in the
+business tier for processing.
 
-[[figure-1-3, Figure 1-3]]
-.*Figure 1-3 Web Tier and Jakarta EE Applications*
-image:jakartaeett_dt_003.png["Diagram of client-server communication
-showing detail of JavaBeans components and web pages in the web tier."]
+[[web-tier-and-jakarta-ee-applications]]
+image::jakartaeett_dt_003.png["Diagram of client-server communication showing detail of JavaBeans components and web pages in the web tier.", title="Web Tier and Jakarta EE Applications"]
 
 === Business Components
 
 Business code, which is logic that solves or meets the needs of a
 particular business domain such as banking, retail, or finance, is
 handled by enterprise beans running in either the business tier or the
-web tier. <<figure-1-4>> shows how an enterprise bean receives
-data from client programs, processes it (if necessary), and sends it to
-the enterprise information system tier for storage. An enterprise bean
-also retrieves data from storage, processes it (if necessary), and
-sends it back to the client program.
+web tier. <<business-and-eis-tiers>> shows how an enterprise bean
+receives data from client programs, processes it (if necessary), and
+sends it to the enterprise information system tier for storage. An
+enterprise bean also retrieves data from storage, processes it (if
+necessary), and sends it back to the client program.
 
-[[figure-1-4, Figure 1-4]]
-.*Figure 1-4 Business and EIS Tiers*
-image:jakartaeett_dt_004.png["Diagram of client-server communication
-showing detail of entities, session beans, and message-driven beans in
-the business tier."]
+[[business-and-eis-tiers]]
+image::jakartaeett_dt_004.png["Diagram of client-server communication showing detail of entities, session beans, and message-driven beans in the business tier.", title="Business and EIS Tiers"]
 
 === Enterprise Information System Tier
 

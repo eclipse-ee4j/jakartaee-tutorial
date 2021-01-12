@@ -56,12 +56,9 @@ groups, and principals defined in GlassFish Server. The GlassFish
 Server web application runtime DD, if used, is named
 `glassfish-web.xml` and is located in the `WEB-INF` directory. The
 structure of a web module that can be deployed on GlassFish Server is
-shown in <<figure-5-3>>.
+shown in <<web-module-structure>>.
 
-[[figure-5-3, Figure 5-3]]
-.*Figure 5-3 Web Module Structure*
-image:jakartaeett_dt_012.png["Diagram of web module structure. WEB-INF
-and web pages are under the root. Under WEB-INF are descriptors and the
-lib and classes directories."]
+[[web-module-structure]]
+image::jakartaeett_dt_012.png["Diagram of web module structure. WEB-INF and web pages are under the root. Under WEB-INF are descriptors and the lib and classes directories.", title="Web Module Structure"]
 
 

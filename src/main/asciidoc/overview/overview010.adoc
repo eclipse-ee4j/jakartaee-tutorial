@@ -9,16 +9,16 @@ provided as a convenience to the developer.
 This section briefly summarizes the tools that make up Eclipse
 GlassFish Server. Instructions for starting and stopping Eclipse
 GlassFish Server, starting the Administration Console, and starting and
-stopping Apache Derby are in <<using-the-tutorial-examples>>.
+stopping Apache Derby are in
+xref:using-the-tutorial-examples[xrefstyle=full].
 
-Eclipse GlassFish Server contains the tools listed in <<table-1-1>>.
-Basic usage information for many of the tools appears throughout the
-tutorial. For detailed information, see the online help in the GUI
-tools.
+Eclipse GlassFish Server contains the tools listed in
+<<glassfish-server-tools>>. Basic usage information for many of
+the tools appears throughout the tutorial. For detailed information,
+see the online help in the GUI tools.
 
-[[table-1-1, Table 1-1]]
-*Table 1-1 Eclipse GlassFish Server Tools*
-[width="85%" cols="20%a,65%"]
+[[glassfish-server-tools]]
+[width="85%" cols="20%a,65%", title="Eclipse GlassFish Server Tools"]
 |===
 |*Tool* |*Description*
 a| Administration Console |A web-based GUI Eclipse GlassFish Server
