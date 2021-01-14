@@ -31,7 +31,7 @@
 
     <properties>
         <maven.site.skip>true</maven.site.skip>
-        <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:eclipse-ee4j/jakartaee-tutorial.git</connection>
@@ -51,6 +51,13 @@
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>${asciidoctor.maven.plugin.version}</version>
+                <configuration>
+                    <sourceDirectory>src/main/asciidoc</sourceDirectory>
+                    <sourceDocumentName>index.adoc</sourceDocumentName>
+                    <requires>
+                        <require>./src/main/ruby/autoxref-treeprocessor.rb</require>
+                    </requires>
+                </configuration>
                 <executions>
                     <execution>
                         <id>asciidoc-to-html</id>
@@ -60,28 +67,21 @@
                         </goals>
                         <configuration>
                             <backend>html5</backend>
-                            <requires>
-                                <require>./src/main/ruby/autoxref-treeprocessor.rb</require>
-                            </requires>
                             <attributes>
                                 <doctype>book</doctype>
-                                <status>${status}</status>
-                                <data-uri />
                                 <icons>font</icons>
                                 <toc>left</toc>
                                 <icons>font</icons>
                                 <sectanchors>true</sectanchors>
                                 <idprefix />
                                 <idseparator>-</idseparator>
-                                <docinfo1>true</docinfo1>
+                                <imagesdir>images</imagesdir>
+                                <source-highlighter>coderay</source-highlighter>
                             </attributes>
+                            <embedAssets>true</embedAssets>
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <sourceDocumentName>index.adoc</sourceDocumentName>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
