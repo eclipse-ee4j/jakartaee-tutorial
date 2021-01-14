@@ -1,5 +1,3 @@
-[[BNAHR]][[immediate-and-deferred-evaluation-syntax]]
-
 == Immediate and Deferred Evaluation Syntax
 
 The EL supports both immediate and deferred evaluation of expressions.
@@ -12,17 +10,15 @@ the page's lifecycle, whenever it is appropriate to do so.
 Those expressions that are evaluated immediately use the `${}` syntax.
 Expressions whose evaluation is deferred use the `#{}` syntax.
 
-Because of its multiphase lifecycle, Jakarta Server Faces technology uses
-mostly deferred evaluation expressions. During the lifecycle, component
-events are handled, data is validated, and other tasks are performed in
-a particular order. Therefore, a Jakarta Server Faces implementation must
-defer evaluation of expressions until the appropriate point in the
-lifecycle.
+Because of its multiphase lifecycle, Jakarta Server Faces technology
+uses mostly deferred evaluation expressions. During the lifecycle,
+component events are handled, data is validated, and other tasks are
+performed in a particular order. Therefore, a Jakarta Server Faces
+implementation must defer evaluation of expressions until the
+appropriate point in the lifecycle.
 
 Other technologies using the EL might have different reasons for using
 deferred expressions.
-
-[[BNAHS]][[immediate-evaluation]]
 
 === Immediate Evaluation
 
@@ -34,16 +30,12 @@ The following example shows a tag whose `value` attribute references an
 immediate evaluation expression that updates the quantity of books
 retrieved from the backing bean named `catalog`:
 
-[source,java]
-----
+[source,xml]
 <h:outputText value="${catalog.bookQuantity}" />
-----
 
 The Jakarta Server Faces implementation evaluates the expression
-`${catalog.bookQuantity}`, converts it, and passes the returned value to
-the tag handler. The value is updated on the page.
-
-[[BNAHT]][[deferred-evaluation]]
+`${catalog.bookQuantity}`, converts it, and passes the returned value
+to the tag handler. The value is updated on the page.
 
 === Deferred Evaluation
 
@@ -54,26 +46,25 @@ technology, its controller can evaluate the expression at different
 phases of the lifecycle, depending on how the expression is being used
 in the page.
 
-The following example shows a Jakarta Server Faces `h:inputText` tag, which
-represents a field component into which a user enters a value. The
-`h:inputText` tag's `value` attribute references a deferred evaluation
-expression that points to the `name` property of the `customer` bean:
+The following example shows a Jakarta Server Faces `h:inputText` tag,
+which represents a field component into which a user enters a value.
+The `h:inputText` tag's `value` attribute references a deferred
+evaluation expression that points to the `name` property of the
+`customer` bean:
 
 [source,xml]
-----
 <h:inputText id="name" value="#{customer.name}" />
-----
 
-For an initial request of the page containing this tag, the Jakarta Server
-Faces implementation evaluates the `#{customer.name}` expression during
-the render-response phase of the lifecycle. During this phase, the
-expression merely accesses the value of `name` from the `customer` bean,
-as is done in immediate evaluation.
+For an initial request of the page containing this tag, the Jakarta
+Server Faces implementation evaluates the `#{customer.name}` expression
+during the render-response phase of the lifecycle. During this phase,
+the expression merely accesses the value of `name` from the `customer`
+bean, as is done in immediate evaluation.
 
-For a postback request, the Jakarta Server Faces implementation evaluates
-the expression at different phases of the lifecycle, during which the
-value is retrieved from the request, validated, and propagated to the
-`customer` bean.
+For a postback request, the Jakarta Server Faces implementation
+evaluates the expression at different phases of the lifecycle, during
+which the value is retrieved from the request, validated, and
+propagated to the `customer` bean.
 
 As shown in this example, deferred evaluation expressions can be
 

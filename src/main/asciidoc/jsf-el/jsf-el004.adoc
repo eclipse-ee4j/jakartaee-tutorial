@@ -1,22 +1,12 @@
-[[CIHGABHD]][[operations-on-collection-objects]]
-
 == Operations on Collection Objects
 
-The EL supports operations on collection objects: sets, lists, and maps.
-It allows the dynamic creation of collection objects, which can then be
-operated on using streams and pipelines.
+The EL supports operations on collection objects: sets, lists, and
+maps. It allows the dynamic creation of collection objects, which can
+then be operated on using streams and pipelines.
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
+[NOTE]
 Like lambda expressions, operations on collection objects are part of
 Java SE 8.
-
-|=======================================================================
-
 
 For example, you can construct a set as follows:
 
@@ -25,8 +15,8 @@ For example, you can construct a set as follows:
 {1,2,3}
 ----
 
-You can construct a list as follows; a list can contain various types of
-items:
+You can construct a list as follows; a list can contain various types
+of items:
 
 [source,java]
 ----
@@ -104,7 +94,8 @@ The following subset of operations is supported by the EL:
 `toArray` +
 `toList` +
 
-See the EL specification at `http://www.jcp.org/en/jsr/detail?id=341`
-for details on these operations.
+See the Expression Language specification at
+https://jakarta.ee/specifications/expression-language/4.0/[^] for
+details on these operations.
 
 

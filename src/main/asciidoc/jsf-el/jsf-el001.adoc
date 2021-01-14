@@ -1,12 +1,10 @@
-[[BNAHQ]][[overview-of-the-el]]
-
 == Overview of the EL
 
 The EL allows page authors to use simple expressions to dynamically
-access data from JavaBeans components. For example, the `test` attribute
-of the following conditional tag is supplied with an EL expression that
-compares 0 with the number of items in the session-scoped bean named
-`cart`.
+access data from JavaBeans components. For example, the `test`
+attribute of the following conditional tag is supplied with an EL
+expression that compares 0 with the number of items in the
+session-scoped bean named `cart`.
 
 [source,xml]
 ----
@@ -15,12 +13,11 @@ compares 0 with the number of items in the session-scoped bean named
 </c:if>
 ----
 
-See link:#BNAQP[Using the EL to Reference Managed
-Beans] for more information on how to use the EL in Jakarta Server Faces
-applications.
+See <<using-the-el-to-reference-managed-beans>> for more information on
+how to use the EL in Jakarta Server Faces applications.
 
-To summarize, the EL provides a way to use simple expressions to perform
-the following tasks:
+To summarize, the EL provides a way to use simple expressions to
+perform the following tasks:
 
 * Dynamically read application data stored in JavaBeans components,
 various data structures, and implicit objects

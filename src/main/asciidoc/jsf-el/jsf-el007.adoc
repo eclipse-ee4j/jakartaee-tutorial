@@ -1,16 +1,11 @@
-[[BNAIM]][[examples-of-el-expressions]]
-
 == Examples of EL Expressions
 
-link:#BNAIN[Table 9-1] contains example EL expressions and the result of
-evaluating them.
+<<example-expressions>> contains example EL expressions and the result
+of evaluating them.
 
-[[sthref39]][[BNAIN]]
-
-*Table 9-1 Example Expressions*
-
-[width="80%",cols="40%,40%"]
-|=======================================================================
+[[example-expressions]]
+[width="80%",cols="40%a,40%a", title="Example Expressions"]
+|===
 |*EL Expression*|*Result*
 |`${1> (4/2)}` |`false`
 
@@ -69,4 +64,4 @@ during a postback
 
 |`#{customer.calcTotal}` |The return value of the method `calcTotal` of
 the `customer` bean
-|=======================================================================
+|===
