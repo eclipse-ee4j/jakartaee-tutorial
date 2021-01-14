@@ -1,41 +1,37 @@
-[[BABGECCJ]][[html5-friendly-markup]]
-
 == HTML5-Friendly Markup
 
-When you want to produce user interface features for which HTML does not
-have its own elements, you can create a custom Jakarta Server Faces
+When you want to produce user interface features for which HTML does
+not have its own elements, you can create a custom Jakarta Server Faces
 component and insert it in your Facelets page. This mechanism can cause
 a simple element to create complex web code. However, creating such a
-component is a significant task (see link:#BNAVG[Chapter
-15, "Creating Custom UI Components and Other Custom Objects"]).
+component is a significant task (see
+xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full]).
 
-HTML5 offers new elements and attributes that can make it unnecessary to
-write your own components. It also provides many new capabilities for
-existing components. Jakarta Server Faces technology supports HTML5 not by
-introducing new UI components that imitate HTML5 ones but by allowing
-you to use HTML5 markup directly. It also allows you to use Jakarta Server
-Faces attributes within HTML5 elements. Jakarta Server Faces technology
-support for HTML5 falls into two categories:
+HTML5 offers new elements and attributes that can make it unnecessary
+to write your own components. It also provides many new capabilities
+for existing components. Jakarta Server Faces technology supports HTML5
+not by introducing new UI components that imitate HTML5 ones but by
+allowing you to use HTML5 markup directly. It also allows you to use
+Jakarta Server Faces attributes within HTML5 elements. Jakarta Server
+Faces technology support for HTML5 falls into two categories:
 
 * Pass-through elements
 * Pass-through attributes
 
-The effect of the HTML5-friendly markup feature is to offer the Facelets
-page author almost complete control over the rendered page output,
-rather than having to pass this control off to component authors. You
-can mix and match Jakarta Server Faces and HTML5 components and elements as
-you see fit.
-
-[[sthref33]][[using-pass-through-elements]]
+The effect of the HTML5-friendly markup feature is to offer the
+Facelets page author almost complete control over the rendered page
+output, rather than having to pass this control off to component
+authors. You can mix and match Jakarta Server Faces and HTML5
+components and elements as you see fit.
 
 === Using Pass-Through Elements
 
 Pass-through elements allow you to use HTML5 tags and attributes but to
-treat them as equivalent to Jakarta Server Faces components associated with
-a server-side `UIComponent` instance.
+treat them as equivalent to Jakarta Server Faces components associated
+with a server-side `UIComponent` instance.
 
-To make an element that is not a Jakarta Server Faces element a pass-through
-element, specify at least one of its attributes using the
+To make an element that is not a Jakarta Server Faces element a
+pass-through element, specify at least one of its attributes using the
 `http://xmlns.jcp.org/jsf` namespace. For example, the following code
 declares the namespace with the short name `jsf`:
 
@@ -47,23 +43,21 @@ declares the namespace with the short name `jsf`:
            value="#{reservationBean.email}" required="required"/>
 ----
 
-Here, the `jsf` prefix is placed on the `id` attribute so that the HTML5
-input tag's attributes are treated as part of the Facelets page. This
-means that, for example, you can use EL expressions to retrieve managed
-bean properties.
+Here, the `jsf` prefix is placed on the `id` attribute so that the
+HTML5 input tag's attributes are treated as part of the Facelets page.
+This means that, for example, you can use EL expressions to retrieve
+managed bean properties.
 
-link:#BABJADGH[Table 8-4] shows how pass-through elements are rendered
-as Facelets tags. The server faces implementation uses the element name and the
-identifying attribute to determine the corresponding Facelets tag that
-will be used in the server-side processing. The browser, however,
-interprets the markup that the page author has written.
+<<how-facelets-renders-html5-elements>> shows how pass-through elements
+are rendered as Facelets tags. The server faces implementation uses the
+element name and the identifying attribute to determine the
+corresponding Facelets tag that will be used in the server-side
+processing. The browser, however, interprets the markup that the page
+author has written.
 
-[[sthref34]][[BABJADGH]]
-
-*Table 8-4 How Facelets Renders HTML5 Elements*
-
-[width="60%",cols="20%,20%,20%" ]
-|=======================================================
+[[how-facelets-renders-html5-elements]]
+[width="60%",cols="20%a,20%a,20%a", title="How Facelets Renders HTML5 Elements" ]
+|===
 |*HTML5 Element Name*|*Identifying Attribute*|*Facelets Tag*
 |`a` |`jsf:action` |`h:commandLink`
 |`a` |`jsf:actionListener` |`h:commandLink`
@@ -101,20 +95,18 @@ interprets the markup that the page author has written.
 |`select` |`multiple="*"` |`h:selectManyListbox`
 |`select` | + |`h:selectOneListbox`
 |`textarea` | + |`h:inputTextArea`
-|=======================================================
-
-
-[[sthref35]][[using-pass-through-attributes]]
+|===
 
 === Using Pass-Through Attributes
 
 Pass-through attributes are the converse of pass-through elements. They
-allow you to pass attributes that are not Jakarta Server Faces attributes
-through to the browser without interpretation. If you specify a
-pass-through attribute in a Jakarta Server Faces `UIComponent`, the
-attribute name and value are passed straight through to the browser
-without being interpreted by Jakarta Server Faces components or renderers.
-There are several ways to specify pass-through attributes.
+allow you to pass attributes that are not Jakarta Server Faces
+attributes through to the browser without interpretation. If you
+specify a pass-through attribute in a Jakarta Server Faces
+`UIComponent`, the attribute name and value are passed straight through
+to the browser without being interpreted by Jakarta Server Faces
+components or renderers. There are several ways to specify pass-through
+attributes.
 
 * Use the Jakarta Server Faces namespace for pass-through attributes to
 prefix the attribute names within a Jakarta Server Faces component. For
@@ -189,28 +181,25 @@ public Bean() {
 }
 ----
 
-[[BABGGIAA]][[the-reservation-example-application]]
-
 === The reservation Example Application
 
 The `reservation` example application provides a set of HTML5 `input`
 elements of various types to simulate purchasing tickets for a
-theatrical event. It consists of two Facelets pages, `reservation.xhtml`
-and `confirmation.xhtml`, and a backing bean, `ReservationBean.java`.
-The pages use both pass-through attributes and pass-through elements.
+theatrical event. It consists of two Facelets pages,
+`reservation.xhtml` and `confirmation.xhtml`, and a backing bean,
+`ReservationBean.java`. The pages use both pass-through attributes and
+pass-through elements.
 
 The source code for this application is in the
-tut-install`/examples/web/jsf/reservation/` directory.
-
-[[BABGCAHH]][[the-facelets-pages-for-the-reservation-application]]
+`_tut-install_/examples/web/jsf/reservation/` directory.
 
 ==== The Facelets Pages for the reservation Application
 
 The first important feature of the Facelets pages for the `reservation`
-application is the `DOCTYPE` header. Most Facelets pages in Jakarta Server
-Faces applications refer to the XHTML DTD. The facelets pages for this
-application begin simply with the following `DOCTYPE` header, which
-indicates an HTML5 page:
+application is the `DOCTYPE` header. Most Facelets pages in Jakarta
+Server Faces applications refer to the XHTML DTD. The facelets pages
+for this application begin simply with the following `DOCTYPE` header,
+which indicates an HTML5 page:
 
 [source,xml]
 ----
@@ -290,16 +279,15 @@ to the browser uninterpreted by the Jakarta Server Faces input component:
 ----
 
 The output of the `calculateTotal` method that is specified as the
-listener for the Ajax event is rendered in the output element whose `id`
-and `name` value is `total`. See link:#GKIOW[Chapter 13,
-"Using Ajax with Jakarta Server Faces Technology"], for more information.
+listener for the Ajax event is rendered in the output element whose
+`id` and `name` value is `total`. See
+<<using-ajax-with-jakarta-server-faces-technology>>, for more
+information.
 
 The second Facelets page, `confirmation.xhtml`, uses a pass-through
 `output` element to display the values entered by the user and provides
 a Facelets `h:commandButton` tag to allow the user to return to the
 `reservation.xhtml` page.
-
-[[BABHFCCG]][[the-managed-bean-for-the-reservation-application]]
 
 ==== The Managed Bean for the reservation Application
 
@@ -309,44 +297,36 @@ Facelets pages. It also contains two methods, `calculateTotal` and
 `clear`, that act as listeners for Ajax events on the
 `reservation.xhtml` page.
 
-[[BABIHHGC]][[to-build-package-and-deploy-the-reservation-example-using-netbeans-ide]]
-
 ==== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
+1. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+2. From the *File* menu, choose *Open Project*.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf
 ----
 4.  Select the `reservation` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `reservation` project and
-select Build.
+5.  Click *Open Project*.
+6.  In the *Projects* tab, right-click the `reservation` project and
+select *Build*.
 +
 This option builds the example application and deploys it to your
 GlassFish Server instance.
 
-[[sthref36]][[to-build-package-and-deploy-the-reservation-example-using-maven]]
-
 ==== To Build, Package, and Deploy the reservation Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
+<<starting-and-stopping-glassfish-server>>).
 2.  In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf/reservation/
 ----
 3.  Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
@@ -355,18 +335,15 @@ This command builds and packages the application into a WAR file,
 `reservation.war`, that is located in the `target` directory. It then
 deploys the WAR file to your GlassFish Server instance.
 
-[[sthref37]][[to-run-the-reservation-example]]
-
 ==== To Run the reservation Example
 
 At the time of the publication of this tutorial, the browser that most
 fully implements HTML5 is Google Chrome, and it is recommended that you
-use it to run this example. Other browsers are catching up, however, and
-may work equally well by the time you read this.
+use it to run this example. Other browsers are catching up, however,
+and may work equally well by the time you read this.
 
-1.  Enter the following URL in your web browser:
+1. Enter the following URL in your web browser:
 +
-[source,xml]
 ----
 http://localhost:8080/reservation
 ----

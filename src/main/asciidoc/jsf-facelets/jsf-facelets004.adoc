@@ -1,24 +1,19 @@
-[[GIQXP]][[using-facelets-templates]]
-
 == Using Facelets Templates
 
 Jakarta Server Faces technology provides the tools to implement user
 interfaces that are easy to extend and reuse. Templating is a useful
 Facelets feature that allows you to create a page that will act as the
 base, or template, for the other pages in an application. By using
-templates, you can reuse code and avoid recreating similarly constructed
-pages. Templating also helps in maintaining a standard look and feel in
-an application with a large number of pages.
+templates, you can reuse code and avoid recreating similarly
+constructed pages. Templating also helps in maintaining a standard look
+and feel in an application with a large number of pages.
 
-link:#GJBFP[Table 8-2] lists Facelets tags that are used for templating
-and their respective functionality.
+<<facelets-templating-tags>> lists Facelets tags that are used for
+templating and their respective functionality.
 
-[[sthref30]][[GJBFP]]
-
-*Table 8-2 Facelets Templating Tags*
-
-[width="99%",cols="20%,80%"]
-|=======================================================================
+[[facelets-templating-tags]]
+[width="99%",cols="20%a,80%", title="Facelets Templating Tags"]
+|===
 |*Tag*|*Function*
 |`ui:component` |Defines a component that is created and added to the
 component tree.
@@ -44,18 +39,18 @@ content outside this tag.
 
 |`ui:param` |Used to pass parameters to an included file.
 
-|`ui:repeat` |Used as an alternative for loop tags, such as `c:forEach`
+|`ui:repeat` a|Used as an alternative for loop tags, such as `c:forEach`
 or `h:dataTable.`
 
 |`ui:remove` |Removes content from a page.
-|=======================================================================
+|===
 
 
-For more information on Facelets templating tags, see the
-Jakarta Server Faces Facelets Tag Library documentation.
+For more information on Facelets templating tags, see the Jakarta
+Server Faces Facelets Tag Library documentation.
 
-The Facelets tag library includes the main templating tag `ui:insert`. A
-template page that is created with this tag allows you to define a
+The Facelets tag library includes the main templating tag `ui:insert`.
+A template page that is created with this tag allows you to define a
 default structure for a page. A template page is used as a template for
 other pages, usually referred to as client pages.
 
@@ -133,4 +128,4 @@ the `ui:define` tag.
 
 You can use NetBeans IDE to create Facelets template and client pages.
 For more information on creating these pages, see
-`https://netbeans.org/kb/docs/web/jsf20-intro.html`.
+https://netbeans.org/kb/docs/web/jsf20-intro.html[^].

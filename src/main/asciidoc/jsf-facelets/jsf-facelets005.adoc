@@ -1,10 +1,8 @@
-[[GIQZR]][[composite-components]]
-
 == Composite Components
 
-Jakarta Server Faces technology offers the concept of composite components
-with Facelets. A composite component is a special type of template that
-acts as a component.
+Jakarta Server Faces technology offers the concept of composite
+components with Facelets. A composite component is a special type of
+template that acts as a component.
 
 Any component is essentially a piece of reusable code that behaves in a
 particular way. For example, an input component accepts user input. A
@@ -22,15 +20,12 @@ resources facility, the composite component can be stored in a library
 that is available to the application from the defined resources
 location.
 
-link:#GJCWC[Table 8-3] lists the most commonly used composite tags and
-their functions.
+<<composite-component-tags>> lists the most commonly used composite
+tags and their functions.
 
-[[sthref31]][[GJCWC]]
-
-*Table 8-3 Composite Component Tags*
-
-[width="99%",cols="20%,80%"]
-|=======================================================================
+[[composite-component-tags]]
+[width="99%",cols="20%a,80%a", title="Composite Component Tags"]
+|===
 |*Tag*|*Function*
 |`composite:interface` |Declares the usage contract for a composite
 component. The composite component can be used as a single component
@@ -63,11 +58,11 @@ suitable for use as the target of attached objects in the using page.
 contract is declared by the `composite:interface` in which this element
 is nested exposes an implementation of `ActionSource2` suitable for use
 as the target of attached objects in the using page.
-|=======================================================================
+|===
 
 
-For more information and a complete list of Facelets composite tags, see
-the Jakarta Server Faces Facelets Tag Library documentation.
+For more information and a complete list of Facelets composite tags,
+see the Jakarta Server Faces Facelets Tag Library documentation.
 
 The following example shows a composite component that accepts an email
 address as input:
@@ -97,17 +92,17 @@ address as input:
 ----
 
 Note the use of `cc.attrs.value` when defining the value of the
-`inputText` component. The word `cc` in Jakarta Server Faces is a reserved
-word for composite components. The `#{cc.attrs.`attribute-name`}`
-expression is used to access the attributes defined for the composite
-component's interface, which in this case happens to be `value`.
+`inputText` component. The word `cc` in Jakarta Server Faces is a
+reserved word for composite components. The
+`#{cc.attrs._attribute-name_}` expression is used to access the
+attributes defined for the composite component's interface, which in
+this case happens to be `value`.
 
-The preceding example content is stored as a file named `email.xhtml` in
-a folder named `resources/emcomp`, under the application web root
-directory. This directory is considered a library by Jakarta Server Faces,
-and a component can be accessed from such a library. For more
-information on resources, see link:#GIRGM[Web
-Resources].
+The preceding example content is stored as a file named `email.xhtml`
+in a folder named `resources/emcomp`, under the application web root
+directory. This directory is considered a library by Jakarta Server
+Faces, and a component can be accessed from such a library. For more
+information on resources, see <<web-resources>>.
 
 The web page that uses this composite component is generally called a
 using page. The using page includes a reference to the composite
@@ -141,10 +136,10 @@ content can be stored as a web page named `emuserpage.xhtml` under the
 web root directory. When compiled and deployed on a server, it can be
 accessed with the following URL:
 
-[source,xml]
-----
+```
 http://localhost:8080/application-name/emuserpage.xhtml
-----
+```
 
-See link:#GKHXA[Chapter 14, "Composite Components:
-Advanced Topics and an Example,"] for more information and an example.
+See
+xref:composite-components-advanced-topics-and-an-example[xrefstyle=full]
+for more information and an example.

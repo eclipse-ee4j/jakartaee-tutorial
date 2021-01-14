@@ -1,5 +1,3 @@
-[[GIRGM]][[web-resources]]
-
 == Web Resources
 
 Web resources are any software artifacts that the web application
@@ -9,12 +7,12 @@ standard location, which can be one of the following.
 
 * A resource packaged in the web application root must be in a
 subdirectory of a `resources` directory at the web application root:
-`resources/`resource-identifier.
+`resources/_resource-identifier_`.
 * A resource packaged in the web application's classpath must be in a
 subdirectory of the `META-INF/resources` directory within a web
-application: `META-INF/resources/`resource-identifier. You can use this
-file structure to package resources in a JAR file bundled in the web
-application.
+application: `META-INF/resources/_resource-identifier_`. You can use
+this file structure to package resources in a JAR file bundled in the
+web application.
 
 The Jakarta Server Faces runtime will look for the resources in the
 preceding listed locations, in that order.
@@ -22,16 +20,15 @@ preceding listed locations, in that order.
 Resource identifiers are unique strings that conform to the following
 format (all on one line):
 
-[source,java]
-----
+```
 [locale-prefix/][library-name/][library-version/]resource-name[/resource-version]
-----
+```
 
 Elements of the resource identifier in brackets (`[]`) are optional,
-indicating that only a resource-name, which is usually a file name, is a
-required element. For example, the most common way to specify a style
+indicating that only a resource-name, which is usually a file name, is
+a required element. For example, the most common way to specify a style
 sheet, image, or script is to use the `library` and `name` attributes,
-as in the following tag from the `guessnumber-jsf` example:
+as in the following tag from the `guessnumber-jsf` example:s
 
 [source,xml]
 ----
@@ -52,9 +49,9 @@ syntax, also from the `guessnumber-jsf` example:
 This tag specifies that the image named `wave.med.gif` is in the
 directory `web/resources/images`.
 
-Resources can be considered as a library location. Any artifact, such as
-a composite component or a template that is stored in the `resources`
-directory, becomes accessible to the other application components, which
-can use it to create a resource instance.
+Resources can be considered as a library location. Any artifact, such
+as a composite component or a template that is stored in the
+`resources` directory, becomes accessible to the other application
+components, which can use it to create a resource instance.
 
 
