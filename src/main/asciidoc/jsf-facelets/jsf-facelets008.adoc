@@ -181,9 +181,7 @@ tut-install/examples/web/jsf/hello1-rlc/
 3.  Enter the following command:
 +
 [source,shell]
-----
 mvn install
-----
 +
 This command builds and packages the application into a WAR file,
 `hello1-rlc.war`, that is located in the `target` directory. It then

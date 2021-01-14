@@ -8,9 +8,7 @@ specifying as the argument a file named `glassfish-resources.xml`, to
 create the resources administratively, as shown.
 
 [source,shell]
-----
 asadmin add-resources glassfish-resources.xml
-----
 
 The `glassfish-resources.xml` file can be created in any project using
 NetBeans IDE or by hand. Some of the Jakarta Messaging examples use this approach to

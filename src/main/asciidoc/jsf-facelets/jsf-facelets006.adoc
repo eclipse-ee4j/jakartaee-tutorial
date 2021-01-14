@@ -20,9 +20,9 @@ preceding listed locations, in that order.
 Resource identifiers are unique strings that conform to the following
 format (all on one line):
 
-```
+----
 [locale-prefix/][library-name/][library-version/]resource-name[/resource-version]
-```
+----
 
 Elements of the resource identifier in brackets (`[]`) are optional,
 indicating that only a resource-name, which is usually a file name, is

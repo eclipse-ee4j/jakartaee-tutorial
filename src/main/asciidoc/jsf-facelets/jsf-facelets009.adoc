@@ -327,9 +327,7 @@ tut-install/examples/web/jsf/reservation/
 3.  Enter the following command:
 +
 [source,shell]
-----
 mvn install
-----
 +
 This command builds and packages the application into a WAR file,
 `reservation.war`, that is located in the `target` directory. It then

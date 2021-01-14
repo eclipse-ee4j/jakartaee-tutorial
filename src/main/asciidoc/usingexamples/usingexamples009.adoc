@@ -47,9 +47,9 @@ Administration Console:
 a.  Expand the *Configurations* node, then expand the *server-config* node.
 b.  Select the *JVM Settings* node. The default debug options are set to:
 +
-```
+----
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9009
-```
+----
 +
 As you can see, the default debugger socket port is 9009. You can change
 it to a port not in use by GlassFish Server or another service.

@@ -288,9 +288,9 @@ run the `guessnumber-jsf` example.
 2.  From the *File* menu, choose *Open Project*.
 3.  In the Open Project dialog box, navigate to:
 +
-```
+----
 tut-install/examples/web/jsf
-```
+----
 4.  Select the `guessnumber-jsf` folder.
 5.  Click *Open Project*.
 6.  In the *Projects* tab, right-click the `guessnumber-jsf` project and
@@ -305,14 +305,13 @@ GlassFish Server instance.
 <<starting-and-stopping-glassfish-server>>).
 2.  In a terminal window, go to:
 +
-```
+----
 tut-install/examples/web/jsf/guessnumber-jsf/
-```
+----
 3.  Enter the following command:
 +
-```
+[source,shell]
 mvn install
-```
 +
 This command builds and packages the application into a WAR file,
 `guessnumber-jsf.war`, that is located in the `target` directory. It
@@ -323,9 +322,9 @@ then deploys it to the server.
 1.  Open a web browser.
 2.  Enter the following URL in your web browser:
 +
-```
+----
 http://localhost:8080/guessnumber-jsf
-```
+----
 3.  In the field, enter a number from 0 to 10 and click Submit.
 +
 Another page appears, reporting whether your guess is correct or

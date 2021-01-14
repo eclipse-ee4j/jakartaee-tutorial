@@ -14,9 +14,9 @@ To view the `hello1` web module using NetBeans IDE:
 1.  From the *File* menu, choose *Open Project*.
 2.  In the Open Project dialog box, navigate to:
 +
-```
+----
 tut-install/examples/web/jsf
-```
+----
 3.  Select the `hello1` folder and click *Open Project*.
 4.  Expand the *Web Pages* node and double-click the `index.xhtml` file to
 view it in the editor.
@@ -247,9 +247,9 @@ already done so.
 2.  From the *File* menu, choose *Open Project*.
 3.  In the Open Project dialog box, navigate to:
 +
-```
+----
 tut-install/examples/web/jsf
-```
+----
 4.  Select the `hello1` folder.
 5.  Click *Open Project*.
 6.  In the *Projects* tab, right-click the `hello1` project and select
@@ -264,14 +264,13 @@ To build and package the `hello1` web module using Maven:
 already done so.
 2.  In a terminal window, go to:
 +
-```
+----
 tut-install/examples/web/jsf/hello1/
-```
+----
 3.  Enter the following command:
 +
-```
+[source,shell]
 mvn install
-```
 +
 This command spawns any necessary compilations and creates the WAR file
 in `_tut-install_/examples/web/jsf/hello1/target/`. It then deploys the
@@ -298,9 +297,7 @@ The deployed web modules appear in the Deployed Applications table.
 Enter the following command:
 
 [source,shell]
-----
 asadmin list-applications
-----
 
 ==== To View Deployed Web Modules Using NetBeans IDE
 
@@ -322,9 +319,9 @@ To run the deployed `hello1` web module:
 1.  Open a web browser.
 2.  Enter the following URL:
 +
-```
+----
 http://localhost:8080/hello1/
-```
+----
 3.  In the field, enter your name and click Submit.
 +
 The response page displays the name you submitted. Click Back to try
@@ -375,19 +372,17 @@ To undeploy the `hello1` web module using Maven:
 
 1.  In a terminal window, go to:
 +
-```
+----
 tut-install/examples/web/jsf/hello1/
-```
+----
 
 2.  Enter the following command:
 +
-```
+[source,shell]
 mvn cargo:undeploy
-```
 
 3.  To delete the class files and other build artifacts, enter the
 following command:
 +
-```
+[source,shell]
 mvn clean
-```

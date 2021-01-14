@@ -15,9 +15,9 @@ mapping the URL path contained in the request to a web application and
 a web component. A URL path contains the context root and, optionally,
 a URL pattern:
 
-```
+----
 http://host:port/context-root[/url-pattern]
-```
+----
 
 You set the URL pattern for a servlet by using the `@WebServlet`
 annotation in the servlet source file. For example, the
@@ -36,9 +36,9 @@ This annotation indicates that the URL pattern `/greeting` follows the
 context root. Therefore, when the servlet is deployed locally, it is
 accessed with the following URL:
 
-```
+----
 http://localhost:8080/hello2/greeting
-```
+----
 
 To access the servlet by using only the context root, specify `"/"` as
 the URL pattern.
@@ -57,9 +57,9 @@ To view the `hello2` web module using NetBeans IDE:
 1.  From the *File* menu, choose *Open Project*.
 2.  In the Open Project dialog box, navigate to:
 +
-```
+----
 tut-install/examples/web/servlet
-```
+----
 3.  Select the `hello2` folder and click *Open Project*.
 4.  Expand the *Source Packages* node, then expand the
 `ee.jakarta.tutorial.hello2` node.
@@ -159,9 +159,9 @@ already done so.
 2. From the *File* menu, choose *Open Project*.
 3. In the Open Project dialog box, navigate to:
 +
-```
+----
 tut-install/examples/web/servlet
-```
+----
 4. Select the `hello2` folder.
 5. Click *Open Project*.
 6. In the *Projects* tab, right-click the `hello2` project and select
@@ -169,9 +169,9 @@ tut-install/examples/web/servlet
 
 7. In a web browser, open the following URL:
 +
-```
+----
 http://localhost:8080/hello2/greeting
-```
+----
 +
 The URL specifies the context root, followed by the URL pattern.
 +
@@ -189,22 +189,21 @@ already done so.
 
 2. In a terminal window, go to:
 +
-```
+----
 tut-install/examples/web/servlet/hello2/
-```
+----
 3.  Enter the following command:
 +
-```
+[source,shell]
 mvn install
-```
 +
 This target builds the WAR file, copies it to the
 `_tut-install_/examples/web/hello2/target/` directory, and deploys it.
 4.  In a web browser, open the following URL:
 +
-```
+----
 http://localhost:8080/hello2/greeting
-```
+----
 +
 The URL specifies the context root, followed by the URL pattern.
 +

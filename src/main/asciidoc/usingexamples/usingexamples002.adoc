@@ -20,9 +20,7 @@ To start GlassFish Server from the command line, open a terminal window
 or command prompt and execute the following:
 
 [source,shell]
-----
 asadmin start-domain --verbose
-----
 
 A domain is a set of one or more GlassFish Server instances managed by
 one administration server. The following elements are associated with a
@@ -41,7 +39,7 @@ With no arguments, the `start-domain` command initiates the default
 domain, which is `domain1`. The `--verbose` flag causes all logging and
 debugging output to appear on the terminal window or command prompt.
 The output also goes into the server log, which is located in
-domain-dir`/logs/server.log`.
+`_domain-dir_/logs/server.log`.
 
 === To Stop GlassFish Server Using the Command Line
 
@@ -49,8 +47,4 @@ To stop GlassFish Server, open a terminal window or command prompt and
 execute:
 
 [source,shell]
-----
 asadmin stop-domain domain1
-----
-
-
