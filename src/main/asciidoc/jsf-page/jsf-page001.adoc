@@ -1,5 +1,3 @@
-[[BNARB]][[setting-up-a-page]]
-
 == Setting Up a Page
 
 A typical Jakarta Server Faces web page includes the following elements:
@@ -9,17 +7,18 @@ libraries
 * Optionally, the HTML head (`h:head`) and body (`h:body`) tags
 * A form tag (`h:form`) that represents the user input components
 
-To add the Jakarta Server Faces components to your web page, you need to
-provide the page access to the two standard tag libraries: the
-Jakarta Server Faces HTML render kit tag library and the Jakarta Server Faces
-core tag library. The olink:JSFRK[Jakarta Server Faces standard HTML tag
-library] defines tags that represent common HTML user interface
-components. The Jakarta Server Faces core tag library defines tags that
-perform core actions and are independent of a particular render kit.
+To add the Jakarta Server Faces components to your web page, you need
+to provide the page access to the two standard tag libraries: the
+Jakarta Server Faces HTML render kit tag library and the Jakarta Server
+Faces core tag library. The
+https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Server Faces standard HTML tag library^] defines tags that represent
+common HTML user interface components. The Jakarta Server Faces core
+tag library defines tags that perform core actions and are independent
+of a particular render kit.
 
 For a complete list of Jakarta Server Faces Facelets tags and their
-attributes, refer to the olink:JSFTL[Jakarta Server Faces Facelets Tag
-Library documentation].
+attributes, refer to the
+https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation^].
 
 To use any of the Jakarta Server Faces tags, you need to include appropriate
 directives at the top of each page specifying the tag libraries.
@@ -51,10 +50,10 @@ to distinguish the tags defined in the HTML tag library:
 <h:form ...>
 ----
 
-The sections link:#BNARF[Adding Components to a Page
-Using HTML Tag Library Tags] and link:#BNARC[Using Core
-Tags] describe how to use the component tags from the Jakarta Server Faces
-standard HTML tag library and the core tags from the Jakarta Server Faces
-core tag library.
+The sections
+<<adding-components-to-a-page-using-html-tag-library-tags>> and
+<<using-core-tags>> describe how to use the component tags from the
+Jakarta Server Faces standard HTML tag library and the core tags from
+the Jakarta Server Faces core tag library.
 
 

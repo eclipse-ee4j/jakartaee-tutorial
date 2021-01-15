@@ -1,22 +1,17 @@
-[[BNARC]][[using-core-tags]]
-
 == Using Core Tags
 
-The tags included in the Jakarta Server Faces core tag library are used to
-perform core actions that are not performed by HTML tags.
+The tags included in the Jakarta Server Faces core tag library are used
+to perform core actions that are not performed by HTML tags.
 
-link:#GKVYB[Table 10-8] lists the event-handling core tags.
+<<event-handling-core-tags>> lists the event-handling core tags.
 
-[[sthref53]][[GKVYB]]
-
-*Table 10-8 Event-Handling Core Tags*
-
-[width="99%",cols="30%,70%"]
-|=======================================================================
+[[event-handling-core-tags]]
+[width="99%",cols="30%a,70%",title="Event-Handling Core Tags"]
+|===
 |*Tag* |*Function*
 |`f:actionListener` |Adds an action listener to a parent component
 
-|`f:phaseListener` |Adds a `PhaseListener` to a page
+|`f:phaseListener` a|Adds a `PhaseListener` to a page
 
 |`f:setPropertyActionListener` |Registers a special action listener
 whose sole purpose is to push a value into a managed bean when a form is
@@ -24,17 +19,13 @@ submitted
 
 |`f:valueChangeListener` |Adds a value-change listener to a parent
 component
-|=======================================================================
+|===
 
+<<data-conversion-core-tags>> lists the data-conversion core tags.
 
-link:#GKVYY[Table 10-9] lists the data-conversion core tags.
-
-[[sthref54]][[GKVYY]]
-
-*Table 10-9 Data-Conversion Core Tags*
-
-[width="99%",cols="30%,70%"]
-|=======================================================================
+[[data-conversion-core-tags]]
+[width="99%",cols="30%a,70%a",title="Data-Conversion Core Tags"]
+|===
 |*Tag* |*Function*
 |`f:converter` |Adds an arbitrary converter to the parent component
 
@@ -43,48 +34,36 @@ component
 
 |`f:convertNumber` |Adds a `NumberConverter` instance to the parent
 component
-|=======================================================================
+|===
 
+<<facet-core-tags>> lists the facet core tags.
 
-link:#GKVZG[Table 10-10] lists the facet core tags.
-
-[[sthref55]][[GKVZG]]
-
-*Table 10-10 Facet Core Tags*
-
-[width="99%",cols="30%,70%"]
-|=======================================================================
+[[facet-core-tags]]
+[width="99%",cols="30%a,70%a",title="Facet Core Tags"]
+|===
 |*Tag* |*Function*
 |`f:facet` |Adds a nested component that has a special relationship to
 its enclosing tag
 
 |`f:metadata` |Registers a `facet` on a parent component
-|=======================================================================
+|===
 
+<<core-tags-that-represent-items-in-a-list>> lists the core tags that
+represent items in a list.
 
-link:#GKVZA[Table 10-11] lists the core tags that represent items in a
-list.
-
-[[sthref56]][[GKVZA]]
-
-*Table 10-11 Core Tags That Represent Items in a List*
-
-[width="99%",cols="30%,70%"]
-|======================================================
+[[core-tags-that-represent-items-in-a-list]]
+[width="99%",cols="30%a,70%",title="Core Tags That Represent Items in a List"]
+|===
 |*Tag* |*Function*
 |`f:selectItem` |Represents one item in a list of items
 |`f:selectItems` |Represents a set of items
-|======================================================
+|===
 
+<<validator-core-tags>> lists the validator core tags.
 
-link:#GKVYV[Table 10-12] lists the validator core tags.
-
-[[sthref57]][[GKVYV]]
-
-*Table 10-12 Validator Core Tags*
-
-[width="99%",cols="30%,70%"]
-|=======================================================================
+[[validator-core-tags]]
+[width="99%",cols="30%a,70%a",title="Validator Core Tags"]
+|===
 |*Tag* |*Function*
 |`f:validateDoubleRange` |Adds a `DoubleRangeValidator` to a component
 
@@ -100,18 +79,14 @@ link:#GKVYV[Table 10-12] lists the validator core tags.
 `BeanValidator`
 
 |`f:validateRequired` |Enforces the presence of a value in a component
-|=======================================================================
+|===
 
-
-link:#GKVYU[Table 10-13] lists the core tags that fall into other
+<<miscellaneous-core-tags>> lists the core tags that fall into other
 categories.
 
-[[sthref58]][[GKVYU]]
-
-*Table 10-13 Miscellaneous Core Tags*
-
-[width="99%",cols="25%,15%,60%"]
-|=======================================================================
+[[miscellaneous-core-tags]]
+[width="99%",cols="25%,15%a,60%a",title="Miscellaneous Core Tags"]
+|===
 |*Tag Category* |*Tag* |*Function*
 |Attribute configuration |`f:attribute` |Adds configurable attributes to
 a parent component
@@ -130,62 +105,43 @@ a component
 
 |WebSocket |`f:websocket` |Allows server-side communications to be
 pushed to all instances of a socket containing the same channel name.
-|=======================================================================
-
+|===
 
 These tags, which are used in conjunction with component tags, are
 explained in other sections of this tutorial.
 
-link:#BNARE[Table 10-14] lists the sections that explain how to use
-specific core tags.
+<<where-the-core-tags-are-explained>> lists the sections that explain
+how to use specific core tags.
 
-[[sthref59]][[BNARE]]
-
-*Table 10-14 Where the Core Tags Are Explained*
-
-[width="99%",cols="30%,70%"]
-|=======================================================================
+[[where-the-core-tags-are-explained]]
+[width="99%",cols="30%a,70%",title="Where the Core Tags Are Explained"]
+|===
 |*Tags* |*Where Explained*
-|Event-handling tags a|
-link:#BNASZ[Registering Listeners on Components]
+|Event-handling tags |
+<<registering-listeners-on-components>>
 
+|Data-conversion tags |
+<<using-the-standard-converters>>
 
-|Data-conversion tags a|
-link:#BNAST[Using the Standard Converters]
+|`f:facet` |<<using-data-bound-table-components>> and <<laying-out-components-with-the-hpanelgrid-and-hpanelgroup-tags>>
 
+|`f:loadBundle` |
+<<setting-the-resource-bundle>>
 
-|`f:facet` |link:#BNARZ[Using Data-Bound Table
-Components] and link:#BNASC[Laying Out Components with
-the h:panelGrid and h:panelGroup Tags]
+|`f:metadata` |
+<<using-view-parameters-to-configure-bookmarkable-urls>>
 
-|`f:loadBundle` a|
-link:#BNAXY[Setting the Resource Bundle]
+|`f:param` |
+<<displaying-a-formatted-message-with-the-houtputformat-tag>>
 
+|`f:selectItem` and `f:selectItems` |
+<<using-the-fselectitem-and-fselectitems-tags>>
 
-|`f:metadata` a|
-link:#GIQWQ[Using View Parameters to Configure
-Bookmarkable URLs]
+|Validator tags |<<using-the-standard-validators>>
 
+|`f:ajax` |
+xref:using-ajax-with-jakarta-server-faces-technology[xrefstyle=full]
 
-|`f:param` a|
-link:#BNARU[Displaying a Formatted Message with the
-h:outputFormat Tag]
-
-
-|`f:selectItem` and `f:selectItems` a|
-link:#BNASK[Using the f:selectItem and f:selectItems
-Tags]
-
-
-|Validator tags |link:#BNATC[Using the Standard
-Validators]
-
-|`f:ajax` a|
-link:#GKIOW[Chapter 13, "Using Ajax with Jakarta Server Faces
-Technology"]
-
-|`f:websocket` a|
-link:#using-websockets-with-javaserver-faces-technology[Chapter 17, "Using WebSockets with Jakarta Server Faces Technology"]
-
-
-|=======================================================================
+|`f:websocket` |
+xref:using-websockets-with-jakarta-server-faces-technology[xrefstyle=full]
+|===
