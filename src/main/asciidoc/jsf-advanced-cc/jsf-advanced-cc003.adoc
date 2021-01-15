@@ -1,22 +1,15 @@
-[[GKHWO]][[validating-composite-component-values]]
-
-
 == Validating Composite Component Values
 
-Jakarta Server Faces provides the following tags for validating values of
-input components. These tags can be used with the
+Jakarta Server Faces provides the following tags for validating values
+of input components. These tags can be used with the
 `composite:valueHolder` or the `composite:editableValueHolder` tag.
 
-link:#GKHVG[Table 14-2] lists commonly used validator tags. See
-link:#BNATC[Using the Standard Validators] for
-details and a complete list.
+<<validator-tags>> lists commonly used validator tags. See
+<<using-the-standard-validators>> for details and a complete list.
 
-[[sthref75]][[GKHVG]]
-
-*Table 14-2 Validator Tags*
-
-[width="70%",cols="15%,55%"]
-|=======================================================================
+[[validator-tags]]
+[width="70%",cols="15%a,55%a",title="Validator Tags"]
+|===
 |*Tag Name* |*Description*
 |`f:validateBean` |Delegates the validation of the local value to the
 Bean Validation API.
@@ -28,4 +21,4 @@ value of the component. If it matches, it is valid.
 |`f:validateRequired` |Enforces the presence of a value. Has the same
 effect as setting the `required` element of a composite component's
 attribute to `true`.
-|=======================================================================
+|===

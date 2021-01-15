@@ -1,11 +1,9 @@
-[[GKHVN]][[the-compositecomponentexample-example-application]]
-
 == The compositecomponentexample Example Application
 
 The `compositecomponentexample` application creates a composite
 component that accepts a name (or any other string). The component
-interacts with a managed bean that calculates whether the letters in the
-name, if converted to numeric values, add up to a prime number. The
+interacts with a managed bean that calculates whether the letters in
+the name, if converted to numeric values, add up to a prime number. The
 component displays the sum of the letter values and reports whether it
 is or is not prime.
 
@@ -13,16 +11,15 @@ The `compositecomponentexample` application has a composite component
 file, a using page, and a managed bean.
 
 The source code for this application is in the
-tut-install`/examples/web/jsf/compositecomponentexample/` directory.
-
-[[GKHUU]][[the-composite-component-file]]
+`_tut-install_/examples/web/jsf/compositecomponentexample/` directory.
 
 === The Composite Component File
 
 The composite component file is an XHTML file,
-`/web/resources/ezcomp/PrimePanel.xhtml`. It has a `composite:interface`
-section that declares the labels for the name and a command button. It
-also declares a managed bean, which defines properties for the name.
+`/web/resources/ezcomp/PrimePanel.xhtml`. It has a
+`composite:interface` section that declares the labels for the name and
+a command button. It also declares a managed bean, which defines
+properties for the name.
 
 [source,xml]
 ----
@@ -40,10 +37,11 @@ also declares a managed bean, which defines properties for the name.
 The composite component implementation accepts the input value for the
 `name` property of the managed bean. The `h:outputStylesheet` tag
 specifies the stylesheet as a relocatable resource. The implementation
-then specifies the format of the output, using properties of the managed
-bean, as well as the format of error messages. The sum value is rendered
-only after it has been calculated, and the report of whether the sum is
-prime or not is rendered only if the input value is validated.
+then specifies the format of the output, using properties of the
+managed bean, as well as the format of error messages. The sum value is
+rendered only after it has been calculated, and the report of whether
+the sum is prime or not is rendered only if the input value is
+validated.
 
 [source,xml]
 ----
@@ -91,8 +89,6 @@ prime or not is rendered only if the input value is validated.
 </composite:implementation>
 ----
 
-[[GKHVX]][[the-using-page]]
-
 === The Using Page
 
 The using page in this example application, `web/index.xhtml`, is an
@@ -108,17 +104,15 @@ along with the managed bean. It validates the user's input.
 </div>
 ----
 
-[[GKHVQ]][[the-managed-bean]]
-
 === The Managed Bean
 
-The managed bean, `PrimeBean.java`, defines a method called `calculate`,
-which performs the calculations on the input string and sets properties
-accordingly. The bean first creates an array of prime numbers. It
-calculates the sum of the letters in the string, with `'a'` equal to 1
-and `'z'` equal to 26, and determines whether the value can be found in
-the array of primes. An uppercase letter in the input string has the
-same value as its lowercase equivalent.
+The managed bean, `PrimeBean.java`, defines a method called
+`calculate`, which performs the calculations on the input string and
+sets properties accordingly. The bean first creates an array of prime
+numbers. It calculates the sum of the letters in the string, with `'a'`
+equal to 1 and `'z'` equal to 26, and determines whether the value can
+be found in the array of primes. An uppercase letter in the input
+string has the same value as its lowercase equivalent.
 
 The bean specifies the minimum and maximum size of the `name` string,
 which is enforced by the Bean Validation `@Size` constraint. The bean
@@ -141,65 +135,52 @@ public class PrimeBean implements Serializable {
 }
 ----
 
-[[GLECV]][[running-the-compositecomponentexample-example]]
-
 === Running the compositecomponentexample Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `compositecomponentexample` example.
 
-[[GKHVC]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-netbeans-ide]]
-
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
+1. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+2.  From the *File* menu, choose *Open Project*.
 3.  In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `compositecomponentexample` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `compositecomponentexample`
-project and select Build.
+4. Select the `compositecomponentexample` folder.
+5. Click *Open Project*.
+6. In the *Projects* tab, right-click the `compositecomponentexample`
+project and select *Build*.
 +
 This command builds and deploys the application.
 
-[[GLEAE]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-maven]]
-
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+1. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+2. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf/compositecomponentexample/
 ----
-3.  Enter the following command to build and deploy the application:
+3. Enter the following command to build and deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
 
-[[GLEEU]][[to-run-the-compositecomponentexample-example]]
-
 ==== To Run the compositecomponentexample Example
 
-1.  In a web browser, enter the following URL:
+1. In a web browser, enter the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/compositecomponentexample
 ----
-2.  On the page that appears, enter a string in the Name, word, or
+2. On the page that appears, enter a string in the Name, word, or
 phrase field, then click Calculate.
 +
 The page reports the sum of the letters and whether the sum is prime. A
