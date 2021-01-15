@@ -1,29 +1,25 @@
-[[GKDCB]][[handling-errors]]
-
 == Handling Errors
 
 Jakarta Server Faces handles Ajax errors through use of the `onerror`
 attribute of the `f:ajax` tag. The value of this attribute is the name
 of a JavaScript function.
 
-When there is an error in processing a Ajax request, Jakarta Server Faces
-calls the defined `onerror` JavaScript function and passes a data object
-to it. The data object contains all the properties available for the
-`onevent` attribute and, in addition, the following properties:
+When there is an error in processing a Ajax request, Jakarta Server
+Faces calls the defined `onerror` JavaScript function and passes a data
+object to it. The data object contains all the properties available for
+the `onevent` attribute and, in addition, the following properties:
 
 * `description`
 * `errorName`
 * `errorMessage`
 
-The `type` is `error`. The `status` property of the data object contains
-one of the valid error values listed in link:#GKGOU[Table 13-4].
+The `type` is `error`. The `status` property of the data object
+contains one of the valid error values listed in
+<<valid-error-values-for-the-data-object-status-property>>.
 
-[[sthref72]][[GKGOU]]
-
-*Table 13-4 Valid Error Values for the Data Object status Property*
-
-[width="60%",cols="15%,45%"]
-|=======================================================================
+[[valid-error-values-for-the-data-object-status-property]]
+[width="60%",cols="15%a,45%a",title="Valid Error Values for the Data Object status Property"]
+|===
 |*Values* |*Description*
 |`emptyResponse` |No Ajax response from server.
 
@@ -34,11 +30,11 @@ one of the valid error values listed in link:#GKGOU[Table 13-4].
 |`malformedXML` |The Ajax response is not well formed.
 
 |`serverError` |The Ajax response contains an `error` element.
-|=======================================================================
-
+|===
 
 In the following example, any errors that occurred in processing the
-Ajax request are handled by the `handlemyajaxerror` JavaScript function:
+Ajax request are handled by the `handlemyajaxerror` JavaScript
+function:
 
 [source,xml]
 ----

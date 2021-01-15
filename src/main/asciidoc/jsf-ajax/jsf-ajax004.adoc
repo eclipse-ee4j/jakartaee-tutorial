@@ -1,5 +1,3 @@
-[[GKACE]][[sending-an-ajax-request]]
-
 == Sending an Ajax Request
 
 To activate Ajax functionality, the web application must create an Ajax
@@ -7,24 +5,14 @@ request and send it to the server. The server then processes the
 request.
 
 The application uses the attributes of the `f:ajax` tag listed in
-link:#GKDER[Table 13-1] to create the Ajax request. The
+<<attributes-of-the-fajax-tag>> to create the Ajax request. The
 following sections explain the process of creating and sending an Ajax
 request using some of these attributes.
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 Behind the scenes, the `jsf.ajax.request()` method of the JavaScript
 resource library collects the data provided by the `f:ajax` tag and
 posts the request to the Jakarta Server Faces lifecycle.
-
-|=======================================================================
-
-
-[[GKHVT]][[using-the-event-attribute]]
 
 === Using the event Attribute
 
@@ -49,23 +37,14 @@ mouse click:
 <h:outputText id="result" value="#{userNumberBean.response}" />
 ----
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
+[NOTE]
 You may have noticed that the listed events are very similar to
 JavaScript events. In fact, they are based on JavaScript events, but do
 not have the `on` prefix.
 
-|=======================================================================
-
-
 For a command button, the default event is `click`, so you do not
-actually need to specify `event="click"` to obtain the desired behavior.
-
-[[GKHUZ]][[using-the-execute-attribute]]
+actually need to specify `event="click"` to obtain the desired
+behavior.
 
 === Using the execute Attribute
 
@@ -79,8 +58,8 @@ When a component is executed, it participates in all phases of the
 request-processing lifecycle except the Render Response phase.
 
 The `execute` attribute value can also be a keyword, such as `@all`,
-`@none`, `@this`, or `@form`. The default value is `@this`, which refers
-to the component within which the `f:ajax` tag is nested.
+`@none`, `@this`, or `@form`. The default value is `@this`, which
+refers to the component within which the `f:ajax` tag is nested.
 
 The following code specifies that the `h:inputText` component with the
 `id` value of `userNo` should be executed when the button is clicked:
@@ -97,8 +76,6 @@ The following code specifies that the `h:inputText` component with the
 </h:commandButton>
 ----
 
-[[GKHWM]][[using-the-immediate-attribute]]
-
 === Using the immediate Attribute
 
 The `immediate` attribute indicates whether user inputs are to be
@@ -109,18 +86,16 @@ broadcast during the Invoke Application phase.
 
 If not defined, the default value of this attribute is `false`.
 
-[[GKHZS]][[using-the-listener-attribute]]
-
 === Using the listener Attribute
 
 The `listener` attribute refers to a method expression that is executed
 on the server side in response to an Ajax action on the client. The
-listener's `jakarta.faces.event.AjaxBehaviorListener.processAjaxBehavior`
-method is called once during the Invoke Application phase of the
-lifecycle. In the following code from the `reservation` example
-application (see link:#BABGGIAA[The reservation
-Example Application]), a `listener` attribute is defined by an `f:ajax`
-tag, which refers to a method from the bean:
+listener's
+`jakarta.faces.event.AjaxBehaviorListener.processAjaxBehavior` method
+is called once during the Invoke Application phase of the lifecycle. In
+the following code from the `reservation` example application (see
+<<the-reservation-example-application>>), a `listener` attribute is
+defined by an `f:ajax` tag, which refers to a method from the bean:
 
 [source,xml]
 ----
@@ -129,5 +104,6 @@ tag, which refers to a method from the bean:
 ----
 
 Whenever either the price or the number of tickets ordered changes, the
-`calculateTotal` method of `ReservationBean` recalculates the total cost
-of the tickets and displays it in the output component named `total`.
+`calculateTotal` method of `ReservationBean` recalculates the total
+cost of the tickets and displays it in the output component named
+`total`.

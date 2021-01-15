@@ -1,5 +1,3 @@
-[[GKDBR]][[receiving-an-ajax-response]]
-
 == Receiving an Ajax Response
 
 After the application sends an Ajax request, it is processed on the
@@ -9,13 +7,13 @@ partial updating, Jakarta Server Faces technology allows for partial
 processing of the view. The handling of the response is defined by the
 `render` attribute of the `f:ajax` tag.
 
-Similar to the `execute` attribute, the `render` attribute defines which
-sections of the page will be updated. The value of a `render` attribute
-can be one or more component `id` values, one of the keywords `@this`,
-`@all`, `@none`, or `@form`, or an EL expression. In the following
-example, the `render` attribute identifies an output component to be
-displayed when the button component is clicked (the default event for a
-command button):
+Similar to the `execute` attribute, the `render` attribute defines
+which sections of the page will be updated. The value of a `render`
+attribute can be one or more component `id` values, one of the keywords
+`@this`, `@all`, `@none`, or `@form`, or an EL expression. In the
+following example, the `render` attribute identifies an output
+component to be displayed when the button component is clicked (the
+default event for a command button):
 
 [source,xml]
 ----
@@ -25,16 +23,9 @@ command button):
 <h:outputText id="result" value="#{userNumberBean.response}" />
 ----
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 Behind the scenes, once again the `jsf.ajax.request()` method handles
 the response. It registers a response-handling callback when the
 original request is created. When the response is sent back to the
-client, the callback is invoked. This callback automatically updates the
-client-side DOM to reflect the rendered response.
-
-|=======================================================================
+client, the callback is invoked. This callback automatically updates
+the client-side DOM to reflect the rendered response.
