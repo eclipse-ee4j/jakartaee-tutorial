@@ -1,28 +1,23 @@
-[[BNASZ]][[registering-listeners-on-components]]
-
 == Registering Listeners on Components
 
 An application developer can implement listeners as classes or as
 managed bean methods. If a listener is a managed bean method, the page
 author references the method from either the component's
 `valueChangeListener` attribute or its `actionListener` attribute. If
-the listener is a class, the page author can reference the listener from
-either an `f:valueChangeListener` tag or an `f:actionListener` tag and
-nest the tag inside the component tag to register the listener on the
-component.
+the listener is a class, the page author can reference the listener
+from either an `f:valueChangeListener` tag or an `f:actionListener` tag
+and nest the tag inside the component tag to register the listener on
+the component.
 
-link:#BNATQ[Referencing a Method That Handles an
-Action Event] and link:#BNATS[Referencing a Method
-That Handles a Value-Change Event] explain how a page author uses the
-`valueChangeListener` and `actionListener` attributes to reference
-managed bean methods that handle events.
+<<referencing-a-method-that-handles-an-action-event>> and
+<<referencing-a-method-that-handles-a-value-change-event>> explain how
+a page author uses the `valueChangeListener` and `actionListener`
+attributes to reference managed bean methods that handle events.
 
 This section explains how to register a `NameChanged` value-change
 listener and a `BookChange` action listener implementation on
 components. The Duke's Bookstore case study includes both of these
 listeners.
-
-[[BNATA]][[registering-a-value-change-listener-on-a-component]]
 
 === Registering a Value-Change Listener on a Component
 
@@ -30,14 +25,12 @@ A page author can register a `ValueChangeListener` implementation on a
 component that implements `EditableValueHolder` by nesting an
 `f:valueChangeListener` tag within the component's tag on the page. The
 `f:valueChangeListener` tag supports the attributes shown in
-link:#GKCLY[Table 11-5], one of which must be used.
+<<attributes-for-the-fvaluechangelistener-tag>>, one of which must be
+used.
 
-[[sthref64]][[GKCLY]]
-
-*Table 11-5 Attributes for the f:valueChangeListener Tag*
-
-[width="60%",cols="10%,50%"]
-|=======================================================================
+[[attributes-for-the-fvaluechangelistener-tag]]
+[width="60%",cols="10%a,50%a",title="Attributes for the f:valueChangeListener Tag"]
+|===
 |*Attribute* |*Description*
 |`type` |References the fully qualified class name of a
 `ValueChangeListener` implementation. Can accept a literal or a value
@@ -47,8 +40,7 @@ expression.
 Can accept only a value expression, which must point to a managed bean
 property that accepts and returns a `ValueChangeListener`
 implementation.
-|=======================================================================
-
+|===
 
 The following example shows a value-change listener registered on a
 component:
@@ -77,10 +69,9 @@ to the component.
 The `binding` attribute is used to bind a `ValueChangeListener`
 implementation to a managed bean property. This attribute works in a
 similar way to the `binding` attribute supported by the standard
-converter tags. See link:#BNATG[Binding Component
-Values and Instances to Managed Bean Properties] for more information.
-
-[[BNATB]][[registering-an-action-listener-on-a-component]]
+converter tags. See
+<<binding-component-values-and-instances-to-managed-bean-properties>>
+for more information.
 
 === Registering an Action Listener on a Component
 
@@ -88,8 +79,8 @@ A page author can register an `ActionListener` implementation on a
 command component by nesting an `f:actionListener` tag within the
 component's tag on the page. Similarly to the `f:valueChangeListener`
 tag, the `f:actionListener` tag supports both the `type` and `binding`
-attributes. One of these attributes must be used to reference the action
-listener.
+attributes. One of these attributes must be used to reference the
+action listener.
 
 Here is an example of an `h:commandLink` tag that references an
 `ActionListener` implementation:
@@ -107,17 +98,17 @@ The `type` attribute of the `f:actionListener` tag specifies the fully
 qualified class name of the `ActionListener` implementation. Similarly
 to the `f:valueChangeListener` tag, the `f:actionListener` tag also
 supports the `binding` attribute. See
-link:#BNATM[Binding Converters, Listeners, and
-Validators to Managed Bean Properties] for more information about
-binding listeners to managed bean properties.
+<<binding-converters-listeners-and-validators-to-managed-bean-properties>>
+for more information about binding listeners to managed bean
+properties.
 
 In addition to the `actionListener` tag that allows you register a
 custom listener onto a component, the core tag library includes the
 `f:setPropertyActionListener` tag. You use this tag to register a
-special action listener onto the `ActionSource` instance associated with
-a component. When the component is activated, the listener will store
-the object referenced by the tag's `value` attribute into the object
-referenced by the tag's `target` attribute.
+special action listener onto the `ActionSource` instance associated
+with a component. When the component is activated, the listener will
+store the object referenced by the tag's `value` attribute into the
+object referenced by the tag's `target` attribute.
 
 The `bookcatalog.xhtml` page of the Duke's Bookstore application uses
 `f:setPropertyActionListener` with two components: the `h:commandLink`
@@ -168,9 +159,9 @@ in page scope. However, in this case you need to put this object into
 request scope so that when the user activates the `commandLink`
 component to go to `bookdetails.xhtml` or activates the `commandButton`
 component to go to `bookcatalog.xhtml`, the book data is available to
-those pages. Therefore, the `f:setPropertyActionListener` tag is used to
-set the current book object into request scope when the `commandLink` or
-`commandButton` component is activated.
+those pages. Therefore, the `f:setPropertyActionListener` tag is used
+to set the current book object into request scope when the
+`commandLink` or `commandButton` component is activated.
 
 In the preceding example, the `f:setPropertyActionListener` tag's
 `value` attribute references the `book` object. The
