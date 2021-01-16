@@ -1,13 +1,11 @@
-[[BNAXI]][[registering-a-custom-component]]
-
 == Registering a Custom Component
 
 In addition to registering custom renderers (as explained in the
 preceding section), you also must register the custom components that
 are usually associated with the custom renderers. You use either a
 `@FacesComponent` annotation, as described in
-link:#BNAVU[Creating Custom Component Classes], or the
-`component` element of the application configuration resource file.
+<<creating-custom-component-classes>>, or the `component` element of
+the application configuration resource file.
 
 Here is a hypothetical `component` element from the application
 configuration resource file that registers `AreaComponent`:
@@ -48,10 +46,8 @@ The `component-class` element indicates the fully qualified class name
 of the component. The `property` elements specify the component
 properties and their types.
 
-If the custom component can include facets, you can configure the facets
-in the component configuration using `facet` elements, which are allowed
-after the `component-class` elements. See
-link:#BNAXH[Registering a Custom Renderer with a
-Render Kit] for further details on configuring facets.
-
-
+If the custom component can include facets, you can configure the
+facets in the component configuration using `facet` elements, which are
+allowed after the `component-class` elements. See
+<<registering-a-custom-renderer-with-a-render-kit>> for further details
+on configuring facets.

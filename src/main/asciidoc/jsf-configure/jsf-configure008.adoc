@@ -1,14 +1,11 @@
-[[BNAXD]][[registering-a-custom-validator]]
-
 == Registering a Custom Validator
 
 If the application developer provides an implementation of the
-`jakarta.faces.validator.Validator` interface to perform validation, you
-must register this custom validator either by using the
+`jakarta.faces.validator.Validator` interface to perform validation,
+you must register this custom validator either by using the
 `@FacesValidator` annotation, as described in
-link:#BNAUX[Implementing the Validator Interface], or
-by using the `validator` XML element in the application configuration
-resource file:
+<<implementing-the-validator-interface>>, or by using the `validator`
+XML element in the application configuration resource file:
 
 [source,xml]
 ----
@@ -31,8 +28,8 @@ Attributes specified in a `validator` tag override any settings in the
 
 The `validator-id` and `validator-class` elements are required
 subelements. The `validator-id` element represents the identifier under
-which the `Validator` class should be registered. This ID is used by the
-tag class corresponding to the custom `validator` tag.
+which the `Validator` class should be registered. This ID is used by
+the tag class corresponding to the custom `validator` tag.
 
 The `validator-class` element represents the fully qualified class name
 of the `Validator` class.
@@ -44,10 +41,8 @@ the name of the attribute as it appears in the `validator` tag. The
 `attribute-class` element identifies the Java type of the value
 associated with the attribute.
 
-link:#BNAUW[Creating and Using a Custom Validator]
-explains how to implement the `Validator` interface.
+<<creating-and-using-a-custom-validator>> explains how to implement the
+`Validator` interface.
 
-link:#BNATV[Using a Custom Validator] explains how to
-reference the validator from the page.
-
-
+<<using-a-custom-validator>> explains how to reference the validator
+from the page.

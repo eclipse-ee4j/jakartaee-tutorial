@@ -1,34 +1,31 @@
-[[BNAXF]][[configuring-navigation-rules]]
-
 == Configuring Navigation Rules
 
-Navigation between different pages of a Jakarta Server Faces application,
-such as choosing the next page to be displayed after a button or link
-component is clicked, is defined by a set of rules. Navigation rules can
-be implicit, or they can be explicitly defined in the application
-configuration resource file. For more information on implicit navigation
-rules, see link:#BNAQL[Navigation Model].
+Navigation between different pages of a Jakarta Server Faces
+application, such as choosing the next page to be displayed after a
+button or link component is clicked, is defined by a set of rules.
+Navigation rules can be implicit, or they can be explicitly defined in
+the application configuration resource file. For more information on
+implicit navigation rules, see <<navigation-model>>.
 
 Each navigation rule specifies how to navigate from one page to another
-page or set of pages. The Jakarta Server Faces implementation chooses the
-proper navigation rule according to which page is currently displayed.
+page or set of pages. The Jakarta Server Faces implementation chooses
+the proper navigation rule according to which page is currently
+displayed.
 
 After the proper navigation rule is selected, the choice of which page
 to access next from the current page depends on two factors:
 
 * The action method invoked when the component was clicked
-* The logical outcome referenced by the component's tag or returned from
-the action method
+* The logical outcome referenced by the component's tag or returned
+from the action method
 
-The outcome can be anything the developer chooses, but link:#BNAXG[Table
-16-3] lists some outcomes commonly used in web applications.
+The outcome can be anything the developer chooses, but
+<<common-outcome-strings>> lists some outcomes commonly used in web
+applications.
 
-[[sthref96]][[BNAXG]]
-
-*Table 16-3 Common Outcome Strings*
-
-[width="60%",cols="15%,45%"]
-|=======================================================================
+[[common-outcome-strings]]
+[width="60%",cols="15%a,45%",title="Common Outcome Strings"]
+|===
 |*Outcome* |*What It Means*
 |`success` |Everything worked. Go on to the next page.
 
@@ -38,21 +35,20 @@ The outcome can be anything the developer chooses, but link:#BNAXG[Table
 
 |`no results` |The search did not find anything. Go to the search page
 again.
-|=======================================================================
-
+|===
 
 Usually, the action method performs some processing on the form data of
 the current page. For example, the method might check whether the user
 name and password entered in the form match the user name and password
 on file. If they match, the method returns the outcome `success`.
 Otherwise, it returns the outcome `failure`. As this example
-demonstrates, both the method used to process the action and the outcome
-returned are necessary to determine the correct page to access.
+demonstrates, both the method used to process the action and the
+outcome returned are necessary to determine the correct page to access.
 
 Here is a navigation rule that could be used with the example just
 described:
 
-[source,java]
+[source,xml]
 ----
 <navigation-rule>
     <from-view-id>/login.xhtml</from-view-id>
@@ -87,11 +83,11 @@ that each rule defines all the possible ways to navigate from one
 particular page in the application. If there is no `from-view-id`
 element, the navigation rules defined in the `navigation-rule` element
 apply to all the pages in the application. The `from-view-id` element
-also allows wildcard matching patterns. For example, this `from-view-id`
-element says that the navigation rule applies to all the pages in the
-`books` directory:
+also allows wildcard matching patterns. For example, this
+`from-view-id` element says that the navigation rule applies to all the
+pages in the `books` directory:
 
-[source,java]
+[source,xml]
 ----
 <from-view-id>/books/*</from-view-id>
 ----
@@ -112,15 +108,17 @@ outcome and returns the outcome.
 The `navigation-case` elements are checked against the outcome and the
 method expression in the following order.
 
-1.  Cases specifying both a `from-outcome` value and a `from-action`
+. Cases specifying both a `from-outcome` value and a `from-action`
 value. Both of these elements can be used if the action method returns
 different outcomes depending on the result of the processing it
 performs.
-2.  Cases specifying only a `from-outcome` value. The `from-outcome`
+
+. Cases specifying only a `from-outcome` value. The `from-outcome`
 element must match either the outcome defined by the `action` attribute
 of the `jakarta.faces.component.UICommand` component or the outcome
 returned by the method referred to by the `UICommand` component.
-3.  Cases specifying only a `from-action` value. This value must match
+
+. Cases specifying only a `from-action` value. This value must match
 the `action` expression specified by the component tag.
 
 When any of these cases is matched, the component tree defined by the

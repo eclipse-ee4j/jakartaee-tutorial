@@ -1,13 +1,11 @@
-[[BNAWP]][[application-configuration-resource-file]]
-
 == Application Configuration Resource File
 
-Jakarta Server Faces technology provides a portable configuration format (as
-an XML document) for configuring application resources. One or more XML
-documents, called application configuration resource files, may use this
-format to register and configure objects and resources and to define
-navigation rules for applications. An application configuration resource
-file is usually named `faces-config.xml`.
+Jakarta Server Faces technology provides a portable configuration
+format (as an XML document) for configuring application resources. One
+or more XML documents, called application configuration resource files,
+may use this format to register and configure objects and resources and
+to define navigation rules for applications. An application
+configuration resource file is usually named `faces-config.xml`.
 
 You need an application configuration resource file in the following
 cases:
@@ -34,7 +32,7 @@ following order:
 +
 [source,xml]
 ----
-<faces-config version="2.2" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
               https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd"> 
@@ -53,6 +51,7 @@ configuration resource. This method is practical for a packaged library
 containing some components and renderers. In addition, any file with a
 name that ends in `faces-config.xml` is also considered a configuration
 resource and is loaded as such.
+
 * A context initialization parameter,
 `jakarta.faces.application.CONFIG_FILES`, in your web deployment
 descriptor file that specifies one or more (comma-delimited) paths to
@@ -60,9 +59,10 @@ multiple configuration files for your web application. This method is
 most often used for enterprise-scale applications that delegate to
 separate groups the responsibility for maintaining the file for each
 portion of a big application.
+
 * A resource named `faces-config.xml` in the `/WEB-INF/` directory of
-your application. Simple web applications make their configuration files
-available in this way.
+your application. Simple web applications make their configuration
+files available in this way.
 
 To access the resources registered with the application, an application
 developer can use an instance of the
@@ -75,19 +75,17 @@ creates a single instance of the `Application` class and configures it
 with the information you provided in the application configuration
 resource file.
 
-[[GIREP]][[configuring-eager-application-scoped-managed-beans]]
-
 === Configuring Eager Application-Scoped Managed Beans
 
 Jakarta Server Faces managed beans (either specified in the
-f`aces-config.xml` file or annotated with
-`jakarta.faces.bean.ManagedBean`) are lazily instantiated. That is, that
-they are instantiated when a request is made from the application.
+`faces-config.xml` file or annotated with
+`jakarta.faces.bean.ManagedBean`) are lazily instantiated. That is,
+that they are instantiated when a request is made from the application.
 
-To force an application-scoped bean to be instantiated and placed in the
-application scope as soon as the application is started and before any
-request is made, the `eager` attribute of the managed bean should be set
-to `true`, as shown in the following examples.
+To force an application-scoped bean to be instantiated and placed in
+the application scope as soon as the application is started and before
+any request is made, the `eager` attribute of the managed bean should
+be set to `true`, as shown in the following examples.
 
 The `faces-config.xml` file declaration is as follows:
 
@@ -104,8 +102,6 @@ The annotation is as follows:
 @ApplicationScoped
 ----
 
-[[GIQCK]][[ordering-of-application-configuration-resource-files]]
-
 === Ordering of Application Configuration Resource Files
 
 Because Jakarta Server Faces technology allows the use of multiple
@@ -114,8 +110,8 @@ the order in which they are loaded by the implementation becomes
 important in certain situations (for example, when using
 application-level objects). This order can be defined through an
 `ordering` element and its subelements in the application configuration
-resource file itself. The ordering of application configuration resource
-files can be absolute or relative.
+resource file itself. The ordering of application configuration
+resource files can be absolute or relative.
 
 Absolute ordering is defined by an `absolute-ordering` element in the
 file. With absolute ordering, the user specifies the order in which
@@ -148,9 +144,9 @@ files will be ignored at load time.
 Relative ordering is defined by an `ordering` element and its
 subelements `before` and `after`. With relative ordering, the order in
 which application configuration resource files will be loaded is
-calculated by considering ordering entries from the different files. The
-following example shows some of these considerations. In the following
-example, `config-A`, `config-B`, and `config-C` are different
+calculated by considering ordering entries from the different files.
+The following example shows some of these considerations. In the
+following example, `config-A`, `config-B`, and `config-C` are different
 application configuration resource files.
 
 File `config-A` contains the following elements:
@@ -196,5 +192,3 @@ listed and unlisted configuration files.
 If an `ordering` element is not present in an application configuration
 file, then that file will be loaded after all the files that contain
 `ordering` elements.
-
-
