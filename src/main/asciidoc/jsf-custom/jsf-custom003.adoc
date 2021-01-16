@@ -1,5 +1,3 @@
-[[GLPCB]][[understanding-the-image-map-example]]
-
 == Understanding the Image Map Example
 
 Duke's Bookstore includes a custom image map component on the
@@ -9,14 +7,12 @@ the application goes to a page that displays the title of the selected
 book as well as information about a featured book. The page allows the
 user to add either book (or none) to the shopping cart.
 
-[[GLPBD]][[why-use-javaserver-faces-technology-to-implement-an-image-map]]
-
 === Why Use Jakarta Server Faces Technology to Implement an Image Map?
 
 Jakarta Server Faces technology is an ideal framework to use for
-implementing this kind of image map because it can perform the work that
-must be done on the server without requiring you to create a server-side
-image map.
+implementing this kind of image map because it can perform the work
+that must be done on the server without requiring you to create a
+server-side image map.
 
 In general, client-side image maps are preferred over server-side image
 maps for several reasons. One reason is that the client-side image map
@@ -24,15 +20,14 @@ allows the browser to provide immediate feedback when a user positions
 the mouse over a hotspot. Another reason is that client-side image maps
 perform better because they don't require round-trips to the server.
 However, in some situations, your image map might need to access the
-server to retrieve data or to change the appearance of nonform controls,
-tasks that a client-side image map cannot do.
+server to retrieve data or to change the appearance of nonform
+controls, tasks that a client-side image map cannot do.
 
-Because the image map custom component uses Jakarta Server Faces technology,
-it has the best of both styles of image maps: It can handle the parts of
-the application that need to be performed on the server while allowing
-the other parts of the application to be performed on the client side.
-
-[[GLPEM]][[understanding-the-rendered-html]]
+Because the image map custom component uses Jakarta Server Faces
+technology, it has the best of both styles of image maps: It can handle
+the parts of the application that need to be performed on the server
+while allowing the other parts of the application to be performed on
+the client side.
 
 === Understanding the Rendered HTML
 
@@ -67,33 +62,32 @@ the application needs to render:
 The `img` tag associates an image (`book_all.jpg`) with the image map
 referenced in the `usemap` attribute value.
 
-The `map` tag specifies the image map and contains a set of `area` tags.
+The `map` tag specifies the image map and contains a set of `area`
+tags.
 
 Each `area` tag specifies a region of the image map. The `onmouseover`,
 `onmouseout`, and `onclick` attributes define which JavaScript code is
 executed when these events occur. When the user moves the mouse over a
 region, the `onmouseover` function associated with the region displays
 the map with that region highlighted. When the user moves the mouse out
-of a region, the `onmouseout` function redisplays the original image. If
-the user clicks on a region, the `onclick` function sets the value of
-the `input` tag to the ID of the selected area and submits the page.
+of a region, the `onmouseout` function redisplays the original image.
+If the user clicks on a region, the `onclick` function sets the value
+of the `input` tag to the ID of the selected area and submits the page.
 
-The `input` tag represents a hidden control that stores the value of the
-currently selected area between client-server exchanges so that the
+The `input` tag represents a hidden control that stores the value of
+the currently selected area between client-server exchanges so that the
 server-side component classes can retrieve the value.
 
 The server-side objects retrieve the value of `bookMap_current` and set
-the locale in the `jakarta.faces.context.FacesContext` instance according
-to the region that was selected.
-
-[[GLPCD]][[understanding-the-facelets-page]]
+the locale in the `jakarta.faces.context.FacesContext` instance
+according to the region that was selected.
 
 === Understanding the Facelets Page
 
 Here is an abbreviated form of the Facelets page that the image map
-component uses to generate the HTML page shown in the preceding section.
-It uses custom `bookstore:map` and `bookstore:area` tags to represent
-the custom components:
+component uses to generate the HTML page shown in the preceding
+section. It uses custom `bookstore:map` and `bookstore:area` tags to
+represent the custom components:
 
 [source,xml]
 ----
@@ -131,13 +125,12 @@ The `f:actionListener` tag within the `bookstore:map` tag points to a
 listener class for an action event. The `processAction` method of the
 listener places the book ID for the selected map area into the session
 map. The way this event is handled is explained more in
-link:#BNAWD[Handling Events for Custom Components].
+<<handling-events-for-custom-components>>.
 
 The `action` attribute of the `bookstore:map` tag specifies a logical
 outcome `String`, `"bookstore"`, which by implicit navigation rules
 sends the application to the page `bookstore.xhtml`. For more
-information on navigation, see
-link:#BNAXF[Configuring Navigation Rules].
+information on navigation, see <<configuring-navigation-rules>>.
 
 The `immediate` attribute of the `bookstore:map` tag is set to `true`,
 which indicates that the default `jakarta.faces.event.ActionListener`
@@ -148,42 +141,40 @@ does not require any validation, data conversion, or server-side object
 updates, it makes sense to skip directly to the Invoke Application
 phase.
 
-The `current` attribute of the `bookstore:map` tag is set to the default
-area, which is `map1` (the book My Early Years: Growing Up on Star7, by
-Duke).
+The `current` attribute of the `bookstore:map` tag is set to the
+default area, which is `map1` (the book My Early Years: Growing Up on
+Star7, by Duke).
 
 Notice that the `bookstore:area` tags do not contain any of the
 JavaScript, coordinate, or shape data that is displayed on the HTML
 page. The JavaScript is generated by the
 `dukesbookstore.renderers.AreaRenderer` class. The `onmouseover` and
-`onmouseout` attribute values indicate the image to be loaded when these
-events occur. How the JavaScript is generated is explained more in
-link:#BNAVW[Performing Encoding].
+`onmouseout` attribute values indicate the image to be loaded when
+these events occur. How the JavaScript is generated is explained more
+in <<performing-encoding>>.
 
 The coordinate, shape, and alternate text data are obtained through the
 `value` attribute, whose value refers to an attribute in application
-scope. The value of this attribute is a bean, which stores the `coords`,
-`shape`, and `alt` data. How these beans are stored in the application
-scope is explained more in the next section.
-
-[[GLPBO]][[configuring-model-data]]
+scope. The value of this attribute is a bean, which stores the
+`coords`, `shape`, and `alt` data. How these beans are stored in the
+application scope is explained more in the next section.
 
 === Configuring Model Data
 
-In a Jakarta Server Faces application, data such as the coordinates of a
-hotspot of an image map is retrieved from the `value` attribute through
-a bean. However, the shape and coordinates of a hotspot should be
-defined together because the coordinates are interpreted differently
+In a Jakarta Server Faces application, data such as the coordinates of
+a hotspot of an image map is retrieved from the `value` attribute
+through a bean. However, the shape and coordinates of a hotspot should
+be defined together because the coordinates are interpreted differently
 depending on what shape the hotspot is. Because a component's value can
 be bound only to one property, the `value` attribute cannot refer to
 both the shape and the coordinates.
 
 To solve this problem, the application encapsulates all of this
 information in a set of `ImageArea` objects. These objects are
-initialized into application scope by the managed bean creation facility
-(see link:#BNAWR[Using the managed-bean Element]).
-Here is part of the managed bean declaration for the `ImageArea` bean
-corresponding to the South America hotspot:
+initialized into application scope by the managed bean creation
+facility (see <<using-the-managed-bean-element>>). Here is part of the
+managed bean declaration for the `ImageArea` bean corresponding to the
+South America hotspot:
 
 [source,xml]
 ----
@@ -212,10 +203,9 @@ corresponding to the South America hotspot:
 </managed-bean>
 ----
 
-For more information on initializing managed beans with the managed bean
-creation facility, see the section
-link:#BNAWP[Application Configuration Resource
-File].
+For more information on initializing managed beans with the managed
+bean creation facility, see the section
+<<application-configuration-resource-file>>.
 
 The `value` attributes of the `bookstore:area` tags refer to the beans
 in the application scope, as shown in this `bookstore:area` tag from
@@ -229,10 +219,10 @@ in the application scope, as shown in this `bookstore:area` tag from
                 targetImage="mapImage" />
 ----
 
-To reference the `ImageArea` model object bean values from the component
-class, you implement a `getValue` method in the component class. This
-method calls `super.getValue`. The superclass of
-tut-install`/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/components/AreaComponent.java`,
+To reference the `ImageArea` model object bean values from the
+component class, you implement a `getValue` method in the component
+class. This method calls `super.getValue`. The superclass of
+`_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/components/AreaComponent.java`,
 `UIOutput`, has a `getValue` method that does the work of finding the
 `ImageArea` object associated with `AreaComponent`. The `AreaRenderer`
 class, which needs to render the `alt`, `shape`, and `coords` values
@@ -246,22 +236,17 @@ ImageArea iarea = (ImageArea) area.getValue();
 
 `ImageArea` is a simple bean, so you can access the shape, coordinates,
 and alternative text values by calling the appropriate accessor methods
-of `ImageArea`. link:#BNAWB[Creating the Renderer
-Class] explains how to do this in the `AreaRenderer` class.
-
-[[GLPEL]][[summary-of-the-image-map-application-classes]]
+of `ImageArea`. <<creating-the-renderer-class>> explains how to do this
+in the `AreaRenderer` class.
 
 === Summary of the Image Map Application Classes
 
-link:#GLPEK[Table 15-2] summarizes all the classes needed to implement
+<<image-map-classes>> summarizes all the classes needed to implement
 the image map component.
 
-[[sthref77]][[GLPEK]]
-
-*Table 15-2 Image Map Classes*
-
-[width="60%",cols="15%,45%"]
-|=======================================================================
+[[image-map-classes]]
+[width="60%",cols="15%a,45%a",title="Image Map Classes"]
+|===
 |*Class* |*Function*
 |`AreaSelectedEvent` |The `jakarta.faces.event.ActionEvent` indicating
 that an `AreaComponent` from the `MapComponent` has been selected.
@@ -279,13 +264,12 @@ delegated rendering for `AreaComponent`.
 hotspots.
 
 |`MapBookChangeListener` |The action listener for the `MapComponent`.
-|=======================================================================
-
+|===
 
 The Duke's Bookstore source directory, called bookstore-dir, is
-tut-install`/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`.
+`_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`.
 The event and listener classes are located in
-bookstore-dir`/listeners/`. The component classes are located in
-bookstore-dir`/components/`. The renderer classes are located in
-bookstore-dir`/renderers/`. `ImageArea` is located in
-bookstore-dir`/model/`.
+`_bookstore-dir_/listeners/`. The component classes are located in
+`_bookstore-dir_/components/`. The renderer classes are located in
+`_bookstore-dir_/renderers/`. `ImageArea` is located in
+`_bookstore-dir_/model/`.

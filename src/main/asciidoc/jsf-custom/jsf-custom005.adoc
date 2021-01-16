@@ -1,12 +1,9 @@
-[[BNAVU]][[creating-custom-component-classes]]
-
 == Creating Custom Component Classes
 
-As explained in link:#BNAVI[When to Use a Custom
-Component], a component class defines the state and behavior of a UI
-component. The state information includes the component's type,
-identifier, and local value. The behavior defined by the component class
-includes the following:
+As explained in <<when-to-use-a-custom-component>>, a component class
+defines the state and behavior of a UI component. The state information
+includes the component's type, identifier, and local value. The
+behavior defined by the component class includes the following:
 
 * Decoding (converting the request parameter to the component's local
 value)
@@ -17,9 +14,9 @@ value)
 * Queueing events
 
 The `jakarta.faces.component.UIComponentBase` class defines the default
-behavior of a component class. All the classes representing the standard
-components extend from `UIComponentBase`. These classes add their own
-behavior definitions, as your custom component class will do.
+behavior of a component class. All the classes representing the
+standard components extend from `UIComponentBase`. These classes add
+their own behavior definitions, as your custom component class will do.
 
 Your custom component class must either extend `UIComponentBase`
 directly or extend a class representing one of the standard components.
@@ -29,10 +26,10 @@ their names begin with `UI`.
 If your custom component serves the same purpose as a standard
 component, you should extend that standard component rather than
 directly extend `UIComponentBase`. For example, suppose you want to
-create an editable menu component. It makes sense to have this component
-extend `UISelectOne` rather than `UIComponentBase` because you can reuse
-the behavior already defined in `UISelectOne`. The only new
-functionality you need to define is to make the menu editable.
+create an editable menu component. It makes sense to have this
+component extend `UISelectOne` rather than `UIComponentBase` because
+you can reuse the behavior already defined in `UISelectOne`. The only
+new functionality you need to define is to make the menu editable.
 
 Whether you decide to have your component extend `UIComponentBase` or a
 standard component, you might also want your component to implement one
@@ -54,22 +51,23 @@ between requests
 * `ValueHolder`: Indicates that the component maintains a local value as
 well as the option of accessing data in the model tier
 
-If your component extends `UIComponentBase`, it automatically implements
-only `StateHolder`. Because all components directly or indirectly extend
-`UIComponentBase`, they all implement `StateHolder`. Any component that
-implements `StateHolder` also implements the `StateHelper` interface,
-which extends `StateHolder` and defines a `Map`-like contract that makes
-it easy for components to save and restore a partial view state.
+If your component extends `UIComponentBase`, it automatically
+implements only `StateHolder`. Because all components directly or
+indirectly extend `UIComponentBase`, they all implement `StateHolder`.
+Any component that implements `StateHolder` also implements the
+`StateHelper` interface, which extends `StateHolder` and defines a
+`Map`-like contract that makes it easy for components to save and
+restore a partial view state.
 
-If your component extends one of the other standard components, it might
-also implement other behavioral interfaces in addition to `StateHolder`.
-If your component extends `UICommand`, it automatically implements
-`ActionSource2`. If your component extends `UIOutput` or one of the
-component classes that extend `UIOutput`, it automatically implements
-`ValueHolder`. If your component extends `UIInput`, it automatically
-implements `EditableValueHolder` and `ValueHolder`. See the Jakarta Server
-Faces API documentation to find out what the other component classes
-implement.
+If your component extends one of the other standard components, it
+might also implement other behavioral interfaces in addition to
+`StateHolder`. If your component extends `UICommand`, it automatically
+implements `ActionSource2`. If your component extends `UIOutput` or one
+of the component classes that extend `UIOutput`, it automatically
+implements `ValueHolder`. If your component extends `UIInput`, it
+automatically implements `EditableValueHolder` and `ValueHolder`. See
+the Jakarta Server Faces API documentation to find out what the other
+component classes implement.
 
 You can also make your component explicitly implement a behavioral
 interface that it doesn't already by virtue of extending a particular
@@ -80,11 +78,11 @@ doesn't automatically implement this interface.
 
 The Duke's Bookstore image map example has two component classes:
 `AreaComponent` and `MapComponent`. The `MapComponent` class extends
-`UICommand` and therefore implements `ActionSource2`, which means it can
-fire action events when a user clicks on the map. The `AreaComponent`
-class extends the standard component `UIOutput`. The `@FacesComponent`
-annotation registers the components with the Jakarta Server Faces
-implementation:
+`UICommand` and therefore implements `ActionSource2`, which means it
+can fire action events when a user clicks on the map. The
+`AreaComponent` class extends the standard component `UIOutput`. The
+`@FacesComponent` annotation registers the components with the Jakarta
+Server Faces implementation:
 
 [source,java]
 ----
@@ -132,11 +130,11 @@ Its behavior consists of the following actions:
 `MapComponent` delegates the rendering of the HTML `map` and `input`
 tags to the `MapRenderer` class.
 
-`AreaComponent` is bound to a bean that stores the shape and coordinates
-of the region of the image map. You will see how all this data is
-accessed through the value expression in
-link:#BNAWB[Creating the Renderer Class]. The behavior
-of `AreaComponent` consists of the following:
+`AreaComponent` is bound to a bean that stores the shape and
+coordinates of the region of the image map. You will see how all this
+data is accessed through the value expression in
+<<creating-the-renderer-class>>. The behavior of `AreaComponent`
+consists of the following:
 
 * Retrieving the shape and coordinate data from the bean
 * Setting the value of the hidden tag to the `id` of this component
@@ -145,24 +143,21 @@ of `AreaComponent` consists of the following:
 
 Although these tasks are actually performed by `AreaRenderer`,
 `AreaComponent` must delegate the tasks to `AreaRenderer`. See
-link:#BNAWA[Delegating Rendering to a Renderer] for
-more information.
+<<delegating-rendering-to-a-renderer>> for more information.
 
 The rest of this section describes the tasks that `MapComponent`
 performs as well as the encoding and decoding that it delegates to
-`MapRenderer`. link:#BNAWD[Handling Events for Custom
-Components] details how `MapComponent` handles events.
-
-[[BNAVV]][[specifying-the-component-family]]
+`MapRenderer`. <<handling-events-for-custom-components>> details how
+`MapComponent` handles events.
 
 === Specifying the Component Family
 
-If your custom component class delegates rendering, it needs to override
-the `getFamily` method of `UIComponent` to return the identifier of a
-component family, which is used to refer to a component or set of
-components that can be rendered by a renderer or set of renderers. The
-component family is used along with the renderer type to look up
-renderers that can render the component:
+If your custom component class delegates rendering, it needs to
+override the `getFamily` method of `UIComponent` to return the
+identifier of a component family, which is used to refer to a component
+or set of components that can be rendered by a renderer or set of
+renderers. The component family is used along with the renderer type to
+look up renderers that can render the component:
 
 [source,java]
 ----
@@ -174,21 +169,18 @@ public String getFamily() {
 The component family identifier, `Map`, must match that defined by the
 `component-family` elements included in the component and renderer
 configurations in the application configuration resource file.
-link:#BNAXH[Registering a Custom Renderer with a
-Render Kit] explains how to define the component family in the renderer
-configuration. link:#BNAXI[Registering a Custom
-Component] explains how to define the component family in the component
-configuration.
-
-[[BNAVW]][[performing-encoding]]
+<<registering-a-custom-renderer-with-a-render-kit>> explains how to
+define the component family in the renderer configuration.
+<<registering-a-custom-component>> explains how to define the component
+family in the component configuration.
 
 === Performing Encoding
 
-During the Render Response phase, the Jakarta Server Faces implementation
-processes the encoding methods of all components and their associated
-renderers in the view. The encoding methods convert the current local
-value of the component into the corresponding markup that represents it
-in the response.
+During the Render Response phase, the Jakarta Server Faces
+implementation processes the encoding methods of all components and
+their associated renderers in the view. The encoding methods convert
+the current local value of the component into the corresponding markup
+that represents it in the response.
 
 The `UIComponentBase` class defines a set of methods for rendering
 markup: `encodeBegin`, `encodeChildren`, and `encodeEnd`. If the
@@ -204,10 +196,11 @@ renders the beginning `map` tag in `encodeBegin` and the rest of the
 `map` tag in `encodeEnd`.
 
 The Jakarta Server Faces implementation automatically invokes the
-`encodeEnd` method of `AreaComponent`'s renderer after it invokes
-`MapRenderer`'s `encodeBegin` method and before it invokes
-`MapRenderer`'s `encodeEnd` method. If a component needs to perform the
-rendering for its children, it does this in the `encodeChildren` method.
+`encodeEnd` method of ``AreaComponent``'s renderer after it invokes
+``MapRenderer``'s `encodeBegin` method and before it invokes
+``MapRenderer``'s `encodeEnd` method. If a component needs to perform the
+rendering for its children, it does this in the `encodeChildren`
+method.
 
 Here are the `encodeBegin` and `encodeEnd` methods of `MapRenderer`:
 
@@ -245,22 +238,23 @@ Notice that `encodeBegin` renders only the beginning `map` tag. The
 `encodeEnd` method renders the `input` tag and the ending `map` tag.
 
 The encoding methods accept a `UIComponent` argument and a
-`jakarta.faces.context.FacesContext` argument. The `FacesContext` instance
-contains all the information associated with the current request. The
-`UIComponent` argument is the component that needs to be rendered.
+`jakarta.faces.context.FacesContext` argument. The `FacesContext`
+instance contains all the information associated with the current
+request. The `UIComponent` argument is the component that needs to be
+rendered.
 
 The rest of the method renders the markup to the
 `jakarta.faces.context.ResponseWriter` instance, which writes out the
-markup to the current response. This basically involves passing the HTML
-tag names and attribute names to the `ResponseWriter` instance as
+markup to the current response. This basically involves passing the
+HTML tag names and attribute names to the `ResponseWriter` instance as
 strings, retrieving the values of the component attributes, and passing
 these values to the `ResponseWriter` instance.
 
-The `startElement` method takes a `String` (the name of the tag) and the
-component to which the tag corresponds (in this case, `map`). (Passing
-this information to the `ResponseWriter` instance helps design-time
-tools know which portions of the generated markup are related to which
-components.)
+The `startElement` method takes a `String` (the name of the tag) and
+the component to which the tag corresponds (in this case, `map`).
+(Passing this information to the `ResponseWriter` instance helps
+design-time tools know which portions of the generated markup are
+related to which components.)
 
 After calling `startElement`, you can call `writeAttribute` to render
 the tag's attributes. The `writeAttribute` method takes the name of the
@@ -296,16 +290,14 @@ might need to implement other methods in addition to `encodeEnd`. For
 example, if you need to retrieve the component's value from the request
 parameters, you must also implement the `decode` method.
 
-[[BNAVX]][[performing-decoding]]
-
 === Performing Decoding
 
 During the Apply Request Values phase, the Jakarta Server Faces
 implementation processes the `decode` methods of all components in the
 tree. The `decode` method extracts a component's local value from
-incoming request parameters and uses a `jakarta.faces.convert.Converter`
-implementation to convert the value to a type that is acceptable to the
-component class.
+incoming request parameters and uses a
+`jakarta.faces.convert.Converter` implementation to convert the value
+to a type that is acceptable to the component class.
 
 A custom component class or its renderer must implement the `decode`
 method only if it must retrieve the local value or if it needs to queue
@@ -337,8 +329,6 @@ the `input` field. This value represents the currently selected area.
 Finally, it sets the value of the `MapComponent` class's `current`
 attribute to the value of the `input` field.
 
-[[BNAVY]][[enabling-component-properties-to-accept-expressions]]
-
 === Enabling Component Properties to Accept Expressions
 
 Nearly all the attributes of the standard Jakarta Server Faces tags can
@@ -347,16 +337,17 @@ expressions. It is recommended that you also enable your component
 attributes to accept expressions because it gives you much more
 flexibility when you write Facelets pages.
 
-To enable the attributes to accept expressions, the component class must
-implement getter and setter methods for the component properties. These
-methods can use the facilities offered by the `StateHelper` interface to
-store and retrieve not only the values for these properties but also the
-state of the components across multiple requests.
+To enable the attributes to accept expressions, the component class
+must implement getter and setter methods for the component properties.
+These methods can use the facilities offered by the `StateHelper`
+interface to store and retrieve not only the values for these
+properties but also the state of the components across multiple
+requests.
 
 Because `MapComponent` extends `UICommand`, the `UICommand` class
 already does the work of getting the `ValueExpression` and
-`MethodExpression` instances associated with each of the attributes that
-it supports. Similarly, the `UIOutput` class that `AreaComponent`
+`MethodExpression` instances associated with each of the attributes
+that it supports. Similarly, the `UIOutput` class that `AreaComponent`
 extends already obtains the `ValueExpression` instances for its
 supported attributes. For both components, the simple getter and setter
 methods store and retrieve the key values and state for the attributes,
@@ -378,10 +369,10 @@ public void setAlt(String alt) {
 
 However, if you have a custom component class that extends
 `UIComponentBase`, you will need to implement the methods that get the
-`ValueExpression` and `MethodExpression` instances associated with those
-attributes that are enabled to accept expressions. For example, you
-could include a method that gets the `ValueExpression` instance for the
-`immediate` attribute:
+`ValueExpression` and `MethodExpression` instances associated with
+those attributes that are enabled to accept expressions. For example,
+you could include a method that gets the `ValueExpression` instance for
+the `immediate` attribute:
 
 [source,java]
 ----
@@ -416,28 +407,27 @@ public void setAction(MethodExpression action) {
 }
 ----
 
-[[BNAVZ]][[saving-and-restoring-state]]
-
 === Saving and Restoring State
 
-As described in link:#BNAVY[Enabling Component Properties to Accept
-Expressions], use of the `StateHelper` interface facilities allows you
-to save the component's state at the same time you set and retrieve
-property values. The `StateHelper` implementation allows partial state
-saving; it saves only the changes in the state since the initial
-request, not the entire state, because the full state can be restored
-during the Restore View phase.
+As described in
+<<enabling-component-properties-to-accept-expressions>>, use of the
+`StateHelper` interface facilities allows you to save the component's
+state at the same time you set and retrieve property values. The
+`StateHelper` implementation allows partial state saving; it saves only
+the changes in the state since the initial request, not the entire
+state, because the full state can be restored during the Restore View
+phase.
 
 Component classes that implement `StateHolder` may prefer to implement
 the `saveState(FacesContext)` and `restoreState(FacesContext, Object)`
-methods to help the Jakarta Server Faces implementation save and restore the
-state of components across multiple requests.
+methods to help the Jakarta Server Faces implementation save and
+restore the state of components across multiple requests.
 
-To save a set of values, you can implement the `saveState(FacesContext)`
-method. This method is called during the Render Response phase, during
-which the state of the response is saved for processing on subsequent
-requests. Here is a hypothetical method from `MapComponent`, which has
-only one attribute, `current`:
+To save a set of values, you can implement the
+`saveState(FacesContext)` method. This method is called during the
+Render Response phase, during which the state of the response is saved
+for processing on subsequent requests. Here is a hypothetical method
+from `MapComponent`, which has only one attribute, `current`:
 
 [source,java]
 ----
@@ -456,12 +446,11 @@ next saves all of the state associated with the component.
 A component that implements `StateHolder` may also provide an
 implementation for `restoreState(FacesContext, Object)`, which restores
 the state of the component to that saved with the
-`saveState(FacesContext)` method. The
-`restoreState(FacesContext, Object)` method is called during the Restore
-View phase, during which the Jakarta Server Faces implementation checks
-whether there is any state that was saved during the last Render
-Response phase and needs to be restored in preparation for the next
-postback.
+`saveState(FacesContext)` method. The `restoreState(FacesContext,
+Object)` method is called during the Restore View phase, during which
+the Jakarta Server Faces implementation checks whether there is any
+state that was saved during the last Render Response phase and needs to
+be restored in preparation for the next postback.
 
 Here is a hypothetical `restoreState(FacesContext, Object)` method from
 `MapComponent`:
@@ -476,16 +465,16 @@ public void restoreState(FacesContext context, Object state) {
 ----
 
 This method takes a `FacesContext` and an `Object` instance,
-representing the array that is holding the state for the component. This
-method sets the component's properties to the values saved in the
+representing the array that is holding the state for the component.
+This method sets the component's properties to the values saved in the
 `Object` array.
 
 Whether or not you implement these methods in your component class, you
 can use the `jakarta.faces.STATE_SAVING_METHOD` context parameter to
 specify in the deployment descriptor where you want the state to be
-saved: either `client` or `server`. If state is saved on the client, the
-state of the entire view is rendered to a hidden field on the page. By
-default, the state is saved on the server.
+saved: either `client` or `server`. If state is saved on the client,
+the state of the entire view is rendered to a hidden field on the page.
+By default, the state is saved on the server.
 
 The web applications in the Duke's Forest case study save their view
 state on the client.
@@ -494,5 +483,3 @@ Saving state on the client uses more bandwidth as well as more client
 resources, whereas saving it on the server uses more server resources.
 You may also want to save state on the client if you expect your users
 to disable cookies.
-
-

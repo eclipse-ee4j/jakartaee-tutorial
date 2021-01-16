@@ -1,13 +1,11 @@
-[[BNAWN]][[defining-the-custom-component-tag-in-a-tag-library-descriptor]]
-
 == Defining the Custom Component Tag in a Tag Library Descriptor
 
 To use a custom tag, you declare it in a Tag Library Descriptor (TLD).
-The TLD file defines how the custom tag is used in a Jakarta Server Faces
-page. The web container uses the TLD to validate the tag. The set of
-tags that are part of the HTML render kit are defined in the HTML_BASIC
-TLD, available in the olink:JSFRK[Jakarta Server Faces standard HTML tag
-library].
+The TLD file defines how the custom tag is used in a Jakarta Server
+Faces page. The web container uses the TLD to validate the tag. The set
+of tags that are part of the HTML render kit are defined in the
+HTML_BASIC TLD, available in the
+https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Server Faces standard HTML tag library^].
 
 The TLD file name must end with `taglib.xml`. In the Duke's Bookstore
 case study, the custom tags `area` and `map` are defined in the file
@@ -44,9 +42,9 @@ The `component-type` element specifies the name defined in the
 the `rendererType` defined in the `@FacesRenderer` annotation.
 
 The `facelet-taglib` element must also include a `namespace` element,
-which defines the namespace to be specified in pages that use the custom
-component. See link:#BNATT[Using a Custom Component]
-for information on specifying the namespace in pages.
+which defines the namespace to be specified in pages that use the
+custom component. See <<using-a-custom-component>> for information on
+specifying the namespace in pages.
 
 The TLD file is located in the `WEB-INF` directory. In addition, an
 entry is included in the web deployment descriptor (`web.xml`) to
@@ -59,5 +57,3 @@ identify the custom tag library descriptor file, as follows:
         <param-value>/WEB-INF/bookstore.taglib.xml</param-value>
     </context-param>
 ----
-
-

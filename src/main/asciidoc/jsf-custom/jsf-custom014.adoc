@@ -1,19 +1,17 @@
-[[BNATM]][[binding-converters-listeners-and-validators-to-managed-bean-properties]]
-
 == Binding Converters, Listeners, and Validators to Managed Bean Properties
 
-As described in link:#BNARF[Adding Components to a Page
-Using HTML Tag Library Tags], a page author can bind converter,
-listener, and validator implementations to managed bean properties using
-the `binding` attributes of the tags that are used to register the
-implementations on components.
+As described in
+<<adding-components-to-a-page-using-html-tag-library-tags>>, a page
+author can bind converter, listener, and validator implementations to
+managed bean properties using the `binding` attributes of the tags that
+are used to register the implementations on components.
 
 This technique has similar advantages to binding component instances to
 managed bean properties, as described in
-link:#BNATG[Binding Component Values and Instances to
-Managed Bean Properties]. In particular, binding a converter, listener,
-or validator implementation to a managed bean property yields the
-following benefits.
+<<binding-component-values-and-instances-to-managed-bean-properties>>.
+In particular, binding a converter, listener, or validator
+implementation to a managed bean property yields the following
+benefits.
 
 * The managed bean can instantiate the implementation instead of
 allowing the page author to do so.
@@ -23,8 +21,9 @@ way to modify the attributes outside of the implementation class would
 be to create a custom tag for it and require the page author to set the
 attribute values from the page.
 
-Whether you are binding a converter, listener, or validator to a managed
-bean property, the process is the same for any of the implementations.
+Whether you are binding a converter, listener, or validator to a
+managed bean property, the process is the same for any of the
+implementations.
 
 * Nest the converter, listener, or validator tag within an appropriate
 component tag.
@@ -34,13 +33,13 @@ you want to bind to the property.
 * Reference the managed bean property using a value expression from the
 `binding` attribute of the converter, listener, or validator tag.
 
-For example, say that you want to bind the standard `DateTime` converter
-to a managed bean property because you want to set the formatting
-pattern of the user's input in the managed bean rather than on the
-Facelets page. First, the page registers the converter onto the
+For example, say that you want to bind the standard `DateTime`
+converter to a managed bean property because you want to set the
+formatting pattern of the user's input in the managed bean rather than
+on the Facelets page. First, the page registers the converter onto the
 component by nesting the `f:convertDateTime` tag within the component
-tag. Then, the page references the property with the `binding` attribute
-of the `f:convertDateTime` tag:
+tag. Then, the page references the property with the `binding`
+attribute of the `f:convertDateTime` tag:
 
 [source,xml]
 ----
@@ -64,9 +63,6 @@ public void setConvertDate(DateTimeConverter convertDate) {
 }
 ----
 
-See link:#BNAUL[Writing Properties Bound to
-Converters, Listeners, or Validators] for more information on writing
-managed bean properties for converter, listener, and validator
-implementations.
-
-
+See <<writing-properties-bound-to-converters-listeners-or-validators>>
+for more information on writing managed bean properties for converter,
+listener, and validator implementations.
