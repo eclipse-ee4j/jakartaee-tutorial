@@ -1,22 +1,20 @@
-[[BNAGS]][[finalizing-a-servlet]]
-
 == Finalizing a Servlet
 
 The web container may determine that a servlet should be removed from
-service (for example, when a container wants to reclaim memory resources
-or when it is being shut down). In such a case, the container calls the
-`destroy` method of the `Servlet` interface. In this method, you release
-any resources the servlet is using and save any persistent state. The
-`destroy` method releases the database object created in the `init`
-method.
+service (for example, when a container wants to reclaim memory
+resources or when it is being shut down). In such a case, the container
+calls the `destroy` method of the `Servlet` interface. In this method,
+you release any resources the servlet is using and save any persistent
+state. The `destroy` method releases the database object created in the
+`init` method.
 
 A servlet's service methods should all be complete when a servlet is
-removed. The server tries to ensure this by calling the `destroy` method
-only after all service requests have returned or after a server-specific
-grace period, whichever comes first. If your servlet has operations that
-may run longer than the server's grace period, the operations could
-still be running when `destroy` is called. You must make sure that any
-threads still handling client requests complete.
+removed. The server tries to ensure this by calling the `destroy`
+method only after all service requests have returned or after a
+server-specific grace period, whichever comes first. If your servlet
+has operations that may run longer than the server's grace period, the
+operations could still be running when `destroy` is called. You must
+make sure that any threads still handling client requests complete.
 
 The remainder of this section explains how to do the following.
 
@@ -27,13 +25,11 @@ long-running threads of the shutdown and wait for them to complete.
 * Have the long-running methods poll periodically to check for shutdown
 and, if necessary, stop working, clean up, and return.
 
-[[BNAGT]][[tracking-service-requests]]
-
 === Tracking Service Requests
 
 To track service requests:
 
-1.  Include a field in your servlet class that counts the number of
+. Include a field in your servlet class that counts the number of
 service methods that are running.
 +
 The field should have synchronized access methods to increment,
@@ -78,15 +74,13 @@ protected void service(HttpServletRequest req,
 }
 ----
 
-[[BNAGU]][[notifying-methods-to-shut-down]]
-
 === Notifying Methods to Shut Down
 
-To ensure a clean shutdown, your `destroy` method should not release any
-shared resources until all the service requests have completed:
+To ensure a clean shutdown, your `destroy` method should not release
+any shared resources until all the service requests have completed:
 
-1.  Check the service counter.
-2.  Notify long-running methods that it is time to shut down.
+. Check the service counter.
+. Notify long-running methods that it is time to shut down.
 +
 For this notification, another field is required. The field should have
 the usual access methods:
@@ -128,14 +122,12 @@ public void destroy() {
 }
 ----
 
-[[BNAGV]][[creating-polite-long-running-methods]]
-
 === Creating Polite Long-Running Methods
 
-The final step in providing a clean shutdown is to make any long-running
-methods behave politely. Methods that might run for a long time should
-check the value of the field that notifies them of shutdowns and should
-interrupt their work, if necessary:
+The final step in providing a clean shutdown is to make any
+long-running methods behave politely. Methods that might run for a long
+time should check the value of the field that notifies them of
+shutdowns and should interrupt their work, if necessary:
 
 [source,java]
 ----
@@ -151,5 +143,3 @@ public void doPost(...) {
     }
 }
 ----
-
-

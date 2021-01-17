@@ -1,5 +1,3 @@
-[[BEIJHCDJ]][[protocol-upgrade-processing]]
-
 == Protocol Upgrade Processing
 
 In HTTP/1.1, clients can request to switch to a different protocol on
@@ -12,7 +10,7 @@ using the new protocol.
 For example, a client can make an HTTP request to switch to the XYZP
 protocol as follows:
 
-[source,java]
+[source,http]
 ----
 GET /xyzpresource HTTP/1.1
 Host: localhost:8080
@@ -26,7 +24,7 @@ The client can specify parameters for the new protocol using HTTP
 headers. The server can accept the request and generate a response as
 follows:
 
-[source,java]
+[source,http]
 ----
 HTTP/1.1 101 Switching Protocols
 Upgrade: XYZP
@@ -36,18 +34,15 @@ OtherHeaderB: Value
 (XYZP data)
 ----
 
-Jakarta EE supports the HTTP protocol upgrade functionality in servlets, as
-described in link:#BEIBDHAG[Table 18-7].
+Jakarta EE supports the HTTP protocol upgrade functionality in
+servlets, as described in <<protocol-upgrade-support>>.
 
-[[sthref110]][[BEIBDHAG]]
+[[protocol-upgrade-support]]
+[width="80%",cols="20%a,60%a",title="Protocol Upgrade Support"]
+|===
+|Class or Interface |Method
 
-*Table 18-7 Protocol Upgrade Support*
-
-[width="80%",cols="20%,60%"]
-|=======================================================================
-|*Class or Interface* |*Method*
-|`HttpServletRequest` a|
-`HttpUpgradeHandler upgrade(Class handler)`
+|`HttpServletRequest` | `HttpUpgradeHandler upgrade(Class handler)`
 
 The upgrade method starts the protocol upgrade processing. This method
 instantiates a class that implements the `HttpUpgradeHandler` interface
@@ -56,36 +51,31 @@ and delegates the connection to it.
 You call the `upgrade` method inside a service method when accepting a
 request from a client to switch protocols.
 
-|`HttpUpgradeHandler` a|
-`void init(WebConnection wc)`
+|`HttpUpgradeHandler` | `void init(WebConnection wc)`
 
 The `init` method is called when the servlet accepts the request to
 switch protocols. You implement this method and obtain input and output
 streams from the `WebConnection` object to implement the new protocol.
 
-|`HttpUpgradeHandler` a|
-`void destroy()`
+|`HttpUpgradeHandler` | `void destroy()`
 
 The `destroy` method is called when the client disconnects. You
 implement this method and free any resources associated with processing
 the new protocol.
 
-|`WebConnection` a|
-`ServletInputStream getInputStream()`
+|`WebConnection` | `ServletInputStream getInputStream()`
 
 The `getInputStream` method provides access to the input stream of the
-connection. You can use link:#BEIHICDH[Nonblocking I/O]
-with the returned stream to implement the new protocol.
+connection. You can use <<nonblocking-io>> with the returned stream to
+implement the new protocol.
 
-|`WebConnection` a|
-`ServletOutputStream getOutputStream()`
+|`WebConnection` | `ServletOutputStream getOutputStream()`
 
-The `getOutputStream` method provides access to the output stream of the
-connection. You can use link:#BEIHICDH[Nonblocking I/O]
-with the returned stream to implement the new protocol.
+The `getOutputStream` method provides access to the output stream of
+the connection. You can use <<nonblocking-io>> with the returned stream
+to implement the new protocol.
 
-|=======================================================================
-
+|===
 
 The following code demonstrates how to accept an HTTP protocol upgrade
 request from a client:
@@ -129,8 +119,8 @@ public class XYZPUpgradeHandler implements HttpUpgradeHandler {
 }
 ----
 
-The class that implements `HttpUpgradeHandler` uses the streams from the
-current connection to communicate with the client using the new
-protocol. See the Servlet 4.0 specification at
-`https://jakarta.ee/specifications/servlet/4.0` for details on HTTP protocol
-upgrade support.
+The class that implements `HttpUpgradeHandler` uses the streams from
+the current connection to communicate with the client using the new
+protocol. See the Servlet 5.0 specification at
+https://jakarta.ee/specifications/servlet/5.0[^] for details on HTTP
+protocol upgrade support.
