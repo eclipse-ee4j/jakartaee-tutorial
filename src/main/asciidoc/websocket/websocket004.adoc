@@ -1,10 +1,7 @@
-[[BABFEBGA]][[annotated-endpoints]]
-
 == Annotated Endpoints
 
 The following example shows how to create the same endpoint from
-link:#BABGJEIG[Programmatic Endpoints] using annotations
-instead:
+<<programmatic-endpoints>> using annotations instead:
 
 [source,java]
 ----
@@ -26,26 +23,25 @@ having to create an additional class for the message handler, this
 example uses the `OnMessage` annotation to designate the method invoked
 to handle messages.
 
-link:#BABDGEJH[Table 19-1] lists the annotations available in the
-`jakarta.websocket` package to designate the methods that handle lifecycle
-events. The examples in the table show the most common parameters for
-these methods. See the API reference for details on what combinations of
-parameters are allowed in each case.
+<<websocket-endpoint-lifecycle-annotations>> lists the annotations
+available in the `jakarta.websocket` package to designate the methods
+that handle lifecycle events. The examples in the table show the most
+common parameters for these methods. See the API reference for details
+on what combinations of parameters are allowed in each case.
 
-[[sthref115]][[BABDGEJH]]
+[[websocket-endpoint-lifecycle-annotations]]
+[width="80%",cols="20%a,20%,60%a",title="WebSocket Endpoint Lifecycle Annotations"]
+|===
+|Annotation |Event |Example
 
-*Table 19-1 WebSocket Endpoint Lifecycle Annotations*
-
-[width="80%",cols="20%,20%,60"]
-|========================================
-|*Annotation* |*Event* |*Example*
-|`OnOpen` |Connection opened a|
+|`OnOpen` |Connection opened |
 [source,java]
 ----
 @OnOpen
 public void open(Session session,
                  EndpointConfig conf) { }
 ----
+{empty}
 
 |`OnMessage` |Message received a|
 [source,java]
@@ -54,6 +50,7 @@ public void open(Session session,
 public void message(Session session,
                     String msg) { }
 ----
+{empty}
 
 |`OnError` |Connection error a|
 [source,java]
@@ -62,6 +59,7 @@ public void message(Session session,
 public void error(Session session,
                   Throwable error) { }
 ----
+{empty}
 
 |`OnClose` |Connection closed a|
 [source,java]
@@ -70,5 +68,6 @@ public void error(Session session,
 public void close(Session session,
                   CloseReason reason) { }
 ----
+{empty}
 
-|========================================
+|===

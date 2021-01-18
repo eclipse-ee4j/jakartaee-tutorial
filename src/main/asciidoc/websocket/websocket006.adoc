@@ -1,5 +1,3 @@
-[[BABGJCAD]][[maintaining-client-state]]
-
 == Maintaining Client State
 
 Because the container creates an instance of the endpoint class for
@@ -32,5 +30,3 @@ public class DelayedEchoEndpoint {
 To store information common to all connected clients, you can use class
 (static) variables; however, you are responsible for ensuring
 thread-safe access to them.
-
-

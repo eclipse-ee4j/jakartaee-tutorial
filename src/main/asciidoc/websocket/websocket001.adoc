@@ -1,5 +1,3 @@
-[[BABDABHF]][[introduction-to-websocket]]
-
 == Introduction to WebSocket
 
 In the traditional request-response model used in HTTP, the client
@@ -8,10 +6,10 @@ always initiated by the client; the server cannot send any data without
 the client requesting it first. This model worked well for the World
 Wide Web when clients made occasional requests for documents that
 changed infrequently, but the limitations of this approach are
-increasingly relevant as content changes quickly and users expect a more
-interactive experience on the Web. The WebSocket protocol addresses
-these limitations by providing a full-duplex communication channel
-between the client and the server. Combined with other client
+increasingly relevant as content changes quickly and users expect a
+more interactive experience on the Web. The WebSocket protocol
+addresses these limitations by providing a full-duplex communication
+channel between the client and the server. Combined with other client
 technologies, such as JavaScript and HTML5, WebSocket enables web
 applications to deliver a richer user experience.
 
@@ -30,7 +28,7 @@ HTTP-based infrastructure: web servers interpret it as an HTTP
 connection upgrade request. An example handshake from a client looks
 like this:
 
-[source,java]
+[source,http]
 ----
 GET /path/to/websocket/endpoint HTTP/1.1
 Host: localhost
@@ -44,7 +42,7 @@ Sec-WebSocket-Version: 13
 An example handshake from the server in response to the client looks
 like this:
 
-[source,java]
+[source,http]
 ----
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
@@ -60,23 +58,23 @@ established successfully if the result matches the value received from
 the server. The client and the server can send messages to each other
 after a successful handshake.
 
-WebSocket supports text messages (encoded as UTF-8) and binary messages.
-The control frames in WebSocket are close, ping, and pong (a response to
-a ping frame). Ping and pong frames may also contain application data.
+WebSocket supports text messages (encoded as UTF-8) and binary
+messages. The control frames in WebSocket are close, ping, and pong (a
+response to a ping frame). Ping and pong frames may also contain
+application data.
 
 WebSocket endpoints are represented by URIs that have the following
 form:
 
-[source,java]
 ----
 ws://host:port/path?query
 wss://host:port/path?query
 ----
 
 The `ws` scheme represents an unencrypted WebSocket connection, and the
-`wss` scheme represents an encrypted connection. The `port` component is
-optional; the default port number is 80 for unencrypted connections and
-443 for encrypted connections. The `path` component indicates the
+`wss` scheme represents an encrypted connection. The `port` component
+is optional; the default port number is 80 for unencrypted connections
+and 443 for encrypted connections. The `path` component indicates the
 location of an endpoint within a server. The `query` component is
 optional.
 
@@ -84,5 +82,3 @@ Modern web browsers implement the WebSocket protocol and provide a
 JavaScript API to connect to endpoints, send messages, and assign
 callback methods for WebSocket events (such as opened connections,
 received messages, and closed connections).
-
-

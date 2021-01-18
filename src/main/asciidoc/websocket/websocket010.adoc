@@ -1,9 +1,7 @@
-[[BABJAIGH]][[specifying-an-endpoint-configurator-class]]
-
 == Specifying an Endpoint Configurator Class
 
-Jakarta WebSocket enables you to configure how the container
-creates server endpoint instances. You can provide custom endpoint
+Jakarta WebSocket enables you to configure how the container creates
+server endpoint instances. You can provide custom endpoint
 configuration logic to:
 
 * Access the details of the initial HTTP request for a WebSocket
@@ -15,8 +13,8 @@ connection
 
 To provide custom endpoint configuration logic, you extend the
 `ServerEndpointConfig.Configurator` class and override some of its
-methods. In the endpoint class, you specify the configurator class using
-the `configurator` parameter of the `ServerEndpoint` annotation.
+methods. In the endpoint class, you specify the configurator class
+using the `configurator` parameter of the `ServerEndpoint` annotation.
 
 For example, the following configurator class makes the handshake
 request object available to endpoint instances:
@@ -64,5 +62,3 @@ details of the initial HTTP request, such as its headers or the
 
 For more information on endpoint configuration, see the API reference
 for the `ServerEndpointConfig.Configurator` class.
-
-

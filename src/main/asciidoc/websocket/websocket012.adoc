@@ -1,40 +1,38 @@
-[[BABCDBBC]][[the-websocketbot-example-application]]
-
 == The websocketbot Example Application
 
 The `websocketbot` example application, located in the
-tut-install`/examples/web/websocket/websocketbot/` directory,
+`_tut-install_/examples/web/websocket/websocketbot/` directory,
 demonstrates how to use a WebSocket endpoint to implement a chat. The
 example resembles a chat room in which many users can join and have a
 conversation. Users can ask simple questions to a bot agent that is
 always available in the chat room.
-
-[[CIHICIDE]][[architecture-of-the-websocketbot-example-application]]
 
 === Architecture of the websocketbot Example Application
 
 The `websocketbot` example application consists of the following
 elements:
 
-* link:#CIHDAEHF[The CDI Bean] – A CDI bean (`BotBean`) that contains
-the logic for the bot agent to reply to messages
-* link:#CIHJJJHG[The WebSocket Endpoint] – A WebSocket endpoint
-(`BotEndpoint`) that implements the chat room
-* link:#CIHFDGHG[The Application Messages] – A set of classes
-(`Message`, `ChatMessage`, `InfoMessage`, `JoinMessage`, and
-`UsersMessage`) that represent application messages
-* link:#CIHGHHBD[The Encoder Classes] – A set of classes
-(`ChatMessageEncoder`, `InfoMessageEncoder`, `JoinMessageEncoder`, and
-`UsersMessageEncoder`) that encode application messages into WebSocket
-text messages as JSON data
-* link:#CIHHFICG[The Message Decoder] – A class (`MessageDecoder`) the
-parses WebSocket text messages as JSON data and decodes them into
-`JoinMessage` or `ChatMessage` objects
-* link:#CIHHIEFH[The HTML Page] – An HTML page
-(`index.html`) that uses JavaScript code to implement the client for the
-chat room
+* <<the-cdi-bean>> – A CDI bean (`BotBean`) that contains the logic for
+the bot agent to reply to messages
 
-[[CIHDAEHF]][[the-cdi-bean]]
+* <<the-websocket-endpoint>> – A WebSocket endpoint (`BotEndpoint`)
+that implements the chat room
+
+* <<the-application-messages>> – A set of classes (`Message`,
+`ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`) that
+represent application messages
+
+* <<the-encoder-classes>> – A set of classes (`ChatMessageEncoder`,
+`InfoMessageEncoder`, `JoinMessageEncoder`, and `UsersMessageEncoder`)
+that encode application messages into WebSocket text messages as JSON
+data
+
+* <<the-message-decoder>> – A class (`MessageDecoder`) the parses
+WebSocket text messages as JSON data and decodes them into
+`JoinMessage` or `ChatMessage` objects
+
+* <<the-html-page-3>> – An HTML page (`index.html`) that uses
+JavaScript code to implement the client for the chat room
 
 ==== The CDI Bean
 
@@ -49,8 +47,6 @@ public class BotBean {
     public String respond(String msg) { ... }
 }
 ----
-
-[[CIHJJJHG]][[the-websocket-endpoint]]
 
 ==== The WebSocket Endpoint
 
@@ -142,41 +138,38 @@ message, the endpoint forwards it to all connected clients.
 If a chat message is for the bot agent, the endpoint obtains a response
 using the `BotBean` instance and sends it to all connected clients. The
 `sendAll` method is similar to the example in
-link:#BABIFBCG[Sending Messages to All Peers Connected
-to an Endpoint].
+<<sending-messages-to-all-peers-connected-to-an-endpoint>>.
 
-Asynchronous Processing and Concurrency Considerations
+===== Asynchronous Processing and Concurrency Considerations
 
 The WebSocket endpoint calls the `BotBean.respond` method to obtain a
 response from the bot. In this example, this is a blocking operation;
 the user that sent the associated message would not be able to send or
-receive other chat messages until the operation completes. To avoid this
-problem, the endpoint obtains an executor service from the container and
-executes the blocking operation in a different thread using the
-`ManagedExecutorService.submit` method from Concurrency Utilities for
-Jakarta EE.
+receive other chat messages until the operation completes. To avoid
+this problem, the endpoint obtains an executor service from the
+container and executes the blocking operation in a different thread
+using the `ManagedExecutorService.submit` method from Concurrency
+Utilities for Jakarta EE.
 
 Jakarta WebSocket specification requires that Jakarta EE
 implementations instantiate endpoint classes once per connection. This
 facilitates the development of WebSocket endpoints, because you are
 guaranteed that only one thread is executing the code in a WebSocket
 endpoint class at any given time. When you introduce a new thread in an
-endpoint, as in this example, you must ensure that variables and methods
-accessed by more than one thread are thread safe. In this example, the
-code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method
-has been declared `synchronized`.
+endpoint, as in this example, you must ensure that variables and
+methods accessed by more than one thread are thread safe. In this
+example, the code in `BotBean` is thread safe, and the
+`BotEndpoint.sendAll` method has been declared `synchronized`.
 
-Refer to link:#GKJIQ8[Chapter 59, "Concurrency
-Utilities for Jakarta EE"] for more information on the managed executor
-service and Concurrency Utilities for Jakarta EE.
-
-[[CIHFDGHG]][[the-application-messages]]
+Refer to xref:jakarta-concurrency-2[xrefstyle=full] for more
+information on the managed executor service and Concurrency Utilities
+for Jakarta EE.
 
 ==== The Application Messages
 
 The classes that represent application messages (`Message`,
-`ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`) contain
-only properties and getter and setter methods. For example, the
+`ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`)
+contain only properties and getter and setter methods. For example, the
 `ChatMessage` class looks like this:
 
 [source,java]
@@ -188,8 +181,6 @@ public class ChatMessage extends Message {
     /* ... Constructor, getters, and setters ... */
 }
 ----
-
-[[CIHGHHBD]][[the-encoder-classes]]
 
 ==== The Encoder Classes
 
@@ -216,10 +207,8 @@ public class ChatMessageEncoder implements Encoder.Text<ChatMessage> {
 }
 ----
 
-See link:#GLRBB[JSON
-Processing] for more information on the Java API for JSON Processing.
-
-[[CIHHFICG]][[the-message-decoder]]
+See xref:json-processing[xrefstyle=full] for more information on the
+Jakarta JSON Processing.
 
 ==== The Message Decoder
 
@@ -273,102 +262,85 @@ public class MessageDecoder implements Decoder.Text<Message> {
 }
 ----
 
-[[CIHGDBGF]][[the-html-page]]
-
 ==== The HTML Page
 
 The HTML page (`index.html`) contains a field for the user name. After
 the user types a name and clicks Join, three text areas are available:
 one to type and send messages, one for the chat room, and one with the
-list of users. The page also contains a WebSocket console that shows the
-messages sent and received as JSON text.
+list of users. The page also contains a WebSocket console that shows
+the messages sent and received as JSON text.
 
-The JavaScript code on the page uses the WebSocket API to connect to the
-endpoint, send messages, and designate callback methods. The WebSocket
-API is supported by most modern browsers and is widely used for web
-client development with HTML5.
-
-[[CIHHJHDB]][[running-the-websocketbot-example-application]]
+The JavaScript code on the page uses the WebSocket API to connect to
+the endpoint, send messages, and designate callback methods. The
+WebSocket API is supported by most modern browsers and is widely used
+for web client development with HTML5.
 
 === Running the websocketbot Example Application
 
-This section describes how to run the `websocketbot` example application
-using NetBeans IDE and from the command line.
-
-[[CIHFDDGE]][[to-run-the-websocketbot-example-application-using-netbeans-ide]]
+This section describes how to run the `websocketbot` example
+application using NetBeans IDE and from the command line.
 
 ==== To Run the websocketbot Example Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/websocket
 ----
-4.  Select the `websocketbot` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `websocketbot` project and
-select Run.
+. Select the `websocketbot` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `websocketbot` project and
+select *Run*.
 +
 This command builds and packages the application into a WAR file,
 `websocketbot.war`, located in the `target/` directory; deploys it to
 the server; and launches a web browser window with the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/websocketbot/
 ----
 +
-See link:#BABDDAAG[To Test the websocketbot Example Application] for
-more information.
-
-[[CIHEDEHB]][[to-run-the-websocketbot-example-application-using-maven]]
+See <<to-test-the-websocketbot-example-application>> for more
+information.
 
 ==== To Run the websocketbot Example Application Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/websocket/websocketbot/
 ----
-3.  Enter the following command to deploy the application:
+. Enter the following command to deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
-4.  Open a web browser window and type the following address:
+. Open a web browser window and type the following address:
 +
-[source,java]
 ----
 http://localhost:8080/websocketbot/
 ----
 +
-See link:#BABDDAAG[To Test the websocketbot Example Application] for
-more information.
-
-[[BABDDAAG]][[to-test-the-websocketbot-example-application]]
+See <<to-test-the-websocketbot-example-application>> for more
+information.
 
 ==== To Test the websocketbot Example Application
 
-1.  On the main page, type your name on the first text field and press
+. On the main page, type your name on the first text field and press
 the Enter key.
 +
 The list of connected users appears on the text area on the right. The
 text area on the left is the chat room.
-2.  Type a message on the text area below the login button. For example,
+. Type a message on the text area below the login button. For example,
 type the messages in bold and press enter to obtain responses similar to
 the following:
 +
-[source,java]
 ----
 [--Peter has joined the chat--]
 Duke: @Peter Hi there!!
@@ -377,12 +349,12 @@ Duke: @Peter I'm doing great, thank you!
 Peter: @Duke when is your birthday?
 Duke: @Peter My birthday is on May 23rd. Thanks for asking!
 ----
-3.  Join the chat from another browser window by copying and pasting the
+. Join the chat from another browser window by copying and pasting the
 URI on the address bar and joining with a different name.
 +
 The new user name appears in the list of users in both browser windows.
 You can send messages from either window and see how they appear in the
 other.
-4.  Click Show WebSocket Console.
+. Click Show WebSocket Console.
 +
 The console shows the messages sent and received as JSON text.

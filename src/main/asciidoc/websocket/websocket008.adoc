@@ -1,5 +1,3 @@
-[[BABEJIJI]][[path-parameters]]
-
 == Path Parameters
 
 The `ServerEndpoint` annotation enables you to use URI templates to
@@ -14,11 +12,10 @@ public class ChatEndpoint {
 }
 ----
 
-If the endpoint is deployed inside a web application called `chatapp` at
-a local Jakarta EE server in port 8080, clients can connect to the endpoint
-using any of the following URIs:
+If the endpoint is deployed inside a web application called `chatapp`
+at a local Jakarta EE server in port 8080, clients can connect to the
+endpoint using any of the following URIs:
 
-[source,java]
 ----
 http://localhost:8080/chatapp/chatrooms/currentnews
 http://localhost:8080/chatapp/chatrooms/music
@@ -27,9 +24,9 @@ http://localhost:8080/chatapp/chatrooms/technology
 ----
 
 Annotated endpoints can receive path parameters as arguments in methods
-annotated with `@OnOpen`, `@OnMessage`, and `@OnClose`. In this example,
-the endpoint uses the parameter in the `@OnOpen` method to determine
-which chat room the client wants to join:
+annotated with `@OnOpen`, `@OnMessage`, and `@OnClose`. In this
+example, the endpoint uses the parameter in the `@OnOpen` method to
+determine which chat room the client wants to join:
 
 [source,java]
 ----
@@ -46,5 +43,3 @@ public class ChatEndpoint {
 
 The path parameters used as arguments in these methods can be strings,
 primitive types, or the corresponding wrapper types.
-
-
