@@ -1,4 +1,3 @@
-[[using-the-object-model-api]]
 == Using the Object Model API
 
 This section describes four use cases of the object model API: creating
@@ -6,7 +5,6 @@ an object model from JSON data, creating an object model from
 application code, navigating an object model, and writing an object
 model to a stream.
 
-[[creating-an-object-model-from-json-data]]
 === Creating an Object Model from JSON Data
 
 The following code demonstrates how to create an object model from JSON
@@ -29,8 +27,6 @@ and `JsonArray` are subtypes of `JsonStructure`. This reference
 represents the top of the tree and can be used to navigate the tree or
 to write it to a stream as JSON data.
 
-
-[[creating-an-object-model-from-application-code]]
 === Creating an Object Model from Application Code
 
 The following code demonstrates how to create an object model from
@@ -84,11 +80,8 @@ have a name (key) parameter. You can nest arrays and objects by passing
 a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to
 the corresponding `add` method, as shown in this example.
 
-The resulting tree represents the JSON data from
-link:#BABGHEHG[JSON Syntax].
+The resulting tree represents the JSON data from <<json-syntax>>.
 
-
-[[navigating-an-object-model]]
 === Navigating an Object Model
 
 The following code demonstrates a simple approach to navigating an
@@ -136,60 +129,58 @@ public static void navigateTree(JsonValue tree, String key) {
 ----
 
 The method `navigateTree` can be used with the models built in
-link:#BABBHEBA[Creating an Object Model from JSON Data] and
-link:#BABIGIAF[Creating an Object Model from Application Code] as
-follows:
+<<creating-an-object-model-from-json-data>> and
+<<creating-an-object-model-from-application-code>> as follows:
 
 [source,java]
 ----
 navigateTree(model, null);
 ----
 
-The `navigateTree` method takes two arguments: a JSON element and a key.
-The key is used only to help print the key-value pairs inside objects.
-Elements in a tree are represented by the `JsonValue` type. If the
-element is an object or an array, a new call to this method is made for
-every element contained in the object or array. If the element is a
+The `navigateTree` method takes two arguments: a JSON element and a
+key. The key is used only to help print the key-value pairs inside
+objects. Elements in a tree are represented by the `JsonValue` type. If
+the element is an object or an array, a new call to this method is made
+for every element contained in the object or array. If the element is a
 value, it is printed to the standard output.
 
-The `JsonValue.getValueType` method identifies the element as an object,
-an array, or a value. For objects, the `JsonObject.keySet` method
-returns a set of strings that contains the keys in the object, and the
-`JsonObject.get(String name)` method returns the value of the element
-whose key is `name`. For arrays, `JsonArray` implements the
+The `JsonValue.getValueType` method identifies the element as an
+object, an array, or a value. For objects, the `JsonObject.keySet`
+method returns a set of strings that contains the keys in the object,
+and the `JsonObject.get(String name)` method returns the value of the
+element whose key is `name`. For arrays, `JsonArray` implements the
 `List<JsonValue>` interface. You can use enhanced `for` loops with the
 `Set<String>` instance returned by `JsonObject.keySet` and with
 instances of `JsonArray`, as shown in this example.
 
-The `navigateTree` method for the model built in link:#BABIGIAF[Creating
-an Object Model from Application Code] produces the following output:
+The `navigateTree` method for the model built in
+<<creating-an-object-model-from-application-code>> produces the
+following output:
 
-[source,java]
 ----
 OBJECT
-Key firstName: STRING Duke
-Key lastName: STRING Java
-Key age: NUMBER 18
-Key streetAddress: STRING 100 Internet Dr
-Key city: STRING JavaTown
-Key state: STRING JA
-Key postalCode: STRING 12345
-Key phoneNumbers: ARRAY
-OBJECT
-Key type: STRING mobile
-Key number: STRING 111-111-1111
-OBJECT
-Key type: STRING home
-Key number: STRING 222-222-2222
+   Key firstName: STRING Duke
+   Key lastName: STRING Java
+   Key age: NUMBER 18
+   Key streetAddress: STRING 100 Internet Dr
+   Key city: STRING JavaTown
+   Key state: STRING JA
+   Key postalCode: STRING 12345
+   Key phoneNumbers: ARRAY
+      OBJECT
+         Key type: STRING mobile
+         Key number: STRING 111-111-1111
+      OBJECT
+         Key type: STRING home
+         Key number: STRING 222-222-2222
 ----
 
-[[writing-an-object-model-to-a-stream]]
 === Writing an Object Model to a Stream
 
-The object models created in link:#BABBHEBA[Creating an Object Model
-from JSON Data] and link:#BABIGIAF[Creating an Object Model from
-Application Code] can be written to a stream using the `JsonWriter`
-class as follows:
+The object models created in
+<<creating-an-object-model-from-json-data>> and
+<<creating-an-object-model-from-application-code>> can be written to a
+stream using the `JsonWriter` class as follows:
 
 [source,java]
 ----
@@ -206,11 +197,11 @@ System.out.println(jsonData);
 ----
 
 The `Json.createWriter` method takes an output stream as a parameter.
-The `JsonWriter.writeObject` method writes the object to the stream. The
-`JsonWriter.close` method closes the underlying output stream.
+The `JsonWriter.writeObject` method writes the object to the stream.
+The `JsonWriter.close` method closes the underlying output stream.
 
-The following example uses `try`-with-resources to close the JSON writer
-automatically:
+The following example uses `try-with-resources` to close the JSON
+writer automatically:
 
 [source,java]
 ----
@@ -222,5 +213,3 @@ try (JsonWriter jsonWriter = Json.createWriter(stWriter)) {
 String jsonData = stWriter.toString();
 System.out.println(jsonData);
 ----
-
-

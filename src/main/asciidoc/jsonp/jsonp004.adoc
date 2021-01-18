@@ -1,9 +1,7 @@
-[[using-the-streaming-api]]
 == Using the Streaming API
 
 This section describes two use cases of the streaming API.
 
-[[reading-json-data-using-a-parser]]
 === Reading JSON Data Using a Parser
 
 The streaming API is the most efficient approach for parsing JSON text.
@@ -43,29 +41,31 @@ while (parser.hasNext()) {
 
 This example consists of three steps.
 
-1.  Obtain a parser instance by calling the `Json.createParser` static
+. Obtain a parser instance by calling the `Json.createParser` static
 method.
-2.  Iterate over the parser events with the `JsonParser.hasNext` and the
+
+. Iterate over the parser events with the `JsonParser.hasNext` and the
 `JsonParser.next` methods.
-3.  Perform local processing for each element.
+
+. Perform local processing for each element.
 
 The example shows the ten possible event types from the parser. The
 parser's `next` method advances it to the next event. For the event
-types `KEY_NAME`, `VALUE_STRING`, and `VALUE_NUMBER`, you can obtain the
-content of the element by calling the method `JsonParser.getString`. For
-`VALUE_NUMBER` events, you can also use the following methods:
+types `KEY_NAME`, `VALUE_STRING`, and `VALUE_NUMBER`, you can obtain
+the content of the element by calling the method
+`JsonParser.getString`. For `VALUE_NUMBER` events, you can also use the
+following methods:
 
 * `JsonParser.isIntegralNumber`
 * `JsonParser.getInt`
 * `JsonParser.getLong`
 * `JsonParser.getBigDecimal`
 
-See the Jakarta EE API reference for the `jakarta.json.stream.JsonParser`
-interface for more information.
+See the Jakarta EE API reference for the
+`jakarta.json.stream.JsonParser` interface for more information.
 
 The output of this example is the following:
 
-[source,java]
 ----
 START_OBJECT
 KEY_NAME firstName - VALUE_STRING Duke
@@ -88,8 +88,6 @@ END_ARRAY
 END_OBJECT
 ----
 
-
-[[writing-json-data-using-a-generator]]
 === Writing JSON Data Using a Generator
 
 The following code demonstrates how to write JSON data to a file using
@@ -127,5 +125,3 @@ stream as a parameter. The example writes JSON data to the `test.txt`
 file by nesting calls to the `write`, `writeStartArray`,
 `writeStartObject`, and `writeEnd` methods. The `JsonGenerator.close`
 method closes the underlying writer or output stream.
-
-

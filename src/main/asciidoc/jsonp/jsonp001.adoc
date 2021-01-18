@@ -1,4 +1,3 @@
-[[introduction-to-json]]
 == Introduction to JSON
 
 JSON is a text-based data exchange format derived from JavaScript that
@@ -7,7 +6,6 @@ sections provide an introduction to JSON syntax, an overview of JSON
 uses, and a description of the most common approaches to generate and
 parse JSON.
 
-[[json-syntax]]
 === JSON Syntax
 
 JSON defines only two data structures: objects and arrays. An object is
@@ -19,7 +17,7 @@ The following example shows JSON data for a sample object that contains
 name-value pairs. The value for the name `"phoneNumbers"` is an array
 whose elements are two objects.
 
-[source,java]
+[source,json]
 ----
 {
    "firstName": "Duke",
@@ -43,27 +41,26 @@ separated by a comma (`,`), and the name and value in a pair are
 separated by a colon (`:`). Names in an object are strings, whereas
 values may be of any of the seven value types, including another object
 or an array.
-* Arrays are enclosed in brackets (`[]`), and their values are separated
-by a comma (`,`). Each value in an array may be of a different type,
-including another array or an object.
+* Arrays are enclosed in brackets (`[]`), and their values are
+separated by a comma (`,`). Each value in an array may be of a
+different type, including another array or an object.
 * When objects and arrays contain other objects or arrays, the data has
 a tree-like structure.
 
-[[uses-of-json]]
 === Uses of JSON
 
 JSON is often used as a common format to serialize and deserialize data
 in applications that communicate with each other over the Internet.
-These applications are created using different programming languages and
-run in very different environments. JSON is suited to this scenario
+These applications are created using different programming languages
+and run in very different environments. JSON is suited to this scenario
 because it is an open standard, it is easy to read and write, and it is
 more compact than other representations.
 
 RESTful web services use JSON extensively as the format for the data
-inside requests and responses. The HTTP header used to indicate that the
-content of a request or a response is JSON data is
+inside requests and responses. The HTTP header used to indicate that
+the content of a request or a response is JSON data is
 
-[source,java]
+[source,http]
 ----
 Content-Type: application/json
 ----
@@ -73,7 +70,6 @@ because JSON does not have closing tags. Unlike XML, JSON does not have
 a widely accepted schema for defining and validating the structure of
 JSON data.
 
-[[generating-and-parsing-json-data]]
 === Generating and Parsing JSON Data
 
 For generating and parsing JSON data, there are two programming models,
@@ -82,22 +78,21 @@ which are similar to those used for XML documents.
 * The object model creates a tree that represents the JSON data in
 memory. The tree can then be navigated, analyzed, or modified. This
 approach is the most flexible and allows for processing that requires
-access to the complete contents of the tree. However, it is often slower
-than the streaming model and requires more memory. The object model
-generates JSON output by navigating the entire tree at once.
+access to the complete contents of the tree. However, it is often
+slower than the streaming model and requires more memory. The object
+model generates JSON output by navigating the entire tree at once.
+
 * The streaming model uses an event-based parser that reads JSON data
 one element at a time. The parser generates events and stops for
 processing when an object or an array begins or ends, when it finds a
 key, or when it finds a value. Each element can be processed or
 discarded by the application code, and then the parser proceeds to the
-next event. This approach is adequate for local processing, in which the
-processing of an element does not require information from the rest of
-the data. The streaming model generates JSON output to a given stream by
-making a function call with one element at a time.
+next event. This approach is adequate for local processing, in which
+the processing of an element does not require information from the rest
+of the data. The streaming model generates JSON output to a given
+stream by making a function call with one element at a time.
 
 There are many JSON generators and parsers available for different
-programming languages and environments. link:#BABDFHHD[JSON
-Processing in the Jakarta EE Platform] describes the functionality provided
-by Jakarta JSON Processing.
-
-
+programming languages and environments.
+<<json-processing-in-the-jakarta-ee-platform>> describes the
+functionality provided by Jakarta JSON Processing.
