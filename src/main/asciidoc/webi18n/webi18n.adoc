@@ -1,16 +1,14 @@
 = Internationalizing and Localizing Web Applications
 
-
-[[BNAXU]][[internationalizing-and-localizing-web-applications]]
-
 The process of preparing an application to support more than one
-language and data format is called internationalization. Localization is
-the process of adapting an internationalized application to support a
-specific region or locale. Examples of locale-dependent information
-include messages and user interface labels, character sets and encoding,
-and date and currency formats. Although all client user interfaces
-should be internationalized and localized, it is particularly important
-for web applications because of the global nature of the web.
+language and data format is called internationalization. Localization
+is the process of adapting an internationalized application to support
+a specific region or locale. Examples of locale-dependent information
+include messages and user interface labels, character sets and
+encoding, and date and currency formats. Although all client user
+interfaces should be internationalized and localized, it is
+particularly important for web applications because of the global
+nature of the web.
 
 include::webi18n001.adoc[]
 

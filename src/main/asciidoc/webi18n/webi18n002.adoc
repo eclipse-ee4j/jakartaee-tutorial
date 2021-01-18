@@ -1,9 +1,7 @@
-[[BNAXW]][[providing-localized-messages-and-labels]]
-
 == Providing Localized Messages and Labels
 
-Messages and labels should be tailored according to the conventions of a
-user's language and region. There are two approaches to providing
+Messages and labels should be tailored according to the conventions of
+a user's language and region. There are two approaches to providing
 localized messages and labels in a web application.
 
 * Provide a version of the web page in each of the target locales and
@@ -11,17 +9,17 @@ have a controller servlet dispatch the request to the appropriate page
 depending on the requested locale. This approach is useful if large
 amounts of data on a page or an entire web application need to be
 internationalized.
-* Isolate any locale-sensitive data on a page into resource bundles, and
-access the data so that the corresponding translated message is fetched
-automatically and inserted into the page. Thus, instead of creating
-strings directly in your code, you create a resource bundle that
-contains translations and read the translations from that bundle using
-the corresponding key.
 
-The Duke's Bookstore application follows the second approach. Here are a
-few lines from the default resource bundle `messages`.`properties`:
+* Isolate any locale-sensitive data on a page into resource bundles,
+and access the data so that the corresponding translated message is
+fetched automatically and inserted into the page. Thus, instead of
+creating strings directly in your code, you create a resource bundle
+that contains translations and read the translations from that bundle
+using the corresponding key.
 
-[source,xml]
+The Duke's Bookstore application follows the second approach. Here are
+a few lines from the default resource bundle `messages`.`properties`:
+
 ----
 TitleShoppingCart=Shopping Cart
 TitleReceipt=Receipt
@@ -31,8 +29,6 @@ TitleBookDescription=Book Description
 Visitor=You are visitor number 
 What=What We\'re Reading
 ----
-
-[[GKUIA]][[establishing-the-locale]]
 
 === Establishing the Locale
 
@@ -62,7 +58,7 @@ indicates that German, French, and Spanish are supported locales.
 The `LocaleBean` in the Duke's Bookstore application uses the
 `getLocale` method to retrieve the locale.
 
-[source,xml]
+[source,java]
 ----
 public class LocaleBean {
     
@@ -73,8 +69,6 @@ public class LocaleBean {
     ...
 }
 ----
-
-[[BNAXY]][[setting-the-resource-bundle]]
 
 === Setting the Resource Bundle
 
@@ -93,9 +87,9 @@ configuration file. The setting for Duke's Bookstore looks like this:
 
 After the locale is set, the controller of a web application could
 retrieve the resource bundle for that locale and save it as a session
-attribute (see link:#BNAGO[Associating Objects with a
-Session]) for use by other components or simply be used to return a text
-string appropriate for the selected locale:
+attribute (see <<associating-objects-with-a-session>>) for use by other
+components or simply be used to return a text string appropriate for
+the selected locale:
 
 [source,java]
 ----
@@ -117,28 +111,26 @@ according to the locale stored in `FacesContext`.
     var="bundle"/>
 ----
 
-Resource bundles containing messages that are explicitly referenced from
-a Jakarta Server Faces tag attribute using a value expression must be
-registered using the `resource-bundle` element of the configuration
+Resource bundles containing messages that are explicitly referenced
+from a Jakarta Server Faces tag attribute using a value expression must
+be registered using the `resource-bundle` element of the configuration
 file.
 
 For more information on using this element, see
-link:#BNAXB[Registering Application Messages].
-
-[[GKUFC]][[retrieving-localized-messages]]
+<<registering-application-messages>>.
 
 === Retrieving Localized Messages
 
 A web component written in the Java programming language retrieves the
 resource bundle from the session:
 
-[source,xml]
+[source,java]
 ----
 ResourceBundle messages = (ResourceBundle)session.getAttribute("messages");
 ----
 
-Then it looks up the string associated with the key `person.lastName` as
-follows:
+Then it looks up the string associated with the key `person.lastName`
+as follows:
 
 [source,java]
 ----
@@ -163,12 +155,12 @@ validate the value the user enters into the component.
 ----
 
 For more information on using the `message` or `messages` tags, see
-link:#BNASO[Displaying Error Messages with the h:message
-and h:messages Tags].
+<<displaying-error-messages-with-the-hmessage-and-hmessages-tags>>.
 
-Messages that are not queued on a component and are therefore not loaded
-automatically are referenced using a value expression. You can reference
-a localized message from almost any Jakarta Server Faces tag attribute.
+Messages that are not queued on a component and are therefore not
+loaded automatically are referenced using a value expression. You can
+reference a localized message from almost any Jakarta Server Faces tag
+attribute.
 
 The value expression that references a message has the same notation
 whether you loaded the resource bundle with the `loadBundle` tag or
@@ -176,8 +168,8 @@ registered it with the `resource-bundle` element in the configuration
 file.
 
 The value expression notation is `var.message`, in which `var` matches
-the `var` attribute of the `loadBundle` tag or the `var` element defined
-in the `resource-bundle` element of the configuration file, and
+the `var` attribute of the `loadBundle` tag or the `var` element
+defined in the `resource-bundle` element of the configuration file, and
 `message` matches the key of the message contained in the resource
 bundle, referred to by the `var` attribute.
 
@@ -190,5 +182,3 @@ Here is an example from `bookcashier.xhtml` in Duke's Bookstore:
 
 Notice that `bundle` matches the `var` element from the configuration
 file and that `Name` matches the key in the resource bundle.
-
-
