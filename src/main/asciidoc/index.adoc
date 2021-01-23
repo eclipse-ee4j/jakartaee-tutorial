@@ -11,6 +11,7 @@
 :toc: left
 :toclevels: 2
 :sectnumlevels: 1
+:sectnums:
 :partnums:
 :part-signifier: Part
 :chapter-signifier: Chapter
@@ -19,12 +20,10 @@
 :autoxref-imagecaption: Figure %d-%d
 :autoxref-tablecaption: Table %d-%d
 
-:sectnums!:
 include::title.adoc[]
 
 include::preface.adoc[]
 
-:sectnums:
 include::partintro.adoc[]
 
 include::partplatform.adoc[]
