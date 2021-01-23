@@ -25,14 +25,14 @@ Console log viewer.
 
 ==== To Use the Administration Console Log Viewer
 
-1.  Select the *GlassFish Server* node.
-2.  Click *View Log Files*.
+. Select the *GlassFish Server* node.
+. Click *View Log Files*.
 +
 The log viewer opens and displays the last 40 entries.
-3.  To display other entries, follow these steps:
-a.  Click *Modify Search*.
-b.  Specify any constraints on the entries you want to see.
-c.  Click Search at the top of the log viewer.
+. To display other entries, follow these steps:
+.. Click *Modify Search*.
+.. Specify any constraints on the entries you want to see.
+.. Click Search at the top of the log viewer.
 
 === Using a Debugger
 
@@ -42,10 +42,10 @@ debugging information using a socket.
 
 ==== To Debug an Application Using a Debugger
 
-1.  Follow these steps to enable debugging in GlassFish Server using the
+. Follow these steps to enable debugging in GlassFish Server using the
 Administration Console:
-a.  Expand the *Configurations* node, then expand the *server-config* node.
-b.  Select the *JVM Settings* node. The default debug options are set to:
+.. Expand the *Configurations* node, then expand the *server-config* node.
+.. Select the *JVM Settings* node. The default debug options are set to:
 +
 ----
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9009
@@ -53,6 +53,6 @@ b.  Select the *JVM Settings* node. The default debug options are set to:
 +
 As you can see, the default debugger socket port is 9009. You can change
 it to a port not in use by GlassFish Server or another service.
-c.  Select the *Debug Enabled* check box.
-d.  Click *Save*.
-2.  Stop GlassFish Server and then restart it.
+.. Select the *Debug Enabled* check box.
+.. Click *Save*.
+. Stop GlassFish Server and then restart it.

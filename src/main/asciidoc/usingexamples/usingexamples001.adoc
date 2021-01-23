@@ -39,7 +39,6 @@ After you install GlassFish Server, add the following directories to
 your `PATH` to avoid having to specify the full path when you use
 commands:
 
-[source,shell]
 ----
 as-install-parent/bin
 as-install/bin
@@ -49,6 +48,12 @@ as-install/bin
 
 The tutorial example codes are located at
 https://github.com/eclipse-ee4j/jakartaee-tutorial-examples.
+
+Download the examples and extract it to the following location:
+
+----
+tut-install/examples/
+----
 
 === Apache NetBeans IDE
 
@@ -68,13 +73,13 @@ To run the tutorial examples in NetBeans IDE, you must add your
 GlassFish Server as a server in NetBeans IDE. Follow these instructions
 to add GlassFish Server to NetBeans IDE.
 
-1.  From the *Tools* menu, choose *Servers*.
-2.  In the Servers wizard, click *Add Server*.
-3.  Under Choose Server, select *GlassFish Server* and click *Next*.
-4.  Under Server Location, browse to the GlassFish Server installation
+. From the *Tools* menu, choose *Servers*.
+. In the Servers wizard, click *Add Server*.
+. Under Choose Server, select *GlassFish Server* and click *Next*.
+. Under Server Location, browse to the GlassFish Server installation
 and click *Next*.
-5.  Under Domain Location, select *Register Local Domain*.
-6.  Click *Finish*.
+. Under Domain Location, select *Register Local Domain*.
+. Click *Finish*.
 
 === Apache Maven
 

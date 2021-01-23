@@ -73,7 +73,8 @@ value-binding expressions that you can use with the `value` attribute.
 [[examples-of-value-binding-expressions]]
 [width="60%",cols="30%a,30%a",title="Examples of Value-Binding Expressions"]
 |===
-|*Value* |*Expression*
+|Value |Expression
+
 |A Boolean |`cart.numberOfItems> 0`
 
 |A property initialized from a context initialization parameter
@@ -207,7 +208,8 @@ therefore should not be used as values for a `UIInput` component.
 [[implicit-objects]]
 [width="75%",cols="15%a,60%a",title="Implicit Objects"]
 |===
-|*Implicit Object* |*What It Is*
+|Implicit Object |What It Is
+
 |`applicationScope` |A `Map` of the application scope attribute values,
 keyed by attribute name
 

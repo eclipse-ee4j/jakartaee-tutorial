@@ -283,17 +283,17 @@ run the `guessnumber-jsf` example.
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2.  From the *File* menu, choose *Open Project*.
-3.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `guessnumber-jsf` folder.
-5.  Click *Open Project*.
-6.  In the *Projects* tab, right-click the `guessnumber-jsf` project and
+. Select the `guessnumber-jsf` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `guessnumber-jsf` project and
 select *Build*.
 +
 This option builds the example application and deploys it to your
@@ -301,14 +301,14 @@ GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2.  In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/guessnumber-jsf/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -319,17 +319,17 @@ then deploys it to the server.
 
 ==== To Run the guessnumber-jsf Example
 
-1.  Open a web browser.
-2.  Enter the following URL in your web browser:
+. Open a web browser.
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/guessnumber-jsf
 ----
-3.  In the field, enter a number from 0 to 10 and click Submit.
+. In the field, enter a number from 0 to 10 and click Submit.
 +
 Another page appears, reporting whether your guess is correct or
 incorrect.
-4.  If you guessed incorrectly, click Back to return to the main page.
+. If you guessed incorrectly, click Back to return to the main page.
 +
 You can continue to guess until you get the correct answer, or you can
 look in the server log, where the `UserNumberBean` constructor displays

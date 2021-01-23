@@ -113,18 +113,18 @@ selects the page to display next by matching the outcome or the action
 method reference against the navigation rules in the application
 configuration resource file by the following process.
 
-1.  The `NavigationHandler` selects the navigation rule that matches the
+. The `NavigationHandler` selects the navigation rule that matches the
 page currently displayed.
-2.  It matches the outcome or the action method reference that it
+. It matches the outcome or the action method reference that it
 received from the default `jakarta.faces.event.ActionListener` with those
 defined by the navigation cases.
-3.  It tries to match both the method reference and the outcome against
+. It tries to match both the method reference and the outcome against
 the same navigation case.
-4.  If the previous step fails, the navigation handler attempts to match
+. If the previous step fails, the navigation handler attempts to match
 the outcome.
-5.  Finally, the navigation handler attempts to match the action method
+. Finally, the navigation handler attempts to match the action method
 reference if the previous two attempts failed.
-6.  If no navigation case is matched, it displays the same view again.
+. If no navigation case is matched, it displays the same view again.
 
 When the `NavigationHandler` achieves a match, the Render Response phase
 begins. During this phase, the page selected by the `NavigationHandler`

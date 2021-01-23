@@ -17,19 +17,32 @@ converter classes and their associated converter IDs.
 [[converter-classes-and-converter-ids]]
 [width="60%",cols="30%a,30%a",title="Converter Classes and Converter IDs"]
 |===
-|*Class in the jakarta.faces.convert Package* |*Converter ID*
+|Class in the jakarta.faces.convert Package |Converter ID
+
 |`BigDecimalConverter` |`jakarta.faces.BigDecimal`
+
 |`BigIntegerConverter` |`jakarta.faces.BigInteger`
+
 |`BooleanConverter` |`jakarta.faces.Boolean`
+
 |`ByteConverter` |`jakarta.faces.Byte`
+
 |`CharacterConverter` |`jakarta.faces.Character`
+
 |`DateTimeConverter` |`jakarta.faces.DateTime`
+
 |`DoubleConverter` |`jakarta.faces.Double`
+
 |`EnumConverter` |`jakarta.faces.Enum`
+
 |`FloatConverter` |`jakarta.faces.Float`
+
 |`IntegerConverter` |`jakarta.faces.Integer`
+
 |`LongConverter` |`jakarta.faces.Long`
+
 |`NumberConverter` |`jakarta.faces.Number`
+
 |`ShortConverter` |`jakarta.faces.Short`
 |===
 
@@ -181,58 +194,58 @@ attribute of the `convertDateTime` tag.
 [[attributes-for-the-fconvertDateTime-tag]]
 [width="99%",cols="25%a,25%a,50%a",title="Attributes for the f:convertDateTime Tag"]
 |===
-|*Attribute* |*Type* |*Description*
+|Attribute |Type |Description
+
 |`binding` |`DateTimeConverter` |Used to bind a converter to a managed
 bean property.
 
 |`dateStyle` |`String` |Defines the format, as specified by
 `java.text.DateFormat`, of a date or the date part of a `date` string.
 Applied only if `type` is `date` or `both` and if `pattern` is not
-defined. Valid values: `default`, `short`, `medium`, `long`, and `full`.
-If no value is specified, `default` is used.
+defined. Valid values: `default`, `short`, `medium`, `long`, and
+`full`. If no value is specified, `default` is used.
 
 |`for` |`String` |Used with composite components. Refers to one of the
 objects within the composite component inside which this tag is nested.
 
 |`locale` |`String` or `Locale` |`Locale` whose predefined styles for
-dates and times are used during formatting or parsing. If not specified,
-the `Locale` returned by `FacesContext.getLocale` will be used.
+dates and times are used during formatting or parsing. If not
+specified, the `Locale` returned by `FacesContext.getLocale` will be
+used.
 
-|`pattern` |`String` |
-Custom formatting pattern that determines how the date/time string
-should be formatted and parsed. If this attribute is specified,
-`dateStyle` and `timeStyle` attributes are ignored.
+|`pattern` |`String` | Custom formatting pattern that determines how
+the date/time string should be formatted and parsed. If this attribute
+is specified, `dateStyle` and `timeStyle` attributes are ignored.
 
 See <<type-attribute-and-default-pattern-values>> for the default
 values when `pattern` is not specified.
 
 |`timeStyle` |`String` |Defines the format, as specified by
-`java.text.DateFormat`, of a `time` or the time part of a `date` string.
-Applied only if `type` is time and `pattern` is not defined. Valid
-values: `default`, `short`, `medium`, `long`, and `full`. If no value is
-specified, `default` is used.
+`java.text.DateFormat`, of a `time` or the time part of a `date`
+string. Applied only if `type` is time and `pattern` is not defined.
+Valid values: `default`, `short`, `medium`, `long`, and `full`. If no
+value is specified, `default` is used.
 
-|`timeZone` |`String` or `TimeZone` |Time zone in which to interpret any
-time information in the `date` string.
+|`timeZone` |`String` or `TimeZone` |Time zone in which to interpret
+any time information in the `date` string.
 
-|`type` |`String` a|
-Specifies whether the string value will contain a date, a time, or both.
-Valid values are: `date`, `time`, `both`, `LocalDate`, `LocalTime`,
-`LocalDateTime`, `OffsetTime`, `OffsetDateTime`, or `ZonedDateTime`. If
-no value is specified, `date` is used.
+|`type` |`String` a| Specifies whether the string value will contain a
+date, a time, or both. Valid values are: `date`, `time`, `both`,
+`LocalDate`, `LocalTime`, `LocalDateTime`, `OffsetTime`,
+`OffsetDateTime`, or `ZonedDateTime`. If no value is specified, `date`
+is used.
 
 See <<type-attribute-and-default-pattern-values>> for additional
 information.
-
 |===
-
 
 [[type-attribute-and-default-pattern-values]]
 [width="99%",cols="25%a,25%a,50%a",title="Type Attribute and Default Pattern Values"]
 |===
-|*Type Attribute* |*Class* |*Default When Pattern Is Not Specified*
+|Type Attribute |Class |Default When Pattern Is Not Specified
+
 |`both` |`java.util.Date`
-|`DateFormat.getDateTimeInstance(dateStyle, timeStyle)`
+|`DateFormat.getDateTimeInstance(dateStyle,timeStyle)`
 
 |`date` |`java.util.Date` |`DateFormat.getDateTimeInstance(dateStyle)`
 
@@ -304,7 +317,8 @@ attribute of the `convertNumber` tag.
 [[attributes-for-the-fconvertNumber-tag]]
 [width="99%",cols="25%a,25%a,50%a",title="Attributes for the f:convertNumber Tag"]
 |===
-|*Attribute* |*Type* |*Description*
+|Attribute |Type |Description
+
 |`binding` |`NumberConverter` |Used to bind a converter to a managed
 bean property.
 

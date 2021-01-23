@@ -9,15 +9,16 @@ validators from the page.
 [[the-validator-classes]]
 [width="99%",cols="15%a,15%a,60%a",title="The Validator Classes"]
 |===
-|*Validator Class* |*Tag* |*Function*
+|Validator Class |Tag |Function
+
 |`BeanValidator` |`validateBean` |Registers a bean validator for the
 component.
 
 |`BeanValidator` |`validateWholeBean` |Allows cross-field validation by
 enabling class-level bean validation on CDI-based backing beans.
 
-|`DoubleRangeValidator` |`validateDoubleRange` |Checks whether the local
-value of a component is within a certain range. The value must be
+|`DoubleRangeValidator` |`validateDoubleRange` |Checks whether the
+local value of a component is within a certain range. The value must be
 floating-point or convertible to floating-point.
 
 |`LengthValidator` |`validateLength` |Checks whether the length of a

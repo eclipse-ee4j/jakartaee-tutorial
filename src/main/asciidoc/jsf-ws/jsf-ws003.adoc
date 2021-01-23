@@ -7,6 +7,7 @@
 [width="85%",cols="15%a,15%,55%a",title="Attributes of the `f:websocket` Tag"]
 |===
 |Name |Type |Description
+
 |`channel` |String |Required. The name of the WebSocket channel. It may
 not be an EL expression and may only contain alphanumeric characters,
 hyphens, underscores, and periods. All open WebSockets on the same

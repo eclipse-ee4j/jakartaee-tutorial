@@ -41,7 +41,8 @@ the `f:ajax` tag and their default actions.
 [[attributes-of-the-fajax-tag]]
 [width="99%",cols="15%a,25%a,60%a",title="Attributes of the f:ajax Tag"]
 |===
-|*Name* |*Type* |*Description*
+|Name |Type |Description
+
 |`disabled` |`jakarta.el.ValueExpression` that evaluates to a `Boolean`
 |A `Boolean` value that identifies the tag status. A value of `true`
 indicates that the Ajax behavior should not be rendered. A value of
@@ -98,8 +99,9 @@ the `execute` and `render` attributes of the `f:ajax` tag.
 [[execute-and-render-keywords]]
 [width="60%",cols="15%a,45%",title="Execute and Render Keywords"]
 |===
-|*Keyword* |*Description*
-|`@all` |All component identifiers
+|Keyword |Description
+
+|`@all`  |All component identifiers
 |`@form` |The form that encloses the component
 |`@none` |No component identifiers
 |`@this` |The element that triggered the request

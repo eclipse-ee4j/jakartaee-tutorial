@@ -161,7 +161,8 @@ custom renderer, or custom tag.
 [[requirements-for-custom-components-custom-renderers-and-custom-tags]]
 [width="90%",cols="34%,30%,36%",title="Requirements for Custom Components, Custom Renderers and Custom Tags"]
 |===
-|*Custom Item* |*Must Have* |*Can Have*
+|Custom Item |Must Have |Can Have
+
 |Custom component |Custom tag |Custom renderer or standard renderer
 
 |Custom renderer |Custom tag |Custom component or standard component

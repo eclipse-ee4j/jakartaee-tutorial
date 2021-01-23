@@ -26,15 +26,16 @@ tags and their functions.
 [[composite-component-tags]]
 [width="99%",cols="20%a,80%a", title="Composite Component Tags"]
 |===
-|*Tag*|*Function*
+|Tag |Function
+
 |`composite:interface` |Declares the usage contract for a composite
 component. The composite component can be used as a single component
 whose feature set is the union of the features declared in the usage
 contract.
 
-|`composite:implementation` |Defines the implementation of the composite
-component. If a `composite:interface` element appears, there must be a
-corresponding `composite:implementation`.
+|`composite:implementation` |Defines the implementation of the
+composite component. If a `composite:interface` element appears, there
+must be a corresponding `composite:implementation`.
 
 |`composite:attribute` |Declares an attribute that may be given to an
 instance of the composite component in which this tag is declared.
@@ -46,8 +47,8 @@ placement within the `composite:implementation` section.
 
 |`composite:valueHolder` |Declares that the composite component whose
 contract is declared by the `composite:interface` in which this element
-is nested exposes an implementation of `ValueHolder` suitable for use as
-the target of attached objects in the using page.
+is nested exposes an implementation of `ValueHolder` suitable for use
+as the target of attached objects in the using page.
 
 |`composite:editableValueHolder` |Declares that the composite component
 whose contract is declared by the `composite:interface` in which this

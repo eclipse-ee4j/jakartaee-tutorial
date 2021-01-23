@@ -247,7 +247,8 @@ the image map component.
 [[image-map-classes]]
 [width="60%",cols="15%a,45%a",title="Image Map Classes"]
 |===
-|*Class* |*Function*
+|Class |Function
+
 |`AreaSelectedEvent` |The `jakarta.faces.event.ActionEvent` indicating
 that an `AreaComponent` from the `MapComponent` has been selected.
 

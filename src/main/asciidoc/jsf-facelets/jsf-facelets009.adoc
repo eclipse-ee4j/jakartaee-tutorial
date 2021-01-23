@@ -58,17 +58,18 @@ author has written.
 [[how-facelets-renders-html5-elements]]
 [width="60%",cols="20%a,20%a,20%a", title="How Facelets Renders HTML5 Elements" ]
 |===
-|*HTML5 Element Name*|*Identifying Attribute*|*Facelets Tag*
+|HTML5 Element Name |Identifying Attribute |Facelets Tag
+
 |`a` |`jsf:action` |`h:commandLink`
 |`a` |`jsf:actionListener` |`h:commandLink`
 |`a` |`jsf:value` |`h:outputLink`
 |`a` |`jsf:outcome` |`h:link`
-|`body` | + |`h:body`
-|`button` | + |`h:commandButton`
+|`body` | {empty} |`h:body`
+|`button` | {empty} |`h:commandButton`
 |`button` |`jsf:outcome` |`h:button`
-|`form` | + |`h:form`
-|`head` | + |`h:head`
-|`img` | + |`h:graphicImage`
+|`form` | {empty} |`h:form`
+|`head` | {empty} |`h:head`
+|`img` | {empty} |`h:graphicImage`
 |`input` |`type="button"` |`h:commandButton`
 |`input` |`type="checkbox"` |`h:selectBooleanCheckbox`
 |`input` |`type="color"` |`h:inputText`
@@ -89,12 +90,12 @@ author has written.
 |`input` |`type="reset"` |`h:commandButton`
 |`input` |`type="submit"` |`h:commandButton`
 |`input` |`type="*"` |`h:inputText`
-|`label` | + |`h:outputLabel`
-|`link` | + |`h:outputStylesheet`
-|`script` | + |`h:outputScript`
+|`label` | {empty} |`h:outputLabel`
+|`link` | {empty} |`h:outputStylesheet`
+|`script` | {empty} |`h:outputScript`
 |`select` |`multiple="*"` |`h:selectManyListbox`
-|`select` | + |`h:selectOneListbox`
-|`textarea` | + |`h:inputTextArea`
+|`select` | {empty} |`h:selectOneListbox`
+|`textarea` | {empty} |`h:inputTextArea`
 |===
 
 === Using Pass-Through Attributes
@@ -299,17 +300,17 @@ Facelets pages. It also contains two methods, `calculateTotal` and
 
 ==== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `reservation` folder.
-5.  Click *Open Project*.
-6.  In the *Projects* tab, right-click the `reservation` project and
+. Select the `reservation` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `reservation` project and
 select *Build*.
 +
 This option builds the example application and deploys it to your
@@ -317,14 +318,14 @@ GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the reservation Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2.  In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/reservation/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -340,12 +341,12 @@ fully implements HTML5 is Google Chrome, and it is recommended that you
 use it to run this example. Other browsers are catching up, however,
 and may work equally well by the time you read this.
 
-1. Enter the following URL in your web browser:
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/reservation
 ----
-2.  Enter information in the fields of the `reservation.xhtml` page.
+. Enter information in the fields of the `reservation.xhtml` page.
 +
 The Performance Date field has a date field with up and down arrows that
 allow you to increment and decrement the month, day, and year as well as
@@ -358,9 +359,9 @@ either of these two fields.
 +
 Email addresses and dates are checked for format, but not for validity
 (you can make a reservation for a past date, for instance).
-3.  Click Make Reservation to complete the reservation or Clear to
+. Click Make Reservation to complete the reservation or Clear to
 restore the fields to their default values.
-4.  If you click Make Reservation, the `confirmation.xhtml` page
+. If you click Make Reservation, the `confirmation.xhtml` page
 appears, displaying the submitted values.
 +
 Click Back to return to the `reservation.xhtml` page.

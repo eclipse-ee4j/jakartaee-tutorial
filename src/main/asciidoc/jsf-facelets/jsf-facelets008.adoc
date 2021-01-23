@@ -153,17 +153,17 @@ respect: the background color specified for the `body` element.
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `hello1-rlc` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `hello1-rlc` project and
+. Select the `hello1-rlc` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `hello1-rlc` project and
 select *Build*.
 +
 This option builds the example application and deploys it to your
@@ -171,14 +171,14 @@ GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2.  In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/hello1-rlc/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -189,18 +189,16 @@ deploys it to your GlassFish Server instance.
 
 ==== To Run the hello1-rlc Example
 
-1.  Enter the following URL in your web browser:
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/hello1-rlc
 ----
-2.  The `greeting.xhtml` page looks just like the one from `hello1`
+. The `greeting.xhtml` page looks just like the one from `hello1`
 except for its background color and graphic.
-3.  In the text field, enter your name and click Submit.
-4.  The response page also looks just like the one from `hello1` except
+. In the text field, enter your name and click Submit.
+. The response page also looks just like the one from `hello1` except
 for its background color and graphic.
 +
 The page displays the name you submitted. Click Back to return to the
 `greeting.xhtml` page.
-
-

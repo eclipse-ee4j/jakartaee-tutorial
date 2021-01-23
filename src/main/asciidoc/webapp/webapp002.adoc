@@ -11,18 +11,18 @@ different from that of traditional stand-alone Java classes.
 The process for creating, deploying, and executing a web application
 can be summarized as follows:
 
-1. Develop the web component code.
+. Develop the web component code.
 
-2. Develop the web application deployment descriptor, if necessary.
+. Develop the web application deployment descriptor, if necessary.
 
-3. Compile the web application components and helper classes referenced
+. Compile the web application components and helper classes referenced
 by the components.
 
-4. Optionally, package the application into a deployable unit.
+. Optionally, package the application into a deployable unit.
 
-5. Deploy the application into a web container.
+. Deploy the application into a web container.
 
-6. Access a URL that references the web application.
+. Access a URL that references the web application.
 
 Developing web component code is covered in the later chapters. Steps 2
 through 4 are expanded on in the following sections and illustrated

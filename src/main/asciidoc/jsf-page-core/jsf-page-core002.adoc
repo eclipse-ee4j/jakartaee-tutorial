@@ -31,7 +31,8 @@ used.
 [[attributes-for-the-fvaluechangelistener-tag]]
 [width="60%",cols="10%a,50%a",title="Attributes for the f:valueChangeListener Tag"]
 |===
-|*Attribute* |*Description*
+|Attribute |Description
+
 |`type` |References the fully qualified class name of a
 `ValueChangeListener` implementation. Can accept a literal or a value
 expression.
@@ -148,6 +149,8 @@ component used to link to the `bookdetails.xhtml` page and the
                                          value="#{book}"/>
         </h:commandButton>
     </h:column>
+    ...
+</h:dataTable>
 ----
 
 The `h:commandLink` and `h:commandButton` tags are within an

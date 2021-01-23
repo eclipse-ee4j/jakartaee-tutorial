@@ -1,12 +1,12 @@
 == Writing Service Methods
 
 The service provided by a servlet is implemented in the `service`
-method of a `GenericServlet`, in the `do`Method methods (where Method
-can take the value `Get`, `Delete`, `Options`, `Post`, `Put`, or
-`Trace`) of an `HttpServlet` object, or in any other protocol-specific
-methods defined by a class that implements the `Servlet` interface. The
-term service method is used for any method in a servlet class that
-provides a service to a client.
+method of a `GenericServlet`, in the `do__Method__` methods (where
+_Method_ can take the value `Get`, `Delete`, `Options`, `Post`, `Put`,
+or `Trace`) of an `HttpServlet` object, or in any other
+protocol-specific methods defined by a class that implements the
+`Servlet` interface. The term service method is used for any method in
+a servlet class that provides a service to a client.
 
 The general pattern for a service method is to extract information from
 the request, access external resources, and then populate the response,

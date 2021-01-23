@@ -8,7 +8,8 @@ with the tag. These attributes are summarized in
 [[component-tag-attributes-that-reference-managed-bean-methods]]
 [width="60%",cols="10%a,50%a",title="Component Tag Attributes That Reference Managed Bean Methods"]
 |===
-|*Attribute* |*Function*
+|Attribute |Function
+
 |`action` |Refers to a managed bean method that performs navigation
 processing for the component and returns a logical outcome `String`
 

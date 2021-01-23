@@ -11,14 +11,17 @@ The source code for this application is in the
 
 To view the `hello1` web module using NetBeans IDE:
 
-1.  From the *File* menu, choose *Open Project*.
-2.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-3.  Select the `hello1` folder and click *Open Project*.
-4.  Expand the *Web Pages* node and double-click the `index.xhtml` file to
+
+. Select the `hello1` folder and click *Open Project*.
+
+. Expand the *Web Pages* node and double-click the `index.xhtml` file to
 view it in the editor.
 +
 The `index.xhtml` file is the default landing page for a Facelets
@@ -77,7 +80,8 @@ always accessed with the first letter of the class name in lowercase.
 The Submit `commandButton` element specifies the action as `response`,
 meaning that when the button is clicked, the `response.xhtml` page is
 displayed.
-5.  Double-click the `response.xhtml` file to view it.
+
+. Double-click the `response.xhtml` file to view it.
 +
 The response page appears. Even simpler than the greeting page, the
 response page contains a graphic image, a header that displays the
@@ -105,9 +109,11 @@ expression provided by the managed bean, and a single button whose
     </h:body>
 </html>
 ----
-6.  Expand the Source Packages node, then the `ee.jakarta.tutorial.hello1`
+
+. Expand the Source Packages node, then the `ee.jakarta.tutorial.hello1`
 node. 
-7. [[hello1-nb-step-7, Step 7]]
+
+. [[hello1-nb-step-7, Step 7]]
 +
 Double-click the `Hello.java` file to view it.
 +
@@ -149,7 +155,7 @@ term for an annotation that encapsulates other annotations. It is
 described later in <<using-stereotypes-in-cdi-applications>>. Some
 examples will use `@Model` where it is appropriate.
 
-8.  Under the Web Pages node, expand the WEB-INF node and double-click
+. Under the Web Pages node, expand the WEB-INF node and double-click
 the `web.xml` file to view it.
 +
 The `web.xml` file contains several elements that are required for a
@@ -241,33 +247,40 @@ packaging and deploying.
 
 To build and package the `hello1` web module using NetBeans IDE:
 
-1. Start GlassFish Server as described in
+. Start GlassFish Server as described in
 <<to-start-glassfish-server-using-netbeans-ide>>, if you have not
 already done so.
-2.  From the *File* menu, choose *Open Project*.
-3.  In the Open Project dialog box, navigate to:
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `hello1` folder.
-5.  Click *Open Project*.
-6.  In the *Projects* tab, right-click the `hello1` project and select
+
+. Select the `hello1` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `hello1` project and select
 *Build*. This command deploys the project to the server.
 
 ==== To Build and Package the hello1 Web Module Using Maven
 
 To build and package the `hello1` web module using Maven:
 
-1. Start GlassFish Server as described in
+. Start GlassFish Server as described in
 <<to-start-glassfish-server-using-the-command-line>>, if you have not
 already done so.
-2.  In a terminal window, go to:
+
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/hello1/
 ----
-3.  Enter the following command:
+
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -286,9 +299,9 @@ NetBeans IDE to view deployed modules.
 
 To view deployed web modules using the Administration Console:
 
-1. Open the URL http://localhost:4848/[^] in a browser.
+. Open the URL http://localhost:4848/[^] in a browser.
 
-2. Select the Applications node.
+. Select the Applications node.
 +
 The deployed web modules appear in the Deployed Applications table.
 
@@ -303,9 +316,9 @@ asadmin list-applications
 
 To view deployed web modules using NetBeans IDE:
 
-1. In the *Services* tab, expand the *Servers* node, then expand the
+. In the *Services* tab, expand the *Servers* node, then expand the
 *GlassFish Server* node.
-2. Expand the *Applications* node to view the deployed modules.
+. Expand the *Applications* node to view the deployed modules.
 
 === Running the Deployed hello1 Web Module
 
@@ -316,13 +329,15 @@ application is `hello1`.
 
 To run the deployed `hello1` web module:
 
-1.  Open a web browser.
-2.  Enter the following URL:
+. Open a web browser.
+
+. Enter the following URL:
 +
 ----
 http://localhost:8080/hello1/
 ----
-3.  In the field, enter your name and click Submit.
+
+. In the field, enter your name and click Submit.
 +
 The response page displays the name you submitted. Click Back to try
 again.
@@ -356,32 +371,32 @@ by using either NetBeans IDE or Maven.
 
 To undeploy the `hello1` web module using NetBeans IDE:
 
-1. In the *Services* tab, expand the *Servers* node, then expand the
+. In the *Services* tab, expand the *Servers* node, then expand the
 *GlassFish Server* node.
 
-2. Expand the *Applications* node.
+. Expand the *Applications* node.
 
-3. Right-click the `hello1` module and select *Undeploy*.
+. Right-click the `hello1` module and select *Undeploy*.
 
-4. To delete the class files and other build artifacts, go back to the
+. To delete the class files and other build artifacts, go back to the
 *Projects* tab, right-click the project, and select *Clean*.
 
 ==== To Undeploy the hello1 Web Module Using Maven
 
 To undeploy the `hello1` web module using Maven:
 
-1.  In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/hello1/
 ----
 
-2.  Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn cargo:undeploy
 
-3.  To delete the class files and other build artifacts, enter the
+. To delete the class files and other build artifacts, enter the
 following command:
 +
 [source,shell]

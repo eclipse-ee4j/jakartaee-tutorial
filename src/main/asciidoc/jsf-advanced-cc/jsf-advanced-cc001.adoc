@@ -13,7 +13,8 @@ commonly used attributes of this tag.
 [[commonly-used-attributes-of-the-compositeattribute-tag]]
 [width="70%",cols="15%a,55%a",title="Commonly Used Attributes of the composite:attribute Tag"]
 |===
-|*Attribute* |*Description*
+|Attribute |Description
+
 |`name` |Specifies the name of the composite component attribute to be
 used in the using page. Alternatively, the `name` attribute can specify
 standard event handlers such as `action`, `actionListener`, and managed

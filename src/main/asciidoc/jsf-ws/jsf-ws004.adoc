@@ -39,10 +39,7 @@ Or, when you have a custom user entity accessible via EL, such as
 identifier:
 
 [source,xml]
-----
-<f:websocket channel="someChannel"
-user="#{someLoggedInUser.id}" ... />
-----
+<f:websocket channel="someChannel" user="#{someLoggedInUser.id}" ... />
 
 When the `user` attribute is specified, the scope defaults to `session`
 and cannot be set to `application`.

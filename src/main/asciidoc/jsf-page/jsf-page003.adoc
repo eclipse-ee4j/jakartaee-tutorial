@@ -8,14 +8,15 @@ to perform core actions that are not performed by HTML tags.
 [[event-handling-core-tags]]
 [width="99%",cols="30%a,70%",title="Event-Handling Core Tags"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`f:actionListener` |Adds an action listener to a parent component
 
 |`f:phaseListener` a|Adds a `PhaseListener` to a page
 
 |`f:setPropertyActionListener` |Registers a special action listener
-whose sole purpose is to push a value into a managed bean when a form is
-submitted
+whose sole purpose is to push a value into a managed bean when a form
+is submitted
 
 |`f:valueChangeListener` |Adds a value-change listener to a parent
 component
@@ -26,7 +27,8 @@ component
 [[data-conversion-core-tags]]
 [width="99%",cols="30%a,70%a",title="Data-Conversion Core Tags"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`f:converter` |Adds an arbitrary converter to the parent component
 
 |`f:convertDateTime` |Adds a `DateTimeConverter` instance to the parent
@@ -41,7 +43,8 @@ component
 [[facet-core-tags]]
 [width="99%",cols="30%a,70%a",title="Facet Core Tags"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`f:facet` |Adds a nested component that has a special relationship to
 its enclosing tag
 
@@ -54,8 +57,10 @@ represent items in a list.
 [[core-tags-that-represent-items-in-a-list]]
 [width="99%",cols="30%a,70%",title="Core Tags That Represent Items in a List"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`f:selectItem` |Represents one item in a list of items
+
 |`f:selectItems` |Represents a set of items
 |===
 
@@ -64,7 +69,8 @@ represent items in a list.
 [[validator-core-tags]]
 [width="99%",cols="30%a,70%a",title="Validator Core Tags"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`f:validateDoubleRange` |Adds a `DoubleRangeValidator` to a component
 
 |`f:validateLength` |Adds a `LengthValidator` to a component
@@ -87,21 +93,23 @@ categories.
 [[miscellaneous-core-tags]]
 [width="99%",cols="25%,15%a,60%a",title="Miscellaneous Core Tags"]
 |===
-|*Tag Category* |*Tag* |*Function*
-|Attribute configuration |`f:attribute` |Adds configurable attributes to
-a parent component
+|Tag Category |Tag |Function
+
+|Attribute configuration |`f:attribute` |Adds configurable attributes
+to a parent component
 
 |Localization |`f:loadBundle` |Specifies a `ResourceBundle` that is
 exposed as a `Map`
 
 |Parameter substitution |`f:param` |Substitutes parameters into a
-`MessageFormat` instance and adds query string name-value pairs to a URL
+`MessageFormat` instance and adds query string name-value pairs to a
+URL
 
 |Ajax |`f:ajax` |Associates an Ajax action with a single component or a
 group of components based on placement
 
-|Event |`f:event` |Allows installing a `ComponentSystemEventListener` on
-a component
+|Event |`f:event` |Allows installing a `ComponentSystemEventListener`
+on a component
 
 |WebSocket |`f:websocket` |Allows server-side communications to be
 pushed to all instances of a socket containing the same channel name.
@@ -116,17 +124,16 @@ how to use specific core tags.
 [[where-the-core-tags-are-explained]]
 [width="99%",cols="30%a,70%",title="Where the Core Tags Are Explained"]
 |===
-|*Tags* |*Where Explained*
-|Event-handling tags |
-<<registering-listeners-on-components>>
+|Tags |Where Explained
 
-|Data-conversion tags |
-<<using-the-standard-converters>>
+|Event-handling tags | <<registering-listeners-on-components>>
 
-|`f:facet` |<<using-data-bound-table-components>> and <<laying-out-components-with-the-hpanelgrid-and-hpanelgroup-tags>>
+|Data-conversion tags | <<using-the-standard-converters>>
 
-|`f:loadBundle` |
-<<setting-the-resource-bundle>>
+|`f:facet` |<<using-data-bound-table-components>> and
+<<laying-out-components-with-the-hpanelgrid-and-hpanelgroup-tags>>
+
+|`f:loadBundle` | <<setting-the-resource-bundle>>
 
 |`f:metadata` |
 <<using-view-parameters-to-configure-bookmarkable-urls>>

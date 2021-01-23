@@ -187,17 +187,17 @@ need a managed bean.
 
 ==== To Build, Package, and Deploy the simple-flow Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `simple-flow` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `simple-flow` project and
+. Select the `simple-flow` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `simple-flow` project and
 select *Build*.
 +
 This command builds and packages the application into a WAR file,
@@ -206,14 +206,14 @@ deploys the application to the server.
 
 ==== To Build, Package, and Deploy the simple-flow Example Using Maven
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/simple-flow/
 ----
-3. Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 ----
@@ -226,17 +226,17 @@ deploys the application to the server.
 
 ==== To Run the simple-flow Example
 
-1. Enter the following URL in your web browser:
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/simple-flow
 ----
-2. On the `index.xhtml` page, click Enter Flow.
-3. On the first page of the flow, enter any string in the Value field,
+. On the `index.xhtml` page, click Enter Flow.
+. On the first page of the flow, enter any string in the Value field,
 then click Next.
-4. On the second page of the flow, you can see the value you entered.
+. On the second page of the flow, you can see the value you entered.
 Click Return.
-5. On the return page, an empty pair of quotation marks encloses the
+. On the return page, an empty pair of quotation marks encloses the
 inaccessible value. Click Back to Start to return to the `index.xhtml`
 page.
 
@@ -547,17 +547,17 @@ For the `JoinFlowBean`, the return node is the `exithome.xhtml` page.
 
 ==== To Build, Package, and Deploy the checkout-module Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `checkout-module` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `checkout-module` project and
+. Select the `checkout-module` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `checkout-module` project and
 select *Build*.
 +
 This command builds and packages the application into a WAR file,
@@ -566,14 +566,14 @@ then deploys the application to the server.
 
 ==== To Build, Package, and Deploy the checkout-module Example Using Maven
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/checkout-module/
 ----
-3. Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 ----
@@ -586,25 +586,25 @@ then deploys the application to the server.
 
 ==== To Run the checkout-module Example
 
-1. Enter the following URL in your web browser:
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/checkout-module
 ----
-2. The `index.xhtml` page presents hypothetical results of the shopping
+. The `index.xhtml` page presents hypothetical results of the shopping
 expedition. Click either Check Out or Join to enter one of the two
 flows.
-3. Follow the flow, providing input as needed and choosing whether to
+. Follow the flow, providing input as needed and choosing whether to
 continue, go back, or exit the flow.
 +
 In the checkout flow, only one of the input fields is validated (the
 credit card field expects 16 digits), so you can enter any values you
 like. The join flow does not require you to check any boxes in its
 checkbox menus.
-4. On the last page of a flow, select the option to enter the other
+. On the last page of a flow, select the option to enter the other
 flow. This allows you to view the inbound parameters from the previous
 flow.
-5. Because flows are nested, if you click Exit Flow from a called flow,
+. Because flows are nested, if you click Exit Flow from a called flow,
 you will return to the first page of the calling flow. (You may see a
 warning, which you can ignore.) Click Exit Flow on that page to go to
 the specified return node.

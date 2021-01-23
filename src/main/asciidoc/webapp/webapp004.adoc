@@ -54,16 +54,20 @@ to view the application files, or you can use NetBeans IDE.
 
 To view the `hello2` web module using NetBeans IDE:
 
-1.  From the *File* menu, choose *Open Project*.
-2.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/servlet
 ----
-3.  Select the `hello2` folder and click *Open Project*.
-4.  Expand the *Source Packages* node, then expand the
+
+. Select the `hello2` folder and click *Open Project*.
+
+. Expand the *Source Packages* node, then expand the
 `ee.jakarta.tutorial.hello2` node.
-5.  Double-click the `GreetingServlet.java` file to view it.
+
+. Double-click the `GreetingServlet.java` file to view it.
 +
 This servlet overrides the `doGet` method, implementing the `GET`
 method of HTTP. The servlet displays a simple HTML greeting form whose
@@ -115,7 +119,8 @@ public class GreetingServlet extends HttpServlet {
     ...
 }
 ----
-6.  Double-click the `ResponseServlet.java` file to view it.
+
+. Double-click the `ResponseServlet.java` file to view it.
 +
 This servlet also overrides the `doGet` method, displaying only the
 response. The following excerpt begins with the `@WebServlet`
@@ -153,21 +158,26 @@ run the `hello2` example.
 
 To run the `hello2` example using NetBeans IDE:
 
-1. Start GlassFish Server as described in
+. Start GlassFish Server as described in
 <<to-start-glassfish-server-using-netbeans-ide>>, if you have not
 already done so.
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/servlet
 ----
-4. Select the `hello2` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `hello2` project and select
+
+. Select the `hello2` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `hello2` project and select
 *Build* to package and deploy the project.
 
-7. In a web browser, open the following URL:
+. In a web browser, open the following URL:
 +
 ----
 http://localhost:8080/hello2/greeting
@@ -183,23 +193,25 @@ the greeting, not on a separate page.
 
 To run the `hello2` example using Maven:
 
-1. Start GlassFish Server as described in
+. Start GlassFish Server as described in
 <<to-start-glassfish-server-using-the-command-line>>, if you have not
 already done so.
 
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/servlet/hello2/
 ----
-3.  Enter the following command:
+
+. Enter the following command:
 +
 [source,shell]
 mvn install
 +
 This target builds the WAR file, copies it to the
 `_tut-install_/examples/web/hello2/target/` directory, and deploys it.
-4.  In a web browser, open the following URL:
+
+. In a web browser, open the following URL:
 +
 ----
 http://localhost:8080/hello2/greeting

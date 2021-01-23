@@ -8,14 +8,14 @@ Eclipse GlassFish Server is the leading open-source and open-community
 platform for building and deploying next-generation applications and
 services. Eclipse GlassFish Server, developed by the Eclipse GlassFish
 project open-source community at
-https://projects.eclipse.org/projects/ee4j.glassfish[^], is a compatible
-implementation of the Jakarta EE 9 platform specification. This
-lightweight, flexible, and open-source application server enables
+https://projects.eclipse.org/projects/ee4j.glassfish[^], is a
+compatible implementation of the Jakarta EE 9 platform specification.
+This lightweight, flexible, and open-source application server enables
 organizations not only to leverage the new capabilities introduced
 within the Jakarta EE 9 specification, but also to add to their
 existing capabilities through a faster and more streamlined development
-and deployment cycle. GlassFish Server Open Source Edition is hereafter
-referred to as GlassFish Server.
+and deployment cycle. Eclipse GlassFish Server is hereafter referred to
+as GlassFish Server.
 
 === Audience
 
@@ -60,30 +60,28 @@ at https://github.com/eclipse-ee4j/glassfish-samples/[^].
 The following table describes the typographic conventions that are used
 in this book.
 
-[width="99%",cols="20%,38%,37%"]
+[width="99%",cols="20%a,38%,37%a"]
 |===
-|*Convention* |*Meaning* |*Example*
-|*Boldface*   
-|Boldface type indicates graphical user interface elements associated
-with an action or terms defined in text.
-a|From the *File* menu, choose *Open Project*.
+|Convention |Meaning |Example
+
+|*Boldface* |Boldface type indicates graphical user interface elements
+associated with an action or terms defined in text. |From the *File*
+menu, choose *Open Project*.
 
 A *cache* is a copy that is stored locally.
 
-|`Monospace`  
-|Monospace type indicates the names of files and directories, commands
-within a paragraph, URLs, code in examples, text that appears on the
-screen, or text that you enter. 
-a|Edit your `.login` file.
+|`Monospace` |Monospace type indicates the names of files and
+directories, commands within a paragraph, URLs, code in examples, text
+that appears on the screen, or text that you enter. |Edit your
+`.login` file.
 
 Use `ls -a` to list all files.
 
 `_machine_name_% you have mail.`
 
-|_Italic_ 
-|Italic type indicates book titles, emphasis, or placeholder variables
-for which you supply particular values.
-a|Read Chapter 6 in the _User's Guide_.
+|_Italic_ |Italic type indicates book titles, emphasis, or placeholder
+variables for which you supply particular values. |Read Chapter 6 in
+the _User's Guide_.
 
 Do _not_ save the file.
 
@@ -97,12 +95,11 @@ used in this book.
 
 [width="99%",cols="20%a,38%,38%a"]
 |===
-|*Placeholder* |*Description* |*Default Value*
-|`_as-install_` 
-|Represents the base installation directory for GlassFish
-Server. 
-| Installations on the Solaris operating system, Linux operating system,
-and Mac operating system:
+|Placeholder |Description |Default Value
+
+|`_as-install_` |Represents the base installation directory for
+GlassFish Server. | Installations on the Solaris operating system,
+Linux operating system, and Mac operating system:
 
 `_user's-home-directory_/glassfish6/glassfish`
 
@@ -110,11 +107,9 @@ Windows, all installations:
 
 `_SystemDrive_:\glassfish6\glassfish`
 
-|`_as-install-parent_` 
-|Represents the parent of the base installation
-directory for GlassFish Server. 
-|Installations on the Solaris operating system, Linux operating system,
-and Mac operating system:
+|`_as-install-parent_` |Represents the parent of the base installation
+directory for GlassFish Server. |Installations on the Solaris operating
+system, Linux operating system, and Mac operating system:
 
 `_user's-home-directory_/glassfish6`
 
@@ -122,13 +117,10 @@ Windows, all installations:
 
 `_SystemDrive_:\glassfish6`
 
-|`_tut-install_` 
-|Represents the base installation directory for the Jakarta EE
-Tutorial after you download it. 
+|`_tut-install_` |Represents the base installation directory for the
+Jakarta EE Tutorial after you download it.
 |`_as-install-parent_/docs/jakartaee-tutorial`
 
-|`_domain-dir_` 
-|Represents the directory in which a domain's configuration
-is stored. 
-|`_as-install_/domains/domain1`
+|`_domain-dir_` |Represents the directory in which a domain's
+configuration is stored. |`_as-install_/domains/domain1`
 |===

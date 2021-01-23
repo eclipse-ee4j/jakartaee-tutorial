@@ -6,17 +6,25 @@ operators, which can be used in rvalue expressions only.
 
 * Arithmetic: `+`, `-` (binary), `*`, `/` and `div`, `%` and `mod`, `-`
 (unary).
+
 * String concatenation: `+=`.
+
 * Logical: `and`, `&&`, `or`, `||`, `not`, `!`.
+
 * Relational: `==`, `eq`, `!=`, `ne`, `<`, `lt`, `>`, `gt`, `\<=`, `ge`,
 `>=`, `le`. Comparisons can be made against other values or against
 Boolean, string, integer, or floating-point literals.
+
 * Empty: The `empty` operator is a prefix operation that can be used to
 determine whether a value is `null` or empty.
+
 * Conditional: `A ? B : C`. Evaluate `B` or `C`, depending on the result
 of the evaluation of `A`.
+
 * Lambda expression: `\->`, the arrow token.
+
 * Assignment: `=`.
+
 * Semicolon: `;`.
 
 The precedence of operators, highest to lowest, left to right, is as
@@ -36,5 +44,3 @@ follows:
 * `\->`
 * `=`
 * `;`
-
-

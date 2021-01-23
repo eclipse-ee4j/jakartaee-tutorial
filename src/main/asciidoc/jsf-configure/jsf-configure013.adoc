@@ -252,7 +252,7 @@ the `WEB-INF` directory.
 directory.
 * All resource files are either under the root of the web application
 `/resources` directory or in the web application's classpath, the
-`META-INF/resources/`resourceIdentifier directory. For more information
+`META-INF/resources/_resourceIdentifier_` directory. For more information
 on resources, see <<web-resources>>.
 
 When packaging your own applications, you can use NetBeans IDE or you

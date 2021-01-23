@@ -60,20 +60,20 @@ takes place behind the scenes.
 The `hello1` example application goes through the following stages when
 it is deployed on GlassFish Server.
 
-1.  When the `hello1` application is built and deployed on GlassFish
+. When the `hello1` application is built and deployed on GlassFish
 Server, the application is in an uninitiated state.
-2.  When a client makes an initial request for the `index.xhtml` web
+. When a client makes an initial request for the `index.xhtml` web
 page, the `hello1` Facelets application is compiled.
-3.  The compiled Facelets application is executed, and a new component
+. The compiled Facelets application is executed, and a new component
 tree is constructed for the `hello1` application and placed in a
 `FacesContext`.
-4.  The component tree is populated with the component and the managed
+. The component tree is populated with the component and the managed
 bean property associated with it, represented by the EL expression
 `hello.name`.
-5.  A new view is built, based on the component tree.
-6.  The view is rendered to the requesting client as a response.
-7.  The component tree is destroyed automatically.
-8.  On subsequent (postback) requests, the component tree is rebuilt,
+. A new view is built, based on the component tree.
+. The view is rendered to the requesting client as a response.
+. The component tree is destroyed automatically.
+. On subsequent (postback) requests, the component tree is rebuilt,
 and the saved state is applied.
 
 For full details on the lifecycle, see

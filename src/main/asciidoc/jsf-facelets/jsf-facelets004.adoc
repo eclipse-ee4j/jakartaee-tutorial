@@ -14,7 +14,8 @@ templating and their respective functionality.
 [[facelets-templating-tags]]
 [width="99%",cols="20%a,80%", title="Facelets Templating Tags"]
 |===
-|*Tag*|*Function*
+|Tag |Function
+
 |`ui:component` |Defines a component that is created and added to the
 component tree.
 
@@ -44,7 +45,6 @@ or `h:dataTable.`
 
 |`ui:remove` |Removes content from a page.
 |===
-
 
 For more information on Facelets templating tags, see the Jakarta
 Server Faces Facelets Tag Library documentation.

@@ -13,25 +13,25 @@ You can install the archetypes using NetBeans IDE or Maven.
 
 ==== Installing the Tutorial Archetypes Using NetBeans IDE
 
-1. From the *File* menu, choose *Open Project*.
-2. In the Open Project dialog box, navigate to: 
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to: 
 +
 ----
 tut-install/examples
 ----
-3. Select the `archetypes` folder.
-4. Click *Open Project*.
-5. In the *Projects* tab, right-click the `archetypes` project and
+. Select the `archetypes` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `archetypes` project and
 select *Build*.
 
 ==== Installing the Tutorial Archetypes Using Maven
 
-1.  In a terminal window, go to: 
+. In a terminal window, go to: 
 +
 ----
 tut-install/examples/archetypes/
 ----
-2.  Enter the following command: 
+. Enter the following command:
 +
 [source,shell]
 mvn install

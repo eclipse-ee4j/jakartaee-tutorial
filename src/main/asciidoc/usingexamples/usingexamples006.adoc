@@ -22,16 +22,16 @@ exception of web applications
 When an example has multiple application modules packaged into an EAR
 file, its submodule directories use the following naming conventions:
 
-* example-name``-app-client``: application clients
+* _example-name_``-app-client``: application clients
 
-* example-name``-ejb``: enterprise bean JAR files
+* _example-name_``-ejb``: enterprise bean JAR files
 
-* example-name``-war``: web applications
+* _example-name_``-war``: web applications
 
-* example-name``-ear``: enterprise applications
+* _example-name_``-ear``: enterprise applications
 
-* example-name``-common``: library JAR containing components, classes, and
-files used by other modules
+* _example-name_``-common``: library JAR containing components,
+classes, and files used by other modules
 
 The Maven build files (`pom.xml`) distributed with the examples contain
 goals to compile and assemble the application into the `target`

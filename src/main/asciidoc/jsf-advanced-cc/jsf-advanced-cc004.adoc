@@ -142,31 +142,31 @@ run the `compositecomponentexample` example.
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2.  From the *File* menu, choose *Open Project*.
-3.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `compositecomponentexample` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `compositecomponentexample`
+. Select the `compositecomponentexample` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `compositecomponentexample`
 project and select *Build*.
 +
 This command builds and deploys the application.
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/compositecomponentexample/
 ----
-3. Enter the following command to build and deploy the application:
+. Enter the following command to build and deploy the application:
 +
 [source,shell]
 ----
@@ -175,12 +175,12 @@ mvn install
 
 ==== To Run the compositecomponentexample Example
 
-1. In a web browser, enter the following URL:
+. In a web browser, enter the following URL:
 +
 ----
 http://localhost:8080/compositecomponentexample
 ----
-2. On the page that appears, enter a string in the Name, word, or
+. On the page that appears, enter a string in the Name, word, or
 phrase field, then click Calculate.
 +
 The page reports the sum of the letters and whether the sum is prime. A

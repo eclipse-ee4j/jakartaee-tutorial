@@ -61,11 +61,12 @@ values.
 [[acceptable-types-of-component-values]]
 [width="99%",cols="25%a,75%a",title="Acceptable Types of Component Values"]
 |===
-|*Component Class* |*Acceptable Types of Component Values*
+|Component Class |Acceptable Types of Component Values
+
 |`UIInput`, `UIOutput`, `UISelectItem`, `UISelectOne` |Any of the basic
-primitive and numeric types or any Java programming language object type
-for which an appropriate `jakarta.faces.convert.Converter` implementation
-is available
+primitive and numeric types or any Java programming language object
+type for which an appropriate `jakarta.faces.convert.Converter`
+implementation is available
 
 |`UIData` |`array` of beans, `List` of beans, single bean,
 `java.sql.ResultSet`, `jakarta.servlet.jsp.jstl.sql.Result`,

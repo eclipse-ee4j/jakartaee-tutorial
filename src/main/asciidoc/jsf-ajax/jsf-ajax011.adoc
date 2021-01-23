@@ -122,31 +122,31 @@ run the `ajaxguessnumber` application.
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `ajaxguessnumber` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `ajaxguessnumber` project and
+. Select the `ajaxguessnumber` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `ajaxguessnumber` project and
 select *Build*.
 +
 This command builds and deploys the project.
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using Maven
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/ajaxguessnumber/
 ----
-3. Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -157,12 +157,12 @@ deploys the application.
 
 ==== To Run the ajaxguessnumber Example
 
-1. In a web browser, enter the following URL:
+. In a web browser, enter the following URL:
 +
 ----
 http://localhost:8080/ajaxguessnumber
 ----
-2. Enter a value in the field and click Submit.
+. Enter a value in the field and click Submit.
 +
 If the value is in the range of 0 to 10, a message states whether the
 guess is correct or incorrect. If the value is outside that range or if

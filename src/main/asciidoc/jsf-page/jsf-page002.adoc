@@ -10,13 +10,14 @@ the component tags shown in <<the-component-tags>>.
 [[the-component-tags]]
 [width="99%",cols="15%a,30%,30%a,25%", title="The Component Tags"]
 |===
-|*Tag*|*Functions*|*Rendered As*|*Appearance*
+|Tag |Functions |Rendered As |Appearance 
+
 |`h:column` |Represents a column of data in a data component |A column
 of data in an HTML table |A column in a table
 
-|`h:commandButton` |Submits a form to the application |An HTML
-`<input type=_value_>` element for which the `type` value can be
-"`submit`", "`reset`", or "`image`" |A button
+|`h:commandButton` |Submits a form to the application |An HTML `<input
+type=_value_>` element for which the `type` value can be "`submit`",
+"`reset`", or "`image`" |A button
 
 |`h:commandLink` |Links to another page or location on a page |An HTML
 `<a href>` element |A link
@@ -25,24 +26,24 @@ of data in an HTML table |A column in a table
 table that can be updated dynamically
 
 |`h:form` |Represents an input form (inner tags of the form receive the
-data that will be submitted with the form) |An HTML `<form>` element |No
-appearance
+data that will be submitted with the form) |An HTML `<form>` element
+|No appearance
 
 |`h:graphicImage` |Displays an image |An HTML `<img>` element |An image
 
-|`h:inputFile` |Allows a user to upload a file |An HTML
-`<input type="file">` element |A field with a Browse... button
+|`h:inputFile` |Allows a user to upload a file |An HTML `<input
+type="file">` element |A field with a Browse... button
 
-|`h:inputHidden` |Allows a page author to include a hidden variable in a
-page |An HTML `<input type="hidden">` element |No appearance
+|`h:inputHidden` |Allows a page author to include a hidden variable in
+a page |An HTML `<input type="hidden">` element |No appearance
 
 |`h:inputSecret` |Allows a user to input a string without the actual
-string appearing in the field |An HTML `<input type="password">` element
-|A field that displays a row of characters instead of the actual string
-entered
+string appearing in the field |An HTML `<input type="password">`
+element |A field that displays a row of characters instead of the
+actual string entered
 
-|`h:inputText` |Allows a user to input a string |An HTML
-`<input type="text">` element |A field
+|`h:inputText` |Allows a user to input a string |An HTML `<input
+type="text">` element |A field
 
 |`h:inputTextarea` |Allows a user to enter a multiline string |An HTML
 `<textarea>` element |A multirow field
@@ -55,8 +56,8 @@ if styles are used |A text string
 
 |`h:outputFormat` |Displays a formatted message |Plain text |Plain text
 
-|`h:outputLabel` |Displays a nested component as a label for a specified
-input field |An HTML `<label>` element |Plain text
+|`h:outputLabel` |Displays a nested component as a label for a
+specified input field |An HTML `<label>` element |Plain text
 
 |`h:outputLink` |Links to another page or location on a page without
 generating an action event |An HTML `<a>` element |A link
@@ -85,15 +86,13 @@ of items |An HTML `<select>` element |A menu
 |`h:selectOneListbox` |Allows a user to select one item from a set of
 items all displayed at once |An HTML `<select>` element |A box
 
-|`h:selectOneMenu` |Allows a user to select one item from a set of items
-|An HTML `<select>` element |A menu
+|`h:selectOneMenu` |Allows a user to select one item from a set of
+items |An HTML `<select>` element |A menu
 
 |`h:selectOneRadio` |Allows a user to select one item from a set of
-items |An HTML `<input type="radio">` element a|
-A group of options
+items |An HTML `<input type="radio">` element a| A group of options
 
 For a standalone radio button, use the `group` attribute.
-
 |===
 
 The tags correspond to components in the `jakarta.faces.component`
@@ -116,7 +115,8 @@ Most of the component tags support the attributes shown in
 [[common-tag-attributes]]
 [width="80%",cols="20%a,60%", title="Common Component Tag Attributes"]
 |===
-|*Attribute* |*Description*
+|Attribute |Description
+
 |`binding` |Identifies a bean property and binds the component instance
 to it.
 
@@ -399,17 +399,18 @@ display more specialized text.
 [[input-tags]]
 [width="80%",cols="20%a,60%", title="Input Tags"]
 |===
-|*Tag* |*Function*
-|`h:inputHidden` |Allows a page author to include a hidden variable in a
-page
+|Tag |Function
+
+|`h:inputHidden` |Allows a page author to include a hidden variable in
+a page
 
 |`h:inputSecret` |The standard password field: accepts one line of text
 with no spaces and displays it as a set of asterisks as it is entered
 
 |`h:inputText` |The standard field: accepts a one-line text string
 
-|`h:inputTextarea` |The standard multiline field: accepts multiple lines
-of text
+|`h:inputTextarea` |The standard multiline field: accepts multiple
+lines of text
 |===
 
 The input tags support the tag attributes shown in
@@ -422,17 +423,18 @@ the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Fac
 [[input-tag-attributes]]
 [width="80%",cols="20%a,60%a", title="Input Tag Attributes"]
 |===
-|*Attribute* |*Description*
+|Attribute |Description
+
 |`converter` |Identifies a converter that will be used to convert the
-component's local data. See <<using-the-standard-converters>> for more 
+component's local data. See <<using-the-standard-converters>> for more
 information on how to use this attribute.
 
 |`converterMessage` |Specifies an error message to display when the
 converter registered on the component fails.
 
-|`dir` |Specifies the direction of the text displayed by this component.
-Acceptable values are `ltr`, meaning left to right, and `rtl`, meaning
-right to left.
+|`dir` |Specifies the direction of the text displayed by this
+component. Acceptable values are `ltr`, meaning left to right, and
+`rtl`, meaning right to left.
 
 |`label` |Specifies a name that can be used to identify this component
 in error messages.
@@ -448,7 +450,7 @@ does not enter a value into the component.
 
 |`validator` |Identifies a method expression pointing to a managed bean
 method that performs validation on the component's data. See
-<<referencing-a-method-that-performs-validation>> for an example of 
+<<referencing-a-method-that-performs-validation>> for an example of
 using the `f:validator` tag.
 
 |`validatorMessage` |Specifies an error message to display when the
@@ -457,8 +459,9 @@ local value.
 
 |`valueChangeListener` |Identifies a method expression that points to a
 managed bean method that handles the event of entering a value in this
-component. See <<referencing-a-method-that-handles-a-value-change-event>> 
-for an example of using `valueChangeListener`.
+component. See
+<<referencing-a-method-that-handles-a-value-change-event>> for an
+example of using `valueChangeListener`.
 |===
 
 
@@ -467,7 +470,8 @@ for an example of using `valueChangeListener`.
 [[output-tags]]
 [width="80%",cols="20%a,60%", title="Output Tags"]
 |===
-|*Tag* |*Function*
+|Tag |Function
+
 |`h:outputFormat` |Displays a formatted message
 
 |`h:outputLabel` |The standard read-only label: displays a component as
@@ -504,7 +508,7 @@ Here is an example of an `h:inputText` tag:
              requiredMessage="#{bundle.ReqCustomerName}">
     <f:valueChangeListener
         type="ee.jakarta.tutorial.dukesbookstore.listeners.NameChanged" />
- </h:inputText>
+</h:inputText>
 ----
 
 The `label` attribute specifies a user-friendly name that will be used
@@ -634,7 +638,6 @@ The value of the parameter replaces the `{0}` in the sentence. If the
 value of `"#{hello.name}"` is "Bill", the message displayed in the page
 is as follows:
 
-[source,xml]
 ----
 Hello, Bill!
 ----
@@ -661,7 +664,6 @@ page. This is an example of a value-expression-enabled tag attribute
 accepting an EL expression. The message displayed in the page is now as
 follows:
 
-[source,xml]
 ----
 Hello, Bill! You are visitor number 10 to the page.
 ----
@@ -729,7 +731,7 @@ an example:
     <f:actionListener
         type="ee.jakarta.tutorial.dukesbookstore.listeners.LinkBookChangeListener" />
     <h:outputText value="#{bundle.Book201}"/>
-/h:commandLink>
+</h:commandLink>
 ----
 
 This tag will render HTML that looks something like the following:
@@ -752,7 +754,7 @@ technology.
 In a Jakarta Server Faces application, use the `h:graphicImage` tag to
 render an image on a page:
 
-[source,java]
+[source,xml]
 ----
 <h:graphicImage id="mapImage" url="/resources/images/book_all.jpg"/>
 ----
@@ -799,7 +801,8 @@ table. <<panel-component-tags>> lists the tags used to create panels.
 [[panel-component-tags]]
 [width="90%",cols="20%a,50%a,20%", title="Panel Component Tags"]
 |===
-|*Tag* |*Attributes* |*Function*
+|Tag |Attributes |Function
+
 |`h:panelGrid` |`columns`, `columnClasses`, `footerClass`,
 `headerClass`, `panelClass`, `rowClasses`, `role` |Displays a table
 
@@ -1117,7 +1120,7 @@ Here is the example from
                   itemLabel="#{bundle.NormalShip}"/>
     <f:selectItem itemValue="7"
                   itemLabel="#{bundle.SaverShip}"/>
- </h:selectOneMenu>
+</h:selectOneMenu>
 ----
 
 The `itemValue` attribute represents the value for the `f:selectItem`
@@ -1216,7 +1219,7 @@ source, which is displayed as a row. Here is an example:
         </h:commandLink>
     </h:column>
     ...
-    <f:facet name="footer"
+    <f:facet name="footer">
         <h:panelGroup>
             <h:outputText value="#{bundle.Subtotal}"/>
             <h:outputText value="#{cart.total}" />
@@ -1320,12 +1323,18 @@ attributes for the `h:dataTable` tag.
 [[optional-attributes-for-the-hdatatable-tag]]
 [width="60%",cols="30%a,30%",title="Optional Attributes for the h:dataTable Tag"]
 |===
-|*Attribute* |*Defines Styles For*
+|Attribute |Defines Styles For
+
 |`captionClass` |Table caption
+
 |`columnClasses` |All the columns
+
 |`footerClass` |Footer
+
 |`headerClass` |Header
+
 |`rowClasses` |Rows
+
 |`styleClass` |The entire table
 |===
 
@@ -1513,9 +1522,9 @@ Because the URL can be the result of various parameter values, the
 order of the URL creation has been predefined. The order in which the
 various parameter values are read is as follows:
 
-1. Component
-2. Navigation-case parameters
-3. View parameters
+. Component
+. Navigation-case parameters
+. View parameters
 
 === The bookmarks Example Application
 
@@ -1536,17 +1545,17 @@ run the `bookmarks` example. The source code for this example is in the
 
 ==== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. From the *File* menu, choose *Open Project*.
-3. In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+. In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
-4. Select the `bookmarks` folder.
-5. Click *Open Project*.
-6. In the *Projects* tab, right-click the `bookmarks` project and
+. Select the `bookmarks` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `bookmarks` project and
 select *Build*.
 +
 This option builds the example application and deploys it to your
@@ -1554,14 +1563,14 @@ GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the bookmarks Example Using Maven
 
-1. Make sure that GlassFish Server has been started (see
+. Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
-2. In a terminal window, go to:
+. In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/bookmarks/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
 [source,shell]
 mvn install
@@ -1572,18 +1581,18 @@ deploys the WAR file to your GlassFish Server instance.
 
 ==== To Run the bookmarks Example
 
-1. Enter the following URL in your web browser:
+. Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/bookmarks
 ----
-2.  In the text field, enter a name and click Submit.
-3.  On the response page, move your mouse over the "personal greeting
+. In the text field, enter a name and click Submit.
+. On the response page, move your mouse over the "personal greeting
 page" link to view the URL with the view parameter, then click the link.
 +
 The `personal.xhtml` page opens, displaying a greeting to the name you
 typed.
-4.  In the URL field, modify the Result parameter value and press
+. In the URL field, modify the Result parameter value and press
 Return.
 +
 The name in the greeting changes to what you typed.

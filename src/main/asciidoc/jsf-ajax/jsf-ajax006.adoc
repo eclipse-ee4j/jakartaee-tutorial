@@ -20,7 +20,8 @@ contains one of the valid error values listed in
 [[valid-error-values-for-the-data-object-status-property]]
 [width="60%",cols="15%a,45%a",title="Valid Error Values for the Data Object status Property"]
 |===
-|*Values* |*Description*
+|Values |Description
+
 |`emptyResponse` |No Ajax response from server.
 
 |`httpError` |One of the valid HTTP errors: `request.status==null` or

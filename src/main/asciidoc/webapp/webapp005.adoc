@@ -24,31 +24,43 @@ specifically to the examples in this chapter.
 
 To add a context parameter using NetBeans IDE:
 
-1.  Open the project.
-2.  Expand the project's node in the *Projects* tree.
-3.  Expand the *Web Pages* node and then the *WEB-INF* node.
-4.  Double-click `web.xml`.
+. Open the project.
+
+. Expand the project's node in the *Projects* tree.
+
+. Expand the *Web Pages* node and then the *WEB-INF* node.
+
+. Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
 the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
-5.  Click *General* at the top of the editor window.
-6.  Expand the *Context Parameters* node.
-7.  Click *Add*.
-8.  In the *Add Context Parameter* dialog box, in the *Parameter Name*
+
+. Click *General* at the top of the editor window.
+
+. Expand the *Context Parameters* node.
+
+. Click *Add*.
+
+. In the *Add Context Parameter* dialog box, in the *Parameter Name*
 field, enter the name that specifies the context object.
-9.  In the *Parameter Value* field, enter the parameter to pass to the
+
+. In the *Parameter Value* field, enter the parameter to pass to the
 context object.
-10. Click *OK*.
+
+. Click *OK*.
 
 ==== To Create a web.xml File Using NetBeans IDE
 
 To create a `web.xml` file using NetBeans IDE:
 
-1.  From the *File* menu, choose *New File*.
-2.  In the New File wizard, select the *Web* category, then select
+. From the *File* menu, choose *New File*.
+
+. In the New File wizard, select the *Web* category, then select
 *Standard Deployment Descriptor* under *File Types*.
-3.  Click *Next*.
-4.  Click *Finish*.
+
+. Click *Next*.
+
+. Click *Finish*.
 +
 A basic `web.xml` file appears in `web/WEB-INF/`.
 
@@ -111,26 +123,36 @@ specifically to the examples in this chapter.
 
 To set up error mapping using NetBeans IDE:
 
-1.  Open the project.
-2.  Expand the project's node in the *Projects* tab.
-3.  Expand the *Web Pages* node and then the *WEB-INF* node.
-4.  Double-click `web.xml`.
+. Open the project.
+
+. Expand the project's node in the *Projects* tab.
+
+. Expand the *Web Pages* node and then the *WEB-INF* node.
+
+. Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
 the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
-5.  Click *Pages* at the top of the editor window.
-6.  Expand the *Error Pages* node.
-7.  Click *Add*.
-8.  In the Add Error Page dialog box, click *Browse* to locate the page
+
+. Click *Pages* at the top of the editor window.
+
+. Expand the *Error Pages* node.
+
+. Click *Add*.
+
+. In the Add Error Page dialog box, click *Browse* to locate the page
 that you want to act as the error page.
-9.  Specify either an error code or an exception type.
+
+. Specify either an error code or an exception type.
++
 * To specify an error code, in the Error Code field enter the HTTP
 status code that will cause the error page to be opened, or leave the
 field blank to include all error codes.
 * To specify an exception type, in the Exception Type field enter the
 exception that will cause the error page to load. To specify all
 throwable errors and exceptions, enter `java.lang.Throwable`.
-10. Click *OK*.
+
+. Click *OK*.
 
 === Declaring Resource References
 
@@ -165,11 +187,13 @@ information on resources.
 [[web-components-that-accept-resource-injections]]
 [width="50%",cols="20%,30%a", title="Web Components That Accept Resource Injections"]
 |===
-|*Component* |*Interface/Class*
+|Component |Interface/Class
+
 |Servlets |`jakarta.servlet.Servlet`
+
 |Servlet filters |`jakarta.servlet.ServletFilter`
-|Event listeners |
-`jakarta.servlet.ServletContextListener`
+
+|Event listeners | `jakarta.servlet.ServletContextListener`
 
 `jakarta.servlet.ServletContextAttributeListener`
 

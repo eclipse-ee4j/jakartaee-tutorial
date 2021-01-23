@@ -3,17 +3,19 @@
 A web application is a dynamic extension of a web or application
 server. Web applications are of the following types:
 
-* Presentation-oriented: A presentation-oriented web application
-generates interactive web pages containing various types of markup
-language (HTML, XHTML, XML, and so on) and dynamic content in response
-to requests. Development of presentation-oriented web applications is
-covered in xref:jakarta-server-faces-technology[xrefstyle=full] through
+* *Presentation-oriented* +
+A presentation-oriented web application generates interactive web pages
+containing various types of markup language (HTML, XHTML, XML, and so
+on) and dynamic content in response to requests. Development of
+presentation-oriented web applications is covered in
+xref:jakarta-server-faces-technology[xrefstyle=full] through
 xref:jakarta-servlet-technology-2[xrefstyle=full]
 
-* Service-oriented: A service-oriented web application implements the
-endpoint of a web service. Presentation-oriented applications are often
-clients of service-oriented web applications. Development of
-service-oriented web applications is covered in
+* *Service-oriented* +
+A service-oriented web application implements the endpoint of a web
+service. Presentation-oriented applications are often clients of
+service-oriented web applications. Development of service-oriented web
+applications is covered in
 xref:building-web-services-with-jakarta-xml-web-services[xrefstyle=full]
 and
 xref:building-restful-web-services-with-jakarta-rest[xrefstyle=full] in

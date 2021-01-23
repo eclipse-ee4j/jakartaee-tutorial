@@ -10,7 +10,8 @@ of input components. These tags can be used with the
 [[validator-tags]]
 [width="70%",cols="15%a,55%a",title="Validator Tags"]
 |===
-|*Tag Name* |*Description*
+|Tag Name |Description
+
 |`f:validateBean` |Delegates the validation of the local value to the
 Bean Validation API.
 

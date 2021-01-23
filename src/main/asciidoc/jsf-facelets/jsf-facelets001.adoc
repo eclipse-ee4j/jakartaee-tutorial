@@ -38,35 +38,27 @@ supported by Facelets.
 [[tag-libraries-supported-by-facelets]]
 [width="99%",cols="25%,25%,10%a,15%a,20%", title="Tag Libraries Supported by Facelets"]
 |===
-|*Tag Library*|*URI*|*Prefix*|*Example*|*Contents*
+|Tag Library |URI |Prefix |Example |Contents
+
 |Jakarta Server Faces Facelets Tag Library
-|http://xmlns.jcp.org/jsf/facelets |`ui:` a|
-`ui:component`
+|http://xmlns.jcp.org/jsf/facelets |`ui:` | `ui:component`
 
-`ui:insert`
-
- |Tags for templating
+`ui:insert` |Tags for templating
 
 |Jakarta Server Faces HTML Tag Library |http://xmlns.jcp.org/jsf/html
-|`h:` a|
-`h:head`
+|`h:` | `h:head`
 
 `h:body`
 
 `h:outputText`
 
-`h:inputText`
-
- |Jakarta Server Faces component tags for all `UIComponent` objects
+`h:inputText` |Jakarta Server Faces component tags for all `UIComponent` objects
 
 |Jakarta Server Faces Core Tag Library |http://xmlns.jcp.org/jsf/core
-|`f:` a|
-`f:actionListener`
+|`f:` | `f:actionListener`
 
-`f:attribute`
-
- |Tags for Jakarta Server Faces custom actions that are independent of any
-particular render kit
+`f:attribute` |Tags for Jakarta Server Faces custom actions that are
+independent of any particular render kit
 
 |Pass-through Elements Tag Library |http://xmlns.jcp.org/jsf |`jsf:`
 |`jsf:id` |Tags to support HTML5-friendly markup
@@ -78,22 +70,16 @@ HTML5-friendly markup
 |Composite Component Tag Library |http://xmlns.jcp.org/jsf/composite
 |`cc:` |`cc:interface` |Tags to support composite components
 
-|JSTL Core Tag Library |http://xmlns.jcp.org/jsp/jstl/core |`c:` a|
-`c:forEach`
+|JSTL Core Tag Library |http://xmlns.jcp.org/jsp/jstl/core |`c:`
+|`c:forEach`
 
-`c:catch`
-
- |JSTL 1.2 Core Tags
+`c:catch` |JSTL 1.2 Core Tags
 
 |JSTL Functions Tag Library |http://xmlns.jcp.org/jsp/jstl/functions
-|`fn:` a|
-`fn:toUpperCase`
+|`fn:` |`fn:toUpperCase`
 
-`fn:toLowerCase`
-
- |JSTL 1.2 Functions Tags
+`fn:toLowerCase` |JSTL 1.2 Functions Tags
 |===
-
 
 Facelets provides two namespaces to support HTML5-friendly markup. For
 details, see <<html5-friendly-markup>>.
@@ -107,14 +93,12 @@ mandatory. As is always the case when you declare an XML namespace, you
 can specify any prefix in your Facelets page. For example, you can
 declare the prefix for the composite component tag library as
 
-[source,xml]
 ----
 xmlns:composite="http://xmlns.jcp.org/jsf/composite"
 ----
 
 instead of as
 
-[source,xml]
 ----
 xmlns:cc="http://xmlns.jcp.org/jsf/composite"
 ----

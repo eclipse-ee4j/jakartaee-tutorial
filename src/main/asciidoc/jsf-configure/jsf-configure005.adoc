@@ -159,7 +159,8 @@ lists all the elements that are used to initialize a value.
 [[subelements-of-managed-property-elements-that-define-property-values]]
 [width="75%",cols="25%a,50%a",title="Subelements of managed-property Elements That Define Property Values"]
 |===
-|*Element* |*Value It Defines*
+|Element |Value It Defines
+
 |`list-entries` |Defines the values in a list
 
 |`map-entries` |Defines the values of a map
@@ -436,11 +437,16 @@ of the allowed connections.
 [[allowable-connections-between-scoped-objects]]
 [width="60%",cols="20%a,40%a",title="Allowable Connections between Scoped Objects"]
 |===
-|*An Object of This Scope* |*May Point to an Object of This Scope*
+|An Object of This Scope |May Point to an Object of This Scope
+
 |`none` |`none`
+
 |`application` |`none`, `application`
+
 |`session` |`none`, `application`, `session`
+
 |`request` |`none`, `application`, `session`, `request`, `view`
+
 |`view` |`none`, `application`, `session`, `view`
 |===
 
