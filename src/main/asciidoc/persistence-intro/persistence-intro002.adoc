@@ -267,12 +267,12 @@ is, if the persistent class uses field access, apply the Bean Validation
 constraint annotations on the class's fields. If the class uses property
 access, apply the constraints on the getter methods.
 
-link:#GKAGK[Table 22-1] lists Bean Validation's
+<<built-in-jakarta-bean-validation-constraints>> lists Bean Validation's
 built-in constraints, defined in the `jakarta.validation.constraints`
 package.
 
 All the built-in constraints listed in
-link:#GKAGK[Table 22-1] have a corresponding
+<<built-in-jakarta-bean-validation-constraints>> have a corresponding
 annotation, ConstraintName`.List`, for grouping multiple constraints of
 the same type on the same field or property. For example, the following
 persistent field has two `@Pattern` constraints:
