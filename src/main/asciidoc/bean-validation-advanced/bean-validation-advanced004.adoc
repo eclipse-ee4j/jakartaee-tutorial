@@ -1,5 +1,3 @@
-[[CIHGJBGI]][[using-method-constraints-in-type-hierarchies]]
-
 == Using Method Constraints in Type Hierarchies
 
 If you add validation constraints to objects in an inheritance
@@ -37,9 +35,9 @@ that were valid with `Person.setPhone` will not be valid with
 (that is, the method parameters) of a subtype's method. You may not
 strengthen the preconditions of subtype method calls.
 
-Similarly, the return values from method calls should not be weakened in
-subtypes. The following code shows an incorrect use of constraints on
-method return values in a class hierarchy:
+Similarly, the return values from method calls should not be weakened
+in subtypes. The following code shows an incorrect use of constraints
+on method return values in a class hierarchy:
 
 [source,java]
 ----
@@ -65,13 +63,13 @@ of a subtype method call.
 
 If your type hierarchy strengthens the preconditions or weakens the
 postconditions of subtype method calls, a
-`jakarta.validation.ConstraintDeclarationException` will be thrown by the
-Jakarta Bean Validation runtime.
+`jakarta.validation.ConstraintDeclarationException` will be thrown by
+the Jakarta Bean Validation runtime.
 
-Classes that implement several interfaces that each have the same method
-signature, known as parallel types, need to be aware of the constraints
-applied to the interfaces that they implement to avoid strengthening the
-preconditions. For example:
+Classes that implement several interfaces that each have the same
+method signature, known as parallel types, need to be aware of the
+constraints applied to the interfaces that they implement to avoid
+strengthening the preconditions. For example:
 
 [source,java]
 ----
@@ -100,8 +98,6 @@ that calls `PaymentService.processOrder` doesn't expect these
 constraints. This is another example of strengthening the preconditions
 of a subtype and will result in a `ConstraintDeclarationException`.
 
-[[sthref125]][[rules-for-using-method-constraints-in-type-hierarchies]]
-
 === Rules for Using Method Constraints in Type Hierarchies
 
 The following rules define how method validation constraints should be
@@ -109,8 +105,10 @@ used in type hierarchies.
 
 * Do not add method parameter constraints to overridden or implemented
 methods in a subtype.
+
 * Do not add method parameter constraints to overridden or implemented
 methods in a subtype that was originally declared in several parallel
 types.
+
 * You may add return value constraints to an overridden or implemented
 method in a subtype.

@@ -1,5 +1,3 @@
-[[GKAGV]][[grouping-constraints]]
-
 == Grouping Constraints
 
 Constraints may be added to one or more groups. Constraint groups are
@@ -42,12 +40,11 @@ Multiple groups can be declared by surrounding the groups with braces
 Phone workPhone;
 ----
 
-If a group inherits from another group, validating that group results in
-validating all constraints declared as part of the supergroup. For
-example, validating the `Manager` group results in the `workPhone` field
-being validated, because `Employee` is a superinterface of `Manager`.
-
-[[GKAGU]][[customizing-group-validation-order]]
+If a group inherits from another group, validating that group results
+in validating all constraints declared as part of the supergroup. For
+example, validating the `Manager` group results in the `workPhone`
+field being validated, because `Employee` is a superinterface of
+`Manager`.
 
 === Customizing Group Validation Order
 
@@ -57,8 +54,8 @@ For example, in a particular class, basic data should be validated
 before more advanced data.
 
 To set the validation order for a group, add a
-`jakarta.validation.GroupSequence` annotation to the interface definition,
-listing the order in which the validation should occur.
+`jakarta.validation.GroupSequence` annotation to the interface
+definition, listing the order in which the validation should occur.
 
 [source,java]
 ----
@@ -72,5 +69,3 @@ validated. If all the data passes validation, then the
 of both the `Default` and the `ExpensiveValidationGroup` groups, the
 constraint is validated as part of the `Default` group and will not be
 validated on the subsequent `ExpensiveValidationGroup` pass.
-
-
