@@ -1,21 +1,17 @@
-[[GJCXV]][[the-guessnumber-cdi-cdi-example]]
-
 == The guessnumber-cdi CDI Example
 
 The `guessnumber-cdi` example, somewhat more complex than the
-`simplegreeting` example, illustrates the use of producer methods and of
-session and application scope. The example is a game in which you try to
-guess a number in fewer than ten attempts. It is similar to the
+`simplegreeting` example, illustrates the use of producer methods and
+of session and application scope. The example is a game in which you
+try to guess a number in fewer than ten attempts. It is similar to the
 `guessnumber-jsf` example described in
-link:#GIEPX[Chapter 8, "Introduction to Facelets"],
-except that you can keep guessing until you get the right answer or
-until you use up your ten attempts.
+xref:introduction-to-facelets[xrefstyle=full], except that you can keep
+guessing until you get the right answer or until you use up your ten
+attempts.
 
 The example includes four source files, a Facelets page and template,
 and configuration files. The configuration files and the template are
 the same as those used for the `simplegreeting` example.
-
-[[GJDJU]][[the-guessnumber-cdi-source-files]]
 
 === The guessnumber-cdi Source Files
 
@@ -29,8 +25,6 @@ The four source files for the `guessnumber-cdi` example are:
 The source files are located in the
 `_tut-install_/examples/cdi/guessnumber-cdi/src/main/java/ee/jakarta/tutorial/guessnumber`
 directory.
-
-[[GJDJP]][[the-maxnumber-and-random-qualifier-interfaces]]
 
 ==== The @MaxNumber and @Random Qualifier Interfaces
 
@@ -82,14 +76,12 @@ public @interface Random {
 }
 ----
 
-[[GJDJN]][[the-generator-managed-bean]]
-
 ==== The Generator Managed Bean
 
 The `Generator` managed bean contains the two producer methods for the
-application. The bean has the `@ApplicationScoped` annotation to specify
-that its context extends for the duration of the user's interaction with
-the application:
+application. The bean has the `@ApplicationScoped` annotation to
+specify that its context extends for the duration of the user's
+interaction with the application:
 
 [source,java]
 ----
@@ -124,20 +116,18 @@ public class Generator implements Serializable {
 }
 ----
 
-[[GJDHY]][[the-usernumberbean-managed-bean]]
-
 ==== The UserNumberBean Managed Bean
 
-The `UserNumberBean` managed bean, the managed bean for the Jakarta Server
-Faces application, provides the basic logic for the game. This bean does
-the following:
+The `UserNumberBean` managed bean, the managed bean for the Jakarta
+Server Faces application, provides the basic logic for the game. This
+bean does the following:
 
 * Implements setter and getter methods for the bean fields
 * Injects the two qualifier objects
 * Provides a `reset` method that allows you to begin a new game after
 you complete one
-* Provides a `check` method that determines whether the user has guessed
-the number
+* Provides a `check` method that determines whether the user has
+guessed the number
 * Provides a `validateNumberRange` method that determines whether the
 user's input is correct
 
@@ -253,8 +243,6 @@ public class UserNumberBean implements Serializable {
 }
 ----
 
-[[GJDON]][[the-facelets-page]]
-
 === The Facelets Page
 
 This example uses the same template that the `simplegreeting` example
@@ -320,57 +308,49 @@ rendered="#{userNumberBean.number lt userNumberBean.userNumber and userNumberBea
 The Facelets page presents the user with the minimum and maximum values
 and the number of guesses remaining. The user's interaction with the
 game takes place within the `panelGrid` table, which contains an input
-field, *Guess* and *Reset* buttons, and a field that appears if the guess is
-higher or lower than the correct number. Every time the user clicks
-*Guess*, the `userNumberBean.check` method is called to reset the
-maximum or minimum value or, if the guess is correct, to generate a
+field, *Guess* and *Reset* buttons, and a field that appears if the
+guess is higher or lower than the correct number. Every time the user
+clicks *Guess*, the `userNumberBean.check` method is called to reset
+the maximum or minimum value or, if the guess is correct, to generate a
 `FacesMessage` to that effect. The method that determines whether each
 guess is valid is `userNumberBean.validateNumberRange`.
-
-[[GJDPW]][[running-the-guessnumber-cdi-example]]
 
 === Running the guessnumber-cdi Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `guessnumber-cdi` application.
 
-[[GJDPS]][[to-build-package-and-deploy-the-guessnumber-cdi-example-using-netbeans-ide]]
-
 ==== To Build, Package, and Deploy the guessnumber-cdi Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the *File* menu, choose *Open Project*.
-3.  In the *Open Project* dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. From the *File* menu, choose *Open Project*.
+. In the *Open Project* dialog box, navigate to:
 +
 [source,java]
 ----
 tut-install/examples/cdi
 ----
-4.  Select the `guessnumber-cdi` folder.
-5.  Click *Open Project*.
-6.  In the *Projects* tab, right-click the `guessnumber-cdi` project and
+. Select the `guessnumber-cdi` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `guessnumber-cdi` project and
 select *Build*.
 +
 This command builds and packages the application into a WAR file,
 `guessnumber-cdi.war`, located in the `target` directory, and then
 deploys it to GlassFish Server.
 
-[[GJDPR]][[to-build-package-and-deploy-the-guessnumber-cdi-example-using-maven]]
-
 ==== To Build, Package, and Deploy the guessnumber-cdi Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, change to the following directory:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. In a terminal window, change to the following directory:
 +
 [source,java]
 ----
 tut-install/examples/cdi/guessnumber-cdi/
 ----
-3.  Enter the following command to deploy the application:
+. Enter the following command to deploy the application:
 +
 [source,java]
 ----
@@ -381,26 +361,23 @@ This command builds and packages the application into a WAR file,
 `guessnumber-cdi.war`, located in the `target` directory, and then
 deploys it to GlassFish Server.
 
-[[GJDQB]][[to-run-the-guessnumber-example]]
-
 ==== To Run the guessnumber Example
 
-1.  In a web browser, enter the following URL:
+. In a web browser, enter the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/guessnumber-cdi
 ----
 +
 The *Guess My Number* page opens.
-2.  On the *Guess My Number* page, enter a number in the *Number* field and
+. On the *Guess My Number* page, enter a number in the *Number* field and
 click *Guess*.
 +
 The minimum and maximum values are modified, along with the remaining
 number of guesses.
-3.  Keep guessing numbers until you get the right answer or run out of
+. Keep guessing numbers until you get the right answer or run out of
 guesses.
 +
 If you get the right answer or run out of guesses, the input field and
 *Guess* button are grayed out.
-4.  Click *Reset* to play the game again with a new random number.
+. Click *Reset* to play the game again with a new random number.
