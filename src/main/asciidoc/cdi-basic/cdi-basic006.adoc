@@ -1,5 +1,3 @@
-[[GJBCK]][[using-qualifiers]]
-
 == Using Qualifiers
 
 You can use qualifiers to provide various implementations of a
@@ -50,9 +48,9 @@ public class InformalGreeting extends Greeting {
 
 Both implementations of the bean can now be used in the application.
 
-If you define a bean with no qualifier, then the bean automatically has the
-qualifier `@Default`. The unannotated `Greeting` class could be declared
-as follows:
+If you define a bean with no qualifier, then the bean automatically has
+the qualifier `@Default`. The unannotated `Greeting` class could be
+declared as follows:
 
 [source,java]
 ----

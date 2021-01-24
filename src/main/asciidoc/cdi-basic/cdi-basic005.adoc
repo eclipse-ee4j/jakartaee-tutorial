@@ -1,18 +1,17 @@
-[[GIZKS]][[beans-as-injectable-objects]]
-
 == Beans as Injectable Objects
 
-The concept of injection has been part of Java technology for some time.
-Since the Java EE 5 platform was introduced, annotations have made it
-possible to inject resources and some other kinds of objects into
-container-managed objects. CDI makes it possible to inject more kinds of
-objects and to inject them into objects that are not container-managed.
+The concept of injection has been part of Java technology for some
+time. Since the Java EE 5 platform was introduced, annotations have
+made it possible to inject resources and some other kinds of objects
+into container-managed objects. CDI makes it possible to inject more
+kinds of objects and to inject them into objects that are not
+container-managed.
 
 The following kinds of objects can be injected:
 
 * Almost any Java class
 * Session beans
-* Jakarta EE resources: data sources, Java Message Service topics, queues,
+* Jakarta EE resources: data sources, Messaging topics, queues,
 connection factories, and the like
 * Persistence contexts (Jakarta Persistence `EntityManager` objects)
 * Producer fields
@@ -36,5 +35,5 @@ public class Greeting {
 
 This class becomes a bean that you can then inject into another class.
 This bean is not exposed to the EL in this form.
-link:#GJBAK[Giving Beans EL Names] explains how you can
-make a bean accessible to the EL.
+<<giving-beans-el-names>> explains how you can make a bean accessible
+to the EL.

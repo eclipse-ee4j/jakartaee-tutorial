@@ -1,5 +1,3 @@
-[[GIWHL]][[overview-of-cdi]]
-
 == Overview of CDI
 
 CDI is a set of services that, used together, make it easy for
@@ -9,12 +7,12 @@ CDI also has many broader uses, allowing developers a great deal of
 flexibility to integrate various kinds of components in a loosely
 coupled but typesafe way
 
-CDI 2.0 is specified in a Jakarta EE specification. Related specifications that CDI uses
-include the following:
+CDI 3.0 is specified in a Jakarta EE specification. Related
+specifications that CDI uses include the following:
 
 * Jakarta Dependency Injection
-* The Managed Beans specification, an offshoot of the Jakarta EE platform
-specification
+* The Managed Beans specification, an offshoot of the Jakarta EE
+platform specification
 
 The most fundamental services provided by CDI are as follows.
 
@@ -42,8 +40,9 @@ frameworks to integrate cleanly in the Jakarta EE environment
 
 A major theme of CDI is loose coupling. CDI does the following:
 
-* Decouples the server and the client by means of well-defined types and
-qualifiers, so that the server implementation may vary
+* Decouples the server and the client by means of well-defined types
+and qualifiers, so that the server implementation may vary
+
 * Decouples the lifecycles of collaborating components by
 
 ** Making components contextual, with automatic lifecycle management
@@ -59,6 +58,6 @@ Along with loose coupling, CDI provides strong typing by
 * Eliminating lookup using string-based names for wiring and
 correlations so that the compiler will detect typing errors
 * Allowing the use of declarative Java annotations to specify
-everything, largely eliminating the need for XML deployment descriptors,
-and making it easy to provide tools that introspect the code and
-understand the dependency structure at development time
+everything, largely eliminating the need for XML deployment
+descriptors, and making it easy to provide tools that introspect the
+code and understand the dependency structure at development time

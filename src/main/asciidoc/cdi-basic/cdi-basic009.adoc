@@ -1,8 +1,7 @@
-[[GJBAK]][[giving-beans-el-names]]
-
 == Giving Beans EL Names
 
-To make a bean accessible through the EL, use the `@Named` built-in qualifier:
+To make a bean accessible through the EL, use the `@Named` built-in
+qualifier:
 
 [source,java]
 ----

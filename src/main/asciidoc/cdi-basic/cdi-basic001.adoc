@@ -1,5 +1,3 @@
-[[BABJDJGA]][[getting-started]]
-
 == Getting Started
 
 Contexts and Dependency Injection (CDI) enables your objects to have
@@ -71,13 +69,13 @@ public class NewServlet extends HttpServlet {
 ----
 
 The CDI runtime looks for classes that implement the `Message`
-interface, finds the `MessageB` class, creates a new instance of it, and
-injects it into the servlet at runtime. To manage the lifecycle of the
-new instance, the CDI runtime needs to know what the scope of the
-instance should be. In this example, the servlet only needs the instance
-to process an HTTP request; the instance can then be garbage collected.
-This is specified using the `jakarta.enterprise.context.RequestScoped`
-annotation:
+interface, finds the `MessageB` class, creates a new instance of it,
+and injects it into the servlet at runtime. To manage the lifecycle of
+the new instance, the CDI runtime needs to know what the scope of the
+instance should be. In this example, the servlet only needs the
+instance to process an HTTP request; the instance can then be garbage
+collected. This is specified using the
+`jakarta.enterprise.context.RequestScoped` annotation:
 
 [source,java]
 ----
@@ -85,25 +83,22 @@ annotation:
 public class MessageB implements Message { ... }
 ----
 
-For more information on scopes, see link:#GJBBK[Using
-Scopes].
+For more information on scopes, see <<using-scopes>>.
 
 The `MessageB` class is a CDI bean. CDI beans are classes that CDI can
 instantiate, manage, and inject automatically to satisfy the
 dependencies of other objects. Almost any Java class can be managed and
-injected by CDI. For more information on beans, see
-link:#GJEBJ[About Beans]. A JAR or WAR file that
-contains a CDI bean is a bean archive. For more information on packaging
-bean archives, see link:#GJBNZ[Configuring a CDI
-Application] in this chapter and link:#CACDCFDE[Packaging
-CDI Applications] in link:#GJEHI[Chapter 27, "Contexts and
-Dependency Injection for Jakarta EE: Advanced Topics"].
+injected by CDI. For more information on beans, see <<about-beans>>. A
+JAR or WAR file that contains a CDI bean is a bean archive. For more
+information on packaging bean archives, see
+<<configuring-a-cdi-application>> in this chapter and
+<<packaging-cdi-applications>> in
+xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
 
 In this example, `MessageB` is the only class that implements the
 `Message` interface. If an application has more than one implementation
 of an interface, CDI provides mechanisms that you can use to select
 which implementation to inject. For more information, see
-link:#GJBCK[Using Qualifiers] in this chapter and
-link:#GJSDF[Using Alternatives in CDI Applications] in
-link:#GJEHI[Chapter 27, "Contexts and Dependency Injection
-for Jakarta EE: Advanced Topics"].
+<<using-qualifiers>> in this chapter and
+<<using-alternatives-in-cdi-applications>> in
+xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
