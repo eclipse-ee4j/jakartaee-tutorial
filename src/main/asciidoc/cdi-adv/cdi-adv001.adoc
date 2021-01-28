@@ -1,16 +1,14 @@
-[[CACDCFDE]][[packaging-cdi-applications]]
-
 == Packaging CDI Applications
 
-When you deploy a Jakarta EE application, CDI looks for beans inside bean
-archives. A bean archive is any module that contains beans that the CDI
-runtime can manage and inject. There are two kinds of bean archives:
-explicit bean archives and implicit bean archives.
+When you deploy a Jakarta EE application, CDI looks for beans inside
+bean archives. A bean archive is any module that contains beans that
+the CDI runtime can manage and inject. There are two kinds of bean
+archives: explicit bean archives and implicit bean archives.
 
 An explicit bean archive is an archive that contains a `beans.xml`
 deployment descriptor, which can be an empty file, contain no version
-number, or contain the version number 1.1 with the `bean-discovery-mode`
-attribute set to `all`. For example:
+number, or contain the version number 3.0 with the
+`bean-discovery-mode` attribute set to `all`. For example:
 
 [source,xml]
 ----
@@ -19,7 +17,7 @@ attribute set to `all`. For example:
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                            https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
-       version="1.1" bean-discovery-mode="all">
+       version="3.0" bean-discovery-mode="all">
     ...
 </beans>
 ----
@@ -36,6 +34,6 @@ In an implicit archive, CDI can only manage and inject beans annotated
 with a scope type.
 
 For a web application, the `beans.xml` deployment descriptor, if
-present, must be in the `WEB-INF` directory. For enterprise bean modules or JAR
-files, the `beans.xml` deployment descriptor, if present, must be in the
-`META-INF` directory.
+present, must be in the `WEB-INF` directory. For enterprise bean
+modules or JAR files, the `beans.xml` deployment descriptor, if
+present, must be in the `META-INF` directory.

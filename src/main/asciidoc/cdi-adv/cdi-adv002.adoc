@@ -1,11 +1,9 @@
-[[GJSDF]][[using-alternatives-in-cdi-applications]]
-
 == Using Alternatives in CDI Applications
 
-When you have more than one version of a bean that you use for different
-purposes, you can choose between them during the development phase by
-injecting one qualifier or another, as shown in
-link:#GJBJU[The simplegreeting CDI Example].
+When you have more than one version of a bean that you use for
+different purposes, you can choose between them during the development
+phase by injecting one qualifier or another, as shown in
+<<the-simplegreeting-cdi-example>>.
 
 Instead of having to change the source code of your application,
 however, you can make the choice at deployment time by using
@@ -13,10 +11,13 @@ alternatives.
 
 Alternatives are commonly used for purposes such as the following:
 
-* To handle client-specific business logic that is determined at runtime
+* To handle client-specific business logic that is determined at
+runtime
+
 * To specify beans that are valid for a particular deployment scenario
 (for example, when country-specific sales tax laws require
 country-specific sales tax business logic)
+
 * To create dummy (mock) versions of beans to be used for testing
 
 To make a bean available for lookup, injection, or EL resolution using
@@ -26,9 +27,9 @@ annotation and then use the `alternatives` element to specify it in the
 
 For example, you might want to create a full version of a bean and also
 a simpler version that you use only for certain kinds of testing. The
-example described in link:#GKHPU[The encoder
-Example: Using Alternatives] contains two such beans, `CoderImpl` and
-`TestCoderImpl`. The test bean is annotated as follows:
+example described in <<the-encoder-example-using-alternatives>>
+contains two such beans, `CoderImpl` and `TestCoderImpl`. The test bean
+is annotated as follows:
 
 [source,java]
 ----
@@ -89,14 +90,12 @@ alternative beans that implement the same interface are annotated with
 `@Priority`. You do not need to specify the alternative in the
 `beans.xml` file when you use the `@Priority` annotation.
 
-[[GKHPO]][[using-specialization]]
-
 === Using Specialization
 
-Specialization has a function similar to that of alternatives in that it
-allows you to substitute one bean for another. However, you might want
-to make one bean override the other in all cases. Suppose you defined
-the following two beans:
+Specialization has a function similar to that of alternatives in that
+it allows you to substitute one bean for another. However, you might
+want to make one bean override the other in all cases. Suppose you
+defined the following two beans:
 
 [source,java]
 ----
@@ -107,8 +106,8 @@ public class AsynchronousService implements Service { ... }
 public class MockAsynchronousService extends AsynchronousService { ... }
 ----
 
-If you then declared `MockAsynchronousService` as an alternative in your
-`beans.xml` file, the following injection point would resolve to
+If you then declared `MockAsynchronousService` as an alternative in
+your `beans.xml` file, the following injection point would resolve to
 `MockAsynchronousService`:
 
 [source,java]
@@ -128,19 +127,19 @@ not have the `@Asynchronous` qualifier:
 To make sure that `MockAsynchronousService` was always injected, you
 would have to implement all bean types and bean qualifiers of
 `AsynchronousService`. However, if `AsynchronousService` declared a
-producer method or observer method, even this cumbersome mechanism would
-not ensure that the other bean was never invoked. Specialization
+producer method or observer method, even this cumbersome mechanism
+would not ensure that the other bean was never invoked. Specialization
 provides a simpler mechanism.
 
-Specialization happens at development time as well as at runtime. If you
-declare that one bean specializes another, it extends the other bean
-class, and at runtime the specialized bean completely replaces the other
-bean. If the first bean is produced by means of a producer method, you
-must also override the producer method.
+Specialization happens at development time as well as at runtime. If
+you declare that one bean specializes another, it extends the other
+bean class, and at runtime the specialized bean completely replaces the
+other bean. If the first bean is produced by means of a producer
+method, you must also override the producer method.
 
 You specialize a bean by giving it the
-`jakarta.enterprise.inject.Specializes` annotation. For example, you might
-declare a bean as follows:
+`jakarta.enterprise.inject.Specializes` annotation. For example, you
+might declare a bean as follows:
 
 [source,java]
 ----
@@ -148,8 +147,8 @@ declare a bean as follows:
 public class MockAsynchronousService extends AsynchronousService { ... }
 ----
 
-In this case, the `MockAsynchronousService` class will always be invoked
-instead of the `AsynchronousService` class.
+In this case, the `MockAsynchronousService` class will always be
+invoked instead of the `AsynchronousService` class.
 
 Usually, a bean marked with the `@Specializes` annotation is also an
 alternative and is declared as an alternative in the `beans.xml` file.

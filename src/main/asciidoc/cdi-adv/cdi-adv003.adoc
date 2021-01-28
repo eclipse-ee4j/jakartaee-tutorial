@@ -1,5 +1,3 @@
-[[GKGKV]][[using-producer-methods-producer-fields-and-disposer-methods-in-cdi-applications]]
-
 == Using Producer Methods, Producer Fields, and Disposer Methods in CDI Applications
 
 A producer method generates an object that can then be injected.
@@ -12,27 +10,24 @@ runtime
 constructor does not perform
 
 For more information on producer methods, see
-link:#GJDID[Injecting Objects by Using Producer
-Methods].
+<<injecting-objects-by-using-producer-methods>>.
 
 A producer field is a simpler alternative to a producer method; it is a
 field of a bean that generates an object. It can be used instead of a
 simple getter method. Producer fields are particularly useful for
-declaring Jakarta EE resources such as data sources, JMS resources, and web
-service references.
+declaring Jakarta EE resources such as data sources, JMS resources, and
+web service references.
 
 A producer method or field is annotated with the
 `jakarta.enterprise.inject.Produces` annotation.
-
-[[sthref127]][[using-producer-methods]]
 
 === Using Producer Methods
 
 A producer method can allow you to select a bean implementation at
 runtime instead of at development time or deployment time. For example,
-in the example described in link:#GKHPY[The
-producermethods Example: Using a Producer Method to Choose a Bean
-Implementation], the managed bean defines the following producer method:
+in the example described in
+<<the-producermethods-example-using-a-producer-method-to-choose-a-bean-implementation>>,
+the managed bean defines the following producer method:
 
 [source,java]
 ----
@@ -52,9 +47,10 @@ public Coder getCoder() {
 }
 ----
 
-Here, `getCoder` becomes in effect a getter method, and when the `coder`
-property is injected with the same qualifier and other annotations as
-the method, the selected version of the interface is used.
+Here, `getCoder` becomes in effect a getter method, and when the
+`coder` property is injected with the same qualifier and other
+annotations as the method, the selected version of the interface is
+used.
 
 [source,java]
 ----
@@ -66,21 +62,18 @@ Coder coder;
 
 Specifying the qualifier is essential: It tells CDI which `Coder` to
 inject. Without it, the CDI implementation would not be able to choose
-between `CoderImpl`, `TestCoderImpl`, and the one returned by `getCoder`
-and would cancel deployment, informing the user of the ambiguous
-dependency.
-
-[[sthref128]][[using-producer-fields-to-generate-resources]]
+between `CoderImpl`, `TestCoderImpl`, and the one returned by
+`getCoder` and would cancel deployment, informing the user of the
+ambiguous dependency.
 
 === Using Producer Fields to Generate Resources
 
-A common use of a producer field is to generate an object such as a JDBC
-`DataSource` or a Jakarta Persistence `EntityManager` (see
-link:#BNBPZ[Chapter 40, "Introduction to Jakarta
-Persistence,"] for more information). The object can then be managed
-by the container. For example, you could create a `@UserDatabase`
-qualifier and then declare a producer field for an entity manager as
-follows:
+A common use of a producer field is to generate an object such as a
+JDBC `DataSource` or a Jakarta Persistence `EntityManager` (see
+xref:introduction-to-jakarta-persistence[xrefstyle=full], for more
+information). The object can then be managed by the container. For
+example, you could create a `@UserDatabase` qualifier and then declare
+a producer field for an entity manager as follows:
 
 [source,java]
 ----
@@ -101,22 +94,20 @@ into another bean, `RequestBean`, elsewhere in the application:
     ...
 ----
 
-link:#GKHRG[The producerfields Example: Using
-Producer Fields to Generate Resources] shows how to use producer fields
-to generate an entity manager. You can use a similar mechanism to inject
-`@Resource`, `@EJB`, or `@WebServiceRef` objects.
+<<the-producerfields-example-using-producer-fields-to-generate-resources>>
+shows how to use producer fields to generate an entity manager. You can
+use a similar mechanism to inject `@Resource`, `@EJB`, or
+`@WebServiceRef` objects.
 
 To minimize the reliance on resource injection, specify the producer
 field for the resource in one place in the application, and then inject
 the object wherever in the application you need it.
 
-[[sthref129]][[using-a-disposer-method]]
-
 === Using a Disposer Method
 
 You can use a producer method or a producer field to generate an object
-that needs to be removed when its work is completed. If you do, you need
-a corresponding disposer method, annotated with a `@Disposes`
+that needs to be removed when its work is completed. If you do, you
+need a corresponding disposer method, annotated with a `@Disposes`
 annotation. For example, you can close the entity manager as follows:
 
 [source,java]

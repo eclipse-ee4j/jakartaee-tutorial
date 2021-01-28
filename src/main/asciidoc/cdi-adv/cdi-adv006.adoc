@@ -1,5 +1,3 @@
-[[GKHJX]][[using-interceptors-in-cdi-applications]]
-
 == Using Interceptors in CDI Applications
 
 An interceptor is a class used to interpose in method invocations or
@@ -7,31 +5,31 @@ lifecycle events that occur in an associated target class. The
 interceptor performs tasks, such as logging or auditing, that are
 separate from the business logic of the application and are repeated
 often within an application. Such tasks are often called cross-cutting
-tasks. Interceptors allow you to specify the code for these tasks in one
-place for easy maintenance. When interceptors were first introduced to
-the Jakarta EE platform, they were specific to enterprise beans. On the
-Jakarta EE platform, you can use them with Jakarta EE managed objects of all
-kinds, including managed beans.
+tasks. Interceptors allow you to specify the code for these tasks in
+one place for easy maintenance. When interceptors were first introduced
+to the Jakarta EE platform, they were specific to enterprise beans. On
+the Jakarta EE platform, you can use them with Jakarta EE managed
+objects of all kinds, including managed beans.
 
 For information on Jakarta EE interceptors, see
-link:#GKEED[Chapter 57, "Using Jakarta EE Interceptors"].
+xref:using-jakarta-ee-interceptors[xrefstyle=full].
 
 An interceptor class often contains a method annotated `@AroundInvoke`,
 which specifies the tasks the interceptor will perform when intercepted
 methods are invoked. It can also contain a method annotated
-`@PostConstruct`, `@PreDestroy`, `@PrePassivate`, or `@PostActivate`, to
-specify lifecycle callback interceptors, and a method annotated
-`@AroundTimeout`, to specify enterprise bean timeout interceptors. An interceptor
-class can contain more than one interceptor method, but it must have no
-more than one method of each type.
+`@PostConstruct`, `@PreDestroy`, `@PrePassivate`, or `@PostActivate`,
+to specify lifecycle callback interceptors, and a method annotated
+`@AroundTimeout`, to specify enterprise bean timeout interceptors. An
+interceptor class can contain more than one interceptor method, but it
+must have no more than one method of each type.
 
 Along with an interceptor, an application defines one or more
 interceptor binding types, which are annotations that associate an
-interceptor with target beans or methods. For example, the `billpayment`
-example contains an interceptor binding type named `@Logged` and an
-interceptor named `LoggedInterceptor`. The interceptor binding type
-declaration looks something like a qualifier declaration, but it is
-annotated with `jakarta.interceptor.InterceptorBinding`:
+interceptor with target beans or methods. For example, the
+`billpayment` example contains an interceptor binding type named
+`@Logged` and an interceptor named `LoggedInterceptor`. The interceptor
+binding type declaration looks something like a qualifier declaration,
+but it is annotated with `jakarta.interceptor.InterceptorBinding`:
 
 [source,java]
 ----
@@ -52,8 +50,7 @@ An interceptor binding type may declare other interceptor bindings.
 
 The interceptor class is annotated with the interceptor binding as well
 as with the `@Interceptor` annotation. For an example, see
-link:#GKHRQ[The LoggedInterceptor Interceptor
-Class].
+<<the-loggedinterceptor-interceptor-class>>.
 
 Every `@AroundInvoke` method takes a
 `jakarta.interceptor.InvocationContext` argument, returns a
@@ -61,8 +58,8 @@ Every `@AroundInvoke` method takes a
 `InvocationContext` methods. The `@AroundInvoke` method must call the
 `proceed` method, which causes the target class method to be invoked.
 
-Once an interceptor and binding type are defined, you can annotate beans
-and individual methods with the binding type to specify that the
+Once an interceptor and binding type are defined, you can annotate
+beans and individual methods with the binding type to specify that the
 interceptor is to be invoked either on all methods of the bean or on
 specific methods. For example, in the `billpayment` example, the
 `PaymentHandler` bean is annotated `@Logged`, which means that any
@@ -89,9 +86,9 @@ public String pay() {...}
 public void reset() {...}
 ----
 
-In order for an interceptor to be invoked in a CDI application, it must,
-like an alternative, be specified in the `beans.xml` file. For example,
-the `LoggedInterceptor` class is specified as follows:
+In order for an interceptor to be invoked in a CDI application, it
+must, like an alternative, be specified in the `beans.xml` file. For
+example, the `LoggedInterceptor` class is specified as follows:
 
 [source,xml]
 ----
@@ -117,5 +114,5 @@ public class LoggedInterceptor implements Serializable { ... }
 ----
 
 Interceptors with lower priority values are called first. You do not
-need to specify the interceptor in the `beans.xml` file when you use the
-`@Priority` annotation.
+need to specify the interceptor in the `beans.xml` file when you use
+the `@Priority` annotation.

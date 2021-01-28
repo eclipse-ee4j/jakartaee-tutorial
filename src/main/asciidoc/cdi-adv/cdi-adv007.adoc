@@ -1,5 +1,3 @@
-[[GKHQF]][[using-decorators-in-cdi-applications]]
-
 == Using Decorators in CDI Applications
 
 A decorator is a Java class that is annotated
@@ -7,18 +5,18 @@ A decorator is a Java class that is annotated
 element in the `beans.xml` file.
 
 A decorator bean class must also have a delegate injection point, which
-is annotated `jakarta.decorator.Delegate`. This injection point can be a
-field, a constructor parameter, or an initializer method parameter of
+is annotated `jakarta.decorator.Delegate`. This injection point can be
+a field, a constructor parameter, or an initializer method parameter of
 the decorator class.
 
-Decorators are outwardly similar to interceptors. However, they actually
-perform tasks complementary to those performed by interceptors.
-Interceptors perform cross-cutting tasks associated with method
-invocation and with the lifecycles of beans, but cannot perform any
-business logic. Decorators, on the other hand, do perform business logic
-by intercepting business methods of beans. This means that instead of
-being reusable for different kinds of applications, as are interceptors,
-their logic is specific to a particular application.
+Decorators are outwardly similar to interceptors. However, they
+actually perform tasks complementary to those performed by
+interceptors. Interceptors perform cross-cutting tasks associated with
+method invocation and with the lifecycles of beans, but cannot perform
+any business logic. Decorators, on the other hand, do perform business
+logic by intercepting business methods of beans. This means that
+instead of being reusable for different kinds of applications, as are
+interceptors, their logic is specific to a particular application.
 
 For example, instead of using an alternative `TestCoderImpl` class for
 the `encoder` example, you could create a decorator as follows:
@@ -42,8 +40,8 @@ public abstract class CoderDecorator implements Coder {
 }
 ----
 
-See link:#GKPAX[The decorators Example:
-Decorating a Bean] for an example that uses this decorator.
+See <<the-decorators-example-decorating-a-bean>> for an example that
+uses this decorator.
 
 This simple decorator returns more detailed output than the encoded
 string returned by the `CoderImpl.codeString` method. A more complex
@@ -68,9 +66,9 @@ If an application uses more than one decorator, the decorators are
 invoked in the order in which they are specified in the `beans.xml`
 file.
 
-If an application has both interceptors and decorators, the interceptors
-are invoked first. This means, in effect, that you cannot intercept a
-decorator.
+If an application has both interceptors and decorators, the
+interceptors are invoked first. This means, in effect, that you cannot
+intercept a decorator.
 
 The decorators that you specify in the `beans.xml` file apply only to
 classes in the same archive. Use the `@Priority` annotation to specify
@@ -85,5 +83,5 @@ public abstract class CoderDecorator implements Coder { ... }
 ----
 
 Decorators with lower priority values are called first. You do not need
-to specify the decorator in the `beans.xml` when you use the `@Priority`
-annotation.
+to specify the decorator in the `beans.xml` when you use the
+`@Priority` annotation.
