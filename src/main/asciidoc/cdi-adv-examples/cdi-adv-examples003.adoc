@@ -1,19 +1,14 @@
-[[GKHPY]][[the-producermethods-example-using-a-producer-method-to-choose-a-bean-implementation]]
-
 == The producermethods Example: Using a Producer Method to Choose a Bean Implementation
 
 The `producermethods` example shows how to use a producer method to
 choose between two beans at runtime, as described in
-link:#GKGKV[Using Producer Methods, Producer Fields, and
-Disposer Methods in CDI Applications]. It is very similar to the
-`encoder` example described in link:#GKHPU[The
-encoder Example: Using Alternatives]. The example includes the same
-interface and two implementations of it, a managed bean, a Facelets
-page, and configuration files. It also contains a qualifier type. When
-you run it, you do not need to edit the `beans.xml` file and redeploy
-the application to change its behavior.
-
-[[GKHRO]][[components-of-the-producermethods-example]]
+<<using-producer-methods-producer-fields-and-disposer-methods-in-cdi-applications>>.
+It is very similar to the `encoder` example described in
+<<the-encoder-example-using-alternatives>>. The example includes the
+same interface and two implementations of it, a managed bean, a
+Facelets page, and configuration files. It also contains a qualifier
+type. When you run it, you do not need to edit the `beans.xml` file and
+redeploy the application to change its behavior.
 
 === Components of the producermethods Example
 
@@ -35,32 +30,32 @@ letters:
 
 [source,java]
 ----
-    private final static int TEST = 1;
-    private final static int SHIFT = 2;
-    private int coderType = SHIFT; // default value
+private final static int TEST = 1;
+private final static int SHIFT = 2;
+private int coderType = SHIFT; // default value
 ----
 
-The producer method, annotated with `@Produces` and `@Chosen` as well as
-`@RequestScoped` (so that it lasts only for the duration of a single
+The producer method, annotated with `@Produces` and `@Chosen` as well
+as `@RequestScoped` (so that it lasts only for the duration of a single
 request and response), returns one of the two implementations based on
 the `coderType` supplied by the user.
 
 [source,java]
 ----
-    @Produces
-    @Chosen
-    @RequestScoped
-    public Coder getCoder() {
+@Produces
+@Chosen
+@RequestScoped
+public Coder getCoder() {
 
-        switch (coderType) {
-            case TEST:
-                return new TestCoderImpl();
-            case SHIFT:
-                return new CoderImpl();
-            default:
-                return null;
-        }
+    switch (coderType) {
+        case TEST:
+            return new TestCoderImpl();
+        case SHIFT:
+            return new CoderImpl();
+        default:
+            return null;
     }
+}
 ----
 
 Finally, the managed bean injects the chosen implementation, specifying
@@ -69,10 +64,10 @@ ambiguities:
 
 [source,java]
 ----
-    @Inject
-    @Chosen
-    @RequestScoped
-    Coder coder;
+@Inject
+@Chosen
+@RequestScoped
+Coder coder;
 ----
 
 The Facelets page contains modified instructions and a pair of options
@@ -102,52 +97,42 @@ whose selected value is assigned to the property `coderBean.coderType`:
             ...
 ----
 
-[[GKHQE]][[running-the-producermethods-example]]
-
 === Running the producermethods Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `producermethods` application.
 
-[[GKHPE]][[to-build-package-and-deploy-the-producermethods-example-using-netbeans-ide]]
-
 ==== To Build, Package, and Deploy the producermethods Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. From the *File* menu, choose *Open Project*.
+. In the *Open Project* dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/cdi
 ----
-4.  Select the `producermethods` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `producermethods` project and
-select Build.
+. Select the `producermethods` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `producermethods` project and
+select *Build*.
 +
 This command builds and packages the application into a WAR file,
 `producermethods.war`, located in the `target` directory, and then
 deploys it to GlassFish Server.
 
-[[GKHPS]][[to-build-package-and-deploy-the-producermethods-example-using-maven]]
-
 ==== To Build, Package, and Deploy the producermethods Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/cdi/producermethods/
 ----
-3.  Enter the following command to deploy the application:
+. Enter the following command to deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
@@ -156,17 +141,14 @@ This command builds and packages the application into a WAR file,
 `producermethods.war`, located in the `target` directory, and then
 deploys it to GlassFish Server.
 
-[[GKHQG]][[to-run-the-producermethods-example]]
-
 ==== To Run the producermethods Example
 
-1.  In a web browser, enter the following URL:
+. In a web browser, enter the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/producermethods
 ----
-2.  On the String Encoder page, select either the Test or Shift Letters
+. On the String Encoder page, select either the Test or Shift Letters
 option, enter a string and the number of letters to shift by, and then
 click Encode.
 +
