@@ -1,34 +1,28 @@
-[[BNAZC]][[types-supported-by-jax-ws]]
+== Types Supported by XML Web Services
 
-== Types Supported by JAX-WS
-
-JAX-WS delegates the mapping of Java programming language types to and
-from XML definitions to JAXB. Application developers don't need to know
-the details of these mappings but should be aware that not every class
-in the Java language can be used as a method parameter or return type in
-JAX-WS.
+XML Web Services delegates the mapping of Java programming language
+types to and from XML definitions to JAXB. Application developers don't
+need to know the details of these mappings but should be aware that not
+every class in the Java language can be used as a method parameter or
+return type in XML Web Services.
 
 The following sections explain the default schema-to-Java and
 Java-to-schema data type bindings:
 
-* link:#BNAZT[Schema-to-Java Mapping]
-* link:#BNAZW[Java-to-Schema Mapping]
-
-[[BNAZT]][[schema-to-java-mapping]]
+* <<schema-to-java-mapping>>
+* <<java-to-schema-mapping>>
 
 === Schema-to-Java Mapping
 
 The Java language provides a richer set of data types than XML schema.
-link:#BNAZU[Table 31-1] lists the mapping of XML data types to Java data
-types in JAXB.
+<<mapping-of-xml-data-types-to-java-data-types>>
+lists the mapping of XML data types to Java data types.
 
-[[sthref135]][[BNAZU]]
+[[mapping-of-xml-data-types-to-java-data-types]]
+[width="50%",cols="20%a,30%a", title="Mapping of XML Data Types to Java Data Types"]
+|===
+|XML Schema Type |Java Data Type
 
-*Table 31-1 Mapping of XML Data Types to Java Data Types in JAXB*
-
-[width="50%",cols="20%,30%"]
-|=========================================================
-|*XML Schema Type* |*Java Data Type*
 |`xsd:string` |`java.lang.String`
 |`xsd:integer` |`java.math.BigInteger`
 |`xsd:int` |`int`
@@ -53,23 +47,18 @@ types in JAXB.
 |`xsd:anySimpleType` |`java.lang.String`
 |`xsd:duration` |`javax.xml.datatype.Duration`
 |`xsd:NOTATION` |`javax.xml.namespace.QName`
-|=========================================================
-
-
-[[BNAZW]][[java-to-schema-mapping]]
+|===
 
 === Java-to-Schema Mapping
 
-link:#BNAZX[Table 31-2] shows the default mapping of Java classes to XML
-data types.
+<<mapping-of-java-classes-to-xml-data-types>> shows the default mapping
+of Java classes to XML data types.
 
-[[sthref136]][[BNAZX]]
+[[mapping-of-java-classes-to-xml-data-types]]
+[width="50%",cols="30%a,20%a",title="Mapping of Java Classes to XML Data Types"]
+|===
+|Java Class |XML Data Type
 
-*Table 31-2 Mapping of Java Classes to XML Data Types in JAXB*
-
-[width="50%",cols="30%,20%"]
-|=============================================================
-|*Java Class* |*XML Data Type*
 |`java.lang.String` |`xs:string`
 |`java.math.BigInteger` |`xs:integer`
 |`java.math.BigDecimal` |`xs:decimal`
@@ -84,4 +73,4 @@ data types.
 |`jakarta.activation.DataHandler` |`xs:base64Binary`
 |`javax.xml.transform.Source` |`xs:base64Binary`
 |`java.util.UUID` |`xs:string`
-|=============================================================
+|===
