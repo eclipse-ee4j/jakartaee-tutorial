@@ -1,18 +1,12 @@
-[[BABCDDGH]][[advanced-features-of-the-client-api]]
-
 == Advanced Features of the Client API
 
-This section describes some of the advanced features of the Jakarta REST
-Client API.
-
-[[CHDGBBCC]][[configuring-the-client-request]]
+This section describes some of the advanced features of the Jakarta
+REST Client API.
 
 === Configuring the Client Request
 
 Additional configuration options may be added to the client request
 after it is created but before it is invoked.
-
-[[CHDHAFBG]][[setting-message-headers-in-the-client-request]]
 
 ==== Setting Message Headers in the Client Request
 
@@ -30,9 +24,10 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
 
 If you need to set multiple headers on the request, call the
 `Invocation.Builder.headers` method and pass in a
-`jakarta.ws.rs.core.MultivaluedMap` instance with the name-value pairs of
-the HTTP headers. Calling the `headers` method replaces all the existing
-headers with the headers supplied in the `MultivaluedMap` instance.
+`jakarta.ws.rs.core.MultivaluedMap` instance with the name-value pairs
+of the HTTP headers. Calling the `headers` method replaces all the
+existing headers with the headers supplied in the `MultivaluedMap`
+instance.
 
 [source,java]
 ----
@@ -46,19 +41,17 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
         .get(String.class);
 ----
 
-The `MultivaluedMap` interface allows you to specify multiple values for
-a given key.
+The `MultivaluedMap` interface allows you to specify multiple values
+for a given key.
 
 [source,java]
 ----
-MultivaluedMap<String, Object> myHeaders =
+MultivaluedMap<String, Object> myHeaders = 
     new MultivaluedMap<String, Object>();
 List<String> values = new ArrayList<>();
-values.add(...)
-myHeaders.add("myHeader", values
+values.add(...);
+myHeaders.add("myHeader", values);
 ----
-
-[[CHDHFFDJ]][[setting-cookies-in-the-client-request]]
 
 ==== Setting Cookies in the Client Request
 
@@ -92,8 +85,6 @@ String response = myResource.request(MediaType.TEXT_PLAIN)
         .get(String.class);
 ----
 
-[[CHDJEFID]][[adding-filters-to-the-client]]
-
 ==== Adding Filters to the Client
 
 You can register custom filters with the client request or the response
@@ -123,9 +114,9 @@ In the preceding example, both the `MyLoggingFilter` and
 
 Request and response filter classes implement the
 `jakarta.ws.rs.client.ClientRequestFilter` and
-`jakarta.ws.rs.client.ClientResponseFilter` interfaces, respectively. Both
-of these interfaces define a single method, `filter`. All filters must
-be annotated with `jakarta.ws.rs.ext.Provider`.
+`jakarta.ws.rs.client.ClientResponseFilter` interfaces, respectively.
+Both of these interfaces define a single method, `filter`. All filters
+must be annotated with `jakarta.ws.rs.ext.Provider`.
 
 The following class is a logging filter for both client requests and
 client responses.
@@ -170,8 +161,6 @@ public void filter(ClientRequestContext requestContext) throws IOException {
 }
 ----
 
-[[CHDEBIGG]][[asynchronous-invocations-in-the-client-api]]
-
 === Asynchronous Invocations in the Client API
 
 In networked applications, network issues can affect the perceived
@@ -179,16 +168,17 @@ performance of the application, particularly in long-running or
 complicated network calls. Asynchronous processing helps prevent
 blocking and makes better use of an application's resources.
 
-In the Jakarta REST Client API, the `Invocation.Builder.async` method is used
-when constructing a client request to indicate that the call to the
-service should be performed asynchronously. An asynchronous invocation
-returns control to the caller immediately, with a return type of
-http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html?is-external=true[`java.util.concurrent.Future<T>`]
+In the Jakarta REST Client API, the `Invocation.Builder.async` method
+is used when constructing a client request to indicate that the call to
+the service should be performed asynchronously. An asynchronous
+invocation returns control to the caller immediately, with a return
+type of
+http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html?is-external=true[`java.util.concurrent.Future<T>`]
 (part of the Java SE concurrency API) and with the type set to the
 return type of the service call. `Future<T>` objects have methods to
-check if the asynchronous call has been completed, to retrieve the final
-result, to cancel the invocation, and to check if the invocation has
-been cancelled.
+check if the asynchronous call has been completed, to retrieve the
+final result, to cancel the invocation, and to check if the invocation
+has been cancelled.
 
 The following example shows how to invoke an asynchronous request on a
 resource.
@@ -202,15 +192,13 @@ Future<String> response = myResource.request(MediaType.TEXT_PLAIN)
         .get(String.class);
 ----
 
-[[sthref140]][[using-custom-callbacks-in-asynchronous-invocations]]
-
 ==== Using Custom Callbacks in Asynchronous Invocations
 
 The `InvocationCallback` interface defines two methods, `completed` and
 `failed`, that are called when an asynchronous invocation either
 completes successfully or fails, respectively. You may register an
-`InvocationCallback` instance on your request by creating a new instance
-when specifying the request method.
+`InvocationCallback` instance on your request by creating a new
+instance when specifying the request method.
 
 The following example shows how to register a callback object on an
 asynchronous invocation.
@@ -230,10 +218,8 @@ Future<Customer> fCustomer = myResource.request(MediaType.TEXT_PLAIN)
              public void failed(Throwable throwable) {
             // handle the error
             }
-    });
+        });
 ----
-
-[[sthref141]][[using-reactive-approach-in-asynchronous-invocations]]
 
 ==== Using Reactive Approach in Asynchronous Invocations
 
@@ -242,29 +228,32 @@ cases and when there are many independent calls to make. In nested
 calls, using custom callbacks becomes very difficult to implement,
 debug, and maintain.
 
-Jakarta REST defines a new type of invoker called as `RxInvoker` and a default
-implementation of this type is `CompletionStageRxInvoker`. The new `rx`
-method is used as in the following example:
+Jakarta REST defines a new type of invoker called as `RxInvoker` and a
+default implementation of this type is `CompletionStageRxInvoker`. The
+new `rx` method is used as in the following example:
 
 [source,java]
 ----
-CompletionStage<String> csf = client.target("forecast/{destination}") resolveTemplate("destination", "mars").request().rx().get(String.class);
+CompletionStage<String> csf = client.target("forecast/{destination}")
+    .resolveTemplate("destination","mars")
+    .request().rx().get(String.class);
 csf.thenAccept(System.out::println);
 ----
 
 In the example, an asynchronous processing of the interface
 `CompletionStage<String>` is created and waits till it is completed and
-the result is displayed. The `CompletionStage` that is returned can then be used only to retrieve the result as shown in the above example or can be combined with other completion stages to ease and improve the processing of asynchronous tasks.
-
-[[sthref142]][[using-server-sent-events]]
+the result is displayed. The `CompletionStage` that is returned can
+then be used only to retrieve the result as shown in the above example
+or can be combined with other completion stages to ease and improve the
+processing of asynchronous tasks.
 
 === Using Server-Sent Events
 
 Server-sent Events (SSE) technology is used to asynchronously push
 notifications to the client over standard HTTP or HTTPS protocol.
-Clients can subscribe to event notifications that originate on a server.
-Server generates events and sends these events back to the clients
-that are subscribed to receive the notifications. The one-way
+Clients can subscribe to event notifications that originate on a
+server. Server generates events and sends these events back to the
+clients that are subscribed to receive the notifications. The one-way
 communication channel connection is established by the client. Once the
 connection is established, the server sends events to the client
 whenever new data is available.
@@ -272,8 +261,6 @@ whenever new data is available.
 The communication channel established by the client lasts till the
 client closes the connection and it is also re-used by the server to
 send multiple events from the server.
-
-[[sthref143]][[overview-of-the-sse-api]]
 
 === Overview of the SSE API
 
@@ -291,15 +278,14 @@ send events to the clients:
 @GET
 @Path("eventStream")
 @Produces(MediaType.SERVER_SENT_EVENTS)
-public void eventStream(@Context SseEventSink eventSink,
-@Context Sse sse) {
-executor.execute(() -> {
-try (SseEventSink sink = eventSink) {
-eventSink.send(sse.newEvent("event1"));
-eventSink.send(sse.newEvent("event2"));
-eventSink.send(sse.newEvent("event3"));
-}
-});
+public void eventStream(@Context SseEventSink eventSink, @Context Sse sse) {
+    executor.execute(() -> {
+        try (SseEventSink sink = eventSink) {
+            eventSink.send(sse.newEvent("event1"));
+            eventSink.send(sse.newEvent("event2"));
+            eventSink.send(sse.newEvent("event3"));
+        }
+    });
 }
 ----
 
@@ -313,16 +299,14 @@ enabled.
 The events that are streamed to the clients can be defined with the
 details such as `event`, `data`, `id`, `retry`, and `comment`.
 
-[[sthref144]][[broadcasting-using-sse]]
-
 === Broadcasting Using SSE
 
 Broadcasting is the action of sending events to multiple clients
-simultaneously. Jakarta REST SSE API provides `SseBroadcaster` to register all
-`SseEventSink` instances and send events to all registered event
-outputs. The life-cycle and scope of an `SseBroadcaster` is fully
-controlled by applications and not the Jakarta REST runtime. The following
-example show the use of broadcasters:
+simultaneously. Jakarta REST SSE API provides `SseBroadcaster` to
+register all `SseEventSink` instances and send events to all registered
+event outputs. The life-cycle and scope of an `SseBroadcaster` is fully
+controlled by applications and not the Jakarta REST runtime. The
+following example show the use of broadcasters:
 
 [source,java]
 ----
@@ -361,14 +345,12 @@ the creation of multiple instances of the class. The `register` method
 on a broadcaster is used to add a new `SseEventSink`; the `broadcast`
 method is used to send an SSE event to all registered clients.
 
-[[sthref145]][[listening-and-receiving-events]]
-
 === Listening and Receiving Events
 
-Jakarta REST SSE provides the `SseEventSource` interface for the client to
-subscribe to notifications. The client can get asynchronously notified
-about incoming events by invoking one of the `subscribe` methods in
-`jakarta.ws.rs.sse.SseEventSource`.
+Jakarta REST SSE provides the `SseEventSource` interface for the client
+to subscribe to notifications. The client can get asynchronously
+notified about incoming events by invoking one of the `subscribe`
+methods in `jakarta.ws.rs.sse.SseEventSource`.
 
 The following example shows how to use the `SseEventSource` API to open
 an SSE connection and read some of the messages for a period:
