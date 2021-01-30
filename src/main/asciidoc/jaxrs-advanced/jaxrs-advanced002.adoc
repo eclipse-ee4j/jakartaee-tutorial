@@ -1,15 +1,11 @@
-[[BABCJEDF]][[validating-resource-data-with-bean-validation]]
-
 == Validating Resource Data with Bean Validation
 
-Jakarta REST supports Bean Validation to verify Jakarta REST resource classes.
-This support consists of:
+Jakarta REST supports Bean Validation to verify Jakarta REST resource
+classes. This support consists of:
 
 * Adding constraint annotations to resource method parameters
 * Ensuring entity data is valid when the entity is passed in as a
 parameter
-
-[[CIHJAFGI]][[using-constraint-annotations-on-resource-methods]]
 
 === Using Constraint Annotations on Resource Methods
 
@@ -106,15 +102,13 @@ public class CreateUserResource {
 }
 ----
 
-[[CIHFDCBI]][[validating-entity-data]]
-
 === Validating Entity Data
 
 Classes that contain validation constraint annotations may be used in
-method parameters in a resource class. To validate these entity classes,
-use the `@Valid` annotation on the method parameter. For example, the
-following class is a user-defined class containing both standard and
-user-defined validation constraints.
+method parameters in a resource class. To validate these entity
+classes, use the `@Valid` annotation on the method parameter. For
+example, the following class is a user-defined class containing both
+standard and user-defined validation constraints.
 
 [source,java]
 ----
@@ -147,8 +141,8 @@ public class CreateUserResource {
 ----
 
 The `@Valid` annotation ensures that the entity class is validated at
-runtime. Additional user-defined constraints can also trigger validation
-of an entity.
+runtime. Additional user-defined constraints can also trigger
+validation of an entity.
 
 [source,java]
 ----
@@ -191,10 +185,8 @@ public class GetUserResource {
 ----
 
 As in the previous example, the `@ActiveUser` constraint is applied to
-the returned entity class as well as the `@PhoneRequired` and `@NotNull`
-constraints defined within the entity class.
-
-[[CIHCHEFH]][[validation-exception-handling-and-response-codes]]
+the returned entity class as well as the `@PhoneRequired` and
+`@NotNull` constraints defined within the entity class.
 
 === Validation Exception Handling and Response Codes
 
@@ -203,8 +195,9 @@ If a `jakarta.validation.ValidationException` or any subclass of
 the Jakarta REST runtime will respond to the client request with a 500
 (Internal Server Error) HTTP status code.
 
-If a `ConstraintValidationException` is thrown, the Jakarta REST runtime will
-respond to the client with one of the following HTTP status codes:
+If a `ConstraintValidationException` is thrown, the Jakarta REST
+runtime will respond to the client with one of the following HTTP
+status codes:
 
 * `500` (Internal Server Error) if the exception was thrown while
 validating a method return type

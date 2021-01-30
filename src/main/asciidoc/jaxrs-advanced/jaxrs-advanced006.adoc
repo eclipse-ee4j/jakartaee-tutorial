@@ -1,16 +1,14 @@
-[[GKQBQ]][[runtime-content-negotiation]]
-
 == Runtime Content Negotiation
 
 The `@Produces` and `@Consumes` annotations handle static content
-negotiation in Jakarta REST. These annotations specify the content preferences
-of the server. HTTP headers such as `Accept`, `Content-Type`, and
-`Accept-Language` define the content negotiation preferences of the
-client.
+negotiation in Jakarta REST. These annotations specify the content
+preferences of the server. HTTP headers such as `Accept`,
+`Content-Type`, and `Accept-Language` define the content negotiation
+preferences of the client.
 
-For more details on the HTTP headers for content negotiation, see HTTP
-/1.1 - Content Negotiation
-(`http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html`).
+For more details on the HTTP headers for content negotiation, see
+HTTP/1.1 - Content Negotiation
+(http://www.w3.org/Protocols/rfc2616/rfc2616-sec12.html[^]).
 
 The following code snippet shows the server content preferences:
 
@@ -32,7 +30,7 @@ public class Employee {
 The `getEmployeeAddressText` method is called for an HTTP request that
 looks like the following:
 
-[source,java]
+[source,http]
 ----
 GET /employee
 Accept: text/plain
@@ -40,7 +38,6 @@ Accept: text/plain
 
 This will produce the following response:
 
-[source,java]
 ----
 500 Oracle Parkway, Redwood Shores, CA
 ----
@@ -48,7 +45,7 @@ This will produce the following response:
 The `getEmployeeAddressXml` method is called for an HTTP request that
 looks like the following:
 
-[source,java]
+[source,http]
 ----
 GET /employee
 Accept: text/xml
@@ -56,7 +53,7 @@ Accept: text/xml
 
 This will produce the following response:
 
-[source,java]
+[source,xml]
 ----
 <address street="500 Oracle Parkway, Redwood Shores, CA" country="USA"/>
 ----
@@ -72,9 +69,9 @@ and media types for the client and server.
 In addition to supporting static content negotiation, Jakarta REST also
 supports runtime content negotiation using the
 `jakarta.ws.rs.core.Variant` class and `Request` objects. The `Variant`
-class specifies the resource representation of content negotiation. Each
-instance of the `Variant` class may contain a media type, a language,
-and an encoding. The `Variant` object defines the resource
+class specifies the resource representation of content negotiation.
+Each instance of the `Variant` class may contain a media type, a
+language, and an encoding. The `Variant` object defines the resource
 representation that is supported by the server. The
 `Variant.VariantListBuilder` class is used to build a list of
 representation variants.
@@ -105,10 +102,10 @@ snippet is 4, and the contents are as follows:
 ----
 
 The `jakarta.ws.rs.core.Request.selectVariant` method accepts a list of
-`Variant` objects and chooses the `Variant` object that matches the HTTP
-request. This method compares its list of `Variant` objects with the
-`Accept`, `Accept-Encoding`, `Accept-Language`, and `Accept-Charset`
-headers of the HTTP request.
+`Variant` objects and chooses the `Variant` object that matches the
+HTTP request. This method compares its list of `Variant` objects with
+the `Accept`, `Accept-Encoding`, `Accept-Language`, and
+`Accept-Charset` headers of the HTTP request.
 
 The following code snippet shows how to use the `selectVariant` method
 to select the most acceptable `Variant` from the values in the client
@@ -129,11 +126,9 @@ public Response get(@Context Request r) {
 }
 ----
 
-The `selectVariant` method returns the `Variant` object that matches the
-request or null if no matches are found. In this code snippet, if the
-method returns null, a `Response` object for a nonacceptable response is
-built. Otherwise, a `Response` object with an OK status and containing a
-representation in the form of an `Object` entity and a `Variant` is
-returned.
-
-
+The `selectVariant` method returns the `Variant` object that matches
+the request or null if no matches are found. In this code snippet, if
+the method returns null, a `Response` object for a nonacceptable
+response is built. Otherwise, a `Response` object with an OK status and
+containing a representation in the form of an `Object` entity and a
+`Variant` is returned.
