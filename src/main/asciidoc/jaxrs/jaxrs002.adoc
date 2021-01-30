@@ -1,44 +1,40 @@
-[[GILIK]][[creating-a-restful-root-resource-class]]
-
 == Creating a RESTful Root Resource Class
 
 Root resource classes are "plain old Java objects" (POJOs) that are
-either annotated with `@Path` or have at least one method annotated with
-`@Path` or a request method designator, such as `@GET`, `@PUT`, `@POST`,
-or `@DELETE`. Resource methods are methods of a resource class annotated
-with a request method designator. This section explains how to use
-Jakarta REST to annotate Java classes to create RESTful web services.
-
-[[GILRU]][[developing-restful-web-services-with-jax-rs]]
+either annotated with `@Path` or have at least one method annotated
+with `@Path` or a request method designator, such as `@GET`, `@PUT`,
+`@POST`, or `@DELETE`. Resource methods are methods of a resource class
+annotated with a request method designator. This section explains how
+to use Jakarta REST to annotate Java classes to create RESTful web
+services.
 
 === Developing RESTful Web Services with Jakarta REST
 
-Jakarta REST is a Java programming language API designed to make it easy to
-develop applications that use the REST architecture.
+Jakarta REST is a Java programming language API designed to make it
+easy to develop applications that use the REST architecture.
 
-The Jakarta REST API uses Java programming language annotations to simplify
-the development of RESTful web services. Developers decorate Java
-programming language class files with Jakarta REST annotations to define
-resources and the actions that can be performed on those resources.
-Jakarta REST annotations are runtime annotations; therefore, runtime
-reflection will generate the helper classes and artifacts for the
-resource. A Jakarta EE application archive containing Jakarta REST resource
-classes will have the resources configured, the helper classes and
-artifacts generated, and the resource exposed to clients by deploying
-the archive to a Jakarta EE server.
+The Jakarta REST API uses Java programming language annotations to
+simplify the development of RESTful web services. Developers decorate
+Java programming language class files with Jakarta REST annotations to
+define resources and the actions that can be performed on those
+resources. Jakarta REST annotations are runtime annotations; therefore,
+runtime reflection will generate the helper classes and artifacts for
+the resource. A Jakarta EE application archive containing Jakarta REST
+resource classes will have the resources configured, the helper classes
+and artifacts generated, and the resource exposed to clients by
+deploying the archive to a Jakarta EE server.
 
-link:#GINNA[Table 30-1] lists some of the Java programming annotations
-that are defined by Jakarta REST, with a brief description of how each is
-used. Further information on the Jakarta REST APIs can be viewed at
-`https://jakarta.ee/specifications/platform/8/apidocs/`.
+<<summary-of-jakarta-rest-annotations>> lists some of the Java
+programming annotations that are defined by Jakarta REST, with a brief
+description of how each is used. Further information on the Jakarta
+REST APIs can be viewed at
+https://jakarta.ee/specifications/platform/9/apidocs/[^].
 
-[[sthref137]][[GINNA]]
+[[summary-of-jakarta-rest-annotations]]
+[width="99%",cols="10%,90%",title="Summary of Jakarta REST Annotations"]
+|===
+|Annotation |Description
 
-*Table 30-1 Summary of Jakarta REST Annotations*
-
-[width="99%",cols="10%,90%"]
-|=======================================================================
-|*Annotation*|*Description*
 |`@Path` |The `@Path` annotation's value is a relative URI path
 indicating where the Java class will be hosted: for example,
 `/helloworld`. You can also embed variables in the URIs to make a URI
@@ -49,44 +45,44 @@ pass it to the application as a variable in the URI:
 |`@GET` |The `@GET` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP GET
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@POST` |The `@POST` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP POST
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@PUT` |The `@PUT` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP PUT
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@DELETE` |The `@DELETE` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP DELETE
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@HEAD` |The `@HEAD` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP HEAD
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@OPTIONS` |The `@OPTIONS` annotation is a request method designator
 and corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP OPTIONS
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@PATCH` |The `@PATCH` annotation is a request method designator and
 corresponds to the similarly named HTTP method. The Java method
 annotated with this request method designator will process HTTP PATCH
-requests. The behavior of a resource is determined by the HTTP method to
-which the resource is responding.
+requests. The behavior of a resource is determined by the HTTP method
+to which the resource is responding.
 
 |`@PathParam` |The `@PathParam` annotation is a type of parameter that
 you can extract for use in your resource class. URI path parameters are
@@ -94,9 +90,9 @@ extracted from the request URI, and the parameter names correspond to
 the URI path template variable names specified in the `@Path`
 class-level annotation.
 
-|`@QueryParam` |The `@QueryParam` annotation is a type of parameter that
-you can extract for use in your resource class. Query parameters are
-extracted from the request URI query parameters.
+|`@QueryParam` |The `@QueryParam` annotation is a type of parameter
+that you can extract for use in your resource class. Query parameters
+are extracted from the request URI query parameters.
 
 |`@Consumes` |The `@Consumes` annotation is used to specify the MIME
 media types of representations a resource can consume that were sent by
@@ -106,25 +102,22 @@ the client.
 media types of representations a resource can produce and send back to
 the client: for example, `"text/plain"`.
 
-|`@Provider` |The `@Provider` annotation is used for anything that is of
-interest to the Jakarta REST runtime, such as `MessageBodyReader` and
-`MessageBodyWriter`. For HTTP requests, the `MessageBodyReader` is used
-to map an HTTP request entity body to method parameters. On the response
-side, a return value is mapped to an HTTP response entity body by using
-a `MessageBodyWriter`. If the application needs to supply additional
-metadata, such as HTTP headers or a different status code, a method can
-return a `Response` that wraps the entity and that can be built using
-`Response.ResponseBuilder`.
+|`@Provider` |The `@Provider` annotation is used for anything that is
+of interest to the Jakarta REST runtime, such as `MessageBodyReader`
+and `MessageBodyWriter`. For HTTP requests, the `MessageBodyReader` is
+used to map an HTTP request entity body to method parameters. On the
+response side, a return value is mapped to an HTTP response entity body
+by using a `MessageBodyWriter`. If the application needs to supply
+additional metadata, such as HTTP headers or a different status code, a
+method can return a `Response` that wraps the entity and that can be
+built using `Response.ResponseBuilder`.
 
-|`@ApplicationPath` |The `@ApplicationPath` annotation is used to define
-the URL mapping for the application. The path specified by
+|`@ApplicationPath` |The `@ApplicationPath` annotation is used to
+define the URL mapping for the application. The path specified by
 `@ApplicationPath` is the base URI for all resource URIs specified by
 `@Path` annotations in the resource class. You may only apply
 `@ApplicationPath` to a subclass of `jakarta.ws.rs.core.Application`.
-|=======================================================================
-
-
-[[GILQB]][[overview-of-a-jax-rs-application]]
+|===
 
 === Overview of a Jakarta REST Application
 
@@ -173,18 +166,21 @@ The following sections describe the annotations used in this example.
 preceding example, the Java class will be hosted at the URI path
 `/helloworld`. This is an extremely simple use of the `@Path`
 annotation, with a static URI path. Variables can be embedded in the
-URIs. URI path templates are URIs with variables embedded within the URI
-syntax.
+URIs. URI path templates are URIs with variables embedded within the
+URI syntax.
+
 * The `@GET` annotation is a request method designator, along with
 `@POST`, `@PUT`, `@DELETE`, and `@HEAD`, defined by Jakarta REST and
 corresponding to the similarly named HTTP methods. In the example, the
 annotated Java method will process HTTP GET requests. The behavior of a
 resource is determined by the HTTP method to which the resource is
 responding.
+
 * The `@Produces` annotation is used to specify the MIME media types a
 resource can produce and send back to the client. In this example, the
 Java method will produce representations identified by the MIME media
 type `"text/html"`.
+
 * The `@Consumes` annotation is used to specify the MIME media types a
 resource can consume that were sent by the client. The example could be
 modified to set the message returned by the `getHtml` method, as shown
@@ -199,8 +195,6 @@ public void postHtml(String message) {
 }
 ----
 
-[[GINPW]][[the-path-annotation-and-uri-path-templates]]
-
 === The @Path Annotation and URI Path Templates
 
 The `@Path` annotation identifies the URI path template to which the
@@ -212,27 +206,26 @@ which the Jakarta REST runtime responds.
 
 URI path templates are URIs with variables embedded within the URI
 syntax. These variables are substituted at runtime in order for a
-resource to respond to a request based on the substituted URI. Variables
-are denoted by braces (`{` and `}`). For example, look at the following
-`@Path` annotation:
+resource to respond to a request based on the substituted URI.
+Variables are denoted by braces (`{` and `}`). For example, look at the
+following `@Path` annotation:
 
 [source,java]
 ----
 @Path("/users/{username}")
 ----
 
-In this kind of example, a user is prompted to type his or her name, and
-then a Jakarta REST web service configured to respond to requests to this URI
-path template responds. For example, if the user types the user name
-"Galileo," the web service responds to the following URL:
+In this kind of example, a user is prompted to type his or her name,
+and then a Jakarta REST web service configured to respond to requests
+to this URI path template responds. For example, if the user types the
+user name "Galileo," the web service responds to the following URL:
 
-[source,java]
 ----
 http://example.com/users/Galileo
 ----
 
-To obtain the value of the user name, the `@PathParam` annotation may be
-used on the method parameter of a request method, as shown in the
+To obtain the value of the user name, the `@PathParam` annotation may
+be used on the method parameter of a request method, as shown in the
 following code example:
 
 [source,java]
@@ -259,29 +252,29 @@ override the default regular expression in the variable definition:
 @Path("users/{username: [a-zA-Z][a-zA-Z_0-9]*}")
 ----
 
-In this example, the `username` variable will match only user names that
-begin with one uppercase or lowercase letter and zero or more
+In this example, the `username` variable will match only user names
+that begin with one uppercase or lowercase letter and zero or more
 alphanumeric characters and the underscore character. If a user name
-does not match that template, a 404 (Not Found) response will be sent to
-the client.
+does not match that template, a 404 (Not Found) response will be sent
+to the client.
 
 A `@Path` value isn't required to have leading or trailing slashes (/).
-The Jakarta REST runtime parses URI path templates the same way, whether or
-not they have leading or trailing slashes.
+The Jakarta REST runtime parses URI path templates the same way,
+whether or not they have leading or trailing slashes.
 
 A URI path template has one or more variables, with each variable name
 surrounded by braces: `{` to begin the variable name and `}` to end it.
-In the preceding example, `username` is the variable name. At runtime, a
-resource configured to respond to the preceding URI path template will
-attempt to process the URI data that corresponds to the location of
-`{username}` in the URI as the variable data for `username`.
+In the preceding example, `username` is the variable name. At runtime,
+a resource configured to respond to the preceding URI path template
+will attempt to process the URI data that corresponds to the location
+of `{username}` in the URI as the variable data for `username`.
 
 For example, if you want to deploy a resource that responds to the URI
 path template
 `http://example.com/myContextRoot/resources/{name1}/{name2}/`, you must
 first deploy the application to a Jakarta EE server that responds to
-requests to the `http://example.com/myContextRoot` URI and then decorate
-your resource with the following `@Path` annotation:
+requests to the `http://example.com/myContextRoot` URI and then
+decorate your resource with the following `@Path` annotation:
 
 [source,java]
 ----
@@ -294,7 +287,7 @@ public class SomeResource {
 In this example, the URL pattern for the Jakarta REST helper servlet,
 specified in `web.xml`, is the default:
 
-[source,java]
+[source,xml]
 ----
 <servlet-mapping>
       <servlet-name>jakarta.ws.rs.core.Application</servlet-name>
@@ -306,15 +299,15 @@ A variable name can be used more than once in the URI path template.
 
 If a character in the value of a variable would conflict with the
 reserved characters of a URI, the conflicting character should be
-substituted with percent encoding. For example, spaces in the value of a
-variable should be substituted with `%20`.
+substituted with percent encoding. For example, spaces in the value of
+a variable should be substituted with `%20`.
 
 When defining URI path templates, be careful that the resulting URI
 after substitution is valid.
 
-link:#GIPYM[Table 32-2] lists some examples of URI path template
-variables and how the URIs are resolved after substitution. The
-following variable names and values are used in the examples:
+<<examples-of-uri-path-templates>> lists some examples of URI path
+template variables and how the URIs are resolved after substitution.
+The following variable names and values are used in the examples:
 
 * `name1`: `james`
 * `name2`: `gatz`
@@ -322,25 +315,16 @@ following variable names and values are used in the examples:
 * `location`: `Main%20Street`
 * `question`: `why`
 
-
-[width="100%",cols="100%",]
-|====================================================
-a|
-*Note*:
-
+[NOTE]
 The value of the `name3` variable is an empty string.
 
-|====================================================
+[[examples-of-uri-path-templates]]
+[width="80%",cols="40%,40%",title="Examples of URI Path Templates"]
+|===
+|URI Path Template |URI After Substitution
 
-
-[[sthref138]][[GIPYM]]
-
-*Table 32-2 Examples of URI Path Templates*
-
-[width="80%",cols="40%,40%"]
-|=======================================================================
-|*URI Path Template* |*URI After Substitution*
-|`http://example.com/{name1}/{name2}/` |`http://example.com/james/gatz/`
+|`http://example.com/{name1}/{name2}/`
+|`http://example.com/james/gatz/`
 
 |`http://example.com/{question}/{question}/{question}/`
 |`http://example.com/why/why/why/`
@@ -349,29 +333,26 @@ The value of the `name3` variable is an empty string.
 |`http://example.com/maps/Main%20Street`
 
 |`http://example.com/{name3}/home/` |`http://example.com//home/`
-|=======================================================================
-
-
-[[GIPYS]][[responding-to-http-methods-and-requests]]
+|===
 
 === Responding to HTTP Methods and Requests
 
-The behavior of a resource is determined by the HTTP methods (typically,
-GET, POST, PUT, or DELETE) to which the resource is responding.
-
-[[GIPXS]][[the-request-method-designator-annotations]]
+The behavior of a resource is determined by the HTTP methods
+(typically, GET, POST, PUT, or DELETE) to which the resource is
+responding.
 
 ==== The Request Method Designator Annotations
 
 Request method designator annotations are runtime annotations, defined
-by Jakarta REST, that correspond to the similarly named HTTP methods. Within a
-resource class file, HTTP methods are mapped to Java programming
-language methods by using the request method designator annotations. The
-behavior of a resource is determined by which HTTP method the resource
-is responding to. Jakarta REST defines a set of request method designators for
-the common HTTP methods GET, POST, PUT, DELETE, and HEAD; you can also
-create your own custom request method designators. Creating custom
-request method designators is outside the scope of this document.
+by Jakarta REST, that correspond to the similarly named HTTP methods.
+Within a resource class file, HTTP methods are mapped to Java
+programming language methods by using the request method designator
+annotations. The behavior of a resource is determined by which HTTP
+method the resource is responding to. Jakarta REST defines a set of
+request method designators for the common HTTP methods GET, POST, PUT,
+DELETE, and HEAD; you can also create your own custom request method
+designators. Creating custom request method designators is outside the
+scope of this document.
 
 The following example shows the use of the PUT method to create or
 update a storage container:
@@ -397,32 +378,34 @@ public Response putContainer() {
 }
 ----
 
-By default, the Jakarta REST runtime will automatically support the methods
-HEAD and OPTIONS if not explicitly implemented. For HEAD, the runtime
-will invoke the implemented GET method, if present, and ignore the
-response entity, if set. For OPTIONS, the `Allow` response header will
-be set to the set of HTTP methods supported by the resource. In
-addition, the Jakarta REST runtime will return a Web Application Definition
-Language (WADL) document describing the resource; see
-`http://www.w3.org/Submission/wadl/` for more information.
+By default, the Jakarta REST runtime will automatically support the
+methods HEAD and OPTIONS if not explicitly implemented. For HEAD, the
+runtime will invoke the implemented GET method, if present, and ignore
+the response entity, if set. For OPTIONS, the `Allow` response header
+will be set to the set of HTTP methods supported by the resource. In
+addition, the Jakarta REST runtime will return a Web Application
+Definition Language (WADL) document describing the resource; see
+https://www.w3.org/Submission/wadl/[^] for more information.
 
 Methods decorated with request method designators must return `void`, a
-Java programming language type, or a `jakarta.ws.rs.core.Response` object.
-Multiple parameters may be extracted from the URI by using the
+Java programming language type, or a `jakarta.ws.rs.core.Response`
+object. Multiple parameters may be extracted from the URI by using the
 `@PathParam` or `@QueryParam` annotations, as described in
-link:#GIPYW[Extracting Request Parameters]. Conversion between Java
-types and an entity body is the responsibility of an entity provider,
-such as `MessageBodyReader` or `MessageBodyWriter`. Methods that need to
-provide additional metadata with a response should return an instance of
-the `Response` class. The `ResponseBuilder` class provides a convenient
-way to create a `Response` instance using a builder pattern. The HTTP
-PUT and POST methods expect an HTTP request body, so you should use a
-`MessageBodyReader` for methods that respond to PUT and POST requests.
+<<extracting-request-parameters>>. Conversion between Java types and an
+entity body is the responsibility of an entity provider, such as
+`MessageBodyReader` or `MessageBodyWriter`. Methods that need to
+provide additional metadata with a response should return an instance
+of the `Response` class. The `ResponseBuilder` class provides a
+convenient way to create a `Response` instance using a builder pattern.
+The HTTP PUT and POST methods expect an HTTP request body, so you
+should use a `MessageBodyReader` for methods that respond to PUT and
+POST requests.
 
-Both `@PUT` and `@POST` can be used to create or update a resource. POST
-can mean anything, so when using POST, it is up to the application to
-define the semantics. PUT has well-defined semantics. When using PUT for
-creation, the client declares the URI for the newly created resource.
+Both `@PUT` and `@POST` can be used to create or update a resource.
+POST can mean anything, so when using POST, it is up to the application
+to define the semantics. PUT has well-defined semantics. When using PUT
+for creation, the client declares the URI for the newly created
+resource.
 
 PUT has very clear semantics for creating and updating a resource. The
 representation the client sends must be the same representation that is
@@ -433,32 +416,28 @@ create a resource and return a `201` response with a location header
 whose value is the URI to the newly created resource. In this pattern,
 the web service declares the URI for the newly created resource.
 
-[[GIPZE]][[using-entity-providers-to-map-http-response-and-request-entity-bodies]]
-
 ==== Using Entity Providers to Map HTTP Response and Request Entity Bodies
 
 Entity providers supply mapping services between representations and
 their associated Java types. The two types of entity providers are
 `MessageBodyReader` and `MessageBodyWriter`. For HTTP requests, the
-`MessageBodyReader` is used to map an HTTP request entity body to method
-parameters. On the response side, a return value is mapped to an HTTP
-response entity body by using a `MessageBodyWriter`. If the application
-needs to supply additional metadata, such as HTTP headers or a different
-status code, a method can return a `Response` that wraps the entity and
-that can be built by using `Response.ResponseBuilder`.
+`MessageBodyReader` is used to map an HTTP request entity body to
+method parameters. On the response side, a return value is mapped to an
+HTTP response entity body by using a `MessageBodyWriter`. If the
+application needs to supply additional metadata, such as HTTP headers
+or a different status code, a method can return a `Response` that wraps
+the entity and that can be built by using `Response.ResponseBuilder`.
 
-link:#GKCCG[Table 32-3] shows the standard types that are supported
-automatically for HTTP request and response entity bodies. You need to
-write an entity provider only if you are not choosing one of these
-standard types.
+<<types-supported-for-http-request-and-response-entity-bodies>> shows
+the standard types that are supported automatically for HTTP request
+and response entity bodies. You need to write an entity provider only
+if you are not choosing one of these standard types.
 
-[[sthref139]][[GKCCG]]
-
-Table 32-3 Types Supported for HTTP Request and Response Entity Bodies
-
-[width="50%",cols="50%,50%",options="header",]
-|=======================================================================
+[[types-supported-for-http-request-and-response-entity-bodies]]
+[width="50%",cols="50%a,50%a",options="header",title="Types Supported for HTTP Request and Response Entity Bodies"]
+|===
 |Java Type |Supported Media Types
+
 |`byte[]` |All media types (`*/*`)
 
 |`java.lang.String` |All text media types (`text/*`)
@@ -474,15 +453,15 @@ Table 32-3 Types Supported for HTTP Request and Response Entity Bodies
 |`javax.xml.transform.Source` |XML media types (`text/xml`,
 `application/xml`, and `application/*+xml`)
 
-|`jakarta.xml.bind.JAXBElement` and application-supplied Jakarta XML Binding classes |XML
-media types (`text/xml`, `application/xml`, and `application/*+xml`)
+|`jakarta.xml.bind.JAXBElement` and application-supplied Jakarta XML
+Binding classes |XML media types (`text/xml`, `application/xml`, and
+`application/*+xml`)
 
 |`MultivaluedMap<String, String>` |Form content
 (`application/x-www-form-urlencoded`)
 
 |`StreamingOutput` |All media types (`*/*`), `MessageBodyWriter` only
-|=======================================================================
-
+|===
 
 The following example shows how to use `MessageBodyReader` with the
 `@Consumes` and `@Provider` annotations:
@@ -491,7 +470,7 @@ The following example shows how to use `MessageBodyReader` with the
 ----
 @Consumes("application/x-www-form-urlencoded")
 @Provider
-public class FormReader implements MessageBodyReader<NameValuePair> {
+public class FormReader implements MessageBodyReader<NameValuePair> { }
 ----
 
 The following example shows how to use `MessageBodyWriter` with the
@@ -502,7 +481,7 @@ The following example shows how to use `MessageBodyWriter` with the
 @Produces("text/html")
 @Provider
 public class FormWriter implements
-        MessageBodyWriter<Hashtable<String, String>> {
+        MessageBodyWriter<Hashtable<String, String>> { }
 ----
 
 The following example shows how to use `ResponseBuilder`:
@@ -528,12 +507,10 @@ public Response getItem() {
 }
 ----
 
-[[GIPZH]][[using-consumes-and-produces-to-customize-requests-and-responses]]
-
 === Using @Consumes and @Produces to Customize Requests and Responses
 
-The information sent to a resource and then passed back to the client is
-specified as a MIME media type in the headers of an HTTP request or
+The information sent to a resource and then passed back to the client
+is specified as a MIME media type in the headers of an HTTP request or
 response. You can specify which MIME media types of representations a
 resource can respond to or produce by using the following annotations:
 
@@ -544,15 +521,13 @@ By default, a resource class can respond to and produce all MIME media
 types of representations specified in the HTTP request and response
 headers.
 
-[[GIPXF]][[the-produces-annotation]]
-
 ==== The @Produces Annotation
 
 The `@Produces` annotation is used to specify the MIME media types or
 representations a resource can produce and send back to the client. If
-`@Produces` is applied at the class level, all the methods in a resource
-can produce the specified MIME types by default. If applied at the
-method level, the annotation overrides any `@Produces` annotations
+`@Produces` is applied at the class level, all the methods in a
+resource can produce the specified MIME types by default. If applied at
+the method level, the annotation overrides any `@Produces` annotations
 applied at the class level.
 
 If no methods in a resource are able to produce the MIME type in a
@@ -590,8 +565,8 @@ public class SomeResource {
 
 The `doGetAsPlainText` method defaults to the MIME media type of the
 `@Produces` annotation at the class level. The `doGetAsHtml` method's
-`@Produces` annotation overrides the class-level `@Produces` setting and
-specifies that the method can produce HTML rather than plain text.
+`@Produces` annotation overrides the class-level `@Produces` setting
+and specifies that the method can produce HTML rather than plain text.
 
 `@Produces` can also use the constants defined in the
 `jakarta.ws.rs.core.MediaType` class to specify the media type. For
@@ -611,9 +586,10 @@ media type as declared by the client. More specifically, the `Accept`
 header of the HTTP request declares what is most acceptable. For
 example, if the `Accept` header is `Accept: text/plain`, the
 `doGetAsPlainText` method will be invoked. Alternatively, if the
-`Accept` header is `Accept: text/plain;q=0.9, text/html`, which declares
-that the client can accept media types of `text/plain` and `text/html`
-but prefers the latter, the `doGetAsHtml` method will be invoked.
+`Accept` header is `Accept: text/plain;q=0.9, text/html`, which
+declares that the client can accept media types of `text/plain` and
+`text/html` but prefers the latter, the `doGetAsHtml` method will be
+invoked.
 
 More than one media type may be declared in the same `@Produces`
 declaration. The following code example shows how this is done:
@@ -627,14 +603,12 @@ public String doGetAsXmlOrJson() {
 ----
 
 The `doGetAsXmlOrJson` method will get invoked if either of the media
-types `application/xml` or `application/json` is acceptable. If both are
-equally acceptable, the former will be chosen because it occurs first.
-The preceding examples refer explicitly to MIME media types for clarity.
-It is possible to refer to constant values, which may reduce
+types `application/xml` or `application/json` is acceptable. If both
+are equally acceptable, the former will be chosen because it occurs
+first. The preceding examples refer explicitly to MIME media types for
+clarity. It is possible to refer to constant values, which may reduce
 typographical errors. For more information, see the API documentation
 for the constant field values of `jakarta.ws.rs.core.MediaType`.
-
-[[GIPYT]][[the-consumes-annotation]]
 
 ==== The @Consumes Annotation
 
@@ -646,8 +620,8 @@ level, `@Consumes` overrides any `@Consumes` annotations applied at the
 class level.
 
 If a resource is unable to consume the MIME type of a client request,
-the Jakarta REST runtime sends back an HTTP 415 ("Unsupported Media Type")
-error.
+the Jakarta REST runtime sends back an HTTP 415 ("Unsupported Media
+Type") error.
 
 The value of `@Consumes` is an array of `String` of acceptable MIME
 types, or a comma-separated list of `MediaType` constants. For example:
@@ -706,12 +680,11 @@ public void postHtml(String message) {
 }
 ----
 
-In this example, the Java method will consume representations identified
-by the MIME media type `text/plain`. Note that the resource method
-returns `void`. This means that no representation is returned and that a
-response with a status code of HTTP 204 ("No Content") will be returned.
-
-[[GIPYW]][[extracting-request-parameters]]
+In this example, the Java method will consume representations
+identified by the MIME media type `text/plain`. Note that the resource
+method returns `void`. This means that no representation is returned
+and that a response with a status code of HTTP 204 ("No Content") will
+be returned.
 
 === Extracting Request Parameters
 
@@ -731,11 +704,11 @@ resource class:
 * Header
 * Matrix
 
-Query parameters are extracted from the request URI query parameters and
-are specified by using the `jakarta.ws.rs.QueryParam` annotation in the
-method parameter arguments. The following example demonstrates using
-`@QueryParam` to extract query parameters from the `Query` component of
-the request URL:
+Query parameters are extracted from the request URI query parameters
+and are specified by using the `jakarta.ws.rs.QueryParam` annotation in
+the method parameter arguments. The following example demonstrates
+using `@QueryParam` to extract query parameters from the `Query`
+component of the request URL:
 
 [source,java]
 ----
@@ -761,8 +734,8 @@ parameter. If the `step` value cannot be parsed as a 32-bit signed
 integer, an HTTP 400 ("Client Error") response is returned.
 
 User-defined Java programming language types may be used as query
-parameters. The following code example shows the `ColorParam` class used
-in the preceding query parameter example:
+parameters. The following code example shows the `ColorParam` class
+used in the preceding query parameter example:
 
 [source,java]
 ----
@@ -830,27 +803,27 @@ public class MyResourceBean {
 }
 ----
 
-In the preceding snippet, the URI path template variable name `username`
-is specified as a parameter to the `printUsername` method. The
-`@PathParam` annotation is set to the variable name `username`. At
+In the preceding snippet, the URI path template variable name
+`username` is specified as a parameter to the `printUsername` method.
+The `@PathParam` annotation is set to the variable name `username`. At
 runtime, before `printUsername` is called, the value of `username` is
-extracted from the URI and cast to a `String`. The resulting `String` is
-then available to the method as the `userId` variable.
+extracted from the URI and cast to a `String`. The resulting `String`
+is then available to the method as the `userId` variable.
 
 If the URI path template variable cannot be cast to the specified type,
-the Jakarta REST runtime returns an HTTP 400 ("Bad Request") error to the
-client. If the `@PathParam` annotation cannot be cast to the specified
-type, the Jakarta REST runtime returns an HTTP 404 ("Not Found") error to the
-client.
+the Jakarta REST runtime returns an HTTP 400 ("Bad Request") error to
+the client. If the `@PathParam` annotation cannot be cast to the
+specified type, the Jakarta REST runtime returns an HTTP 404 ("Not
+Found") error to the client.
 
 The `@PathParam` parameter and the other parameter-based annotations
 (`@MatrixParam`, `@HeaderParam`, `@CookieParam`, and `@FormParam`) obey
 the same rules as `@QueryParam`.
 
 Cookie parameters, indicated by decorating the parameter with
-`jakarta.ws.rs.CookieParam`, extract information from the cookies declared
-in cookie-related HTTP headers. Header parameters, indicated by
-decorating the parameter with `jakarta.ws.rs.HeaderParam`, extract
+`jakarta.ws.rs.CookieParam`, extract information from the cookies
+declared in cookie-related HTTP headers. Header parameters, indicated
+by decorating the parameter with `jakarta.ws.rs.HeaderParam`, extract
 information from the HTTP headers. Matrix parameters, indicated by
 decorating the parameter with `jakarta.ws.rs.MatrixParam`, extract
 information from URL path segments.
@@ -860,9 +833,9 @@ Form parameters, indicated by decorating the parameter with
 representation that is of the MIME media type
 `application/x-www-form-urlencoded` and conforms to the encoding
 specified by HTML forms, as described in
-`http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1`. This
-parameter is very useful for extracting information sent by POST in HTML
-forms.
+http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1[^]. This
+parameter is very useful for extracting information sent by POST in
+HTML forms.
 
 The following example extracts the `name` form parameter from the POST
 form data:
@@ -876,8 +849,8 @@ public void post(@FormParam("name") String name) {
 }
 ----
 
-To obtain a general map of parameter names and values for query and path
-parameters, use the following code:
+To obtain a general map of parameter names and values for query and
+path parameters, use the following code:
 
 [source,java]
 ----
@@ -914,20 +887,16 @@ public void post(MultivaluedMap<String, String> formParams) {
 }
 ----
 
-[[CIHEGAGI]][[configuring-jax-rs-applications]]
-
 === Configuring Jakarta REST Applications
 
-A Jakarta REST application consists of at least one resource class packaged
-within a WAR file. The base URI from which an application's resources
-respond to requests can be set one of two ways:
+A Jakarta REST application consists of at least one resource class
+packaged within a WAR file. The base URI from which an application's
+resources respond to requests can be set one of two ways:
 
 * Using the `@ApplicationPath` annotation in a subclass of
 `jakarta.ws.rs.core.Application` packaged within the WAR
 * Using the `servlet-mapping` tag within the WAR's `web.xml` deployment
 descriptor
-
-[[CIHFEBJF]][[configuring-a-jax-rs-application-using-a-subclass-of-application]]
 
 ==== Configuring a Jakarta REST Application Using a Subclass of Application
 
@@ -960,8 +929,6 @@ public Set<Class<?>> getClasses() {
     return classes;
 }
 ----
-
-[[CIHDHAIJ]][[configuring-the-base-uri-in-web.xml]]
 
 ==== Configuring the Base URI in web.xml
 
