@@ -1,19 +1,15 @@
-[[A1249349]][[starting-with-enterprise-beans]]
-
 == Starting With Enterprise Beans
 
 Here's an overview of the steps you'll follow:
 
-1.  Create the enterprise bean: `ConverterBean`.
-2.  Create the web client.
-3.  Deploy `converter` onto the server.
-4.  Using a browser, run the web client.
+. Create the enterprise bean: `ConverterBean`.
+. Create the web client.
+. Deploy `converter` onto the server.
+. Using a browser, run the web client.
 
 Before proceeding, make sure that you've done the following:
 
-* Read link:#BNAAW[Chapter 1, "Overview"]
+* Read xref:overview[xrefstyle=full]
 * Become familiar with enterprise beans (see
-link:#GIJSZ[Chapter 35, "Enterprise Beans"])
-* Started the server (see link:#BNADI[Starting and
-Stopping GlassFish Server])
-
+xref:enterprise-beans[xrefstyle=full])
+* Started the server (see <<starting-and-stopping-glassfish-server>>)

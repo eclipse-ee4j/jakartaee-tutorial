@@ -1,5 +1,3 @@
-[[GIPSS]][[creating-the-enterprise-bean]]
-
 == Creating the Enterprise Bean
 
 The enterprise bean in our example is a stateless session bean called
@@ -8,10 +6,8 @@ The enterprise bean in our example is a stateless session bean called
 
 Creating `ConverterBean` requires these steps:
 
-1.  Coding the bean's implementation class (the source code is provided)
-2.  Compiling the source code
-
-[[GIPSX]][[coding-the-enterprise-bean-class]]
+. Coding the bean's implementation class (the source code is provided)
+. Compiling the source code
 
 === Coding the Enterprise Bean Class
 
@@ -51,14 +47,11 @@ Note the `@Stateless` annotation decorating the enterprise bean class.
 This annotation lets the container know that `ConverterBean` is a
 stateless session bean.
 
-[[GIPSI]][[creating-the-converter-web-client]]
-
 === Creating the converter Web Client
 
 The web client is contained in the following servlet class under the
 `_tut-install_/examples/ejb/converter/src/main/java/` directory:
 
-[source,java]
 ----
 converter/web/ConverterServlet.java
 ----
@@ -66,9 +59,9 @@ converter/web/ConverterServlet.java
 A Jakarta servlet is a web component that responds to HTTP requests.
 
 The `ConverterServlet` class uses dependency injection to obtain a
-reference to `ConverterBean`. The `jakarta.ejb.EJB` annotation is added to
-the declaration of the private member variable `converter`, which is of
-type `ConverterBean`. `ConverterBean` exposes a local, no-interface
+reference to `ConverterBean`. The `jakarta.ejb.EJB` annotation is added
+to the declaration of the private member variable `converter`, which is
+of type `ConverterBean`. `ConverterBean` exposes a local, no-interface
 view, so the enterprise bean implementation class is the variable type:
 
 [source,java]
@@ -109,61 +102,50 @@ try {
 
 The results are displayed to the user.
 
-[[GIPVV]][[running-the-converter-example]]
-
 === Running the converter Example
 
 Now you are ready to compile the enterprise bean class
 (`ConverterBean.java`) and the servlet class (`ConverterServlet.java`)
 and to package the compiled classes into a WAR file. You can use either
-NetBeans IDE or Maven to build, package, deploy, and run the `converter`
-example.
-
-[[GIPUM]][[to-run-the-converter-example-using-netbeans-ide]]
+NetBeans IDE or Maven to build, package, deploy, and run the
+`converter` example.
 
 ==== To Run the converter Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. From the *File* menu, choose *Open Project*.
+. In the *Open Project* dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/ejb
 ----
-4.  Select the `converter` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `converter` project and select
-Build.
-7.  Open a web browser to the following URL:
+. Select the `converter` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `converter` project and select
+*Build*.
+. Open a web browser to the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/converter
 ----
-8.  On the Servlet ConverterServlet page, enter `100` in the field and
+. On the Servlet ConverterServlet page, enter `100` in the field and
 click Submit.
 +
 A second page opens, showing the converted values.
 
-[[GIPVQ]][[to-run-the-converter-example-using-maven]]
-
 ==== To Run the converter Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/ejb/converter/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
@@ -171,14 +153,13 @@ mvn install
 This command compiles the source files for the enterprise bean and the
 servlet, packages the project into a WAR module (`converter.war`), and
 deploys the WAR to the server. For more information about Maven, see
-link:#BNAAN[Building the Examples].
-4.  Open a web browser to the following URL:
+<<building-the-examples>>.
+. Open a web browser to the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/converter
 ----
-5.  On the Servlet ConverterServlet page, enter `100` in the field and
+. On the Servlet ConverterServlet page, enter `100` in the field and
 click Submit.
 +
 A second page opens, showing the converted values.
