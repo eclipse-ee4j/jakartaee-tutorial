@@ -1,11 +1,8 @@
-[[A1250776]][[overview-of-the-ejb-examples]]
-
 == Overview of the Jakarta Enterprise Beans Examples
 
-In link:#GIJRE[Chapter 36, "Getting Started with
-Enterprise Beans"], you built a stateless session bean named
-`ConverterBean`. This chapter examines the source code of four more
-session beans:
+In xref:getting-started-with-enterprise-beans[xrefstyle=full], you
+built a stateless session bean named `ConverterBean`. This chapter
+examines the source code of four more session beans:
 
 * `CartBean`: a stateful session bean that is accessed by a remote
 client

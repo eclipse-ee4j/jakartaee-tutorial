@@ -1,5 +1,3 @@
-[[BNBOY]][[using-the-timer-service]]
-
 == Using the Timer Service
 
 Applications that model business work flows often rely on timed
@@ -8,32 +6,29 @@ enables you to schedule timed notifications for all types of enterprise
 beans except for stateful session beans. You can schedule a timed
 notification to occur according to a calendar schedule, at a specific
 time, after a duration of time, or at timed intervals. For example, you
-could set timers to go off at 10:30 a.m. on May 23, in 30 days, or every
-12 hours.
+could set timers to go off at 10:30 a.m. on May 23, in 30 days, or
+every 12 hours.
 
 Enterprise bean timers are either programmatic timers or automatic
 timers. Programmatic timers are set by explicitly calling one of the
-timer creation methods of the `TimerService` interface. Automatic timers
-are created upon the successful deployment of an enterprise bean that
-contains a method annotated with the `jakarta.ejb.Schedule` or
+timer creation methods of the `TimerService` interface. Automatic
+timers are created upon the successful deployment of an enterprise bean
+that contains a method annotated with the `jakarta.ejb.Schedule` or
 `jakarta.ejb.Schedules` annotations.
-
-[[GIQLK]][[creating-calendar-based-timer-expressions]]
 
 === Creating Calendar-Based Timer Expressions
 
 Timers can be set according to a calendar-based schedule, expressed
-using a syntax similar to the UNIX `cron` utility. Both programmatic and
-automatic timers can use calendar-based timer expressions.
-link:#GIQLY[Table 37-1] shows the calendar-based timer attributes.
+using a syntax similar to the UNIX `cron` utility. Both programmatic
+and automatic timers can use calendar-based timer expressions.
+<<calendar-based-timer-attributes>> shows the calendar-based timer
+attributes.
 
-[[sthref156]][[GIQLY]]
+[[calendar-based-timer-attributes]]
+[width="99%",cols="15%,35%,15%,35%",title="Calendar-Based Timer Attributes"]
+|===
+|Attribute |Description |Default Value |Allowable Values and Examples
 
-*Table 37-1 Calendar-Based Timer Attributes*
-
-[width="99%",cols="15%,35%,15%,35%"]
-|=======================================================================
-|*Attribute* |*Description* |*Default Value* |*Allowable Values and Examples*
 |`second` |One or more seconds within a minute |`0` |`0` to `59`. For
 example: `second="30"`.
 
@@ -43,57 +38,39 @@ example: `minute="15"`.
 |`hour` |One or more hours within a day |`0` |`0` to `23`. For example:
 `hour="13"`.
 
-|`dayOfWeek` |One or more days within a week a|
-`*`
-
-
- a|
-`0` to `7` (both 0 and 7 refer to Sunday). For example: `dayOfWeek="3"`.
+|`dayOfWeek` |One or more days within a week a| `*` a| `0` to `7` (both
+0 and 7 refer to Sunday). For example: `dayOfWeek="3"`.
 
 `Sun`, `Mon`, `Tue`, `Wed`, `Thu`, `Fri`, `Sat`. For example:
 `dayOfWeek="Mon"`.
 
-|`dayOfMonth` |One or more days within a month a|
-`*`
+|`dayOfMonth` |One or more days within a month a| `*` a| `1` to `31`.
+For example: `dayOfMonth="15"`.
 
-
- a|
-`1` to `31`. For example: `dayOfMonth="15"`.
-
-`–7` to `–1` (a negative number means the nth day or days before the end
-of the month). For example: `dayOfMonth="–3"`.
+`–7` to `–1` (a negative number means the nth day or days before the
+end of the month). For example: `dayOfMonth="–3"`.
 
 `Last`. For example: `dayOfMonth="Last"`.
 
-[`1st`, `2nd`, `3rd`, `4th`, `5th`, `Last`] [`Sun`, `Mon`, `Tue`, `Wed`,
-`Thu`, `Fri`, `Sat`]. For example: `dayOfMonth="2nd Fri"`.
+[`1st`, `2nd`, `3rd`, `4th`, `5th`, `Last`] [`Sun`, `Mon`, `Tue`,
+`Wed`, `Thu`, `Fri`, `Sat`]. For example: `dayOfMonth="2nd Fri"`.
 
-|`month` |One or more months within a year a|
-`*`
-
-
- a|
-`1` to `12`. For example: `month="7"`.
+|`month` |One or more months within a year a| `*` a| `1` to `12`. For
+example: `month="7"`.
 
 `Jan`, `Feb`, `Mar`, `Apr`, `May`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`,
 `Nov`, `Dec`. For example: `month="July"`.
 
-|`year` |A particular calendar year a|
-`*`
-
-
- |A four-digit calendar year. For example: `year="2011"`.
-|=======================================================================
-
-
-[[GIQMX]][[specifying-multiple-values-in-calendar-expressions]]
+|`year` |A particular calendar year a| `*` |A four-digit calendar year.
+For example: `year="2011"`.
+|===
 
 ==== Specifying Multiple Values in Calendar Expressions
 
-You can specify multiple values in calendar expressions, as described in
-the following sections.
+You can specify multiple values in calendar expressions, as described
+in the following sections.
 
-Using Wildcards in Calendar Expressions
+===== Using Wildcards in Calendar Expressions
 
 Setting an attribute to an asterisk symbol (`*`) represents all
 allowable values for the attribute.
@@ -112,7 +89,7 @@ The following expression represents every day of the week:
 dayOfWeek="*"
 ----
 
-Specifying a List of Values
+===== Specifying a List of Values
 
 To specify two or more values for an attribute, use a comma (`,`) to
 separate the values. A range of values is allowed as part of a list.
@@ -128,23 +105,23 @@ Thursday:
 dayOfWeek="Tue, Thu"
 ----
 
-The following expression represents 4:00 a.m., every hour from 9:00 a.m.
-to 5:00 p.m. using a range, and 10:00 p.m.:
+The following expression represents 4:00 a.m., every hour from 9:00
+a.m. to 5:00 p.m. using a range, and 10:00 p.m.:
 
 [source,java]
 ----
 hour="4,9-17,22"
 ----
 
-Specifying a Range of Values
+===== Specifying a Range of Values
 
 Use a dash character (`-`) to specify an inclusive range of values for
 an attribute. Members of a range cannot be wildcards, lists, or
-intervals. A range of the form `x-x`, is equivalent to the single-valued
-expression `x`. A range of the form `x-y` where `x` is greater than `y`
-is equivalent to the expression `x-`maximumvalue`,` minimumvalue`-y`.
-That is, the expression begins at `x`, rolls over to the beginning of
-the allowable values, and continues up to `y`.
+intervals. A range of the form `x-x`, is equivalent to the
+single-valued expression `x`. A range of the form `x-y` where `x` is
+greater than `y` is equivalent to the expression `x-`maximumvalue`,`
+minimumvalue`-y`. That is, the expression begins at `x`, rolls over to
+the beginning of the allowable values, and continues up to `y`.
 
 The following expression represents 9:00 a.m. to 5:00 p.m.:
 
@@ -160,9 +137,9 @@ The following expression represents Friday through Monday:
 dayOfWeek="5-1"
 ----
 
-The following expression represents the twenty-fifth day of the month to
-the end of the month, and the beginning of the month to the fifth day of
-the month:
+The following expression represents the twenty-fifth day of the month
+to the end of the month, and the beginning of the month to the fifth
+day of the month:
 
 [source,java]
 ----
@@ -176,16 +153,17 @@ It is equivalent to the following expression:
 dayOfMonth="25-Last,1-5"
 ----
 
-Specifying Intervals
+===== Specifying Intervals
 
 The forward slash (`/`) constrains an attribute to a starting point and
 an interval and is used to specify every `N` seconds, minutes, or hours
 within the minute, hour, or day. For an expression of the form `x/y`,
 `x` represents the starting point and `y` represents the interval. The
-wildcard character may be used in the `x` position of an interval and is
-equivalent to setting `x` to `0`.
+wildcard character may be used in the `x` position of an interval and
+is equivalent to setting `x` to `0`.
 
-Intervals may be set only for `second`, `minute`, and `hour` attributes.
+Intervals may be set only for `second`, `minute`, and `hour`
+attributes.
 
 The following expression represents every 10 minutes within the hour:
 
@@ -208,16 +186,12 @@ The following expression represents every 2 hours starting at noon:
 hour="12/2"
 ----
 
-[[GIQLT]][[programmatic-timers]]
-
 === Programmatic Timers
 
 When a programmatic timer expires (goes off), the container calls the
 method annotated `@Timeout` in the bean's implementation class. The
 `@Timeout` method contains the business logic that handles the timed
 event.
-
-[[BNBOZ]][[the-timeout-method]]
 
 ==== The @Timeout Method
 
@@ -233,19 +207,17 @@ public void timeout(Timer timer) {
 }
 ----
 
-[[BNBPA]][[creating-programmatic-timers]]
-
 ==== Creating Programmatic Timers
 
 To create a timer, the bean invokes one of the `create` methods of the
 `TimerService` interface. These methods allow single-action, interval,
 or calendar-based timers to be created.
 
-For single-action or interval timers, the expiration of the timer can be
-expressed as either a duration or an absolute time. The duration is
+For single-action or interval timers, the expiration of the timer can
+be expressed as either a duration or an absolute time. The duration is
 expressed as a the number of milliseconds before a timeout event is
-triggered. To specify an absolute time, create a `java.util.Date` object
-and pass it to the `TimerService.createSingleActionTimer` or the
+triggered. To specify an absolute time, create a `java.util.Date`
+object and pass it to the `TimerService.createSingleActionTimer` or the
 `TimerService.createTimer` method.
 
 The following code sets a programmatic timer that will expire in 1
@@ -269,12 +241,12 @@ Date date = formatter.parse("05/01/2015 at 12:05");
 Timer timer = timerService.createSingleActionTimer(date, new TimerConfig());
 ----
 
-For calendar-based timers, the expiration of the timer is expressed as a
-`jakarta.ejb.ScheduleExpression` object, passed as a parameter to the
+For calendar-based timers, the expiration of the timer is expressed as
+a `jakarta.ejb.ScheduleExpression` object, passed as a parameter to the
 `TimerService.createCalendarTimer` method. The `ScheduleExpression`
 class represents calendar-based timer expressions and has methods that
-correspond to the attributes described in link:#GIQLK[Creating
-Calendar-Based Timer Expressions].
+correspond to the attributes described in
+<<creating-calendar-based-timer-expressions>>.
 
 The following code creates a programmatic timer using the
 `ScheduleExpression` helper class:
@@ -289,10 +261,10 @@ Timer timer = timerService.createCalendarTimer(schedule);
 
 For details on the method signatures, see the `TimerService` API
 documentation at
-`https://jakarta.ee/specifications/platform/8/apidocs/jakarta.ejb/TimerService.html`.
+https://jakarta.ee/specifications/platform/9/apidocs/jakarta/ejb/TimerService.html[^].
 
-The bean described in link:#BNBPE[The timersession Example] creates a
-timer as follows:
+The bean described in <<the-timersession-example>> creates a timer as
+follows:
 
 [source,java]
 ----
@@ -303,11 +275,11 @@ Timer timer = timerService.createTimer(intervalDuration,
 In the `timersession` example, the method that calls `createTimer` is
 invoked in a business method, which is called by a client.
 
-Timers are persistent by default. If the server is shut down or crashes,
-persistent timers are saved and will become active again when the server
-is restarted. If a persistent timer expires while the server is down,
-the container will call the `@Timeout` method when the server is
-restarted.
+Timers are persistent by default. If the server is shut down or
+crashes, persistent timers are saved and will become active again when
+the server is restarted. If a persistent timer expires while the server
+is down, the container will call the `@Timeout` method when the server
+is restarted.
 
 Nonpersistent programmatic timers are created by calling
 `TimerConfig.setPersistent(false)` and passing the `TimerConfig` object
@@ -320,12 +292,10 @@ service is not intended for real-time applications, a callback to the
 service is for business applications, which typically measure time in
 hours, days, or longer durations.
 
-[[GIQMB]][[automatic-timers]]
-
 === Automatic Timers
 
-Automatic timers are created by the Enterprise Bean container when an enterprise
-bean that contains methods annotated with the `@Schedule` or
+Automatic timers are created by the Enterprise Bean container when an
+enterprise bean that contains methods annotated with the `@Schedule` or
 `@Schedules` annotations is deployed. An enterprise bean can have
 multiple automatic timeout methods, unlike a programmatic timer, which
 allows only one method annotated with the `@Timeout` annotation in the
@@ -339,8 +309,8 @@ as a timeout method according to the calendar schedule specified in the
 attributes of `@Schedule`.
 
 The `@Schedule` annotation has elements that correspond to the calendar
-expressions detailed in link:#GIQLK[Creating Calendar-Based Timer
-Expressions] and the `persistent`, `info`, and `timezone` elements.
+expressions detailed in <<creating-calendar-based-timer-expressions>>
+and the `persistent`, `info`, and `timezone` elements.
 
 The optional `persistent` element takes a Boolean value and is used to
 specify whether the automatic timer should survive a server restart or
@@ -349,9 +319,9 @@ crash. By default, all automatic timers are persistent.
 The optional `timezone` element is used to specify that the automatic
 timer is associated with a particular time zone. If set, this element
 will evaluate all timer expressions in relation to the specified time
-zone, regardless of the time zone in which the Enterprise Bean container is running.
-By default, all automatic timers set are in relation to the default time
-zone of the server.
+zone, regardless of the time zone in which the Enterprise Bean
+container is running. By default, all automatic timers set are in
+relation to the default time zone of the server.
 
 The optional `info` element is used to set an informational description
 of the timer. A timer's information can be retrieved later by using
@@ -383,14 +353,12 @@ sets a timer to expire every Friday at 11:00 p.m.:
 public void doPeriodicCleanup() { ... }
 ----
 
-[[BNBPB]][[canceling-and-saving-timers]]
-
 === Canceling and Saving Timers
 
 Timers can be cancelled by the following events.
 
-* When a single-event timer expires, the Enterprise Bean container calls the
-associated timeout method and then cancels the timer.
+* When a single-event timer expires, the Enterprise Bean container
+calls the associated timeout method and then cancels the timer.
 * When the bean invokes the `cancel` method of the `Timer` interface,
 the container cancels the timer.
 
@@ -406,8 +374,6 @@ method defined in a remote or web service interface. In other words,
 remote clients and web service clients cannot access a bean's
 `TimerHandle` object. Local clients, however, do not have this
 restriction.
-
-[[BNBPC]][[getting-timer-information]]
 
 === Getting Timer Information
 
@@ -431,24 +397,21 @@ To retrieve all of a bean's active timers, call the `getTimers` method
 of the `TimerService` interface. The `getTimers` method returns a
 collection of `Timer` objects.
 
-[[BNBPD]][[transactions-and-timers]]
-
 === Transactions and Timers
 
-An enterprise bean usually creates a timer within a transaction. If this
-transaction is rolled back, the timer creation also is rolled back.
-Similarly, if a bean cancels a timer within a transaction that gets
-rolled back, the timer cancellation is rolled back. In this case, the
-timer's duration is reset as if the cancellation had never occurred.
+An enterprise bean usually creates a timer within a transaction. If
+this transaction is rolled back, the timer creation also is rolled
+back. Similarly, if a bean cancels a timer within a transaction that
+gets rolled back, the timer cancellation is rolled back. In this case,
+the timer's duration is reset as if the cancellation had never
+occurred.
 
 In beans that use container-managed transactions, the `@Timeout` method
 usually has the `Required` or `RequiresNew` transaction attribute to
-preserve transaction integrity. With these attributes, the Enterprise Bean container
-begins the new transaction before calling the `@Timeout` method. If the
-transaction is rolled back, the container will call the `@Timeout`
-method at least one more time.
-
-[[BNBPE]][[the-timersession-example]]
+preserve transaction integrity. With these attributes, the Enterprise
+Bean container begins the new transaction before calling the `@Timeout`
+method. If the transaction is rolled back, the container will call the
+`@Timeout` method at least one more time.
 
 === The timersession Example
 
@@ -461,13 +424,13 @@ listing of `TimerSessionBean` that follows, the `setTimer` and
 `@Timeout` methods are used to set a programmatic timer. A
 `TimerService` instance is injected by the container when the bean is
 created. Because it's a business method, `setTimer` is exposed to the
-local, no-interface view of `TimerSessionBean` and can be invoked by the
-client. In this example, the client invokes `setTimer` with an interval
-duration of 8,000 milliseconds, or 8 seconds. The `setTimer` method
-creates a new timer by invoking the `createTimer` method of
-`TimerService`. Now that the timer is set, the Enterprise Bean container will invoke
-the `programmaticTimeout` method of `TimerSessionBean` when the timer
-expires, in about 8 seconds:
+local, no-interface view of `TimerSessionBean` and can be invoked by
+the client. In this example, the client invokes `setTimer` with an
+interval duration of 8,000 milliseconds, or 8 seconds. The `setTimer`
+method creates a new timer by invoking the `createTimer` method of
+`TimerService`. Now that the timer is set, the Enterprise Bean
+container will invoke the `programmaticTimeout` method of
+`TimerSessionBean` when the timer expires, in about 8 seconds:
 
 [source,java]
 ----
@@ -490,8 +453,8 @@ expires, in about 8 seconds:
 
 `TimerSessionBean` also has an automatic timer and timeout method,
 `automaticTimeout`. The automatic timer is set to expire every 1 minute
-and is set by using a calendar-based timer expression in the `@Schedule`
-annotation:
+and is set by using a calendar-based timer expression in the
+`@Schedule` annotation:
 
 [source,java]
 ----
@@ -505,8 +468,8 @@ annotation:
 ----
 
 `TimerSessionBean` also has two business methods:
-`getLastProgrammaticTimeout` and `getLastAutomaticTimeout`. Clients call
-these methods to get the date and time of the last timeout for the
+`getLastProgrammaticTimeout` and `getLastAutomaticTimeout`. Clients
+call these methods to get the date and time of the last timeout for the
 programmatic timer and automatic timer, respectively.
 
 Here's the source code for the `TimerSessionBean` class:
@@ -584,72 +547,58 @@ public class TimerSessionBean {
 }
 ----
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
+[NOTE]
+====
 GlassFish Server has a default minimum timeout value of 1,000
 milliseconds, or 1 second. If you need to set the timeout value lower
 than 1,000 milliseconds, change the value of the Minimum Delivery
-Interval setting in the Administration Console. To modify the minimum
-timeout value, in the Administration Console expand Configurations, then
-expand server-config, select EJB Container, and click the EJB Timer
-Service tab. Enter a new timeout value under Minimum Delivery Interval
-and click Save. The lowest practical value for
-`minimum-delivery-interval-in-millis` is around 10 milliseconds, owing
-to virtual machine constraints.
+Interval setting in the Administration Console.
 
-|=======================================================================
+To modify the minimum timeout value, in the Administration Console
+expand Configurations, then expand server-config, select EJB Container,
+and click the EJB Timer Service tab. Enter a new timeout value under
+Minimum Delivery Interval and click Save.
 
-
-[[BNBPF]][[running-the-timersession-example]]
+The lowest practical value for `minimum-delivery-interval-in-millis` is
+around 10 milliseconds, owing to virtual machine constraints.
+====
 
 === Running the timersession Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `timersession` example.
 
-[[GIQNI]][[to-run-the-timersession-example-using-netbeans-ide]]
-
 ==== To Run the timersession Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. From the *File* menu, choose *Open Project*.
+. In the *Open Project* dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/ejb
 ----
-4.  Select the `timersession` folder.
-5.  Click Open Project.
-6.  From the Run menu, choose Run Project.
+. Select the `timersession` folder.
+. Click *Open Project*.
+. From the *Run* menu, choose *Run Project*.
 +
 This builds and packages the application into a WAR file located at
-`_tut-install_/examples/ejb/timersession/target/timersession.war`, deploys
-this WAR file to your GlassFish Server instance, and then runs the web
-client.
-
-[[GIQNQ]][[to-build-package-and-deploy-the-timersession-example-using-maven]]
+`_tut-install_/examples/ejb/timersession/target/timersession.war`,
+deploys this WAR file to your GlassFish Server instance, and then runs
+the web client.
 
 ==== To Build, Package, and Deploy the timersession Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/ejb/timersession/
 ----
-3.  Enter the following command:
+. Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
@@ -658,21 +607,18 @@ This builds and packages the application into a WAR file located at
 `_tut-install_/examples/ejb/timersession/target/timersession.war` and
 deploys this WAR file to your GlassFish Server instance.
 
-[[GIQOP]][[to-run-the-web-client]]
-
 ==== To Run the Web Client
 
-1.  Open a web browser to the following URL:
+. Open a web browser to the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/timersession
 ----
-2.  Click Set Timer to set a programmatic timer.
-3.  Wait for a while and click the browser's Refresh button.
+. Click Set Timer to set a programmatic timer.
+. Wait for a while and click the browser's Refresh button.
 +
 You will see the date and time of the last programmatic and automatic
 timeouts.
 +
 To see the messages that are logged when a timeout occurs, open the
-`server.log` file located in domain-dir`/logs/`.
+`server.log` file located in `_domain-dir_/logs/`.
