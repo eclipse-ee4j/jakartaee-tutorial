@@ -82,8 +82,8 @@ modified at runtime by the GlassFish Server administrator to use a
 different mail server or transport protocol.
 
 The web client consists of a Facelets template, `template.xhtml`; two
-Facelets clients, `index.xhtml` and `response.xhtml`; and a JavaServer
-Faces managed bean, `MailerManagedBean`. The `index.xhtml` file
+Facelets clients, `index.xhtml` and `response.xhtml`; and a Jakarta
+Server Faces managed bean, `MailerManagedBean`. The `index.xhtml` file
 contains a form for the target email address. When the user submits the
 form, the `MailerManagedBean.send` method is called. This method uses
 an injected instance of the `MailerBean` session bean to call

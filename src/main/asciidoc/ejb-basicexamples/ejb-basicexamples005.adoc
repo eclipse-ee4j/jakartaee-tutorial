@@ -119,9 +119,10 @@ Use a dash character (`-`) to specify an inclusive range of values for
 an attribute. Members of a range cannot be wildcards, lists, or
 intervals. A range of the form `x-x`, is equivalent to the
 single-valued expression `x`. A range of the form `x-y` where `x` is
-greater than `y` is equivalent to the expression `x-`maximumvalue`,`
-minimumvalue`-y`. That is, the expression begins at `x`, rolls over to
-the beginning of the allowable values, and continues up to `y`.
+greater than `y` is equivalent to the expression
+`x-_maximumvalue_`,`_minimumvalue_-y`. That is, the expression begins
+at `x`, rolls over to the beginning of the allowable values, and
+continues up to `y`.
 
 The following expression represents 9:00 a.m. to 5:00 p.m.:
 
