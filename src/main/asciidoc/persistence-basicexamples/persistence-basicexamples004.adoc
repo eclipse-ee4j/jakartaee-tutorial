@@ -1,15 +1,10 @@
-[[GKANQ]][[the-address-book-application]]
-
 == The address-book Application
 
 The `address-book` example application is a simple web application that
-stores contact data. It uses a single entity class, `Contact`, that uses
-Jakarta Bean Validation to validate the
-data stored in the persistent attributes of the entity, as described in
-link:#GKAHQ[Validating Persistent Fields and
-Properties].
-
-[[GKAOJ]][[bean-validation-constraints-in-address-book]]
+stores contact data. It uses a single entity class, `Contact`, that
+uses Jakarta Bean Validation to validate the data stored in the
+persistent attributes of the entity, as described in
+<<validating-persistent-fields-and-properties>>.
 
 === Bean Validation Constraints in address-book
 
@@ -21,20 +16,21 @@ attribute must be set to a non-null value before the entity can be
 persisted or modified. Bean Validation will throw a validation error if
 the attribute is null when the entity is persisted or modified.
 
-The `@Pattern` constraint defines a regular expression that the value of
-the attribute must match before the entity can be persisted or modified.
-This constraint has two different uses in `address-book`.
+The `@Pattern` constraint defines a regular expression that the value
+of the attribute must match before the entity can be persisted or
+modified. This constraint has two different uses in `address-book`.
 
 * The regular expression declared in the `@Pattern` annotation on the
-`email` field matches email addresses of the form name`@`domain
-name`.`top level domain, allowing only valid characters for email
+`email` field matches email addresses of the form name``@``domain
+name``.``top level domain, allowing only valid characters for email
 addresses. For example, `username@example.com` will pass validation, as
 will `firstname.lastname@mail.example.com`. However,
-`firstname,lastname@example.com`, which contains an illegal comma
+pass:q[`firstname,lastname@example.com`], which contains an illegal comma
 character in the local name, will fail validation.
+
 * The `mobilePhone` and `homePhone` fields are annotated with a
 `@Pattern` constraint that defines a regular expression to match phone
-numbers of the form `(`xxx`)` xxx`-`xxxx.
+numbers of the form ``(``xxx``)`` xxx``-``xxxx.
 
 The `@Past` constraint is applied to the birthday field, which must be a
 `java.util.Date` in the past.
@@ -71,8 +67,6 @@ public class Contact implements Serializable {
 }
 ----
 
-[[GKANL]][[specifying-error-messages-for-constraints-in-address-book]]
-
 === Specifying Error Messages for Constraints in address-book
 
 Some of the constraints in the `Contact` entity specify an optional
@@ -97,26 +91,25 @@ protected String homePhone;
 
 The constraints in `Contact`, however, are strings in the resource
 bundle `ValidationMessages.properties`, under
-`_tut-install_/examples/persistence/address-book/src/java/`. This allows
-the validation messages to be located in one single properties file and
-the messages to be easily localized. Overridden Bean Validation messages
-must be placed in a resource bundle properties file named
-`ValidationMessages.properties` in the default package, with localized
-resource bundles taking the form
-`ValidationMessages_`locale-prefix`.properties`. For example,
+`_tut-install_/examples/persistence/address-book/src/java/`. This
+allows the validation messages to be located in one single properties
+file and the messages to be easily localized. Overridden Bean
+Validation messages must be placed in a resource bundle properties file
+named `ValidationMessages.properties` in the default package, with
+localized resource bundles taking the form
+`ValidationMessages___locale-prefix__.properties`. For example,
 `ValidationMessages_es.properties` is the resource bundle used in
 Spanish-speaking locales.
 
-[[GKAON]][[validating-contact-input-from-a-javaserver-faces-application]]
-
 === Validating Contact Input from a Jakarta Server Faces Application
 
-The `address-book` application uses a Jakarta Server Faces web front end to
-allow users to enter contacts. While Jakarta Server Faces has a form input
-validation mechanism using tags in Facelets XHTML files, `address-book`
-doesn't use these validation tags. Bean Validation constraints in
-Jakarta Server Faces managed beans, in this case in the `Contact` entity,
-automatically trigger validation when the forms are submitted.
+The `address-book` application uses a Jakarta Server Faces web front
+end to allow users to enter contacts. While Jakarta Server Faces has a
+form input validation mechanism using tags in Facelets XHTML files,
+`address-book` doesn't use these validation tags. Bean Validation
+constraints in Jakarta Server Faces managed beans, in this case in the
+`Contact` entity, automatically trigger validation when the forms are
+submitted.
 
 The following code snippet from the `Create.xhtml` Facelets file shows
 some of the input form for creating new `Contact` instances:
@@ -150,86 +143,72 @@ some of the input form for creating new `Contact` instances:
 
 The `<h:inputText>` tags `firstName` and `lastName` are bound to the
 attributes in the `Contact` entity instance `selected` in the
-`ContactController` stateless session bean. Each `<h:inputText>` tag has
-an associated `<h:message>` tag that will display validation error
-messages. The form doesn't require any Jakarta Server Faces validation tags,
-however.
-
-[[GKAOP]][[running-the-address-book-example]]
+`ContactController` stateless session bean. Each `<h:inputText>` tag
+has an associated `<h:message>` tag that will display validation error
+messages. The form doesn't require any Jakarta Server Faces validation
+tags, however.
 
 === Running the address-book Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `address-book` application.
 
-[[GKAOD]][[to-run-the-address-book-example-using-netbeans-ide]]
-
 ==== To Run the address-book Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  If the database server is not already running, start it by following
-the instructions in link:#BNADK[Starting and
-Stopping Apache Derby].
-3.  From the File menu, choose Open Project.
-4.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. If the database server is not already running, start it by following
+the instructions in <<starting-and-stopping-apache-derby>>.
+. From the *File* menu, choose *Open Project*.
+. In the *Open Project* dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/persistence
 ----
-5.  Select the `address-book` folder.
-6.  Click Open Project.
-7.  In the Projects tab, right-click the `address-book` project and
-select Run.
+. Select the `address-book` folder.
+. Click *Open Project*.
+. In the *Projects* tab, right-click the `address-book` project and
+select *Run*.
 +
-After the application has been deployed, a web browser window appears at
-the following URL:
+After the application has been deployed, a web browser window appears
+at the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/address-book/
 ----
-8.  Click Show All Contact Items, then Create New Contact. Enter values
+. Click Show All Contact Items, then Create New Contact. Enter values
 in the fields; then click Save.
 +
 If any of the values entered violate the constraints in `Contact`, an
 error message will appear in red beside the field with the incorrect
 values.
 
-[[GKANZ]][[to-run-the-address-book-example-using-maven]]
-
 ==== To Run the address-book Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  If the database server is not already running, start it by following
-the instructions in link:#BNADK[Starting and
-Stopping Apache Derby].
-3.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+. If the database server is not already running, start it by following
+the instructions in <<starting-and-stopping-apache-derby>>.
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/persistence/address-book/
 ----
-4.  Enter the following command:
+. Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
 +
 This will compile and assemble the `address-book` application into a
 WAR. The WAR file is then deployed to GlassFish Server.
-5.  Open a web browser window and enter the following URL:
+. Open a web browser window and enter the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/address-book/
 ----
-6.  Click Show All Contact Items, then Create New Contact. Enter values
+. Click Show All Contact Items, then Create New Contact. Enter values
 in the fields; then click Save.
 +
 If any of the values entered violate the constraints in `Contact`, an
