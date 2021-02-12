@@ -1,5 +1,3 @@
-[[BNBQA]][[entities]]
-
 == Entities
 
 An entity is a lightweight persistence domain object. Typically, an
@@ -10,10 +8,9 @@ helper classes.
 
 The persistent state of an entity is represented through either
 persistent fields or persistent properties. These fields or properties
-use object/relational mapping annotations to map the entities and entity
-relationships to the relational data in the underlying data store.
-
-[[BNBQB]][[requirements-for-entity-classes]]
+use object/relational mapping annotations to map the entities and
+entity relationships to the relational data in the underlying data
+store.
 
 === Requirements for Entity Classes
 
@@ -25,23 +22,21 @@ annotation.
 The class may have other constructors.
 * The class must not be declared `final`. No methods or persistent
 instance variables must be declared `final`.
-* If an entity instance is passed by value as a detached object, such as
-through a session bean's remote business interface, the class must
+* If an entity instance is passed by value as a detached object, such
+as through a session bean's remote business interface, the class must
 implement the `Serializable` interface.
-* Entities may extend both entity and non-entity classes, and non-entity
-classes may extend entity classes.
+* Entities may extend both entity and non-entity classes, and
+non-entity classes may extend entity classes.
 * Persistent instance variables must be declared private, protected, or
 package-private and can be accessed directly only by the entity class's
 methods. Clients must access the entity's state through accessor or
 business methods.
 
-[[BNBQC]][[persistent-fields-and-properties-in-entity-classes]]
-
 === Persistent Fields and Properties in Entity Classes
 
 The persistent state of an entity can be accessed through either the
-entity's instance variables or properties. The fields or properties must
-be of the following Java language types:
+entity's instance variables or properties. The fields or properties
+must be of the following Java language types:
 
 * Java primitive types
 * `java.lang.String`
@@ -82,8 +77,6 @@ entity's instance variables, the entity uses persistent fields. If the
 mapping annotations are applied to the entity's getter methods for
 JavaBeans-style properties, the entity uses persistent properties.
 
-[[BNBQD]][[persistent-fields]]
-
 ==== Persistent Fields
 
 If the entity class uses persistent fields, the Persistence runtime
@@ -92,21 +85,19 @@ annotated `jakarta.persistence.Transient` or not marked as Java
 `transient` will be persisted to the data store. The object/relational
 mapping annotations must be applied to the instance variables.
 
-[[BNBQE]][[persistent-properties]]
-
 ==== Persistent Properties
 
 If the entity uses persistent properties, the entity must follow the
 method conventions of JavaBeans components. JavaBeans-style properties
 use getter and setter methods that are typically named after the entity
-class's instance variable names. For every persistent property property
-of type Type of the entity, there is a getter method `get`Property and
-setter method `set`Property. If the property is a Boolean, you may use
-`is`Property instead of `get`Property. For example, if a `Customer`
-entity uses persistent properties and has a private instance variable
-called `firstName`, the class defines a `getFirstName` and
-`setFirstName` method for retrieving and setting the state of the
-`firstName` instance variable.
+class's instance variable names. For every persistent property
+`_property_` of type `_Type_` of the entity, there is a getter method
+`get__Property__` and setter method `set__Property__`. If the property
+is a Boolean, you may use `is__Property__` instead of
+`get__Property__`. For example, if a `Customer` entity uses persistent
+properties and has a private instance variable called `firstName`, the
+class defines a `getFirstName` and `setFirstName` method for retrieving
+and setting the state of the `firstName` instance variable.
 
 The method signatures for single-valued persistent properties are as
 follows:
@@ -117,11 +108,10 @@ Type getProperty()
 void setProperty(Type type)
 ----
 
-The object/relational mapping annotations for persistent properties must
-be applied to the getter methods. Mapping annotations cannot be applied
-to fields or properties annotated `@Transient` or marked `transient`.
-
-[[GIQVN]][[using-collections-in-entity-fields-and-properties]]
+The object/relational mapping annotations for persistent properties
+must be applied to the getter methods. Mapping annotations cannot be
+applied to fields or properties annotated `@Transient` or marked
+`transient`.
 
 ==== Using Collections in Entity Fields and Properties
 
@@ -157,9 +147,9 @@ The two attributes of `@ElementCollection` are `targetClass` and
 basic or embeddable class and is optional if the field or property is
 defined using Java programming language generics. The optional `fetch`
 attribute is used to specify whether the collection should be retrieved
-lazily or eagerly, using the `jakarta.persistence.FetchType` constants of
-either `LAZY` or `EAGER`, respectively. By default, the collection will
-be fetched lazily.
+lazily or eagerly, using the `jakarta.persistence.FetchType` constants
+of either `LAZY` or `EAGER`, respectively. By default, the collection
+will be fetched lazily.
 
 The following entity, `Person`, has a persistent field, `nicknames`,
 which is a collection of `String` classes that will be fetched eagerly.
@@ -192,35 +182,35 @@ an embeddable class, or an entity.
 
 If the key type of a `Map` is a Java programming language basic type,
 use the annotation `jakarta.persistence.MapKeyColumn` to set the column
-mapping for the key. By default, the `name` attribute of `@MapKeyColumn`
-is of the form RELATIONSHIP-FIELD/PROPERTY-NAME`_KEY`. For example, if
-the referencing relationship field name is `image`, the default `name`
-attribute is `IMAGE_KEY`.
+mapping for the key. By default, the `name` attribute of
+`@MapKeyColumn` is of the form _RELATIONSHIP-FIELD/PROPERTY-NAME_``_KEY``.
+For example, if the referencing relationship field name is `image`, the
+default `name` attribute is `IMAGE_KEY`.
 
 If the key type of a `Map` is an entity, use the
-`jakarta.persistence.MapKeyJoinColumn` annotation. If the multiple columns
-are needed to set the mapping, use the annotation
+`jakarta.persistence.MapKeyJoinColumn` annotation. If the multiple
+columns are needed to set the mapping, use the annotation
 `jakarta.persistence.MapKeyJoinColumns` to include multiple
 `@MapKeyJoinColumn` annotations. If no `@MapKeyJoinColumn` is present,
 the mapping column name is by default set to
-RELATIONSHIP-FIELD/PROPERTY-NAME`_KEY`. For example, if the relationship
-field name is `employee`, the default `name` attribute is
+_RELATIONSHIP-FIELD/PROPERTY-NAME_``_KEY``. For example, if the
+relationship field name is `employee`, the default `name` attribute is
 `EMPLOYEE_KEY`.
 
 If Java programming language generic types are not used in the
 relationship field or property, the key class must be explicitly set
 using the `jakarta.persistence.MapKeyClass` annotation.
 
-If the `Map` key is the primary key or a persistent field or property of
-the entity that is the `Map` value, use the `jakarta.persistence.MapKey`
-annotation. The `@MapKeyClass` and `@MapKey` annotations cannot be used
-on the same field or property.
+If the `Map` key is the primary key or a persistent field or property
+of the entity that is the `Map` value, use the
+`jakarta.persistence.MapKey` annotation. The `@MapKeyClass` and
+`@MapKey` annotations cannot be used on the same field or property.
 
 If the `Map` value is a Java programming language basic type or an
 embeddable class, it will be mapped as a collection table in the
 underlying database. If generic types are not used, the
-`@ElementCollection` annotation's `targetClass` attribute must be set to
-the type of the `Map` value.
+`@ElementCollection` annotation's `targetClass` attribute must be set
+to the type of the `Map` value.
 
 If the `Map` value is an entity and part of a many-to-many or
 one-to-many unidirectional relationship, it will be mapped as a join
@@ -234,19 +224,17 @@ represents the value of the `Map`. If generic types are not used, the
 `targetEntity` attribute of the `@OneToMany` and `@ManyToMany`
 annotations must be set to the type of the `Map` value.
 
-[[GKAHQ]][[validating-persistent-fields-and-properties]]
-
 ==== Validating Persistent Fields and Properties
 
-Jakarta Bean Validation provides a
-mechanism for validating application data. Bean Validation is integrated
-into the Jakarta EE containers, allowing the same validation logic to be
-used in any of the tiers of an enterprise application.
+Jakarta Bean Validation provides a mechanism for validating application
+data. Bean Validation is integrated into the Jakarta EE containers,
+allowing the same validation logic to be used in any of the tiers of an
+enterprise application.
 
-Bean Validation constraints may be applied to persistent entity classes,
-embeddable classes, and mapped superclasses. By default, the Persistence
-provider will automatically perform validation on entities with
-persistent fields or properties annotated with Bean Validation
+Bean Validation constraints may be applied to persistent entity
+classes, embeddable classes, and mapped superclasses. By default, the
+Persistence provider will automatically perform validation on entities
+with persistent fields or properties annotated with Bean Validation
 constraints immediately after the `PrePersist`, `PreUpdate`, and
 `PreRemove` lifecycle events.
 
@@ -257,23 +245,23 @@ constraints. Custom constraints can be specific combinations of the
 default constraints, or new constraints that don't use the default
 constraints. Each constraint is associated with at least one validator
 class that validates the value of the constrained field or property.
-Custom constraint developers must also provide a validator class for the
-constraint.
+Custom constraint developers must also provide a validator class for
+the constraint.
 
 Bean Validation constraints are applied to the persistent fields or
 properties of persistent classes. When adding Bean Validation
 constraints, use the same access strategy as the persistent class. That
-is, if the persistent class uses field access, apply the Bean Validation
-constraint annotations on the class's fields. If the class uses property
-access, apply the constraints on the getter methods.
+is, if the persistent class uses field access, apply the Bean
+Validation constraint annotations on the class's fields. If the class
+uses property access, apply the constraints on the getter methods.
 
-<<built-in-jakarta-bean-validation-constraints>> lists Bean Validation's
-built-in constraints, defined in the `jakarta.validation.constraints`
-package.
+<<built-in-jakarta-bean-validation-constraints>> lists Bean
+Validation's built-in constraints, defined in the
+`jakarta.validation.constraints` package.
 
 All the built-in constraints listed in
 <<built-in-jakarta-bean-validation-constraints>> have a corresponding
-annotation, ConstraintName`.List`, for grouping multiple constraints of
+annotation, `_ConstraintName_.List`, for grouping multiple constraints of
 the same type on the same field or property. For example, the following
 persistent field has two `@Pattern` constraints:
 
@@ -332,12 +320,10 @@ validation error will be thrown.
 
 The `homePhone` and `mobilePhone` fields have the same `@Pattern`
 constraints. The regular expression matches 10 digit telephone numbers
-in the United States and Canada of the form `(`xxx`)` xxx`-`xxxx.
+in the United States and Canada of the form ``(``xxx``)`` xxx``-``xxxx.
 
 The `birthday` field is annotated with the `@Past` constraint, which
 ensures that the value of `birthday` must be in the past.
-
-[[BNBQF]][[primary-keys-in-entities]]
 
 === Primary Keys in Entities
 
@@ -347,11 +333,11 @@ identifier, or primary key, enables clients to locate a particular
 entity instance. Every entity must have a primary key. An entity may
 have either a simple or a composite primary key.
 
-Simple primary keys use the `jakarta.persistence.Id` annotation to denote
-the primary key property or field.
+Simple primary keys use the `jakarta.persistence.Id` annotation to
+denote the primary key property or field.
 
-Composite primary keys are used when a primary key consists of more than
-one attribute, which corresponds to a set of single persistent
+Composite primary keys are used when a primary key consists of more
+than one attribute, which corresponds to a set of single persistent
 properties or fields. Composite primary keys must be defined in a
 primary key class. Composite primary keys are denoted using the
 `jakarta.persistence.EmbeddedId` and `jakarta.persistence.IdClass`
@@ -434,18 +420,16 @@ public final class LineItemKey implements Serializable {
 }
 ----
 
-[[BNBQH]][[multiplicity-in-entity-relationships]]
-
 === Multiplicity in Entity Relationships
 
 Multiplicities are of the following types.
 
 * One-to-one: Each entity instance is related to a single instance of
-another entity. For example, to model a physical warehouse in which each
-storage bin contains a single widget, `StorageBin` and `Widget` would
-have a one-to-one relationship. One-to-one relationships use the
-`jakarta.persistence.OneToOne` annotation on the corresponding persistent
-property or field.
+another entity. For example, to model a physical warehouse in which
+each storage bin contains a single widget, `StorageBin` and `Widget`
+would have a one-to-one relationship. One-to-one relationships use the
+`jakarta.persistence.OneToOne` annotation on the corresponding
+persistent property or field.
 * One-to-many: An entity instance can be related to multiple instances
 of the other entities. A sales order, for example, can have multiple
 line items. In the order application, `CustomerOrder` would have a
@@ -457,37 +441,33 @@ single instance of the other entity. This multiplicity is the opposite
 of a one-to-many relationship. In the example just mentioned, the
 relationship to `CustomerOrder` from the perspective of `LineItem` is
 many-to-one. Many-to-one relationships use the
-`jakarta.persistence.ManyToOne` annotation on the corresponding persistent
-property or field.
+`jakarta.persistence.ManyToOne` annotation on the corresponding
+persistent property or field.
 * Many-to-many: The entity instances can be related to multiple
 instances of each other. For example, each college course has many
 students, and every student may take several courses. Therefore, in an
-enrollment application, `Course` and `Student` would have a many-to-many
-relationship. Many-to-many relationships use the
+enrollment application, `Course` and `Student` would have a
+many-to-many relationship. Many-to-many relationships use the
 `jakarta.persistence.ManyToMany` annotation on the corresponding
 persistent property or field.
-
-[[BNBQI]][[direction-in-entity-relationships]]
 
 === Direction in Entity Relationships
 
 The direction of a relationship can be either bidirectional or
-unidirectional. A bidirectional relationship has both an owning side and
-an inverse side. A unidirectional relationship has only an owning side.
-The owning side of a relationship determines how the Persistence runtime
-makes updates to the relationship in the database.
-
-[[BNBQJ]][[bidirectional-relationships]]
+unidirectional. A bidirectional relationship has both an owning side
+and an inverse side. A unidirectional relationship has only an owning
+side. The owning side of a relationship determines how the Persistence
+runtime makes updates to the relationship in the database.
 
 ==== Bidirectional Relationships
 
-In a bidirectional relationship, each entity has a relationship field or
-property that refers to the other entity. Through the relationship field
-or property, an entity class's code can access its related object. If an
-entity has a related field, the entity is said to "know" about its
-related object. For example, if `CustomerOrder` knows what `LineItem`
-instances it has and if `LineItem` knows what `CustomerOrder` it belongs
-to, they have a bidirectional relationship.
+In a bidirectional relationship, each entity has a relationship field
+or property that refers to the other entity. Through the relationship
+field or property, an entity class's code can access its related
+object. If an entity has a related field, the entity is said to "know"
+about its related object. For example, if `CustomerOrder` knows what
+`LineItem` instances it has and if `LineItem` knows what
+`CustomerOrder` it belongs to, they have a bidirectional relationship.
 
 Bidirectional relationships must follow these rules.
 
@@ -504,53 +484,45 @@ corresponds to the side that contains the corresponding foreign key.
 * For many-to-many bidirectional relationships, either side may be the
 owning side.
 
-[[BNBQK]][[unidirectional-relationships]]
-
 ==== Unidirectional Relationships
 
 In a unidirectional relationship, only one entity has a relationship
 field or property that refers to the other. For example, `LineItem`
-would have a relationship field that identifies `Product`, but `Product`
-would not have a relationship field or property for `LineItem`. In other
-words, `LineItem` knows about `Product`, but `Product` doesn't know
-which `LineItem` instances refer to it.
-
-[[BNBQL]][[queries-and-relationship-direction]]
+would have a relationship field that identifies `Product`, but
+`Product` would not have a relationship field or property for
+`LineItem`. In other words, `LineItem` knows about `Product`, but
+`Product` doesn't know which `LineItem` instances refer to it.
 
 ==== Queries and Relationship Direction
 
-Jakarta Persistence query language and Criteria API queries often navigate
-across relationships. The direction of a relationship determines whether
-a query can navigate from one entity to another. For example, a query
-can navigate from `LineItem` to `Product` but cannot navigate in the
-opposite direction. For `CustomerOrder` and `LineItem`, a query could
-navigate in both directions because these two entities have a
-bidirectional relationship.
-
-[[BNBQM]][[cascade-operations-and-relationships]]
+Jakarta Persistence query language and Criteria API queries often
+navigate across relationships. The direction of a relationship
+determines whether a query can navigate from one entity to another. For
+example, a query can navigate from `LineItem` to `Product` but cannot
+navigate in the opposite direction. For `CustomerOrder` and `LineItem`,
+a query could navigate in both directions because these two entities
+have a bidirectional relationship.
 
 ==== Cascade Operations and Relationships
 
-Entities that use relationships often have dependencies on the existence
-of the other entity in the relationship. For example, a line item is
-part of an order; if the order is deleted, the line item also should be
-deleted. This is called a cascade delete relationship.
+Entities that use relationships often have dependencies on the
+existence of the other entity in the relationship. For example, a line
+item is part of an order; if the order is deleted, the line item also
+should be deleted. This is called a cascade delete relationship.
 
-The `jakarta.persistence.CascadeType` enumerated type defines the cascade
-operations that are applied in the `cascade` element of the relationship
-annotations. link:#GJJNJ[Table 40-1] lists the cascade operations for
-entities.
+The `jakarta.persistence.CascadeType` enumerated type defines the
+cascade operations that are applied in the `cascade` element of the
+relationship annotations. <<cascade-operations-for-entities>> lists the
+cascade operations for entities.
 
-[[sthref159]][[GJJNJ]]
+[[cascade-operations-for-entities]]
+[width="75%",cols="15%,60%",title="Cascade Operations for Entities"]
+|===
+|Cascade Operation |Description
 
-*Table 40-1 Cascade Operations for Entities*
-
-[width="75%",cols="15%,60%"]
-|=======================================================================
-|*Cascade Operation* |*Description*
 |`ALL` |All cascade operations will be applied to the parent entity's
-related entity. `All` is equivalent to specifying
-`cascade={DETACH, MERGE, PERSIST, REFRESH, REMOVE}`
+related entity. `All` is equivalent to specifying `cascade={DETACH,
+MERGE, PERSIST, REFRESH, REMOVE}`
 
 |`DETACH` |If the parent entity is detached from the persistence
 context, the related entity will also be detached.
@@ -561,13 +533,12 @@ the related entity will also be merged.
 |`PERSIST` |If the parent entity is persisted into the persistence
 context, the related entity will also be persisted.
 
-|`REFRESH` |If the parent entity is refreshed in the current persistence
-context, the related entity will also be refreshed.
+|`REFRESH` |If the parent entity is refreshed in the current
+persistence context, the related entity will also be refreshed.
 
 |`REMOVE` |If the parent entity is removed from the current persistence
 context, the related entity will also be removed.
-|=======================================================================
-
+|===
 
 Cascade delete relationships are specified using the `cascade=REMOVE`
 element specification for `@OneToOne` and `@OneToMany` relationships.
@@ -579,8 +550,6 @@ For example:
 public Set<CustomerOrder> getOrders() { return orders; }
 ----
 
-[[GIQXY]][[orphan-removal-in-relationships]]
-
 ==== Orphan Removal in Relationships
 
 When a target entity in a one-to-one or one-to-many relationship is
@@ -588,10 +557,10 @@ removed from the relationship, it is often desirable to cascade the
 remove operation to the target entity. Such target entities are
 considered "orphans," and the `orphanRemoval` attribute can be used to
 specify that orphaned entities should be removed. For example, if an
-order has many line items and one of them is removed from the order, the
-removed line item is considered an orphan. If `orphanRemoval` is set to
-`true`, the line item entity will be deleted when the line item is
-removed from the order.
+order has many line items and one of them is removed from the order,
+the removed line item is considered an orphan. If `orphanRemoval` is
+set to `true`, the line item entity will be deleted when the line item
+is removed from the order.
 
 The `orphanRemoval` attribute in `@OneToMany` and `@oneToOne` takes a
 Boolean value and is by default false.
@@ -605,8 +574,6 @@ The following example will cascade the remove operation to the orphaned
 public List<CustomerOrder> getOrders() { ... }
 ----
 
-[[GJIWZ]][[embeddable-classes-in-entities]]
-
 === Embeddable Classes in Entities
 
 Embeddable classes are used to represent the state of an entity but
@@ -617,8 +584,8 @@ An entity may have single-valued or collection-valued embeddable class
 attributes.
 
 Embeddable classes have the same rules as entity classes but are
-annotated with the `jakarta.persistence.Embeddable` annotation instead of
-`@Entity`.
+annotated with the `jakarta.persistence.Embeddable` annotation instead
+of `@Entity`.
 
 The following embeddable class, `ZipCode`, has the fields `zip` and
 `plusFour`:
@@ -653,8 +620,9 @@ public class Address {
 ----
 
 Entities that own embeddable classes as part of their persistent state
-may annotate the field or property with the `jakarta.persistence.Embedded`
-annotation but are not required to do so.
+may annotate the field or property with the
+`jakarta.persistence.Embedded` annotation but are not required to do
+so.
 
 Embeddable classes may themselves use other embeddable classes to
 represent their state. They may also contain collections of basic Java

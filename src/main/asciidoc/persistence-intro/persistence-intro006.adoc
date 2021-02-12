@@ -1,22 +1,22 @@
-[[CHDBEGIC]][[database-schema-creation]]
-
 == Database Schema Creation
 
 The persistence provider can be configured to automatically create the
-database tables, load data into the tables, and remove the tables during
-application deployment using standard properties in the application's
-deployment descriptor. These tasks are typically used during the
-development phase of a release, not against a production database.
+database tables, load data into the tables, and remove the tables
+during application deployment using standard properties in the
+application's deployment descriptor. These tasks are typically used
+during the development phase of a release, not against a production
+database.
 
-The following is an example of a `persistence.xml` deployment descriptor
-that specifies that the provider should drop all database artifacts
-using a provided script, create the artifacts with a provided script,
-and load data from a provided script when the application is deployed:
+The following is an example of a `persistence.xml` deployment
+descriptor that specifies that the provider should drop all database
+artifacts using a provided script, create the artifacts with a provided
+script, and load data from a provided script when the application is
+deployed:
 
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="https://jakarta.ee/xml/ns/persistence"
+<persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
  https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
@@ -40,8 +40,6 @@ and load data from a provided script when the application is deployed:
 </persistence>
 ----
 
-[[sthref161]][[configuring-an-application-to-create-or-drop-database-tables]]
-
 === Configuring an Application to Create or Drop Database Tables
 
 The `jakarta.persistence.schema-generation.database.action` property is
@@ -49,13 +47,11 @@ used to specify the action taken by the persistence provider when an
 application is deployed. If the property is not set, the persistence
 provider will not create or drop any database artifacts.
 
-[[sthref162]][[sthref163]]
+[[schema-creation-actions]]
+[width="75%",cols="15%,60%",title="Schema Creation Actions"]
+|===
+|Setting |Description
 
-*Table 40-3 Schema Creation Actions*
-
-[width="75%",cols="15%,60%"]
-|=======================================================================
-|*Setting* |*Description*
 |`none` |No schema creation or deletion will take place.
 
 |`create` |The provider will create the database artifacts on
@@ -67,12 +63,11 @@ the provider will create the database artifacts on deployment.
 
 |`drop` |Any artifacts in the database will be deleted on application
 deployment.
-|=======================================================================
-
+|===
 
 In this example, the persistence provider will delete any remaining
-database artifacts and then create the artifacts when the application is
-deployed:
+database artifacts and then create the artifacts when the application
+is deployed:
 
 [source,xml]
 ----
@@ -84,16 +79,14 @@ By default, the object/relational metadata in the persistence unit is
 used to create the database artifacts. You may also supply scripts used
 by the provider to create and delete the database artifacts. The
 `jakarta.persistence.schema-generation.create-source` and
-`jakarta.persistence.schema-generation.drop-source` properties control how
-the provider will create or delete the database artifacts.
+`jakarta.persistence.schema-generation.drop-source` properties control
+how the provider will create or delete the database artifacts.
 
-[[sthref164]][[sthref165]]
+[[settings-for-create-and-delete-source-properties]]
+[width="75%",cols="15%,60%",title="Settings for Create and Delete Source Properties"]
+|===
+|Setting |Description
 
-*Table 40-4 Settings for Create and Delete Source Properties*
-
-[width="75%",cols="15%,60%"]
-|=======================================================================
-|*Setting* |*Description*
 |`metadata` |Use the object/relational metadata in the application to
 create or delete the database artifacts.
 
@@ -107,8 +100,7 @@ artifacts.
 |`script-then-metadata` |Use a combination of a user-provided script,
 then the object/relational metadata to create and delete the database
 artifacts.
-|=======================================================================
-
+|===
 
 In this example, the persistence provider will use a script packaged
 within the application to create the database artifacts:
@@ -119,11 +111,12 @@ within the application to create the database artifacts:
            value="script"/>
 ----
 
-If you specify a script in `create-source` or `drop-source`, specify the
-location of the script using the
+If you specify a script in `create-source` or `drop-source`, specify
+the location of the script using the
 `jakarta.persistence.schema-generation.create-script-source` or
-`jakarta.persistence.schema-generation.drop-script-source` property. The
-location of the script is relative to the root of the persistence unit:
+`jakarta.persistence.schema-generation.drop-script-source` property.
+The location of the script is relative to the root of the persistence
+unit:
 
 [source,xml]
 ----
@@ -134,8 +127,6 @@ location of the script is relative to the root of the persistence unit:
 In the above example, the `create-script-source` is set to a SQL file
 called `create.sql` in the `META-INF/sql` directory relative to root of
 the persistence unit.
-
-[[sthref166]][[loading-data-using-sql-scripts]]
 
 === Loading Data Using SQL Scripts
 

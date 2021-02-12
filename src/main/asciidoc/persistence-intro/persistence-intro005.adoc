@@ -1,18 +1,19 @@
-[[GJISE]][[querying-entities]]
-
 == Querying Entities
 
 Jakarta Persistence provides the following methods for querying
 entities.
 
-* The Jakarta Persistence query language (JPQL) is a simple, string-based
-language similar to SQL used to query entities and their relationships.
-See link:#BNBTG[Chapter 42, "The Jakarta
-Persistence Query Language"] for more information.
+* The Jakarta Persistence query language (JPQL) is a simple,
+string-based language similar to SQL used to query entities and their
+relationships. See
+xref:the-jakarta-persistence-query-language[xrefstyle=full] for more
+information.
+
 * The Criteria API is used to create typesafe queries using Java
-programming language APIs to query for entities and their relationships.
-See link:#GJITV[Chapter 43, "Using the Criteria
-API to Create Queries"] for more information.
+programming language APIs to query for entities and their
+relationships. See
+xref:using-the-criteria-api-to-create-queries[xrefstyle=full] for more
+information.
 
 Both JPQL and the Criteria API have advantages and disadvantages.
 
@@ -22,8 +23,8 @@ it easy to learn the syntax of JPQL. JPQL named queries can be defined
 in the entity class using a Java programming language annotation or in
 the application's deployment descriptor. JPQL queries are not typesafe,
 however, and require a cast when retrieving the query result from the
-entity manager. This means that type-casting errors may not be caught at
-compile time. JPQL queries don't support open-ended parameters.
+entity manager. This means that type-casting errors may not be caught
+at compile time. JPQL queries don't support open-ended parameters.
 
 Criteria queries allow you to define the query in the business tier of
 the application. Although this is also possible using JPQL dynamic

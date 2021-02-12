@@ -1,5 +1,3 @@
-[[BNBQW]][[managing-entities]]
-
 == Managing Entities
 
 Entities are managed by the entity manager, which is represented by
@@ -10,15 +8,11 @@ context defines the scope under which particular entity instances are
 created, persisted, and removed. The `EntityManager` interface defines
 the methods that are used to interact with the persistence context.
 
-[[BNBQY]][[the-entitymanager-interface]]
-
 === The EntityManager Interface
 
-The `EntityManager` API creates and removes persistent entity instances,
-finds entities by the entity's primary key, and allows queries to be run
-on entities.
-
-[[BNBQZ]][[container-managed-entity-managers]]
+The `EntityManager` API creates and removes persistent entity
+instances, finds entities by the entity's primary key, and allows
+queries to be run on entities.
 
 ==== Container-Managed Entity Managers
 
@@ -27,19 +21,19 @@ persistence context is automatically propagated by the container to all
 application components that use the `EntityManager` instance within a
 single Jakarta transaction.
 
-Jakarta transactions usually involve calls across application components. To
-complete a Jakarta transaction, these components usually need access to a
-single persistence context. This occurs when an `EntityManager` is
-injected into the application components by means of the
-`jakarta.persistence.PersistenceContext` annotation. The persistence
-context is automatically propagated with the current Jakarta transaction,
-and `EntityManager` references that are mapped to the same persistence
-unit provide access to the persistence context within that transaction.
-By automatically propagating the persistence context, application
-components don't need to pass references to `EntityManager` instances to
-each other in order to make changes within a single transaction. The
-Jakarta EE container manages the lifecycle of container-managed entity
-managers.
+Jakarta transactions usually involve calls across application
+components. To complete a Jakarta transaction, these components usually
+need access to a single persistence context. This occurs when an
+`EntityManager` is injected into the application components by means of
+the `jakarta.persistence.PersistenceContext` annotation. The
+persistence context is automatically propagated with the current
+Jakarta transaction, and `EntityManager` references that are mapped to
+the same persistence unit provide access to the persistence context
+within that transaction. By automatically propagating the persistence
+context, application components don't need to pass references to
+`EntityManager` instances to each other in order to make changes within
+a single transaction. The Jakarta EE container manages the lifecycle of
+container-managed entity managers.
 
 To obtain an `EntityManager` instance, inject the entity manager into
 the application component:
@@ -50,23 +44,22 @@ the application component:
 EntityManager em;
 ----
 
-[[BNBRA]][[application-managed-entity-managers]]
-
 ==== Application-Managed Entity Managers
 
 With an application-managed entity manager, on the other hand, the
-persistence context is not propagated to application components, and the
-lifecycle of `EntityManager` instances is managed by the application.
+persistence context is not propagated to application components, and
+the lifecycle of `EntityManager` instances is managed by the
+application.
 
 Application-managed entity managers are used when applications need to
 access a persistence context that is not propagated with the Jakarta
-transaction across `EntityManager` instances in a particular persistence
-unit. In this case, each `EntityManager` creates a new, isolated
-persistence context. The `EntityManager` and its associated persistence
-context are created and destroyed explicitly by the application. They
-are also used when directly injecting `EntityManager` instances can't be
-done because `EntityManager` instances are not thread-safe.
-`EntityManagerFactory` instances are thread-safe.
+transaction across `EntityManager` instances in a particular
+persistence unit. In this case, each `EntityManager` creates a new,
+isolated persistence context. The `EntityManager` and its associated
+persistence context are created and destroyed explicitly by the
+application. They are also used when directly injecting `EntityManager`
+instances can't be done because `EntityManager` instances are not
+thread-safe. `EntityManagerFactory` instances are thread-safe.
 
 Applications create `EntityManager` instances in this case by using the
 `createEntityManager` method of
@@ -83,7 +76,8 @@ annotation:
 EntityManagerFactory emf;
 ----
 
-Then obtain an `EntityManager` from the `EntityManagerFactory` instance:
+Then obtain an `EntityManager` from the `EntityManagerFactory`
+instance:
 
 [source,java]
 ----
@@ -91,11 +85,11 @@ EntityManager em = emf.createEntityManager();
 ----
 
 Application-managed entity managers don't automatically propagate the
-Jakarta transaction context. Such applications need to manually gain access
-to the Jakarta transaction manager and add transaction demarcation
-information when performing entity operations. The
-`jakarta.transaction.UserTransaction` interface defines methods to begin,
-commit, and roll back transactions. Inject an instance of
+Jakarta transaction context. Such applications need to manually gain
+access to the Jakarta transaction manager and add transaction
+demarcation information when performing entity operations. The
+`jakarta.transaction.UserTransaction` interface defines methods to
+begin, commit, and roll back transactions. Inject an instance of
 `UserTransaction` by creating an instance variable annotated with
 `@Resource`:
 
@@ -111,8 +105,8 @@ all the entity operations are complete, call the
 `UserTransaction.rollback` method is used to roll back the current
 transaction.
 
-The following example shows how to manage transactions in an application
-that uses an application-managed entity manager:
+The following example shows how to manage transactions in an
+application that uses an application-managed entity manager:
 
 [source,java]
 ----
@@ -134,8 +128,6 @@ try {
 }
 ----
 
-[[BNBRB]][[finding-entities-using-the-entitymanager]]
-
 ==== Finding Entities Using the EntityManager
 
 The `EntityManager.find` method is used to look up entities in the data
@@ -152,8 +144,6 @@ public void enterOrder(int custID, CustomerOrder newOrder) {
 }
 ----
 
-[[BNBRC]][[managing-an-entity-instances-lifecycle]]
-
 ==== Managing an Entity Instance's Lifecycle
 
 You manage entity instances by invoking operations on the entity by
@@ -162,15 +152,13 @@ four states: new, managed, detached, or removed.
 
 * New entity instances have no persistent identity and are not yet
 associated with a persistence context.
-* Managed entity instances have a persistent identity and are associated
-with a persistence context.
+* Managed entity instances have a persistent identity and are
+associated with a persistence context.
 * Detached entity instances have a persistent identity and are not
 currently associated with a persistence context.
 * Removed entity instances have a persistent identity, are associated
 with a persistent context, and are scheduled for removal from the data
 store.
-
-[[BNBRD]][[persisting-entity-instances]]
 
 ==== Persisting Entity Instances
 
@@ -203,8 +191,8 @@ public LineItem createLineItem(CustomerOrder order, Product product,
 ----
 
 The `persist` operation is propagated to all entities related to the
-calling entity that have the `cascade` element set to `ALL` or `PERSIST`
-in the relationship annotation:
+calling entity that have the `cascade` element set to `ALL` or
+`PERSIST` in the relationship annotation:
 
 [source,java]
 ----
@@ -214,8 +202,6 @@ public Collection<LineItem> getLineItems() {
 }
 ----
 
-[[BNBRE]][[removing-entity-instances]]
-
 ==== Removing Entity Instances
 
 Managed entity instances are removed by invoking the `remove` method or
@@ -224,8 +210,8 @@ have the `cascade=REMOVE` or `cascade=ALL` elements set in the
 relationship annotation. If the `remove` method is invoked on a new
 entity, the `remove` operation is ignored, although `remove` will
 cascade to related entities that have the `cascade` element set to
-`REMOVE` or `ALL` in the relationship annotation. If `remove` is invoked
-on a detached entity, either `remove` will throw an
+`REMOVE` or `ALL` in the relationship annotation. If `remove` is
+invoked on a detached entity, either `remove` will throw an
 `IllegalArgumentException`, or the transaction commit will fail. If
 invoked on an already removed entity, `remove` will be ignored. The
 entity's data will be removed from the data store when the transaction
@@ -242,9 +228,8 @@ public void removeOrder(Integer orderId) {
         CustomerOrder order = em.find(CustomerOrder.class, orderId);
         em.remove(order);
     }...
+}
 ----
-
-[[BNBRF]][[synchronizing-entity-data-to-the-database]]
 
 ==== Synchronizing Entity Data to the Database
 
@@ -254,16 +239,14 @@ managed entity is in a bidirectional relationship with another managed
 entity, the data will be persisted, based on the owning side of the
 relationship.
 
-To force synchronization of the managed entity to the data store, invoke
-the `flush` method of the `EntityManager` instance. If the entity is
-related to another entity and the relationship annotation has the
-`cascade` element set to `PERSIST` or `ALL`, the related entity's data
-will be synchronized with the data store when `flush` is called.
+To force synchronization of the managed entity to the data store,
+invoke the `flush` method of the `EntityManager` instance. If the
+entity is related to another entity and the relationship annotation has
+the `cascade` element set to `PERSIST` or `ALL`, the related entity's
+data will be synchronized with the data store when `flush` is called.
 
 If the entity is removed, calling `flush` will remove the entity data
 from the data store.
-
-[[BNBRJ]][[persistence-units]]
 
 === Persistence Units
 
@@ -290,17 +273,18 @@ file. The following is an example `persistence.xml` file:
 </persistence>
 ----
 
-This file defines a persistence unit named `OrderManagement`, which uses
-a Jakarta Transactions aware data source, `jdbc/MyOrderDB`. The `jar-file` and `class`
-elements specify managed persistence classes: entity classes, embeddable
-classes, and mapped superclasses. The `jar-file` element specifies JAR
-files that are visible to the packaged persistence unit that contain
-managed persistence classes, whereas the `class` element explicitly
-names managed persistence classes.
+This file defines a persistence unit named `OrderManagement`, which
+uses a Jakarta Transactions aware data source, `jdbc/MyOrderDB`. The
+`jar-file` and `class` elements specify managed persistence classes:
+entity classes, embeddable classes, and mapped superclasses. The
+`jar-file` element specifies JAR files that are visible to the packaged
+persistence unit that contain managed persistence classes, whereas the
+`class` element explicitly names managed persistence classes.
 
 The `jta-data-source` (for Jakarta Transactions aware data sources) and
-`non-jta-data-source` (for non Jakarta Transactions aware data sources) elements specify
-the global JNDI name of the data source to be used by the container.
+`non-jta-data-source` (for non Jakarta Transactions aware data sources)
+elements specify the global JNDI name of the data source to be used by
+the container.
 
 The JAR file or directory whose `META-INF` directory contains
 `persistence.xml` is called the root of the persistence unit. The scope
@@ -308,15 +292,15 @@ of the persistence unit is determined by the persistence unit's root.
 Each persistence unit must be identified with a name that is unique to
 the persistence unit's scope.
 
-Persistent units can be packaged as part of a WAR or enterprise bean JAR file or can
-be packaged as a JAR file that can then be included in an WAR or EAR
-file.
+Persistent units can be packaged as part of a WAR or enterprise bean
+JAR file or can be packaged as a JAR file that can then be included in
+an WAR or EAR file.
 
-* If you package the persistent unit as a set of classes in an enterprise bean JAR
-file, `persistence.xml` should be put in the enterprise bean JAR's `META-INF`
-directory.
-* If you package the persistence unit as a set of classes in a WAR file,
-`persistence.xml` should be located in the WAR file's
+* If you package the persistent unit as a set of classes in an
+enterprise bean JAR file, `persistence.xml` should be put in the
+enterprise bean JAR's `META-INF` directory.
+* If you package the persistence unit as a set of classes in a WAR
+file, `persistence.xml` should be located in the WAR file's
 `WEB-INF/classes/META-INF` directory.
 * If you package the persistence unit in a JAR file that will be
 included in a WAR or EAR file, the JAR file should be located in either
@@ -325,15 +309,8 @@ included in a WAR or EAR file, the JAR file should be located in either
 
 ** Or the EAR file's library directory
 +
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 In the Java Persistence API 1.0, JAR files could be located at the root
 of an EAR file as the root of the persistence unit. This is no longer
 supported. Portable applications should use the EAR file's library
 directory as the root of the persistence unit.
-
-|=======================================================================
