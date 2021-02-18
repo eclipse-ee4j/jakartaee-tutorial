@@ -411,7 +411,7 @@ mvn install
 +
 This compiles the source files and packages the application into an EAR
 file located at
-tut-install`/examples/persistence/roster/target/roster.ear`. The EAR
+`_tut-install_/examples/persistence/roster/target/roster.ear`. The EAR
 file is then deployed to GlassFish Server. GlassFish Server will then
 drop and create the database tables during deployment, as specified in
 `persistence.xml`.

@@ -116,7 +116,7 @@ configuration file. A configuration file that has content, or a class
 annotated `@FlowDefinition`, provides an explicit flow definition.
 
 The source code for this application is in the
-tut-install`/examples/web/jsf/simple-flow/` directory.
+`_tut-install_/examples/web/jsf/simple-flow/` directory.
 
 The file layout of the `simple-flow` example looks like this:
 
@@ -276,7 +276,7 @@ other. Both flows have explicit flow definitions. One flow,
 `joinFlow`, is specified in a configuration file.
 
 The source code for this application is in the
-tut-install`/examples/web/jsf/checkout-module/` directory.
+`_tut-install_/examples/web/jsf/checkout-module/` directory.
 
 For the `checkout-module` application, the directory structure is as
 follows (there is also a `src/main/webapp/resources` directory with a
@@ -358,7 +358,7 @@ marks if you have not called the checkout flow from the join flow.
 
 Only `checkoutFlow2.xhtml` has a button to return to the previous page,
 but moving between pages is generally permitted within flows. Here are
-the buttons for c`heckoutFlow2.xhtml`:
+the buttons for `checkoutFlow2.xhtml`:
 
 [source,xml]
 ----

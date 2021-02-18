@@ -50,7 +50,7 @@ expected by an `HttpAuthenticationMechanism`.
 principals and credentials.
 
 Only the `validateRequest()` method must be implemented by an `HttpAuthenticationMechanism`;
-the interface includes default implementations for secureResponse()` and `cleanSubject()` that will
+the interface includes default implementations for `secureResponse()` and `cleanSubject()` that will
 often be sufficient.
 
 The following annotations can be used to add additional behaviors to an `HttpAuthenticationMechanism`:

@@ -204,9 +204,9 @@ renders the beginning `map` tag in `encodeBegin` and the rest of the
 `map` tag in `encodeEnd`.
 
 The Jakarta Server Faces implementation automatically invokes the
-`encodeEnd` method of `AreaComponent`'s renderer after it invokes
-`MapRenderer`'s `encodeBegin` method and before it invokes
-`MapRenderer`'s `encodeEnd` method. If a component needs to perform the
+`encodeEnd` method of `AreaComponent`{zwsp}'s renderer after it invokes
+`MapRenderer`{zwsp}'s `encodeBegin` method and before it invokes
+`MapRenderer`{zwsp}'s `encodeEnd` method. If a component needs to perform the
 rendering for its children, it does this in the `encodeChildren` method.
 
 Here are the `encodeBegin` and `encodeEnd` methods of `MapRenderer`:

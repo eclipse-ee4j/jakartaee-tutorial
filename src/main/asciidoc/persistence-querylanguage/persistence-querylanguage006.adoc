@@ -1075,7 +1075,7 @@ position in a string is designated by 1.
 |`LENGTH(String)` |`int`
 |`LOCATE(String, String [, start])` |`int`
 |`SUBSTRING(String, start, length)` |`String`
-|`TRIM([[LEADING|TRAILING|BOTH] char) FROM] (String)` |`String`
+|`TRIM([[LEADING\|TRAILING\|BOTH] char) FROM] (String)` |`String`
 |`LOWER(String)` |`String`
 |`UPPER(String)` |`String`
 |==============================================================

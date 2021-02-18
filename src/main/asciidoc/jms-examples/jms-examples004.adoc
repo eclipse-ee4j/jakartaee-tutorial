@@ -210,7 +210,7 @@ link:#BNCGB[Creating Temporary Destinations],
 although it uses permanent rather than temporary destinations. The
 example consists of three modules, `genericsupplier`, `retailer`, and
 `vendor`, which can be found under the
-tut-install`/examples/jms/transactedexample/` directory. The source code
+`_tut-install_/examples/jms/transactedexample/` directory. The source code
 can be found in the `src/main/java/jakarta.tutorial` trees for each
 module. The `genericsupplier` and `retailer` modules each contain a
 single class, `genericsupplier/GenericSupplier.java` and

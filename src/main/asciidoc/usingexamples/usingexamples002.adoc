@@ -49,7 +49,7 @@ With no arguments, the `start-domain` command initiates the default
 domain, which is `domain1`. The `--verbose` flag causes all logging and
 debugging output to appear on the terminal window or command prompt. The
 output also goes into the server log, which is located in
-domain-dir`/logs/server.log`.
+`domain-dir/logs/server.log`.
 
 [[sthref15]][[to-stop-glassfish-server-using-the-command-line]]
 
