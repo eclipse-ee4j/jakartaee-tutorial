@@ -141,7 +141,7 @@ From the directory where you want to create the client certificate, run
 to enter the server name, organizational unit, organization, locality,
 state, and country code.
 
-You must enter the server name in response to `keytool`'s first prompt,
+You must enter the server name in response to `keytool`{zwsp}'s first prompt,
 in which it asks for first and last names. For testing purposes, this
 can be `localhost`. If this example is to verify mutual authentication
 and you receive a runtime error stating that the HTTPS host name is
@@ -158,7 +158,7 @@ To create a keystore named `client_keystore.jks` that contains a client
 certificate named `client.cer`, follow these steps.
 
 .  Create a backup copy of the server truststore file. To do this,
-..  Change to the directory containing the server's keystore and truststore files, domain-dir`\config`.
+..  Change to the directory containing the server's keystore and truststore files, `domain-dir\config`.
 ..  Copy `cacerts.jks` to `cacerts.backup.jks`.
 ..  Copy `keystore.jks` to `keystore.backup.jks`.
 +
@@ -175,7 +175,7 @@ java-home\bin\keytool -genkey -alias client-alias -keyalg RSA -keypass changeit 
 ----
 java-home\bin\keytool -export -alias client-alias -storepass changeit -file client.cer -keystore client_keystore.jks
 ----
-.  Add the certificate to the truststore file domain-dir`/config/cacerts.jks`. Run `keytool` from the directory where you created the keystore and client certificate. Use the following parameters:
+.  Add the certificate to the truststore file `domain-dir/config/cacerts.jks`. Run `keytool` from the directory where you created the keystore and client certificate. Use the following parameters:
 +
 [source,xml]
 ----

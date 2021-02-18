@@ -80,7 +80,7 @@ resource file.
 === Configuring Eager Application-Scoped Managed Beans
 
 Jakarta Server Faces managed beans (either specified in the
-f`aces-config.xml` file or annotated with
+`faces-config.xml` file or annotated with
 `javax.faces.bean.ManagedBean`) are lazily instantiated. That is, that
 they are instantiated when a request is made from the application.
 

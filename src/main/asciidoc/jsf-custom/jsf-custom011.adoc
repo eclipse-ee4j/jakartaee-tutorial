@@ -21,7 +21,7 @@ perform a custom data conversion.
 
 The Duke's Bookstore case study uses a custom `Converter`
 implementation, located in
-tut-install`/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/converters/CreditCardConverter.java`,
+`_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/converters/CreditCardConverter.java`,
 to convert the data entered in the Credit Card Number field on the
 `bookcashier.xhtml` page. It strips blanks and hyphens from the text
 string and formats it so that a blank space separates every four

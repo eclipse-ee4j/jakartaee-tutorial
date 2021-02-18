@@ -129,7 +129,7 @@ subscription will be dropped when the `JMSContext` is closed.
 If you use a queue or a durable subscription, you can use the
 `JMSContext.recover` method to stop a nontransacted `JMSContext` and
 restart it with its first unacknowledged message. In effect, the
-`JMSContext`'s series of delivered messages is reset to the point after
+`JMSContext`{zwsp}'s series of delivered messages is reset to the point after
 its last acknowledged message. The messages it now delivers may be
 different from those that were originally delivered, if messages have
 expired or if higher-priority messages have arrived. For a consumer on a

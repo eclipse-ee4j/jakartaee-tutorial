@@ -142,7 +142,7 @@ Use a dash character (`-`) to specify an inclusive range of values for
 an attribute. Members of a range cannot be wildcards, lists, or
 intervals. A range of the form `x-x`, is equivalent to the single-valued
 expression `x`. A range of the form `x-y` where `x` is greater than `y`
-is equivalent to the expression `x-`maximumvalue`,` minimumvalue`-y`.
+is equivalent to the expression `x-maximumvalue`, `minimumvalue-y`.
 That is, the expression begins at `x`, rolls over to the beginning of
 the allowable values, and continues up to `y`.
 
@@ -675,4 +675,4 @@ You will see the date and time of the last programmatic and automatic
 timeouts.
 +
 To see the messages that are logged when a timeout occurs, open the
-`server.log` file located in domain-dir`/logs/`.
+`server.log` file located in `domain-dir/logs/`.

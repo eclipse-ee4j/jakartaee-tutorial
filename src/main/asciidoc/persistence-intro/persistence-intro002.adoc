@@ -100,9 +100,9 @@ If the entity uses persistent properties, the entity must follow the
 method conventions of JavaBeans components. JavaBeans-style properties
 use getter and setter methods that are typically named after the entity
 class's instance variable names. For every persistent property property
-of type Type of the entity, there is a getter method `get`Property and
-setter method `set`Property. If the property is a Boolean, you may use
-`is`Property instead of `get`Property. For example, if a `Customer`
+of type Type of the entity, there is a getter method `get`{zwsp}Property and
+setter method `set`{zwsp}Property. If the property is a Boolean, you may use
+`is`{zwsp}Property instead of `get`{zwsp}Property. For example, if a `Customer`
 entity uses persistent properties and has a private instance variable
 called `firstName`, the class defines a `getFirstName` and
 `setFirstName` method for retrieving and setting the state of the
@@ -273,7 +273,7 @@ package.
 
 All the built-in constraints listed in
 link:#GKAGK[Table 22-1] have a corresponding
-annotation, ConstraintName`.List`, for grouping multiple constraints of
+annotation, `ConstraintName.List`, for grouping multiple constraints of
 the same type on the same field or property. For example, the following
 persistent field has two `@Pattern` constraints:
 
@@ -332,7 +332,7 @@ validation error will be thrown.
 
 The `homePhone` and `mobilePhone` fields have the same `@Pattern`
 constraints. The regular expression matches 10 digit telephone numbers
-in the United States and Canada of the form `(`xxx`)` xxx`-`xxxx.
+in the United States and Canada of the form `(xxx) xxx-xxxx`.
 
 The `birthday` field is annotated with the `@Past` constraint, which
 ensures that the value of `birthday` must be in the past.

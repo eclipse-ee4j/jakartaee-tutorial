@@ -98,7 +98,7 @@ address as input:
 
 Note the use of `cc.attrs.value` when defining the value of the
 `inputText` component. The word `cc` in Jakarta Server Faces is a reserved
-word for composite components. The `#{cc.attrs.`attribute-name`}`
+word for composite components. The `#{cc.attrs.``attribute-name``}`
 expression is used to access the attributes defined for the composite
 component's interface, which in this case happens to be `value`.
 

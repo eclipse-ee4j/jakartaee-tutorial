@@ -90,7 +90,7 @@ public Collection<Part> getParts() {
 ==== One-to-One Relationships
 
 `Part` has a field, `vendorPart`, that has a one-to-one relationship
-with `VendorPart`'s `part` field. That is, each part has exactly one
+with `VendorPart`{zwsp}'s `part` field. That is, each part has exactly one
 vendor part, and vice versa.
 
 Here is the relationship mapping in `Part`:
@@ -121,7 +121,7 @@ Note that, because `Part` uses a compound primary key, the
 `@JoinColumns` annotation is used to map the columns in the
 `PERSISTENCE_ORDER_VENDOR_PART` table to the columns in
 `PERSISTENCE_ORDER_PART`. The `PERSISTENCE_ORDER_VENDOR_PART` table's
-`PARTREVISION` column refers to `PERSISTENCE_ORDER_PART`'s `REVISION`
+`PARTREVISION` column refers to `PERSISTENCE_ORDER_PART`{zwsp}'s `REVISION`
 column.
 
 [[GIQTJ]][[one-to-many-relationship-mapped-to-overlapping-primary-and-foreign-keys]]
@@ -129,7 +129,7 @@ column.
 ==== One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys
 
 `CustomerOrder` has a field, `lineItems`, that has a one-to-many
-relationship with `LineItem`'s field `customerOrder`. That is, each
+relationship with `LineItem`{zwsp}'s field `customerOrder`. That is, each
 order has one or more line item.
 
 `LineItem` uses a compound primary key that is made up of the `orderId`
@@ -217,7 +217,7 @@ public Long getVendorPartNumber() {
 ----
 
 The `@TableGenerator` annotation is used in conjunction with
-`@GeneratedValue`'s `strategy=TABLE` element. That is, the strategy used
+`@GeneratedValue`{zwsp}'s `strategy=TABLE` element. That is, the strategy used
 to generate the primary keys is to use a table in the database. The
 `@TableGenerator` annotation is used to configure the settings for the
 generator table. The name element sets the name of the generator, which
@@ -230,7 +230,7 @@ the `pkColumnValue` element is set to `VENDOR_PART_ID` to distinguish
 this entity's generated primary keys from other entities' generated
 primary keys. The `allocationSize` element specifies the amount to
 increment when allocating primary key values. In this case, each
-`VendorPart`'s primary key will increment by 10.
+`VendorPart`{zwsp}'s primary key will increment by 10.
 
 The primary key field `vendorPartNumber` is of type `Long`, as the
 generated primary key's field must be an integral type.
@@ -247,10 +247,10 @@ wrapper class.
 In `order`, two entities use compound primary keys: `Part` and
 `LineItem`.
 
-* `Part` uses the `PartKey` wrapper class. `Part`'s primary key is a
+* `Part` uses the `PartKey` wrapper class. `Part`{zwsp}'s primary key is a
 combination of the part number and the revision number. `PartKey`
 encapsulates this primary key.
-* `LineItem` uses the `LineItemKey` class. `LineItem`'s primary key is a
+* `LineItem` uses the `LineItemKey` class. `LineItem`{zwsp}'s primary key is a
 combination of the order number and the item number. `LineItemKey`
 encapsulates this primary key.
 
@@ -358,7 +358,7 @@ link:#GIQTJ[One-to-Many Relationship Mapped to Overlapping Primary and
 Foreign Keys]). That is, `customerOrder` will be set by the
 `CustomerOrder` entity.
 
-In `LineItem`'s constructor, the line item number (`LineItem.itemId`) is
+In `LineItem`{zwsp}'s constructor, the line item number (`LineItem.itemId`) is
 set using the `CustomerOrder.getNextId` method:
 
 [source,java]
@@ -383,7 +383,7 @@ public int getNextId() {
 ----
 
 `Part` requires the `@Column` annotation on the two fields that comprise
-`Part`'s compound primary key, because `Part`'s compound primary key is
+`Part`{zwsp}'s compound primary key, because `Part`{zwsp}'s compound primary key is
 an overlapping primary key/foreign key:
 
 [source,java]
@@ -412,7 +412,7 @@ public class Part implements Serializable {
 
 === Entity Mapped to More Than One Database Table
 
-`Part`'s fields map to more than one database table:
+`Part`{zwsp}'s fields map to more than one database table:
 `PERSISTENCE_ORDER_PART` and `PERSISTENCE_ORDER_PART_DETAIL`. The
 `PERSISTENCE_ORDER_PART_DETAIL` table holds the specification and
 schematics for the part. The `@SecondaryTable` annotation is used to
@@ -437,7 +437,7 @@ public class Part implements Serializable {
 `PERSISTENCE_ORDER_PART_DETAIL` and `PERSISTENCE_ORDER_PART` share the
 same primary key values. The `pkJoinColumns` element of
 `@SecondaryTable` is used to specify that
-`PERSISTENCE_ORDER_PART_DETAIL`'s primary key columns are foreign keys
+`PERSISTENCE_ORDER_PART_DETAIL`{zwsp}'s primary key columns are foreign keys
 to `PERSISTENCE_ORDER_PART`. The `@PrimaryKeyJoinColumn` annotation sets
 the primary key column names and specifies which column in the primary
 table the column refers to. In this case, the primary key column names
@@ -535,7 +535,7 @@ The `CustomerOrder.lastUpdate` persistent property, which is of type
 `PERSISTENCE_ORDER_CUSTOMERORDER.LASTUPDATE` database field, which is of
 the SQL type `TIMESTAMP`. To ensure the proper mapping between these
 types, you must use the `@Temporal` annotation with the proper temporal
-type specified in `@Temporal`'s element. `@Temporal`'s elements are of
+type specified in `@Temporal`{zwsp}'s element. `@Temporal`{zwsp}'s elements are of
 type `javax.persistence.TemporalType`. The possible values are
 
 * `DATE`, which maps to `java.sql.Date`
@@ -559,7 +559,7 @@ public Date getLastUpdate() {
 The `RequestBean` stateful session bean contains the business logic and
 manages the entities of `order`. `RequestBean` uses the
 `@PersistenceContext` annotation to retrieve an entity manager instance,
-which is used to manage `order`'s entities in `RequestBean`'s business
+which is used to manage `order`{zwsp}'s entities in `RequestBean`{zwsp}'s business
 methods:
 
 [source,java]
@@ -570,7 +570,7 @@ private EntityManager em;
 
 This `EntityManager` instance is a container-managed entity manager, so
 the container takes care of all the transactions involved in managing
-`order`'s entities.
+`order`{zwsp}'s entities.
 
 [[GIQRR]][[creating-entities]]
 
@@ -595,7 +595,7 @@ The `ConfigBean` singleton session bean is used to initialize the data
 in `order`. `ConfigBean` is annotated with `@Startup`, which indicates
 that the enterprise bean container should create `ConfigBean` when `order` is
 deployed. The `createData` method is annotated with `@PostConstruct` and
-creates the initial entities used by `order` by calling `RequestBean`'s
+creates the initial entities used by `order` by calling `RequestBean`{zwsp}'s
 business methods.
 
 [[GIQQC]][[finding-entities]]
@@ -774,7 +774,7 @@ mvn install
 +
 This compiles the source files and packages the application into a WAR
 file located at
-tut-install`/examples/persistence/order/target/order.war`. Then the WAR
+`_tut-install_/examples/persistence/order/target/order.war`. Then the WAR
 file is deployed to your GlassFish Server instance.
 5.  To create and update the order data, open a web browser to the
 following URL:

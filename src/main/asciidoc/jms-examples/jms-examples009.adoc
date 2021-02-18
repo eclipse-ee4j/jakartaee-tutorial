@@ -11,7 +11,7 @@ the following components:
 * An entity class
 
 You will find the source files for this section in the
-tut-install`/examples/jms/clientmdbentity/` directory. Path names in
+`_tut-install_/examples/jms/clientmdbentity/` directory. Path names in
 this section are relative to this directory.
 
 [[BNCHG]][[overview-of-the-clientmdbentity-example-application]]
@@ -108,7 +108,7 @@ module
 3.  Creates a `TemporaryQueue` to receive notification of processing
 that occurs, based on new-hire events it has published
 4.  Creates a `JMSConsumer` for the `TemporaryQueue`, sets the
-`JMSConsumer`'s message listener, and starts the connection
+`JMSConsumer`{zwsp}'s message listener, and starts the connection
 5.  Creates a `MapMessage`
 6.  Creates five new employees with randomly generated names, positions,
 and ID numbers (in sequence) and publishes five messages containing this
@@ -135,8 +135,8 @@ The beans take the following steps.
 .  They inject a `MessageDrivenContext` resource, an `EntityManager`,
 and a `JMSContext`.
 .  The `onMessage` method retrieves the information in the message. The
-`EquipmentMDB`'s `onMessage` method chooses equipment, based on the new
-hire's position; the `OfficeMDB`'s `onMessage` method randomly generates
+`EquipmentMDB`{zwsp}'s `onMessage` method chooses equipment, based on the new
+hire's position; the `OfficeMDB`{zwsp}'s `onMessage` method randomly generates
 an office number.
 .  After a slight delay to simulate real world processing hitches, the
 `onMessage` method calls a helper method, `compose`.

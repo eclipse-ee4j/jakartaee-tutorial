@@ -374,7 +374,7 @@ bean, `Count.java`, that is used by the Facelets XHTML files
 `template.xhtml` and `index.xhtml`. The `Count` JavaServer Faces managed
 bean obtains a reference to `CounterBean` through dependency injection.
 `Count` defines a `hitCount` JavaBeans property. When the `getHitCount`
-getter method is called from the XHTML files, `CounterBean`'s `getHits`
+getter method is called from the XHTML files, `CounterBean`{zwsp}'s `getHits`
 method is called to return the current number of page hits.
 
 Here's the `Count` managed bean class:

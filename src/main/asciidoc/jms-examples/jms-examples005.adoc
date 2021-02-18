@@ -137,7 +137,7 @@ can be divided among multiple clients).
 The example is much more similar to the `sharedconsumer` example than to
 the `DurableConsumer.java` client. It uses two classes,
 `SharedDurableConsumer.java` and `TextListener.java`, which can be found
-under the tut-install`/examples/jms/shared/shareddurableconsumer/`
+under the `_tut-install_/examples/jms/shared/shareddurableconsumer/`
 directory.
 
 The client uses `java:comp/DefaultJMSConnectionFactory`, the connection
