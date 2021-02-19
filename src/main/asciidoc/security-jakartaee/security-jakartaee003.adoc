@@ -261,8 +261,7 @@ Enterprise Beans"] and is found in the
 the example by adding the necessary elements to secure the application
 by using the `getCallerPrincipal` and `isCallerInRole` methods, which
 are discussed in more detail in
-link:#securing-an-enterprise-bean-programmatically
-[Securing an Enterprise Bean Programmatically].
+link:#securing-an-enterprise-bean-programmatically[Securing an Enterprise Bean Programmatically].
 
 In general, the following steps are necessary when using the
 `getCallerPrincipal` and `isCallerInRole` methods with an enterprise

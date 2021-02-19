@@ -110,7 +110,7 @@ following elements:
 The `contract-mapping` elements within the `resource-library-contracts`
 element map each contract to a different set of pages within the
 application. One contract, named `reply`, is used for all pages under
-the `reply` area of the application (`/reply/*`). The other contract,
+the `reply` area of the application (`/reply/\*`). The other contract,
 `hello`, is used for all other pages in the application (`*`).
 
 The application is organized as follows:

@@ -170,7 +170,7 @@ under `src/main/resources/`.
 * `jakarta.tutorial/dukestutoring/util/StatusMessages.properties`: Strings
 for each of the status types defined in the `StatusType` enumerated type
 for the default locale. Each supported locale has a property file of the
-form `StatusMessages_`locale prefix`.properties` containing the
+form `StatusMessages_'locale prefix'.properties` containing the
 localized strings. For example, the strings for Spanish-speaking locales
 are located in `StatusMessages_es.properties`.
 
@@ -181,14 +181,14 @@ under `src/main/resources/`.
 by the Bean Validation runtime to display validation messages. This file
 must be named `ValidationMessages.properties` and located in the default
 package as required by the Bean Validation specification. Each supported
-locale has a property file of the form `ValidationMessages_`locale
-prefix`.properties` containing the localized strings. For example, the
+locale has a property file of the form `ValidationMessages_'locale
+prefix'.properties` containing the localized strings. For example, the
 strings for German-speaking locales are located in
 `ValidationMessages_de.properties`.
 * `jakarta.tutorial/dukestutoring/web/messages/Messages.properties`:
 Strings for the default locale for the main and administration Facelets
 interface. Each supported locale has a property file of the form
-`Messages_`locale prefix`.properties` containing the localized strings.
+`Messages_'locale prefix'.properties` containing the localized strings.
 For example, the strings for simplified Chinese-speaking locales are
 located in `Messages_zh.properties`.
 

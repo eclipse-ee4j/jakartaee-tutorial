@@ -103,7 +103,7 @@ the messages to be easily localized. Overridden Bean Validation messages
 must be placed in a resource bundle properties file named
 `ValidationMessages.properties` in the default package, with localized
 resource bundles taking the form
-`ValidationMessages_`locale-prefix`.properties`. For example,
+`ValidationMessages_'locale-prefix'.properties`. For example,
 `ValidationMessages_es.properties` is the resource bundle used in
 Spanish-speaking locales.
 

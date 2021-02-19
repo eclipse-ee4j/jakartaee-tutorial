@@ -197,7 +197,7 @@ Metamodel classes model an entity's attributes and are used by Criteria
 queries to navigate to an entity's attributes. Each entity class in
 `roster` has a corresponding metamodel class, generated at compile time,
 with the same package name as the entity and appended with an underscore
-character (_). For example, the `roster.entity.Player` entity has a
+character (\_). For example, the `roster.entity.Player` entity has a
 corresponding metamodel class, `roster.entity.Player_`.
 
 Each persistent field or property in the entity class has a
