@@ -1,9 +1,7 @@
-[[GJIUP]][[using-the-metamodel-api-to-model-entity-classes]]
-
 == Using the Metamodel API to Model Entity Classes
 
-Use the Metamodel API to create a metamodel of the managed entities in a
-particular persistence unit. For each entity class in a particular
+Use the Metamodel API to create a metamodel of the managed entities in
+a particular persistence unit. For each entity class in a particular
 package, a metamodel class is created with a trailing underscore and
 with attributes that correspond to the persistent fields or properties
 of the entity class.
@@ -44,14 +42,13 @@ public class Pet_ {
 ----
 
 Criteria queries use the metamodel class and its attributes to refer to
-the managed entity classes and their persistent state and relationships.
-
-[[GJIVL]][[using-metamodel-classes]]
+the managed entity classes and their persistent state and
+relationships.
 
 === Using Metamodel Classes
 
-Metamodel classes that correspond to entity classes are of the following
-type:
+Metamodel classes that correspond to entity classes are of the
+following type:
 
 [source,java]
 ----
@@ -94,21 +91,10 @@ EntityManager em = ...;
 Metamodel m = em.getMetamodel();
 EntityType<Pet> Pet_ = m.entity(Pet.class);
 ----
-
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
+[NOTE]
 The most common use case is to generate typesafe static metamodel
 classes at development time. Obtaining the metamodel classes
 dynamically, by calling `Root<T>.getModel` or
 `EntityManager.getMetamodel` and then the `entity` method, doesn't allow
 for type safety and doesn't allow the application to call persistent
 field or property names on the metamodel class.
-
-|=======================================================================
-
-
-

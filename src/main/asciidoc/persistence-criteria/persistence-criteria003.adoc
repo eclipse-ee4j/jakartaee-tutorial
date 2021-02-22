@@ -1,13 +1,9 @@
-[[GJIVM]][[using-the-criteria-api-and-metamodel-api-to-create-basic-typesafe-queries]]
-
 == Using the Criteria API and Metamodel API to Create Basic Typesafe Queries
 
-The basic semantics of a Criteria query consists of a `SELECT` clause, a
-`FROM` clause, and an optional `WHERE` clause, similar to a JPQL query.
-Criteria queries set these clauses by using Java programming language
-objects, so the query can be created in a typesafe manner.
-
-[[GJIVS]][[creating-a-criteria-query]]
+The basic semantics of a Criteria query consists of a `SELECT` clause,
+a `FROM` clause, and an optional `WHERE` clause, similar to a JPQL
+query. Criteria queries set these clauses by using Java programming
+language objects, so the query can be created in a typesafe manner.
 
 === Creating a Criteria Query
 
@@ -64,8 +60,6 @@ that returns a `String`:
 CriteriaQuery<String> cq = cb.createQuery(String.class);
 ----
 
-[[GJIVQ]][[query-roots]]
-
 === Query Roots
 
 For a particular `CriteriaQuery` object, the root entity of the query,
@@ -107,8 +101,6 @@ Root<Pet> pet1 = cq.from(Pet.class);
 Root<Pet> pet2 = cq.from(Pet.class);
 ----
 
-[[GJIUV]][[querying-relationships-using-joins]]
-
 === Querying Relationships Using Joins
 
 For queries that navigate to related entity classes, the query must
@@ -144,8 +136,6 @@ Root<Pet> pet = cq.from(Pet.class);
 Join<Owner, Address> address = pet.join(Pet_.owners).join(Owner_.addresses);
 ----
 
-[[GJIVE]][[path-navigation-in-criteria-queries]]
-
 === Path Navigation in Criteria Queries
 
 `Path` objects, which are used in the `SELECT` and `WHERE` clauses of a
@@ -160,9 +150,9 @@ a collection-valued attribute, specified by one of
 `@CollectionAttribute`, `@SetAttribute`, `@ListAttribute`, or
 `@MapAttribute`.
 
-The following query returns the names of all the pets in the data store.
-The `get` method is called on the query root, `pet`, with the `name`
-attribute of the `Pet` entity's Metamodel class, `Pet_`, as the
+The following query returns the names of all the pets in the data
+store. The `get` method is called on the query root, `pet`, with the
+`name` attribute of the `Pet` entity's Metamodel class, `Pet_`, as the
 argument:
 
 [source,java]
@@ -172,8 +162,6 @@ CriteriaQuery<String> cq = cb.createQuery(String.class);
 Root<Pet> pet = cq.from(Pet.class);
 cq.select(pet.get(Pet_.name));
 ----
-
-[[GJIVI]][[restricting-criteria-query-results]]
 
 === Restricting Criteria Query Results
 
@@ -187,29 +175,26 @@ restrict the results according to the conditions of the expressions. To
 create `Expression` instances, use methods defined in the `Expression`
 and `CriteriaBuilder` interfaces.
 
-[[GJIWN]][[the-expression-interface-methods]]
-
 ==== The Expression Interface Methods
 
 An `Expression` object is used in a query's `SELECT`, `WHERE`, or
-`HAVING` clause. link:#GJIWW[Table 43-1] shows conditional methods you
-can use with `Expression` objects.
+`HAVING` clause. <<conditional-methods-in-the-expression-interface>>
+shows conditional methods you can use with `Expression` objects.
 
-[[sthref180]][[GJIWW]]
+[[conditional-methods-in-the-expression-interface]]
+[width="50%",cols="15%,35%",title="Conditional Methods in the Expression Interface"]
+|===
+|Method |Description
 
-*Table 43-1 Conditional Methods in the Expression Interface*
-
-[width="50%",cols="15%,35%"]
-|============================================================
-|*Method* |*Description*
 |`isNull` |Tests whether an expression is null
+
 |`isNotNull` |Tests whether an expression is not null
+
 |`in` |Tests whether an expression is within a list of values
-|============================================================
+|===
 
-
-The following query uses the `Expression.isNull` method to find all pets
-where the `color` attribute is null:
+The following query uses the `Expression.isNull` method to find all
+pets where the `color` attribute is null:
 
 [source,java]
 ----
@@ -231,22 +216,19 @@ cq.where(pet.get(Pet_.color).in("brown", "black"));
 The `in` method can also check whether an attribute is a member of a
 collection.
 
-[[GJIXA]][[expression-methods-in-the-criteriabuilder-interface]]
-
 ==== Expression Methods in the CriteriaBuilder Interface
 
 The `CriteriaBuilder` interface defines additional methods for creating
 expressions. These methods correspond to the arithmetic, string, date,
-time, and case operators and functions of JPQL. link:#GJIXL[Table 43-2]
-shows conditional methods you can use with `CriteriaBuilder` objects.
+time, and case operators and functions of JPQL.
+<<conditional-methods-in-the-criteriabuilder-interface>> shows
+conditional methods you can use with `CriteriaBuilder` objects.
 
-[[sthref181]][[GJIXL]]
+[[conditional-methods-in-the-criteriabuilder-interface]]
+[width="60%",cols="15%,45%",title="Conditional Methods in the CriteriaBuilder Interface"]
+|===
+|Conditional Method |Description
 
-*Table 43-2 Conditional Methods in the CriteriaBuilder Interface*
-
-[width="60%",cols="15%,45%"]
-|=======================================================================
-|*Conditional Method* |*Description*
 |`equal` |Tests whether two expressions are equal
 
 |`notEqual` |Tests whether two expressions are not equal
@@ -263,12 +245,11 @@ second numeric expression
 |`le` |Tests whether the first numeric expression is less than or equal
 to the second numeric expression
 
-|`between` |Tests whether the first expression is between the second and
-third expression in value
+|`between` |Tests whether the first expression is between the second
+and third expression in value
 
 |`like` |Tests whether the expression matches a given pattern
-|=======================================================================
-
+|===
 
 The following code uses the `CriteriaBuilder.equal` method:
 
@@ -311,20 +292,19 @@ cq.where(cb.like(pet.get(Pet_.name), "*do"));
 
 To specify multiple conditional predicates, use the compound predicate
 methods of the `CriteriaBuilder` interface, as shown in
-link:#GJIWU[Table 43-3].
+<<compound-predicate-methods-in-the-criteriabuildder-interface>>.
 
-[[sthref182]][[GJIWU]]
+[[compound-predicate-methods-in-the-criteriabuildder-interface]]
+[width="50%",cols="15%,35%",title="Compound Predicate Methods in the CriteriaBuilder Interface"]
+|===
+|Method |Description
 
-*Table 43-3 Compound Predicate Methods in the CriteriaBuilder Interface*
-
-[width="50%",cols="15%,35%"]
-|=========================================================
-|*Method* |*Description*
 |`and` |A logical conjunction of two Boolean expressions
-|`or` |A logical disjunction of two Boolean expressions
-|`not` |A logical negation of the given Boolean expression
-|=========================================================
 
+|`or` |A logical disjunction of two Boolean expressions
+
+|`not` |A logical negation of the given Boolean expression
+|===
 
 The following code shows the use of compound predicates in queries:
 
@@ -335,8 +315,6 @@ Root<Pet> pet = cq.from(Pet.class);
 cq.where(cb.equal(pet.get(Pet_.name), "Fido")
         .and(cb.equal(pet.get(Pet_.color), "brown")));
 ----
-
-[[GJIXE]][[managing-criteria-query-results]]
 
 === Managing Criteria Query Results
 
@@ -349,8 +327,6 @@ an entity
 * The `groupBy` method groups the results of a query together according
 to attributes of an entity, and the `having` method restricts those
 groups according to a condition
-
-[[GJIWO]][[ordering-results]]
 
 ==== Ordering Results
 
@@ -408,8 +384,6 @@ cq.orderBy(cb.asc(owner.get(Owner_.lastName)), owner.get(Owner_.firstName)));
 The results of this query will be ordered alphabetically by the pet
 owner's last name, then first name.
 
-[[GJIXG]][[grouping-results]]
-
 ==== Grouping Results
 
 The `CriteriaQuery.groupBy` method partitions the query results into
@@ -443,8 +417,6 @@ as in the preceding example. However, the only returned groups will be
 `Pet` entities where the `color` attribute is set to `brown` or
 `blonde`. That is, no gray-colored pets will be returned in this query.
 
-[[GJIVY]][[executing-queries]]
-
 === Executing Queries
 
 To prepare a query for execution, create a `TypedQuery<T>` object with
@@ -453,8 +425,6 @@ the type of the query result, passing the `CriteriaQuery` object to
 
 To execute a query, call either `getSingleResult` or `getResultList` on
 the `TypedQuery<T>` object.
-
-[[GJIUR]][[single-valued-query-results]]
 
 ==== Single-Valued Query Results
 
@@ -468,8 +438,6 @@ CriteriaQuery<Pet> cq = cb.createQuery(Pet.class);
 TypedQuery<Pet> q = em.createQuery(cq);
 Pet result = q.getSingleResult();
 ----
-
-[[GJIVP]][[collection-valued-query-results]]
 
 ==== Collection-Valued Query Results
 

@@ -1,13 +1,11 @@
-[[GJRIJ]][[overview-of-the-criteria-and-metamodel-apis]]
-
 == Overview of the Criteria and Metamodel APIs
 
 Similar to JPQL, the Criteria API is based on the abstract schema of
 persistent entities, their relationships, and embedded objects. The
 Criteria API operates on this abstract schema to allow developers to
 find, modify, and delete persistent entities by invoking Jakarta
-Persistence entity operations. The Metamodel API works in concert
-with the Criteria API to model persistent entity classes for Criteria
+Persistence entity operations. The Metamodel API works in concert with
+the Criteria API to model persistent entity classes for Criteria
 queries.
 
 The Criteria API and JPQL are closely related and are designed to allow
@@ -38,18 +36,18 @@ FROM Pet p
 
 This query demonstrates the basic steps to create a Criteria query.
 
-1.  Use an `EntityManager` instance to create a `CriteriaBuilder`
+. Use an `EntityManager` instance to create a `CriteriaBuilder`
 object.
-2.  Create a query object by creating an instance of the `CriteriaQuery`
+. Create a query object by creating an instance of the `CriteriaQuery`
 interface. This query object's attributes will be modified with the
 details of the query.
-3.  Set the query root by calling the `from` method on the
+. Set the query root by calling the `from` method on the
 `CriteriaQuery` object.
-4.  Specify what the type of the query result will be by calling the
+. Specify what the type of the query result will be by calling the
 `select` method of the `CriteriaQuery` object.
-5.  Prepare the query for execution by creating a `TypedQuery<T>`
+. Prepare the query for execution by creating a `TypedQuery<T>`
 instance, specifying the type of the query result.
-6.  Execute the query by calling the `getResultList` method on the
+. Execute the query by calling the `getResultList` method on the
 `TypedQuery<T>` object. Because this query returns a collection of
 entities, the result is stored in a `List`.
 
@@ -83,17 +81,17 @@ the query and to specify the root of the query:
 Root<Pet> pet = cq.from(Pet.class);
 ----
 
-Call the `select` method of the query object, passing in the query root,
-to set the `SELECT` clause of the query:
+Call the `select` method of the query object, passing in the query
+root, to set the `SELECT` clause of the query:
 
 [source,java]
 ----
 cq.select(pet);
 ----
 
-Now, use the query object to create a `TypedQuery<T>` object that can be
-executed against the data source. The modifications to the query object
-are captured to create a ready-to-execute query:
+Now, use the query object to create a `TypedQuery<T>` object that can
+be executed against the data source. The modifications to the query
+object are captured to create a ready-to-execute query:
 
 [source,java]
 ----
@@ -108,5 +106,3 @@ statement stores the results in a `List<Pet>` collection-valued object:
 ----
 List<Pet> allPets = q.getResultList();
 ----
-
-
