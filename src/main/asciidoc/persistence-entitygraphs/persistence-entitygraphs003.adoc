@@ -1,5 +1,3 @@
-[[BABFIGEI]][[using-named-entity-graphs]]
-
 == Using Named Entity Graphs
 
 Named entity graphs are created using annotations applied to entity
@@ -8,8 +6,6 @@ application's deployment descriptor. The persistence provider will scan
 for all named entity graphs, defined in both annotations and in XML,
 within an application. A named entity graph set using an annotation may
 be overridden using `named-entity-graph`.
-
-[[sthref186]][[applying-named-entity-graph-annotations-to-entity-classes]]
 
 === Applying Named Entity Graph Annotations to Entity Classes
 
@@ -22,8 +18,8 @@ annotation.
 The `@NamedEntityGraph` annotation must be applied on the root of the
 graph of entities. That is, if the `EntityManager.find` or query
 operation has as its root entity the `EmailMessage` class, the named
-entity graph used in the operation must be defined in the `EmailMessage`
-class:
+entity graph used in the operation must be defined in the
+`EmailMessage` class:
 
 [source,java]
 ----
@@ -46,9 +42,9 @@ not annotated with metadata to set the fetch type, so the only field
 that will be eagerly fetched in either a load graph or fetch graph is
 `messageId`.
 
-The attributes of a named entity graph are the fields of the entity that
-should be included in the entity graph. Add the fields to the entity
-graph by specifying them in the `attributeNodes` element of
+The attributes of a named entity graph are the fields of the entity
+that should be included in the entity graph. Add the fields to the
+entity graph by specifying them in the `attributeNodes` element of
 `@NamedEntityGraph` with a `jakarta.persistence.NamedAttributeNode`
 annotation:
 
@@ -92,8 +88,6 @@ of the message, including any message attachments:
 public class EmailMessage { ... }
 ----
 
-[[sthref187]][[obtaining-entitygraph-instances-from-named-entity-graphs]]
-
 === Obtaining EntityGraph Instances from Named Entity Graphs
 
 Use the `EntityManager.getEntityGraph` method, passing in the named
@@ -104,5 +98,3 @@ graph:
 ----
 EntityGraph<EmailMessage> eg = em.getEntityGraph("emailEntityGraph");
 ----
-
-

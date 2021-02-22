@@ -1,5 +1,3 @@
-[[A1153411]][[overview-of-using-fetch-plans-and-entity-graphs]]
-
 == Overview of Using Fetch Plans and Entity Graphs
 
 Entity graphs are templates for a particular Persistence query or
@@ -12,15 +10,13 @@ By default, entity fields or properties are fetched lazily. Developers
 specify fields or properties as part of a fetch plan, and the
 persistence provider will fetch them eagerly.
 
-For example, an email application that stores messages as `EmailMessage`
-entities prioritizes fetching some fields over others. The sender,
-subject, and date will be viewed the most often, in mailbox views and
-when the message is displayed. The `EmailMessage` entity has a
-collection of related `EmailAttachment` entities. For performance
-reasons the attachments should not be fetched until they are needed, but
-the file names of the attachment are important. A developer working on
-this application might make a fetch plan that eagerly fetches the
+For example, an email application that stores messages as
+`EmailMessage` entities prioritizes fetching some fields over others.
+The sender, subject, and date will be viewed the most often, in mailbox
+views and when the message is displayed. The `EmailMessage` entity has
+a collection of related `EmailAttachment` entities. For performance
+reasons the attachments should not be fetched until they are needed,
+but the file names of the attachment are important. A developer working
+on this application might make a fetch plan that eagerly fetches the
 important fields from `EmailMessage` and `EmailAttachment` while
 fetching the lower priority data lazily.
-
-
