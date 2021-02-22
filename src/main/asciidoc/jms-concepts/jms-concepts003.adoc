@@ -840,7 +840,7 @@ example:
 QueueBrowser browser = context.createBrowser(queue);
 ----
 
-See <<browsing-messages-on-a-queue]>> for an example of using a
+See <<browsing-messages-on-a-queue>> for an example of using a
 `QueueBrowser` object.
 
 The `createBrowser` method allows you to specify a message selector as

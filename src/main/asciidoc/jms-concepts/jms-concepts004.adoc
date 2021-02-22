@@ -390,10 +390,10 @@ The production and the consumption of a message cannot both be part of
 the same transaction. The reason is that the transactions take place
 between the clients and the Messaging provider, which intervenes
 between the production and the consumption of the message.
-<<using-jakarta-messaging-local-transactions>> illustrates this
+<<using-jakarta-messaging-local-transactions-2>> illustrates this
 interaction.
 
-[[using-jakarta-messaging-local-transactions]]
+[[using-jakarta-messaging-local-transactions-2]]
 image::jakartaeett_dt_033.png["Diagram of local transactions, showing separate transactions for sending and consuming a message",title="Using Jakarta Messaging Local Transactions"]
 
 The sending of one or more messages to one or more destinations by
