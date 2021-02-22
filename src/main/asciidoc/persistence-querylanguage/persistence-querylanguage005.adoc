@@ -1,19 +1,12 @@
-[[BNBTL]][[example-queries]]
-
 == Example Queries
 
 The following queries are from the `Player` entity of the `roster`
-application, which is documented in
-link:#GIQSQ[The roster Application].
-
-[[BNBTM]][[simple-queries]]
+application, which is documented in <<the-roster-application>>.
 
 === Simple Queries
 
 If you are unfamiliar with the query language, these simple queries are
 a good place to start.
-
-[[BNBTN]][[a-basic-select-query]]
 
 ==== A Basic Select Query
 
@@ -37,8 +30,6 @@ The `Player` element is the abstract schema name of the `Player` entity.
 * See also: link:#BNBUM[Identification
 Variables].
 
-[[BNBTO]][[eliminating-duplicate-values]]
-
 ==== Eliminating Duplicate Values
 
 [source,sql]
@@ -48,18 +39,14 @@ FROM Player p
 WHERE p.position = ?1
 ----
 
-* Data retrieved: The players with the position specified by the query's
-parameter.
+* Data retrieved: The players with the position specified by the
+query's parameter.
 * Description: The `DISTINCT` keyword eliminates duplicate values.
 +
 The `WHERE` clause restricts the players retrieved by checking their
 `position`, a persistent field of the `Player` entity. The `?1` element
 denotes the input parameter of the query.
-* See also: link:#BNBVA[Input
-Parameters] and link:#BNBWB[The DISTINCT
-Keyword].
-
-[[BNBTP]][[using-named-parameters]]
+* See also: <<input-parameters>> and <<the-distinct-keyword>>.
 
 ==== Using Named Parameters
 
@@ -75,10 +62,8 @@ WHERE p.position = :position AND p.name = :name
 of the `Player` entity. The `WHERE` clause compares the values of these
 fields with the named parameters of the query, set using the
 `Query.setNamedParameter` method. The query language denotes a named
-input parameter using a colon (`:`) followed by an identifier. The first
-input parameter is `:position`, the second is `:name`.
-
-[[BNBTQ]][[queries-that-navigate-to-related-entities]]
+input parameter using a colon (`:`) followed by an identifier. The
+first input parameter is `:position`, the second is `:name`.
 
 === Queries That Navigate to Related Entities
 
@@ -86,8 +71,6 @@ In the query language, an expression can traverse, or navigate, to
 related entities. These expressions are the primary difference between
 the Jakarta Persistence query language and SQL. Queries navigates to
 related entities, whereas SQL joins tables.
-
-[[BNBTR]][[a-simple-query-with-relationships]]
 
 ==== A Simple Query with Relationships
 
@@ -123,8 +106,6 @@ FROM Player p
 WHERE p.team IS NOT EMPTY
 ----
 
-[[BNBTS]][[navigating-to-single-valued-relationship-fields]]
-
 ==== Navigating to Single-Valued Relationship Fields
 
 Use the `JOIN` clause statement to navigate to a single-valued
@@ -140,8 +121,6 @@ WHERE l.sport = 'soccer' OR l.sport ='football'
 In this example, the query will return all teams that are in either
 soccer or football leagues.
 
-[[BNBTT]][[traversing-relationships-with-an-input-parameter]]
-
 ==== Traversing Relationships with an Input Parameter
 
 [source,sql]
@@ -152,10 +131,10 @@ WHERE t.city = :city
 ----
 
 * Data retrieved: The players whose teams belong to the specified city.
-* Description: This query is similar to the previous example but adds an
-input parameter. The `AS` keyword in the `FROM` clause is optional. In
-the `WHERE` clause, the period preceding the persistent variable `city`
-is a delimiter, not a navigation operator. Strictly speaking,
+* Description: This query is similar to the previous example but adds
+an input parameter. The `AS` keyword in the `FROM` clause is optional.
+In the `WHERE` clause, the period preceding the persistent variable
+`city` is a delimiter, not a navigation operator. Strictly speaking,
 expressions can navigate to relationship fields (related entities) but
 not to persistent fields. To access a persistent field, an expression
 uses the period as a delimiter.
@@ -165,10 +144,7 @@ fields that are collections. In the syntax of an expression, a
 collection-valued field is a terminal symbol. Because the `teams` field
 is a collection, the `WHERE` clause cannot specify `p.teams.city` (an
 illegal expression).
-* See also: link:#BNBUQ[Path
-Expressions].
-
-[[BNBTU]][[traversing-multiple-relationships]]
+* See also: <<path-expressions>>.
 
 ==== Traversing Multiple Relationships
 
@@ -190,8 +166,6 @@ this example, the parameter is an object whose type is a `League`. This
 type matches the `league` relationship field in the comparison
 expression of the `WHERE` clause.
 
-[[BNBTV]][[navigating-according-to-related-fields]]
-
 ==== Navigating According to Related Fields
 
 [source,sql]
@@ -209,8 +183,6 @@ the `Player` entity to `Team` (`p.teams`) and then from `Team` to the
 `league` relationship field can be followed by the `sport` persistent
 field.
 
-[[BNBTW]][[queries-with-other-conditional-expressions]]
-
 === Queries with Other Conditional Expressions
 
 Every `WHERE` clause must specify a conditional expression, of which
@@ -218,9 +190,7 @@ there are several kinds. In the previous examples, the conditional
 expressions are comparison expressions that test for equality. The
 following examples demonstrate some of the other kinds of conditional
 expressions. For descriptions of all conditional expressions, see
-link:#BNBUU[WHERE Clause].
-
-[[BNBTX]][[the-like-expression]]
+<<WHERE Clause>>.
 
 ==== The LIKE Expression
 
@@ -237,10 +207,7 @@ for strings that match the wildcard pattern. In this case, the query
 uses the `LIKE` expression and the `%` wildcard to find all players
 whose names begin with the string "Mich." For example, "Michael" and
 "Michelle" both match the wildcard pattern.
-* See also: link:#BNBVG[LIKE
-Expressions].
-
-[[BNBTY]][[the-is-null-expression]]
+* See also: <<like-expressions>>.
 
 ==== The IS NULL Expression
 
@@ -254,13 +221,9 @@ WHERE t.league IS NULL
 * Data retrieved: All teams not associated with a league.
 * Description: The `IS NULL` expression can be used to check whether a
 relationship has been set between two entities. In this case, the query
-checks whether the teams are associated with any leagues and returns the
-teams that do not have a league.
-* See also: link:#BNBVI[NULL Comparison
-Expressions] and link:#BNBVR[NULL
-Values].
-
-[[BNBTZ]][[the-is-empty-expression]]
+checks whether the teams are associated with any leagues and returns
+the teams that do not have a league.
+* See also: <<null-comparison-expressions>> and <<null-values>>.
 
 ==== The IS EMPTY Expression
 
@@ -275,10 +238,7 @@ WHERE p.teams IS EMPTY
 * Description: The `teams` relationship field of the `Player` entity is
 a collection. If a player does not belong to a team, the `teams`
 collection is empty, and the conditional expression is `TRUE`.
-* See also: link:#BNBVJ[Empty Collection
-Comparison Expressions].
-
-[[BNBUA]][[the-between-expression]]
+* See also: <<empty-collection-comparison-expressions>>.
 
 ==== The BETWEEN Expression
 
@@ -300,10 +260,7 @@ expression is equivalent to the `BETWEEN` expression:
 ----
 p.salary >= :lowerSalary AND p.salary <= :higherSalary
 ----
-* See also: link:#BNBVE[BETWEEN
-Expressions].
-
-[[BNBUB]][[comparison-operators]]
+* See also: <<between-expressions>>.
 
 ==== Comparison Operators
 
@@ -320,10 +277,7 @@ of the player with the specified name.
 (`p1` and `p2`) of the same type (`Player`). Two identification
 variables are needed because the `WHERE` clause compares the salary of
 one player (`p2`) with that of the other players (`p1`).
-* See also: link:#BNBUM[Identification
-Variables].
-
-[[BNBUC]][[bulk-updates-and-deletes]]
+* See also: <<identification-variables>>.
 
 === Bulk Updates and Deletes
 
@@ -332,8 +286,6 @@ expressions in queries. `UPDATE` and `DELETE` operate on multiple
 entities according to the condition or conditions set in the `WHERE`
 clause. The `WHERE` clause in `UPDATE` and `DELETE` queries follows the
 same rules as `SELECT` queries.
-
-[[BNBUD]][[update-queries]]
 
 ==== Update Queries
 
@@ -348,8 +300,6 @@ WHERE p.lastPlayed < :inactiveThresholdDate
 `inactive` if the player's last game was longer ago than the date
 specified in `inactiveThresholdDate`.
 
-[[BNBUE]][[delete-queries]]
-
 ==== Delete Queries
 
 [source,sql]
@@ -362,5 +312,3 @@ AND p.teams IS EMPTY
 
 * Description: This query deletes all inactive players who are not on a
 team.
-
-

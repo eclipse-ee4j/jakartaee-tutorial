@@ -1,53 +1,36 @@
-[[BNBUF]][[full-query-language-syntax]]
-
 == Full Query Language Syntax
 
-This section discusses the query language syntax, as defined in the Jakarta
-Persistence 2.2 specification available at
-`https://jakarta.ee/specifications/persistence/2.2/`. Much of the following material
-paraphrases or directly quotes the specification.
-
-[[BNBUG]][[bnf-symbols]]
+This section discusses the query language syntax, as defined in the
+Jakarta Persistence 3.0 specification available at
+https://jakarta.ee/specifications/persistence/3.0/[^]. Much of the
+following material paraphrases or directly quotes the specification.
 
 === BNF Symbols
 
-link:#BNBUH[Table 42-1] describes the BNF symbols used in this chapter.
+<<bnf-symbol-summary>> describes the BNF symbols used in this chapter.
 
-[[sthref169]][[BNBUH]]
+[[bnf-symbol-summary]]
+[width="75%",cols="25%,45%",title="BNF Symbol Summary"]
+|===
+|Symbol |Description
 
-*Table 42-1 BNF Symbol Summary*
-
-[width="75%",cols="25%,45%"]
-|=======================================================================
-|*Symbol* |*Description*
 |`::=` |The element to the left of the symbol is defined by the
 constructs on the right.
 
-a|
-`*`
-
-
- |The preceding construct may occur zero or more times.
+|`*` |The preceding construct may occur zero or more times.
 
 |`{...}` |The constructs within the braces are grouped together.
 
 |`[...]` |The constructs within the brackets are optional.
 
-a|
-`|`
-
-
- |An exclusive `OR`.
+|`\|` |An exclusive `OR`.
 
 |`BOLDFACE` |A keyword; although capitalized in the BNF diagram,
 keywords are not case-sensitive.
 
 |White space |A whitespace character can be a space, a horizontal tab,
 or a line feed.
-|=======================================================================
-
-
-[[BNBUI]][[bnf-grammar-of-the-java-persistence-query-language]]
+|===
 
 === BNF Grammar of the Jakarta Persistence Query Language
 
@@ -274,22 +257,18 @@ functions_returning_strings ::=
 trim_specification ::= LEADING | TRAILING | BOTH
 ----
 
-[[BNBUJ]][[from-clause]]
-
 === FROM Clause
 
 The `FROM` clause defines the domain of the query by declaring
 identification variables.
 
-[[BNBUK]][[identifiers]]
-
 ==== Identifiers
 
 An identifier is a sequence of one or more characters. The first
-character must be a valid first character (letter, `$`, `_`) in an
+character must be a valid first character (letter, `$`, `\_`) in an
 identifier of the Java programming language, hereafter in this chapter
-called simply "Java." Each subsequent character in the sequence must be
-a valid nonfirst character (letter, digit, `$`, `_`) in a Java
+called simply "`Java`". Each subsequent character in the sequence must
+be a valid nonfirst character (letter, digit, `$`, `_`) in a Java
 identifier. (For details, see the Java SE API documentation of the
 `isJavaIdentifierStart` and `isJavaIdentifierPart` methods of the
 `Character` class.) The question mark (`?`) is a reserved character in
@@ -303,90 +282,52 @@ A query language identifier is case-sensitive, with two exceptions:
 An identifier cannot be the same as a query language keyword. Here is a
 list of query language keywords:
 
-`ABS` +
-`ALL` +
-`AND` +
-`ANY` +
-`AS` +
-`ASC` +
-`AVG` +
-`BETWEEN` +
-`BIT_LENGTH` +
-`BOTH` +
-`BY` +
-`CASE` +
-`CHAR_LENGTH` +
-`CHARACTER_LENGTH` +
-`CLASS` +
-`COALESCE` +
-`CONCAT` +
-`COUNT` +
-`CURRENT_DATE` +
-`CURRENT_TIMESTAMP` +
-`DELETE` +
-`DESC` +
-`DISTINCT` +
-`ELSE` +
-`EMPTY` +
-`END` +
-`ENTRY` +
-`ESCAPE` +
-`EXISTS` +
-`FALSE` +
-`FETCH` +
-`FROM` +
-`GROUP` +
-`HAVING` +
-`IN` +
-`INDEX` +
-`INNER` +
-`IS` +
-`JOIN` +
-`KEY` +
-`LEADING` +
-`LEFT` +
-`LENGTH` +
-`LIKE` +
-`LOCATE` +
-`LOWER` +
-`MAX` +
-`MEMBER` +
-`MIN` +
-`MOD` +
-`NEW` +
-`NOT` +
-`NULL` +
-`NULLIF` +
-`OBJECT` +
-`OF` +
-`OR` +
-`ORDER` +
-`OUTER` +
-`POSITION` +
-`SELECT` +
-`SET` +
-`SIZE` +
-`SOME` +
-`SQRT` +
-`SUBSTRING` +
-`SUM` +
-`THEN` +
-`TRAILING` +
-`TRIM` +
-`TRUE` +
-`TYPE` +
-`UNKNOWN` +
-`UPDATE` +
-`UPPER` +
-`VALUE` +
-`WHEN` +
-`WHERE` +
+[width="75%",cols="25%,25%,25%,25%",options="noheader"]
+|===
+| `ABS` | `ALL` | `AND` | `ANY`
+
+| `AS` | `ASC` | `AVG` | `BETWEEN`
+
+| `BIT_LENGTH` | `BOTH` | `BY` | `CASE`
+
+| `CHAR_LENGTH` | `CHARACTER_LENGTH` | `CLASS` | `COALESCE`
+
+| `CONCAT` | `COUNT` | `CURRENT_DATE` | `CURRENT_TIMESTAMP`
+
+| `DELETE` | `DESC` | `DISTINCT` | `ELSE`
+
+| `EMPTY` | `END` | `ENTRY` | `ESCAPE`
+
+| `EXISTS` | `FALSE` | `FETCH` | `FROM`
+
+| `GROUP` | `HAVING` | `IN` | `INDEX`
+
+| `INNER` | `IS` | `JOIN` | `KEY`
+
+| `LEADING` | `LEFT` | `LENGTH` | `LIKE`
+
+| `LOCATE` | `LOWER` | `MAX` | `MEMBER`
+
+| `MIN` | `MOD` | `NEW` | `NOT`
+
+| `NULL` | `NULLIF` | `OBJECT` | `OF`
+
+| `OR` | `ORDER` | `OUTER` | `POSITION`
+
+|`SELECT` | `SET` | `SIZE` | `SOME`
+
+| `SQRT` | `SUBSTRING` | `SUM` |`THEN`
+
+| `TRAILING` | `TRIM` | `TRUE` | `TYPE`
+
+| `UNKNOWN` |`UPDATE` |`UPPER` | `VALUE`
+
+| `WHEN` 3+| `WHERE`
+|===
 
 It is not recommended that you use an SQL keyword as an identifier,
 because the list of keywords may expand to include other reserved SQL
 words in the future.
-
-[[BNBUM]][[identification-variables]]
 
 ==== Identification Variables
 
@@ -396,18 +337,18 @@ clause. Although they can reference identification variables, the
 variables must be declared in the `FROM` clause.
 
 Because it is an identifier, an identification variable has the same
-naming conventions and restrictions as an identifier, with the exception
-that an identification variable is case-insensitive. For example, an
-identification variable cannot be the same as a query language keyword.
-(See link:#BNBUK[Identifiers] for more naming rules.) Also, within a
-given persistence unit, an identification variable name must not match
-the name of any entity or abstract schema.
+naming conventions and restrictions as an identifier, with the
+exception that an identification variable is case-insensitive. For
+example, an identification variable cannot be the same as a query
+language keyword. (See <<identifiers>> for more naming rules.) Also,
+within a given persistence unit, an identification variable name must
+not match the name of any entity or abstract schema.
 
 The `FROM` clause can contain multiple declarations, separated by
-commas. A declaration can reference another identification variable that
-has been previously declared (to the left). In the following `FROM`
-clause, the variable `t` references the previously declared variable
-`p`:
+commas. A declaration can reference another identification variable
+that has been previously declared (to the left). In the following
+`FROM` clause, the variable `t` references the previously declared
+variable `p`:
 
 [source,sql]
 ----
@@ -415,9 +356,9 @@ FROM Player p, IN (p.teams) AS t
 ----
 
 Even if it is not used in the `WHERE` clause, an identification
-variable's declaration can affect the results of the query. For example,
-compare the next two queries. The following query returns all players,
-whether or not they belong to a team:
+variable's declaration can affect the results of the query. For
+example, compare the next two queries. The following query returns all
+players, whether or not they belong to a team:
 
 [source,sql]
 ----
@@ -434,8 +375,8 @@ SELECT p
 FROM Player p, IN (p.teams) AS t
 ----
 
-The following query returns the same results as the preceding query, but
-the `WHERE` clause makes it easier to read:
+The following query returns the same results as the preceding query,
+but the `WHERE` clause makes it easier to read:
 
 [source,sql]
 ----
@@ -448,8 +389,6 @@ An identification variable always designates a reference to a single
 value whose type is that of the expression used in the declaration.
 There are two kinds of declarations: range variable and collection
 member.
-
-[[BNBUN]][[range-variable-declarations]]
 
 ==== Range Variable Declarations
 
@@ -472,23 +411,20 @@ FROM Player AS p
 ----
 
 To obtain objects, a query usually uses path expressions to navigate
-through the relationships. But for those objects that cannot be obtained
-by navigation, you can use a range variable declaration to designate a
-starting point, or query root.
+through the relationships. But for those objects that cannot be
+obtained by navigation, you can use a range variable declaration to
+designate a starting point, or query root.
 
 If the query compares multiple values of the same abstract schema type,
-the `FROM` clause must declare multiple identification variables for the
-abstract schema:
+the `FROM` clause must declare multiple identification variables for
+the abstract schema:
 
 [source,sql]
 ----
 FROM Player p1, Player p2
 ----
 
-For an example of such a query, see
-link:#BNBUB[Comparison Operators].
-
-[[BNBUO]][[collection-member-declarations]]
+For an example of such a query, see <<comparison-operators>>.
 
 ==== Collection Member Declarations
 
@@ -497,11 +433,9 @@ collection of entities. An identification variable can represent a
 member of this collection. To access a collection member, the path
 expression in the variable's declaration navigates through the
 relationships in the abstract schema. (For more information on path
-expressions, see link:#BNBUQ[Path Expressions].) Because a path
-expression can be based on another path expression, the navigation can
-traverse several relationships. See
-link:#BNBTU[Traversing Multiple
-Relationships].
+expressions, see <<path-expressions>>.) Because a path expression can
+be based on another path expression, the navigation can traverse
+several relationships. See <<traversing-multiple-relationships>>.
 
 A collection member declaration must include the `IN` operator but can
 omit the optional `AS` operator.
@@ -515,8 +449,6 @@ identification variable called `t` represents a single member of the
 ----
 FROM Player p, IN (p.teams) t
 ----
-
-[[BNBUP]][[joins]]
 
 ==== Joins
 
@@ -562,8 +494,8 @@ WHERE l.sport = :sport
 ----
 
 A `LEFT JOIN` or `LEFT OUTER JOIN` retrieves a set of entities where
-matching values in the join condition may be absent. The `OUTER` keyword
-is optional:
+matching values in the join condition may be absent. The `OUTER`
+keyword is optional:
 
 [source,sql]
 ----
@@ -571,8 +503,8 @@ SELECT c.name, o.totalPrice
 FROM CustomerOrder o LEFT JOIN o.customer c
 ----
 
-A `FETCH JOIN` is a join operation that returns associated entities as a
-side effect of running the query. In the following example, the query
+A `FETCH JOIN` is a join operation that returns associated entities as
+a side effect of running the query. In the following example, the query
 returns a set of departments and, as a side effect, the associated
 employees of the departments, even though the employees were not
 explicitly retrieved by the `SELECT` clause:
@@ -584,8 +516,6 @@ FROM Department d LEFT JOIN FETCH d.employees
 WHERE d.deptno = 1
 ----
 
-[[BNBUQ]][[path-expressions]]
-
 === Path Expressions
 
 Path expressions are important constructs in the syntax of the query
@@ -594,16 +524,14 @@ paths through the relationships in the abstract schema. These path
 definitions affect both the scope and the results of a query. Second,
 path expressions can appear in any of the main clauses of a query
 (`SELECT`, `DELETE`, `HAVING`, `UPDATE`, `WHERE`, `FROM`, `GROUP BY`,
-`ORDER BY`). Finally, although much of the query language is a subset of
-SQL, path expressions are extensions not found in SQL.
-
-[[BNBUR]][[examples-of-path-expressions]]
+`ORDER BY`). Finally, although much of the query language is a subset
+of SQL, path expressions are extensions not found in SQL.
 
 ==== Examples of Path Expressions
 
-Here, the `WHERE` clause contains a `single_valued_path_expression`; the
-`p` is an identification variable, and `salary` is a persistent field of
-`Player`:
+Here, the `WHERE` clause contains a `single_valued_path_expression`;
+the `p` is an identification variable, and `salary` is a persistent
+field of `Player`:
 
 [source,sql]
 ----
@@ -624,9 +552,9 @@ FROM Player p, IN (p.teams) t
 WHERE t.league.sport = :sport
 ----
 
-Here, the `WHERE` clause contains a `collection_valued_path_expression`;
-`p` is an identification variable, and `teams` designates a
-collection-valued relationship field:
+Here, the `WHERE` clause contains a
+`collection_valued_path_expression`; `p` is an identification variable,
+and `teams` designates a collection-valued relationship field:
 
 [source,sql]
 ----
@@ -634,8 +562,6 @@ SELECT DISTINCT p
 FROM Player p
 WHERE p.teams IS EMPTY
 ----
-
-[[BNBUS]][[expression-types]]
 
 ==== Expression Types
 
@@ -651,24 +577,23 @@ the terminating persistent field (`salary`) is a `double`.
 
 In the expression `p.teams`, the terminating element is a
 collection-valued relationship field (`teams`). This expression's type
-is a collection of the abstract schema type named `Team`. Because `Team`
-is the abstract schema name for the `Team` entity, this type maps to the
-entity. For more information on the type mapping of abstract schemas,
-see link:#BNBVY[Return Types].
-
-[[BNBUT]][[navigation]]
+is a collection of the abstract schema type named `Team`. Because
+`Team` is the abstract schema name for the `Team` entity, this type
+maps to the entity. For more information on the type mapping of
+abstract schemas, see <<return-types>>.
 
 ==== Navigation
 
-A path expression enables the query to navigate to related entities. The
-terminating elements of an expression determine whether navigation is
-allowed. If an expression contains a single-valued relationship field,
-the navigation can continue to an object that is related to the field.
-However, an expression cannot navigate beyond a persistent field or a
-collection-valued relationship field. For example, the expression
-`p.teams.league.sport` is illegal because `teams` is a collection-valued
-relationship field. To reach the `sport` field, the `FROM` clause could
-define an identification variable named `t` for the `teams` field:
+A path expression enables the query to navigate to related entities.
+The terminating elements of an expression determine whether navigation
+is allowed. If an expression contains a single-valued relationship
+field, the navigation can continue to an object that is related to the
+field. However, an expression cannot navigate beyond a persistent field
+or a collection-valued relationship field. For example, the expression
+`p.teams.league.sport` is illegal because `teams` is a
+collection-valued relationship field. To reach the `sport` field, the
+`FROM` clause could define an identification variable named `t` for the
+`teams` field:
 
 [source,sql]
 ----
@@ -676,23 +601,19 @@ FROM Player AS p, IN (p.teams) t
 WHERE t.league.sport = 'soccer'
 ----
 
-[[BNBUU]][[where-clause]]
-
 === WHERE Clause
 
 The `WHERE` clause specifies a conditional expression that limits the
-values returned by the query. The query returns all corresponding values
-in the data store for which the conditional expression is `TRUE`.
-Although usually specified, the `WHERE` clause is optional. If the
-`WHERE` clause is omitted, the query returns all values. The high-level
-syntax for the `WHERE` clause is as follows:
+values returned by the query. The query returns all corresponding
+values in the data store for which the conditional expression is
+`TRUE`. Although usually specified, the `WHERE` clause is optional. If
+the `WHERE` clause is omitted, the query returns all values. The
+high-level syntax for the `WHERE` clause is as follows:
 
 [source,sql]
 ----
 where_clause ::= WHERE conditional_expression
 ----
-
-[[BNBUV]][[literals]]
 
 ==== Literals
 
@@ -726,11 +647,13 @@ literals support numbers in the range of a Java `long`.
 notation, such as 57., –85.7, and +2.1. Using the syntax of the Java
 floating-point literal, approximate numeric literals support numbers in
 the range of a Java `double`.
-* Boolean literals: A Boolean literal is either `TRUE` or `FALSE`. These
-keywords are not case-sensitive.
-* Enum literals: The Jakarta Persistence query language supports the use of
-enum literals using the Java enum literal syntax. The enum class name
-must be specified as a fully qualified class name:
+
+* Boolean literals: A Boolean literal is either `TRUE` or `FALSE`.
+These keywords are not case-sensitive.
+
+* Enum literals: The Jakarta Persistence query language supports the
+use of enum literals using the Java enum literal syntax. The enum class
+name must be specified as a fully qualified class name:
 +
 [source,sql]
 ----
@@ -738,8 +661,6 @@ SELECT e
 FROM Employee e
 WHERE e.status = com.example.EmployeeStatus.FULL_TIME
 ----
-
-[[BNBVA]][[input-parameters]]
 
 ==== Input Parameters
 
@@ -760,38 +681,31 @@ The following rules apply to input parameters.
 single query.
 * Named parameters are case-sensitive.
 
-[[BNBVB]][[conditional-expressions]]
-
 ==== Conditional Expressions
 
 A `WHERE` clause consists of a conditional expression, which is
 evaluated from left to right within a precedence level. You can change
 the order of evaluation by using parentheses.
 
-[[BNBVC]][[operators-and-their-precedence]]
-
 ==== Operators and Their Precedence
 
-link:#BNBVD[Table 42-2] lists the query language operators in order of
-decreasing precedence.
+<<query-language-order-precedence>> lists the query language operators
+in order of decreasing precedence.
 
-[[sthref170]][[BNBVD]]
+[[query-language-order-precedence]]
+[width="75%",cols="25%,45%",title="Query Language Order Precedence"]
+|===
+|Type |Precedence Order
 
-*Table 42-2 Query Language Order Precedence*
-
-[width="75%",cols="25%,45%"]
-|==================================
-|*Type* |*Precedence Order*
 |Navigation |`.` (a period)
-|Arithmetic a|
-`+ –` (unary)
+
+|Arithmetic a| `+ –` (unary)
 
 `* /` (multiplication and division)
 
 `+ –` (addition and subtraction)
 
-|Comparison a|
-`=`
+|Comparison a| `=`
 
 `>`
 
@@ -815,22 +729,17 @@ decreasing precedence.
 
 `[NOT] MEMBER OF`
 
-|Logical a|
-`NOT`
+|Logical a| `NOT`
 
 `AND`
 
 `OR`
-
-|==================================
-
-
-[[BNBVE]][[between-expressions]]
+|===
 
 ==== BETWEEN Expressions
 
-A `BETWEEN` expression determines whether an arithmetic expression falls
-within a range of values.
+A `BETWEEN` expression determines whether an arithmetic expression
+falls within a range of values.
 
 These two expressions are equivalent:
 
@@ -850,8 +759,6 @@ p.age < 15 OR p.age > 19
 
 If an arithmetic expression has a `NULL` value, the value of the
 `BETWEEN` expression is unknown.
-
-[[BNBVF]][[in-expressions]]
 
 ==== IN Expressions
 
@@ -877,8 +784,6 @@ You may also use input parameters:
 o.country IN ('UK', 'US', 'France', :country)
 ----
 
-[[BNBVG]][[like-expressions]]
-
 ==== LIKE Expressions
 
 A `LIKE` expression determines whether a wildcard pattern matches a
@@ -887,42 +792,33 @@ string.
 The path expression must have a string or numeric value. If this value
 is `NULL`, the value of the `LIKE` expression is unknown. The pattern
 value is a string literal that can contain wildcard characters. The
-underscore (`_`) wildcard character represents any single character. The
-percent (`%`) wildcard character represents zero or more characters. The
-`ESCAPE` clause specifies an escape character for the wildcard
-characters in the pattern value. link:#BNBVH[Table 42-3] shows some
-sample `LIKE` expressions.
+underscore (`_`) wildcard character represents any single character.
+The percent (`%`) wildcard character represents zero or more
+characters. The `ESCAPE` clause specifies an escape character for the
+wildcard characters in the pattern value. <<like-expression-examples>>
+shows some sample `LIKE` expressions.
 
-[[sthref171]][[BNBVH]]
+[[like-expression-examples]]
+[width=75%",cols="35%,20%,20%",title="LIKE Expression Examples"]
+|===
+|Expression |TRUE |FALSE
 
-*Table 42-3 LIKE Expression Examples*
+|`address.phone LIKE '12%3'` | `'123'` +
+`'12993'` |`'1234'`
 
-[width=75%",cols="35%,20%,20%"]
-|============================================================
-|*Expression* |*TRUE* |*FALSE*
-|`address.phone LIKE '12%3'` a|
-`'123'`
-
-`'12993'`
-
- |`'1234'`
 |`asentence.word LIKE 'l_se'` |`'lose'` |`'loose'`
+
 |`aword.underscored LIKE '\_%' ESCAPE '\'` |`'_foo'` |`'bar'`
-|`address.phone NOT LIKE '12%3'` |`'1234'` a|
-`'123'`
 
+|`address.phone NOT LIKE '12%3'` |`'1234'` |`'123'` +
 `'12993'`
-
-|============================================================
-
-
-[[BNBVI]][[null-comparison-expressions]]
+|===
 
 ==== NULL Comparison Expressions
 
 A `NULL` comparison expression tests whether a single-valued path
-expression or an input parameter has a `NULL` value. Usually, the `NULL`
-comparison expression is used to test whether a single-valued
+expression or an input parameter has a `NULL` value. Usually, the
+`NULL` comparison expression is used to test whether a single-valued
 relationship has been set:
 
 [source,sql]
@@ -946,16 +842,14 @@ The comparison with `NULL` using the equals operator (`=`) always
 returns an unknown value, even if the relationship is not set. The
 second query will always return an empty result.
 
-[[BNBVJ]][[empty-collection-comparison-expressions]]
-
 ==== Empty Collection Comparison Expressions
 
 The `IS [NOT] EMPTY` comparison expression tests whether a
 collection-valued path expression has no elements. In other words, it
 tests whether a collection-valued relationship has been set.
 
-If the collection-valued path expression is `NULL`, the empty collection
-comparison expression has a `NULL` value.
+If the collection-valued path expression is `NULL`, the empty
+collection comparison expression has a `NULL` value.
 
 Here is an example that finds all orders that do not have any line
 items:
@@ -966,8 +860,6 @@ SELECT o
 FROM CustomerOrder o
 WHERE o.lineItems IS EMPTY
 ----
-
-[[BNBVK]][[collection-member-expressions]]
 
 ==== Collection Member Expressions
 
@@ -990,8 +882,6 @@ SELECT o
 FROM CustomerOrder o
 WHERE :lineItem MEMBER OF o.lineItems
 ----
-
-[[BNBVL]][[subqueries]]
 
 ==== Subqueries
 
@@ -1032,14 +922,14 @@ the subquery is empty.
 +
 The `ANY` expression is used with a subquery and is true if some of the
 values returned by the subquery are true. An `ANY` expression is false
-if the subquery result is empty or if all the values returned are false.
-The `SOME` keyword is synonymous with `ANY`.
+if the subquery result is empty or if all the values returned are
+false. The `SOME` keyword is synonymous with `ANY`.
 +
 The `ALL` and `ANY` expressions are used with the `=`, `<`, `<=`, `>`,
 `>=`, and `<>` comparison operators.
 +
-The following example finds all employees whose salaries are higher than
-the salaries of the managers in the employee's department:
+The following example finds all employees whose salaries are higher
+than the salaries of the managers in the employee's department:
 +
 [source,sql]
 ----
@@ -1057,43 +947,46 @@ WHERE emp.salary > ALL (
 
 The query language includes several string, arithmetic, and date/time
 functions that may be used in the `SELECT`, `WHERE`, or `HAVING` clause
-of a query. The functions are listed in link:#BNBVP[Table 42-4],
-link:#GJJNL[Table 42-6].
+of a query. The functions are listed in <<string-expressions>>,
+<<arithmetic-expressions>> and <<date-time-expressions>>.
 
-In link:#BNBVP[Table 42-4], the `start` and `length` arguments are of
+In <<string-expressions>>, the `start` and `length` arguments are of
 type `int` and designate positions in the `String` argument. The first
 position in a string is designated by 1.
 
-[[sthref172]][[BNBVP]]
+[[string-expressions]]
+[width="75%",cols="45%,25%",title="String Expressions"]
+|===
+|Function Syntax |Return Type
 
-*Table 42-4 String Expressions*
-
-[width="75%",cols="45%,25%"]
-|==============================================================
-|*Function Syntax* |*Return Type*
 |`CONCAT(String, String)` |`String`
-|`LENGTH(String)` |`int`
-|`LOCATE(String, String [, start])` |`int`
-|`SUBSTRING(String, start, length)` |`String`
-|`TRIM([[LEADING|TRAILING|BOTH] char) FROM] (String)` |`String`
-|`LOWER(String)` |`String`
-|`UPPER(String)` |`String`
-|==============================================================
 
+|`LENGTH(String)` |`int`
+
+|`LOCATE(String, String [, start])` |`int`
+
+|`SUBSTRING(String, start, length)` |`String`
+
+|`TRIM([[LEADING|TRAILING|BOTH] char) FROM] (String)` |`String`
+
+|`LOWER(String)` |`String`
+
+|`UPPER(String)` |`String`
+|===
 
 The `CONCAT` function concatenates two strings into one string.
 
-The `LENGTH` function returns the length of a string in characters as an
-integer.
+The `LENGTH` function returns the length of a string in characters as
+an integer.
 
 The `LOCATE` function returns the position of a given string within a
-string. This function returns the first position at which the string was
-found as an integer. The first argument is the string to be located. The
-second argument is the string to be searched. The optional third
-argument is an integer that represents the starting string position. By
-default, `LOCATE` starts at the beginning of the string. The starting
-position of a string is `1`. If the string cannot be located, `LOCATE`
-returns `0`.
+string. This function returns the first position at which the string
+was found as an integer. The first argument is the string to be
+located. The second argument is the string to be searched. The optional
+third argument is an integer that represents the starting string
+position. By default, `LOCATE` starts at the beginning of the string.
+The starting position of a string is `1`. If the string cannot be
+located, `LOCATE` returns `0`.
 
 The `SUBSTRING` function returns a string that is a substring of the
 first argument based on the starting position and length.
@@ -1110,22 +1003,22 @@ string.
 The `LOWER` and `UPPER` functions convert a string to lowercase or
 uppercase, respectively.
 
-In link:#BNBVQ[Table 42-5], the `number` argument can be an `int`, a
+In <<arithmetic-expressions>>, the `number` argument can be an `int`, a
 `float`, or a `double`.
 
-[[sthref173]][[BNBVQ]]
+[[arithmetic-expressions]]
+[width="60%",cols="30%,30%",title="Arithmetic Expressions"]
+|===
+|Function Syntax |Return Type
 
-*Table 42-5 Arithmetic Expressions*
-
-[width="60%",cols="30%,30%"]
-|==========================================
-|*Function Syntax* |*Return Type*
 |`ABS(number)` |`int`, `float`, or `double`
-|`MOD(int, int)` |`int`
-|`SQRT(double)` |`double`
-|`SIZE(Collection)` |`int`
-|==========================================
 
+|`MOD(int, int)` |`int`
+
+|`SQRT(double)` |`double`
+
+|`SIZE(Collection)` |`int`
+|===
 
 The `ABS` function takes a numeric expression and returns a number of
 the same type as the argument.
@@ -1138,23 +1031,20 @@ The `SQRT` function returns the square root of a number.
 The `SIZE` function returns an integer of the number of elements in the
 given collection.
 
-In link:#GJJNL[Table 42-6], the date/time functions return the date,
+In <<date-time-expressions>>, the date/time functions return the date,
 time, or timestamp on the database server.
 
-[[sthref174]][[GJJNL]]
+[[date-time-expressions]]
+[width="60%",cols="30%,30%",title="Date/Time Expressions"]
+|===
+|Function Syntax |Return Type
 
-*Table 42-6 Date/Time Expressions*
-
-[width="60%",cols="30%,30%"]
-|=========================================
-|*Function Syntax* |*Return Type*
 |`CURRENT_DATE` |`java.sql.Date`
+
 |`CURRENT_TIME` |`java.sql.Time`
+
 |`CURRENT_TIMESTAMP` |`java.sql.Timestamp`
-|=========================================
-
-
-[[GJJND]][[case-expressions]]
+|===
 
 ==== Case Expressions
 
@@ -1167,9 +1057,9 @@ none of the other conditions be satisfied.
 
 The following query selects the name of a person and a conditional
 string, depending on the subtype of the `Person` entity. If the subtype
-is `Student`, the string `kid` is returned. If the subtype is `Guardian`
-or `Staff`, the string `adult` is returned. If the entity is some other
-subtype of `Person`, the string `unknown` is returned:
+is `Student`, the string `kid` is returned. If the subtype is
+`Guardian` or `Staff`, the string `adult` is returned. If the entity is
+some other subtype of `Person`, the string `unknown` is returned:
 
 [source,sql]
 ----
@@ -1200,8 +1090,6 @@ SET c.discount =
     END
 ----
 
-[[BNBVR]][[null-values]]
-
 ==== NULL Values
 
 If the target of a reference is not in the persistent store, the target
@@ -1211,42 +1099,41 @@ are as follows.
 
 * If a comparison or arithmetic operation has an unknown value, it
 yields a `NULL` value.
-* Two `NULL` values are not equal. Comparing two `NULL` values yields an
-unknown value.
+
+* Two `NULL` values are not equal. Comparing two `NULL` values yields
+an unknown value.
+
 * The `IS NULL` test converts a `NULL` persistent field or a
 single-valued relationship field to `TRUE`. The `IS NOT NULL` test
 converts them to `FALSE`.
+
 * Boolean operators and conditional tests use the three-valued logic
-defined by link:#BNBVT[Table 42-8]. (In
-these tables, T stands for `TRUE`, F for `FALSE`, and U for unknown.)
+defined by <<and-operator-logic>> and <<or-operator-logic>>. (In these
+tables, T stands for `TRUE`, F for `FALSE`, and U for unknown.)
 
-[[sthref175]][[BNBVS]]
+[[and-operator-logic]]
+[width="40%",cols="10%,10%,10%,10%",title="AND Operator Logic"]
+|===
+|AND |T |F |U
 
-*Table 42-7 AND Operator Logic*
-
-[width="40%",cols="10%,10%,10%,10%"]
-|============
-|*AND* |*T* |*F* |*U*
 |T |T |F |U
+
 |F |F |F |F
+
 |U |U |F |U
-|============
+|===
 
+[[or-operator-logic]]
+[width="40%",cols="10%,10%,10%,10%",title="OR Operator Logic"]
+|===
+|OR |T |F |U
 
-[[sthref176]][[BNBVT]]
-
-*Table 42-8 OR Operator Logic*
-
-[width="40%",cols="10%,10%,10%,10%"]
-|===========
-|*OR* |*T* |*F* |*U*
 |T |T |T |T
+
 |F |T |F |U
+
 |U |T |U |U
-|===========
-
-
-[[BNBVU]][[equality-semantics]]
+|===
 
 ==== Equality Semantics
 
@@ -1255,64 +1142,58 @@ However, this rule has one exception: Exact and approximate numeric
 values can be compared. In such a comparison, the required type
 conversion adheres to the rules of Java numeric promotion.
 
-The query language treats compared values as if they were Java types and
-not as if they represented types in the underlying data store. For
+The query language treats compared values as if they were Java types
+and not as if they represented types in the underlying data store. For
 example, a persistent field that could be either an integer or a `NULL`
-must be designated as an `Integer` object and not as an `int` primitive.
-This designation is required because a Java object can be `NULL`, but a
-primitive cannot.
+must be designated as an `Integer` object and not as an `int`
+primitive. This designation is required because a Java object can be
+`NULL`, but a primitive cannot.
 
 Two strings are equal only if they contain the same sequence of
 characters. Trailing blanks are significant; for example, the strings
 `'abc'` and `'abc '` are not equal.
 
 Two entities of the same abstract schema type are equal only if their
-primary keys have the same value. link:#BNBVV[Table 42-9] shows the
-operator logic of a negation, and link:#BNBVW[Table 42-10] shows the
-truth values of conditional tests.
+primary keys have the same value. <<not-operator-logic>> shows the
+operator logic of a negation, and <<conditional-test>> shows the truth
+values of conditional tests.
 
-[[sthref177]][[BNBVV]]
+[[not-operator-logic]]
+[width="30%",cols="15%,15%",title="NOT Operator Logic"]
+|===
+|NOT Value |Value
 
-*Table 42-9 NOT Operator Logic*
-
-[width="30%",cols="15%,15%"]
-|================
-|*NOT Value* |*Value*
 |T |F
+
 |F |T
+
 |U |U
-|================
+|===
 
+[[conditional-test]]
+[width="60%",cols="30%,10%,10%,10%",title="Conditional Test"]
+|===
+|Conditional Test |T |F |U
 
-[[sthref178]][[BNBVW]]
-
-*Table 42-10 Conditional Test*
-
-[width="60%",cols="30%,10%,10%,10%"]
-|==============================
-|*Conditional Test* |*T* |*F* |*U*
 |Expression `IS TRUE` |T |F |F
+
 |Expression `IS FALSE` |F |T |F
+
 |Expression is unknown |F |F |T
-|==============================
-
-
-[[BNBVX]][[select-clause]]
+|===
 
 === SELECT Clause
 
 The `SELECT` clause defines the types of the objects or values returned
 by the query.
 
-[[BNBVY]][[return-types]]
-
 ==== Return Types
 
-The return type of the `SELECT` clause is defined by the result types of
-the select expressions contained within it. If multiple expressions are
-used, the result of the query is an `Object[]`, and the elements in the
-array correspond to the order of the expressions in the `SELECT` clause
-and in type to the result types of each expression.
+The return type of the `SELECT` clause is defined by the result types
+of the select expressions contained within it. If multiple expressions
+are used, the result of the query is an `Object[]`, and the elements in
+the array correspond to the order of the expressions in the `SELECT`
+clause and in type to the result types of each expression.
 
 A `SELECT` clause cannot specify a collection-valued expression. For
 example, the `SELECT` clause `p.teams` is invalid because `teams` is a
@@ -1339,16 +1220,14 @@ This query returns a list of `Object[]` elements; the first array
 element is a string denoting the customer name, and the second array
 element is a string denoting the name of the customer's country.
 
-The result of a query may be the result of an aggregate function, listed
-in link:#BNBWA[Table 42-11].
+The result of a query may be the result of an aggregate function,
+listed in <<aggregate-functions-in-select-statements>>.
 
-[[sthref179]][[BNBWA]]
+[[aggregate-functions-in-select-statements]]
+[width="80%",cols="15%,50%,64%",title="Aggregate Functions in Select Statements"]
+|===
+|Name |Return Type |Description
 
-*Table 42-11 Aggregate Functions in Select Statements*
-
-[width="80%",cols="15%,50%,64%"]
-|=======================================================================
-|*Name* |*Return Type* |*Description*
 |`AVG` |`Double` |Returns the mean average of the fields
 
 |`COUNT` |`Long` |Returns the total number of results
@@ -1359,18 +1238,12 @@ set
 |`MIN` |The type of the field |Returns the lowest value in the result
 set
 
-|`SUM` a|
-`Long` (for integral fields)
-
-`Double` (for floating-point fields)
-
-`BigInteger` (for `BigInteger` fields)
-
-`BigDecimal` (for `BigDecimal` fields)
-
- |Returns the sum of all the values in the result set
-|=======================================================================
-
+|`SUM` a| `Long` (for integral fields) +
+`Double` (for floating-point fields) +
+`BigInteger` (for `BigInteger` fields) +
+`BigDecimal` (for `BigDecimal` fields) |Returns the sum of all the
+values in the result set
+|===
 
 For select method queries with an aggregate function (`AVG`, `COUNT`,
 `MAX`, `MIN`, or `SUM`) in the `SELECT` clause, the following rules
@@ -1407,8 +1280,8 @@ SELECT COUNT(o)
 FROM CustomerOrder o
 ----
 
-The following example returns the total number of items that have prices
-in Hal Incandenza's order:
+The following example returns the total number of items that have
+prices in Hal Incandenza's order:
 
 [source,sql]
 ----
@@ -1417,15 +1290,11 @@ FROM CustomerOrder o JOIN o.lineItems l JOIN o.customer c
 WHERE c.lastname = 'Incandenza' AND c.firstname = 'Hal'
 ----
 
-[[BNBWB]][[the-distinct-keyword]]
-
 ==== The DISTINCT Keyword
 
 The `DISTINCT` keyword eliminates duplicate return values. If a query
 returns a `java.util.Collection`, which allows duplicates, you must
 specify the `DISTINCT` keyword to eliminate duplicates.
-
-[[BNBWC]][[constructor-expressions]]
 
 ==== Constructor Expressions
 
@@ -1433,8 +1302,8 @@ Constructor expressions allow you to return Java instances that store a
 query result element instead of an `Object[]`.
 
 The following query creates a `CustomerDetail` instance per `Customer`
-matching the `WHERE` clause. A `CustomerDetail` stores the customer name
-and customer's country name. So the query returns a `List` of
+matching the `WHERE` clause. A `CustomerDetail` stores the customer
+name and customer's country name. So the query returns a `List` of
 `CustomerDetail` instances:
 
 [source,sql]
@@ -1444,24 +1313,22 @@ FROM customer c
 WHERE c.lastname = 'Coss' AND c.firstname = 'Roxane'
 ----
 
-[[BNBWD]][[order-by-clause]]
-
 === ORDER BY Clause
 
-As its name suggests, the `ORDER BY` clause orders the values or objects
-returned by the query.
+As its name suggests, the `ORDER BY` clause orders the values or
+objects returned by the query.
 
 If the `ORDER BY` clause contains multiple elements, the left-to-right
 sequence of the elements determines the high-to-low precedence.
 
-The `ASC` keyword specifies ascending order, the default, and the `DESC`
-keyword indicates descending order.
+The `ASC` keyword specifies ascending order, the default, and the
+`DESC` keyword indicates descending order.
 
 When using the `ORDER BY` clause, the `SELECT` clause must return an
 orderable set of objects or values. You cannot order the values or
 objects for values or objects not returned by the `SELECT` clause. For
-example, the following query is valid because the `ORDER BY` clause uses
-the objects returned by the `SELECT` clause:
+example, the following query is valid because the `ORDER BY` clause
+uses the objects returned by the `SELECT` clause:
 
 [source,sql]
 ----
@@ -1471,8 +1338,8 @@ WHERE a.state = 'CA'
 ORDER BY o.quantity, o.totalcost
 ----
 
-The following example is not valid, because the `ORDER BY` clause uses a
-value not returned by the `SELECT` clause:
+The following example is not valid, because the `ORDER BY` clause uses
+a value not returned by the `SELECT` clause:
 
 [source,sql]
 ----
@@ -1481,8 +1348,6 @@ FROM CustomerOrder o, IN(o.lineItems) l JOIN o.customer c
 WHERE c.lastname = 'Faehmel' AND c.firstname = 'Robert'
 ORDER BY o.quantity
 ----
-
-[[BNBWE]][[group-by-and-having-clauses]]
 
 === GROUP BY and HAVING Clauses
 
@@ -1502,10 +1367,10 @@ The `HAVING` clause is used with the `GROUP BY` clause to further
 restrict the returned result of a query.
 
 The following query groups orders by the status of their customer and
-returns the customer status plus the average `totalPrice` for all orders
-where the corresponding customers have the same status. In addition, it
-considers only customers with status `1`, `2`, or `3`, so orders of
-other customers are not taken into account:
+returns the customer status plus the average `totalPrice` for all
+orders where the corresponding customers have the same status. In
+addition, it considers only customers with status `1`, `2`, or `3`, so
+orders of other customers are not taken into account:
 
 [source,sql]
 ----

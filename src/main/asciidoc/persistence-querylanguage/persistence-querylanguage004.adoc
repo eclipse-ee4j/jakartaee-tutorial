@@ -1,14 +1,9 @@
-[[BNBTI]][[simplified-query-language-syntax]]
-
 == Simplified Query Language Syntax
 
 This section briefly describes the syntax of the query language so that
-you can quickly move on to
-link:#BNBTL[Example Queries]. When you
-are ready to learn about the syntax in more detail, see
-link:#BNBUF[Full Query Language Syntax].
-
-[[BNBTJ]][[select-statements]]
+you can quickly move on to <<example-queries>>. When you are ready to
+learn about the syntax in more detail, see
+<<full-query-language-syntax>>.
 
 === Select Statements
 
@@ -51,8 +46,6 @@ restrict the query results according to a conditional expression.
 * The `ORDER BY` clause sorts the objects or values returned by the
 query into a specified order.
 
-[[BNBTK]][[update-and-delete-statements]]
-
 === Update and Delete Statements
 
 Update and delete statements provide bulk operations over sets of
@@ -65,7 +58,5 @@ delete_statement :: = delete_clause [where_clause]
 ----
 
 The update and delete clauses determine the type of the entities to be
-updated or deleted. The `WHERE` clause may be used to restrict the scope
-of the update or delete operation.
-
-
+updated or deleted. The `WHERE` clause may be used to restrict the
+scope of the update or delete operation.
