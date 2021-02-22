@@ -1,9 +1,7 @@
 = Controlling Concurrent Access to Entity Data with Locking
 
-[[GKJJF]][[controlling-concurrent-access-to-entity-data-with-locking]]
-
-This chapter details how to handle concurrent access to entity data, and
-the locking strategies available to Jakarta Persistence application
+This chapter details how to handle concurrent access to entity data,
+and the locking strategies available to Jakarta Persistence application
 developers.
 
 include::persistence-locking001.adoc[]
