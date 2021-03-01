@@ -266,8 +266,8 @@ context.createProducer().send(dest, message);
 ----
 
 You can create the message in a variable before sending it, as shown
-here, or you can create it within the `send` call. See link:#BNCES[JMS
-Messages] for more information.
+here, or you can create it within the `send` call. See
+<<jakarta-messaging-messages>> for more information.
 
 === Jakarta Messaging Message Consumers
 
