@@ -1,12 +1,8 @@
-[[GKBAA]][[securing-web-applications]]
-
 == Securing Web Applications
 
 Web applications are created by application developers who give, sell,
 or otherwise transfer the application to an application deployer for
 installation into a runtime environment.
-
-[[CHDBIBHI]][[overview-of-securing-web-applications]]
 
 === Overview of Securing Web Applications
 
@@ -14,17 +10,15 @@ Application developers communicate how to set up security for the
 deployed application by using annotations or deployment descriptors.
 This information is passed on to the deployer, who uses it to define
 method permissions for security roles, set up user authentication, and
-set up the appropriate transport mechanism. If the application developer
-doesn't define security requirements, the deployer will have to
-determine the security requirements independently.
+set up the appropriate transport mechanism. If the application
+developer doesn't define security requirements, the deployer will have
+to determine the security requirements independently.
 
 Some elements necessary for security in a web application cannot be
-specified as annotations for all types of web applications. This chapter
-explains how to secure web applications using annotations wherever
-possible. It explains how to use deployment descriptors where
+specified as annotations for all types of web applications. This
+chapter explains how to secure web applications using annotations
+wherever possible. It explains how to use deployment descriptors where
 annotations cannot be used.
-
-[[BNCBK]][[specifying-security-constraints]]
 
 === Specifying Security Constraints
 
@@ -50,17 +44,16 @@ patterns (the part of a URL after the host name and port you want to
 constrain) and HTTP operations (the methods within the files that match
 the URL pattern you want to constrain) that describe a set of resources
 to be protected. Web resource collections are discussed in
-link:#GJJCD[Specifying a Web Resource Collection].
+<<specifying-a-web-resource-collection>>.
+
 * Authorization constraint (`auth-constraint`): Specifies whether
 authentication is to be used and names the roles authorized to perform
 the constrained requests. For more information about authorization
-constraints, see link:#GJJCG[Specifying an Authorization Constraint].
+constraints, see <<specifying-an-authorization-constraint>>.
+
 * User data constraint (`user-data-constraint`): Specifies how data is
 protected when transported between a client and a server. User data
-constraints are discussed in link:#BNCBM[Specifying a Secure
-Connection].
-
-[[GJJCD]][[specifying-a-web-resource-collection]]
+constraints are discussed in <<specifying-a-secure-connection>>.
 
 ==== Specifying a Web Resource Collection
 
@@ -78,8 +71,8 @@ example, let's say that you have an e-commerce site with a catalog that
 you would want anyone to be able to access and browse, and a shopping
 cart area for customers only. You could set up the paths for your web
 application so that the pattern `/cart/*` is protected but nothing else
-is protected. Assuming that the application is installed at context path
-`/myapp`, the following are true.
+is protected. Assuming that the application is installed at context
+path `/myapp`, the following are true.
 
 ** `http://localhost:8080/myapp/index.xhtml` is not protected.
 
@@ -101,36 +94,34 @@ are protected)
 ** If the collection contains one or more `http-method-omission`
 elements, none of which names the HTTP method
 
-[[GJJCG]][[specifying-an-authorization-constraint]]
-
 ==== Specifying an Authorization Constraint
 
-An authorization constraint (`auth-constraint`) contains the `role-name`
-element. You can use as many `role-name` elements as needed here.
+An authorization constraint (`auth-constraint`) contains the
+`role-name` element. You can use as many `role-name` elements as needed
+here.
 
-An authorization constraint establishes a requirement for authentication
-and names the roles authorized to access the URL patterns and HTTP
-methods declared by this security constraint. If there is no
-authorization constraint, the container must accept the request without
-requiring user authentication. If there is an authorization constraint
-but no roles are specified within it, the container will not allow
-access to constrained requests under any circumstances. Each role name
-specified here must either correspond to the role name of one of the
-`security-role` elements defined for this web application or be the
-specially reserved role name `*`, which indicates all roles in the web
-application. Role names are case sensitive. The roles defined for the
-application must be mapped to users and groups defined on the server,
-except when default principal-to-role mapping is used.
+An authorization constraint establishes a requirement for
+authentication and names the roles authorized to access the URL
+patterns and HTTP methods declared by this security constraint. If
+there is no authorization constraint, the container must accept the
+request without requiring user authentication. If there is an
+authorization constraint but no roles are specified within it, the
+container will not allow access to constrained requests under any
+circumstances. Each role name specified here must either correspond to
+the role name of one of the `security-role` elements defined for this
+web application or be the specially reserved role name `*`, which
+indicates all roles in the web application. Role names are case
+sensitive. The roles defined for the application must be mapped to
+users and groups defined on the server, except when default
+principal-to-role mapping is used.
 
-For more information about security roles, see link:#BNCAV[Declaring
-Security Roles]. For information on mapping security roles, see
-link:#BNBXV[Mapping Roles to Users and Groups].
+For more information about security roles, see
+<<declaring-security-roles>>. For information on mapping security
+roles, see <<mapping-roles-to-users-and-groups-2>>.
 
 For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint`
 annotations accept a `rolesAllowed` element that specifies the
 authorized roles.
-
-[[BNCBM]][[specifying-a-secure-connection]]
 
 ==== Specifying a Secure Connection
 
@@ -142,8 +133,8 @@ HTTP methods specified in the security constraint. The choices for
 transport guarantee are `CONFIDENTIAL`, `INTEGRAL`, or `NONE`. If you
 specify `CONFIDENTIAL` or `INTEGRAL` as a security constraint, it
 generally means that the use of SSL is required and applies to all
-requests that match the URL patterns in the web resource collection, not
-just to the login dialog box.
+requests that match the URL patterns in the web resource collection,
+not just to the login dialog box.
 
 The strength of the required protection is defined by the value of the
 transport guarantee, as follows.
@@ -151,23 +142,17 @@ transport guarantee, as follows.
 * Specify `CONFIDENTIAL` when the application requires that data be
 transmitted so as to prevent other entities from observing the contents
 of the transmission.
-* Specify `INTEGRAL` when the application requires that the data be sent
-between client and server in such a way that it cannot be changed in
-transit.
+
+* Specify `INTEGRAL` when the application requires that the data be
+sent between client and server in such a way that it cannot be changed
+in transit.
+
 * Specify `NONE` to indicate that the container must accept the
 constrained requests on any connection, including an unprotected one.
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 In practice, Jakarta EE servers treat the `CONFIDENTIAL` and `INTEGRAL`
 transport guarantee values identically.
-
-|=======================================================================
-
 
 The user data constraint is handy to use in conjunction with basic and
 form-based user authentication. When the login authentication method is
@@ -176,47 +161,36 @@ passwords sent between a client and a server on an unprotected session
 can be viewed and intercepted by third parties. Using a user data
 constraint with the user authentication mechanism can alleviate this
 concern. Configuring a user authentication mechanism is described in
-link:#BNCBN[Specifying an Authentication Mechanism in the Deployment
-Descriptor].
+<<specifying-an-authentication-mechanism-in-the-deployment-descriptor>>.
 
 To guarantee that data is transported over a secure connection, ensure
 that SSL support is configured for your server. SSL support is already
 configured for GlassFish Server.
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 After you switch to SSL for a session, you should never accept any
 non-SSL requests for the rest of that session. For example, a shopping
-site might not use SSL until the checkout page, and then it might switch
-to using SSL to accept your card number. After switching to SSL, you
-should stop listening to non-SSL requests for this session. The reason
-for this practice is that the session ID itself was not encrypted on the
-earlier communications. This is not so bad when you're only doing your
-shopping, but after the credit card information is stored in the
-session, you don't want anyone to use that information to fake the
-purchase transaction against your credit card. This practice could be
-easily implemented by using a filter.
-
-|=======================================================================
-
-
-[[BNCBL]][[specifying-security-constraints-for-resources]]
+site might not use SSL until the checkout page, and then it might
+switch to using SSL to accept your card number. After switching to SSL,
+you should stop listening to non-SSL requests for this session. The
+reason for this practice is that the session ID itself was not
+encrypted on the earlier communications. This is not so bad when you're
+only doing your shopping, but after the credit card information is
+stored in the session, you don't want anyone to use that information to
+fake the purchase transaction against your credit card. This practice
+could be easily implemented by using a filter.
 
 ==== Specifying Security Constraints for Resources
 
 You can create security constraints for resources within your
 application. For example, you could allow users with the role of
 `PARTNER` full access to all resources at the URL pattern
-`/acme/wholesale/*` and allow users with the role of `CLIENT` full
-access to all resources at the URL pattern `/acme/retail/*`. This is the
-recommended way to protect resources if you do not want to protect some
-HTTP methods while leaving other HTTP methods unprotected. An example of
-a deployment descriptor that would demonstrate this functionality is the
-following:
+`/acme/wholesale/\*` and allow users with the role of `CLIENT` full
+access to all resources at the URL pattern `/acme/retail/*`. This is
+the recommended way to protect resources if you do not want to protect
+some HTTP methods while leaving other HTTP methods unprotected. An
+example of a deployment descriptor that would demonstrate this
+functionality is the following:
 
 [source,xml]
 ----
@@ -249,24 +223,16 @@ following:
 </security-constraint>
 ----
 
-[[GKBSA]][[specifying-authentication-mechanisms]]
-
 === Specifying Authentication Mechanisms
 
 This section describes built-in authentication mechanisms defined by
 the Servlet specification.
 
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
-An alternative way to perform user authentication, including BASIC
-and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by 
-Jakarta Security, and documented in
-link:#using-the-jakarta-ee-security-api[Chapter 53, "Using Jakarta Security"].
-|=======================================================================
-
+[NOTE]
+An alternative way to perform user authentication, including BASIC and
+FORM authentication, is to use the `HttpAuthenticationMechanism`,
+specified by Jakarta Security, and documented in
+<<using-jakarta-security>>.
 
 A user authentication mechanism specifies:
 
@@ -284,10 +250,10 @@ method will apply to all constrained resources in an application.
 Before you can authenticate a user, you must have a database of user
 names, passwords, and roles configured on your web or application
 server. For information on setting up the user database, see
-link:#BNBXR[Managing Users and Groups in GlassFish
-Server].
+<<managing-users-and-groups-in-glassfish-server>>.
 
-The Jakarta EE platform supports the following authentication mechanisms:
+The Jakarta EE platform supports the following authentication
+mechanisms:
 
 * Basic authentication
 * Form-based authentication
@@ -297,8 +263,7 @@ The Jakarta EE platform supports the following authentication mechanisms:
 
 Basic, form-based, and digest authentication are discussed in this
 section. Client and mutual authentication are discussed in
-link:#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
-Topics"].
+xref:jakarta-ee-security-advanced-topics[xrefstyle=full].
 
 HTTP basic authentication and form-based authentication are not very
 secure authentication mechanisms. Basic authentication sends user names
@@ -313,54 +278,47 @@ However, when a secure transport mechanism, such as SSL, or security at
 the network level, such as the Internet Protocol Security (IPsec)
 protocol or virtual private network (VPN) strategies, is used in
 conjunction with basic or form-based authentication, some of these
-concerns can be alleviated. To specify a secure transport mechanism, use
-the elements described in link:#BNCBM[Specifying a Secure Connection].
-
-[[BNCBO]][[http-basic-authentication]]
+concerns can be alleviated. To specify a secure transport mechanism,
+use the elements described in <<specifying-a-secure-connection>>.
 
 ==== HTTP Basic Authentication
 
-Specifying HTTP basic authentication requires that the server requests a
-user name and a password from the web client and verifies that the user name
-and password are valid by comparing them against a database of
-authorized users in the specified or default realm.
+Specifying HTTP basic authentication requires that the server requests
+a user name and a password from the web client and verifies that the
+user name and password are valid by comparing them against a database
+of authorized users in the specified or default realm.
 
 Basic authentication is the default when you do not specify an
 authentication mechanism.
 
 When basic authentication is used, the following actions occur.
 
-1.  A client requests access to a protected resource.
-2.  The web server returns a dialog box that requests the user name and
+. A client requests access to a protected resource.
+. The web server returns a dialog box that requests the user name and
 password.
-3.  The client submits the user name and password to the server.
-4.  The server authenticates the user in the specified realm and, if
+. The client submits the user name and password to the server.
+. The server authenticates the user in the specified realm and, if
 successful, returns the requested resource.
 
-link:#BNCBP[Figure 51-1] shows what happens when you specify HTTP basic
-authentication.
+<<http-basic-authentication-2>> shows what happens when you specify HTTP
+basic authentication.
 
-[[BNCBP]]
-
-.*Figure 51-1 HTTP Basic Authentication*
-image:jakartaeett_dt_045.png[
-"Diagram of four steps in HTTP basic authentication between client and
-server"]
-
-[[BNCBQ]][[form-based-authentication]]
+[[http-basic-authentication-2]]
+image::jakartaeett_dt_045.png["Diagram of four steps in HTTP basic authentication between client and server",title="HTTP Basic Authentication"]
 
 ==== Form-Based Authentication
 
 Form-based authentication allows the developer to control the look and
-feel of the login authentication screens by customizing the login screen
-and error pages that an HTTP browser presents to the end user. When
-form-based authentication is declared, the following actions occur.
+feel of the login authentication screens by customizing the login
+screen and error pages that an HTTP browser presents to the end user.
+When form-based authentication is declared, the following actions
+occur.
 
-1.  A client requests access to a protected resource.
-2.  If the client is unauthenticated, the server redirects the client to
+. A client requests access to a protected resource.
+. If the client is unauthenticated, the server redirects the client to
 a login page.
-3.  The client submits the login form to the server.
-4.  The server attempts to authenticate the user.
+. The client submits the login form to the server.
+. The server attempts to authenticate the user.
 * If authentication succeeds, the authenticated user's principal is
 checked to ensure that it is in a role that is authorized to access the
 resource. If the user is authorized, the server redirects the client to
@@ -368,32 +326,27 @@ the resource by using the stored URL path.
 * If authentication fails, the client is forwarded or redirected to an
 error page.
 
-link:#GEXFA[Figure 51-2] shows what happens when you specify form-based
+<<form-based-authentication-2>> shows what happens when you specify form-based
 authentication.
 
+[[form-based-authentication-2]]
+image::jakartaeett_dt_046.png["Diagram of four steps in form-based authentication between client and server",title="Form-Based Authentication"]
 
-[[GEXFA]]
-
-.*Figure 51-2 Form-Based Authentication*
-image:jakartaeett_dt_046.png[
-"Diagram of four steps in form-based authentication between client and
-server"]
-
-The section link:#BNCBY[The hello1-formauth
-Example: Form-Based Authentication with a Jakarta Server Faces Application]
+The section
+<<the-hello1-formauth-example-form-based-authentication-with-a-jakarta-server-faces-application>>
 is an example application that uses form-based authentication.
 
 When you create a form-based login, be sure to maintain sessions using
 cookies or SSL session information.
 
 For authentication to proceed appropriately, the action of the login
-form must always be `j_security_check`. This restriction is made so that
-the login form will work no matter which resource it is for and to avoid
-requiring the server to specify the action field of the outbound form.
-The following code snippet shows how the form should be coded into the
-HTML page:
+form must always be `j_security_check`. This restriction is made so
+that the login form will work no matter which resource it is for and to
+avoid requiring the server to specify the action field of the outbound
+form. The following code snippet shows how the form should be coded
+into the HTML page:
 
-[source,java]
+[source,xml]
 ----
 <form method="POST" action="j_security_check">
 <input type="text" name="j_username">
@@ -401,20 +354,16 @@ HTML page:
 </form>
 ----
 
-[[BNCBW]][[digest-authentication]]
-
 ==== Digest Authentication
 
 Like basic authentication, digest authentication authenticates a user
 based on a user name and a password. However, unlike basic
 authentication, digest authentication does not send user passwords over
 the network. Instead, the client sends a one-way cryptographic hash of
-the password and additional data. Although passwords are not sent on the
-wire, digest authentication requires that clear-text password
+the password and additional data. Although passwords are not sent on
+the wire, digest authentication requires that clear-text password
 equivalents be available to the authenticating container so that it can
 validate received authenticators by calculating the expected digest.
-
-[[BNCBN]][[specifying-an-authentication-mechanism-in-the-deployment-descriptor]]
 
 === Specifying an Authentication Mechanism in the Deployment Descriptor
 
@@ -426,28 +375,19 @@ for the web application. The element content must be either `NONE`,
 `BASIC`, `DIGEST`, `FORM`, or `CLIENT-CERT`.
 * The `realm-name` subelement indicates the realm name to use when the
 basic authentication scheme is chosen for the web application.
-* The `form-login-config` subelement specifies the login and error pages
-that should be used when form-based login is specified.
+* The `form-login-config` subelement specifies the login and error
+pages that should be used when form-based login is specified.
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note*:
-
+[NOTE]
 Another way to specify form-based authentication is to use the
 `authenticate`, `login`, and `logout` methods of `HttpServletRequest`,
-as discussed in link:#GIRCJ[Authenticating Users
-Programmatically].
-
-|=======================================================================
-
+as discussed in <<authenticating-users-programmatically>>.
 
 When you try to access a web resource that is constrained by a
 `security-constraint` element, the web container activates the
-authentication mechanism that has been configured for that resource. The
-authentication mechanism specifies how the user will be prompted to log
-in. If the `login-config` element is present and the `auth-method`
+authentication mechanism that has been configured for that resource.
+The authentication mechanism specifies how the user will be prompted to
+log in. If the `login-config` element is present and the `auth-method`
 element contains a value other than `NONE`, the user must be
 authenticated to access the resource. If you do not specify an
 authentication mechanism, authentication of the user is not required.
@@ -468,12 +408,11 @@ your deployment descriptor:
 ----
 
 The login and error page locations are specified relative to the
-location of the deployment descriptor. Examples of login and error pages
-are shown in link:#BNCCA[Creating the Login Form
-and the Error Page].
+location of the deployment descriptor. Examples of login and error
+pages are shown in <<creating-the-login-form-and-the-error-page>>.
 
-The following example shows how to declare digest authentication in your
-deployment descriptor:
+The following example shows how to declare digest authentication in
+your deployment descriptor:
 
 [source,xml]
 ----
@@ -482,8 +421,6 @@ deployment descriptor:
 </login-config>
 ----
 
-[[BNCAV]][[declaring-security-roles]]
-
 === Declaring Security Roles
 
 You can declare security role names used in web applications by using
@@ -491,9 +428,9 @@ the `security-role` element of the deployment descriptor. Use this
 element to list all the security roles that you have referenced in your
 application.
 
-The following snippet of a deployment descriptor declares the roles that
-will be used in an application using the `security-role` element and
-specifies which of these roles is authorized to access protected
+The following snippet of a deployment descriptor declares the roles
+that will be used in an application using the `security-role` element
+and specifies which of these roles is authorized to access protected
 resources using the `auth-constraint` element:
 
 [source,xml]
