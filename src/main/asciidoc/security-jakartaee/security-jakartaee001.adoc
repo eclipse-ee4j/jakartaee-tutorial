@@ -1,5 +1,3 @@
-[[CACGIFHJ]][[basic-security-tasks-for-enterprise-applications]]
-
 == Basic Security Tasks for Enterprise Applications
 
 System administrators, application developers, bean providers, and
@@ -9,8 +7,9 @@ applications. The basic security tasks are as follows:
 * Setting up a database of users and assigning them to the proper group
 * Setting up identity propagation
 * Setting GlassFish Server properties that enable the applications to
-run properly. Note that the the *Default Principal To Role Mapping* setting is
-enabled by default in the GlassFish Server Administration Console.
+run properly. Note that the the *Default Principal To Role Mapping*
+setting is enabled by default in the GlassFish Server Administration
+Console.
 * Annotating the classes and methods of an enterprise application to
 provide information about which methods need to have restricted access
 
