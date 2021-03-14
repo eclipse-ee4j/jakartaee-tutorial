@@ -1,28 +1,34 @@
-[[GIPJU]][[common-client-interface]]
-
 == Common Client Interface
 
-This section explains how components use the Jakarta Connectors
-Common Client Interface (CCI) API and a resource adapter to access data
-from an EIS. The CCI API defines a set of interfaces and classes whose
+This section explains how components use the Jakarta Connectors Common
+Client Interface (CCI) API and a resource adapter to access data from
+an EIS. The CCI API defines a set of interfaces and classes whose
 methods allow a client to perform typical data access operations. The
 CCI interfaces and classes are as follows.
 
 * `ConnectionFactory`: Provides an application component with a
 `Connection` instance to an EIS.
+
 * `Connection`: Represents the connection to the underlying EIS.
+
 * `ConnectionSpec`: Provides a means for an application component to
 pass connection-request-specific properties to the `ConnectionFactory`
 when making a connection request.
+
 * `Interaction`: Provides a means for an application component to
 execute EIS functions, such as database stored procedures.
+
 * `InteractionSpec`: Holds properties pertaining to an application
 component's interaction with an EIS.
+
 * `Record`: The superinterface for the various kinds of record
 instances. Record instances can be `MappedRecord`, `IndexedRecord`, or
-`ResultSet` instances, all of which inherit from the `Record` interface.
+`ResultSet` instances, all of which inherit from the `Record`
+interface.
+
 * `RecordFactory`: Provides an application component with a `Record`
 instance.
+
 * `IndexedRecord`: Represents an ordered collection of `Record`
 instances based on the `java.util.List` interface.
 
@@ -42,7 +48,5 @@ does so by using a particular type of `Record` instance: a
 `MappedRecord`, an `IndexedRecord`, or a `ResultSet` instance.
 
 Note, too, that a client application that relies on a CCI resource
-adapter is very much like any other Jakarta EE client that uses enterprise
-bean methods.
-
-
+adapter is very much like any other Jakarta EE client that uses
+enterprise bean methods.

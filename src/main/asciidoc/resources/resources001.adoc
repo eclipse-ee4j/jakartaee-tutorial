@@ -1,56 +1,47 @@
-[[GIPGL]][[what-is-a-resource-adapter]]
-
 == What Is a Resource Adapter?
 
-A resource adapter is a Jakarta EE component that implements the Jakarta Connectors API
-for a specific EIS. Examples of EISs include
+A resource adapter is a Jakarta EE component that implements the
+Jakarta Connectors API for a specific EIS. Examples of EISs include
 enterprise resource planning, mainframe transaction processing, and
-database systems. In a Jakarta EE server, Jakarta Messaging and
-Jakarta Mail also act as EISs that you access using resource adapters. As
-illustrated in link:#GJTZO[Figure 55-1], the resource adapter
-facilitates communication between a Jakarta EE application and an EIS.
+database systems. In a Jakarta EE server, Jakarta Messaging and Jakarta
+Mail also act as EISs that you access using resource adapters. As
+illustrated in <<resource-adapters>>, the resource adapter facilitates
+communication between a Jakarta EE application and an EIS.
 
-[[GJTZO]]
-
-.*Figure 55-1 Resource Adapters*
-image:jakartaeett_dt_053.png[
-"Resource Adapter Contracts"]
+[[resource-adapters]]
+image::jakartaeett_dt_053.png["Resource Adapter Contracts",title="Resource Adapters"]
 
 Stored in a Resource Adapter Archive (RAR) file, a resource adapter can
-be deployed on any Jakarta EE server, much like a Jakarta EE application. A
-RAR file may be contained in an Enterprise Archive (EAR) file, or it may
-exist as a separate file.
+be deployed on any Jakarta EE server, much like a Jakarta EE
+application. A RAR file may be contained in an Enterprise Archive (EAR)
+file, or it may exist as a separate file.
 
 A resource adapter is analogous to a JDBC driver. Both provide a
 standard API through which an application can access a resource that is
-outside the Jakarta EE server. For a resource adapter, the target system is
-an EIS; for a JDBC driver, it is a DBMS. Resource adapters and JDBC
-drivers are rarely created by application developers. In most cases,
-both types of software are built by vendors that sell tools, servers, or
-integration software.
+outside the Jakarta EE server. For a resource adapter, the target
+system is an EIS; for a JDBC driver, it is a DBMS. Resource adapters
+and JDBC drivers are rarely created by application developers. In most
+cases, both types of software are built by vendors that sell tools,
+servers, or integration software.
 
-The resource adapter mediates communication between the Jakarta EE server
-and the EIS by means of contracts. The application contract defines the
-API through which a Jakarta EE component, such as an enterprise bean,
-accesses the EIS. This API is the only view that the component has of
-the EIS. The system contracts link the resource adapter to important
-services that are managed by the Jakarta EE server. The resource adapter
-itself and its system contracts are transparent to the Jakarta EE
-component.
-
-[[GIPGY]][[management-contracts]]
+The resource adapter mediates communication between the Jakarta EE
+server and the EIS by means of contracts. The application contract
+defines the API through which a Jakarta EE component, such as an
+enterprise bean, accesses the EIS. This API is the only view that the
+component has of the EIS. The system contracts link the resource
+adapter to important services that are managed by the Jakarta EE
+server. The resource adapter itself and its system contracts are
+transparent to the Jakarta EE component.
 
 === Management Contracts
 
-Jakarta Connectors defines system contracts that enable
-resource adapter lifecycle and thread management.
-
-[[GIPHT]][[lifecycle-management]]
+Jakarta Connectors defines system contracts that enable resource
+adapter lifecycle and thread management.
 
 ==== Lifecycle Management
 
-Jakarta Connectors specifies a lifecycle management contract
-that allows an application server to manage the lifecycle of a resource
+Jakarta Connectors specifies a lifecycle management contract that
+allows an application server to manage the lifecycle of a resource
 adapter. This contract provides a mechanism for the application server
 to bootstrap a resource adapter instance during the deployment or
 application server startup. This contract also provides a means for the
@@ -58,14 +49,12 @@ application server to notify the resource adapter instance when it is
 undeployed or when an orderly shutdown of the application server takes
 place.
 
-[[GIPIG]][[work-management-contract]]
-
 ==== Work Management Contract
 
-Jakarta Connectors work management contract ensures that
-resource adapters use threads in the proper, recommended manner. This
-contract also enables an application server to manage threads for
-resource adapters.
+Jakarta Connectors work management contract ensures that resource
+adapters use threads in the proper, recommended manner. This contract
+also enables an application server to manage threads for resource
+adapters.
 
 Resource adapters that improperly use threads can jeopardize the entire
 application server environment. For example, a resource adapter might
@@ -76,13 +65,13 @@ destroying threads are expensive operations.
 
 The work management contract establishes a means for the application
 server to pool and reuse threads, similar to pooling and reusing
-connections. By adhering to this contract, the resource adapter does not
-have to manage threads itself. Instead, the resource adapter has the
-application server create and provide needed threads. When it is
-finished with a given thread, the resource adapter returns the thread to
-the application server. The application server manages the thread,
-either returning it to a pool for later reuse or destroying it. Handling
-threads in this manner results in increased application server
+connections. By adhering to this contract, the resource adapter does
+not have to manage threads itself. Instead, the resource adapter has
+the application server create and provide needed threads. When it is
+finished with a given thread, the resource adapter returns the thread
+to the application server. The application server manages the thread,
+either returning it to a pool for later reuse or destroying it.
+Handling threads in this manner results in increased application server
 performance and more efficient use of resources.
 
 In addition to moving thread management to the application server, the
@@ -91,9 +80,11 @@ that uses threads.
 
 * The requesting thread can choose to block (stop its own execution)
 until the work thread completes.
-* The requesting thread can block while it waits to get the work thread.
-When the application server provides a work thread, the requesting
-thread and the work thread execute in parallel.
+
+* The requesting thread can block while it waits to get the work
+thread. When the application server provides a work thread, the
+requesting thread and the work thread execute in parallel.
+
 * The resource adapter can opt to submit the work for the thread to a
 queue. The thread executes the work from the queue at some later point.
 The resource adapter continues its own execution from the point it
@@ -106,8 +97,6 @@ resource adapter that the thread has completed its operation. The
 resource adapter can also specify the execution context for the thread,
 and the work management contract controls the context in which the
 thread executes.
-
-[[GIPMK]][[generic-work-context-contract]]
 
 === Generic Work Context Contract
 
@@ -127,8 +116,6 @@ control over concurrent behavior in a managed environment.
 The generic work context contract standardizes the transaction context
 and the security context.
 
-[[GKCKI]][[outbound-and-inbound-contracts]]
-
 === Outbound and Inbound Contracts
 
 The Connector Architecture defines the following outbound contracts,
@@ -139,6 +126,7 @@ enable outbound connectivity to an EIS.
 technique that enhances application performance and scalability.
 Connection pooling is transparent to the application, which simply
 obtains a connection to the EIS.
+
 * The transaction management contract extends the connection management
 contract and provides support for management of both local and XA
 transactions.
@@ -148,18 +136,19 @@ EIS resource manager itself manages such a transaction. An XA
 transaction or global transaction can span multiple resource managers.
 This form of transaction requires transaction coordination by an
 external transaction manager, typically bundled with an application
-server. A transaction manager uses a two-phase commit protocol to manage
-a transaction that spans multiple resource managers or EISs, and uses
-one-phase commit optimization if only one resource manager is
+server. A transaction manager uses a two-phase commit protocol to
+manage a transaction that spans multiple resource managers or EISs, and
+uses one-phase commit optimization if only one resource manager is
 participating in an XA transaction.
+
 * The security management contract provides mechanisms for
-authentication, authorization, and secure communication between a Java
-EE server and an EIS to protect the information in the EIS.
+authentication, authorization, and secure communication between a
+Jakarta EE server and an EIS to protect the information in the EIS.
 +
 A work security map matches EIS identities to the application server
 domain's identities.
 
-Inbound contracts are system contracts between a Jakarta EE server and an
-EIS that enable inbound connectivity from the EIS: pluggability
+Inbound contracts are system contracts between a Jakarta EE server and
+an EIS that enable inbound connectivity from the EIS: pluggability
 contracts for message providers and contracts for importing
 transactions.
