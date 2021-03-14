@@ -1,5 +1,3 @@
-[[BNCJG]][[transactions-in-web-components]]
-
 == Transactions in Web Components
 
 You can demarcate a transaction in a web component by using either the
@@ -7,6 +5,4 @@ You can demarcate a transaction in a web component by using either the
 interface. These are the same interfaces that a session bean with
 bean-managed transactions can use. Transactions demarcated with the
 `UserTransaction` interface are discussed in
-link:#BNCIZ[Jakarta Transactions].
-
-
+<<jakarta-transactions-2>>.
