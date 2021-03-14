@@ -1,20 +1,17 @@
-[[GKHRL]][[configuring-security-using-deployment-descriptors]]
-
 == Configuring Security Using Deployment Descriptors
 
-The recommended way to configure security in the Jakarta EE 8 platform is
-with annotations. If you wish to override the security settings at
+The recommended way to configure security in the Jakarta EE 8 platform
+is with annotations. If you wish to override the security settings at
 deployment time, you can use security elements in the `web.xml`
 deployment descriptor to do so. This section describes how to use the
 deployment descriptor to specify basic authentication and to override
 default principal-to-role mapping.
 
-[[BNCCM]][[specifying-security-for-basic-authentication-in-the-deployment-descriptor]]
-
 === Specifying Security for Basic Authentication in the Deployment Descriptor
 
 The elements of the deployment descriptor that add basic authentication
-to an example tell the server or browser to perform the following tasks.
+to an example tell the server or browser to perform the following
+tasks.
 
 * Send a standard login dialog box to collect user name and password
 data.
@@ -23,7 +20,7 @@ data.
 
 The following sample code shows the security elements for a deployment
 descriptor that could be used in the example of basic authentication
-found in the tut-install`/examples/security/hello2_basicauth/`
+found in the `_tut-install_/examples/security/hello2_basicauth/`
 directory:
 
 [source,xml]
@@ -57,21 +54,20 @@ been verified to be in the role `TutorialUser`. The user name and
 password data will be sent over a protected transport in order to keep
 it from being read in transit.
 
-[[GKAFQ]][[specifying-non-default-principal-to-role-mapping-in-the-deployment-descriptor]]
-
 === Specifying Non-Default Principal-to-Role Mapping in the Deployment Descriptor
 
-Jakarta Security requires that group principal names be mapped to
-roles of the same name by default. GlassFish adheres to this standard, by default,
-and provides group principal to role mapping. Implementations of the standard
-can, however, provide mechanisms to configure a different default.
+Jakarta Security requires that group principal names be mapped to roles
+of the same name by default. GlassFish adheres to this standard, by
+default, and provides group principal to role mapping. Implementations
+of the standard can, however, provide mechanisms to configure a
+different default.
 
 To map a role name permitted by the application or module to principals
 (users) and groups defined on the server, use the
 `security-role-mapping` element in the runtime deployment descriptor
 file (`glassfish-application.xml`, `glassfish-web.xml`, or
-`glassfish-ejb-jar.xml`). The entry needs to declare a mapping between a
-security role used in the application and one or more groups or
+`glassfish-ejb-jar.xml`). The entry needs to declare a mapping between
+a security role used in the application and one or more groups or
 principals defined for the applicable realm of GlassFish Server. An
 example for the `glassfish-web.xml` file is shown below:
 

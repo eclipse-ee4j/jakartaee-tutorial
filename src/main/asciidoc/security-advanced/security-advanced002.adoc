@@ -1,11 +1,7 @@
-[[GLIEN]][[authentication-mechanisms]]
-
 == Authentication Mechanisms
 
 This section discusses the client authentication and mutual
 authentication mechanisms.
-
-[[GLIEQ]][[client-authentication]]
 
 === Client Authentication
 
@@ -16,17 +12,17 @@ authentication. It uses HTTP over SSL (HTTPS), in which the server
 authenticates the client using the client's public key certificate. SSL
 technology provides data encryption, server authentication, message
 integrity, and optional client authentication for a TCP/IP connection.
-You can think of a public key certificate as the digital equivalent of a
-passport. The certificate is issued by a trusted organization, a
+You can think of a public key certificate as the digital equivalent of
+a passport. The certificate is issued by a trusted organization, a
 certificate authority (CA), and provides identification for the bearer.
 
 Before using client authentication, make sure that the client has a
-valid public key certificate. For more information on creating and using
-public key certificates, read
-link:#BNBYB[Working with Digital Certificates].
+valid public key certificate. For more information on creating and
+using public key certificates, read
+<<working-with-digital-certificates>>.
 
-The following example shows how to declare client authentication in your
-deployment descriptor:
+The following example shows how to declare client authentication in
+your deployment descriptor:
 
 [source,xml]
 ----
@@ -34,150 +30,153 @@ deployment descriptor:
     <auth-method>CLIENT-CERT</auth-method>
 </login-config>
 ----
-Jakarta Security provides an alternative means to configure client authentication
-using the `HttpAuthenticationMechanism` interface. This
-interface defines an SPI for writing
-authentication mechanisms that can be provided with an application and
-deployed using CDI. See link:#overview-of-the-http-authentication-mechanism-interface[Overview of
-the HTTP Authentication Mechanism Interface].
 
-[[GLIEL]][[mutual-authentication]]
+Jakarta Security provides an alternative means to configure client
+authentication using the `HttpAuthenticationMechanism` interface. This
+interface defines an SPI for writing authentication mechanisms that can
+be provided with an application and deployed using CDI. See
+<<overview-of-the-http-authentication-mechanism-interface>>.
 
 === Mutual Authentication
 
 With mutual authentication, the server and the client authenticate each
 other. Mutual authentication is of two types:
 
-* Certificate-based (see link:#GLIFJ[Figure 53-1])
-* User name/password-based (see link:#GLIGQ[Figure 53-2])
+* Certificate-based (see <<certificate-based-mutual-authentication>>)
+* User name/password-based (see
+<<username-password-based-mutual-authentication>>)
 
 When using certificate-based mutual authentication, the following
 actions occur.
 
-1.  A client requests access to a protected resource.
-2.  The web server presents its certificate to the client.
-3.  The client verifies the server's certificate.
-4.  If successful, the client sends its certificate to the server.
-5.  The server verifies the client's credentials.
-6.  If successful, the server grants access to the protected resource
+. A client requests access to a protected resource.
+. The web server presents its certificate to the client.
+. The client verifies the server's certificate.
+. If successful, the client sends its certificate to the server.
+. The server verifies the client's credentials.
+. If successful, the server grants access to the protected resource
 requested by the client.
 
-link:#GLIFJ[Figure 53-1] shows what occurs during certificate-based
-mutual authentication.
+<<certificate-based-mutual-authentication>> shows what occurs during
+certificate-based mutual authentication.
 
-[[GLIFJ]]
+[[certificate-based-mutual-authentication]]
+image::jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates",title="Certificate-Based Mutual Authentication"]
 
-.*Figure 53-1 Certificate-Based Mutual Authentication*
-image:jakartaeett_dt_048.png[
-"Diagram of six steps in mutual authentication with certificates"]
+In user name/password-based mutual authentication, the following
+actions occur.
 
-In user name/password-based mutual authentication, the following actions
-occur.
-
-1.  A client requests access to a protected resource.
-2.  The web server presents its certificate to the client.
-3.  The client verifies the server's certificate.
-4.  If successful, the client sends its user name and password to the
+. A client requests access to a protected resource.
+. The web server presents its certificate to the client.
+. The client verifies the server's certificate.
+. If successful, the client sends its user name and password to the
 server.
-5.  The server verifies the client's credentials
-6.  If the verification is successful, the server grants access to the
+. The server verifies the client's credentials
+. If the verification is successful, the server grants access to the
 protected resource requested by the client.
 
-link:#GLIGQ[Figure 53-2] shows what occurs during user
-name/password-based mutual authentication.
+<<username-password-based-mutual-authentication>> shows what occurs
+during user name/password-based mutual authentication.
 
-[[GLIGQ]]
-
-.*Figure 53-2 User Name/Password-Based Mutual Authentication*
-image:jakartaeett_dt_049.png[
-"Diagram of five steps in mutual authentication with user name and
-password"]
-
-[[BNBYH]][[enabling-mutual-authentication-over-ssl]]
+[[username-password-based-mutual-authentication]]
+image::jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name and password",title="User Name/Password-Based Mutual Authentication"]
 
 ==== Enabling Mutual Authentication over SSL
 
 This section discusses setting up client-side authentication. Enabling
 both server-side and client-side authentication is called mutual, or
 two-way, authentication. In client authentication, clients are required
-to submit certificates issued by a certificate authority that you choose
-to accept.
+to submit certificates issued by a certificate authority that you
+choose to accept.
 
 There are at least two ways to enable mutual authentication over SSL.
 
 * The preferred method is to set the method of authentication in the
 `web.xml` application deployment descriptor to `CLIENT-CERT`. This
-enforces mutual authentication by modifying the deployment descriptor of
-the given application. In this way, client authentication is enabled
+enforces mutual authentication by modifying the deployment descriptor
+of the given application. In this way, client authentication is enabled
 only for a specific resource controlled by the security constraint, and
 the check is performed only when the application requires client
 authentication.
-* A less commonly used method is to set the `clientAuth` property in the
-`certificate` realm to `true` if you want the SSL stack to require a
-valid certificate chain from the client before accepting a connection. A
-`false` value (which is the default) will not require a certificate
-chain unless the client requests a resource protected by a security
-constraint that uses `CLIENT-CERT` authentication. When you enable
-client authentication by setting the `clientAuth` property to `true`,
-client authentication will be required for all the requests going
-through the specified SSL port. If you turn `clientAuth` on, it is on
-all of the time, which can severely degrade performance.
+
+* A less commonly used method is to set the `clientAuth` property in
+the `certificate` realm to `true` if you want the SSL stack to require
+a valid certificate chain from the client before accepting a
+connection. A `false` value (which is the default) will not require a
+certificate chain unless the client requests a resource protected by a
+security constraint that uses `CLIENT-CERT` authentication. When you
+enable client authentication by setting the `clientAuth` property to
+`true`, client authentication will be required for all the requests
+going through the specified SSL port. If you turn `clientAuth` on, it
+is on all of the time, which can severely degrade performance.
 
 When client authentication is enabled in both of these ways, client
 authentication will be performed twice.
 
-[[BNBYI]][[creating-a-client-certificate-for-mutual-authentication]]
-
 ==== Creating a Client Certificate for Mutual Authentication
 
-If you have a certificate signed by a trusted Certificate Authority (CA)
-such as Verisign, and the GlassFish Server `cacerts.jks` file already
-contains a certificate verified by that CA, you do not need to complete
-this step. You need to install your certificate in the GlassFish Server
-certificate file only when your certificate is self-signed.
+If you have a certificate signed by a trusted Certificate Authority
+(CA) such as Verisign, and the GlassFish Server `cacerts.jks` file
+already contains a certificate verified by that CA, you do not need to
+complete this step. You need to install your certificate in the
+GlassFish Server certificate file only when your certificate is
+self-signed.
 
 From the directory where you want to create the client certificate, run
 `keytool` as outlined here. When you press Enter, `keytool` prompts you
 to enter the server name, organizational unit, organization, locality,
 state, and country code.
 
-You must enter the server name in response to `keytool`'s first prompt,
-in which it asks for first and last names. For testing purposes, this
-can be `localhost`. If this example is to verify mutual authentication
-and you receive a runtime error stating that the HTTPS host name is
-wrong, re-create the client certificate, being sure to use the same host
-name you will use when running the example. For example, if your machine
-name is `duke`, then enter `duke` as the certificate CN or when prompted
-for first and last names. When accessing the application, enter a URL
-that points to the same location (for example,
-`https://duke:8181/mutualauth/hello`). This is necessary because during
-SSL handshake, the server verifies the client certificate by comparing
-the certificate name to the host name from which it originates.
+You must enter the server name in response to ``keytool``'s first
+prompt, in which it asks for first and last names. For testing
+purposes, this can be `localhost`. If this example is to verify mutual
+authentication and you receive a runtime error stating that the HTTPS
+host name is wrong, re-create the client certificate, being sure to use
+the same host name you will use when running the example. For example,
+if your machine name is `duke`, then enter `duke` as the certificate CN
+or when prompted for first and last names. When accessing the
+application, enter a URL that points to the same location (for example,
+pass:q[`https://duke:8181/mutualauth/hello`]). This is necessary
+because during SSL handshake, the server verifies the client
+certificate by comparing the certificate name to the host name from
+which it originates.
 
 To create a keystore named `client_keystore.jks` that contains a client
 certificate named `client.cer`, follow these steps.
 
-.  Create a backup copy of the server truststore file. To do this,
-..  Change to the directory containing the server's keystore and truststore files, domain-dir`\config`.
-..  Copy `cacerts.jks` to `cacerts.backup.jks`.
-..  Copy `keystore.jks` to `keystore.backup.jks`.
+. Create a backup copy of the server truststore file. To do this,
+
+.. Change to the directory containing the server's keystore and
+truststore files, `_domain-dir_\config`.
+.. Copy `cacerts.jks` to `cacerts.backup.jks`.
+.. Copy `keystore.jks` to `keystore.backup.jks`.
 +
-Do not put client certificates in the `cacerts.jks` file. Any certificate you add to the `cacerts` file effectively can be a trusted root for any and all certificate chains. After you have completed development, delete the development version of the `cacerts` file and replace it with the original copy.
-.  Generate the client certificate. Enter the following command from the directory where you want to generate the client certificate:
+Do not put client certificates in the `cacerts.jks` file. Any
+certificate you add to the `cacerts` file effectively can be a trusted
+root for any and all certificate chains. After you have completed
+development, delete the development version of the `cacerts` file and
+replace it with the original copy.
+
+. Generate the client certificate. Enter the following command from the
+directory where you want to generate the client certificate:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -genkey -alias client-alias -keyalg RSA -keypass changeit -storepass changeit -keystore client_keystore.jks
 ----
-.  Export the generated client certificate into the file `client.cer`:
+. Export the generated client certificate into the file `client.cer`:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -export -alias client-alias -storepass changeit -file client.cer -keystore client_keystore.jks
 ----
-.  Add the certificate to the truststore file domain-dir`/config/cacerts.jks`. Run `keytool` from the directory where you created the keystore and client certificate. Use the following parameters:
+
+. Add the certificate to the truststore file
+`_domain-dir_/config/cacerts.jks`. Run `keytool` from the directory
+where you created the keystore and client certificate. Use the
+following parameters:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -import -v -trustcacerts -alias client-alias
 -file client.cer -keystore domain-dir/config/cacerts.jks
@@ -186,7 +185,6 @@ java-home\bin\keytool -import -v -trustcacerts -alias client-alias
 +
 The `keytool` utility returns a message like this one:
 +
-[source,xml]
 ----
 Owner: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US
 Issuer: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US
@@ -201,4 +199,4 @@ Trust this certificate? [no]: yes
 Certificate was added to keystore
 [Storing cacerts.jks]
 ----
-.  Restart GlassFish Server.
+. Restart GlassFish Server.

@@ -1,16 +1,14 @@
-[[BABGEJJJ]][[securing-http-resources]]
-
 == Securing HTTP Resources
 
 When a request URI is matched by multiple constrained URL patterns, the
-constraints that apply to the request are those that are associated with
-the best matching URL pattern. The servlet matching rules defined in
-Chapter 12, "Mapping Requests To Servlets," in the Jakarta Servlet 4.0
-Specification, are used to determine the best matching URL pattern to
-the request URI. No protection requirements apply to a request URI that
-is not matched by a constrained URL pattern. The HTTP method of the
-request plays no role in selecting the best matching URL pattern for a
-request.
+constraints that apply to the request are those that are associated
+with the best matching URL pattern. The servlet matching rules defined
+in Chapter 12, "Mapping Requests To Servlets" in the Jakarta Servlet
+5.0 Specification, are used to determine the best matching URL pattern
+to the request URI. No protection requirements apply to a request URI
+that is not matched by a constrained URL pattern. The HTTP method of
+the request plays no role in selecting the best matching URL pattern
+for a request.
 
 When HTTP methods are listed within a constraint definition, the
 protections defined by the constraint are applied to the listed methods
@@ -23,7 +21,7 @@ methods, including HTTP extension methods.
 When constraints with different protection requirements apply to the
 same combination of URL patterns and HTTP methods, the rules for
 combining the protection requirements are as defined in Section 13.8.1,
-"Combining Constraints," in the Jakarta Servlet 4.0 Specification.
+"Combining Constraints" in the Jakarta Servlet 5.0 Specification.
 
 Follow these guidelines to properly secure a web application.
 
@@ -103,13 +101,13 @@ constraints:
     </auth-constraint>
 </security-constraint>
 ----
-* The simplest way to ensure that you deny all HTTP methods except those
-that you want to be permitted is to use `http-method-omission` elements
-to omit those HTTP methods from the security constraint, and also to
-define an `auth-constraint` that names no roles. The security constraint
-will apply to all methods except those that were named in the omissions,
-and the constraint will apply only to the resources matched by the
-patterns in the constraint.
+* The simplest way to ensure that you deny all HTTP methods except
+those that you want to be permitted is to use `http-method-omission`
+elements to omit those HTTP methods from the security constraint, and
+also to define an `auth-constraint` that names no roles. The security
+constraint will apply to all methods except those that were named in
+the omissions, and the constraint will apply only to the resources
+matched by the patterns in the constraint.
 +
 For example, the following constraint excludes access to all methods
 except GET and POST at the resources matched by the pattern
@@ -147,9 +145,9 @@ your application, also include the URL pattern `/` (forward slash):
 </security-constraint>
 ----
 * If, for your web application, you do not want any resource to be
-accessible unless you explicitly define a constraint that permits access
-to it, you can define an `auth-constraint` that names no roles and
-associate it with the URL pattern `/`. The URL pattern `/` is the
+accessible unless you explicitly define a constraint that permits
+access to it, you can define an `auth-constraint` that names no roles
+and associate it with the URL pattern `/`. The URL pattern `/` is the
 weakest matching pattern. Do not list any HTTP methods in this
 constraint:
 +
@@ -167,5 +165,3 @@ constraint:
     <auth-constraint/>
 </security-constraint>
 ----
-
-
