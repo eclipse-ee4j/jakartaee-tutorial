@@ -1,5 +1,3 @@
-[[BCGHBJIG]][[simple-use-case]]
-
 == Simple Use Case
 
 This section demonstrates how to define a simple job using the Job
@@ -14,7 +12,7 @@ follows:
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <job id="simplejob" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
-                    version="1.0">
+                    version="2.0">
   <properties>
     <property name="input_file" value="input.txt"/>
     <property name="output_file" value="output.txt"/>
@@ -32,8 +30,6 @@ follows:
   </step>
 </job>
 ----
-
-[[sthref268]][[chunk-step]]
 
 === Chunk Step
 
@@ -112,17 +108,9 @@ public class MyProcessor implements jakarta.batch.api.chunk.ItemProcessor {
 }
 ----
 
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
+[NOTE]
 The batch processing API does not support generics. In most cases, you
 need to cast items to their specific type before processing them.
-
-|=======================================================================
-
 
 The item writer writes the processed items to the output file. It
 overwrites the output file if no checkpoint is provided; otherwise, it
@@ -157,10 +145,9 @@ public class MyWriter implements jakarta.batch.api.chunk.ItemWriter {
     @Override
     public Serializable checkpointInfo() throws Exception {
         return new MyCheckpoint();
+    }
 }
 ----
-
-[[sthref269]][[task-step]]
 
 === Task Step
 
@@ -185,5 +172,3 @@ public class MyBatchlet implements jakarta.batch.api.chunk.Batchlet {
     }
 }
 ----
-
-

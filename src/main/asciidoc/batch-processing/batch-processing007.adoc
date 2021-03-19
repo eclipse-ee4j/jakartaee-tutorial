@@ -1,5 +1,3 @@
-[[BCGBBGJI]][[packaging-batch-applications]]
-
 == Packaging Batch Applications
 
 Job definition files and batch artifacts do not require separate
@@ -12,17 +10,15 @@ following directories:
 * `META-INF/batch-jobs/` for `jar` packages
 * `WEB-INF/classes/META-INF/batch-jobs/` for `war` packages
 
-The name of each job definition file must match its job ID. For example,
-if you define a job as follows, and you are packaging your application
-as a WAR file, include the job definition file in
+The name of each job definition file must match its job ID. For
+example, if you define a job as follows, and you are packaging your
+application as a WAR file, include the job definition file in
 `WEB-INF/classes/META-INF/batch-jobs/simplejob.xml`:
 
 [source,xml]
 ----
 <job id="simplejob" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
-                    version="1.0">
+                    version="2.0">
   ...
 </job>
 ----
-
-

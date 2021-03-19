@@ -1,5 +1,3 @@
-[[BCGCAHCB]][[submitting-jobs-to-the-batch-runtime]]
-
 == Submitting Jobs to the Batch Runtime
 
 The `JobOperator` interface in the `jakarta.batch.operations` package
@@ -11,10 +9,9 @@ functionality.
 * Start, stop, restart, and abandon jobs.
 * Obtain job instances and job executions.
 
-The `BatchRuntime` class in the `jakarta.batch.runtime` package provides
-the `getJobOperator` factory method to obtain `JobOperator` objects.
-
-[[sthref282]][[starting-a-job]]
+The `BatchRuntime` class in the `jakarta.batch.runtime` package
+provides the `getJobOperator` factory method to obtain `JobOperator`
+objects.
 
 === Starting a Job
 
@@ -36,8 +33,6 @@ job as specified in its job definition file. The second parameter is a
 execution. You can use job parameters to pass to a job information that
 is only known at runtime.
 
-[[BCGIBGFC]][[checking-the-status-of-a-job]]
-
 === Checking the Status of a Job
 
 The `JobExecution` interface in the `jakarta.batch.runtime` package
@@ -58,18 +53,14 @@ JobExecution jobExec = jobOperator.getJobExecution(execID);
 String status = jobExec.getBatchStatus().toString();
 ----
 
-[[sthref283]][[invoking-the-batch-runtime-in-your-application]]
-
 === Invoking the Batch Runtime in Your Application
 
 The component from which you invoke the batch runtime depends on the
-architecture of your particular application. For example, you can invoke
-the batch runtime from an enterprise bean, a servlet, a managed bean,
-and so on.
+architecture of your particular application. For example, you can
+invoke the batch runtime from an enterprise bean, a servlet, a managed
+bean, and so on.
 
-See link:#BCGJHEHJ[The webserverlog Example
-Application] and link:#BCGFCACD[The phonebilling
-Example Application] for details on how to invoke the batch runtime from
-a managed bean driven by a Jakarta Server Faces user interface.
-
-
+See <<the-webserverlog-example-application>> and
+<<the-phonebilling-example-application>> for details on how to invoke
+the batch runtime from a managed bean driven by a Jakarta Server Faces
+user interface.

@@ -1,16 +1,14 @@
-[[BCGDDBBG]][[using-the-job-specification-language]]
-
 == Using the Job Specification Language
 
 The Job Specification Language (JSL) enables you to define the steps in
-a job and their execution order using an XML file. The following example
-shows how to define a simple job that contains one chunk step and one
-task step:
+a job and their execution order using an XML file. The following
+example shows how to define a simple job that contains one chunk step
+and one task step:
 
 [source,xml]
 ----
 <job id="loganalysis" xmlns="https://jakarta.ee/xml/ns/jakartaee"
-                      version="1.0">
+                      version="2.0">
   <properties>
     <property name="input_file" value="input1.txt"/>
     <property name="output_file" value="output2.txt"/>
@@ -37,10 +35,10 @@ This example defines the `loganalysis` batch job, which consists of the
 the job when completed.
 
 The `job` element defines two properties, `input_file` and
-`output_file`. Specifying properties in this manner enables you to run a
-batch job with different configuration parameters without having to
-recompile its Java batch artifacts. The batch artifacts can access these
-properties using the context objects from the batch runtime.
+`output_file`. Specifying properties in this manner enables you to run
+a batch job with different configuration parameters without having to
+recompile its Java batch artifacts. The batch artifacts can access
+these properties using the context objects from the batch runtime.
 
 The `logprocessor` step is a chunk step that specifies batch artifacts
 for the reader (`LogItemReader`), the processor (`LogItemProcessor`),
@@ -53,8 +51,6 @@ its batch artifact. The job terminates when this step completes.
 The following sections describe the elements of the Job Specification
 Language (JSL) in more detail and show the most common attributes and
 child elements.
-
-[[sthref270]][[the-job-element]]
 
 === The job Element
 
@@ -83,15 +79,13 @@ example:
 ----
 
 The `listener` element specifies a batch artifact whose methods are
-invoked before and after the execution of the job. The batch artifact is
-an implementation of the `jakarta.batch.api.listener.JobListener`
-interface. See link:#BCGCCFAC[The Listener Batch
-Artifacts] for an example of a job listener implementation.
+invoked before and after the execution of the job. The batch artifact
+is an implementation of the `jakarta.batch.api.listener.JobListener`
+interface. See <<the-listener-batch-artifacts>> for an example of a job
+listener implementation.
 
 The first `step`, `flow`, or `split` element inside the `job` element
 executes first.
-
-[[sthref271]][[the-step-element]]
 
 === The step Element
 
@@ -99,12 +93,14 @@ The `step` element can be a child of the `job` and `flow` elements. Its
 main attributes are `id` and `next`. The `step` element can contain the
 following elements.
 
-* One `chunk` element for chunk-oriented steps or one `batchlet` element
-for task-oriented steps.
+* One `chunk` element for chunk-oriented steps or one `batchlet`
+element for task-oriented steps.
+
 * One `properties` element (optional).
 +
 This element specifies a set of properties that batch artifacts can
 access using batch context objects.
+
 * One `listener` element (optional); one `listeners` element if more
 than one listener is specified.
 +
@@ -121,21 +117,26 @@ implementations of the following interfaces: `StepListener`,
 For task steps, the batch artifact for these listeners must be an
 implementation of the `StepListener` interface.
 +
-See link:#BCGCCFAC[The Listener Batch Artifacts]
-for an example of an item processor listener implementation.
+See <<the-listener-batch-artifacts>> for an example of an item
+processor listener implementation.
+
 * One `partition` element (optional).
 +
-This element is used in partitioned steps which execute in more than one
-thread.
+This element is used in partitioned steps which execute in more than
+one thread.
+
 * One `end` element if this is the last step in a job.
 +
 This element sets the batch status to `COMPLETED`.
+
 * One `stop` element (optional) to stop a job at this step.
 +
 This element sets the batch status to `STOPPED`.
+
 * One `fail` element (optional) to terminate a job at this step.
 +
 This element sets the batch status to `FAILED`.
+
 * One or more `next` elements if the `next` attribute is not specified.
 +
 This element is associated with an exit status and refers to another
@@ -170,47 +171,38 @@ The following is an example of a task step:
 </step>
 ----
 
-[[sthref272]][[the-chunk-element]]
-
 ==== The chunk Element
 
 The `chunk` element is a child of the `step` element for chunk-oriented
-steps. The attributes of this element are listed in link:#BCGJCIEI[Table
-58-2].
+steps. The attributes of this element are listed in
+<<attributes-of-the-chunk-element>>.
 
-[[sthref273]][[BCGJCIEI]]
+[[attributes-of-the-chunk-element]]
+[width="99%",cols="15%,75%,10%",title="Attributes of the chunk Element"]
+|===
+|Attribute Name |Description |Default Value
 
-*Table 58-2 Attributes of the chunk Element*
-
-[width="99%",cols="15%,75%,10%"]
-|=======================================================================
-|*Attribute Name* |*Description* |*Default Value*
-|`checkpoint-policy` a|
-Specifies how to commit the results of processing each chunk:
+|`checkpoint-policy` a| Specifies how to commit the results of
+processing each chunk:
 
 * `"item"`: the chunk is committed after processing `item-count` items
-* `"custom"`: the chunk is committed according to a checkpoint algorithm
-specified with the `checkpoint-algorithm` element
+* `"custom"`: the chunk is committed according to a checkpoint
+algorithm specified with the `checkpoint-algorithm` element
 
 The checkpoint is updated when the results of a chunk are committed.
 
 Every chunk is processed in a global Jakarta EE transaction. If the
 processing of one item in the chunk fails, the transaction is rolled
-back and no processed items from this chunk are stored.
-
- |`"item"`
+back and no processed items from this chunk are stored. |`"item"`
 
 |`item-count` |Specifies the number of items to process before
 committing the chunk and taking a checkpoint. |10
 
-|`time-limit` a|
-Specifies the number of seconds before committing the chunk and taking a
-checkpoint when `checkpoint-policy="item"`.
+|`time-limit` a| Specifies the number of seconds before committing the
+chunk and taking a checkpoint when `checkpoint-policy="item"`.
 
 If `item-count` items have not been processed by `time-limit` seconds,
-the chunk is committed and a checkpoint is taken.
-
- |0 (no limit)
+the chunk is committed and a checkpoint is taken. |0 (no limit)
 
 |`buffer-items` |Specifies if processed items are buffered until it is
 time to take a checkpoint. If true, a single call to the item writer is
@@ -221,42 +213,48 @@ taking a checkpoint. |true
 this step during chunk processing. Skippable exception classes are
 specified with the `skippable-exception-classes` element. |No limit
 
-|`retry-limit` |Specifies the number of attempts to execute this step if
-retryable exceptions occur. Retryable exception classes are specified
-with the `retryable-exception-classes` element. |No limit
-|=======================================================================
-
+|`retry-limit` |Specifies the number of attempts to execute this step
+if retryable exceptions occur. Retryable exception classes are
+specified with the `retryable-exception-classes` element. |No limit
+|===
 
 The `chunk` element can contain the following elements.
 
 * One `reader` element.
 +
-This element specifies a batch artifact that implements the `ItemReader`
-interface.
+This element specifies a batch artifact that implements the
+`ItemReader` interface.
+
 * One `processor` element.
 +
 This element specifies a batch artifact that implements the
 `ItemProcessor` interface.
+
 * One `writer` element.
 +
-This element specifies a batch artifact that implements the `ItemWriter`
-interface.
+This element specifies a batch artifact that implements the
+`ItemWriter` interface.
+
 * One `checkpoint-algorithm` element (optional).
 +
 This element specifies a batch artifact that implements the
-`CheckpointAlgorithm` interface and provides a custom checkpoint policy.
+`CheckpointAlgorithm` interface and provides a custom checkpoint
+policy.
+
 * One `skippable-exception-classes` element (optional).
 +
 This element specifies a set of exceptions thrown from the reader,
-writer, and processor batch artifacts that chunk processing should skip.
-The `skip-limit` attribute from the `chunk` element specifies the
+writer, and processor batch artifacts that chunk processing should
+skip. The `skip-limit` attribute from the `chunk` element specifies the
 maximum number of skipped exceptions.
+
 * One `retryable-exception-classes` element (optional).
 +
 This element specifies a set of exceptions thrown from the reader,
 writer, and processor batch artifacts that chunk processing will retry.
 The `retry-limit` attribute from the `chunk` element specifies the
 maximum number of attempts.
+
 * One `no-rollback-exception-classes` element (optional).
 +
 This element specifies a set of exceptions thrown from the reader,
@@ -291,19 +289,17 @@ The following is an example of a chunk-oriented step:
 This example defines a chunk step and specifies its reader, processor,
 and writer artifacts. The step updates a checkpoint and commits each
 chunk after processing five items. It skips all `MyItemException`
-exceptions and all its subtypes, except for `MyItemSeriousSubException`,
-up to a maximum of ten skipped exceptions. The step retries a chunk when
-a `MyResourceTempUnavailable` exception occurs, up to a maximum of three
-attempts.
-
-[[sthref274]][[the-batchlet-element]]
+exceptions and all its subtypes, except for
+`MyItemSeriousSubException`, up to a maximum of ten skipped exceptions.
+The step retries a chunk when a `MyResourceTempUnavailable` exception
+occurs, up to a maximum of three attempts.
 
 ==== The batchlet Element
 
 The `batchlet` element is a child of the `step` element for
 task-oriented steps. This element only has the `ref` attribute, which
-specifies a batch artifact that implements the `Batchlet` interface. The
-`batch` element can contain a `properties` element.
+specifies a batch artifact that implements the `Batchlet` interface.
+The `batch` element can contain a `properties` element.
 
 The following is an example of a task-oriented step:
 
@@ -320,19 +316,18 @@ The following is an example of a task-oriented step:
 
 This example defines a batch step and specifies its batch artifact.
 
-[[sthref275]][[the-partition-element]]
-
 ==== The partition Element
 
 The `partition` element is a child of the `step` element. It indicates
-that a step is partitioned. Most partitioned steps are chunk steps where
-the processing of each item does not depend on the results of processing
-previous items. You specify the number of partitions in a step and
-provide each partition with specific information on which items to
-process, such as the following.
+that a step is partitioned. Most partitioned steps are chunk steps
+where the processing of each item does not depend on the results of
+processing previous items. You specify the number of partitions in a
+step and provide each partition with specific information on which
+items to process, such as the following.
 
 * A range of items. For example, partition 1 processes items 1 through
 500, and partition 2 processes items 501 through 1000.
+
 * An input source. For example, partition 1 processes the items in
 `input1.txt` and partition 2 processes the items in `input2.txt`.
 
@@ -349,23 +344,23 @@ In most cases, the number of partitions, the number of items, or the
 input sources for a partitioned step can only be determined at runtime.
 Instead of specifying partition-specific properties statically in the
 job definition file, you provide a batch artifact that can access your
-data sources at runtime and determine how many partitions are needed and
-what range of items each partition should process. This batch artifact
-is an implementation of the `PartitionMapper` interface. The batch
-runtime invokes this artifact and then uses the information it provides
-to instantiate the step batch artifacts (reader, writer, and processor)
-for each partition and to pass them partition-specific data as
-parameters.
+data sources at runtime and determine how many partitions are needed
+and what range of items each partition should process. This batch
+artifact is an implementation of the `PartitionMapper` interface. The
+batch runtime invokes this artifact and then uses the information it
+provides to instantiate the step batch artifacts (reader, writer, and
+processor) for each partition and to pass them partition-specific data
+as parameters.
 
-The rest of this section describes the `partition` element in detail and
-shows two examples of job definition files: one that uses partition
+The rest of this section describes the `partition` element in detail
+and shows two examples of job definition files: one that uses partition
 properties to specify a range of items for each partition, and one that
 relies on a `PartitionMapper` implementation to determine
 partition-specific information.
 
-See link:#BCGGGAHB[The Phone Billing Chunk Step]
-in link:#BCGFCACD[The phonebilling Example
-Application] for a complete example of a partitioned chunk step.
+See <<the-phone-billing-chunk-step>> in
+<<the-phonebilling-example-application>> for a complete example of a
+partitioned chunk step.
 
 The `partition` element can contain the following elements.
 
@@ -375,6 +370,7 @@ This element defines the number of partitions, the number of threads,
 and the properties for each partition in the job definition file. The
 `plan` element is useful when this information is known at development
 or deployment time.
+
 * One `mapper` element, if the `plan` element is not specified.
 +
 This element specifies a batch artifact that provides the number of
@@ -382,13 +378,15 @@ partitions, the number of threads, and the properties for each
 partition. The batch artifact is an implementation of the
 `PartitionMapper` interface. You use this option when the information
 required for each partition is only known at runtime.
+
 * One `reducer` element (optional).
 +
 This element specifies a batch artifact that receives control when a
-partitioned step begins, ends, or rolls back. The batch artifact enables
-you to merge results from different partitions and perform other related
-operations. The batch artifact is an implementation of the
-`PartitionReducer` interface.
+partitioned step begins, ends, or rolls back. The batch artifact
+enables you to merge results from different partitions and perform
+other related operations. The batch artifact is an implementation of
+the `PartitionReducer` interface.
+
 * One `collector` element (optional).
 +
 This element specifies a batch artifact that sends intermediary results
@@ -396,11 +394,12 @@ from each partition to a partition analyzer. The batch artifact sends
 the intermediary results after each checkpoint for chunk steps and at
 the end of the step for task steps. The batch artifact is an
 implementation of the `PartitionCollector` interface.
+
 * One `analyzer` element (optional).
 +
 This element specifies a batch artifact that analyzes the intermediary
-results from the partition collector instances. The batch artifact is an
-implementation of the `PartitionAnalyzer` interface.
+results from the partition collector instances. The batch artifact is
+an implementation of the `PartitionAnalyzer` interface.
 
 The following is an example of a partitioned step using the `plan`
 element:
@@ -456,11 +455,8 @@ file:
 </step>
 ----
 
-Refer to link:#BCGFCACD[The phonebilling Example
-Application] for an example implementation of the `PartitionMapper`
-interface.
-
-[[sthref276]][[the-flow-element]]
+Refer to <<the-phonebilling-example-application>> for an example
+implementation of the `PartitionMapper` interface.
 
 === The flow Element
 
@@ -495,15 +491,13 @@ This example flow contains three steps, one flow, and one split. The
 last step does not have the `next` attribute. The flow transitions to
 `stepE` when its last step completes.
 
-[[sthref277]][[the-split-element]]
-
 === The split Element
 
-The `split` element can be a child of the `job` and `flow` elements. Its
-attributes are `id` and `next`. Splits can transition to splits, steps,
-flows, and decision elements. The `split` element can only contain one
-or more `flow` elements that can only transition to other `flow`
-elements in the split.
+The `split` element can be a child of the `job` and `flow` elements.
+Its attributes are `id` and `next`. Splits can transition to splits,
+steps, flows, and decision elements. The `split` element can only
+contain one or more `flow` elements that can only transition to other
+`flow` elements in the split.
 
 The following is an example of a split with three flows that execute
 concurrently:
@@ -517,28 +511,30 @@ concurrently:
 </split>
 ----
 
-[[sthref278]][[the-decision-element]]
-
 === The decision Element
 
 The `decision` element can be a child of the `job` and `flow` elements.
 Its attributes are `id` and `next`. Steps, flows, and splits can
 transition to a `decision` element. This element specifies a batch
 artifact that decides the next step, flow, or split to execute based on
-information from the execution of the previous step, flow, or split. The
-batch artifact implements the `Decider` interface. The `decision`
+information from the execution of the previous step, flow, or split.
+The batch artifact implements the `Decider` interface. The `decision`
 element can contain the following elements.
 
 * One or more `end` elements (optional).
 +
 This element sets the batch status to `COMPLETED`.
+
 * One or more `stop` elements (optional).
 +
 This element sets the batch status to `STOPPED`.
+
 * One or more `fail` elements (optional).
 +
 This element sets the batch status to `FAILED`.
+
 * One or more `next` elements (optional).
+
 * One `properties` element (optional).
 
 The following is an example of the `decider` element:
