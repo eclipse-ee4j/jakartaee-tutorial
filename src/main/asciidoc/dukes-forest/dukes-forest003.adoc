@@ -1,27 +1,21 @@
-[[GLNQP]][[building-and-deploying-the-dukes-forest-case-study-application]]
-
 == Building and Deploying the Duke's Forest Case Study Application
 
 You can use NetBeans IDE or Maven to build and deploy Duke's Forest.
 
-[[CHDJDIFH]][[to-build-and-deploy-the-dukes-forest-application-using-netbeans-ide]]
-
 === To Build and Deploy the Duke's Forest Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]), as well as the database server (see
-link:#BNADK[Starting and Stopping Apache Derby]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>), as well as the database
+server (see <<starting-and-stopping-apache-derby>>).
+. From the File menu, choose Open Project.
+. In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/case-studies
 ----
-4.  Select the `dukes-forest` folder.
-5.  Select the Open Required Projects check box and click Open Project.
-6.  Right-click the `dukes-forest` folder and select Build.
+. Select the `dukes-forest` folder.
+. Select the Open Required Projects check box and click Open Project.
+. Right-click the `dukes-forest` folder and select Build.
 +
 This task configures the server, creates and populates the database,
 builds all the subprojects, assembles them into JAR and WAR files, and
@@ -29,33 +23,29 @@ deploys the `dukes-payment`, `dukes-store,` and `dukes-shipment`
 applications.
 +
 To configure the server, this task creates a JDBC security realm named
-jdbcRealm, enables default principal-to-role mapping, and enables single
-sign-on (SSO) for the HTTP Service.
-
-[[CHDEJHBJ]][[to-build-and-deploy-the-dukes-forest-application-using-maven]]
+`jdbcRealm`, enables default principal-to-role mapping, and enables
+single sign-on (SSO) for the HTTP Service.
 
 === To Build and Deploy the Duke's Forest Application Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]), as well as the database server (see
-link:#BNADK[Starting and Stopping Apache Derby]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>), as well as the database
+server (see <<starting-and-stopping-apache-derby>>).
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/case-studies/dukes-forest/
 ----
-3.  Enter the following command to configure the server, create and
-populate the database, build all the subprojects, assemble them into JAR
-and WAR files, and deploy the `dukes-payment`, `dukes-store,` and
+. Enter the following command to configure the server, create and
+populate the database, build all the subprojects, assemble them into
+JAR and WAR files, and deploy the `dukes-payment`, `dukes-store,` and
 `dukes-shipment` applications:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
 +
 To configure the server, this task creates a JDBC security realm named
-jdbcRealm, enables default principal-to-role mapping, and enables single
-sign-on (SSO) for the HTTP Service.
+`jdbcRealm`, enables default principal-to-role mapping, and enables
+single sign-on (SSO) for the HTTP Service.
