@@ -1,5 +1,3 @@
-[[CIHDFGGG]][[concurrency-basics]]
-
 == Concurrency Basics
 
 Concurrency is the concept of executing two or more tasks at the same
@@ -8,12 +6,11 @@ program, or even other programs. With current computer architectures,
 support for multiple cores and multiple processors in a single CPU is
 very common.
 
-The Java Platform has always offered support for concurrent programming,
-which was the basis for implementing many of the services offered by
-Jakarta EE containers. At Java SE 5, additional high-level API support for
-concurrency was provided by the `java.util.concurrent` package.
-
-[[sthref293]][[threads-and-processes]]
+The Java Platform has always offered support for concurrent
+programming, which was the basis for implementing many of the services
+offered by Jakarta EE containers. Since Java SE 5, additional
+high-level API support for concurrency was provided by the
+`java.util.concurrent` package.
 
 === Threads and Processes
 
@@ -28,15 +25,15 @@ process.
 The Java programming language and platform are primarily concerned with
 threads.
 
-Threads share some features with processes, since both consume resources
-from the OS or the execution environment. But threads are easier to
-create and consume many fewer resources than a process.
+Threads share some features with processes, since both consume
+resources from the OS or the execution environment. But threads are
+easier to create and consume many fewer resources than a process.
 
 Because threads are so lightweight, any modern CPU that has a couple of
 cores and a few gigabytes of RAM can handle thousands of threads in a
 single JVM process. The precise number of threads will depend on the
-combined output of the CPU, OS, and RAM available, as well as on correct
-configuration (tuning) of the JVM.
+combined output of the CPU, OS, and RAM available, as well as on
+correct configuration (tuning) of the JVM.
 
 Although concurrent programming solves many problems and can improve
 performance for most applications, there are a number of situations
