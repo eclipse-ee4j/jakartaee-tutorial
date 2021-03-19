@@ -1,13 +1,9 @@
-[[GKAFH]][[main-interface]]
-
 == Main Interface
 
 The main interface allows students and staff to check students in and
 out, and record when students are outside at the playground.
 
-[[GKAFJ]][[java-persistence-api-entities-used-in-the-main-interface]]
-
-=== Java Persistence API Entities Used in the Main Interface
+=== Jakarta Persistence Entities Used in the Main Interface
 
 The following entities used in the main interface encapsulate data
 stored and manipulated by Duke's Tutoring, and are located in the
@@ -15,43 +11,46 @@ stored and manipulated by Duke's Tutoring, and are located in the
 
 * `Person`: The `Person` entity defines attributes common to students
 and guardians tracked by the application. These attributes are the
-person's name and contact information, including phone numbers and email
-address. This entity has two subclasses, `Student` and `Guardian`.
+person's name and contact information, including phone numbers and
+email address. This entity has two subclasses, `Student` and
+`Guardian`.
+
 * `PersonDetails`: The `PersonDetails` entity is used to store
 additional data common to all people, such as attributes like pictures
 and the person's birthday, which aren't included in the `Person` entity
 for performance reasons.
+
 * `Student` and `Guardian`: The `Student` entity stores attributes
-specific to the students who come to tutoring. This includes information
-like the student's grade level and school. The `Guardian` entity's
-attributes are specific to the parents or guardians of a `Student`.
-Students and guardians have a many-to-many relationship. That is, a
-student may have one or more guardians, and a guardian may have one or
-more students.
+specific to the students who come to tutoring. This includes
+information like the student's grade level and school. The `Guardian`
+entity's attributes are specific to the parents or guardians of a
+`Student`. Students and guardians have a many-to-many relationship.
+That is, a student may have one or more guardians, and a guardian may
+have one or more students.
+
 * `Address`: The `Address` entity represents a mailing address and is
 associated with `Person` entities. Addresses and people have a
 many-to-one relationship. That is, one person may have many addresses.
+
 * `TutoringSession`: The `TutoringSession` entity represents a
 particular day at the tutoring center. A particular tutoring session
 tracks which students attended that day, and which students went to the
 park.
+
 * `StatusEntry`: The `StatusEntry` entity, which logs when a student's
 status changes, is associated with the `TutoringSession` entity.
-Students' statuses change when they check in to a tutoring session, when
-they go to the park, and when they check out. The status entry allows
-the tutoring center staff to track exactly which students attended a
-tutoring session, when they checked in and out, which students went to
-the park while they were at the tutoring center, and when they went to
-and came back from the park.
+Students' statuses change when they check in to a tutoring session,
+when they go to the park, and when they check out. The status entry
+allows the tutoring center staff to track exactly which students
+attended a tutoring session, when they checked in and out, which
+students went to the park while they were at the tutoring center, and
+when they went to and came back from the park.
 
 For information on creating Jakarta Persistence entities, see
-link:#BNBPZ[Chapter 40, "Introduction to the Jakarta
-Persistence."] For information on validating entity data, see
-link:#GKAHQ[Validating Persistent Fields and
-Properties] and link:#GKAHP[Chapter 24,
-"Jakarta Bean Validation: Advanced Topics."]
-
-[[GKAFC]][[enterprise-beans-used-in-the-main-interface]]
+xref:introduction-to-jakarta-persistence[xrefstyle=full]. For
+information on validating entity data, see
+<<validating-persistent-fields-and-properties>> and
+xref:bean-validation-advanced-topics[xrefstyle=full].
 
 === Enterprise Beans Used in the Main Interface
 
@@ -61,8 +60,9 @@ business logic for Duke's Tutoring, and are located in the
 
 * `ConfigBean` is a singleton session bean used to create the default
 students when the application is initially deployed, and to create an
-automatic enterprise bean timer that creates tutoring session entities every
-weekday.
+automatic enterprise bean timer that creates tutoring session entities
+every weekday.
+
 * `RequestBean` is a stateless session bean containing the business
 methods for the main interface. The bean also has business methods for
 retrieving lists of students. These business methods use strongly typed
@@ -71,36 +71,30 @@ also injects a CDI event instance, `StatusEvent`. This event is fired
 from the business methods when the status of a student changes.
 
 For information on creating and using enterprise beans, see
-link:#BNBLR[Enterprise Beans]. For information on
-creating strongly typed Criteria API queries, see
-link:#GJITV[Chapter 43, "Using the Criteria API
-to Create Queries."] For information on CDI events, see
-link:#GKHIC[Using Events in CDI Applications].
-
-[[BCGHHCDA]][[websocket-endpoint-used-in-the-main-interface]]
+xref:enterprise-beans[xrefstyle=full]. For information on creating
+strongly typed Criteria API queries, see
+xref:using-the-criteria-api-to-create-queries[xrefstyle=full]. For
+information on CDI events, see <<using-events-in-cdi-applications>>.
 
 === WebSocket Endpoint Used in the Main Interface
 
-The `ee.jakarta.tutorial.dukestutoring.web.websocket.StatusEndpoint` class is
-a WebSocket server endpoint that returns students and their status to
-client endpoints. The `StatusEndpoint.updateStatus` method is a CDI
-observer method for the `StatusEvent` event. When a student's status
-changes in the main interface, a `StatusEvent` is fired. The
+The `ee.jakarta.tutorial.dukestutoring.web.websocket.StatusEndpoint`
+class is a WebSocket server endpoint that returns students and their
+status to client endpoints. The `StatusEndpoint.updateStatus` method is
+a CDI observer method for the `StatusEvent` event. When a student's
+status changes in the main interface, a `StatusEvent` is fired. The
 `updateStatus` observer method is called by the container, and pushes
 out the status change to all the client endpoints registered with
 `StatusEndpoint`.
 
 The `index.xhtml` Jakarta Server Faces page contains JavaScript code to
 connect to the WebSocket endpoint. The `onMessage` method on this page
-clicks a Jakarta Server Faces button, which makes an Ajax request to refresh
-the table that shows the current status of the students.
+clicks a Jakarta Server Faces button, which makes an Ajax request to
+refresh the table that shows the current status of the students.
 
 For more information on WebSocket endpoints, see
-link:#GKJIQ5[Chapter 19, "Jakarta WebSocket."] For
-information on CDI events, see link:#GKHIC[Using Events in
-CDI Applications].
-
-[[GKAET]][[facelets-files-used-in-the-main-interface]]
+xref:jakarta-websocket-2[xrefstyle=full]. For information on CDI
+events, see <<using-events-in-cdi-applications>>.
 
 === Facelets Files Used in the Main Interface
 
@@ -133,9 +127,7 @@ table displaying all students currently at the park
 interface's navigation bar
 
 For information on using Facelets, see
-link:#GIEPX[Chapter 8, "Introduction to Facelets."]
-
-[[GKADH]][[helper-classes-used-in-the-main-interface]]
+xref:introduction-to-facelets[xrefstyle=full].
 
 === Helper Classes Used in the Main Interface
 
@@ -150,10 +142,8 @@ email addresses in the `Person` entity.
 a student can have. Possible values are `IN`, `OUT`, and `PARK`.
 `StatusType` is used throughout the application, including in the
 `StatusEntry` entity, and throughout the main interface. `StatusType`
-also defines a `toString` method that returns a localized translation of
-the status based on the locale.
-
-[[GKADA]][[properties-files]]
+also defines a `toString` method that returns a localized translation
+of the status based on the locale.
 
 === Properties Files
 
@@ -167,40 +157,40 @@ Spanish locales.
 The `dukes-tutoring-common` project has the following resource bundle
 under `src/main/resources/`.
 
-* `ee.jakarta.tutorial/dukestutoring/util/StatusMessages.properties`: Strings
-for each of the status types defined in the `StatusType` enumerated type
-for the default locale. Each supported locale has a property file of the
-form `StatusMessages_`locale prefix`.properties` containing the
-localized strings. For example, the strings for Spanish-speaking locales
-are located in `StatusMessages_es.properties`.
+* `ee.jakarta.tutorial/dukestutoring/util/StatusMessages.properties`:
+Strings for each of the status types defined in the `StatusType`
+enumerated type for the default locale. Each supported locale has a
+property file of the form `StatusMessages___locale prefix__.properties`
+containing the localized strings. For example, the strings for
+Spanish-speaking locales are located in `StatusMessages_es.properties`.
 
 The `dukes-tutoring-war` project has the following resource bundles
 under `src/main/resources/`.
 
 * `ValidationMessages.properties`: Strings for the default locale used
-by the Bean Validation runtime to display validation messages. This file
-must be named `ValidationMessages.properties` and located in the default
-package as required by the Bean Validation specification. Each supported
-locale has a property file of the form `ValidationMessages_`locale
-prefix`.properties` containing the localized strings. For example, the
-strings for German-speaking locales are located in
-`ValidationMessages_de.properties`.
+by the Bean Validation runtime to display validation messages. This
+file must be named `ValidationMessages.properties` and located in the
+default package as required by the Bean Validation specification. Each
+supported locale has a property file of the form
+`ValidationMessages___locale prefix__.properties` containing the
+localized strings. For example, the strings for German-speaking locales
+are located in `ValidationMessages_de.properties`.
+
 * `ee.jakarta.tutorial/dukestutoring/web/messages/Messages.properties`:
 Strings for the default locale for the main and administration Facelets
 interface. Each supported locale has a property file of the form
-`Messages_`locale prefix`.properties` containing the localized strings.
-For example, the strings for simplified Chinese-speaking locales are
-located in `Messages_zh.properties`.
+`Messages___locale prefix__.properties` containing the localized
+strings. For example, the strings for simplified Chinese-speaking
+locales are located in `Messages_zh.properties`.
 
 For information on localizing web applications, see
-link:#BNAXB[Registering Application Messages].
-
-[[GKAEV]][[deployment-descriptors-used-in-dukes-tutoring]]
+<<registering-application-messages>>.
 
 === Deployment Descriptors Used in Duke's Tutoring
 
 Duke's Tutoring uses these deployment descriptors in the
-`src/main/webapp/WEB-INF` directory of the `dukes-tutoring-war` project:
+`src/main/webapp/WEB-INF` directory of the `dukes-tutoring-war`
+project:
 
 * `faces-config.xml`: The Jakarta Server Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
