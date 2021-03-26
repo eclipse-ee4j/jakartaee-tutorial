@@ -29,7 +29,7 @@ while the parts are processed or when the size of the file exceeds the
 specified `fileSizeThreshold` setting. The default location is `""`.
 * `fileSizeThreshold`: The file size in bytes after which the file will
 be temporarily stored on disk. The default size is 0 bytes.
-* `MaxFileSize`: The maximum size allowed for uploaded files, in bytes.
+* `maxFileSize`: The maximum size allowed for uploaded files, in bytes.
 If the size of any uploaded file is greater than this size, the web
 container will throw an exception (`IllegalStateException`). The
 default size is unlimited.
