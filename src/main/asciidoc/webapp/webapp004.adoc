@@ -105,7 +105,7 @@ public class GreetingServlet extends HttpServlet {
                 + "</form>");
 
             String username = request.getParameter("username");
-            if (username != null && username.length()> 0) {
+            if (username != null && username.length() > 0) {
                 RequestDispatcher dispatcher =
                     getServletContext().getRequestDispatcher("/response");
 
@@ -140,7 +140,7 @@ public class ResponseServlet extends HttpServlet {
 
             // then write the data of the response
             String username = request.getParameter("username");
-            if (username != null && username.length()> 0) {
+            if (username != null && username.length() > 0) {
                 out.println("<h2>Hello, " + username + "!</h2>");
             }
         }

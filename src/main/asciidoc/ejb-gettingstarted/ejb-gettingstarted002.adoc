@@ -84,7 +84,7 @@ are called:
 ...
 try {
   String amount = request.getParameter("amount");
-  if (amount != null && amount.length()> 0) {
+  if (amount != null && amount.length() > 0) {
     // convert the amount to a BigDecimal from the request parameter
     BigDecimal d = new BigDecimal(amount);
     // call the ConverterBean.dollarToYen() method to get the amount

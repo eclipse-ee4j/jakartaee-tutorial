@@ -59,7 +59,7 @@ If the user does not purchase more than $100 worth of books or if the
 ----
 public String submit() {
     ...
-    if ((cart().getTotal()> 100.00) && !specialOffer.isRendered()) {
+    if ((cart().getTotal() > 100.00) && !specialOffer.isRendered()) {
         specialOfferText.setRendered(true);
         specialOffer.setRendered(true);
         return null;
