@@ -39,7 +39,7 @@ messages to the instances of the message-driven bean, which then
 processes the messages.
 
 [[the-simplemessage-application]]
-image::jakartaeett_dt_036.png["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean",title="The simplemessage Application"]
+image::jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean",title="The simplemessage Application"]
 
 The source code for this application is in the
 `_tut-install_/examples/jms/simplemessage/` directory.

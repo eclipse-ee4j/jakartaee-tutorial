@@ -43,7 +43,7 @@ execute with a new transaction? The answer depends on the transaction
 attribute of `method-B`.
 
 [[transaction-scope]]
-image::jakartaeett_dt_050.png["A diagram showing a transaction between two beans.",title="Transaction Scope"]
+image::jakartaeett_dt_050.svg["A diagram showing a transaction between two beans.",title="Transaction Scope"]
 
 A transaction attribute can have one of the following values:
 

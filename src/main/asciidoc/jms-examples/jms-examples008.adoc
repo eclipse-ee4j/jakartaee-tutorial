@@ -26,7 +26,7 @@ bean, which was shown in
 <<sending-and-receiving-messages-using-a-simple-web-application>>.
 
 [[an-enterprise-bean-application-client-to-session-bean-to-message-driven-bean]]
-image::jakartaeett_dt_037.png["Diagram of application showing an application client calling a session bean, which sends messages that are processed by a message-driven bean",title="An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean"]
+image::jakartaeett_dt_037.svg["Diagram of application showing an application client calling a session bean, which sends messages that are processed by a message-driven bean",title="An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean"]
 
 The Publisher enterprise bean in this example is the
 enterprise-application equivalent of a wire-service news feed that

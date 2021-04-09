@@ -12,7 +12,7 @@ TCP socket. The example demonstrates the scenario in
 adapter and the web application
 
 [[the-trading-example-2]]
-image::jakartaeett_dt_054.png["This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket.",title="The trading Example"]
+image::jakartaeett_dt_054.svg["This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket.",title="The trading Example"]
 
 The `trading-eis` module is an auxiliary project that resembles a
 legacy stock trading execution platform. It contains a Java SE program
@@ -170,7 +170,7 @@ in this example. The architecture of the outbound resource adapter is
 shown in <<architecture-of-the-trading-example>>.
 
 [[architecture-of-the-trading-example]]
-image::jakartaeett_dt_055.png["This figure shows the classes in each of the modules of the trading example.",title="Architecture of the trading Example"]
+image::jakartaeett_dt_055.svg["This figure shows the classes in each of the modules of the trading example.",title="Architecture of the trading Example"]
 
 The `trading-rar` module implements the interfaces listed in
 <<interfaces-implemented-in-the-trading-rar-module>>.

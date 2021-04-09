@@ -22,7 +22,7 @@ updates Database Y. The transaction managers of the Jakarta EE servers
 ensure that both databases are updated in the same transaction.
 
 [[updating-multiple-databases-2]]
-image::jakartaeett_dt_051.png["A diagram showing Bean-A updating databases X and Y, and Bean-B updating database Z.",title="Updating Multiple Databases"]
+image::jakartaeett_dt_051.svg["A diagram showing Bean-A updating databases X and Y, and Bean-B updating database Z.",title="Updating Multiple Databases"]
 
 [[updating-multiple-databases-across-jakarta-ee-servers]]
-image::jakartaeett_dt_052.png["A diagram showing Bean-A on one Jakarta EE server updating database X, and Bean-B on another Jakarta EE server updating database Y.",title="Updating Multiple Databases Across Jakarta EE Servers"]
+image::jakartaeett_dt_052.svg["A diagram showing Bean-A on one Jakarta EE server updating database X, and Bean-B on another Jakarta EE server updating database Y.",title="Updating Multiple Databases Across Jakarta EE Servers"]

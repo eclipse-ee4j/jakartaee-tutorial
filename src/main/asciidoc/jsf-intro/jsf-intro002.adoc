@@ -28,7 +28,7 @@ is rendered by the web container that implements Jakarta Server Faces
 technology.
 
 [[responding-to-a-client-request-for-a-jakarta-server-faces-page]]
-image::jakartaeett_dt_014.png["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response.", title="Responding to a Client Request for a Jakarta Server Faces Page"]
+image::jakartaeett_dt_014.svg["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response.", title="Responding to a Client Request for a Jakarta Server Faces Page"]
 
 The web page, `myfacelet.xhtml`, is built using Jakarta Server Faces
 component tags. Component tags are used to add components to the `view`

@@ -51,7 +51,7 @@ series of steps in the Jakarta Server Faces request-response lifecycle.
 illustrates these steps.
 
 [[jakarta-server-faces-standard-request-response-lifecycle]]
-image::jakartaeett_dt_016.png["Flow diagram of Faces request and Faces response, including event and validation processing, error handling, model updating, application invocation.", title="Jakarta Server Faces Standard Request-Response Lifecycle"]
+image::jakartaeett_dt_016.svg["Flow diagram of Faces request and Faces response, including event and validation processing, error handling, model updating, application invocation.", title="Jakarta Server Faces Standard Request-Response Lifecycle"]
 
 The request-response lifecycle handles two kinds of requests: initial
 requests and postbacks. An initial request occurs when a user makes a

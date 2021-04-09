@@ -502,7 +502,7 @@ specific run-as identity should be used.
 <<security-identity-propagation>> illustrates this concept.
 
 [[security-identity-propagation]]
-image::jakartaeett_dt_047.png["Diagram of security identity propagation from client to intermediate container to target container",title="Security Identity Propagation"]
+image::jakartaeett_dt_047.svg["Diagram of security identity propagation from client to intermediate container to target container",title="Security Identity Propagation"]
 
 In this illustration, an application client is making a call to an
 enterprise bean method in one enterprise bean container. This

@@ -8,7 +8,7 @@ Store, Duke's Shipment, and Duke's Payment. It also shows how Duke's
 Store makes use of the Events and Entities projects.
 
 [[architecture-of-the-dukes-forest-example-application]]
-image::jakartaeett_dt_062.png["This figure shows the architecture of the main Duke's Forest projects and how they use the Events and Entities projects.",title="Architecture of the Duke's Forest Example Application"]
+image::jakartaeett_dt_062.svg["This figure shows the architecture of the main Duke's Forest projects and how they use the Events and Entities projects.",title="Architecture of the Duke's Forest Example Application"]
 
 Duke's Forest uses the following Jakarta EE platform features:
 
@@ -80,7 +80,7 @@ to administrators.
 applications and the web service interact.
 
 [[interactions-between-dukes-forest-components]]
-image:jakartaeett_dt_063.png["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
+image:jakartaeett_dt_063.svg["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
 
 As illustrated in <<interactions-between-dukes-forest-components>>, the
 customer interacts with the main interface of Duke's Store, while the
@@ -154,7 +154,7 @@ validation rules based on business requirements, specified using
 Jakarta Bean Validation.
 
 [[dukes-forest-database-table-and-their-relationships]]
-image:jakartaeett_dt_064.png["This figure shows the database tables in Duke's Forest and their relationships.",title="Duke's Forest Database Tables and Their Relationships"]
+image:jakartaeett_dt_064.svg["This figure shows the database tables in Duke's Forest and their relationships.",title="Duke's Forest Database Tables and Their Relationships"]
 
 The database schema contains eight tables:
 

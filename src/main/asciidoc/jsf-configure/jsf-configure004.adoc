@@ -48,7 +48,7 @@ enables you to modularize the flows.
 illustrates how they interact.
 
 [[two-faces-flows-and-their-interactions]]
-image::jakartaeett_dt_017.png["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow.",title="Two Faces Flows and Their Interactions"]
+image::jakartaeett_dt_017.svg["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow.",title="Two Faces Flows and Their Interactions"]
 
 In this figure, Flow A has a start node named `flow-a` and two
 additional pages, `next_a1` and `next_a2`. From `next_a2`, a user can

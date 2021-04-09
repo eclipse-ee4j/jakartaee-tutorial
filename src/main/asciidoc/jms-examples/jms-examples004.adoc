@@ -320,7 +320,7 @@ in the first order, so these steps are executed twice.
 <<transactions-messaging-client-example>> illustrates these steps.
 
 [[transactions-messaging-client-example]]
-image::jakartaeett_dt_034.png["Diagram of steps in transaction example",title="Transactions: Messaging Client Example"]
+image::jakartaeett_dt_034.svg["Diagram of steps in transaction example",title="Transactions: Messaging Client Example"]
 
 All the messages use the `MapMessage` message type. Synchronous
 receives are used for all message reception except when the vendor

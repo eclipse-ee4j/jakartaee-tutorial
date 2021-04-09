@@ -38,7 +38,7 @@ service endpoint in `TaskEJB` and sleeps for 1.5 seconds.
 the `taskcreator` example.
 
 [[architecture-of-the-taskcreator-example]]
-image::jakartaeett_dt_060.png["The figure shows the architecture of the taskcreator example. The Jakarta Server Faces page invokes methods on a CDI-managed bean, which submits task initiation requests to an enterprise bean. The enterprise bean uses a WebSocket endpoint to indicate to clients that an updated task execution log is available.",title="Architecture of the taskcreator Example"]
+image::jakartaeett_dt_060.svg["The figure shows the architecture of the taskcreator example. The Jakarta Server Faces page invokes methods on a CDI-managed bean, which submits task initiation requests to an enterprise bean. The enterprise bean uses a WebSocket endpoint to indicate to clients that an updated task execution log is available.",title="Architecture of the taskcreator Example"]
 
 The `TaskEJB` class obtains the default executor service objects from
 the application server as follows:

@@ -11,7 +11,7 @@ the database.
 the architecture of the application.
 
 [[architecture-of-the-dukes-tutoring-example-application]]
-image::jakartaeett_dt_061.png["Architecture diagram of the Duke's Tutoring example application. Two clients access the main interface and the admin interface deployed in the web container. These interfaces communicate with enterprise beans deployed in the Jakarta Enterprise Beans container. The enterprise beans communicate with the database.",title="Architecture of the Duke's Tutoring Example Application"]
+image::jakartaeett_dt_061.svg["Architecture diagram of the Duke's Tutoring example application. Two clients access the main interface and the admin interface deployed in the web container. These interfaces communicate with enterprise beans deployed in the Jakarta Enterprise Beans container. The enterprise beans communicate with the database.",title="Architecture of the Duke's Tutoring Example Application"]
 
 The Duke's Tutoring application is organized into two main projects:
 the `dukes-tutoring-common` library and the `dukes-tutoring-war` web

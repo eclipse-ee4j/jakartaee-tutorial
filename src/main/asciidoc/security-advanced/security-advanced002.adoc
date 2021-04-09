@@ -61,7 +61,7 @@ requested by the client.
 certificate-based mutual authentication.
 
 [[certificate-based-mutual-authentication]]
-image::jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates",title="Certificate-Based Mutual Authentication"]
+image::jakartaeett_dt_048.svg["Diagram of six steps in mutual authentication with certificates",title="Certificate-Based Mutual Authentication"]
 
 In user name/password-based mutual authentication, the following
 actions occur.
@@ -79,7 +79,7 @@ protected resource requested by the client.
 during user name/password-based mutual authentication.
 
 [[username-password-based-mutual-authentication]]
-image::jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name and password",title="User Name/Password-Based Mutual Authentication"]
+image::jakartaeett_dt_049.svg["Diagram of five steps in mutual authentication with user name and password",title="User Name/Password-Based Mutual Authentication"]
 
 ==== Enabling Mutual Authentication over SSL
 

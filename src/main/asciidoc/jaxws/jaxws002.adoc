@@ -12,7 +12,7 @@ how XML Web Services technology manages communication between a web
 service and a client.
 
 [[communication-between-a-xml-web-service-and-a-client]]
-image::jakartaeett_dt_019.png["Diagram showing a client and web service communicating through a SOAP message.",title="Communication between a XML Web Service and a Client"]
+image::jakartaeett_dt_019.svg["Diagram showing a client and web service communicating through a SOAP message.",title="Communication between a XML Web Service and a Client"]
 
 The starting point for developing a XML Web Services web service is a
 Java class annotated with the `jakarta.jws.WebService` annotation. The

@@ -23,7 +23,7 @@ annotations. Deployment descriptors, if present, override what is
 specified in the source code.
 
 [[ear-file-structure]]
-image::jakartaeett_dt_010.png["Diagram of EAR file structure. META-INF and web, application client, enterprise bean, and resource adapter modules are under the assembly root.", title="EAR File Structure"]
+image::jakartaeett_dt_010.svg["Diagram of EAR file structure. META-INF and web, application client, enterprise bean, and resource adapter modules are under the assembly root.", title="EAR File Structure"]
 
 The two types of deployment descriptors are Jakarta EE and runtime. A
 Jakarta EE deployment descriptor is defined by a Jakarta EE

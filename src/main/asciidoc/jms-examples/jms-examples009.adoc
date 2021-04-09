@@ -77,7 +77,7 @@ that the entity has completed its work. `EquipmentMDB` then sends the
 message to the reply queue and removes the entity.
 
 [[an-enterprise-bean-application-client-to-message-driven-beans-to-entity]]
-image::jakartaeett_dt_038.png["Diagram of application showing an application client, two message-driven beans, and an entity, as well as the associated topic and queue",title="An Enterprise Bean Application: Client to Message-Driven Beans to Entity"]
+image::jakartaeett_dt_038.svg["Diagram of application showing an application client, two message-driven beans, and an entity, as well as the associated topic and queue",title="An Enterprise Bean Application: Client to Message-Driven Beans to Entity"]
 
 === Writing the Application Components for the clientmdbentity Example
 

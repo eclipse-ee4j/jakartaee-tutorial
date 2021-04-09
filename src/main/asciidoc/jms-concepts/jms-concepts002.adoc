@@ -46,7 +46,7 @@ administered objects in the namespace and then establish a logical
 connection to the same objects through the Jakarta Messaging provider.
 
 [[jakarta-messaging-architecture-2]]
-image::jakartaeett_dt_027.png["Diagram of Jakarta Messaging architecture, showing administrative tool, Jakarta Messaging client, JNDI namespace, and JMS provider",title="Jakarta Messaging Architecture"]
+image::jakartaeett_dt_027.svg["Diagram of Jakarta Messaging architecture, showing administrative tool, Jakarta Messaging client, JNDI namespace, and JMS provider",title="Jakarta Messaging Architecture"]
 
 === Messaging Styles
 
@@ -83,7 +83,7 @@ following characteristics.
 the client sent the message.
 
 [[point-to-point-messaging]]
-image::jakartaeett_dt_028.png["Diagram of point-to-point messaging, showing Client 1 sending a message to a queue, and Client 2 consuming and acknowledging the message",title="Point-to-Point Messaging"]
+image::jakartaeett_dt_028.svg["Diagram of point-to-point messaging, showing Client 1 sending a message to a queue, and Client 2 consuming and acknowledging the message",title="Point-to-Point Messaging"]
 
 Use PTP messaging when every message you send must be processed
 successfully by one consumer.
@@ -128,7 +128,7 @@ of consumers (or none). <<publish-subscribe-messaging>> illustrates
 pub/sub messaging.
 
 [[publish-subscribe-messaging]]
-image::jakartaeett_dt_029.png["Diagram of pub/sub messaging, showing Client 1 sending a message to a topic, and the message being delivered to two consumers to the topic",title="Publish/Subscribe Messaging"]
+image::jakartaeett_dt_029.svg["Diagram of pub/sub messaging, showing Client 1 sending a message to a topic, and the message being delivered to two consumers to the topic",title="Publish/Subscribe Messaging"]
 
 === Message Consumption
 

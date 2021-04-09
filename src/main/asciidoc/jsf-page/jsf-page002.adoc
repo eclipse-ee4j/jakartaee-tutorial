@@ -349,7 +349,7 @@ user name and password, then submits the form by clicking the Login
 button.
 
 [[a-typical-form]]
-image::jakartaeett_dt_065_frmcmpnt.png["Form with User Name and Password text fields and a Login button.", title="A Typical Form"]
+image::jakartaeett_dt_065_frmcmpnt.svg["Form with User Name and Password text fields and a Login button.", title="A Typical Form"]
 
 The `h:form` tag represents the form on the page and encloses all the
 components that display or collect data from the user, as shown here:
@@ -384,7 +384,7 @@ user enters
 <<example-text-components>> shows examples of these text components.
 
 [[example-text-components]]
-image::jakartaeett_dt_068_txtcmpnts.png["A form. "User Name" labels a field. "Password" labels a password field. "Comments" labels a multi-line field.", title="Example Text Components"]
+image::jakartaeett_dt_068_txtcmpnts.svg["A form. "User Name" labels a field. "Password" labels a password field. "Comments" labels a multi-line field.", title="Example Text Components"]
 
 Text components can be categorized as either input or output. A Jakarta
 Server Faces output component, such as a label, is rendered as
@@ -929,7 +929,7 @@ represents a Boolean state
 components.
 
 [[example-components-for-selecting-one-item]]
-image::jakartaeett_dt_067_slctn.png["Options, check box, and lists.",title="Example Components for Selecting One Item"]
+image::jakartaeett_dt_067_slctn.svg["Options, check box, and lists.",title="Example Components for Selecting One Item"]
 
 ==== Displaying a Check Box Using the h:selectBooleanCheckbox Tag
 
@@ -1008,7 +1008,7 @@ using one of the following component tags:
 these components.
 
 [[example-components-for-selecting-multiple-values]]
-image::jakartaeett_dt_066_slctmny.png["Check box group, scrollable box, and unscrollable box.",title="Example Components for Selecting Multiple Values"]
+image::jakartaeett_dt_066_slctmny.svg["Check box group, scrollable box, and unscrollable box.",title="Example Components for Selecting Multiple Values"]
 
 These tags allow the user to select zero or more values from a set of
 values. This section explains the `h:selectManyCheckbox` tag. The
