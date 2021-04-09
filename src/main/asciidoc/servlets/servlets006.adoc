@@ -140,7 +140,7 @@ S1, S2, and S3; filter F2 is mapped to servlet S2; and filter F3 is
 mapped to servlets S1 and S2.
 
 [[filter-to-servlet-mapping]]
-image::jakartaeett_dt_018.png["Diagram of filter-to-servlet mapping with filters F1-F3 and servlets S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2.",title="Filter-to-Servlet Mapping"]
+image::jakartaeett_dt_018.svg["Diagram of filter-to-servlet mapping with filters F1-F3 and servlets S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2.",title="Filter-to-Servlet Mapping"]
 
 Recall that a filter chain is one of the objects passed to the
 `doFilter` method of a filter. This chain is formed indirectly by means

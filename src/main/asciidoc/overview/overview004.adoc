@@ -28,7 +28,7 @@ two-tiered client-and-server model by placing a multithreaded
 application server between the client application and back-end storage.
 
 [[multitiered-applications]] 
-image::jakartaeett_dt_001.png[ "Diagram of multitiered application structure, including client tier, web tier, business tier, and EIS tier.", title="Multitiered Applications"]
+image::jakartaeett_dt_001.svg[ "Diagram of multitiered application structure, including client tier, web tier, business tier, and EIS tier.", title="Multitiered Applications"]
 
 === Security
 
@@ -157,7 +157,7 @@ running in a browser, by going through web pages or servlets running in
 the web tier.
 
 [[server-communication]] 
-image::jakartaeett_dt_002.png["Diagram of client-server communication. Application clients access the business tier directly. Browsers, web pages, and applets access the web tier.", title="Server Communication"]
+image::jakartaeett_dt_002.svg["Diagram of client-server communication. Application clients access the business tier directly. Browsers, web pages, and applets access the web tier.", title="Server Communication"]
 
 === Web Components
 
@@ -181,7 +181,7 @@ user input and send that input to enterprise beans running in the
 business tier for processing.
 
 [[web-tier-and-jakarta-ee-applications]]
-image::jakartaeett_dt_003.png["Diagram of client-server communication showing detail of JavaBeans components and web pages in the web tier.", title="Web Tier and Jakarta EE Applications"]
+image::jakartaeett_dt_003.svg["Diagram of client-server communication showing detail of JavaBeans components and web pages in the web tier.", title="Web Tier and Jakarta EE Applications"]
 
 === Business Components
 
@@ -195,7 +195,7 @@ enterprise bean also retrieves data from storage, processes it (if
 necessary), and sends it back to the client program.
 
 [[business-and-eis-tiers]]
-image::jakartaeett_dt_004.png["Diagram of client-server communication showing detail of entities, session beans, and message-driven beans in the business tier.", title="Business and EIS Tiers"]
+image::jakartaeett_dt_004.svg["Diagram of client-server communication showing detail of entities, session beans, and message-driven beans in the business tier.", title="Business and EIS Tiers"]
 
 === Enterprise Information System Tier
 

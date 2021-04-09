@@ -21,7 +21,7 @@ message-driven bean
 adapter, the message-driven bean, and the web application
 
 [[the-traffic-example-2]]
-image::jakartaeett_dt_056.png["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket.",title="The traffic Example"]
+image::jakartaeett_dt_056.svg["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket.",title="The traffic Example"]
 
 The `traffic-eis` module is an auxiliary project that resembles a
 legacy traffic information system. It contains a Java SE program that
@@ -122,7 +122,7 @@ resource adapter contract for the simple traffic information system
 adapter is shown in <<architecture-of-the-traffic-example>>.
 
 [[architecture-of-the-traffic-example]]
-image::jakartaeett_dt_057.png["This figure shows the classes in each of the components of the traffic example.",title="Architecture of the traffic Example"]
+image::jakartaeett_dt_057.svg["This figure shows the classes in each of the components of the traffic example.",title="Architecture of the traffic Example"]
 
 The `traffic-rar` module implements the interfaces listed in
 <<interfaces-implemented-in-the-traffic-rar-module>>.

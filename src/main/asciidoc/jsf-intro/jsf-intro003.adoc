@@ -23,7 +23,7 @@ Faces technology APIs are layered directly on top of the Servlet API,
 as shown in <<web-application-technologies>>.
 
 [[web-application-technologies]]
-image::jakartaeett_dt_015.png["Diagram of web application technologies. Jakarta Server Pages, the server pages Standard Tag Library, and Jakarta Server Faces rest on Jakarta Servlet technology.", title="Web Application Technologies"]
+image::jakartaeett_dt_015.svg["Diagram of web application technologies. Jakarta Server Pages, the server pages Standard Tag Library, and Jakarta Server Faces rest on Jakarta Servlet technology.", title="Web Application Technologies"]
 
 This layering of APIs enables several important application use cases,
 such as using different presentation technologies, creating your own

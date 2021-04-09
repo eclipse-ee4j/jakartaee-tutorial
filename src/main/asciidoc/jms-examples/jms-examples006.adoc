@@ -19,7 +19,7 @@ displays it on the page. When the user goes to the receiving page and
 clicks another button, the backing bean for that page receives the
 message synchronously and displays it.
 
-image::jakartaeett_dt_035.png["Diagram showing a web application in which a managed bean sends a message to a queue, and another managed bean receives the message from the queue.",title="The websimplemessage Application"]
+image::jakartaeett_dt_035.svg["Diagram showing a web application in which a managed bean sends a message to a queue, and another managed bean receives the message from the queue.",title="The websimplemessage Application"]
 
 === The websimplemessage Facelets Pages
 

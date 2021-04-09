@@ -38,7 +38,7 @@ generates a `HTTPServletResponse` object. The web server converts this
 object to an HTTP response and returns it to the client.
 
 [[jakarta-web-application-request-handling]]
-image::jakartaeett_dt_013.png["Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse.", caption='{figure-caption}{counter:figure-number}. ', title="Jakarta Web Application Request Handling"]
+image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse.", caption='{figure-caption}{counter:figure-number}. ', title="Jakarta Web Application Request Handling"]
 
 Servlets are Java programming language classes that dynamically process
 requests and construct responses. Java technologies, such as Jakarta

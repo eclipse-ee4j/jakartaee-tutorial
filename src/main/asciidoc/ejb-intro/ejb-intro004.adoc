@@ -301,7 +301,7 @@ shows how the interface controls the client's view of an enterprise
 bean.
 
 [[interfaces-for-an-enterprise-bean-with-remote-access]]
-image::jakartaeett_dt_020.png["Diagram showing a remote client accessing an enterprise bean's methods through its remote interface.",title="Interfaces for an Enterprise Bean with Remote Access"]
+image::jakartaeett_dt_020.svg["Diagram showing a remote client accessing an enterprise bean's methods through its remote interface.",title="Interfaces for an Enterprise Bean with Remote Access"]
 
 Client access to an enterprise bean that implements a remote business
 interface is accomplished through either dependency injection or JNDI

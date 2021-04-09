@@ -15,7 +15,7 @@ object
 fit together in a Messaging client application.
 
 [[jakarta-messaging-programming-model-2]]
-image::jakartaeett_dt_030.png["Diagram of Jakarta Messaging programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations",title="Jakarta Messaging Programming Model"]
+image::jakartaeett_dt_030.svg["Diagram of Jakarta Messaging programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations",title="Jakarta Messaging Programming Model"]
 
 Jakarta Messaging also provides queue browsers, objects that allow an
 application to browse messages on a queue.
@@ -551,7 +551,7 @@ messages M1, M2, M5, and M6, but they do not receive messages M3 and
 M4.
 
 [[nondurable-subscriptions-and-consumers]]
-image::jakartaeett_dt_031.png["Diagram showing messages being lost when nondurable subscriptions are used",title="Nondurable Subscriptions and Consumers"]
+image::jakartaeett_dt_031.svg["Diagram showing messages being lost when nondurable subscriptions are used",title="Nondurable Subscriptions and Consumers"]
 
 With a durable subscription, the consumer can be closed and re-created,
 but the subscription continues to exist and to hold messages until the
@@ -565,7 +565,7 @@ durable subscription), so even though messages M2, M4, and M5 arrive
 while there is no consumer, they are not lost.
 
 [[consumers-on-a-durable-subscription]]
-image::jakartaeett_dt_032.png["Diagram showing messages being preserved when durable subscriptions are used",title="Consumers on a Durable Subscription"]
+image::jakartaeett_dt_032.svg["Diagram showing messages being preserved when durable subscriptions are used",title="Consumers on a Durable Subscription"]
 
 A shared durable subscription allows you to use multiple consumers to
 receive messages from a durable subscription. If you use a shared
