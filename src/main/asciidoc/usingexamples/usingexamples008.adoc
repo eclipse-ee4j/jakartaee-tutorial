@@ -5,34 +5,31 @@ Glassfish no longer ships with Update Tool
 ////
 == Getting the Latest Updates to the Tutorial
 
-Check for any updates to the tutorial by using the Update Tool included
-with the Jakarta EE SDK.
+Check for any updates to the tutorial by using the Update Tool included with the Jakarta EE SDK.
 
 === To Update the Tutorial Using NetBeans IDE
 
-1.  Open the *Services* tab in NetBeans IDE and expand *Servers*.
-2.  Right-click the GlassFish Server instance and select 
-*View Domain Update Center* to display the Update Tool.
-3.  Select *Available Updates* in the tree to display a list of updated
-packages.
-4.  Look for updates to the Jakarta EE Tutorial (jakartaee-tutorial)
-package.
-5.  If there is an updated version of the Tutorial, select *Jakarta EE
-Tutorial* (`jakartaee-tutorial`) and click *Install*.
+. Open the *Services* tab in NetBeans IDE and expand *Servers*.
+
+. Right-click the GlassFish Server instance and select *View Domain Update Center* to display the Update Tool.
+
+. Select *Available Updates* in the tree to display a list of updated packages.
+
+. Look for updates to the Jakarta EE Tutorial (jakartaee-tutorial) package.
+
+. If there is an updated version of the Tutorial, select *Jakarta EE Tutorial* (`jakartaee-tutorial`) and click *Install*.
 
 === To Update the Tutorial Using the Command Line
 
-1.  Open a terminal window and enter the following command to display
-the Update Tool:
-+
+. Open a terminal window and enter the following command to display the Update Tool: +
 ----
 updatetool
 ----
-2.  Select *Available Updates* in the tree to display a list of updated
-packages.
-3.  Look for updates to the Jakarta EE Tutorial (`jakartaee-tutorial`)
-package.
-4.  If there is an updated version of the tutorial, select *Jakarta EE
-Tutorial* (`jakartaee-tutorial`) and click *Install*.
+
+. Select *Available Updates* in the tree to display a list of updated packages.
+
+. Look for updates to the Jakarta EE Tutorial (`jakartaee-tutorial`) package.
+
+. If there is an updated version of the tutorial, select *Jakarta EE Tutorial* (`jakartaee-tutorial`) and click *Install*.
 
 ////

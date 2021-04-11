@@ -1,33 +1,19 @@
 == Jakarta EE Application Model
 
-The Jakarta EE application model begins with the Java programming
-language and the Java virtual machine. The proven portability,
-security, and developer productivity they provide form the basis of the
-application model. Jakarta EE is designed to support applications that
-implement enterprise services for customers, employees, suppliers,
-partners, and others who make demands on or contributions to the
-enterprise. Such applications are inherently complex, potentially
-accessing data from a variety of sources and distributing applications
-to a variety of clients.
+The Jakarta EE application model begins with the Java programming language and the Java virtual machine.
+The proven portability, security, and developer productivity they provide form the basis of the application model.
+Jakarta EE is designed to support applications that implement enterprise services for customers, employees, suppliers, partners, and others who make demands on or contributions to the enterprise.
+Such applications are inherently complex, potentially accessing data from a variety of sources and distributing applications to a variety of clients.
 
-To better control and manage these applications, the business functions
-to support these various users are conducted in the middle tier. The
-middle tier represents an environment that is closely controlled by an
-enterprise's information technology department. The middle tier is
-typically run on dedicated server hardware and has access to the full
-services of the enterprise.
+To better control and manage these applications, the business functions to support these various users are conducted in the middle tier.
+The middle tier represents an environment that is closely controlled by an enterprise's information technology department.
+The middle tier is typically run on dedicated server hardware and has access to the full services of the enterprise.
 
-The Jakarta EE application model defines an architecture for
-implementing services as multitier applications that deliver the
-scalability, accessibility, and manageability needed by
-enterprise-level applications. This model partitions the work needed to
-implement a multitier service into the following parts:
+The Jakarta EE application model defines an architecture for implementing services as multitier applications that deliver the scalability, accessibility, and manageability needed by enterprise-level applications.
+This model partitions the work needed to implement a multitier service into the following parts:
 
-* The business and presentation logic to be implemented by the
-developer
+* The business and presentation logic to be implemented by the developer
+
 * The standard system services provided by the Jakarta EE platform
 
-The developer can rely on the platform to provide solutions for the
-hard systems-level problems of developing a multitier service.
-
-
+The developer can rely on the platform to provide solutions for the hard systems-level problems of developing a multitier service.
