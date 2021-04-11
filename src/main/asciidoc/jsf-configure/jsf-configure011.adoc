@@ -60,9 +60,9 @@ of components that a particular renderer can render. The
 method of the tag handler class.
 
 By using the component family and renderer type to look up renderers
-for components, the Jakarta Server Faces implementation allows a
-component to be rendered by multiple renderers and allows a renderer to
-render multiple components.
+for components, the Jakarta Faces implementation allows a component to
+be rendered by multiple renderers and allows a renderer to render
+multiple components.
 
 Each of the `attribute` tags specifies a render-dependent attribute and
 its type. The `attribute` element doesn't affect the runtime execution

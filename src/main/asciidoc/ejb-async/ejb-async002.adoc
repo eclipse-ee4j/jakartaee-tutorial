@@ -5,9 +5,10 @@ method on a session bean and call it from a web client. This example
 contains two modules.
 
 * A web application (`async-war`) that contains a stateless session
-bean and a Jakarta Server Faces interface. The `MailerBean` stateless
-session bean defines an asynchronous method, `sendMessage`, which uses
-the Jakarta Mail API to send an email to an specified email address.
+bean and a Jakarta Faces interface. The `MailerBean` stateless session
+bean defines an asynchronous method, `sendMessage`, which uses the
+Jakarta Mail API to send an email to an specified email address.
+
 * An auxiliary Java SE program (`async-smtpd`) that simulates an SMTP
 server. This program listens on TCP port 3025 for SMTP requests and
 prints the email messages to the standard output (instead of delivering
@@ -19,10 +20,10 @@ module.
 === Architecture of the async-war Module
 
 The `async-war` module consists of a single stateless session bean,
-`MailerBean`, and a Jakarta Server Faces web application front end that
-uses Facelets tags in XHTML files to display a form for users to enter
-the email address for the recipient of an email. The status of the
-email is updated when the email is finally sent.
+`MailerBean`, and a Jakarta Faces web application front end that uses
+Facelets tags in XHTML files to display a form for users to enter the
+email address for the recipient of an email. The status of the email is
+updated when the email is finally sent.
 
 The `MailerBean` session bean injects a Jakarta Mail resource used to
 send an email message to an address specified by the user. The message
@@ -83,7 +84,7 @@ different mail server or transport protocol.
 
 The web client consists of a Facelets template, `template.xhtml`; two
 Facelets clients, `index.xhtml` and `response.xhtml`; and a Jakarta
-Server Faces managed bean, `MailerManagedBean`. The `index.xhtml` file
+Faces managed bean, `MailerManagedBean`. The `index.xhtml` file
 contains a form for the target email address. When the user submits the
 form, the `MailerManagedBean.send` method is called. This method uses
 an injected instance of the `MailerBean` session bean to call

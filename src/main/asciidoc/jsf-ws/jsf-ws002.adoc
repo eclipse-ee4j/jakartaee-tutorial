@@ -1,7 +1,7 @@
 == Configuring WebSockets
 
-To configure WebSockets for use in server faces web applications, first
-enable the WebSocket endpoint using the context parameter in `web.xml`:
+To configure WebSockets for use in faces web applications, first enable
+the WebSocket endpoint using the context parameter in `web.xml`:
 
 [source,xml]
 ----
@@ -26,8 +26,8 @@ explicitly specify the port:
 
 === WebSocket Usage: Client Side
 
-Declare the `f:websocket tag` in the server faces view with a channel
-name and an `onmessage` JavaScript listener function.
+Declare the `f:websocket tag` in the faces view with a channel name and
+an `onmessage` JavaScript listener function.
 
 The following example refers to an existing JavaScript listener
 function:

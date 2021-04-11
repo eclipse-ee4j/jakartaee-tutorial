@@ -1,7 +1,7 @@
 == Configuring Managed Beans
 
 When a page references a managed bean for the first time, the Jakarta
-Server Faces implementation initializes it either based on a `@Named`
+Faces implementation initializes it either based on a `@Named`
 annotation and scope annotation in the bean class or according to its
 configuration in the application configuration resource file. For
 information on using annotations to initialize beans, see
@@ -9,14 +9,14 @@ information on using annotations to initialize beans, see
 
 You can use either annotations or the application configuration
 resource file to instantiate managed beans that are used in a Jakarta
-Server Faces application and to store them in scope. The managed bean
-creation facility is configured in the application configuration
-resource file using `managed-bean` XML elements to define each bean.
-This file is processed at application startup time. For information on
-using this facility, see <<using-the-managed-bean-element>>.
+Faces application and to store them in scope. The managed bean creation
+facility is configured in the application configuration resource file
+using `managed-bean` XML elements to define each bean. This file is
+processed at application startup time. For information on using this
+facility, see <<using-the-managed-bean-element>>.
 
 Managed beans created in the application configuration resource file
-are Jakarta Server Faces managed beans, not CDI managed beans.
+are Jakarta Faces managed beans, not CDI managed beans.
 
 With the managed bean creation facility, you can
 
@@ -40,10 +40,10 @@ beans.
 A managed bean is initiated in the application configuration resource
 file using a `managed-bean` element, which represents an instance of a
 bean class that must exist in the application. At runtime, the Jakarta
-Server Faces implementation processes the `managed-bean` element. If a
-page references the bean and no bean instance exists, the Jakarta
-Server Faces implementation instantiates the bean as specified by the
-element configuration.
+Faces implementation processes the `managed-bean` element. If a page
+references the bean and no bean instance exists, the Jakarta Faces
+implementation instantiates the bean as specified by the element
+configuration.
 
 Here is an example managed bean configuration from the Duke's Bookstore
 case study:
@@ -168,7 +168,7 @@ lists all the elements that are used to initialize a value.
 |`null-value` |Explicitly sets the property to `null`
 
 |`value` |Defines a single value, such as a `String`, `int`, or Jakarta
-Server Faces EL expression
+Faces EL expression
 |===
 
 <<using-the-managed-bean-element>> includes an example of initializing

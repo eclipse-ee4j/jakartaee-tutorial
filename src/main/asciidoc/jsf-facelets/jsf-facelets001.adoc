@@ -1,12 +1,12 @@
 == What Is Facelets?
 
 Facelets is a powerful but lightweight page declaration language that
-is used to build Jakarta Server Faces views using HTML style templates
-and to build component trees. Facelets features include the following:
+is used to build Jakarta Faces views using HTML style templates and to
+build component trees. Facelets features include the following:
 
 * Use of XHTML for creating web pages
-* Support for Facelets tag libraries in addition to Jakarta Server
-Faces and JSTL tag libraries
+* Support for Facelets tag libraries in addition to Jakarta Faces and
+JSTL tag libraries
 * Support for the Expression Language (EL)
 * Templating for components and pages
 
@@ -23,15 +23,15 @@ through customization
 In short, the use of Facelets reduces the time and effort that needs to
 be spent on development and deployment.
 
-Facelets views are usually created as XHTML pages. Jakarta Server Faces
+Facelets views are usually created as XHTML pages. Jakarta Faces
 implementations support XHTML pages created in conformance with the
 XHTML Transitional Document Type Definition (DTD), as listed at
 http://www.w3.org/TR/xhtml1/#a_dtd_XHTML-1.0-Transitional[^]. By
 convention, web pages built with XHTML have an `.xhtml` extension.
 
-Jakarta Server Faces technology supports various tag libraries to add
-components to a web page. To support the Jakarta Server Faces tag
-library mechanism, Facelets uses XML namespace declarations.
+Jakarta Faces technology supports various tag libraries to add
+components to a web page. To support the Jakarta Faces tag library
+mechanism, Facelets uses XML namespace declarations.
 <<tag-libraries-supported-by-facelets>> lists the tag libraries
 supported by Facelets.
 
@@ -40,24 +40,25 @@ supported by Facelets.
 |===
 |Tag Library |URI |Prefix |Example |Contents
 
-|Jakarta Server Faces Facelets Tag Library
-|http://xmlns.jcp.org/jsf/facelets |`ui:` | `ui:component`
+|Jakarta Faces Facelets Tag Library |http://xmlns.jcp.org/jsf/facelets
+|`ui:` | `ui:component`
 
 `ui:insert` |Tags for templating
 
-|Jakarta Server Faces HTML Tag Library |http://xmlns.jcp.org/jsf/html
-|`h:` | `h:head`
+|Jakarta Faces HTML Tag Library |http://xmlns.jcp.org/jsf/html |`h:`
+|`h:head`
 
 `h:body`
 
 `h:outputText`
 
-`h:inputText` |Jakarta Server Faces component tags for all `UIComponent` objects
+`h:inputText` |Jakarta Faces component tags for all `UIComponent`
+objects
 
-|Jakarta Server Faces Core Tag Library |http://xmlns.jcp.org/jsf/core
+|Jakarta Faces Core Tag Library |http://xmlns.jcp.org/jsf/core
 |`f:` | `f:actionListener`
 
-`f:attribute` |Tags for Jakarta Server Faces custom actions that are
+`f:attribute` |Tags for Jakarta Faces custom actions that are
 independent of any particular render kit
 
 |Pass-through Elements Tag Library |http://xmlns.jcp.org/jsf |`jsf:`
@@ -103,9 +104,9 @@ instead of as
 xmlns:cc="http://xmlns.jcp.org/jsf/composite"
 ----
 
-Based on the Jakarta Server Faces support for Expression Language (EL)
-syntax, Facelets uses EL expressions to reference properties and methods
-of managed beans. EL expressions can be used to bind component objects
-or values to methods or properties of managed beans that are used as
+Based on the Jakarta Faces support for Expression Language (EL) syntax,
+Facelets uses EL expressions to reference properties and methods of
+managed beans. EL expressions can be used to bind component objects or
+values to methods or properties of managed beans that are used as
 backing beans. For more information on using EL expressions, see
 <<using-the-el-to-reference-managed-beans>>.

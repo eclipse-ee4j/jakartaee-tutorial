@@ -33,10 +33,10 @@ the second expression, the tag handler can defer the expression
 evaluation to a later time in the page lifecycle if the technology
 using this tag allows.
 
-In the case of Jakarta Server Faces technology, the latter tag's
-expression is evaluated immediately during an initial request for the
-page. During a postback request, this expression can be used to set the
-value of the `name` property with user input.
+In the case of Jakarta Faces technology, the latter tag's expression is
+evaluated immediately during an initial request for the page. During a
+postback request, this expression can be used to set the value of the
+`name` property with user input.
 
 ==== Referencing Objects
 
@@ -59,7 +59,7 @@ ${customer}
 You can use a custom EL resolver to alter the way variables are
 resolved. For instance, you can provide an EL resolver that intercepts
 objects with the name `customer`, so that `${customer}` returns a value
-in the EL resolver instead. (Jakarta Server Faces technology uses an EL
+in the EL resolver instead. (Jakarta Faces technology uses an EL
 resolver to handle managed beans.)
 
 An `enum` constant is a special case of a static field, and you can
@@ -172,8 +172,8 @@ rather than from user input to the method call:
 
 The preceding example uses a value expression.
 
-Consider the following example of a Jakarta Server Faces component tag
-that uses a method expression:
+Consider the following example of a Jakarta Faces component tag that
+uses a method expression:
 
 [source,xml]
 <h:commandButton action="#{trader.buy}" value="buy"/>
@@ -274,12 +274,11 @@ Another feature of the EL is its support of deferred method
 expressions. A method expression is used to refer to a public method of
 a bean and has the same syntax as an _lvalue_ expression.
 
-In Jakarta Server Faces technology, a component tag represents a
-component on a page. The component tag uses method expressions to
-specify methods that can be invoked to perform some processing for the
-component. These methods are necessary for handling events that the
-components generate and for validating component data, as shown in this
-example:
+In Jakarta Faces technology, a component tag represents a component on
+a page. The component tag uses method expressions to specify methods
+that can be invoked to perform some processing for the component. These
+methods are necessary for handling events that the components generate
+and for validating component data, as shown in this example:
 
 [source,xml]
 ----
@@ -323,10 +322,10 @@ then be invoked later.
 <some:tag value="sometext"/>
 +
 Method expressions support literals primarily to support `action`
-attributes in Jakarta Server Faces technology. When the method referenced by
+attributes in Jakarta Faces technology. When the method referenced by
 this method expression is invoked, the method returns the `String`
-literal, which is then converted to the expected return type, as defined
-in the tag's tag library descriptor.
+literal, which is then converted to the expected return type, as
+defined in the tag's tag library descriptor.
 
 === Lambda Expressions
 

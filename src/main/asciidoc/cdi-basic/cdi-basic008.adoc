@@ -25,16 +25,16 @@ means that an object exists to serve exactly one client (bean) and has
 the same lifecycle as that client (bean).
 
 |Conversation |`@ConversationScoped` |A user's interaction with a
-servlet, including Jakarta Server Faces applications. The conversation
-scope exists within developer-controlled boundaries that extend it
-across multiple requests for long-running conversations. All
-long-running conversations are scoped to a particular HTTP servlet
-session and may not cross session boundaries.
+servlet, including Jakarta Faces applications. The conversation scope
+exists within developer-controlled boundaries that extend it across
+multiple requests for long-running conversations. All long-running
+conversations are scoped to a particular HTTP servlet session and may
+not cross session boundaries.
 |===
 
 The first three scopes are defined by both Jakarta Context and
-Dependency Injection and the Jakarta Server Faces specification. The
-last two are defined by Jakarta Context and Dependency Injection.
+Dependency Injection and the Jakarta Faces specification. The last two
+are defined by Jakarta Context and Dependency Injection.
 
 All predefined scopes except `@Dependent` are contextual scopes. CDI
 places beans of contextual scope in the context whose lifecycle is

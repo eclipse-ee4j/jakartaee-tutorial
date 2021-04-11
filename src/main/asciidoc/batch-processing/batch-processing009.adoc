@@ -393,7 +393,7 @@ a bill and calculates the tax and total amount due for each bill.
 
 The `BillWriter` artifact writes each bill to a plain text file.
 
-==== The Jakarta Server Faces Pages
+==== The Jakarta Faces Pages
 
 The `index.xhtml` page contains a text area that shows the log file of
 call records. The page provides a button for the user to submit the
@@ -466,7 +466,7 @@ public String getJobStatus() {
 ----
 
 The `getRowList` method of the bean creates a list of bills to be
-displayed on the `jobstarted.xhtml` server faces page using a table.
+displayed on the `jobstarted.xhtml` faces page using a table.
 
 === Running the phonebilling Example Application
 

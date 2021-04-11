@@ -111,16 +111,16 @@ public static String loadErrorMessage(FacesContext context,
 
 === Referencing Error Messages
 
-A Jakarta Server Faces page uses the `message` or `messages` tags to
-access error messages, as explained in
+A Jakarta Faces page uses the `message` or `messages` tags to access
+error messages, as explained in
 <<displaying-error-messages-with-the-hmessage-and-hmessages-tags>>.
 
 The error messages these tags access include
 
 * The standard error messages that accompany the standard converters
 and validators that ship with the API. (see
-https://jakarta.ee/specifications/faces/3.0/jakarta-faces-3.0.html#a584[Section 2.5.2.4^]
-of the Jakarta Server Faces specification for a complete list of
+https://jakarta.ee/specifications/faces/3.0/jakarta-faces-3.0.html#a584[Section
+2.5.2.4^] of the Jakarta Faces specification for a complete list of
 standard error messages)
 
 * Custom error messages contained in resource bundles registered with

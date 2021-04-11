@@ -112,8 +112,8 @@ according to the locale stored in `FacesContext`.
 ----
 
 Resource bundles containing messages that are explicitly referenced
-from a Jakarta Server Faces tag attribute using a value expression must
-be registered using the `resource-bundle` element of the configuration
+from a Jakarta Faces tag attribute using a value expression must be
+registered using the `resource-bundle` element of the configuration
 file.
 
 For more information on using this element, see
@@ -159,7 +159,7 @@ For more information on using the `message` or `messages` tags, see
 
 Messages that are not queued on a component and are therefore not
 loaded automatically are referenced using a value expression. You can
-reference a localized message from almost any Jakarta Server Faces tag
+reference a localized message from almost any Jakarta Faces tag
 attribute.
 
 The value expression that references a message has the same notation

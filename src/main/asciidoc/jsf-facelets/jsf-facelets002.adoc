@@ -1,10 +1,9 @@
 == The Lifecycle of a Facelets Application
 
-The Jakarta Server Faces specification defines the lifecycle of a
-Jakarta Server Faces application. For more information on this
-lifecycle, see
-<<the-lifecycle-of-a-jakarta-server-faces-application>>. The following
-steps describe that process as applied to a Facelets-based application.
+The Jakarta Faces specification defines the lifecycle of a Jakarta
+Faces application. For more information on this lifecycle, see
+<<the-lifecycle-of-a-jakarta-faces-application>>. The following steps
+describe that process as applied to a Facelets-based application.
 
 . When a client, such as a browser, makes a new request to a page that
 is created using Facelets, a new component tree or
@@ -22,11 +21,11 @@ with components for rendering.
 The state of input components and form data is stored.
 
 . The client may interact with the view and request another view or
-change from the Jakarta Server Faces application. At this time, the
-saved view is restored from the stored state.
+change from the Jakarta Faces application. At this time, the saved view
+is restored from the stored state.
 
-. The restored view is once again passed through the Jakarta Server
-Faces lifecycle, which eventually will either generate a new view or
+. The restored view is once again passed through the Jakarta Faces
+lifecycle, which eventually will either generate a new view or
 re-render the current view if there were no validation problems and no
 action was triggered.
 

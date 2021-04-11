@@ -1,11 +1,11 @@
 == Handling Errors
 
-Jakarta Server Faces handles Ajax errors through use of the `onerror`
+Jakarta Faces handles Ajax errors through use of the `onerror`
 attribute of the `f:ajax` tag. The value of this attribute is the name
 of a JavaScript function.
 
-When there is an error in processing a Ajax request, Jakarta Server
-Faces calls the defined `onerror` JavaScript function and passes a data
+When there is an error in processing a Ajax request, Jakarta Faces
+calls the defined `onerror` JavaScript function and passes a data
 object to it. The data object contains all the properties available for
 the `onevent` attribute and, in addition, the following properties:
 

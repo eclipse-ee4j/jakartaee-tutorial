@@ -29,12 +29,14 @@ Binding a component's value to a bean property has the following
 advantages.
 
 * The page author has more control over the component attributes.
-* The managed bean has no dependencies on the Jakarta Server Faces API
-(such as the component classes), allowing for greater separation of the
+
+* The managed bean has no dependencies on the Jakarta Faces API (such
+as the component classes), allowing for greater separation of the
 presentation layer from the model layer.
-* The Jakarta Server Faces implementation can perform conversions on
-the data based on the type of the bean property without the developer
-needing to apply a converter.
+
+* The Jakarta Faces implementation can perform conversions on the data
+based on the type of the bean property without the developer needing to
+apply a converter.
 
 In most situations, you will bind a component's value rather than its
 instance to a bean property. You'll need to use a component binding

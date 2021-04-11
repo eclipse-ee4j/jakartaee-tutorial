@@ -1,6 +1,6 @@
 == Writing Bean Properties
 
-As explained in <<managed-beans-in-jakarta-server-faces-technology>>, a
+As explained in <<managed-beans-in-jakarta-faces-technology>>, a
 managed bean property can be bound to one of the following items:
 
 * A component value
@@ -492,7 +492,7 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 ----
 
 For more general information on component binding, see
-<<managed-beans-in-jakarta-server-faces-technology>>.
+<<managed-beans-in-jakarta-faces-technology>>.
 
 For information on how to reference a managed bean method that performs
 navigation when a button is clicked, see
@@ -504,9 +504,9 @@ navigation, see <<writing-a-method-to-handle-navigation>>.
 === Writing Properties Bound to Converters, Listeners, or Validators
 
 All the standard converter, listener, and validator tags included with
-Jakarta Server Faces technology support binding attributes that allow
-you to bind converter, listener, or validator implementations to
-managed bean properties.
+Jakarta Faces technology support binding attributes that allow you to
+bind converter, listener, or validator implementations to managed bean
+properties.
 
 The following example shows a standard `convertDateTime` tag using a
 value expression with its `binding` attribute to bind the

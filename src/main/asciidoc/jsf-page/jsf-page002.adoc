@@ -1,6 +1,6 @@
 == Adding Components to a Page Using HTML Tag Library Tags
 
-The tags defined by the Jakarta Server Faces standard HTML tag library
+The tags defined by the Jakarta Faces standard HTML tag library
 represent HTML form components and other basic HTML elements. These
 components display data or accept data from the user. This data is
 collected as part of a form and is submitted to the server, usually
@@ -97,7 +97,7 @@ For a standalone radio button, use the `group` attribute.
 
 The tags correspond to components in the `jakarta.faces.component`
 package. The components are discussed in more detail in
-xref:developing-with-jakarta-server-faces-technology[xrefstyle=full]
+xref:developing-with-jakarta-faces-technology[xrefstyle=full]
 
 The next section explains the important attributes that are common to
 most component tags. For each of the components discussed in the
@@ -105,7 +105,7 @@ following sections, <<writing-bean-properties>> explains how to write a
 bean property bound to that particular component or its value.
 
 For reference information about the tags and their attributes, see the
-https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation^].
+https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
 === Common Component Tag Attributes
 
@@ -150,10 +150,10 @@ then modified in the backing bean for the page.
 
 The `id` attribute is not usually required for a component tag but is
 used when another component or a server-side class must refer to the
-component. If you don't include an `id` attribute, the Jakarta Server
-Faces implementation automatically generates a component ID. Unlike
-most other Jakarta Server Faces tag attributes, the `id` attribute
-takes expressions using only the evaluation syntax described in
+component. If you don't include an `id` attribute, the Jakarta Faces
+implementation automatically generates a component ID. Unlike most
+other Jakarta Faces tag attributes, the `id` attribute takes
+expressions using only the evaluation syntax described in
 <<immediate-evaluation>>, which uses the `${}` delimiters. For more
 information on expression syntax, see <<value-expressions>>.
 
@@ -239,14 +239,14 @@ is not rendered if the cart contains no items:
 </h:commandLink>
 ----
 
-Unlike nearly every other Jakarta Server Faces tag attribute, the `rendered`
+Unlike nearly every other Jakarta Faces tag attribute, the `rendered`
 attribute is restricted to using rvalue expressions. As explained in
-<<value-and-method-expressions>>, these rvalue
-expressions can only read data; they cannot write the data back to the
-data source. Therefore, expressions used with `rendered` attributes can
-use the arithmetic operators and literals that rvalue expressions can
-use but lvalue expressions cannot use. For example, the expression in
-the preceding example uses the `>` operator.
+<<value-and-method-expressions>>, these rvalue expressions can only
+read data; they cannot write the data back to the data source.
+Therefore, expressions used with `rendered` attributes can use the
+arithmetic operators and literals that rvalue expressions can use but
+lvalue expressions cannot use. For example, the expression in the
+preceding example uses the `>` operator.
 
 [NOTE]
 In this example and others, `bundle` refers to a
@@ -293,7 +293,7 @@ more information on these attributes, see <<creating-a-managed-bean>>,
 === Adding HTML Head and Body Tags
 
 The HTML head (`h:head`) and body (`h:body`) tags add HTML page
-structure to Jakarta Server Faces web pages.
+structure to Jakarta Faces web pages.
 
 * The `h:head` tag represents the head element of an HTML page.
 * The `h:body` tag represents the body element of an HTML page.
@@ -357,7 +357,7 @@ components that display or collect data from the user, as shown here:
 [source,xml]
 ----
 <h:form>
-... other Jakarta Server Faces tags and other content...
+... other Jakarta Faces tags and other content...
 </h:form>
 ----
 
@@ -387,9 +387,9 @@ user enters
 image::jakartaeett_dt_068_txtcmpnts.svg["A form. "User Name" labels a field. "Password" labels a password field. "Comments" labels a multi-line field.", title="Example Text Components"]
 
 Text components can be categorized as either input or output. A Jakarta
-Server Faces output component, such as a label, is rendered as
-read-only text. A Jakarta Server Faces input component, such as a
-field, is rendered as editable text.
+Faces output component, such as a label, is rendered as read-only text.
+A Jakarta Faces input component, such as a field, is rendered as
+editable text.
 
 The input and output components can each be rendered in various ways to
 display more specialized text.
@@ -418,7 +418,7 @@ The input tags support the tag attributes shown in
 <<common-component-tag-attributes>>. Note that this table does not
 include all the attributes supported by the input tags but just those
 that are used most often. For the complete list of attributes, refer to
-the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation^].
+the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
 [[input-tag-attributes]]
 [width="80%",cols="20%a,60%a", title="Input Tag Attributes"]
@@ -522,7 +522,7 @@ property in `CashierBean` will be set to the text entered in the field
 corresponding to this tag.
 
 The `required` attribute causes the page to reload, displaying errors,
-if the user does not enter a value in the `name` field. The Jakarta Server
+if the user does not enter a value in the `name` field. The Jakarta
 Faces implementation checks whether the value of the component is null
 or is an empty string.
 
@@ -670,10 +670,10 @@ Hello, Bill! You are visitor number 10 to the page.
 
 === Using Command Component Tags for Performing Actions and Navigation
 
-In Jakarta Server Faces applications, the button and link component
-tags are used to perform actions, such as submitting a form, and for
-navigating to another page. These tags are called command component
-tags because they perform an action when activated.
+In Jakarta Faces applications, the button and link component tags are
+used to perform actions, such as submitting a form, and for navigating
+to another page. These tags are called command component tags because
+they perform an action when activated.
 
 The `h:commandButton` tag is rendered as a button. The `h:commandLink`
 tag is rendered as a link.
@@ -751,8 +751,8 @@ technology.
 
 === Adding Graphics and Images with the h:graphicImage Tag
 
-In a Jakarta Server Faces application, use the `h:graphicImage` tag to
-render an image on a page:
+In a Jakarta Faces application, use the `h:graphicImage` tag to render
+an image on a page:
 
 [source,xml]
 ----
@@ -794,9 +794,9 @@ header {
 
 === Laying Out Components with the h:panelGrid and h:panelGroup Tags
 
-In a Jakarta Server Faces application, you use a panel as a layout
-container for a set of other components. A panel is rendered as an HTML
-table. <<panel-component-tags>> lists the tags used to create panels.
+In a Jakarta Faces application, you use a panel as a layout container
+for a set of other components. A panel is rendered as an HTML table.
+<<panel-component-tags>> lists the tags used to create panels.
 
 [[panel-component-tags]]
 [width="90%",cols="20%a,50%a,20%", title="Panel Component Tags"]
@@ -929,12 +929,12 @@ represents a Boolean state
 components.
 
 [[example-components-for-selecting-one-item]]
-image::jakartaeett_dt_067_slctn.svg["Options, check box, and lists.",title="Example Components for Selecting One Item"]
+image::jakartaeett_dt_067_slctn.png["Options, check box, and lists.",title="Example Components for Selecting One Item"]
 
 ==== Displaying a Check Box Using the h:selectBooleanCheckbox Tag
 
-The `h:selectBooleanCheckbox` tag is the only tag that Jakarta Server
-Faces technology provides for representing a Boolean state.
+The `h:selectBooleanCheckbox` tag is the only tag that Jakarta Faces
+technology provides for representing a Boolean state.
 
 Here is an example that shows how to use the `h:selectBooleanCheckbox`
 tag:
@@ -1177,11 +1177,11 @@ in an itemized list. (This tag is listed in
 === Using Data-Bound Table Components
 
 Data-bound table components display relational data in a tabular
-format. In a Jakarta Server Faces application, the `h:dataTable`
-component tag supports binding to a collection of data objects and
-displays the data as an HTML table. The `h:column` tag represents a
-column of data within the table, iterating over each record in the data
-source, which is displayed as a row. Here is an example:
+format. In a Jakarta Faces application, the `h:dataTable` component tag
+supports binding to a collection of data objects and displays the data
+as an HTML table. The `h:column` tag represents a column of data within
+the table, iterating over each record in the data source, which is
+displayed as a row. Here is an example:
 
 [source,xml]
 ----
@@ -1288,8 +1288,8 @@ following:
 * A `javax.sql.RowSet` object
 
 All data sources for data components have a `DataModel` wrapper. Unless
-you explicitly construct a `DataModel` wrapper, the Jakarta Server
-Faces implementation will create one around data of any of the other
+you explicitly construct a `DataModel` wrapper, the Jakarta Faces
+implementation will create one around data of any of the other
 acceptable types. See <<writing-bean-properties>> for more information
 on how to write properties for use with a data component.
 
@@ -1396,7 +1396,7 @@ of red, New Century Schoolbook, serif font family, and oblique style,
 and a line will appear over the text. The message and messages tags
 support many other attributes for defining styles. For more information
 on these attributes, refer to the
-https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation^].
+https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
 Another attribute supported by the `h:messages` tag is the `layout`
 attribute. Its default value is `list`, which indicates that the
@@ -1429,9 +1429,9 @@ parameters.
 In HTTP, most browsers by default send GET requests for URL retrieval
 and POST requests for data processing. The GET requests can have query
 parameters and can be cached, which is not advised for POST requests,
-which send data to servers for processing. The other Jakarta Server
-Faces tags capable of generating links use either simple GET requests,
-as in the case of `h:outputLink`, or POST requests, as in the case of
+which send data to servers for processing. The other Jakarta Faces tags
+capable of generating links use either simple GET requests, as in the
+case of `h:outputLink`, or POST requests, as in the case of
 `h:commandLink` or `h:commandButton` tags. GET requests with query
 parameters provide finer granularity to URL strings. These URLs are
 created with one or more `name=value` parameters appended to the simple
@@ -1530,7 +1530,7 @@ various parameter values are read is as follows:
 
 The `bookmarks` example application modifies the `hello1` application
 described in
-<<a-web-module-that-uses-jakarta-server-faces-technology-the-hello1-example>>
+<<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>
 to use a bookmarkable URL that uses view parameters.
 
 Like `hello1`, the application includes the `Hello.java` managed bean,
@@ -1599,7 +1599,7 @@ The name in the greeting changes to what you typed.
 
 === Resource Relocation Using h:outputScript and h:outputStylesheet Tags
 
-Resource relocation refers to the ability of a Jakarta Server Faces
+Resource relocation refers to the ability of a Jakarta Faces
 application to specify the location where a resource can be rendered.
 Resource relocation can be defined with the following HTML tags:
 
@@ -1609,7 +1609,7 @@ Resource relocation can be defined with the following HTML tags:
 These tags have `name` and `target` attributes, which can be used to
 define the render location. For a complete list of attributes for these
 tags, see the
-https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation^].
+https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
 For the `h:outputScript` tag, the `name` and `target` attributes define
 where the output of a resource may appear. Here is an example:

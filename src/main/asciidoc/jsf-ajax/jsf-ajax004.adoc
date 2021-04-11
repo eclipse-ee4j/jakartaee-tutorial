@@ -12,7 +12,7 @@ request using some of these attributes.
 [NOTE]
 Behind the scenes, the `jsf.ajax.request()` method of the JavaScript
 resource library collects the data provided by the `f:ajax` tag and
-posts the request to the Jakarta Server Faces lifecycle.
+posts the request to the Jakarta Faces lifecycle.
 
 === Using the event Attribute
 

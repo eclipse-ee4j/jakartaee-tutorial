@@ -1,6 +1,6 @@
 == Using Facelets Templates
 
-Jakarta Server Faces technology provides the tools to implement user
+Jakarta Faces technology provides the tools to implement user
 interfaces that are easy to extend and reuse. Templating is a useful
 Facelets feature that allows you to create a page that will act as the
 base, or template, for the other pages in an application. By using
@@ -46,8 +46,8 @@ or `h:dataTable.`
 |`ui:remove` |Removes content from a page.
 |===
 
-For more information on Facelets templating tags, see the Jakarta
-Server Faces Facelets Tag Library documentation.
+For more information on Facelets templating tags, see the Jakarta Faces
+Facelets Tag Library documentation.
 
 The Facelets tag library includes the main templating tag `ui:insert`.
 A template page that is created with this tag allows you to define a

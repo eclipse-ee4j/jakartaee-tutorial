@@ -32,7 +32,7 @@ Duke's Forest uses the following Jakarta EE platform features:
 
 * Jakarta Contexts and Dependency Injection (CDI)
 
-** CDI annotations for Jakarta Server Faces components
+** CDI annotations for Jakarta Faces components
 
 ** A CDI managed bean used as a shopping cart, with conversation scoping
 
@@ -44,7 +44,7 @@ Duke's Forest uses the following Jakarta EE platform features:
 
 ** A servlet for dynamic image presentation
 
-* Jakarta Server Faces technology, using Facelets for the web front end
+* Jakarta Faces technology, using Facelets for the web front end
 
 ** Templating
 
@@ -80,7 +80,7 @@ to administrators.
 applications and the web service interact.
 
 [[interactions-between-dukes-forest-components]]
-image:jakartaeett_dt_063.svg["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
+image::jakartaeett_dt_063.png["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
 
 As illustrated in <<interactions-between-dukes-forest-components>>, the
 customer interacts with the main interface of Duke's Store, while the
@@ -443,8 +443,8 @@ the managed beans
 * `ImageServlet`: A servlet class that retrieves the image content from
 the database and displays it
 
-* `JsfUtil`: Class used for Jakarta Server Faces operations, such as
-queuing messages on a `FacesContext` instance
+* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
+messages on a `FacesContext` instance
 
 * `MD5Util`: Class used by the `CustomerController` managed bean to
 generate an encrypted password for a user
@@ -486,7 +486,7 @@ orders in the database that are ready for delivery.
 Duke's Store uses the following deployment descriptors, located in the
 `web/WEB-INF` directory:
 
-* `faces-config.xml`: The Jakarta Server Faces configuration file
+* `faces-config.xml`: The Jakarta Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file
@@ -573,8 +573,8 @@ session bean
 The Duke's Shipment managed beans use only one helper class, found in
 the `com.forest.shipment.web.util` package:
 
-* `JsfUtil`: Class used for Jakarta Server Faces operations, such as
-queuing messages on a `FacesContext` instance
+* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing
+messages on a `FacesContext` instance
 
 ==== Qualifier Used in Duke's Shipment
 
@@ -585,7 +585,7 @@ Duke's Shipment includes the `@LoggedIn` qualifier described in
 
 Duke's Shipment uses the following deployment descriptors:
 
-* `faces-config.xml`: The Jakarta Server Faces configuration file
+* `faces-config.xml`: The Jakarta Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server
 * `web.xml`: The web application configuration file

@@ -101,15 +101,14 @@ localized resource bundles taking the form
 `ValidationMessages_es.properties` is the resource bundle used in
 Spanish-speaking locales.
 
-=== Validating Contact Input from a Jakarta Server Faces Application
+=== Validating Contact Input from a Jakarta Faces Application
 
-The `address-book` application uses a Jakarta Server Faces web front
-end to allow users to enter contacts. While Jakarta Server Faces has a
-form input validation mechanism using tags in Facelets XHTML files,
-`address-book` doesn't use these validation tags. Bean Validation
-constraints in Jakarta Server Faces managed beans, in this case in the
-`Contact` entity, automatically trigger validation when the forms are
-submitted.
+The `address-book` application uses a Jakarta Faces web front end to
+allow users to enter contacts. While Jakarta Faces has a form input
+validation mechanism using tags in Facelets XHTML files, `address-book`
+doesn't use these validation tags. Bean Validation constraints in
+Jakarta Faces managed beans, in this case in the `Contact` entity,
+automatically trigger validation when the forms are submitted.
 
 The following code snippet from the `Create.xhtml` Facelets file shows
 some of the input form for creating new `Contact` instances:
@@ -145,8 +144,8 @@ The `<h:inputText>` tags `firstName` and `lastName` are bound to the
 attributes in the `Contact` entity instance `selected` in the
 `ContactController` stateless session bean. Each `<h:inputText>` tag
 has an associated `<h:message>` tag that will display validation error
-messages. The form doesn't require any Jakarta Server Faces validation
-tags, however.
+messages. The form doesn't require any Jakarta Faces validation tags,
+however.
 
 === Running the address-book Example
 

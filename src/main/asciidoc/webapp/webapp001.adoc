@@ -8,7 +8,7 @@ A presentation-oriented web application generates interactive web pages
 containing various types of markup language (HTML, XHTML, XML, and so
 on) and dynamic content in response to requests. Development of
 presentation-oriented web applications is covered in
-xref:jakarta-server-faces-technology[xrefstyle=full] through
+xref:jakarta-faces-technology[xrefstyle=full] through
 xref:jakarta-servlet-technology-2[xrefstyle=full]
 
 * *Service-oriented* +
@@ -23,8 +23,8 @@ xref:web-services[xrefstyle=full]
 
 In the Jakarta EE platform, web components provide the dynamic
 extension capabilities for a web server. Web components can be Jakarta
-servlets, web pages implemented with Jakarta Server Faces technology,
-web service endpoints, or Jakarta Server pages. 
+servlets, web pages implemented with Jakarta Faces technology, web
+service endpoints, or Jakarta Server Pages.
 xref:jakarta-web-application-request-handling[xrefstyle=short]
 illustrates the interaction between a web client and a web application
 that uses a servlet. The client sends an HTTP request to the web
@@ -38,20 +38,20 @@ generates a `HTTPServletResponse` object. The web server converts this
 object to an HTTP response and returns it to the client.
 
 [[jakarta-web-application-request-handling]]
-image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse.", caption='{figure-caption}{counter:figure-number}. ', title="Jakarta Web Application Request Handling"]
+image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse.",title="Jakarta Web Application Request Handling"]
 
 Servlets are Java programming language classes that dynamically process
 requests and construct responses. Java technologies, such as Jakarta
-Server Faces and Facelets, are used for building interactive web
-applications. (Frameworks can also be used for this purpose.) Although
-servlets and Jakarta Server Faces and Facelets pages can be used to
-accomplish similar things, each has its own strengths. Servlets are
-best suited for service-oriented applications (web service endpoints
-can be implemented as servlets) and the control functions of a
-presentation-oriented application, such as dispatching requests and
-handling nontextual data. Jakarta Server Faces and Facelets pages are
-more appropriate for generating text-based markup, such as XHTML, and
-are generally used for presentation-oriented applications.
+Faces and Facelets, are used for building interactive web applications.
+(Frameworks can also be used for this purpose.) Although servlets and
+Jakarta Faces and Facelets pages can be used to accomplish similar
+things, each has its own strengths. Servlets are best suited for
+service-oriented applications (web service endpoints can be implemented
+as servlets) and the control functions of a presentation-oriented
+application, such as dispatching requests and handling nontextual data.
+Jakarta Faces and Facelets pages are more appropriate for generating
+text-based markup, such as XHTML, and are generally used for
+presentation-oriented applications.
 
 Web components are supported by the services of a runtime platform
 called a web container. A web container provides such services as

@@ -1,15 +1,15 @@
-== What Is a Jakarta Server Faces Application?
+== What Is a Jakarta Faces Application?
 
-The functionality provided by a Jakarta Server Faces application is
-similar to that of any other Java web application. A typical Jakarta
-Server Faces application includes the following parts.
+The functionality provided by a Jakarta Faces application is similar to
+that of any other Java web application. A typical Jakarta Faces
+application includes the following parts.
 
 * A set of web pages in which components are laid out.
 * A set of tags to add components to the web page.
 * A set of managed beans, which are lightweight, container-managed
-objects (POJOs). In a Jakarta Server Faces application, managed beans
-serve as backing beans, which define properties and functions for UI
-components on a page.
+objects (POJOs). In a Jakarta Faces application, managed beans serve as
+backing beans, which define properties and functions for UI components
+on a page.
 * A web deployment descriptor (`web.xml` file).
 * Optionally, one or more application configuration resource files,
 such as a `faces-config.xml` file, which can be used to define page
@@ -21,17 +21,16 @@ application developer.
 * Optionally, a set of custom tags for representing custom objects on
 the page.
 
-<<responding-to-a-client-request-for-a-jakarta-server-faces-page>>
-shows the interaction between client and server in a typical Jakarta
-Server Faces application. In response to a client request, a web page
-is rendered by the web container that implements Jakarta Server Faces
-technology.
+<<responding-to-a-client-request-for-a-jakarta-faces-page>> shows the
+interaction between client and server in a typical Jakarta Faces
+application. In response to a client request, a web page is rendered by
+the web container that implements Jakarta Faces technology.
 
-[[responding-to-a-client-request-for-a-jakarta-server-faces-page]]
-image::jakartaeett_dt_014.svg["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response.", title="Responding to a Client Request for a Jakarta Server Faces Page"]
+[[responding-to-a-client-request-for-a-jakarta-faces-page]]
+image::jakartaeett_dt_014.svg["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response.", title="Responding to a Client Request for a Jakarta Faces Page"]
 
-The web page, `myfacelet.xhtml`, is built using Jakarta Server Faces
-component tags. Component tags are used to add components to the `view`
+The web page, `myfacelet.xhtml`, is built using Jakarta Faces component
+tags. Component tags are used to add components to the `view`
 (represented by `myView` in the diagram), which is the server-side
 representation of the page. In addition to components, the web page can
 also reference objects, such as the following:
