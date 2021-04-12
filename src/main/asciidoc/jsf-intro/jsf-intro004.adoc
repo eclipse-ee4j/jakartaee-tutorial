@@ -1,10 +1,10 @@
-== A Simple Jakarta Server Faces Application
+== A Simple Jakarta Faces Application
 
-Jakarta Server Faces technology provides an easy and user-friendly
-process for creating web applications. Developing a simple Jakarta
-Server Faces application typically requires the following tasks, which
-have already been described in
-<<a-web-module-that-uses-jakarta-server-faces-technology-the-hello1-example>>:
+Jakarta Faces technology provides an easy and user-friendly process for
+creating web applications. Developing a simple Jakarta Faces
+application typically requires the following tasks, which have already
+been described in
+<<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>:
 
 * Creating web pages using component tags
 * Developing managed beans
@@ -17,9 +17,9 @@ her name, and the second page responds by providing a greeting.
 For details on Facelets technology, see
 xref:introduction-to-facelets[xrefstyle=full]. For details on using EL
 expressions, see xref:expression-language[xrefstyle=full]. For details
-on the Jakarta Server Faces programming model and building web pages
-using Jakarta Server Faces technology, see
-xref:using-jakarta-server-faces-technology-in-web-pages[xrefstyle=full].
+on the Jakarta Faces programming model and building web pages using
+Jakarta Faces technology, see
+xref:using-jakarta-faces-technology-in-web-pages[xrefstyle=full].
 
 Every web application has a lifecycle. Common tasks, such as handling
 incoming requests, decoding parameters, modifying and saving state, and
@@ -28,14 +28,14 @@ application lifecycle. Some web application frameworks hide the details
 of the lifecycle from you, whereas others require you to manage them
 manually.
 
-By default, Jakarta Server Faces automatically handles most of the lifecycle
+By default, Jakarta Faces automatically handles most of the lifecycle
 actions for you. However, it also exposes the various stages of the
-request lifecycle so that you can modify or perform different actions if
-your application requirements warrant it.
+request lifecycle so that you can modify or perform different actions
+if your application requirements warrant it.
 
-The lifecycle of a Jakarta Server Faces application starts and ends with the
-following activity: The client makes a request for the web page, and the
-server responds with the page. The lifecycle consists of two main
+The lifecycle of a Jakarta Faces application starts and ends with the
+following activity: The client makes a request for the web page, and
+the server responds with the page. The lifecycle consists of two main
 phases: Execute and Render.
 
 During the Execute phase, several actions can take place.
@@ -53,7 +53,7 @@ In the Render phase, the requested view is rendered as a response to the
 client. Rendering is typically the process of generating output, such as
 HTML or XHTML, that can be read by the client, usually a browser.
 
-The following short description of the example Jakarta Server Faces
+The following short description of the example Jakarta Faces
 application passing through its lifecycle summarizes the activity that
 takes place behind the scenes.
 
@@ -77,5 +77,5 @@ bean property associated with it, represented by the EL expression
 and the saved state is applied.
 
 For full details on the lifecycle, see
-<<the-lifecycle-of-a-jakarta-server-faces-application>>.
+<<the-lifecycle-of-a-jakarta-faces-application>>.
 

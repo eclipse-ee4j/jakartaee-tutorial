@@ -140,10 +140,10 @@ public class FormatValidator implements Validator, StateHolder {
 ----
 
 The `@FacesValidator` annotation registers the `FormatValidator` class
-as a validator with the Jakarta Server Faces implementation. The
-`validate` method gets the local value of the component and converts it
-to a `String`. It then iterates over the `formatPatternsList` list,
-which is the list of acceptable patterns that was parsed from the
+as a validator with the Jakarta Faces implementation. The `validate`
+method gets the local value of the component and converts it to a
+`String`. It then iterates over the `formatPatternsList` list, which is
+the list of acceptable patterns that was parsed from the
 `formatPatterns` attribute of the custom validator tag.
 
 While iterating over the list, this method checks the pattern of the

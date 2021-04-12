@@ -1,9 +1,9 @@
 == Loading JavaScript as a Resource
 
-The JavaScript resource file bundled with Jakarta Server Faces
-technology is named `jsf.js` and is available in the `jakarta.faces`
-library. This resource library supports Ajax functionality in Jakarta
-Server Faces applications.
+The JavaScript resource file bundled with Jakarta Faces technology is
+named `jsf.js` and is available in the `jakarta.faces` library. This
+resource library supports Ajax functionality in Jakarta Faces
+applications.
 
 If you use the `f:ajax` tag on a page, the `jsf.js` resource is
 automatically delivered to the client. It is not necessary to use the

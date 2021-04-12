@@ -108,12 +108,12 @@ a clean shutdown:
 public void destroy() {
     /* Check to see whether there are still service methods /*
     /* running, and if there are, tell them to stop. */
-    if (numServices()> 0) {
+    if (numServices() > 0) {
         setShuttingDown(true);
     }
 
     /* Wait for the service methods to stop. */
-    while (numServices()> 0) {
+    while (numServices() > 0) {
         try {
             Thread.sleep(interval);
         } catch (InterruptedException e) {

@@ -1,6 +1,6 @@
 == Determining Whether You Need a Custom Component or Renderer
 
-The Jakarta Server Faces implementation supports a very basic set of
+The Jakarta Faces implementation supports a very basic set of
 components and associated renderers. This section helps you to decide
 whether you can use standard components and renderers in your
 application or need a custom component or custom renderer.
@@ -25,14 +25,13 @@ value of a component from what is available in any of the existing
 standard components.
 
 * You want to take advantage of an HTML capability offered by your
-target browser, but none of the standard Jakarta Server Faces
-components take advantage of the capability in the way you want, if at
-all. The current release does not contain standard components for
-complex HTML components, such as frames; however, because of the
-extensibility of the component architecture, you can use Jakarta Server
-Faces technology to create components like these. The Duke's Bookstore
-case study creates custom components that correspond to the HTML `map`
-and `area` tags.
+target browser, but none of the standard Jakarta Faces components take
+advantage of the capability in the way you want, if at all. The current
+release does not contain standard components for complex HTML
+components, such as frames; however, because of the extensibility of
+the component architecture, you can use Jakarta Faces technology to
+create components like these. The Duke's Bookstore case study creates
+custom components that correspond to the HTML `map` and `area` tags.
 
 * You need to render to a non-HTML client that requires extra
 components not supported by HTML. Eventually, the standard HTML render
@@ -57,7 +56,7 @@ xref:composite-components-advanced-topics-and-an-example[xrefstyle=full].
 application-specific functionality to it. In this situation, you should
 create a managed bean for this purpose and bind it to the standard
 component rather than create a custom component. See
-<<managed-beans-in-jakarta-server-faces-technology>> for more
+<<managed-beans-in-jakarta-faces-technology>> for more
 information on managed beans.
 
 * You need to convert a component's data to a type not supported by its
@@ -97,8 +96,8 @@ value of the component
 * Encoding: Converting the current local value of the component into the
 corresponding markup that represents it in the response
 
-The Jakarta Server Faces specification supports two programming models
-for handling encoding and decoding.
+The Jakarta Faces specification supports two programming models for
+handling encoding and decoding.
 
 * Direct implementation: The component class itself implements the
 decoding and encoding.
@@ -167,7 +166,7 @@ custom renderer, or custom tag.
 
 |Custom renderer |Custom tag |Custom component or standard component
 
-|Custom Jakarta Server Faces tag |Some server-side object, like a
-component, a custom renderer, or custom validator |Custom component or
-standard component associated with a custom renderer
+|Custom Jakarta Faces tag |Some server-side object, like a component, a
+custom renderer, or custom validator |Custom component or standard
+component associated with a custom renderer
 |===

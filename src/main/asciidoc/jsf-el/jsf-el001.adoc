@@ -14,7 +14,7 @@ session-scoped bean named `cart`.
 ----
 
 See <<using-the-el-to-reference-managed-beans>> for more information on
-how to use the EL in Jakarta Server Faces applications.
+how to use the EL in Jakarta Faces applications.
 
 To summarize, the EL provides a way to use simple expressions to
 perform the following tasks:
@@ -28,8 +28,8 @@ components
 * Dynamically construct collection objects and perform operations on
 collections
 
-In a Jakarta Server Faces page, an EL expression can be used either in
-static text or in the attribute of a custom tag or standard action.
+In a Jakarta Faces page, an EL expression can be used either in static
+text or in the attribute of a custom tag or standard action.
 
 Finally, the EL provides a pluggable API for resolving expressions so
 that custom resolvers that can handle expressions not already supported

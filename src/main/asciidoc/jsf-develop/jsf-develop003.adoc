@@ -43,23 +43,23 @@ time that page is rendered.
 
 After setting the components' `rendered` properties to `true`, this
 method returns the logical outcome `null`. This causes the Jakarta
-Server Faces implementation to re-render the page without creating a
-new view of the page, retaining the customer's input. If this method
-were to return `purchase`, which is the logical outcome to use to
-advance to a payment page, the page would re-render without retaining
-the customer's input. In this case, you want to re-render the page
-without clearing the data.
+Faces implementation to re-render the page without creating a new view
+of the page, retaining the customer's input. If this method were to
+return `purchase`, which is the logical outcome to use to advance to a
+payment page, the page would re-render without retaining the customer's
+input. In this case, you want to re-render the page without clearing
+the data.
 
 If the user does not purchase more than $100 worth of books or if the
 `thankYou` component has already been rendered, the method returns
-`bookreceipt`. The Jakarta Server Faces implementation loads the
+`bookreceipt`. The Jakarta Faces implementation loads the
 `bookreceipt.xhtml` page after this method returns:
 
 [source,java]
 ----
 public String submit() {
     ...
-    if ((cart().getTotal()> 100.00) && !specialOffer.isRendered()) {
+    if ((cart().getTotal() > 100.00) && !specialOffer.isRendered()) {
         specialOfferText.setRendered(true);
         specialOffer.setRendered(true);
         return null;

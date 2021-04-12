@@ -1,16 +1,16 @@
 == Using Annotations to Configure Managed Beans
 
 [NOTE]
-In Jakarta Server Faces 2.3, managed bean annotations are deprecated; CDI is now the
-preferred approach.
+In Jakarta Faces 2.3, managed bean annotations are deprecated; CDI is
+now the preferred approach.
 
-Jakarta Server Faces support for bean annotations is introduced in
-xref:jakarta-server-faces-technology[xrefstyle=full]. Bean annotations
-can be used for configuring Jakarta Server Faces applications.
+Jakarta Faces support for bean annotations is introduced in
+xref:jakarta-faces-technology-2[xrefstyle=full]. Bean annotations
+can be used for configuring Jakarta Faces applications.
 
 The `@Named` (`jakarta.inject.Named`) annotation in a class, along with
 a scope annotation, automatically registers that class as a resource
-with the Jakarta Server Faces implementation. A bean that uses these
+with the Jakarta Faces implementation. A bean that uses these
 annotations is a CDI managed bean.
 
 The following shows the use of the `@Named` and `@SessionScoped`
@@ -24,8 +24,7 @@ public class ShoppingCart ... { ... }
 ----
 
 The above code snippet shows a bean that is managed by the Jakarta
-Server Faces implementation and is available for the length of the
-session.
+Faces implementation and is available for the length of the session.
 
 You can annotate beans with any of the scopes listed in the next
 section, <<using-managed-bean-scopes>>.

@@ -54,7 +54,7 @@ follows:
 
 [source,java]
 ----
-books.stream().filter(b->b.category == 'history')
+books.stream().filter(b->b.category == "history")
               .map(b->b.title)
               .toList()
 ----

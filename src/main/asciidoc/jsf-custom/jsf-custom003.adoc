@@ -7,12 +7,12 @@ the application goes to a page that displays the title of the selected
 book as well as information about a featured book. The page allows the
 user to add either book (or none) to the shopping cart.
 
-=== Why Use Jakarta Server Faces Technology to Implement an Image Map?
+=== Why Use Jakarta Faces Technology to Implement an Image Map?
 
-Jakarta Server Faces technology is an ideal framework to use for
-implementing this kind of image map because it can perform the work
-that must be done on the server without requiring you to create a
-server-side image map.
+Jakarta Faces technology is an ideal framework to use for implementing
+this kind of image map because it can perform the work that must be
+done on the server without requiring you to create a server-side image
+map.
 
 In general, client-side image maps are preferred over server-side image
 maps for several reasons. One reason is that the client-side image map
@@ -23,11 +23,11 @@ However, in some situations, your image map might need to access the
 server to retrieve data or to change the appearance of nonform
 controls, tasks that a client-side image map cannot do.
 
-Because the image map custom component uses Jakarta Server Faces
-technology, it has the best of both styles of image maps: It can handle
-the parts of the application that need to be performed on the server
-while allowing the other parts of the application to be performed on
-the client side.
+Because the image map custom component uses Jakarta Faces technology,
+it has the best of both styles of image maps: It can handle the parts
+of the application that need to be performed on the server while
+allowing the other parts of the application to be performed on the
+client side.
 
 === Understanding the Rendered HTML
 
@@ -161,10 +161,10 @@ application scope is explained more in the next section.
 
 === Configuring Model Data
 
-In a Jakarta Server Faces application, data such as the coordinates of
-a hotspot of an image map is retrieved from the `value` attribute
-through a bean. However, the shape and coordinates of a hotspot should
-be defined together because the coordinates are interpreted differently
+In a Jakarta Faces application, data such as the coordinates of a
+hotspot of an image map is retrieved from the `value` attribute through
+a bean. However, the shape and coordinates of a hotspot should be
+defined together because the coordinates are interpreted differently
 depending on what shape the hotspot is. Because a component's value can
 be bound only to one property, the `value` attribute cannot refer to
 both the shape and the coordinates.

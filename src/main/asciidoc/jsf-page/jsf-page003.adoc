@@ -1,7 +1,7 @@
 == Using Core Tags
 
-The tags included in the Jakarta Server Faces core tag library are used
-to perform core actions that are not performed by HTML tags.
+The tags included in the Jakarta Faces core tag library are used to
+perform core actions that are not performed by HTML tags.
 
 <<event-handling-core-tags>> lists the event-handling core tags.
 
@@ -147,8 +147,8 @@ how to use specific core tags.
 |Validator tags |<<using-the-standard-validators>>
 
 |`f:ajax` |
-xref:using-ajax-with-jakarta-server-faces-technology[xrefstyle=full]
+xref:using-ajax-with-jakarta-faces-technology[xrefstyle=full]
 
 |`f:websocket` |
-xref:using-websockets-with-jakarta-server-faces-technology[xrefstyle=full]
+xref:using-websockets-with-jakarta-faces-technology[xrefstyle=full]
 |===

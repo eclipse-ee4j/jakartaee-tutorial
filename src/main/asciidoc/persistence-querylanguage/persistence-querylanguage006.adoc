@@ -895,7 +895,7 @@ orders:
 ----
 SELECT c
 FROM Customer c
-WHERE (SELECT COUNT(o) FROM c.orders o)> 10
+WHERE (SELECT COUNT(o) FROM c.orders o) > 10
 ----
 
 Subqueries may contain `EXISTS`, `ALL`, and `ANY` expressions.

@@ -1,9 +1,9 @@
 == Using Faces Flows
 
-The Faces Flows feature of Jakarta Server Faces technology allows you
-to create a set of pages with a scope, `FlowScoped`, that is greater
-than request scope but less than session scope. For example, you might
-want to create a series of pages for the checkout process in an online
+The Faces Flows feature of Jakarta Faces technology allows you to
+create a set of pages with a scope, `FlowScoped`, that is greater than
+request scope but less than session scope. For example, you might want
+to create a series of pages for the checkout process in an online
 store. You could create a set of self-contained pages that could be
 transferred from one store to another as needed.
 
@@ -48,7 +48,7 @@ enables you to modularize the flows.
 illustrates how they interact.
 
 [[two-faces-flows-and-their-interactions]]
-image::jakartaeett_dt_017.svg["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow.",title="Two Faces Flows and Their Interactions"]
+image::jakartaeett_dt_017.png["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow.",title="Two Faces Flows and Their Interactions"]
 
 In this figure, Flow A has a start node named `flow-a` and two
 additional pages, `next_a1` and `next_a2`. From `next_a2`, a user can
@@ -497,7 +497,7 @@ method, `defineFlow`, as a producer method with the `@FlowDefinition`
 qualifier that returns a `jakarta.faces.flow.Flow` class. The
 `defineFlow` method takes one parameter, a `FlowBuilder` with the
 qualifier `@FlowBuilderParameter`, which is passed in from the Jakarta
-Server Faces implementation. The method then calls methods from the
+Faces implementation. The method then calls methods from the
 `jakarta.faces.flow.Builder.FlowBuilder` class to configure the flow.
 
 First, the method defines the flow `id` as `checkoutFlow`. Then, it

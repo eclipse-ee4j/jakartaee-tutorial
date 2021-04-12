@@ -1,6 +1,6 @@
-== A Web Module That Uses Jakarta Server Faces Technology: The hello1 Example
+== A Web Module That Uses Jakarta Faces Technology: The hello1 Example
 
-The `hello1` application is a web module that uses Jakarta Server Faces
+The `hello1` application is a web module that uses Jakarta Faces
 technology to display a greeting and response. You can use a text
 editor to view the application files, or you can use NetBeans IDE.
 
@@ -174,8 +174,8 @@ when you use NetBeans IDE to create an application.
 +
 A context parameter provides configuration information needed by a web
 application. An application can define its own context parameters. In
-addition, Jakarta Server Faces technology and Jakarta Servlet technology define
-context parameters that an application can use.
+addition, Jakarta Faces technology and Jakarta Servlet technology
+define context parameters that an application can use.
 * A `servlet` element and its `servlet-mapping` element specifying the
 `FacesServlet`. All files with the `.xhtml` suffix will be matched:
 +
@@ -208,7 +208,7 @@ In the `Hello.java` class, the annotations `jakarta.inject.Named` and
 bean using request scope. Scope defines how application data persists
 and is shared.
 
-The most commonly used scopes in Jakarta Server Faces applications are the
+The most commonly used scopes in Jakarta Faces applications are the
 following:
 
 * Request (`@RequestScoped`): Request scope persists during a single
@@ -222,7 +222,7 @@ use session scope.
 * Application (`@ApplicationScoped`): Application scope persists across
 all users' interactions with a web application.
 
-For more information on scopes in Jakarta Server Faces technology, see
+For more information on scopes in Jakarta Faces technology, see
 <<using-managed-bean-scopes>>.
 
 === Packaging and Deploying the hello1 Web Module

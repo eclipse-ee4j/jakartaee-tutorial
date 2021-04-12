@@ -4,7 +4,7 @@ Duke's Forest is a simple e-commerce application that contains several
 web applications and illustrates the use of the following Jakarta EE
 APIs:
 
-* Jakarta Server Faces technology, including Ajax
+* Jakarta Faces technology, including Ajax
 * Jakarta Contexts and Dependency Injection (CDI)
 * Jakarta RESTful Web Services
 * Jakarta Persistence
@@ -27,7 +27,7 @@ service for order payment. The project name is `dukes-payment`.
 
 * Duke's Resources: A simple Java archive project that contains all
 resources used by the web projects. It includes messages, CSS style
-sheets, images, JavaScript files, and Jakarta Server Faces composite
+sheets, images, JavaScript files, and Jakarta Faces composite
 components. The project name is `dukes-resources`.
 
 * Entities: A simple Java archive project that contains all Jakarta

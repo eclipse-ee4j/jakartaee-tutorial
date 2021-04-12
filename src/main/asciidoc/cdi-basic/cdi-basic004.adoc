@@ -3,8 +3,8 @@
 A managed bean is implemented by a Java class, which is called its bean
 class. A top-level Java class is a managed bean if it is defined to be
 a managed bean by any other Jakarta EE technology specification, such
-as the Jakarta Server Faces technology specification, or if it meets
-all the following conditions.
+as the Jakarta Faces technology specification, or if it meets all the
+following conditions.
 
 * It is not a nonstatic inner class.
 * It is a concrete class or is annotated `@Decorator`.

@@ -14,8 +14,8 @@ application: `META-INF/resources/_resource-identifier_`. You can use
 this file structure to package resources in a JAR file bundled in the
 web application.
 
-The Jakarta Server Faces runtime will look for the resources in the
-preceding listed locations, in that order.
+The Jakarta Faces runtime will look for the resources in the preceding
+listed locations, in that order.
 
 Resource identifiers are unique strings that conform to the following
 format (all on one line):

@@ -1,17 +1,16 @@
 == Creating and Using a Custom Converter
 
-A Jakarta Server Faces converter class converts strings to objects and
-objects to strings as required. Several standard converters are
-provided by Jakarta Server Faces for this purpose. See
-<<using-the-standard-converters>> for more information on these
-included converters.
+A Jakarta Faces converter class converts strings to objects and objects
+to strings as required. Several standard converters are provided by
+Jakarta Faces for this purpose. See <<using-the-standard-converters>>
+for more information on these included converters.
 
 As explained in <<conversion-model>>, if the standard converters
-included with Jakarta Server Faces cannot perform the data conversion
-that you need, you can create a custom converter to perform this
-specialized conversion. This implementation, at a minimum, must define
-how to convert data both ways between the two views of the data
-described in <<conversion-model>>.
+included with Jakarta Faces cannot perform the data conversion that you
+need, you can create a custom converter to perform this specialized
+conversion. This implementation, at a minimum, must define how to
+convert data both ways between the two views of the data described in
+<<conversion-model>>.
 
 All custom converters must implement the
 `jakarta.faces.convert.Converter` interface. This section explains how
@@ -43,7 +42,7 @@ public class CreditCardConverter implements Converter {
 ----
 
 The `@FacesConverter` annotation registers the custom converter class
-as a converter with the name of `ccno` with the Jakarta Server Faces
+as a converter with the name of `ccno` with the Jakarta Faces
 implementation. Alternatively, you can register the converter with
 entries in the application configuration resource file, as shown in
 <<registering-a-custom-converter>>.
@@ -84,14 +83,14 @@ public Object getAsObject(FacesContext context,
 ----
 
 During the Apply Request Values phase, when the components' `decode`
-methods are processed, the Jakarta Server Faces implementation looks up
-the component's local value in the request and calls the `getAsObject`
-method. When calling this method, the Jakarta Server Faces
-implementation passes in the current `FacesContext` instance, the
-component whose data needs conversion, and the local value as a
-`String`. The method then writes the local value to a character array,
-trims the hyphens and blanks, adds the rest of the characters to a
-`String`, and returns the `String`.
+methods are processed, the Jakarta Faces implementation looks up the
+component's local value in the request and calls the `getAsObject`
+method. When calling this method, the Jakarta Faces implementation
+passes in the current `FacesContext` instance, the component whose data
+needs conversion, and the local value as a `String`. The method then
+writes the local value to a character array, trims the hyphens and
+blanks, adds the rest of the characters to a `String`, and returns the
+`String`.
 
 To define how the data is converted from the model view to the
 presentation view, the `Converter` implementation must implement the
@@ -138,10 +137,10 @@ public String getAsString(FacesContext context,
 ----
 
 During the Render Response phase, in which the components' `encode`
-methods are called, the Jakarta Server Faces implementation calls the
+methods are called, the Jakarta Faces implementation calls the
 `getAsString` method in order to generate the appropriate output. When
-the Jakarta Server Faces implementation calls this method, it passes in
-the current `FacesContext`, the `UIComponent` whose value needs to be
+the Jakarta Faces implementation calls this method, it passes in the
+current `FacesContext`, the `UIComponent` whose value needs to be
 converted, and the bean value to be converted. Because this converter
 does a `String`-to-`String` conversion, this method can cast the bean
 value to a `String`.
@@ -172,10 +171,10 @@ is invoked automatically.
 
 A converter class can be a separate Java POJO class, as in the Duke's
 Bookstore case study. If it needs to access objects defined in a
-managed bean class, however, it can be a subclass of a Jakarta Server
-Faces managed bean, as in the `address-book` persistence example, in
-which the converters use an enterprise bean that is injected into the
-managed bean class.
+managed bean class, however, it can be a subclass of a Jakarta Faces
+managed bean, as in the `address-book` persistence example, in which
+the converters use an enterprise bean that is injected into the managed
+bean class.
 
 === Using a Custom Converter
 
@@ -252,9 +251,9 @@ resource file. This method is shown in `bookcashier.xhtml`:
 the `f:converter` tag's `binding` attribute, as described in
 <<binding-converters-listeners-and-validators-to-managed-bean-properties>>.
 
-The Jakarta Server Faces implementation calls the converter's
-`getAsObject` method to strip spaces and hyphens from the input value.
-The `getAsString` method is called when the `bookcashier.xhtml` page is
+The Jakarta Faces implementation calls the converter's `getAsObject`
+method to strip spaces and hyphens from the input value. The
+`getAsString` method is called when the `bookcashier.xhtml` page is
 redisplayed; this happens if the user orders more than $100 worth of
 books.
 

@@ -66,7 +66,7 @@ implements `ActionSource2`. If your component extends `UIOutput` or one
 of the component classes that extend `UIOutput`, it automatically
 implements `ValueHolder`. If your component extends `UIInput`, it
 automatically implements `EditableValueHolder` and `ValueHolder`. See
-the Jakarta Server Faces API documentation to find out what the other
+the Jakarta Faces API documentation to find out what the other
 component classes implement.
 
 You can also make your component explicitly implement a behavioral
@@ -82,7 +82,7 @@ The Duke's Bookstore image map example has two component classes:
 can fire action events when a user clicks on the map. The
 `AreaComponent` class extends the standard component `UIOutput`. The
 `@FacesComponent` annotation registers the components with the Jakarta
-Server Faces implementation:
+Faces implementation:
 
 [source,java]
 ----
@@ -176,11 +176,11 @@ family in the component configuration.
 
 === Performing Encoding
 
-During the Render Response phase, the Jakarta Server Faces
-implementation processes the encoding methods of all components and
-their associated renderers in the view. The encoding methods convert
-the current local value of the component into the corresponding markup
-that represents it in the response.
+During the Render Response phase, the Jakarta Faces implementation
+processes the encoding methods of all components and their associated
+renderers in the view. The encoding methods convert the current local
+value of the component into the corresponding markup that represents it
+in the response.
 
 The `UIComponentBase` class defines a set of methods for rendering
 markup: `encodeBegin`, `encodeChildren`, and `encodeEnd`. If the
@@ -195,11 +195,11 @@ the ending `map` tag. To accomplish this, the `MapRenderer` class
 renders the beginning `map` tag in `encodeBegin` and the rest of the
 `map` tag in `encodeEnd`.
 
-The Jakarta Server Faces implementation automatically invokes the
-`encodeEnd` method of ``AreaComponent``'s renderer after it invokes
+The Jakarta Faces implementation automatically invokes the `encodeEnd`
+method of ``AreaComponent``'s renderer after it invokes
 ``MapRenderer``'s `encodeBegin` method and before it invokes
-``MapRenderer``'s `encodeEnd` method. If a component needs to perform the
-rendering for its children, it does this in the `encodeChildren`
+``MapRenderer``'s `encodeEnd` method. If a component needs to perform
+the rendering for its children, it does this in the `encodeChildren`
 method.
 
 Here are the `encodeBegin` and `encodeEnd` methods of `MapRenderer`:
@@ -292,12 +292,12 @@ parameters, you must also implement the `decode` method.
 
 === Performing Decoding
 
-During the Apply Request Values phase, the Jakarta Server Faces
-implementation processes the `decode` methods of all components in the
-tree. The `decode` method extracts a component's local value from
-incoming request parameters and uses a
-`jakarta.faces.convert.Converter` implementation to convert the value
-to a type that is acceptable to the component class.
+During the Apply Request Values phase, the Jakarta Faces implementation
+processes the `decode` methods of all components in the tree. The
+`decode` method extracts a component's local value from incoming
+request parameters and uses a `jakarta.faces.convert.Converter`
+implementation to convert the value to a type that is acceptable to the
+component class.
 
 A custom component class or its renderer must implement the `decode`
 method only if it must retrieve the local value or if it needs to queue
@@ -331,11 +331,11 @@ attribute to the value of the `input` field.
 
 === Enabling Component Properties to Accept Expressions
 
-Nearly all the attributes of the standard Jakarta Server Faces tags can
-accept expressions, whether they are value expressions or method
-expressions. It is recommended that you also enable your component
-attributes to accept expressions because it gives you much more
-flexibility when you write Facelets pages.
+Nearly all the attributes of the standard Jakarta Faces tags can accept
+expressions, whether they are value expressions or method expressions.
+It is recommended that you also enable your component attributes to
+accept expressions because it gives you much more flexibility when you
+write Facelets pages.
 
 To enable the attributes to accept expressions, the component class
 must implement getter and setter methods for the component properties.
@@ -420,8 +420,8 @@ phase.
 
 Component classes that implement `StateHolder` may prefer to implement
 the `saveState(FacesContext)` and `restoreState(FacesContext, Object)`
-methods to help the Jakarta Server Faces implementation save and
-restore the state of components across multiple requests.
+methods to help the Jakarta Faces implementation save and restore the
+state of components across multiple requests.
 
 To save a set of values, you can implement the
 `saveState(FacesContext)` method. This method is called during the
@@ -448,9 +448,9 @@ implementation for `restoreState(FacesContext, Object)`, which restores
 the state of the component to that saved with the
 `saveState(FacesContext)` method. The `restoreState(FacesContext,
 Object)` method is called during the Restore View phase, during which
-the Jakarta Server Faces implementation checks whether there is any
-state that was saved during the last Render Response phase and needs to
-be restored in preparation for the next postback.
+the Jakarta Faces implementation checks whether there is any state that
+was saved during the last Render Response phase and needs to be
+restored in preparation for the next postback.
 
 Here is a hypothetical `restoreState(FacesContext, Object)` method from
 `MapComponent`:

@@ -8,13 +8,13 @@ An empty string is represented as `""`. It is a character sequence of
 zero characters. A null string is represented by `null`. It can be
 described as the absence of a string instance.
 
-Managed bean elements represented as a Jakarta Server Faces text
-component such as `inputText` are initialized with the value of the
-empty string by the Jakarta Server Faces implementation. Validating
-these strings can be an issue when user input for such fields is not
-required. Consider the following example, in which the string
-`testString` is a bean variable that will be set using input entered by
-the user. In this case, the user input for the field is not required.
+Managed bean elements represented as a Jakarta Faces text component
+such as `inputText` are initialized with the value of the empty string
+by the Jakarta Faces implementation. Validating these strings can be an
+issue when user input for such fields is not required. Consider the
+following example, in which the string `testString` is a bean variable
+that will be set using input entered by the user. In this case, the
+user input for the field is not required.
 
 [source,java]
 ----
@@ -42,8 +42,8 @@ set the context parameter
 </context-param>
 ----
 
-This parameter enables the Jakarta Server Faces implementation to treat
-empty strings as null.
+This parameter enables the Jakarta Faces implementation to treat empty
+strings as null.
 
 Suppose, on the other hand, that you have a `@NotNull` constraint on an
 element, meaning that input is required. In this case, an empty string

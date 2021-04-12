@@ -222,23 +222,23 @@ application now.
 +
 The application responds by saying "Hello" to the name you entered.
 
-=== The hello1-formauth Example: Form-Based Authentication with a Jakarta Server Faces Application
+=== The hello1-formauth Example: Form-Based Authentication with a Jakarta Faces Application
 
 This example explains how to use form-based authentication with a
-Jakarta Server Faces application. With form-based authentication, you
-can customize the login screen and error pages that are presented to
-the web client for authentication of the user name and password. When a
+Jakarta Faces application. With form-based authentication, you can
+customize the login screen and error pages that are presented to the
+web client for authentication of the user name and password. When a
 user submits his or her name and password, the server determines
 whether the user name and password are those of an authorized user and,
 if authorized, sends the requested web resource.
 
 This example, `hello1-formauth`, adds security to the basic Jakarta
-Server Faces application shown in
-<<a-web-module-that-uses-jakarta-server-faces-technology-the-hello1-example>>.
+Faces application shown in
+<<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>.
 
 In general, the steps necessary for adding form-based authentication to
-an unsecured Jakarta Server Faces application are similar to those
-described in
+an unsecured Jakarta Faces application are similar to those described
+in
 <<the-hello2-basicauth-example-basic-authentication-with-a-servlet>>.
 The major difference is that you must use a deployment descriptor to
 specify the use of form-based authentication, as described in
@@ -339,8 +339,8 @@ to try again. Here is the code for this page:
 
 This example takes a very simple servlet-based web application and adds
 form-based security. To specify form-based instead of basic
-authentication for a Jakarta Server Faces example, you must use the
-deployment descriptor.
+authentication for a Jakarta Faces example, you must use the deployment
+descriptor.
 
 The following sample code shows the security elements added to the
 deployment descriptor for this example, which can be found in

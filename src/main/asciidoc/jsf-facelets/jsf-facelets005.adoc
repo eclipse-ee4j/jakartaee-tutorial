@@ -1,8 +1,8 @@
 == Composite Components
 
-Jakarta Server Faces technology offers the concept of composite
-components with Facelets. A composite component is a special type of
-template that acts as a component.
+Jakarta Faces technology offers the concept of composite components
+with Facelets. A composite component is a special type of template that
+acts as a component.
 
 Any component is essentially a piece of reusable code that behaves in a
 particular way. For example, an input component accepts user input. A
@@ -63,7 +63,7 @@ as the target of attached objects in the using page.
 
 
 For more information and a complete list of Facelets composite tags,
-see the Jakarta Server Faces Facelets Tag Library documentation.
+see the Jakarta Faces Facelets Tag Library documentation.
 
 The following example shows a composite component that accepts an email
 address as input:
@@ -93,17 +93,16 @@ address as input:
 ----
 
 Note the use of `cc.attrs.value` when defining the value of the
-`inputText` component. The word `cc` in Jakarta Server Faces is a
-reserved word for composite components. The
-`#{cc.attrs._attribute-name_}` expression is used to access the
-attributes defined for the composite component's interface, which in
-this case happens to be `value`.
+`inputText` component. The word `cc` in Jakarta Faces is a reserved
+word for composite components. The `#{cc.attrs._attribute-name_}`
+expression is used to access the attributes defined for the composite
+component's interface, which in this case happens to be `value`.
 
 The preceding example content is stored as a file named `email.xhtml`
 in a folder named `resources/emcomp`, under the application web root
-directory. This directory is considered a library by Jakarta Server
-Faces, and a component can be accessed from such a library. For more
-information on resources, see <<web-resources>>.
+directory. This directory is considered a library by Jakarta Faces, and
+a component can be accessed from such a library. For more information
+on resources, see <<web-resources>>.
 
 The web page that uses this composite component is generally called a
 using page. The using page includes a reference to the composite

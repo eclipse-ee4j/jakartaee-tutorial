@@ -1,18 +1,18 @@
 == User Interface Component Model
 
-In addition to the lifecycle description, an overview of Jakarta Server
-Faces architecture provides better understanding of the technology.
+In addition to the lifecycle description, an overview of Jakarta Faces
+architecture provides better understanding of the technology.
 
-Jakarta Server Faces components are the building blocks of a Jakarta Server
-Faces view. A component can be a user interface (UI) component or a
-non-UI component.
+Jakarta Faces components are the building blocks of a Jakarta Faces
+view. A component can be a user interface (UI) component or a non-UI
+component.
 
-Jakarta Server Faces UI components are configurable, reusable elements that
-compose the user interfaces of Jakarta Server Faces applications. A
-component can be simple, such as a button, or can be compound, such as a
-table composed of multiple components.
+Jakarta Faces UI components are configurable, reusable elements that
+compose the user interfaces of Jakarta Faces applications. A component
+can be simple, such as a button, or can be compound, such as a table
+composed of multiple components.
 
-Jakarta Server Faces technology provides a rich, flexible component
+Jakarta Faces technology provides a rich, flexible component
 architecture that includes the following:
 
 * A set of `jakarta.faces.component.UIComponent` classes for specifying
@@ -31,7 +31,7 @@ architecture.
 
 === User Interface Component Classes
 
-Jakarta Server Faces technology provides a set of UI component classes and
+Jakarta Faces technology provides a set of UI component classes and
 associated behavioral interfaces that specify all the UI component
 functionality, such as holding component state, maintaining a reference
 to objects, and driving event handling and rendering for a set of
@@ -43,11 +43,11 @@ xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full]
 for more information.
 
 The abstract base class for all components is
-`jakarta.faces.component.UIComponent`. Jakarta Server Faces UI component
+`jakarta.faces.component.UIComponent`. Jakarta Faces UI component
 classes extend the `UIComponentBase` class (a subclass of
 `UIComponent`), which defines the default state and behavior of a
 component. The following set of component classes is included with
-Jakarta Server Faces technology.
+Jakarta Faces technology.
 
 * `UIColumn`: Represents a single column of data in a `UIData`
 component.
@@ -88,14 +88,16 @@ interface.
 These behavioral interfaces, all defined in the `jakarta.faces.component`
 package unless otherwise stated, are as follows.
 
-* `ActionSource`: Indicates that the component can fire an action event.
-This interface is intended for use with components based on Jakarta Server
-Faces technology 1.1_01 and earlier versions. This interface is
-deprecated in Jakarta Server Faces 2.
+* `ActionSource`: Indicates that the component can fire an action
+event. This interface is intended for use with components based on Java
+Server Faces technology 1.1_01 and earlier versions. This interface is
+deprecated in Java Server Faces 2.
+
 * `ActionSource2`: Extends `ActionSource` and therefore provides the
 same functionality. However, it allows components to use the Expression
 Language (EL) when they are referencing methods that handle action
 events.
+
 * `EditableValueHolder`: Extends `ValueHolder` and specifies additional
 features for editable components, such as validation and emitting
 value-change events.
@@ -131,7 +133,7 @@ tags.
 
 === Component Rendering Model
 
-The Jakarta Server Faces component architecture is designed such that the
+The Jakarta Faces component architecture is designed such that the
 functionality of the components is defined by the component classes,
 whereas the component rendering can be defined by a separate renderer
 class. This design has several benefits, including the following.
@@ -144,7 +146,7 @@ component on the page by selecting the tag that represents the
 appropriate combination of component and renderer.
 
 A render kit defines how component classes map to component tags that
-are appropriate for a particular client. The Jakarta Server Faces
+are appropriate for a particular client. The Jakarta Faces
 implementation includes a standard HTML render kit for rendering to an
 HTML client.
 
@@ -171,15 +173,15 @@ The section
 supported component tags and illustrates how to use the tags in an
 example.
 
-The Jakarta Server Faces implementation provides a custom tag library for
+The Jakarta Faces implementation provides a custom tag library for
 rendering components in HTML.
 
 === Conversion Model
 
-A Jakarta Server Faces application can optionally associate a component
-with server-side object data. This object is a JavaBeans component,
-such as a managed bean. An application gets and sets the object data
-for a component by calling the appropriate object properties for that
+A Jakarta Faces application can optionally associate a component with
+server-side object data. This object is a JavaBeans component, such as
+a managed bean. An application gets and sets the object data for a
+component by calling the appropriate object properties for that
 component.
 
 When a component is bound to an object, the application has two views
@@ -192,20 +194,19 @@ can be read or modified by the user. For example, a `java.util.Date`
 might be represented as a text string in the format `mm/dd/yy` or as a
 set of three text strings.
 
-The Jakarta Server Faces implementation automatically converts
-component data between these two views when the bean property
-associated with the component is of one of the types supported by the
-component's data. For example, if a `UISelectBoolean` component is
-associated with a bean property of type `java.lang.Boolean`, the
-Jakarta Server Faces implementation will automatically convert the
-component's data from `String` to `Boolean`. In addition, some
-component data must be bound to properties of a particular type. For
-example, a `UISelectBoolean` component must be bound to a property of
-type `boolean` or `java.lang.Boolean`.
+The Jakarta Faces implementation automatically converts component data
+between these two views when the bean property associated with the
+component is of one of the types supported by the component's data. For
+example, if a `UISelectBoolean` component is associated with a bean
+property of type `java.lang.Boolean`, the Jakarta Faces implementation
+will automatically convert the component's data from `String` to
+`Boolean`. In addition, some component data must be bound to properties
+of a particular type. For example, a `UISelectBoolean` component must
+be bound to a property of type `boolean` or `java.lang.Boolean`.
 
 Sometimes you might want to convert a component's data to a type other
 than a standard type, or you might want to convert the format of the
-data. To facilitate this, Jakarta Server Faces technology allows you to
+data. To facilitate this, Jakarta Faces technology allows you to
 register a `jakarta.faces.convert.Converter` implementation on
 `UIOutput` components and components whose classes subclass `UIOutput`.
 If you register the `Converter` implementation on a component, the
@@ -213,33 +214,33 @@ If you register the `Converter` implementation on a component, the
 two views.
 
 You can either use the standard converters supplied with the Jakarta
-Server Faces implementation or create your own custom converter. Custom
+Faces implementation or create your own custom converter. Custom
 converter creation is covered in
 xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full].
 
 === Event and Listener Model
 
-The Jakarta Server Faces event and listener model is similar to the
-JavaBeans event model in that it has strongly typed event classes and
-listener interfaces that an application can use to handle events
-generated by components.
+The Jakarta Faces event and listener model is similar to the JavaBeans
+event model in that it has strongly typed event classes and listener
+interfaces that an application can use to handle events generated by
+components.
 
-The Jakarta Server Faces specification defines three types of events:
+The Jakarta Faces specification defines three types of events:
 application events, system events, and data-model events.
 
 Application events are tied to a particular application and are
 generated by a `UIComponent`. They represent the standard events
-available in previous versions of Jakarta Server Faces technology.
+available in previous versions of Jakarta Faces technology.
 
 An event object identifies the component that generated the event and
 stores information about the event. To be notified of an event, an
 application must provide an implementation of the listener class and
 must register it on the component that generates the event. When the
 user activates a component, such as by clicking a button, an event is
-fired. This causes the Jakarta Server Faces implementation to invoke the
+fired. This causes the Jakarta Faces implementation to invoke the
 listener method that processes the event.
 
-Jakarta Server Faces supports two kinds of application events: action events
+Jakarta Faces supports two kinds of application events: action events
 and value-change events.
 
 An action event (class `jakarta.faces.event.ActionEvent`) occurs when the
@@ -300,14 +301,14 @@ method that handles the event.
 
 === Validation Model
 
-Jakarta Server Faces technology supports a mechanism for validating the
-local data of editable components (such as text fields). This
-validation occurs before the corresponding model data is updated to
-match the local value.
+Jakarta Faces technology supports a mechanism for validating the local
+data of editable components (such as text fields). This validation
+occurs before the corresponding model data is updated to match the
+local value.
 
 Like the conversion model, the validation model defines a set of
 standard classes for performing common data validation checks. The
-Jakarta Server Faces core tag library also defines a set of tags that
+Jakarta Faces core tag library also defines a set of tags that
 correspond to the standard `jakarta.faces.validator.Validator`
 implementations. See <<using-the-standard-validators>> for a list of
 all the standard validation classes and corresponding tags.

@@ -30,7 +30,7 @@ beans, and JAR archives of libraries called by server-side classes
 deployment descriptor) and `ejb-jar.xml` (an enterprise bean deployment
 descriptor)
 
-A web module needs a `web.xml` file if it uses Jakarta Server Faces
+A web module needs a `web.xml` file if it uses Jakarta Faces
 technology, if it must specify certain kinds of security information,
 or if you want to override information specified by web component
 annotations.

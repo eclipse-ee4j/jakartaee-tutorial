@@ -91,12 +91,12 @@ In these cases, packaging the enterprise bean within the web
 application's WAR module simplifies deployment and application
 organization. Enterprise beans may be packaged within a WAR module as
 Java class files or within a JAR file that is bundled within the WAR
-module. When a servlet or Jakarta Server Faces page handles the web
-front end and the application is packaged into a WAR module as a Java
-class file, security for the application can be handled in the
-application's `web.xml` file. The enterprise bean in the WAR file can
-have its own deployment descriptor, `ejb-jar.xml`, if required.
-Securing web applications using `web.xml` is discussed in
+module. When a servlet or Jakarta Faces page handles the web front end
+and the application is packaged into a WAR module as a Java class file,
+security for the application can be handled in the application's
+`web.xml` file. The enterprise bean in the WAR file can have its own
+deployment descriptor, `ejb-jar.xml`, if required. Securing web
+applications using `web.xml` is discussed in
 xref:getting-started-securing-web-applications[xrefsyle=full].
 
 The following sections describe declarative and programmatic security

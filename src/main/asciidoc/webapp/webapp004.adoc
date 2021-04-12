@@ -47,8 +47,8 @@ the URL pattern.
 
 The `hello2` application behaves almost identically to the `hello1`
 application, but it is implemented using Jakarta Servlet technology
-instead of Jakarta Server Faces technology. You can use a text editor
-to view the application files, or you can use NetBeans IDE.
+instead of Jakarta Faces technology. You can use a text editor to view
+the application files, or you can use NetBeans IDE.
 
 ==== To View the hello2 Web Module Using NetBeans IDE
 
@@ -105,7 +105,7 @@ public class GreetingServlet extends HttpServlet {
                 + "</form>");
 
             String username = request.getParameter("username");
-            if (username != null && username.length()> 0) {
+            if (username != null && username.length() > 0) {
                 RequestDispatcher dispatcher =
                     getServletContext().getRequestDispatcher("/response");
 
@@ -140,7 +140,7 @@ public class ResponseServlet extends HttpServlet {
 
             // then write the data of the response
             String username = request.getParameter("username");
-            if (username != null && username.length()> 0) {
+            if (username != null && username.length() > 0) {
                 out.println("<h2>Hello, " + username + "!</h2>");
             }
         }

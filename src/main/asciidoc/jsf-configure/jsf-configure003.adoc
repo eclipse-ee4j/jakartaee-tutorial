@@ -1,11 +1,11 @@
 == Application Configuration Resource File
 
-Jakarta Server Faces technology provides a portable configuration
-format (as an XML document) for configuring application resources. One
-or more XML documents, called application configuration resource files,
-may use this format to register and configure objects and resources and
-to define navigation rules for applications. An application
-configuration resource file is usually named `faces-config.xml`.
+Jakarta Faces technology provides a portable configuration format (as
+an XML document) for configuring application resources. One or more XML
+documents, called application configuration resource files, may use
+this format to register and configure objects and resources and to
+define navigation rules for applications. An application configuration
+resource file is usually named `faces-config.xml`.
 
 You need an application configuration resource file in the following
 cases:
@@ -41,7 +41,7 @@ following order:
 ----
 
 You can have more than one application configuration resource file for
-an application. The Jakarta Server Faces implementation finds the
+an application. The Jakarta Faces implementation finds the
 configuration file or files by looking for the following.
 
 * A resource named `/META-INF/faces-config.xml` in any of the JAR files
@@ -70,17 +70,17 @@ developer can use an instance of the
 created for each application. The `Application` instance acts as a
 centralized factory for resources that are defined in the XML file.
 
-When an application starts up, the Jakarta Server Faces implementation
-creates a single instance of the `Application` class and configures it
-with the information you provided in the application configuration
-resource file.
+When an application starts up, the Jakarta Faces implementation creates
+a single instance of the `Application` class and configures it with the
+information you provided in the application configuration resource
+file.
 
 === Configuring Eager Application-Scoped Managed Beans
 
-Jakarta Server Faces managed beans (either specified in the
-`faces-config.xml` file or annotated with
-`jakarta.faces.bean.ManagedBean`) are lazily instantiated. That is,
-that they are instantiated when a request is made from the application.
+Jakarta Faces managed beans (either specified in the `faces-config.xml`
+file or annotated with `jakarta.faces.bean.ManagedBean`) are lazily
+instantiated. That is, that they are instantiated when a request is
+made from the application.
 
 To force an application-scoped bean to be instantiated and placed in
 the application scope as soon as the application is started and before
@@ -104,14 +104,14 @@ The annotation is as follows:
 
 === Ordering of Application Configuration Resource Files
 
-Because Jakarta Server Faces technology allows the use of multiple
-application configuration resource files stored in different locations,
-the order in which they are loaded by the implementation becomes
-important in certain situations (for example, when using
-application-level objects). This order can be defined through an
-`ordering` element and its subelements in the application configuration
-resource file itself. The ordering of application configuration
-resource files can be absolute or relative.
+Because Jakarta Faces technology allows the use of multiple application
+configuration resource files stored in different locations, the order
+in which they are loaded by the implementation becomes important in
+certain situations (for example, when using application-level objects).
+This order can be defined through an `ordering` element and its
+subelements in the application configuration resource file itself. The
+ordering of application configuration resource files can be absolute or
+relative.
 
 Absolute ordering is defined by an `absolute-ordering` element in the
 file. With absolute ordering, the user specifies the order in which

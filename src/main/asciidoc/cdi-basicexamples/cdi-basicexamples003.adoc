@@ -119,8 +119,8 @@ public class Generator implements Serializable {
 ==== The UserNumberBean Managed Bean
 
 The `UserNumberBean` managed bean, the managed bean for the Jakarta
-Server Faces application, provides the basic logic for the game. This
-bean does the following:
+Faces application, provides the basic logic for the game. This bean
+does the following:
 
 * Implements setter and getter methods for the bean fields
 * Injects the two qualifier objects

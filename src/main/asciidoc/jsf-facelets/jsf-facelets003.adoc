@@ -1,8 +1,7 @@
 == Developing a Simple Facelets Application: The guessnumber-jsf Example Application
 
 This section describes the general steps involved in developing a
-Jakarta Server Faces application. The following tasks are usually
-required:
+Jakarta Faces application. The following tasks are usually required:
 
 * Developing the managed beans
 * Creating the pages using the component tags
@@ -23,11 +22,10 @@ The source code for this application is in the
 
 ==== Developing a Managed Bean
 
-In a typical Jakarta Server Faces application, each page of the
-application connects to a managed bean that serves as a backing bean.
-The backing bean defines the methods and properties that are associated
-with the components. In this example, both pages use the same backing
-bean.
+In a typical Jakarta Faces application, each page of the application
+connects to a managed bean that serves as a backing bean. The backing
+bean defines the methods and properties that are associated with the
+components. In this example, both pages use the same backing bean.
 
 The following managed bean class, `UserNumberBean.java`, generates a
 random number from 0 to 10 inclusive:
@@ -177,7 +175,7 @@ input
 An `h:inputText` tag accepts user input and sets the value of the
 managed bean property `userNumber` through the EL expression
 `#{userNumberBean.userNumber}`. The input value is validated for value
-range by the Jakarta Server Faces standard validator tag
+range by the Jakarta Faces standard validator tag
 `f:validateLongRange`.
 
 The image file, `wave.med.gif`, is added to the page as a resource, as
@@ -224,11 +222,11 @@ for the Back button to send the user to the `greeting.xhtml` page.
 
 === Configuring the Application
 
-Configuring a Jakarta Server Faces application involves mapping the
-Faces Servlet in the web deployment descriptor file, such as a
-`web.xml` file, and possibly adding managed bean declarations,
-navigation rules, and resource bundle declarations to the application
-configuration resource file, `faces-config.xml`.
+Configuring a Jakarta Faces application involves mapping the Faces
+Servlet in the web deployment descriptor file, such as a `web.xml`
+file, and possibly adding managed bean declarations, navigation rules,
+and resource bundle declarations to the application configuration
+resource file, `faces-config.xml`.
 
 If you are using NetBeans IDE, a web deployment descriptor file is
 automatically created for you. In such an IDE-created `web.xml` file,
@@ -268,8 +266,8 @@ change in bold.
 ----
 
 Note the use of the context parameter `PROJECT_STAGE`. This parameter
-identifies the status of a Jakarta Server Faces application in the
-software lifecycle.
+identifies the status of a Jakarta Faces application in the software
+lifecycle.
 
 The stage of an application can affect the behavior of the application.
 For example, if the project stage is defined as `Development`,

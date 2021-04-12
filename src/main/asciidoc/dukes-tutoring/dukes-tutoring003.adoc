@@ -79,14 +79,14 @@ administration interface.
 
 * `EntityConverter`: A parent class to `StudentConverter` and
 `GuardianConverter` that defines a cache to store the entity classes
-when converting the entities for use in Jakarta Server Faces user
-interface components. The cache helps increase performance. The cache
-is stored in the Jakarta Server Faces context.
+when converting the entities for use in Jakarta Faces user interface
+components. The cache helps increase performance. The cache is stored
+in the Jakarta Faces context.
 
-* `StudentConverter`: A Jakarta Server Faces converter for the
-`Student` entity class. This class contains methods to convert
-`Student` instances to strings and back again, so they can be used in
-the user interface components of the application.
+* `StudentConverter`: A Jakarta Faces converter for the `Student`
+entity class. This class contains methods to convert `Student`
+instances to strings and back again, so they can be used in the user
+interface components of the application.
 
 * `GuardianConverter`: Similar to `StudentConverter`, this class is a
 converter for the `Guardian` entity class.

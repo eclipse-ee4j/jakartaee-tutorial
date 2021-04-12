@@ -1,37 +1,27 @@
-== Jakarta EE 8 Platform Highlights
+== Jakarta EE 9 Platform Highlights
 
-The key goals of the Jakarta EE 8 platform are to modernize the
-infrastructure for enterprise Java for the cloud and microservices
-environments, emphasize HTML5 and HTTP/2 support, enhance ease of
-development through new Contexts and Dependency Injection features, and
-further enhance security and reliability of the platform.
+The goal of the Jakarta EE 9 release is to deliver a set of specifications functionally similar to Jakarta EE 8 but in the new Jakarta EE 9 namespace jakarta.*.
 
-The Jakarta EE 8 platform includes the following new features:
+In addition, the Jakarta EE 9 release removes a small set of specifications from Jakarta EE 8 that were old, optional, or deprecated in order to reduce the surface area of the APIs to ensure that it is easier for new vendors to enter the ecosystem – as well as reduce the burden on implementation, migration, and maintenance of these old APIs.
 
-* New technologies, including the following:
+The following Jakarta EE Technologies were removed from the Jakarta EE Platform:
 
-** <<jakarta-json-binding>>
-** <<jakarta-security>>
+* XML Registries 1.0
+* XML RPC 1.1
+* Deployment 1.7
+* Management 1.1
+* Distributed Interoperability (EJB 3.2 Core Specification, Chapter 10)
 
-* New object model improvements for JSON Processing (see
-<<jakarta-json-processing>> for details), including support for the
-following:
+Aside from the removed technologies, some technologies in Jakarta EE 9 release are marked as optional. The reason for this is that some of the technologies originally included in Jakarta EE are no longer as relevant as they were when they were introduced to the platform. 
 
-** JSON Pointer
-** JSON Patch
-** JSON Merge Patch
+Platform Specification Project can decide to officially "remove" the "optional" feature from the Platform in the next (or beyond) releases.
 
-* New features for RESTful web services (see
-<<jakarta-restful-web-services>> for details)
+The following technologies are optional:
 
-* New features for servlets (see <<jakarta-servlet-technology>> for
-details)
-
-* New features for Jakarta Server Faces components (see
-<<jakarta-faces-technology>> for details)
-
-* New Contexts and Dependency Injection features (see
-<<jakarta-contexts-and-dependency-injection>> for details)
-
-* New Jakarta Bean Validation features (see <<jakarta-bean-validation>>
-for details)
+* Jakarta Enterprise Beans 3.2 and earlier entity beans and associated Jakarta Enterprise Beans QL
+* Jakarta Enterprise Beans 2.x API group
+* Jakarta Enterprise Web Services 2.0
+* Jakarta SOAP with Attachments 2.0
+* Jakarta Web Services Metadata 3.0
+* Jakarta XML Web Services 3.0
+* Jakarta XML Binding 3.0

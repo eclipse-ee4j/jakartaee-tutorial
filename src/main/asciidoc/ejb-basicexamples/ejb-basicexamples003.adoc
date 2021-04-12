@@ -295,7 +295,7 @@ singleton instance is used throughout the application lifecycle.
 === The Architecture of the counter Example
 
 The `counter` example consists of a singleton session bean,
-`CounterBean`, and a Jakarta Server Faces Facelets web front end.
+`CounterBean`, and a Jakarta Faces Facelets web front end.
 
 `CounterBean` is a simple singleton with one method, `getHits`, that
 returns an integer representing the number of times a web page has been
@@ -363,14 +363,13 @@ public class CounterBean {
 }
 ----
 
-The web front end of `counter` consists of a Jakarta Server Faces
-managed bean, `Count.java`, that is used by the Facelets XHTML files
-`template.xhtml` and `index.xhtml`. The `Count` Jakarta Server Faces
-managed bean obtains a reference to `CounterBean` through dependency
-injection. `Count` defines a `hitCount` JavaBeans property. When the
-`getHitCount` getter method is called from the XHTML files,
-``CounterBean``'s `getHits` method is called to return the current
-number of page hits.
+The web front end of `counter` consists of a Jakarta Faces managed
+bean, `Count.java`, that is used by the Facelets XHTML files
+`template.xhtml` and `index.xhtml`. The `Count` Jakarta Faces managed
+bean obtains a reference to `CounterBean` through dependency injection.
+`Count` defines a `hitCount` JavaBeans property. When the `getHitCount`
+getter method is called from the XHTML files, ``CounterBean``'s
+`getHits` method is called to return the current number of page hits.
 
 Here's the `Count` managed bean class:
 

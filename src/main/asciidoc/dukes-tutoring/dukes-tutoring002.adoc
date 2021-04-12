@@ -87,10 +87,10 @@ status changes in the main interface, a `StatusEvent` is fired. The
 out the status change to all the client endpoints registered with
 `StatusEndpoint`.
 
-The `index.xhtml` Jakarta Server Faces page contains JavaScript code to
+The `index.xhtml` Jakarta Faces page contains JavaScript code to
 connect to the WebSocket endpoint. The `onMessage` method on this page
-clicks a Jakarta Server Faces button, which makes an Ajax request to
-refresh the table that shows the current status of the students.
+clicks a Jakarta Faces button, which makes an Ajax request to refresh
+the table that shows the current status of the students.
 
 For more information on WebSocket endpoints, see
 xref:jakarta-websocket-2[xrefstyle=full]. For information on CDI
@@ -100,8 +100,8 @@ events, see <<using-events-in-cdi-applications>>.
 
 The Duke's Tutoring application uses Facelets to display the user
 interface, making extensive use of the templating features of Facelets.
-Facelets, the default display technology for Jakarta Server Faces
-technology, consists of XHTML files located in the
+Facelets, the default display technology for Jakarta Faces technology,
+consists of XHTML files located in the
 `_tut-install_/examples/case-studies/dukes-tutoring-war/src/main/webapp/`
 directory.
 
@@ -192,7 +192,7 @@ Duke's Tutoring uses these deployment descriptors in the
 `src/main/webapp/WEB-INF` directory of the `dukes-tutoring-war`
 project:
 
-* `faces-config.xml`: The Jakarta Server Faces configuration file
+* `faces-config.xml`: The Jakarta Faces configuration file
 * `glassfish-web.xml`: The configuration file specific to GlassFish
 Server, which defines security role mapping
 * `web.xml`: The web application configuration file

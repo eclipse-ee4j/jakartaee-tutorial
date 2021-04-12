@@ -29,7 +29,7 @@ public class AreaRenderer extends Renderer { }
 ----
 
 The `@FacesRenderer` annotation registers the renderer class with the
-Jakarta Server Faces implementation as a renderer class. The annotation
+Jakarta Faces implementation as a renderer class. The annotation
 identifies the component family as well as the renderer type.
 
 To perform the rendering for `AreaComponent`, `AreaRenderer` must
@@ -109,20 +109,20 @@ writer.writeAttribute("onclick", sb.toString(), "value");
 writer.endElement("area");
 ----
 
-By submitting the page, this code causes the Jakarta Server Faces
-lifecycle to return back to the Restore View phase. This phase saves
-any state information, including the value of the hidden field, so that
-a new request component tree is constructed. This value is retrieved by
-the `decode` method of the `MapComponent` class. This decode method is
-called by the Jakarta Server Faces implementation during the Apply
-Request Values phase, which follows the Restore View phase.
+By submitting the page, this code causes the Jakarta Faces lifecycle to
+return back to the Restore View phase. This phase saves any state
+information, including the value of the hidden field, so that a new
+request component tree is constructed. This value is retrieved by the
+`decode` method of the `MapComponent` class. This decode method is
+called by the Jakarta Faces implementation during the Apply Request
+Values phase, which follows the Restore View phase.
 
 In addition to the `encodeEnd` method, `AreaRenderer` contains an empty
 constructor. This is used to create an instance of `AreaRenderer` so
 that it can be added to the render kit.
 
 The `@FacesRenderer` annotation registers the renderer class with the
-Jakarta Server Faces implementation as a renderer class. The annotation
+Jakarta Faces implementation as a renderer class. The annotation
 identifies the component family as well as the renderer type.
 
 === Identifying the Renderer Type
@@ -130,9 +130,9 @@ identifies the component family as well as the renderer type.
 Register the renderer with a render kit by using the `@FacesRenderer`
 annotation (or by using the application configuration resource file, as
 explained in <<registering-a-custom-renderer-with-a-render-kit>>).
-During the Render Response phase, the Jakarta Server Faces
-implementation calls the `getRendererType` method of the component's
-tag handler to determine which renderer to invoke, if there is one.
+During the Render Response phase, the Jakarta Faces implementation
+calls the `getRendererType` method of the component's tag handler to
+determine which renderer to invoke, if there is one.
 
 You identify the type associated with the renderer in the
 `rendererType` element of the `@FacesRenderer` annotation for
