@@ -1,13 +1,9 @@
 = Expression Language
 
-This chapter introduces the Expression Language (also referred to as
-the EL), which provides an important mechanism for enabling the
-presentation layer (web pages) to communicate with the application
-logic (managed beans). The EL is used by several Jakarta EE
-technologies, such as Jakarta Faces technology, Jakarta Server Pages
-technology, and Dependency Injection for Jakarta EE (CDI). The EL can
-also be used in stand-alone environments. This chapter only covers the
-use of the EL in Jakarta EE containers.
+This chapter introduces the Expression Language (also referred to as the EL), which provides an important mechanism for enabling the presentation layer (web pages) to communicate with the application logic (managed beans).
+The EL is used by several Jakarta EE technologies, such as Jakarta Faces technology, Jakarta Server Pages technology, and Dependency Injection for Jakarta EE (CDI).
+The EL can also be used in stand-alone environments.
+This chapter only covers the use of the EL in Jakarta EE containers.
 
 include::jsf-el001.adoc[]
 
@@ -24,4 +20,3 @@ include::jsf-el006.adoc[]
 include::jsf-el007.adoc[]
 
 include::jsf-el008.adoc[]
-
