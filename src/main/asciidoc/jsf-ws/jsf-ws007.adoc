@@ -1,8 +1,7 @@
 == Using Ajax With WebSockets
 
-If you want to perform complex UI updates depending on the received
-push message, you can nest the `f:ajax` tag inside the `f:websocket`
-tag. See the following example:
+If you want to perform complex UI updates depending on the received push message, you can nest the `f:ajax` tag inside the `f:websocket` tag.
+See the following example:
 
 [source,xml]
 ----
@@ -16,15 +15,16 @@ tag. See the following example:
 </h:form>
 ----
 
-Here, the push message simply represents the ajax event name. You can
-use any custom event name.
+Here, the push message simply represents the ajax event name.
+You can use any custom event name.
 
 [source,javascript]
+----
 someChannel.send("someEvent");
+----
 
-An alternative is to combine the `f:websocket` tag with the
-`h:commandScript` tag. The `<f:websocket onmessage>` references exactly
-the `<h:commandScript name>`.
+An alternative is to combine the `f:websocket` tag with the `h:commandScript` tag.
+The `<f:websocket onmessage>` references exactly the `<h:commandScript name>`.
 
 For example:
 
@@ -39,6 +39,4 @@ For example:
 </h:form>
 ----
 
-If you pass a `Map<String,V>` or a JavaBean as the push message object,
-then all entries or properties will transparently be available as
-request parameters in the command script method `#{bean.pushed}`.
+If you pass a `Map<String,V>` or a JavaBean as the push message object, then all entries or properties will transparently be available as request parameters in the command script method `#{bean.pushed}`.
