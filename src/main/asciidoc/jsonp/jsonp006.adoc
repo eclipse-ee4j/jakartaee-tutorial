@@ -1,12 +1,9 @@
 == The jsonpmodel Example Application
 
-This section describes how to build and run the `jsonpmodel` example
-application. This example is a web application that demonstrates how to
-create an object model from form data, how to parse JSON data, and how
-write JSON data using the object model API.
+This section describes how to build and run the `jsonpmodel` example application.
+This example is a web application that demonstrates how to create an object model from form data, how to parse JSON data, and how write JSON data using the object model API.
 
-The `jsonpmodel` example application is in the
-`_tut-install_/examples/web/jsonp/jsonpmodel` directory.
+The `jsonpmodel` example application is in the `_tut-install_/examples/web/jsonp/jsonpmodel` directory.
 
 === Components of the jsonpmodel Example Application
 
@@ -16,80 +13,76 @@ The `jsonpmodel` example application contains the following files.
 
 ** The `index.xhtml` page contains a form to collect information.
 
-** The `modelcreated.xhtml` page contains a text area that displays
-JSON data.
+** The `modelcreated.xhtml` page contains a text area that displays JSON data.
 
-** The `parsejson.xhtml` page contains a table that shows the elements
-of the object model.
+** The `parsejson.xhtml` page contains a table that shows the elements of the object model.
 
-* The `ObjectModelBean.java` managed bean, which is a session-scoped
-managed bean that stores the data from the form and directs the
-navigation between the Facelets pages. This file also contains code
-that uses the JSON object model API.
+* The `ObjectModelBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages.
+This file also contains code that uses the JSON object model API.
 
-The code used in `ObjectModelBean.java` to create an object model from
-the data in the form is similar to the example in
-<<creating-an-object-model-from-application-code>>. The
-code to write JSON output from the model is similar to the example in
-<<writing-an-object-model-to-a-stream>>. The code to
-navigate the object model tree is similar to the example in
-<<navigating-an-object-model>>.
+The code used in `ObjectModelBean.java` to create an object model from the data in the form is similar to the example in <<creating-an-object-model-from-application-code>>.
+The code to write JSON output from the model is similar to the example in <<writing-an-object-model-to-a-stream>>.
+The code to navigate the object model tree is similar to the example in <<navigating-an-object-model>>.
 
 === Running the jsonpmodel Example Application
 
-This section describes how to run the `jsonpmodel` example application
-using NetBeans IDE and from the command line.
+This section describes how to run the `jsonpmodel` example application using NetBeans IDE and from the command line.
 
 ==== To Run the jsonpmodel Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the Open Project dialog box, navigate to: 
 +
 ----
 tut-install/examples/web/jsonp
 ----
+
 . Select the `jsonpmodel` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `jsonpmodel` project and
-select *Run*. 
+
+. In the *Projects* tab, right-click the `jsonpmodel` project and select *Run*.
 +
-This command builds and packages the application into a WAR file
-(`jsonpmodel.war`) located in the `target` directory, deploys it to the
-server, and opens a web browser window with the following URL: 
+This command builds and packages the application into a WAR file (`jsonpmodel.war`) located in the `target` directory, deploys it to the server, and opens a web browser window with the following URL:
 +
 ----
 http://localhost:8080/jsonpmodel/
 ----
-. Edit the data on the page and click Create a JSON Object to submit
-the form. The following page shows a JSON object that contains the data
-from the form.
-. Click Parse JSON. The following page contains a table that lists the
-nodes of the object model tree.
+
+. Edit the data on the page and click Create a JSON Object to submit the form.
+The following page shows a JSON object that contains the data from the form.
+
+. Click Parse JSON.
+The following page contains a table that lists the nodes of the object model tree.
 
 ==== To Run the jsonpmodel Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to: 
 +
 ----
 tut-install/examples/web/jsonp/jsonpmodel
 ----
+
 . Enter the following command to deploy the application: 
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Open a web browser window and enter the following address: 
 +
 ----
 http://localhost:8080/jsonpmodel/
 ----
-. Edit the data on the page and click Create a JSON Object to submit
-the form. The following page shows a JSON object that contains the data
-from the form.
-. Click Parse JSON. The following page contains a table that lists the
-nodes of the object model tree.
+
+. Edit the data on the page and click Create a JSON Object to submit the form.
+The following page shows a JSON object that contains the data from the form.
+
+. Click Parse JSON.
+The following page contains a table that lists the nodes of the object model tree.
