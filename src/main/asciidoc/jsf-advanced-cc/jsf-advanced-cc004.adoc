@@ -1,25 +1,18 @@
 == The compositecomponentexample Example Application
 
-The `compositecomponentexample` application creates a composite
-component that accepts a name (or any other string). The component
-interacts with a managed bean that calculates whether the letters in
-the name, if converted to numeric values, add up to a prime number. The
-component displays the sum of the letter values and reports whether it
-is or is not prime.
+The `compositecomponentexample` application creates a composite component that accepts a name (or any other string).
+The component interacts with a managed bean that calculates whether the letters in the name, if converted to numeric values, add up to a prime number.
+The component displays the sum of the letter values and reports whether it is or is not prime.
 
-The `compositecomponentexample` application has a composite component
-file, a using page, and a managed bean.
+The `compositecomponentexample` application has a composite component file, a using page, and a managed bean.
 
-The source code for this application is in the
-`_tut-install_/examples/web/jsf/compositecomponentexample/` directory.
+The source code for this application is in the `_tut-install_/examples/web/jsf/compositecomponentexample/` directory.
 
 === The Composite Component File
 
-The composite component file is an XHTML file,
-`/web/resources/ezcomp/PrimePanel.xhtml`. It has a
-`composite:interface` section that declares the labels for the name and
-a command button. It also declares a managed bean, which defines
-properties for the name.
+The composite component file is an XHTML file, `/web/resources/ezcomp/PrimePanel.xhtml`.
+It has a `composite:interface` section that declares the labels for the name and a command button.
+It also declares a managed bean, which defines properties for the name.
 
 [source,xml]
 ----
@@ -34,14 +27,10 @@ properties for the name.
 </composite:interface>
 ----
 
-The composite component implementation accepts the input value for the
-`name` property of the managed bean. The `h:outputStylesheet` tag
-specifies the stylesheet as a relocatable resource. The implementation
-then specifies the format of the output, using properties of the
-managed bean, as well as the format of error messages. The sum value is
-rendered only after it has been calculated, and the report of whether
-the sum is prime or not is rendered only if the input value is
-validated.
+The composite component implementation accepts the input value for the `name` property of the managed bean.
+The `h:outputStylesheet` tag specifies the stylesheet as a relocatable resource.
+The implementation then specifies the format of the output, using properties of the managed bean, as well as the format of error messages.
+The sum value is rendered only after it has been calculated, and the report of whether the sum is prime or not is rendered only if the input value is validated.
 
 [source,xml]
 ----
@@ -91,34 +80,26 @@ validated.
 
 === The Using Page
 
-The using page in this example application, `web/index.xhtml`, is an
-XHTML file that invokes the `PrimePanel.xhtml` composite component file
-along with the managed bean. It validates the user's input.
+The using page in this example application, `web/index.xhtml`, is an XHTML file that invokes the `PrimePanel.xhtml` composite component file along with the managed bean.
+It validates the user's input.
 
 [source,xml]
 ----
 <div id="compositecomponent">
-    <ez:PrimePanel primeBean="#{primeBean}"
-                   calcAction="#{primeBean.calculate}">
+    <ez:PrimePanel primeBean="#{primeBean}" calcAction="#{primeBean.calculate}">
     </ez:PrimePanel>
 </div>
 ----
 
 === The Managed Bean
 
-The managed bean, `PrimeBean.java`, defines a method called
-`calculate`, which performs the calculations on the input string and
-sets properties accordingly. The bean first creates an array of prime
-numbers. It calculates the sum of the letters in the string, with `'a'`
-equal to 1 and `'z'` equal to 26, and determines whether the value can
-be found in the array of primes. An uppercase letter in the input
-string has the same value as its lowercase equivalent.
+The managed bean, `PrimeBean.java`, defines a method called `calculate`, which performs the calculations on the input string and sets properties accordingly.
+The bean first creates an array of prime numbers.
+It calculates the sum of the letters in the string, with `'a'` equal to 1 and `'z'` equal to 26, and determines whether the value can be found in the array of primes.
+An uppercase letter in the input string has the same value as its lowercase equivalent.
 
-The bean specifies the minimum and maximum size of the `name` string,
-which is enforced by the Bean Validation `@Size` constraint. The bean
-uses the `@Model` annotation, a shortcut for `@Named` and
-`@RequestScoped`, as described in <<hello1-nb-step-7>> of
-<<to-view-the-hello1-web-module-using-netbeans-ide>>.
+The bean specifies the minimum and maximum size of the `name` string, which is enforced by the Bean Validation `@Size` constraint.
+The bean uses the `@Model` annotation, a shortcut for `@Named` and `@RequestScoped`, as described in <<hello1-nb-step-7>> of <<to-view-the-hello1-web-module-using-netbeans-ide>>.
 
 [source,java]
 ----
@@ -137,35 +118,38 @@ public class PrimeBean implements Serializable {
 
 === Running the compositecomponentexample Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `compositecomponentexample` example.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `compositecomponentexample` example.
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
+
 . Select the `compositecomponentexample` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `compositecomponentexample`
-project and select *Build*.
+
+. In the *Projects* tab, right-click the `compositecomponentexample` project and select *Build*.
 +
 This command builds and deploys the application.
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/compositecomponentexample/
 ----
+
 . Enter the following command to build and deploy the application:
 +
 [source,shell]
@@ -180,9 +164,8 @@ mvn install
 ----
 http://localhost:8080/compositecomponentexample
 ----
-. On the page that appears, enter a string in the Name, word, or
-phrase field, then click Calculate.
+
+. On the page that appears, enter a string in the Name, word, or phrase field, then click Calculate.
 +
-The page reports the sum of the letters and whether the sum is prime. A
-validation error is reported if no value is entered or if the string
-contains more than 45 characters.
+The page reports the sum of the letters and whether the sum is prime.
+A validation error is reported if no value is entered or if the string contains more than 45 characters.

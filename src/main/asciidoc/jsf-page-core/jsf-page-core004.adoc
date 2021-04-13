@@ -1,40 +1,29 @@
 == Referencing a Managed Bean Method
 
-A component tag has a set of attributes for referencing managed bean
-methods that can perform certain functions for the component associated
-with the tag. These attributes are summarized in 
-<<component-tag-attributes-that-reference-managed-bean-methods>>.
+A component tag has a set of attributes for referencing managed bean methods that can perform certain functions for the component associated with the tag.
+These attributes are summarized in <<component-tag-attributes-that-reference-managed-bean-methods>>.
 
 [[component-tag-attributes-that-reference-managed-bean-methods]]
-[width="60%",cols="10%a,50%a",title="Component Tag Attributes That Reference Managed Bean Methods"]
+.Component Tag Attributes That Reference Managed Bean Methods
+[width="60%",cols="10%,50%"]
 |===
 |Attribute |Function
 
-|`action` |Refers to a managed bean method that performs navigation
-processing for the component and returns a logical outcome `String`
+|`action` |Refers to a managed bean method that performs navigation processing for the component and returns a logical outcome `String`
 
-|`actionListener` |Refers to a managed bean method that handles action
-events
+|`actionListener` |Refers to a managed bean method that handles action events
 
-|`validator` |Refers to a managed bean method that performs validation
-on the component's value
+|`validator` |Refers to a managed bean method that performs validation on the component's value
 
-|`valueChangeListener` |Refers to a managed bean method that handles
-value-change events
+|`valueChangeListener` |Refers to a managed bean method that handles value-change events
 |===
 
-Only components that implement `ActionSource` can use the `action` and
-`actionListener` attributes. Only components that implement
-`EditableValueHolder` can use the `validator` or `valueChangeListener`
-attributes.
+Only components that implement `ActionSource` can use the `action` and `actionListener` attributes.
+Only components that implement `EditableValueHolder` can use the `validator` or `valueChangeListener` attributes.
 
-The component tag refers to a managed bean method using a method
-expression as a value of one of the attributes. The method referenced
-by an attribute must follow a particular signature, which is defined by
-the tag attribute's definition in the
-https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^]. 
-For example, the definition of the `validator` attribute of the
-`inputText` tag is the following:
+The component tag refers to a managed bean method using a method expression as a value of one of the attributes.
+The method referenced by an attribute must follow a particular signature, which is defined by the tag attribute's definition in the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
+For example, the definition of the `validator` attribute of the `inputText` tag is the following:
 
 [source,java]
 ----
@@ -46,15 +35,12 @@ The following sections give examples of how to use the attributes.
 
 === Referencing a Method That Performs Navigation
 
-If your page includes a component, such as a button or a link, that
-causes the application to navigate to another page when the component
-is activated, the tag corresponding to this component must include an
-`action` attribute. This attribute does one of the following:
+If your page includes a component, such as a button or a link, that causes the application to navigate to another page when the component is activated, the tag corresponding to this component must include an `action` attribute.
+This attribute does one of the following:
 
-* Specifies a logical outcome `String` that tells the application which
-page to access next
-* References a managed bean method that performs some processing and
-returns a logical outcome `String`
+* Specifies a logical outcome `String` that tells the application which page to access next
+
+* References a managed bean method that performs some processing and returns a logical outcome `String`
 
 The following example shows how to reference a navigation method:
 
@@ -64,14 +50,11 @@ The following example shows how to reference a navigation method:
                  action="#{cashierBean.submit}" />
 ----
 
-See <<writing-a-method-to-handle-navigation>> for information on how to
-write such a method.
+See <<writing-a-method-to-handle-navigation>> for information on how to write such a method.
 
 === Referencing a Method That Handles an Action Event
 
-If a component on your page generates an action event, and if that
-event is handled by a managed bean method, you refer to the method by
-using the component's `actionListener` attribute.
+If a component on your page generates an action event, and if that event is handled by a managed bean method, you refer to the method by using the component's `actionListener` attribute.
 
 The following example shows how such a method could be referenced:
 
@@ -81,22 +64,15 @@ The following example shows how such a method could be referenced:
                actionListener="#{actionBean.chooseBookFromLink}">
 ----
 
-The `actionListener` attribute of this component tag references the
-`chooseBookFromLink` method using a method expression. The
-`chooseBookFromLink` method handles the event when the user clicks the
-link rendered by this component. See
-<<writing-a-method-to-handle-an-action-event>> for information on how
-to write such a method.
+The `actionListener` attribute of this component tag references the `chooseBookFromLink` method using a method expression.
+The `chooseBookFromLink` method handles the event when the user clicks the link rendered by this component.
+See <<writing-a-method-to-handle-an-action-event>> for information on how to write such a method.
 
 === Referencing a Method That Performs Validation
 
-If the input of one of the components on your page is validated by a
-managed bean method, refer to the method from the component's tag by
-using the `validator` attribute.
+If the input of one of the components on your page is validated by a managed bean method, refer to the method from the component's tag by using the `validator` attribute.
 
-The following simplified example from
-<<the-guessnumber-cdi-cdi-example>> shows how to reference a method
-that performs validation on `inputGuess`, an input component:
+The following simplified example from <<the-guessnumber-cdi-cdi-example>> shows how to reference a method that performs validation on `inputGuess`, an input component:
 
 [source,xml]
 ----
@@ -108,17 +84,12 @@ that performs validation on `inputGuess`, an input component:
 </h:inputText>
 ----
 
-The managed bean method `validateNumberRange` verifies that the input
-value is within the valid range, which changes each time another guess
-is made. See <<writing-a-method-to-perform-validation>> for information
-on how to write such a method.
+The managed bean method `validateNumberRange` verifies that the input value is within the valid range, which changes each time another guess is made.
+See <<writing-a-method-to-perform-validation>> for information on how to write such a method.
 
 === Referencing a Method That Handles a Value-Change Event
 
-If you want a component on your page to generate a value-change event
-and you want that event to be handled by a managed bean method instead
-of a `ValueChangeListener` implementation, you refer to the method by
-using the component's `valueChangeListener` attribute:
+If you want a component on your page to generate a value-change event and you want that event to be handled by a managed bean method instead of a `ValueChangeListener` implementation, you refer to the method by using the component's `valueChangeListener` attribute:
 
 [source,xml]
 ----
@@ -130,10 +101,7 @@ using the component's `valueChangeListener` attribute:
 </h:inputText>
 ----
 
-The `valueChangeListener` attribute of this component tag references
-the `processValueChange` method of `CashierBean` by using a method
-expression. The `processValueChange` method handles the event of a user
-entering a name in the input field rendered by this component.
+The `valueChangeListener` attribute of this component tag references the `processValueChange` method of `CashierBean` by using a method expression.
+The `processValueChange` method handles the event of a user entering a name in the input field rendered by this component.
 
-<<writing-a-method-to-handle-a-value-change-event>> describes how to
-implement a method that handles a `ValueChangeEvent`.
+<<writing-a-method-to-handle-a-value-change-event>> describes how to implement a method that handles a `ValueChangeEvent`.
