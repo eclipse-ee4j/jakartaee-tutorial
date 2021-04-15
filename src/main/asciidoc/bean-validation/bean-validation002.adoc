@@ -10,7 +10,7 @@ See <<creating-custom-constraints>> for information on creating custom constrain
 
 [[built-in-jakarta-bean-validation-constraints]]
 .Built-In Jakarta Bean Validation Constraints
-[width="99%",cols="22%,59%,18%"]
+[width="99%",cols="22%,59%,18%a"]
 |===
 |Constraint |Description |Example
 
@@ -39,6 +39,7 @@ boolean isActive;
 @DecimalMax("30.00")
 BigDecimal discount;
 ----
+{empty}
 
 |`@DecimalMin` |The value of the field or property must be a decimal value greater than or equal to the number in the value element. |
 
@@ -47,6 +48,7 @@ BigDecimal discount;
 @DecimalMin("5.00")
 BigDecimal discount;
 ----
+{empty}
 
 |`@Digits` |The value of the field or property must be a number within a specified range.
 The `integer` element specifies the maximum integral digits for the number, and the `fraction` element specifies the maximum fractional digits for the number. |
@@ -56,6 +58,7 @@ The `integer` element specifies the maximum integral digits for the number, and 
 @Digits(integer=6, fraction=2)
 BigDecimal price;
 ----
+{empty}
 
 |`@Email` |The value of the field or property must be a valid email address. |
 
@@ -91,6 +94,7 @@ Time travelTime;
 @Max(10)
 int quantity;
 ----
+{empty}
 
 |`@Min` |The value of the field or property must be an integer value greater than or equal to the number in the value element. |
 
@@ -99,6 +103,7 @@ int quantity;
 @Min(5)
 int quantity;
 ----
+{empty}
 
 |`@Negative` |The value of the field or property must be a negative number. |
 
@@ -134,6 +139,7 @@ String message;
 @NotEmpty
 String message;;
 ----
+{empty}
 
 |`@NotNull` |The value of the field or property must not be null. |
 
