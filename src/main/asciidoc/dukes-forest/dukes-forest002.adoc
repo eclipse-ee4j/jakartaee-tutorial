@@ -80,7 +80,7 @@ to administrators.
 applications and the web service interact.
 
 [[interactions-between-dukes-forest-components]]
-image::jakartaeett_dt_063.png["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
+image::jakartaeett_dt_063.svg["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP).",title="Interactions between Duke's Forest Components"]
 
 As illustrated in <<interactions-between-dukes-forest-components>>, the
 customer interacts with the main interface of Duke's Store, while the
