@@ -1,10 +1,10 @@
 == Jakarta EE APIs
 
-////
-<<jakarta-ee-containers>> shows the relationships among the Jakarta EE
+
+<<jakarta-ee-containers-2>> shows the relationships among the Jakarta EE
 containers.
 
-[[jakarta-ee-containers]]
+[[jakarta-ee-containers-2]]
 image::jakartaeett_dt_006.svg["Diagram of Jakarta EE containers and their relationships", title="Jakarta EE Containers"]
 
 <<jakarta-ee-apis-in-the-web-container>> shows the availability of the
@@ -25,7 +25,7 @@ container.
 
 [[jakarta-ee-apis-in-the-application-client-container]]
 image::jakartaeett_dt_009.svg["Diagram of Jakarta EE APIs in the application client container", title="Jakarta EE APIs in the Application Client Container"]
-////
+
 
 The following sections give a brief summary of the technologies
 required by the Jakarta EE platform and the APIs used in Jakarta EE
