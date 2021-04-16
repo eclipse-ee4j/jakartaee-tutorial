@@ -1,41 +1,34 @@
 == The cart Example
 
-The `cart` example represents a shopping cart in an online bookstore
-and uses a stateful session bean to manage the operations of the
-shopping cart. The bean's client can add a book to the cart, remove a
-book, or retrieve the cart's contents. To assemble `cart`, you need the
-following code:
+The `cart` example represents a shopping cart in an online bookstore and uses a stateful session bean to manage the operations of the shopping cart.
+The bean's client can add a book to the cart, remove a book, or retrieve the cart's contents.
+To assemble `cart`, you need the following code:
 
 * Session bean class (`CartBean`)
+
 * Remote business interface (`Cart`)
 
-All session beans require a session bean class. All enterprise beans
-that permit remote access must have a remote business interface. To
-meet the needs of a specific application, an enterprise bean may also
-need some helper classes. The `CartBean` session bean uses two helper
-classes, `BookException` and `IdVerifier`, which are discussed in the
-section <<helper-classes>>.
+All session beans require a session bean class.
+All enterprise beans that permit remote access must have a remote business interface.
+To meet the needs of a specific application, an enterprise bean may also need some helper classes.
+The `CartBean` session bean uses two helper classes, `BookException` and `IdVerifier`, which are discussed in the section <<helper-classes>>.
 
-The source code for this example is in the
-`_tut-install_/examples/ejb/cart/` directory.
+The source code for this example is in the `_tut-install_/examples/ejb/cart/` directory.
 
 === The Business Interface
 
-The `Cart` business interface is a plain Java interface that defines
-all the business methods implemented in the bean class. If the bean
-class implements a single interface, that interface is assumed to the
-business interface. The business interface is a local interface unless
-it is annotated with the `jakarta.ejb.Remote` annotation; the
-`jakarta.ejb.Local` annotation is optional in this case.
+The `Cart` business interface is a plain Java interface that defines all the business methods implemented in the bean class.
+If the bean class implements a single interface, that interface is assumed to the business interface.
+The business interface is a local interface unless it is annotated with the `jakarta.ejb.Remote` annotation; the `jakarta.ejb.Local` annotation is optional in this case.
 
-The bean class may implement more than one interface. In that case, the
-business interfaces must either be explicitly annotated `@Local` or
-`@Remote` or be specified by decorating the bean class with `@Local` or
-`@Remote`. However, the following interfaces are excluded when
-determining whether the bean class implements more than one interface:
+The bean class may implement more than one interface.
+In that case, the business interfaces must either be explicitly annotated `@Local` or `@Remote` or be specified by decorating the bean class with `@Local` or `@Remote`.
+However, the following interfaces are excluded when determining whether the bean class implements more than one interface:
 
 * `java.io.Serializable`
+
 * `java.io.Externalizable`
+
 * Any of the interfaces defined by the `jakarta.ejb` package
 
 The source code for the `Cart` business interface is as follows:
@@ -61,20 +54,20 @@ public interface Cart {
 
 === Session Bean Class
 
-The session bean class for this example is called `CartBean`. Like any
-stateful session bean, the `CartBean` class must meet the following
-requirements.
+The session bean class for this example is called `CartBean`.
+Like any stateful session bean, the `CartBean` class must meet the following requirements.
 
 * The class is annotated `@Stateful`.
-* The class implements the business methods defined in the business
-interface.
+
+* The class implements the business methods defined in the business interface.
 
 Stateful session beans may also do the following.
 
-* Implement the business interface, a plain Java interface. It is good
-practice to implement the bean's business interface.
-* Implement any optional lifecycle callback methods, annotated
-`@PostConstruct`, `@PreDestroy`, `@PostActivate`, and `@PrePassivate`.
+* Implement the business interface, a plain Java interface.
+It is good practice to implement the bean's business interface.
+
+* Implement any optional lifecycle callback methods, annotated `@PostConstruct`, `@PreDestroy`, `@PostActivate`, and `@PrePassivate`.
+
 * Implement any optional business methods annotated `@Remove`.
 
 The source code for the `CartBean` class is as follows:
@@ -155,34 +148,24 @@ public class CartBean implements Cart {
 
 ==== Lifecycle Callback Methods
 
-A method in the bean class may be declared as a lifecycle callback
-method by annotating the method with the following annotations.
+A method in the bean class may be declared as a lifecycle callback method by annotating the method with the following annotations.
 
-* `jakarta.annotation.PostConstruct`: Methods annotated with
-`@PostConstruct` are invoked by the container on newly constructed bean
-instances after all dependency injection has completed and before the
-first business method is invoked on the enterprise bean.
-* `jakarta.annotation.PreDestroy`: Methods annotated with `@PreDestroy`
-are invoked after any method annotated `@Remove` has completed and
-before the container removes the enterprise bean instance.
-* `jakarta.ejb.PostActivate`: Methods annotated with `@PostActivate`
-are invoked by the container after the container moves the bean from
-secondary storage to active status.
-* `jakarta.ejb.PrePassivate`: Methods annotated with `@PrePassivate`
-are invoked by the container before it passivates the enterprise bean,
-meaning that the container temporarily removes the bean from the
-environment and saves it to secondary storage.
+* `jakarta.annotation.PostConstruct`: Methods annotated with `@PostConstruct` are invoked by the container on newly constructed bean instances after all dependency injection has completed and before the first business method is invoked on the enterprise bean.
+
+* `jakarta.annotation.PreDestroy`: Methods annotated with `@PreDestroy` are invoked after any method annotated `@Remove` has completed and before the container removes the enterprise bean instance.
+
+* `jakarta.ejb.PostActivate`: Methods annotated with `@PostActivate` are invoked by the container after the container moves the bean from secondary storage to active status.
+
+* `jakarta.ejb.PrePassivate`: Methods annotated with `@PrePassivate` are invoked by the container before it passivates the enterprise bean, meaning that the container temporarily removes the bean from the environment and saves it to secondary storage.
 
 Lifecycle callback methods must return `void` and have no parameters.
 
 ==== Business Methods
 
-The primary purpose of a session bean is to run business tasks for the
-client. The client invokes business methods on the object reference it
-gets from dependency injection or JNDI lookup. From the client's
-perspective, the business methods appear to run locally, although they
-run remotely in the session bean. The following code snippet shows how
-the `CartClient` program invokes the business methods:
+The primary purpose of a session bean is to run business tasks for the client.
+The client invokes business methods on the object reference it gets from dependency injection or JNDI lookup.
+From the client's perspective, the business methods appear to run locally, although they run remotely in the session bean.
+The following code snippet shows how the `CartClient` program invokes the business methods:
 
 [source,java]
 ----
@@ -195,8 +178,7 @@ List<String> bookList = cart.getContents();
 cart.removeBook("Gravity's Rainbow");
 ----
 
-The `CartBean` class implements the business methods in the following
-code:
+The `CartBean` class implements the business methods in the following code:
 
 [source,java]
 ----
@@ -221,39 +203,30 @@ public List<String> getContents() {
 
 The signature of a business method must conform to these rules.
 
-* The method name must not begin with `ejb`, to avoid conflicts with
-callback methods defined by the Jakarta Enterprise Beans architecture.
-For example, you cannot call a business method `ejbCreate` or
-`ejbActivate`.
+* The method name must not begin with `ejb`, to avoid conflicts with callback methods defined by the Jakarta Enterprise Beans architecture.
+For example, you cannot call a business method `ejbCreate` or `ejbActivate`.
+
 * The access control modifier must be `public`.
-* If the bean allows remote access through a remote business interface,
-the arguments and return types must be legal types for the Java Remote
-Method Invocation (RMI) API.
-* If the bean is a Jakarta XML Web Services endpoint, the arguments and
-return types for the methods annotated `@WebMethod` must be legal types
-for Jakarta XML Web Services.
-* If the bean is a Jakarta RESTful Web Services resource, the arguments
-and return types for the resource methods must be legal types for
-Jakarta RESTful Web Services.
+
+* If the bean allows remote access through a remote business interface, the arguments and return types must be legal types for the Java Remote Method Invocation (RMI) API.
+
+* If the bean is a Jakarta XML Web Services endpoint, the arguments and return types for the methods annotated `@WebMethod` must be legal types for Jakarta XML Web Services.
+
+* If the bean is a Jakarta RESTful Web Services resource, the arguments and return types for the resource methods must be legal types for Jakarta RESTful Web Services.
+
 * The modifier must not be `static` or `final`.
 
-The `throws` clause can include exceptions that you define for your
-application. The `removeBook` method, for example, throws a
-`BookException` if the book is not in the cart.
+The `throws` clause can include exceptions that you define for your application.
+The `removeBook` method, for example, throws a `BookException` if the book is not in the cart.
 
-To indicate a system-level problem, such as the inability to connect to
-a database, a business method should throw a
-`jakarta.ejb.EJBException`. The container will not wrap application
-exceptions, such as `BookException`. Because `EJBException` is a
-subclass of `RuntimeException`, you do not need to include it in the
-`throws` clause of the business method.
+To indicate a system-level problem, such as the inability to connect to a database, a business method should throw a `jakarta.ejb.EJBException`.
+The container will not wrap application exceptions, such as `BookException`.
+Because `EJBException` is a subclass of `RuntimeException`, you do not need to include it in the `throws` clause of the business method.
 
 === The @Remove Method
 
-Business methods annotated with `jakarta.ejb.Remove` in the stateful
-session bean class can be invoked by enterprise bean clients to remove
-the bean instance. The container will remove the enterprise bean after
-a `@Remove` method completes, either normally or abnormally.
+Business methods annotated with `jakarta.ejb.Remove` in the stateful session bean class can be invoked by enterprise bean clients to remove the bean instance.
+The container will remove the enterprise bean after a `@Remove` method completes, either normally or abnormally.
 
 In `CartBean`, the `remove` method is a `@Remove` method:
 
@@ -268,47 +241,40 @@ public void remove() {
 
 === Helper Classes
 
-The `CartBean` session bean has two helper classes: `BookException` and
-`IdVerifier`. The `BookException` is thrown by the `removeBook` method,
-and the `IdVerifier` validates the `customerId` in one of the `create`
-methods. Helper classes may reside in an EJB JAR file that contains the
-enterprise bean class; a WAR file if the enterprise bean is packaged
-within a WAR; or an EAR file that contains an EJB JAR, a WAR file, or a
-separate library JAR file. In `cart`, the helper classes are included
-in a library JAR used by the application client and the EJB JAR.
+The `CartBean` session bean has two helper classes: `BookException` and `IdVerifier`.
+The `BookException` is thrown by the `removeBook` method, and the `IdVerifier` validates the `customerId` in one of the `create` methods.
+Helper classes may reside in an EJB JAR file that contains the enterprise bean class; a WAR file if the enterprise bean is packaged within a WAR; or an EAR file that contains an EJB JAR, a WAR file, or a separate library JAR file.
+In `cart`, the helper classes are included in a library JAR used by the application client and the EJB JAR.
 
 === Running the cart Example
 
-Now you are ready to compile the remote interface (`Cart.java`), the
-enterprise bean class (`CartBean.java`), the client class
-(`CartClient.java`), and the helper classes (`BookException.java` and
-`IdVerifier.java`).
+Now you are ready to compile the remote interface (`Cart.java`), the enterprise bean class (`CartBean.java`), the client class (`CartClient.java`), and the helper classes (`BookException.java` and `IdVerifier.java`).
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `cart` application.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `cart` application.
 
 ==== To Run the cart Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/ejb
 ----
+
 . Select the `cart` folder.
+
 . Select the *Open Required Projects* check box.
+
 . Click Open Project.
-. In the *Projects* tab, right-click the `cart` project and select
-*Build*.
+
+. In the *Projects* tab, right-click the `cart` project and select *Build*.
 +
-This builds and packages the application into `cart.ear`, located in
-`_tut-install_/examples/ejb/cart/cart-ear/target/`, and deploys this
-EAR file to your GlassFish Server instance.
+This builds and packages the application into `cart.ear`, located in `_tut-install_/examples/ejb/cart/cart-ear/target/`, and deploys this EAR file to your GlassFish Server instance.
 +
-You will see the output of the `cart-app-client` application client in
-the Output tab:
+You will see the output of the `cart-app-client` application client in the Output tab:
 +
 ----
 ...
@@ -323,11 +289,13 @@ Caught a BookException: "Gravity's Rainbow" not in cart.
 
 . Make sure that GlassFish Server has been started (see
 <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/ejb/cart/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -335,28 +303,21 @@ tut-install/examples/ejb/cart/
 mvn install
 ----
 +
-This command compiles and packages the application into an EAR file,
-`cart.ear`, located in the `target` directory, and deploys the EAR to
-your GlassFish Server instance.
+This command compiles and packages the application into an EAR file, `cart.ear`, located in the `target` directory, and deploys the EAR to your GlassFish Server instance.
 +
-Then, the client stubs are retrieved and run. This is equivalent to
-running the following command:
+Then, the client stubs are retrieved and run.
+This is equivalent to running the following command:
 +
 [source,shell]
 ----
 appclient -client cart-ear/target/cart-earClient.jar
 ----
 +
-The client JAR, `cart-earClient.jar`, contains the application client
-class, the helper class `BookException`, and the `Cart` business
-interface.
+The client JAR, `cart-earClient.jar`, contains the application client class, the helper class `BookException`, and the `Cart` business interface.
 +
-When you run the client, the application client container injects any
-component references declared in the application client class, in this
-case the reference to the `Cart` enterprise bean.
+When you run the client, the application client container injects any component references declared in the application client class, in this case the reference to the `Cart` enterprise bean.
 +
-You will see the output of the `cart-app-client` application client in
-the terminal window:
+You will see the output of the `cart-app-client` application client in the terminal window:
 +
 ----
 ...

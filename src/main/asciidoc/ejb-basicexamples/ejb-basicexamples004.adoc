@@ -1,53 +1,44 @@
 == A Web Service Example: helloservice
 
-This example demonstrates a simple web service that generates a
-response based on information received from the client.
-`HelloServiceBean` is a stateless session bean that implements a single
-method: `sayHello`. This method matches the `sayHello` method invoked
-by the client described in
-<<a-simple-xml-web-services-application-client>>.
+This example demonstrates a simple web service that generates a response based on information received from the client.
+`HelloServiceBean` is a stateless session bean that implements a single method: `sayHello`.
+This method matches the `sayHello` method invoked by the client described in <<a-simple-xml-web-services-application-client>>.
 
 === The Web Service Endpoint Implementation Class
 
-`HelloServiceBean` is the endpoint implementation class, typically the
-primary programming artifact for enterprise bean web service endpoints.
-The web service endpoint implementation class has the following
-requirements.
+`HelloServiceBean` is the endpoint implementation class, typically the primary programming artifact for enterprise bean web service endpoints.
+The web service endpoint implementation class has the following requirements.
 
-* The class must be annotated with either the `jakarta.jws.WebService`
-or the `jakarta.jws.WebServiceProvider` annotation.
-* The implementing class may explicitly reference an SEI through the
-`endpointInterface` element of the `@WebService` annotation but is not
-required to do so. If no `endpointInterface` is specified in
-`@WebService`, an SEI is implicitly defined for the implementing class.
-* The business methods of the implementing class must be public and
-must not be declared `static` or `final`.
-* Business methods that are exposed to web service clients must be
-annotated with `jakarta.jws.WebMethod`.
-* Business methods that are exposed to web service clients must have
-Jakarta XML Binding-compatible parameters and return types. See the
-list of Jakarta XML Binding default data type bindings at
-<<types-supported-by-xml-web-services>>.
-* The implementing class must not be declared `final` and must not be
-`abstract`.
+* The class must be annotated with either the `jakarta.jws.WebService` or the `jakarta.jws.WebServiceProvider` annotation.
+
+* The implementing class may explicitly reference an SEI through the `endpointInterface` element of the `@WebService` annotation but is not required to do so.
+If no `endpointInterface` is specified in `@WebService`, an SEI is implicitly defined for the implementing class.
+
+* The business methods of the implementing class must be public and must not be declared `static` or `final`.
+
+* Business methods that are exposed to web service clients must be annotated with `jakarta.jws.WebMethod`.
+
+* Business methods that are exposed to web service clients must have Jakarta XML Binding-compatible parameters and return types.
+See the list of Jakarta XML Binding default data type bindings at <<types-supported-by-xml-web-services>>.
+
+* The implementing class must not be declared `final` and must not be `abstract`.
+
 * The implementing class must have a default public constructor.
+
 * The endpoint class must be annotated `@Stateless`.
+
 * The implementing class must not define the `finalize` method.
-* The implementing class may use the `jakarta.annotation.PostConstruct`
-or `jakarta.annotation.PreDestroy` annotations on its methods for
-lifecycle event callbacks.
+
+* The implementing class may use the `jakarta.annotation.PostConstruct` or `jakarta.annotation.PreDestroy` annotations on its methods for lifecycle event callbacks.
 +
-The `@PostConstruct` method is called by the container before the
-implementing class begins responding to web service clients.
+The `@PostConstruct` method is called by the container before the implementing class begins responding to web service clients.
 +
-The `@PreDestroy` method is called by the container before the endpoint
-is removed from operation.
+The `@PreDestroy` method is called by the container before the endpoint is removed from operation.
 
 === Stateless Session Bean Implementation Class
 
-The `HelloServiceBean` class implements the `sayHello` method, which is
-annotated `@WebMethod`. The source code for the `HelloServiceBean`
-class is as follows:
+The `HelloServiceBean` class implements the `sayHello` method, which is annotated `@WebMethod`.
+The source code for the `HelloServiceBean` class is as follows:
 
 [source,java]
 ----
@@ -73,38 +64,39 @@ public class HelloServiceBean {
 
 === Running the helloservice Example
 
-You can use either NetBeans IDE or Maven to build, package, and deploy
-the `helloservice` example. You can then use the Administration Console
-to test the web service endpoint methods.
+You can use either NetBeans IDE or Maven to build, package, and deploy the `helloservice` example.
+You can then use the Administration Console to test the web service endpoint methods.
 
 ==== To Build, Package, and Deploy the helloservice Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/ejb
 ----
+
 . Select the `helloservice` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `helloservice` project and
-select *Build*.
+
+. In the *Projects* tab, right-click the `helloservice` project and select *Build*.
 +
-This builds and packages the application into `helloservice.ear`,
-located in `_tut-install_/examples/ejb/helloservice/target/`, and
-deploys this EAR file to GlassFish Server.
+This builds and packages the application into `helloservice.ear`, located in `_tut-install_/examples/ejb/helloservice/target/`, and deploys this EAR file to GlassFish Server.
 
 ==== To Build, Package, and Deploy the helloservice Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/ejb/helloservice/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -112,19 +104,15 @@ tut-install/examples/ejb/helloservice/
 mvn install
 ----
 +
-This compiles the source files and packages the application into an
-enterprise bean JAR file located at
-`_tut-install_/examples/ejb/helloservice/target/helloservice.jar`. Then
-the enterprise bean JAR file is deployed to GlassFish Server.
+This compiles the source files and packages the application into an enterprise bean JAR file located at `_tut-install_/examples/ejb/helloservice/target/helloservice.jar`.
+Then the enterprise bean JAR file is deployed to GlassFish Server.
 +
-Upon deployment, GlassFish Server generates additional artifacts
-required for web service invocation, including the WSDL file.
+Upon deployment, GlassFish Server generates additional artifacts required for web service invocation, including the WSDL file.
 
 ==== To Test the Service without a Client
 
-The GlassFish Server Administration Console allows you to test the
-methods of a web service endpoint. To test the `sayHello` method of
-`HelloServiceBean`, follow these steps.
+The GlassFish Server Administration Console allows you to test the methods of a web service endpoint.
+To test the `sayHello` method of `HelloServiceBean`, follow these steps.
 
 . Open the *Administration Console* by opening the following URL in a
 web browser:
@@ -132,19 +120,24 @@ web browser:
 ----
 http://localhost:4848/
 ----
+
 . In the navigation tree, select the *Applications* node.
+
 . In the *Applications* table, click the `helloservice` link.
+
 . In the *Modules and Components* table, click the *View Endpoint* link.
+
 . On the *Web Service Endpoint Information* page, click the *Tester* link:
 +
 ----
 /HelloServiceBeanService/HelloServiceBean?Tester
 ----
-. On the *Web Service Test Links* page, click the non-secure link (the
-one that specifies port 8080).
-. On the *HelloServiceBeanService Web Service Tester* page, under
-*Methods*, enter a name as the parameter to the `sayHello` method.
+
+. On the *Web Service Test Links* page, click the non-secure link (the one that specifies port 8080).
+
+. On the *HelloServiceBeanService Web Service Tester* page, under *Methods*, enter a name as the parameter to the `sayHello` method.
+
 . Click *sayHello*.
 +
-The sayHello Method invocation page opens. Under Method returned,
-you'll see the response from the endpoint.
+The sayHello Method invocation page opens.
+Under Method returned, you'll see the response from the endpoint.

@@ -1,77 +1,55 @@
 == What Is a Message-Driven Bean?
 
-A message-driven bean is an enterprise bean that allows Jakarta EE
-applications to process messages asynchronously. This type of bean
-normally acts as a Jakarta Messaging message listener, which is similar
-to an event listener but receives Jakarta Messaging messages instead of
-events. The messages can be sent by any Jakarta EE component (an
-application client, another enterprise bean, or a web component) or by
-a Jakarta Messaging application or system that does not use Jakarta EE
-technology. Message-driven beans can process Jakarta Messaging messages
-or other kinds of messages.
+A message-driven bean is an enterprise bean that allows Jakarta EE applications to process messages asynchronously.
+This type of bean normally acts as a Jakarta Messaging message listener, which is similar to an event listener but receives Jakarta Messaging messages instead of events.
+The messages can be sent by any Jakarta EE component (an application client, another enterprise bean, or a web component) or by a Jakarta Messaging application or system that does not use Jakarta EE technology.
+Message-driven beans can process Jakarta Messaging messages or other kinds of messages.
 
 === What Makes Message-Driven Beans Different from Session Beans?
 
-The most visible difference between message-driven beans and session
-beans is that clients do not access message-driven beans through
-interfaces. Interfaces are described in the section
-<<accessing-enterprise-beans>>. Unlike a session bean, a message-driven
-bean has only a bean class.
+The most visible difference between message-driven beans and session beans is that clients do not access message-driven beans through interfaces.
+Interfaces are described in the section <<accessing-enterprise-beans>>.
+Unlike a session bean, a message-driven bean has only a bean class.
 
-In several respects, a message-driven bean resembles a stateless
-session bean.
+In several respects, a message-driven bean resembles a stateless session bean.
 
-* A message-driven bean's instances retain no data or conversational
-state for a specific client.
-* All instances of a message-driven bean are equivalent, allowing the
-Enterprise Bean container to assign a message to any message-driven
-bean instance. The container can pool these instances to allow streams
-of messages to be processed concurrently.
-* A single message-driven bean can process messages from multiple
-clients.
+* A message-driven bean's instances retain no data or conversational state for a specific client.
 
-The instance variables of the message-driven bean instance can contain
-some state across the handling of client messages, such as a Jakarta
-Messaging connection, an open database connection, or an object
-reference to an enterprise bean object.
+* All instances of a message-driven bean are equivalent, allowing the Enterprise Bean container to assign a message to any message-driven bean instance.
+The container can pool these instances to allow streams of messages to be processed concurrently.
 
-Client components do not locate message-driven beans and invoke methods
-directly on them. Instead, a client accesses a message-driven bean
-through, for example, Jakarta Messaging by sending messages to the
-message destination for which the message-driven bean class is the
-`MessageListener`. You assign a message-driven bean's destination
-during deployment by using GlassFish Server resources.
+* A single message-driven bean can process messages from multiple clients.
+
+The instance variables of the message-driven bean instance can contain some state across the handling of client messages, such as a Jakarta Messaging connection, an open database connection, or an object reference to an enterprise bean object.
+
+Client components do not locate message-driven beans and invoke methods directly on them.
+Instead, a client accesses a message-driven bean through, for example, Jakarta Messaging by sending messages to the message destination for which the message-driven bean class is the `MessageListener`.
+You assign a message-driven bean's destination during deployment by using GlassFish Server resources.
 
 Message-driven beans have the following characteristics.
 
 * They execute upon receipt of a single client message.
+
 * They are invoked asynchronously.
+
 * They are relatively short-lived.
-* They do not represent directly shared data in the database, but they
-can access and update this data.
+
+* They do not represent directly shared data in the database, but they can access and update this data.
+
 * They can be transaction-aware.
+
 * They are stateless.
 
-When a message arrives, the container calls the message-driven bean's
-`onMessage` method to process the message. The `onMessage` method
-normally casts the message to one of the five Jakarta Messaging message
-types and handles it in accordance with the application's business
-logic. The `onMessage` method can call helper methods or can invoke a
-session bean to process the information in the message or to store it
-in a database.
+When a message arrives, the container calls the message-driven bean's `onMessage` method to process the message.
+The `onMessage` method normally casts the message to one of the five Jakarta Messaging message types and handles it in accordance with the application's business logic.
+The `onMessage` method can call helper methods or can invoke a session bean to process the information in the message or to store it in a database.
 
-A message can be delivered to a message-driven bean within a
-transaction context, so all operations within the `onMessage` method
-are part of a single transaction. If message processing is rolled back,
-the message will be redelivered. For more information, see
-<<receiving-messages-asynchronously-using-a-message-driven-bean>> and
-xref:transactions[xrefstyle=full].
+A message can be delivered to a message-driven bean within a transaction context, so all operations within the `onMessage` method are part of a single transaction.
+If message processing is rolled back, the message will be redelivered.
+For more information, see <<receiving-messages-asynchronously-using-a-message-driven-bean>> and xref:transactions[xrefstyle=full].
 
 === When to Use Message-Driven Beans
 
-Session beans allow you to send Jakarta Messaging messages and to
-receive them synchronously but not asynchronously. To avoid tying up
-server resources, do not to use blocking synchronous receives in a
-server-side component; in general, Jakarta Messaging messages should
-not be sent or received synchronously. To receive messages
-asynchronously, use a message-driven bean.
+Session beans allow you to send Jakarta Messaging messages and to receive them synchronously but not asynchronously.
+To avoid tying up server resources, do not to use blocking synchronous receives in a server-side component; in general, Jakarta Messaging messages should not be sent or received synchronously.
+To receive messages asynchronously, use a message-driven bean.

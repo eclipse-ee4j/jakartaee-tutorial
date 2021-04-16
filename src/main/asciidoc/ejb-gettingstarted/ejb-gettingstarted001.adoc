@@ -3,13 +3,17 @@
 Here's an overview of the steps you'll follow:
 
 . Create the enterprise bean: `ConverterBean`.
+
 . Create the web client.
+
 . Deploy `converter` onto the server.
+
 . Using a browser, run the web client.
 
 Before proceeding, make sure that you've done the following:
 
 * Read xref:overview[xrefstyle=full]
-* Become familiar with enterprise beans (see
-xref:enterprise-beans[xrefstyle=full])
+
+* Become familiar with enterprise beans (see xref:enterprise-beans[xrefstyle=full])
+
 * Started the server (see <<starting-and-stopping-glassfish-server>>)
