@@ -1,72 +1,48 @@
 == Overview of Web Application Security
 
-A web application is accessed using a web browser over a network, such
-as the Internet or a company's intranet. As discussed in
-<<distributed-multitiered-applications>>, the Jakarta EE platform uses
-a distributed multitiered application model, and web applications run
-in the web tier.
+A web application is accessed using a web browser over a network, such as the Internet or a company's intranet.
+As discussed in <<distributed-multitiered-applications>>, the Jakarta EE platform uses a distributed multitiered application model, and web applications run in the web tier.
 
 Web applications contain resources that can be accessed by many users.
-These resources often traverse unprotected, open networks, such as the
-Internet. In such an environment, a substantial number of web
-applications will require some type of security.
+These resources often traverse unprotected, open networks, such as the Internet.
+In such an environment, a substantial number of web applications will require some type of security.
 
-Securing applications and their clients in the business tier and the
-EIS tier is discussed in
-xref:getting-started-securing-enterprise-applications[xrefstyle=full].
+Securing applications and their clients in the business tier and the EIS tier is discussed in xref:getting-started-securing-enterprise-applications[xrefstyle=full].
 
-In the Jakarta EE platform, web components provide the dynamic
-extension capabilities for a web server. Web components can be Jakarta
-servlets or Jakarta Faces pages.
+In the Jakarta EE platform, web components provide the dynamic extension capabilities for a web server.
+Web components can be Jakarta servlets or Jakarta Faces pages.
 
-Certain aspects of web application security can be configured when the
-application is installed, or deployed, to the web container.
-Annotations and/or deployment descriptors are used to relay information
-to the deployer about security and other aspects of the application.
-Specifying this information in annotations or in the deployment
-descriptor helps the deployer set up the appropriate security policy
-for the web application. Any values explicitly specified in the
-deployment descriptor override any values specified in annotations.
+Certain aspects of web application security can be configured when the application is installed, or deployed, to the web container.
+Annotations and/or deployment descriptors are used to relay information to the deployer about security and other aspects of the application.
+Specifying this information in annotations or in the deployment descriptor helps the deployer set up the appropriate security policy for the web application.
+Any values explicitly specified in the deployment descriptor override any values specified in annotations.
 
-Security for Jakarta EE web applications can be implemented in the
-following ways.
+Security for Jakarta EE web applications can be implemented in the following ways.
 
-* Declarative security can be implemented using either metadata
-annotations or an application's deployment descriptor. See
-<<overview-of-jakarta-security>> for more information.
+* Declarative security can be implemented using either metadata annotations or an application's deployment descriptor.
+See <<overview-of-jakarta-security>> for more information.
 +
-Declarative security for web applications is described in
-<<securing-web-applications>>.
+Declarative security for web applications is described in <<securing-web-applications>>.
 
-* Programmatic security is embedded in an application and can be used
-to make security decisions when declarative security alone is not
-sufficient to express the security model of an application. Declarative
-security alone may not be sufficient when conditional login in a
-particular work flow, instead of for all cases, is required in the
-middle of an application. See <<overview-of-jakarta-security>> for more
-information.
+* Programmatic security is embedded in an application and can be used to make security decisions when declarative security alone is not sufficient to express the security model of an application.
+Declarative security alone may not be sufficient when conditional login in a particular work flow, instead of for all cases, is required in the middle of an application.
+See <<overview-of-jakarta-security>> for more information.
 +
-Servlet 5.0 provides the `authenticate`, `login`, and `logout` methods
-of the `HttpServletRequest` interface. With the addition of the
-`authenticate`, `login`, and `logout` methods to the Servlet
-specification, an application deployment descriptor is no longer
-required for web applications but may still be used to further specify
-security requirements beyond the basic default values.
+Servlet 5.0 provides the `authenticate`, `login`, and `logout` methods of the `HttpServletRequest` interface.
+With the addition of the `authenticate`, `login`, and `logout` methods to the Servlet specification, an application deployment descriptor is no longer required for web applications but may still be used to further specify security requirements beyond the basic default values.
 +
-Programmatic security is discussed in
-<<using-programmatic-security-with-web-applications>>.
+Programmatic security is discussed in <<using-programmatic-security-with-web-applications>>.
 
-* Message security works with web services and incorporates security
-features, such as digital signatures and encryption, into the header of
-a SOAP message, working in the application layer, ensuring end-to-end
-security. Message security is not a component of Jakarta EE and is
-mentioned here for informational purposes only.
+* Message security works with web services and incorporates security features, such as digital signatures and encryption, into the header of a SOAP message, working in the application layer, ensuring end-to-end security.
+Message security is not a component of Jakarta EE and is mentioned here for informational purposes only.
 
-Some of the material in this chapter builds on material presented
-earlier in this tutorial. In particular, this chapter assumes that you
-are familiar with the information in the following chapters:
+Some of the material in this chapter builds on material presented earlier in this tutorial.
+In particular, this chapter assumes that you are familiar with the information in the following chapters:
 
 * xref:getting-started-with-web-applications[xrefstyle=full]
+
 * xref:jakarta-faces-technology-2[xrefstyle=full]
+
 * xref:jakarta-servlet-technology-2[xrefstyle=full]
+
 * xref:introduction-to-security-in-the-jakarta-ee-platform[xrefstyle=full]

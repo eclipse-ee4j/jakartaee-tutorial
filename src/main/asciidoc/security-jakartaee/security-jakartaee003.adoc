@@ -1,53 +1,34 @@
 == Examples: Securing Enterprise Beans
 
-The following examples show how to secure enterprise beans using
-declarative and programmatic security.
+The following examples show how to secure enterprise beans using declarative and programmatic security.
 
 === The cart-secure Example: Securing an Enterprise Bean with Declarative Security
 
-This section discusses how to configure an enterprise bean for basic
-user name/password authentication. When a bean that is constrained in
-this way is requested, the server requests a user name and password
-from the client and verifies that the user name and password are valid
-by comparing them against a database of authorized users in GlassFish
-Server.
+This section discusses how to configure an enterprise bean for basic user name/password authentication.
+When a bean that is constrained in this way is requested, the server requests a user name and password from the client and verifies that the user name and password are valid by comparing them against a database of authorized users in GlassFish Server.
 
-If the topic of authentication is new to you, see
-<<specifying-authentication-mechanisms>>.
+If the topic of authentication is new to you, see <<specifying-authentication-mechanisms>>.
 
-This example demonstrates security by starting with the unsecured
-enterprise bean application, `cart`, which is found in the
-`_tut-install_/examples/ejb/cart/` directory and is discussed in
-<<the-cart-example>>.
+This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_tut-install_/examples/ejb/cart/` directory and is discussed in <<the-cart-example>>.
 
-In general, the following steps are necessary to add user name/password
-authentication to an existing application that contains an enterprise
-bean. In the example application included with this tutorial, these
-steps have been completed for you and are listed here simply to show
-what needs to be done should you wish to create a similar application.
+In general, the following steps are necessary to add user name/password authentication to an existing application that contains an enterprise bean.
+In the example application included with this tutorial, these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 
-. Create an application like the one in <<the-cart-example>>. The
-example in this tutorial starts with this example and demonstrates
-adding basic authentication of the client to this application. The
-example application discussed in this section can be found at
-`_tut-install_/examples/security/cart-secure/`.
-. If you have not already done so, complete the steps in
-<<to-set-up-your-system-for-running-the-security-examples>> to
-configure your system for running the tutorial applications.
-. Modify the source code for the enterprise bean, `CartBean.java`, to
-specify which roles are authorized to access which protected methods.
+. Create an application like the one in <<the-cart-example>>.
+The example in this tutorial starts with this example and demonstrates adding basic authentication of the client to this application.
+The example application discussed in this section can be found at `_tut-install_/examples/security/cart-secure/`.
+
+. If you have not already done so, complete the steps in <<to-set-up-your-system-for-running-the-security-examples>> to configure your system for running the tutorial applications.
+
+. Modify the source code for the enterprise bean, `CartBean.java`, to specify which roles are authorized to access which protected methods.
 This step is discussed in <<annotating-the-bean>>.
-. Build, package, and deploy the enterprise bean; then build and run
-the client application by following the steps in
-<<to-run-the-cart-secure-example-using-netbeans-ide>> or
-<<to-run-the-cart-secure-example-using-maven>>.
+
+. Build, package, and deploy the enterprise bean; then build and run the client application by following the steps in <<to-run-the-cart-secure-example-using-netbeans-ide>> or <<to-run-the-cart-secure-example-using-maven>>.
 
 ==== Annotating the Bean
 
-The source code for the original `cart` application was modified as
-shown in the following code snippet (modifications in bold). The
-resulting file can be found in the file
-`_tut-install_/examples/security/cart-secure/cart-secure-ejb/src/main/java/ee/jakarta/tutorial/cart/ejb/CartBean.java`.
+The source code for the original `cart` application was modified as shown in the following code snippet (modifications in bold).
+The resulting file can be found in the file `_tut-install_/examples/security/cart-secure/cart-secure-ejb/src/main/java/ee/jakarta/tutorial/cart/ejb/CartBean.java`.
 
 The code snippet is as follows:
 
@@ -134,43 +115,37 @@ public class CartBean implements Cart, Serializable {
 }
 ----
 
-The `@RolesAllowed` annotation is specified on methods for which you
-want to restrict access. In this example, only users in the role of
-`TutorialUser` will be allowed to add and remove books from the cart
-and to list the contents of the cart. A `@RolesAllowed` annotation
-implicitly declares a role that will be referenced in the application;
-therefore, no `@DeclareRoles` annotation is required. The presence of
-the `@RolesAllowed` annotation also implicitly declares that
-authentication will be required for a user to access these methods. If
-no authentication method is specified in the deployment descriptor, the
-type of authentication will be user name/password authentication.
+The `@RolesAllowed` annotation is specified on methods for which you want to restrict access.
+In this example, only users in the role of `TutorialUser` will be allowed to add and remove books from the cart and to list the contents of the cart.
+A `@RolesAllowed` annotation implicitly declares a role that will be referenced in the application; therefore, no `@DeclareRoles` annotation is required.
+The presence of the `@RolesAllowed` annotation also implicitly declares that authentication will be required for a user to access these methods.
+If no authentication method is specified in the deployment descriptor, the type of authentication will be user name/password authentication.
 
 ==== To Run the cart-secure Example Using NetBeans IDE
 
-. Follow the steps in
-<<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/security
 ----
+
 . Select the `cart-secure` folder.
+
 . Select the Open Required Projects check box.
+
 . Click Open Project.
-. In the Projects tab, right-click the `cart-secure` project and select
-Build.
+
+. In the Projects tab, right-click the `cart-secure` project and select Build.
 +
-This step builds and packages the application into `cart-secure.ear`,
-located in the `cart-secure-ear/target/` directory, and deploys this
-EAR file to your GlassFish Server instance, retrieves the client stubs,
-and runs the client.
-. In the Login for user: dialog box, enter the user name and password
-of a `file` realm user created in GlassFish Server and assigned to the
-group `TutorialUser`; then click OK.
+This step builds and packages the application into `cart-secure.ear`, located in the `cart-secure-ear/target/` directory, and deploys this EAR file to your GlassFish Server instance, retrieves the client stubs, and runs the client.
+
+. In the Login for user: dialog box, enter the user name and password of a `file` realm user created in GlassFish Server and assigned to the group `TutorialUser`; then click OK.
 +
-If the user name and password you enter are authenticated, the output
-of the application client appears in the Output tab:
+If the user name and password you enter are authenticated, the output of the application client appears in the Output tab:
 +
 ----
 ...
@@ -183,32 +158,28 @@ Java Result: 1
 ...
 ----
 +
-If the user name and password are not authenticated, the dialog box
-reappears until you enter correct values.
+If the user name and password are not authenticated, the dialog box reappears until you enter correct values.
 
 ==== To Run the cart-secure Example Using Maven
 
-. Follow the steps in
-<<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/security/cart-secure/
 ----
-. To build the application, package it into an EAR file in the
-`cart-secure-ear/target` subdirectory, deploy it, and run it, enter the
-following command at the terminal window or command prompt:
+
+. To build the application, package it into an EAR file in the `cart-secure-ear/target` subdirectory, deploy it, and run it, enter the following command at the terminal window or command prompt:
 +
 [source,shell]
 ----
 mvn install
 ----
-. In the Login for user: dialog box, enter the user name and password
-of a `file` realm user created in GlassFish Server and assigned to the
-group `TutorialUser`; then click OK.
+
+. In the Login for user: dialog box, enter the user name and password of a `file` realm user created in GlassFish Server and assigned to the group `TutorialUser`; then click OK.
 +
-If the user name and password you enter are authenticated, the output
-of the application client appears in the Output tab:
+If the user name and password you enter are authenticated, the output of the application client appears in the Output tab:
 +
 ----
 ...
@@ -221,109 +192,90 @@ Java Result: 1
 ...
 ----
 +
-If the user name and password are not authenticated, the dialog box
-reappears until you enter correct values.
+If the user name and password are not authenticated, the dialog box reappears until you enter correct values.
 
 === The converter-secure Example: Securing an Enterprise Bean with Programmatic Security
 
-This example demonstrates how to use the `getCallerPrincipal` and
-`isCallerInRole` methods with an enterprise bean. This example starts
-with a very simple enterprise bean application, `converter`, and
-modifies the methods of the `ConverterBean` so that currency conversion
-will occur only when the requester is in the role of `TutorialUser`.
+This example demonstrates how to use the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
+This example starts with a very simple enterprise bean application, `converter`, and modifies the methods of the `ConverterBean` so that currency conversion will occur only when the requester is in the role of `TutorialUser`.
 
-This example can be found in the
-`_tut-install_/examples/security/converter-secure` directory. This
-example is based on the unsecured enterprise bean application,
-`converter`, which is discussed in
-xref:getting-started-with-enterprise-beans[xrefstyle=full] and is found
-in the `_tut-install_/examples/ejb/converter/` directory. This section
-builds on the example by adding the necessary elements to secure the
-application by using the `getCallerPrincipal` and `isCallerInRole`
-methods, which are discussed in more detail in
-<<securing-an-enterprise-bean-programmatically>>.
+This example can be found in the `_tut-install_/examples/security/converter-secure` directory.
+This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:getting-started-with-enterprise-beans[xrefstyle=full] and is found in the `_tut-install_/examples/ejb/converter/` directory.
+This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in <<securing-an-enterprise-bean-programmatically>>.
 
-In general, the following steps are necessary when using the
-`getCallerPrincipal` and `isCallerInRole` methods with an enterprise
-bean. In the example application included with this tutorial, many of
-these steps have been completed for you and are listed here simply to
-show what needs to be done should you wish to create a similar
-application.
+In general, the following steps are necessary when using the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
+In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 
 . Create a simple enterprise bean application.
-. Set up a user on GlassFish Server in the `file` realm, in the group
-`TutorialUser`, and set up default principal to role mapping. To do
-this, follow the steps in
-<<to-set-up-your-system-for-running-the-security-examples>>.
-. Modify the bean to add the `getCallerPrincipal` and `isCallerInRole`
-methods.
-. If the application contains a web client that is a servlet, specify
-security for the servlet, as described in
-<<specifying-security-for-basic-authentication-using-annotations>>.
+
+. Set up a user on GlassFish Server in the `file` realm, in the group `TutorialUser`, and set up default principal to role mapping.
+To do this, follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+
+. Modify the bean to add the `getCallerPrincipal` and `isCallerInRole` methods.
+
+. If the application contains a web client that is a servlet, specify security for the servlet, as described in <<specifying-security-for-basic-authentication-using-annotations>>.
+
 . Build, package, deploy, and run the application.
 
 ==== Modifying ConverterBean
 
-The source code for the original `ConverterBean` class was modified to
-add the `if..else` clause that tests whether the caller is in the role
-of `TutorialUser`. If the user is in the correct role, the currency
-conversion is computed and displayed. If the user is not in the correct
-role, the computation is not performed, and the application displays
-the result as `0`. The code example can be found in
-`_tut-install_/examples/security/converter-secure/converter-secure-ejb/src/main/java/ee/jakarta/tutorial/converter/ejb/ConverterBean.java`.
+The source code for the original `ConverterBean` class was modified to add the `if..else` clause that tests whether the caller is in the role of `TutorialUser`.
+If the user is in the correct role, the currency conversion is computed and displayed.
+If the user is not in the correct role, the computation is not performed, and the application displays the result as `0`.
+The code example can be found in `_tut-install_/examples/security/converter-secure/converter-secure-ejb/src/main/java/ee/jakarta/tutorial/converter/ejb/ConverterBean.java`.
 
-The code snippet (with modifications shown in bold) is as follows:
+The code snippet (with modifications shown in *bold*) is as follows:
 
-[source,java]
+[source,java,subs="+quotes"]
 ----
 package ee.jakarta.tutorial.convertersecure.ejb;
 
 import java.math.BigDecimal;
-import java.security.Principal;
-import jakarta.ejb.Stateless;
-import jakarta.annotation.Resource;
-import jakarta.ejb.SessionContext;
+*import java.security.Principal;*
+
+*import jakarta.annotation.Resource;
 import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.ejb.SessionContext;*
+import jakarta.ejb.Stateless;
 
 @Stateless()
-@DeclareRoles("TutorialUser")
+*@DeclareRoles("TutorialUser")*
 public class ConverterBean{
 
-    @Resource SessionContext ctx;
+    *@Resource SessionContext ctx;*
     private final BigDecimal yenRate = new BigDecimal("104.34");
     private final BigDecimal euroRate = new BigDecimal("0.007");
 
-    @RolesAllowed("TutorialUser")
+    *@RolesAllowed("TutorialUser")*
      public BigDecimal dollarToYen(BigDecimal dollars) {
-        BigDecimal result = new BigDecimal("0.0");
+        *BigDecimal result = new BigDecimal("0.0");
         Principal callerPrincipal = ctx.getCallerPrincipal();
-        if (ctx.isCallerInRole("TutorialUser")) {
+        if (ctx.isCallerInRole("TutorialUser")) {*
             result = dollars.multiply(yenRate);
             return result.setScale(2, BigDecimal.ROUND_UP);
-        } else {
+        *} else {
             return result.setScale(2, BigDecimal.ROUND_UP);
-        }
+        }*
     }
 
-    @RolesAllowed("TutorialUser")
+    *@RolesAllowed("TutorialUser")*
     public BigDecimal yenToEuro(BigDecimal yen) {
-        BigDecimal result = new BigDecimal("0.0");
+        *BigDecimal result = new BigDecimal("0.0");
         Principal callerPrincipal = ctx.getCallerPrincipal();
-        if (ctx.isCallerInRole("TutorialUser")) {
+        if (ctx.isCallerInRole("TutorialUser")) {*
              result = yen.multiply(euroRate);
              return result.setScale(2, BigDecimal.ROUND_UP);
-        } else {
+        *} else {
              return result.setScale(2, BigDecimal.ROUND_UP);
-        }
+        }*
     }
 }
 ----
 
 ==== Modifying ConverterServlet
 
-The following annotations specify security for the `converter` web
-client, `ConverterServlet`:
+The following annotations specify security for the `converter` web client, `ConverterServlet`:
 
 [source,java]
 ----
@@ -335,30 +287,34 @@ client, `ConverterServlet`:
 
 ==== To Run the converter-secure Example Using NetBeans IDE
 
-. Follow the steps in
-<<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/security
 ----
+
 . Select the `converter-secure` folder.
+
 . Click Open Project.
+
 . Right-click the `converter-secure` project and select Build.
 +
-This command builds and deploys the example application to your
-GlassFish Server instance.
+This command builds and deploys the example application to your GlassFish Server instance.
 
 ==== To Run the converter-secure Example Using Maven
 
-. Follow the steps in
-<<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/security/converter-secure/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -366,9 +322,7 @@ tut-install/examples/security/converter-secure/
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file,
-`converter-secure.war`, that is located in the `target` directory, and
-deploys the WAR file.
+This command builds and packages the application into a WAR file, `converter-secure.war`, that is located in the `target` directory, and deploys the WAR file.
 
 ==== To Run the converter-secure Example
 
@@ -380,9 +334,7 @@ http://localhost:8080/converter-secure
 +
 An Authentication Required dialog box appears.
 
-. Enter a user name and password combination that corresponds to a user
-who has already been created in the `file` realm of GlassFish Server
-and has been assigned to the group `TutorialUser`; then click OK.
+. Enter a user name and password combination that corresponds to a user who has already been created in the `file` realm of GlassFish Server and has been assigned to the group `TutorialUser`; then click OK.
 
 . Enter `100` in the input field and click Submit.
 +

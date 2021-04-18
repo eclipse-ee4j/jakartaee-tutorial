@@ -1,52 +1,34 @@
 == Using Programmatic Security with Web Applications
 
-Programmatic security is used by security-aware applications when
-declarative security alone is not sufficient to express the security
-model of the application.
+Programmatic security is used by security-aware applications when declarative security alone is not sufficient to express the security model of the application.
 
 === Authenticating Users Programmatically
 
-You can use the `SecurityContext` and `HttpServletRequest` interfaces
-to authenticate users for a web application programmatically.
+You can use the `SecurityContext` and `HttpServletRequest` interfaces to authenticate users for a web application programmatically.
 
 ==== SecurityContext
 
-The `SecurityContext` interface, as specified in the Jakarta Security
-specification, defines the following method to programmatically trigger
-the authentication process:
+The `SecurityContext` interface, as specified in the Jakarta Security specification, defines the following method to programmatically trigger the authentication process:
 
-* `authenticate()` allows an application to signal to the container
-that it should start the authentication process with the caller.
+* `authenticate()` allows an application to signal to the container that it should start the authentication process with the caller.
 
-Programmatically triggering means that the container responds as if the
-caller had attempted to access a constrained resource. It causes the
-container to invoke the authentication mechanism configured for the
-application. If the configured authentication mechanism is an
-`HttpAuthenticationMechanism`, then the `AuthenticationParameters`
-argument is meaningful and extended capabilities of
-`HttpAuthenticationMechanism` are available. If not, the behavior and
-result is as if `HttpServletRequest.authenticate()` were called.
+Programmatically triggering means that the container responds as if the caller had attempted to access a constrained resource.
+It causes the container to invoke the authentication mechanism configured for the application.
+If the configured authentication mechanism is an `HttpAuthenticationMechanism`, then the `AuthenticationParameters` argument is meaningful and extended capabilities of `HttpAuthenticationMechanism` are available.
+If not, the behavior and result is as if `HttpServletRequest.authenticate()` were called.
 
 ==== HttpServletRequest
 
-The `HttpServletRequest` interface defines the following methods that
-enable you to authenticate users for a web application
-programmatically.
+The `HttpServletRequest` interface defines the following methods that enable you to authenticate users for a web application programmatically.
 
-* `authenticate` allows an application to instigate authentication of
-the request caller by the container from within an unconstrained
-request context. A login dialog box displays and collects the user name
-and password for authentication purposes.
+* `authenticate` allows an application to instigate authentication of the request caller by the container from within an unconstrained request context.
+A login dialog box displays and collects the user name and password for authentication purposes.
 
-* `login` allows an application to collect user name and password
-information as an alternative to specifying form-based authentication
-in an application deployment descriptor.
+* `login` allows an application to collect user name and password information as an alternative to specifying form-based authentication in an application deployment descriptor.
 
-* `logout` allows an application to reset the caller identity of a
-request.
+* `logout` allows an application to reset the caller identity of a request.
 
-The following example code shows how to use the `login` and `logout`
-methods:
+The following example code shows how to use the `login` and `logout` methods:
 
 [source,java]
 ----
@@ -133,87 +115,53 @@ public class TestServlet extends HttpServlet {
 
 === Checking Caller Identity Programmatically
 
-In general, the container enforces security management in a manner that
-is transparent to the web component. Use the security APIs described in
-this section only in the less frequent situations in which the web
-component methods need to access the security context information.
+In general, the container enforces security management in a manner that is transparent to the web component.
+Use the security APIs described in this section only in the less frequent situations in which the web component methods need to access the security context information.
 
-The Jakarta Security specification defines the following methods of the
-`SecurityContext` interface that allow the application to test aspects
-of the caller data:
+The Jakarta Security specification defines the following methods of the `SecurityContext` interface that allow the application to test aspects of the caller data:
 
-* `getCallerPrincipal()` retrieves the `Principal` representing the
-caller. This is the container-specific representation of the caller
-principal, and the type may differ from the type of the caller
-principal originally established by an `HttpAuthenticationMechanism`.
+* `getCallerPrincipal()` retrieves the `Principal` representing the caller.
+This is the container-specific representation of the caller principal, and the type may differ from the type of the caller principal originally established by an `HttpAuthenticationMechanism`.
 This method returns null for an unauthenticated caller.
 
 * `getPrincipalsByType()` retrieves all principals of the given type.
-This method can be used to retrieve an application-specific caller
-principal established during authentication. This method is primarily
-useful in the case that the container’s caller principal is a different
-type than the application caller principal, and the application needs
-specific information behavior available only from the application
-principal. This method returns an empty `Set` if the caller is
-unauthenticated, or if the requested type is not found.
+This method can be used to retrieve an application-specific caller principal established during authentication.
+This method is primarily useful in the case that the container’s caller principal is a different type than the application caller principal, and the application needs specific information behavior available only from the application principal.
+This method returns an empty `Set` if the caller is unauthenticated, or if the requested type is not found.
 +
-Where both a container caller principal and an application caller
-principal are present, the value returned by `getName()` is the same
-for both principals.
+Where both a container caller principal and an application caller principal are present, the value returned by `getName()` is the same for both principals.
 
-* `isCallerInRole()` takes a String argument that represents the role
-to be tested. The specification does not define how the role
-determination is made, but the result must be the same as if the
-corresponding container-specific call had been made (for example
-`HttpServletRequest.isUserInRole()`, `EJBContext.isCallerInRole()`),
-and must be consistent with the result implied by specifications that
-prescribe role-mapping behavior.
+* `isCallerInRole()` takes a String argument that represents the role to be tested.
+The specification does not define how the role determination is made, but the result must be the same as if the corresponding container-specific call had been made (for example `HttpServletRequest.isUserInRole()`, `EJBContext.isCallerInRole()`), and must be consistent with the result implied by specifications that prescribe role-mapping behavior.
 
-Servlet 5.0 specifies the following methods that enable you to access
-security information about the component's caller.
+Servlet 5.0 specifies the following methods that enable you to access security information about the component's caller.
 
-* `getRemoteUser` determines the user name with which the client
-authenticated. The `getRemoteUser` method returns the name of the
-remote user (the caller) associated by the container with the request.
+* `getRemoteUser` determines the user name with which the client authenticated.
+The `getRemoteUser` method returns the name of the remote user (the caller) associated by the container with the request.
 If no user has been authenticated, this method returns `null`.
 
-* `isUserInRole` determines whether a remote user is in a specific
-security role. If no user has been authenticated, this method returns
-`false`. This method expects a `String` user `role-name` parameter.
+* `isUserInRole` determines whether a remote user is in a specific security role.
+If no user has been authenticated, this method returns `false`.
+This method expects a `String` user `role-name` parameter.
 +
-The `security-role-ref` element should be declared in the deployment
-descriptor with a `role-name` subelement containing the role name to be
-passed to the method. Using security role references is discussed in
-<<declaring-and-linking-role-references>>.
+The `security-role-ref` element should be declared in the deployment descriptor with a `role-name` subelement containing the role name to be passed to the method.
+Using security role references is discussed in <<declaring-and-linking-role-references>>.
 
-* `getUserPrincipal` determines the principal name of the current user
-and returns a `java.security.Principal` object. If no user has been
-authenticated, this method returns `null`. Calling the `getName` method
-on the `Principal` returned by `getUserPrincipal` returns the name of
-the remote user.
+* `getUserPrincipal` determines the principal name of the current user and returns a `java.security.Principal` object.
+If no user has been authenticated, this method returns `null`.
+Calling the `getName` method on the `Principal` returned by `getUserPrincipal` returns the name of the remote user.
 
-Your application can make business-logic decisions based on the
-information obtained using these APIs.
+Your application can make business-logic decisions based on the information obtained using these APIs.
 
 === Testing Access to a Resource Programmatically
 
-The `SecurityContext` interface, as specified in the Jakarta Security
-API specification, defines the following method for programmatically
-testing access to a resource:
+The `SecurityContext` interface, as specified in the Jakarta Security API specification, defines the following method for programmatically testing access to a resource:
 
-* `hasAccessToWebResource()` method determines if the caller has access
-to the specified web resource for the specified HTTP methods, as
-determined by the security constraints configured for the application.
+* `hasAccessToWebResource()` method determines if the caller has access to the specified web resource for the specified HTTP methods, as determined by the security constraints configured for the application.
 +
-The resource parameter is an `URLPatternSpec`, as defined by Jakarta
-Authorization
-(https://jakarta.ee/specifications/authorization/2.0/[^]), that
-identifies an application-specific web resource.
+The resource parameter is an `URLPatternSpec`, as defined by Jakarta Authorization (https://jakarta.ee/specifications/authorization/2.0/[^]), that identifies an application-specific web resource.
 +
-This method can be used to check access to resources in the current
-application only — it cannot be called cross-application, or
-cross-container, to check access to resources in a different
-application.
+This method can be used to check access to resources in the current application only — it cannot be called cross-application, or cross-container, to check access to resources in a different application.
 
 For example, consider the following Servlet definition:
 
@@ -231,21 +179,22 @@ And the following call to `hasAccessToWebResource()`:
 securityContext.hasAccessToWebResource("/protectedServlet", GET)
 ----
 
-The above `hasAccessToWebResource()` call returns true if, and only if,
-the caller is in role "foo".
+The above `hasAccessToWebResource()` call returns true if, and only if, the caller is in role "foo".
 
 === Example Code for Programmatic Security
 
-The following code demonstrates the use of programmatic security for
-the purposes of programmatic login. This servlet does the following.
+The following code demonstrates the use of programmatic security for the purposes of programmatic login.
+This servlet does the following.
 
 . It displays information about the current user.
+
 . It prompts the user to log in.
-. It prints out the information again to demonstrate the effect of the
-`login` method.
+
+. It prints out the information again to demonstrate the effect of the `login` method.
+
 . It logs the user out.
-. It prints out the information again to demonstrate the effect of the
-`logout` method.
+
+. It prints out the information again to demonstrate the effect of the `logout` method.
 
 [source,java]
 ----
@@ -315,29 +264,17 @@ public class LoginServlet extends HttpServlet {
 
 === Declaring and Linking Role References
 
-A security role reference is a mapping between the name of a role that
-is called from a web component using `isUserInRole(String role)` and
-the name of a security role that has been defined for the application.
-If no `security-role-ref` element is declared in a deployment
-descriptor and the `isUserInRole` method is called, the container
-defaults to checking the provided role name against the list of all
-security roles defined for the web application. Using the default
-method instead of using the `security-role-ref` element limits your
-flexibility to change role names in an application without also
-recompiling the servlet making the call.
+A security role reference is a mapping between the name of a role that is called from a web component using `isUserInRole(String role)` and the name of a security role that has been defined for the application.
+If no `security-role-ref` element is declared in a deployment descriptor and the `isUserInRole` method is called, the container defaults to checking the provided role name against the list of all security roles defined for the web application.
+Using the default method instead of using the `security-role-ref` element limits your flexibility to change role names in an application without also recompiling the servlet making the call.
 
-The `security-role-ref` element is used when an application uses the
-`HttpServletRequest.isUserInRole(String role)`. The value passed to the
-`isUserInRole` method is a `String` representing the role name of the
-user. The value of the `role-name` element must be the `String` used as
-the parameter to the `HttpServletRequest.isUserInRole(String role)`.
-The `role-link` must contain the name of one of the security roles
-defined in the `security-role` elements. The container uses the mapping
-of `security-role-ref` to `security-role` when determining the return
-value of the call.
+The `security-role-ref` element is used when an application uses the `HttpServletRequest.isUserInRole(String role)`.
+The value passed to the `isUserInRole` method is a `String` representing the role name of the user.
+The value of the `role-name` element must be the `String` used as the parameter to the `HttpServletRequest.isUserInRole(String role)`.
+The `role-link` must contain the name of one of the security roles defined in the `security-role` elements.
+The container uses the mapping of `security-role-ref` to `security-role` when determining the return value of the call.
 
-For example, to map the security role reference `cust` to the security
-role with role name `bankCustomer`, the elements would look like this:
+For example, to map the security role reference `cust` to the security role with role name `bankCustomer`, the elements would look like this:
 
 [source,xml]
 ----
@@ -351,12 +288,9 @@ role with role name `bankCustomer`, the elements would look like this:
 </servlet>
 ----
 
-If the servlet method is called by a user in the `bankCustomer`
-security role, `isUserInRole("cust")` returns `true`.
+If the servlet method is called by a user in the `bankCustomer` security role, `isUserInRole("cust")` returns `true`.
 
-The `role-link` element in the `security-role-ref` element must match a
-`role-name` defined in the `security-role` element of the same
-`web.xml` deployment descriptor, as shown here:
+The `role-link` element in the `security-role-ref` element must match a `role-name` defined in the `security-role` element of the same `web.xml` deployment descriptor, as shown here:
 
 [source,xml]
 ----
@@ -365,6 +299,4 @@ The `role-link` element in the `security-role-ref` element must match a
 </security-role>
 ----
 
-A security role reference, including the name defined by the reference,
-is scoped to the component whose deployment descriptor contains the
-`security-role-ref` deployment descriptor element.
+A security role reference, including the name defined by the reference, is scoped to the component whose deployment descriptor contains the `security-role-ref` deployment descriptor element.
