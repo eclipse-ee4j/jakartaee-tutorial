@@ -1,30 +1,25 @@
 == Writing Simple Jakarta Messaging Applications
 
-This section shows how to create, package, and run simple Messaging
-clients that are packaged as application clients.
+This section shows how to create, package, and run simple Messaging clients that are packaged as application clients.
 
 === Overview of Writing Simple Jakarta Messaging Application
 
-The clients demonstrate the basic tasks a Jakarta Messaging application
-must perform:
+The clients demonstrate the basic tasks a Jakarta Messaging application must perform:
 
 * Creating a `JMSContext`
+
 * Creating message producers and consumers
+
 * Sending and receiving messages
 
-Each example uses two clients: one that sends messages and one that
-receives them. You can run the clients in two terminal windows.
+Each example uses two clients: one that sends messages and one that receives them.
+You can run the clients in two terminal windows.
 
-When you write a Messaging client to run in an enterprise bean
-application, you use many of the same methods in much the same sequence
-as for an application client. However, there are some significant
-differences. <<using-jakarta-messaging-in-jakarta-ee-applications>>
-describes these differences, and this chapter provides examples that
-illustrate them.
+When you write a Messaging client to run in an enterprise bean application, you use many of the same methods in much the same sequence as for an application client.
+However, there are some significant differences.
+<<using-jakarta-messaging-in-jakarta-ee-applications>> describes these differences, and this chapter provides examples that illustrate them.
 
-The examples for this section are in the
-`_tut-install_/examples/jms/simple/` directory, under the following
-subdirectories:
+The examples for this section are in the `_tut-install_/examples/jms/simple/` directory, under the following subdirectories:
 
 `producer/` +
 `synchconsumer/` +
@@ -32,56 +27,49 @@ subdirectories:
 `messagebrowser/` +
 `clientackconsumer/` +
 
-Before running the examples, you need to start GlassFish Server and
-create administered objects.
+Before running the examples, you need to start GlassFish Server and create administered objects.
 
 === Starting the Jakarta Messaging Provider
 
-When you use GlassFish Server, your Messaging provider is GlassFish
-Server. Start the server as described in
-<<starting-and-stopping-glassfish-server>>.
+When you use GlassFish Server, your Messaging provider is GlassFish Server.
+Start the server as described in <<starting-and-stopping-glassfish-server>>.
 
 === Creating Jakarta Messaging Administered Objects
 
 This example uses the following Jakarta Messaging administered objects:
 
 * A connection factory
+
 * Two destination resources: a topic and a queue
 
-Before you run the applications, you can use the `asadmin
-add-resources` command to create needed Messaging resources, specifying
-as the argument a file named `glassfish-resources.xml`. This file can
-be created in any project using NetBeans IDE, although you can also
-create it by hand. A file for the needed resources is present in the
-`jms/simple/producer/src/main/setup/` directory.
+Before you run the applications, you can use the `asadmin add-resources` command to create needed Messaging resources, specifying as the argument a file named `glassfish-resources.xml`.
+This file can be created in any project using NetBeans IDE, although you can also create it by hand.
+A file for the needed resources is present in the `jms/simple/producer/src/main/setup/` directory.
 
-The Jakarta Messaging examples use a connection factory with the
-logical JNDI lookup name `java:comp/DefaultJMSConnectionFactory`, which
-is preconfigured in GlassFish Server.
+The Jakarta Messaging examples use a connection factory with the logical JNDI lookup name `java:comp/DefaultJMSConnectionFactory`, which is preconfigured in GlassFish Server.
 
-You can also use the `asadmin create-jms-resource` command to create
-resources, the `asadmin list-jms-resources` command to display their
-names, and the `asadmin delete-jms-resource` command to remove them.
+You can also use the `asadmin create-jms-resource` command to create resources, the `asadmin list-jms-resources` command to display their names, and the `asadmin delete-jms-resource` command to remove them.
 
 ==== To Create Resources for the Simple Examples
 
-A `glassfish-resources.xml` file in one of the Maven projects can
-create all the resources needed for the simple examples.
+A `glassfish-resources.xml` file in one of the Maven projects can create all the resources needed for the simple examples.
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a command window, go to the `Producer` example.
 +
 [source,shell]
 ----
 cd tut-install/jms/simple/producer
 ----
+
 . Create the resources using the `asadmin add-resources` command:
 +
 [source,shell]
 ----
 asadmin add-resources src/main/setup/glassfish-resources.xml
 ----
+
 . Verify the creation of the resources:
 +
 [source,shell]
@@ -89,9 +77,7 @@ asadmin add-resources src/main/setup/glassfish-resources.xml
 asadmin list-jms-resources
 ----
 +
-The command lists the two destinations and connection factory specified
-in the `glassfish-resources.xml` file in addition to the platform
-default connection factory:
+The command lists the two destinations and connection factory specified in the `glassfish-resources.xml` file in addition to the platform default connection factory:
 +
 [source,shell]
 ----
@@ -101,36 +87,33 @@ jms/__defaultConnectionFactory
 Command list-jms-resources executed successfully.
 ----
 +
-In GlassFish Server, the Jakarta EE
-`java:comp/DefaultJMSConnectionFactory` resource is mapped to a
-connection factory named `jms/__defaultConnectionFactory`.
+In GlassFish Server, the Jakarta EE `java:comp/DefaultJMSConnectionFactory` resource is mapped to a connection factory named `jms/__defaultConnectionFactory`.
 
 === Building All the Simple Examples
 
-To run the simple examples using GlassFish Server, package each example
-in an application client JAR file. The application client JAR file
-requires a manifest file, located in the `src/main/java/META-INF/`
-directory for each example, along with the `.class` file.
+To run the simple examples using GlassFish Server, package each example in an application client JAR file.
+The application client JAR file requires a manifest file, located in the `src/main/java/META-INF/` directory for each example, along with the `.class` file.
 
-The `pom.xml` file for each example specifies a plugin that creates an
-application client JAR file. You can build the examples using either
-NetBeans IDE or Maven.
+The `pom.xml` file for each example specifies a plugin that creates an application client JAR file.
+You can build the examples using either NetBeans IDE or Maven.
 
 ==== To Build All the Simple Examples Using NetBeans IDE
 
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/jms
 ----
+
 . Expand the `jms` node and select the `simple` folder.
+
 . Click *Open Project* to open all the simple examples.
-. In the *Projects* tab, right-click the `simple` project and select
-*Build* to build all the examples.
+
+. In the *Projects* tab, right-click the `simple` project and select *Build* to build all the examples.
 +
-This command places the application client JAR files in the `target`
-directories for the examples.
+This command places the application client JAR files in the `target` directories for the examples.
 
 ==== To Build All the Simple Examples Using Maven
 
@@ -140,6 +123,7 @@ directories for the examples.
 ----
 cd tut-install/jms/simple/
 ----
+
 . Enter the following command to build all the projects:
 +
 [source,shell]
@@ -147,28 +131,26 @@ cd tut-install/jms/simple/
 mvn install
 ----
 +
-This command places the application client JAR files in the `target`
-directories for the examples.
+This command places the application client JAR files in the `target` directories for the examples.
 
 === Sending Messages
 
-This section describes how to use a client to send messages. The
-`Producer.java` client will send messages in all of these examples.
+This section describes how to use a client to send messages.
+The `Producer.java` client will send messages in all of these examples.
 
 ==== General Steps Performed in the Example
 
 General steps this example performs are as follows.
 
 . Inject resources for the administered objects used by the example.
-. Accept and verify command-line arguments. You can use this example
-to send any number of messages to either a queue or a topic, so you
-specify the destination type and the number of messages on the command
-line when you run the program.
-. Create a `JMSContext`, then send the specified number of text
-messages in the form of strings, as described in
-<<message-bodies>>.
-. Send a final message of type `Message` to indicate that the consumer
-should expect no more messages.
+
+. Accept and verify command-line arguments.
+You can use this example to send any number of messages to either a queue or a topic, so you specify the destination type and the number of messages on the command line when you run the program.
+
+. Create a `JMSContext`, then send the specified number of text messages in the form of strings, as described in <<message-bodies>>.
+
+. Send a final message of type `Message` to indicate that the consumer should expect no more messages.
+
 . Catch any exceptions.
 
 ==== The Producer.java Client
@@ -186,8 +168,8 @@ private static Queue queue;
 @Resource(lookup = "jms/MyTopic")
 private static Topic topic;
 ----
-. Retrieves and verifies command-line arguments that specify the
-destination type and the number of arguments:
+
+. Retrieves and verifies command-line arguments that specify the destination type and the number of arguments:
 +
 [source,java]
 ----
@@ -204,8 +186,8 @@ if (args.length == 2){
     NUM_MSGS = 1;
 }
 ----
-. Assigns either the queue or the topic to a destination object, based
-on the specified destination type:
+
+. Assigns either the queue or the topic to a destination object, based on the specified destination type:
 +
 [source,java]
 ----
@@ -221,14 +203,15 @@ try {
     System.exit(1);
 }
 ----
+
 . Within a `try-with-resources` block, creates a `JMSContext`:
 +
 [source,java]
 ----
 try (JMSContext context = connectionFactory.createContext();) { ... }
 ----
-. Sets the message count to zero, then creates a `JMSProducer` and
-sends one or more messages to the destination and increments the count.
+
+. Sets the message count to zero, then creates a `JMSProducer` and sends one or more messages to the destination and increments the count.
 Messages in the form of strings are of the `TextMessage` message type:
 +
 [source,java]
@@ -244,20 +227,18 @@ Messages in the form of strings are of the `TextMessage` message type:
     }
     System.out.println("Text messages sent: " + count);
 ----
-. Sends an empty control message to indicate the end of the message
-stream:
+
+. Sends an empty control message to indicate the end of the message stream:
 +
 [source,java]
 ----
     context.createProducer().send(dest, context.createMessage());
 ----
 +
-Sending an empty message of no specified type is a convenient way for
-an application to indicate to the consumer that the final message has
-arrived.
-. Catches and handles any exceptions. The end of the
-`try-with-resources` block automatically causes the `JMSContext` to be
-closed:
+Sending an empty message of no specified type is a convenient way for an application to indicate to the consumer that the final message has arrived.
+
+. Catches and handles any exceptions.
+The end of the `try-with-resources` block automatically causes the `JMSContext` to be closed:
 +
 [source,java]
 ----
@@ -270,24 +251,21 @@ System.exit(0);
 
 ==== To Run the Producer Client
 
-You can run the client using the `appclient` command. The `Producer`
-client takes one or two command-line arguments: a destination type and,
-optionally, a number of messages. If you do not specify a number of
-messages, the client sends one message.
+You can run the client using the `appclient` command.
+The `Producer` client takes one or two command-line arguments: a destination type and, optionally, a number of messages.
+If you do not specify a number of messages, the client sends one message.
 
 You will use the client to send three messages to a queue.
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>) and that you have created
-resources and built the simple Jakarta Messaging examples (see
-<<creating-jakarta-messaging-administered-objects>> and
-<<building-all-the-simple-examples>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>) and that you have created resources and built the simple Jakarta Messaging examples (see <<creating-jakarta-messaging-administered-objects>> and <<building-all-the-simple-examples>>).
+
 . In a terminal window, go to the `producer` directory:
 +
 [source,shell]
 ----
 cd producer
 ----
+
 . Run the `Producer` program, sending three messages to the queue:
 +
 [source,shell]
@@ -295,8 +273,7 @@ cd producer
 appclient -client target/producer.jar queue 3
 ----
 +
-The output of the program looks like this (along with some additional
-output):
+The output of the program looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -310,32 +287,31 @@ Text messages sent: 3
 The messages are now in the queue, waiting to be received.
 +
 [NOTE]
-When you run an application client, the command may take a long time to
-complete.
+When you run an application client, the command may take a long time to complete.
 
 === Receiving Messages Synchronously
 
-This section describes the receiving client, which uses the `receive`
-method to consume messages synchronously. This section then explains
-how to run the clients using GlassFish Server.
+This section describes the receiving client, which uses the `receive` method to consume messages synchronously.
+This section then explains how to run the clients using GlassFish Server.
 
 ==== The SynchConsumer.java Client
 
-The receiving client, `SynchConsumer.java`, performs the following
-steps.
+The receiving client, `SynchConsumer.java`, performs the following steps.
 
 . Injects resources for a connection factory, queue, and topic.
-. Assigns either the queue or the topic to a destination object, based
-on the specified destination type.
+
+. Assigns either the queue or the topic to a destination object, based on the specified destination type.
+
 . Within a `try-with-resources` block, creates a `JMSContext`.
+
 . Creates a `JMSConsumer`, starting message delivery:
 +
 [source,java]
 ----
 consumer = context.createConsumer(dest);
 ----
-. Receives the messages sent to the destination until the
-end-of-message-stream control message is received:
+
+. Receives the messages sent to the destination until the end-of-message-stream control message is received:
 +
 [source,java]
 ----
@@ -355,33 +331,28 @@ while (true) {
 System.out.println("Messages received: " + count);
 ----
 +
-Because the control message is not a `TextMessage`, the receiving
-client terminates the `while` loop and stops receiving messages after
-the control message arrives.
-. Catches and handles any exceptions. The end of the
-`try-with-resources` block automatically causes the `JMSContext` to be
-closed.
+Because the control message is not a `TextMessage`, the receiving client terminates the `while` loop and stops receiving messages after the control message arrives.
 
-The `SynchConsumer` client uses an indefinite `while` loop to receive
-messages, calling `receive` with a timeout argument.
+. Catches and handles any exceptions.
+The end of the `try-with-resources` block automatically causes the `JMSContext` to be closed.
+
+The `SynchConsumer` client uses an indefinite `while` loop to receive messages, calling `receive` with a timeout argument.
 
 ==== To Run the SynchConsumer and Producer Clients
 
-You can run the client using the `appclient` command. The
-`SynchConsumer` client takes one command-line argument, the destination
-type.
+You can run the client using the `appclient` command.
+The `SynchConsumer` client takes one command-line argument, the destination type.
 
-These steps show how to receive and send messages synchronously using
-both a queue and a topic. The steps assume you already ran the
-`Producer` client and have three messages waiting in the queue.
+These steps show how to receive and send messages synchronously using both a queue and a topic.
+The steps assume you already ran the `Producer` client and have three messages waiting in the queue.
 
-. In the same terminal window where you ran `Producer`, go to the
-`synchconsumer` directory:
+. In the same terminal window where you ran `Producer`, go to the `synchconsumer` directory:
 +
 [source,shell]
 ----
 cd ../synchconsumer
 ----
+
 . Run the `SynchConsumer` client, specifying the queue:
 +
 [source,shell]
@@ -389,8 +360,7 @@ cd ../synchconsumer
 appclient -client target/synchconsumer.jar queue
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -400,8 +370,9 @@ Reading message: This is message 2 from producer
 Reading message: This is message 3 from producer
 Messages received: 3
 ----
-. Now try running the clients in the opposite order. Run the
-`SynchConsumer` client:
+
+. Now try running the clients in the opposite order.
+Run the `SynchConsumer` client:
 +
 [source,shell]
 ----
@@ -409,6 +380,7 @@ appclient -client target/synchconsumer.jar queue
 ----
 +
 The client displays the destination type and then waits for messages.
+
 . Open a new terminal window and run the `Producer` client:
 +
 [source,shell]
@@ -417,8 +389,8 @@ cd tut-install/jms/simple/producer
 appclient -client target/producer.jar queue 3
 ----
 +
-When the messages have been sent, the `SynchConsumer` client receives
-them and exits.
+When the messages have been sent, the `SynchConsumer` client receives them and exits.
+
 . Now run the `Producer` client using a topic instead of a queue:
 +
 [source,shell]
@@ -426,8 +398,7 @@ them and exits.
 appclient -client target/producer.jar topic 3
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -437,22 +408,19 @@ Sending message: This is message 2 from producer
 Sending message: This is message 3 from producer
 Text messages sent: 3
 ----
-. Now, in the other terminal window, run the `SynchConsumer` client
-using the topic:
+
+. Now, in the other terminal window, run the `SynchConsumer` client using the topic:
 +
 [source,shell]
 ----
 appclient -client target/synchconsumer.jar topic
 ----
 +
-The result, however, is different. Because you are using a subscription
-on a topic, messages that were sent before you created the subscription
-on the topic will not be added to the subscription and delivered to the
-consumer. (See <<publishsubscribe-messaging-style>> and
-<<consuming-messages-from-topics>> for details.) Instead of receiving
-the messages, the client waits for messages to arrive.
-. Leave the `SynchConsumer` client running and run the `Producer`
-client again:
+The result, however, is different.
+Because you are using a subscription on a topic, messages that were sent before you created the subscription on the topic will not be added to the subscription and delivered to the consumer.
+(See <<publishsubscribe-messaging-style>> and <<consuming-messages-from-topics>> for details.) Instead of receiving the messages, the client waits for messages to arrive.
+
+. Leave the `SynchConsumer` client running and run the `Producer` client again:
 +
 [source,shell]
 ----
@@ -470,55 +438,53 @@ Reading message: This is message 3 from producer
 Messages received: 3
 ----
 +
-Because these messages were sent after the consumer was started, the
-client receives them.
+Because these messages were sent after the consumer was started, the client receives them.
 
 === Using a Message Listener for Asynchronous Message Delivery
 
-This section describes the receiving clients in an example that uses a
-message listener for asynchronous message delivery. This section then
-explains how to compile and run the clients using GlassFish Server.
+This section describes the receiving clients in an example that uses a message listener for asynchronous message delivery.
+This section then explains how to compile and run the clients using GlassFish Server.
 
 [NOTE]
-In the Jakarta EE platform, message listeners can be used only in
-application clients, as in this example. To allow asynchronous message
-delivery in a web or enterprise bean application, you use a
-message-driven bean, shown in later examples in this chapter.
+In the Jakarta EE platform, message listeners can be used only in application clients, as in this example.
+To allow asynchronous message delivery in a web or enterprise bean application, you use a message-driven bean, shown in later examples in this chapter.
 
 ==== Writing the AsynchConsumer.java and TextListener.java Clients
 
-The sending client is `Producer.java`, the same client used in
-<<receiving-messages-synchronously>>.
+The sending client is `Producer.java`, the same client used in <<receiving-messages-synchronously>>.
 
-An asynchronous consumer normally runs indefinitely. This one runs
-until the user types the character `q` or `Q` to stop the client.
+An asynchronous consumer normally runs indefinitely.
+This one runs until the user types the character `q` or `Q` to stop the client.
 
 . The client, `AsynchConsumer.java`, performs the following steps.
+
 .. Injects resources for a connection factory, queue, and topic.
-.. Assigns either the queue or the topic to a destination object, based
-on the specified destination type.
+
+.. Assigns either the queue or the topic to a destination object, based on the specified destination type.
+
 .. In a `try-with-resources` block, creates a `JMSContext`.
+
 .. Creates a `JMSConsumer`.
-.. Creates an instance of the `TextListener` class and registers it
-asthe message listener for the `JMSConsumer`:
+
+.. Creates an instance of the `TextListener` class and registers it as the message listener for the `JMSConsumer`:
 +
 [source,java]
 ----
 listener = new TextListener();
 consumer.setMessageListener(listener);
 ----
-.. Listens for the messages sent to the destination, stopping when the
-user types the character `q` or `Q` (it uses a
-`java.io.InputStreamReader` to do this).
-.. Catches and handles any exceptions. The end of the
-`try-with-resources` block automatically causes the `JMSContext` to be
-closed, thus stopping delivery of messages to the message listener.
+
+.. Listens for the messages sent to the destination, stopping when the user types the character `q` or `Q` (it uses a `java.io.InputStreamReader` to do this).
+
+.. Catches and handles any exceptions.
+The end of the `try-with-resources` block automatically causes the `JMSContext` to be closed, thus stopping delivery of messages to the message listener.
+
 . The message listener, `TextListener.java`, follows these steps:
-.. When a message arrives, the `onMessage` method is called
-automatically.
-.. If the message is a `TextMessage`, the `onMessage` method displays
-its content as a string value. If the message is not a text message, it
-reports this fact:
+
+.. When a message arrives, the `onMessage` method is called automatically.
+
+.. If the message is a `TextMessage`, the `onMessage` method displays its content as a string value.
+If the message is not a text message, it reports this fact:
 +
 [source,java]
 ----
@@ -536,51 +502,44 @@ public void onMessage(Message m) {
 }
 ----
 
-For this example, you will use the same connection factory and
-destinations you created in
-<<to-create-resources-for-the-simple-examples>>.
+For this example, you will use the same connection factory and destinations you created in <<to-create-resources-for-the-simple-examples>>.
 
-The steps assume that you have already built and packaged all the
-examples using NetBeans IDE or Maven.
+The steps assume that you have already built and packaged all the examples using NetBeans IDE or Maven.
 
 ==== To Run the AsynchConsumer and Producer Clients
 
-You will need two terminal windows, as you did in
-<<receiving-messages-synchronously>>.
+You will need two terminal windows, as you did in <<receiving-messages-synchronously>>.
 
-. In the terminal window where you ran the `SynchConsumer` client, go
-to the `asynchconsumer` example directory:
+. In the terminal window where you ran the `SynchConsumer` client, go to the `asynchconsumer` example directory:
 +
 [source,shell]
 ----
 cd tut-install/jms/simple/asynchconsumer
 ----
-. Run the `AsynchConsumer` client, specifying the `topic` destination
-type:
+
+. Run the `AsynchConsumer` client, specifying the `topic` destination type:
 +
 [source,shell]
 ----
 appclient -client target/asynchconsumer.jar topic
 ----
 +
-The client displays the following lines (along with some additional
-output) and then waits for messages:
+The client displays the following lines (along with some additional output) and then waits for messages:
 +
 [source,shell]
 ----
 Destination type is topic
 To end program, enter Q or q, then <return>
 ----
-. In the terminal window where you ran the `Producer` client
-previously, run the client again, sending three messages:
+
+. In the terminal window where you ran the `Producer` client previously, run the client again, sending three messages:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar topic 3
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -591,8 +550,7 @@ Sending message: This is message 3 from producer
 Text messages sent: 3
 ----
 +
-In the other window, the `AsynchConsumer` client displays the following
-(along with some additional output):
+In the other window, the `AsynchConsumer` client displays the following (along with some additional output):
 +
 [source,shell]
 ----
@@ -604,15 +562,13 @@ Reading message: This is message 3 from producer
 Message is not a TextMessage
 ----
 +
-The last line appears because the client has received the non-text
-control message sent by the `Producer` client.
-. Enter `Q` or `q` and press Return to stop the `AsynchConsumer`
-client.
+The last line appears because the client has received the non-text control message sent by the `Producer` client.
+
+. Enter `Q` or `q` and press Return to stop the `AsynchConsumer` client.
+
 . Now run the clients using a queue.
 +
-In this case, as with the synchronous example, you can run the
-`Producer` client first, because there is no timing dependency between
-the sender and receiver:
+In this case, as with the synchronous example, you can run the `Producer` client first, because there is no timing dependency between the sender and receiver:
 +
 [source,shell]
 ----
@@ -629,6 +585,7 @@ Sending message: This is message 2 from producer
 Sending message: This is message 3 from producer
 Text messages sent: 3
 ----
+
 . In the other window, run the `AsynchConsumer` client:
 +
 [source,shell]
@@ -636,8 +593,7 @@ Text messages sent: 3
 appclient -client target/asynchconsumer.jar queue
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -648,41 +604,41 @@ Reading message: This is message 2 from producer
 Reading message: This is message 3 from producer
 Message is not a TextMessage
 ----
+
 . Enter `Q` or `q` and press Return to stop the client.
 
 === Browsing Messages on a Queue
 
-This section describes an example that creates a `QueueBrowser` object
-to examine messages on a queue, as described in
-<<jakarta-messaging-queue-browsers>>. This section then explains how to
-compile, package, and run the example using GlassFish Server.
+This section describes an example that creates a `QueueBrowser` object to examine messages on a queue, as described in <<jakarta-messaging-queue-browsers>>.
+This section then explains how to compile, package, and run the example using GlassFish Server.
 
 ==== The MessageBrowser.java Client
 
-To create a `QueueBrowser` for a queue, you call the
-`JMSContext.createBrowser` method with the queue as the argument. You
-obtain the messages in the queue as an `Enumeration` object. You can
-then iterate through the `Enumeration` object and display the contents
-of each message.
+To create a `QueueBrowser` for a queue, you call the `JMSContext.createBrowser` method with the queue as the argument.
+You obtain the messages in the queue as an `Enumeration` object.
+You can then iterate through the `Enumeration` object and display the contents of each message.
 
 The `MessageBrowser.java` client performs the following steps.
 
 . Injects resources for a connection factory and a queue.
+
 . In a `try-with-resources` block, creates a `JMSContext`.
+
 . Creates a `QueueBrowser`:
 +
 [source,java]
 ----
 QueueBrowser browser = context.createBrowser(queue);
 ----
+
 . Retrieves the `Enumeration` that contains the messages:
 +
 [source,java]
 ----
 Enumeration msgs = browser.getEnumeration();
 ----
-. Verifies that the `Enumeration` contains messages, then displays the
-contents of the messages:
+
+. Verifies that the `Enumeration` contains messages, then displays the contents of the messages:
 +
 [source,java]
 ----
@@ -695,14 +651,12 @@ if ( !msgs.hasMoreElements() ) {
     }
 }
 ----
-. Catches and handles any exceptions. The end of the
-`try-with-resources` block automatically causes the `JMSContext` to be
-closed.
 
-Dumping the message contents to standard output retrieves the message
-body and properties in a format that depends on the implementation of
-the `toString` method. In GlassFish Server, the message format looks
-something like this:
+. Catches and handles any exceptions.
+The end of the `try-with-resources` block automatically causes the `JMSContext` to be closed.
+
+Dumping the message contents to standard output retrieves the message body and properties in a format that depends on the implementation of the `toString` method.
+In GlassFish Server, the message format looks something like this:
 
 [source,shell]
 ----
@@ -721,22 +675,16 @@ getJMSPriority():       4
 Properties:             {JMSXDeliveryCount=0}
 ----
 
-Instead of displaying the message contents this way, you can call some
-of the `Message` interface's getter methods to retrieve the parts of
-the message you want to see.
+Instead of displaying the message contents this way, you can call some of the `Message` interface's getter methods to retrieve the parts of the message you want to see.
 
-For this example, you will use the connection factory and queue you
-created for <<receiving-messages-synchronously>>. It is assumed that
-you have already built and packaged all the examples.
+For this example, you will use the connection factory and queue you created for <<receiving-messages-synchronously>>.
+It is assumed that you have already built and packaged all the examples.
 
 ==== To Run the QueueBrowser Client
 
-To run the `MessageBrowser` example using the `appclient` command,
-follow these steps.
+To run the `MessageBrowser` example using the `appclient` command, follow these steps.
 
-You also need the `Producer` example to send the message to the queue,
-and one of the consumer clients to consume the messages after you
-inspect them.
+You also need the `Producer` example to send the message to the queue, and one of the consumer clients to consume the messages after you inspect them.
 
 To run the clients, you need two terminal windows.
 
@@ -746,16 +694,15 @@ To run the clients, you need two terminal windows.
 ----
 cd tut-install/examples/jms/simple/producer/
 ----
-. Run the `Producer` client, sending one message to the queue, along
-with the non-text control message:
+
+. Run the `Producer` client, sending one message to the queue, along with the non-text control message:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar queue
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -763,12 +710,14 @@ Destination type is queue
 Sending message: This is message 1 from producer
 Text messages sent: 1
 ----
+
 . In another terminal window, go to the `messagebrowser` directory:
 +
 [source,shell]
 ----
 cd tut-install/jms/simple/messagebrowser
 ----
+
 . Run the `MessageBrowser` client using the following command:
 +
 [source,shell]
@@ -776,8 +725,7 @@ cd tut-install/jms/simple/messagebrowser
 appclient -client target/messagebrowser.jar
 ----
 +
-The output of the client looks something like this (along with some
-additional output):
+The output of the client looks something like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -811,9 +759,10 @@ getJMSPriority():       4
 Properties:             {JMSXDeliveryCount=0}
 ----
 +
-The first message is the `TextMessage`, and the second is the non-text
-control message.
+The first message is the `TextMessage`, and the second is the non-text control message.
+
 . Go to the `synchconsumer` directory.
+
 . Run the `SynchConsumer` client to consume the messages:
 +
 [source,shell]
@@ -821,8 +770,7 @@ control message.
 appclient -client target/synchconsumer.jar queue
 ----
 +
-The output of the client looks like this (along with some additional
-output):
+The output of the client looks like this (along with some additional output):
 +
 [source,shell]
 ----
@@ -833,110 +781,91 @@ Messages received: 1
 
 === Running Multiple Consumers on the Same Destination
 
-To illustrate further the way point-to-point and publish/subscribe
-messaging works, you can use the `Producer` and `SynchConsumer`
-examples to send messages that are then consumed by two clients running
-simultaneously.
+To illustrate further the way point-to-point and publish/subscribe messaging works, you can use the `Producer` and `SynchConsumer` examples to send messages that are then consumed by two clients running simultaneously.
 
-. Open three command windows. In one, go to the `producer` directory.
+. Open three command windows.
+In one, go to the `producer` directory.
 In the other two, go to the `synchconsumer` directory.
-. In each of the `synchconsumer` windows, start running the client,
-receiving messages from a queue:
+
+. In each of the `synchconsumer` windows, start running the client, receiving messages from a queue:
 +
 [source,shell]
 ----
 appclient -client target/synchconsumer.jar queue
 ----
 +
-Wait until you see the "Destination type is queue" message in both
-windows.
-. In the `producer` window, run the client, sending 20 or so messages
-to the queue:
+Wait until you see the "Destination type is queue" message in both windows.
+
+. In the `producer` window, run the client, sending 20 or so messages to the queue:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar queue 20
 ----
-. Look at the output in the `synchconsumer` windows. In point-to-point
-messaging, each message can have only one consumer. Therefore, each of
-the clients receives some of the messages. One of the clients receives
-the non-text control message, reports the number of messages received,
-and exits.
-. In the window of the client that did not receive the non-text
-control message, enter Control-C to exit the program.
-. Next, run the `synchconsumer` clients using a topic. In each window,
-run the following command:
+
+. Look at the output in the `synchconsumer` windows.
+In point-to-point messaging, each message can have only one consumer.
+Therefore, each of the clients receives some of the messages.
+One of the clients receives the non-text control message, reports the number of messages received, and exits.
+
+. In the window of the client that did not receive the non-text control message, enter Control-C to exit the program.
+
+. Next, run the `synchconsumer` clients using a topic.
+In each window, run the following command:
 +
 [source,shell]
 ----
 appclient -client target/synchconsumer.jar topic
 ----
 +
-Wait until you see the "Destination type is topic" message in both
-windows.
-. In the `producer` window, run the client, sending 20 or so messages
-to the topic:
+Wait until you see the "Destination type is topic" message in both windows.
+
+. In the `producer` window, run the client, sending 20 or so messages to the topic:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar topic 20
 ----
-. Again, look at the output in the `synchconsumer` windows. In
-publish/subscribe messaging, a copy of every message is sent to each
-subscription on the topic. Therefore, each of the clients receives all
-20 text messages as well as the non-text control message.
+
+. Again, look at the output in the `synchconsumer` windows.
+In publish/subscribe messaging, a copy of every message is sent to each subscription on the topic.
+Therefore, each of the clients receives all 20 text messages as well as the non-text control message.
 
 === Acknowledging Messages
 
-Jakarta Messaging provides two alternative ways for a consuming client
-to ensure that a message is not acknowledged until the application has
-finished processing the message:
+Jakarta Messaging provides two alternative ways for a consuming client to ensure that a message is not acknowledged until the application has finished processing the message:
 
-* Using a synchronous consumer in a `JMSContext` that has been
-configured to use the `CLIENT_ACKNOWLEDGE` setting
-* Using a message listener for asynchronous message delivery in a
-`JMSContext` that has been configured to use the default
-`AUTO_ACKNOWLEDGE` setting
+* Using a synchronous consumer in a `JMSContext` that has been configured to use the `CLIENT_ACKNOWLEDGE` setting
+
+* Using a message listener for asynchronous message delivery in a `JMSContext` that has been configured to use the default `AUTO_ACKNOWLEDGE` setting
 
 [NOTE]
-In the Jakarta EE platform, `CLIENT_ACKNOWLEDGE` sessions can be used
-only in application clients, as in this example.
+In the Jakarta EE platform, `CLIENT_ACKNOWLEDGE` sessions can be used only in application clients, as in this example.
 
-The `clientackconsumer` example demonstrates the first alternative, in
-which a synchronous consumer uses client acknowledgment. The
-`asynchconsumer` example described in
-<<using-a-message-listener-for-asynchronous-message-delivery>>
-demonstrates the second alternative.
+The `clientackconsumer` example demonstrates the first alternative, in which a synchronous consumer uses client acknowledgment.
+The `asynchconsumer` example described in <<using-a-message-listener-for-asynchronous-message-delivery>> demonstrates the second alternative.
 
-For information about message acknowledgment, see
-<<controlling-message-acknowledgment>>.
+For information about message acknowledgment, see <<controlling-message-acknowledgment>>.
 
-The following table describes four possible interactions between types
-of consumers and types of acknowledgment.
+The following table describes four possible interactions between types of consumers and types of acknowledgment.
 
-[width="99%",cols="20%,20%,60%",title="Message Acknowledgment with Synchronous and Asynchronous Consumers"]
+.Message Acknowledgment with Synchronous and Asynchronous Consumers
+[width="99%",cols="20%,20%,60%"]
 |===
 |Consumer Type |Acknowledgment Type |Behavior
 
-|Synchronous |Client |Client acknowledges message after processing is
-complete
+|Synchronous |Client |Client acknowledges message after processing is complete
 
-|Asynchronous |Client |Client acknowledges message after processing is
-complete
+|Asynchronous |Client |Client acknowledges message after processing is complete
 
-|Synchronous |Auto |Acknowledgment happens immediately after `receive`
-call; message cannot be redelivered if any subsequent processing steps
-fail
+|Synchronous |Auto |Acknowledgment happens immediately after `receive` call; message cannot be redelivered if any subsequent processing steps fail
 
-|Asynchronous |Auto |Message is automatically acknowledged when
-`onMessage` method returns
+|Asynchronous |Auto |Message is automatically acknowledged when `onMessage` method returns
 |===
 
-The example is under the
-`_tut-install_/examples/jms/simple/clientackconsumer/` directory.
+The example is under the `_tut-install_/examples/jms/simple/clientackconsumer/` directory.
 
-The example client, `ClientAckConsumer.java`, creates a `JMSContext`
-that specifies client acknowledgment:
+The example client, `ClientAckConsumer.java`, creates a `JMSContext` that specifies client acknowledgment:
 
 [source,java]
 ----
@@ -946,9 +875,7 @@ try (JMSContext context =
 }
 ----
 
-The client uses a `while` loop almost identical to that used by
-`SynchConsumer.java`, with the exception that after processing each
-message, it calls the `acknowledge` method on the `JMSContext`:
+The client uses a `while` loop almost identical to that used by `SynchConsumer.java`, with the exception that after processing each message, it calls the `acknowledge` method on the `JMSContext`:
 
 [source,java]
 ----
@@ -957,10 +884,9 @@ context.acknowledge();
 
 The example uses the following objects:
 
-* The `jms/MyQueue` resource that you created for
-<<receiving-messages-synchronously>>.
-* `java:comp/DefaultJMSConnectionFactory`, the platform default
-connection factory preconfigured with GlassFish Server
+* The `jms/MyQueue` resource that you created for <<receiving-messages-synchronously>>.
+
+* `java:comp/DefaultJMSConnectionFactory`, the platform default connection factory preconfigured with GlassFish Server
 
 ==== To Run the ClientAckConsumer Client
 
@@ -969,17 +895,20 @@ connection factory preconfigured with GlassFish Server
 ----
 tut-install/examples/jms/simple/producer/
 ----
+
 . Run the `Producer` client, sending some messages to the queue:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar queue 3
 ----
+
 . In another terminal window, go to the following directory:
 +
 ----
 tut-install/examples/jms/simple/clientackconsumer/
 ----
+
 . To run the client, use the following command:
 +
 [source,shell]
@@ -1001,7 +930,4 @@ Acknowledging TextMessage
 Acknowledging non-text control message
 ----
 +
-The client acknowledges each message explicitly after processing it,
-just as a `JMSContext` configured to use `AUTO_ACKNOWLEDGE` does
-automatically after a `MessageListener` returns successfully from
-processing a message received asynchronously.
+The client acknowledges each message explicitly after processing it, just as a `JMSContext` configured to use `AUTO_ACKNOWLEDGE` does automatically after a `MessageListener` returns successfully from processing a message received asynchronously.

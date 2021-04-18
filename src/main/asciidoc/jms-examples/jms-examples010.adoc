@@ -1,63 +1,59 @@
 == Using NetBeans IDE to Create Jakarta Messaging Resources
 
-When you write your own Messaging applications, you will need to create
-resources for them. This section explains how to use NetBeans IDE to
-create `src/main/setup/glassfish-resources.xml` files similar to those
-used in the examples in this chapter. It also explains how to use
-NetBeans IDE to delete the resources.
+When you write your own Messaging applications, you will need to create resources for them.
+This section explains how to use NetBeans IDE to create `src/main/setup/glassfish-resources.xml` files similar to those used in the examples in this chapter.
+It also explains how to use NetBeans IDE to delete the resources.
 
-You can also create, list, and delete Jakarta Messaging resources using
-the Administration Console or the `asadmin create-jms-resource`,
-`asadmin list-jms-resources`, and `asadmin delete-jms-resources`
-commands. For information, consult the GlassFish Server documentation
-or enter `asadmin help` command-name.
+You can also create, list, and delete Jakarta Messaging resources using the Administration Console or the `asadmin create-jms-resource`, `asadmin list-jms-resources`, and `asadmin delete-jms-resources` commands.
+For information, consult the GlassFish Server documentation or enter `asadmin help` command-name.
 
 === To Create Jakarta Messaging Resources Using NetBeans IDE
 
-Follow these steps to create a Jakarta Messaging resource in GlassFish
-Server using NetBeans IDE. Repeat these steps for each resource you
-need.
+Follow these steps to create a Jakarta Messaging resource in GlassFish Server using NetBeans IDE.
+Repeat these steps for each resource you need.
 
-. Right-click the project for which you want to create resources and
-select *New*, then select *Other*.
+. Right-click the project for which you want to create resources and select *New*, then select *Other*.
+
 . In the *New File* wizard, under *Categories*, select *GlassFish*.
+
 . Under *File Types*, select *JMS Resource*.
-. On the General Attributes - JMS Resource page, in the JNDI Name
-field, enter the name of the resource.
+
+. On the General Attributes - JMS Resource page, in the JNDI Name field, enter the name of the resource.
 +
 By convention, Messaging resource names begin with `jms/`.
+
 . Select the option for the resource type.
 +
-Normally, this is either `jakarta.jms.Queue`, `jakarta.jms.Topic`, or
-`jakarta.jms.ConnectionFactory`.
+Normally, this is either `jakarta.jms.Queue`, `jakarta.jms.Topic`, or `jakarta.jms.ConnectionFactory`.
+
 . Click *Next*.
-. On the JMS Properties page, for a queue or topic, enter a name for a
-physical queue in the Value field for the Name property.
+
+. On the JMS Properties page, for a queue or topic, enter a name for a physical queue in the Value field for the Name property.
 +
 You can enter any value for this required field.
 +
-Connection factories have no required properties. In a few situations,
-you may need to specify a property.
+Connection factories have no required properties.
+In a few situations, you may need to specify a property.
+
 . Click *Finish*.
 +
-A file named `glassfish-resources.xml` is created in your Maven
-project, in a directory named `src/main/setup/`. In the Projects tab,
-you can find it under the Other Sources node. You will need to run the
-`asadmin add-resources` command to create the resources in GlassFish
-Server.
+A file named `glassfish-resources.xml` is created in your Maven project, in a directory named `src/main/setup/`.
+In the Projects tab, you can find it under the Other Sources node.
+You will need to run the `asadmin add-resources` command to create the resources in GlassFish Server.
 
 === To Delete Jakarta Messaging Resources Using NetBeans IDE
 
-. In the *Services* tab, expand the *Servers* node, then expand the
-*GlassFish Server* node.
-. Expand the *Resources* node, then expand the *Connector Resources*
-node.
+. In the *Services* tab, expand the *Servers* node, then expand the *GlassFish Server* node.
+
+. Expand the *Resources* node, then expand the *Connector Resources* node.
+
 . Expand the *Admin Object Resources* node.
-. Right-click any destination you want to remove and select
-*Unregister*.
+
+. Right-click any destination you want to remove and select *Unregister*.
+
 . Expand the *Connector Connection Pools* node.
-. Right-click the connection pool that corresponds to the connection
-factory you removed and select *Unregister*.
+
+. Right-click the connection pool that corresponds to the connection factory you removed and select *Unregister*.
 +
-When you remove a connector connection pool, the associated connector
-resource is also deleted. This action removes the connection factory.
+When you remove a connector connection pool, the associated connector resource is also deleted.
+This action removes the connection factory.
