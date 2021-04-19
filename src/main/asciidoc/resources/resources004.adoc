@@ -1,31 +1,15 @@
 == Using Resource Adapters with Jakarta Contexts and Dependency Injection (CDI)
 
-For details about CDI, see
-xref:introduction-to-jakarta-contexts-and-dependency-injection[xrefstyle=full]
-and
-xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
+For details about CDI, see xref:introduction-to-jakarta-contexts-and-dependency-injection[xrefstyle=full] and xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
 
-Do not specify the following classes in the resource adapter as CDI
-managed beans (that is, do not inject them), because the behavior of
-these classes as CDI managed beans has not been portably defined.
+Do not specify the following classes in the resource adapter as CDI managed beans (that is, do not inject them), because the behavior of these classes as CDI managed beans has not been portably defined.
 
-* Resource adapter beans: These beans are classes that are annotated
-with the `jakarta.resource.spi.Connector` annotation or are declared as
-corresponding elements in the resource adapter deployment descriptor,
-`ra.xml`.
+* Resource adapter beans: These beans are classes that are annotated with the `jakarta.resource.spi.Connector` annotation or are declared as corresponding elements in the resource adapter deployment descriptor, `ra.xml`.
 
-* Managed connection factory beans: These beans are classes that are
-annotated with the `jakarta.resource.spi.ConnectorDefinition`
-annotation or the `jakarta.resource.spi.ConnectorDefinitions`
-annotation or are declared as corresponding elements in `ra.xml`.
+* Managed connection factory beans: These beans are classes that are annotated with the `jakarta.resource.spi.ConnectorDefinition` annotation or the `jakarta.resource.spi.ConnectorDefinitions` annotation or are declared as corresponding elements in `ra.xml`.
 
-* Activation specification beans: These beans are classes that are
-annotated with the `jakarta.resource.spi.Activation` annotation or are
-declared as corresponding elements in `ra.xml`.
+* Activation specification beans: These beans are classes that are annotated with the `jakarta.resource.spi.Activation` annotation or are declared as corresponding elements in `ra.xml`.
 
-* Administered object beans: These beans are classes that are annotated
-with the `jakarta.resource.spi.AdministeredObject` annotation or are
-declared as corresponding elements in `ra.xml`.
+* Administered object beans: These beans are classes that are annotated with the `jakarta.resource.spi.AdministeredObject` annotation or are declared as corresponding elements in `ra.xml`.
 
-Other types of classes in the resource adapter can be CDI managed beans
-and will behave in a portable manner.
+Other types of classes in the resource adapter can be CDI managed beans and will behave in a portable manner.
