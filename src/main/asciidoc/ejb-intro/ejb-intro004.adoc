@@ -195,7 +195,8 @@ ExampleLocal example = (ExampleLocal)
 
 A remote client of an enterprise bean has the following traits.
 
-* It can run on a different machine and a different JVM from the enterprise bean it accesses (It is not required to run on a different JVM.).
+* It can run on a different machine and a different JVM from the enterprise bean it accesses.
+(It is not required to run on a different JVM.)
 
 * It can be a web component, an application client, or another enterprise bean.
 
@@ -251,7 +252,8 @@ ExampleRemote example = (ExampleRemote)
 === Web Service Clients
 
 A web service client can access a Jakarta EE application in two ways.
-First, the client can access a web service created with Jakarta XML Web Services (For more information on Jakarta XML Web Services, see xref:building-web-services-with-jakarta-xml-web-services[xrefstyle=full].).
+First, the client can access a web service created with Jakarta XML Web Services.
+(For more information on Jakarta XML Web Services, see xref:building-web-services-with-jakarta-xml-web-services[xrefstyle=full].)
 Second, a web service client can invoke the business methods of a stateless session bean.
 Message beans cannot be accessed by web service clients.
 

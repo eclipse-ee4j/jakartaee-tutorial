@@ -18,7 +18,8 @@ public interface Coder {
 ----
 
 The interface has two implementation classes, `CoderImpl` and `TestCoderImpl`.
-The implementation of `codeString` in `CoderImpl` shifts the string argument forward in the alphabet by the number of letters specified in the second argument; any characters that are not letters are left unchanged (This simple shift code is known as a Caesar cipher because Julius Caesar reportedly used it to communicate with his generals.).
+The implementation of `codeString` in `CoderImpl` shifts the string argument forward in the alphabet by the number of letters specified in the second argument; any characters that are not letters are left unchanged.
+(This simple shift code is known as a Caesar cipher because Julius Caesar reportedly used it to communicate with his generals.)
 The implementation in `TestCoderImpl` merely displays the values of the arguments.
 The `TestCoderImpl` implementation is annotated `@Alternative`:
 

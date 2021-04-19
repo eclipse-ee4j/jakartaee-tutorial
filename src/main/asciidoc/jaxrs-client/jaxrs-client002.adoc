@@ -18,7 +18,7 @@ public StatusManager() {
 }
 ----
 
-The `StatusManager.getEvents` method returns a collection of all the current events in the system by calling the resource at `http://localhost:8080/rsvp/webapi/status/all`, which returns an XML document with entries for each event.
+The `StatusManager.getEvents` method returns a collection of all the current events in the system by calling the resource at http://localhost:8080/rsvp/webapi/status/all[^], which returns an XML document with entries for each event.
 The Client API automatically unmarshals the XML and creates a `List<Event>` instance.
 
 [source,java]

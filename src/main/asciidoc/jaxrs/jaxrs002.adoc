@@ -197,7 +197,7 @@ A URI path template has one or more variables, with each variable name surrounde
 In the preceding example, `username` is the variable name.
 At runtime, a resource configured to respond to the preceding URI path template will attempt to process the URI data that corresponds to the location of `{username}` in the URI as the variable data for `username`.
 
-For example, if you want to deploy a resource that responds to the URI path template `http://example.com/myContextRoot/resources/{name1}/{name2}/`, you must first deploy the application to a Jakarta EE server that responds to requests to the `http://example.com/myContextRoot` URI and then decorate your resource with the following `@Path` annotation:
+For example, if you want to deploy a resource that responds to the URI path template `\http://example.com/myContextRoot/resources/{name1}/{name2}/`, you must first deploy the application to a Jakarta EE server that responds to requests to the `\http://example.com/myContextRoot` URI and then decorate your resource with the following `@Path` annotation:
 
 [source,java]
 ----

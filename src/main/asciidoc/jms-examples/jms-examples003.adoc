@@ -418,7 +418,8 @@ appclient -client target/synchconsumer.jar topic
 +
 The result, however, is different.
 Because you are using a subscription on a topic, messages that were sent before you created the subscription on the topic will not be added to the subscription and delivered to the consumer.
-(See <<publishsubscribe-messaging-style>> and <<consuming-messages-from-topics>> for details.) Instead of receiving the messages, the client waits for messages to arrive.
+(See <<publishsubscribe-messaging-style>> and <<consuming-messages-from-topics>> for details.)
+Instead of receiving the messages, the client waits for messages to arrive.
 
 . Leave the `SynchConsumer` client running and run the `Producer` client again:
 +

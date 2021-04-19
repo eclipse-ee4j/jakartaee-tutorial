@@ -4,7 +4,8 @@ A session bean encapsulates business logic that can be invoked programmatically 
 To access an application that is deployed on the server, the client invokes the session bean's methods.
 The session bean performs work for its client, shielding it from complexity by executing business tasks inside the server.
 
-A session bean is not persistent (That is, its data is not saved to a database.).
+A session bean is not persistent.
+(That is, its data is not saved to a database.)
 
 For code samples, see xref:running-the-enterprise-bean-examples[xrefstyle=full].
 
