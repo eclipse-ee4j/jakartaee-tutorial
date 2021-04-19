@@ -1,9 +1,6 @@
 == Using Entity Graphs in Query Operations
 
-To specify entity graphs for both typed and untyped queries, call the
-`setHint` method on the query object and specify either
-`jakarta.persistence.loadgraph` or `jakarta.persistence.fetchgraph` as
-the property name and an `EntityGraph` instance as the value:
+To specify entity graphs for both typed and untyped queries, call the `setHint` method on the query object and specify either `jakarta.persistence.loadgraph` or `jakarta.persistence.fetchgraph` as the property name and an `EntityGraph` instance as the value:
 
 [source,java]
 ----
@@ -14,8 +11,7 @@ List<EmailMessage> messages = em.createNamedQuery("findAllEmailMessages")
         .getResultList();
 ----
 
-In this example, the `previewEmailEntityGraph` is used for the
-`findAllEmailMessages` named query.
+In this example, the `previewEmailEntityGraph` is used for the `findAllEmailMessages` named query.
 
 Typed queries use the same technique:
 

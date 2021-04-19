@@ -1,32 +1,29 @@
 == The traffic Example
 
-The `traffic` example demonstrates how to implement and use a simple
-inbound resource adapter that receives data from a legacy EIS using a
-TCP socket.
+The `traffic` example demonstrates how to implement and use a simple inbound resource adapter that receives data from a legacy EIS using a TCP socket.
 
-The example is in the `_tut-install_/examples/connectors/traffic`
-directory. See xref:using-the-tutorial-examples[xrefstyle=full] for
-basic information on building and running sample applications.
+The example is in the `_tut-install_/examples/connectors/traffic` directory.
+See xref:using-the-tutorial-examples[xrefstyle=full] for basic information on building and running sample applications.
 
-The example demonstrates the scenario in <<the-traffic-example-2>> and
-consists of the following modules:
+The example demonstrates the scenario in <<the-traffic-example-2>> and consists of the following modules:
 
 * `traffic-eis`: A Java SE program that simulates an EIS
+
 * `traffic-rar`: The inbound resource adapter implementation
-* `traffic-ejb`: A message-driven bean that is the endpoint for incoming
-messages
-* `traffic-war`: A web application that displays information from the
-message-driven bean
-* `traffic-ear`: An enterprise archive that contains the resource
-adapter, the message-driven bean, and the web application
+
+* `traffic-ejb`: A message-driven bean that is the endpoint for incoming messages
+
+* `traffic-war`: A web application that displays information from the message-driven bean
+
+* `traffic-ear`: An enterprise archive that contains the resource adapter, the message-driven bean, and the web application
 
 [[the-traffic-example-2]]
-image::jakartaeett_dt_056.svg["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket.",title="The traffic Example"]
+.The traffic Example
+image::jakartaeett_dt_056.svg["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket."]
 
-The `traffic-eis` module is an auxiliary project that resembles a
-legacy traffic information system. It contains a Java SE program that
-sends traffic status updates for several cities to any subscribed
-client. The program sends the updates in JSON format over a TCP socket.
+The `traffic-eis` module is an auxiliary project that resembles a legacy traffic information system.
+It contains a Java SE program that sends traffic status updates for several cities to any subscribed client.
+The program sends the updates in JSON format over a TCP socket.
 For example, a traffic update looks like this:
 
 [source,json]
@@ -39,38 +36,25 @@ For example, a traffic update looks like this:
  ]}
 ----
 
-The `traffic-rar` module implements the inbound contract of the Jakarta
-Connectors specification. This module subscribes to the traffic
-information system using the TCP port indicated by the configuration
-provided by the MDB and invokes the methods of the MDB to process
-traffic information updates.
+The `traffic-rar` module implements the inbound contract of the Jakarta Connectors specification.
+This module subscribes to the traffic information system using the TCP port indicated by the configuration provided by the MDB and invokes the methods of the MDB to process traffic information updates.
 
-The `traffic-ejb` module contains a message-driven bean that activates
-the resource adapter with a configuration parameter (the TCP port to
-subscribe to the traffic information system). The MDB contains a method
-to process the traffic information updates. This method filters the
-updates for a particular city and publishes the results to a Jakarta
-Messaging topic.
+The `traffic-ejb` module contains a message-driven bean that activates the resource adapter with a configuration parameter (the TCP port to subscribe to the traffic information system).
+The MDB contains a method to process the traffic information updates.
+This method filters the updates for a particular city and publishes the results to a Jakarta Messaging topic.
 
-The `traffic-war` module contains a message-driven bean that receives
-filtered traffic information updates from the Jakarta Messaging topic
-asynchronously and sends them to the clients using a WebSocket
-endpoint.
+The `traffic-war` module contains a message-driven bean that receives filtered traffic information updates from the Jakarta Messaging topic asynchronously and sends them to the clients using a WebSocket endpoint.
 
 === Using the Inbound Resource Adapter
 
-In most cases, Jakarta EE application developers use inbound resource
-adapters developed by a third party. To use an inbound resource
-adapter, a Jakarta EE application includes a message-driven bean with
-the following characteristics.
+In most cases, Jakarta EE application developers use inbound resource adapters developed by a third party.
+To use an inbound resource adapter, a Jakarta EE application includes a message-driven bean with the following characteristics.
 
-* The MDB implements the business interface defined by the resource
-adapter.
-* The MDB specifies configuration parameters to activate the resource
-adapter.
+* The MDB implements the business interface defined by the resource adapter.
 
-The business interface defined by the resource adapter is not specified
-in the Jakarta Connectors specification; it is specific to the EIS.
+* The MDB specifies configuration parameters to activate the resource adapter.
+
+The business interface defined by the resource adapter is not specified in the Jakarta Connectors specification; it is specific to the EIS.
 
 The MDB in this example is defined as follows:
 
@@ -85,19 +69,14 @@ The MDB in this example is defined as follows:
 public class TrafficMdb implements TrafficListener { ... }
 ----
 
-The `TrafficListener` interface is defined in the API package of the
-resource adapter. The resource adapter requires the MDB to provide the
-`port` property.
+The `TrafficListener` interface is defined in the API package of the resource adapter.
+The resource adapter requires the MDB to provide the `port` property.
 
-When the MDB is deployed, it activates the `traffic-rar` resource
-adapter, which invokes the methods of the MDB to process traffic
-information updates. Then the MDB filters the updates for a particular
-city and publishes the results to a Jakarta Messaging topic.
+When the MDB is deployed, it activates the `traffic-rar` resource adapter, which invokes the methods of the MDB to process traffic information updates.
+Then the MDB filters the updates for a particular city and publishes the results to a Jakarta Messaging topic.
 
 In this particular example, the `TrafficListener` interface is empty.
-In addition to this interface, the resource adapter provides the
-`TrafficCommand` annotation and uses reflection to discover which
-methods in the MDB are decorated with this annotation:
+In addition to this interface, the resource adapter provides the `TrafficCommand` annotation and uses reflection to discover which methods in the MDB are decorated with this annotation:
 
 [source,java]
 ----
@@ -110,43 +89,33 @@ public class TrafficMdb implements TrafficListener {
 }
 ----
 
-This approach enables you to adapt the MDB to support new features in
-the EIS without having to modify the `TrafficListener` interface or the
-resource adapter module.
+This approach enables you to adapt the MDB to support new features in the EIS without having to modify the `TrafficListener` interface or the resource adapter module.
 
 === Implementing the Inbound Resource Adapter
 
-The `traffic-rar` module implements the Jakarta Connectors inbound
-resource adapter contract for the simple traffic information system
-(EIS) used in this example. The architecture of the inbound resource
-adapter is shown in <<architecture-of-the-traffic-example>>.
+The `traffic-rar` module implements the Jakarta Connectors inbound resource adapter contract for the simple traffic information system (EIS) used in this example.
+The architecture of the inbound resource adapter is shown in <<architecture-of-the-traffic-example>>.
 
 [[architecture-of-the-traffic-example]]
-image::jakartaeett_dt_057.svg["This figure shows the classes in each of the components of the traffic example.",title="Architecture of the traffic Example"]
+.Architecture of the traffic Example
+image::jakartaeett_dt_057.svg["This figure shows the classes in each of the components of the traffic example."]
 
-The `traffic-rar` module implements the interfaces listed in
-<<interfaces-implemented-in-the-traffic-rar-module>>.
+The `traffic-rar` module implements the interfaces listed in <<interfaces-implemented-in-the-traffic-rar-module>>.
 
 [[interfaces-implemented-in-the-traffic-rar-module]]
-[width="99%",cols="20%,20%,60%",title="Interfaces Implemented in the traffic-rar Module"]
+.Interfaces Implemented in the traffic-rar Module
+[width="99%",cols="20%,20%,60%"]
 |===
 |Package |Interface |Description
 
-|`jakarta.resource.spi` |`ResourceAdapter` |Defines the lifecycle
-methods of the resource adapter.
+|`jakarta.resource.spi` |`ResourceAdapter` |Defines the lifecycle methods of the resource adapter.
 
-|`jakarta.resource.spi` |`ActivationSpec` |Defines the configuration
-parameters that the MDB provides to activate the inbound resource
-adapter.
+|`jakarta.resource.spi` |`ActivationSpec` |Defines the configuration parameters that the MDB provides to activate the inbound resource adapter.
 
-|`jakarta.resource.spi` |`Work` |The traffic service subscriber
-implements this interface from the work management contract to wait for
-traffic updates on a separate thread.
+|`jakarta.resource.spi` |`Work` |The traffic service subscriber implements this interface from the work management contract to wait for traffic updates on a separate thread.
 |===
 
-When an MDB activates the inbound resource adapter, the container
-invokes the `endpointActivation` method in the `TrafficResourceAdapter`
-class:
+When an MDB activates the inbound resource adapter, the container invokes the `endpointActivation` method in the `TrafficResourceAdapter` class:
 
 [source,java]
 ----
@@ -164,19 +133,13 @@ public class TrafficResourceAdapter implements ResourceAdapter, Serializable {
 }
 ----
 
-The `getEndpointClass` method returns the `Class` type of the MDB
-performing the activation, which enables the resource adapter to use
-reflection to find methods annotated with `@TrafficCommand` in the MDB.
+The `getEndpointClass` method returns the `Class` type of the MDB performing the activation, which enables the resource adapter to use reflection to find methods annotated with `@TrafficCommand` in the MDB.
 
-The `createEndpoint` method returns an instance of the MDB. The
-resource adapter uses this instance to invoke the methods of the MDB
-when it receives requests from the EIS.
+The `createEndpoint` method returns an instance of the MDB.
+The resource adapter uses this instance to invoke the methods of the MDB when it receives requests from the EIS.
 
-After obtaining the message endpoint instance (MDB), the resource
-adapter uses the work management contract to create the traffic service
-subscriber thread that receives traffic updates from the EIS. The
-resource adapter obtains the `WorkManager` instance from the bootstrap
-context as follows:
+After obtaining the message endpoint instance (MDB), the resource adapter uses the work management contract to create the traffic service subscriber thread that receives traffic updates from the EIS.
+The resource adapter obtains the `WorkManager` instance from the bootstrap context as follows:
 
 [source,java]
 ----
@@ -188,8 +151,7 @@ public void start(BootstrapContext ctx) ... {
 }
 ----
 
-The resource adapter schedules the traffic service subscriber thread
-using the work manager:
+The resource adapter schedules the traffic service subscriber thread using the work manager:
 
 [source,java]
 ----
@@ -197,12 +159,9 @@ tSubscriber = new TrafficServiceSubscriber(tSpec, endpoint);
 workManager.scheduleWork(tSubscriber);
 ----
 
-The `TrafficServiceSubscriber` class implements the
-`jakarta.resource.spi.Work` interface from the work management
-contract.
+The `TrafficServiceSubscriber` class implements the `jakarta.resource.spi.Work` interface from the work management contract.
 
-The traffic service subscriber thread uses reflection to invoke the
-methods in the MDB:
+The traffic service subscriber thread uses reflection to invoke the methods in the MDB:
 
 [source,java]
 ----
@@ -218,28 +177,32 @@ private String callMdb(MessageEndpoint mdb, Method command,
 }
 ----
 
-For more details, see the code and the comments in the traffic-rar
-module.
+For more details, see the code and the comments in the traffic-rar module.
 
 === Running the traffic Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `traffic` example.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `traffic` example.
 
 ==== To Run the traffic Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/connectors
 ----
+
 . Select the `traffic` folder.
+
 . Click Open Project.
+
 . In the Projects tab, expand the `traffic` node.
+
 . Right-click the `traffic-eis` module and select Open Project.
+
 . Right-click the `traffic-eis` project and select Run.
 +
 The messages from the EIS appear on the Output tab:
@@ -247,33 +210,32 @@ The messages from the EIS appear on the Output tab:
 ----
 Traffic EIS accepting connections on port 4008
 ----
-. In the Projects tab, right-click the `traffic` project and select
-Clean and Build.
+
+. In the Projects tab, right-click the `traffic` project and select Clean and Build.
 +
-This command builds and packages the resource adapter, the MDB, and the
-web application into an EAR archive and deploys it. The server log
-shows the call sequence that activates the resource adapter and the
-filtered traffic updates for City1.
+This command builds and packages the resource adapter, the MDB, and the web application into an EAR archive and deploys it.
+The server log shows the call sequence that activates the resource adapter and the filtered traffic updates for City1.
+
 . Open the following URL in a web browser:
 +
 ----
 http://localhost:8080/traffic/
 ----
 +
-The web interface shows filtered traffic updates for City1 every few
-seconds.
-. After undeploying the `traffic-ear` application, close the
-`traffic-eis` application from the status bar.
+The web interface shows filtered traffic updates for City1 every few seconds.
+
+. After undeploying the `traffic-ear` application, close the `traffic-eis` application from the status bar.
 
 ==== To Run the traffic Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/connectors/traffic/traffic-eis/
 ----
+
 . Enter the following command in the terminal window:
 +
 [source,shell]
@@ -282,6 +244,7 @@ mvn install
 ----
 +
 This command builds and packages the traffic EIS.
+
 . Enter the following command in the terminal window:
 +
 [source,shell]
@@ -296,11 +259,13 @@ Traffic EIS accepting connections on port 4008
 ----
 +
 Leave this terminal window open.
+
 . Open a new terminal window and go to:
 +
 ----
 tut-install/examples/connectors/traffic/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -308,17 +273,15 @@ tut-install/examples/connectors/traffic/
 mvn install
 ----
 +
-This command builds and packages the resource adapter, the MDB, and the
-web application into an EAR archive and deploys it. The server log
-shows the call sequence that activates the resource adapter and the
-filtered traffic updates for City1.
+This command builds and packages the resource adapter, the MDB, and the web application into an EAR archive and deploys it.
+The server log shows the call sequence that activates the resource adapter and the filtered traffic updates for City1.
+
 . Open the following URL in a web browser:
 +
 ----
 http://localhost:8080/traffic/
 ----
 +
-The web interface shows the filtered traffic updates for City1 every
-few seconds.
-. After undeploying the `traffic-ear` application, press Ctrl+C in the
-first terminal window to close the `traffic-eis` application.
+The web interface shows the filtered traffic updates for City1 every few seconds.
+
+. After undeploying the `traffic-ear` application, press Ctrl+C in the first terminal window to close the `traffic-eis` application.

@@ -1,15 +1,12 @@
 == Using the Configurators Interfaces
 
-The CDI 2.0 specification defines the following Configurators
-interfaces, which are used for dynamically defining and modifying CDI
-objects:
+The CDI 2.0 specification defines the following Configurators interfaces, which are used for dynamically defining and modifying CDI objects:
 
-[width="99%",cols="30%a,70%a"]
+[width="99%",cols="30%,70%"]
 |===
 |Interface |Description
 
-|`AnnotatedTypeConfigurator` SPI |Helps create and configure the
-following type metadata:
+|`AnnotatedTypeConfigurator` SPI |Helps create and configure the following type metadata:
 
 `AnnotatedType`
 
@@ -21,17 +18,13 @@ following type metadata:
 
 `AnnotatedParameter`
 
-|`InjectionPointConfigurator` interface |Helps configure an existing
-`InjectionPoint` instance
+|`InjectionPointConfigurator` interface |Helps configure an existing `InjectionPoint` instance
 
-|`BeanAttributesConfigurator` interface |Helps configure a new
-`BeanAttributes` instance
+|`BeanAttributesConfigurator` interface |Helps configure a new `BeanAttributes` instance
 
 |`BeanConfigurator` interface |Helps configure a new `Bean` instance
 
-|`ObserverMethodConfigurator` interface | Helps configure an
-`ObserverMethod` instance
+|`ObserverMethodConfigurator` interface | Helps configure an `ObserverMethod` instance
 
-|`ProducerConfigurator` interface |Helps configure a `Producer`
-instance
+|`ProducerConfigurator` interface |Helps configure a `Producer` instance
 |===

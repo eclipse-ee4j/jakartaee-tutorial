@@ -1,14 +1,10 @@
 == Date and Number Formatting
 
-Java programs use the `DateFormat.getDateInstance(int, locale)`
-method to parse and format dates in a locale-sensitive manner. Java
-programs use the `NumberFormat.get__XXX__Instance(locale)` method, where
-_XXX_ can be `Currency`, `Number`, or `Percent`, to parse and format
-numerical values in a locale-sensitive manner.
+Java programs use the `DateFormat.getDateInstance(int, locale)` method to parse and format dates in a locale-sensitive manner.
+Java programs use the `NumberFormat.get__XXX__Instance(locale)` method, where _XXX_ can be `Currency`, `Number`, or `Percent`, to parse and format numerical values in a locale-sensitive manner.
 
-An application can use date/time and number converters to format dates
-and numbers in a locale-sensitive manner. For example, a shipping date
-could be converted as follows:
+An application can use date/time and number converters to format dates and numbers in a locale-sensitive manner.
+For example, a shipping date could be converted as follows:
 
 [source,xml]
 ----
@@ -17,5 +13,4 @@ could be converted as follows:
 </h:outputText>
 ----
 
-For information on Jakarta Faces converters, see
-<<using-the-standard-converters>>.
+For information on Jakarta Faces converters, see <<using-the-standard-converters>>.

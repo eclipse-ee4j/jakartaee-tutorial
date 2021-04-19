@@ -1,85 +1,54 @@
 == Jakarta EE Containers
 
-Normally, thin-client multitiered applications are hard to write
-because they involve many lines of intricate code to handle transaction
-and state management, multithreading, resource pooling, and other
-complex low-level details. The component-based and platform-independent
-Jakarta EE architecture makes applications easy to write because
-business logic is organized into reusable components. In addition, the
-Jakarta EE server provides underlying services in the form of a
-container for every component type. Because you do not have to develop
-these services yourself, you are free to concentrate on solving the
-business problem at hand.
+Normally, thin-client multitiered applications are hard to write because they involve many lines of intricate code to handle transaction and state management, multithreading, resource pooling, and other complex low-level details.
+The component-based and platform-independent Jakarta EE architecture makes applications easy to write because business logic is organized into reusable components.
+In addition, the Jakarta EE server provides underlying services in the form of a container for every component type.
+Because you do not have to develop these services yourself, you are free to concentrate on solving the business problem at hand.
 
 === Container Services
 
-Containers are the interface between a component and the low-level,
-platform-specific functionality that supports the component. Before it
-can be executed, a web, enterprise bean, or application client
-component must be assembled into a Jakarta EE module and deployed into
-its container.
+Containers are the interface between a component and the low-level, platform-specific functionality that supports the component.
+Before it can be executed, a web, enterprise bean, or application client component must be assembled into a Jakarta EE module and deployed into its container.
 
-The assembly process involves specifying container settings for each
-component in the Jakarta EE application and for the Jakarta EE
-application itself. Container settings customize the underlying support
-provided by the Jakarta EE server, including such services as security,
-transaction management, Java Naming and Directory Interface (JNDI) API
-lookups, and remote connectivity. Here are some of the highlights.
+The assembly process involves specifying container settings for each component in the Jakarta EE application and for the Jakarta EE application itself.
+Container settings customize the underlying support provided by the Jakarta EE server, including such services as security, transaction management, Java Naming and Directory Interface (JNDI) API lookups, and remote connectivity.
+Here are some of the highlights.
 
-* The Jakarta EE security model lets you configure a web component or
-enterprise bean so that system resources are accessed only by
-authorized users.
+* The Jakarta EE security model lets you configure a web component or enterprise bean so that system resources are accessed only by authorized users.
 
-* The Jakarta EE transaction model lets you specify relationships among
-methods that make up a single transaction so that all methods in one
-transaction are treated as a single unit.
+* The Jakarta EE transaction model lets you specify relationships among methods that make up a single transaction so that all methods in one transaction are treated as a single unit.
 
-* JNDI lookup services provide a unified interface to multiple naming
-and directory services in the enterprise so that application components
-can access these services.
+* JNDI lookup services provide a unified interface to multiple naming and directory services in the enterprise so that application components can access these services.
 
-* The Jakarta EE remote connectivity model manages low-level
-communications between clients and enterprise beans. After an
-enterprise bean is created, a client invokes methods on it as if it
-were in the same virtual machine.
+* The Jakarta EE remote connectivity model manages low-level communications between clients and enterprise beans.
+After an enterprise bean is created, a client invokes methods on it as if it were in the same virtual machine.
 
-Because the Jakarta EE architecture provides configurable services,
-components within the same application can behave differently based on
-where they are deployed. For example, an enterprise bean can have
-security settings that allow it a certain level of access to database
-data in one production environment and another level of database access
-in another production environment.
+Because the Jakarta EE architecture provides configurable services, components within the same application can behave differently based on where they are deployed.
+For example, an enterprise bean can have security settings that allow it a certain level of access to database data in one production environment and another level of database access in another production environment.
 
-The container also manages nonconfigurable services, such as enterprise
-bean and servlet lifecycles, database connection resource pooling, data
-persistence, and access to the Jakarta EE platform APIs (see
-<<jakarta-ee-apis>>.
+The container also manages nonconfigurable services, such as enterprise bean and servlet lifecycles, database connection resource pooling, data persistence, and access to the Jakarta EE platform APIs (see <<jakarta-ee-apis>>.
 
 === Container Types
 
-The deployment process installs Jakarta EE application components in
-the Jakarta EE containers, as illustrated in
-<<jakarta-ee-server-and-containers>>.
+The deployment process installs Jakarta EE application components in the Jakarta EE containers, as illustrated in <<jakarta-ee-server-and-containers>>.
 
 [[jakarta-ee-server-and-containers]]
-image::jakartaeett_dt_005.svg["Diagram of client-server communication showing servlets and web pages in the web tier and enterprise beans in the business tier.", title="Jakarta EE Server and Containers"]
+.Jakarta EE Server and Containers
+image::jakartaeett_dt_005.svg["Diagram of client-server communication showing servlets and web pages in the web tier and enterprise beans in the business tier."]
 
 The server and containers are as follows:
 
-* Jakarta EE server: The runtime portion of a Jakarta EE product. A
-Jakarta EE server provides enterprise and web containers.
+* Jakarta EE server: The runtime portion of a Jakarta EE product.
+A Jakarta EE server provides enterprise and web containers.
 
-* Jakarta Enterprise Bean container: Manages the execution of
-enterprise beans for Jakarta EE applications. Jakarta Enterprise Beans
-and their container run on the Jakarta EE server.
+* Jakarta Enterprise Bean container: Manages the execution of enterprise beans for Jakarta EE applications.
+Jakarta Enterprise Beans and their container run on the Jakarta EE server.
 
-* Web container: Manages the execution of web pages, servlets, and some
-enterprise bean components for Jakarta EE applications. Web components
-and their container run on the Jakarta EE server.
+* Web container: Manages the execution of web pages, servlets, and some enterprise bean components for Jakarta EE applications.
+Web components and their container run on the Jakarta EE server.
 
-* Application client container: Manages the execution of application
-client components. Application clients and their container run on the
-client.
+* Application client container: Manages the execution of application client components.
+Application clients and their container run on the client.
 
-* Applet container: Manages the execution of applets. Consists of a web
-browser and a Java Plug-in running on the client together.
+* Applet container: Manages the execution of applets.
+Consists of a web browser and a Java Plug-in running on the client together.

@@ -1,25 +1,20 @@
 == Annotations for Field and Bean Properties of Resource Classes
 
-Jakarta REST annotations for resource classes let you extract specific
-parts or values from a Uniform Resource Identifier (URI) or request
-header.
+Jakarta REST annotations for resource classes let you extract specific parts or values from a Uniform Resource Identifier (URI) or request header.
 
-Jakarta REST provides the annotations listed in
-<<advanced-jakarta-rest-annotations>>.
+Jakarta REST provides the annotations listed in <<advanced-jakarta-rest-annotations>>.
 
 [[advanced-jakarta-rest-annotations]]
-[width="99%",cols="5%,95%",title="Advanced Jakarta REST Annotations"]
+.Advanced Jakarta REST Annotations
+[width="99%",cols="5%,95%"]
 |===
 |Annotation |Description
 
-|`@Context` |Injects information into a class field, bean property, or
-method parameter
+|`@Context` |Injects information into a class field, bean property, or method parameter
 
-|`@CookieParam` |Extracts information from cookies declared in the
-cookie request header
+|`@CookieParam` |Extracts information from cookies declared in the cookie request header
 
-|`@FormParam` |Extracts information from a request representation whose
-content type is `application/x-www-form-urlencoded`
+|`@FormParam` |Extracts information from a request representation whose content type is `application/x-www-form-urlencoded`
 
 |`@HeaderParam` |Extracts the value of a header
 
@@ -32,12 +27,10 @@ content type is `application/x-www-form-urlencoded`
 
 === Extracting Path Parameters
 
-URI path templates are URIs with variables embedded within the URI
-syntax. The `@PathParam` annotation lets you use variable URI path
-fragments when you call a method.
+URI path templates are URIs with variables embedded within the URI syntax.
+The `@PathParam` annotation lets you use variable URI path fragments when you call a method.
 
-The following code snippet shows how to extract the last name of an
-employee when the employee's email address is provided:
+The following code snippet shows how to extract the last name of an employee when the employee's email address is provided:
 
 [source,java]
 ----
@@ -52,35 +45,28 @@ public class EmpResource {
 }
 ----
 
-In this example, the `@Path` annotation defines the URI variables (or
-path parameters) pass:q[`{firstname}`, `{lastname}`], and `{domain}`.
-The `@PathParam` in the method parameter of the request method extracts
-the last name from the email address.
+In this example, the `@Path` annotation defines the URI variables (or path parameters) pass:q[`{firstname}`, `{lastname}`], and `{domain}`.
+The `@PathParam` in the method parameter of the request method extracts the last name from the email address.
 
-If your HTTP request is `GET` `/employees/john.doe@example.com`, the
-value "`doe`" is injected into pass:q[`{lastname}`].
+If your HTTP request is `GET` `/employees/john.doe@example.com`, the value "`doe`" is injected into pass:q[`{lastname}`].
 
 You can specify several path parameters in one URI.
 
-You can declare a regular expression with a URI variable. For example,
-if it is required that the last name must consist only of lowercase and
-uppercase characters, you can declare the following regular expression:
+You can declare a regular expression with a URI variable.
+For example, if it is required that the last name must consist only of lowercase and uppercase characters, you can declare the following regular expression:
 
 [source,java]
 ----
 @Path("/employees/{firstname}.{lastname[a-zA-Z]*}@{domain}.com")
 ----
 
-If the last name does not match the regular expression, a 404 response
-is returned.
+If the last name does not match the regular expression, a 404 response is returned.
 
 === Extracting Query Parameters
 
-Use the `@QueryParam` annotation to extract query parameters from the
-query component of the request URI.
+Use the `@QueryParam` annotation to extract query parameters from the query component of the request URI.
 
-For instance, to query all employees who have joined within a specific
-range of years, use a method signature like the following:
+For instance, to query all employees who have joined within a specific range of years, use a method signature like the following:
 
 [source,java]
 ----
@@ -92,27 +78,22 @@ public Response getEmployees(
     {...}
 ----
 
-This code snippet defines two query parameters, `minyear` and
-`maxyear`. The following HTTP request would query for all employees who
-have joined between 2003 and 2013:
+This code snippet defines two query parameters, `minyear` and `maxyear`.
+The following HTTP request would query for all employees who have joined between 2003 and 2013:
 
 [source,http]
 ----
 GET /employees?maxyear=2013&minyear=2003
 ----
 
-The `@DefaultValue` annotation defines a default value, which is to be
-used if no values are provided for the query parameters. By default,
-Jakarta REST assigns a null value for `Object` values and zero for
-primitive data types. You can use the `@DefaultValue` annotation to
-eliminate null or zero values and define your own default values for a
-parameter.
+The `@DefaultValue` annotation defines a default value, which is to be used if no values are provided for the query parameters.
+By default, Jakarta REST assigns a null value for `Object` values and zero for primitive data types.
+You can use the `@DefaultValue` annotation to eliminate null or zero values and define your own default values for a parameter.
 
 === Extracting Form Data
 
-Use the `@FormParam` annotation to extract form parameters from HTML
-forms. For example, the following form accepts the name, address, and
-manager's name of an employee:
+Use the `@FormParam` annotation to extract form parameters from HTML forms.
+For example, the following form accepts the name, address, and manager's name of an employee:
 
 [source,html]
 ----
@@ -127,8 +108,7 @@ manager's name of an employee:
 </FORM>
 ----
 
-Use the following code snippet to extract the manager name from this
-HTML form:
+Use the following code snippet to extract the manager name from this HTML form:
 
 [source,java]
 ----
@@ -140,8 +120,7 @@ public void post(@FormParam("managername") String managername) {
 }
 ----
 
-To obtain a map of form parameter names to values, use a code snippet
-like the following:
+To obtain a map of form parameter names to values, use a code snippet like the following:
 
 [source,java]
 ----
@@ -154,12 +133,10 @@ public void post(MultivaluedMap<String, String> formParams) {
 
 === Extracting the Java Type of a Request or Response
 
-The `jakarta.ws.rs.core.Context` annotation retrieves the Java types
-related to a request or response.
+The `jakarta.ws.rs.core.Context` annotation retrieves the Java types related to a request or response.
 
-The `jakarta.ws.rs.core.UriInfo` interface provides information about
-the components of a request URI. The following code snippet shows how
-to obtain a map of query and path parameter names to values:
+The `jakarta.ws.rs.core.UriInfo` interface provides information about the components of a request URI.
+The following code snippet shows how to obtain a map of query and path parameter names to values:
 
 [source,java]
 ----
@@ -170,9 +147,8 @@ public String getParams(@Context UriInfo ui) {
 }
 ----
 
-The `jakarta.ws.rs.core.HttpHeaders` interface provides information
-about request headers and cookies. The following code snippet shows how
-to obtain a map of header and cookie parameter names to values:
+The `jakarta.ws.rs.core.HttpHeaders` interface provides information about request headers and cookies.
+The following code snippet shows how to obtain a map of header and cookie parameter names to values:
 
 [source,java]
 ----

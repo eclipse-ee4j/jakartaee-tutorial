@@ -1,9 +1,7 @@
 = The Jakarta Persistence Query Language
 
-This chapter describes the Jakarta Persistence query language that
-defines queries for entities and their persistent state. The query
-language allows you to write portable queries that work regardless of
-the underlying data store.
+This chapter describes the Jakarta Persistence query language that defines queries for entities and their persistent state.
+The query language allows you to write portable queries that work regardless of the underlying data store.
 
 include::persistence-querylanguage001.adoc[]
 
@@ -16,4 +14,3 @@ include::persistence-querylanguage004.adoc[]
 include::persistence-querylanguage005.adoc[]
 
 include::persistence-querylanguage006.adoc[]
-

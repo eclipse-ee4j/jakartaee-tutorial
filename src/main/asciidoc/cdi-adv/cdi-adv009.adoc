@@ -1,23 +1,35 @@
 == Using the Built-In Annotation Literals
 
-The following built-in annotations define a `Literal` static nested
-class, which can be used as a convenience feature for creating
-instances of annotations:
+The following built-in annotations define a `Literal` static nested class, which can be used as a convenience feature for creating instances of annotations:
 
 * `jakarta.enterprise.inject.Any`
+
 * `jakarta.enterprise.inject.Default`
+
 * `jakarta.enterprise.inject.New`
+
 * `jakarta.enterprise.inject.Specializes`
+
 * `jakarta.enterprise.inject.Vetoed`
+
 * `jakarta.enterprise.util.Nonbinding`
+
 * `jakarta.enterprise.context.Initialized`
+
 * `jakarta.enterprise.context.Destroyed`
+
 * `jakarta.enterprise.context.RequestScoped`
+
 * `jakarta.enterprise.context.SessionScoped`
+
 * `jakarta.enterprise.context.ApplicationScoped`
+
 * `jakarta.enterprise.context.Dependent`
+
 * `jakarta.enterprise.context.ConversationScoped`
+
 * `jakarta.enterprise.inject.Alternative`
+
 * `jakarta.enterprise.inject.Typed`
 
 For example:

@@ -1,98 +1,103 @@
 == The jobs Concurrency Example
 
-This section describes a very basic example that shows how to use some
-of the basic concurrency features in an enterprise application.
-Specifically, this example uses one of the main components of Jakarta
-Concurrency, a Managed Executor Service.
+This section describes a very basic example that shows how to use some of the basic concurrency features in an enterprise application.
+Specifically, this example uses one of the main components of Jakarta Concurrency, a Managed Executor Service.
 
-The example demonstrates a scenario where a RESTful web service,
-exposed as a public API, is used to submit generic jobs for execution.
-These jobs are processed in the background. Each job prints a
-"Starting" and a "Finished" message at the beginning and end of the
-execution. Also, to simulate background processing, each job takes 10
-seconds to execute.
+The example demonstrates a scenario where a RESTful web service, exposed as a public API, is used to submit generic jobs for execution.
+These jobs are processed in the background.
+Each job prints a "Starting" and a "Finished" message at the beginning and end of the execution.
+Also, to simulate background processing, each job takes 10 seconds to execute.
 
 The RESTful service exposes two methods:
 
-* `/token`: Exposed as a GET method that registers and returns valid
-API tokens
+* `/token`: Exposed as a GET method that registers and returns valid API tokens
 
-* `/process`: Exposed as a POST method that receives a `jobID` query
-parameter, which is the identifier for the job to be executed, and a
-custom HTTP header named `X-REST-API-Key,` which will be used
-internally to validate requests with tokens
+* `/process`: Exposed as a POST method that receives a `jobID` query parameter, which is the identifier for the job to be executed, and a custom HTTP header named `X-REST-API-Key,` which will be used internally to validate requests with tokens
 
-The token is used to differentiate the Quality of Service (QoS) offered
-by the API. Users that provide a token in a service request can process
-multiple concurrent jobs. However, users that do not provide a token
-can process only one job at a time. Since every job takes 10 seconds to
-execute, users that provide no token will be able to execute only one
-call to the service every 10 seconds. For users that provide a token,
-processing will be much faster.
+The token is used to differentiate the Quality of Service (QoS) offered by the API.
+Users that provide a token in a service request can process multiple concurrent jobs.
+However, users that do not provide a token can process only one job at a time.
+Since every job takes 10 seconds to execute, users that provide no token will be able to execute only one call to the service every 10 seconds.
+For users that provide a token, processing will be much faster.
 
-This differentiation is made possible by the use of two different
-Managed Executor Services, one for each type of request.
+This differentiation is made possible by the use of two different Managed Executor Services, one for each type of request.
 
 === Running the jobs Example
 
-After configuring GlassFish Server by adding two Managed Executor
-Services, you can use either NetBeans IDE or Maven to build, package,
-deploy, and run the `jobs` example.
+After configuring GlassFish Server by adding two Managed Executor Services, you can use either NetBeans IDE or Maven to build, package, deploy, and run the `jobs` example.
 
 ==== To Configure GlassFish Server for the Basic Concurrency Example
 
 To configure GlassFish Server, follow these steps.
 
 . Open the Administration Console at http://localhost:4848[^].
+
 . Expand the Resources node.
+
 . Expand the Concurrent Resources node.
+
 . Click Managed Executor Services.
-. On the Managed Executor Services page, click New to open the New
-Managed Executor Services page.
-. In the JNDI Name field, enter `MES_High` to create the high-priority
-Managed Executor Service. Use the following settings (keep the default
-values for other settings):
+
+. On the Managed Executor Services page, click New to open the New Managed Executor Services page.
+
+. In the JNDI Name field, enter `MES_High` to create the high-priority Managed Executor Service.
+Use the following settings (keep the default values for other settings):
+
 * Thread Priority: 10
+
 * Core Size: 2
+
 * Maximum Pool Size: 5
+
 * Task Queue Capacity: 2
+
 . Click OK.
+
 . On the On the Managed Executor Services page, click New again.
-. In the JNDI Name field, enter `MES_Low` to create the low-priority
-Managed Executor Service. Use the following settings (keep the default
-values for other settings):
+
+. In the JNDI Name field, enter `MES_Low` to create the low-priority Managed Executor Service.
+Use the following settings (keep the default values for other settings):
+
 * Thread Priority: 1
+
 * Core Size: 1
+
 * Maximum Pool Size: 1
+
 * Task Queue Capacity: 0
+
 . Click OK.
 
 ==== To Build, Package, and Deploy the jobs Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/concurrency
 ----
+
 . Select the `jobs` folder.
+
 . Click Open Project.
-. In the Projects tab, right-click the `jobs` project and select
-Build.
+
+. In the Projects tab, right-click the `jobs` project and select Build.
 +
 This command builds and deploys the application.
 
 ==== To Build, Package, and Deploy the jobs Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/concurrency/jobs
 ----
+
 . Enter the following command to build and deploy the application:
 +
 [source,shell]
@@ -110,8 +115,8 @@ these steps:
 ----
 http://localhost:8080/jobs
 ----
-. In the Jobs Client page, enter the value 1 in the Enter a JobID
-field, enter nothing in the Enter a Token field, then click Submit Job.
+
+. In the Jobs Client page, enter the value 1 in the Enter a JobID field, enter nothing in the Enter a Token field, then click Submit Job.
 +
 The following message should be displayed at the bottom of the page:
 +
@@ -128,10 +133,9 @@ INFO:   Job 1 successfully submitted
 INFO:   Task finished LOW-1
 ----
 +
-You submitted a job with low priority. This means that you cannot submit
-another job for 10 seconds. If you try to do so, the RESTful API will
-return a service unavailable (HTTP 503) response and the following
-message will be displayed at the bottom of the page:
+You submitted a job with low priority.
+This means that you cannot submit another job for 10 seconds.
+If you try to do so, the RESTful API will return a service unavailable (HTTP 503) response and the following message will be displayed at the bottom of the page:
 +
 ----
 Job 2 was NOT submitted
@@ -150,23 +154,24 @@ INFO:   Task finished LOW-1
 
 ==== To Run the jobs Example and Submit Jobs with High Priority
 
-To run the example as a user who submits jobs with high priority,
-follow these steps:
+To run the example as a user who submits jobs with high priority, follow these steps:
 
 . In a web browser, enter the following URL:
 +
 ----
 http://localhost:8080/jobs
 ----
-. In the Jobs Client page, enter a value of one to ten digits in the
-Enter a JobID field.
+
+. In the Jobs Client page, enter a value of one to ten digits in the Enter a JobID field.
+
 . Click the here link on the line "Get a token here" to get a token.
 The page that displays the token will open in a new tab.
+
 . Copy the token and return to the Jobs Client page.
+
 . Paste the token in the Enter a Token field, then click Submit Job.
 +
-A message like the following should be displayed at the bottom of the
-page:
+A message like the following should be displayed at the bottom of the page:
 +
 ----
 Job 11 successfully submitted
@@ -181,11 +186,9 @@ INFO:   Job 11 successfully submitted
 INFO:   Task finished HIGH-11
 ----
 +
-You submitted a job with high priority. This means that you can submit
-multiple jobs, each with a token, and not face the 10 second per job
-restriction that the low priority submitters face. If you submit 3 jobs
-with tokens in rapid succession, messages like the following will be
-displayed at the bottom of the page:
+You submitted a job with high priority.
+This means that you can submit multiple jobs, each with a token, and not face the 10 second per job restriction that the low priority submitters face.
+If you submit 3 jobs with tokens in rapid succession, messages like the following will be displayed at the bottom of the page:
 +
 ----
 Job 1 was submitted

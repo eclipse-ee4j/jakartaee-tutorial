@@ -1,12 +1,8 @@
 == Using Default Validators
 
-In addition to the validators you declare on the components, you can
-also specify zero or more default validators in the application
-configuration resource file. The default validator applies to all
-`jakarta.faces.component.UIInput` instances in a view or component tree
-and is appended after the local defined validators. Here is an example
-of a default validator registered in the application configuration
-resource file:
+In addition to the validators you declare on the components, you can also specify zero or more default validators in the application configuration resource file.
+The default validator applies to all `jakarta.faces.component.UIInput` instances in a view or component tree and is appended after the local defined validators.
+Here is an example of a default validator registered in the application configuration resource file:
 
 [source,xml]
 ----

@@ -1,14 +1,10 @@
 == Using the Object Model API
 
-This section describes four use cases of the object model API: creating
-an object model from JSON data, creating an object model from
-application code, navigating an object model, and writing an object
-model to a stream.
+This section describes four use cases of the object model API: creating an object model from JSON data, creating an object model from application code, navigating an object model, and writing an object model to a stream.
 
 === Creating an Object Model from JSON Data
 
-The following code demonstrates how to create an object model from JSON
-data in a text file:
+The following code demonstrates how to create an object model from JSON data in a text file:
 
 [source,java]
 ----
@@ -21,16 +17,13 @@ JsonReader reader = Json.createReader(new FileReader("jsondata.txt"));
 JsonStructure jsonst = reader.read();
 ----
 
-The object reference `jsonst` can be either of type `JsonObject` or of
-type `JsonArray`, depending on the contents of the file. `JsonObject`
-and `JsonArray` are subtypes of `JsonStructure`. This reference
-represents the top of the tree and can be used to navigate the tree or
-to write it to a stream as JSON data.
+The object reference `jsonst` can be either of type `JsonObject` or of type `JsonArray`, depending on the contents of the file.
+`JsonObject` and `JsonArray` are subtypes of `JsonStructure`.
+This reference represents the top of the tree and can be used to navigate the tree or to write it to a stream as JSON data.
 
 === Creating an Object Model from Application Code
 
-The following code demonstrates how to create an object model from
-application code:
+The following code demonstrates how to create an object model from application code:
 
 [source,java]
 ----
@@ -55,10 +48,8 @@ JsonObject model = Json.createObjectBuilder()
    .build();
 ----
 
-The object reference `model` represents the top of the tree, which is
-created by nesting calls to the `add` methods and built by calling the
-`build` method. The `JsonObjectBuilder` class contains the following
-`add` methods:
+The object reference `model` represents the top of the tree, which is created by nesting calls to the `add` methods and built by calling the `build` method.
+The `JsonObjectBuilder` class contains the following `add` methods:
 
 [source,java]
 ----
@@ -75,17 +66,14 @@ JsonObjectBuilder add(String name, String value)
 JsonObjectBuilder addNull(String name)
 ----
 
-The `JsonArrayBuilder` class contains similar `add` methods that do not
-have a name (key) parameter. You can nest arrays and objects by passing
-a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to
-the corresponding `add` method, as shown in this example.
+The `JsonArrayBuilder` class contains similar `add` methods that do not have a name (key) parameter.
+You can nest arrays and objects by passing a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to the corresponding `add` method, as shown in this example.
 
 The resulting tree represents the JSON data from <<json-syntax>>.
 
 === Navigating an Object Model
 
-The following code demonstrates a simple approach to navigating an
-object model:
+The following code demonstrates a simple approach to navigating an object model:
 
 [source,java]
 ----
@@ -128,34 +116,25 @@ public static void navigateTree(JsonValue tree, String key) {
 }
 ----
 
-The method `navigateTree` can be used with the models built in
-<<creating-an-object-model-from-json-data>> and
-<<creating-an-object-model-from-application-code>> as follows:
+The method `navigateTree` can be used with the models built in <<creating-an-object-model-from-json-data>> and <<creating-an-object-model-from-application-code>> as follows:
 
 [source,java]
 ----
 navigateTree(model, null);
 ----
 
-The `navigateTree` method takes two arguments: a JSON element and a
-key. The key is used only to help print the key-value pairs inside
-objects. Elements in a tree are represented by the `JsonValue` type. If
-the element is an object or an array, a new call to this method is made
-for every element contained in the object or array. If the element is a
-value, it is printed to the standard output.
+The `navigateTree` method takes two arguments: a JSON element and a key.
+The key is used only to help print the key-value pairs inside objects.
+Elements in a tree are represented by the `JsonValue` type.
+If the element is an object or an array, a new call to this method is made for every element contained in the object or array.
+If the element is a value, it is printed to the standard output.
 
-The `JsonValue.getValueType` method identifies the element as an
-object, an array, or a value. For objects, the `JsonObject.keySet`
-method returns a set of strings that contains the keys in the object,
-and the `JsonObject.get(String name)` method returns the value of the
-element whose key is `name`. For arrays, `JsonArray` implements the
-`List<JsonValue>` interface. You can use enhanced `for` loops with the
-`Set<String>` instance returned by `JsonObject.keySet` and with
-instances of `JsonArray`, as shown in this example.
+The `JsonValue.getValueType` method identifies the element as an object, an array, or a value.
+For objects, the `JsonObject.keySet` method returns a set of strings that contains the keys in the object, and the `JsonObject.get(String name)` method returns the value of the element whose key is `name`.
+For arrays, `JsonArray` implements the `List<JsonValue>` interface.
+You can use enhanced `for` loops with the `Set<String>` instance returned by `JsonObject.keySet` and with instances of `JsonArray`, as shown in this example.
 
-The `navigateTree` method for the model built in
-<<creating-an-object-model-from-application-code>> produces the
-following output:
+The `navigateTree` method for the model built in <<creating-an-object-model-from-application-code>> produces the following output:
 
 ----
 OBJECT
@@ -177,10 +156,7 @@ OBJECT
 
 === Writing an Object Model to a Stream
 
-The object models created in
-<<creating-an-object-model-from-json-data>> and
-<<creating-an-object-model-from-application-code>> can be written to a
-stream using the `JsonWriter` class as follows:
+The object models created in <<creating-an-object-model-from-json-data>> and <<creating-an-object-model-from-application-code>> can be written to a stream using the `JsonWriter` class as follows:
 
 [source,java]
 ----
@@ -200,8 +176,7 @@ The `Json.createWriter` method takes an output stream as a parameter.
 The `JsonWriter.writeObject` method writes the object to the stream.
 The `JsonWriter.close` method closes the underlying output stream.
 
-The following example uses `try-with-resources` to close the JSON
-writer automatically:
+The following example uses `try-with-resources` to close the JSON writer automatically:
 
 [source,java]
 ----

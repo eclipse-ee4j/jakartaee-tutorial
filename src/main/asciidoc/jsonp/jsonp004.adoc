@@ -5,8 +5,7 @@ This section describes two use cases of the streaming API.
 === Reading JSON Data Using a Parser
 
 The streaming API is the most efficient approach for parsing JSON text.
-The following code demonstrates how to create a `JsonParser` object and
-how to parse JSON data using events:
+The following code demonstrates how to create a `JsonParser` object and how to parse JSON data using events:
 
 [source,java]
 ----
@@ -41,28 +40,26 @@ while (parser.hasNext()) {
 
 This example consists of three steps.
 
-. Obtain a parser instance by calling the `Json.createParser` static
-method.
+. Obtain a parser instance by calling the `Json.createParser` static method.
 
-. Iterate over the parser events with the `JsonParser.hasNext` and the
-`JsonParser.next` methods.
+. Iterate over the parser events with the `JsonParser.hasNext` and the `JsonParser.next` methods.
 
 . Perform local processing for each element.
 
-The example shows the ten possible event types from the parser. The
-parser's `next` method advances it to the next event. For the event
-types `KEY_NAME`, `VALUE_STRING`, and `VALUE_NUMBER`, you can obtain
-the content of the element by calling the method
-`JsonParser.getString`. For `VALUE_NUMBER` events, you can also use the
-following methods:
+The example shows the ten possible event types from the parser.
+The parser's `next` method advances it to the next event.
+For the event types `KEY_NAME`, `VALUE_STRING`, and `VALUE_NUMBER`, you can obtain the content of the element by calling the method `JsonParser.getString`.
+For `VALUE_NUMBER` events, you can also use the following methods:
 
 * `JsonParser.isIntegralNumber`
+
 * `JsonParser.getInt`
+
 * `JsonParser.getLong`
+
 * `JsonParser.getBigDecimal`
 
-See the Jakarta EE API reference for the
-`jakarta.json.stream.JsonParser` interface for more information.
+See the Jakarta EE API reference for the `jakarta.json.stream.JsonParser` interface for more information.
 
 The output of this example is the following:
 
@@ -90,8 +87,7 @@ END_OBJECT
 
 === Writing JSON Data Using a Generator
 
-The following code demonstrates how to write JSON data to a file using
-the streaming API:
+The following code demonstrates how to write JSON data to a file using the streaming API:
 
 [source,java]
 ----
@@ -119,9 +115,6 @@ gen.writeStartObject()
 gen.close();
 ----
 
-This example obtains a JSON generator by calling the
-`Json.createGenerator` static method, which takes a writer or an output
-stream as a parameter. The example writes JSON data to the `test.txt`
-file by nesting calls to the `write`, `writeStartArray`,
-`writeStartObject`, and `writeEnd` methods. The `JsonGenerator.close`
-method closes the underlying writer or output stream.
+This example obtains a JSON generator by calling the `Json.createGenerator` static method, which takes a writer or an output stream as a parameter.
+The example writes JSON data to the `test.txt` file by nesting calls to the `write`, `writeStartArray`, `writeStartObject`, and `writeEnd` methods.
+The `JsonGenerator.close` method closes the underlying writer or output stream.

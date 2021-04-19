@@ -1,7 +1,6 @@
 == Handling Errors
 
-To designate a method that handles errors in an annotated WebSocket
-endpoint, decorate it with `@OnError`:
+To designate a method that handles errors in an annotated WebSocket endpoint, decorate it with `@OnError`:
 
 [source,java]
 ----
@@ -16,6 +15,4 @@ public class TestEndpoint {
 }
 ----
 
-This method is invoked when there are connection problems, runtime
-errors from message handlers, or conversion errors when decoding
-messages.
+This method is invoked when there are connection problems, runtime errors from message handlers, or conversion errors when decoding messages.

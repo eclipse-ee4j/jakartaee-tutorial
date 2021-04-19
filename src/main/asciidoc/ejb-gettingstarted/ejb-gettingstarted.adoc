@@ -1,15 +1,11 @@
 = Getting Started with Enterprise Beans
 
-This chapter shows how to develop, deploy, and run a simple Jakarta EE
-application named `converter` that uses an enterprise bean for its
-business logic. The purpose of `converter` is to calculate currency
-conversions among Japanese yen, euros, and US dollars. The `converter`
-application consists of an enterprise bean, which performs the
-calculations, and a web client.
+This chapter shows how to develop, deploy, and run a simple Jakarta EE application named `converter` that uses an enterprise bean for its business logic.
+The purpose of `converter` is to calculate currency conversions among Japanese yen, euros, and US dollars.
+The `converter` application consists of an enterprise bean, which performs the calculations, and a web client.
 
 include::ejb-gettingstarted001.adoc[]
 
 include::ejb-gettingstarted002.adoc[]
 
 include::ejb-gettingstarted003.adoc[]
-

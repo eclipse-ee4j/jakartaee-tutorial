@@ -1,11 +1,9 @@
 == Running the jsonbbasics Example Application
 
-This section describes how to build and run the `jsonbbasics` example
-application. This example is a web application that demonstrates how to
-serialize an object to JSON and how to deserialize JSON to an object.
+This section describes how to build and run the `jsonbbasics` example application.
+This example is a web application that demonstrates how to serialize an object to JSON and how to deserialize JSON to an object.
 
-The `jsonbbasics` example application is in the
-`_tut-install_/examples/web/jsonb/jsonbbasics` directory.
+The `jsonbbasics` example application is in the `_tut-install_/examples/web/jsonb/jsonbbasics` directory.
 
 === Components of the jsonbbasics Example Application
 
@@ -13,43 +11,42 @@ The `jsonbbasics` example application contains the following files.
 
 * Two Jakarta Faces pages.
 
-** The `index.xhtml` page contains a form to collect data that is used
-to create a `Person` object.
+** The `index.xhtml` page contains a form to collect data that is used to create a `Person` object.
 
-** The `jsongenerated.xhtml` page contains a text area that displays
-the data in JSON format.
+** The `jsongenerated.xhtml` page contains a text area that displays the data in JSON format.
 
-* The `JsonbBean.java` managed bean, which is a session-scoped managed
-bean that stores the data from the form and directs the navigation
-between the Facelets pages. This file contains code that uses the JSON
-Binding API.
+* The `JsonbBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages.
+This file contains code that uses the JSON Binding API.
 
 === Running the jsonbbasics Example Application
 
-This section describes how to run the `jsonbbasics` example application
-from the command line using Maven.
+This section describes how to run the `jsonbbasics` example application from the command line using Maven.
 
 To run the jsonbbasics example application using Maven:
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsonb/jsonbbasics
 ----
+
 . Enter the following command to deploy the application:
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Open a web browser window and enter the following address:
 +
 ----
 http://localhost:8080/jsonbbasics/
 ----
+
 . Enter data on form and click Serialize to JSON to submit the form.
 The following page shows the JSON format of the object data.
-. Click Deserialize JSON. The index page displays and contains the
-fields populated from the object data.
+
+. Click Deserialize JSON.
+The index page displays and contains the fields populated from the object data.

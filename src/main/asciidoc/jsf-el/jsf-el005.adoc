@@ -1,25 +1,19 @@
 == Operators
 
-In addition to the `.` and `[]` operators discussed in
-<<value-and-method-expressions>>, the EL provides the following
-operators, which can be used in rvalue expressions only.
+In addition to the `.` and `[]` operators discussed in <<value-and-method-expressions>>, the EL provides the following operators, which can be used in rvalue expressions only.
 
-* Arithmetic: `+`, `-` (binary), `*`, `/` and `div`, `%` and `mod`, `-`
-(unary).
+* Arithmetic: `+`, `-` (binary), `*`, `/` and `div`, `%` and `mod`, `-` (unary).
 
 * String concatenation: `+=`.
 
 * Logical: `and`, `&&`, `or`, `||`, `not`, `!`.
 
-* Relational: `==`, `eq`, `!=`, `ne`, `<`, `lt`, `>`, `gt`, `\<=`, `ge`,
-`>=`, `le`. Comparisons can be made against other values or against
-Boolean, string, integer, or floating-point literals.
+* Relational: `==`, `eq`, `!=`, `ne`, `<`, `lt`, `>`, `gt`, `\<=`, `ge`, `>=`, `le`.
+Comparisons can be made against other values or against Boolean, string, integer, or floating-point literals.
 
-* Empty: The `empty` operator is a prefix operation that can be used to
-determine whether a value is `null` or empty.
+* Empty: The `empty` operator is a prefix operation that can be used to determine whether a value is `null` or empty.
 
-* Conditional: `A ? B : C`. Evaluate `B` or `C`, depending on the result
-of the evaluation of `A`.
+* Conditional: `A ? B : C`. Evaluate `B` or `C`, depending on the result of the evaluation of `A`.
 
 * Lambda expression: `\->`, the arrow token.
 
@@ -27,20 +21,32 @@ of the evaluation of `A`.
 
 * Semicolon: `;`.
 
-The precedence of operators, highest to lowest, left to right, is as
-follows:
+The precedence of operators, highest to lowest, left to right, is as follows:
 
 * `[] .`
+
 * `()` (used to change the precedence of operators)
+
 * `-` (unary) `not ! empty`
+
 * `* / div % mod`
+
 * `+ -` (binary)
+
 * `+=`
+
 * `<> \<= >= lt gt le ge`
+
 * `== != eq ne`
+
 * `&& and`
+
 * `|| or`
+
 * `? :`
+
 * `\->`
+
 * `=`
+
 * `;`

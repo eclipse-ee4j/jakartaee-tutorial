@@ -1,8 +1,7 @@
 == Servlet Lifecycle
 
-The lifecycle of a servlet is controlled by the container in which the
-servlet has been deployed. When a request is mapped to a servlet, the
-container performs the following steps.
+The lifecycle of a servlet is controlled by the container in which the servlet has been deployed.
+When a request is mapped to a servlet, the container performs the following steps.
 
 . If an instance of the servlet does not exist, the web container:
 
@@ -10,68 +9,47 @@ container performs the following steps.
 
 .. Creates an instance of the servlet class
 
-.. Initializes the servlet instance by calling the `init` method
-(initialization is covered in <<creating-and-initializing-a-servlet>>)
+.. Initializes the servlet instance by calling the `init` method (initialization is covered in <<creating-and-initializing-a-servlet>>)
 
-. The container invokes the `service` method, passing request and
-response objects. Service methods are discussed in
-<<writing-service-methods>>.
+. The container invokes the `service` method, passing request and response objects.
+Service methods are discussed in <<writing-service-methods>>.
 
-If it needs to remove the servlet, the container finalizes the servlet
-by calling the servlet's `destroy` method. For more information, see
-<<finalizing-a-servlet>>.
+If it needs to remove the servlet, the container finalizes the servlet by calling the servlet's `destroy` method.
+For more information, see <<finalizing-a-servlet>>.
 
 === Handling Servlet Lifecycle Events
 
-You can monitor and react to events in a servlet's lifecycle by
-defining listener objects whose methods get invoked when lifecycle
-events occur. To use these listener objects, you must define and
-specify the listener class.
+You can monitor and react to events in a servlet's lifecycle by defining listener objects whose methods get invoked when lifecycle events occur.
+To use these listener objects, you must define and specify the listener class.
 
 ==== Defining the Listener Class
 
-You define a listener class as an implementation of a listener
-interface. <<servlet-lifecycle-events>> lists the events that can be
-monitored and the corresponding interface that must be implemented.
-When a listener method is invoked, it is passed an event that contains
-information appropriate to the event. For example, the methods in the
-`HttpSessionListener` interface are passed an `HttpSessionEvent`, which
-contains an `HttpSession`.
+You define a listener class as an implementation of a listener interface.
+<<servlet-lifecycle-events>> lists the events that can be monitored and the corresponding interface that must be implemented.
+When a listener method is invoked, it is passed an event that contains information appropriate to the event.
+For example, the methods in the `HttpSessionListener` interface are passed an `HttpSessionEvent`, which contains an `HttpSession`.
 
 [[servlet-lifecycle-events]]
-[width="90%",cols="15%,30%,45%a",title="Servlet Lifecycle Events"]
+.Servlet Lifecycle Events
+[width="90%",cols="15%,30%,45%"]
 |===
 |Object |Event |Listener Interface and Event Class
 
-|Web context |Initialization and destruction
-|`jakarta.servlet.ServletContextListener` and `ServletContextEvent`
+|Web context |Initialization and destruction |`jakarta.servlet.ServletContextListener` and `ServletContextEvent`
 
-|Web context |Attribute added, removed, or replaced
-|`jakarta.servlet.ServletContextAttributeListener` and
-`ServletContextAttributeEvent`
+|Web context |Attribute added, removed, or replaced |`jakarta.servlet.ServletContextAttributeListener` and `ServletContextAttributeEvent`
 
-|Session |Creation, invalidation, activation, passivation, and timeout
-|`jakarta.servlet.http.HttpSessionListener`,
-`jakarta.servlet.http.HttpSessionActivationListener`, and
-`HttpSessionEvent`
+|Session |Creation, invalidation, activation, passivation, and timeout |`jakarta.servlet.http.HttpSessionListener`, `jakarta.servlet.http.HttpSessionActivationListener`, and `HttpSessionEvent`
 
-|Session |Attribute added, removed, or replaced
-|`jakarta.servlet.http.HttpSessionAttributeListener` and
-`HttpSessionBindingEvent`
+|Session |Attribute added, removed, or replaced |`jakarta.servlet.http.HttpSessionAttributeListener` and `HttpSessionBindingEvent`
 
-|Request |A servlet request has started being processed by web
-components |`jakarta.servlet.ServletRequestListener` and
-`ServletRequestEvent`
+|Request |A servlet request has started being processed by web components |`jakarta.servlet.ServletRequestListener` and `ServletRequestEvent`
 
-|Request |Attribute added, removed, or replaced
-|`jakarta.servlet.ServletRequestAttributeListener` and
-`ServletRequestAttributeEvent`
+|Request |Attribute added, removed, or replaced |`jakarta.servlet.ServletRequestAttributeListener` and `ServletRequestAttributeEvent`
 |===
 
-Use the `@WebListener` annotation to define a listener to get events
-for various operations on the particular web application context.
-Classes annotated with `@WebListener` must implement one of the
-following interfaces:
+Use the `@WebListener` annotation to define a listener to get events for various operations on the particular web application context.
+Classes annotated with `@WebListener` must implement one of the following interfaces:
 
 [source,java]
 ----
@@ -83,8 +61,7 @@ jakarta.servlet..http.HttpSessionListener
 jakarta.servlet..http.HttpSessionAttributeListener
 ----
 
-For example, the following code snippet defines a listener that
-implements two of these interfaces:
+For example, the following code snippet defines a listener that implements two of these interfaces:
 
 [source,java]
 ----
@@ -101,13 +78,11 @@ public class SimpleServletListener implements ServletContextListener,
 
 === Handling Servlet Errors
 
-Any number of exceptions can occur when a servlet executes. When an
-exception occurs, the web container generates a default page containing
-the following message:
+Any number of exceptions can occur when a servlet executes.
+When an exception occurs, the web container generates a default page containing the following message:
 
 ----
 A Servlet Exception Has Occurred
 ----
 
-But you can also specify that the container should return a specific
-error page for a given exception.
+But you can also specify that the container should return a specific error page for a given exception.

@@ -1,9 +1,7 @@
 == Simple Use Case
 
-This section demonstrates how to define a simple job using the Job
-Specification Language (JSL) and how to implement the corresponding
-batch artifacts. Refer to the rest of the sections in this chapter for
-detailed descriptions of the elements in the batch framework.
+This section demonstrates how to define a simple job using the Job Specification Language (JSL) and how to implement the corresponding batch artifacts.
+Refer to the rest of the sections in this chapter for detailed descriptions of the elements in the batch framework.
 
 The following job definition specifies a chunk step and a task step as
 follows:
@@ -33,9 +31,8 @@ follows:
 
 === Chunk Step
 
-In most cases, you have to implement a checkpoint class for
-chunk-oriented steps. The following class just keeps track of the line
-number in a text file:
+In most cases, you have to implement a checkpoint class for chunk-oriented steps.
+The following class just keeps track of the line number in a text file:
 
 [source,java]
 ----
@@ -46,10 +43,8 @@ public class MyCheckpoint implements Serializable {
 }
 ----
 
-The following item reader implementation continues reading the input
-file from the provided checkpoint if the job was restarted. The items
-consist of each line in the text file (in more complex scenarios, the
-items are custom Java types and the input source can be a database):
+The following item reader implementation continues reading the input file from the provided checkpoint if the job was restarted.
+The items consist of each line in the text file (in more complex scenarios, the items are custom Java types and the input source can be a database):
 
 [source,java]
 ----
@@ -89,9 +84,8 @@ public class MyReader implements jakarta.batch.api.chunk.ItemReader {
 }
 ----
 
-In the following case, the item processor only converts the line to
-uppercase. More complex examples can process items in different ways or
-transform them into custom output Java types:
+In the following case, the item processor only converts the line to uppercase.
+More complex examples can process items in different ways or transform them into custom output Java types:
 
 [source,java]
 ----
@@ -109,12 +103,12 @@ public class MyProcessor implements jakarta.batch.api.chunk.ItemProcessor {
 ----
 
 [NOTE]
-The batch processing API does not support generics. In most cases, you
-need to cast items to their specific type before processing them.
+The batch processing API does not support generics.
+In most cases, you need to cast items to their specific type before processing them.
 
-The item writer writes the processed items to the output file. It
-overwrites the output file if no checkpoint is provided; otherwise, it
-resumes writing at the end of the file. Items are written in chunks:
+The item writer writes the processed items to the output file.
+It overwrites the output file if no checkpoint is provided; otherwise, it resumes writing at the end of the file.
+Items are written in chunks:
 
 [source,java]
 ----
@@ -151,9 +145,8 @@ public class MyWriter implements jakarta.batch.api.chunk.ItemWriter {
 
 === Task Step
 
-The task step displays the length of the output file. In more complex
-scenarios, task steps perform any task that does not fit the chunk
-processing programming model:
+The task step displays the length of the output file.
+In more complex scenarios, task steps perform any task that does not fit the chunk processing programming model:
 
 [source,java]
 ----

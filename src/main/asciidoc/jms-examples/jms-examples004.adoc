@@ -1,38 +1,23 @@
 == Writing More Advanced Jakarta Messaging Applications
 
-The following examples show how to use some of the more advanced
-Jakarta Messaging features: durable subscriptions and transactions.
+The following examples show how to use some of the more advanced Jakarta Messaging features: durable subscriptions and transactions.
 
 === Using Durable Subscriptions
 
-The `durablesubscriptionexample` example shows how unshared durable
-subscriptions work. It demonstrates that a durable subscription
-continues to exist and accumulate messages even when there is no active
-consumer on it.
+The `durablesubscriptionexample` example shows how unshared durable subscriptions work.
+It demonstrates that a durable subscription continues to exist and accumulate messages even when there is no active consumer on it.
 
-The example consists of two modules, a `durableconsumer` application
-that creates a durable subscription and consumes messages, and an
-`unsubscriber` application that enables you to unsubscribe from the
-durable subscription after you have finished running the
-`durableconsumer` application.
+The example consists of two modules, a `durableconsumer` application that creates a durable subscription and consumes messages, and an `unsubscriber` application that enables you to unsubscribe from the durable subscription after you have finished running the `durableconsumer` application.
 
-For information on durable subscriptions, see
-<<creating-durable-subscriptions>>.
+For information on durable subscriptions, see <<creating-durable-subscriptions>>.
 
-The main client, `DurableConsumer.java`, is under the
-`_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer`
-directory.
+The main client, `DurableConsumer.java`, is under the `_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer` directory.
 
-The example uses a connection factory, `jms/DurableConnectionFactory`,
-that has a client ID.
+The example uses a connection factory, `jms/DurableConnectionFactory`, that has a client ID.
 
-The `DurableConsumer` client creates a `JMSContext` using the
-connection factory. It then stops the `JMSContext`, calls
-`createDurableConsumer` to create a durable subscription and a consumer
-on the topic by specifying a subscription name, registers a message
-listener, and starts the `JMSContext` again. The subscription is
-created only if it does not already exist, so the example can be run
-repeatedly:
+The `DurableConsumer` client creates a `JMSContext` using the connection factory.
+It then stops the `JMSContext`, calls `createDurableConsumer` to create a durable subscription and a consumer on the topic by specifying a subscription name, registers a message listener, and starts the `JMSContext` again.
+The subscription is created only if it does not already exist, so the example can be run repeatedly:
 
 [source,java]
 ----
@@ -48,9 +33,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 
 To send messages to the topic, you run the `producer` client.
 
-The `unsubscriber` example contains a very simple `Unsubscriber`
-client, which creates a `JMSContext` on the same connection factory and
-then calls the `unsubscribe` method, specifying the subscription name:
+The `unsubscriber` example contains a very simple `Unsubscriber` client, which creates a `JMSContext` on the same connection factory and then calls the `unsubscribe` method, specifying the subscription name:
 
 [source,java]
 ----
@@ -63,14 +46,15 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 
 ==== To Create Resources for the Durable Subscription Example
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a command window, go to the `durableconsumer` example.
 +
 [source,shell]
 ----
 cd tut-install/jms/durablesubscriptionexample/durableconsumer
 ----
+
 . Create the resources using the `asadmin add-resources` command:
 +
 [source,shell]
@@ -78,8 +62,8 @@ cd tut-install/jms/durablesubscriptionexample/durableconsumer
 asadmin add-resources src/main/setup/glassfish-resources.xml
 ----
 +
-The command output reports the creation of a connector connection pool
-and a connector resource.
+The command output reports the creation of a connector connection pool and a connector resource.
+
 . Verify the creation of the resources:
 +
 [source,shell]
@@ -87,8 +71,7 @@ and a connector resource.
 asadmin list-jms-resources
 ----
 +
-In addition to the resources you created for the simple examples, the
-command lists the new connection factory:
+In addition to the resources you created for the simple examples, the command lists the new connection factory:
 +
 [source,shell]
 ----
@@ -106,18 +89,21 @@ Command list-jms-resources executed successfully.
 ----
 tut-install/examples/jms/durablesubscriptionexample/
 ----
+
 . Build the `durableconsumer` and `unsubscriber` examples:
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Go to the `durableconsumer` directory:
 +
 [source,shell]
 ----
 cd durableconsumer
 ----
+
 . To run the client, enter the following command:
 +
 [source,shell]
@@ -133,30 +119,30 @@ Creating consumer for topic
 Starting consumer
 To end program, enter Q or q, then <return>
 ----
-. In another terminal window, run the `Producer` client, sending some
-messages to the topic:
+
+. In another terminal window, run the `Producer` client, sending some messages to the topic:
 +
 [source,shell]
 ----
 cd tut-install/examples/jms/simple/producer
 appclient -client target/producer.jar topic 3
 ----
-. After the `DurableConsumer` client receives the messages, enter `q`
-or `Q` to exit the program. At this point, the client has behaved like
-any other asynchronous consumer.
-. Now, while the `DurableConsumer` client is not running, use the
-`Producer` client to send more messages:
+
+. After the `DurableConsumer` client receives the messages, enter `q` or `Q` to exit the program.
+At this point, the client has behaved like any other asynchronous consumer.
+
+. Now, while the `DurableConsumer` client is not running, use the `Producer` client to send more messages:
 +
 [source,shell]
 ----
 appclient -client target/producer.jar topic 2
 ----
 +
-If a durable subscription did not exist, these messages would be lost,
-because no consumer on the topic is currently running. However, the
-durable subscription is still active, and it retains the messages.
-. Run the `DurableConsumer` client again. It immediately receives the
-messages that were sent while it was inactive:
+If a durable subscription did not exist, these messages would be lost, because no consumer on the topic is currently running.
+However, the durable subscription is still active, and it retains the messages.
+
+. Run the `DurableConsumer` client again.
+It immediately receives the messages that were sent while it was inactive:
 +
 [source,shell]
 ----
@@ -167,18 +153,19 @@ Reading message: This is message 1 from producer
 Reading message: This is message 2 from producer
 Message is not a TextMessage
 ----
+
 . Enter `q` or `Q` to exit the program.
 
 ==== To Run the unsubscriber Example
 
-After you have finished running the `DurableConsumer` client, run the
-`unsubscriber` example to unsubscribe from the durable subscription.
+After you have finished running the `DurableConsumer` client, run the `unsubscriber` example to unsubscribe from the durable subscription.
 
 . In a terminal window, go to the following directory:
 +
 ----
 tut-install/examples/jms/durablesubscriptionexample/unsubscriber
 ----
+
 . To run the `Unsubscriber` client, enter the following command:
 +
 [source,shell]
@@ -186,35 +173,21 @@ tut-install/examples/jms/durablesubscriptionexample/unsubscriber
 appclient -client target/unsubscriber.jar
 ----
 +
-The client reports that it is unsubscribing from the durable
-subscription.
+The client reports that it is unsubscribing from the durable subscription.
 
 === Using Local Transactions
 
-The `transactedexample` example demonstrates the use of local
-transactions in a Messaging client application. It also demonstrates
-the use of the request/reply messaging pattern described in
-<<creating-temporary-destinations>>, although it uses permanent rather
-than temporary destinations. The example consists of three modules,
-`genericsupplier`, `retailer`, and `vendor`, which can be found under
-the `_tut-install_/examples/jms/transactedexample/` directory. The
-source code can be found in the `src/main/java/ee.jakarta.tutorial`
-trees for each module. The `genericsupplier` and `retailer` modules
-each contain a single class, `genericsupplier/GenericSupplier.java` and
-`retailer/Retailer.java`, respectively. The `vendor` module is more
-complex, containing four classes: `vendor/Vendor.java`,
-`vendor/VendorMessageListener.java`, `vendor/Order.java`, and
-`vendor/SampleUtilities.java`.
+The `transactedexample` example demonstrates the use of local transactions in a Messaging client application.
+It also demonstrates the use of the request/reply messaging pattern described in <<creating-temporary-destinations>>, although it uses permanent rather than temporary destinations.
+The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_tut-install_/examples/jms/transactedexample/` directory.
+The source code can be found in the `src/main/java/ee.jakarta.tutorial` trees for each module.
+The `genericsupplier` and `retailer` modules each contain a single class, `genericsupplier/GenericSupplier.java` and `retailer/Retailer.java`, respectively.
+The `vendor` module is more complex, containing four classes: `vendor/Vendor.java`, `vendor/VendorMessageListener.java`, `vendor/Order.java`, and `vendor/SampleUtilities.java`.
 
-The example shows how to use a queue and a topic in a single
-transaction as well as how to pass a `JMSContext` to a message
-listener's constructor function. The example represents a highly
-simplified e-commerce application in which the following actions occur.
+The example shows how to use a queue and a topic in a single transaction as well as how to pass a `JMSContext` to a message listener's constructor function.
+The example represents a highly simplified e-commerce application in which the following actions occur.
 
-. A retailer
-(`retailer/src/main/java/ee/jakarta/tutorial/retailer/Retailer.java`)
-sends a `MapMessage` to a vendor order queue, ordering a quantity of
-computers, and waits for the vendor's reply:
+. A retailer (`retailer/src/main/java/ee/jakarta/tutorial/retailer/Retailer.java`) sends a `MapMessage` to a vendor order queue, ordering a quantity of computers, and waits for the vendor's reply:
 +
 [source,java]
 ----
@@ -226,22 +199,18 @@ context.createProducer().send(vendorOrderQueue, outMessage);
 System.out.println("Retailer: ordered " + quantity + " computer(s)");
 orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);
 ----
-. The vendor
-(`vendor/src/main/java/ee/jakarta/tutorial/retailer/Vendor.java`)
-receives the retailer's order message and sends an order message to the
-supplier order topic in one transaction. This Jakarta Messaging
-transaction uses a single session, so you can combine a receive from a
-queue with a send to a topic. Here is the code that uses the same
-session to create a consumer for a queue:
+
+. The vendor (`vendor/src/main/java/ee/jakarta/tutorial/retailer/Vendor.java`) receives the retailer's order message and sends an order message to the supplier order topic in one transaction.
+This Jakarta Messaging transaction uses a single session, so you can combine a receive from a queue with a send to a topic.
+Here is the code that uses the same session to create a consumer for a queue:
 +
 [source,java]
 ----
 vendorOrderReceiver = session.createConsumer(vendorOrderQueue);
 ----
 +
-The following code receives the incoming message, sends an outgoing
-message, and commits the `JMSContext`. The message processing has been
-removed to keep the sequence simple:
+The following code receives the incoming message, sends an outgoing message, and commits the `JMSContext`.
+The message processing has been removed to keep the sequence simple:
 +
 [source,java]
 ----
@@ -254,16 +223,11 @@ context.createProducer().send(supplierOrderTopic, orderMessage);
 context.commit();
 ----
 +
-For simplicity, there are only two suppliers, one for CPUs and one for
-hard drives.
-. Each supplier
-(`genericsupplier/src/main/java/ee/jakarta/tutorial/retailer/GenericSupplier.java`)
-receives the order from the order topic, checks its inventory, and then
-sends the items ordered to the queue named in the order message's
-`JMSReplyTo` field. If it does not have enough of the item in stock,
-the supplier sends what it has. The synchronous receive from the topic
-and the send to the queue take place in one Jakarta Messaging
-transaction:
+For simplicity, there are only two suppliers, one for CPUs and one for hard drives.
+
+. Each supplier (`genericsupplier/src/main/java/ee/jakarta/tutorial/retailer/GenericSupplier.java`) receives the order from the order topic, checks its inventory, and then sends the items ordered to the queue named in the order message's `JMSReplyTo` field.
+If it does not have enough of the item in stock, the supplier sends what it has.
+The synchronous receive from the topic and the send to the queue take place in one Jakarta Messaging transaction:
 +
 [source,java]
 ----
@@ -282,10 +246,9 @@ context.createProducer().send(
 // Display message contents
 context.commit();
 ----
-. The vendor receives the suppliers' replies from its confirmation
-queue and updates the state of the order. Messages are processed by an
-asynchronous message listener, `VendorMessageListener`; this step shows
-the use of Jakarta Messaging transactions with a message listener:
+
+. The vendor receives the suppliers' replies from its confirmation queue and updates the state of the order.
+Messages are processed by an asynchronous message listener, `VendorMessageListener`; this step shows the use of Jakarta Messaging transactions with a message listener:
 +
 [source,java]
 ----
@@ -295,9 +258,8 @@ int orderNumber = component.getInt("VendorOrderNumber");
 Order order = Order.getOrder(orderNumber).processSubOrder(component);
 context.commit();
 ----
-. When all outstanding replies are processed for a given order, the
-vendor message listener sends a message notifying the retailer whether
-it can fulfill the order:
+
+. When all outstanding replies are processed for a given order, the vendor message listener sends a message notifying the retailer whether it can fulfill the order:
 +
 [source,java]
 ----
@@ -307,6 +269,7 @@ MapMessage retailerConfirmMessage = context.createMapMessage();
 context.createProducer().send(replyQueue, retailerConfirmMessage);
 context.commit();
 ----
+
 . The retailer receives the message from the vendor:
 +
 [source,java]
@@ -314,44 +277,42 @@ context.commit();
 inMessage = (MapMessage) orderConfirmReceiver.receive();
 ----
 +
-The retailer then places a second order for twice as many computers as
-in the first order, so these steps are executed twice.
+The retailer then places a second order for twice as many computers as in the first order, so these steps are executed twice.
 
 <<transactions-messaging-client-example>> illustrates these steps.
 
 [[transactions-messaging-client-example]]
-image::jakartaeett_dt_034.svg["Diagram of steps in transaction example",title="Transactions: Messaging Client Example"]
+.Transactions: Messaging Client Example
+image::jakartaeett_dt_034.svg["Diagram of steps in transaction example"]
 
-All the messages use the `MapMessage` message type. Synchronous
-receives are used for all message reception except when the vendor
-processes the replies of the suppliers. These replies are processed
-asynchronously and demonstrate how to use transactions within a message
-listener.
+All the messages use the `MapMessage` message type.
+Synchronous receives are used for all message reception except when the vendor processes the replies of the suppliers.
+These replies are processed asynchronously and demonstrate how to use transactions within a message listener.
 
-At random intervals, the `Vendor` client throws an exception to
-simulate a database problem and cause a rollback.
+At random intervals, the `Vendor` client throws an exception to simulate a database problem and cause a rollback.
 
 All clients except `Retailer` use transacted contexts.
 
-The example uses three queues named `jms/AQueue`, `jms/BQueue`, and
-`jms/CQueue`, and one topic named `jms/OTopic`.
+The example uses three queues named `jms/AQueue`, `jms/BQueue`, and `jms/CQueue`, and one topic named `jms/OTopic`.
 
 ==== To Create Resources for the transactedexample Example
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a command window, go to the `genericsupplier` example:
 +
 [source,shell]
 ----
 cd tut-install/jms/transactedexample/genericsupplier
 ----
+
 . Create the resources using the `asadmin add-resources` command:
 +
 [source,shell]
 ----
 asadmin add-resources src/main/setup/glassfish-resources.xml
 ----
+
 . Verify the creation of the resources:
 +
 [source,shell]
@@ -359,9 +320,7 @@ asadmin add-resources src/main/setup/glassfish-resources.xml
 asadmin list-jms-resources
 ----
 +
-In addition to the resources you created for the simple examples and
-the durable subscription example, the command lists the four new
-destinations:
+In addition to the resources you created for the simple examples and the durable subscription example, the command lists the four new destinations:
 +
 [source,shell]
 ----
@@ -378,26 +337,29 @@ Command list-jms-resources executed successfully.
 
 ==== To Run the transactedexample Clients
 
-You will need four terminal windows to run the clients. Make sure that
-you start the clients in the correct order.
+You will need four terminal windows to run the clients.
+Make sure that you start the clients in the correct order.
 
 . In a terminal window, go to the following directory:
 +
 ----
 tut-install/examples/jms/transactedexample/
 ----
+
 . To build and package all the modules, enter the following command:
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Go to the `genericsupplier` directory:
 +
 [source,shell]
 ----
 cd genericsupplier
 ----
+
 . Use the following command to start the CPU supplier client:
 +
 [source,shell]
@@ -411,12 +373,14 @@ After some initial output, the client reports the following:
 ----
 Starting CPU supplier
 ----
+
 . In a second terminal window, go to the `genericsupplier` directory:
 +
 [source,shell]
 ----
 cd tut-install/examples/jms/transactedexample/genericsupplier
 ----
+
 . Use the following command to start the hard drive supplier client:
 +
 [source,shell]
@@ -430,12 +394,14 @@ After some initial output, the client reports the following:
 ----
 Starting Hard Drive supplier
 ----
+
 . In a third terminal window, go to the `vendor` directory:
 +
 [source,shell]
 ----
 cd tut-install/examples/jms/transactedexample/vendor
 ----
+
 . Use the following command to start the `Vendor` client:
 +
 [source,shell]
@@ -449,25 +415,24 @@ After some initial output, the client reports the following:
 ----
 Starting vendor
 ----
+
 . In another terminal window, go to the `retailer` directory:
 +
 [source,shell]
 ----
 cd tut-install/examples/jms/transactedexample/retailer
 ----
-. [[transactedexample-step-10, Step 10]]
-+
-Use a command like the following to run the `Retailer` client. The
-argument specifies the number of computers to order:
+
+. [[transactedexample-step-10, Step 10]] Use a command like the following to run the `Retailer` client.
+The argument specifies the number of computers to order:
 +
 [source,shell]
 ----
 appclient -client target/retailer.jar 4
 ----
 +
-After some initial output, the `Retailer` client reports something like
-the following. In this case, the first order is filled, but the second
-is not:
+After some initial output, the `Retailer` client reports something like the following.
+In this case, the first order is filled, but the second is not:
 +
 [source,shell]
 ----
@@ -479,9 +444,7 @@ Retailer: Ordered 8 computer(s)
 Retailer: Order not filled
 ----
 +
-The `Vendor` client reports something like the following, stating in
-this case that it is able to send all the computers in the first order,
-but not in the second:
+The `Vendor` client reports something like the following, stating in this case that it is able to send all the computers in the first order, but not in the second:
 +
 [source,shell]
 ----
@@ -499,8 +462,8 @@ Vendor: Unable to send 8 computer(s)
   Vendor: Committed transaction 2
 ----
 +
-The CPU supplier reports something like the following. In this case, it
-is able to send all the CPUs for both orders:
+The CPU supplier reports something like the following.
+In this case, it is able to send all the CPUs for both orders:
 +
 [source,shell]
 ----
@@ -512,8 +475,8 @@ CPU Supplier: Sent 8 CPU(s)
   CPU Supplier: Committed transaction
 ----
 +
-The hard drive supplier reports something like the following. In this
-case, it has a shortage of hard drives for the second order:
+The hard drive supplier reports something like the following.
+In this case, it has a shortage of hard drives for the second order:
 +
 [source,shell]
 ----
@@ -524,9 +487,9 @@ Hard Drive Supplier: Vendor ordered 8 Hard Drive(s)
 Hard Drive Supplier: Sent 1 Hard Drive(s)
   Hard Drive Supplier: Committed transaction
 ----
+
 . Repeat <<transactedexample-step-10>> as many times as you wish.
-Occasionally, the vendor will report an exception that causes a
-rollback:
+Occasionally, the vendor will report an exception that causes a rollback:
 +
 [source,shell]
 ----
@@ -534,8 +497,8 @@ Vendor: JMSException occurred: jakarta.jms.JMSException: Simulated
 database concurrent access exception
   Vendor: Rolled back transaction 1
 ----
-. After you finish running the clients, you can delete the destination
-resources by using the following commands:
+
+. After you finish running the clients, you can delete the destination resources by using the following commands:
 +
 [source,shell]
 ----

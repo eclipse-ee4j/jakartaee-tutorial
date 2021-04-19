@@ -1,17 +1,15 @@
 == Basic Security Tasks for Enterprise Applications
 
-System administrators, application developers, bean providers, and
-deployers are responsible for administering security for enterprise
-applications. The basic security tasks are as follows:
+System administrators, application developers, bean providers, and deployers are responsible for administering security for enterprise applications.
+The basic security tasks are as follows:
 
 * Setting up a database of users and assigning them to the proper group
-* Setting up identity propagation
-* Setting GlassFish Server properties that enable the applications to
-run properly. Note that the the *Default Principal To Role Mapping*
-setting is enabled by default in the GlassFish Server Administration
-Console.
-* Annotating the classes and methods of an enterprise application to
-provide information about which methods need to have restricted access
 
-The sections on the security examples in this chapter and the previous
-chapter explain how to perform these tasks.
+* Setting up identity propagation
+
+* Setting GlassFish Server properties that enable the applications to run properly.
+Note that the the *Default Principal To Role Mapping* setting is enabled by default in the GlassFish Server Administration Console.
+
+* Annotating the classes and methods of an enterprise application to provide information about which methods need to have restricted access
+
+The sections on the security examples in this chapter and the previous chapter explain how to perform these tasks.

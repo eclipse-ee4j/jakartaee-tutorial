@@ -1,55 +1,39 @@
 == Sending Messages from a Session Bean to an MDB
 
-This section explains how to write, compile, package, deploy, and run
-an application that uses Jakarta Messaging in conjunction with a
-session bean. The application contains the following components:
+This section explains how to write, compile, package, deploy, and run an application that uses Jakarta Messaging in conjunction with a session bean.
+The application contains the following components:
 
 * An application client that invokes a session bean
-* A session bean that publishes several messages to a topic
-* A message-driven bean that receives and processes the messages using
-a durable topic subscription and a message selector
 
-You will find the source files for this section in the
-`_tut-install_/examples/jms/clientsessionmdb/` directory. Path names in
-this section are relative to this directory.
+* A session bean that publishes several messages to a topic
+
+* A message-driven bean that receives and processes the messages using a durable topic subscription and a message selector
+
+You will find the source files for this section in the `_tut-install_/examples/jms/clientsessionmdb/` directory.
+Path names in this section are relative to this directory.
 
 === Writing the Application Components for the clientsessionmdb Example
 
-This application demonstrates how to send messages from an enterprise
-bean (in this case, a session bean) rather than from an application
-client, as in the example in
-<<receiving-messages-asynchronously-using-a-message-driven-bean>>.
-<<an-enterprise-bean-application-client-to-session-bean-to-message-driven-bean>>
-illustrates the structure of this application. Sending messages from an
-enterprise bean is very similar to sending messages from a managed
-bean, which was shown in
-<<sending-and-receiving-messages-using-a-simple-web-application>>.
+This application demonstrates how to send messages from an enterprise bean (in this case, a session bean) rather than from an application client, as in the example in <<receiving-messages-asynchronously-using-a-message-driven-bean>>.
+<<an-enterprise-bean-application-client-to-session-bean-to-message-driven-bean>> illustrates the structure of this application.
+Sending messages from an enterprise bean is very similar to sending messages from a managed bean, which was shown in <<sending-and-receiving-messages-using-a-simple-web-application>>.
 
 [[an-enterprise-bean-application-client-to-session-bean-to-message-driven-bean]]
-image::jakartaeett_dt_037.svg["Diagram of application showing an application client calling a session bean, which sends messages that are processed by a message-driven bean",title="An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean"]
+.An Enterprise Bean Application: Client to Session Bean to Message-Driven Bean
+image::jakartaeett_dt_037.svg["Diagram of application showing an application client calling a session bean, which sends messages that are processed by a message-driven bean"]
 
-The Publisher enterprise bean in this example is the
-enterprise-application equivalent of a wire-service news feed that
-categorizes news events into six news categories. The message-driven
-bean could represent a newsroom, where the sports desk, for example,
-would set up a subscription for all news events pertaining to sports.
+The Publisher enterprise bean in this example is the enterprise-application equivalent of a wire-service news feed that categorizes news events into six news categories.
+The message-driven bean could represent a newsroom, where the sports desk, for example, would set up a subscription for all news events pertaining to sports.
 
-The application client in the example injects the Publisher enterprise
-bean's remote home interface and then calls the bean's business method.
-The enterprise bean creates 18 text messages. For each message, it sets
-a `String` property randomly to one of six values representing the news
-categories and then publishes the message to a topic. The
-message-driven bean uses a message selector for the property to limit
-which of the published messages will be delivered to it.
+The application client in the example injects the Publisher enterprise bean's remote home interface and then calls the bean's business method.
+The enterprise bean creates 18 text messages.
+For each message, it sets a `String` property randomly to one of six values representing the news categories and then publishes the message to a topic.
+The message-driven bean uses a message selector for the property to limit which of the published messages will be delivered to it.
 
 ==== Coding the Application Client: MyAppClient.java
 
-The application client, `MyAppClient.java`, found under
-`clientsessionmdb-app-client`, performs no Messaging operations and so
-is simpler than the client in
-<<receiving-messages-asynchronously-using-a-message-driven-bean>>. The
-client uses dependency injection to obtain the Publisher enterprise
-bean's business interface:
+The application client, `MyAppClient.java`, found under `clientsessionmdb-app-client`, performs no Messaging operations and so is simpler than the client in <<receiving-messages-asynchronously-using-a-message-driven-bean>>.
+The client uses dependency injection to obtain the Publisher enterprise bean's business interface:
 
 [source,java]
 ----
@@ -61,21 +45,15 @@ The client then calls the bean's business method twice.
 
 ==== Coding the Publisher Session Bean
 
-The Publisher bean is a stateless session bean that has one business
-method. The Publisher bean uses a remote interface rather than a local
-interface because it is accessed from the application client.
+The Publisher bean is a stateless session bean that has one business method.
+The Publisher bean uses a remote interface rather than a local interface because it is accessed from the application client.
 
-The remote interface, `PublisherRemote.java`, found under
-`clientsessionmdb-ejb`, declares a single business method,
-`publishNews`.
+The remote interface, `PublisherRemote.java`, found under `clientsessionmdb-ejb`, declares a single business method, `publishNews`.
 
-The bean class, `PublisherBean.java`, also found under
-`clientsessionmdb-ejb`, implements the `publishNews` method and its
-helper method `chooseType`. The bean class injects `SessionContext` and
-`Topic` resources (the topic is defined in the message-driven bean). It
-then injects a `JMSContext`, which uses the preconfigured default
-connection factory unless you specify otherwise. The bean class begins
-as follows:
+The bean class, `PublisherBean.java`, also found under `clientsessionmdb-ejb`, implements the `publishNews` method and its helper method `chooseType`.
+The bean class injects `SessionContext` and `Topic` resources (the topic is defined in the message-driven bean).
+It then injects a `JMSContext`, which uses the preconfigured default connection factory unless you specify otherwise.
+The bean class begins as follows:
 
 [source,java]
 ----
@@ -95,26 +73,16 @@ public class PublisherBean implements PublisherRemote {
 }
 ----
 
-The business method `publishNews` creates a `JMSProducer` and publishes
-the messages.
+The business method `publishNews` creates a `JMSProducer` and publishes the messages.
 
 ==== Coding the Message-Driven Bean: MessageBean.java
 
-The message-driven bean class, `MessageBean.java`, found under
-`clientsessionmdb-ejb`, is almost identical to the one in
-<<receiving-messages-asynchronously-using-a-message-driven-bean>>.
-However, the `@MessageDriven` annotation is different, because instead
-of a queue, the bean is using a topic, a durable subscription, and a
-message selector. The bean defines a topic for the use of the
-application; the definition uses the `java:module` scope because both
-the session bean and the message-driven bean are in the same module.
-Because the destination is defined in the message-driven bean, the
-`@MessageDriven` annotation uses the `destinationLookup` activation
-config property. (See
-<<creating-resources-for-jakarta-ee-applications>> for more
-information.) The annotation also sets the activation config properties
-`messageSelector`, `subscriptionDurability`, `clientId`, and
-`subscriptionName`, as follows:
+The message-driven bean class, `MessageBean.java`, found under `clientsessionmdb-ejb`, is almost identical to the one in <<receiving-messages-asynchronously-using-a-message-driven-bean>>.
+However, the `@MessageDriven` annotation is different, because instead of a queue, the bean is using a topic, a durable subscription, and a message selector.
+The bean defines a topic for the use of the application; the definition uses the `java:module` scope because both the session bean and the message-driven bean are in the same module.
+Because the destination is defined in the message-driven bean, the `@MessageDriven` annotation uses the `destinationLookup` activation config property.
+(See <<creating-resources-for-jakarta-ee-applications>> for more information.)
+The annotation also sets the activation config properties `messageSelector`, `subscriptionDurability`, `clientId`, and `subscriptionName`, as follows:
 
 [source,java]
 ----
@@ -138,55 +106,47 @@ information.) The annotation also sets the activation config properties
 })
 ----
 
-The topic is the one defined in the `PublisherBean`. The message
-selector in this case represents both the sports and opinion desks,
-just to demonstrate the syntax of message selectors.
+The topic is the one defined in the `PublisherBean`.
+The message selector in this case represents both the sports and opinion desks, just to demonstrate the syntax of message selectors.
 
-The Jakarta Messaging resource adapter uses these properties to create
-a connection factory for the message-driven bean that allows the bean
-to use a durable subscription.
+The Jakarta Messaging resource adapter uses these properties to create a connection factory for the message-driven bean that allows the bean to use a durable subscription.
 
 === Running the clientsessionmdb Example
 
-You can use either NetBeans IDE or Maven to build, deploy, and run the
-`simplemessage` example.
+You can use either NetBeans IDE or Maven to build, deploy, and run the `simplemessage` example.
 
-This example uses an annotation-defined topic and the preconfigured
-default connection factory `java:comp/DefaultJMSConnectionFactory`, so
-you do not have to create resources for it.
+This example uses an annotation-defined topic and the preconfigured default connection factory `java:comp/DefaultJMSConnectionFactory`, so you do not have to create resources for it.
 
 ==== To Run clientsessionmdb Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/jms/clientsessionmdb
 ----
+
 . Select the `clientsessionmdb` folder.
-. Make sure that the *Open Required Projects* check box is selected,
-then click *Open Project*.
-. In the *Projects* tab, right-click the `clientsessionmdb` project and
-select *Build*. (If NetBeans IDE suggests that you run a priming build,
-click the box to do so.)
+
+. Make sure that the *Open Required Projects* check box is selected, then click *Open Project*.
+
+. In the *Projects* tab, right-click the `clientsessionmdb` project and select *Build*.
+(If NetBeans IDE suggests that you run a priming build, click the box to do so.)
 +
 This command creates the following:
-.. An application client JAR file that contains the client class file
-and the session bean's remote interface, along with a manifest file
-that specifies the main class and places the Jakarta Enterprise Beans
-JAR file in its classpath
-.. An enterprise bean JAR file that contains both the session bean and
-the message-driven bean
+
+.. An application client JAR file that contains the client class file and the session bean's remote interface, along with a manifest file that specifies the main class and places the Jakarta Enterprise Beans JAR file in its classpath
+
+.. An enterprise bean JAR file that contains both the session bean and the message-driven bean
 
 .. An application EAR file that contains the two JAR files
 +
-The `clientsessionmdb.ear` file is created in the
-`clientsessionmdb-ear/target/` directory.
+The `clientsessionmdb.ear` file is created in the `clientsessionmdb-ear/target/` directory.
 +
-The command then deploys the EAR file, retrieves the client stubs,
-and runs the client.
+The command then deploys the EAR file, retrieves the client stubs, and runs the client.
 +
 The client displays these lines:
 +
@@ -195,25 +155,24 @@ To view the bean output,
  check <install_dir>/domains/domain1/logs/server.log.
 ----
 +
+
 The output from the enterprise beans appears in the server log file.
-The Publisher session bean sends two sets of 18 messages numbered 0
-through 17. Because of the message selector, the message-driven bean
-receives only the messages whose `NewsType` property is `Sports` or
-`Opinion`.
-. Use the *Services* tab to undeploy the application after you have
-finished running it.
+The Publisher session bean sends two sets of 18 messages numbered 0 through 17.
+Because of the message selector, the message-driven bean receives only the messages whose `NewsType` property is `Sports` or `Opinion`.
+
+. Use the *Services* tab to undeploy the application after you have finished running it.
 
 ==== To Run clientsessionmdb Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . Go to the following directory:
 +
 ----
 tut-install/examples/jms/clientsessionmdb/
 ----
-. To compile the source files and package, deploy, and run the
-application, enter the following command:
+
+. To compile the source files and package, deploy, and run the application, enter the following command:
 +
 [source,shell]
 ----
@@ -222,19 +181,15 @@ mvn install
 +
 This command creates the following:
 
-** An application client JAR file that contains the client class file
-and the session bean's remote interface, along with a manifest file
-that specifies the main class and places the enterprise bean JAR file
-in its classpath
-** An enterprise bean JAR file that contains both the session bean and
-the message-driven bean
+** An application client JAR file that contains the client class file and the session bean's remote interface, along with a manifest file that specifies the main class and places the enterprise bean JAR file in its classpath
+
+** An enterprise bean JAR file that contains both the session bean and the message-driven bean
+
 ** An application EAR file that contains the two JAR files
 +
-The `clientsessionmdb.ear` file is created in the
-`clientsessionmdb-ear/target/` directory.
+The `clientsessionmdb.ear` file is created in the `clientsessionmdb-ear/target/` directory.
 +
-The command then deploys the EAR file, retrieves the client stubs, and
-runs the client.
+The command then deploys the EAR file, retrieves the client stubs, and runs the client.
 +
 The client displays these lines:
 +
@@ -244,10 +199,9 @@ To view the bean output,
 ----
 +
 The output from the enterprise beans appears in the server log file.
-The Publisher session bean sends two sets of 18 messages numbered 0
-through 17. Because of the message selector, the message-driven bean
-receives only the messages whose `NewsType` property is `Sports` or
-`Opinion`.
+The Publisher session bean sends two sets of 18 messages numbered 0 through 17.
+Because of the message selector, the message-driven bean receives only the messages whose `NewsType` property is `Sports` or `Opinion`.
+
 . Undeploy the application after you have finished running it:
 +
 [source,shell]

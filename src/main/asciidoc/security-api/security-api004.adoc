@@ -1,51 +1,39 @@
 == Running the Built-In Database Identity Store Example
 
-The example described in this section demonstrates how to use the
-built-in database identity store for credential validation.
+The example described in this section demonstrates how to use the built-in database identity store for credential validation.
 
 Topics include:
 
 * <<overview-of-the-built-in-database-identity-store-example>>
+
 * <<running-the-built-in-db-identity-store-example>>
 
 === Overview of the Built-In Database Identity Store Example
 
-Jakarta Security mandates that a Jakarta EE container MUST support a
-built-in `IdentityStore` backed by a database. To support this
-mandatory requirement, `DatabaseIdentityStore` is bundled with
-GlassFish.
+Jakarta Security mandates that a Jakarta EE container MUST support a built-in `IdentityStore` backed by a database.
+To support this mandatory requirement, `DatabaseIdentityStore` is bundled with GlassFish.
 
-This example demonstrates how you can configure a
-`DatabaseIdentityStore` to point to a backend database and then use it
-as an IdentityStore. The authentication mechanism used is
-`BasicAuthenticationMechanism`.
+This example demonstrates how you can configure a `DatabaseIdentityStore` to point to a backend database and then use it as an IdentityStore.
+The authentication mechanism used is `BasicAuthenticationMechanism`.
 
-The source code for this example is in the
-`_tut-install_/examples/security/security-api/built-in-db-identity-store`
-directory.
+The source code for this example is in the `_tut-install_/examples/security/security-api/built-in-db-identity-store` directory.
 
-The following sections describe the high-level process for configuring
-the `DatabaseIdentityStore`. Note that the configuration described in
-these sections has already been completed in the application files, but
-is provided here to illustrate what you need to do to use the built-in
-database identity store.
+The following sections describe the high-level process for configuring the `DatabaseIdentityStore`.
+Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use the built-in database identity store.
 
 * <<define-the-users-and-groups-in-the-identity-store>>
+
 * <<map-the-databaseidentitystore-to-the-default-data-source>>
+
 * <<specify-the-authentication-mechanism>>
+
 * <<declare-roles-in-the-servlet-container>>
 
-When a request that includes credentials is sent to the application, it
-triggers the configured authentication mechanism and authentication is
-performed against the `DatabaseIdentityStore` as defined in the
-application.
+When a request that includes credentials is sent to the application, it triggers the configured authentication mechanism and authentication is performed against the `DatabaseIdentityStore` as defined in the application.
 
-Post authentication, the application also verifies the roles the caller
-is in and sends the details as part of the response.
+Post authentication, the application also verifies the roles the caller is in and sends the details as part of the response.
 
-Note that in GlassFish, if the user provides the wrong credentials when
-using `BasicAuthenticationMechanism`, then the `realmName` is presented
-to user, as a hint.
+Note that in GlassFish, if the user provides the wrong credentials when using `BasicAuthenticationMechanism`, then the `realmName` is presented to user, as a hint.
 
 [source,shell]
 ----
@@ -62,8 +50,7 @@ Content-Type: text/html
 
 ==== Define the Users and Groups in the Identity Store
 
-The following table shows the users, passwords, and groups used in this
-example.
+The following table shows the users, passwords, and groups used in this example.
 
 [width="40%",cols="30%,40%,30%"]
 |===
@@ -78,12 +65,9 @@ example.
 |Sue |secret2 |foo
 |===
 
-The following code shows how to define credentials and the roles
-assigned to users in the `DatabaseSetup.java` file.
+The following code shows how to define credentials and the roles assigned to users in the `DatabaseSetup.java` file.
 
-With `@Startup` annotation, this singleton enterprise bean is
-initialized during application startup and the credentials are set in
-the underlying database.
+With `@Startup` annotation, this singleton enterprise bean is initialized during application startup and the credentials are set in the underlying database.
 
 [source,java]
 ----
@@ -132,10 +116,8 @@ public class DatabaseSetup {
 
 ==== Map the DatabaseIdentityStore to the Default Data source
 
-Use the `@DatabaseIdentityStoreDefinition` annotation to map the
-built-in `DatabaseIdentityStore` to the `DefaultDataSource` in the
-`ApplicationConfig.java` file. This example also demonstrates the use
-of the `Pbkdf2PasswordHash` interface.
+Use the `@DatabaseIdentityStoreDefinition` annotation to map the built-in `DatabaseIdentityStore` to the `DefaultDataSource` in the `ApplicationConfig.java` file.
+This example also demonstrates the use of the `Pbkdf2PasswordHash` interface.
 
 [source,java]
 ----
@@ -165,18 +147,10 @@ public class ApplicationConfig {
 
 ==== Specify the Authentication Mechanism
 
-In this application, credentials are validated using the BASIC
-authentication mechanism. Specify the
-`@BasicAuthenticationMechanismDefinition` annotation in the
-`ApplicationConfig.java` to ensure that the
-`BasicAuthenticationMechanism` is used to perform credential
-validation.
+In this application, credentials are validated using the BASIC authentication mechanism.
+Specify the `@BasicAuthenticationMechanismDefinition` annotation in the `ApplicationConfig.java` to ensure that the `BasicAuthenticationMechanism` is used to perform credential validation.
 
-When a request is made to the servlet in question, the container
-delegates the request to
-`org.glassfish.soteria.mechanisms.jaspic.HttpBridgeServerAuthModule`,
-which then invokes the `BasicAuthenticationMechanism#validateRequest`
-method, and gets the credential from the request.
+When a request is made to the servlet in question, the container delegates the request to `org.glassfish.soteria.mechanisms.jaspic.HttpBridgeServerAuthModule`, which then invokes the `BasicAuthenticationMechanism#validateRequest` method, and gets the credential from the request.
 
 [source,java]
 ----
@@ -187,10 +161,8 @@ method, and gets the credential from the request.
 
 ==== Declare Roles in the Servlet Container
 
-When a request is made to the application, the roles the user is in are
-returned as part of the response. Note that the container needs to be
-made aware of the supported roles, which are defined using the
-`@DeclareRoles({ "foo", "bar", "kaz" })` annotation as shown below.
+When a request is made to the application, the roles the user is in are returned as part of the response.
+Note that the container needs to be made aware of the supported roles, which are defined using the `@DeclareRoles({ "foo", "bar", "kaz" })` annotation as shown below.
 
 [source,java]
 ----
@@ -220,28 +192,26 @@ public class Servlet extends HttpServlet {
 ----
 
 In GlassFish 6.0, group to role mapping is enabled by default.
-Therefore, you do not need to bundle web.xml with the application to
-provide mapping between roles and groups.
+Therefore, you do not need to bundle web.xml with the application to provide mapping between roles and groups.
 
 === Running the built-in-db-identity-store Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `built-in-db-identity-store` application as described in the
-following topics:
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `built-in-db-identity-store` application as described in the following topics:
 
 * <<to-build-package-and-deploy-the-built-in-db-identity-store-example-using-netbeans-ide>>
+
 * <<to-build-package-and-deploy-the-built-in-db-identity-store-example-using-maven>>
+
 * <<to-run-the-built-in-db-identity-store-example>>
 
 ==== To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE
 
-. If you have not already done so, start the default database. This is
-necessary because we are using the DefaultDataSource bundled with
-GlassFish for `DatabaseIdentityStore`. See
-<<starting-and-stopping-apache-derby>>.
+. If you have not already done so, start the default database.
+This is necessary because we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
+See <<starting-and-stopping-apache-derby>>.
 
-. If you have not already done so, start the GlassFish server. See
-<<starting-and-stopping-glassfish-server>>.
+. If you have not already done so, start the GlassFish server.
+See <<starting-and-stopping-glassfish-server>>.
 
 . From the File menu, choose Open Project.
 
@@ -250,20 +220,20 @@ GlassFish for `DatabaseIdentityStore`. See
 ----
 tut-install/examples/security/security-api
 ----
+
 . Select the `built-in-db-identity-store` folder.
+
 . Click Open Project.
-. In the Projects tab, right-click the `built-in-db-identity-store`
-project and select Build.
+
+. In the Projects tab, right-click the `built-in-db-identity-store` project and select Build.
 +
-This command builds and deploys the example application to your
-GlassFish Server instance.
+This command builds and deploys the example application to your GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the built-in-db-identity-store Example Using Maven
 
-. If you have not already done so, start the default database. This is
-necessary because we are using the DefaultDataSource bundled with
-GlassFish for `DatabaseIdentityStore`. See
-<<starting-and-stopping-apache-derby>>.
+. If you have not already done so, start the default database.
+This is necessary because we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
+See <<starting-and-stopping-apache-derby>>.
 
 . If you have not already done so, start the GlassFish server. See
 <<starting-and-stopping-glassfish-server>>.
@@ -273,6 +243,7 @@ GlassFish for `DatabaseIdentityStore`. See
 ----
 tut-install/examples/security/security-api/built-in-db-identity-store
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -280,18 +251,13 @@ tut-install/examples/security/security-api/built-in-db-identity-store
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file,
-`built-in-db-identity-store.war`, that is located in the `target`
-directory, then deploys the WAR file.
+This command builds and packages the application into a WAR file, `built-in-db-identity-store.war`, that is located in the `target` directory, then deploys the WAR file.
 
 ==== To Run the built-in-db-identity-store Example
 
-In this example, use the credentials of user Joe to make a request and
-to validate the response according to the credentials/roles defined in
-`DatabaseSetup.java`.
+In this example, use the credentials of user Joe to make a request and to validate the response according to the credentials/roles defined in `DatabaseSetup.java`.
 
-. Make a request to the deployed application by entering
-the following request URL in your web browser:
+. Make a request to the deployed application by entering the following request URL in your web browser:
 +
 Request URL:
 +
@@ -299,30 +265,23 @@ Request URL:
 http://localhost:8080/built-in-db-identity-store/servlet
 ----
 +
-Because BASIC authentication is being used here, the container responds
-back prompting for username and password.
+Because BASIC authentication is being used here, the container responds back prompting for username and password.
 
 . Enter the username `Joe`, and the password `secret1` at the prompt.
 +
 Once you provide the credentials, the following process occurs:
 +
-* The client presents the request to the container with base64 encoded
-string and with the `Authorization` header using the value in the
-format expected for basic authentication.
-+
-* With the username and password available to the container, validation
-is performed against `DatabaseIdentityStore`.
-+
-* The corresponding `UsernamePasswordCredential` object is passed as a
-parameter to the `DatabaseIdentityStore#validate()` method.
-+
-* The password is fetched from the database for user Joe.
-* The password stored in the database is hashed using the `PBKDF2`
-algorithm and verified by the built-in `Pbkdf2PasswordHash`
-implementation.
+* The client presents the request to the container with base64 encoded string and with the `Authorization` header using the value in the format expected for basic authentication.
 
-* On successful verification, the request gets delegated to the servlet
-in question and the following response is returned to the end user.
+* With the username and password available to the container, validation is performed against `DatabaseIdentityStore`.
+
+* The corresponding `UsernamePasswordCredential` object is passed as a parameter to the `DatabaseIdentityStore#validate()` method.
+
+* The password is fetched from the database for user Joe.
+
+* The password stored in the database is hashed using the `PBKDF2` algorithm and verified by the built-in `Pbkdf2PasswordHash` implementation.
+
+* On successful verification, the request gets delegated to the servlet in question and the following response is returned to the end user.
 +
 Response:
 +
@@ -333,9 +292,8 @@ web user has role "bar": true
 web user has role "kaz": false
 ----
 
-. Test the authentication using invalid credentials. Make a request to
-the deployed application by entering the following request URL in your
-web browser:
+. Test the authentication using invalid credentials.
+Make a request to the deployed application by entering the following request URL in your web browser:
 +
 Request URL:
 +
@@ -343,14 +301,12 @@ Request URL:
 http://localhost:8080/built-in-db-identity-store/servlet
 ----
 +
-Again, because BASIC authentication is being used here, the container
-responds back prompting for username and password.
+Again, because BASIC authentication is being used here, the container responds back prompting for username and password.
 
-. Enter an invalid username and password. You are promted to enter the
-credentials again, but you are not authenticated.
+. Enter an invalid username and password.
+You are promted to enter the credentials again, but you are not authenticated.
 +
-When you click Cancel in the Authentication required window, the
-following response is returned:
+When you click Cancel in the Authentication required window, the following response is returned:
 +
 ----
 HTTP Status 401 - Unauthorized

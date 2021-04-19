@@ -1,98 +1,65 @@
 == Writing Bean Properties
 
-As explained in <<managed-beans-in-jakarta-faces-technology>>, a
-managed bean property can be bound to one of the following items:
+As explained in <<managed-beans-in-jakarta-faces-technology>>, a managed bean property can be bound to one of the following items:
 
 * A component value
+
 * A component instance
+
 * A converter implementation
+
 * A listener implementation
+
 * A validator implementation
 
-These properties follow the conventions of JavaBeans components (also
-called beans). For more information on JavaBeans components, see the
-JavaBeans Tutorial at
-http://docs.oracle.com/javase/tutorial/javabeans/index.html[^].
+These properties follow the conventions of JavaBeans components (also called beans).
+For more information on JavaBeans components, see the JavaBeans Tutorial at https://docs.oracle.com/javase/tutorial/javabeans/index.html[^].
 
-The component's tag binds the component's value to a managed bean
-property by using its `value` attribute and binds the component's
-instance to a managed bean property by using its `binding` attribute.
-Likewise, all the converter, listener, and validator tags use their
-`binding` attributes to bind their associated implementations to
-managed bean properties. See
-<<binding-component-values-and-instances-to-managed-bean-properties>>
-and
-<<binding-converters-listeners-and-validators-to-managed-bean-properties>>
-for more information.
+The component's tag binds the component's value to a managed bean property by using its `value` attribute and binds the component's instance to a managed bean property by using its `binding` attribute.
+Likewise, all the converter, listener, and validator tags use their `binding` attributes to bind their associated implementations to managed bean properties.
+See <<binding-component-values-and-instances-to-managed-bean-properties>> and <<binding-converters-listeners-and-validators-to-managed-bean-properties>> for more information.
 
-To bind a component's value to a managed bean property, the type of the
-property must match the type of the component's value to which it is
-bound. For example, if a managed bean property is bound to a
-`UISelectBoolean` component's value, the property should accept and
-return a `boolean` value or a `Boolean` wrapper `Object` instance.
+To bind a component's value to a managed bean property, the type of the property must match the type of the component's value to which it is bound.
+For example, if a managed bean property is bound to a `UISelectBoolean` component's value, the property should accept and return a `boolean` value or a `Boolean` wrapper `Object` instance.
 
-To bind a component instance to a managed bean property, the property
-must match the type of component. For example, if a managed bean
-property is bound to a `UISelectBoolean` instance, the property should
-accept and return a `UISelectBoolean` value.
+To bind a component instance to a managed bean property, the property must match the type of component.
+For example, if a managed bean property is bound to a `UISelectBoolean` instance, the property should accept and return a `UISelectBoolean` value.
 
-Similarly, to bind a converter, listener, or validator implementation
-to a managed bean property, the property must accept and return the
-same type of converter, listener, or validator object. For example, if
-you are using the `convertDateTime` tag to bind a
-`jakarta.faces.convert.DateTimeConverter` to a property, that property
-must accept and return a `DateTimeConverter` instance.
+Similarly, to bind a converter, listener, or validator implementation to a managed bean property, the property must accept and return the same type of converter, listener, or validator object.
+For example, if you are using the `convertDateTime` tag to bind a `jakarta.faces.convert.DateTimeConverter` to a property, that property must accept and return a `DateTimeConverter` instance.
 
-The rest of this section explains how to write properties that can be
-bound to component values, to component instances for the component
-objects described in
-<<adding-components-to-a-page-using-html-tag-library-tags>>, and to
-converter, listener, and validator implementations.
+The rest of this section explains how to write properties that can be bound to component values, to component instances for the component objects described in <<adding-components-to-a-page-using-html-tag-library-tags>>, and to converter, listener, and validator implementations.
 
 === Writing Properties Bound to Component Values
 
-To write a managed bean property that is bound to a component's value,
-you must match the property type to the component's value.
+To write a managed bean property that is bound to a component's value, you must match the property type to the component's value.
 
-<<acceptable-types-of-component-values>> lists the
-`jakarta.faces.component` classes and the acceptable types of their
-values.
+<<acceptable-types-of-component-values>> lists the `jakarta.faces.component` classes and the acceptable types of their values.
 
 [[acceptable-types-of-component-values]]
-[width="99%",cols="25%a,75%a",title="Acceptable Types of Component Values"]
+.Acceptable Types of Component Values
+[width="99%",cols="25%,75%"]
 |===
 |Component Class |Acceptable Types of Component Values
 
-|`UIInput`, `UIOutput`, `UISelectItem`, `UISelectOne` |Any of the basic
-primitive and numeric types or any Java programming language object
-type for which an appropriate `jakarta.faces.convert.Converter`
-implementation is available
+|`UIInput`, `UIOutput`, `UISelectItem`, `UISelectOne` |Any of the basic primitive and numeric types or any Java programming language object type for which an appropriate `jakarta.faces.convert.Converter` implementation is available
 
-|`UIData` |`array` of beans, `List` of beans, single bean,
-`java.sql.ResultSet`, `jakarta.servlet.jsp.jstl.sql.Result`,
-`javax.sql.RowSet`
+|`UIData` |`array` of beans, `List` of beans, single bean, `java.sql.ResultSet`, `jakarta.servlet.jsp.jstl.sql.Result`, `javax.sql.RowSet`
 
 |`UISelectBoolean` |`boolean` or `Boolean`
 
 |`UISelectItems` |`java.lang.String`, `Collection`, `Array`, `Map`
 
-|`UISelectMany` |`array` or `List`, although elements of the `array` or
-`List` can be any of the standard types
+|`UISelectMany` |`array` or `List`, although elements of the `array` or `List` can be any of the standard types
 |===
 
-When they bind components to properties by using the `value` attributes
-of the component tags, page authors need to ensure that the
-corresponding properties match the types of the components' values.
+When they bind components to properties by using the `value` attributes of the component tags, page authors need to ensure that the corresponding properties match the types of the components' values.
 
 ==== UIInput and UIOutput Properties
 
-The `UIInput` and `UIOutput` component classes are represented by the
-component tags that begin with `h:input` and `h:output`, respectively
-(for example, `h:inputText` and `h:outputText`).
+The `UIInput` and `UIOutput` component classes are represented by the component tags that begin with `h:input` and `h:output`, respectively (for example, `h:inputText` and `h:outputText`).
 
-In the following example, an `h:inputText` tag binds the `name`
-component to the `name` property of a managed bean called
-`CashierBean`.
+In the following example, an `h:inputText` tag binds the `name` component to the `name` property of a managed bean called `CashierBean`.
 
 [source,xml]
 ----
@@ -103,8 +70,7 @@ component to the `name` property of a managed bean called
 </h:inputText>
 ----
 
-The following code snippet from the managed bean `CashierBean` shows
-the bean property type bound by the preceding component tag:
+The following code snippet from the managed bean `CashierBean` shows the bean property type bound by the preceding component tag:
 
 [source,java]
 ----
@@ -118,11 +84,8 @@ public String getName() {
 }
 ----
 
-As described in <<using-the-standard-converters>>, to convert the value
-of an input or output component you can either apply a converter or
-create the bean property bound to the component with the matching type.
-Here is the example tag, from <<using-datetimeconverter>>, that
-displays the date on which items will be shipped.
+As described in <<using-the-standard-converters>>, to convert the value of an input or output component you can either apply a converter or create the bean property bound to the component with the matching type.
+Here is the example tag, from <<using-datetimeconverter>>, that displays the date on which items will be shipped.
 
 [source,xml]
 ----
@@ -131,10 +94,8 @@ displays the date on which items will be shipped.
 </h:outputText>
 ----
 
-The bean property represented by this tag must have a type of
-`java.util.Date`. The following code snippet shows the `shipDate`
-property, from the managed bean `CashierBean`, that is bound by the
-tag's value in the preceding example:
+The bean property represented by this tag must have a type of `java.util.Date`.
+The following code snippet shows the `shipDate` property, from the managed bean `CashierBean`, that is bound by the tag's value in the preceding example:
 
 [source,java]
 ----
@@ -150,13 +111,11 @@ public void setShipDate(Date shipDate) {
 
 ==== UIData Properties
 
-The `UIData` component class is represented by the `h:dataTable`
-component tag.
+The `UIData` component class is represented by the `h:dataTable` component tag.
 
-`UIData` components must be bound to one of the managed bean property
-types listed in <<acceptable-types-of-component-values>>. Data
-components are discussed in <<using-data-bound-table-components>>. Here
-is part of the start tag of `dataTable` from that section:
+`UIData` components must be bound to one of the managed bean property types listed in <<acceptable-types-of-component-values>>.
+Data components are discussed in <<using-data-bound-table-components>>.
+Here is part of the start tag of `dataTable` from that section:
 
 [source,xml]
 ----
@@ -167,14 +126,10 @@ is part of the start tag of `dataTable` from that section:
     var="item">
 ----
 
-The value expression points to the `items` property of a shopping cart
-bean named `cart`. The `cart` bean maintains a map of
-`ShoppingCartItem` beans.
+The value expression points to the `items` property of a shopping cart bean named `cart`.
+The `cart` bean maintains a map of `ShoppingCartItem` beans.
 
-The `getItems` method from the `cart` bean populates a `List` with
-`ShoppingCartItem` instances that are saved in the `items` map when the
-customer adds books to the cart, as shown in the following code
-segment:
+The `getItems` method from the `cart` bean populates a `List` with `ShoppingCartItem` instances that are saved in the `items` map when the customer adds books to the cart, as shown in the following code segment:
 
 [source,java]
 ----
@@ -185,10 +140,8 @@ public synchronized List<ShoppingCartItem> getItems() {
 }
 ----
 
-All the components contained in the `UIData` component are bound to the
-properties of the `cart` bean that is bound to the entire `UIData`
-component. For example, here is the `h:outputText` tag that displays
-the book title in the table:
+All the components contained in the `UIData` component are bound to the properties of the `cart` bean that is bound to the entire `UIData` component.
+For example, here is the `h:outputText` tag that displays the book title in the table:
 
 [source,xml]
 ----
@@ -197,17 +150,12 @@ the book title in the table:
 </h:commandLink>
 ----
 
-The title is actually a link to the `bookdetails.xhtml` page. The
-`h:outputText` tag uses the value expression `#{item.item.title}` to
-bind its `UIOutput` component to the `title` property of the `Book`
-entity. The first item in the expression is the `ShoppingCartItem`
-instance that the `h:dataTable` tag is referencing while rendering the
-current row. The second item in expression refers to the `item`
-property of `ShoppingCartItem`, which returns an `Object` (in this
-case, a `Book`). The `title` part of the expression refers to the
-`title` property of `Book`. The value of the `UIOutput` component
-corresponding to this tag is bound to the `title` property of the
-`Book` entity:
+The title is actually a link to the `bookdetails.xhtml` page.
+The `h:outputText` tag uses the value expression `#{item.item.title}` to bind its `UIOutput` component to the `title` property of the `Book` entity.
+The first item in the expression is the `ShoppingCartItem` instance that the `h:dataTable` tag is referencing while rendering the current row.
+The second item in expression refers to the `item` property of `ShoppingCartItem`, which returns an `Object` (in this case, a `Book`).
+The `title` part of the expression refers to the `title` property of `Book`.
+The value of the `UIOutput` component corresponding to this tag is bound to the `title` property of the `Book` entity:
 
 [source,java]
 ----
@@ -222,33 +170,37 @@ public void setTitle(String title) {
 }
 ----
 
-The UIData component (and UIRepeat) supports the `Map` and `Iterable`
-interfaces, as well as custom types.
+The UIData component (and UIRepeat) supports the `Map` and `Iterable` interfaces, as well as custom types.
 
 For UIData and UIRepeat, the supported types are:
 
 * `null` (becomes empty list)
+
 * `jakarta.faces.model.DataMode`
+
 * `java.util.List`
+
 * `java.lang.Object`[]
+
 * `java.sql.ResultSet`
+
 * `jakarta.servlet.jsp.jstl.sql.Result`
+
 * `java.util.Collection`
+
 * `java.lang.Iterable`
+
 * `java.util.Map`
+
 * `java.lang.Object` (becomes ScalarDataModel)
 
 ==== UISelectBoolean Properties
 
-The `UISelectBoolean` component class is represented by the component
-tag `h:selectBooleanCheckbox`.
+The `UISelectBoolean` component class is represented by the component tag `h:selectBooleanCheckbox`.
 
-Managed bean properties that hold a `UISelectBoolean` component's data
-must be of `boolean` or `Boolean` type. The example
-`selectBooleanCheckbox` tag from the section
-<<displaying-components-for-selecting-one-value>> binds a component to
-a property. The following example shows a tag that binds a component
-value to a `boolean` property:
+Managed bean properties that hold a `UISelectBoolean` component's data must be of `boolean` or `Boolean` type.
+The example `selectBooleanCheckbox` tag from the section <<displaying-components-for-selecting-one-value>> binds a component to a property.
+The following example shows a tag that binds a component value to a `boolean` property:
 
 [source,xml]
 ----
@@ -258,8 +210,7 @@ value to a `boolean` property:
 <h:outputText value="#{bundle.receiveEmails}">
 ----
 
-Here is an example property that can be bound to the component
-represented by the example tag:
+Here is an example property that can be bound to the component represented by the example tag:
 
 [source,java]
 ----
@@ -275,17 +226,12 @@ public boolean getReceiveEmails() {
 
 ==== UISelectMany Properties
 
-The `UISelectMany` component class is represented by the component tags
-that begin with `h:selectMany` (for example, `h:selectManyCheckbox` and
-`h:selectManyListbox`).
+The `UISelectMany` component class is represented by the component tags that begin with `h:selectMany` (for example, `h:selectManyCheckbox` and `h:selectManyListbox`).
 
-Because a `UISelectMany` component allows a user to select one or more
-items from a list of items, this component must map to a bean property
-of type `List` or `array`. This bean property represents the set of
-currently selected items from the list of available items.
+Because a `UISelectMany` component allows a user to select one or more items from a list of items, this component must map to a bean property of type `List` or `array`.
+This bean property represents the set of currently selected items from the list of available items.
 
-The following example of the `selectManyCheckbox` tag comes from
-<<displaying-components-for-selecting-multiple-values>>:
+The following example of the `selectManyCheckbox` tag comes from <<displaying-components-for-selecting-multiple-values>>:
 
 [source,xml]
 ----
@@ -296,8 +242,7 @@ The following example of the `selectManyCheckbox` tag comes from
 </h:selectManyCheckbox>
 ----
 
-Here is the bean property that maps to the `value` of the
-`selectManyCheckbox` tag from the preceding example:
+Here is the bean property that maps to the `value` of the `selectManyCheckbox` tag from the preceding example:
 
 [source,java]
 ----
@@ -311,24 +256,17 @@ public String[] getNewsletters() {
 }
 ----
 
-The `UISelectItem` and `UISelectItems` components are used to represent
-all the values in a `UISelectMany` component. See
-<<uiselectitems-properties>> for information on writing the bean
-properties for the `UISelectItem` and `UISelectItems` components.
+The `UISelectItem` and `UISelectItems` components are used to represent all the values in a `UISelectMany` component.
+See <<uiselectitems-properties>> for information on writing the bean properties for the `UISelectItem` and `UISelectItems` components.
 
 ==== UISelectOne Properties
 
-The `UISelectOne` component class is represented by the component tags
-that begin with `h:selectOne` (for example, `h:selectOneRadio` and
-`h:selectOneListbox`).
+The `UISelectOne` component class is represented by the component tags that begin with `h:selectOne` (for example, `h:selectOneRadio` and `h:selectOneListbox`).
 
-`UISelectOne` properties accept the same types as `UIInput` and
-`UIOutput` properties, because a `UISelectOne` component represents the
-single selected item from a set of items. This item can be any of the
-primitive types and anything else for which you can apply a converter.
+`UISelectOne` properties accept the same types as `UIInput` and `UIOutput` properties, because a `UISelectOne` component represents the single selected item from a set of items.
+This item can be any of the primitive types and anything else for which you can apply a converter.
 
-Here is an example of the `h:selectOneMenu` tag from
-<<displaying-a-menu-using-the-hselectonemenu-tag>>:
+Here is an example of the `h:selectOneMenu` tag from <<displaying-a-menu-using-the-hselectonemenu-tag>>:
 
 [source,xml]
 ----
@@ -358,31 +296,21 @@ public String getShippingOption() {
 }
 ----
 
-Note that `shippingOption` represents the currently selected item from
-the list of items in the `UISelectOne` component.
+Note that `shippingOption` represents the currently selected item from the list of items in the `UISelectOne` component.
 
-The `UISelectItem` and `UISelectItems` components are used to represent
-all the values in a `UISelectOne` component. This is explained in
-<<displaying-a-menu-using-the-hselectonemenu-tag>>.
+The `UISelectItem` and `UISelectItems` components are used to represent all the values in a `UISelectOne` component.
+This is explained in <<displaying-a-menu-using-the-hselectonemenu-tag>>.
 
-For information on how to write the managed bean properties for the
-`UISelectItem` and `UISelectItems` components, see
-<<uiselectitems-properties>>.
+For information on how to write the managed bean properties for the `UISelectItem` and `UISelectItems` components, see <<uiselectitems-properties>>.
 
 ==== UISelectItem Properties
 
-A `UISelectItem` component represents a single value in a set of values
-in a `UISelectMany` or a `UISelectOne` component. A `UISelectItem`
-component must be bound to a managed bean property of type
-`jakarta.faces.model.SelectItem`. A `SelectItem` object is composed of
-an `Object` representing the value along with two `Strings`
-representing the label and the description of the `UISelectItem`
-object.
+A `UISelectItem` component represents a single value in a set of values in a `UISelectMany` or a `UISelectOne` component.
+A `UISelectItem` component must be bound to a managed bean property of type `jakarta.faces.model.SelectItem`.
+A `SelectItem` object is composed of an `Object` representing the value along with two `Strings` representing the label and the description of the `UISelectItem` object.
 
-The example `selectOneMenu` tag from <<uiselectone-properties>>
-contains `selectItem` tags that set the values of the list of items in
-the page. Here is an example of a bean property that can set the values
-for this list in the bean:
+The example `selectOneMenu` tag from <<uiselectone-properties>> contains `selectItem` tags that set the values of the list of items in the page.
+Here is an example of a bean property that can set the values for this list in the bean:
 
 [source,java]
 ----
@@ -398,13 +326,10 @@ void setItemOne(SelectItem item) {
 
 ==== UISelectItems Properties
 
-`UISelectItems` components are children of `UISelectMany` and
-`UISelectOne` components. Each `UISelectItems` component is composed of
-a set of either `UISelectItem` instances or any collection of objects,
-such as an array, a list, or even POJOs.
+`UISelectItems` components are children of `UISelectMany` and `UISelectOne` components.
+Each `UISelectItems` component is composed of a set of either `UISelectItem` instances or any collection of objects, such as an array, a list, or even POJOs.
 
-The following code snippet from `CashierBean` shows how to write the
-properties for `selectItems` tags containing `SelectItem` instances.
+The following code snippet from `CashierBean` shows how to write the properties for `selectItems` tags containing `SelectItem` instances.
 
 [source,java]
 ----
@@ -429,19 +354,13 @@ public SelectItem[] getNewsletterItems() {
 }
 ----
 
-Here, the `newsletters` property represents the `SelectItems` object,
-whereas the `newsletterItems` property represents a static array of
-`SelectItem` objects. The `SelectItem` class has several constructors;
-in this example, the first argument is an `Object` representing the
-value of the item, whereas the second argument is a `String`
-representing the label that appears in the `UISelectMany` component on
-the page.
+Here, the `newsletters` property represents the `SelectItems` object, whereas the `newsletterItems` property represents a static array of `SelectItem` objects.
+The `SelectItem` class has several constructors; in this example, the first argument is an `Object` representing the value of the item, whereas the second argument is a `String` representing the label that appears in the `UISelectMany` component on the page.
 
 === Writing Properties Bound to Component Instances
 
-A property bound to a component instance returns and accepts a
-component instance rather than a component value. The following
-components bind a component instance to a managed bean property:
+A property bound to a component instance returns and accepts a component instance rather than a component value.
+The following components bind a component instance to a managed bean property:
 
 [source,xml]
 ----
@@ -455,21 +374,12 @@ components bind a component instance to a managed bean property:
 </h:outputLabel>
 ----
 
-The `selectBooleanCheckbox` tag renders a check box and binds the
-`fanClub` `UISelectBoolean` component to the `specialOffer` property of
-`CashierBean`. The `outputLabel` tag binds the value of the `value`
-attribute, which represents the check box's label, to the
-`specialOfferText` property of `CashierBean`. If the user orders more
-than $100 worth of books and clicks the Submit button, the `submit`
-method of `CashierBean` sets both components' `rendered` properties to
-`true`, causing the check box and label to display when the page is
-re-rendered.
+The `selectBooleanCheckbox` tag renders a check box and binds the `fanClub` `UISelectBoolean` component to the `specialOffer` property of `CashierBean`.
+The `outputLabel` tag binds the value of the `value` attribute, which represents the check box's label, to the `specialOfferText` property of `CashierBean`.
+If the user orders more than $100 worth of books and clicks the Submit button, the `submit` method of `CashierBean` sets both components' `rendered` properties to `true`, causing the check box and label to display when the page is re-rendered.
 
-Because the components corresponding to the example tags are bound to
-the managed bean properties, these properties must match the
-components' types. This means that the `specialOfferText` property must
-be of type `UIOutput`, and the `specialOffer` property must be of type
-`UISelectBoolean`:
+Because the components corresponding to the example tags are bound to the managed bean properties, these properties must match the components' types.
+This means that the `specialOfferText` property must be of type `UIOutput`, and the `specialOffer` property must be of type `UISelectBoolean`:
 
 [source,java]
 ----
@@ -491,27 +401,17 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 }
 ----
 
-For more general information on component binding, see
-<<managed-beans-in-jakarta-faces-technology>>.
+For more general information on component binding, see <<managed-beans-in-jakarta-faces-technology>>.
 
-For information on how to reference a managed bean method that performs
-navigation when a button is clicked, see
-<<referencing-a-method-that-performs-navigation>>.
+For information on how to reference a managed bean method that performs navigation when a button is clicked, see <<referencing-a-method-that-performs-navigation>>.
 
-For more information on writing managed bean methods that handle
-navigation, see <<writing-a-method-to-handle-navigation>>.
+For more information on writing managed bean methods that handle navigation, see <<writing-a-method-to-handle-navigation>>.
 
 === Writing Properties Bound to Converters, Listeners, or Validators
 
-All the standard converter, listener, and validator tags included with
-Jakarta Faces technology support binding attributes that allow you to
-bind converter, listener, or validator implementations to managed bean
-properties.
+All the standard converter, listener, and validator tags included with Jakarta Faces technology support binding attributes that allow you to bind converter, listener, or validator implementations to managed bean properties.
 
-The following example shows a standard `convertDateTime` tag using a
-value expression with its `binding` attribute to bind the
-`jakarta.faces.convert.DateTimeConverter` instance to the `convertDate`
-property of `LoginBean`:
+The following example shows a standard `convertDateTime` tag using a value expression with its `binding` attribute to bind the `jakarta.faces.convert.DateTimeConverter` instance to the `convertDate` property of `LoginBean`:
 
 [source,xml]
 ----
@@ -520,8 +420,7 @@ property of `LoginBean`:
 </h:inputText>
 ----
 
-The `convertDate` property must therefore accept and return a
-`DateTimeConverter` object, as shown here:
+The `convertDate` property must therefore accept and return a `DateTimeConverter` object, as shown here:
 
 [source,java]
 ----
@@ -536,12 +435,7 @@ public void setConvertDate(DateTimeConverter convertDate) {
 }
 ----
 
-Because the converter is bound to a managed bean property, the managed
-bean property can modify the attributes of the converter or add new
-functionality to it. In the case of the preceding example, the property
-sets the date pattern that the converter uses to parse the user's input
-into a `Date` object.
+Because the converter is bound to a managed bean property, the managed bean property can modify the attributes of the converter or add new functionality to it.
+In the case of the preceding example, the property sets the date pattern that the converter uses to parse the user's input into a `Date` object.
 
-The managed bean properties that are bound to validator or listener
-implementations are written in the same way and have the same general
-purpose.
+The managed bean properties that are bound to validator or listener implementations are written in the same way and have the same general purpose.

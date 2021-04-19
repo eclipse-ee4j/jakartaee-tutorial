@@ -1,11 +1,7 @@
 == Web Services Interoperability and Jakarta XML Web Services
 
-Jakarta XML Web Services supports the Web Services Interoperability
-(WS-I) Basic Profile Version 1.1. The WS-I Basic Profile is a document
-that clarifies the SOAP 1.1 and WSDL 1.1 specifications to promote SOAP
-interoperability. For links related to WS-I, see
-<<further-information-about-jakarta-xml-web-services>>.
+Jakarta XML Web Services supports the Web Services Interoperability (WS-I) Basic Profile Version 1.1.
+The WS-I Basic Profile is a document that clarifies the SOAP 1.1 and WSDL 1.1 specifications to promote SOAP interoperability.
+For links related to WS-I, see <<further-information-about-jakarta-xml-web-services>>.
 
-To support WS-I Basic Profile Version 1.1, the JAX-WS runtime supports
-doc/literal and rpc/literal encodings for services, static ports,
-dynamic proxies, and the Dynamic Invocation Interface (DII).
+To support WS-I Basic Profile Version 1.1, the JAX-WS runtime supports doc/literal and rpc/literal encodings for services, static ports, dynamic proxies, and the Dynamic Invocation Interface (DII).

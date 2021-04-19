@@ -1,23 +1,17 @@
 == Value and Method Expressions
 
-The EL defines two kinds of expressions: value expressions and method
-expressions. Value expressions can be evaluated to yield a value, and
-method expressions are used to reference a method.
+The EL defines two kinds of expressions: value expressions and method expressions.
+Value expressions can be evaluated to yield a value, and method expressions are used to reference a method.
 
 === Value Expressions
 
-Value expressions can be further categorized into _rvalue_ and _lvalue_
-expressions. An _lvalue_ expression can specify a target, such as an
-object, a bean property, or elements of a collection, that can be
-assigned a value. An _rvalue_ expression cannot specify such a target.
+Value expressions can be further categorized into _rvalue_ and _lvalue_ expressions.
+An _lvalue_ expression can specify a target, such as an object, a bean property, or elements of a collection, that can be assigned a value.
+An _rvalue_ expression cannot specify such a target.
 
-All expressions that are evaluated immediately use the `${}`
-delimiters, and although the expression can be an _lvalue_ expression,
-no assignments will ever happen. Expressions whose evaluation can be
-deferred use the `#{}` delimiters and can act as both _rvalue_ and
-_lvalue_ expressions; if the expression is an _lvalue_ expression, it
-can be assigned a new value. Consider the following two value
-expressions:
+All expressions that are evaluated immediately use the `${}` delimiters, and although the expression can be an _lvalue_ expression, no assignments will ever happen.
+Expressions whose evaluation can be deferred use the `#{}` delimiters and can act as both _rvalue_ and _lvalue_ expressions; if the expression is an _lvalue_ expression, it can be assigned a new value.
+Consider the following two value expressions:
 
 [source,java]
 ----
@@ -26,98 +20,93 @@ ${customer.name}
 #{customer.name}
 ----
 
-The former uses immediate evaluation syntax, whereas the latter uses
-deferred evaluation syntax. The first expression accesses the `name`
-property, gets its value, and passes the value to the tag handler. With
-the second expression, the tag handler can defer the expression
-evaluation to a later time in the page lifecycle if the technology
-using this tag allows.
+The former uses immediate evaluation syntax, whereas the latter uses deferred evaluation syntax.
+The first expression accesses the `name` property, gets its value, and passes the value to the tag handler.
+With the second expression, the tag handler can defer the expression evaluation to a later time in the page lifecycle if the technology using this tag allows.
 
-In the case of Jakarta Faces technology, the latter tag's expression is
-evaluated immediately during an initial request for the page. During a
-postback request, this expression can be used to set the value of the
-`name` property with user input.
+In the case of Jakarta Faces technology, the latter tag's expression is evaluated immediately during an initial request for the page.
+During a postback request, this expression can be used to set the value of the `name` property with user input.
 
 ==== Referencing Objects
 
-A top-level identifier (such as `customer` in the expression
-`customer.name`) can refer to the following objects:
+A top-level identifier (such as `customer` in the expression `customer.name`) can refer to the following objects:
 
 * Lambda parameters
+
 * EL variables
+
 * Managed beans
+
 * Implicit objects
+
 * Classes of static fields and methods
 
-To refer to these objects, you write an expression using a variable
-that is the name of the object. The following expression references a
-managed bean called `customer`:
+To refer to these objects, you write an expression using a variable that is the name of the object.
+The following expression references a managed bean called `customer`:
 
 [source,java]
+----
 ${customer}
+----
 
-You can use a custom EL resolver to alter the way variables are
-resolved. For instance, you can provide an EL resolver that intercepts
-objects with the name `customer`, so that `${customer}` returns a value
-in the EL resolver instead. (Jakarta Faces technology uses an EL
-resolver to handle managed beans.)
+You can use a custom EL resolver to alter the way variables are resolved.
+For instance, you can provide an EL resolver that intercepts objects with the name `customer`, so that `${customer}` returns a value in the EL resolver instead.
+(Jakarta Faces technology uses an EL resolver to handle managed beans.)
 
-An `enum` constant is a special case of a static field, and you can
-reference such a constant directly. For example, consider this `enum`
-class:
+An `enum` constant is a special case of a static field, and you can reference such a constant directly.
+For example, consider this `enum` class:
 
 [source,java]
+----
 public enum Suit {hearts, spades, diamonds, clubs}
+----
 
-In the following expression, in which `mySuit` is an instance of
-`Suit`, you can compare `suit.hearts` to the instance:
+In the following expression, in which `mySuit` is an instance of `Suit`, you can compare `suit.hearts` to the instance:
 
 [source,java]
+----
 ${mySuit == suit.hearts}
+----
 
 ==== Referencing Object Properties or Collection Elements
 
-To refer to properties of a bean, static fields or methods of a class,
-or items of a collection, you use the `.` or `[]` notation. The same
-syntax can be used for attributes of an implicit object, because
-attributes are placed in a map.
+To refer to properties of a bean, static fields or methods of a class, or items of a collection, you use the `.` or `[]` notation.
+The same syntax can be used for attributes of an implicit object, because attributes are placed in a map.
 
-To reference the `name` property of the `customer` bean, use either the
-expression `${customer.name}` or the expression `${customer["name"]}`.
-Here, the part inside the brackets is a `String` literal that is the
-name of the property to reference. The `[]` syntax is more general than
-the `.` syntax, because the part inside the brackets can be any
-`String` expression, not just literals.
+To reference the `name` property of the `customer` bean, use either the expression `${customer.name}` or the expression `${customer["name"]}`.
+Here, the part inside the brackets is a `String` literal that is the name of the property to reference.
+The `[]` syntax is more general than the `.` syntax, because the part inside the brackets can be any `String` expression, not just literals.
 
-You can use double or single quotes for the `String` literal. You can
-also combine the `[]` and `.` notations, as shown here:
+You can use double or single quotes for the `String` literal. You can also combine the `[]` and `.` notations, as shown here:
 
 [source,java]
+----
 ${customer.address["street"]}
+----
 
-You can reference a static field or method using the syntax
-classname.field, as in the following example:
+You can reference a static field or method using the syntax classname.field, as in the following example:
 
 [source,java]
+----
 Boolean.FALSE
+----
 
-The classname is the name of the class without the package name. By
-default, all the `java.lang` packages are imported. You can import
-other packages, classes, and static fields as needed.
+The classname is the name of the class without the package name.
+By default, all the `java.lang` packages are imported.
+You can import other packages, classes, and static fields as needed.
 
-If you are accessing an item in an array or list, you must use the `[]`
-notation and specify an index in the array or list. The index is an
-expression that can be converted to `int`. The following example
-references the first of the customer orders, assuming that
-`customer.orders` is a `List`:
+If you are accessing an item in an array or list, you must use the `[]` notation and specify an index in the array or list.
+The index is an expression that can be converted to `int`.
+The following example references the first of the customer orders, assuming that `customer.orders` is a `List`:
 
 [source,java]
+----
 ${customer.orders[1]}
+----
 
-If you are accessing an item in a `Map`, you must specify the key for
-the `Map`. If the key is a `String` literal, the dot (`.)` notation can
-be used. Assuming that `customer.orders` is a `Map` with a `String`
-key, the following examples reference the item with the key `"socks"`:
+If you are accessing an item in a `Map`, you must specify the key for the `Map`.
+If the key is a `String` literal, the dot (`.)` notation can be used.
+Assuming that `customer.orders` is a `Map` with a `String` key, the following examples reference the item with the key `"socks"`:
 
 [source,java]
 ----
@@ -131,73 +120,78 @@ ${customer.orders.socks}
 The EL defines the following literals:
 
 * Boolean: `true` and `false`
+
 * Integer: As in Java
+
 * Floating-point: As in Java
+
 * String: With single and double quotes; `"` is escaped as `\"`, `'` is
 escaped as `\'`, and `\` is escaped as `\\`
+
 * Null: `null`
 
 Here are some examples:
 
 * `${"literal"}`
+
 * `${true}`
+
 * `${57}`
 
 ==== Parameterized Method Calls
 
 The EL offers support for parameterized method calls.
 
-Both the `.` and `[]` operators can be used for invoking method calls
-with parameters, as shown in the following expression syntax:
+Both the `.` and `[]` operators can be used for invoking method calls with parameters, as shown in the following expression syntax:
 
 * `_expr-a_[_expr-b_](_parameters_)`
+
 * `_expr-a_._identifier-b_(_parameters_)`
 
-In the first expression syntax, _expr-a_ is evaluated to represent a bean
-object. The expression _expr-b_ is evaluated and cast to a string that
-represents a method in the bean represented by _expr-a_. In the second
-expression syntax, _expr-a_ is evaluated to represent a bean object, and
-_identifier-b_ is a string that represents a method in the bean object.
-The _parameters_ in parentheses are the arguments for the method
-invocation. Parameters can be zero or more values of expressions,
-separated by commas.
+In the first expression syntax, _expr-a_ is evaluated to represent a bean object.
+The expression _expr-b_ is evaluated and cast to a string that represents a method in the bean represented by _expr-a_.
+In the second expression syntax, _expr-a_ is evaluated to represent a bean object, and _identifier-b_ is a string that represents a method in the bean object.
+The _parameters_ in parentheses are the arguments for the method invocation.
+Parameters can be zero or more values of expressions, separated by commas.
 
-Parameters are supported for both value expressions and method
-expressions. In the following example, which is a modified tag from the
-`guessnumber` application, a random number is provided as an argument
-rather than from user input to the method call:
+Parameters are supported for both value expressions and method expressions.
+In the following example, which is a modified tag from the `guessnumber` application, a random number is provided as an argument rather than from user input to the method call:
 
 [source,xml]
+----
 <h:inputText value="#{userNumberBean.userNumber('5')}">
+----
 
 The preceding example uses a value expression.
 
-Consider the following example of a Jakarta Faces component tag that
-uses a method expression:
+Consider the following example of a Jakarta Faces component tag that uses a method expression:
 
 [source,xml]
+----
 <h:commandButton action="#{trader.buy}" value="buy"/>
+----
 
 The EL expression `trader.buy` calls the `trader` bean's `buy` method.
-You can modify the tag to pass on a parameter. Here is the revised tag
-in which a parameter is passed:
+You can modify the tag to pass on a parameter.
+Here is the revised tag in which a parameter is passed:
 
 [source,xml]
+----
 <h:commandButton action="#{trader.buy('SOMESTOCK')}" value="buy"/>
+----
 
-In the preceding example, you are passing the string `'SOMESTOCK'` (a
-stock symbol) as a parameter to the `buy` method.
+In the preceding example, you are passing the string `'SOMESTOCK'` (a stock symbol) as a parameter to the `buy` method.
 
 ==== Where Value Expressions Can Be Used
 
 Value expressions using the `${}` delimiters can be used
 
 * In static text
+
 * In any standard or custom tag attribute that can accept an expression
 
-The value of an expression in static text is computed and inserted into
-the current output. Here is an example of an expression embedded in
-static text:
+The value of an expression in static text is computed and inserted into the current output.
+Here is an example of an expression embedded in static text:
 
 [source,xml]
 ----
@@ -217,8 +211,8 @@ A tag attribute can be set in the following ways.
 <another:tag value="#{expr}"/>
 ----
 +
-These expressions are evaluated, and the result is converted to the
-attribute's expected type.
+These expressions are evaluated, and the result is converted to the attribute's expected type.
+
 * With one or more expressions separated or surrounded by text:
 +
 [source,xml]
@@ -228,11 +222,10 @@ attribute's expected type.
 <another:tag value="some#{expr}#{expr}text#{expr}"/>
 ----
 +
-These kinds of expression, called composite expressions, are evaluated
-from left to right. Each expression embedded in the composite expression
-is converted to a `String` and then concatenated with any intervening
-text. The resulting `String` is then converted to the attribute's
-expected type.
+These kinds of expression, called composite expressions, are evaluated from left to right.
+Each expression embedded in the composite expression is converted to a `String` and then concatenated with any intervening text.
+The resulting `String` is then converted to the attribute's expected type.
+
 * With text only:
 +
 [source,xml]
@@ -240,12 +233,9 @@ expected type.
 <some:tag value="sometext"/>
 ----
 +
-The attribute's `String` value is converted to the attribute's expected
-type.
+The attribute's `String` value is converted to the attribute's expected type.
 
-You can use the string concatenation operator += to create a single
-expression from what would otherwise be a composite expression. For
-example, you could change the composite expression
+You can use the string concatenation operator `+=` to create a single expression from what would otherwise be a composite expression. For example, you could change the composite expression
 
 [source,xml]
 ----
@@ -259,26 +249,23 @@ to
 <some:tag value="${sometext += expr += moretext}"/>
 ----
 
-All expressions used to set attribute values are evaluated in the
-context of an expected type. If the result of the expression evaluation
-does not match the expected type exactly, a type conversion will be
-performed. For example, the expression `${1.2E4}` provided as the value
-of an attribute of type `float` will result in the following conversion:
+All expressions used to set attribute values are evaluated in the context of an expected type.
+If the result of the expression evaluation does not match the expected type exactly, a type conversion will be performed.
+For example, the expression `${1.2E4}` provided as the value of an attribute of type `float` will result in the following conversion:
 
 [source,java]
+----
 Float.valueOf("1.2E4").floatValue()
+----
 
 === Method Expressions
 
-Another feature of the EL is its support of deferred method
-expressions. A method expression is used to refer to a public method of
-a bean and has the same syntax as an _lvalue_ expression.
+Another feature of the EL is its support of deferred method expressions.
+A method expression is used to refer to a public method of a bean and has the same syntax as an _lvalue_ expression.
 
-In Jakarta Faces technology, a component tag represents a component on
-a page. The component tag uses method expressions to specify methods
-that can be invoked to perform some processing for the component. These
-methods are necessary for handling events that the components generate
-and for validating component data, as shown in this example:
+In Jakarta Faces technology, a component tag represents a component on a page.
+The component tag uses method expressions to specify methods that can be invoked to perform some processing for the component.
+These methods are necessary for handling events that the components generate and for validating component data, as shown in this example:
 
 [source,xml]
 ----
@@ -291,60 +278,51 @@ and for validating component data, as shown in this example:
 </h:form>
 ----
 
-The `h:inputText` tag displays as a field. The `validator` attribute of
-this `h:inputText` tag references a method, called `validateName`, in
-the bean, called `customer`.
+The `h:inputText` tag displays as a field. The `validator` attribute of this `h:inputText` tag references a method, called `validateName`, in the bean, called `customer`.
 
-Because a method can be invoked during different phases of the
-lifecycle, method expressions must always use the deferred evaluation
-syntax.
+Because a method can be invoked during different phases of the lifecycle, method expressions must always use the deferred evaluation syntax.
 
-Like lvalue expressions, method expressions can use the `.` and the `[]`
-operators. For example, `#{object.method}` is equivalent to
-#`{object["method"]}`. The literal inside the `[]` is converted to
-`String` and is used to find the name of the method that matches it.
+Like lvalue expressions, method expressions can use the `.` and the `[]` operators.
+For example, `#{object.method}` is equivalent to #`{object["method"]}`.
+The literal inside the `[]` is converted to `String` and is used to find the name of the method that matches it.
 
-Method expressions can be used only in tag attributes and only in the
-following ways:
+Method expressions can be used only in tag attributes and only in the following ways:
 
-* With a single expression construct, where bean refers to a JavaBeans
-component and method refers to a method of the JavaBeans component:
+* With a single expression construct, where bean refers to a JavaBeans component and method refers to a method of the JavaBeans component:
 +
 [source,xml]
+----
 <some:tag value="#{bean.method}"/>
+----
 +
-The expression is evaluated to a method expression, which is passed to
-the tag handler. The method represented by the method expression can
-then be invoked later.
+The expression is evaluated to a method expression, which is passed to the tag handler.
+The method represented by the method expression can then be invoked later.
+
 * With text only:
 +
 [source,xml]
+----
 <some:tag value="sometext"/>
+----
 +
-Method expressions support literals primarily to support `action`
-attributes in Jakarta Faces technology. When the method referenced by
-this method expression is invoked, the method returns the `String`
-literal, which is then converted to the expected return type, as
-defined in the tag's tag library descriptor.
+Method expressions support literals primarily to support `action` attributes in Jakarta Faces technology.
+When the method referenced by this method expression is invoked, the method returns the `String` literal, which is then converted to the expected return type, as defined in the tag's tag library descriptor.
 
 === Lambda Expressions
 
-A lambda expression is a value expression with parameters. The syntax
-is similar to that of the lambda expression in the Java programming
-language, except that in the EL, the body of the lambda expression is
-an EL expression.
+A lambda expression is a value expression with parameters.
+The syntax is similar to that of the lambda expression in the Java programming language, except that in the EL, the body of the lambda expression is an EL expression.
 
-For basic information on lambda expressions, see
-`http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html`.
+For basic information on lambda expressions, see https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html[^].
 
 [NOTE]
 Lambda expressions are part of Java SE 8
 
-A lambda expression uses the arrow token (`\->`) operator. The
-identifiers to the left of the operator are called lambda parameters.
-The body, to the right of the operator, must be an EL expression. The
-lambda parameters are enclosed in parentheses; the parentheses can be
-omitted if there is only one parameter. Here are some examples:
+A lambda expression uses the arrow token (`\->`) operator.
+The identifiers to the left of the operator are called lambda parameters.
+The body, to the right of the operator, must be an EL expression.
+The lambda parameters are enclosed in parentheses; the parentheses can be omitted if there is only one parameter.
+Here are some examples:
 
 [source,java]
 ----
@@ -353,20 +331,23 @@ x -> x+1
 () -> 64
 ----
 
-A lambda expression behaves like a function. It can be invoked
-immediately. For example, the following invocation evaluates to 7:
+A lambda expression behaves like a function.
+It can be invoked immediately.
+For example, the following invocation evaluates to 7:
 
 [source,java]
+----
 ((x, y) -> x + y)(3, 4)
+----
 
-You can use a lambda expression in conjunction with the assignment and
-semicolon operators. For example, the following code assigns the
-previous lambda expression to a variable and then invokes it. The
-result is again 7:
+You can use a lambda expression in conjunction with the assignment and semicolon operators.
+For example, the following code assigns the previous lambda expression to a variable and then invokes it.
+The result is again 7:
 
 [source,java]
+----
 v = (x, y) -> x + y; v(3, 4)
+----
 
-A lambda expression can also be passed as an argument to a method and
-be invoked in the method. It can also be nested in another lambda
-expression.
+A lambda expression can also be passed as an argument to a method and be invoked in the method.
+It can also be nested in another lambda expression.

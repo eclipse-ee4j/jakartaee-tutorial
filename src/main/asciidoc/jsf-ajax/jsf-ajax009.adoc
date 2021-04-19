@@ -1,10 +1,8 @@
 == Grouping of Components
 
-The previous sections describe how to associate a single UI component
-with Ajax functionality. You can also associate Ajax with more than one
-component at a time by grouping them together on a page. The following
-example shows how a number of components can be grouped by using the
-`f:ajax` tag:
+The previous sections describe how to associate a single UI component with Ajax functionality.
+You can also associate Ajax with more than one component at a time by grouping them together on a page.
+The following example shows how a number of components can be grouped by using the `f:ajax` tag:
 
 [source,xml]
 ----
@@ -16,10 +14,9 @@ example shows how a number of components can be grouped by using the
 </f:ajax>
 ----
 
-In the example, neither component is associated with any Ajax `event`
-or `render` attributes yet. Therefore, no action will take place in
-case of user input. You can associate the above components with an
-`event` and a `render` attribute as follows:
+In the example, neither component is associated with any Ajax `event` or `render` attributes yet.
+Therefore, no action will take place in case of user input.
+You can associate the above components with an `event` and a `render` attribute as follows:
 
 [source,xml]
 ----
@@ -31,10 +28,8 @@ case of user input. You can associate the above components with an
 </f:ajax>
 ----
 
-In the updated example, when the user clicks either component, the
-updated results will be displayed for all components. You can further
-fine-tune the Ajax action by adding specific events to each of the
-components, in which case Ajax functionality becomes cumulative.
+In the updated example, when the user clicks either component, the updated results will be displayed for all components.
+You can further fine-tune the Ajax action by adding specific events to each of the components, in which case Ajax functionality becomes cumulative.
 Consider the following example:
 
 [source,xml]
@@ -48,5 +43,4 @@ Consider the following example:
 </f:ajax>
 ----
 
-Now the button component will fire an Ajax action in case of a
-`mouseover` event as well as a mouse-click event.
+Now the button component will fire an Ajax action in case of a `mouseover` event as well as a mouse-click event.

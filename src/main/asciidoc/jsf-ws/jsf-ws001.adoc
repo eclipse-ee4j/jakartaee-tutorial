@@ -1,12 +1,7 @@
-== About WebSockets in JSF
+== About WebSockets in Jakarta Faces
 
-You use the `f:websocket tag` in a view to allow server-side
-communications to be pushed to all instances of a socket containing the
-same channel name. When the communication is received, an `onmessage`,
-client-side JavaScript event handler can be set that is called whenever
-a push arrives from the server.
+You use the `f:websocket tag` in a view to allow server-side communications to be pushed to all instances of a socket containing the same channel name.
+When the communication is received, an `onmessage`, client-side JavaScript event handler can be set that is called whenever a push arrives from the server.
 
-The server side of a WebSocket communication has the ability to push
-out messages. You can do this using `jakarta.faces.push.PushContext`,
-which is an injectable context, allowing a server push to a named
-channel.
+The server side of a WebSocket communication has the ability to push out messages.
+You can do this using `jakarta.faces.push.PushContext`, which is an injectable context, allowing a server push to a named channel.

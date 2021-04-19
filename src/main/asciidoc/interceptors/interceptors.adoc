@@ -1,12 +1,9 @@
 = Using Jakarta EE Interceptors
 
-This chapter discusses how to create interceptor classes and methods
-that interpose on method invocations or lifecycle events on a target
-class.
+This chapter discusses how to create interceptor classes and methods that interpose on method invocations or lifecycle events on a target class.
 
 include::interceptors001.adoc[]
 
 include::interceptors002.adoc[]
 
 include::interceptors003.adoc[]
-
