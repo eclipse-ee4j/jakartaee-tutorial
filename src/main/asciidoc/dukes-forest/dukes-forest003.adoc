@@ -4,48 +4,41 @@ You can use NetBeans IDE or Maven to build and deploy Duke's Forest.
 
 === To Build and Deploy the Duke's Forest Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>), as well as the database
-server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/case-studies
 ----
+
 . Select the `dukes-forest` folder.
+
 . Select the Open Required Projects check box and click Open Project.
+
 . Right-click the `dukes-forest` folder and select Build.
 +
-This task configures the server, creates and populates the database,
-builds all the subprojects, assembles them into JAR and WAR files, and
-deploys the `dukes-payment`, `dukes-store,` and `dukes-shipment`
-applications.
+This task configures the server, creates and populates the database, builds all the subprojects, assembles them into JAR and WAR files, and deploys the `dukes-payment`, `dukes-store,` and `dukes-shipment` applications.
 +
-To configure the server, this task creates a JDBC security realm named
-`jdbcRealm`, enables default principal-to-role mapping, and enables
-single sign-on (SSO) for the HTTP Service.
+To configure the server, this task creates a JDBC security realm named `jdbcRealm`, enables default principal-to-role mapping, and enables single sign-on (SSO) for the HTTP Service.
 
 === To Build and Deploy the Duke's Forest Application Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>), as well as the database
-server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/case-studies/dukes-forest/
 ----
-. Enter the following command to configure the server, create and
-populate the database, build all the subprojects, assemble them into
-JAR and WAR files, and deploy the `dukes-payment`, `dukes-store,` and
-`dukes-shipment` applications:
+
+. Enter the following command to configure the server, create and populate the database, build all the subprojects, assemble them into JAR and WAR files, and deploy the `dukes-payment`, `dukes-store,` and `dukes-shipment` applications:
 +
 [source,shell]
 ----
 mvn install
 ----
 +
-To configure the server, this task creates a JDBC security realm named
-`jdbcRealm`, enables default principal-to-role mapping, and enables
-single sign-on (SSO) for the HTTP Service.
+To configure the server, this task creates a JDBC security realm named `jdbcRealm`, enables default principal-to-role mapping, and enables single sign-on (SSO) for the HTTP Service.
