@@ -32,7 +32,7 @@
     <properties>
 	    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.site.skip>true</maven.site.skip>
-        <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+        <asciidoctor.maven.plugin.version>2.1.0</asciidoctor.maven.plugin.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:eclipse-ee4j/jakartaee-tutorial.git</connection>
@@ -72,6 +72,7 @@
                                 <idprefix />
                                 <idseparator>-</idseparator>
                                 <docinfo1>true</docinfo1>
+                                <imagesDir>images</imagesDir>
                             </attributes>
                         </configuration>
                     </execution>

@@ -408,7 +408,7 @@ You can also click Reset to return to the initial page values.
 5.  Examine the server log output.
 +
 In NetBeans IDE, the output is visible in the GlassFish Server Output
-tab. Otherwise, view domain-dir`/logs/server.log`.
+tab. Otherwise, view `domain-dir/logs/server.log`.
 +
 The output from each interceptor appears in the log, followed by the
 additional logger output defined by the constructor and methods:

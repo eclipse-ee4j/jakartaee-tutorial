@@ -210,7 +210,7 @@ file:
 
 This configuration means that in the Facelets pages, messages are
 retrieved using the prefix `bundle` with the key found in the
-`Messages_`locale`.properties` file, as in the following example from
+`Messages_'locale'.properties` file, as in the following example from
 the `index.xhtml` page:
 
 [source,xml]

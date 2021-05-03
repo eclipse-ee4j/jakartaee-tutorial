@@ -70,7 +70,7 @@ partial request) that is not mapped to a web component. For example,
 suppose that you define a welcome file `welcome.html`. When a client
 requests a URL such as `_host:port/webapp/directory_`, where `_directory_`
 is not mapped to a servlet or XHTML page, the file
-`_host:port/webapp/directory/_`welcome.html` is returned to the
+`_host:port/webapp/directory/_{zwsp}welcome.html` is returned to the
 client.
 
 If a web container receives a valid partial request, the web container

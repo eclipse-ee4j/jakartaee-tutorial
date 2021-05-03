@@ -3,7 +3,7 @@
 == Working with Digital Certificates
 
 Digital certificates for GlassFish Server have already been generated
-and can be found in the directory domain-dir`/config/`. These digital
+and can be found in the directory `domain-dir/config/`. These digital
 certificates are self-signed and are intended for use in a development
 environment; they are not intended for production purposes. For
 production purposes, generate your own certificates and have them signed
@@ -71,7 +71,7 @@ Advanced Security Topics] for a link to the `keytool` documentation.
 === Creating a Server Certificate
 
 A server certificate has already been created for GlassFish Server and
-can be found in the domain-dir`/config/` directory. The server
+can be found in the `domain-dir/config/` directory. The server
 certificate is in `keystore.jks`. The `cacerts.jks` file contains all
 the trusted certificates, including client certificates.
 
@@ -139,7 +139,7 @@ java-home/bin/keytool -genkey -alias server-alias -keyalg RSA
 When you press Enter, `keytool` prompts you to enter the server name,
 organizational unit, organization, locality, state, and country code.
 +
-You must enter the server name in response to `keytool`'s first prompt,
+You must enter the server name in response to `keytool`{zwsp}'s first prompt,
 in which it asks for first and last names. For testing purposes, this
 can be `localhost`.
 2.  Export the generated server certificate in `keystore.jks` into the

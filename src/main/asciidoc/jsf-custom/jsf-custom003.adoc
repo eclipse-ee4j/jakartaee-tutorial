@@ -232,7 +232,7 @@ in the application scope, as shown in this `bookstore:area` tag from
 To reference the `ImageArea` model object bean values from the component
 class, you implement a `getValue` method in the component class. This
 method calls `super.getValue`. The superclass of
-tut-install`/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/components/AreaComponent.java`,
+`_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/components/AreaComponent.java`,
 `UIOutput`, has a `getValue` method that does the work of finding the
 `ImageArea` object associated with `AreaComponent`. The `AreaRenderer`
 class, which needs to render the `alt`, `shape`, and `coords` values
@@ -283,9 +283,9 @@ hotspots.
 
 
 The Duke's Bookstore source directory, called bookstore-dir, is
-tut-install`/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`.
+`_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`.
 The event and listener classes are located in
-bookstore-dir`/listeners/`. The component classes are located in
-bookstore-dir`/components/`. The renderer classes are located in
-bookstore-dir`/renderers/`. `ImageArea` is located in
-bookstore-dir`/model/`.
+`bookstore-dir/listeners/`. The component classes are located in
+`bookstore-dir/components/`. The renderer classes are located in
+`bookstore-dir/renderers/`. `ImageArea` is located in
+`bookstore-dir/model/`.

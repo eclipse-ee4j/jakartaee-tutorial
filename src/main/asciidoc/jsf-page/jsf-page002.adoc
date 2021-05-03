@@ -20,7 +20,7 @@ component tags shown in link:#BNAQH[Table 10-1].
 of data in an HTML table |A column in a table
 
 |`h:commandButton` |Submits a form to the application |An HTML
-`<input type=`value`>` element for which the `type` value can be
+`<input type="value">` element for which the `type` value can be
 `"submit"`, `"reset"`, or `"image"` |A button
 
 |`h:commandLink` |Links to another page or location on a page |An HTML
@@ -1659,7 +1659,7 @@ link:#GIQWQ[Using View Parameters to Configure Bookmarkable URLs].
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `bookmarks` example. The source code for this example is in the
-tut-install`/examples/web/jsf/bookmarks/` directory.
+`_tut-install_/examples/web/jsf/bookmarks/` directory.
 
 [[CHDIEHEB]][[to-build-package-and-deploy-the-bookmarks-example-using-netbeans-ide]]
 
