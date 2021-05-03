@@ -15,7 +15,7 @@ asadmin add-resources glassfish-resources.xml
 ----
 
 The `glassfish-resources.xml` file can be created in any project using
-NetBeans IDE or by hand. Some of the Jakarta Messaging examples use this approach to
+Apache NetBeans IDE or by hand. Some of the Jakarta Messaging examples use this approach to
 resource creation. A file for creating the resources needed for the Messaging
 simple producer example can be found in the
 `jms/simple/producer/src/main/setup` directory.

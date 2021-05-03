@@ -12,7 +12,7 @@ In the JDBC API, databases are accessed by using `DataSource` objects. A
 real-world data source that it represents. These properties include such
 information as the location of the database server, the name of the
 database, the network protocol to use to communicate with the server,
-and so on. In GlassFish Server, a data source is called a JDBC resource.
+and so on. In Eclipse GlassFish Server, a data source is called a JDBC resource.
 
 Applications access a data source by using a connection, and a
 `DataSource` object can be thought of as a factory for connections to
