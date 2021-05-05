@@ -1,9 +1,7 @@
 == Injecting Beans
 
-To use the beans you create, you inject them into yet another bean that
-can then be used by an application, such as a Jakarta Faces
-application. For example, you might create a bean called `Printer` into
-which you would inject one of the `Greeting` beans:
+To use the beans you create, you inject them into yet another bean that can then be used by an application, such as a Jakarta Faces application.
+For example, you might create a bean called `Printer` into which you would inject one of the `Greeting` beans:
 
 [source,java]
 ----
@@ -16,8 +14,8 @@ public class Printer {
 }
 ----
 
-This code injects the `@Default` `Greeting` implementation into the
-bean. The following code injects the `@Informal` implementation:
+This code injects the `@Default` `Greeting` implementation into the bean.
+The following code injects the `@Informal` implementation:
 
 [source,java]
 ----
@@ -30,13 +28,10 @@ public class Printer {
 }
 ----
 
-More is needed for the complete picture of this bean. Its use of scope
-needs to be understood. In addition, for a Jakarta Faces
-application, the bean needs to be accessible through the EL.
+More is needed for the complete picture of this bean.
+Its use of scope needs to be understood.
+In addition, for a Jakarta Faces application, the bean needs to be accessible through the EL.
 
-Now that you can identify the target of the injection, it is important
-to understand what can be injected and in what context. Faces 2.3 and
-above provides producers that enable most important Faces artifacts to
-be injected. For detailed information, see the package
-https://jakarta.ee/specifications/faces/3.0/apidocs/[javadoc^] for
-`jakarta.faces.annotation`.
+Now that you can identify the target of the injection, it is important to understand what can be injected and in what context.
+Faces 2.3 and above provides producers that enable most important Faces artifacts to be injected.
+For detailed information, see the package https://jakarta.ee/specifications/faces/3.0/apidocs/[javadoc^] for `jakarta.faces.annotation`.

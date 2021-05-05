@@ -1,82 +1,57 @@
 == Using Scopes
 
-For a web application to use a bean that injects another bean class,
-the bean needs to be able to hold state over the duration of the user's
-interaction with the application. The way to define this state is to
-give the bean a scope. You can give an object any of the scopes
-described in <<scopes>>, depending on how you are using it.
+For a web application to use a bean that injects another bean class, the bean needs to be able to hold state over the duration of the user's interaction with the application.
+The way to define this state is to give the bean a scope.
+You can give an object any of the scopes described in <<scopes>>, depending on how you are using it.
 
 [[scopes]]
-[width="99%",cols="25%,25%a,50%",title="Scopes"]
+.Scopes
+[width="99%",cols="25%,25%,50%"]
 |===
 |Scope |Annotation |Duration
 
-|Request |`@RequestScoped` |A user's interaction with a web application
-in a single HTTP request.
+|Request |`@RequestScoped` |A user's interaction with a web application in a single HTTP request.
 
-|Session |`@SessionScoped` |A user's interaction with a web application
-across multiple HTTP requests.
+|Session |`@SessionScoped` |A user's interaction with a web application across multiple HTTP requests.
 
-|Application |`@ApplicationScoped` |Shared state across all users'
-interactions with a web application.
+|Application |`@ApplicationScoped` |Shared state across all users' interactions with a web application.
 
-|Dependent |`@Dependent` |The default scope if none is specified; it
-means that an object exists to serve exactly one client (bean) and has
-the same lifecycle as that client (bean).
+|Dependent |`@Dependent` |The default scope if none is specified; it means that an object exists to serve exactly one client (bean) and has the same lifecycle as that client (bean).
 
-|Conversation |`@ConversationScoped` |A user's interaction with a
-servlet, including Jakarta Faces applications. The conversation scope
-exists within developer-controlled boundaries that extend it across
-multiple requests for long-running conversations. All long-running
-conversations are scoped to a particular HTTP servlet session and may
-not cross session boundaries.
+|Conversation |`@ConversationScoped` |A user's interaction with a servlet, including Jakarta Faces applications.
+The conversation scope exists within developer-controlled boundaries that extend it across multiple requests for long-running conversations.
+All long-running conversations are scoped to a particular HTTP servlet session and may not cross session boundaries.
 |===
 
-The first three scopes are defined by both Jakarta Context and
-Dependency Injection and the Jakarta Faces specification. The last two
-are defined by Jakarta Context and Dependency Injection.
+The first three scopes are defined by both Jakarta Context and Dependency Injection and the Jakarta Faces specification.
+The last two are defined by Jakarta Context and Dependency Injection.
 
-All predefined scopes except `@Dependent` are contextual scopes. CDI
-places beans of contextual scope in the context whose lifecycle is
-defined by the Jakarta EE specifications. For example, a session
-context and its beans exist during the lifetime of an HTTP session.
-Injected references to the beans are contextually aware. The references
-always apply to the bean that is associated with the context for the
-thread that is making the reference. The CDI container ensures that the
-objects are created and injected at the correct time as determined by
-the scope that is specified for these objects.
+All predefined scopes except `@Dependent` are contextual scopes.
+CDI places beans of contextual scope in the context whose lifecycle is defined by the Jakarta EE specifications.
+For example, a session context and its beans exist during the lifetime of an HTTP session.
+Injected references to the beans are contextually aware.
+The references always apply to the bean that is associated with the context for the thread that is making the reference.
+The CDI container ensures that the objects are created and injected at the correct time as determined by the scope that is specified for these objects.
 
-You can also define and implement custom scopes, but that is an
-advanced topic. Custom scopes are likely to be used by those who
-implement and extend the CDI specification.
+You can also define and implement custom scopes, but that is an advanced topic.
+Custom scopes are likely to be used by those who implement and extend the CDI specification.
 
-A scope gives an object a well-defined lifecycle context. A scoped
-object can be automatically created when it is needed and automatically
-destroyed when the context in which it was created ends. Moreover, its
-state is automatically shared by any clients that execute in the same
-context.
+A scope gives an object a well-defined lifecycle context.
+A scoped object can be automatically created when it is needed and automatically destroyed when the context in which it was created ends.
+Moreover, its state is automatically shared by any clients that execute in the same context.
 
-Jakarta EE components, such as servlets and enterprise beans, and
-JavaBeans components do not by definition have a well-defined scope.
+Jakarta EE components, such as servlets and enterprise beans, and JavaBeans components do not by definition have a well-defined scope.
 These components are one of the following:
 
-* Singletons, such as enterprise singleton beans, whose state is shared
-among all clients
+* Singletons, such as enterprise singleton beans, whose state is shared among all clients
 
-* Stateless objects, such as servlets and stateless session beans,
-which do not contain client-visible state
+* Stateless objects, such as servlets and stateless session beans, which do not contain client-visible state
 
-* Objects that must be explicitly created and destroyed by their
-client, such as JavaBeans components and stateful session beans, whose
-state is shared by explicit reference passing between clients
+* Objects that must be explicitly created and destroyed by their client, such as JavaBeans components and stateful session beans, whose state is shared by explicit reference passing between clients
 
-However, if you create a Jakarta EE component that is a managed bean,
-then it becomes a scoped object, which exists in a well-defined
-lifecycle context.
+However, if you create a Jakarta EE component that is a managed bean, then it becomes a scoped object, which exists in a well-defined lifecycle context.
 
-The web application for the `Printer` bean will use a simple request
-and response mechanism, so the managed bean can be annotated as
-follows:
+The web application for the `Printer` bean will use a simple request and response mechanism, so the managed bean can be annotated as follows:
 
 [source,java]
 ----
@@ -91,6 +66,4 @@ public class Printer {
 }
 ----
 
-Beans that use session, application, or conversation scope must be
-serializable, but beans that use request scope do not have to be
-serializable.
+Beans that use session, application, or conversation scope must be serializable, but beans that use request scope do not have to be serializable.

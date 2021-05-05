@@ -1,22 +1,19 @@
 == Submitting Jobs to the Batch Runtime
 
-The `JobOperator` interface in the `jakarta.batch.operations` package
-enables you to submit jobs to the batch runtime and obtain information
-about existing jobs. This interface provides the following
-functionality.
+The `JobOperator` interface in the `jakarta.batch.operations` package enables you to submit jobs to the batch runtime and obtain information about existing jobs.
+This interface provides the following functionality.
 
 * Obtain the names of all known jobs.
+
 * Start, stop, restart, and abandon jobs.
+
 * Obtain job instances and job executions.
 
-The `BatchRuntime` class in the `jakarta.batch.runtime` package
-provides the `getJobOperator` factory method to obtain `JobOperator`
-objects.
+The `BatchRuntime` class in the `jakarta.batch.runtime` package provides the `getJobOperator` factory method to obtain `JobOperator` objects.
 
 === Starting a Job
 
-The following example code demonstrates how to obtain a `JobOperator`
-object and submit a batch job:
+The following example code demonstrates how to obtain a `JobOperator` object and submit a batch job:
 
 [source,java]
 ----
@@ -27,25 +24,24 @@ props.setProperty("parameter1", "value1");
 long execID = jobOperator.start("simplejob", props);
 ----
 
-The first argument of the `JobOperator.start` method is the name of the
-job as specified in its job definition file. The second parameter is a
-`Properties` object that represents the parameters for this job
-execution. You can use job parameters to pass to a job information that
-is only known at runtime.
+The first argument of the `JobOperator.start` method is the name of the job as specified in its job definition file.
+The second parameter is a `Properties` object that represents the parameters for this job execution.
+You can use job parameters to pass to a job information that is only known at runtime.
 
 === Checking the Status of a Job
 
-The `JobExecution` interface in the `jakarta.batch.runtime` package
-provides methods to obtain information about submitted jobs. This
-interface provides the following functionality.
+The `JobExecution` interface in the `jakarta.batch.runtime` package provides methods to obtain information about submitted jobs.
+This interface provides the following functionality.
 
 * Obtain the batch and exit status of a job execution.
+
 * Obtain the time the execution was started, updated, or ended.
+
 * Obtain the job name.
+
 * Obtain the execution ID.
 
-The following example code demonstrates how to obtain the batch status
-of a job using its execution ID:
+The following example code demonstrates how to obtain the batch status of a job using its execution ID:
 
 [source,java]
 ----
@@ -55,12 +51,7 @@ String status = jobExec.getBatchStatus().toString();
 
 === Invoking the Batch Runtime in Your Application
 
-The component from which you invoke the batch runtime depends on the
-architecture of your particular application. For example, you can
-invoke the batch runtime from an enterprise bean, a servlet, a managed
-bean, and so on.
+The component from which you invoke the batch runtime depends on the architecture of your particular application.
+For example, you can invoke the batch runtime from an enterprise bean, a servlet, a managed bean, and so on.
 
-See <<the-webserverlog-example-application>> and
-<<the-phonebilling-example-application>> for details on how to invoke
-the batch runtime from a managed bean driven by a Jakarta Faces user
-interface.
+See <<the-webserverlog-example-application>> and <<the-phonebilling-example-application>> for details on how to invoke the batch runtime from a managed bean driven by a Jakarta Faces user interface.

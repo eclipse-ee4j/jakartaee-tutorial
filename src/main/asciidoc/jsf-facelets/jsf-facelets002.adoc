@@ -1,39 +1,25 @@
 == The Lifecycle of a Facelets Application
 
-The Jakarta Faces specification defines the lifecycle of a Jakarta
-Faces application. For more information on this lifecycle, see
-<<the-lifecycle-of-a-jakarta-faces-application>>. The following steps
-describe that process as applied to a Facelets-based application.
+The Jakarta Faces specification defines the lifecycle of a Jakarta Faces application.
+For more information on this lifecycle, see <<the-lifecycle-of-a-jakarta-faces-application>>.
+The following steps describe that process as applied to a Facelets-based application.
 
-. When a client, such as a browser, makes a new request to a page that
-is created using Facelets, a new component tree or
-`jakarta.faces.component.UIViewRoot` is created and placed in the
-`FacesContext`.
+. When a client, such as a browser, makes a new request to a page that is created using Facelets, a new component tree or `jakarta.faces.component.UIViewRoot` is created and placed in the `FacesContext`.
 
-. [[step-2-of-lifecycle-of-facelets, Step 2]]
-+
-The `UIViewRoot` is applied to the Facelets, and the view is populated
-with components for rendering.
+. [[step-2-of-lifecycle-of-facelets, Step 2]] The `UIViewRoot` is applied to the Facelets, and the view is populated with components for rendering.
 
 . The newly built view is rendered back as a response to the client.
 
 . On rendering, the state of this view is stored for the next request.
 The state of input components and form data is stored.
 
-. The client may interact with the view and request another view or
-change from the Jakarta Faces application. At this time, the saved view
-is restored from the stored state.
+. The client may interact with the view and request another view or change from the Jakarta Faces application.
+At this time, the saved view is restored from the stored state.
 
-. The restored view is once again passed through the Jakarta Faces
-lifecycle, which eventually will either generate a new view or
-re-render the current view if there were no validation problems and no
-action was triggered.
+. The restored view is once again passed through the Jakarta Faces lifecycle, which eventually will either generate a new view or re-render the current view if there were no validation problems and no action was triggered.
 
-. If the same view is requested, the stored view is rendered once
-again.
+. If the same view is requested, the stored view is rendered once again.
 
-. If a new view is requested, then the process described in
-<<step-2-of-lifecycle-of-facelets>> is continued.
+. If a new view is requested, then the process described in <<step-2-of-lifecycle-of-facelets>> is continued.
 
 . The new view is then rendered back as a response to the client.
-

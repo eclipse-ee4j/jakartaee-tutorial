@@ -1,30 +1,21 @@
 == The dukeetf2 Example Application
 
-The `dukeetf2` example application, located in the
-`_tut-install_/examples/web/websocket/dukeetf2/` directory,
-demonstrates how to use a WebSocket endpoint to provide data updates to
-web clients. The example resembles a service that provides periodic
-updates on the price and trading volume of an electronically traded
-fund (ETF).
+The `dukeetf2` example application, located in the `_tut-install_/examples/web/websocket/dukeetf2/` directory, demonstrates how to use a WebSocket endpoint to provide data updates to web clients.
+The example resembles a service that provides periodic updates on the price and trading volume of an electronically traded fund (ETF).
 
 === Architecture of the dukeetf2 Sample Application
 
-The `dukeetf2` example application consists of a WebSocket endpoint, an
-enterprise bean, and an HTML page.
+The `dukeetf2` example application consists of a WebSocket endpoint, an enterprise bean, and an HTML page.
 
-* The endpoint accepts connections from clients and sends them updates
-when new data for price and trading volume becomes available.
-* The enterprise bean updates the price and volume information once
-every second.
-* The HTML page uses JavaScript code to connect to the WebSocket
-endpoint, parse incoming messages, and update the price and volume
-information without reloading the page.
+* The endpoint accepts connections from clients and sends them updates when new data for price and trading volume becomes available.
+
+* The enterprise bean updates the price and volume information once every second.
+
+* The HTML page uses JavaScript code to connect to the WebSocket endpoint, parse incoming messages, and update the price and volume information without reloading the page.
 
 ==== The Endpoint
 
-The WebSocket endpoint is implemented in the `ETFEndpoint` class, which
-stores all connected sessions in a queue and provides a method that the
-enterprise bean calls when there is new information available to send:
+The WebSocket endpoint is implemented in the `ETFEndpoint` class, which stores all connected sessions in a queue and provides a method that the enterprise bean calls when there is new information available to send:
 
 [source,java]
 ----
@@ -51,8 +42,7 @@ public class ETFEndpoint {
 }
 ----
 
-The lifecycle methods of the endpoint add and remove sessions to and
-from the queue:
+The lifecycle methods of the endpoint add and remove sessions to and from the queue:
 
 [source,java]
 ----
@@ -85,8 +75,7 @@ public class ETFEndpoint {
 
 ==== The Enterprise Bean
 
-The enterprise bean uses the timer service to generate new price and
-volume information every second:
+The enterprise bean uses the timer service to generate new price and volume information every second:
 
 [source,java]
 ----
@@ -118,15 +107,13 @@ public class PriceVolumeBean {
 }
 ----
 
-The enterprise bean calls the `send` method of the `ETFEndpoint` class
-in the timeout method. See <<using-the-timer-service>> in xref:
-<<running-the-enterprise-bean-examples>> for more information on the
-timer service.
+The enterprise bean calls the `send` method of the `ETFEndpoint` class in the timeout method.
+See <<using-the-timer-service>> in xref: <<running-the-enterprise-bean-examples>> for more information on the timer service.
 
 ==== The HTML Page
 
-The HTML page consists of a table and some JavaScript code. The table
-contains two fields referenced from JavaScript code:
+The HTML page consists of a table and some JavaScript code.
+The table contains two fields referenced from JavaScript code:
 
 [source,html]
 ----
@@ -146,9 +133,8 @@ contains two fields referenced from JavaScript code:
 </html>
 ----
 
-The JavaScript code uses the WebSocket API to connect to the server
-endpoint and to designate a callback method for incoming messages. The
-callback method updates the page with the new information.
+The JavaScript code uses the WebSocket API to connect to the server endpoint and to designate a callback method for incoming messages.
+The callback method updates the page with the new information.
 
 [source,javascript]
 ----
@@ -165,60 +151,59 @@ function onMessage(evt) {
 window.addEventListener("load", connect, false);
 ----
 
-The WebSocket API is supported by most modern browsers, and it is
-widely used in HTML5 web client development.
+The WebSocket API is supported by most modern browsers, and it is widely used in HTML5 web client development.
 
 === Running the dukeetf2 Example Application
 
-This section describes how to run the `dukeetf2` example application
-using NetBeans IDE and from the command line.
+This section describes how to run the `dukeetf2` example application using NetBeans IDE and from the command line.
 
 ==== To Run the dukeetf2 Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/websocket
 ----
+
 . Select the `dukeetf2` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `dukeetf2` project and select
-*Run*.
+
+. In the *Projects* tab, right-click the `dukeetf2` project and select *Run*.
 +
-This command builds and packages the application into a WAR file
-(`dukeetf2.war`) located in the `target/` directory, deploys it to the
-server, and launches a web browser window with the following URL:
+This command builds and packages the application into a WAR file (`dukeetf2.war`) located in the `target/` directory, deploys it to the server, and launches a web browser window with the following URL:
 +
 ----
 http://localhost:8080/dukeetf2/
 ----
 +
-Open the same URL on a different web browser tab or window to see how
-both pages get price and volume updates simultaneously.
+Open the same URL on a different web browser tab or window to see how both pages get price and volume updates simultaneously.
 
 ==== To Run the dukeetf2 Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/web/websocket/dukeetf2/
 ----
+
 . Enter the following command to deploy the application:
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Open a web browser window and enter the following URL:
 +
 ----
 http://localhost:8080/dukeetf2/
 ----
 +
-Open the same URL on a different web browser tab or window to see how
-both pages get price and volume updates simultaneously.
+Open the same URL on a different web browser tab or window to see how both pages get price and volume updates simultaneously.

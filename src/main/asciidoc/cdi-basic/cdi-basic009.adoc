@@ -1,7 +1,6 @@
 == Giving Beans EL Names
 
-To make a bean accessible through the EL, use the `@Named` built-in
-qualifier:
+To make a bean accessible through the EL, use the `@Named` built-in qualifier:
 
 [source,java]
 ----
@@ -18,17 +17,14 @@ public class Printer {
 }
 ----
 
-The `@Named` qualifier allows you to access the bean by using the bean
-name, with the first letter in lowercase. For example, a Facelets page
-would refer to the bean as `printer`.
+The `@Named` qualifier allows you to access the bean by using the bean name, with the first letter in lowercase.
+For example, a Facelets page would refer to the bean as `printer`.
 
-You can specify an argument to the `@Named` qualifier to use a
-nondefault name:
+You can specify an argument to the `@Named` qualifier to use a nondefault name:
 
 [source,java]
 ----
 @Named("MyPrinter")
 ----
 
-With this annotation, the Facelets page would refer to the bean as
-`MyPrinter`.
+With this annotation, the Facelets page would refer to the bean as `MyPrinter`.

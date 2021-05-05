@@ -1,28 +1,20 @@
 == The simplegreeting CDI Example
 
-The `simplegreeting` example illustrates some of the most basic
-features of CDI: scopes, qualifiers, bean injection, and accessing a
-managed bean in a Jakarta Faces application. When you run the example,
-you click a button that presents either a formal or an informal
-greeting, depending on how you edited one of the classes. The example
-includes four source files, a Facelets page and template, and
-configuration files.
+The `simplegreeting` example illustrates some of the most basic features of CDI: scopes, qualifiers, bean injection, and accessing a managed bean in a Jakarta Faces application.
+When you run the example, you click a button that presents either a formal or an informal greeting, depending on how you edited one of the classes.
+The example includes four source files, a Facelets page and template, and configuration files.
 
 === The simplegreeting Source Files
 
 The four source files for the `simplegreeting` example are:
 
-* The default `Greeting` class, shown in
-<<beans-as-injectable-objects>>
-* The `@Informal` qualifier interface definition and the
-`InformalGreeting` class that implements the interface, both shown in
-<<using-qualifiers>>
-* The `Printer` managed bean class, which injects one of the two
-interfaces, shown in full in <<adding-setter-and-getter-methods>>
+* The default `Greeting` class, shown in <<beans-as-injectable-objects>>
 
-The source files are located in the
-`_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting`
-directory.
+* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in <<using-qualifiers>>
+
+* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in <<adding-setter-and-getter-methods>>
+
+The source files are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
 
 === The Facelets Template and Page
 
@@ -64,8 +56,8 @@ The template page, `template.xhtml`, looks like this:
     </body>
 </html>
 ----
-. To create the Facelets page, redefine the title and head, then add a
-small form to the content:
+
+. To create the Facelets page, redefine the title and head, then add a small form to the content:
 +
 [source,xml]
 ----
@@ -94,15 +86,12 @@ small form to the content:
 </html>
 ----
 +
-The form asks the user to enter a name. The button is labeled *Say Hello*,
-and the action defined for it is to call the `createSalutation` method
-of the `Printer` managed bean. This method in turn calls the `greet`
-method of the defined `Greeting` class.
+The form asks the user to enter a name.
+The button is labeled *Say Hello*, and the action defined for it is to call the `createSalutation` method of the `Printer` managed bean.
+This method in turn calls the `greet` method of the defined `Greeting` class.
 +
-The output text for the form is the value of the greeting returned by
-the setter method. Depending on whether the default or the `@Informal`
-version of the greeting is injected, this is one of the following, where
-`name` is the name entered by the user:
+The output text for the form is the value of the greeting returned by the setter method.
+Depending on whether the default or the `@Informal` version of the greeting is injected, this is one of the following, where `name` is the name entered by the user:
 +
 ----
 Hello, name.
@@ -110,11 +99,9 @@ Hello, name.
 Hi, name!
 ----
 +
-The Facelets page and template are located in the
-`_tut-install_/examples/cdi/simplegreeting/src/main/webapp/` directory.
+The Facelets page and template are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/webapp/` directory.
 +
-The simple CSS file that is used by the Facelets page is in the
-following location:
+The simple CSS file that is used by the Facelets page is in the following location:
 +
 ----
 tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.css
@@ -122,25 +109,32 @@ tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.cs
 
 === Running the simplegreeting Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `simplegreeting` application.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `simplegreeting` application.
 
 ==== To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/cdi
 ----
+
 . Select the `simplegreeting` folder.
+
 . Click *Open Project*.
+
 . To modify the `Printer.java` file, perform these steps:
+
 .. Expand the *Source Packages* node.
+
 .. Expand the `greetings` node.
+
 .. Double-click the `Printer.java` file.
+
 .. In the editor, comment out the `@Informal` annotation:
 +
 [source,java]
@@ -149,23 +143,23 @@ tut-install/examples/cdi
 //@Informal
 Greeting greeting;
 ----
+
 .. Save the file.
-. In the *Projects* tab, right-click the `simplegreeting` project and
-select *Build*.
+
+. In the *Projects* tab, right-click the `simplegreeting` project and select *Build*.
 +
-This command builds and packages the application into a WAR file,
-`simplegreeting.war`, located in the `target` directory, and then
-deploys it to GlassFish Server.
+This command builds and packages the application into a WAR file, `simplegreeting.war`, located in the `target` directory, and then deploys it to GlassFish Server.
 
 ==== To Build, Package, and Deploy the simplegreeting Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/cdi/simplegreeting/
 ----
+
 . Enter the following command to deploy the application:
 +
 [source,shell]
@@ -173,9 +167,7 @@ tut-install/examples/cdi/simplegreeting/
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file,
-`simplegreeting.war`, located in the `target` directory, and then
-deploys it to GlassFish Server.
+This command builds and packages the application into a WAR file, `simplegreeting.war`, located in the `target` directory, and then deploys it to GlassFish Server.
 
 ==== To Run the simplegreeting Example
 
@@ -186,20 +178,20 @@ http://localhost:8080/simplegreeting
 ----
 +
 The *Simple Greeting* page opens.
+
 . Enter a name in the field.
 +
 For example, suppose that you enter `Duke`.
+
 . Click *Say Hello*.
 +
-If you did not modify the `Printer.java` file, then the following text string
-appears below the button:
+If you did not modify the `Printer.java` file, then the following text string appears below the button:
 +
 ----
 Hi, Duke!
 ----
 +
-If you commented out the `@Informal` annotation in the `Printer.java`
-file, then the following text string appears below the button:
+If you commented out the `@Informal` annotation in the `Printer.java` file, then the following text string appears below the button:
 +
 ----
 Hello, Duke.

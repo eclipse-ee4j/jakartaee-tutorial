@@ -1,19 +1,12 @@
 == Configuring a CDI Application
 
-When your beans are annotated with a scope type, the server recognizes
-the application as a bean archive and no additional configuration is
-required. The possible scope types for CDI beans are listed in
-<<using-scopes>>.
+When your beans are annotated with a scope type, the server recognizes the application as a bean archive and no additional configuration is required.
+The possible scope types for CDI beans are listed in <<using-scopes>>.
 
-CDI uses an optional deployment descriptor named `beans.xml`. Like
-other Jakarta EE deployment descriptors, the configuration settings in
-`beans.xml` are used in addition to annotation settings in CDI classes.
-The settings in `beans.xml` override the annotation settings if there
-is a conflict. An archive must contain the `beans.xml` deployment
-descriptor only in certain limited situations, described in
-xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
+CDI uses an optional deployment descriptor named `beans.xml`.
+Like other Jakarta EE deployment descriptors, the configuration settings in `beans.xml` are used in addition to annotation settings in CDI classes.
+The settings in `beans.xml` override the annotation settings if there is a conflict.
+An archive must contain the `beans.xml` deployment descriptor only in certain limited situations, described in xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
 
-For a web application, the `beans.xml` deployment descriptor, if
-present, must be in the `WEB-INF` directory. For EJB modules or JAR
-files, the `beans.xml` deployment descriptor, if present, must be in
-the `META-INF` directory.
+For a web application, the `beans.xml` deployment descriptor, if present, must be in the `WEB-INF` directory.
+For EJB modules or JAR files, the `beans.xml` deployment descriptor, if present, must be in the `META-INF` directory.

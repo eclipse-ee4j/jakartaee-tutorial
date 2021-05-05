@@ -1,30 +1,15 @@
 == Java Platform Localization Classes
 
-In the Java platform, `java.util.Locale`
-(http://docs.oracle.com/javase/8/docs/api/java/util/Locale.html[^])
-represents a specific geographical, political, or cultural region. The
-string representation of a locale consists of the international
-standard two-character abbreviation for language and country and an
-optional variant, all separated by underscore (`_`) characters.
-Examples of locale strings include `fr` (French), `de_CH` (Swiss
-German), and `en_US_POSIX` (English on a POSIX-compliant platform).
+In the Java platform, `java.util.Locale` (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html[^]) represents a specific geographical, political, or cultural region.
+The string representation of a locale consists of the international standard two-character abbreviation for language and country and an optional variant, all separated by underscore (`_`) characters.
+Examples of locale strings include `fr` (French), `de_CH` (Swiss German), and `en_US_POSIX` (English on a POSIX-compliant platform).
 
-Locale-sensitive data is stored in a `java.util.ResourceBundle`
-(http://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html[^]).
-A resource bundle contains key-value pairs, where the keys uniquely
-identify a locale-specific object in the bundle. A resource bundle can
-be backed by a text file (properties resource bundle) or a class (list
-resource bundle) containing the pairs. You construct a resource bundle
-instance by appending a locale string representation to a base name.
+Locale-sensitive data is stored in a `java.util.ResourceBundle` (https://docs.oracle.com/javase/8/docs/api/java/util/ResourceBundle.html[^]).
+A resource bundle contains key-value pairs, where the keys uniquely identify a locale-specific object in the bundle.
+A resource bundle can be backed by a text file (properties resource bundle) or a class (list resource bundle) containing the pairs.
+You construct a resource bundle instance by appending a locale string representation to a base name.
 
-The Duke's Bookstore application (see
-xref:dukes-bookstore-case-study-example[xrefstyle=full]) contains
-resource bundles with the base name `messages.properties` for the
-locales `de` (German), `es` (Spanish), and `fr` (French). The default
-locale, `en` (English), which is specified in the `faces-config.xml`
-file, uses the resource bundle with the base name,
-`messages.properties`.
+The Duke's Bookstore application (see xref:dukes-bookstore-case-study-example[xrefstyle=full]) contains resource bundles with the base name `messages.properties` for the locales `de` (German), `es` (Spanish), and `fr` (French).
+The default locale, `en` (English), which is specified in the `faces-config.xml` file, uses the resource bundle with the base name, `messages.properties`.
 
-For more details on internationalization and localization in the Java
-platform, see
-http://docs.oracle.com/javase/tutorial/i18n/index.html[^].
+For more details on internationalization and localization in the Java platform, see https://docs.oracle.com/javase/tutorial/i18n/index.html[^].

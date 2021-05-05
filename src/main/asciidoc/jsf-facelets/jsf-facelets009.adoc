@@ -1,39 +1,28 @@
 == HTML5-Friendly Markup
 
-When you want to produce user interface features for which HTML does
-not have its own elements, you can create a custom Jakarta Faces
-component and insert it in your Facelets page. This mechanism can cause
-a simple element to create complex web code. However, creating such a
-component is a significant task (see
-xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full]).
+When you want to produce user interface features for which HTML does not have its own elements, you can create a custom Jakarta Faces component and insert it in your Facelets page.
+This mechanism can cause a simple element to create complex web code.
+However, creating such a component is a significant task (see xref:creating-custom-ui-components-and-other-custom-objects[xrefstyle=full]).
 
-HTML5 offers new elements and attributes that can make it unnecessary
-to write your own components. It also provides many new capabilities
-for existing components. Jakarta Faces technology supports HTML5 not by
-introducing new UI components that imitate HTML5 ones but by allowing
-you to use HTML5 markup directly. It also allows you to use Jakarta
-Faces attributes within HTML5 elements. Jakarta Faces technology
-support for HTML5 falls into two categories:
+HTML5 offers new elements and attributes that can make it unnecessary to write your own components.
+It also provides many new capabilities for existing components.
+Jakarta Faces technology supports HTML5 not by introducing new UI components that imitate HTML5 ones but by allowing you to use HTML5 markup directly.
+It also allows you to use Jakarta Faces attributes within HTML5 elements.
+Jakarta Faces technology support for HTML5 falls into two categories:
 
 * Pass-through elements
+
 * Pass-through attributes
 
-The effect of the HTML5-friendly markup feature is to offer the
-Facelets page author almost complete control over the rendered page
-output, rather than having to pass this control off to component
-authors. You can mix and match Jakarta Faces and HTML5 components and
-elements as you see fit.
+The effect of the HTML5-friendly markup feature is to offer the Facelets page author almost complete control over the rendered page output, rather than having to pass this control off to component authors.
+You can mix and match Jakarta Faces and HTML5 components and elements as you see fit.
 
 === Using Pass-Through Elements
 
-Pass-through elements allow you to use HTML5 tags and attributes but to
-treat them as equivalent to Jakarta Faces components associated with a
-server-side `UIComponent` instance.
+Pass-through elements allow you to use HTML5 tags and attributes but to treat them as equivalent to Jakarta Faces components associated with a server-side `UIComponent` instance.
 
-To make an element that is not a Jakarta Faces element a pass-through
-element, specify at least one of its attributes using the
-`http://xmlns.jcp.org/jsf` namespace. For example, the following code
-declares the namespace with the short name `jsf`:
+To make an element that is not a Jakarta Faces element a pass-through element, specify at least one of its attributes using the `\http://xmlns.jcp.org/jsf` namespace.
+For example, the following code declares the namespace with the short name `jsf`:
 
 [source,xml]
 ----
@@ -43,76 +32,101 @@ declares the namespace with the short name `jsf`:
            value="#{reservationBean.email}" required="required"/>
 ----
 
-Here, the `jsf` prefix is placed on the `id` attribute so that the
-HTML5 input tag's attributes are treated as part of the Facelets page.
-This means that, for example, you can use EL expressions to retrieve
-managed bean properties.
+Here, the `jsf` prefix is placed on the `id` attribute so that the HTML5 input tag's attributes are treated as part of the Facelets page.
+This means that, for example, you can use EL expressions to retrieve managed bean properties.
 
-<<how-facelets-renders-html5-elements>> shows how pass-through elements
-are rendered as Facelets tags. The faces implementation uses the
-element name and the identifying attribute to determine the
-corresponding Facelets tag that will be used in the server-side
-processing. The browser, however, interprets the markup that the page
-author has written.
+<<how-facelets-renders-html5-elements>> shows how pass-through elements are rendered as Facelets tags.
+The faces implementation uses the element name and the identifying attribute to determine the corresponding Facelets tag that will be used in the server-side processing.
+The browser, however, interprets the markup that the page author has written.
 
 [[how-facelets-renders-html5-elements]]
-[width="60%",cols="20%a,20%a,20%a", title="How Facelets Renders HTML5 Elements" ]
+.How Facelets Renders HTML5 Elements
+[width="60%",cols="20%,20%,20%"]
 |===
 |HTML5 Element Name |Identifying Attribute |Facelets Tag
 
 |`a` |`jsf:action` |`h:commandLink`
+
 |`a` |`jsf:actionListener` |`h:commandLink`
+
 |`a` |`jsf:value` |`h:outputLink`
+
 |`a` |`jsf:outcome` |`h:link`
+
 |`body` | {empty} |`h:body`
+
 |`button` | {empty} |`h:commandButton`
+
 |`button` |`jsf:outcome` |`h:button`
+
 |`form` | {empty} |`h:form`
+
 |`head` | {empty} |`h:head`
+
 |`img` | {empty} |`h:graphicImage`
+
 |`input` |`type="button"` |`h:commandButton`
+
 |`input` |`type="checkbox"` |`h:selectBooleanCheckbox`
+
 |`input` |`type="color"` |`h:inputText`
+
 |`input` |`type="date"` |`h:inputText`
+
 |`input` |`type="datetime"` |`h:inputText`
+
 |`input` |`type="datetime-local"` |`h:inputText`
+
 |`input` |`type="email"` |`h:inputText`
+
 |`input` |`type="month"` |`h:inputText`
+
 |`input` |`type="number"` |`h:inputText`
+
 |`input` |`type="range"` |`h:inputText`
+
 |`input` |`type="search"` |`h:inputText`
+
 |`input` |`type="time"` |`h:inputText`
+
 |`input` |`type="url"` |`h:inputText`
+
 |`input` |`type="week"` |`h:inputText`
+
 |`input` |`type="file"` |`h:inputFile`
+
 |`input` |`type="hidden"` |`h:inputHidden`
+
 |`input` |`type="password"` |`h:inputSecret`
+
 |`input` |`type="reset"` |`h:commandButton`
+
 |`input` |`type="submit"` |`h:commandButton`
+
 |`input` |`type="*"` |`h:inputText`
+
 |`label` | {empty} |`h:outputLabel`
+
 |`link` | {empty} |`h:outputStylesheet`
+
 |`script` | {empty} |`h:outputScript`
+
 |`select` |`multiple="*"` |`h:selectManyListbox`
+
 |`select` | {empty} |`h:selectOneListbox`
+
 |`textarea` | {empty} |`h:inputTextArea`
 |===
 
 === Using Pass-Through Attributes
 
-Pass-through attributes are the converse of pass-through elements. They
-allow you to pass attributes that are not Jakarta Faces attributes
-through to the browser without interpretation. If you specify a
-pass-through attribute in a Jakarta Faces `UIComponent`, the attribute
-name and value are passed straight through to the browser without being
-interpreted by Jakarta Faces components or renderers. There are several
-ways to specify pass-through attributes.
+Pass-through attributes are the converse of pass-through elements.
+They allow you to pass attributes that are not Jakarta Faces attributes through to the browser without interpretation.
+If you specify a pass-through attribute in a Jakarta Faces `UIComponent`, the attribute name and value are passed straight through to the browser without being interpreted by Jakarta Faces components or renderers.
+There are several ways to specify pass-through attributes.
 
-* Use the Jakarta Faces namespace for pass-through attributes to prefix
-the attribute names within a Jakarta Faces component. For example, the
-following code declares the namespace with the short name `p`, then
-passes the `type`, `min`, `max`, `required`, and `title` attributes
-through to the HTML5 `input` component:
+* Use the Jakarta Faces namespace for pass-through attributes to prefix the attribute names within a Jakarta Faces component.
+For example, the following code declares the namespace with the short name `p`, then passes the `type`, `min`, `max`, `required`, and `title` attributes through to the HTML5 `input` component:
 +
 [source,xml]
 ----
@@ -126,8 +140,7 @@ through to the HTML5 `input` component:
         ...
 ----
 +
-This will cause the following markup to be rendered (assuming that
-`bean.nights` has a default value set to 1):
+This will cause the following markup to be rendered (assuming that `bean.nights` has a default value set to 1):
 +
 [source,xml]
 ----
@@ -135,8 +148,9 @@ This will cause the following markup to be rendered (assuming that
        required="required"
        title="Enter a number between 1 and 30 inclusive.">
 ----
-* To pass a single attribute, nest the `f:passThroughAttribute` tag
-within a component tag. For example:
+
+* To pass a single attribute, nest the `f:passThroughAttribute` tag within a component tag.
+For example:
 +
 [source,xml]
 ----
@@ -151,9 +165,9 @@ This code would be rendered similarly to the following:
 ----
 <input value="me@me.com" type="email" />
 ----
-* To pass a group of attributes, nest the `f:passThroughAttributes` tag
-within a component tag, specifying an EL value that must evaluate to a
-`Map<String, Object>`. For example:
+
+* To pass a group of attributes, nest the `f:passThroughAttributes` tag within a component tag, specifying an EL value that must evaluate to a `Map<String, Object>`.
+For example:
 +
 [source,xml]
 ----
@@ -162,11 +176,9 @@ within a component tag, specifying an EL value that must evaluate to a
 </h:inputText>
 ----
 +
-If the bean used the following `Map` declaration and initialized the map
-in the constructor as follows, the markup would be similar to the output
-of the code that uses the pass-through attribute namespace:
+If the bean used the following `Map` declaration and initialized the map in the constructor as follows, the markup would be similar to the output of the code that uses the pass-through attribute namespace:
 +
-[source,xml]
+[source,java]
 ----
 private Map<String, Object> nameValuePairs;
 ...
@@ -183,32 +195,24 @@ public Bean() {
 
 === The reservation Example Application
 
-The `reservation` example application provides a set of HTML5 `input`
-elements of various types to simulate purchasing tickets for a
-theatrical event. It consists of two Facelets pages,
-`reservation.xhtml` and `confirmation.xhtml`, and a backing bean,
-`ReservationBean.java`. The pages use both pass-through attributes and
-pass-through elements.
+The `reservation` example application provides a set of HTML5 `input` elements of various types to simulate purchasing tickets for a theatrical event.
+It consists of two Facelets pages, `reservation.xhtml` and `confirmation.xhtml`, and a backing bean, `ReservationBean.java`.
+The pages use both pass-through attributes and pass-through elements.
 
-The source code for this application is in the
-`_tut-install_/examples/web/jsf/reservation/` directory.
+The source code for this application is in the `_tut-install_/examples/web/jsf/reservation/` directory.
 
 ==== The Facelets Pages for the reservation Application
 
-The first important feature of the Facelets pages for the `reservation`
-application is the `DOCTYPE` header. Most Facelets pages in Jakarta
-Faces applications refer to the XHTML DTD. The facelets pages for this
-application begin simply with the following `DOCTYPE` header, which
-indicates an HTML5 page:
+The first important feature of the Facelets pages for the `reservation` application is the `DOCTYPE` header.
+Most Facelets pages in Jakarta Faces applications refer to the XHTML DTD.
+The facelets pages for this application begin simply with the following `DOCTYPE` header, which indicates an HTML5 page:
 
 [source,xml]
 ----
 <!DOCTYPE html>
 ----
 
-The namespace declarations in the `html` element of the
-`reservation.xhtml` page specify both the `jsf` and the `passthrough`
-namespaces:
+The namespace declarations in the `html` element of the `reservation.xhtml` page specify both the `jsf` and the `passthrough` namespaces:
 
 [source,xml]
 ----
@@ -220,10 +224,7 @@ namespaces:
       xmlns:jsf="http://xmlns.jcp.org/jsf">
 ----
 
-Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag
-within the `h:body` tag illustrates the use of a relocatable resource
-(as described in link:#BABHGBJI[Relocatable
-Resources]):
+Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in <<relocatable-resources>>):
 
 [source,xml]
 ----
@@ -233,12 +234,10 @@ Resources]):
     <h:outputStylesheet name="css/stylesheet.css" target="head"/>
 ----
 
-The `reservation.xhtml` page uses pass-through elements for most of the
-form fields on the page. This allows it to use some HTML5-specific
-`input` element types, such as `date` and `email`. For example, the
-following element renders both a date format and a calendar from which
-you can choose a date. The `jsf` prefix on the `id` attribute makes the
-element a pass-through one:
+The `reservation.xhtml` page uses pass-through elements for most of the form fields on the page.
+This allows it to use some HTML5-specific `input` element types, such as `date` and `email`.
+For example, the following element renders both a date format and a calendar from which you can choose a date.
+The `jsf` prefix on the `id` attribute makes the element a pass-through one:
 
 [source,xml]
 ----
@@ -247,10 +246,8 @@ element a pass-through one:
            title="Enter or choose a date."/>
 ----
 
-The field for the number of tickets, however, uses the
-`h:passThroughAttributes` tag to pass a `Map` defined in the managed
-bean. It also recalculates the total in response to a change in the
-field:
+The field for the number of tickets, however, uses the `h:passThroughAttributes` tag to pass a `Map` defined in the managed bean.
+It also recalculates the total in response to a change in the field:
 
 [source,xml]
 ----
@@ -261,11 +258,8 @@ field:
     </h:inputText>
 ----
 
-The field for the price specifies the `number` type as a pass-through
-attribute of the `h:inputText` element, offering a range of four ticket
-prices. Here, the `p` prefix on the HTML5 attributes passes them
-through to the browser uninterpreted by the Jakarta Faces input
-component:
+The field for the price specifies the `number` type as a pass-through attribute of the `h:inputText` element, offering a range of four ticket prices.
+Here, the `p` prefix on the HTML5 attributes passes them through to the browser uninterpreted by the Jakarta Faces input component:
 
 [source,xml]
 ----
@@ -279,89 +273,78 @@ component:
     </h:inputText>
 ----
 
-The output of the `calculateTotal` method that is specified as the
-listener for the Ajax event is rendered in the output element whose
-`id` and `name` value is `total`. See
-<<using-ajax-with-jakarta-faces-technology>>, for more
-information.
+The output of the `calculateTotal` method that is specified as the listener for the Ajax event is rendered in the output element whose `id` and `name` value is `total`.
+See <<using-ajax-with-jakarta-faces-technology>>, for more information.
 
-The second Facelets page, `confirmation.xhtml`, uses a pass-through
-`output` element to display the values entered by the user and provides
-a Facelets `h:commandButton` tag to allow the user to return to the
-`reservation.xhtml` page.
+The second Facelets page, `confirmation.xhtml`, uses a pass-through `output` element to display the values entered by the user and provides a Facelets `h:commandButton` tag to allow the user to return to the `reservation.xhtml` page.
 
 ==== The Managed Bean for the reservation Application
 
-The session-scoped managed bean for the reservation application,
-`ReservationBean.java`, contains properties for all the elements on the
-Facelets pages. It also contains two methods, `calculateTotal` and
-`clear`, that act as listeners for Ajax events on the
-`reservation.xhtml` page.
+The session-scoped managed bean for the reservation application, `ReservationBean.java`, contains properties for all the elements on the Facelets pages.
+It also contains two methods, `calculateTotal` and `clear`, that act as listeners for Ajax events on the `reservation.xhtml` page.
 
 ==== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/web/jsf
 ----
+
 . Select the `reservation` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `reservation` project and
-select *Build*.
+
+. In the *Projects* tab, right-click the `reservation` project and select *Build*.
 +
-This option builds the example application and deploys it to your
-GlassFish Server instance.
+This option builds the example application and deploys it to your GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the reservation Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/web/jsf/reservation/
 ----
+
 . Enter the following command:
 +
 [source,shell]
+----
 mvn install
+----
 +
-This command builds and packages the application into a WAR file,
-`reservation.war`, that is located in the `target` directory. It then
-deploys the WAR file to your GlassFish Server instance.
+This command builds and packages the application into a WAR file, `reservation.war`, that is located in the `target` directory.
+It then deploys the WAR file to your GlassFish Server instance.
 
 ==== To Run the reservation Example
 
-At the time of the publication of this tutorial, the browser that most
-fully implements HTML5 is Google Chrome, and it is recommended that you
-use it to run this example. Other browsers are catching up, however,
-and may work equally well by the time you read this.
+At the time of the publication of this tutorial, the browser that most fully implements HTML5 is Google Chrome, and it is recommended that you use it to run this example.
+Other browsers are catching up, however, and may work equally well by the time you read this.
 
 . Enter the following URL in your web browser:
 +
 ----
 http://localhost:8080/reservation
 ----
+
 . Enter information in the fields of the `reservation.xhtml` page.
 +
-The Performance Date field has a date field with up and down arrows that
-allow you to increment and decrement the month, day, and year as well as
-a larger down arrow that brings up a date editor in calendar form.
+The Performance Date field has a date field with up and down arrows that allow you to increment and decrement the month, day, and year as well as a larger down arrow that brings up a date editor in calendar form.
 +
-The Number of Tickets and Ticket Price fields also have up and down
-arrows that allow you to increment and decrement the values within the
-allowed range and steps. The Estimated Total changes when you change
-either of these two fields.
+The Number of Tickets and Ticket Price fields also have up and down arrows that allow you to increment and decrement the values within the allowed range and steps.
+The Estimated Total changes when you change either of these two fields.
 +
-Email addresses and dates are checked for format, but not for validity
-(you can make a reservation for a past date, for instance).
-. Click Make Reservation to complete the reservation or Clear to
-restore the fields to their default values.
-. If you click Make Reservation, the `confirmation.xhtml` page
-appears, displaying the submitted values.
+Email addresses and dates are checked for format, but not for validity (you can make a reservation for a past date, for instance).
+
+. Click Make Reservation to complete the reservation or Clear to restore the fields to their default values.
+
+. If you click Make Reservation, the `confirmation.xhtml` page appears, displaying the submitted values.
 +
 Click Back to return to the `reservation.xhtml` page.

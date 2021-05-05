@@ -1,23 +1,21 @@
 == Creating the Enterprise Bean
 
-The enterprise bean in our example is a stateless session bean called
-`ConverterBean`. The source code for `ConverterBean` is in the
-`_tut-install_/examples/ejb/converter/src/main/java/` directory.
+The enterprise bean in our example is a stateless session bean called `ConverterBean`.
+The source code for `ConverterBean` is in the `_tut-install_/examples/ejb/converter/src/main/java/` directory.
 
 Creating `ConverterBean` requires these steps:
 
 . Coding the bean's implementation class (the source code is provided)
+
 . Compiling the source code
 
 === Coding the Enterprise Bean Class
 
 The enterprise bean class for this example is called `ConverterBean`.
-This class implements two business methods: `dollarToYen` and
-`yenToEuro`. Because the enterprise bean class doesn't implement a
-business interface, the enterprise bean exposes a local, no-interface
-view. The public methods in the enterprise bean class are available to
-clients that obtain a reference to `ConverterBean`. The source code for
-the `ConverterBean` class is as follows:
+This class implements two business methods: `dollarToYen` and `yenToEuro`.
+Because the enterprise bean class doesn't implement a business interface, the enterprise bean exposes a local, no-interface view.
+The public methods in the enterprise bean class are available to clients that obtain a reference to `ConverterBean`.
+The source code for the `ConverterBean` class is as follows:
 
 [source,java]
 ----
@@ -44,13 +42,11 @@ public class ConverterBean {
 ----
 
 Note the `@Stateless` annotation decorating the enterprise bean class.
-This annotation lets the container know that `ConverterBean` is a
-stateless session bean.
+This annotation lets the container know that `ConverterBean` is a stateless session bean.
 
 === Creating the converter Web Client
 
-The web client is contained in the following servlet class under the
-`_tut-install_/examples/ejb/converter/src/main/java/` directory:
+The web client is contained in the following servlet class under the `_tut-install_/examples/ejb/converter/src/main/java/` directory:
 
 ----
 converter/web/ConverterServlet.java
@@ -58,11 +54,9 @@ converter/web/ConverterServlet.java
 
 A Jakarta servlet is a web component that responds to HTTP requests.
 
-The `ConverterServlet` class uses dependency injection to obtain a
-reference to `ConverterBean`. The `jakarta.ejb.EJB` annotation is added
-to the declaration of the private member variable `converter`, which is
-of type `ConverterBean`. `ConverterBean` exposes a local, no-interface
-view, so the enterprise bean implementation class is the variable type:
+The `ConverterServlet` class uses dependency injection to obtain a reference to `ConverterBean`.
+The `jakarta.ejb.EJB` annotation is added to the declaration of the private member variable `converter`, which is of type `ConverterBean`.
+`ConverterBean` exposes a local, no-interface view, so the enterprise bean implementation class is the variable type:
 
 [source,java]
 ----
@@ -74,10 +68,7 @@ public class ConverterServlet extends HttpServlet {
 }
 ----
 
-When the user enters an amount to be converted to yen and euro, the
-amount is retrieved from the request parameters; then the
-`ConverterBean.dollarToYen` and the `ConverterBean.yenToEuro` methods
-are called:
+When the user enters an amount to be converted to yen and euro, the amount is retrieved from the request parameters; then the `ConverterBean.dollarToYen` and the `ConverterBean.yenToEuro` methods are called:
 
 [source,java]
 ----
@@ -104,45 +95,47 @@ The results are displayed to the user.
 
 === Running the converter Example
 
-Now you are ready to compile the enterprise bean class
-(`ConverterBean.java`) and the servlet class (`ConverterServlet.java`)
-and to package the compiled classes into a WAR file. You can use either
-NetBeans IDE or Maven to build, package, deploy, and run the
-`converter` example.
+Now you are ready to compile the enterprise bean class (`ConverterBean.java`) and the servlet class (`ConverterServlet.java`) and to package the compiled classes into a WAR file.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `converter` example.
 
 ==== To Run the converter Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/ejb
 ----
+
 . Select the `converter` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `converter` project and select
-*Build*.
+
+. In the *Projects* tab, right-click the `converter` project and select *Build*.
+
 . Open a web browser to the following URL:
 +
 ----
 http://localhost:8080/converter
 ----
-. On the Servlet ConverterServlet page, enter `100` in the field and
-click Submit.
+
+. On the Servlet ConverterServlet page, enter `100` in the field and click Submit.
 +
 A second page opens, showing the converted values.
 
 ==== To Run the converter Example Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/ejb/converter/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -150,16 +143,15 @@ tut-install/examples/ejb/converter/
 mvn install
 ----
 +
-This command compiles the source files for the enterprise bean and the
-servlet, packages the project into a WAR module (`converter.war`), and
-deploys the WAR to the server. For more information about Maven, see
-<<building-the-examples>>.
+This command compiles the source files for the enterprise bean and the servlet, packages the project into a WAR module (`converter.war`), and deploys the WAR to the server.
+For more information about Maven, see <<building-the-examples>>.
+
 . Open a web browser to the following URL:
 +
 ----
 http://localhost:8080/converter
 ----
-. On the Servlet ConverterServlet page, enter `100` in the field and
-click Submit.
+
+. On the Servlet ConverterServlet page, enter `100` in the field and click Submit.
 +
 A second page opens, showing the converted values.

@@ -1,76 +1,109 @@
 == Types Supported by XML Web Services
 
-XML Web Services delegates the mapping of Java programming language
-types to and from XML definitions to JAXB. Application developers don't
-need to know the details of these mappings but should be aware that not
-every class in the Java language can be used as a method parameter or
-return type in XML Web Services.
+XML Web Services delegates the mapping of Java programming language types to and from XML definitions to Jakarta XML Binding.
+Application developers don't need to know the details of these mappings but should be aware that not every class in the Java language can be used as a method parameter or return type in XML Web Services.
 
-The following sections explain the default schema-to-Java and
-Java-to-schema data type bindings:
+The following sections explain the default schema-to-Java and Java-to-schema data type bindings:
 
 * <<schema-to-java-mapping>>
+
 * <<java-to-schema-mapping>>
 
 === Schema-to-Java Mapping
 
 The Java language provides a richer set of data types than XML schema.
-<<mapping-of-xml-data-types-to-java-data-types>>
-lists the mapping of XML data types to Java data types.
+<<mapping-of-xml-data-types-to-java-data-types>> lists the mapping of XML data types to Java data types.
 
 [[mapping-of-xml-data-types-to-java-data-types]]
-[width="50%",cols="20%a,30%a", title="Mapping of XML Data Types to Java Data Types"]
+.Mapping of XML Data Types to Java Data Types
+[width="50%",cols="20%,30%"]
 |===
 |XML Schema Type |Java Data Type
 
 |`xsd:string` |`java.lang.String`
+
 |`xsd:integer` |`java.math.BigInteger`
+
 |`xsd:int` |`int`
+
 |`xsd.long` |`long`
+
 |`xsd:short` |`short`
+
 |`xsd:decimal` |`java.math.BigDecimal`
+
 |`xsd:float` |`float`
+
 |`xsd:double` |`double`
+
 |`xsd:boolean` |`boolean`
+
 |`xsd:byte` |`byte`
+
 |`xsd:QName` |`javax.xml.namespace.QName`
+
 |`xsd:dateTime` |`javax.xml.datatype.XMLGregorianCalendar`
+
 |`xsd:base64Binary` |`byte[]`
+
 |`xsd:hexBinary` |`byte[]`
+
 |`xsd:unsignedInt` |`long`
+
 |`xsd:unsignedShort` |`int`
+
 |`xsd:unsignedByte` |`short`
+
 |`xsd:time` |`javax.xml.datatype.XMLGregorianCalendar`
+
 |`xsd:date` |`javax.xml.datatype.XMLGregorianCalendar`
+
 |`xsd:g` |`javax.xml.datatype.XMLGregorianCalendar`
+
 |`xsd:anySimpleType` |`java.lang.Object`
+
 |`xsd:anySimpleType` |`java.lang.String`
+
 |`xsd:duration` |`javax.xml.datatype.Duration`
+
 |`xsd:NOTATION` |`javax.xml.namespace.QName`
 |===
 
 === Java-to-Schema Mapping
 
-<<mapping-of-java-classes-to-xml-data-types>> shows the default mapping
-of Java classes to XML data types.
+<<mapping-of-java-classes-to-xml-data-types>> shows the default mapping of Java classes to XML data types.
 
 [[mapping-of-java-classes-to-xml-data-types]]
-[width="50%",cols="30%a,20%a",title="Mapping of Java Classes to XML Data Types"]
+.Mapping of Java Classes to XML Data Types
+[width="50%",cols="30%,20%"]
 |===
 |Java Class |XML Data Type
 
 |`java.lang.String` |`xs:string`
+
 |`java.math.BigInteger` |`xs:integer`
+
 |`java.math.BigDecimal` |`xs:decimal`
+
 |`java.util.Calendar` |`xs:dateTime`
+
 |`java.util.Date` |`xs:dateTime`
+
 |`javax.xml.namespace.QName` |`xs:QName`
+
 |`java.net.URI` |`xs:string`
+
 |`javax.xml.datatype.XMLGregorianCalendar` |`xs:anySimpleType`
+
 |`javax.xml.datatype.Duration` |`xs:duration`
+
 |`java.lang.Object` |`xs:anyType`
+
 |`java.awt.Image` |`xs:base64Binary`
+
 |`jakarta.activation.DataHandler` |`xs:base64Binary`
+
 |`javax.xml.transform.Source` |`xs:base64Binary`
+
 |`java.util.UUID` |`xs:string`
 |===

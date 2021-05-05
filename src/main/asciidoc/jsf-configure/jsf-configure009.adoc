@@ -1,12 +1,7 @@
 == Registering a Custom Converter
 
-As is the case with a custom validator, if the application developer
-creates a custom converter, you must register it with the application
-either by using the `@FacesConverter` annotation, as described in
-<<creating-a-custom-converter>>, or by using the `converter` XML
-element in the application configuration resource file. Here is a
-hypothetical `converter` configuration for `CreditCardConverter` from
-the Duke's Bookstore case study:
+As is the case with a custom validator, if the application developer creates a custom converter, you must register it with the application either by using the `@FacesConverter` annotation, as described in <<creating-a-custom-converter>>, or by using the `converter` XML element in the application configuration resource file.
+Here is a hypothetical `converter` configuration for `CreditCardConverter` from the Duke's Bookstore case study:
 
 [source,xml]
 ----
@@ -22,20 +17,13 @@ the Duke's Bookstore case study:
 </converter>
 ----
 
-Attributes specified in a `converter` tag override any settings in the
-`@FacesConverter` annotation.
+Attributes specified in a `converter` tag override any settings in the `@FacesConverter` annotation.
 
-The `converter` element represents a `jakarta.faces.convert.Converter`
-implementation and contains required `converter-id` and
-`converter-class` elements.
+The `converter` element represents a `jakarta.faces.convert.Converter` implementation and contains required `converter-id` and `converter-class` elements.
 
-The `converter-id` element identifies an ID that is used by the
-`converter` attribute of a UI component tag to apply the converter to
-the component's data. <<using-a-custom-converter>> includes an example
-of referencing the custom converter from a component tag.
+The `converter-id` element identifies an ID that is used by the `converter` attribute of a UI component tag to apply the converter to the component's data.
+<<using-a-custom-converter>> includes an example of referencing the custom converter from a component tag.
 
-The `converter-class` element identifies the `Converter`
-implementation.
+The `converter-class` element identifies the `Converter` implementation.
 
-<<creating-and-using-a-custom-converter>> explains how to create a
-custom converter.
+<<creating-and-using-a-custom-converter>> explains how to create a custom converter.

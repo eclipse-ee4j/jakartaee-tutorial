@@ -1,72 +1,46 @@
 == Composite Components
 
-Jakarta Faces technology offers the concept of composite components
-with Facelets. A composite component is a special type of template that
-acts as a component.
+Jakarta Faces technology offers the concept of composite components with Facelets.
+A composite component is a special type of template that acts as a component.
 
-Any component is essentially a piece of reusable code that behaves in a
-particular way. For example, an input component accepts user input. A
-component can also have validators, converters, and listeners attached
-to it to perform certain defined actions.
+Any component is essentially a piece of reusable code that behaves in a particular way.
+For example, an input component accepts user input.
+A component can also have validators, converters, and listeners attached to it to perform certain defined actions.
 
-A composite component consists of a collection of markup tags and other
-existing components. This reusable, user-created component has a
-customized, defined functionality and can have validators, converters,
-and listeners attached to it like any other component.
+A composite component consists of a collection of markup tags and other existing components.
+This reusable, user-created component has a customized, defined functionality and can have validators, converters, and listeners attached to it like any other component.
 
-With Facelets, any XHTML page that contains markup tags and other
-components can be converted into a composite component. Using the
-resources facility, the composite component can be stored in a library
-that is available to the application from the defined resources
-location.
+With Facelets, any XHTML page that contains markup tags and other components can be converted into a composite component.
+Using the resources facility, the composite component can be stored in a library that is available to the application from the defined resources location.
 
-<<composite-component-tags>> lists the most commonly used composite
-tags and their functions.
+<<composite-component-tags>> lists the most commonly used composite tags and their functions.
 
 [[composite-component-tags]]
-[width="99%",cols="20%a,80%a", title="Composite Component Tags"]
+.Composite Component Tags
+[width="99%",cols="20%,80%"]
 |===
 |Tag |Function
 
-|`composite:interface` |Declares the usage contract for a composite
-component. The composite component can be used as a single component
-whose feature set is the union of the features declared in the usage
-contract.
+|`composite:interface` |Declares the usage contract for a composite component.
+The composite component can be used as a single component whose feature set is the union of the features declared in the usage contract.
 
-|`composite:implementation` |Defines the implementation of the
-composite component. If a `composite:interface` element appears, there
-must be a corresponding `composite:implementation`.
+|`composite:implementation` |Defines the implementation of the composite component.
+If a `composite:interface` element appears, there must be a corresponding `composite:implementation`.
 
-|`composite:attribute` |Declares an attribute that may be given to an
-instance of the composite component in which this tag is declared.
+|`composite:attribute` |Declares an attribute that may be given to an instance of the composite component in which this tag is declared.
 
-|`composite:insertChildren` |Any child components or template text
-within the composite component tag in the using page will be reparented
-into the composite component at the point indicated by this tag's
-placement within the `composite:implementation` section.
+|`composite:insertChildren` |Any child components or template text within the composite component tag in the using page will be reparented into the composite component at the point indicated by this tag's placement within the `composite:implementation` section.
 
-|`composite:valueHolder` |Declares that the composite component whose
-contract is declared by the `composite:interface` in which this element
-is nested exposes an implementation of `ValueHolder` suitable for use
-as the target of attached objects in the using page.
+|`composite:valueHolder` |Declares that the composite component whose contract is declared by the `composite:interface` in which this element is nested exposes an implementation of `ValueHolder` suitable for use as the target of attached objects in the using page.
 
-|`composite:editableValueHolder` |Declares that the composite component
-whose contract is declared by the `composite:interface` in which this
-element is nested exposes an implementation of `EditableValueHolder`
-suitable for use as the target of attached objects in the using page.
+|`composite:editableValueHolder` |Declares that the composite component whose contract is declared by the `composite:interface` in which this element is nested exposes an implementation of `EditableValueHolder` suitable for use as the target of attached objects in the using page.
 
-|`composite:actionSource` |Declares that the composite component whose
-contract is declared by the `composite:interface` in which this element
-is nested exposes an implementation of `ActionSource2` suitable for use
-as the target of attached objects in the using page.
+|`composite:actionSource` |Declares that the composite component whose contract is declared by the `composite:interface` in which this element is nested exposes an implementation of `ActionSource2` suitable for use as the target of attached objects in the using page.
 |===
 
+For more information and a complete list of Facelets composite tags, see the Jakarta Faces Facelets Tag Library documentation.
 
-For more information and a complete list of Facelets composite tags,
-see the Jakarta Faces Facelets Tag Library documentation.
-
-The following example shows a composite component that accepts an email
-address as input:
+The following example shows a composite component that accepts an email address as input:
 
 [source,xml]
 ----
@@ -92,21 +66,15 @@ address as input:
 </html>
 ----
 
-Note the use of `cc.attrs.value` when defining the value of the
-`inputText` component. The word `cc` in Jakarta Faces is a reserved
-word for composite components. The `#{cc.attrs._attribute-name_}`
-expression is used to access the attributes defined for the composite
-component's interface, which in this case happens to be `value`.
+Note the use of `cc.attrs.value` when defining the value of the `inputText` component.
+The word `cc` in Jakarta Faces is a reserved word for composite components.
+The `#{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
 
-The preceding example content is stored as a file named `email.xhtml`
-in a folder named `resources/emcomp`, under the application web root
-directory. This directory is considered a library by Jakarta Faces, and
-a component can be accessed from such a library. For more information
-on resources, see <<web-resources>>.
+The preceding example content is stored as a file named `email.xhtml` in a folder named `resources/emcomp`, under the application web root directory.
+This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see <<web-resources>>.
 
-The web page that uses this composite component is generally called a
-using page. The using page includes a reference to the composite
-component, in the `xml` namespace declarations:
+The web page that uses this composite component is generally called a using page.
+The using page includes a reference to the composite component, in the `xml` namespace declarations:
 
 [source,xml]
 ----
@@ -128,18 +96,13 @@ component, in the `xml` namespace declarations:
 </html>
 ----
 
-The local composite component library is defined in the `xmlns`
-namespace with the declaration
-`xmlns:em="http://xmlns.jcp.org/jsf/composite/emcomp"`. The component
-itself is accessed through the `em:email` tag. The preceding example
-content can be stored as a web page named `emuserpage.xhtml` under the
-web root directory. When compiled and deployed on a server, it can be
-accessed with the following URL:
+The local composite component library is defined in the `xmlns` namespace with the declaration `xmlns:em="http://xmlns.jcp.org/jsf/composite/emcomp"`.
+The component itself is accessed through the `em:email` tag.
+The preceding example content can be stored as a web page named `emuserpage.xhtml` under the web root directory.
+When compiled and deployed on a server, it can be accessed with the following URL:
 
 ----
 http://localhost:8080/application-name/emuserpage.xhtml
 ----
 
-See
-xref:composite-components-advanced-topics-and-an-example[xrefstyle=full]
-for more information and an example.
+See xref:composite-components-advanced-topics-and-an-example[xrefstyle=full] for more information and an example.

@@ -2,31 +2,23 @@
 
 A typical Jakarta Faces web page includes the following elements:
 
-* A set of namespace declarations that declare the Jakarta Faces tag
-libraries
+* A set of namespace declarations that declare the Jakarta Faces tag libraries
+
 * Optionally, the HTML head (`h:head`) and body (`h:body`) tags
+
 * A form tag (`h:form`) that represents the user input components
 
-To add the Jakarta Faces components to your web page, you need to
-provide the page access to the two standard tag libraries: the Jakarta
-Faces HTML render kit tag library and the Jakarta Faces core tag
-library. The https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Faces standard HTML tag library^] 
-defines tags that represent common HTML user interface components. The
-Jakarta Faces core tag library defines tags that perform core actions
-and are independent of a particular render kit.
+To add the Jakarta Faces components to your web page, you need to provide the page access to the two standard tag libraries: the Jakarta Faces HTML render kit tag library and the Jakarta Faces core tag library.
+The https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Faces standard HTML tag library^] defines tags that represent common HTML user interface components.
+The Jakarta Faces core tag library defines tags that perform core actions and are independent of a particular render kit.
 
-For a complete list of Jakarta Faces Facelets tags and their
-attributes, refer to the
-https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
+For a complete list of Jakarta Faces Facelets tags and their attributes, refer to the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
-To use any of the Jakarta Faces tags, you need to include appropriate
-directives at the top of each page specifying the tag libraries.
+To use any of the Jakarta Faces tags, you need to include appropriate directives at the top of each page specifying the tag libraries.
 
-For Facelets applications, the XML namespace directives uniquely
-identify the tag library URI and the tag prefix.
+For Facelets applications, the XML namespace directives uniquely identify the tag library URI and the tag prefix.
 
-For example, when you create a Facelets XHTML page, include namespace
-directives as follows:
+For example, when you create a Facelets XHTML page, include namespace directives as follows:
 
 [source,xml]
 ----
@@ -35,24 +27,14 @@ directives as follows:
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 ----
 
-The XML namespace URI identifies the tag library location, and the
-prefix value is used to distinguish the tags belonging to that specific
-tag library. You can also use other prefixes instead of the standard `h`
-or `f`. However, when including the tag in the page you must use the
-prefix that you have chosen for the tag library. For example, in the
-following web page the `form` tag must be referenced using the `h`
-prefix because the preceding tag library directive uses the `h` prefix
-to distinguish the tags defined in the HTML tag library:
+The XML namespace URI identifies the tag library location, and the prefix value is used to distinguish the tags belonging to that specific tag library.
+You can also use other prefixes instead of the standard `h` or `f`.
+However, when including the tag in the page you must use the prefix that you have chosen for the tag library.
+For example, in the following web page the `form` tag must be referenced using the `h` prefix because the preceding tag library directive uses the `h` prefix to distinguish the tags defined in the HTML tag library:
 
 [source,xml]
 ----
 <h:form ...>
 ----
 
-The sections
-<<adding-components-to-a-page-using-html-tag-library-tags>> and
-<<using-core-tags>> describe how to use the component tags from the
-Jakarta Faces standard HTML tag library and the core tags from the
-Jakarta Faces core tag library.
-
-
+The sections <<adding-components-to-a-page-using-html-tag-library-tags>> and <<using-core-tags>> describe how to use the component tags from the Jakarta Faces standard HTML tag library and the core tags from the Jakarta Faces core tag library.

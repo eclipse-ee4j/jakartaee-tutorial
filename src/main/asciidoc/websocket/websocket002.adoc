@@ -1,51 +1,40 @@
 == Creating WebSocket Applications in the Jakarta EE Platform
 
-The Jakarta EE platform includes Jakarta WebSocket, which enables you
-to create, configure, and deploy WebSocket endpoints in web
-applications. The WebSocket client API specified in Jakarta WebSocket
-also enables you to access remote WebSocket endpoints from any Java
-application.
+The Jakarta EE platform includes Jakarta WebSocket, which enables you to create, configure, and deploy WebSocket endpoints in web applications.
+The WebSocket client API specified in Jakarta WebSocket also enables you to access remote WebSocket endpoints from any Java application.
 
 Jakarta WebSocket consists of the following packages.
 
-* The `jakarta.websocket.server` package contains annotations, classes,
-and interfaces to create and configure server endpoints.
-* The `jakarta.websocket` package contains annotations, classes,
-interfaces, and exceptions that are common to client and server
-endpoints.
+* The `jakarta.websocket.server` package contains annotations, classes, and interfaces to create and configure server endpoints.
 
-WebSocket endpoints are instances of the `jakarta.websocket.Endpoint`
-class. Jakarta WebSocket enables you to create two kinds of endpoints:
-programmatic endpoints and annotated endpoints. To create a
-programmatic endpoint, you extend the `Endpoint` class and override its
-lifecycle methods. To create an annotated endpoint, you decorate a Java
-class and some of its methods with the annotations provided by the
-packages mentioned previously. After you have created an endpoint, you
-deploy it to an specific URI in the application so that remote clients
-can connect to it.
+* The `jakarta.websocket` package contains annotations, classes, interfaces, and exceptions that are common to client and server endpoints.
+
+WebSocket endpoints are instances of the `jakarta.websocket.Endpoint` class.
+Jakarta WebSocket enables you to create two kinds of endpoints: programmatic endpoints and annotated endpoints.
+To create a programmatic endpoint, you extend the `Endpoint` class and override its lifecycle methods.
+To create an annotated endpoint, you decorate a Java class and some of its methods with the annotations provided by the packages mentioned previously.
+After you have created an endpoint, you deploy it to an specific URI in the application so that remote clients can connect to it.
 
 [NOTE]
-In most cases, it is easier to create and deploy an annotated endpoint
-than a programmatic endpoint. This chapter provides a simple example of
-a programmatic endpoint, but it focuses on annotated endpoints.
+In most cases, it is easier to create and deploy an annotated endpoint than a programmatic endpoint.
+This chapter provides a simple example of a programmatic endpoint, but it focuses on annotated endpoints.
 
 === Creating and Deploying a WebSocket Endpoint
 
 The process for creating and deploying a WebSocket endpoint:
 
 . Create an endpoint class.
+
 . Implement the lifecycle methods of the endpoint.
+
 . Add your business logic to the endpoint.
+
 . Deploy the endpoint inside a web application.
 
-The process is slightly different for programmatic endpoints and
-annotated endpoints, and it is covered in detail in the following
-sections.
+The process is slightly different for programmatic endpoints and annotated endpoints, and it is covered in detail in the following sections.
 
 [NOTE]
-As opposed to servlets, WebSocket endpoints are instantiated multiple
-times. The container creates an instance of an endpoint per connection
-to its deployment URI. Each instance is associated with one and only one
-connection. This facilitates keeping user state for each connection and
-makes development easier, because there is only one thread executing the
-code of an endpoint instance at any given time.
+As opposed to servlets, WebSocket endpoints are instantiated multiple times.
+The container creates an instance of an endpoint per connection to its deployment URI.
+Each instance is associated with one and only one connection.
+This facilitates keeping user state for each connection and makes development easier, because there is only one thread executing the code of an endpoint instance at any given time.

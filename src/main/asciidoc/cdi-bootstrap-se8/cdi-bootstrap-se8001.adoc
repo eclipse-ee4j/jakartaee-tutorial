@@ -2,11 +2,11 @@
 
 The API for bootstrapping a CDI container in Java SE consists of the following entities:
 
-* `jakarta.enterprise.inject.se.SeContainerInitializer` class – Allows you to configure and bootstrap the CDI container. This class includes the following key methods:
+* `jakarta.enterprise.inject.se.SeContainerInitializer` class – Allows you to configure and bootstrap the CDI container.
+This class includes the following key methods:
 
 ** `newInstance()` obtains a `SeContainerInitializer` instance, which allows you to configure the container prior to bootstrapping it.
 
-** `initialize()` bootstraps the container. 
+** `initialize()` bootstraps the container.
 
 * `jakarta.enterprise.inject.se.SeContainer` interface – Provides access to the `BeanManager` instance for programmatic lookup, as defined in the `SeContainer` interface, which is described at https://jakarta.ee/specifications/cdi/3.0/jakarta-cdi-spec-3.0.html#se_container[^].
-

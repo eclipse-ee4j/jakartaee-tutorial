@@ -1,63 +1,42 @@
 == Overview of the Jakarta Messaging Examples
 
-The following tables list the examples used in this chapter, describe
-what they do, and link to the section that describes them fully. The
-example directory for each example is relative to the
-`_tut-install_/examples/jms/` directory.
+The following tables list the examples used in this chapter, describe what they do, and link to the section that describes them fully.
+The example directory for each example is relative to the `_tut-install_/examples/jms/` directory.
 
-[width="80%",cols="20%,60%",title="Jakarta Messaging Examples That Show the Use of Jakarta EE Application Clients"]
+.Jakarta Messaging Examples That Show the Use of Jakarta EE Application Clients
+[width="80%",cols="20%,60%"]
 |===
 |Example Directory |Description
 
-|`simple/producer` |Using an application client to send messages; see
-<<sending-messages>>
+|`simple/producer` |Using an application client to send messages; see <<sending-messages>>
 
-|`simple/synchconsumer` |Using an application client to receive
-messages synchronously; see <<receiving-messages-synchronously>>
+|`simple/synchconsumer` |Using an application client to receive messages synchronously; see <<receiving-messages-synchronously>>
 
-|`simple/asynchconsumer` |Using an application client to receive
-messages asynchronously; see
-<<using-a-message-listener-for-asynchronous-message-delivery>>
+|`simple/asynchconsumer` |Using an application client to receive messages asynchronously; see <<using-a-message-listener-for-asynchronous-message-delivery>>
 
-|`simple/messagebrowser` |Using an application client to use a
-`QueueBrowser` to browse a queue; see <<browsing-messages-on-a-queue>>
+|`simple/messagebrowser` |Using an application client to use a `QueueBrowser` to browse a queue; see <<browsing-messages-on-a-queue>>
 
-|`simple/clientackconsumer` |Using an application client to acknowledge
-messages received synchronously; see <<acknowledging-messages>>
+|`simple/clientackconsumer` |Using an application client to acknowledge messages received synchronously; see <<acknowledging-messages>>
 
-|`durablesubscriptionexample` |Using an application client to create a
-durable subscription on a topic; see <<using-durable-subscriptions>>
+|`durablesubscriptionexample` |Using an application client to create a durable subscription on a topic; see <<using-durable-subscriptions>>
 
-|`transactedexample` |Using an application client to send and receive
-messages in local transactions (also uses request-reply messaging); see
-<<using-local-transactions>>
+|`transactedexample` |Using an application client to send and receive messages in local transactions (also uses request-reply messaging); see <<using-local-transactions>>
 
-|`shared/sharedconsumer` |Using an application client to create shared
-nondurable topic subscriptions; see
-<<using-shared-nondurable-subscriptions>>
+|`shared/sharedconsumer` |Using an application client to create shared nondurable topic subscriptions; see <<using-shared-nondurable-subscriptions>>
 
-|`shared/shareddurableconsumer` |Using an application client to create
-shared durable topic subscriptions; see
-<<using-shared-durable-subscriptions>>
+|`shared/shareddurableconsumer` |Using an application client to create shared durable topic subscriptions; see <<using-shared-durable-subscriptions>>
 |===
 
-[width="80%",cols="20%,60%",title="Jakarta Messaging Examples That Show the Use of Jakarta EE Web and Enterprise Bean Components"]
+.Jakarta Messaging Examples That Show the Use of Jakarta EE Web and Enterprise Bean Components
+[width="80%",cols="20%,60%"]
 |===
 |Example Directory |Description
 
-|`websimplemessage` |Using managed beans to send messages and to
-receive messages synchronously; see
-<<sending-and-receiving-messages-using-a-simple-web-application>>
+|`websimplemessage` |Using managed beans to send messages and to receive messages synchronously; see <<sending-and-receiving-messages-using-a-simple-web-application>>
 
-|`simplemessage` |Using an application client to send messages, and
-using a message-driven bean to receive messages asynchronously; see
-<<receiving-messages-asynchronously-using-a-message-driven-bean>>
+|`simplemessage` |Using an application client to send messages, and using a message-driven bean to receive messages asynchronously; see <<receiving-messages-asynchronously-using-a-message-driven-bean>>
 
-|`clientsessionmdb` |Using a session bean to send messages, and using a
-message-driven bean to receive messages; see
-<<sending-messages-from-a-session-bean-to-an-mdb>>
+|`clientsessionmdb` |Using a session bean to send messages, and using a message-driven bean to receive messages; see <<sending-messages-from-a-session-bean-to-an-mdb>>
 
-|`clientmdbentity` |Using an application client, two message-driven
-beans, and JPA persistence to create a simple HR application; see
-<<using-an-entity-to-join-messages-from-two-mdbs>>
+|`clientmdbentity` |Using an application client, two message-driven beans, and JPA persistence to create a simple HR application; see <<using-an-entity-to-join-messages-from-two-mdbs>>
 |===

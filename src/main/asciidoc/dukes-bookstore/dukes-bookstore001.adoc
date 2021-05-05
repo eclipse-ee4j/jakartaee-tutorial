@@ -1,59 +1,42 @@
 == Design and Architecture of Duke's Bookstore
 
-Duke's Bookstore is a simple web application that uses many features of
-Jakarta Faces technology, in addition to other Jakarta EE features:
+Duke's Bookstore is a simple web application that uses many features of Jakarta Faces technology, in addition to other Jakarta EE features:
 
-* Jakarta Faces technology, as well as Jakarta Contexts and Dependency
-Injection (CDI)
+* Jakarta Faces technology, as well as Jakarta Contexts and Dependency Injection (CDI)
 
-** A set of Facelets pages, along with a template, provides the user
-interface to the application.
+** A set of Facelets pages, along with a template, provides the user interface to the application.
 
 ** CDI managed beans are associated with each of the Facelets pages.
 
-** A custom image map component on the front page allows you to select
-a book to enter the store. Each area of the map is represented by a
-Jakarta Faces managed bean. Text hyperlinks are also provided for
-accessibility.
+** A custom image map component on the front page allows you to select a book to enter the store.
+Each area of the map is represented by a Jakarta Faces managed bean.
+Text hyperlinks are also provided for accessibility.
 
 ** Action listeners are registered on the image map and the text links.
-These listeners retrieve the ID value for the selected book and store
-it in the session map so it can be retrieved by the managed bean for
-the next page.
+These listeners retrieve the ID value for the selected book and store it in the session map so it can be retrieved by the managed bean for the next page.
 
-** The `h:dataTable` tag is used to render the book catalog and
-shopping cart contents dynamically.
+** The `h:dataTable` tag is used to render the book catalog and shopping cart contents dynamically.
 
-** A custom converter is registered on the credit card field on the
-checkout page, `bookcashier.xhtml`, which also uses an
-`f:validateRegEx` tag to ensure that the input is correctly formatted.
+** A custom converter is registered on the credit card field on the checkout page, `bookcashier.xhtml`, which also uses an `f:validateRegEx` tag to ensure that the input is correctly formatted.
 
-** A value-change listener is registered on the name field on
-`bookcashier.xhtml`. This listener saves the name in a parameter so the
-following page, `bookreceipt.xhtml`, can access it.
+** A value-change listener is registered on the name field on `bookcashier.xhtml`.
+This listener saves the name in a parameter so the following page, `bookreceipt.xhtml`, can access it.
 
-* Enterprise beans: Local, no-interface-view stateless session bean and
-singleton bean
+* Enterprise beans: Local, no-interface-view stateless session bean and singleton bean
 
 * A Jakarta Persistence entity
 
-The packages of the Duke's Bookstore application, located in the
-`_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/ee/jakarta/tutorial/dukesbookstore/`
-directory, are as follows:
+The packages of the Duke's Bookstore application, located in the `_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/ee/jakarta/tutorial/dukesbookstore/` directory, are as follows:
 
-* `components`: Includes the custom UI component classes,
-`MapComponent` and `AreaComponent`
+* `components`: Includes the custom UI component classes, `MapComponent` and `AreaComponent`
 
-* `converters`: Includes the custom converter class,
-`CreditCardConverter`
+* `converters`: Includes the custom converter class, `CreditCardConverter`
 
 * `ejb`: Includes two enterprise beans:
 
-** A singleton bean, `ConfigBean`, that initializes the data in the
-database
+** A singleton bean, `ConfigBean`, that initializes the data in the database
 
-** A stateless session bean, `BookRequestBean`, that contains the
-business logic to manage the entity
+** A stateless session bean, `BookRequestBean`, that contains the business logic to manage the entity
 
 * `entity`: Includes the `Book` entity class
 
@@ -63,10 +46,8 @@ business logic to manage the entity
 
 * `model`: Includes a model JavaBeans class
 
-* `renderers`: Includes the custom renderers for the custom UI
-component classes
+* `renderers`: Includes the custom renderers for the custom UI component classes
 
 * `web.managedbeans`: Includes the managed beans for the Facelets pages
 
-* `web.messages`: Includes the resource bundle files for localized
-messages
+* `web.messages`: Includes the resource bundle files for localized messages

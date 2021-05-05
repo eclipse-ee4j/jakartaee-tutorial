@@ -1,8 +1,5 @@
 == Transactions in Web Components
 
-You can demarcate a transaction in a web component by using either the
-`java.sql.Connection` or the `jakarta.transaction.UserTransaction`
-interface. These are the same interfaces that a session bean with
-bean-managed transactions can use. Transactions demarcated with the
-`UserTransaction` interface are discussed in
-<<jakarta-transactions-2>>.
+You can demarcate a transaction in a web component by using either the `java.sql.Connection` or the `jakarta.transaction.UserTransaction` interface.
+These are the same interfaces that a session bean with bean-managed transactions can use.
+Transactions demarcated with the `UserTransaction` interface are discussed in <<jakarta-transactions-2>>.

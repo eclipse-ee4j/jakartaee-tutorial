@@ -1,10 +1,8 @@
 = Batch Processing
 
-This chapter describes Jakarta Batch, which provides support for
-defining, implementing, and running batch jobs. Batch jobs are tasks
-that can be executed without user interaction. The batch framework is
-composed of a job specification language based on XML, a Java API, and
-a batch runtime.
+This chapter describes Jakarta Batch, which provides support for defining, implementing, and running batch jobs.
+Batch jobs are tasks that can be executed without user interaction.
+The batch framework is composed of a job specification language based on XML, a Java API, and a batch runtime.
 
 include::batch-processing001.adoc[]
 
@@ -25,4 +23,3 @@ include::batch-processing008.adoc[]
 include::batch-processing009.adoc[]
 
 include::batch-processing010.adoc[]
-

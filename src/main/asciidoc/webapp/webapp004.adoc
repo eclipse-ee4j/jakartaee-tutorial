@@ -1,28 +1,22 @@
 == A Web Module That Uses Jakarta Servlet Technology: The hello2 Example
 
-The `hello2` application is a web module that uses Jakarta Servlet
-technology to display a greeting and response. You can use a text
-editor to view the application files, or you can use NetBeans IDE.
+The `hello2` application is a web module that uses Jakarta Servlet technology to display a greeting and response.
+You can use a text editor to view the application files, or you can use NetBeans IDE.
 
-The source code for this application is in the
-`_tut-install_/examples/web/servlet/hello2/` directory.
+The source code for this application is in the `_tut-install_/examples/web/servlet/hello2/` directory.
 
 === Mapping URLs to Web Components
 
-When it receives a request, the web container must determine which web
-component should handle the request. The web container does so by
-mapping the URL path contained in the request to a web application and
-a web component. A URL path contains the context root and, optionally,
-a URL pattern:
+When it receives a request, the web container must determine which web component should handle the request.
+The web container does so by mapping the URL path contained in the request to a web application and a web component.
+A URL path contains the context root and, optionally, a URL pattern:
 
 ----
 http://host:port/context-root[/url-pattern]
 ----
 
-You set the URL pattern for a servlet by using the `@WebServlet`
-annotation in the servlet source file. For example, the
-`GreetingServlet.java` file in the `hello2` application contains the
-following annotation, specifying the URL pattern as `/greeting`:
+You set the URL pattern for a servlet by using the `@WebServlet` annotation in the servlet source file.
+For example, the `GreetingServlet.java` file in the `hello2` application contains the following annotation, specifying the URL pattern as `/greeting`:
 
 [source,java]
 ----
@@ -32,23 +26,19 @@ public class GreetingServlet extends HttpServlet {
 }
 ----
 
-This annotation indicates that the URL pattern `/greeting` follows the
-context root. Therefore, when the servlet is deployed locally, it is
-accessed with the following URL:
+This annotation indicates that the URL pattern `/greeting` follows the context root.
+Therefore, when the servlet is deployed locally, it is accessed with the following URL:
 
 ----
 http://localhost:8080/hello2/greeting
 ----
 
-To access the servlet by using only the context root, specify `"/"` as
-the URL pattern.
+To access the servlet by using only the context root, specify `"/"` as the URL pattern.
 
 === Examining the hello2 Web Module
 
-The `hello2` application behaves almost identically to the `hello1`
-application, but it is implemented using Jakarta Servlet technology
-instead of Jakarta Faces technology. You can use a text editor to view
-the application files, or you can use NetBeans IDE.
+The `hello2` application behaves almost identically to the `hello1` application, but it is implemented using Jakarta Servlet technology instead of Jakarta Faces technology.
+You can use a text editor to view the application files, or you can use NetBeans IDE.
 
 ==== To View the hello2 Web Module Using NetBeans IDE
 
@@ -64,16 +54,13 @@ tut-install/examples/web/servlet
 
 . Select the `hello2` folder and click *Open Project*.
 
-. Expand the *Source Packages* node, then expand the
-`ee.jakarta.tutorial.hello2` node.
+. Expand the *Source Packages* node, then expand the `ee.jakarta.tutorial.hello2` node.
 
 . Double-click the `GreetingServlet.java` file to view it.
 +
-This servlet overrides the `doGet` method, implementing the `GET`
-method of HTTP. The servlet displays a simple HTML greeting form whose
-Submit button, like that of `hello1`, specifies a response page for its
-action. The following excerpt begins with the `@WebServlet` annotation,
-which specifies the URL pattern relative to the context root:
+This servlet overrides the `doGet` method, implementing the `GET` method of HTTP.
+The servlet displays a simple HTML greeting form whose Submit button, like that of `hello1`, specifies a response page for its action.
+The following excerpt begins with the `@WebServlet` annotation, which specifies the URL pattern relative to the context root:
 +
 [source,java]
 ----
@@ -122,10 +109,8 @@ public class GreetingServlet extends HttpServlet {
 
 . Double-click the `ResponseServlet.java` file to view it.
 +
-This servlet also overrides the `doGet` method, displaying only the
-response. The following excerpt begins with the `@WebServlet`
-annotation, which specifies the URL pattern relative to the context
-root:
+This servlet also overrides the `doGet` method, displaying only the response.
+The following excerpt begins with the `@WebServlet` annotation, which specifies the URL pattern relative to the context root:
 +
 [source,java]
 ----
@@ -151,16 +136,13 @@ public class ResponseServlet extends HttpServlet {
 
 === Running the hello2 Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `hello2` example.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `hello2` example.
 
 ==== To Run the hello2 Example Using NetBeans IDE
 
 To run the `hello2` example using NetBeans IDE:
 
-. Start GlassFish Server as described in
-<<to-start-glassfish-server-using-netbeans-ide>>, if you have not
-already done so.
+. Start GlassFish Server as described in <<to-start-glassfish-server-using-netbeans-ide>>, if you have not already done so.
 
 . From the *File* menu, choose *Open Project*.
 
@@ -174,8 +156,7 @@ tut-install/examples/web/servlet
 
 . Click *Open Project*.
 
-. In the *Projects* tab, right-click the `hello2` project and select
-*Build* to package and deploy the project.
+. In the *Projects* tab, right-click the `hello2` project and select *Build* to package and deploy the project.
 
 . In a web browser, open the following URL:
 +
@@ -185,17 +166,14 @@ http://localhost:8080/hello2/greeting
 +
 The URL specifies the context root, followed by the URL pattern.
 +
-The application looks much like the `hello1` application. The major
-difference is that after you click Submit the response appears below
-the greeting, not on a separate page.
+The application looks much like the `hello1` application.
+The major difference is that after you click Submit the response appears below the greeting, not on a separate page.
 
 ==== To Run the hello2 Example Using Maven
 
 To run the `hello2` example using Maven:
 
-. Start GlassFish Server as described in
-<<to-start-glassfish-server-using-the-command-line>>, if you have not
-already done so.
+. Start GlassFish Server as described in <<to-start-glassfish-server-using-the-command-line>>, if you have not already done so.
 
 . In a terminal window, go to:
 +
@@ -206,10 +184,11 @@ tut-install/examples/web/servlet/hello2/
 . Enter the following command:
 +
 [source,shell]
+----
 mvn install
+----
 +
-This target builds the WAR file, copies it to the
-`_tut-install_/examples/web/hello2/target/` directory, and deploys it.
+This target builds the WAR file, copies it to the `_tut-install_/examples/web/hello2/target/` directory, and deploys it.
 
 . In a web browser, open the following URL:
 +
@@ -219,6 +198,5 @@ http://localhost:8080/hello2/greeting
 +
 The URL specifies the context root, followed by the URL pattern.
 +
-The application looks much like the `hello1` application. The major
-difference is that after you click Submit the response appears below the
-greeting, not on a separate page.
+The application looks much like the `hello1` application.
+The major difference is that after you click Submit the response appears below the greeting, not on a separate page.

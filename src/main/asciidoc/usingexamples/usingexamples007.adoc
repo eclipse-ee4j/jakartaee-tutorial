@@ -1,37 +1,38 @@
 == Jakarta EE Maven Archetypes in the Tutorial
 
-Some of the chapters have instructions on how to build an example
-application using Maven archetypes. Archetypes are templates for
-generating a particular Maven project. The Tutorial includes several
-Maven archetypes for generating Jakarta EE projects.
+Some of the chapters have instructions on how to build an example application using Maven archetypes.
+Archetypes are templates for generating a particular Maven project.
+The Tutorial includes several Maven archetypes for generating Jakarta EE projects.
 
 === Installing the Tutorial Archetypes
 
-You must install the included Maven archetypes into your local Maven
-repository before you can create new projects based on the archetypes.
+You must install the included Maven archetypes into your local Maven repository before you can create new projects based on the archetypes.
 You can install the archetypes using NetBeans IDE or Maven.
 
 ==== Installing the Tutorial Archetypes Using NetBeans IDE
 
 . From the *File* menu, choose *Open Project*.
-. In the Open Project dialog box, navigate to: 
-+
+
+. In the Open Project dialog box, navigate to: +
 ----
 tut-install/examples
 ----
+
 . Select the `archetypes` folder.
+
 . Click *Open Project*.
-. In the *Projects* tab, right-click the `archetypes` project and
-select *Build*.
+
+. In the *Projects* tab, right-click the `archetypes` project and select *Build*.
 
 ==== Installing the Tutorial Archetypes Using Maven
 
-. In a terminal window, go to: 
-+
+. In a terminal window, go to: +
 ----
 tut-install/examples/archetypes/
 ----
-. Enter the following command:
-+
+
+. Enter the following command: +
 [source,shell]
+----
 mvn install
+----

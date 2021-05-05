@@ -1,24 +1,14 @@
 == The standalone Example Application
 
-The `standalone` example application demonstrates how to create an
-instance of the embedded enterprise bean container in a JUnit test
-class and call a session bean business method.
+The `standalone` example application demonstrates how to create an instance of the embedded enterprise bean container in a JUnit test class and call a session bean business method.
 
 === Overview of the standalone Example Application
 
-Testing the business methods of an enterprise bean in a unit test
-allows developers to exercise the business logic of an application
-separately from the other application layers, such as the presentation
-layer, and without having to deploy the application to a Jakarta EE
-server.
+Testing the business methods of an enterprise bean in a unit test allows developers to exercise the business logic of an application separately from the other application layers, such as the presentation layer, and without having to deploy the application to a Jakarta EE server.
 
-The `standalone` example has two main components: `StandaloneBean`, a
-stateless session bean, and `StandaloneBeanTest`, a JUnit test class
-that acts as a client to `StandaloneBean` using the embedded container.
+The `standalone` example has two main components: `StandaloneBean`, a stateless session bean, and `StandaloneBeanTest`, a JUnit test class that acts as a client to `StandaloneBean` using the embedded container.
 
-`StandaloneBean` is a simple session bean exposing a local,
-no-interface view with a single business method, `returnMessage`, which
-returns "Greetings!" as a `String`:
+`StandaloneBean` is a simple session bean exposing a local, no-interface view with a single business method, `returnMessage`, which returns "Greetings!" as a `String`:
 
 [source,java]
 ----
@@ -34,11 +24,8 @@ public class StandaloneBean {
 }
 ----
 
-`StandaloneBeanTest` calls `StandaloneBean.returnMessage` and tests
-that the returned message is correct. First, an embedded container
-instance and initial context are created within the `setUp` method,
-which is annotated with `org.junit.Before` to indicate that the method
-should be executed before the test methods:
+`StandaloneBeanTest` calls `StandaloneBean.returnMessage` and tests that the returned message is correct.
+First, an embedded container instance and initial context are created within the `setUp` method, which is annotated with `org.junit.Before` to indicate that the method should be executed before the test methods:
 
 [source,java]
 ----
@@ -49,13 +36,9 @@ public void setUp() {
 }
 ----
 
-The `testReturnMessage` method, annotated with `org.junit.Test` to
-indicate that the method includes a unit test, obtains a reference to
-`StandaloneBean` through the `Context` instance, and calls
-`StandaloneBean.returnMessage`. The result is compared with the
-expected result using a JUnit assertion, `assertEquals`. If the string
-returned from `StandaloneBean.returnMessage` is equal to "Greetings!"
-the test passes:
+The `testReturnMessage` method, annotated with `org.junit.Test` to indicate that the method includes a unit test, obtains a reference to `StandaloneBean` through the `Context` instance, and calls `StandaloneBean.returnMessage`.
+The result is compared with the expected result using a JUnit assertion, `assertEquals`.
+If the string returned from `StandaloneBean.returnMessage` is equal to "Greetings!" the test passes:
 
 [source,java]
 ----
@@ -70,9 +53,7 @@ public void testReturnMessage() throws Exception {
 }
 ----
 
-Finally, the `tearDown` method, annotated with `org.junit.After` to
-indicate that the method should be executed after all the unit tests
-have run, closes the embedded container instance:
+Finally, the `tearDown` method, annotated with `org.junit.After` to indicate that the method should be executed after all the unit tests have run, closes the embedded container instance:
 
 [source,java]
 ----
@@ -87,16 +68,19 @@ public void tearDown() {
 === To Run the standalone Example Application Using NetBeans IDE
 
 . From the *File* menu, choose *Open Project*.
+
 . In the *Open Project* dialog box, navigate to:
 +
 ----
 tut-install/examples/ejb
 ----
+
 . Select the `standalone` folder and click *Open Project*.
+
 . In the *Projects* tab, right-click `standalone` and select *Test*.
 +
-This will execute the JUnit test class `StandaloneBeanTest`. The Output
-tab shows the progress of the test and the output log.
+This will execute the JUnit test class `StandaloneBeanTest`.
+The Output tab shows the progress of the test and the output log.
 
 === To Run the standalone Example Application Using Maven
 
@@ -105,6 +89,7 @@ tab shows the progress of the test and the output log.
 ----
 tut-install/examples/ejb/standalone/
 ----
+
 . Enter the following command:
 +
 [source,shell]
@@ -112,5 +97,4 @@ tut-install/examples/ejb/standalone/
 mvn install
 ----
 +
-This command compiles and packages the application into an JAR file, and
-executes the JUnit test class `StandaloneBeanTest`.
+This command compiles and packages the application into an JAR file, and executes the JUnit test class `StandaloneBeanTest`.

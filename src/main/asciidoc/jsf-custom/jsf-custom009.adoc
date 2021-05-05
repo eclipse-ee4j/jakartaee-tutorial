@@ -1,19 +1,16 @@
 == Defining the Custom Component Tag in a Tag Library Descriptor
 
 To use a custom tag, you declare it in a Tag Library Descriptor (TLD).
-The TLD file defines how the custom tag is used in a Jakarta Faces
-page. The web container uses the TLD to validate the tag. The set of
-tags that are part of the HTML render kit are defined in the HTML_BASIC
-TLD, available in the
-https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Faces standard HTML tag library^].
+The TLD file defines how the custom tag is used in a Jakarta Faces page.
+The web container uses the TLD to validate the tag.
+The set of tags that are part of the HTML render kit are defined in the HTML_BASIC TLD, available in the https://jakarta.ee/specifications/faces/3.0/renderkitdoc/[Jakarta Faces standard HTML tag library^].
 
-The TLD file name must end with `taglib.xml`. In the Duke's Bookstore
-case study, the custom tags `area` and `map` are defined in the file
-`web/WEB-INF/bookstore.taglib.xml`.
+The TLD file name must end with `taglib.xml`.
+In the Duke's Bookstore case study, the custom tags `area` and `map` are defined in the file `web/WEB-INF/bookstore.taglib.xml`.
 
-All tag definitions must be nested inside the `facelet-taglib` element
-in the TLD. Each tag is defined by a `tag` element. Here are the tag
-definitions for the `area` and `map` components:
+All tag definitions must be nested inside the `facelet-taglib` element in the TLD.
+Each tag is defined by a `tag` element.
+Here are the tag definitions for the `area` and `map` components:
 
 [source,xml]
 ----
@@ -37,18 +34,13 @@ definitions for the `area` and `map` components:
 </facelet-taglib>
 ----
 
-The `component-type` element specifies the name defined in the
-`@FacesComponent` annotation, and the `renderer-type` element specifies
-the `rendererType` defined in the `@FacesRenderer` annotation.
+The `component-type` element specifies the name defined in the `@FacesComponent` annotation, and the `renderer-type` element specifies the `rendererType` defined in the `@FacesRenderer` annotation.
 
-The `facelet-taglib` element must also include a `namespace` element,
-which defines the namespace to be specified in pages that use the
-custom component. See <<using-a-custom-component>> for information on
-specifying the namespace in pages.
+The `facelet-taglib` element must also include a `namespace` element, which defines the namespace to be specified in pages that use the custom component.
+See <<using-a-custom-component>> for information on specifying the namespace in pages.
 
-The TLD file is located in the `WEB-INF` directory. In addition, an
-entry is included in the web deployment descriptor (`web.xml`) to
-identify the custom tag library descriptor file, as follows:
+The TLD file is located in the `WEB-INF` directory.
+In addition, an entry is included in the web deployment descriptor (`web.xml`) to identify the custom tag library descriptor file, as follows:
 
 [source,xml]
 ----

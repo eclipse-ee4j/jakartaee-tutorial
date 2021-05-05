@@ -3,41 +3,39 @@
 The following software is required to run the examples:
 
 * <<java-platform-standard-edition>>
+
 * <<eclipse-glassfish-server>>
+
 * <<jakarta-ee-tutorial-examples>>
+
 * <<apache-netbeans-ide>>
+
 * <<apache-maven>>
 
 === Java Platform, Standard Edition
 
-To build, deploy, and run the examples, you need a copy of the Java
-Platform, Standard Edition Development Kit (JDK). You must use JDK 8
-Update 20 or above. You can download JDK software from
-http://www.oracle.com/technetwork/java/javase/downloads/index.html[^].
+To build, deploy, and run the examples, you need a copy of the Java Platform, Standard Edition Development Kit (JDK).
+You must use JDK 8 Update 20 or above.
+You can download JDK software from https://www.oracle.com/technetwork/java/javase/downloads/index.html[^].
 
 === Eclipse Glassfish Server
 
-GlassFish Server 6.0 is targeted as the build and runtime environment
-for the tutorial examples. To build, deploy, and run the examples, you
-need a copy of GlassFish Server and, optionally, NetBeans IDE. You can
-download GlassFish Server from https://glassfish.org/download[^].
+GlassFish Server 6.0 is targeted as the build and runtime environment for the tutorial examples.
+To build, deploy, and run the examples, you need a copy of GlassFish Server and, optionally, NetBeans IDE.
+You can download GlassFish Server from https://glassfish.org/download[^].
 
 ==== GlassFish Server Installation Tips
 
-GlassFish Server is installed from a ZIP file. It sets the
-default administration user name as `admin` with no required password.
+GlassFish Server is installed from a ZIP file.
+It sets the default administration user name as `admin` with no required password.
 The Admin Port is set to 4848, and the HTTP Port is set to 8080.
 
-This tutorial refers to `_as-install-parent_`, the directory where you
-install GlassFish Server. For example, the default installation
-directory on Microsoft Windows is `C:\glassfish6`, so `_as-install-parent_`
-is `C:\glassfish6`. GlassFish Server itself is installed in `_as-install_`,
-the `glassfish` directory under `_as-install-parent_`. So on Microsoft
-Windows, `_as-install_` is `C:\glassfish6\glassfish`.
+This tutorial refers to `_as-install-parent_`, the directory where you install GlassFish Server.
+For example, the default installation directory on Microsoft Windows is `C:\glassfish6`, so `_as-install-parent_` is `C:\glassfish6`.
+GlassFish Server itself is installed in `_as-install_`, the `glassfish` directory under `_as-install-parent_`.
+So on Microsoft Windows, `_as-install_` is `C:\glassfish6\glassfish`.
 
-After you install GlassFish Server, add the following directories to
-your `PATH` to avoid having to specify the full path when you use
-commands:
+After you install GlassFish Server, add the following directories to your `PATH` to avoid having to specify the full path when you use commands:
 
 ----
 as-install-parent/bin
@@ -46,8 +44,7 @@ as-install/bin
 
 === Jakarta EE Tutorial Examples
 
-The tutorial example codes are located at
-https://github.com/eclipse-ee4j/jakartaee-tutorial-examples.
+The tutorial example codes are located at https://github.com/eclipse-ee4j/jakartaee-tutorial-examples.
 
 Download the examples and extract it to the following location:
 
@@ -57,41 +54,37 @@ tut-install/examples/
 
 === Apache NetBeans IDE
 
-The NetBeans integrated development environment (IDE) is a free,
-open-source IDE for developing Java applications, including enterprise
-applications. NetBeans IDE supports the Jakarta EE platform. You can
-build, package, deploy, and run the tutorial examples from within
-NetBeans IDE.
+The NetBeans integrated development environment (IDE) is a free, open-source IDE for developing Java applications, including enterprise applications.
+NetBeans IDE supports the Jakarta EE platform.
+You can build, package, deploy, and run the tutorial examples from within NetBeans IDE.
 
-To run the tutorial examples, you need the latest version of NetBeans
-IDE. You can download NetBeans IDE from
-https://netbeans.apache.org/download/index.html[^].
+To run the tutorial examples, you need the latest version of NetBeans IDE.
+You can download NetBeans IDE from https://netbeans.apache.org/download/index.html[^].
 
 ==== To Add GlassFish Server as a Server Using NetBeans IDE
 
-To run the tutorial examples in NetBeans IDE, you must add your
-GlassFish Server as a server in NetBeans IDE. Follow these instructions
-to add GlassFish Server to NetBeans IDE.
+To run the tutorial examples in NetBeans IDE, you must add your GlassFish Server as a server in NetBeans IDE.
+Follow these instructions to add GlassFish Server to NetBeans IDE.
 
 . From the *Tools* menu, choose *Servers*.
+
 . In the Servers wizard, click *Add Server*.
+
 . Under Choose Server, select *GlassFish Server* and click *Next*.
-. Under Server Location, browse to the GlassFish Server installation
-and click *Next*.
+
+. Under Server Location, browse to the GlassFish Server installation and click *Next*.
+
 . Under Domain Location, select *Register Local Domain*.
+
 . Click *Finish*.
 
 === Apache Maven
 
-Maven is a Java technology-based build tool developed by the Apache
-Software Foundation and is used to build, package, and deploy the
-tutorial examples. To run the tutorial examples from the command line,
-you need Maven 3.0 or higher. If you do not already have Maven, you can
-install it from:
+Maven is a Java technology-based build tool developed by the Apache Software Foundation and is used to build, package, and deploy the tutorial examples.
+To run the tutorial examples from the command line, you need Maven 3.0 or higher. If you do not already have Maven, you can install it from:
 
-http://maven.apache.org[^]
+https://maven.apache.org[^]
 
 Be sure to add the `maven-install/bin` directory to your path.
 
-If you are using NetBeans IDE to build and run the examples, it includes
-a copy of Maven.
+If you are using NetBeans IDE to build and run the examples, it includes a copy of Maven.

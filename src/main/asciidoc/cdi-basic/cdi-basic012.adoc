@@ -1,11 +1,7 @@
 == Injecting Objects by Using Producer Methods
 
-Producer methods provide a way to inject objects that are not beans,
-objects whose values may vary at runtime, and objects that require
-custom initialization. For example, if you want to initialize a numeric
-value defined by a qualifier named `@MaxNumber`, then you can define
-the value in a managed bean and then define a producer method,
-`getMaxNumber`, for it:
+Producer methods provide a way to inject objects that are not beans, objects whose values may vary at runtime, and objects that require custom initialization.
+For example, if you want to initialize a numeric value defined by a qualifier named `@MaxNumber`, then you can define the value in a managed bean and then define a producer method, `getMaxNumber`, for it:
 
 [source,java]
 ----
@@ -16,18 +12,15 @@ private int maxNumber = 100;
 }
 ----
 
-When you inject the object in another managed bean, the container
-automatically invokes the producer method, initializing the value to
-100:
+When you inject the object in another managed bean, the container automatically invokes the producer method, initializing the value to 100:
 
 [source,java]
 ----
 @Inject @MaxNumber private int maxNumber;
 ----
 
-If the value can vary at runtime, then the process is slightly
-different. For example, the following code defines a producer method
-that generates a random number defined by a qualifier called `@Random`:
+If the value can vary at runtime, then the process is slightly different.
+For example, the following code defines a producer method that generates a random number defined by a qualifier called `@Random`:
 
 [source,java]
 ----
@@ -43,8 +36,7 @@ java.util.Random getRandom() {
 }
 ----
 
-When you inject this object in another managed bean, you declare a
-contextual instance of the object:
+When you inject this object in another managed bean, you declare a contextual instance of the object:
 
 [source,java]
 ----

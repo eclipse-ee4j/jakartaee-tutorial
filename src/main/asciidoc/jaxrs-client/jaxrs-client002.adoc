@@ -1,20 +1,15 @@
 == Using the Client API in the Jakarta REST Example Applications
 
-The `rsvp` and `customer` examples use the Client API to call Jakarta
-REST services. This section describes how each example application uses
-the Client API.
+The `rsvp` and `customer` examples use the Client API to call Jakarta REST services.
+This section describes how each example application uses the Client API.
 
 === The Client API in the rsvp Example Application
 
-The `rsvp` application allows users to respond to event invitations
-using Jakarta REST resources, as explained in
-<<the-rsvp-example-application>>. The web application uses the Client
-API in CDI backing beans to interact with the service resources, and
-the Facelets web interface displays the results.
+The `rsvp` application allows users to respond to event invitations using Jakarta REST resources, as explained in <<the-rsvp-example-application>>.
+The web application uses the Client API in CDI backing beans to interact with the service resources, and the Facelets web interface displays the results.
 
-The `StatusManager` CDI backing bean retrieves all the current events
-in the system. The client instance used in the backing bean is obtained
-in the constructor:
+The `StatusManager` CDI backing bean retrieves all the current events in the system.
+The client instance used in the backing bean is obtained in the constructor:
 
 [source,java]
 ----
@@ -23,11 +18,8 @@ public StatusManager() {
 }
 ----
 
-The `StatusManager.getEvents` method returns a collection of all the
-current events in the system by calling the resource at
-`http://localhost:8080/rsvp/webapi/status/all`, which returns an XML
-document with entries for each event. The Client API automatically
-unmarshals the XML and creates a `List<Event>` instance.
+The `StatusManager.getEvents` method returns a collection of all the current events in the system by calling the resource at http://localhost:8080/rsvp/webapi/status/all[^], which returns an XML document with entries for each event.
+The Client API automatically unmarshals the XML and creates a `List<Event>` instance.
 
 [source,java]
 ----
@@ -52,9 +44,9 @@ public List<Event> getEvents() {
 }
 ----
 
-The `StatusManager.changeStatus` method is used to update the
-attendee's response. It creates an HTTP `POST` request to the service
-with the new response. The body of the request is an XML document.
+The `StatusManager.changeStatus` method is used to update the attendee's response.
+It creates an HTTP `POST` request to the service with the new response.
+The body of the request is an XML document.
 
 [source,java]
 ----
@@ -87,19 +79,12 @@ public String changeStatus(ResponseEnum userResponse,
 
 === The Client API in the customer Example Application
 
-The `customer` example application stores customer data in a database
-and exposes the resource as XML, as explained in
-<<the-customer-example-application>>. The service resource exposes
-methods that create customers and retrieve all the customers. A
-Facelets web application acts as a client for the service resource,
-with a form for creating customers and displaying the list of customers
-in a table.
+The `customer` example application stores customer data in a database and exposes the resource as XML, as explained in <<the-customer-example-application>>.
+The service resource exposes methods that create customers and retrieve all the customers.
+A Facelets web application acts as a client for the service resource, with a form for creating customers and displaying the list of customers in a table.
 
-The `CustomerBean` stateless session bean uses the Jakarta REST Client
-API to interface with the service resource. The
-`CustomerBean.createCustomer` method takes the `Customer` entity
-instance created by the Facelets form and makes a POST call to the
-service URI.
+The `CustomerBean` stateless session bean uses the Jakarta REST Client API to interface with the service resource.
+The `CustomerBean.createCustomer` method takes the `Customer` entity instance created by the Facelets form and makes a POST call to the service URI.
 
 [source,java]
 ----
@@ -129,14 +114,9 @@ public String createCustomer(Customer customer) {
 }
 ----
 
-The XML request entity is created by calling the
-`Invocation.Builder.post` method, passing in a new `Entity` instance
-from the `Customer` instance, and specifying the media type as
-`MediaType.APPLICATION_XML`.
+The XML request entity is created by calling the `Invocation.Builder.post` method, passing in a new `Entity` instance from the `Customer` instance, and specifying the media type as `MediaType.APPLICATION_XML`.
 
-The `CustomerBean.retrieveCustomer` method retrieves a `Customer`
-entity instance from the service by appending the customer's ID to the
-service URI.
+The `CustomerBean.retrieveCustomer` method retrieves a `Customer` entity instance from the service by appending the customer's ID to the service URI.
 
 [source,java]
 ----
@@ -156,9 +136,8 @@ public String retrieveCustomer(String id) {
 }
 ----
 
-The `CustomerBean.retrieveAllCustomers` method retrieves a collection
-of customers as a `List<Customer>` instance. This list is then
-displayed as a table in the Facelets web application.
+The `CustomerBean.retrieveAllCustomers` method retrieves a collection of customers as a `List<Customer>` instance.
+This list is then displayed as a table in the Facelets web application.
 
 [source,java]
 ----
@@ -173,6 +152,4 @@ public List<Customer> retrieveAllCustomers() {
 }
 ----
 
-Because the response type is a collection, the `Invocation.Builder.get`
-method is called by passing in a new instance of
-`GenericType<List<Customer>>`.
+Because the response type is a collection, the `Invocation.Builder.get` method is called by passing in a new instance of `GenericType<List<Customer>>`.

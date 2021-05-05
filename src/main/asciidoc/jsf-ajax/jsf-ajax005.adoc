@@ -1,17 +1,15 @@
 == Monitoring Events on the Client
 
-To monitor ongoing Ajax requests, use the `onevent` attribute of the
-`f:ajax` tag. The value of this attribute is the name of a JavaScript
-function. Jakarta Faces calls the `onevent` function at each stage of
-the processing of an Ajax request: begin, complete, and success.
+To monitor ongoing Ajax requests, use the `onevent` attribute of the `f:ajax` tag.
+The value of this attribute is the name of a JavaScript function.
+Jakarta Faces calls the `onevent` function at each stage of the processing of an Ajax request: begin, complete, and success.
 
-When calling the JavaScript function assigned to the `onevent`
-property, Jakarta Faces passes a data object to it. The data object
-contains the properties listed in
-<<properties-of-the-onevent-data-object>>.
+When calling the JavaScript function assigned to the `onevent` property, Jakarta Faces passes a data object to it.
+The data object contains the properties listed in <<properties-of-the-onevent-data-object>>.
 
 [[properties-of-the-onevent-data-object]]
-[width="60%",cols="15%a,45%a",title="Properties of the onevent Data Object"]
+.Properties of the onevent Data Object
+[width="60%",cols="15%,45%"]
 |===
 |Property |Description
 
@@ -23,16 +21,13 @@ contains the properties listed in
 
 |`source` |The source of the current Ajax event: the DOM element
 
-|`status` |The status of the current Ajax call: `begin`, `complete`, or
-`success`
+|`status` |The status of the current Ajax call: `begin`, `complete`, or `success`
 
 |`type` |The type of the Ajax call: `event`
 |===
 
-By using the `status` property of the data object, you can identify the
-current status of the Ajax request and monitor its progress. In the
-following example, `monitormyajaxevent` is a JavaScript function that
-monitors the Ajax request sent by the event:
+By using the `status` property of the data object, you can identify the current status of the Ajax request and monitor its progress.
+In the following example, `monitormyajaxevent` is a JavaScript function that monitors the Ajax request sent by the event:
 
 [source,xml]
 ----

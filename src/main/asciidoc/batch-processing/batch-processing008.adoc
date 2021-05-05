@@ -1,53 +1,36 @@
 == The webserverlog Example Application
 
-The `webserverlog` example application, located in the
-`_tut-install_/examples/batch/webserverlog/` directory, demonstrates
-how to use the batch framework in Jakarta EE to analyze the log file
-from a web server. This example application reads a log file and finds
-what percentage of page views from tablet devices are product sales.
+The `webserverlog` example application, located in the `_tut-install_/examples/batch/webserverlog/` directory, demonstrates how to use the batch framework in Jakarta EE to analyze the log file from a web server.
+This example application reads a log file and finds what percentage of page views from tablet devices are product sales.
 
 === Architecture of the webserverlog Example Application
 
-The `webserverlog` example application consists of the following
-elements:
+The `webserverlog` example application consists of the following elements:
 
-* A job definition file (`webserverlog.xml`) that uses the Job
-Specification Language (JSL) to define a batch job with a chunk step
-and a task step. The chunk step acts as a filter, and the task step
-calculates statistics on the remaining entries.
+* A job definition file (`webserverlog.xml`) that uses the Job Specification Language (JSL) to define a batch job with a chunk step and a task step.
+The chunk step acts as a filter, and the task step calculates statistics on the remaining entries.
 
 * A log file (`log1.txt`) that serves as input data to the batch job.
 
-* Two Java classes (`LogLine` and `LogFilteredLine`) that represent
-input items and output items for the chunk step.
+* Two Java classes (`LogLine` and `LogFilteredLine`) that represent input items and output items for the chunk step.
 
-* Three batch artifacts (`LogLineReader`, `LogLineProcessor`, and
-`LogFilteredLineWriter`) that implement the chunk step of the
-application. This step reads items from the web server log file,
-filters them by the web browser used by the client, and writes the
-results to a text file.
+* Three batch artifacts (`LogLineReader`, `LogLineProcessor`, and `LogFilteredLineWriter`) that implement the chunk step of the application.
+This step reads items from the web server log file, filters them by the web browser used by the client, and writes the results to a text file.
 
-* Two batch artifacts (`InfoJobListener` and `InfoItemProcessListener`)
-that implement two simple listeners.
+* Two batch artifacts (`InfoJobListener` and `InfoItemProcessListener`) that implement two simple listeners.
 
-* A batch artifact (`MobileBatchlet.java`) that calculates statistics
-on the filtered items.
+* A batch artifact (`MobileBatchlet.java`) that calculates statistics on the filtered items.
 
-* Two Facelets pages (`index.xhtml` and `jobstarted.xhtml`) that
-provide the front end of the batch application. The first page shows
-the log file that will be processed by the batch job, and the second
-page enables the user to check on the status of the job and shows the
-results.
+* Two Facelets pages (`index.xhtml` and `jobstarted.xhtml`) that provide the front end of the batch application.
+The first page shows the log file that will be processed by the batch job, and the second page enables the user to check on the status of the job and shows the results.
 
 * A managed bean (`JsfBean`) that is accessed from the Facelets pages.
-The bean submits the job to the batch runtime, checks on the status of
-the job, and reads the results from a text file.
+The bean submits the job to the batch runtime, checks on the status of the job, and reads the results from a text file.
 
 ==== The Job Definition File
 
-The `webserverlog.xml` job definition file is located in the
-`WEB-INF/classes/META-INF/batch-jobs/` directory. The file specifies
-seven job-level properties and two steps:
+The `webserverlog.xml` job definition file is located in the `WEB-INF/classes/META-INF/batch-jobs/` directory.
+The file specifies seven job-level properties and two steps:
 
 [source,xml]
 ----
@@ -87,10 +70,8 @@ The first step is defined as follows:
 </step>
 ----
 
-This step is a normal chunk step that specifies the batch artifacts
-that implement each phase of the step. The batch artifact names are not
-fully qualified class names, so the batch artifacts are CDI beans
-annotated with `@Named`.
+This step is a normal chunk step that specifies the batch artifacts that implement each phase of the step.
+The batch artifact names are not fully qualified class names, so the batch artifacts are CDI beans annotated with `@Named`.
 
 The second step is defined as follows:
 
@@ -102,13 +83,12 @@ The second step is defined as follows:
 </step>
 ----
 
-This step is a task step that specifies the batch artifact that
-implements it. This is the last step of the job.
+This step is a task step that specifies the batch artifact that implements it.
+This is the last step of the job.
 
 ==== The LogLine and LogFilteredLine Items
 
-The `LogLine` class represents entries in the web server log file and
-it is defined as follows:
+The `LogLine` class represents entries in the web server log file and it is defined as follows:
 
 [source,java]
 ----
@@ -122,16 +102,13 @@ public class LogLine {
 }
 ----
 
-The `LogFileteredLine` class is similar to this class but only has two
-fields: the IP address of the client and the URL.
+The `LogFileteredLine` class is similar to this class but only has two fields: the IP address of the client and the URL.
 
 ==== The Chunk Step Batch Artifacts
 
-The first step is composed of the `LogLineReader`, `LogLineProcessor`,
-and `LogFilteredLineWriter` batch artifacts.
+The first step is composed of the `LogLineReader`, `LogLineProcessor`, and `LogFilteredLineWriter` batch artifacts.
 
-The `LogLineReader` artifact reads records from the web server log
-file:
+The `LogLineReader` artifact reads records from the web server log file:
 
 [source,java]
 ----
@@ -151,10 +128,8 @@ public class LogLineReader implements ItemReader {
 }
 ----
 
-The `open` method reads the `log_file_name` property and opens the log
-file with a buffered reader. In this example, the log file has been
-included with the application under
-`webserverlog/WEB-INF/classes/log1.txt`:
+The `open` method reads the `log_file_name` property and opens the log file with a buffered reader.
+In this example, the log file has been included with the application under `webserverlog/WEB-INF/classes/log1.txt`:
 
 [source,java]
 ----
@@ -164,13 +139,11 @@ InputStream iStream = classLoader.getResourceAsStream(fileName);
 breader = new BufferedReader(new InputStreamReader(iStream));
 ----
 
-If a checkpoint object is provided, the `open` method advances the
-reader up to the last checkpoint. Otherwise, this method creates a new
-checkpoint object. The checkpoint object keeps track of the line number
-from the last committed chunk.
+If a checkpoint object is provided, the `open` method advances the reader up to the last checkpoint.
+Otherwise, this method creates a new checkpoint object.
+The checkpoint object keeps track of the line number from the last committed chunk.
 
-The `readItem` method returns a new `LogLine` object or null at the end
-of the log file:
+The `readItem` method returns a new `LogLine` object or null at the end of the log file:
 
 [source,java]
 ----
@@ -186,8 +159,7 @@ public Object readItem() throws Exception {
 }
 ----
 
-The `LogLineProcessor` artifact obtains a list of browsers from the job
-properties and filters the log entries according to the list:
+The `LogLineProcessor` artifact obtains a list of browsers from the job properties and filters the log entries according to the list:
 
 [source,java]
 ----
@@ -213,10 +185,9 @@ public Object processItem(Object item) {
 }
 ----
 
-The `LogFilteredLineWriter` artifact reads the name of the output file
-from the job properties. The `open` method opens the file for writing.
-If a checkpoint object is provided, the artifact continues writing at
-the end of the file; otherwise, it overwrites the file if it exists.
+The `LogFilteredLineWriter` artifact reads the name of the output file from the job properties.
+The `open` method opens the file for writing.
+If a checkpoint object is provided, the artifact continues writing at the end of the file; otherwise, it overwrites the file if it exists.
 The `writeItems` method writes filtered items to the output file:
 
 [source,java]
@@ -234,8 +205,7 @@ public void writeItems(List<Object> items) throws Exception {
 
 ==== The Listener Batch Artifacts
 
-The `InfoJobListener` batch artifact implements a simple listener that
-writes log messages when the job starts and when it ends:
+The `InfoJobListener` batch artifact implements a simple listener that writes log messages when the job starts and when it ends:
 
 [source,java]
 ----
@@ -253,8 +223,7 @@ public class InfoJobListener implements JobListener {
 }
 ----
 
-The `InfoItemProcessListener` batch artifact implements the
-`ItemProcessListener` interface for chunk steps:
+The `InfoItemProcessListener` batch artifact implements the `ItemProcessListener` interface for chunk steps:
 
 [source,java]
 ----
@@ -273,8 +242,7 @@ public class InfoItemProcessListener implements ItemProcessListener {
 
 ==== The Task Step Batch Artifact
 
-The task step is implemented by the `MobileBatchlet` artifact, which
-computes what percentage of the filtered log entries are purchases:
+The task step is implemented by the `MobileBatchlet` artifact, which computes what percentage of the filtered log entries are purchases:
 
 [source,java]
 ----
@@ -300,9 +268,8 @@ public String process() throws Exception {
 
 ==== The Jakarta Faces Pages
 
-The `index.xhtml` page contains a text area that shows the web server
-log. The page provides a button for the user to submit the batch job
-and navigate to the next page:
+The `index.xhtml` page contains a text area that shows the web server log.
+The page provides a button for the user to submit the batch job and navigate to the next page:
 
 [source,xml]
 ----
@@ -318,11 +285,9 @@ and navigate to the next page:
 </body>
 ----
 
-This page calls the methods of the managed bean to show the log file
-and submit the batch job.
+This page calls the methods of the managed bean to show the log file and submit the batch job.
 
-The `jobstarted.xhtml` page provides a button to check the current
-status of the batch job and displays the results when the job finishes:
+The `jobstarted.xhtml` page provides a button to check the current status of the batch job and displays the results when the job finishes:
 
 [source,xml]
 ----
@@ -337,8 +302,7 @@ status of the batch job and displays the results when the job finishes:
 
 ==== The Managed Bean
 
-The `JsfBean` managed bean submits the job to the batch runtime, checks
-on the status of the job, and reads the results from a text file.
+The `JsfBean` managed bean submits the job to the batch runtime, checks on the status of the job, and reads the results from a text file.
 
 The `startBatchJob` method submits the job to the batch runtime:
 
@@ -367,27 +331,27 @@ The `showResults` method reads the results from a text file.
 
 === Running the webserverlog Example Application
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `webserverlog` example application.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `webserverlog` example application.
 
 ==== To Run the webserverlog Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . From the File menu, choose Open Project.
+
 . In the Open Project dialog box, navigate to:
 +
 ----
 tut-install/examples/batch
 ----
+
 . Select the `webserverlog` folder.
+
 . Click Open Project.
-. In the Projects tab, right-click the `webserverlog` project and
-select Run.
+
+. In the Projects tab, right-click the `webserverlog` project and select Run.
 +
-This command builds and packages the application into a WAR file,
-`webserverlog.war`, located in the `target/` directory; deploys it to
-the server; and launches a web browser window at the following URL:
+This command builds and packages the application into a WAR file, `webserverlog.war`, located in the `target/` directory; deploys it to the server; and launches a web browser window at the following URL:
 +
 ----
 http://localhost:8080/webserverlog/
@@ -395,19 +359,21 @@ http://localhost:8080/webserverlog/
 
 ==== To Run the webserverlog Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
 . In a terminal window, go to:
 +
 ----
 tut-install/examples/batch/webserverlog/
 ----
+
 . Enter the following command to deploy the application:
 +
 [source,shell]
 ----
 mvn install
 ----
+
 . Open a web browser window at the following URL:
 +
 ----

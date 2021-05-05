@@ -1,25 +1,23 @@
 == Validating Composite Component Values
 
-Jakarta Faces provides the following tags for validating values of
-input components. These tags can be used with the
-`composite:valueHolder` or the `composite:editableValueHolder` tag.
+Jakarta Faces provides the following tags for validating values of input components.
+These tags can be used with the `composite:valueHolder` or the `composite:editableValueHolder` tag.
 
-<<validator-tags>> lists commonly used validator tags. See
-<<using-the-standard-validators>> for details and a complete list.
+<<validator-tags>> lists commonly used validator tags.
+See <<using-the-standard-validators>> for details and a complete list.
 
 [[validator-tags]]
-[width="70%",cols="15%a,55%a",title="Validator Tags"]
+.Validator Tags
+[width="70%",cols="15%,55%"]
 |===
 |Tag Name |Description
 
-|`f:validateBean` |Delegates the validation of the local value to the
-Bean Validation API.
+|`f:validateBean` |Delegates the validation of the local value to the Bean Validation API.
 
-|`f:validateRegex` |Uses the `pattern` attribute to validate the
-wrapping component. The entire pattern is matched against the `String`
-value of the component. If it matches, it is valid.
+|`f:validateRegex` a|Uses the `pattern` attribute to validate the wrapping component.
+The entire pattern is matched against the `String` value of the component.
+If it matches, it is valid.
 
-|`f:validateRequired` |Enforces the presence of a value. Has the same
-effect as setting the `required` element of a composite component's
-attribute to `true`.
+|`f:validateRequired` a|Enforces the presence of a value.
+Has the same effect as setting the `required` element of a composite component's attribute to `true`.
 |===

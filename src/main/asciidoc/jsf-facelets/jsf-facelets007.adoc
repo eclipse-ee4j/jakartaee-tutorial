@@ -1,16 +1,16 @@
 == Relocatable Resources
 
-You can place a resource tag in one part of a page and specify that it
-be rendered in another part of the page. To do this, you use the
-`target` attribute of a tag that specifies a resource. Acceptable
-values for this attribute are as follows.
+You can place a resource tag in one part of a page and specify that it be rendered in another part of the page.
+To do this, you use the `target` attribute of a tag that specifies a resource.
+Acceptable values for this attribute are as follows.
 
 * "`head`" renders the resource in the `head` element.
+
 * "`body`" renders the resource in the `body` element.
+
 * "`form`" renders the resource in the `form` element.
 
-For example, the following `h:outputScript` tag is placed within an
-`h:form` element, but it renders the JavaScript in the `head` element:
+For example, the following `h:outputScript` tag is placed within an `h:form` element, but it renders the JavaScript in the `head` element:
 
 [source,xml]
 ----
@@ -19,12 +19,7 @@ For example, the following `h:outputScript` tag is placed within an
 </h:form>
 ----
 
-The `h:outputStylesheet` tag also supports resource relocation, in a
-similar way.
+The `h:outputStylesheet` tag also supports resource relocation, in a similar way.
 
-Relocatable resources are essential for composite components that use
-stylesheets and can also be useful for composite components that use
-JavaScript. See <<the-compositecomponentexample-example-application>>
-for an example.
-
-
+Relocatable resources are essential for composite components that use stylesheets and can also be useful for composite components that use JavaScript.
+See <<the-compositecomponentexample-example-application>> for an example.

@@ -1,59 +1,41 @@
 == Packaging Enterprise Beans
 
-This section explains how enterprise beans can be packaged in
-enterprise bean JAR or WAR modules. It includes the following sections:
+This section explains how enterprise beans can be packaged in enterprise bean JAR or WAR modules. It includes the following sections:
 
 * <<packaging-enterprise-beans-in-enterprise-bean-jar-modules>>
+
 * <<packaging-enterprise-beans-in-war-modules>>
 
 === Packaging Enterprise Beans in enterprise bean JAR Modules
 
-An enterprise bean JAR file is portable and can be used for various
-applications.
+An enterprise bean JAR file is portable and can be used for various applications.
 
-To assemble a Jakarta EE application, package one or more modules, such
-as enterprise bean JAR files, into an EAR file, the archive file that
-holds the application. When deploying the EAR file that contains the
-enterprise bean's JAR file, you also deploy the enterprise bean to
-GlassFish Server. You can also deploy an enterprise bean JAR that is
-not contained in an EAR file. <<structure-of-an-enterprise-bean-jar>>
-shows the contents of an enterprise bean JAR file.
+To assemble a Jakarta EE application, package one or more modules, such as enterprise bean JAR files, into an EAR file, the archive file that holds the application.
+When deploying the EAR file that contains the enterprise bean's JAR file, you also deploy the enterprise bean to GlassFish Server.
+You can also deploy an enterprise bean JAR that is not contained in an EAR file.
+<<structure-of-an-enterprise-bean-jar>> shows the contents of an enterprise bean JAR file.
 
 [[structure-of-an-enterprise-bean-jar]]
-image::jakartaeett_dt_011.svg["Diagram showing the structure and contents of an enterprise bean JAR file.", title="Structure of an Enterprise Bean JAR"]
+.Structure of an Enterprise Bean JAR
+image::jakartaeett_dt_011.svg["Diagram showing the structure and contents of an enterprise bean JAR file."]
 
 === Packaging Enterprise Beans in WAR Modules
 
-Enterprise beans often provide the business logic of a web application.
-In these cases, packaging the enterprise bean within the web
-application's WAR module simplifies deployment and application
-organization. Enterprise beans may be packaged within a WAR module as
-Java programming language class files or within a JAR file that is
-bundled within the WAR module.
+Enterprise beans often provide the business logic of a web application. In these cases, packaging the enterprise bean within the web application's WAR module simplifies deployment and application organization.
+Enterprise beans may be packaged within a WAR module as Java programming language class files or within a JAR file that is bundled within the WAR module.
 
-To include enterprise bean class files in a WAR module, the class files
-should be in the `WEB-INF/classes` directory.
+To include enterprise bean class files in a WAR module, the class files should be in the `WEB-INF/classes` directory.
 
-To include a JAR file that contains enterprise beans in a WAR module,
-add the JAR to the `WEB-INF/lib` directory of the WAR module.
+To include a JAR file that contains enterprise beans in a WAR module, add the JAR to the `WEB-INF/lib` directory of the WAR module.
 
-WAR modules that contain enterprise beans do not require an
-`ejb-jar.xml` deployment descriptor. If the application uses
-`ejb-jar.xml`, it must be located in the WAR module's `WEB-INF`
-directory.
+WAR modules that contain enterprise beans do not require an `ejb-jar.xml` deployment descriptor.
+If the application uses `ejb-jar.xml`, it must be located in the WAR module's `WEB-INF` directory.
 
-JAR files that contain enterprise bean classes packaged within a WAR
-module are not considered enterprise bean JAR files, even if the
-bundled JAR file conforms to the format of an enterprise bean JAR file.
-The enterprise beans contained within the JAR file are semantically
-equivalent to enterprise beans located in the WAR module's
-`WEB-INF/classes` directory, and the environment namespace of all the
-enterprise beans are scoped to the WAR module.
+JAR files that contain enterprise bean classes packaged within a WAR module are not considered enterprise bean JAR files, even if the bundled JAR file conforms to the format of an enterprise bean JAR file.
+The enterprise beans contained within the JAR file are semantically equivalent to enterprise beans located in the WAR module's `WEB-INF/classes` directory, and the environment namespace of all the enterprise beans are scoped to the WAR module.
 
-For example, suppose that a web application consists of a shopping cart
-enterprise bean, a credit card–processing enterprise bean, and a Java
-servlet front end. The shopping cart bean exposes a local, no-interface
-view and is defined as follows:
+For example, suppose that a web application consists of a shopping cart enterprise bean, a credit card–processing enterprise bean, and a Java servlet front end.
+The shopping cart bean exposes a local, no-interface view and is defined as follows:
 
 [source,java]
 ----
@@ -63,8 +45,7 @@ package com.example.cart;
 public class CartBean { ... }
 ----
 
-The credit card–processing bean is packaged within its own JAR file,
-`cc.jar`, exposes a local, no-interface view, and is defined as follows:
+The credit card–processing bean is packaged within its own JAR file, `cc.jar`, exposes a local, no-interface view, and is defined as follows:
 
 [source,java]
 ----
@@ -74,9 +55,8 @@ package com.example.cc;
 public class CreditCardBean { ... }
 ----
 
-The servlet, `com.example.web.StoreServlet`, handles the web front end
-and uses both `CartBean` and `CreditCardBean`. The WAR module layout for
-this application is as follows:
+The servlet, `com.example.web.StoreServlet`, handles the web front end and uses both `CartBean` and `CreditCardBean`.
+The WAR module layout for this application is as follows:
 
 [source]
 ----
