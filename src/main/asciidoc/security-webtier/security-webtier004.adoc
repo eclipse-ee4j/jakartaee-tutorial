@@ -366,6 +366,7 @@ Form-based authentication is case sensitive for both the user name and password,
 +
 If you entered `My_Name` as the name and `My_Pwd` for the password, the server returns the requested resource if all the following conditions are met.
 +
+
 * A user with the user name `My_Name` is defined for GlassFish Server.
 
 * The user with the user name `My_Name` has a password `My_Pwd` defined for GlassFish Server.
@@ -373,6 +374,7 @@ If you entered `My_Name` as the name and `My_Pwd` for the password, the server r
 * The user `My_Name` with the password `My_Pwd` is assigned to the group `TutorialUser` on GlassFish Server.
 
 * The role `TutorialUser`, as defined for the application, is mapped to the group `TutorialUser`, as defined for GlassFish Server.
+
 +
 When these conditions are met and the server has authenticated the user, the application appears.
 
