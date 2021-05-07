@@ -4,7 +4,7 @@ This section describes how using Jakarta Messaging in enterprise bean applicatio
 
 === Overview of Using Jakarta Messaging
 
-A general rule in the Jakarta EE platform specification applies to all Java EE components that use Jakarta Messaging within enterprise bean or web containers: Application components in the web and enterprise bean containers must not attempt to create more than one active (not closed) `Session` object per connection.
+A general rule in the Jakarta EE platform specification applies to all Jakarta EE components that use Jakarta Messaging within enterprise bean or web containers: Application components in the web and enterprise bean containers must not attempt to create more than one active (not closed) `Session` object per connection.
 Multiple `JMSContext` objects are permitted, however, since they combine a single connection and a single session.
 
 This rule does not apply to application clients.
