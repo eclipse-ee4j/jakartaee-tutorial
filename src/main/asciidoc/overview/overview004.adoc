@@ -109,7 +109,7 @@ Servlets are Java programming language classes that dynamically process requests
 Jakarta Server Pages are text-based documents that execute as servlets but allow a more natural approach to creating static content.
 Jakarta Faces technology builds on servlets and Jakarta Server Pages technology and provides a user interface component framework for web applications.
 
-Static HTML pages and applets are bundled with web components during application assembly but are not considered web components by the Java EE specification.
+Static HTML pages and applets are bundled with web components during application assembly but are not considered web components by the Jakarta EE specification.
 Server-side utility classes can also be bundled with web components and, like HTML pages, are not considered web components.
 
 As shown in <<web-tier-and-jakarta-ee-applications>>, the web tier, like the client tier, might include a JavaBeans component to manage the user input and send that input to enterprise beans running in the business tier for processing.

@@ -447,7 +447,7 @@ consumer = context.createSharedConsumer(topicName, "SubName");
 With a shared subscription, messages will be distributed among multiple clients that use the same topic and subscription name.
 Each message sent to the topic will be added to every subscription (subject to any message selectors), but each message added to a subscription will be delivered to only one of the consumers on that subscription, so it will be received by only one of the clients.
 A shared subscription can be useful if you want to share the message load among several consumers on the subscription rather than having just one consumer on the subscription receive each message.
-This feature can improve the scalability of Java EE application client applications and Java SE applications.
+This feature can improve the scalability of Jakarta EE application client applications and Java SE applications.
 (Message-driven beans share the work of processing messages from a topic among multiple threads.)
 
 See <<using-shared-nondurable-subscriptions>> for a simple example of using shared nondurable consumers.

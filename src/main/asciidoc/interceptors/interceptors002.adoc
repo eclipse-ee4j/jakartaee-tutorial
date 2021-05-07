@@ -352,7 +352,7 @@ These interceptors have the highest priority.
 
 |`LIBRARY_AFTER` |3000 |Low priority interceptors defined by extension libraries should use the range between `LIBRARY_AFTER` and `PLATFORM_AFTER`.
 
-|`PLATFORM_AFTER` |4000 |Low priority interceptors defined by the Java EE Platform should have values higher than `PLATFORM_AFTER`.
+|`PLATFORM_AFTER` |4000 |Low priority interceptors defined by the Jakarta EE Platform should have values higher than `PLATFORM_AFTER`.
 |===
 
 [NOTE]
