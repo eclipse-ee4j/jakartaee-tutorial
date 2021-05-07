@@ -1,6 +1,11 @@
 target/
 src/main/jbake/content/toc.adoc
 
+# Eclipse #
+.settings/
+*.classpath
+*.project
+
 # IntelliJ #
 .idea/
 *.iml
