@@ -1,41 +1,23 @@
-[[BEIFAIFF]][[the-dukeetf-example-application]]
-
 == The dukeetf Example Application
 
-The `dukeetf` example application, located in the
-`_tut-install_/examples/web/dukeetf/` directory, demonstrates how to use
-asynchronous processing in a servlet to provide data updates to web
-clients. The example resembles a service that provides periodic updates
-on the price and trading volume of an electronically traded fund (ETF).
-
-[[CHDBBEDA]][[architecture-of-the-dukeetf-example-application]]
+The `dukeetf` example application, located in the `_tut-install_/examples/web/dukeetf/` directory, demonstrates how to use asynchronous processing in a servlet to provide data updates to web clients.
+The example resembles a service that provides periodic updates on the price and trading volume of an electronically traded fund (ETF).
 
 === Architecture of the dukeetf Example Application
 
-The `dukeetf` example application consists of a servlet, an enterprise
-bean, and an HTML page.
+The `dukeetf` example application consists of a servlet, an enterprise bean, and an HTML page.
 
-* The servlet puts requests in asynchronous mode, stores them in a
-queue, and writes the responses when new data for price and trading
-volume becomes available.
-* The enterprise bean updates the price and volume information once
-every second.
-* The HTML page uses JavaScript code to make requests to the servlet for
-new data, parse the response from the servlet, and update the price and
-volume information without reloading the page.
+* The servlet puts requests in asynchronous mode, stores them in a queue, and writes the responses when new data for price and trading volume becomes available.
 
-The `dukeetf` example application uses a programming model known as long
-polling. In the traditional HTTP request and response model, the user
-must make an explicit request (such as clicking a link or submitting a
-form) to get any new information from the server, and the page has to be
-reloaded. Long polling provides a mechanism for web applications to push
-updates to clients using HTTP without the user making an explicit
-request. The server handles connections asynchronously, and the client
-uses JavaScript to make new connections. In this model, clients make a
-new request immediately after receiving new data, and the server keeps
-the connection open until new data becomes available.
+* The enterprise bean updates the price and volume information once every second.
 
-[[sthref111]][[the-servlet]]
+* The HTML page uses JavaScript code to make requests to the servlet for new data, parse the response from the servlet, and update the price and volume information without reloading the page.
+
+The `dukeetf` example application uses a programming model known as long polling.
+In the traditional HTTP request and response model, the user must make an explicit request (such as clicking a link or submitting a form) to get any new information from the server, and the page has to be reloaded.
+Long polling provides a mechanism for web applications to push updates to clients using HTTP without the user making an explicit request.
+The server handles connections asynchronously, and the client uses JavaScript to make new connections.
+In this model, clients make a new request immediately after receiving new data, and the server keeps the connection open until new data becomes available.
 
 ==== The Servlet
 
@@ -49,11 +31,8 @@ public class DukeETFServlet extends HttpServlet {
 }
 ----
 
-In the following code, the `init` method initializes a queue to hold
-client requests and registers the servlet with the enterprise bean that
-provides the price and volume updates. The `send` method gets called
-once per second by the `PriceVolumeBean` to send updates and close the
-connection:
+In the following code, the `init` method initializes a queue to hold client requests and registers the servlet with the enterprise bean that provides the price and volume updates.
+The `send` method gets called once per second by the `PriceVolumeBean` to send updates and close the connection:
 
 [source,java]
 ----
@@ -84,12 +63,10 @@ public void send(double price, int volume) {
 }
 ----
 
-The service method puts client requests in asynchronous mode and adds a
-listener to each request. The listener is implemented as an anonymous
-class that removes the request from the queue when the servlet finishes
-writing a response or when there is an error. Finally, the service
-method adds the request to the request queue created in the `init`
-method. The service method is the following:
+The service method puts client requests in asynchronous mode and adds a listener to each request.
+The listener is implemented as an anonymous class that removes the request from the queue when the servlet finishes writing a response or when there is an error.
+Finally, the service method adds the request to the request queue created in the `init` method.
+The service method is the following:
 
 [source,java]
 ----
@@ -117,13 +94,9 @@ public void doGet(HttpServletRequest request,
 }
 ----
 
-[[sthref112]][[the-enterprise-bean]]
-
 ==== The Enterprise Bean
 
-The `PriceVolumeBean` class is an enterprise bean that uses the timer
-service from the container to update the price and volume information
-and call the servlet's `send` method once every second:
+The `PriceVolumeBean` class is an enterprise bean that uses the timer service from the container to update the price and volume information and call the servlet's `send` method once every second:
 
 [source,java]
 ----
@@ -159,16 +132,12 @@ public class PriceVolumeBean {
 }
 ----
 
-See link:#BNBOY[Using the Timer Service] in
-link:#GIJRB[Chapter 37, "Running the Enterprise
-Bean Examples"] for more information on the timer service.
-
-[[sthref113]][[the-html-page]]
+See <<using-the-timer-service>> in xref:running-the-enterprise-bean-examples[xrefstyle=full] for more information on the timer service.
 
 ==== The HTML Page
 
-The HTML page consists of a table and some JavaScript code. The table
-contains two fields referenced from JavaScript code:
+The HTML page consists of a table and some JavaScript code.
+The table contains two fields referenced from JavaScript code:
 
 [source,html]
 ----
@@ -187,14 +156,12 @@ contains two fields referenced from JavaScript code:
 </html>
 ----
 
-The JavaScript code uses the `XMLHttpRequest` API, which provides
-functionality for transferring data between a client and a server. The
-script makes an asynchronous request to the servlet and designates a
-callback method. When the server provides a response, the callback
-method updates the fields in the table and makes a new request. The
-JavaScript code is the following:
+The JavaScript code uses the `XMLHttpRequest` API, which provides functionality for transferring data between a client and a server.
+The script makes an asynchronous request to the servlet and designates a callback method.
+When the server provides a response, the callback method updates the fields in the table and makes a new request.
+The JavaScript code is the following:
 
-[source,java]
+[source,javascript]
 ----
 var ajaxRequest;
 function updatePage() {
@@ -214,78 +181,61 @@ function makeAjaxRequest() {
 }
 ----
 
-The `XMLHttpRequest` API is supported by most modern browsers, and it is
-widely used in Ajax web client development (Asynchronous JavaScript and
-XML).
+The `XMLHttpRequest` API is supported by most modern browsers, and it is widely used in Ajax web client development (Asynchronous JavaScript and XML).
 
-See link:#BABGCEHE[The dukeetf2 Example Application] in
-link:#GKJIQ5[Chapter 19, "Jakarta WebSocket"] for an
-equivalent version of this example implemented using a WebSocket
-endpoint.
-
-[[CHDHBBBI]][[running-the-dukeetf-example-application]]
+See <<the-dukeetf2-example-application>> in xref:jakarta-websocket-2[xrefstyle=full] for an equivalent version of this example implemented using a WebSocket endpoint.
 
 === Running the dukeetf Example Application
 
-This section describes how to run the `dukeetf` example application
-using NetBeans IDE and from the command line.
-
-[[CHDCGCJD]][[to-run-the-dukeetf-example-application-using-netbeans-ide]]
+This section describes how to run the `dukeetf` example application using NetBeans IDE and from the command line.
 
 ==== To Run the dukeetf Example Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/servlet
 ----
-4.  Select the `dukeetf` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `dukeetf` project and select
-Run.
+
+. Select the `dukeetf` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `dukeetf` project and select *Run*.
 +
-This command builds and packages the application into a WAR file
-(`dukeetf.war`) located in the `target` directory, deploys it to the
-server, and launches a web browser window with the following URL:
+This command builds and packages the application into a WAR file (`dukeetf.war`) located in the `target` directory, deploys it to the server, and launches a web browser window with the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/dukeetf/
 ----
 +
-Open the same URL in a different web browser to see how both pages get
-price and volume updates simultaneously.
-
-[[CHDHHAFG]][[to-run-the-dukeetf-example-application-using-maven]]
+Open the same URL in a different web browser to see how both pages get price and volume updates simultaneously.
 
 ==== To Run the dukeetf Example Application Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/servlet/dukeetf/
 ----
-3.  Enter the following command to deploy the application:
+
+. Enter the following command to deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
-4.  Open a web browser window and type the following address:
+
+. Open a web browser window and type the following address:
 +
-[source,java]
 ----
 http://localhost:8080/dukeetf/
 ----
 +
-Open the same URL in a different web browser to see how both pages get
-price and volume updates simultaneously.
+Open the same URL in a different web browser to see how both pages get price and volume updates simultaneously.

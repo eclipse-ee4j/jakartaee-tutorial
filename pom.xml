@@ -20,13 +20,13 @@
     <parent>
         <groupId>org.eclipse.ee4j</groupId>
         <artifactId>project</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>jakarta.tutorial</groupId>
     <artifactId>tutorial</artifactId>
     <packaging>pom</packaging>
-    <version>8.1</version>
+    <version>9.0-SNAPSHOT</version>
     <name>Jakarta EE Tutorial</name>
 
     <properties>
@@ -52,6 +52,13 @@
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>${asciidoctor.maven.plugin.version}</version>
+                <configuration>
+                    <sourceDirectory>src/main/asciidoc</sourceDirectory>
+                    <sourceDocumentName>index.adoc</sourceDocumentName>
+                    <requires>
+                        <require>./src/main/ruby/autoxref-treeprocessor.rb</require>
+                    </requires>
+                </configuration>
                 <executions>
                     <execution>
                         <id>asciidoc-to-html</id>
@@ -63,24 +70,20 @@
                             <backend>html5</backend>
                             <attributes>
                                 <doctype>book</doctype>
-                                <status>${status}</status>
-                                <data-uri />
                                 <icons>font</icons>
                                 <toc>left</toc>
                                 <icons>font</icons>
                                 <sectanchors>true</sectanchors>
                                 <idprefix />
                                 <idseparator>-</idseparator>
-                                <docinfo1>true</docinfo1>
+                                <imagesdir>images</imagesdir>
+                                <source-highlighter>coderay</source-highlighter>
                                 <imagesDir>images</imagesDir>
                             </attributes>
+                            <embedAssets>true</embedAssets>
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <sourceDocumentName>index.adoc</sourceDocumentName>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

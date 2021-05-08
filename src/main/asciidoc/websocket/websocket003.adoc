@@ -1,9 +1,6 @@
-[[BABGJEIG]][[programmatic-endpoints]]
-
 == Programmatic Endpoints
 
-The following example shows how to create an endpoint by extending the
-`Endpoint` class:
+The following example shows how to create an endpoint by extending the `Endpoint` class:
 
 [source,java]
 ----
@@ -22,31 +19,22 @@ public class EchoEndpoint extends Endpoint {
 }
 ----
 
-This endpoint echoes every message received. The `Endpoint` class
-defines three lifecycle methods: `onOpen`, `onClose`, and `onError`. The
-`EchoEndpoint` class implements the `onOpen` method, which is the only
-abstract method in the `Endpoint` class.
+This endpoint echoes every message received.
+The `Endpoint` class defines three lifecycle methods: `onOpen`, `onClose`, and `onError`.
+The `EchoEndpoint` class implements the `onOpen` method, which is the only abstract method in the `Endpoint` class.
 
-The `Session` parameter represents a conversation between this endpoint
-and the remote endpoint. The `addMessageHandler` method registers
-message handlers, and the `getBasicRemote` method returns an object that
-represents the remote endpoint. The `Session` interface is covered in
-detail in the rest of this chapter.
+The `Session` parameter represents a conversation between this endpoint and the remote endpoint.
+The `addMessageHandler` method registers message handlers, and the `getBasicRemote` method returns an object that represents the remote endpoint.
+The `Session` interface is covered in detail in the rest of this chapter.
 
-The message handler is implemented as an anonymous inner class. The
-`onMessage` method of the message handler is invoked when the endpoint
-receives a text message.
+The message handler is implemented as an anonymous inner class.
+The `onMessage` method of the message handler is invoked when the endpoint receives a text message.
 
-To deploy this programmatic endpoint, use the following code in your
-Jakarta EE application:
+To deploy this programmatic endpoint, use the following code in your Jakarta EE application:
 
 [source,java]
 ----
 ServerEndpointConfig.Builder.create(EchoEndpoint.class, "/echo").build();
 ----
 
-When you deploy your application, the endpoint is available at
-`ws://<host>:<port>/<application>/echo`; for example,
-`ws://localhost:8080/echoapp/echo`.
-
-
+When you deploy your application, the endpoint is available at `ws://<host>:<port>/<application>/echo`; for example, `ws://localhost:8080/echoapp/echo`.

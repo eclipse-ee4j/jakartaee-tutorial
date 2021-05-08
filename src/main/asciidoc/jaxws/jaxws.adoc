@@ -1,11 +1,7 @@
-= Building Web Services with JAX-WS
+= Building Web Services with Jakarta XML Web Services
 
-[[BNAYL]][[building-web-services-with-jax-ws]]
-
-This chapter describes Java API for XML Web Services (JAX-WS), a
-technology for building web services and clients that communicate using
-XML. JAX-WS allows developers to write message-oriented as well as
-Remote Procedure Call–oriented (RPC-oriented) web services.
+This chapter describes Jakarta XML Web Services, a technology for building web services and clients that communicate using XML.
+XML Web Services allows developers to write message-oriented as well as Remote Procedure Call–oriented (RPC-oriented) web services.
 
 include::jaxws001.adoc[]
 
@@ -16,4 +12,3 @@ include::jaxws003.adoc[]
 include::jaxws004.adoc[]
 
 include::jaxws005.adoc[]
-

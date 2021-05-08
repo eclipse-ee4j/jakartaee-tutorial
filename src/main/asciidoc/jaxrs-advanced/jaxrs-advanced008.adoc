@@ -1,39 +1,27 @@
-[[GKOIB]][[the-customer-example-application]]
-
 == The customer Example Application
 
-This section describes how to build and run the `customer` example
-application. This application is a RESTful web service that uses Jakarta XML Binding to
-perform the create, read, update, delete (CRUD) operations for a
-specific entity.
+This section describes how to build and run the `customer` example application.
+This application is a RESTful web service that uses Jakarta XML Binding to perform the create, read, update, delete (CRUD) operations for a specific entity.
 
-The `customer` sample application is in the
-`_tut-install_/examples/jaxrs/customer/` directory. See
-link:#GFIUD[Chapter 2, "Using the Tutorial Examples,"]
-for basic information on building and running sample applications.
-
-[[GKOFO]][[overview-of-the-customer-example-application]]
+The `customer` sample application is in the `_tut-install_/examples/jaxrs/customer/` directory.
+See xref:using-the-tutorial-examples[xrefstyle=full], for basic information on building and running sample applications.
 
 === Overview of the customer Example Application
 
-The source files of this application are at
-`_tut-install_/examples/jaxrs/customer/src/main/java/`. The application
-has three parts.
+The source files of this application are at `_tut-install_/examples/jaxrs/customer/src/main/java/`.
+The application has three parts.
 
-* The `Customer` and `Address` entity classes. These classes model the
-data of the application and contain Jakarta XML Binding annotations.
-* The `CustomerService` resource class. This class contains Jakarta REST
-resource methods that perform operations on `Customer` instances
-represented as XML or JSON data using Jakarta XML Binding. See link:#GKLGT[The
-CustomerService Class] for details.
-* The `CustomerBean` session bean that acts as a backing bean for the
-web client. `CustomerBean` uses the Jakarta REST client API to call the
-methods of `CustomerService`.
+* The `Customer` and `Address` entity classes.
+These classes model the data of the application and contain Jakarta XML Binding annotations.
 
-The `customer` example application shows you how to model your data
-entities as Java classes with Jakarta XML Binding annotations.
+* The `CustomerService` resource class.
+This class contains Jakarta REST resource methods that perform operations on `Customer` instances represented as XML or JSON data using Jakarta XML Binding.
+See <<the-customerservice-class>> for details.
 
-[[CIHJFEJI]][[the-customer-and-address-entity-classes]]
+* The `CustomerBean` session bean that acts as a backing bean for the web client.
+`CustomerBean` uses the Jakarta REST client API to call the methods of `CustomerService`.
+
+The `customer` example application shows you how to model your data entities as Java classes with Jakarta XML Binding annotations.
 
 === The Customer and Address Entity Classes
 
@@ -75,11 +63,9 @@ public class Address {
 }
 ----
 
-The `@XmlRootElement(name="address")` annotation maps this class to the
-`address` XML element. The `@XmlAccessorType(XmlAccessType.FIELD)`
-annotation specifies that all the fields of this class are bound to XML
-by default. The `@XmlElement(required=true)` annotation specifies that
-an element must be present in the XML representation.
+The `@XmlRootElement(name="address")` annotation maps this class to the `address` XML element.
+The `@XmlAccessorType(XmlAccessType.FIELD)` annotation specifies that all the fields of this class are bound to XML by default.
+The `@XmlElement(required=true)` annotation specifies that an element must be present in the XML representation.
 
 The following class represents a customer:
 
@@ -123,18 +109,12 @@ public class Customer {
 }
 ----
 
-The `Customer` class contains the same Jakarta XML Binding annotations as the previous
-class, except for the `@XmlAttribute(required=true)` annotation, which
-maps a property to an attribute of the XML element representing the
-class.
+The `Customer` class contains the same Jakarta XML Binding annotations as the previous class, except for the `@XmlAttribute(required=true)` annotation, which maps a property to an attribute of the XML element representing the class.
 
-The `Customer` class contains a property whose type is another entity,
-the `Address` class. This mechanism allows you to define in Java code
-the hierarchical relationships between entities without having to write
-an `.xsd` file yourself.
+The `Customer` class contains a property whose type is another entity, the `Address` class.
+This mechanism allows you to define in Java code the hierarchical relationships between entities without having to write an `.xsd` file yourself.
 
-Jakarta XML Binding generates the following XML schema definition for the two preceding
-classes:
+Jakarta XML Binding generates the following XML schema definition for the two preceding classes:
 
 [source,xml]
 ----
@@ -169,13 +149,9 @@ classes:
 </xs:schema>
 ----
 
-[[GKLGT]][[the-customerservice-class]]
-
 === The CustomerService Class
 
-The `CustomerService` class has a `createCustomer` method that creates a
-customer resource based on the `Customer` class and returns a URI for
-the new resource.
+The `CustomerService` class has a `createCustomer` method that creates a customer resource based on the `Customer` class and returns a URI for the new resource.
 
 [source,java]
 ----
@@ -219,27 +195,23 @@ public class CustomerService {
         }
         return customer.getId();
     }
+}
 ----
 
-The response returned to the client has a URI to the newly created
-resource. The return type is an entity body mapped from the property of
-the response with the status code specified by the status property of
-the response. The `WebApplicationException` is a `RuntimeException` that
-is used to wrap the appropriate HTTP error status code, such as 404,
-406, 415, or 500.
+The response returned to the client has a URI to the newly created resource.
+The return type is an entity body mapped from the property of the response with the status code specified by the status property of the response.
+The `WebApplicationException` is a `RuntimeException` that is used to wrap the appropriate HTTP error status code, such as 404, 406, 415, or 500.
 
-The `@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})`
-and `@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})`
-annotations set the request and response media types to use the
-appropriate MIME client. These annotations can be applied to a resource
-method, a resource class, or even an entity provider. If you do not use
-these annotations, Jakarta REST allows the use of any media type (`"*/*"`).
+The `@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})` and `@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})` annotations set the request and response media types to use the appropriate MIME client.
+These annotations can be applied to a resource method, a resource class, or even an entity provider.
+If you do not use these annotations, Jakarta REST allows the use of any media type (`"\*/*"`).
 
-The following code snippet shows the implementation of the `getCustomer`
-and `findbyId` methods. The `getCustomer` method uses the `@Produces`
-annotation and returns a `Customer` object, which is converted to an XML
-or JSON representation depending on the `Accept:` header specified by
-the client.
+The following code snippet shows the implementation of the
+`getCustomer` and `findbyId` methods.
+The `getCustomer` method uses the
+`@Produces` annotation and returns a `Customer` object, which is
+converted to an XML or JSON representation depending on the `Accept:`
+header specified by the client.
 
 [source,java]
 ----
@@ -272,15 +244,11 @@ the client.
     }
 ----
 
-[[GKQJQ]][[using-the-jax-rs-client-in-the-customerbean-classes]]
-
 === Using the Jakarta REST Client in the CustomerBean Classes
 
-Use the Jakarta REST Client API to write a client for the `customer` example
-application.
+Use the Jakarta REST Client API to write a client for the `customer` example application.
 
-The `CustomerBean` enterprise bean class calls the Jakarta REST Client API to
-test the `CustomerService` web service:
+The `CustomerBean` enterprise bean class calls the Jakarta REST Client API to test the `CustomerService` web service:
 
 [source,java]
 ----
@@ -351,75 +319,64 @@ public class CustomerBean {
 
 This client uses the `POST` and `GET` methods.
 
-All of these HTTP status codes indicate success: 201 for `POST`, 200 for
-`GET`, and 204 for `DELETE`. For details about the meanings of HTTP
-status codes, see
-`http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html`.
-
-[[GKQKV]][[running-the-customer-example]]
+All of these HTTP status codes indicate success: 201 for `POST`, 200 for `GET`, and 204 for `DELETE`. For details about the meanings of HTTP status codes, see https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html[^].
 
 === Running the customer Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `customer` application.
-
-[[GKQLY]][[to-build-package-and-deploy-the-customer-example-using-netbeans-ide]]
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `customer` application.
 
 ==== To Build, Package, and Deploy the customer Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the *Open Project* dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/jaxrs
 ----
-4.  Select the `customer` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `customer` project and select
-Build.
+
+. Select the `customer` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `customer` project and select *Build*.
 +
-This command builds and packages the application into a WAR file,
-`customer.war`, located in the `target` directory. Then, the WAR file is
-deployed to GlassFish Server.
-7.  Open the web client in a browser at the following URL:
+This command builds and packages the application into a WAR file, `customer.war`, located in the `target` directory.
+Then, the WAR file is deployed to GlassFish Server.
+
+. Open the web client in a browser at the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/customer/
 ----
 +
 The web client allows you to create and view customers.
 
-[[GKQJV]][[to-build-package-and-deploy-the-customer-example-using-maven]]
-
 ==== To Build, Package, and Deploy the customer Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/jaxrs/customer/
 ----
-3.  Enter the following command:
+
+. Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file,
-`customer.war`, located in the `target` directory. Then, the WAR file is
-deployed to GlassFish Server.
-4.  Open the web client in a browser at the following URL:
+This command builds and packages the application into a WAR file, `customer.war`, located in the `target` directory.
+Then, the WAR file is deployed to GlassFish Server.
+
+. Open the web client in a browser at the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/customer/
 ----

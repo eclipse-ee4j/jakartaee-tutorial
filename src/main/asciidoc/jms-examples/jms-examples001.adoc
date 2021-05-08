@@ -1,22 +1,15 @@
-[[A1251921]][[building-and-running-java-message-service-examples]]
-
 == Building and Running Jakarta Messaging Examples
 
 The examples are in the `_tut-install_/examples/jms/` directory.
 
 To build and run each example:
 
-1.  Use NetBeans IDE or Maven to compile, package, and in some cases
-deploy the example.
-2.  Use NetBeans IDE, Maven, or the `appclient` command to run the
-application client, or use the browser to run the web application
-examples.
+. Use NetBeans IDE or Maven to compile, package, and in some cases deploy the example.
 
-Before you deploy or run the examples, you need to create resources for
-them. Some examples have a `glassfish-resources.xml` file that is used
-to create resources for that example and others. You can use the
-`asadmin` command to create the resources.
+. Use NetBeans IDE, Maven, or the `appclient` command to run the application client, or use the browser to run the web application examples.
 
-To use the `asadmin` and `appclient` commands, you need to put the
-GlassFish Server `bin` directories in your command path, as described in
-link:#GEXBC[SDK Installation Tips].
+Before you deploy or run the examples, you need to create resources for them.
+Some examples have a `glassfish-resources.xml` file that is used to create resources for that example and others.
+You can use the `asadmin` command to create the resources.
+
+To use the `asadmin` and `appclient` commands, you need to put the GlassFish Server `bin` directories in your command path, as described in <<glassfish-server-installation-tips>>.
