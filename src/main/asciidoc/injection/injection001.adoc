@@ -5,7 +5,8 @@ For example, you can use resource injection to inject data sources, connectors, 
 
 The type you use for the reference to the injected instance is usually an interface, which decouples your code from the implementation of the resource.
 
-For example, the following code injects a data source object that provides connections to the default Apache Derby database shipped with GlassFish Server:
+For example, the following code injects a data source object that provides connections to the default Apache Derby database shipped with
+Eclipse GlassFish Server:
 
 [source,java]
 ----
