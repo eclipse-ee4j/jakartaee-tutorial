@@ -1,81 +1,64 @@
-[[json-processing-in-the-jakarta-ee-platform]]
 == JSON Processing in the Jakarta EE Platform
 
-Jakarta EE includes support for the Jakarta JSON Processing spec, which provides an API to parse,
-transform, and query JSON data using the object model or the streaming
-model described in link:#BABJJACI[Generating and Parsing
-JSON Data]. Jakarta JSON Processing contains the following
-packages:
+Jakarta EE includes support for the Jakarta JSON Processing spec, which provides an API to parse, transform, and query JSON data using the object model or the streaming model described in <<generating-and-parsing-json-data>>.
+Jakarta JSON Processing contains the following packages:
 
-* The `javax.json` package contains a reader interface, a writer
-interface, a model builder interface for the object model, and utility
-classes and Java types for JSON elements. This package also includes
-several classes that implement other JSON-related standards: link:http://tools.ietf.org/html/rfc6901[JSON Pointer],
-link:http://tools.ietf.org/html/rfc6902[JSON Patch], and link:http://tools.ietf.org/html/rfc7396[JSON Merge Patch].
-These standards are used to retrieve, transform or manipulate values
-in an object model. link:#CHDJJCBE[Table 20-1] lists the main classes
-and interfaces in this package.
-* The `javax.json.stream` package contains a parser interface and a
-generator interface for the streaming model. link:#CHDIHCEG[Table 20-2]
-lists the main classes and interfaces in this package.
-* The `javax.json.spi` package contains a Service Provider Interface (SPI)
-to plug in implementations for JSON processing objects. This package
-contains the `JsonProvider` class, which contains the methods that a service
-provider implements.
+* The `jakarta.json` package contains a reader interface, a writer interface, a model builder interface for the object model, and utility classes and Java types for JSON elements.
+This package also includes several classes that implement other JSON-related standards: https://tools.ietf.org/html/rfc6901[JSON Pointer^], https://tools.ietf.org/html/rfc6902[JSON Patch^], and https://tools.ietf.org/html/rfc7396[JSON Merge Patch^].
+These standards are used to retrieve, transform or manipulate values in an object model.
+<<main-classes-and-interfaces-in-jakarta.json>> lists the main classes and interfaces in this package.
 
-[[sthref118]][[CHDJJCBE]]
+* The `jakarta.json.stream` package contains a parser interface and a generator interface for the streaming model.
+<<main-classes-and-interfaces-in-jakarta.json.stream>> lists the main classes and interfaces in this package.
 
-*Table 20-1 Main Classes and Interfaces in javax.json*
+* The `jakarta.json.spi` package contains a Service Provider Interface (SPI) to plug in implementations for JSON processing objects.
+This package contains the `JsonProvider` class, which contains the methods that a service provider implements.
+
+[[main-classes-and-interfaces-in-jakarta.json]]
+.Main Classes and Interfaces in jakarta.json
 [width=99%,cols="25%,75%"]
-|=======================================================================
-|*Class or Interface* |*Description*
-|`Json` |Contains static methods to create instances of JSON parsers,
-builders, and generators. This class also contains methods to create
-parser, builder, and generator factory objects.
+|===
+|Class or Interface |Description
 
-|`JsonReader` | Reads JSON data from a stream and creates an object model
-in memory.
+|`Json` |Contains static methods to create instances of JSON parsers, builders, and generators.
+This class also contains methods to create parser, builder, and generator factory objects.
 
-|`JsonObjectBuilder`, `JsonArrayBuilder` | Create an object model or an array model in memory by adding elements
-from application code.
+|`JsonReader` | Reads JSON data from a stream and creates an object model in memory.
+
+|`JsonObjectBuilder`, `JsonArrayBuilder` | Create an object model or an array model in memory by adding elements from application code.
 
 |`JsonWriter` | Writes an object model from memory to a stream.
 
-|`JsonValue` | Represents an element (such as an object, an array, or a
-value) in JSON data.
+|`JsonValue` | Represents an element (such as an object, an array, or a value) in JSON data.
 
-|`JsonStructure` | Represents an object or an array in JSON data. This
-interface is a subtype of `JsonValue`.
+|`JsonStructure` | Represents an object or an array in JSON data.
+This interface is a subtype of `JsonValue`.
 
-|`JsonObject`, `JsonArray` | Represent an object or an array in JSON data. These two interfaces are
-subtypes of `JsonStructure`.
+|`JsonObject`, `JsonArray` | Represent an object or an array in JSON data.
+These two interfaces are subtypes of `JsonStructure`.
 
-|`JsonPointer` | Contains methods for operating on specific targets within JSON documents. The targets can be `JsonValue`,
-`JsonObject`, or `JsonArray` objects.
+|`JsonPointer` | Contains methods for operating on specific targets within JSON documents.
+The targets can be `JsonValue`, `JsonObject`, or `JsonArray` objects.
 
-|`JsonPatch` | An interface for supporting a sequence of operations to be applied to a target JSON resource. The
-operations are defined within a JSON patch document.
+|`JsonPatch` | An interface for supporting a sequence of operations to be applied to a target JSON resource.
+The operations are defined within a JSON patch document.
 
-|`JsonMergePatch` | An interface for supporting updates to target JSON resources. A JSON patch document is compared with
-the target resource to determine the specific set of change operations to be applied.
+|`JsonMergePatch` | An interface for supporting updates to target JSON resources.
+A JSON patch document is compared with the target resource to determine the specific set of change operations to be applied.
 
-|`JsonString`, `JsonNumber` | Represent data types for elements in JSON data. These two interfaces
-are subtypes of `JsonValue`.
+|`JsonString`, `JsonNumber` | Represent data types for elements in JSON data.
+These two interfaces are subtypes of `JsonValue`.
 
-|`JsonException` | Indicates that a problem occurred during JSON
-processing.
-|=======================================================================
+|`JsonException` | Indicates that a problem occurred during JSON processing.
+|===
 
-
-[[sthref119]][[CHDIHCEG]]
-
-*Table 20-2 Main Classes and Interfaces in javax.json.stream*
-
+[[main-classes-and-interfaces-in-jakarta.json.stream]]
+.Main Classes and Interfaces in jakarta.json.stream
 [width=99%,cols="25%,75%"]
-|=======================================================================
-|*Class or Interface* |*Description*
-|`JsonParser` | Represents an event-based parser that can read JSON data
-from a stream or from an object model.
+|===
+|Class or Interface |Description
+
+|`JsonParser` | Represents an event-based parser that can read JSON data from a stream or from an object model.
 
 |`JsonGenerator` | Writes JSON data to a stream one element at a time.
-|=======================================================================
+|===

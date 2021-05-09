@@ -1,32 +1,21 @@
-[[GKNAV]][[subresources-and-runtime-resource-resolution]]
-
 == Subresources and Runtime Resource Resolution
 
 You can use a resource class to process only a part of the URI request.
-A root resource can then implement subresources that can process the
-remainder of the URI path.
+A root resource can then implement subresources that can process the remainder of the URI path.
 
-A resource class method that is annotated with `@Path` is either a
-subresource method or a subresource locator.
+A resource class method that is annotated with `@Path` is either a subresource method or a subresource locator.
 
-* A subresource method is used to handle requests on a subresource of
-the corresponding resource.
-* A subresource locator is used to locate subresources of the
-corresponding resource.
+* A subresource method is used to handle requests on a subresource of the corresponding resource.
 
-[[GKLAG]][[subresource-methods]]
+* A subresource locator is used to locate subresources of the corresponding resource.
 
 === Subresource Methods
 
-A subresource method handles an HTTP request directly. The method must
-be annotated with a request method designator, such as `@GET` or
-`@POST`, in addition to `@Path`. The method is invoked for request URIs
-that match a URI template created by concatenating the URI template of
-the resource class with the URI template of the method.
+A subresource method handles an HTTP request directly.
+The method must be annotated with a request method designator, such as `@GET` or `@POST`, in addition to `@Path`.
+The method is invoked for request URIs that match a URI template created by concatenating the URI template of the resource class with the URI template of the method.
 
-The following code snippet shows how a subresource method can be used to
-extract the last name of an employee when the employee's email address
-is provided:
+The following code snippet shows how a subresource method can be used to extract the last name of an employee when the employee's email address is provided:
 
 [source,java]
 ----
@@ -44,23 +33,18 @@ public class EmployeeInfo {
 }
 ----
 
-The `getEmployeeLastName` method returns `doe` for the following `GET`
-request:
+The `getEmployeeLastName` method returns `doe` for the following `GET` request:
 
-[source,java]
+[source,http]
 ----
 GET /employeeinfo/employees/john.doe@example.com
 ----
 
-[[GKRHR]][[subresource-locators]]
-
 === Subresource Locators
 
-A subresource locator returns an object that will handle an HTTP
-request. The method must not be annotated with a request method
-designator. You must declare a subresource locator within a subresource
-class, and only subresource locators are used for runtime resource
-resolution.
+A subresource locator returns an object that will handle an HTTP request.
+The method must not be annotated with a request method designator.
+You must declare a subresource locator within a subresource class, and only subresource locators are used for runtime resource resolution.
 
 The following code snippet shows a subresource locator:
 
@@ -94,15 +78,7 @@ public class Employee {
 }
 ----
 
-In this code snippet, the `getEmployee` method is the subresource
-locator that provides the `Employee` object, which services requests for
-`lastname`.
+In this code snippet, the `getEmployee` method is the subresource locator that provides the `Employee` object, which services requests for `lastname`.
 
-If your HTTP request is `GET /employeeinfo/employees/as209/`, the
-`getEmployee` method returns an `Employee` object whose id is `as209`.
-At runtime, Jakarta REST sends a `GET /employeeinfo/employees/as209/lastname`
-request to the `getEmployeeLastName` method. The `getEmployeeLastName`
-method retrieves and returns the last name of the employee whose id is
-`as209`.
-
-
+If your HTTP request is `GET /employeeinfo/employees/as209/`, the `getEmployee` method returns an `Employee` object whose id is `as209`. At runtime, Jakarta REST sends a `GET /employeeinfo/employees/as209/lastname` request to the `getEmployeeLastName` method.
+The `getEmployeeLastName` method retrieves and returns the last name of the employee whose id is `as209`.

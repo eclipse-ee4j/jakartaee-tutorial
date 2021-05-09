@@ -1,199 +1,224 @@
-[[GIRCZ]][[using-bean-validation-constraints]]
-
 == Using Jakarta Bean Validation Constraints
 
-The Jakarta Bean Validation model is supported by constraints in the form of
-annotations placed on a field, method, or class of a JavaBeans
-component, such as a managed bean.
+The Jakarta Bean Validation model is supported by constraints in the form of annotations placed on a field, method, or class of a JavaBeans component, such as a managed bean.
 
-Constraints can be built in or user defined. User-defined constraints
-are called custom constraints. Several built-in constraints are
-available in the `javax.validation.constraints` package.
-link:#GKAGK[Table 23-1] lists all the built-in constraints. See
-link:#GKFGX[Creating Custom Constraints]
-for information on creating custom constraints.
+Constraints can be built in or user defined.
+User-defined constraints are called custom constraints.
+Several built-in constraints are available in the `jakarta.validation.constraints` package.
+<<built-in-jakarta-bean-validation-constraints>> lists all the built-in constraints.
+See <<creating-custom-constraints>> for information on creating custom constraints.
 
-[[sthref121]][[GKAGK]]
+[[built-in-jakarta-bean-validation-constraints]]
+.Built-In Jakarta Bean Validation Constraints
+[width="99%",cols="22%,59%,18%a"]
+|===
+|Constraint |Description |Example
 
-Table 23-1 Built-In Jakarta Bean Validation Constraints
+|`@AssertFalse` |The value of the field or property must be `false`. |
 
-[width="99%",cols="22%,59%,18%",]
-|=======================================================================
-|*Constraint* |*Description* |*Example*
-|`@AssertFalse` |The value of the field or property must be `false`. a|
 [source,java]
 ----
 @AssertFalse
 boolean isUnsupported;
 ----
+{empty}
 
-|`@AssertTrue` |The value of the field or property must be `true`. a|
+|`@AssertTrue` |The value of the field or property must be `true`. |
+
 [source,java]
 ----
 @AssertTrue
 boolean isActive;
 ----
+{empty}
 
-|`@DecimalMax` |The value of the field or property must be a decimal
-value lower than or equal to the number in the value element. a|
+|`@DecimalMax` |The value of the field or property must be a decimal value lower than or equal to the number in the value element. |
+
 [source,java]
 ----
 @DecimalMax("30.00")
 BigDecimal discount;
 ----
+{empty}
 
-|`@DecimalMin` |The value of the field or property must be a decimal
-value greater than or equal to the number in the value element. a|
+|`@DecimalMin` |The value of the field or property must be a decimal value greater than or equal to the number in the value element. |
+
 [source,java]
 ----
 @DecimalMin("5.00")
 BigDecimal discount;
 ----
+{empty}
 
-|`@Digits` |The value of the field or property must be a number within a
-specified range. The `integer` element specifies the maximum integral
-digits for the number, and the `fraction` element specifies the maximum
-fractional digits for the number. a|
+|`@Digits` |The value of the field or property must be a number within a specified range.
+The `integer` element specifies the maximum integral digits for the number, and the `fraction` element specifies the maximum fractional digits for the number. |
+
 [source,java]
 ----
 @Digits(integer=6, fraction=2)
 BigDecimal price;
 ----
+{empty}
 
-|`@Email` |The value of the field or property must be a valid email address. a|
+|`@Email` |The value of the field or property must be a valid email address. |
+
 [source,java]
 ----
 @Email
 String emailaddress;
 ----
+{empty}
 
-|`@Future` |The value of the field or property must be a date in the
-future. a|
+|`@Future` |The value of the field or property must be a date in the future. |
+
 [source,java]
 ----
 @Future
 Date eventDate;
 ----
+{empty}
 
-|`@FutureOrPresent` |TThe value of the field or property must be a date or time in present or future. a|
+|`@FutureOrPresent` |TThe value of the field or property must be a date or time in present or future. |
+
 [source,java]
 ----
 @FutureOrPresent
 Time travelTime;
-
 ----
-|`@Max` |The value of the field or property must be an integer value
-lower than or equal to the number in the value element. a|
+{empty}
+
+|`@Max` |The value of the field or property must be an integer value lower than or equal to the number in the value element. |
+
 [source,java]
 ----
 @Max(10)
 int quantity;
 ----
+{empty}
 
-|`@Min` |The value of the field or property must be an integer value
-greater than or equal to the number in the value element. a|
+|`@Min` |The value of the field or property must be an integer value greater than or equal to the number in the value element. |
+
 [source,java]
 ----
 @Min(5)
 int quantity;
 ----
-|`@Negative` |The value of the field or property must be a negative number. a|
+{empty}
+
+|`@Negative` |The value of the field or property must be a negative number. |
+
 [source,java]
 ----
 @Negative
 int basementFloor;
 ----
+{empty}
 
-|`@NegativeOrZero` |The value of the field or property must be negative or zero.
- a|
+|`@NegativeOrZero` |The value of the field or property must be negative or zero. |
+
 [source,java]
 ----
 @NegativeOrZero
 int debtValue;
 ----
-|`@NotBlank` |The value of the field or property must contain atleast one non-white space character.
- a|
+{empty}
+
+|`@NotBlank` |The value of the field or property must contain atleast one non-white space character. |
+
 [source,java]
 ----
 @NotBlank
 String message;
 ----
-|`@NotEmpty` |The value of the field or property must not be empty. The length of the characters or array, and the size of a collection or map are evaluated.
- a|
+{empty}
+
+|`@NotEmpty` |The value of the field or property must not be empty. The length of the characters or array, and the size of a collection or map are evaluated. |
+
 [source,java]
 ----
 @NotEmpty
 String message;;
 ----
-|`@NotNull` |The value of the field or property must not be null.
- a|
+{empty}
+
+|`@NotNull` |The value of the field or property must not be null. |
+
 [source,java]
 ----
 @NotNull
 String username;
 ----
-|`@Null` |The value of the field or property must be null. a|
+{empty}
+
+|`@Null` |The value of the field or property must be null. |
+
 [source,java]
 ----
 @Null
 String unusedString;
 ----
+{empty}
 
-|`@Past` |The value of the field or property must be a date in the past.
-a|
+|`@Past` |The value of the field or property must be a date in the past. |
+
 [source,java]
 ----
 @Past
 Date birthday;
 ----
-|`@PastOrPresent` |The value of the field or property must be a date or time in the past or present.
-a|
+{empty}
+
+|`@PastOrPresent` |The value of the field or property must be a date or time in the past or present. |
+
 [source,java]
 ----
 @PastOrPresent
 Date travelDate;
 ----
-|`@Pattern` |The value of the field or property must match the regular
-expression defined in the `regexp` element. a|
+{empty}
+
+|`@Pattern` |The value of the field or property must match the regular expression defined in the `regexp` element. |
+
 [source,java]
 ----
 @Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
 String phoneNumber;
 ----
+{empty}
 
-|`@Positive` |The value of the field or property must be a positive number.
-a|
+|`@Positive` |The value of the field or property must be a positive number. |
+
 [source,java]
 ----
 @Positive
 BigDecimal area;
 ----
-|`@PositiveOrZero` |The value of the field or property must be a positive number or zero. .
-a|
+{empty}
+
+|`@PositiveOrZero` |The value of the field or property must be a positive number or zero. |
+
 [source,java]
 ----
 @PositiveOrZero
 int totalGoals;
 ----
+{empty}
 
-|`@Size` |The size of the field or property is evaluated and must match
-the specified boundaries. If the field or property is a `String`, the
-size of the string is evaluated. If the field or property is a
-`Collection`, the size of the `Collection` is evaluated. If the field or
-property is a `Map`, the size of the `Map` is evaluated. If the field or
-property is an array, the size of the array is evaluated. Use one of the
-optional `max` or `min` elements to specify the boundaries. a|
+|`@Size` |The size of the field or property is evaluated and must match the specified boundaries.
+If the field or property is a `String`, the size of the string is evaluated.
+If the field or property is a `Collection`, the size of the `Collection` is evaluated.
+If the field or property is a `Map`, the size of the `Map` is evaluated.
+If the field or property is an array, the size of the array is evaluated.
+Use one of the optional `max` or `min` elements to specify the boundaries. |
+
 [source,java]
 ----
 @Size(min=2, max=240)
 String briefMessage;
 ----
+|===
 
-|=======================================================================
-
-
-In the following example, a constraint is placed on a field using the
-built-in `@NotNull` constraint:
+In the following example, a constraint is placed on a field using the built-in `@NotNull` constraint:
 
 [source,java]
 ----
@@ -207,9 +232,8 @@ public class Name {
 }
 ----
 
-You can also place more than one constraint on a single JavaBeans
-component object. For example, you can place an additional constraint
-for size of field on the `firstname` and the `lastname` fields:
+You can also place more than one constraint on a single JavaBeans component object.
+For example, you can place an additional constraint for size of field on the `firstname` and the `lastname` fields:
 
 [source,java]
 ----
@@ -225,8 +249,7 @@ public class Name {
 }
 ----
 
-The following example shows a method with a user-defined constraint that
-checks user-defined constraint that checks for a predefined phone number pattern, such as a country specific phone number:
+The following example shows a method with a user-defined constraint that checks user-defined constraint that checks for a predefined phone number pattern, such as a country specific phone number:
 
 [source,java]
 ----
@@ -236,16 +259,14 @@ public String getPhone() {
 }
 ----
 
-For a built-in constraint, a default implementation is available. A
-user-defined or custom constraint needs a validation implementation. In
-the preceding example, the `@USPhoneNumber` custom constraint needs an
-implementation class.
+For a built-in constraint, a default implementation is available.
+A user-defined or custom constraint needs a validation implementation.
+In the preceding example, the `@USPhoneNumber` custom constraint needs an implementation class.
 
 == Repeating Annotations
 
-[[repeating_annotations]]
+From Bean Validation 2.0 onwards, you can specify the same constraint several times on a validation target using repeating annotation:
 
-In Bean Validation 2.0, you can specify the same constraint several times on a validation target using repeating annotation:
 [source,java]
 ----
 public class Account {
@@ -254,9 +275,11 @@ public class Account {
     @Max (value = 5000, groups = GoldCustomer.class, message = "max.value")
     private long withdrawalAmount;
 }
-
 ----
-All in-built constraints from `javax .validation.constraints` package support repeatable annotations. Similarly, custom constraints can use `@Repeatable` annotation. In the following sample, depending on whether the group is `PeakHour` or `NonPeakHour`, the car instance is validated as either two passengers or three passengers based car, and then listed as eligible in the car pool lane:
+
+All in-built constraints from `jakarta.validation.constraints` package support repeatable annotations.
+Similarly, custom constraints can use `@Repeatable` annotation.
+In the following sample, depending on whether the group is `PeakHour` or `NonPeakHour`, the car instance is validated as either two passengers or three passengers based car, and then listed as eligible in the car pool lane:
 
 [source,java]
 ----
@@ -297,20 +320,16 @@ public class Car{
   @CarPool(value = 3, group = {Default.class, PeakHour.class})
   private int totalPassengers;
 }
-
 ----
-Any validation failures are gracefully handled and can be displayed by
-the `h:messages` tag.
 
-Any managed bean that contains Bean Validation annotations automatically
-gets validation constraints placed on the fields on a Jakarta Server Faces
-application's web pages.
+Any validation failures are gracefully handled and can be displayed by the `h:messages` tag.
+
+Any managed bean that contains Bean Validation annotations automatically gets validation constraints placed on the fields on a Jakarta Faces application's web pages.
 
 For more information on using validation constraints, see the following:
 
-* link:#GKAHP[Chapter 24, "Jakarta Bean Validation:
-Advanced Topics"]
-* link:#BABCJEDF[Validating Resource Data with Jakarta Bean
-Validation]
-* link:#GKAHQ[Validating Persistent Fields and
-Properties]
+* xref:bean-validation-advanced-topics[xrefstyle=full]
+
+* <<validating-resource-data-with-bean-validation>>
+
+* <<validating-persistent-fields-and-properties>>

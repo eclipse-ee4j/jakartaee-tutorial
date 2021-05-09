@@ -1,49 +1,41 @@
-[[GIPOB]][[developing-a-simple-facelets-application-the-guessnumber-jsf-example-application]]
-
 == Developing a Simple Facelets Application: The guessnumber-jsf Example Application
 
-This section describes the general steps involved in developing a
-Jakarta Server Faces application. The following tasks are usually required:
+This section describes the general steps involved in developing a Jakarta Faces application.
+The following tasks are usually required:
 
 * Developing the managed beans
-* Creating the pages using the component tags
-* Defining page navigation
-* Mapping the `FacesServlet` instance
-* Adding managed bean declarations
 
-[[GIQTE]][[creating-a-facelets-application]]
+* Creating the pages using the component tags
+
+* Defining page navigation
+
+* Mapping the `FacesServlet` instance
+
+* Adding managed bean declarations
 
 === Creating a Facelets Application
 
 The example used in this tutorial is the `guessnumber-jsf` application.
-The application presents you with a page that asks you to guess a number
-from 0 to 10, validates your input against a random number, and responds
-with another page that informs you whether you guessed the number
-correctly or incorrectly.
+The application presents you with a page that asks you to guess a number from 0 to 10, validates your input against a random number, and responds with another page that informs you whether you guessed the number correctly or incorrectly.
 
-The source code for this application is in the
-tut-install`/examples/web/jsf/guessnumber-jsf/` directory.
-
-[[GIQQZ]][[developing-a-managed-bean]]
+The source code for this application is in the `_tut-install_/examples/web/jsf/guessnumber-jsf/` directory.
 
 ==== Developing a Managed Bean
 
-In a typical Jakarta Server Faces application, each page of the application
-connects to a managed bean that serves as a backing bean. The backing
-bean defines the methods and properties that are associated with the
-components. In this example, both pages use the same backing bean.
+In a typical Jakarta Faces application, each page of the application connects to a managed bean that serves as a backing bean.
+The backing bean defines the methods and properties that are associated with the components.
+In this example, both pages use the same backing bean.
 
-The following managed bean class, `UserNumberBean.java`, generates a
-random number from 0 to 10 inclusive:
+The following managed bean class, `UserNumberBean.java`, generates a random number from 0 to 10 inclusive:
 
 [source,java]
 ----
-package jakarta.tutorial.guessnumber;
+package ee.jakarta.tutorial.guessnumber;
 
 import java.io.Serializable;
 import java.util.Random;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
 
 @Named
 @SessionScoped
@@ -97,26 +89,18 @@ public class UserNumberBean implements Serializable {
 }
 ----
 
-Note the use of the `@Named` annotation, which makes the managed bean
-accessible through the EL. The `@SessionScoped` annotation registers the
-bean scope as `session` to enable you to make multiple guesses as you
-run the application.
-
-[[GJZPV]][[creating-facelets-views]]
+Note the use of the `@Named` annotation, which makes the managed bean accessible through the EL.
+The `@SessionScoped` annotation registers the bean scope as `session` to enable you to make multiple guesses as you run the application.
 
 ==== Creating Facelets Views
 
-To create a page or view, you add components to the pages, wire the
-components to backing bean values and properties, and register
-converters, validators, or listeners on the components.
+To create a page or view, you add components to the pages, wire the components to backing bean values and properties, and register converters, validators, or listeners on the components.
 
-For the example application, XHTML web pages serve as the front end. The
-first page of the example application is a page called `greeting.xhtml`.
-A closer look at various sections of this web page provides more
-information.
+For the example application, XHTML web pages serve as the front end.
+The first page of the example application is a page called `greeting.xhtml`.
+A closer look at various sections of this web page provides more information.
 
-The first section of the web page declares the content type for the
-page, which is XHTML:
+The first section of the web page declares the content type for the page, which is XHTML:
 
 [source,xml]
 ----
@@ -124,9 +108,7 @@ page, which is XHTML:
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 ----
 
-The next section specifies the language of the XHTML page and then
-declares the XML namespace for the tag libraries that are used in the
-web page:
+The next section specifies the language of the XHTML page and then declares the XML namespace for the tag libraries that are used in the web page:
 
 [source,xml]
 ----
@@ -136,8 +118,7 @@ web page:
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 ----
 
-The next section uses various tags to insert components into the web
-page:
+The next section uses various tags to insert components into the web page:
 
 [source,xml]
 ----
@@ -177,26 +158,20 @@ page:
 Note the use of the following tags:
 
 * Facelets HTML tags (those beginning with `h:`) to add components
+
 * The Facelets core tag `f:validateLongRange` to validate the user input
 
-An `h:inputText` tag accepts user input and sets the value of the
-managed bean property `userNumber` through the EL expression
-`#{userNumberBean.userNumber}`. The input value is validated for value
-range by the Jakarta Server Faces standard validator tag
-`f:validateLongRange`.
+An `h:inputText` tag accepts user input and sets the value of the managed bean property `userNumber` through the EL expression `#{userNumberBean.userNumber}`.
+The input value is validated for value range by the Jakarta Faces standard validator tag `f:validateLongRange`.
 
-The image file, `wave.med.gif`, is added to the page as a resource, as
-is the style sheet. For more details about the resources facility, see
-link:#GIRGM[Web Resources].
+The image file, `wave.med.gif`, is added to the page as a resource, as is the style sheet.
+For more details about the resources facility, see <<web-resources>>.
 
-An `h:commandButton` tag with the ID `submit` starts validation of the
-input data when a user clicks the button. Using implicit navigation, the
-tag redirects the client to another page, `response.xhtml`, which shows
-the response to your input. The page specifies only `response`, which by
-default causes the server to look for `response.xhtml`.
+An `h:commandButton` tag with the ID `submit` starts validation of the input data when a user clicks the button.
+Using implicit navigation, the tag redirects the client to another page, `response.xhtml`, which shows the response to your input.
+The page specifies only `response`, which by default causes the server to look for `response.xhtml`.
 
-You can now create the second page, `response.xhtml`, with the following
-content:
+You can now create the second page, `response.xhtml`, with the following content:
 
 [source,xml]
 ----
@@ -224,39 +199,30 @@ content:
 </html>
 ----
 
-This page also uses implicit navigation, setting the `action` attribute
-for the Back button to send the user to the `greeting.xhtml` page.
-
-[[GJJKC]][[configuring-the-application]]
+This page also uses implicit navigation, setting the `action` attribute for the Back button to send the user to the `greeting.xhtml` page.
 
 === Configuring the Application
 
-Configuring a Jakarta Server Faces application involves mapping the Faces
-Servlet in the web deployment descriptor file, such as a `web.xml` file,
-and possibly adding managed bean declarations, navigation rules, and
-resource bundle declarations to the application configuration resource
-file, `faces-config.xml`.
+Configuring a Jakarta Faces application involves mapping the Faces Servlet in the web deployment descriptor file, such as a `web.xml` file, and possibly adding managed bean declarations, navigation rules, and resource bundle declarations to the application configuration resource file, `faces-config.xml`.
 
-If you are using NetBeans IDE, a web deployment descriptor file is
-automatically created for you. In such an IDE-created `web.xml` file,
-change the default greeting page, which is `index.xhtml`, to
-`greeting.xhtml`. Here is an example `web.xml` file, showing this change
-in bold.
+If you are using NetBeans IDE, a web deployment descriptor file is automatically created for you.
+In such an IDE-created `web.xml` file, change the default greeting page, which is `index.xhtml`, to `greeting.xhtml`.
+Here is an example `web.xml` file, showing this change in bold.
 
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-  http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+<web-app version="5.0"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
     <context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-name>jakarta.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -274,85 +240,71 @@ in bold.
 </web-app>
 ----
 
-Note the use of the context parameter `PROJECT_STAGE`. This parameter
-identifies the status of a Jakarta Server Faces application in the software
-lifecycle.
+Note the use of the context parameter `PROJECT_STAGE`.
+This parameter identifies the status of a Jakarta Faces application in the software lifecycle.
 
 The stage of an application can affect the behavior of the application.
-For example, if the project stage is defined as `Development`, debugging
-information is automatically generated for the user. If not defined by
-the user, the default project stage is `Production`.
-
-[[GIRGF]][[running-the-guessnumber-jsf-facelets-example]]
+For example, if the project stage is defined as `Development`, debugging information is automatically generated for the user.
+If not defined by the user, the default project stage is `Production`.
 
 === Running the guessnumber-jsf Facelets Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `guessnumber-jsf` example.
-
-[[GJQZL]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-netbeans-ide]]
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `guessnumber-jsf` example.
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `guessnumber-jsf` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `guessnumber-jsf` project and
-select Build.
-+
-This option builds the example application and deploys it to your
-GlassFish Server instance.
 
-[[GJQYU]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-maven]]
+. Select the `guessnumber-jsf` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `guessnumber-jsf` project and select *Build*.
++
+This option builds the example application and deploys it to your GlassFish Server instance.
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsf/guessnumber-jsf/
 ----
-3.  Enter the following command:
+
+. Enter the following command:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file,
-`guessnumber-jsf.war`, that is located in the `target` directory. It
-then deploys it to the server.
-
-[[GJQYX]][[to-run-the-guessnumber-jsf-example]]
+This command builds and packages the application into a WAR file, `guessnumber-jsf.war`, that is located in the `target` directory.
+It then deploys it to the server.
 
 ==== To Run the guessnumber-jsf Example
 
-1.  Open a web browser.
-2.  Enter the following URL in your web browser:
+. Open a web browser.
+
+. Enter the following URL in your web browser:
 +
-[source,java]
 ----
 http://localhost:8080/guessnumber-jsf
 ----
-3.  In the field, enter a number from 0 to 10 and click Submit.
+
+. In the field, enter a number from 0 to 10 and click Submit.
 +
-Another page appears, reporting whether your guess is correct or
-incorrect.
-4.  If you guessed incorrectly, click Back to return to the main page.
+Another page appears, reporting whether your guess is correct or incorrect.
+
+. If you guessed incorrectly, click Back to return to the main page.
 +
-You can continue to guess until you get the correct answer, or you can
-look in the server log, where the `UserNumberBean` constructor displays
-the correct answer.
+You can continue to guess until you get the correct answer, or you can look in the server log, where the `UserNumberBean` constructor displays the correct answer.

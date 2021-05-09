@@ -1,20 +1,10 @@
-[[json-in-jakarta-ee-restful-web-services]]
 == JSON in Jakarta EE RESTful Web Services
 
-This section explains how the Jakarta JSON Processing is related to
-other Jakarta EE packages that provide JSON support for RESTful web
-services. See link:#GIEPU[Chapter 32, "Building RESTful Web
-Services with Jakarta RESTful Web Services,"] for more information on RESTful web services.
+This section explains how the Jakarta JSON Processing is related to other Jakarta EE packages that provide JSON support for RESTful web services.
+See xref:building-restful-web-services-with-jakarta-rest[xrefstyle=full] for more information on RESTful web services.
 
-Jersey, the Jakarta RESTful Web Services implementation included in
-GlassFish Server, provides support for binding JSON data from RESTful
-resource methods to Java objects using Jakarta XML Binding, as described in
-link:#GKKNJ[Using Jakarta RESTful Web Services with JAXB] in
-link:#GJJXE[Chapter 34, "Jakarta RESTful Web Services: Advanced Topics and
-an Example"]. However, JSON support is not part of Jakarta RESTful Web Services or
-Jakarta XML Binding, so that procedure may not work for Jakarta EE
-implementations other than GlassFish Server.
+Jersey, the Jakarta RESTful Web Services implementation included in GlassFish Server, provides support for binding JSON data from RESTful resource methods to Java objects using Jakarta XML Binding, as described in <<using-jakarta-rest-with-jakarta-xml-binding>> in xref:jakarta-rest-advanced-topics-and-an-example[xrefstyle=full].
+However, JSON support is not part of Jakarta RESTful Web Services or Jakarta XML Binding, so that procedure may not work for Jakarta EE implementations other than GlassFish Server.
 
-You can still use the Jakarta JSON Processing with Jakarta RESTful Web Services resource
-methods. For more information, see the sample code for JSON Processing
-included with the Jakarta EE 8 SDK.
+You can still use the Jakarta JSON Processing with Jakarta RESTful Web Services resource methods.
+For more information, see the sample code for JSON Processing included with the Jakarta EE tutorial examples.

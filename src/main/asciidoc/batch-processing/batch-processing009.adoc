@@ -1,61 +1,44 @@
-[[BCGFCACD]][[the-phonebilling-example-application]]
-
 == The phonebilling Example Application
 
-The `phonebilling` example application, located in the
-tut-install`/examples/batch/phonebilling/` directory, demonstrates how
-to use the batch framework in Jakarta EE to implement a phone billing
-system. This example application processes a log file of phone calls and
-creates a bill for each customer.
-
-[[BABDEIFG]][[architecture-of-the-phonebilling-example-application]]
+The `phonebilling` example application, located in the `_tut-install_/examples/batch/phonebilling/` directory, demonstrates how to use the batch framework in Jakarta EE to implement a phone billing system.
+This example application processes a log file of phone calls and creates a bill for each customer.
 
 === Architecture of the phonebilling Example Application
 
-The `phonebilling` example application consists of the following
-elements.
+The `phonebilling` example application consists of the following elements.
 
-* A job definition file (`phonebilling.xml`) that uses the Job
-Specification Language (JSL) to define a batch job with two chunk steps.
-The first step reads call records from a log file and associates them
-with a bill. The second step computes the amount due and writes each
-bill to a text file.
-* A Java class (`CallRecordLogCreator`) that creates the log file for
-the batch job. This is an auxiliary component that does not demonstrate
-any key functionality in this example.
-* Two Jakarta Persistence entities (`CallRecord` and `PhoneBill`)
-that represent call records and customer bills. The application uses a
-Jakarta Persistence entity manager to store instances of these entities in a database.
-* Three batch artifacts (`CallRecordReader`, `CallRecordProcessor`, and
-`CallRecordWriter`) that implement the first step of the application.
-This step reads call records from the log file, associates them with a
-bill, and stores them in a database.
-* Four batch artifacts (`BillReader`, `BillProcessor`, `BillWriter`, and
-`BillPartitionMapper`) that implement the second step of the
-application. This step is a partitioned step that gets each bill from
-the database, calculates the amount due, and writes it to a text file.
-* Two Facelets pages (`index.xhtml` and `jobstarted.xhtml`) that provide
-the front end of the batch application. The first page shows the log
-file that will be processed by the batch job, and the second page
-enables the user to check on the status of the job and shows the
-resulting bill for each customer.
+* A job definition file (`phonebilling.xml`) that uses the Job Specification Language (JSL) to define a batch job with two chunk steps.
+The first step reads call records from a log file and associates them with a bill.
+The second step computes the amount due and writes each bill to a text file.
+
+* A Java class (`CallRecordLogCreator`) that creates the log file for the batch job.
+This is an auxiliary component that does not demonstrate any key functionality in this example.
+
+* Two Jakarta Persistence entities (`CallRecord` and `PhoneBill`) that represent call records and customer bills.
+The application uses a Jakarta Persistence entity manager to store instances of these entities in a database.
+
+* Three batch artifacts (`CallRecordReader`, `CallRecordProcessor`, and `CallRecordWriter`) that implement the first step of the application.
+This step reads call records from the log file, associates them with a bill, and stores them in a database.
+
+* Four batch artifacts (`BillReader`, `BillProcessor`, `BillWriter`, and `BillPartitionMapper`) that implement the second step of the application.
+This step is a partitioned step that gets each bill from the database, calculates the amount due, and writes it to a text file.
+
+* Two Facelets pages (`index.xhtml` and `jobstarted.xhtml`) that provide the front end of the batch application.
+The first page shows the log file that will be processed by the batch job, and the second page enables the user to check on the status of the job and shows the resulting bill for each customer.
+
 * A managed bean (`JsfBean`) that is accessed from the Facelets pages.
-The bean submits the job to the batch runtime, checks on the status of
-the job, and reads the text files for each bill.
-
-[[sthref288]][[the-job-definition-file]]
+The bean submits the job to the batch runtime, checks on the status of the job, and reads the text files for each bill.
 
 ==== The Job Definition File
 
-The `phonebilling.xml` job definition file is located in the
-`WEB-INF/classes/META-INF/batch-jobs/` directory. The file specifies
-three job-level properties and two steps:
+The `phonebilling.xml` job definition file is located in the `WEB-INF/classes/META-INF/batch-jobs/` directory.
+The file specifies three job-level properties and two steps:
 
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<job id="phonebilling" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-     version="1.0">
+<job id="phonebilling" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     version="2.0">
     <properties>
         <property name="log_file_name" value="log1.txt"/>
         <property name="airtime_price" value="0.08"/>
@@ -79,10 +62,8 @@ The first step is defined as follows:
 </step>
 ----
 
-This step is a normal chunk step that specifies the batch artifacts that
-implement each phase of the step. The batch artifact names are not fully
-qualified class names, so the batch artifacts are CDI beans annotated
-with `@Named`.
+This step is a normal chunk step that specifies the batch artifacts that implement each phase of the step.
+The batch artifact names are not fully qualified class names, so the batch artifacts are CDI beans annotated with `@Named`.
 
 The second step is defined as follows:
 
@@ -91,7 +72,11 @@ The second step is defined as follows:
 <step id="bills">
     <chunk checkpoint-policy="item" item-count="2">
         <reader ref="BillReader">
-            <properties>                <property name="firstItem" value="#{partitionPlan['firstItem']}"/>                <property name="numItems" value="#{partitionPlan['numItems']}"/>            </properties>        </reader>
+            <properties>                
+                <property name="firstItem" value="#{partitionPlan['firstItem']}"/>                
+                <property name="numItems" value="#{partitionPlan['numItems']}"/>            
+            </properties>        
+        </reader>
         <processor ref="BillProcessor"></processor>
         <writer ref="BillWriter"></writer>
     </chunk>
@@ -102,11 +87,8 @@ The second step is defined as follows:
 </step>
 ----
 
-This step is a partitioned chunk step. The partition plan is specified
-through the `BillPartitionMapper` artifact instead of using the `plan`
-element.
-
-[[sthref289]][[the-callrecord-and-phonebill-entities]]
+This step is a partitioned chunk step.
+The partition plan is specified through the `BillPartitionMapper` artifact instead of using the `plan` element.
 
 ==== The CallRecord and PhoneBill Entities
 
@@ -137,12 +119,10 @@ public class CallRecord implements Serializable {
 }
 ----
 
-The `id` field is generated automatically by the JPA implementation to
-store and retrieve `CallRecord` objects to and from a database.
+The `id` field is generated automatically by the Jakarta Persistence implementation to store and retrieve `CallRecord` objects to and from a database.
 
-The second constructor creates a `CallRecord` object from an entry of
-JSON data in the log file using Jakarta JSON Processing. Log entries
-look as follows:
+The second constructor creates a `CallRecord` object from an entry of JSON data in the log file using Jakarta JSON Processing.
+Log entries look as follows:
 
 [source,java]
 ----
@@ -179,32 +159,23 @@ public class PhoneBill implements Serializable {
 
     public void calculate(BigDecimal taxRate) { ... }
 
-    /* ... Getters and setters ... *
+    /* ... Getters and setters ... */
 }
 ----
 
-The `OneToMany` annotation defines the relationship between a bill and
-its call records. The `FetchType.EAGER` attribute specifies that the
-collection should be retrieved eagerly. The `CascadeType.PERSIST`
-attribute indicates that the elements in the call list should be
-automatically persisted when the phone bill is persisted. The `OrderBy`
-annotation defines an order for retrieving the elements of the call list
-from the database.
+The `OneToMany` annotation defines the relationship between a bill and its call records.
+The `FetchType.EAGER` attribute specifies that the collection should be retrieved eagerly.
+The `CascadeType.PERSIST` attribute indicates that the elements in the call list should be automatically persisted when the phone bill is persisted.
+The `OrderBy` annotation defines an order for retrieving the elements of the call list from the database.
 
-The batch artifacts use instances of these two entities as items to
-read, process, and write.
+The batch artifacts use instances of these two entities as items to read, process, and write.
 
-For more information on Jakarta Persistence, see
-link:#BNBPZ[Chapter 40, "Introduction to Jakarta
-Persistence"]. For more information on Jakarta JSON Processing, see
-link:#GLRBB[Chapter 20, "JSON Processing"].
-
-[[sthref290]][[the-call-records-chunk-step]]
+For more information on Jakarta Persistence, see <<introduction-to-jakarta-persistence>>.
+For more information on Jakarta JSON Processing, see <<json-processing>>.
 
 ==== The Call Records Chunk Step
 
-The first step is composed of the `CallRecordReader`,
-`CallRecordProcessor`, and `CallRecordWriter` batch artifacts.
+The first step is composed of the `CallRecordReader`, `CallRecordProcessor`, and `CallRecordWriter` batch artifacts.
 
 The `CallRecordReader` artifact reads call records from the log file:
 
@@ -224,8 +195,7 @@ public class CallRecordReader implements ItemReader {
 }
 ----
 
-The `open` method reads the `log_filename` property and opens the log
-file with a buffered reader:
+The `open` method reads the `log_filename` property and opens the log file with a buffered reader:
 
 [source,java]
 ----
@@ -233,13 +203,11 @@ fileName = jobCtx.getProperties().getProperty("log_file_name");
 breader = new BufferedReader(new FileReader(fileName));
 ----
 
-If a checkpoint object is provided, the `open` method advances the
-reader up to the last checkpoint. Otherwise, this method creates a new
-checkpoint object. The checkpoint object keeps track of the line number
-from the last committed chunk.
+If a checkpoint object is provided, the `open` method advances the reader up to the last checkpoint.
+Otherwise, this method creates a new checkpoint object.
+The checkpoint object keeps track of the line number from the last committed chunk.
 
-The `readItem` method returns a new `CallRecord` object or null at the
-end of the log file:
+The `readItem` method returns a new `CallRecord` object or null at the end of the log file:
 
 [source,java]
 ----
@@ -256,14 +224,12 @@ public Object readItem() throws Exception {
 }
 ----
 
-The `CallRecordProcessor` artifact obtains the airtime price from the
-job properties, calculates the price of each call, and returns the call
-object. This artifact overrides only the `processItem` method.
+The `CallRecordProcessor` artifact obtains the airtime price from the job properties, calculates the price of each call, and returns the call object.
+This artifact overrides only the `processItem` method.
 
-The `CallRecordWriter` artifact associates each call record with a bill
-and stores the bill in the database. This artifact overrides the `open`,
-`close`, `writeItems`, and `checkpointInfo` methods. The `writeItems`
-method looks like this:
+The `CallRecordWriter` artifact associates each call record with a bill and stores the bill in the database.
+This artifact overrides the `open`, `close`, `writeItems`, and `checkpointInfo` methods.
+The `writeItems` method looks like this:
 
 [source,java]
 ----
@@ -286,23 +252,16 @@ public void writeItems(List<Object> callList) throws Exception {
 }
 ----
 
-[[BCGGGAHB]][[the-phone-billing-chunk-step]]
-
 ==== The Phone Billing Chunk Step
 
-The second step is composed of the `BillReader`, `BillProcessor`,
-`BillWriter`, and `BillPartitionMapper` batch artifacts. This step gets
-the phone bills from the database, computes the tax and total amount
-due, and writes each bill to a text file. Since the processing of each
-bill is independent of the others, this step can be partitioned and run
-in more than one thread.
+The second step is composed of the `BillReader`, `BillProcessor`, `BillWriter`, and `BillPartitionMapper` batch artifacts.
+This step gets the phone bills from the database, computes the tax and total amount due, and writes each bill to a text file.
+Since the processing of each bill is independent of the others, this step can be partitioned and run in more than one thread.
 
-The `BillPartitionMapper` artifact specifies the number of partitions
-and the parameters for each partition. In this example, the parameters
-represent the range of items each partition should process. The artifact
-obtains the number of bills in the database to calculate these ranges.
-It provides a partition plan object that overrides the `getPartitions`
-and `getPartitionProperties` methods of the `PartitionPlan` interface.
+The `BillPartitionMapper` artifact specifies the number of partitions and the parameters for each partition.
+In this example, the parameters represent the range of items each partition should process.
+The artifact obtains the number of bills in the database to calculate these ranges.
+It provides a partition plan object that overrides the `getPartitions` and `getPartitionProperties` methods of the `PartitionPlan` interface.
 The `getPartitions` method looks like this:
 
 [source,java]
@@ -330,6 +289,7 @@ public Properties[] getPartitionProperties() {
         } else {
             props[i].setProperty("numItems",
                     String.valueOf(partItems));
+        }
     }
     return props;
 }
@@ -342,8 +302,15 @@ The `BillReader` artifact obtains the partition parameters as follows:
 @Dependent
 @Named("BillReader")
 public class BillReader implements ItemReader {
-    @Inject    @BatchProperty(name = "firstItem")    private String firstItemValue;    @Inject    @BatchProperty(name = "numItems")    private String numItemsValue;
-    private ItemNumberCheckpoint checkpoint;    @PersistenceContext    private EntityManager em;    private Iterator iterator;
+
+    @Inject @BatchProperty(name = "firstItem") 
+    private String firstItemValue; 
+    @Inject @BatchProperty(name = "numItems") 
+    private String numItemsValue; 
+    private ItemNumberCheckpoint checkpoint;
+    @PersistenceContext 
+    private EntityManager em; 
+    private Iterator iterator;
 
     @Override
     public void open(Serializable ckpt) throws Exception {
@@ -369,8 +336,7 @@ public class BillReader implements ItemReader {
 }
 ----
 
-This artifact also obtains an iterator to read items from the Jakarta Persistence entity
-manager:
+This artifact also obtains an iterator to read items from the Jakarta Persistence entity manager:
 
 [source,java]
 ----
@@ -381,18 +347,14 @@ Query q = em.createQuery(query).setFirstResult((int) firstItem)
 iterator = q.getResultList().iterator();
 ----
 
-The `BillProcessor` artifact iterates over the list of call records in a
-bill and calculates the tax and total amount due for each bill.
+The `BillProcessor` artifact iterates over the list of call records in a bill and calculates the tax and total amount due for each bill.
 
 The `BillWriter` artifact writes each bill to a plain text file.
 
-[[sthref291]][[the-javaserver-faces-pages]]
+==== The Jakarta Faces Pages
 
-==== The Jakarta Server Faces Pages
-
-The `index.xhtml` page contains a text area that shows the log file of
-call records. The page provides a button for the user to submit the
-batch job and navigate to the next page:
+The `index.xhtml` page contains a text area that shows the log file of call records.
+The page provides a button for the user to submit the batch job and navigate to the next page:
 
 [source,xml]
 ----
@@ -410,11 +372,9 @@ batch job and navigate to the next page:
 </body>
 ----
 
-This page calls the methods of the managed bean to show the log file and
-submit the batch job.
+This page calls the methods of the managed bean to show the log file and submit the batch job.
 
-The `jobstarted.xhtml` page provides a button to check the current
-status of the batch job and displays the bills when the job finishes:
+The `jobstarted.xhtml` page provides a button to check the current status of the batch job and displays the bills when the job finishes:
 
 [source,xml]
 ----
@@ -431,15 +391,11 @@ status of the batch job and displays the bills when the job finishes:
 </h:form>
 ----
 
-[[sthref292]][[the-managed-bean]]
-
 ==== The Managed Bean
 
-The `JsfBean` managed bean submits the job to the batch runtime, checks
-on the status of the job, and reads the text files for each bill.
+The `JsfBean` managed bean submits the job to the batch runtime, checks on the status of the job, and reads the text files for each bill.
 
-The `startBatchJob` method of the bean submits the job to the batch
-runtime:
+The `startBatchJob` method of the bean submits the job to the batch runtime:
 
 [source,java]
 ----
@@ -462,66 +418,56 @@ public String getJobStatus() {
 }
 ----
 
-The `getRowList` method of the bean creates a list of bills to be
-displayed on the `jobstarted.xhtml` server faces page using a table.
-
-[[BABBGDAA]][[running-the-phonebilling-example-application]]
+The `getRowList` method of the bean creates a list of bills to be displayed on the `jobstarted.xhtml` faces page using a table.
 
 === Running the phonebilling Example Application
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and
-run the `phonebilling` example application.
-
-[[BABIBBBG]][[to-run-the-phonebilling-example-application-using-netbeans-ide]]
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `phonebilling` example application.
 
 ==== To Run the phonebilling Example Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see
+<<starting-and-stopping-glassfish-server>>).
+
+. From the File menu, choose Open Project.
+
+. In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/batch
 ----
-4.  Select the `phonebilling` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `phonebilling` project and
-select Run.
+
+. Select the `phonebilling` folder.
+
+. Click Open Project.
+
+. In the Projects tab, right-click the `phonebilling` project and select Run.
 +
-This command builds and packages the application into a WAR file,
-`phonebilling.war`, located in the `target/` directory; deploys it to
-the server; and launches a web browser window at the following URL:
+This command builds and packages the application into a WAR file, `phonebilling.war`, located in the `target/` directory; deploys it to the server; and launches a web browser window at the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/phonebilling/
 ----
 
-[[BABFHIIB]][[to-run-the-phonebilling-example-application-using-maven]]
-
 ==== To Run the phonebilling Example Application Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/batch/phonebilling/
 ----
-3.  Enter the following command to deploy the application:
+
+. Enter the following command to deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
-4.  Open a web browser window at the following URL:
+
+. Open a web browser window at the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/phonebilling/
 ----

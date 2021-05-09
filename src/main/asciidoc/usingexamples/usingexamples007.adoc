@@ -1,49 +1,38 @@
-[[CIHBHEFF]][[jakarta-ee-maven-archetypes-in-the-tutorial]]
-
 == Jakarta EE Maven Archetypes in the Tutorial
 
-Some of the chapters have instructions on how to build an example
-application using Maven archetypes. Archetypes are templates for
-generating a particular Maven project. The Tutorial includes several
-Maven archetypes for generating Jakarta EE projects.
-
-[[CHDJGCCA]][[installing-the-tutorial-archetypes]]
+Some of the chapters have instructions on how to build an example application using Maven archetypes.
+Archetypes are templates for generating a particular Maven project.
+The Tutorial includes several Maven archetypes for generating Jakarta EE projects.
 
 === Installing the Tutorial Archetypes
 
-You must install the included Maven archetypes into your local Maven
-repository before you can create new projects based on the archetypes.
+You must install the included Maven archetypes into your local Maven repository before you can create new projects based on the archetypes.
 You can install the archetypes using NetBeans IDE or Maven.
-
-[[sthref16]][[installing-the-tutorial-archetypes-using-netbeans-ide]]
 
 ==== Installing the Tutorial Archetypes Using NetBeans IDE
 
-1.  From the *File* menu, choose *Open Project*.
-2.  In the Open Project dialog box, navigate to:
-+
-[source,java]
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to: +
 ----
 tut-install/examples
 ----
-3.  Select the `archetypes` folder.
-4.  Click *Open Project*.
-5.  In the *Projects* tab, right-click the `archetypes` project and select
-*Build*.
 
-[[sthref17]][[installing-the-tutorial-archetypes-using-maven]]
+. Select the `archetypes` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `archetypes` project and select *Build*.
 
 ==== Installing the Tutorial Archetypes Using Maven
 
-1.  In a terminal window, go to:
-+
-[source,java]
+. In a terminal window, go to: +
 ----
 tut-install/examples/archetypes/
 ----
-2.  Enter the following command:
-+
-[source,java]
+
+. Enter the following command: +
+[source,shell]
 ----
 mvn install
 ----

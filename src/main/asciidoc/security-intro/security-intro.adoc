@@ -1,20 +1,7 @@
 = Introduction to Security in the Jakarta EE Platform
 
-[[BNBWJ]][[introduction-to-security-in-the-jakarta-ee-platform]]
-
 This chapter introduces basic security concepts and security mechanisms.
-More information on these concepts and mechanisms can be found in the
-chapter on security in the Jakarta EE 8 specification.
-
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-*Note:*
-
-The SDK may include additional material demonstrating key features of Jakarta Security. Please check the latest SDK release notes for additional details.
-
-|=======================================================================
-
+More information on these concepts and mechanisms can be found in the chapter on security in the Jakarta EE 9 specification.
 
 include::security-intro001.adoc[]
 
@@ -33,4 +20,3 @@ include::security-intro005.adoc[]
 include::security-intro006.adoc[]
 
 include::security-intro007.adoc[]
-

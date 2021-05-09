@@ -1,35 +1,29 @@
-[[BNADX]][[a-web-module-that-uses-javaserver-faces-technology-the-hello1-example]]
+== A Web Module That Uses Jakarta Faces Technology: The hello1 Example
 
-== A Web Module That Uses Jakarta Server Faces Technology: The hello1 Example
+The `hello1` application is a web module that uses Jakarta Faces technology to display a greeting and response.
+You can use a text editor to view the application files, or you can use NetBeans IDE.
 
-The `hello1` application is a web module that uses Jakarta Server Faces
-technology to display a greeting and response. You can use a text editor
-to view the application files, or you can use NetBeans IDE.
-
-The source code for this application is in the
-`_tut-install_/examples/web/jsf/hello1/` directory.
-
-[[GJWTV]][[to-view-the-hello1-web-module-using-netbeans-ide]]
+The source code for this application is in the `_tut-install_/examples/web/jsf/hello1/` directory.
 
 === To View the hello1 Web Module Using NetBeans IDE
 
 To view the `hello1` web module using NetBeans IDE:
 
-1.  From the File menu, choose Open Project.
-2.  In the Open Project dialog box, navigate to:
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
-[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
-3.  Select the `hello1` folder and click Open Project.
-4.  Expand the Web Pages node and double-click the `index.xhtml` file to
-view it in the editor.
+
+. Select the `hello1` folder and click *Open Project*.
+
+. Expand the *Web Pages* node and double-click the `index.xhtml` file to view it in the editor.
 +
-The `index.xhtml` file is the default landing page for a Facelets
-application. In a typical Facelets application, web pages are created in
-XHTML. For this application, the page uses simple tag markup to display
-a form with a graphic image, a header, a field, and two command buttons:
+The `index.xhtml` file is the default landing page for a Facelets application.
+In a typical Facelets application, web pages are created in XHTML.
+For this application, the page uses simple tag markup to display a form with a graphic image, a header, a field, and two command buttons:
 +
 [source,xml]
 ----
@@ -63,31 +57,21 @@ a form with a graphic image, a header, a field, and two command buttons:
 </html>
 ----
 +
-The most complex element on the page is the `inputText` field. The
-`maxlength` attribute specifies the maximum length of the field. The
-`required` attribute specifies that the field must be filled out; the
-`requiredMessage` attribute provides the error message to be displayed
-if the field is left empty. The `title` attribute provides the text to
-be used by screen readers for the visually disabled. Finally, the
-`value` attribute contains an expression that will be provided by the
-`Hello` managed bean.
+The most complex element on the page is the `inputText` field.
+The `maxlength` attribute specifies the maximum length of the field.
+The `required` attribute specifies that the field must be filled out; the `requiredMessage` attribute provides the error message to be displayed if the field is left empty.
+The `title` attribute provides the text to be used by screen readers for the visually disabled.
+Finally, the `value` attribute contains an expression that will be provided by the `Hello` managed bean.
 +
-The web page connects to the `Hello` managed bean through the Expression
-Language (EL) value expression `#{hello.name}`, which retrieves the
-value of the `name` property from the managed bean. Note the use of
-`hello` to reference the managed bean `Hello`. If no name is specified
-in the `@Named` annotation of the managed bean, the managed bean is
-always accessed with the first letter of the class name in lowercase.
+The web page connects to the `Hello` managed bean through the Expression Language (EL) value expression `#{hello.name}`, which retrieves the value of the `name` property from the managed bean.
+Note the use of `hello` to reference the managed bean `Hello`.
+If no name is specified in the `@Named` annotation of the managed bean, the managed bean is always accessed with the first letter of the class name in lowercase.
 +
-The Submit `commandButton` element specifies the action as `response`,
-meaning that when the button is clicked, the `response.xhtml` page is
-displayed.
-5.  Double-click the `response.xhtml` file to view it.
+The Submit `commandButton` element specifies the action as `response`, meaning that when the button is clicked, the `response.xhtml` page is displayed.
+
+. Double-click the `response.xhtml` file to view it.
 +
-The response page appears. Even simpler than the greeting page, the
-response page contains a graphic image, a header that displays the
-expression provided by the managed bean, and a single button whose
-`action` element transfers you back to the `index.xhtml` page:
+The response page appears.Even simpler than the greeting page, the response page contains a graphic image, a header that displays the expression provided by the managed bean, and a single button whose `action` element transfers you back to the `index.xhtml` page:
 +
 [source,xml]
 ----
@@ -110,23 +94,20 @@ expression provided by the managed bean, and a single button whose
     </h:body>
 </html>
 ----
-6.  Expand the Source Packages node, then the `jakarta.tutorial.hello1`
-node.
-7.  [[CHDCABHC]]
+
+. Expand the Source Packages node, then the `ee.jakarta.tutorial.hello1` node.
+
+. [[hello1-nb-step-7, Step 7]] Double-click the `Hello.java` file to view it.
 +
-Double-click the `Hello.java` file to view it.
-+
-The `Hello` class, called a managed bean class, provides getter and
-setter methods for the `name` property used in the Facelets page
-expressions. By default, the expression language refers to the class
-name, with the first letter in lowercase (`hello.name`).
+The `Hello` class, called a managed bean class, provides getter and setter methods for the `name` property used in the Facelets page expressions.
+By default, the expression language refers to the class name, with the first letter in lowercase (`hello.name`).
 +
 [source,java]
 ----
-package jakarta.tutorial.hello1;
+package ee.jakarta.tutorial.hello1;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
 @Named
 @RequestScoped
@@ -147,277 +128,232 @@ public class Hello {
 }
 ----
 +
-If you use the default name for the bean class, you can specify `@Model`
-as the annotation instead of having to specify both `@Named` and
-`@RequestScoped`. The `@Model` annotation is called a stereotype, a term
-for an annotation that encapsulates other annotations. It is described
-later in link:#GKHQC[Using Stereotypes in CDI
-Applications]. Some examples will use `@Model` where it is appropriate.
-8.  Under the Web Pages node, expand the WEB-INF node and double-click
-the `web.xml` file to view it.
+If you use the default name for the bean class, you can specify `@Model` as the annotation instead of having to specify both `@Named` and `@RequestScoped`.
+The `@Model` annotation is called a stereotype, a term for an annotation that encapsulates other annotations.
+It is described later in <<using-stereotypes-in-cdi-applications>>.
+Some examples will use `@Model` where it is appropriate.
+
+. Under the Web Pages node, expand the WEB-INF node and double-click the `web.xml` file to view it.
 +
-The `web.xml` file contains several elements that are required for a
-Facelets application. All of the following are created automatically
-when you use NetBeans IDE to create an application.
+The `web.xml` file contains several elements that are required for a Facelets application.
+All of the following are created automatically when you use NetBeans IDE to create an application.
 
 * A context parameter specifying the project stage:
 +
 [source,xml]
 ----
-    <context-param>
-        <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
-    </context-param>
+<context-param>
+    <param-name>jakarta.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+</context-param>
 ----
 +
-A context parameter provides configuration information needed by a web
-application. An application can define its own context parameters. In
-addition, Jakarta Server Faces technology and Jakarta Servlet technology define
-context parameters that an application can use.
-* A `servlet` element and its `servlet-mapping` element specifying the
-`FacesServlet`. All files with the `.xhtml` suffix will be matched:
-+
-[source,xml]
-----
-    <servlet>
-        <servlet-name>Faces Servlet</servlet-name>
-        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.xhtml</url-pattern>
-    </servlet-mapping>
-----
-* A `welcome-file-list` element specifying the location of the landing
-page:
+A context parameter provides configuration information needed by a web application.
+An application can define its own context parameters.
+In addition, Jakarta Faces technology and Jakarta Servlet technology define context parameters that an application can use.
+
+* A `servlet` element and its `servlet-mapping` element specifying the `FacesServlet`. All files with the `.xhtml` suffix will be matched:
 +
 [source,xml]
 ----
-    <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
-    </welcome-file-list>
+<servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+</servlet-mapping>
 ----
 
-[[GLQLK]][[introduction-to-scopes]]
+* A `welcome-file-list` element specifying the location of the landing page:
++
+[source,xml]
+----
+<welcome-file-list>
+    <welcome-file>index.xhtml</welcome-file>
+</welcome-file-list>
+----
 
 ==== Introduction to Scopes
 
-In the `Hello.java` class, the annotations `javax.inject.Named` and
-`javax.enterprise.context.RequestScoped` identify the class as a managed
-bean using request scope. Scope defines how application data persists
-and is shared.
+In the `Hello.java` class, the annotations `jakarta.inject.Named` and `jakarta.enterprise.context.RequestScoped` identify the class as a managed bean using request scope.
+Scope defines how application data persists and is shared.
 
-The most commonly used scopes in Jakarta Server Faces applications are the
-following:
+The most commonly used scopes in Jakarta Faces applications are the following:
 
-* Request (`@RequestScoped`): Request scope persists during a single
-HTTP request in a web application. In an application like `hello1`, in
-which the application consists of a single request and response, the
-bean uses request scope.
-* Session (`@SessionScoped`): Session scope persists across multiple
-HTTP requests in a web application. When an application consists of
-multiple requests and responses where data needs to be maintained, beans
-use session scope.
-* Application (`@ApplicationScoped`): Application scope persists across
-all users' interactions with a web application.
+Request (`@RequestScoped`):: Request scope persists during a single HTTP request in a web application.
+In an application like `hello1`, in which the application consists of a single request and response, the bean uses request scope.
 
-For more information on scopes in Jakarta Server Faces technology, see
-link:#GIRCR[Using Managed Bean Scopes].
+Session (`@SessionScoped`):: Session scope persists across multiple HTTP requests in a web application.
+When an application consists of multiple requests and responses where data needs to be maintained, beans use session scope.
 
-[[BNADZ]][[packaging-and-deploying-the-hello1-web-module]]
+Application (`@ApplicationScoped`):: Application scope persists across all users' interactions with a web application.
+
+For more information on scopes in Jakarta Faces technology, see <<using-managed-bean-scopes>>.
 
 === Packaging and Deploying the hello1 Web Module
 
-A web module must be packaged into a WAR in certain deployment scenarios
-and whenever you want to distribute the web module. You can package a
-web module into a WAR file by using Maven or by using the IDE tool of
-your choice. This tutorial shows you how to use NetBeans IDE or Maven to
-build, package, and deploy the `hello1` sample application.
+A web module must be packaged into a WAR in certain deployment scenarios and whenever you want to distribute the web module.
+You can package a web module into a WAR file by using Maven or by using the IDE tool of your choice.
+This tutorial shows you how to use NetBeans IDE or Maven to build, package, and deploy the `hello1` sample application.
 
 You can deploy a WAR file to GlassFish Server by:
 
 * Using NetBeans IDE
+
 * Using the `asadmin` command
+
 * Using the Administration Console
+
 * Copying the WAR file into the `_domain-dir_/autodeploy/` directory
 
-Throughout the tutorial, you will use NetBeans IDE or Maven for
-packaging and deploying.
-
-[[GJRGN]][[to-build-and-package-the-hello1-web-module-using-netbeans-ide]]
+Throughout the tutorial, you will use NetBeans IDE or Maven for packaging and deploying.
 
 ==== To Build and Package the hello1 Web Module Using NetBeans IDE
 
 To build and package the `hello1` web module using NetBeans IDE:
 
-1.  Start GlassFish Server as described in
-link:#CHDCACDI[To Start GlassFish Server Using
-NetBeans IDE], if you have not already done so.
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Start GlassFish Server as described in <<to-start-glassfish-server-using-netbeans-ide>>, if you have not already done so.
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
 +
-[source,xml]
 ----
 tut-install/examples/web/jsf
 ----
-4.  Select the `hello1` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `hello1` project and select
-Build. This command deploys the project to the server.
 
-[[GJRKN]][[to-build-and-package-the-hello1-web-module-using-maven]]
+. Select the `hello1` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `hello1` project and select *Build*. This command deploys the project to the server.
 
 ==== To Build and Package the hello1 Web Module Using Maven
 
 To build and package the `hello1` web module using Maven:
 
-1.  Start GlassFish Server as described in
-link:#CHDBDDAF[To Start GlassFish Server Using the
-Command Line], if you have not already done so.
-2.  In a terminal window, go to:
+. Start GlassFish Server as described in <<to-start-glassfish-server-using-the-command-line>>, if you have not already done so.
+
+. In a terminal window, go to:
 +
-[source,xml]
 ----
 tut-install/examples/web/jsf/hello1/
 ----
-3.  Enter the following command:
+
+. Enter the following command:
 +
-[source,xml]
+[source,shell]
 ----
 mvn install
 ----
 +
-This command spawns any necessary compilations and creates the WAR file
-in `_tut-install_/examples/web/jsf/hello1/target/`. It then deploys the
-project to the server.
-
-[[BNAEI]][[viewing-deployed-web-modules]]
+This command spawns any necessary compilations and creates the WAR file in `_tut-install_/examples/web/jsf/hello1/target/`.
+It then deploys the project to the server.
 
 === Viewing Deployed Web Modules
 
-GlassFish Server provides two ways to view the deployed web modules: the
-Administration Console and the `asadmin` command. You can also use
-NetBeans IDE to view deployed modules.
-
-[[GJSGR]][[to-view-deployed-web-modules-using-the-administration-console]]
+GlassFish Server provides two ways to view the deployed web modules: the Administration Console and the `asadmin` command.
+You can also use NetBeans IDE to view deployed modules.
 
 ==== To View Deployed Web Modules Using the Administration Console
 
 To view deployed web modules using the Administration Console:
 
-1.  Open the URL `http://localhost:4848/` in a browser.
-2.  Select the Applications node.
+. Open the URL http://localhost:4848/[^] in a browser.
+
+. Select the Applications node.
 +
 The deployed web modules appear in the Deployed Applications table.
-
-[[GJSEW]][[to-view-deployed-web-modules-using-the-asadmin-command]]
 
 ==== To View Deployed Web Modules Using the asadmin Command
 
 Enter the following command:
 
-[source,xml]
+[source,shell]
 ----
 asadmin list-applications
 ----
-
-[[sthref24]][[to-view-deployed-web-modules-using-netbeans-ide]]
 
 ==== To View Deployed Web Modules Using NetBeans IDE
 
 To view deployed web modules using NetBeans IDE:
 
-1.  In the Services tab, expand the Servers node, then expand the
-GlassFish Server node.
-2.  Expand the Applications node to view the deployed modules.
+. In the *Services* tab, expand the *Servers* node, then expand the *GlassFish Server* node.
 
-[[BCEBEGED]][[running-the-deployed-hello1-web-module]]
+. Expand the *Applications* node to view the deployed modules.
 
 === Running the Deployed hello1 Web Module
 
-Now that the web module is deployed, you can view it by opening the
-application in a web browser. By default, the application is deployed to
-host `localhost` on port 8080. The context root of the web application
-is `hello1`.
+Now that the web module is deployed, you can view it by opening the application in a web browser.
+By default, the application is deployed to host `localhost` on port 8080.
+The context root of the web application is `hello1`.
 
 To run the deployed `hello1` web module:
 
-1.  Open a web browser.
-2.  Enter the following URL:
+. Open a web browser.
+
+. Enter the following URL:
 +
-[source,xml]
 ----
 http://localhost:8080/hello1/
 ----
-3.  In the field, enter your name and click Submit.
-+
-The response page displays the name you submitted. Click Back to try
-again.
 
-[[BNAEM]][[dynamic-reloading-of-deployed-modules]]
+. In the field, enter your name and click Submit.
++
+The response page displays the name you submitted. Click Back to try again.
 
 ==== Dynamic Reloading of Deployed Modules
 
-If dynamic reloading is enabled, you do not have to redeploy an
-application or module when you change its code or deployment
-descriptors. All you have to do is copy the changed pages or class files
-into the deployment directory for the application or module. The
-deployment directory for a web module named context-root is
-`_domain-dir_/applications/_context-root_`. The server checks for changes
-periodically and redeploys the application, automatically and
-dynamically, with the changes.
+If dynamic reloading is enabled, you do not have to redeploy an application or module when you change its code or deployment descriptors.
+All you have to do is copy the changed pages or class files into the deployment directory for the application or module.
+The deployment directory for a web module named context-root is `_domain-dir_/applications/_context-root_`.
+The server checks for changes periodically and redeploys the application, automatically and dynamically, with the changes.
 
-This capability is useful in a development environment because it allows
-code changes to be tested quickly. Dynamic reloading is not recommended
-for a production environment, however, because it may degrade
-performance. In addition, whenever a reload takes place, the sessions at
-that time become invalid, and the client must restart the session.
+This capability is useful in a development environment because it allows code changes to be tested quickly.
+Dynamic reloading is not recommended for a production environment, however, because it may degrade performance.
+In addition, whenever a reload takes place, the sessions at that time become invalid, and the client must restart the session.
 
 In GlassFish Server, dynamic reloading is enabled by default.
 
-[[BNAEN]][[undeploying-the-hello1-web-module]]
-
 === Undeploying the hello1 Web Module
 
-You can undeploy web modules and other types of enterprise applications
-by using either NetBeans IDE or Maven.
-
-[[GJSEJ]][[to-undeploy-the-hello1-web-module-using-netbeans-ide]]
+You can undeploy web modules and other types of enterprise applications by using either NetBeans IDE or Maven.
 
 ==== To Undeploy the hello1 Web Module Using NetBeans IDE
 
 To undeploy the `hello1` web module using NetBeans IDE:
 
-1.  In the Services tab, expand the Servers node, then expand the
-GlassFish Server node.
-2.  Expand the Applications node.
-3.  Right-click the `hello1` module and select Undeploy.
-4.  To delete the class files and other build artifacts, go back to the
-Projects tab, right-click the project, and select Clean.
+. In the *Services* tab, expand the *Servers* node, then expand the *GlassFish Server* node.
 
-[[GJSHH]][[to-undeploy-the-hello1-web-module-using-maven]]
+. Expand the *Applications* node.
+
+. Right-click the `hello1` module and select *Undeploy*.
+
+. To delete the class files and other build artifacts, go back to the *Projects* tab, right-click the project, and select *Clean*.
 
 ==== To Undeploy the hello1 Web Module Using Maven
 
 To undeploy the `hello1` web module using Maven:
 
-1.  In a terminal window, go to:
+. In a terminal window, go to:
 +
-[source,xml]
 ----
 tut-install/examples/web/jsf/hello1/
 ----
-2.  Enter the following command:
+
+. Enter the following command:
 +
-[source,xml]
+[source,shell]
 ----
 mvn cargo:undeploy
 ----
-3.  To delete the class files and other build artifacts, enter the
-following command:
+
+. To delete the class files and other build artifacts, enter the following command:
 +
-[source,xml]
+[source,shell]
 ----
 mvn clean
 ----
