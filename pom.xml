@@ -101,12 +101,6 @@
                         </configuration>
                     </execution>
                 </executions>
-
-                <configuration>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                </configuration>
-
-
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
