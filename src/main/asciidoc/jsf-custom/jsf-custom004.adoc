@@ -1,31 +1,31 @@
-[[BNAVT]][[steps-for-creating-a-custom-component]]
-
 == Steps for Creating a Custom Component
 
-You can apply the following steps while developing your own custom
-component.
+You can apply the following steps while developing your own custom component.
 
-.  Create a custom component class that does the following:
-.  Overrides the `getFamily` method to return the component family, which is used to look up renderers that can render the component
-.  Includes the rendering code or delegates it to a renderer (explained in Step link:#CDECBJAE[2])
-.  Enables component attributes to accept expressions
-.  Queues an event on the component if the component generates events
-.  Saves and restores the component state
-.  [[CDECBJAE]] Delegate rendering to a renderer if your component does not handle the rendering. To do this:
-+
---
-..  Create a custom renderer class by extending `javax.faces.render.Renderer`.
-..  Register the renderer to a render kit.
-..  Register the component.
-..  Create an event handler if your component generates events.
-..  Create a tag library descriptor (TLD) that defines the custom tag.
---
+. Create a custom component class that does the following:
 
-See link:#BNAXI[Registering a Custom Component] and
-link:#BNAXH[Registering a Custom Renderer with a
-Render Kit] for information on registering the custom component and the
-renderer. The section link:#BNATT[Using a Custom
-Component] discusses how to use the custom component in a Jakarta Server
-Faces page.
+.. Overrides the `getFamily` method to return the component family, which is used to look up renderers that can render the component
 
+.. Includes the rendering code or delegates it to a renderer (explained in <<create-custom-component-step-2>>)
 
+.. Enables component attributes to accept expressions
+
+.. Queues an event on the component if the component generates events
+
+.. Saves and restores the component state
+
+. [[create-custom-component-step-2, Step 2]] Delegate rendering to a renderer if your component does not handle the rendering.
+To do this:
+
+.. Create a custom renderer class by extending `jakarta.faces.render.Renderer`.
+
+.. Register the renderer to a render kit.
+
+. Register the component.
+
+. Create an event handler if your component generates events.
+
+. Create a tag library descriptor (TLD) that defines the custom tag.
+
+See <<registering-a-custom-component>> and <<registering-a-custom-renderer-with-a-render-kit>> for information on registering the custom component and the renderer.
+The section <<using-a-custom-component>> discusses how to use the custom component in a Jakarta Faces page.

@@ -1,17 +1,11 @@
-[[GKNCY]][[integrating-jax-rs-with-ejb-technology-and-cdi]]
-
 == Integrating Jakarta REST with Jakarta Enterprise Beans Technology and CDI
 
-Jakarta REST works with Jakarta Enterprise Beans technology and
-Jakarta Contexts and Dependency Injection (CDI).
+Jakarta REST works with Jakarta Enterprise Beans technology and Jakarta Contexts and Dependency Injection (CDI).
 
-In general, for Jakarta REST to work with enterprise beans, you need to
-annotate the class of a bean with `@Path` to convert it to a root
-resource class. You can use the `@Path` annotation with stateless
-session beans and singleton POJO beans.
+In general, for Jakarta REST to work with enterprise beans, you need to annotate the class of a bean with `@Path` to convert it to a root resource class.
+You can use the `@Path` annotation with stateless session beans and singleton POJO beans.
 
-The following code snippet shows a stateless session bean and a
-singleton bean that have been converted to Jakarta REST root resource classes.
+The following code snippet shows a stateless session bean and a singleton bean that have been converted to Jakarta REST root resource classes.
 
 [source,java]
 ----
@@ -26,11 +20,9 @@ public class SingletonResource {...}
 
 Session beans can also be used for subresources.
 
-Jakarta REST and CDI have slightly different component models. By default,
-Jakarta REST root resource classes are managed in the request scope, and no
-annotations are required for specifying the scope. CDI managed beans
-annotated with `@RequestScoped` or `@ApplicationScoped` can be converted
-to Jakarta REST resource classes.
+Jakarta REST and CDI have slightly different component models.
+By default, Jakarta REST root resource classes are managed in the request scope, and no annotations are required for specifying the scope.
+CDI managed beans annotated with `@RequestScoped` or `@ApplicationScoped` can be converted to Jakarta REST resource classes.
 
 The following code snippet shows a Jakarta REST resource class.
 
@@ -45,10 +37,8 @@ public class Employee {
 public final class EmpDetails {...}
 ----
 
-The following code snippet shows this Jakarta REST resource class converted to
-a CDI bean. The beans must be proxyable, so the `Employee` class
-requires a nonprivate constructor with no parameters, and the
-`EmpDetails` class must not be `final`.
+The following code snippet shows this Jakarta REST resource class converted to a CDI bean.
+The beans must be proxyable, so the `Employee` class requires a nonprivate constructor with no parameters, and the `EmpDetails` class must not be `final`.
 
 [source,java]
 ----
@@ -65,5 +55,3 @@ public class Employee {
 @RequestScoped
 public class EmpDetails {...}
 ----
-
-

@@ -1,72 +1,43 @@
-[[BCGDJDFB]][[packaging-applications]]
-
 == Packaging Applications
 
-A Jakarta EE application is delivered in a Java Archive (JAR) file, a Web
-Archive (WAR) file, or an Enterprise Archive (EAR) file. A WAR or EAR
-file is a standard JAR (`.jar`) file with a `.war` or `.ear` extension.
-Using JAR, WAR, and EAR files and modules makes it possible to assemble
-a number of different Jakarta EE applications using some of the same
-components. No extra coding is needed; it is only a matter of assembling
-(or packaging) various Jakarta EE modules into Jakarta EE JAR, WAR, or EAR
-files.
+A Jakarta EE application is delivered in a Java Archive (JAR) file, a Web Archive (WAR) file, or an Enterprise Archive (EAR) file.
+A WAR or EAR file is a standard JAR (`.jar`) file with a `.war` or `.ear` extension.
+Using JAR, WAR, and EAR files and modules makes it possible to assemble a number of different Jakarta EE applications using some of the same components.
+No extra coding is needed; it is only a matter of assembling (or packaging) various Jakarta EE modules into Jakarta EE JAR, WAR, or EAR files.
 
-An EAR file (see link:#BCGHHIIH[Figure 5-1]) contains Jakarta EE modules
-and, optionally, deployment descriptors. A deployment descriptor, an XML
-document with an `.xml` extension, describes the deployment settings of
-an application, a module, or a component. Because deployment descriptor
-information is declarative, it can be changed without the need to modify
-the source code. At runtime, the Jakarta EE server reads the deployment
-descriptor and acts upon the application, module, or component
-accordingly.
+An EAR file (see <<ear-file-structure>>) contains Jakarta EE modules and, optionally, deployment descriptors.
+A deployment descriptor, an XML document with an `.xml` extension, describes the deployment settings of an application, a module, or a component.
+Because deployment descriptor information is declarative, it can be changed without the need to modify the source code.
+At runtime, the Jakarta EE server reads the deployment descriptor and acts upon the application, module, or component accordingly.
 
-Deployment information is most commonly specified in the source code by
-annotations. Deployment descriptors, if present, override what is
-specified in the source code.
+Deployment information is most commonly specified in the source code by annotations.
+Deployment descriptors, if present, override what is specified in the source code.
 
-[[BCGHHIIH]]
+[[ear-file-structure]]
+.EAR File Structure
+image::jakartaeett_dt_010.svg["Diagram of EAR file structure. META-INF and web, application client, enterprise bean, and resource adapter modules are under the assembly root."]
 
-.*Figure 5-1 EAR File Structure*
-image:jakartaeett_dt_010.png[
-"Diagram of EAR file structure. META-INF and web, application client,
-enterprise bean, and resource adapter modules are under the assembly root."]
+The two types of deployment descriptors are Jakarta EE and runtime.
+A Jakarta EE deployment descriptor is defined by a Jakarta EE specification and can be used to configure deployment settings on any Jakarta EE-compliant implementation.
+A runtime deployment descriptor is used to configure Jakarta EE implementation-specific parameters.
+For example, the GlassFish Server runtime deployment descriptor contains such information as the context root of a web application as well as GlassFish Server implementation-specific parameters, such as caching directives.
+The GlassFish Server runtime deployment descriptors are named `glassfish-_moduleType_.xml` and are located in the same `META-INF` directory as the Jakarta EE deployment descriptor.
 
-The two types of deployment descriptors are Jakarta EE and runtime. A Jakarta
-EE deployment descriptor is defined by a Jakarta EE specification and can
-be used to configure deployment settings on any Jakarta EE-compliant
-implementation. A runtime deployment descriptor is used to configure
-Jakarta EE implementation-specific parameters. For example, the GlassFish
-Server runtime deployment descriptor contains such information as the
-context root of a web application as well as GlassFish Server
-implementation-specific parameters, such as caching directives. The
-GlassFish Server runtime deployment descriptors are named
-`glassfish-`moduleType`.xml` and are located in the same `META-INF`
-directory as the Jakarta EE deployment descriptor.
-
-A Jakarta EE module consists of one or more Jakarta EE components for the same
-container type and, optionally, one component deployment descriptor of
-that type. An enterprise bean module deployment descriptor, for example,
-declares transaction attributes and security authorizations for an
-enterprise bean. A Jakarta EE module can be deployed as a stand-alone
-module.
+A Jakarta EE module consists of one or more Jakarta EE components for the same container type and, optionally, one component deployment descriptor of that type.
+An enterprise bean module deployment descriptor, for example, declares transaction attributes and security authorizations for an enterprise bean.
+A Jakarta EE module can be deployed as a stand-alone module.
 
 Jakarta EE modules are of the following types:
 
-* Enterprise bean modules, which contain class files for enterprise beans and,
-optionally, an enterprise bean deployment descriptor. Enterprise bean modules are packaged as
-JAR files with a `.jar` extension.
-* Web modules, which contain servlet class files, web files, supporting
-class files, GIF and HTML files, and, optionally, a web application
-deployment descriptor. Web modules are packaged as JAR files with a
-`.war` (web archive) extension.
-* Application client modules, which contain class files and, optionally,
-an application client deployment descriptor. Application client modules
-are packaged as JAR files with a `.jar` extension.
-* Resource adapter modules, which contain all Java interfaces, classes,
-native libraries, and, optionally, a resource adapter deployment
-descriptor. Together, these implement the Connector architecture (see
-link:#BNACZ[Jakarta EE Connector Architecture]) for a
-particular EIS. Resource adapter modules are packaged as JAR files with
-an `.rar` (resource adapter archive) extension.
+* Enterprise bean modules, which contain class files for enterprise beans and, optionally, an enterprise bean deployment descriptor.
+Enterprise bean modules are packaged as JAR files with a `.jar` extension.
 
+* Web modules, which contain servlet class files, web files, supporting class files, GIF and HTML files, and, optionally, a web application deployment descriptor.
+Web modules are packaged as JAR files with a `.war` (web archive) extension.
 
+* Application client modules, which contain class files and, optionally, an application client deployment descriptor.
+Application client modules are packaged as JAR files with a `.jar` extension.
+
+* Resource adapter modules, which contain all Java interfaces, classes, native libraries, and, optionally, a resource adapter deployment descriptor.
+Together, these implement the Connector architecture (see <<jakarta-connectors>>) for a particular EIS.
+Resource adapter modules are packaged as JAR files with an `.rar` (resource adapter archive) extension.

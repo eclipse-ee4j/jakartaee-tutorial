@@ -1,26 +1,15 @@
-= Using Jakarta Server Faces Technology in Web Pages
+= Using Jakarta Faces Technology in Web Pages
 
-[[BNAQZ]][[using-javaserver-faces-technology-in-web-pages]]
+Web pages (Facelets pages, in most cases) represent the presentation layer for web applications.
+The process of creating web pages for a Jakarta Faces application includes using component tags to add components to the page and wire them to backing beans, validators, listeners, converters, and other server-side objects that are associated with the page.
 
-Web pages (Facelets pages, in most cases) represent the presentation
-layer for web applications. The process of creating web pages for a
-Jakarta Server Faces application includes using component tags to add
-components to the page and wire them to backing beans, validators,
-listeners, converters, and other server-side objects that are associated
-with the page.
+This chapter explains how to create web pages using various types of component and core tags.
+In the next chapter, you will learn about adding converters, validators, and listeners to component tags to provide additional functionality to components.
 
-This chapter explains how to create web pages using various types of
-component and core tags. In the next chapter, you will learn about
-adding converters, validators, and listeners to component tags to
-provide additional functionality to components.
-
-Many of the examples in this chapter are taken from
-link:#GLNVI[Chapter 60, "Duke's Bookstore Case Study
-Example."]
+Many of the examples in this chapter are taken from xref:dukes-bookstore-case-study-example[xrefstyle=full]
 
 include::jsf-page001.adoc[]
 
 include::jsf-page002.adoc[]
 
 include::jsf-page003.adoc[]
-

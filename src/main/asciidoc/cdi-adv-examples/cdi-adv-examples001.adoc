@@ -1,27 +1,10 @@
-[[A1251406]][[building-and-running-the-cdi-advanced-examples]]
-
 == Building and Running the CDI Advanced Examples
 
-The examples are in the `_tut-install_/examples/cdi/` directory. To build
-and run the examples, you will do the following.
+The examples are in the `_tut-install_/examples/cdi/` directory.
+To build and run the examples, you will do the following.
 
-1.  Use NetBeans IDE or the Maven tool to compile, package, and deploy
-the example.
-2.  Run the example in a web browser.
+. Use NetBeans IDE or the Maven tool to compile, package, and deploy the example.
 
-See link:#GFIUD[Chapter 2, "Using the Tutorial
-Examples"], for basic information on installing, building, and running
-the examples.
+. Run the example in a web browser.
 
-The following topics are addressed here:
-
-* link:#GKHPU[The encoder Example: Using
-Alternatives]
-* link:#GKHPY[The producermethods Example: Using
-a Producer Method to Choose a Bean Implementation]
-* link:#GKHRG[The producerfields Example: Using
-Producer Fields to Generate Resources]
-* link:#GKHPA[The billpayment Example: Using
-Events and Interceptors]
-* link:#GKPAX[The decorators Example: Decorating
-a Bean]
+See xref:using-the-tutorial-examples[xrefstyle=full], for basic information on installing, building, and running the examples.

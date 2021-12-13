@@ -1,10 +1,9 @@
-[[bootstrapping-a-cdi-container-in-java-se]]
-
 = Bootstrapping a CDI Container in Java SE
 
-This chapter explains how to use the API for bootstrapping a CDI container in Java SE. This capability allows you to run CDI applications on Java SE and obtain beans, independently of an application server or any Jakarta EE APIs.
+This chapter explains how to use the API for bootstrapping a CDI container in Java SE.
+This capability allows you to run CDI applications on Java SE and obtain beans, independently of an application server or any Jakarta EE APIs.
 
-For more information about bootstrapping a CDI container in Java SE, see the _Weld Reference Guide_ at `http://weld.cdi-spec.org/documentation/`.
+For more information about bootstrapping a CDI container in Java SE, see the _Weld Reference Guide_ at https://weld.cdi-spec.org/documentation/[^].
 
 include::cdi-bootstrap-se8001.adoc[]
 

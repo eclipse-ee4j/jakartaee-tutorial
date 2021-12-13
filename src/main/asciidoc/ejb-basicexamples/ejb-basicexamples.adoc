@@ -1,11 +1,8 @@
 = Running the Enterprise Bean Examples
 
-[[GIJRB]][[running-the-enterprise-bean-examples]]
-
-This chapter describes the Jakarta Enterprise Beans examples. Session beans provide a simple
-but powerful way to encapsulate business logic within an application.
-They can be accessed from remote Java clients, web service clients, and
-components running in the same server.
+This chapter describes the Jakarta Enterprise Beans examples.
+Session beans provide a simple but powerful way to encapsulate business logic within an application.
+They can be accessed from remote Java clients, web service clients, and components running in the same server.
 
 include::ejb-basicexamples001.adoc[]
 
@@ -18,4 +15,3 @@ include::ejb-basicexamples004.adoc[]
 include::ejb-basicexamples005.adoc[]
 
 include::ejb-basicexamples006.adoc[]
-
