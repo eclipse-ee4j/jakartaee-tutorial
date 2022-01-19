@@ -211,7 +211,7 @@ You can deploy a WAR file to GlassFish Server by:
 
 Throughout the tutorial, you will use NetBeans IDE or Maven for packaging and deploying.
 
-==== To Build and Package the hello1 Web Module Using NetBeans IDE
+==== To Build, Package and Deploy the hello1 Web Module Using NetBeans IDE
 
 To build and package the `hello1` web module using NetBeans IDE:
 
@@ -231,7 +231,7 @@ tut-install/examples/web/jsf
 
 . In the *Projects* tab, right-click the `hello1` project and select *Build*. This command deploys the project to the server.
 
-==== To Build and Package the hello1 Web Module Using Maven
+==== To Build, Package and Deploy the hello1 Web Module Using Maven
 
 To build and package the `hello1` web module using Maven:
 
