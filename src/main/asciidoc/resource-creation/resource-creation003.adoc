@@ -2,7 +2,7 @@
 
 Before you deploy or run many applications, you may need to create resources for them.
 An application can include a `glassfish-resources.xml` file that can be used to define resources for that application and others.
-You can then use the `asadmin` command, specifying as the argument a file named `glassfish-resources.xml`, to create the resources administratively, as shown.
+You can then use the `asadmin` command, specifying as the argument a file named `glassfish-resources.xml`, to create the resources administratively, as shown here:
 
 [source,shell]
 ----
