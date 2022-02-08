@@ -10,29 +10,29 @@ You can use the optional connected attribute to control whether to auto-reconnec
 The connected attribute defaults to `true` and is interpreted as a JavaScript instruction to open or close the WebSocket push connection.
 If the value is an EL expression and it becomes `false` during an ajax request, then the push connection will explicitly be closed during `oncomplete` of that ajax request.
 
-You can also explicitly set it to `false` and manually open the push connection on the client side by invoking `jsf.push.open(clientId)`, passing the component's client ID.
+You can also explicitly set it to `false` and manually open the push connection on the client side by invoking `faces.push.open(clientId)`, passing the component's client ID.
 
 [source,xml]
 ----
-<h:commandButton ... onclick="jsf.push.open('foo')">
+<h:commandButton ... onclick="faces.push.open('foo')">
     <f:ajax ... />
 </h:commandButton>
 <f:websocket id="foo" channel="bar" scope="view" ... connected="false" />
 ----
 
-If you intend to have a one-time push and do not expect more messages, you can optionally explicitly close the push connection from the client side by invoking `jsf.push.close(clientId)`, passing the component's client ID.
+If you intend to have a one-time push and do not expect more messages, you can optionally explicitly close the push connection from the client side by invoking `faces.push.close(clientId)`, passing the component's client ID.
 For example, in the `onmessage` JavaScript listener function, as seen below:
 
 [source,javascript]
 ----
 function someWebsocketListener(message) {
-// ... jsf.push.close('foo');
+// ... faces.push.close('foo');
 }
 ----
 
 === WebSocket Events: Server
 
-When a session or view-scoped socket is automatically closed with close reason code `1000` by the server (and thus, not manually closed by the client via `jsf.push.close(clientId)`), it means that the session or view has expired.
+When a session or view-scoped socket is automatically closed with close reason code `1000` by the server (and thus, not manually closed by the client via `faces.push.close(clientId)`), it means that the session or view has expired.
 
 [source,java]
 ----
