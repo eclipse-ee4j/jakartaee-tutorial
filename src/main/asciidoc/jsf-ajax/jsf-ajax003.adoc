@@ -6,7 +6,7 @@ This built-in Ajax resource can be used in Jakarta Faces web applications in one
 * By using the `f:ajax` tag along with another standard component in a Facelets application.
 This method adds Ajax functionality to any UI component without additional coding and configuration.
 
-* By using the JavaScript API method `jsf.ajax.request()` directly within the Facelets application.
+* By using the JavaScript API method `faces.ajax.request()` directly within the Facelets application.
 This method provides direct access to Ajax methods and allows customized control of component behavior.
 
 * By using the `<h:commandScript>` component to execute arbitrary server-side methods from a view.
