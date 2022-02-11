@@ -42,13 +42,13 @@ For example, consider the following:
     <h:inputText id="inputname" value="#{userBean.name}"/>
     <h:outputText id="outputname" value="#{userBean.name}"/>
     <h:commandButton id="submit" value="Submit"
-                     onclick="jsf.ajax.request(this, event,
+                     onclick="faces.ajax.request(this, event,
                               {execute:'inputname',render:'outputname'});
                               return false;" />
 </h:form>
 ----
 +
-The `jsf.ajax.request` method takes up to three parameters that specify source, event, and options.
+The `faces.ajax.request` method takes up to three parameters that specify source, event, and options.
 The source parameter identifies the DOM element that triggered the Ajax request, typically `this`.
 The optional event parameter identifies the DOM event that triggered this request.
 The optional options parameter contains a set of name/value pairs from <<possible-values-for-the-options-parameter>>.
@@ -80,7 +80,7 @@ Use the `jakarta.faces.application.ResourceDependency` annotation to cause the b
 
 To load the Ajax resource from the server side:
 
-. Use the `jsf.ajax.request` method within the bean class.
+. Use the `faces.ajax.request` method within the bean class.
 +
 [NOTE]
 This method is usually used when creating a custom component or a custom renderer for a component.

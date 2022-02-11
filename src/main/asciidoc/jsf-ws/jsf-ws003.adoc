@@ -57,7 +57,7 @@ Defaults to `true`.
 It is interpreted as a JavaScript instruction to open or close the WebSocket push connection.
 
 This attribute is implicitly re-evaluated on every ajax request by a `PreRenderViewEvent` listener on the `UIViewRoot`.
-You can also explicitly set it to `false` and then manually control it in JavaScript using `jsf.push.open(clientId)` and `jsf.push.close(clientId)`.
+You can also explicitly set it to `false` and then manually control it in JavaScript using `faces.push.open(clientId)` and `faces.push.close(clientId)`.
 
 |`rendered` |Boolean |Optional.
 Specifies whether to render the WebSocket scripts.

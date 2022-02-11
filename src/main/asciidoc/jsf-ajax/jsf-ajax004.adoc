@@ -7,7 +7,7 @@ The application uses the attributes of the `f:ajax` tag listed in <<attributes-o
 The following sections explain the process of creating and sending an Ajax request using some of these attributes.
 
 [NOTE]
-Behind the scenes, the `jsf.ajax.request()` method of the JavaScript resource library collects the data provided by the `f:ajax` tag and posts the request to the Jakarta Faces lifecycle.
+Behind the scenes, the `faces.ajax.request()` method of the JavaScript resource library collects the data provided by the `f:ajax` tag and posts the request to the Jakarta Faces lifecycle.
 
 === Using the event Attribute
 
