@@ -26,9 +26,9 @@ For example, the following code declares the namespace with the short name `jsf`
 
 [source,xml]
 ----
-<html ... xmlns:jsf="http://xmlns.jcp.org/jsf"
+<html ... xmlns:faces="http://xmlns.jcp.org/jsf"
 ...
-    <input type="email" jsf:id="email" name="email"
+    <input type="email" faces:id="email" name="email"
            value="#{reservationBean.email}" required="required"/>
 ----
 
@@ -45,19 +45,19 @@ The browser, however, interprets the markup that the page author has written.
 |===
 |HTML5 Element Name |Identifying Attribute |Facelets Tag
 
-|`a` |`jsf:action` |`h:commandLink`
+|`a` |`faces:action` |`h:commandLink`
 
-|`a` |`jsf:actionListener` |`h:commandLink`
+|`a` |`faces:actionListener` |`h:commandLink`
 
-|`a` |`jsf:value` |`h:outputLink`
+|`a` |`faces:value` |`h:outputLink`
 
-|`a` |`jsf:outcome` |`h:link`
+|`a` |`faces:outcome` |`h:link`
 
 |`body` | {empty} |`h:body`
 
 |`button` | {empty} |`h:commandButton`
 
-|`button` |`jsf:outcome` |`h:button`
+|`button` |`faces:outcome` |`h:button`
 
 |`form` | {empty} |`h:form`
 
@@ -221,7 +221,7 @@ The namespace declarations in the `html` element of the `reservation.xhtml` page
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
+      xmlns:faces="http://xmlns.jcp.org/jsf">
 ----
 
 Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in <<relocatable-resources>>):
@@ -241,7 +241,7 @@ The `jsf` prefix on the `id` attribute makes the element a pass-through one:
 
 [source,xml]
 ----
-    <input type="date" jsf:id="date" name="date"
+    <input type="date" faces:id="date" name="date"
            value="#{reservationBean.date}" required="required"
            title="Enter or choose a date."/>
 ----
