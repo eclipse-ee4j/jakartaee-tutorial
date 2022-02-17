@@ -55,7 +55,7 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 
 `f:attribute` |Tags for Jakarta Faces custom actions that are independent of any particular render kit
 
-|Pass-through Elements Tag Library |\http://xmlns.jcp.org/jsf |`jsf:` |`jsf:id` |Tags to support HTML5-friendly markup
+|Pass-through Elements Tag Library |\http://xmlns.jcp.org/jsf |`faces:` |`faces:id` |Tags to support HTML5-friendly markup
 
 |Pass-through Attributes Tag Library |\http://xmlns.jcp.org/jsf/passthrough |`p:` |`p:type` |Tags to support HTML5-friendly markup
 
