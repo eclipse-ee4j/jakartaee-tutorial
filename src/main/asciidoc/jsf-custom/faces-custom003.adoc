@@ -116,68 +116,6 @@ The coordinate, shape, and alternate text data are obtained through the `value` 
 The value of this attribute is a bean, which stores the `coords`, `shape`, and `alt` data.
 How these beans are stored in the application scope is explained more in the next section.
 
-=== Configuring Model Data
-
-In a Jakarta Faces application, data such as the coordinates of a hotspot of an image map is retrieved from the `value` attribute through a bean.
-However, the shape and coordinates of a hotspot should be defined together because the coordinates are interpreted differently depending on what shape the hotspot is.
-Because a component's value can be bound only to one property, the `value` attribute cannot refer to both the shape and the coordinates.
-
-To solve this problem, the application encapsulates all of this information in a set of `ImageArea` objects.
-These objects are initialized into application scope by the managed bean creation facility (see <<using-the-managed-bean-element>>).
-Here is part of the managed bean declaration for the `ImageArea` bean corresponding to the South America hotspot:
-
-[source,xml]
-----
-<managed-bean eager="true">
-    ...
-    <managed-bean-name>Book201</managed-bean-name>
-    <managed-bean-class>
-        ee.jakarta.tutorial.dukesbookstore.model.ImageArea
-    </managed-bean-class>
-    <managed-bean-scope>application</managed-bean-scope>
-    <managed-property>
-        ...
-        <property-name>shape</property-name>
-        <value>rect</value>
-    </managed-property>
-    <managed-property>
-        ...
-        <property-name>alt</property-name>
-        <value>Duke</value>
-    </managed-property>
-    <managed-property>
-        ...
-        <property-name>coords</property-name>
-        <value>67,23,212,268</value>
-    </managed-property>
-</managed-bean>
-----
-
-For more information on initializing managed beans with the managed bean creation facility, see the section <<application-configuration-resource-file>>.
-
-The `value` attributes of the `bookstore:area` tags refer to the beans in the application scope, as shown in this `bookstore:area` tag from `index.xhtml`:
-
-[source,xml]
-----
-<bookstore:area id="map1" value="#{Book201}"
-                onmouseover="resources/images/book_201.jpg"
-                onmouseout="resources/images/book_all.jpg"
-                targetImage="mapImage" />
-----
-
-To reference the `ImageArea` model object bean values from the component class, you implement a `getValue` method in the component class.
-This method calls `super.getValue`.
-The superclass of `_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/components/AreaComponent.java`, `UIOutput`, has a `getValue` method that does the work of finding the `ImageArea` object associated with `AreaComponent`.
-The `AreaRenderer` class, which needs to render the `alt`, `shape`, and `coords` values from the `ImageArea` object, calls the `getValue` method of `AreaComponent` to retrieve the `ImageArea` object.
-
-[source,java]
-----
-ImageArea iarea = (ImageArea) area.getValue();
-----
-
-`ImageArea` is a simple bean, so you can access the shape, coordinates, and alternative text values by calling the appropriate accessor methods of `ImageArea`.
-<<creating-the-renderer-class>> explains how to do this in the `AreaRenderer` class.
-
 === Summary of the Image Map Application Classes
 
 <<image-map-classes>> summarizes all the classes needed to implement the image map component.
