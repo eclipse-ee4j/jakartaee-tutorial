@@ -95,42 +95,6 @@ For example, in the Duke's Bookstore case study, the `h:dataTable` tag in `bookc
 
 The value is obtained by calling the backing bean's `getBooks` method, which in turn calls the `BookRequestBean` session bean's `getBooks` method.
 
-If you use the application configuration resource file to configure managed beans instead of defining them in managed bean classes, the name of the bean in the `value` expression must match the `managed-bean-name` element of the managed bean declaration up to the first period (`.`) in the expression.
-Similarly, the part of the value expression after the period must match the name specified in the corresponding `property-name` element in the application configuration resource file.
-
-For example, consider this managed bean configuration, which configures the `ImageArea` bean corresponding to the top-left book in the image map on the `index.html` page of the Duke's Bookstore case study:
-
-[source,xml]
-----
-<managed-bean eager="true">
-    ...
-    <managed-bean-name>Book201</managed-bean-name>
-    <managed-bean-class>dukesbookstore.model.ImageArea</managed-bean-class>
-    <managed-bean-scope>application</managed-bean-scope>
-    <managed-property>
-        ...
-        <property-name>shape</property-name>
-        <value>rect</value>
-    </managed-property>
-    <managed-property>
-        ...
-        <property-name>alt</property-name>
-        <value>Duke</value>
-    </managed-property>
-    ...
-----
-
-This example configures a bean called `Book201`, which has several properties, one of which is called `shape`.
-
-Although the `bookstore:area` tags on the `index.xhtml` page do not bind to an `ImageArea` property (they bind to the bean itself), you could refer to the property using a value expression from the `value` attribute of the component's tag:
-
-[source,xml]
-----
-<h:outputText value="#{Book201.shape}" />
-----
-
-See <<configuring-managed-beans>> for information on how to configure beans in the application configuration resource file.
-
 === Binding a Component Value to an Implicit Object
 
 One external data source that a `value` attribute can refer to is an implicit object.

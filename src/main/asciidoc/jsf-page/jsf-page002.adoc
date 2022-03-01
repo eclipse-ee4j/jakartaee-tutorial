@@ -574,7 +574,7 @@ This tag will render HTML that looks something like the following:
 [source,html]
 ----
 <a id="_idt16:Duke" href="#"
-     onclick="mojarra.jsfcljs(document.getElementById('j_idt16'),
+     onclick="mojarra.cljs(document.getElementById('j_idt16'),
      {'j_idt16:Duke':'j_idt16:Duke'},'');
      return false;">My Early Years: Growing Up on Star7, by Duke</a>
 ----
