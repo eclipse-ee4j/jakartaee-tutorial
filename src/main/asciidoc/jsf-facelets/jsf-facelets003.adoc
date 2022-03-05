@@ -114,8 +114,8 @@ The next section specifies the language of the XHTML page and then declares the 
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
 ----
 
 The next section uses various tags to insert components into the web page:
@@ -180,7 +180,7 @@ You can now create the second page, `response.xhtml`, with the following content
 
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="jakarta.faces.html">
 
     <h:head>
         <h:outputStylesheet library="css" name="default.css"/>

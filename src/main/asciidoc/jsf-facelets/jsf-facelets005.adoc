@@ -47,8 +47,8 @@ The following example shows a composite component that accepts an email address 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:composite="http://xmlns.jcp.org/jsf/composite"
-  xmlns:h="http://xmlns.jcp.org/jsf/html">
+  xmlns:composite="jakarta.faces.composite"
+  xmlns:h="jakarta.faces.html">
 
     <h:head>
         <title>This content will not be displayed</title>
@@ -81,8 +81,8 @@ The using page includes a reference to the composite component, in the `xml` nam
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:em="http://xmlns.jcp.org/jsf/composite/emcomp">
+  xmlns:h="jakarta.faces.html"
+  xmlns:em="jakarta.faces.composite/emcomp">
 
     <h:head>
         <title>Using a sample composite component</title>
@@ -96,7 +96,7 @@ The using page includes a reference to the composite component, in the `xml` nam
 </html>
 ----
 
-The local composite component library is defined in the `xmlns` namespace with the declaration `xmlns:em="http://xmlns.jcp.org/jsf/composite/emcomp"`.
+The local composite component library is defined in the `xmlns` namespace with the declaration `xmlns:em="jakarta.faces.composite.emcomp"`.
 The component itself is accessed through the `em:email` tag.
 The preceding example content can be stored as a web page named `emuserpage.xhtml` under the web root directory.
 When compiled and deployed on a server, it can be accessed with the following URL:

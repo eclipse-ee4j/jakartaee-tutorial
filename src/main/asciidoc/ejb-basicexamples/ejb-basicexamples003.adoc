@@ -319,8 +319,8 @@ Here is the content of `index.xhtml`:
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html">
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
             This page has been accessed #{count.hitCount} time(s).
