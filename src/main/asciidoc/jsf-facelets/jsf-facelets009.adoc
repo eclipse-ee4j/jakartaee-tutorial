@@ -21,12 +21,12 @@ You can mix and match Jakarta Faces and HTML5 components and elements as you see
 
 Pass-through elements allow you to use HTML5 tags and attributes but to treat them as equivalent to Jakarta Faces components associated with a server-side `UIComponent` instance.
 
-To make an element that is not a Jakarta Faces element a pass-through element, specify at least one of its attributes using the `\http://xmlns.jcp.org/jsf` namespace.
+To make an element that is not a Jakarta Faces element a pass-through element, specify at least one of its attributes using the `jakarta.faces` namespace.
 For example, the following code declares the namespace with the short name `jsf`:
 
 [source,xml]
 ----
-<html ... xmlns:faces="http://xmlns.jcp.org/jsf"
+<html ... xmlns:faces="jakarta.faces"
 ...
     <input type="email" faces:id="email" name="email"
            value="#{reservationBean.email}" required="required"/>
@@ -130,7 +130,7 @@ For example, the following code declares the namespace with the short name `p`, 
 +
 [source,xml]
 ----
-<html ... xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+<html ... xmlns:p="jakarta.faces.passthrough"
 ...
 
 <h:form prependId="false">
@@ -218,10 +218,10 @@ The namespace declarations in the `html` element of the `reservation.xhtml` page
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:faces="http://xmlns.jcp.org/jsf">
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="jakarta.faces.passthrough"
+      xmlns:faces="jakarta.faces">
 ----
 
 Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in <<relocatable-resources>>):

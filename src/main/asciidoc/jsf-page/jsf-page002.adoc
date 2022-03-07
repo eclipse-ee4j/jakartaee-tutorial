@@ -236,7 +236,7 @@ The following is an example of an XHTML page using `h:head` and `h:body` tags:
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="jakarta.faces.html">
     <h:head>
         Add a title
     </h:head>
@@ -1308,7 +1308,7 @@ Here is an example:
 [source,xml]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="jakarta.faces.html">
     <h:head id="head">
         <title>Resource Relocation</title>
     </h:head>
@@ -1350,7 +1350,7 @@ Here is an example:
 [source,xml]
 ----
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="jakarta.faces.html">
     <h:head id="head">
         <title>Resource Relocation</title>
     </h:head>

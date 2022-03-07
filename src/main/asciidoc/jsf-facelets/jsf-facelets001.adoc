@@ -39,11 +39,11 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 |===
 |Tag Library |URI |Prefix |Example |Contents
 
-|Jakarta Faces Facelets Tag Library |\http://xmlns.jcp.org/jsf/facelets |`ui:` | `ui:component`
+|Jakarta Faces Facelets Tag Library |jakarta.faces.facelets |`ui:` | `ui:component`
 
 `ui:insert` |Tags for templating
 
-|Jakarta Faces HTML Tag Library |\http://xmlns.jcp.org/jsf/html |`h:` |`h:head`
+|Jakarta Faces HTML Tag Library |jakarta.faces.html |`h:` |`h:head`
 
 `h:body`
 
@@ -51,15 +51,15 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 
 `h:inputText` |Jakarta Faces component tags for all `UIComponent` objects
 
-|Jakarta Faces Core Tag Library |\http://xmlns.jcp.org/jsf/core |`f:` | `f:actionListener`
+|Jakarta Faces Core Tag Library |jakarta.faces.core |`f:` | `f:actionListener`
 
 `f:attribute` |Tags for Jakarta Faces custom actions that are independent of any particular render kit
 
-|Pass-through Elements Tag Library |\http://xmlns.jcp.org/jsf |`faces:` |`faces:id` |Tags to support HTML5-friendly markup
+|Pass-through Elements Tag Library |jakarta.faces |`faces:` |`faces:id` |Tags to support HTML5-friendly markup
 
-|Pass-through Attributes Tag Library |\http://xmlns.jcp.org/jsf/passthrough |`p:` |`p:type` |Tags to support HTML5-friendly markup
+|Pass-through Attributes Tag Library |jakarta.faces.passthrough |`p:` |`p:type` |Tags to support HTML5-friendly markup
 
-|Composite Component Tag Library |\http://xmlns.jcp.org/jsf/composite |`cc:` |`cc:interface` |Tags to support composite components
+|Composite Component Tag Library |jakarta.faces.composite |`cc:` |`cc:interface` |Tags to support composite components
 
 |JSTL Core Tag Library |\http://xmlns.jcp.org/jsp/jstl/core |`c:` |`c:forEach`
 
@@ -81,13 +81,13 @@ As is always the case when you declare an XML namespace, you can specify any pre
 For example, you can declare the prefix for the composite component tag library as
 
 ----
-xmlns:composite="http://xmlns.jcp.org/jsf/composite"
+xmlns:composite="jakarta.faces.composite"
 ----
 
 instead of as
 
 ----
-xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+xmlns:cc="jakarta.faces.composite"
 ----
 
 Based on the Jakarta Faces support for Expression Language (EL) syntax, Facelets uses EL expressions to reference properties and methods of managed beans.
