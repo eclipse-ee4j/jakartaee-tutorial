@@ -61,11 +61,11 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 
 |Composite Component Tag Library |jakarta.faces.composite |`cc:` |`cc:interface` |Tags to support composite components
 
-|JSTL Core Tag Library |\http://xmlns.jcp.org/jsp/jstl/core |`c:` |`c:forEach`
+|JSTL Core Tag Library |jakarta.tags.core |`c:` |`c:forEach`
 
 `c:catch` |JSTL 1.2 Core Tags
 
-|JSTL Functions Tag Library |\http://xmlns.jcp.org/jsp/jstl/functions |`fn:` |`fn:toUpperCase`
+|JSTL Functions Tag Library |jakarta.tags.functions |`fn:` |`fn:toUpperCase`
 
 `fn:toLowerCase` |JSTL 1.2 Functions Tags
 |===
