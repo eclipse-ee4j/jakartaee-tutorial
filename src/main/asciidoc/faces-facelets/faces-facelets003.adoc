@@ -1,4 +1,4 @@
-== Developing a Simple Facelets Application: The guessnumber-jsf Example Application
+== Developing a Simple Facelets Application: The guessnumber-faces Example Application
 
 This section describes the general steps involved in developing a Jakarta Faces application.
 The following tasks are usually required:
@@ -15,10 +15,10 @@ The following tasks are usually required:
 
 === Creating a Facelets Application
 
-The example used in this tutorial is the `guessnumber-jsf` application.
+The example used in this tutorial is the `guessnumber-faces` application.
 The application presents you with a page that asks you to guess a number from 0 to 10, validates your input against a random number, and responds with another page that informs you whether you guessed the number correctly or incorrectly.
 
-The source code for this application is in the `_tut-install_/examples/web/jsf/guessnumber-jsf/` directory.
+The source code for this application is in the `_tut-install_/examples/web/faces/guessnumber-faces/` directory.
 
 ==== Developing a Managed Bean
 
@@ -247,11 +247,11 @@ The stage of an application can affect the behavior of the application.
 For example, if the project stage is defined as `Development`, debugging information is automatically generated for the user.
 If not defined by the user, the default project stage is `Production`.
 
-=== Running the guessnumber-jsf Facelets Example
+=== Running the guessnumber-faces Facelets Example
 
-You can use either NetBeans IDE or Maven to build, package, deploy, and run the `guessnumber-jsf` example.
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `guessnumber-faces` example.
 
-==== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
+==== To Build, Package, and Deploy the guessnumber-faces Example Using NetBeans IDE
 
 . Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
 
@@ -260,25 +260,25 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
-. Select the `guessnumber-jsf` folder.
+. Select the `guessnumber-faces` folder.
 
 . Click *Open Project*.
 
-. In the *Projects* tab, right-click the `guessnumber-jsf` project and select *Build*.
+. In the *Projects* tab, right-click the `guessnumber-faces` project and select *Build*.
 +
 This option builds the example application and deploys it to your GlassFish Server instance.
 
-==== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
+==== To Build, Package, and Deploy the guessnumber-faces Example Using Maven
 
 . Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
 
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/guessnumber-jsf/
+tut-install/examples/web/faces/guessnumber-faces/
 ----
 
 . Enter the following command:
@@ -288,17 +288,17 @@ tut-install/examples/web/jsf/guessnumber-jsf/
 mvn install
 ----
 +
-This command builds and packages the application into a WAR file, `guessnumber-jsf.war`, that is located in the `target` directory.
+This command builds and packages the application into a WAR file, `guessnumber-faces.war`, that is located in the `target` directory.
 It then deploys it to the server.
 
-==== To Run the guessnumber-jsf Example
+==== To Run the guessnumber-faces Example
 
 . Open a web browser.
 
 . Enter the following URL in your web browser:
 +
 ----
-http://localhost:8080/guessnumber-jsf
+http://localhost:8080/guessnumber-faces
 ----
 
 . In the field, enter a number from 0 to 10 and click Submit.

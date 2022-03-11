@@ -4,7 +4,7 @@ To demonstrate the advantages of using Ajax, revisit the `guessnumber` example f
 If you modify this example to use Ajax, the response need not be displayed on the `response.xhtml` page.
 Instead, an asynchronous call is made to the bean on the server side, and the response is displayed on the originating page by executing just the input component rather than by form submission.
 
-The source code for this application is in the `_tut-install_/examples/web/jsf/ajaxguessnumber/` directory.
+The source code for this application is in the `_tut-install_/examples/web/faces/ajaxguessnumber/` directory.
 
 === The ajaxguessnumber Source Files
 
@@ -114,7 +114,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
 . Select the `ajaxguessnumber` folder.
@@ -132,7 +132,7 @@ This command builds and deploys the project.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/ajaxguessnumber/
+tut-install/examples/web/faces/ajaxguessnumber/
 ----
 
 . Enter the following command:

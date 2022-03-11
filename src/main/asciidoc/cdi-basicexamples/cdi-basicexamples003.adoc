@@ -2,7 +2,7 @@
 
 The `guessnumber-cdi` example, somewhat more complex than the `simplegreeting` example, illustrates the use of producer methods and of session and application scope.
 The example is a game in which you try to guess a number in fewer than ten attempts.
-It is similar to the `guessnumber-jsf` example described in xref:introduction-to-facelets[xrefstyle=full], except that you can keep guessing until you get the right answer or until you use up your ten attempts.
+It is similar to the `guessnumber-faces` example described in xref:introduction-to-facelets[xrefstyle=full], except that you can keep guessing until you get the right answer or until you use up your ten attempts.
 
 The example includes four source files, a Facelets page and template, and configuration files.
 The configuration files and the template are the same as those used for the `simplegreeting` example.
