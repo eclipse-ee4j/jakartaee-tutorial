@@ -3,7 +3,7 @@
 The `hello1` application is a web module that uses Jakarta Faces technology to display a greeting and response.
 You can use a text editor to view the application files, or you can use NetBeans IDE.
 
-The source code for this application is in the `_tut-install_/examples/web/jsf/hello1/` directory.
+The source code for this application is in the `_tut-install_/examples/web/faces/hello1/` directory.
 
 === To View the hello1 Web Module Using NetBeans IDE
 
@@ -14,7 +14,7 @@ To view the `hello1` web module using NetBeans IDE:
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
 . Select the `hello1` folder and click *Open Project*.
@@ -222,7 +222,7 @@ To build and package the `hello1` web module using NetBeans IDE:
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
 . Select the `hello1` folder.
@@ -240,7 +240,7 @@ To build and package the `hello1` web module using Maven:
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/hello1/
+tut-install/examples/web/faces/hello1/
 ----
 
 . Enter the following command:
@@ -250,7 +250,7 @@ tut-install/examples/web/jsf/hello1/
 mvn install
 ----
 +
-This command spawns any necessary compilations and creates the WAR file in `_tut-install_/examples/web/jsf/hello1/target/`.
+This command spawns any necessary compilations and creates the WAR file in `_tut-install_/examples/web/faces/hello1/target/`.
 It then deploys the project to the server.
 
 === Viewing Deployed Web Modules
@@ -341,7 +341,7 @@ To undeploy the `hello1` web module using Maven:
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/hello1/
+tut-install/examples/web/faces/hello1/
 ----
 
 . Enter the following command:

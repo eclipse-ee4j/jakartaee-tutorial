@@ -194,7 +194,7 @@ The method is called from the checkout process of Duke's Store.
 The `dukes-resources` project contains a number of files used by both Duke's Store and Duke's Shipment, bundled into a JAR file placed in the classpath.
 The resources are in the `src/main/resources` directory:
 
-* `META-INF/resources/css`: Two style sheets, `default.css` and `jsfcrud.css`
+* `META-INF/resources/css`: Two style sheets, `default.css` and `facescrud.css`
 
 * `META-INF/resources/img`: Images used by the projects
 

@@ -88,7 +88,7 @@ The `validateLongRange` tag also has a `maximum` attribute, which sets a maximum
 
 The attributes of all the standard validator tags accept EL value expressions.
 This means that the attributes can reference managed bean properties rather than specify literal values.
-For example, the `f:validateLongRange` tag in the preceding example can reference managed bean properties called `minimum` and `maximum` to get the minimum and maximum values acceptable to the validator implementation, as shown in this snippet from the `guessnumber-jsf` example:
+For example, the `f:validateLongRange` tag in the preceding example can reference managed bean properties called `minimum` and `maximum` to get the minimum and maximum values acceptable to the validator implementation, as shown in this snippet from the `guessnumber-faces` example:
 
 [source,xml]
 ----

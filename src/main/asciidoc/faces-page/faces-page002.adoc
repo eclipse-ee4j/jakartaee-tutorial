@@ -1089,7 +1089,7 @@ Similarly, if the style attribute specifies fewer styles than there are columns 
 The `h:message` and `h:messages` tags are used to display error messages when conversion or validation fails.
 The `h:message` tag displays error messages related to a specific input component, whereas the `h:messages` tag displays the error messages for the entire page.
 
-Here is an example `h:message` tag from the `guessnumber-jsf` application:
+Here is an example `h:message` tag from the `guessnumber-faces` application:
 
 [source,xml]
 ----
@@ -1230,7 +1230,7 @@ Like `hello1`, the application includes the `Hello.java` managed bean, an `index
 In addition, it includes a `personal.xhtml page`, to which a bookmarkable URL and view parameters are passed from the `response.xhtml` page, as described in <<using-view-parameters-to-configure-bookmarkable-urls>>.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `bookmarks` example.
-The source code for this example is in the `_tut-install_/examples/web/jsf/bookmarks/` directory.
+The source code for this example is in the `_tut-install_/examples/web/faces/bookmarks/` directory.
 
 ==== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 
@@ -1241,7 +1241,7 @@ The source code for this example is in the `_tut-install_/examples/web/jsf/bookm
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
 . Select the `bookmarks` folder.
@@ -1259,7 +1259,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/bookmarks/
+tut-install/examples/web/faces/bookmarks/
 ----
 
 . Enter the following command:

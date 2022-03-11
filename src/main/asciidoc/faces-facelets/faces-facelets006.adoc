@@ -17,7 +17,7 @@ Resource identifiers are unique strings that conform to the following format (al
 ----
 
 Elements of the resource identifier in brackets (`[]`) are optional, indicating that only a resource-name, which is usually a file name, is a required element.
-For example, the most common way to specify a style sheet, image, or script is to use the `library` and `name` attributes, as in the following tag from the `guessnumber-jsf` example:s
+For example, the most common way to specify a style sheet, image, or script is to use the `library` and `name` attributes, as in the following tag from the `guessnumber-faces` example:s
 
 [source,xml]
 ----
@@ -26,7 +26,7 @@ For example, the most common way to specify a style sheet, image, or script is t
 
 This tag specifies that the `default.css` style sheet is in the directory `web/resources/css`.
 
-You can also specify the location of an image using the following syntax, also from the `guessnumber-jsf` example:
+You can also specify the location of an image using the following syntax, also from the `guessnumber-faces` example:
 
 [source,xml]
 ----

@@ -22,7 +22,7 @@ You can mix and match Jakarta Faces and HTML5 components and elements as you see
 Pass-through elements allow you to use HTML5 tags and attributes but to treat them as equivalent to Jakarta Faces components associated with a server-side `UIComponent` instance.
 
 To make an element that is not a Jakarta Faces element a pass-through element, specify at least one of its attributes using the `jakarta.faces` namespace.
-For example, the following code declares the namespace with the short name `jsf`:
+For example, the following code declares the namespace with the short name `faces`:
 
 [source,xml]
 ----
@@ -32,7 +32,7 @@ For example, the following code declares the namespace with the short name `jsf`
            value="#{reservationBean.email}" required="required"/>
 ----
 
-Here, the `jsf` prefix is placed on the `id` attribute so that the HTML5 input tag's attributes are treated as part of the Facelets page.
+Here, the `faces` prefix is placed on the `id` attribute so that the HTML5 input tag's attributes are treated as part of the Facelets page.
 This means that, for example, you can use EL expressions to retrieve managed bean properties.
 
 <<how-facelets-renders-html5-elements>> shows how pass-through elements are rendered as Facelets tags.
@@ -199,7 +199,7 @@ The `reservation` example application provides a set of HTML5 `input` elements o
 It consists of two Facelets pages, `reservation.xhtml` and `confirmation.xhtml`, and a backing bean, `ReservationBean.java`.
 The pages use both pass-through attributes and pass-through elements.
 
-The source code for this application is in the `_tut-install_/examples/web/jsf/reservation/` directory.
+The source code for this application is in the `_tut-install_/examples/web/faces/reservation/` directory.
 
 ==== The Facelets Pages for the reservation Application
 
@@ -212,7 +212,7 @@ The facelets pages for this application begin simply with the following `DOCTYPE
 <!DOCTYPE html>
 ----
 
-The namespace declarations in the `html` element of the `reservation.xhtml` page specify both the `jsf` and the `passthrough` namespaces:
+The namespace declarations in the `html` element of the `reservation.xhtml` page specify both the `faces` and the `passthrough` namespaces:
 
 [source,xml]
 ----
@@ -237,7 +237,7 @@ Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `
 The `reservation.xhtml` page uses pass-through elements for most of the form fields on the page.
 This allows it to use some HTML5-specific `input` element types, such as `date` and `email`.
 For example, the following element renders both a date format and a calendar from which you can choose a date.
-The `jsf` prefix on the `id` attribute makes the element a pass-through one:
+The `faces` prefix on the `id` attribute makes the element a pass-through one:
 
 [source,xml]
 ----
@@ -292,7 +292,7 @@ It also contains two methods, `calculateTotal` and `clear`, that act as listener
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsf
+tut-install/examples/web/faces
 ----
 
 . Select the `reservation` folder.
@@ -310,7 +310,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsf/reservation/
+tut-install/examples/web/faces/reservation/
 ----
 
 . Enter the following command:
