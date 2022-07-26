@@ -138,7 +138,7 @@ public class ResponseServlet extends HttpServlet {
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `hello2` example.
 
-==== To Run the hello2 Example Using NetBeans IDE
+==== To Build, Package, Deploy and Run the hello2 Example Using NetBeans IDE
 
 To run the `hello2` example using NetBeans IDE:
 
@@ -169,7 +169,7 @@ The URL specifies the context root, followed by the URL pattern.
 The application looks much like the `hello1` application.
 The major difference is that after you click Submit the response appears below the greeting, not on a separate page.
 
-==== To Run the hello2 Example Using Maven
+====  To Build, Package, Deploy and Run the hello2 Example Using Maven
 
 To run the `hello2` example using Maven:
 
