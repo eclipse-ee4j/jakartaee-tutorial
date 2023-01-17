@@ -84,7 +84,6 @@ These behavioral interfaces, all defined in the `jakarta.faces.component` packag
 
 * `ActionSource`: Indicates that the component can fire an action event.
 This interface is intended for use with components based on JavaServer Faces technology 1.1_01 and earlier versions.
-This interface is deprecated in JavaServer Faces 2.
 
 * `ActionSource2`: Extends `ActionSource` and therefore provides the same functionality.
 However, it allows components to use the Expression Language (EL) when they are referencing methods that handle action events.
