@@ -52,6 +52,19 @@ output.
 mvn generate-resources
 ```
 
+### Creating diagrams
+
+Diagrams are located in `src/main/asciidoc/images`.
+Use [draw.io](https://draw.io) to create/adjust diagrams.
+This tool is primarily chosen for being free to use and the most flexible.
+For portability and maintainability, make sure that the diagram is saved/exported into following 3 formats:
+- `*.drawio`
+- `*.vsdx`
+- `*.svg`
+
+The `*.drawio` format ensures being able to reopen exactly the intended diagram in the original tool.
+The `*.vsdx` format ensures being able to import the diagram in another tool as this is the most supported format by various diagramming tools, just in case that draw.io stops to exist in some unpredictable future.
+The `*.svg` format is ultimately used to embed the diagram in the tutorial document.
 
 ### Deploy the Site to Github Pages
 
