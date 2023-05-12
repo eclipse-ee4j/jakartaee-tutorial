@@ -1,0 +1,10 @@
+name: jakarta-ee-docs
+title: Jakarta EE Documentation
+version: 8
+asciidoc:
+  attributes:
+    source-language: asciidoc@
+    table-caption: false
+nav:
+  - modules/ROOT/nav.adoc
+
