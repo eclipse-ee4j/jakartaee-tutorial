@@ -65,6 +65,18 @@ class AntoraConverter {
                 Files.write(file.toPath(), modifiedContent.getBytes());
                 changeCount++;
             }
+            if (content.contains("image:")) {
+                System.out.println("=> Updating block image references");
+                String modifiedContent = content.replace("image::", "image::images:");
+                Files.write(file.toPath(), modifiedContent.getBytes());
+                changeCount++;
+            }
+            if (content.contains("image:")) {
+                System.out.println("=> Updating inline image references");
+                String modifiedContent = content.replace("image:", "image:images:");
+                Files.write(file.toPath(), modifiedContent.getBytes());
+                changeCount++;
+            }
             if (changeCount == 0) {
                 System.out.println("=> (no changes necessary)");
             } else {

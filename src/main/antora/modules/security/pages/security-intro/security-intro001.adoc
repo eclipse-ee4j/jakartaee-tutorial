@@ -84,7 +84,7 @@ application URL. This action is shown in link:#BNBWN[Figure 50-1].
 [[BNBWN]]
 
 .*Figure 50-1 Initial Request*
-image:jakartaeett_dt_039.png[
+image:images:jakartaeett_dt_039.png[
 "Diagram of initial request from web client to web server for access to a
 protected resource"]
 
@@ -110,7 +110,7 @@ server sets a credential for the user.
 [[BNBWP]]
 
 .*Figure 50-2 Initial Authentication*
-image:jakartaeett_dt_040.png[
+image:images:jakartaeett_dt_040.png[
 "Diagram of initial authentication: server sends form to client, which
 sends authentication data to server for validation"]
 
@@ -130,7 +130,7 @@ link:#BNBWR[Figure 50-3] shows this process.
 [[BNBWR]]
 
 .*Figure 50-3 URL Authorization*
-image:jakartaeett_dt_041.png[
+image:images:jakartaeett_dt_041.png[
 "Diagram of URL authorization"]
 
 The web server's evaluation stops with an "is authorized" outcome when
@@ -148,7 +148,7 @@ original URL request, as shown in link:#BNBWT[Figure 50-4].
 [[BNBWT]]
 
 .*Figure 50-4 Fulfilling the Original Request*
-image:jakartaeett_dt_042.png[
+image:images:jakartaeett_dt_042.png[
 "Diagram of request fulfillment, showing server returning result to
 client"]
 
@@ -171,7 +171,7 @@ one in the web server and one in the enterprise bean container.
 [[BNBWV]]
 
 .*Figure 50-5 Invoking an Enterprise Bean Business Method*
-image:jakartaeett_dt_043.png[
+image:images:jakartaeett_dt_043.png[
 "Diagram of authorization process between web component and enterprise
 bean"]
 

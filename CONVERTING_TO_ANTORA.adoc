@@ -15,6 +15,9 @@ Here’s the current process for migrating an individual module (i.e. security, 
 3. Create a new folder in the `src/main/antora/modules` folder with the name of the module you are migrating. For example, for the Security module, you would create a `security` folder.
     * Inside of this folder, create a `pages` folder.
 4. Move all the folders for the module you are migrating into the new `pages` folder. For example, for the Security module, you would move all of the `src/main/asciidoc/security-*` folders into the `src/main/antora/modules/security/pages`. (Copy the entire folders, not just the `.adoc` files).
+
+> NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
+
 5. Run the migration script from the root project folder. For example, for the Security module, you would run `jbang AntoraConverter.java security`. (The first parameter is the folder relative to `src/main/antora/modules`).
 6. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
 7. Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
@@ -46,6 +49,10 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
 * xref:security-advanced/security-advanced.adoc[]
 ```
 
+8. Add this module to the `src/main/antora/antora.yml`. For example, for the Security module, you would add this line to the end of  `src/main/antora/antora.yml` file:
+
+```yaml
+  - modules/security/nav.adoc
+```
 
 
-> NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
