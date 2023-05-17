@@ -16,6 +16,36 @@ Here’s the current process for migrating an individual module (i.e. security, 
     * Inside of this folder, create a `pages` folder.
 4. Move all the folders for the module you are migrating into the new `pages` folder. For example, for the Security module, you would move all of the `src/main/asciidoc/security-*` folders into the `src/main/antora/modules/security/pages`. (Copy the entire folders, not just the `.adoc` files).
 5. Run the migration script from the root project folder. For example, for the Security module, you would run `jbang AntoraConverter.java security`. (The first parameter is the folder relative to `src/main/antora/modules`).
-6.
+6. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
+7. Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
+
+```asciidoc
+include::security-intro/security-intro.adoc[]
+
+include::security-webtier/security-webtier.adoc[]
+
+include::security-jakartaee/security-jakartaee.adoc[]
+
+include::security-api/security-api.adoc[]
+
+include::security-advanced/security-advanced.adoc[]
+```
+
+After copying these into `nav.adoc`, replace "include::" with "* xref:" and add a header with the module name:
+
+```asciidoc
+.Security
+* xref:security-intro/security-intro.adoc[]
+
+* xref:security-webtier/security-webtier.adoc[]
+
+* xref:security-jakartaee/security-jakartaee.adoc[]
+
+* xref:security-api/security-api.adoc[]
+
+* xref:security-advanced/security-advanced.adoc[]
+```
+
+
 
 > NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
