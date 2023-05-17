@@ -11,7 +11,7 @@ class AntoraConverter {
 
     final static String START_PATH_PREFIX = "src/main/antora/modules/";
 
-    public static String replaceBetween(String str, String start, String end, String prefix, char fromChar, char toChar) {
+    public static String replaceBetween(String str, String start, String end, String prefix, String fromString, String toString) {
         StringBuilder result = new StringBuilder();
         int index = 0;
         int startIndex, endIndex;
@@ -19,7 +19,7 @@ class AntoraConverter {
         while ((startIndex = str.indexOf(start, index)) != -1 && (endIndex = str.indexOf(end, startIndex + start.length())) != -1) {
             result.append(str, index, startIndex + start.length());
             String substring = str.substring(startIndex + start.length(), endIndex);
-            String updatedSubstring = substring.replace(fromChar, toChar);
+            String updatedSubstring = substring.replace(fromString, toString);
             // don't add the prefix if nothing has changed
             if (!substring.equals(updatedSubstring)) {
                 result.append(prefix);
@@ -55,25 +55,25 @@ class AntoraConverter {
 
             if (content.contains(("<<"))) {
                 System.out.println("=> Updating anchor links");
-                String modifiedContent = replaceBetween(content, "<<", ">>", "_",'-', '_');
+                String modifiedContent = replaceBetween(content, "<<", ">>", "_","-", "_");
                 Files.write(file.toPath(), modifiedContent.getBytes());
                 changeCount++;
             }
             if (content.contains(("[["))) {
                 System.out.println("=> Updating anchor names");
-                String modifiedContent = replaceBetween(content, "[[", "]]", "_", '-', '_');
-                Files.write(file.toPath(), modifiedContent.getBytes());
-                changeCount++;
-            }
-            if (content.contains("image::")) {
-                System.out.println("=> Updating block image references");
-                String modifiedContent = content.replace("image::", "image::images:");
+                String modifiedContent = replaceBetween(content, "[[", "]]", "_", "-", "_");
                 Files.write(file.toPath(), modifiedContent.getBytes());
                 changeCount++;
             }
             if (content.contains("image:")) {
-                System.out.println("=> Updating inline image references");
-                String modifiedContent = content.replace("image:", "image:images:");
+                System.out.println("=> Converting inline image references to block image references and adding module prefix");
+                String modifiedContent = content.replace("image:", "image::common:");
+                Files.write(file.toPath(), modifiedContent.getBytes());
+                changeCount++;
+            }
+            if (content.contains((".png["))) {
+                System.out.println("=> Removing newlines from image captions");
+                String modifiedContent = replaceBetween(content, ".png[", "]", "", System.getProperty("line.separator"), " ");
                 Files.write(file.toPath(), modifiedContent.getBytes());
                 changeCount++;
             }

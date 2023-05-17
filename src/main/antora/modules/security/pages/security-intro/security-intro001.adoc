@@ -84,9 +84,7 @@ application URL. This action is shown in link:#BNBWN[Figure 50-1].
 [[BNBWN]]
 
 .*Figure 50-1 Initial Request*
-image:images:jakartaeett_dt_039.png[
-"Diagram of initial request from web client to web server for access to a
-protected resource"]
+image::common:jakartaeett_dt_039.png["Diagram of initial request from web client to web server for access to aprotected resource"]
 
 Since the client has not yet authenticated itself to the application
 environment, the server responsible for delivering the web portion of
@@ -110,9 +108,7 @@ server sets a credential for the user.
 [[BNBWP]]
 
 .*Figure 50-2 Initial Authentication*
-image:images:jakartaeett_dt_040.png[
-"Diagram of initial authentication: server sends form to client, which
-sends authentication data to server for validation"]
+image::common:jakartaeett_dt_040.png["Diagram of initial authentication: server sends form to client, whichsends authentication data to server for validation"]
 
 [[BNBWQ]][[_step_3_url_authorization]]
 
@@ -130,8 +126,7 @@ link:#BNBWR[Figure 50-3] shows this process.
 [[BNBWR]]
 
 .*Figure 50-3 URL Authorization*
-image:images:jakartaeett_dt_041.png[
-"Diagram of URL authorization"]
+image::common:jakartaeett_dt_041.png["Diagram of URL authorization"]
 
 The web server's evaluation stops with an "is authorized" outcome when
 the web server is able to map the user to a role. A "not authorized"
@@ -148,9 +143,7 @@ original URL request, as shown in link:#BNBWT[Figure 50-4].
 [[BNBWT]]
 
 .*Figure 50-4 Fulfilling the Original Request*
-image:images:jakartaeett_dt_042.png[
-"Diagram of request fulfillment, showing server returning result to
-client"]
+image::common:jakartaeett_dt_042.png["Diagram of request fulfillment, showing server returning result to client"]
 
 In our example, the response URL of a web page is returned, enabling the
 user to post form data that needs to be handled by the business-logic
@@ -171,9 +164,7 @@ one in the web server and one in the enterprise bean container.
 [[BNBWV]]
 
 .*Figure 50-5 Invoking an Enterprise Bean Business Method*
-image:images:jakartaeett_dt_043.png[
-"Diagram of authorization process between web component and enterprise
-bean"]
+image::common:jakartaeett_dt_043.png["Diagram of authorization process between web component and enterprise bean"]
 
 The enterprise container is responsible for enforcing access control on the
 enterprise bean method. The container consults the security policy

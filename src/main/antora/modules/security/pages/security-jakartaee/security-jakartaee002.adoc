@@ -500,9 +500,7 @@ illustrates this concept.
 [[BNBZA]]
 
 .*Figure 52-1 Security Identity Propagation*
-image:images:jakartaeett_dt_047.png[
-"Diagram of security identity propagation from client to intermediate
-container to target container"]
+image::common:jakartaeett_dt_047.png["Diagram of security identity propagation from client to intermediatecontainer to target container"]
 
 In this illustration, an application client is making a call to an
 enterprise bean method in one enterprise bean container. This enterprise bean
