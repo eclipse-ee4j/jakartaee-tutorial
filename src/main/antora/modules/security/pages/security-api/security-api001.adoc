@@ -1,4 +1,4 @@
-[[about-the-jakarta-ee-security-api]]
+[[_about_the_jakarta_ee_security_api]]
 == About Jakarta Security
 
 Jakarta EE includes support for Jakarta Security, which defines portable, plug-in interfaces
@@ -31,7 +31,7 @@ lists the main classes and interfaces in this package.
 
 
 
-[[main-classes-and-interfaces-in-enterprise]]
+[[_main_classes_and_interfaces_in_enterprise]]
 
 *Table 51-1  Main Classes and Interfaces in javax.security.enterprise*
 
@@ -52,7 +52,7 @@ mechanism.
 authentication process.
 |=======================================================================
 
-[[main-classes-and-interfaces-in-authentication]]
+[[_main_classes_and_interfaces_in_authentication]]
 
 
 *Table 51-2 Main Classes and Interfaces in javax.security.enterprise.authentication.mechanism.http*
@@ -84,7 +84,7 @@ authentication mechanisms or to modify the behavior of an authentication mechani
 
 
 
-[[main-classes-and-interfaces-in-credential]]
+[[_main_classes_and_interfaces_in_credential]]
 
 *Table 51-3 Main Classes and Interfaces in javax.security.enterprise.credential*
 [width="99%",cols="25%,75%"]
@@ -113,7 +113,7 @@ for the explicit usage with the JSR 375 remember me function.
 used by standard caller name/password authentication.
 |=======================================================================
 
-[[main-classes-and-interfaces-in-identitystore]]
+[[_main_classes_and_interfaces_in_identitystore]]
 
 *Table 51-4 Main Classes and Interfaces in javax.security.enterprise.identitystore*
 [width="99%",cols="25%,75%"]

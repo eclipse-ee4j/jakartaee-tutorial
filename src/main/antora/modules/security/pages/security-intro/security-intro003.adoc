@@ -1,4 +1,4 @@
-[[BNBXE]][[securing-containers]]
+[[BNBXE]][[_securing_containers]]
 
 == Securing Containers
 
@@ -6,7 +6,7 @@ In Jakarta EE, the component containers are responsible for providing
 application security. A container provides two types of security:
 declarative and programmatic.
 
-[[BNBXG]][[using-annotations-to-specify-security-information]]
+[[BNBXG]][[_using_annotations_to_specify_security_information]]
 
 === Using Annotations to Specify Security Information
 
@@ -29,7 +29,7 @@ descriptors are described only where necessary.
 For more information on annotations, see
 link:#BNBYJ[Further Information about Security].
 
-[[BNBXF]][[using-deployment-descriptors-for-declarative-security]]
+[[BNBXF]][[_using_deployment_descriptors_for_declarative_security]]
 
 === Using Deployment Descriptors for Declarative Security
 
@@ -65,7 +65,7 @@ Chapter 14 of the Jakarta Enterprise Beans 3.2 Core Contracts and Requirements S
 which can be downloaded from
 `https://jakarta.ee/specifications/enterprise-beans/3.2/`.
 
-[[BNBXH]][[using-programmatic-security]]
+[[BNBXH]][[_using_programmatic_security]]
 
 === Using Programmatic Security
 

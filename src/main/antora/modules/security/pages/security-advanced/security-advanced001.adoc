@@ -1,4 +1,4 @@
-[[BNBYB]][[working-with-digital-certificates]]
+[[BNBYB]][[_working_with_digital_certificates]]
 
 == Working with Digital Certificates
 
@@ -66,7 +66,7 @@ For a better understanding of `keytool` and public-key cryptography, see
 link:#BABBGBBF[Further Information about
 Advanced Security Topics] for a link to the `keytool` documentation.
 
-[[BNBYC]][[creating-a-server-certificate]]
+[[BNBYC]][[_creating_a_server_certificate]]
 
 === Creating a Server Certificate
 
@@ -99,7 +99,7 @@ contains more than one certificate.
 The next section provides specific information on using the `keytool`
 utility to perform these steps.
 
-[[GJRGY]][[to-use-keytool-to-create-a-server-certificate]]
+[[GJRGY]][[_to_use_keytool_to_create_a_server_certificate]]
 
 ==== To Use keytool to Create a Server Certificate
 
@@ -194,7 +194,7 @@ Certificate was added to keystore
 [Storing cacerts.jks]
 ----
 
-[[GLIFW]][[adding-users-to-the-certificate-realm]]
+[[GLIFW]][[_adding_users_to_the_certificate_realm]]
 
 === Adding Users to the Certificate Realm
 
@@ -204,7 +204,7 @@ cryptographically verified client certificates. For step-by-step
 instructions for creating this type of certificate, see
 link:#BNBYB[Working with Digital Certificates].
 
-[[BNBYF]][[using-a-different-server-certificate-with-glassfish-server]]
+[[BNBYF]][[_using_a_different_server_certificate_with_glassfish_server]]
 
 === Using a Different Server Certificate with GlassFish Server
 
@@ -221,7 +221,7 @@ name of your server. For testing purposes, this can be `localhost`.
 change your keystore's password to the default password (`changeit`) or
 change the default password to your keystore's password.
 
-[[sthref230]][[to-specify-a-different-server-certificate]]
+[[sthref230]][[_to_specify_a_different_server_certificate]]
 
 ==== To Specify a Different Server Certificate
 

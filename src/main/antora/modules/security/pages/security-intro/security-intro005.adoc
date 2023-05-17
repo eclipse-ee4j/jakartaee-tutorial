@@ -1,4 +1,4 @@
-[[BNBXJ]][[working-with-realms-users-groups-and-roles]]
+[[BNBXJ]][[_working_with_realms_users_groups_and_roles]]
 
 == Working with Realms, Users, Groups, and Roles
 
@@ -36,7 +36,7 @@ By default, group principal names are mapped to roles of the same name.
 
 |=======================================================================
 
-[[BNBXK]][[what-are-realms-users-groups-and-roles]]
+[[BNBXK]][[_what_are_realms_users_groups_and_roles]]
 
 === What Are Realms, Users, Groups, and Roles?
 
@@ -71,7 +71,7 @@ definition of roles, and mapping of roles to users and groups"]
 The following sections provide more information on realms, users,
 groups, and roles.
 
-[[BNBXM]][[what-is-a-realm]]
+[[BNBXM]][[_what_is_a_realm]]
 
 ==== What Is a Realm?
 
@@ -109,7 +109,7 @@ Administration Console to manage users in this realm in the same way you
 manage users in the `file` realm. For more information, see
 link:#BNBXR[Managing Users and Groups in GlassFish Server].
 
-[[BNBXN]][[what-is-a-user]]
+[[BNBXN]][[_what_is_a_user]]
 
 ==== What Is a User?
 
@@ -127,7 +127,7 @@ operating system. The Jakarta EE server authentication service is not
 connected to the security mechanism of the operating system. The two
 security services manage users that belong to different realms.
 
-[[BNBXO]][[what-is-a-group]]
+[[BNBXO]][[_what_is_a_group]]
 
 ==== What Is a Group?
 
@@ -145,7 +145,7 @@ A group in GlassFish Server has a different scope from a role. A group
 is designated for the entire GlassFish Server, whereas a role is
 associated only with a specific application in GlassFish Server.
 
-[[BNBXP]][[what-is-a-role]]
+[[BNBXP]][[_what_is_a_role]]
 
 ==== What Is a Role?
 
@@ -154,7 +154,7 @@ of resources in an application. A role can be compared to a key that can
 open a lock. Many people might have a copy of the key. The lock doesn't
 care who you are, only that you have the right key.
 
-[[BNBXQ]][[some-other-terminology]]
+[[BNBXQ]][[_some_other_terminology]]
 
 ==== Some Other Terminology
 
@@ -177,14 +177,14 @@ attributes used to authenticate a principal for Jakarta EE services. A
 principal acquires a credential upon authentication or from another
 principal that allows its credential to be used.
 
-[[BNBXR]][[managing-users-and-groups-in-glassfish-server]]
+[[BNBXR]][[_managing_users_and_groups_in_glassfish_server]]
 
 === Managing Users and Groups in GlassFish Server
 
 Follow these steps for managing users before you run the tutorial
 examples.
 
-[[BNBXS]][[to-add-users-to-glassfish-server]]
+[[BNBXS]][[_to_add_users_to_glassfish_server]]
 
 ==== To Add Users to GlassFish Server
 
@@ -235,7 +235,7 @@ in this tutorial.
 10. Click OK to add this user to the realm, or click Cancel to quit
 without saving.
 
-[[BNBXU]][[setting-up-security-roles]]
+[[BNBXU]][[_setting_up_security_roles]]
 
 === Setting Up Security Roles
 
@@ -316,7 +316,7 @@ has declared what roles are authorized to access protected parts of an
 application, the next step is to map the security role to the name of a
 user, or principal.
 
-[[BNBXV]][[mapping-roles-to-users-and-groups]]
+[[BNBXV]][[_mapping_roles_to_users_and_groups]]
 
 === Mapping Roles to Users and Groups
 

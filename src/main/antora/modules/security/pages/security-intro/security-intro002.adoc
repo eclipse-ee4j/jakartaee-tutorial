@@ -1,4 +1,4 @@
-[[BNBWY]][[security-mechanisms]]
+[[BNBWY]][[_security_mechanisms]]
 
 == Security Mechanisms
 
@@ -9,7 +9,7 @@ that can be used to secure Jakarta EE applications. Each of these
 mechanisms can be used individually or with others to provide protection
 layers based on the specific needs of your implementation.
 
-[[BNBWZ]][[java-se-security-mechanisms]]
+[[BNBWZ]][[_java_se_security_mechanisms]]
 
 === Java SE Security Mechanisms
 
@@ -52,7 +52,7 @@ and obtaining, listing, and managing Kerberos tickets.
 For more information on Java SE security, visit
 `http://docs.oracle.com/javase/8/docs/technotes/guides/security/`.
 
-[[BNBXA]][[jakarta-ee-security-mechanisms]]
+[[BNBXA]][[_jakarta_ee_security_mechanisms]]
 
 === Jakarta EE Security Mechanisms
 
@@ -64,7 +64,7 @@ authenticating users and authorizing access to application functions and
 associated data at many different layers. Jakarta EE security services are
 separate from the security mechanisms of the operating system.
 
-[[BNBXB]][[application-layer-security]]
+[[BNBXB]][[_application_layer_security]]
 
 ==== Application-Layer Security
 
@@ -104,7 +104,7 @@ transferable between application types.
 For more information on providing security at the application layer, see
 link:#BNBXE[Securing Containers].
 
-[[BNBXC]][[transport-layer-security]]
+[[BNBXC]][[_transport_layer_security]]
 
 ==== Transport-Layer Security
 
@@ -156,7 +156,7 @@ For more information on transport-layer security, see
 link:#BNBXW[Establishing a Secure Connection Using
 SSL].
 
-[[BNBXD]][[message-layer-security]]
+[[BNBXD]][[_message_layer_security]]
 
 ==== Message-Layer Security
 

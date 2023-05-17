@@ -1,4 +1,4 @@
-[[GKBAA]][[securing-web-applications]]
+[[GKBAA]][[_securing_web_applications]]
 
 == Securing Web Applications
 
@@ -6,7 +6,7 @@ Web applications are created by application developers who give, sell,
 or otherwise transfer the application to an application deployer for
 installation into a runtime environment.
 
-[[CHDBIBHI]][[overview-of-securing-web-applications]]
+[[CHDBIBHI]][[_overview_of_securing_web_applications]]
 
 === Overview of Securing Web Applications
 
@@ -24,7 +24,7 @@ explains how to secure web applications using annotations wherever
 possible. It explains how to use deployment descriptors where
 annotations cannot be used.
 
-[[BNCBK]][[specifying-security-constraints]]
+[[BNCBK]][[_specifying_security_constraints]]
 
 === Specifying Security Constraints
 
@@ -60,7 +60,7 @@ protected when transported between a client and a server. User data
 constraints are discussed in link:#BNCBM[Specifying a Secure
 Connection].
 
-[[GJJCD]][[specifying-a-web-resource-collection]]
+[[GJJCD]][[_specifying_a_web_resource_collection]]
 
 ==== Specifying a Web Resource Collection
 
@@ -101,7 +101,7 @@ are protected)
 ** If the collection contains one or more `http-method-omission`
 elements, none of which names the HTTP method
 
-[[GJJCG]][[specifying-an-authorization-constraint]]
+[[GJJCG]][[_specifying_an_authorization_constraint]]
 
 ==== Specifying an Authorization Constraint
 
@@ -130,7 +130,7 @@ For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint`
 annotations accept a `rolesAllowed` element that specifies the
 authorized roles.
 
-[[BNCBM]][[specifying-a-secure-connection]]
+[[BNCBM]][[_specifying_a_secure_connection]]
 
 ==== Specifying a Secure Connection
 
@@ -204,7 +204,7 @@ easily implemented by using a filter.
 |=======================================================================
 
 
-[[BNCBL]][[specifying-security-constraints-for-resources]]
+[[BNCBL]][[_specifying_security_constraints_for_resources]]
 
 ==== Specifying Security Constraints for Resources
 
@@ -249,7 +249,7 @@ following:
 </security-constraint>
 ----
 
-[[GKBSA]][[specifying-authentication-mechanisms]]
+[[GKBSA]][[_specifying_authentication_mechanisms]]
 
 === Specifying Authentication Mechanisms
 
@@ -316,7 +316,7 @@ conjunction with basic or form-based authentication, some of these
 concerns can be alleviated. To specify a secure transport mechanism, use
 the elements described in link:#BNCBM[Specifying a Secure Connection].
 
-[[BNCBO]][[http-basic-authentication]]
+[[BNCBO]][[_http_basic_authentication]]
 
 ==== HTTP Basic Authentication
 
@@ -347,7 +347,7 @@ image:jakartaeett_dt_045.png[
 "Diagram of four steps in HTTP basic authentication between client and
 server"]
 
-[[BNCBQ]][[form-based-authentication]]
+[[BNCBQ]][[_form_based_authentication]]
 
 ==== Form-Based Authentication
 
@@ -401,7 +401,7 @@ HTML page:
 </form>
 ----
 
-[[BNCBW]][[digest-authentication]]
+[[BNCBW]][[_digest_authentication]]
 
 ==== Digest Authentication
 
@@ -414,7 +414,7 @@ wire, digest authentication requires that clear-text password
 equivalents be available to the authenticating container so that it can
 validate received authenticators by calculating the expected digest.
 
-[[BNCBN]][[specifying-an-authentication-mechanism-in-the-deployment-descriptor]]
+[[BNCBN]][[_specifying_an_authentication_mechanism_in_the_deployment_descriptor]]
 
 === Specifying an Authentication Mechanism in the Deployment Descriptor
 
@@ -482,7 +482,7 @@ deployment descriptor:
 </login-config>
 ----
 
-[[BNCAV]][[declaring-security-roles]]
+[[BNCAV]][[_declaring_security_roles]]
 
 === Declaring Security Roles
 

@@ -1,11 +1,11 @@
-[[GKBSZ]][[examples-securing-enterprise-beans]]
+[[GKBSZ]][[_examples_securing_enterprise_beans]]
 
 == Examples: Securing Enterprise Beans
 
 The following examples show how to secure enterprise beans using
 declarative and programmatic security.
 
-[[BNBZK]][[the-cart-secure-example-securing-an-enterprise-bean-with-declarative-security]]
+[[BNBZK]][[_the_cart_secure_example_securing_an_enterprise_bean_with_declarative_security]]
 
 === The cart-secure Example: Securing an Enterprise Bean with Declarative Security
 
@@ -49,7 +49,7 @@ the client application by following the steps in link:#BNBZN[To Run the
 cart-secure Example Using NetBeans IDE] or link:#BNBZO[To Run the
 cart-secure Example Using Maven].
 
-[[BNBZL]][[annotating-the-bean]]
+[[BNBZL]][[_annotating_the_bean]]
 
 ==== Annotating the Bean
 
@@ -154,7 +154,7 @@ authentication will be required for a user to access these methods. If
 no authentication method is specified in the deployment descriptor, the
 type of authentication will be user name/password authentication.
 
-[[BNBZN]][[to-run-the-cart-secure-example-using-netbeans-ide]]
+[[BNBZN]][[_to_run_the_cart_secure_example_using_netbeans_ide]]
 
 ==== To Run the cart-secure Example Using NetBeans IDE
 
@@ -199,7 +199,7 @@ Java Result: 1
 If the user name and password are not authenticated, the dialog box
 reappears until you enter correct values.
 
-[[BNBZO]][[to-run-the-cart-secure-example-using-maven]]
+[[BNBZO]][[_to_run_the_cart_secure_example_using_maven]]
 
 ==== To Run the cart-secure Example Using Maven
 
@@ -241,7 +241,7 @@ Java Result: 1
 If the user name and password are not authenticated, the dialog box
 reappears until you enter correct values.
 
-[[BNCAA]][[the-converter-secure-example-securing-an-enterprise-bean-with-programmatic-security]]
+[[BNCAA]][[_the_converter_secure_example_securing_an_enterprise_bean_with_programmatic_security]]
 
 === The converter-secure Example: Securing an Enterprise Bean with Programmatic Security
 
@@ -283,7 +283,7 @@ link:#GJRMH[Specifying Security for Basic
 Authentication Using Annotations].
 5.  Build, package, deploy, and run the application.
 
-[[BNCAB]][[modifying-converterbean]]
+[[BNCAB]][[_modifying_converterbean]]
 
 ==== Modifying ConverterBean
 
@@ -343,7 +343,7 @@ public class ConverterBean{
 }
 ----
 
-[[GKBSI]][[modifying-converterservlet]]
+[[GKBSI]][[_modifying_converterservlet]]
 
 ==== Modifying ConverterServlet
 
@@ -358,7 +358,7 @@ client, `ConverterServlet`:
     rolesAllowed = {"TutorialUser"}))
 ----
 
-[[BNCAD]][[to-run-the-converter-secure-example-using-netbeans-ide]]
+[[BNCAD]][[_to_run_the_converter_secure_example_using_netbeans_ide]]
 
 ==== To Run the converter-secure Example Using NetBeans IDE
 
@@ -378,7 +378,7 @@ tut-install/examples/security
 This command builds and deploys the example application to your
 GlassFish Server instance.
 
-[[BNCAE]][[to-run-the-converter-secure-example-using-maven]]
+[[BNCAE]][[_to_run_the_converter_secure_example_using_maven]]
 
 ==== To Run the converter-secure Example Using Maven
 
@@ -401,7 +401,7 @@ This command builds and packages the application into a WAR file,
 `converter-secure.war`, that is located in the `target` directory, and
 deploys the WAR file.
 
-[[GJTDP]][[to-run-the-converter-secure-example]]
+[[GJTDP]][[_to_run_the_converter_secure_example]]
 
 ==== To Run the converter-secure Example
 

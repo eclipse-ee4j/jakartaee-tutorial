@@ -1,11 +1,11 @@
-[[GLIEN]][[authentication-mechanisms]]
+[[GLIEN]][[_authentication_mechanisms]]
 
 == Authentication Mechanisms
 
 This section discusses the client authentication and mutual
 authentication mechanisms.
 
-[[GLIEQ]][[client-authentication]]
+[[GLIEQ]][[_client_authentication]]
 
 === Client Authentication
 
@@ -41,7 +41,7 @@ authentication mechanisms that can be provided with an application and
 deployed using CDI. See link:#overview-of-the-http-authentication-mechanism-interface[Overview of
 the HTTP Authentication Mechanism Interface].
 
-[[GLIEL]][[mutual-authentication]]
+[[GLIEL]][[_mutual_authentication]]
 
 === Mutual Authentication
 
@@ -93,7 +93,7 @@ image:jakartaeett_dt_049.png[
 "Diagram of five steps in mutual authentication with user name and
 password"]
 
-[[BNBYH]][[enabling-mutual-authentication-over-ssl]]
+[[BNBYH]][[_enabling_mutual_authentication_over_ssl]]
 
 ==== Enabling Mutual Authentication over SSL
 
@@ -126,7 +126,7 @@ all of the time, which can severely degrade performance.
 When client authentication is enabled in both of these ways, client
 authentication will be performed twice.
 
-[[BNBYI]][[creating-a-client-certificate-for-mutual-authentication]]
+[[BNBYI]][[_creating_a_client_certificate_for_mutual_authentication]]
 
 ==== Creating a Client Certificate for Mutual Authentication
 

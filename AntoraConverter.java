@@ -9,6 +9,8 @@ import java.util.List;
 
 class AntoraConverter {
 
+    final static String START_PATH_PREFIX = "src/main/antora/modules/";
+
     public static String replaceBetween(String str, String start, String end, String prefix, char fromChar, char toChar) {
         StringBuilder result = new StringBuilder();
         int index = 0;
@@ -32,14 +34,22 @@ class AntoraConverter {
     }
 
     public static void main(String... args) throws Exception {
+        System.out.println("\uD83E\uDD16 Antora Converter: Convert raw Asciidoc files to Antora-compatible format");
+        System.out.println("Walks through all folders and subfolders from the specified startPath and converts all .adoc files");
         List<File> files = new ArrayList<>();
-        String startPath = args.length == 0  ? "." : args[0];
+        if (args.length == 0) {
+            System.out.println("Usage: AntoraConverter.java [startPath]");
+            System.out.println("       Where [startPath] is relative to " + START_PATH_PREFIX);
+            System.exit(1);
+        }
+        String startPath = START_PATH_PREFIX + args[0];
+        System.out.println("Start path: " + startPath);
         Files.walk(Paths.get(startPath)).filter(Files::isRegularFile) //.forEach(path -> System.out.println(path.getFileName()));
                 .filter(path -> path.toString().endsWith(".adoc"))
                 .forEach(path -> files.add(path.toFile()));
 
         for (File file : files) {
-            System.out.println("Evaluating file " + file.getAbsolutePath());
+            System.out.println("\uD83D\uDD0E Evaluating file " + file.getAbsolutePath());
             String content = new String(Files.readAllBytes(file.toPath()));
             int changeCount = 0;
 

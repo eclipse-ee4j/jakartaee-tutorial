@@ -1,11 +1,11 @@
-[[BNCBX]][[examples-securing-web-applications]]
+[[BNCBX]][[_examples_securing_web_applications]]
 
 == Examples: Securing Web Applications
 
 Some basic setup is required before any of the example applications will
 run correctly.
 
-[[CHDEBCHG]][[overview-of-examples-of-securing-web-applications]]
+[[CHDEBCHG]][[_overview_of_examples_of_securing_web_applications]]
 
 === Overview of Examples of Securing Web Applications
 
@@ -21,7 +21,7 @@ Enterprise Bean with Declarative Security]
 Securing an Enterprise Bean with Programmatic Security]
 * Jakarta EE 8 Eclipse GlassFish samples: `https://github.com/eclipse-ee4j/glassfish-samples`
 
-[[GJJLK]][[to-set-up-your-system-for-running-the-security-examples]]
+[[GJJLK]][[_to_set_up_your_system_for_running_the_security_examples]]
 
 === To Set Up Your System for Running the Security Examples
 
@@ -67,7 +67,7 @@ the console.
 |=======================================================================
 
 
-[[BNCCK]][[the-hello2-basicauth-example-basic-authentication-with-a-servlet]]
+[[BNCCK]][[_the_hello2_basicauth_example_basic_authentication_with_a_servlet]]
 
 === The hello2-basicauth Example: Basic Authentication with a Servlet
 
@@ -102,7 +102,7 @@ the hello2-basicauth Example Using Maven].
 5.  Run the web application by following the steps described in
 link:#GJQZF[To Run the hello2-basicauth Example].
 
-[[GJRMH]][[specifying-security-for-basic-authentication-using-annotations]]
+[[GJRMH]][[_specifying_security_for_basic_authentication_using_annotations]]
 
 ==== Specifying Security for Basic Authentication Using Annotations
 
@@ -157,7 +157,7 @@ security settings in the deployment descriptor. Use the deployment
 descriptor to specify settings for nondefault authentication mechanisms,
 for which you cannot use the `@ServletSecurity` annotation.
 
-[[GJQYS]][[to-build-package-and-deploy-the-hello2-basicauth-example-using-netbeans-ide]]
+[[GJQYS]][[_to_build_package_and_deploy_the_hello2_basicauth_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the hello2-basicauth Example Using NetBeans IDE
 
@@ -178,7 +178,7 @@ select Build.
 This command builds and deploys the example application to your
 GlassFish Server instance.
 
-[[GJQZH]][[to-build-package-and-deploy-the-hello2-basicauth-example-using-maven]]
+[[GJQZH]][[_to_build_package_and_deploy_the_hello2_basicauth_example_using_maven]]
 
 ==== To Build, Package, and Deploy the hello2-basicauth Example Using Maven
 
@@ -201,7 +201,7 @@ This command builds and packages the application into a WAR file,
 `hello2-basicauth.war`, that is located in the `target` directory, then
 deploys the WAR file.
 
-[[GJQZF]][[to-run-the-hello2-basicauth-example]]
+[[GJQZF]][[_to_run_the_hello2_basicauth_example]]
 
 ==== To Run the hello2-basicauth Example
 
@@ -245,7 +245,7 @@ application now.
 +
 The application responds by saying "Hello" to the name you entered.
 
-[[BNCBY]][[the-hello1-formauth-example-form-based-authentication-with-a-javaserver-faces-application]]
+[[BNCBY]][[_the_hello1_formauth_example_form_based_authentication_with_a_javaserver_faces_application]]
 
 === The hello1-formauth Example: Form-Based Authentication with a Jakarta Server Faces Application
 
@@ -274,7 +274,7 @@ Error Page].
 This application can be found in the
 `_tut-install_/examples/security/hello1-formauth/` directory.
 
-[[BNCCA]][[creating-the-login-form-and-the-error-page]]
+[[BNCCA]][[_creating_the_login_form_and_the_error_page]]
 
 ==== Creating the Login Form and the Error Page
 
@@ -361,7 +361,7 @@ again. Here is the code for this page:
 </html>
 ----
 
-[[BNCCB]][[specifying-security-for-the-form-based-authentication-example]]
+[[BNCCB]][[_specifying_security_for_the_form_based_authentication_example]]
 
 ==== Specifying Security for the Form-Based Authentication Example
 
@@ -404,7 +404,7 @@ deployment descriptor for this example, which can be found in
     </security-role>
 ----
 
-[[GJRBA]][[to-build-package-and-deploy-the-hello1-formauth-example-using-netbeans-ide]]
+[[GJRBA]][[_to_build_package_and_deploy_the_hello1_formauth_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the hello1-formauth Example Using NetBeans IDE
 
@@ -425,7 +425,7 @@ select Run.
 This command builds and deploys the example application to your
 GlassFish Server instance, then opens it in a browser.
 
-[[GJRAZ]][[to-build-package-and-deploy-the-hello1-formauth-example-using-maven-and-the-asadmin-command]]
+[[GJRAZ]][[_to_build_package_and_deploy_the_hello1_formauth_example_using_maven_and_the_asadmin_command]]
 
 ==== To Build, Package, and Deploy the hello1-formauth Example Using Maven and the asadmin Command
 
@@ -449,7 +449,7 @@ This command builds and packages the application into a WAR file,
 `hello1-formauth.war`, that is located in the `target` directory, then
 deploys the WAR file to GlassFish Server.
 
-[[GJRAL]][[to-run-the-hello1-formauth-example]]
+[[GJRAL]][[_to_run_the_hello1_formauth_example]]
 
 ==== To Run the hello1-formauth Example
 

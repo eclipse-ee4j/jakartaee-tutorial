@@ -1,11 +1,11 @@
-[[overview-of-the-identity-store-interfaces]]
+[[_overview_of_the_identity_store_interfaces]]
 == Overview of the Identity Store Interfaces
 The Identity Store Interfaces are described in the following sections:
 
 * link:#the-identitystore-interface[The IdentityStore Interface]
 * link:#the-remembermeidentitystore-interface[The RememberMeIdentityStore Interface]
 
-[[the-identitystore-interface]]
+[[_the_identitystore_interface]]
 === The IdentityStore Interface
 The `IdentityStore` interface defines an SPI for interacting with identity stores,
 which are directories or databases containing user account information.
@@ -73,7 +73,7 @@ An application may also supply its own `IdentityStoreHandler`, which can use any
 desired algorithm to select and invoke on IdentityStores, and return an
 aggregated (or non-aggregated) result.
 
-[[identitystoreinterface-methods]]
+[[_identitystoreinterface_methods]]
 ==== IdentityStore Interface Methods
 
 The IdentityStore interface itself has four methods:
@@ -101,7 +101,7 @@ IdentityStores do check for this permission, if a SecurityManager is configured,
 and the built-in IdentityStoreHandler invokes the `getCallerGroups()` method in
 the context of a `PrivilegedAction` block.
 
-[[the-passwordhash-interface]]
+[[_the_passwordhash_interface]]
 ==== The PasswordHash Interface
 
 Unlike some types of identity stores, for example LDAP directories,
@@ -166,7 +166,7 @@ the password value based on the timing of failed attempts.
 
 * A new random salt should be used each time a new password hash value is generated.
 
-[[the-remembermeidentitystore-interface]]
+[[_the_remembermeidentitystore_interface]]
 === The RememberMeIdentityStore Interface
 The `RememberMeIdentityStore` interface represents a special type of identity store.
 It is not directly related to the `IdentityStore` interface; that is, it does not

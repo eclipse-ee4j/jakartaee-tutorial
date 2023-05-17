@@ -1,11 +1,11 @@
-[[GLIFD]][[securing-enterprise-information-systems-applications]]
+[[GLIFD]][[_securing_enterprise_information_systems_applications]]
 
 == Securing Enterprise Information Systems Applications
 
 In Enterprise Information Systems (EIS) applications, components request
 a connection to an EIS resource.
 
-[[BABBJHIC]][[overview-of-securing-enterprise-information-systems-applications]]
+[[BABBJHIC]][[_overview_of_securing_enterprise_information_systems_applications]]
 
 === Overview of Securing Enterprise Information Systems Applications
 
@@ -23,7 +23,7 @@ sign-on by including code that performs the sign-on process to an EIS.
 You can also configure security for resource adapters. See
 link:#GLIGS[Configuring Resource Adapter Security].
 
-[[GLIHL]][[container-managed-sign-on]]
+[[GLIHL]][[_container_managed_sign_on]]
 
 === Container-Managed Sign-On
 
@@ -46,7 +46,7 @@ javax.resource.cci.Connection cx = cxf.getConnection();
 ...
 ----
 
-[[GLIDP]][[component-managed-sign-on]]
+[[GLIDP]][[_component_managed_sign_on]]
 
 === Component-Managed Sign-On
 
@@ -77,7 +77,7 @@ javax.resource.cci.Connection cx =
 ...
 ----
 
-[[GLIGS]][[configuring-resource-adapter-security]]
+[[GLIGS]][[_configuring_resource_adapter_security]]
 
 === Configuring Resource Adapter Security
 
@@ -165,7 +165,7 @@ principal. The security map is usually used if one or more EIS back-end
 principals are used to execute operations (on the EIS) initiated by
 various principals or user groups in the application.
 
-[[GLIGW]][[mapping-an-application-principal-to-eis-principals]]
+[[GLIGW]][[_mapping_an_application_principal_to_eis_principals]]
 
 === Mapping an Application Principal to EIS Principals
 

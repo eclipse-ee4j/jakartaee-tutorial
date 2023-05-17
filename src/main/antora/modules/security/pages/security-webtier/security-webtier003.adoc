@@ -1,4 +1,4 @@
-[[GJIIE]][[using-programmatic-security-with-web-applications]]
+[[GJIIE]][[_using_programmatic_security_with_web_applications]]
 
 == Using Programmatic Security with Web Applications
 
@@ -6,14 +6,14 @@ Programmatic security is used by security-aware applications when
 declarative security alone is not sufficient to express the security
 model of the application.
 
-[[GIRCJ]][[authenticating-users-programmatically]]
+[[GIRCJ]][[_authenticating_users_programmatically]]
 
 === Authenticating Users Programmatically
 
 You can use the `SecurityContext` and `HttpServletRequest` interfaces to
 authenticate users for a web application programmatically.
 
-[[security-context]]
+[[_security_context]]
 == SecurityContext
 The `SecurityContext` interface, as specified in the Jakarta EE Security API
 specification, defines the following method to programmatically trigger the
@@ -131,7 +131,7 @@ public class TestServlet extends HttpServlet {
     }
 ----
 
-[[BNCBA]][[checking-caller-identity-programmatically]]
+[[BNCBA]][[_checking_caller_identity_programmatically]]
 
 === Checking Caller Identity Programmatically
 
@@ -195,7 +195,7 @@ Your application can make business-logic decisions based on the
 information obtained using these APIs.
 
 
-[[testing-access-to-a-resource-programmatically]]
+[[_testing_access_to_a_resource_programmatically]]
 === Testing Access to a Resource Programmatically
 
 The `SecurityContext` interface, as specified in the Jakarta Security API
@@ -232,7 +232,7 @@ securityContext.hasAccessToWebResource("/protectedServlet", GET)
 The above `hasAccessToWebResource()` call returns true if, and only if,
 the caller is in role "foo".
 
-[[GJJLQ]][[example-code-for-programmatic-security]]
+[[GJJLQ]][[_example_code_for_programmatic_security]]
 
 === Example Code for Programmatic Security
 
@@ -313,7 +313,7 @@ public class LoginServlet extends HttpServlet {
 }
 ----
 
-[[BNCBB]][[declaring-and-linking-role-references]]
+[[BNCBB]][[_declaring_and_linking_role_references]]
 
 === Declaring and Linking Role References
 

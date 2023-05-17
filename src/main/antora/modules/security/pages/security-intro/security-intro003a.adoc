@@ -1,4 +1,4 @@
-[[using-pluggable-providers]]
+[[_using_pluggable_providers]]
 == Using Pluggable Providers
 Jakarta EE includes two specifications that define SPI interfaces for
 pluggable security providers, JSR-196 and JSR-375. These specifications are
@@ -8,7 +8,7 @@ described in more detail in the following sections:
 Authentication Service Provider Interface for Containers (JASPIC)]
 * link:#jsr-375-jakarta-ee-security-api[JSR-375 Jakarta EE Security API]
 
-[[jsr-196-java-authentication-service-provider-interface-for-containers-jaspic]]
+[[_jsr_196_java_authentication_service_provider_interface_for_containers_jaspic]]
 === JSR-196 Java Authentication Service Provider Interface for Containers (JASPIC)
 
 JSR-196 defines a model for securing messages sent between a client and server in
@@ -56,7 +56,7 @@ is to register a corresponding `AuthConfigProvider` with the global `AuthConfigF
 An `AuthConfigProvider` makes a `ServerAuthModule` available to the container, via a
 series of intermediary objects, for runtime message processing.
 
-[[jsr-375-jakarta-ee-security-api]]
+[[_jsr_375_jakarta_ee_security_api]]
 === JSR-375 Jakarta EE Security API
 JSR-375 defines the following authentication-related plugin SPIs:
 

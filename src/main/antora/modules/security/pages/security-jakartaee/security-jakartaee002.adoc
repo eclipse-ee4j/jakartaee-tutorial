@@ -1,4 +1,4 @@
-[[BNBYL]][[securing-enterprise-beans]]
+[[BNBYL]][[_securing_enterprise_beans]]
 
 == Securing Enterprise Beans
 
@@ -110,7 +110,7 @@ specification. This document can be downloaded from
 "Security Management," discusses security management for enterprise
 beans.
 
-[[GJGDI]][[securing-an-enterprise-bean-using-declarative-security]]
+[[GJGDI]][[_securing_an_enterprise_bean_using_declarative_security]]
 
 === Securing an Enterprise Bean Using Declarative Security
 
@@ -155,7 +155,7 @@ The following sections show how an application developer uses
 declarative security to either secure an application or to create a
 security view to pass along to the deployer.
 
-[[GJGCQ]][[specifying-authorized-users-by-declaring-security-roles]]
+[[GJGCQ]][[_specifying_authorized_users_by_declaring_security_roles]]
 
 ==== Specifying Authorized Users by Declaring Security Roles
 
@@ -343,7 +343,7 @@ To clarify, the annotations are not inherited by the subclass itself.
 Instead, the annotations apply to methods of the superclass that are
 inherited by the subclass.
 
-[[BNBYU]][[specifying-an-authentication-mechanism-and-secure-connection]]
+[[BNBYU]][[_specifying_an_authentication_mechanism_and_secure_connection]]
 
 ==== Specifying an Authentication Mechanism and Secure Connection
 
@@ -354,7 +354,7 @@ To use a different type of authentication or to require a secure
 connection using SSL, specify this information in an application
 deployment descriptor.
 
-[[GJGCS]][[securing-an-enterprise-bean-programmatically]]
+[[GJGCS]][[_securing_an_enterprise_bean_programmatically]]
 
 === Securing an Enterprise Bean Programmatically
 
@@ -488,7 +488,7 @@ during a particular time of day. An example application that uses the
 link:#BNCAA[The converter-secure Example: Securing
 an Enterprise Bean with Programmatic Security].
 
-[[BNBYR]][[propagating-a-security-identity-run-as]]
+[[BNBYR]][[_propagating_a_security_identity_run_as]]
 
 === Propagating a Security Identity (Run-As)
 
@@ -534,7 +534,7 @@ interfaces, the message listener methods of a message-driven bean, the
 timeout method of an enterprise bean, and all internal methods of the
 bean that might be called in turn.
 
-[[BNBZB]][[configuring-a-components-propagated-security-identity]]
+[[BNBZB]][[_configuring_a_components_propagated_security_identity]]
 
 ==== Configuring a Component's Propagated Security Identity
 
@@ -560,7 +560,7 @@ You will have to map the run-as role name to a given principal defined
 in GlassFish Server if the given roles are associated with more than one
 user principal.
 
-[[BNBZC]][[trust-between-containers]]
+[[BNBZC]][[_trust_between_containers]]
 
 ==== Trust between Containers
 
@@ -581,7 +581,7 @@ By default, GlassFish Server is configured to trust identities that are
 propagated from different containers. Therefore, you do not need to take
 any special steps to set up a trust relationship.
 
-[[BNBZG]][[deploying-secure-enterprise-beans]]
+[[BNBZG]][[_deploying_secure_enterprise_beans]]
 
 === Deploying Secure Enterprise Beans
 
