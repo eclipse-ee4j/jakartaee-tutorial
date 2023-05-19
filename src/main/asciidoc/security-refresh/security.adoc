@@ -408,3 +408,148 @@ john : true
 
 The test itself is basically the same as that for the <<Securing an endpoint with Basic Authentication>> example.
 
+
+== Securing an endpoint with Basic Authentication and multiple identity stores
+
+In the following example we'll be securing a REST endpoint using Basic Authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store.
+
+You'll learn the following things;
+
+1. How to define security constraints
+2. How to set a provided authentication mechanisms 
+3. How to set a provided identity store that uses a database
+4. How to populate and configure that identity store 
+5. How to set an additional identity store
+6. How to use the Jakarta Security SecurityContext
+
+=== Write the application
+
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic Authentication>> example.
+
+==== Declare the authentication mechanism and identity store
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@DatabaseIdentityStoreDefinition(
+    callerQuery = "select password from basic_auth_user where username = ?",
+    groupsQuery = "select name from basic_auth_group where username = ?",
+    hashAlgorithmParameters = {
+        "Pbkdf2PasswordHash.Iterations=3072",
+        "Pbkdf2PasswordHash.Algorithm=PBKDF2WithHmacSHA512",
+        "Pbkdf2PasswordHash.SaltSizeBytes=64"
+    }
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+----
+
+[source,java]
+----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("pete", "secret2")) {
+            return new CredentialValidationResult("pete", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+----
+
+In this example we have two enabled CDI beans implementing the `IdentityStore` interface. One of them will be implicitly enabled via the `@DatabaseIdentityStoreDefinition` annotation, while the other one is defined explicitly via the `CustomIdentityStore`. As with a single identity store, it doesn't matter how or where the CDI beans are defined, only that multiple enabled ones exist.
+
+When multiple identity stores are present, the security system will try them each in order of their priority. We didn't set a priority here, so the order will be undefined. The first store to validate wins, and will end the validation attempts. It's important to note that in the default validation algorithm a successful validation wins over a failed validation. This means we can have multiple identity stores that know about e.g. "pete". If "pete" fails validation in one store, but passes validation in another store, the end result is still that validation passed.
+
+In the two stores above however only one store knows about "pete" and that's the `CustomIdentityStore`. The store created from `@DatabaseIdentityStoreDefinition` doesn't know about "pete" at all, and will simply not validate it.
+
+
+==== Populating the identity store
+
+In order to use the identity store we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic Authentication and a Database identity store>>.
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+```
+mvn clean install -pl :restBasicAuthDBStoreAndCustomStore
+```
+
+This will run a test associated with the project, printing something like the following:
+
+```
+john : true
+pete : true
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.239 s - in jakartaee.examples.focused.security.restbasicauthdbstoreandcustomstore.RestBasicAuthDBStoreAndCustomStoreIT
+```
+
+Let's take a quick look at the actual test again:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * <p>
+     * This will use the "john" credentials, which should be validated by the DB store
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall1() throws Exception {
+        DefaultCredentialsProvider credentialsProvider = new DefaultCredentialsProvider();
+        credentialsProvider.addCredentials("john", "secret1");
+
+        webClient.setCredentialsProvider(credentialsProvider);
+
+        TextPage page = webClient.getPage(baseUrl + "/rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * <p>
+     * This will use the "pete" credentials, which should be validated by the custom store
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall2() throws Exception {
+        DefaultCredentialsProvider credentialsProvider = new DefaultCredentialsProvider();
+        credentialsProvider.addCredentials("pete", "secret2");
+
+        webClient.setCredentialsProvider(credentialsProvider);
+
+        TextPage page = webClient.getPage(baseUrl + "/rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+}
+----
+
+We do two tests here; in one test we try to authenticate as "john", in the other test as "pete". As we have seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognising a username by any of them will not fail the overall validation.
+
