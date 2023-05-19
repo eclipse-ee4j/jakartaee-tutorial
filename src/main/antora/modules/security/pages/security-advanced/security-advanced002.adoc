@@ -68,7 +68,7 @@ mutual authentication.
 [[GLIFJ]]
 
 .*Figure 53-1 Certificate-Based Mutual Authentication*
-image::common::common:jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates"]
+image::common:jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates"]
 
 In user name/password-based mutual authentication, the following actions
 occur.
@@ -88,7 +88,7 @@ name/password-based mutual authentication.
 [[GLIGQ]]
 
 .*Figure 53-2 User Name/Password-Based Mutual Authentication*
-image::common::common:jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name andpassword"]
+image::common:jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name andpassword"]
 
 [[BNBYH]][[_enabling_mutual_authentication_over_ssl]]
 
@@ -162,19 +162,19 @@ certificate named `client.cer`, follow these steps.
 Do not put client certificates in the `cacerts.jks` file. Any certificate you add to the `cacerts` file effectively can be a trusted root for any and all certificate chains. After you have completed development, delete the development version of the `cacerts` file and replace it with the original copy.
 .  Generate the client certificate. Enter the following command from the directory where you want to generate the client certificate:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -genkey -alias client-alias -keyalg RSA -keypass changeit -storepass changeit -keystore client_keystore.jks
 ----
 .  Export the generated client certificate into the file `client.cer`:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -export -alias client-alias -storepass changeit -file client.cer -keystore client_keystore.jks
 ----
 .  Add the certificate to the truststore file `domain-dir/config/cacerts.jks`. Run `keytool` from the directory where you created the keystore and client certificate. Use the following parameters:
 +
-[source,xml]
+[source,shell]
 ----
 java-home\bin\keytool -import -v -trustcacerts -alias client-alias
 -file client.cer -keystore domain-dir/config/cacerts.jks
@@ -183,7 +183,7 @@ java-home\bin\keytool -import -v -trustcacerts -alias client-alias
 +
 The `keytool` utility returns a message like this one:
 +
-[source,xml]
+[source,shell]
 ----
 Owner: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US
 Issuer: CN=localhost, OU=My Company, O=Software, L=Santa Clara, ST=CA, C=US

@@ -88,11 +88,11 @@ class AntoraConverter {
 
         System.out.println("\uD83E\uDD16 Pre-scanning files for anchors, links, etc.");
 
-        preProcess(startPath, files);
+        preProcess(files);
         process(files, dryRun);
     }
 
-    private static void preProcess(String startPath, ArrayList<File> files) throws IOException {
+    private static void preProcess(ArrayList<File> files) throws IOException {
         for (File file : files) {
             System.out.println("\uD83D\uDD0E Pre-scanning file " + file.getAbsolutePath());
             String content = new String(Files.readAllBytes(file.toPath()));
@@ -165,7 +165,7 @@ class AntoraConverter {
                 }
                 changeCount++;
             }
-            if (content.contains("image:")) {
+            if (content.contains("image:") && !content.contains("image:common:")) {
                 System.out.println("=> Converting inline image references to block image references and adding module prefix");
                 content = content.replace("image:", "image::common:");
                 if (!dryRun) {

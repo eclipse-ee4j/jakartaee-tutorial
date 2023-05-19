@@ -262,7 +262,7 @@ a|
 *Note*:
 
 An alternative way to perform user authentication, including BASIC
-and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by 
+and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by
 Jakarta Security, and documented in
 xref:security-api/security-api.adoc#_using_the_jakarta_ee_security_api[Chapter 53, "Using Jakarta Security"].
 |=======================================================================
@@ -343,7 +343,7 @@ authentication.
 [[BNCBP]]
 
 .*Figure 51-1 HTTP Basic Authentication*
-image::common::common:jakartaeett_dt_045.png["Diagram of four steps in HTTP basic authentication between client andserver"]
+image::common:jakartaeett_dt_045.png["Diagram of four steps in HTTP basic authentication between client andserver"]
 
 [[BNCBQ]][[_form_based_authentication]]
 
@@ -373,7 +373,7 @@ authentication.
 [[GEXFA]]
 
 .*Figure 51-2 Form-Based Authentication*
-image::common::common:jakartaeett_dt_046.png["Diagram of four steps in form-based authentication between client andserver"]
+image::common:jakartaeett_dt_046.png["Diagram of four steps in form-based authentication between client andserver"]
 
 The section xref:security-webtier/security-webtier.adoc#BNCBY[The hello1-formauth
 Example: Form-Based Authentication with a Jakarta Server Faces Application]
@@ -389,7 +389,7 @@ requiring the server to specify the action field of the outbound form.
 The following code snippet shows how the form should be coded into the
 HTML page:
 
-[source,java]
+[source,html]
 ----
 <form method="POST" action="j_security_check">
 <input type="text" name="j_username">
