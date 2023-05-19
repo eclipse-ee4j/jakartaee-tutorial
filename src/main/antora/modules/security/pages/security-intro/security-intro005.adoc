@@ -3,7 +3,7 @@
 == Working with Realms, Users, Groups, and Roles
 
 You often need to protect resources to ensure that only authorized users
-have access. See link:#BNBWX[Characteristics of
+have access. See xref:security-intro/security-intro.adoc#BNBWX[Characteristics of
 Application Security] for an introduction to the concepts of
 authentication, identification, and authorization.
 
@@ -14,18 +14,18 @@ authenticate a user, you need to follow these basic steps.
 
 1.  The application developer writes code to prompt for a user name and
 password. The various methods of authentication are discussed in
-link:#GKBSA[Specifying Authentication
+xref:security-webtier/security-webtier.adoc#GKBSA[Specifying Authentication
 Mechanisms].
 2.  The application developer communicates how to set up security for
 the deployed application by use of a metadata annotation or deployment
-descriptor. This step is discussed in link:#BNBXU[Setting Up Security
+descriptor. This step is discussed in xref:security-intro/security-intro.adoc#BNBXU[Setting Up Security
 Roles].
 3.  The server administrator sets up authorized users and groups in
-GlassFish Server. This is discussed in link:#BNBXR[Managing Users and
+GlassFish Server. This is discussed in xref:security-intro/security-intro.adoc#BNBXR[Managing Users and
 Groups in GlassFish Server].
 4.  The application deployer maps the application's security roles to
 users, groups, and principals defined in GlassFish Server. This topic is
-discussed in link:#BNBXV[Mapping Roles to Users and Groups].
+discussed in xref:security-intro/security-intro.adoc#BNBXV[Mapping Roles to Users and Groups].
 
 [width="100%",cols="100%",]
 |=======================================================================
@@ -43,7 +43,7 @@ By default, group principal names are mapped to roles of the same name.
 A realm is a security policy domain defined for a web or application
 server. A realm contains a collection of users, who may or may not be
 assigned to a group. Managing users in GlassFish Server is discussed in
-link:#BNBXR[Managing Users and Groups in GlassFish Server].
+xref:security-intro/security-intro.adoc#BNBXR[Managing Users and Groups in GlassFish Server].
 
 An application will often prompt for a user name and password before
 allowing access to a protected resource. After the user name and
@@ -51,20 +51,20 @@ password have been entered, that information is passed to the server,
 which either authenticates the user and sends the protected resource or
 does not authenticate the user, in which case access to the protected
 resource is denied. This type of user authentication is discussed in
-link:#BNCBN[Specifying an Authentication
+xref:security-webtier/security-webtier.adoc#BNCBN[Specifying an Authentication
 Mechanism in the Deployment Descriptor].
 
 In some applications, authorized users are assigned to roles. In this
 situation, the role assigned to the user in the application must be
 mapped to a principal or group defined on the application server.
-link:#BNBXL[Figure 50-6] shows this. More information on mapping roles
-to users and groups can be found in link:#BNBXU[Setting Up Security
+xref:security-intro/security-intro.adoc#BNBXL[Figure 50-6] shows this. More information on mapping roles
+to users and groups can be found in xref:security-intro/security-intro.adoc#BNBXU[Setting Up Security
 Roles].
 
 [[BNBXL]]
 
 .*Figure 50-6 Mapping Roles to Users and Groups*
-image::common:jakartaeett_dt_044.png["Diagram of role mapping, showing creation of users and groups, definition of roles, and mapping of roles to users and groups"]
+image::common::common:jakartaeett_dt_044.png["Diagram of role mapping, showing creation of users and groups, definition of roles, and mapping of roles to users and groups"]
 
 The following sections provide more information on realms, users,
 groups, and roles.
@@ -97,7 +97,7 @@ uses certificates with HTTPS to authenticate web clients. To verify the
 identity of a user in the `certificate` realm, the authentication
 service verifies an X.509 certificate. For step-by-step instructions for
 creating this type of certificate, see
-link:#BNBYB[Working with Digital Certificates].
+xref:security-advanced/security-advanced.adoc#BNBYB[Working with Digital Certificates].
 The common name field of the X.509 certificate is used as the principal
 name.
 
@@ -105,7 +105,7 @@ The `admin-realm` is also a `file` realm and stores administrator user
 credentials locally in a file named `admin-keyfile`. You can use the
 Administration Console to manage users in this realm in the same way you
 manage users in the `file` realm. For more information, see
-link:#BNBXR[Managing Users and Groups in GlassFish Server].
+xref:security-intro/security-intro.adoc#BNBXR[Managing Users and Groups in GlassFish Server].
 
 [[BNBXN]][[_what_is_a_user]]
 
@@ -189,7 +189,7 @@ examples.
 1.  Start GlassFish Server, if you haven't already done so.
 +
 Information on starting GlassFish Server is available in
-link:#BNADI[Starting and Stopping GlassFish Server].
+xref:#BNADI[Starting and Stopping GlassFish Server].
 2.  Start the Administration Console, if you haven't already done so.
 +
 To start the Administration Console, open a web browser and specify the
@@ -210,7 +210,7 @@ administrators of GlassFish Server.
 You cannot add users to the `certificate` realm by using the
 Administration Console. In the `certificate` realm, you can add only
 certificates. For information on adding (importing) certificates to the
-`certificate` realm, see link:#GLIFW[Adding
+`certificate` realm, see xref:security-advanced/security-advanced.adoc#GLIFW[Adding
 Users to the Certificate Realm].
 7.  On the Edit Realm page, click Manage Users.
 8.  On the File Users or Admin Users page, click New to add a new user
@@ -222,7 +222,7 @@ For the Admin Realm, the Group List field is read-only, and the group
 name is `asadmin`. Restart GlassFish Server and the Administration
 Console after you add a user to the Admin Realm.
 +
-For more information on these properties, see link:#BNBXJ[Working with
+For more information on these properties, see xref:security-intro/security-intro.adoc#BNBXJ[Working with
 Realms, Users, Groups, and Roles].
 +
 For the example security applications, specify a user with any name and
@@ -248,7 +248,7 @@ salary data. Each of these security roles is an abstract logical
 grouping of users that is defined by the person who assembles the
 application. When an application is deployed, the deployer will map the
 roles to security identities in the operational environment, as shown in
-link:#BNBXL[Figure 50-6].
+xref:security-intro/security-intro.adoc#BNBXL[Figure 50-6].
 
 For Jakarta EE components, you define security roles using the
 `@DeclareRoles` and `@RolesAllowed` metadata annotations.
@@ -304,9 +304,9 @@ public class GreetingServlet extends HttpServlet {
 ----
 
 These annotations are discussed in more detail in
-link:#GJRMH[Specifying Security for Basic
+xref:security-webtier/security-webtier.adoc#GJRMH[Specifying Security for Basic
 Authentication Using Annotations] and
-link:#GJGDI[Securing an Enterprise Bean Using
+xref:security-jakartaee/security-jakartaee.adoc#GJGDI[Securing an Enterprise Bean Using
 Declarative Security].
 
 After users have provided their login information and the application

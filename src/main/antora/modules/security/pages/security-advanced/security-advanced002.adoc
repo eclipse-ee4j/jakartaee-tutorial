@@ -23,7 +23,7 @@ certificate authority (CA), and provides identification for the bearer.
 Before using client authentication, make sure that the client has a
 valid public key certificate. For more information on creating and using
 public key certificates, read
-link:#BNBYB[Working with Digital Certificates].
+xref:security-advanced/security-advanced.adoc#BNBYB[Working with Digital Certificates].
 
 The following example shows how to declare client authentication in your
 deployment descriptor:
@@ -38,7 +38,7 @@ Jakarta Security provides an alternative means to configure client authenticatio
 using the `HttpAuthenticationMechanism` interface. This
 interface defines an SPI for writing
 authentication mechanisms that can be provided with an application and
-deployed using CDI. See link:#overview-of-the-http-authentication-mechanism-interface[Overview of
+deployed using CDI. See xref:security-api/security-api.adoc#_overview_of_the_http_authentication_mechanism_interface[Overview of
 the HTTP Authentication Mechanism Interface].
 
 [[GLIEL]][[_mutual_authentication]]
@@ -48,8 +48,8 @@ the HTTP Authentication Mechanism Interface].
 With mutual authentication, the server and the client authenticate each
 other. Mutual authentication is of two types:
 
-* Certificate-based (see link:#GLIFJ[Figure 53-1])
-* User name/password-based (see link:#GLIGQ[Figure 53-2])
+* Certificate-based (see xref:security-advanced/security-advanced.adoc#GLIFJ[Figure 53-1])
+* User name/password-based (see xref:security-advanced/security-advanced.adoc#GLIGQ[Figure 53-2])
 
 When using certificate-based mutual authentication, the following
 actions occur.
@@ -62,13 +62,13 @@ actions occur.
 6.  If successful, the server grants access to the protected resource
 requested by the client.
 
-link:#GLIFJ[Figure 53-1] shows what occurs during certificate-based
+xref:security-advanced/security-advanced.adoc#GLIFJ[Figure 53-1] shows what occurs during certificate-based
 mutual authentication.
 
 [[GLIFJ]]
 
 .*Figure 53-1 Certificate-Based Mutual Authentication*
-image::common:jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates"]
+image::common::common:jakartaeett_dt_048.png["Diagram of six steps in mutual authentication with certificates"]
 
 In user name/password-based mutual authentication, the following actions
 occur.
@@ -82,13 +82,13 @@ server.
 6.  If the verification is successful, the server grants access to the
 protected resource requested by the client.
 
-link:#GLIGQ[Figure 53-2] shows what occurs during user
+xref:security-advanced/security-advanced.adoc#GLIGQ[Figure 53-2] shows what occurs during user
 name/password-based mutual authentication.
 
 [[GLIGQ]]
 
 .*Figure 53-2 User Name/Password-Based Mutual Authentication*
-image::common:jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name andpassword"]
+image::common::common:jakartaeett_dt_049.png["Diagram of five steps in mutual authentication with user name andpassword"]
 
 [[BNBYH]][[_enabling_mutual_authentication_over_ssl]]
 

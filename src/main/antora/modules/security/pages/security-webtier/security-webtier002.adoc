@@ -50,14 +50,14 @@ patterns (the part of a URL after the host name and port you want to
 constrain) and HTTP operations (the methods within the files that match
 the URL pattern you want to constrain) that describe a set of resources
 to be protected. Web resource collections are discussed in
-link:#GJJCD[Specifying a Web Resource Collection].
+xref:security-webtier/security-webtier.adoc#GJJCD[Specifying a Web Resource Collection].
 * Authorization constraint (`auth-constraint`): Specifies whether
 authentication is to be used and names the roles authorized to perform
 the constrained requests. For more information about authorization
-constraints, see link:#GJJCG[Specifying an Authorization Constraint].
+constraints, see xref:security-webtier/security-webtier.adoc#GJJCG[Specifying an Authorization Constraint].
 * User data constraint (`user-data-constraint`): Specifies how data is
 protected when transported between a client and a server. User data
-constraints are discussed in link:#BNCBM[Specifying a Secure
+constraints are discussed in xref:security-webtier/security-webtier.adoc#BNCBM[Specifying a Secure
 Connection].
 
 [[GJJCD]][[_specifying_a_web_resource_collection]]
@@ -122,9 +122,9 @@ application. Role names are case sensitive. The roles defined for the
 application must be mapped to users and groups defined on the server,
 except when default principal-to-role mapping is used.
 
-For more information about security roles, see link:#BNCAV[Declaring
+For more information about security roles, see xref:security-webtier/security-webtier.adoc#BNCAV[Declaring
 Security Roles]. For information on mapping security roles, see
-link:#BNBXV[Mapping Roles to Users and Groups].
+xref:security-intro/security-intro.adoc#BNBXV[Mapping Roles to Users and Groups].
 
 For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint`
 annotations accept a `rolesAllowed` element that specifies the
@@ -176,7 +176,7 @@ passwords sent between a client and a server on an unprotected session
 can be viewed and intercepted by third parties. Using a user data
 constraint with the user authentication mechanism can alleviate this
 concern. Configuring a user authentication mechanism is described in
-link:#BNCBN[Specifying an Authentication Mechanism in the Deployment
+xref:security-webtier/security-webtier.adoc#BNCBN[Specifying an Authentication Mechanism in the Deployment
 Descriptor].
 
 To guarantee that data is transported over a secure connection, ensure
@@ -264,7 +264,7 @@ a|
 An alternative way to perform user authentication, including BASIC
 and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by 
 Jakarta Security, and documented in
-link:#using-the-jakarta-ee-security-api[Chapter 53, "Using Jakarta Security"].
+xref:security-api/security-api.adoc#_using_the_jakarta_ee_security_api[Chapter 53, "Using Jakarta Security"].
 |=======================================================================
 
 
@@ -284,7 +284,7 @@ method will apply to all constrained resources in an application.
 Before you can authenticate a user, you must have a database of user
 names, passwords, and roles configured on your web or application
 server. For information on setting up the user database, see
-link:#BNBXR[Managing Users and Groups in GlassFish
+xref:security-intro/security-intro.adoc#BNBXR[Managing Users and Groups in GlassFish
 Server].
 
 The Jakarta EE platform supports the following authentication mechanisms:
@@ -297,7 +297,7 @@ The Jakarta EE platform supports the following authentication mechanisms:
 
 Basic, form-based, and digest authentication are discussed in this
 section. Client and mutual authentication are discussed in
-link:#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
+xref:security-advanced/security-advanced.adoc#GJJWX[Chapter 54, "Jakarta EE Security: Advanced
 Topics"].
 
 HTTP basic authentication and form-based authentication are not very
@@ -314,7 +314,7 @@ the network level, such as the Internet Protocol Security (IPsec)
 protocol or virtual private network (VPN) strategies, is used in
 conjunction with basic or form-based authentication, some of these
 concerns can be alleviated. To specify a secure transport mechanism, use
-the elements described in link:#BNCBM[Specifying a Secure Connection].
+the elements described in xref:security-webtier/security-webtier.adoc#BNCBM[Specifying a Secure Connection].
 
 [[BNCBO]][[_http_basic_authentication]]
 
@@ -337,13 +337,13 @@ password.
 4.  The server authenticates the user in the specified realm and, if
 successful, returns the requested resource.
 
-link:#BNCBP[Figure 51-1] shows what happens when you specify HTTP basic
+xref:security-webtier/security-webtier.adoc#BNCBP[Figure 51-1] shows what happens when you specify HTTP basic
 authentication.
 
 [[BNCBP]]
 
 .*Figure 51-1 HTTP Basic Authentication*
-image::common:jakartaeett_dt_045.png["Diagram of four steps in HTTP basic authentication between client andserver"]
+image::common::common:jakartaeett_dt_045.png["Diagram of four steps in HTTP basic authentication between client andserver"]
 
 [[BNCBQ]][[_form_based_authentication]]
 
@@ -366,16 +366,16 @@ the resource by using the stored URL path.
 * If authentication fails, the client is forwarded or redirected to an
 error page.
 
-link:#GEXFA[Figure 51-2] shows what happens when you specify form-based
+xref:security-webtier/security-webtier.adoc#GEXFA[Figure 51-2] shows what happens when you specify form-based
 authentication.
 
 
 [[GEXFA]]
 
 .*Figure 51-2 Form-Based Authentication*
-image::common:jakartaeett_dt_046.png["Diagram of four steps in form-based authentication between client andserver"]
+image::common::common:jakartaeett_dt_046.png["Diagram of four steps in form-based authentication between client andserver"]
 
-The section link:#BNCBY[The hello1-formauth
+The section xref:security-webtier/security-webtier.adoc#BNCBY[The hello1-formauth
 Example: Form-Based Authentication with a Jakarta Server Faces Application]
 is an example application that uses form-based authentication.
 
@@ -433,7 +433,7 @@ a|
 
 Another way to specify form-based authentication is to use the
 `authenticate`, `login`, and `logout` methods of `HttpServletRequest`,
-as discussed in link:#GIRCJ[Authenticating Users
+as discussed in xref:security-webtier/security-webtier.adoc#GIRCJ[Authenticating Users
 Programmatically].
 
 |=======================================================================
@@ -465,7 +465,7 @@ your deployment descriptor:
 
 The login and error page locations are specified relative to the
 location of the deployment descriptor. Examples of login and error pages
-are shown in link:#BNCCA[Creating the Login Form
+are shown in xref:security-webtier/security-webtier.adoc#BNCCA[Creating the Login Form
 and the Error Page].
 
 The following example shows how to declare digest authentication in your

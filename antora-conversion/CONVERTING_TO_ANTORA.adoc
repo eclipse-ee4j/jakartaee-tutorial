@@ -8,6 +8,8 @@ The conversion script is written in Java and requires https://jbang.io[JBang] to
 
 == Migration Process
 
+> TIP: Commit your changes after each step; that way you can easily rollback any mistakes.
+
 Here’s the current process for migrating an individual module (i.e. security, bean validation, etc):
 
 1. Check out the release/8 branch and create a new branch from it for your work.
@@ -18,7 +20,7 @@ Here’s the current process for migrating an individual module (i.e. security, 
 
     > NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
 
-5. Run the migration script from the root project folder. For example, for the Security module, you would run `jbang AntoraConverter.java security`. (The first parameter is the folder relative to `src/main/antora/modules`).
+5. Run the migration script from the root project folder. For example, for the Security module, you would run `jbang antora-conversion/AntoraConverter.java security`. (The first parameter is the folder relative to `src/main/antora/modules`).
 6. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
 7. Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
 
@@ -55,18 +57,3 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
   - modules/security/nav.adoc
 ```
 
-9. Check the links. For any links that refer to anchors in other files (usually within the same folder) you will need to fix them manually. For example, in the Security module, this link:
-
-```asciidoc
-* link:#BNBYK[Chapter 52, "Getting Started Securing
-Enterprise Applications"]
-```
-
-should be changed to this:
-
-```asciidoc
-* xref:security-jakartaee/security-jakartaee.adoc#BNBYK[Chapter 52, "Getting Started Securing
-Enterprise Applications"]
-```
-
-This is necessary because the entire module isn't a single file.  Note the use of the `xref` here instead of `link`. We're referring to another folder within the `security` module's `pages` folder. (See the https://docs.antora.org/antora/latest/page/xref/[the Antora docs] for more info about xrefs.)

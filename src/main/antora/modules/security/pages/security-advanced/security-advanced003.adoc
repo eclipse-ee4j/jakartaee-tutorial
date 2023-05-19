@@ -28,9 +28,9 @@ user. Access to specific web application resources is granted to all
 users in a particular role, instead of enumerating a list of associated
 users. A user name can have any number of roles associated with it.
 
-Two of the tutorial case studies, link:#GKAEE[Chapter
+Two of the tutorial case studies, xref:#GKAEE[Chapter
 61, "Duke's Tutoring Case Study Example,"] and
-link:#GLNPW[Chapter 62, "Duke's Forest Case Study
+xref:#GLNPW[Chapter 62, "Duke's Forest Case Study
 Example,"] use a JDBC realm for user authentication.
 
 [[sthref233]][[_to_configure_a_jdbc_authentication_realm]]

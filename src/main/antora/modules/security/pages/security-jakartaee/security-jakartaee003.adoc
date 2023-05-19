@@ -17,13 +17,13 @@ comparing them against a database of authorized users in GlassFish
 Server.
 
 If the topic of authentication is new to you, see
-link:#GKBSA[Specifying Authentication
+xref:security-webtier/security-webtier.adoc#GKBSA[Specifying Authentication
 Mechanisms].
 
 This example demonstrates security by starting with the unsecured
 enterprise bean application, `cart`, which is found in the
 `_tut-install_/examples/ejb/cart/` directory and is discussed in
-link:#BNBOD[The cart Example].
+xref:#BNBOD[The cart Example].
 
 In general, the following steps are necessary to add user name/password
 authentication to an existing application that contains an enterprise
@@ -32,21 +32,21 @@ steps have been completed for you and are listed here simply to show
 what needs to be done should you wish to create a similar application.
 
 1.  Create an application like the one in
-link:#BNBOD[The cart Example]. The example in
+xref:#BNBOD[The cart Example]. The example in
 this tutorial starts with this example and demonstrates adding basic
 authentication of the client to this application. The example
 application discussed in this section can be found at
 `_tut-install_/examples/security/cart-secure/`.
 2.  If you have not already done so, complete the steps in
-link:#GJJLK[To Set Up Your System for Running the
+xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up Your System for Running the
 Security Examples] to configure your system for running the tutorial
 applications.
 3.  Modify the source code for the enterprise bean, `CartBean.java`, to
 specify which roles are authorized to access which protected methods.
-This step is discussed in link:#BNBZL[Annotating the Bean].
+This step is discussed in xref:security-jakartaee/security-jakartaee.adoc#BNBZL[Annotating the Bean].
 4.  Build, package, and deploy the enterprise bean; then build and run
-the client application by following the steps in link:#BNBZN[To Run the
-cart-secure Example Using NetBeans IDE] or link:#BNBZO[To Run the
+the client application by following the steps in xref:security-jakartaee/security-jakartaee.adoc#BNBZN[To Run the
+cart-secure Example Using NetBeans IDE] or xref:security-jakartaee/security-jakartaee.adoc#BNBZO[To Run the
 cart-secure Example Using Maven].
 
 [[BNBZL]][[_annotating_the_bean]]
@@ -158,7 +158,7 @@ type of authentication will be user name/password authentication.
 
 ==== To Run the cart-secure Example Using NetBeans IDE
 
-1.  Follow the steps in link:#GJJLK[To Set Up
+1.  Follow the steps in xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up
 Your System for Running the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -203,7 +203,7 @@ reappears until you enter correct values.
 
 ==== To Run the cart-secure Example Using Maven
 
-1.  Follow the steps in link:#GJJLK[To Set Up
+1.  Follow the steps in xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up
 Your System for Running the Security Examples].
 2.  In a terminal window, go to:
 +
@@ -255,13 +255,13 @@ This example can be found in the
 `_tut-install_/examples/security/converter-secure` directory. This
 example is based on the unsecured enterprise bean application,
 `converter`, which is discussed in
-link:#GIJRE[Chapter 36, "Getting Started with
+xref:#GIJRE[Chapter 36, "Getting Started with
 Enterprise Beans"] and is found in the
 `_tut-install_/examples/ejb/converter/` directory. This section builds on
 the example by adding the necessary elements to secure the application
 by using the `getCallerPrincipal` and `isCallerInRole` methods, which
 are discussed in more detail in
-link:#securing-an-enterprise-bean-programmatically[Securing an Enterprise Bean Programmatically].
+xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_programmatically[Securing an Enterprise Bean Programmatically].
 
 In general, the following steps are necessary when using the
 `getCallerPrincipal` and `isCallerInRole` methods with an enterprise
@@ -273,13 +273,13 @@ application.
 1.  Create a simple enterprise bean application.
 2.  Set up a user on GlassFish Server in the `file` realm, in the group
 `TutorialUser`, and set up default principal to role mapping. To do
-this, follow the steps in link:#GJJLK[To Set Up
+this, follow the steps in xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up
 Your System for Running the Security Examples].
 3.  Modify the bean to add the `getCallerPrincipal` and `isCallerInRole`
 methods.
 4.  If the application contains a web client that is a servlet, specify
 security for the servlet, as described in
-link:#GJRMH[Specifying Security for Basic
+xref:security-webtier/security-webtier.adoc#GJRMH[Specifying Security for Basic
 Authentication Using Annotations].
 5.  Build, package, deploy, and run the application.
 
@@ -362,7 +362,7 @@ client, `ConverterServlet`:
 
 ==== To Run the converter-secure Example Using NetBeans IDE
 
-1.  Follow the steps in link:#GJJLK[To Set Up
+1.  Follow the steps in xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up
 Your System for Running the Security Examples].
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -382,7 +382,7 @@ GlassFish Server instance.
 
 ==== To Run the converter-secure Example Using Maven
 
-1.  Follow the steps in link:#GJJLK[To Set Up
+1.  Follow the steps in xref:security-webtier/security-webtier.adoc#GJJLK[To Set Up
 Your System for Running the Security Examples].
 2.  In a terminal window, go to:
 +

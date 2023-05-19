@@ -21,7 +21,7 @@ establishing a connection to an EIS instance.
 sign-on by including code that performs the sign-on process to an EIS.
 
 You can also configure security for resource adapters. See
-link:#GLIGS[Configuring Resource Adapter Security].
+xref:security-advanced/security-advanced.adoc#GLIGS[Configuring Resource Adapter Security].
 
 [[GLIHL]][[_container_managed_sign_on]]
 
@@ -155,7 +155,7 @@ in the connector specification.
 +
 For more information on the implementation of the security permission
 specification, see the security policy file documentation listed in
-link:#BABBGBBF[Further Information about
+xref:security-advanced/security-advanced.adoc#BABBGBBF[Further Information about
 Advanced Security Topics].
 
 In addition to specifying resource adapter security in the `ra.xml`

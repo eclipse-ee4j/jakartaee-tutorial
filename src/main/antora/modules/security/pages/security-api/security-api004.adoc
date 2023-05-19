@@ -5,8 +5,8 @@ identity store for credential validation.
 
 Topics include:
 
-* link:#overview-of-the-built-in-database-identity-store-example[Overview of the Built-In Database Identity Store Example]
-* link:#running-the-built-in-db-id-store-example[Running the built-in-db-identity-store Example]
+* xref:security-api/security-api.adoc#_overview_of_the_built_in_database_identity_store_example[Overview of the Built-In Database Identity Store Example]
+* xref:#_running_the_built_in_db_id_store_example[Running the built-in-db-identity-store Example]
 
 [[_overview_of_the_built_in_database_identity_store_example]]
 === Overview of the Built-In Database Identity Store Example
@@ -26,10 +26,10 @@ The following sections describe the high-level process for configuring the
 already been completed in the application files, but is provided here to illustrate
 what you need to do to use the built-in database identity store.
 
-* link:#define-the-users-and-groups-in-the-identity-store[Define the Users and Groups in the Identity Store]
-* link:#map-the-databaseidentitystore-to-the-default-data-source[Map the DatabaseIdentityStore to the Default Data source]
-* link:#specify-the-authentication-mechanism[Specify the Authentication Mechanism]
-* link:#declare-roles-in-the-servlet-container[Declare Roles in the Servlet Container]
+* xref:security-api/security-api.adoc#_define_the_users_and_groups_in_the_identity_store[Define the Users and Groups in the Identity Store]
+* xref:security-api/security-api.adoc#_map_the_databaseidentitystore_to_the_default_data_source[Map the DatabaseIdentityStore to the Default Data source]
+* xref:security-api/security-api.adoc#_specify_the_authentication_mechanism[Specify the Authentication Mechanism]
+* xref:security-api/security-api.adoc#_declare_roles_in_the_servlet_container[Declare Roles in the Servlet Container]
 
 When a request that includes credentials is sent to the application,
 it triggers the configured authentication mechanism
@@ -220,9 +220,9 @@ roles and groups.
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `built-in-db-identity-store` application
 as described in the following topics:
 
-* link:#to-build-package-and-deploy-the-built-in-db-identity-store-example-using-netbeans-ide[To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE]
-* link:#to-build-package-and-deploy-the-built-in-db-identity-store-example-using-using-maven[To Build, Package, and Deploy the built-in-db-identity-store Example Using Maven]
-* link:#to-run-the-built-in-db-identity-store-example[To Run the built-in-db-identity-store Example]
+* xref:security-api/security-api.adoc#_to_build_package_and_deploy_the_built_in_db_identity_store_example_using_netbeans_ide[To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE]
+* xref:security-api/security-api.adoc#_to_build_package_and_deploy_the_built_in_db_identity_store_example_using_using_maven[To Build, Package, and Deploy the built-in-db-identity-store Example Using Maven]
+* xref:security-api/security-api.adoc#_to_run_the_built_in_db_identity_store_example[To Run the built-in-db-identity-store Example]
 
 
 [[_to_build_package_and_deploy_the_built_in_db_identity_store_example_using_netbeans_ide]]
@@ -230,10 +230,10 @@ as described in the following topics:
 
 1. If you have not already done so, start the default database. This is necessary because
 we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
-See link:#starting-and-stopping-the-java-db-server[Starting and Stopping Apache Derby].
+See xref:#_starting_and_stopping_the_java_db_server[Starting and Stopping Apache Derby].
 
 2. If you have not already done so, start the GlassFish server. See
-link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Server].
+xref:#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 3.  From the File menu, choose Open Project.
 
@@ -257,11 +257,11 @@ GlassFish Server instance.
 
 1. If you have not already done so, start the default database. This is necessary because
 we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
-See link:#starting-and-stopping-the-java-db-server[Starting and Stopping Apache Derby].
+See xref:#_starting_and_stopping_the_java_db_server[Starting and Stopping Apache Derby].
 
 
 2.  If you have not already done so, start the GlassFish server. See
-link:#starting-and-stopping-glassfish-server[Starting and Stopping GlassFish Server].
+xref:#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 3.  In a terminal window, go to:
 +

@@ -19,7 +19,7 @@ A deployment descriptor is an XML file that is external to the
 application and that expresses an application's security structure,
 including security roles, access control, and authentication
 requirements. For more information about deployment descriptors, read
-link:#BNBXF[Using Deployment Descriptors for
+xref:security-intro/security-intro.adoc#BNBXF[Using Deployment Descriptors for
 Declarative Security].
 +
 Annotations, also called metadata, are used to specify information about
@@ -30,13 +30,13 @@ declarative information inside XML descriptors. Instead, you simply put
 annotations on the code, and the required information gets generated.
 For this tutorial, annotations are used for securing applications
 wherever possible. For more information about annotations, see
-link:#BNBXG[Using Annotations to Specify Security
+xref:security-intro/security-intro.adoc#BNBXG[Using Annotations to Specify Security
 Information].
 * Programmatic security is embedded in an application and is used to
 make security decisions. Programmatic security is useful when
 declarative security alone is not sufficient to express the security
 model of an application. For more information about programmatic
-security, read link:#BNBXH[Using Programmatic
+security, read xref:security-intro/security-intro.adoc#BNBXH[Using Programmatic
 Security].
 
 Jakarta EE 8 includes a Security API specification that defines portable,
@@ -51,13 +51,13 @@ in the chapter on security in the Jakarta EE 8 specification.
 Other chapters in this Part discuss security requirements in web tier
 and enterprise tier applications, and the Jakarta Security.
 
-* link:#BNCAS[Chapter 51, "Getting Started Securing
+* xref:security-webtier/security-webtier.adoc#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] explains how to add security to web components, such
 as servlets.
-* link:#BNBYK[Chapter 52, "Getting Started Securing
+* xref:security-jakartaee/security-jakartaee.adoc#BNBYK[Chapter 52, "Getting Started Securing
 Enterprise Applications"] explains how to add security to Jakarta EE
 components, such as enterprise beans and application clients.
-* link:#using-the-jakarta-ee-security-api[53 Using Jakarta Security]
+* xref:security-api/security-api.adoc#_using_the_jakarta_ee_security_api[53 Using Jakarta Security]
 describes the authentication and credential validation funtionality provided by
 Jakarta Security, and provides examples.
 
@@ -79,19 +79,19 @@ client and using it to establish an authenticated session.
 ==== Step 1: Initial Request
 
 In the first step of this example, the web client requests the main
-application URL. This action is shown in link:#BNBWN[Figure 50-1].
+application URL. This action is shown in xref:security-intro/security-intro.adoc#BNBWN[Figure 50-1].
 
 [[BNBWN]]
 
 .*Figure 50-1 Initial Request*
-image::common:jakartaeett_dt_039.png["Diagram of initial request from web client to web server for access to aprotected resource"]
+image::common::common:jakartaeett_dt_039.png["Diagram of initial request from web client to web server for access to aprotected resource"]
 
 Since the client has not yet authenticated itself to the application
 environment, the server responsible for delivering the web portion of
 the application, hereafter referred to as the web server, detects this
 and invokes the appropriate authentication mechanism for this resource.
 For more information on these mechanisms, see
-link:#BNBWY[Security Mechanisms].
+xref:security-intro/security-intro.adoc#BNBWY[Security Mechanisms].
 
 [[BNBWO]][[_step_2_initial_authentication]]
 
@@ -100,7 +100,7 @@ link:#BNBWY[Security Mechanisms].
 The web server returns a form that the web client uses to collect
 authentication data, such as user name and password, from the user. The
 web client forwards the authentication data to the web server, where it
-is validated by the web server, as shown in link:#BNBWP[Figure 50-2].
+is validated by the web server, as shown in xref:security-intro/security-intro.adoc#BNBWP[Figure 50-2].
 The validation mechanism may be local to a server or may leverage the
 underlying security services. On the basis of the validation, the web
 server sets a credential for the user.
@@ -108,7 +108,7 @@ server sets a credential for the user.
 [[BNBWP]]
 
 .*Figure 50-2 Initial Authentication*
-image::common:jakartaeett_dt_040.png["Diagram of initial authentication: server sends form to client, whichsends authentication data to server for validation"]
+image::common::common:jakartaeett_dt_040.png["Diagram of initial authentication: server sends form to client, whichsends authentication data to server for validation"]
 
 [[BNBWQ]][[_step_3_url_authorization]]
 
@@ -121,12 +121,12 @@ determine the security roles that are permitted access to the resource.
 The security policy is derived from annotations or from the deployment
 descriptor. The web container then tests the user's credential against
 each role to determine whether it can map the user to the role.
-link:#BNBWR[Figure 50-3] shows this process.
+xref:security-intro/security-intro.adoc#BNBWR[Figure 50-3] shows this process.
 
 [[BNBWR]]
 
 .*Figure 50-3 URL Authorization*
-image::common:jakartaeett_dt_041.png["Diagram of URL authorization"]
+image::common::common:jakartaeett_dt_041.png["Diagram of URL authorization"]
 
 The web server's evaluation stops with an "is authorized" outcome when
 the web server is able to map the user to a role. A "not authorized"
@@ -138,17 +138,17 @@ the permitted roles.
 ==== Step 4: Fulfilling the Original Request
 
 If the user is authorized, the web server returns the result of the
-original URL request, as shown in link:#BNBWT[Figure 50-4].
+original URL request, as shown in xref:security-intro/security-intro.adoc#BNBWT[Figure 50-4].
 
 [[BNBWT]]
 
 .*Figure 50-4 Fulfilling the Original Request*
-image::common:jakartaeett_dt_042.png["Diagram of request fulfillment, showing server returning result to client"]
+image::common::common:jakartaeett_dt_042.png["Diagram of request fulfillment, showing server returning result to client"]
 
 In our example, the response URL of a web page is returned, enabling the
 user to post form data that needs to be handled by the business-logic
 component of the application. See
-link:#BNCAS[Chapter 51, "Getting Started Securing
+xref:security-webtier/security-webtier.adoc#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"] for more information on protecting web applications.
 
 [[BNBWU]][[_step_5_invoking_enterprise_bean_business_methods]]
@@ -157,14 +157,14 @@ Web Applications"] for more information on protecting web applications.
 
 The web page performs the remote method call to the enterprise bean,
 using the user's credential to establish a secure association between
-the web page and the enterprise bean, as shown in link:#BNBWV[Figure
+the web page and the enterprise bean, as shown in xref:security-intro/security-intro.adoc#BNBWV[Figure
 50-5]. The association is implemented as two related security contexts:
 one in the web server and one in the enterprise bean container.
 
 [[BNBWV]]
 
 .*Figure 50-5 Invoking an Enterprise Bean Business Method*
-image::common:jakartaeett_dt_043.png["Diagram of authorization process between web component and enterprise bean"]
+image::common::common:jakartaeett_dt_043.png["Diagram of authorization process between web component and enterprise bean"]
 
 The enterprise container is responsible for enforcing access control on the
 enterprise bean method. The container consults the security policy

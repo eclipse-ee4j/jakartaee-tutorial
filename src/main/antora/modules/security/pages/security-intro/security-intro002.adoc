@@ -58,7 +58,7 @@ For more information on Java SE security, visit
 
 Jakarta EE security services are provided by the component container and
 can be implemented by using declarative or programmatic techniques (see
-link:#BNBXE[Securing Containers]). Jakarta EE security
+xref:security-intro/security-intro.adoc#BNBXE[Securing Containers]). Jakarta EE security
 services provide a robust and easily configured security mechanism for
 authenticating users and authorizing access to application functions and
 associated data at many different layers. Jakarta EE security services are
@@ -102,7 +102,7 @@ transferable between application types.
 * Data is close to or contained within the point of vulnerability.
 
 For more information on providing security at the application layer, see
-link:#BNBXE[Securing Containers].
+xref:security-intro/security-intro.adoc#BNBXE[Securing Containers].
 
 [[BNBXC]][[_transport_layer_security]]
 
@@ -153,7 +153,7 @@ receives the message.
 * It is not an end-to-end solution, simply point-to-point.
 
 For more information on transport-layer security, see
-link:#BNBXW[Establishing a Secure Connection Using
+xref:security-intro/security-intro.adoc#BNBXW[Establishing a Secure Connection Using
 SSL].
 
 [[BNBXD]][[_message_layer_security]]

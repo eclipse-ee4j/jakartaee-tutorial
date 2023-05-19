@@ -2,8 +2,8 @@
 == Overview of the Identity Store Interfaces
 The Identity Store Interfaces are described in the following sections:
 
-* link:#the-identitystore-interface[The IdentityStore Interface]
-* link:#the-remembermeidentitystore-interface[The RememberMeIdentityStore Interface]
+* xref:security-api/security-api.adoc#_the_identitystore_interface[The IdentityStore Interface]
+* xref:security-api/security-api.adoc#_the_remembermeidentitystore_interface[The RememberMeIdentityStore Interface]
 
 [[_the_identitystore_interface]]
 === The IdentityStore Interface
@@ -28,14 +28,14 @@ and/or lookup user groups.
 * `DatabaseIdentityStoreDefinition` -- configures an identity store with the
 parameters necessary to connect to an external database, validate user credentials,
 and/or lookup user groups. You must supply a PasswordHash implementation when
-configuring a Database Identity Store. See link:#the-passwordhash-interface[The PasswordHash Interface].
+configuring a Database Identity Store. See xref:security-api/security-api.adoc#_the_passwordhash_interface[The PasswordHash Interface].
 
 An application can provide its own custom identity store, or use the built-in LDAP or database
 identity stores. For examples of both types, see:
 
-* link:#running-the-built-in-database-identity-store-example[Running the Built-In Database Identity Store Example]
+* xref:security-api/security-api.adoc#_running_the_built_in_database_identity_store_example[Running the Built-In Database Identity Store Example]
 
-* link:#running-the-custom-identity-store-example[Running the Custom Identity Store Example]
+* xref:security-api/security-api.adoc#_running_the_custom_identity_store_example[Running the Custom Identity Store Example]
 
 An implementation of `IdentityStore` must be a
 CDI bean to be recognized and deployed at runtime, and is assumed to be normal scoped.

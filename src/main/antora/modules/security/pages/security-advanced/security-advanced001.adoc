@@ -49,7 +49,7 @@ private key could have been used to produce such a signature.
 Digital certificates are used with HTTPS to authenticate web clients.
 The HTTPS service of most web servers will not run unless a digital
 certificate has been installed. Use the procedure outlined in the next
-section, link:#BNBYC[Creating a Server Certificate], to set up a digital
+section, xref:security-advanced/security-advanced.adoc#BNBYC[Creating a Server Certificate], to set up a digital
 certificate that can be used by your application or web server to enable
 SSL.
 
@@ -63,7 +63,7 @@ tool also allows users to cache the public keys, in the form of
 certificates, of their communicating peers.
 
 For a better understanding of `keytool` and public-key cryptography, see
-link:#BABBGBBF[Further Information about
+xref:security-advanced/security-advanced.adoc#BABBGBBF[Further Information about
 Advanced Security Topics] for a link to the `keytool` documentation.
 
 [[BNBYC]][[_creating_a_server_certificate]]
@@ -202,13 +202,13 @@ In the `certificate` realm, user identity is set up in the GlassFish
 Server security context and populated with user data obtained from
 cryptographically verified client certificates. For step-by-step
 instructions for creating this type of certificate, see
-link:#BNBYB[Working with Digital Certificates].
+xref:security-advanced/security-advanced.adoc#BNBYB[Working with Digital Certificates].
 
 [[BNBYF]][[_using_a_different_server_certificate_with_glassfish_server]]
 
 === Using a Different Server Certificate with GlassFish Server
 
-Follow the steps in link:#BNBYC[Creating a Server Certificate] to create
+Follow the steps in xref:security-advanced/security-advanced.adoc#BNBYC[Creating a Server Certificate] to create
 your own server certificate, have it signed by a CA, and import the
 certificate into `keystore.jks`.
 
@@ -233,7 +233,7 @@ follow these steps.
 
 1.  Start GlassFish Server if you haven't already done so. Information
 on starting the GlassFish Server can be found in
-link:#BNADI[Starting and Stopping GlassFish Server].
+xref:#BNADI[Starting and Stopping GlassFish Server].
 2.  Open the GlassFish Server Administration Console in a web browser at
 `http://localhost:4848`.
 3.  Expand Configurations, then expand server-config, then click JVM

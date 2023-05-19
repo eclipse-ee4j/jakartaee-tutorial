@@ -10,15 +10,15 @@ authentication is necessary when accessing unprotected web resources.
 When accessing protected web resources, the usual varieties of
 authentication can be used: HTTP basic authentication, HTTP login-form
 authentication, or SSL client authentication.
-link:#BNCBN[Specifying an Authentication
+xref:security-webtier/security-webtier.adoc#BNCBN[Specifying an Authentication
 Mechanism in the Deployment Descriptor] describes how to specify HTTP
 basic authentication and HTTP login-form authentication.
-link:#GLIEQ[Client Authentication] describes how
+xref:security-advanced/security-advanced.adoc#GLIEQ[Client Authentication] describes how
 to specify SSL client authentication.
 
 Authentication is required when accessing protected enterprise beans.
 The authentication mechanisms for enterprise beans are discussed in
-link:#BNBYL[Securing Enterprise Beans].
+xref:security-jakartaee/security-jakartaee.adoc#BNBYL[Securing Enterprise Beans].
 
 An application client makes use of an authentication service provided by
 the application client container for authenticating its users. The
@@ -71,7 +71,7 @@ name.
 
 For more information on using JAAS for authentication in login modules,
 refer to the documentation listed in
-link:#BABBGBBF[Further Information about
+xref:security-advanced/security-advanced.adoc#BABBGBBF[Further Information about
 Advanced Security Topics].
 
 [[GLIHQ]][[_using_programmatic_login]]
