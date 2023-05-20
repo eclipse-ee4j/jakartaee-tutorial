@@ -1,32 +1,21 @@
-[[GKABR]][[using-ajax-with-facelets]]
-
 == Using Ajax with Facelets
 
-As mentioned in the previous section, Jakarta Server Faces technology
-supports Ajax by using a built-in JavaScript resource library that is
-provided as part of the Jakarta Server Faces core libraries. This built-in
-Ajax resource can be used in Jakarta Server Faces web applications in one of
-the following ways.
+As mentioned in the previous section, Jakarta Faces technology supports Ajax by using a built-in JavaScript resource library that is provided as part of the Jakarta Faces core libraries.
+This built-in Ajax resource can be used in Jakarta Faces web applications in one of the following ways.
 
-* By using the `f:ajax` tag along with another standard component in a
-Facelets application. This method adds Ajax functionality to any UI
-component without additional coding and configuration.
-* By using the JavaScript API method `jsf.ajax.request()` directly
-within the Facelets application. This method provides direct access to
-Ajax methods and allows customized control of component behavior.
-* By using the `<h:commandScript>` component to execute arbitrary
-server-side methods from a view. The component generates a JavaScript
-function with a given name that when invoked, in turn invokes, a given
-server-side method via Ajax.
+* By using the `f:ajax` tag along with another standard component in a Facelets application.
+This method adds Ajax functionality to any UI component without additional coding and configuration.
 
-[[GKAFN]][[using-the-fajax-tag]]
+* By using the JavaScript API method `jsf.ajax.request()` directly within the Facelets application.
+This method provides direct access to Ajax methods and allows customized control of component behavior.
+
+* By using the `<h:commandScript>` component to execute arbitrary server-side methods from a view.
+The component generates a JavaScript function with a given name that when invoked, in turn invokes, a given server-side method via Ajax.
 
 === Using the f:ajax Tag
 
-The `f:ajax` tag is a Jakarta Server Faces core tag that provides Ajax
-functionality to any regular UI component when used in conjunction with
-that component. In the following example, Ajax behavior is added to an
-input component by including the `f:ajax` core tag:
+The `f:ajax` tag is a Jakarta Faces core tag that provides Ajax functionality to any regular UI component when used in conjunction with that component.
+In the following example, Ajax behavior is added to an input component by including the `f:ajax` core tag:
 
 [source,xml]
 ----
@@ -35,87 +24,64 @@ input component by including the `f:ajax` core tag:
 </h:inputText>
 ----
 
-In this example, although Ajax is enabled, the other attributes of the
-`f:ajax` tag are not defined. If an event is not defined, the default
-action for the component is performed. For the `inputText` component,
-when no `event` attribute is specified, the default event is
-`valueChange`. link:#GKDER[Table 13-1] lists the attributes of the
-`f:ajax` tag and their default actions.
+In this example, although Ajax is enabled, the other attributes of the `f:ajax` tag are not defined.
+If an event is not defined, the default action for the component is performed.
+For the `inputText` component, when no `event` attribute is specified, the default event is `valueChange`.
+<<attributes-of-the-fajax-tag>> lists the attributes of the `f:ajax` tag and their default actions.
 
-[[sthref69]][[GKDER]]
-
-*Table 13-1 Attributes of the f:ajax Tag*
-
+[[attributes-of-the-fajax-tag]]
+.Attributes of the f:ajax Tag
 [width="99%",cols="15%,25%,60%"]
-|=======================================================================
-|*Name* |*Type* |*Description*
-|`disabled` |`javax.el.ValueExpression` that evaluates to a `Boolean` |A
-`Boolean` value that identifies the tag status. A value of `true`
-indicates that the Ajax behavior should not be rendered. A value of
-`false` indicates that the Ajax behavior should be rendered. The default
-value is `false`.
+|===
+|Name |Type |Description
 
-|`event` |`javax.el.ValueExpression` that evaluates to a `String` |A
-`String` that identifies the type of event to which the Ajax action will
-apply. If specified, it must be one of the events supported by the
-component. If not specified, the default event (the event that triggers
-the Ajax request) is determined for the component. The default event is
-`action` for `javax.faces.component.ActionSource` components and
-`valueChange` for `javax.faces.component.EditableValueHolder`
-components.
+|`disabled` |`jakarta.el.ValueExpression` that evaluates to a `Boolean` |A `Boolean` value that identifies the tag status.
+A value of `true` indicates that the Ajax behavior should not be rendered.
+A value of `false` indicates that the Ajax behavior should be rendered.
+The default value is `false`.
 
-|`execute` |`javax.el.ValueExpression` that evaluates to an `Object` |A
-`Collection` that identifies a list of components to be executed on the
-server. If a literal is specified, it must be a space-delimited `String`
-of component identifiers and/or one of the keywords. If a
-`ValueExpression` is specified, it must refer to a property that returns
-a `Collection` of `String` objects. If not specified, the default value
-is `@this`.
+|`event` |`jakarta.el.ValueExpression` that evaluates to a `String` |A `String` that identifies the type of event to which the Ajax action will apply.
+If specified, it must be one of the events supported by the component.
+If not specified, the default event (the event that triggers the Ajax request) is determined for the component.
+The default event is `action` for `jakarta.faces.component.ActionSource` components and `valueChange` for `jakarta.faces.component.EditableValueHolder` components.
 
-|`immediate` |`javax.el.ValueExpression` that evaluates to a `Boolean`
-|A `Boolean` value that indicates whether inputs are to be processed
-early in the lifecycle. If `true`, behavior events generated from this
-behavior are broadcast during the Apply Request Values phase. Otherwise,
-the events will be broadcast during the Invoke Application phase.
+|`execute` |`jakarta.el.ValueExpression` that evaluates to an `Object` |A `Collection` that identifies a list of components to be executed on the server.
+If a literal is specified, it must be a space-delimited `String` of component identifiers and/or one of the keywords.
+If a `ValueExpression` is specified, it must refer to a property that returns a `Collection` of `String` objects.
+If not specified, the default value is `@this`.
 
-|`listener` |`javax.el.MethodExpression` |The name of the listener
-method that is called when a `javax.faces.event.AjaxBehaviorEvent` has
-been broadcast for the listener.
+|`immediate` |`jakarta.el.ValueExpression` that evaluates to a `Boolean` |A `Boolean` value that indicates whether inputs are to be processed early in the lifecycle.
+If `true`, behavior events generated from this behavior are broadcast during the Apply Request Values phase.
+Otherwise, the events will be broadcast during the Invoke Application phase.
 
-|`onevent` |`javax.el.ValueExpression` that evaluates to a `String` |The
-name of the JavaScript function that handles UI events.
+|`listener` |`jakarta.el.MethodExpression` |The name of the listener method that is called when a `jakarta.faces.event.AjaxBehaviorEvent` has been broadcast for the listener.
 
-|`onerror` |`javax.el.ValueExpression` that evaluates to a `String` |The
-name of the JavaScript function that handles errors.
+|`onevent` |`jakarta.el.ValueExpression` that evaluates to a `String` |The name of the JavaScript function that handles UI events.
 
-|`render` |`javax.el.ValueExpression` that evaluates to an `Object` |A
-`Collection` that identifies a list of components to be rendered on the
-client. If a literal is specified, it must be a space-delimited `String`
-of component identifiers and/or one of the keywords. If a
-`ValueExpression` is specified, it must refer to a property that returns
-a `Collection` of `String` objects. If not specified, the default value
-is `@none`.
-|=======================================================================
+|`onerror` |`jakarta.el.ValueExpression` that evaluates to a `String` |The name of the JavaScript function that handles errors.
 
+|`render` |`jakarta.el.ValueExpression` that evaluates to an `Object` |A `Collection` that identifies a list of components to be rendered on the client.
+If a literal is specified, it must be a space-delimited `String` of component identifiers and/or one of the keywords.
+If a `ValueExpression` is specified, it must refer to a property that returns a `Collection` of `String` objects.
+If not specified, the default value is `@none`.
+|===
 
-The keywords listed in link:#GKNLK[Table 13-2] can be used with the
-`execute` and `render` attributes of the `f:ajax` tag.
+The keywords listed in <<execute-and-render-keywords>> can be used with the `execute` and `render` attributes of the `f:ajax` tag.
 
-[[sthref70]][[GKNLK]]
-
-*Table 13-2 Execute and Render Keywords*
-
+[[execute-and-render-keywords]]
+.Execute and Render Keywords
 [width="60%",cols="15%,45%"]
-|===============================================
-|*Keyword* |*Description*
+|===
+|Keyword |Description
+
 |`@all` |All component identifiers
+
 |`@form` |The form that encloses the component
+
 |`@none` |No component identifiers
+
 |`@this` |The element that triggered the request
-|===============================================
+|===
 
-
-Note that when you use the `f:ajax` tag in a Facelets page, the
-JavaScript resource library is loaded implicitly. This resource library
-can also be loaded explicitly as described in
-link:#GKAAM[Loading JavaScript as a Resource].
+Note that when you use the `f:ajax` tag in a Facelets page, the JavaScript resource library is loaded implicitly.
+This resource library can also be loaded explicitly as described in <<loading-javascript-as-a-resource>>.

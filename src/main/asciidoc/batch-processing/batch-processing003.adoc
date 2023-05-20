@@ -1,11 +1,7 @@
-[[BCGHBJIG]][[simple-use-case]]
-
 == Simple Use Case
 
-This section demonstrates how to define a simple job using the Job
-Specification Language (JSL) and how to implement the corresponding
-batch artifacts. Refer to the rest of the sections in this chapter for
-detailed descriptions of the elements in the batch framework.
+This section demonstrates how to define a simple job using the Job Specification Language (JSL) and how to implement the corresponding batch artifacts.
+Refer to the rest of the sections in this chapter for detailed descriptions of the elements in the batch framework.
 
 The following job definition specifies a chunk step and a task step as
 follows:
@@ -13,8 +9,8 @@ follows:
 [source,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
-<job id="simplejob" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-                    version="1.0">
+<job id="simplejob" xmlns="https://jakarta.ee/xml/ns/jakartaee" 
+                    version="2.0">
   <properties>
     <property name="input_file" value="input.txt"/>
     <property name="output_file" value="output.txt"/>
@@ -33,13 +29,10 @@ follows:
 </job>
 ----
 
-[[sthref268]][[chunk-step]]
-
 === Chunk Step
 
-In most cases, you have to implement a checkpoint class for
-chunk-oriented steps. The following class just keeps track of the line
-number in a text file:
+In most cases, you have to implement a checkpoint class for chunk-oriented steps.
+The following class just keeps track of the line number in a text file:
 
 [source,java]
 ----
@@ -50,16 +43,14 @@ public class MyCheckpoint implements Serializable {
 }
 ----
 
-The following item reader implementation continues reading the input
-file from the provided checkpoint if the job was restarted. The items
-consist of each line in the text file (in more complex scenarios, the
-items are custom Java types and the input source can be a database):
+The following item reader implementation continues reading the input file from the provided checkpoint if the job was restarted.
+The items consist of each line in the text file (in more complex scenarios, the items are custom Java types and the input source can be a database):
 
 [source,java]
 ----
 @Dependent
 @Named("MyReader")
-public class MyReader implements javax.batch.api.chunk.ItemReader {
+public class MyReader implements jakarta.batch.api.chunk.ItemReader {
     private MyCheckpoint checkpoint;
     private BufferedReader breader;
     @Inject
@@ -93,15 +84,14 @@ public class MyReader implements javax.batch.api.chunk.ItemReader {
 }
 ----
 
-In the following case, the item processor only converts the line to
-uppercase. More complex examples can process items in different ways or
-transform them into custom output Java types:
+In the following case, the item processor only converts the line to uppercase.
+More complex examples can process items in different ways or transform them into custom output Java types:
 
 [source,java]
 ----
 @Dependent
 @Named("MyProcessor")
-public class MyProcessor implements javax.batch.api.chunk.ItemProcessor {
+public class MyProcessor implements jakarta.batch.api.chunk.ItemProcessor {
     public MyProcessor() {}
 
     @Override
@@ -112,27 +102,19 @@ public class MyProcessor implements javax.batch.api.chunk.ItemProcessor {
 }
 ----
 
+[NOTE]
+The batch processing API does not support generics.
+In most cases, you need to cast items to their specific type before processing them.
 
-[width="100%",cols="100%",]
-|=======================================================================
-a|
-Note:
-
-The batch processing API does not support generics. In most cases, you
-need to cast items to their specific type before processing them.
-
-|=======================================================================
-
-
-The item writer writes the processed items to the output file. It
-overwrites the output file if no checkpoint is provided; otherwise, it
-resumes writing at the end of the file. Items are written in chunks:
+The item writer writes the processed items to the output file.
+It overwrites the output file if no checkpoint is provided; otherwise, it resumes writing at the end of the file.
+Items are written in chunks:
 
 [source,java]
 ----
 @Dependent
 @Named("MyWriter")
-public class MyWriter implements javax.batch.api.chunk.ItemWriter {
+public class MyWriter implements jakarta.batch.api.chunk.ItemWriter {
     private BufferedWriter bwriter;
     @Inject
     private JobContext jobCtx;
@@ -157,22 +139,20 @@ public class MyWriter implements javax.batch.api.chunk.ItemWriter {
     @Override
     public Serializable checkpointInfo() throws Exception {
         return new MyCheckpoint();
+    }
 }
 ----
 
-[[sthref269]][[task-step]]
-
 === Task Step
 
-The task step displays the length of the output file. In more complex
-scenarios, task steps perform any task that does not fit the chunk
-processing programming model:
+The task step displays the length of the output file.
+In more complex scenarios, task steps perform any task that does not fit the chunk processing programming model:
 
 [source,java]
 ----
 @Dependent
 @Named("MyBatchlet")
-public class MyBatchlet implements javax.batch.api.chunk.Batchlet {
+public class MyBatchlet implements jakarta.batch.api.chunk.Batchlet {
     @Inject
     private JobContext jobCtx;
     
@@ -185,5 +165,3 @@ public class MyBatchlet implements javax.batch.api.chunk.Batchlet {
     }
 }
 ----
-
-

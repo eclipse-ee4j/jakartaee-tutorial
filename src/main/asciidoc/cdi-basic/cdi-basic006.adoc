@@ -1,15 +1,11 @@
-[[GJBCK]][[using-qualifiers]]
-
 == Using Qualifiers
 
-You can use qualifiers to provide various implementations of a
-particular bean type. A qualifier is an annotation that you apply to a
-bean. A qualifier type is a Java annotation defined as
-`@Target({METHOD, FIELD, PARAMETER, TYPE})` and `@Retention(RUNTIME)`.
+You can use qualifiers to provide various implementations of a particular bean type.
+A qualifier is an annotation that you apply to a bean.
+A qualifier type is a Java annotation defined as `@Target({METHOD, FIELD, PARAMETER, TYPE})` and `@Retention(RUNTIME)`.
 
-For example, you could declare an `@Informal` qualifier type and apply
-it to another class that extends the `Greeting` class. To declare this
-qualifier type, use the following code:
+For example, you could declare an `@Informal` qualifier type and apply it to another class that extends the `Greeting` class.
+To declare this qualifier type, use the following code:
 
 [source,java]
 ----
@@ -25,7 +21,7 @@ import java.lang.annotation.Retention;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
-import javax.inject.Qualifier;
+import jakarta.inject.Qualifier;
 
 @Qualifier
 @Retention(RUNTIME)
@@ -33,8 +29,7 @@ import javax.inject.Qualifier;
 public @interface Informal {}
 ----
 
-You can then define a bean class that extends the `Greeting` class and
-uses this qualifier:
+You can then define a bean class that extends the `Greeting` class and uses this qualifier:
 
 [source,java]
 ----
@@ -50,15 +45,14 @@ public class InformalGreeting extends Greeting {
 
 Both implementations of the bean can now be used in the application.
 
-If you define a bean with no qualifier, then the bean automatically has the
-qualifier `@Default`. The unannotated `Greeting` class could be declared
-as follows:
+If you define a bean with no qualifier, then the bean automatically has the qualifier `@Default`.
+The unannotated `Greeting` class could be declared as follows:
 
 [source,java]
 ----
 package greetings;
 
-import javax.enterprise.inject.Default;
+import jakarta.enterprise.inject.Default;
 
 @Default
 public class Greeting {

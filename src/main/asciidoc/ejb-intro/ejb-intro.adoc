@@ -1,15 +1,9 @@
 = Enterprise Beans
 
-[[GIJSZ]][[enterprise-beans]]
-
-Enterprise beans are Jakarta EE components that implement Jakarta Enterprise Beans
-technology. Enterprise beans run in the Enterprise Bean container, a
-runtime environment within GlassFish Server (see
-link:#BNABQ[Container Types]). Although transparent to
-the application developer, the Enterprise Bean container provides system-level
-services, such as transactions and security, to its enterprise beans.
-These services enable you to quickly build and deploy enterprise beans,
-which form the core of transactional Jakarta EE applications.
+Enterprise beans are Jakarta EE components that implement Jakarta Enterprise Beans technology.
+Enterprise beans run in the Enterprise Bean container, a runtime environment within GlassFish Server (see <<container-types>>).
+Although transparent to the application developer, the Enterprise Bean container provides system-level services, such as transactions and security, to its enterprise beans.
+These services enable you to quickly build and deploy enterprise beans, which form the core of transactional Jakarta EE applications.
 
 include::ejb-intro001.adoc[]
 
@@ -26,4 +20,3 @@ include::ejb-intro006.adoc[]
 include::ejb-intro007.adoc[]
 
 include::ejb-intro008.adoc[]
-

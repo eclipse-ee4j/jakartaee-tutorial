@@ -1,107 +1,87 @@
-[[the-jsonpstreaming-example-application]]
 == The jsonpstreaming Example Application
 
-This section describes how to build and run the `jsonpstreaming` example
-application. This example is a web application that demonstrates how to
-create JSON data from form data, how to parse JSON data, and how to
-write JSON output using the streaming API.
+This section describes how to build and run the `jsonpstreaming` example application.
+This example is a web application that demonstrates how to create JSON data from form data, how to parse JSON data, and how to write JSON output using the streaming API.
 
-The `jsonpstreaming` example application is in the
-`_tut-install_/examples/web/jsonp/jsonpstreaming` directory.
+The `jsonpstreaming` example application is in the `_tut-install_/examples/web/jsonp/jsonpstreaming` directory.
 
-[[components-of-the-jsonpstreaming-example-application]]
 === Components of the jsonpstreaming Example Application
 
 The `jsonpstreaming` example application contains the following files.
 
-* Three JavaServer Faces pages.
+* Three Jakarta Faces pages.
 
 ** The `index.xhtml` page contains a form to collect information.
 
-** The `filewritten.xhtml` page contains a text area that displays JSON
-data.
+** The `filewritten.xhtml` page contains a text area that displays JSON data.
 
-** The `parsed.xhtml` page contains a table that lists the events from
-the parser.
-* The `StreamingBean.java` managed bean, a session-scoped managed bean
-that stores the data from the form and directs the navigation between
-the Facelets pages. This file also contains code that uses the JSON
-streaming API.
+** The `parsed.xhtml` page contains a table that lists the events from the parser.
 
-The code used in `StreamingBean.java` to write JSON data to a file is
-similar to the example in link:#BABGJEEF[Writing JSON Data
-Using a Generator]. The code to parse JSON data from a file is similar
-to the example in link:#BABGCHIG[Reading JSON Data Using a
-Parser].
+* The `StreamingBean.java` managed bean, a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages.
+This file also contains code that uses the JSON streaming API.
 
+The code used in `StreamingBean.java` to write JSON data to a file is similar to the example in <<writing-json-data-using-a-generator>>.
+The code to parse JSON data from a file is similar to the example in <<reading-json-data-using-a-parser>>.
 
-[[running-the-jsonpstreaming-example-application]]
 === Running the jsonpstreaming Example Application
 
-This section describes how to run the `jsonpstreaming` example
-application using NetBeans IDE and from the command line.
+This section describes how to run the `jsonpstreaming` example application using NetBeans IDE and from the command line.
 
-[[to-run-the-jsonpstreaming-example-application-using-netbeans-ide]]
 ==== To Run the jsonpstreaming Example Application Using NetBeans IDE
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  From the File menu, choose Open Project.
-3.  In the Open Project dialog box, navigate to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. From the *File* menu, choose *Open Project*.
+
+.  In the Open Project dialog box, navigate to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsonp
 ----
-4.  Select the `jsonpstreaming` folder.
-5.  Click Open Project.
-6.  In the Projects tab, right-click the `jsonpstreaming` project and
-select Run.
+
+. Select the `jsonpstreaming` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `jsonpstreaming` project and select *Run*.
 +
-This command builds and packages the application into a WAR file
-(`jsonpstreaming.war`) located in the `target` directory, deploys it to
-the server, and opens a web browser window with the following URL:
+This command builds and packages the application into a WAR file (`jsonpstreaming.war`) located in the `target` directory, deploys it to the server, and opens a web browser window with the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/jsonpstreaming/
 ----
-7.  Edit the data on the page and click Write a JSON Object to a File to
-submit the form and write a JSON object to a text file. The following
-page shows the contents of the text file.
-8.  Click Parse JSON from File. The following page contains a table that
-lists the parser events for the JSON data in the text file.
 
+. Edit the data on the page and click Write a JSON Object to a File to submit the form and write a JSON object to a text file.
+The following page shows the contents of the text file.
 
-[[to-run-the-jsonpstreaming-example-application-using-maven]]
+. Click Parse JSON from File.
+The following page contains a table that lists the parser events for the JSON data in the text file.
+
 ==== To Run the jsonpstreaming Example Application Using Maven
 
-1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
-Server]).
-2.  In a terminal window, go to:
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+
+. In a terminal window, go to:
 +
-[source,java]
 ----
 tut-install/examples/web/jsonp/jsonpstreaming/
 ----
-3.  Enter the following command to deploy the application:
+
+. Enter the following command to deploy the application:
 +
-[source,java]
+[source,shell]
 ----
 mvn install
 ----
-4.  Open a web browser window and enter the following URL:
+
+. Open a web browser window and enter the following URL:
 +
-[source,java]
 ----
 http://localhost:8080/jsonpstreaming/
 ----
-5.  Edit the data on the page and click Write a JSON Object to a File to
-submit the form and write a JSON object to a text file. The following
-page shows the contents of the text file.
-6.  Click Parse JSON from File. The following page contains a table that
-lists the parser events for the JSON data in the text file.
 
+. Edit the data on the page and click Write a JSON Object to a File to submit the form and write a JSON object to a text file.
+The following page shows the contents of the text file.
 
+. Click Parse JSON from File.
+The following page contains a table that lists the parser events for the JSON data in the text file.
