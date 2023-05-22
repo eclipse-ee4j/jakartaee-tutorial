@@ -553,3 +553,221 @@ public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
 
 We do two tests here; in one test we try to authenticate as "john", in the other test as "pete". As we have seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognising a username by any of them will not fail the overall validation.
 
+
+== Securing an endpoint with Form Authentication
+
+In the following example we'll be securing a REST endpoint using Form Authentication.
+
+You'll learn the following things;
+
+1. How to define security constraints
+2. How to set a provided authentication mechanisms 
+3. How to define (and implicitly set) a custom identity store
+4. How to use the Jakarta Security SecurityContext
+
+=== Write the application
+
+Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
+
+[source,java]
+----
+@Path("/resource")
+@RequestScoped
+public class Resource {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getCallerAndRole() {
+        return
+            securityContext.getCallerPrincipal().getName() + " : " +
+            securityContext.isCallerInRole("user");
+    }
+
+}
+----
+
+This resource uses the injected Jakarta EE SecurityContext to obtain access to the current authenticated caller, which is represented by a `Principal` instance. For simplicity sake the code here does not check whether the caller principal is `null`. If the resource is also available to non-authenticated callers, this is something we have to do. The `getCallerPrincipal()` call would return `null` then.
+
+Also note that there is a Jakarta REST specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the point of view of Jakarta EE that is a deprecated type and replaced by the Jakarta Security version.
+
+==== Declare the security constraints
+
+Next we'll define the security constraints in `web.xml`, which are used to tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="5.0"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+</web-app>
+----
+
+This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
+
+Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of the Permission Store that we explained above. Knowledge about this transformation is only needed for very advanced use cases.
+
+The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE however this remains a vendor specific extension.
+
+There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@ApplicationScoped
+@FormAuthenticationMechanismDefinition(
+    loginToContinue = @LoginToContinue(
+        loginPage="/login.html",
+        errorPage="/login-error.html"
+    )
+)
+@DeclareRoles({ "user", "caller" })
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+
+The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customise the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+
+In order to use this authentication mechanism we have to specify two paths to resources relative to our application; the one called to login (which the user is redirected to whenever a protected resource is accessed), and the one called when login fails (e.g. when the caller entered the credentials wrongly). Those two paths can be the same, and a request parameter can be used to distinguish between the two. Paths can point to anything our server can respond to; a static HTML file, a REST resource, or anything else. For simplicity we'll use two static HTML files here:
+
+[source,html]
+----
+<!DOCTYPE html/>
+
+<html>
+    <body>
+        Login to continue
+        <form method="POST" action="j_security_check">
+            <p>
+                <strong>Username </strong> <input type="text" name="j_username">
+            <p>
+                <strong>Password </strong> <input type="password" name="j_password">
+            <p>
+                <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+----
+
+[source,html]
+----
+<!DOCTYPE html/>
+
+<html>
+    <body>
+        Login failed!
+        <a href="login.html">Try again</a>
+    </body>
+</html>
+----
+
+ 
+
+==== Define the identity store
+
+Finally, let's define a very simple identity store that the security system can use to validate provided credentials for a Form authentication:
+
+[source,java]
+-----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+-----
+
+This identity store only "contains" the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security does not define a simple identity store out of the box, because there are questions whether that would promote security best practices.
+
+Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+```
+mvn clean install -pl :restBasicAuthCustomStore
+```
+
+This will run a test associated with the project, printing something like the following:
+
+```
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.24 s - in jakartaee.examples.focused.security.restformauthcustomstore.RestFormAuthCustomStoreIT
+```
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestFormAuthCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("j_username")
+            .setValueAttribute("john");
+
+        form.getInputByName("j_password")
+            .setValueAttribute("secret1");
+
+        TextPage page = form.getInputByValue("Submit")
+                   .click();
+
+        System.out.println(page.getContent());
+    }
+}
+----
+
+Using Arquillian, the test starts the default server (GlassFish 7), and deploys the actual output of the build process (a .war file) to it. The test runs in the integration test phase (and not the unit test phase) to make sure this output is indeed available. The test then does a request to the remote GlassFish server using a provided html unit web client. Note that anything that can do an HTTP request could have been used here as well.
+
+The test first does a request here to the protected resource, and as a response the server returns the HTML form we defined above. Using the HTMLUnit API it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the submit button. The authentication mechanism is then able to detect this special postback (it's listening to the special virtual URL the postback is to), and like the basic authentication mechanism got the username and password from the headers, the form authentication mechanism gets them from the POST data.
+
+
