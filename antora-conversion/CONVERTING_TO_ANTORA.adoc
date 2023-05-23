@@ -1,0 +1,59 @@
+= Antora Migration Notes
+
+As part of the documentation upgrade process, we are migrating the existing content to Antora. This will allow us to go back to previous versions of the docs (currently 9.1 and 8.0) from within the docs site.
+
+== Setup
+
+The conversion script is written in Java and requires https://jbang.io[JBang] to run. Install that first.
+
+== Migration Process
+
+> TIP: Commit your changes after each step; that way you can easily rollback any mistakes.
+
+Here’s the current process for migrating an individual module (i.e. security, bean validation, etc):
+
+1. Check out the release/8 branch and create a new branch from it for your work.
+2. Select the module to migrate. We consider each Part of the current https://eclipse-ee4j.github.io/jakartaee-tutorial/[Jakata EE Tutorial] to be a module (for example, Introduction, Web Tier, Bean Validation, etc).
+3. Create a new folder in the `src/main/antora/modules` folder with the name of the module you are migrating. For example, for the Security module, you would create a `security` folder.
+    * Inside of this folder, create a `pages` folder.
+4. Move all the folders for the module you are migrating into the new `pages` folder. For example, for the Security module, you would move all of the `src/main/asciidoc/security-*` folders into the `src/main/antora/modules/security/pages`. (Copy the entire folders, not just the `.adoc` files).
+
+    > NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
+
+5. Run the migration script from the root project folder. For example, for the Security module, you would run `jbang antora-conversion/AntoraConverter.java security`. (The first parameter is the folder relative to `src/main/antora/modules`).
+6. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
+7. Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
+
+```asciidoc
+include::security-intro/security-intro.adoc[]
+
+include::security-webtier/security-webtier.adoc[]
+
+include::security-jakartaee/security-jakartaee.adoc[]
+
+include::security-api/security-api.adoc[]
+
+include::security-advanced/security-advanced.adoc[]
+```
+
+After copying these into `nav.adoc`, replace "include::" with "* xref:" and add a header with the module name:
+
+```asciidoc
+.Security
+* xref:security-intro/security-intro.adoc[]
+
+* xref:security-webtier/security-webtier.adoc[]
+
+* xref:security-jakartaee/security-jakartaee.adoc[]
+
+* xref:security-api/security-api.adoc[]
+
+* xref:security-advanced/security-advanced.adoc[]
+```
+
+8. Add this module to the `src/main/antora/antora.yml`. For example, for the Security module, you would add this line to the end of  `src/main/antora/antora.yml` file:
+
+```yaml
+  - modules/security/nav.adoc
+```
+
