@@ -1,81 +1,79 @@
 = Jakarta Security
 
-Jakarta Security is the overarching security API in Jakarta EE. 
+Jakarta Security is the overarching security API in Jakarta EE.
 
-Due to historical and political reasons, a number of security features are distributed among several other APIs in Jakarta EE. Sometimes they overlap, sometimes such features are only accessible from these other APIs. In this chapter we will focus primarily on explaining Jakarta Security, and will mention when other APIs are needed to accomplish a certain task.
+Due to historical and political reasons, a number of security features are distributed among several other APIs in Jakarta EE. Sometimes they overlap, and sometimes such features are only accessible from these other APIs. In this chapter, we'll focus primarily on explaining Jakarta Security, but we'll mention when other APIs are needed to accomplish a certain task.
 
 == Overview
 
-Before we look at some practical examples, let's quickly go through some basics. 
+Before we look at some practical examples, let's quickly go through some basics.
 
 Some of the guiding principles in Jakarta Security are:
 
-1. It should work directly out of the box, without requiring any kind of vendor specific configuration or activation.
-2. It leverages Jakarta CDI as much as possible. Most artefacts are CDI beans and many features are done via CDI interceptors.
-3. The difference between framework provided artefacts and custom (user provided) artefacts is minimal or non-existent.
-4. It fully integrates with security features from other Jakarta EE APIs and proprietary (vendor specific) artefacts.
+1. It should work directly out of the box, without requiring vendor-specific configuration.
+2. It leverages Jakarta CDI as much as possible. Most artifacts are CDI beans, and many features are done via CDI interceptors.
+3. The difference between framework-provided artifacts and custom (user provided) artifacts is minimal or non-existent.
+4. It fully integrates with security features from other Jakarta EE APIs and proprietary (vendor-specific) artifacts.
 
-Jakarta Security makes an important distinction between several distinct artefacts that play an important role in the security process:
+Jakarta Security defines several distinct artifacts that play an important role in the security process:
 
-1. The Authentication Mechanism
-2. The Identity Store
-3. The Permission Store
+1. Authentication Mechanism
+2. Identity Store
+3. Permission Store
 
 The first two of these are used in the authentication process:
 
-An _authentication mechanism_ is somewhat like a controller in the well-known MVC pattern; it’s the entity that interacts with the caller (typically a human) via some kind of view to collect credentials and with the model (business logic) to validate these credentials. An authentication mechanism knows about the environment that this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are FORM authentication and BASIC authentication.
+An _authentication mechanism_ is somewhat like a controller in the well-known MVC pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate these credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
 
-An _identity store_ on its turn is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains user names, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g. it doesn't know about HTTP or headers etc.
+An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g., it doesn't know about HTTP or headers etc.
 Example of identity stores are services that contact SQL/JDBC databases, LDAP servers, files on the file-system, etc.
-
 
 image::authentication_mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
 
 The third one is used for the authorization process:
 
-A _permission store_ is another kind of model that stores permissions, typically either globally, or per role (role based permissions). This entity then performs a business / data operation where a query and an identity go in, and a yes/no answer goes out. For instance, a query such as "can access /foo/bar" along with the identity for user "John" with roles "bar" and "kaz".
-Examples of permissions stores are the Jakarta Authorization usage of the Policy class, or the internal data structure where a Servlet Container such as Tomcat or Jetty stores the security constraints an application defined.
+A _permission store_ is another kind of model that stores permissions, typically either globally, or per role (role-based permissions). This entity then performs a business / data operation where a query and an identity go in, and a yes/no answer goes out. For instance, a query such as "can access /foo/bar" along with the identity for user "John" with roles "bar" and "kaz".
+Examples of permission stores are the Jakarta Authorization usage of the Policy class, or the internal data structure where a Servlet Container such as Tomcat or Jetty stores the security constraints an application defined.
 
 
-== Provided authentication mechanisms and identity stores 
+== Provided authentication mechanisms and identity stores
 
-Jakarta Security provides a number of build-in authentication mechanisms and identity stores. We'll enumerate them here first, and will look at them in more detail below.
+Jakarta Security provides a number of built-in authentication mechanisms and identity stores. We'll enumerate them here first, and will look at them in more detail below.
 
 Authentication mechanisms:
 
-1. The Basic Authentication Mechanism
-2. The Form Authentication Mechanism
-3. The Custom Form Authentication Mechanism
-4. The Open ID Connect (OIDC) Authentication Mechanism
+. Basic
+. Form
+. Custom Form
+. Open ID Connect (OIDC)
 
 Identity stores:
 
-1. The Database Identity Store
-2. The LDAP Identity Store
+. Database
+. LDAP
 
-== Custom authentication mechanisms and identity stores 
+== Custom authentication mechanisms and identity stores
 
-When the provided authentication mechanisms and identity stores are not sufficient, we can easily define our own. The provided ones and our own ones use the exact same interfaces, and the system doesn't distinguish between calling our own one or one that was provided by the system.
+When the provided authentication mechanisms and identity stores aren't sufficient, we can easily define custom ones. Both provided and custom ones use the same interfaces, and the system doesn't distinguish between them.
 
 == Authentication mechanisms and identity stores from other APIs
 
-The Servlet specification defines the exact same Form and Basic authentication mechanisms. Authenticating with them will have the exact same result as authenticating with a Jakarta Security authentication mechanism. E.g. role checks will work exactly the same independent on which API was used to authenticate. 
+The Servlet specification defines the exact same Form and Basic authentication mechanisms. Authenticating with them will have the exact same result as authenticating with a Jakarta Security authentication mechanism. (Role checks will work the same independent on which API was used to authenticate.)
 
-A Servlet authentication mechanism however will not necessarily consult a Jakarta Security identity store. This is server dependent. The identity store that is called is server dependent as well. Calling this server dependent identity store is possible from Jakarta Security, but as an advanced feature.
+A Servlet authentication mechanism, however, will not necessarily consult a Jakarta Security identity store. This is server dependent. The identity store that is called is server dependent as well. Calling this server-dependent identity store is possible from Jakarta Security, but as an advanced feature.
 
-Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST and Jakarta Servlet. These all return the same outcome, independent from whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism.
+Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST and Jakarta Servlet. These all return the same outcome, independent of whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism.
 
+== Securing an endpoint with Basic authentication
 
-== Securing an endpoint with Basic Authentication
+In the following example we'll be securing a REST endpoint using Basic authentication.
 
-In the following example we'll be securing a REST endpoint using Basic Authentication.
+You'll learn how to:
 
-You'll learn the following things;
-
-1. How to define security constraints
-2. How to set a provided authentication mechanisms 
-3. How to define (and implicitly set) a custom identity store
-4. How to use the Jakarta Security SecurityContext
+. Define security constraints
+. Set a provided authentication mechanisms
+. Define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
 
 === Write the application
 
@@ -101,9 +99,9 @@ public class Resource {
 }
 ----
 
-This resource uses the injected Jakarta EE SecurityContext to obtain access to the current authenticated caller, which is represented by a `Principal` instance. For simplicity sake the code here does not check whether the caller principal is `null`. If the resource is also available to non-authenticated callers, this is something we have to do. The `getCallerPrincipal()` call would return `null` then.
+This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance. For simplicity, the code here doesn't check whether the caller principal is `null`. If the resource is also available to non-authenticated callers, this is something we have to do. The `getCallerPrincipal()` call would return `null` then.
 
-Also note that there is a Jakarta REST specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the point of view of Jakarta EE that is a deprecated type and replaced by the Jakarta Security version.
+Also note that there is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a deprecated type and has been replaced by the Jakarta Security version.
 
 ==== Declare the security constraints
 
@@ -132,7 +130,7 @@ Next we'll define the security constraints in `web.xml`, which are used to tell 
 
 This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
 
-Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of the Permission Store that we explained above. Knowledge about this transformation is only needed for very advanced use cases.
+Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
 
 The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE however this remains a vendor specific extension.
 
@@ -153,7 +151,7 @@ public class ApplicationConfig extends Application {
 
 To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
 
-The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass because it also declares the path for REST resources.
 
 ==== Define the identity store
 
@@ -175,14 +173,14 @@ public class TestIdentityStore implements IdentityStore {
 }
 ----
 
-This identity store only "contains" the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security does not define a simple identity store out of the box, because there are questions whether that would promote security best practices.
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions whether that would promote security best practices.
 
 Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
 
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
 
 Download or clone this repo, then cd into the `focused` folder and execute:
 
@@ -236,23 +234,23 @@ Using Arquillian, the test starts the default server (GlassFish 7), and deploys 
 
 The `DefaultCredentialsProvider` used here makes sure that the headers for Basic authentication are added to the request. The Basic authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
-Alternatively, we can manually deploy the war file found in `security/restBasicAuthCustomStore/target/restBasicAuthCustomStore.war` to a server of our choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
+If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restBasicAuthCustomStore/target/restBasicAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
 
-== Securing an endpoint with Basic Authentication and a Database identity store
+== Securing an endpoint with Basic authentication and a Database identity store
 
-In the following example we'll be securing a REST endpoint using Basic Authentication and the database identity store that is provided by Jakarta Security.
+In the following example we'll be securing a REST endpoint using Basic authentication and the database identity store that is provided by Jakarta Security.
 
-You'll learn the following things;
+You'll learn how to:
 
-1. How to define security constraints
-2. How to set a provided authentication mechanisms 
-3. How to set a provided identity store that uses a database
-4. How to populate and configure that identity store 
-5. How to use the Jakarta Security SecurityContext
+1. Define security constraints
+2. Set a provided authentication mechanisms
+3. Set a provided identity store that uses a database
+4. Populate and configure that identity store
+5. Use the Jakarta Security `SecurityContext`
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic Authentication>> example.
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
 
 ==== Declare the authentication mechanism and identity store
 
@@ -406,25 +404,25 @@ john : true
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.307 s - in jakartaee.examples.focused.security.restbasicauthdbstore.RestBasicAuthDBStoreIT
 ```
 
-The test itself is basically the same as that for the <<Securing an endpoint with Basic Authentication>> example.
+The test itself is basically the same as that for the <<Securing an endpoint with Basic authentication>> example.
 
 
-== Securing an endpoint with Basic Authentication and multiple identity stores
+== Securing an endpoint with Basic authentication and multiple identity stores
 
-In the following example we'll be securing a REST endpoint using Basic Authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store.
+In the following example we'll be securing a REST endpoint using Basic authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store.
 
 You'll learn the following things;
 
 1. How to define security constraints
-2. How to set a provided authentication mechanisms 
+2. How to set a provided authentication mechanisms
 3. How to set a provided identity store that uses a database
-4. How to populate and configure that identity store 
+4. How to populate and configure that identity store
 5. How to set an additional identity store
 6. How to use the Jakarta Security SecurityContext
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic Authentication>> example.
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
 
 ==== Declare the authentication mechanism and identity store
 
@@ -474,7 +472,7 @@ In the two stores above however only one store knows about "pete" and that's the
 
 ==== Populating the identity store
 
-In order to use the identity store we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic Authentication and a Database identity store>>.
+In order to use the identity store we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a Database identity store>>.
 
 ==== Test the application
 
@@ -551,7 +549,7 @@ public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
 }
 ----
 
-We do two tests here; in one test we try to authenticate as "john", in the other test as "pete". As we have seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognising a username by any of them will not fail the overall validation.
+We do two tests here; in one test we try to authenticate as "john", in the other test as "pete". As we've seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognising a username by any of them will not fail the overall validation.
 
 
 == Securing an endpoint with Form Authentication
@@ -561,7 +559,7 @@ In the following example we'll be securing a REST endpoint using Form Authentica
 You'll learn the following things;
 
 1. How to define security constraints
-2. How to set a provided authentication mechanisms 
+2. How to set a provided authentication mechanisms
 3. How to define (and implicitly set) a custom identity store
 4. How to use the Jakarta Security SecurityContext
 
@@ -589,7 +587,7 @@ public class Resource {
 }
 ----
 
-This resource uses the injected Jakarta EE SecurityContext to obtain access to the current authenticated caller, which is represented by a `Principal` instance. For simplicity sake the code here does not check whether the caller principal is `null`. If the resource is also available to non-authenticated callers, this is something we have to do. The `getCallerPrincipal()` call would return `null` then.
+This resource uses the injected Jakarta EE SecurityContext to obtain access to the current authenticated caller, which is represented by a `Principal` instance. For simplicity sake the code here doesn't check whether the caller principal is `null`. If the resource is also available to non-authenticated callers, this is something we have to do. The `getCallerPrincipal()` call would return `null` then.
 
 Also note that there is a Jakarta REST specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the point of view of Jakarta EE that is a deprecated type and replaced by the Jakarta Security version.
 
@@ -622,7 +620,7 @@ This XML essentially says that to access any URL that starts with "/rest" requir
 
 Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of the Permission Store that we explained above. Knowledge about this transformation is only needed for very advanced use cases.
 
-The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE however this remains a vendor specific extension.
+The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension.
 
 There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
 
@@ -683,7 +681,7 @@ In order to use this authentication mechanism we have to specify two paths to re
 </html>
 ----
 
- 
+
 
 ==== Define the identity store
 
@@ -705,7 +703,7 @@ public class CustomIdentityStore implements IdentityStore {
 }
 -----
 
-This identity store only "contains" the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security does not define a simple identity store out of the box, because there are questions whether that would promote security best practices.
+This identity store only "contains" the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions whether that would promote security best practices.
 
 Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
 
@@ -768,6 +766,6 @@ public class RestFormAuthCustomStoreIT extends ITBase {
 
 Using Arquillian, the test starts the default server (GlassFish 7), and deploys the actual output of the build process (a .war file) to it. The test runs in the integration test phase (and not the unit test phase) to make sure this output is indeed available. The test then does a request to the remote GlassFish server using a provided html unit web client. Note that anything that can do an HTTP request could have been used here as well.
 
-The test first does a request here to the protected resource, and as a response the server returns the HTML form we defined above. Using the HTMLUnit API it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the submit button. The authentication mechanism is then able to detect this special postback (it's listening to the special virtual URL the postback is to), and like the basic authentication mechanism got the username and password from the headers, the form authentication mechanism gets them from the POST data.
+The test first does a request here to the protected resource, and as a response the server returns the HTML form we defined above. Using the HTMLUnit API it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The authentication mechanism is then able to detect this special postback (it's listening to the special virtual URL the postback is to), and like the basic authentication mechanism got the username and password from the headers, the form authentication mechanism gets them from the POST data.
 
 
