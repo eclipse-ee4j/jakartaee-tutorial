@@ -10,16 +10,16 @@ Before we look at some practical examples, let's quickly go through some basics.
 
 Some of the guiding principles in Jakarta Security are:
 
-1. It should work directly out of the box, without requiring vendor-specific configuration.
-2. It leverages Jakarta CDI as much as possible. Most artifacts are CDI beans, and many features are done via CDI interceptors.
-3. The difference between framework-provided artifacts and custom (user provided) artifacts is minimal or non-existent.
-4. It fully integrates with security features from other Jakarta EE APIs and proprietary (vendor-specific) artifacts.
+. It should work directly out of the box, without requiring vendor-specific configuration.
+. It leverages Jakarta CDI as much as possible. Most artifacts are CDI beans, and many features are done via CDI interceptors.
+. The difference between framework-provided artifacts and custom (user provided) artifacts is minimal or non-existent.
+. It fully integrates with security features from other Jakarta EE APIs and proprietary (vendor-specific) artifacts.
 
 Jakarta Security defines several distinct artifacts that play an important role in the security process:
 
-1. Authentication Mechanism
-2. Identity Store
-3. Permission Store
+. Authentication Mechanism
+. Identity Store
+. Permission Store
 
 The first two of these are used in the authentication process:
 
@@ -285,8 +285,8 @@ The annotations can be put on any bean, but in a REST application it fits partic
 
 You can use the provided `DatabaseIdentityStoreDefinition` with any authentication mechanism that validates username/password credentials. It requires at least two SQL queries:
 
-1. A query that returns a password for the username part of credentials. The returned password is compared with the password part of those credentials. If they match (of more typically, their hashes match) the credential is considered valid.
-2. A query that returns a number of roles given that same username part of the credentials
+. A query that returns a password for the username part of credentials. The returned password is compared with the password part of those credentials. If they match (of more typically, their hashes match) the credential is considered valid.
+. A query that returns a number of roles given that same username part of the credentials
 
 Although not required, it's a good practice to provide some parameters for the hash algorithm. Passwords should never be stored in plain-text in a database.
 
