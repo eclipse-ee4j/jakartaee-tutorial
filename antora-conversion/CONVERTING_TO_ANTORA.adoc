@@ -27,16 +27,21 @@ Here’s the current process for migrating an individual module (i.e. security, 
 
 . Run the migration script from the root project folder. For example, for the Security module, you would run:
 
-```shell
+[source,shell]
+----
 jbang antora-conversion/AntoraConverter.java src/main/antora/modules/security
-```
+----
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
+
+> NOTE: References to chapters that haven't yet been converted will not work until they have been converted.
+
 . Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
 
 . Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
 
-```asciidoc
+[source,asciidoc]
+----
 include::security-intro/security-intro.adoc[]
 
 include::security-webtier/security-webtier.adoc[]
@@ -46,7 +51,7 @@ include::security-jakartaee/security-jakartaee.adoc[]
 include::security-api/security-api.adoc[]
 
 include::security-advanced/security-advanced.adoc[]
-```
+----
 
 After copying these into `nav.adoc`, replace "include::" with "* xref:" and add a header with the module name:
 
@@ -85,7 +90,12 @@ jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
 
+> NOTE: References to chapters that haven't yet been converted will not work until they have been converted.
+
 . If there are any changes the script didn't make, either make them manually or update the script to handle them.
+
+> TIP: If you're using the Antora IDE plugin, it helps to review its errors and updating before committing. With IntellJ,
+these are run automatically before pushing.
 
 . Commit your changes, push, and raise a PR to merge into the  `release/9.1` branch.
 
