@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,12 +55,10 @@ class AntoraConverter {
         return result.toString();
     }
 
-    public static String replaceInlineReferences(File file, String fileContent) {
+    public static String replaceReferences(File file, String fileContent, String start, String end) {
         StringBuilder result = new StringBuilder();
         int index = 0;
         int startIndex, endIndex;
-        final String start = "<<";
-        final String end = ">>";
 
         while ((startIndex = fileContent.indexOf(start, index)) != -1 && (endIndex = fileContent.indexOf(end, startIndex + start.length())) != -1) {
             result.append(fileContent, index, startIndex);
@@ -81,11 +78,11 @@ class AntoraConverter {
                     updatedReference = start + updatedReferenceBody +  end;
                 } else {
 
-                    updatedReference = String.format("xref:%s/%s#%s[%s]", pageLocation.getParentPage(),
+                    updatedReference = String.format("xref:%s/%s#%s[%s]", pageLocation.path,
                             pageLocation.getParentPage(), updatedReferenceBody, pageLocation.linkText());
                 }
             }
-            System.out.printf(" => Replacing inline reference \"%s\" with \"%s\"%n", rawReference, updatedReference);
+            System.out.printf(" => Replacing reference \"%s\" with \"%s\"%n", rawReference, updatedReference);
             result.append(updatedReference);
             index = endIndex + end.length();
         }
@@ -93,7 +90,7 @@ class AntoraConverter {
         return result.toString();
     }
 
-    public static void processInbetween(String str, Integer iterations, String start, String end, Consumer<String> updatedContentConsumer) {
+    public static void processBetween(String str, Integer iterations, String start, String end, Consumer<String> updatedContentConsumer) {
         int index = 0;
         int count = 0;
         int startIndex, endIndex;
@@ -150,17 +147,17 @@ class AntoraConverter {
 
     private static void processSectionHeadings(File file, String content) {
         // Start with the first heading (level 1 and 2)
-        processInbetween(content, 1, "= ", System.lineSeparator(), processSectionAnchor(file));
-        processInbetween(content, 1, "== ", System.lineSeparator(), processSectionAnchor(file));
+        processBetween(content, 1, "= ", System.lineSeparator(), processSectionAnchor(file));
+        processBetween(content, 1, "== ", System.lineSeparator(), processSectionAnchor(file));
         // Then process all lower section headings
         for (int i = 3; i < 7; i++) {
             final var prefix = System.lineSeparator() + "=".repeat(i) + " ";
-            processInbetween(content, null, prefix, System.lineSeparator(), processSectionAnchor(file));
+            processBetween(content, null, prefix, System.lineSeparator(), processSectionAnchor(file));
         }
     }
 
     private static void processAnchors(File file, String content) {
-        processInbetween(content, null, "[[", "]]", (anchor) -> {
+        processBetween(content, null, "[[", "]]", (anchor) -> {
             final var pageLocation = new PageLocation(file.getParentFile().getName(), file.getName(), null);
             anchorMap.put("#" + anchor, pageLocation);
             System.out.printf("  => Stored anchor \"%s\" for %s%n", anchor, pageLocation);
@@ -184,14 +181,32 @@ class AntoraConverter {
     private static void process(ArrayList<File> files, boolean dryRun) throws IOException {
         System.out.println("\uD83E\uDD16 Updating files");
         for (File file : files) {
+            if (file.getName().equals("nav.adoc")) {
+                continue;
+            }
             System.out.println("\uD83D\uDD0E Evaluating file " + file.getAbsolutePath());
             var content = new String(Files.readAllBytes(file.toPath()));
             int changeCount = 0;
 
+            if (content.contains("xrefstyle=full")) {
+                System.out.println("=> Removing xrefstyle=full (it is now a global attribute)");
+                content = content.replace("xrefstyle=full", "");
+                if (!dryRun) {
+                    Files.write(file.toPath(), content.getBytes());
+                }
+                changeCount++;
+            }
+            if (content.contains(("xref:"))) {
+                System.out.println("=> Updating xrefs to reference other files if necessary");
+                content = replaceReferences(file, content, "xref:", "[]");
+                if (!dryRun) {
+                    Files.write(file.toPath(), content.getBytes());
+                }
+                changeCount++;
+            }
             if (content.contains(("<<"))) {
-                System.out.println("=> Updating in-page anchor links");
-//                content = replaceBetween(content, "<<", ">>", "_", "-", "_", null);
-                content = replaceInlineReferences(file, content);
+                System.out.println("=> Updating in-page references");
+                content = replaceReferences(file, content, "<<", ">>");
                 if (!dryRun) {
                     Files.write(file.toPath(), content.getBytes());
                 }
@@ -206,7 +221,7 @@ class AntoraConverter {
                 changeCount++;
             }
             if (content.contains(("link:#"))) {
-                System.out.println("=> Updating external anchor references");
+                System.out.println("=> Changing links with anchors to xrefs");
                 content = replaceBetween(content, "link:", "[", "_", "-", "_", (originalLink, newLink) -> {
                     var pageLocation = anchorMap.get(originalLink);
                     if (pageLocation == null) {
@@ -217,7 +232,6 @@ class AntoraConverter {
                                 originalLink, newLink);
                         return newLink;
                     }
-
                     if (isInlineReference(file, newLink, pageLocation)) {
                         return newLink;
                     }
@@ -231,16 +245,8 @@ class AntoraConverter {
                 changeCount++;
             }
             if (content.contains("link:")) {
-                System.out.println("=> Converting links to xrefs");
+                System.out.println("=> Converting links without anchors to xrefs");
                 content = content.replace("link:", "xref:");
-                if (!dryRun) {
-                    Files.write(file.toPath(), content.getBytes());
-                }
-                changeCount++;
-            }
-            if (content.contains("xrefstyle=full")) {
-                System.out.println("=> Removing xrefstyle=full (it is now a global attribute)");
-                content = content.replace("xrefstyle=full", "");
                 if (!dryRun) {
                     Files.write(file.toPath(), content.getBytes());
                 }
@@ -275,6 +281,6 @@ class AntoraConverter {
      * so it's an internal reference.
      **/
     private static boolean isInlineReference(File file, String newLink, PageLocation pageLocation) {
-        return file.getName().contains(pageLocation.getParentPage().split(".adoc")[0]);
+        return file.getName().contains(pageLocation.path);
     }
 }
