@@ -25,13 +25,13 @@ The authentication mechanism cannot be expressed using annotations, so if you us
 The following subelements can be part of a `security-constraint`.
 
 * Web resource collection (`web-resource-collection`): A list of URL patterns (the part of a URL after the host name and port you want to constrain) and HTTP operations (the methods within the files that match the URL pattern you want to constrain) that describe a set of resources to be protected.
-Web resource collections are discussed in <<specifying-a-web-resource-collection>>.
+Web resource collections are discussed in <<_specifying_a_web_resource_collection>>.
 
 * Authorization constraint (`auth-constraint`): Specifies whether authentication is to be used and names the roles authorized to perform the constrained requests.
-For more information about authorization constraints, see <<specifying-an-authorization-constraint>>.
+For more information about authorization constraints, see <<_specifying_an_authorization_constraint>>.
 
 * User data constraint (`user-data-constraint`): Specifies how data is protected when transported between a client and a server.
-User data constraints are discussed in <<specifying-a-secure-connection>>.
+User data constraints are discussed in <<_specifying_a_secure_connection>>.
 
 ==== Specifying a Web Resource Collection
 
@@ -75,7 +75,7 @@ Each role name specified here must either correspond to the role name of one of 
 Role names are case sensitive.
 The roles defined for the application must be mapped to users and groups defined on the server, except when default principal-to-role mapping is used.
 
-For more information about security roles, see <<declaring-security-roles>>.
+For more information about security roles, see <<_declaring_security_roles>>.
 For information on mapping security roles, see <<mapping-roles-to-users-and-groups-2>>.
 
 For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint` annotations accept a `rolesAllowed` element that specifies the authorized roles.
@@ -101,7 +101,7 @@ In practice, Jakarta EE servers treat the `CONFIDENTIAL` and `INTEGRAL` transpor
 The user data constraint is handy to use in conjunction with basic and form-based user authentication.
 When the login authentication method is set to `BASIC` or `FORM`, passwords are not protected, meaning that passwords sent between a client and a server on an unprotected session can be viewed and intercepted by third parties.
 Using a user data constraint with the user authentication mechanism can alleviate this concern.
-Configuring a user authentication mechanism is described in <<specifying-an-authentication-mechanism-in-the-deployment-descriptor>>.
+Configuring a user authentication mechanism is described in <<_specifying_an_authentication_mechanism_in_the_deployment_descriptor>>.
 
 To guarantee that data is transported over a secure connection, ensure that SSL support is configured for your server.
 SSL support is already configured for GlassFish Server.
@@ -157,7 +157,7 @@ An example of a deployment descriptor that would demonstrate this functionality 
 This section describes built-in authentication mechanisms defined by the Servlet specification.
 
 [NOTE]
-An alternative way to perform user authentication, including BASIC and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by Jakarta Security, and documented in <<using-jakarta-security>>.
+An alternative way to perform user authentication, including BASIC and FORM authentication, is to use the `HttpAuthenticationMechanism`, specified by Jakarta Security, and documented in xref:security-api/security-api.adoc#_using_jakarta_security[Using Jakarta Security].
 
 A user authentication mechanism specifies:
 
@@ -171,7 +171,7 @@ When an authentication mechanism is specified, the user must be authenticated be
 There can be multiple security constraints applying to multiple resources, but the same authentication method will apply to all constrained resources in an application.
 
 Before you can authenticate a user, you must have a database of user names, passwords, and roles configured on your web or application server.
-For information on setting up the user database, see <<managing-users-and-groups-in-glassfish-server>>.
+For information on setting up the user database, see xref:security-intro/security-intro.adoc#_managing_users_and_groups_in_glassfish_server[Managing Users and Groups in GlassFish Server].
 
 The Jakarta EE platform supports the following authentication mechanisms:
 
@@ -186,7 +186,7 @@ The Jakarta EE platform supports the following authentication mechanisms:
 * Mutual authentication
 
 Basic, form-based, and digest authentication are discussed in this section.
-Client and mutual authentication are discussed in xref:jakarta-ee-security-advanced-topics[xrefstyle=full].
+Client and mutual authentication are discussed in xref:security-advanced/security-advanced.adoc#_jakarta_ee_security_advanced_topics[Jakarta EE Security: Advanced Topics].
 
 HTTP basic authentication and form-based authentication are not very secure authentication mechanisms.
 Basic authentication sends user names and passwords over the Internet as Base64-encoded text.
@@ -196,7 +196,7 @@ Therefore, these forms of authentication leave user data exposed and vulnerable.
 If someone can intercept the transmission, the user name and password information can easily be decoded.
 
 However, when a secure transport mechanism, such as SSL, or security at the network level, such as the Internet Protocol Security (IPsec) protocol or virtual private network (VPN) strategies, is used in conjunction with basic or form-based authentication, some of these concerns can be alleviated.
-To specify a secure transport mechanism, use the elements described in <<specifying-a-secure-connection>>.
+To specify a secure transport mechanism, use the elements described in <<_specifying_a_secure_connection>>.
 
 ==== HTTP Basic Authentication
 
@@ -214,11 +214,11 @@ When basic authentication is used, the following actions occur.
 
 . The server authenticates the user in the specified realm and, if successful, returns the requested resource.
 
-<<http-basic-authentication-2>> shows what happens when you specify HTTP basic authentication.
+<<_http_basic_authentication_2>> shows what happens when you specify HTTP basic authentication.
 
-[[http-basic-authentication-2]]
+[[_http_basic_authentication_2]]
 .HTTP Basic Authentication
-image::jakartaeett_dt_045.svg["Diagram of four steps in HTTP basic authentication between client and server"]
+image::common:jakartaeett_dt_045.svg["Diagram of four steps in HTTP basic authentication between client and server"]
 
 ==== Form-Based Authentication
 
@@ -238,13 +238,13 @@ If the user is authorized, the server redirects the client to the resource by us
 
 * If authentication fails, the client is forwarded or redirected to an error page.
 
-<<form-based-authentication-2>> shows what happens when you specify form-based authentication.
+<<_form_based_authentication_2>> shows what happens when you specify form-based authentication.
 
-[[form-based-authentication-2]]
+[[_form_based_authentication_2]]
 .Form-Based Authentication
-image::jakartaeett_dt_046.svg["Diagram of four steps in form-based authentication between client and server"]
+image::common:jakartaeett_dt_046.svg["Diagram of four steps in form-based authentication between client and server"]
 
-The section <<the-hello1-formauth-example-form-based-authentication-with-a-jakarta-faces-application>> is an example application that uses form-based authentication.
+The section <<_the_hello1_formauth_example_form_based_authentication_with_a_jakarta_faces_application>> is an example application that uses form-based authentication.
 
 When you create a form-based login, be sure to maintain sessions using cookies or SSL session information.
 
@@ -279,7 +279,7 @@ The element content must be either `NONE`, `BASIC`, `DIGEST`, `FORM`, or `CLIENT
 * The `form-login-config` subelement specifies the login and error pages that should be used when form-based login is specified.
 
 [NOTE]
-Another way to specify form-based authentication is to use the `authenticate`, `login`, and `logout` methods of `HttpServletRequest`, as discussed in <<authenticating-users-programmatically>>.
+Another way to specify form-based authentication is to use the `authenticate`, `login`, and `logout` methods of `HttpServletRequest`, as discussed in <<_authenticating_users_programmatically>>.
 
 When you try to access a web resource that is constrained by a `security-constraint` element, the web container activates the authentication mechanism that has been configured for that resource.
 The authentication mechanism specifies how the user will be prompted to log in.
@@ -301,7 +301,7 @@ The following example shows how to declare form-based authentication in your dep
 ----
 
 The login and error page locations are specified relative to the location of the deployment descriptor.
-Examples of login and error pages are shown in <<creating-the-login-form-and-the-error-page>>.
+Examples of login and error pages are shown in <<_creating_the_login_form_and_the_error_page>>.
 
 The following example shows how to declare digest authentication in your deployment descriptor:
 

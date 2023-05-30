@@ -4,11 +4,11 @@ The Jakarta EE authentication requirements for application clients are the same 
 No authentication is necessary when accessing unprotected web resources.
 
 When accessing protected web resources, the usual varieties of authentication can be used: HTTP basic authentication, HTTP login-form authentication, or SSL client authentication.
-<<specifying-an-authentication-mechanism-in-the-deployment-descriptor>> describes how to specify HTTP basic authentication and HTTP login-form authentication.
-<<client-authentication>> describes how to specify SSL client authentication.
+xref:security-webtier/security-webtier.adoc#_specifying_an_authentication_mechanism_in_the_deployment_descriptor[Specifying an Authentication Mechanism in the Deployment Descriptor] describes how to specify HTTP basic authentication and HTTP login-form authentication.
+<<_client_authentication>> describes how to specify SSL client authentication.
 
 Authentication is required when accessing protected enterprise beans.
-The authentication mechanisms for enterprise beans are discussed in <<securing-enterprise-beans>>.
+The authentication mechanisms for enterprise beans are discussed in xref:security-jakartaee/security-jakartaee.adoc#_securing_enterprise_beans[Securing Enterprise Beans].
 
 An application client makes use of an authentication service provided by the application client container for authenticating its users.
 The container's service can be integrated with the native platform's authentication system so that a single sign-on capability is used.
@@ -32,7 +32,7 @@ For example, the implementation of a callback handler for a GUI application migh
 The login module passes an array of appropriate callbacks to the callback handler's `handle` method, such as a `NameCallback` for the user name and a `PasswordCallback` for the password; the callback handler performs the requested user interaction and sets appropriate values in the callbacks.
 For example, to process a `NameCallback`, the `CallbackHandler` might prompt for a name, retrieve the value from the user, and call the `setName` method of the `NameCallback` to store the name.
 
-For more information on using JAAS for authentication in login modules, refer to the documentation listed in <<further-information-about-advanced-security-topics>>.
+For more information on using JAAS for authentication in login modules, refer to the documentation listed in <<_further_information_about_advanced_security_topics>>.
 
 === Using Programmatic Login
 

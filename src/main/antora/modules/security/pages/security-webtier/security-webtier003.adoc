@@ -145,7 +145,7 @@ If no user has been authenticated, this method returns `false`.
 This method expects a `String` user `role-name` parameter.
 +
 The `security-role-ref` element should be declared in the deployment descriptor with a `role-name` subelement containing the role name to be passed to the method.
-Using security role references is discussed in <<declaring-and-linking-role-references>>.
+Using security role references is discussed in <<_declaring_and_linking_role_references>>.
 
 * `getUserPrincipal` determines the principal name of the current user and returns a `java.security.Principal` object.
 If no user has been authenticated, this method returns `null`.

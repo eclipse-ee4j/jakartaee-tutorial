@@ -6,18 +6,18 @@ You can use the built-in implementations of these APIs, or define custom impleme
 Jakarta Security contains the following packages:
 
 * The `jakarta.security.enterprise` package is the main Jakarta Security package and contains classes and interfaces that span authentication, authorization, and identity concerns.
-<<main-classes-and-interfaces-in-enterprise>> lists the main class and interfaces in this package.
+<<_main_classes_and_interfaces_in_enterprise>> lists the main class and interfaces in this package.
 
 * The `jakarta.security.enterprise.authentication.mechanism.http` package contains classes and interfaces associated with HTTP-based authentication mechanisms that can interact with a caller or third-parties as part of an authentication protocol.
-<<main-classes-and-interfaces-in-authentication>> lists the main classes and interfaces in this package.
+<<_main_classes_and_interfaces_in_authentication>> lists the main classes and interfaces in this package.
 
 * The `jakarta.security.enterprise.credential` package contains classes and interfaces for representing user credentials.
-<<main-classes-and-interfaces-in-credential>> lists the main classes and interfaces in this package.
+<<_main_classes_and_interfaces_in_credential>> lists the main classes and interfaces in this package.
 
 * The `jakarta.security.enterprise.identitystore` package contains classes and interfaces associated with identity stores that validate a caller's credentials and lookup caller groups.
-<<main-classes-and-interfaces-in-identitystore>> lists the main classes and interfaces in this package.
+<<_main_classes_and_interfaces_in_identitystore>> lists the main classes and interfaces in this package.
 
-[[main-classes-and-interfaces-in-enterprise]]
+[[_main_classes_and_interfaces_in_enterprise]]
 .Main Classes and Interfaces in `jakarta.security.enterprise`
 [width="99%",cols="25%,75%"]
 |===
@@ -32,7 +32,7 @@ Jakarta Security contains the following packages:
 |`AuthenticationException` |Indicates that a problem occurred during the authentication process.
 |===
 
-[[main-classes-and-interfaces-in-authentication]]
+[[_main_classes_and_interfaces_in_authentication]]
 .Main Classes and Interfaces in `jakarta.security.enterprise.authentication.mechanism.http`
 [width="99%",cols="25%,75%"]
 |===
@@ -51,7 +51,7 @@ Developers can provide their own implementation of this interface, or use one of
 [NOTE]
 The `jakarta.security.enterprise.authentication.mechanism.http` package also includes a number of annotation classes that are used to configure/enable the built-in authentication mechanisms or to modify the behavior of an authentication mechanism.
 
-[[main-classes-and-interfaces-in-credential]]
+[[_main_classes_and_interfaces_in_credential]]
 .Main Classes and Interfaces in `jakarta.security.enterprise.credential`
 [width="99%",cols="25%,75%"]
 |===
@@ -73,7 +73,7 @@ All other classes in this package are implementations of the Credential interfac
 |`UsernamePasswordCredential` |Class that represents the credentials typically used by standard caller name/password authentication.
 |===
 
-[[main-classes-and-interfaces-in-identitystore]]
+[[_main_classes_and_interfaces_in_identitystore]]
 .Main Classes and Interfaces in `jakarta.security.enterprise.identitystore`
 [width="99%",cols="25%,75%"]
 |===

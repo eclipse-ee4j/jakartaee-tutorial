@@ -1,6 +1,6 @@
 == Establishing a Secure Connection Using SSL
 
-Secure Sockets Layer (SSL) technology is security that is implemented at the transport layer (see <<transport-layer-security>> for more information about transport-layer security).
+Secure Sockets Layer (SSL) technology is security that is implemented at the transport layer (see <<_transport_layer_security>> for more information about transport-layer security).
 SSL allows web browsers and web servers to communicate over a secure connection.
 In this secure connection, the data is encrypted before being sent and then is decrypted upon receipt and before processing.
 Both the browser and the server encrypt all traffic before sending any data.

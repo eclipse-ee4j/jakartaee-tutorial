@@ -12,7 +12,7 @@ You can think of a public key certificate as the digital equivalent of a passpor
 The certificate is issued by a trusted organization, a certificate authority (CA), and provides identification for the bearer.
 
 Before using client authentication, make sure that the client has a valid public key certificate.
-For more information on creating and using public key certificates, read <<working-with-digital-certificates>>.
+For more information on creating and using public key certificates, read <<_working_with_digital_certificates>>.
 
 The following example shows how to declare client authentication in your deployment descriptor:
 
@@ -25,16 +25,16 @@ The following example shows how to declare client authentication in your deploym
 
 Jakarta Security provides an alternative means to configure client authentication using the `HttpAuthenticationMechanism` interface.
 This interface defines an SPI for writing authentication mechanisms that can be provided with an application and deployed using CDI.
-See <<overview-of-the-http-authentication-mechanism-interface>>.
+See xref:security-api/security-api.adoc#_overview_of_the_http_authentication_mechanism_interface[Overview of the HTTP Authentication Mechanism Interface].
 
 === Mutual Authentication
 
 With mutual authentication, the server and the client authenticate each other.
 Mutual authentication is of two types:
 
-* Certificate-based (see <<certificate-based-mutual-authentication>>)
+* Certificate-based (see <<_certificate_based_mutual_authentication>>)
 
-* User name/password-based (see <<username-password-based-mutual-authentication>>)
+* User name/password-based (see <<_username_password_based_mutual_authentication>>)
 
 When using certificate-based mutual authentication, the following actions occur.
 
@@ -50,11 +50,11 @@ When using certificate-based mutual authentication, the following actions occur.
 
 . If successful, the server grants access to the protected resource requested by the client.
 
-<<certificate-based-mutual-authentication>> shows what occurs during certificate-based mutual authentication.
+<<_certificate_based_mutual_authentication>> shows what occurs during certificate-based mutual authentication.
 
-[[certificate-based-mutual-authentication]]
+[[_certificate_based_mutual_authentication]]
 .Certificate-Based Mutual Authentication
-image::jakartaeett_dt_048.svg["Diagram of six steps in mutual authentication with certificates"]
+image::common:jakartaeett_dt_048.svg["Diagram of six steps in mutual authentication with certificates"]
 
 In user name/password-based mutual authentication, the following actions occur.
 
@@ -70,11 +70,11 @@ In user name/password-based mutual authentication, the following actions occur.
 
 . If the verification is successful, the server grants access to the protected resource requested by the client.
 
-<<username-password-based-mutual-authentication>> shows what occurs during user name/password-based mutual authentication.
+<<_username_password_based_mutual_authentication>> shows what occurs during user name/password-based mutual authentication.
 
-[[username-password-based-mutual-authentication]]
+[[_username_password_based_mutual_authentication]]
 .User Name/Password-Based Mutual Authentication
-image::jakartaeett_dt_049.svg["Diagram of five steps in mutual authentication with user name and password"]
+image::common:jakartaeett_dt_049.svg["Diagram of five steps in mutual authentication with user name and password"]
 
 ==== Enabling Mutual Authentication over SSL
 

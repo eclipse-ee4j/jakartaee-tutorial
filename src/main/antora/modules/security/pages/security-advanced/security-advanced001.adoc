@@ -29,13 +29,13 @@ If the two values match, the client can trust that the signature is authentic, b
 
 Digital certificates are used with HTTPS to authenticate web clients.
 The HTTPS service of most web servers will not run unless a digital certificate has been installed.
-Use the procedure outlined in the next section, <<creating-a-server-certificate>>, to set up a digital certificate that can be used by your application or web server to enable SSL.
+Use the procedure outlined in the next section, <<_creating_a_server_certificate>>, to set up a digital certificate that can be used by your application or web server to enable SSL.
 
 One tool that can be used to set up a digital certificate is `keytool`, a key and certificate management utility that ships with the JDK.
 This tool enables users to administer their own public/private key pairs and associated certificates for use in self-authentication, whereby the user authenticates himself or herself to other users or services, or data integrity and authentication services, using digital signatures.
 The tool also allows users to cache the public keys, in the form of certificates, of their communicating peers.
 
-For a better understanding of `keytool` and public-key cryptography, see <<further-information-about-advanced-security-topics>> for a link to the `keytool` documentation.
+For a better understanding of `keytool` and public-key cryptography, see <<_further_information_about_advanced_security_topics>> for a link to the `keytool` documentation.
 
 === Creating a Server Certificate
 
@@ -142,11 +142,11 @@ Certificate was added to keystore
 === Adding Users to the Certificate Realm
 
 In the `certificate` realm, user identity is set up in the GlassFish Server security context and populated with user data obtained from cryptographically verified client certificates.
-For step-by-step instructions for creating this type of certificate, see <<working-with-digital-certificates>>.
+For step-by-step instructions for creating this type of certificate, see <<_working_with_digital_certificates>>.
 
 === Using a Different Server Certificate with GlassFish Server
 
-Follow the steps in <<creating-a-server-certificate>> to create your own server certificate, have it signed by a CA, and import the certificate into `keystore.jks`.
+Follow the steps in <<_creating_a_server_certificate>> to create your own server certificate, have it signed by a CA, and import the certificate into `keystore.jks`.
 
 Make sure that when you create the certificate, you follow these rules.
 

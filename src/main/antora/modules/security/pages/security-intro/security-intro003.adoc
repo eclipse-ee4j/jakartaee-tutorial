@@ -11,11 +11,11 @@ GlassFish Server uses this information when the application is deployed.
 Not all security information can be specified by using annotations, however.
 Some information must be specified in the application deployment descriptors.
 
-Specific annotations that can be used to specify security information within an enterprise bean class file are described in <<securing-an-enterprise-bean-using-declarative-security>>.
-xref:getting-started-securing-web-applications[xrefstyle=full], describes how to use annotations to secure web applications where possible.
+Specific annotations that can be used to specify security information within an enterprise bean class file are described in xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_using_declarative_security[Securing an Enterprise Bean Using Declarative Security].
+xref:security-webtier/security-webtier.adoc#_getting_started_securing_web_applications[Getting Started Securing Web Applications], describes how to use annotations to secure web applications where possible.
 Deployment descriptors are described only where necessary.
 
-For more information on annotations, see <<further-information-about-security>>.
+For more information on annotations, see <<_further_information_about_security>>.
 
 === Using Deployment Descriptors for Declarative Security
 
@@ -47,6 +47,6 @@ These methods allow components to make business-logic decisions based on the sec
 
 Programmatic security is discussed in more detail in the following sections:
 
-* <<using-programmatic-security-with-web-applications>>
+* xref:security-webtier/security-webtier.adoc#_using_programmatic_security_with_web_applications[Using Programmatic Security with Web Applications]
 
-* <<securing-an-enterprise-bean-programmatically>>
+* xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_programmatically[Securing an Enterprise Bean Programmatically]

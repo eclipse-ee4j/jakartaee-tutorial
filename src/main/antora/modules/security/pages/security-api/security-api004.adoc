@@ -4,9 +4,9 @@ The example described in this section demonstrates how to use the built-in datab
 
 Topics include:
 
-* <<overview-of-the-built-in-database-identity-store-example>>
+* <<_overview_of_the_built_in_database_identity_store_example>>
 
-* <<running-the-built-in-db-identity-store-example>>
+* <<_running_the_built_in_db_identity_store_example>>
 
 === Overview of the Built-In Database Identity Store Example
 
@@ -21,13 +21,13 @@ The source code for this example is in the `_tut-install_/examples/security/secu
 The following sections describe the high-level process for configuring the `DatabaseIdentityStore`.
 Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use the built-in database identity store.
 
-* <<define-the-users-and-groups-in-the-identity-store>>
+* <<_define_the_users_and_groups_in_the_identity_store>>
 
-* <<map-the-databaseidentitystore-to-the-default-data-source>>
+* <<_map_the_databaseidentitystore_to_the_default_data_source>>
 
-* <<specify-the-authentication-mechanism>>
+* <<_specify_the_authentication_mechanism>>
 
-* <<declare-roles-in-the-servlet-container>>
+* <<_declare_roles_in_the_servlet_container>>
 
 When a request that includes credentials is sent to the application, it triggers the configured authentication mechanism and authentication is performed against the `DatabaseIdentityStore` as defined in the application.
 
@@ -198,11 +198,11 @@ Therefore, you do not need to bundle web.xml with the application to provide map
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `built-in-db-identity-store` application as described in the following topics:
 
-* <<to-build-package-and-deploy-the-built-in-db-identity-store-example-using-netbeans-ide>>
+* <<_to_build_package_and_deploy_the_built_in_db_identity_store_example_using_netbeans_ide>>
 
-* <<to-build-package-and-deploy-the-built-in-db-identity-store-example-using-maven>>
+* <<_to_build_package_and_deploy_the_built_in_db_identity_store_example_using_maven>>
 
-* <<to-run-the-built-in-db-identity-store-example>>
+* <<_to_run_the_built_in_db_identity_store_example>>
 
 ==== To Build, Package, and Deploy the built-in-db-identity-store Example Using NetBeans IDE
 

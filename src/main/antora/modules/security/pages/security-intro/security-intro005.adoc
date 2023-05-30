@@ -1,19 +1,19 @@
 == Working with Realms, Users, Groups, and Roles
 
 You often need to protect resources to ensure that only authorized users have access.
-See <<characteristics-of-application-security>> for an introduction to the concepts of authentication, identification, and authorization.
+See <<_characteristics_of_application_security>> for an introduction to the concepts of authentication, identification, and authorization.
 
 This section discusses setting up users so that they can be correctly identified and either given access to protected resources or denied access if they are not authorized to access the protected resources.
 To authenticate a user, you need to follow these basic steps.
 
 . The application developer writes code to prompt for a user name and password.
-The various methods of authentication are discussed in <<specifying-authentication-mechanisms>>.
+The various methods of authentication are discussed in xref:security-webtier/security-webtier.adoc#_specifying_authentication_mechanisms[Specifying Authentication Mechanisms].
 
 . The application developer communicates how to set up security for the deployed application by use of a metadata annotation or deployment descriptor.
-This step is discussed in <<setting-up-security-roles>>.
+This step is discussed in <<_setting_up_security_roles>>.
 
 . The server administrator sets up authorized users and groups in GlassFish Server.
-This is discussed in <<managing-users-and-groups-in-glassfish-server>>.
+This is discussed in <<_managing_users_and_groups_in_glassfish_server>>.
 
 . The application deployer maps the application's security roles to users, groups, and principals defined in GlassFish Server.
 This topic is discussed in <<mapping-roles-to-users-and-groups-2>>.
@@ -25,20 +25,20 @@ By default, group principal names are mapped to roles of the same name.
 
 A realm is a security policy domain defined for a web or application server.
 A realm contains a collection of users, who may or may not be assigned to a group.
-Managing users in GlassFish Server is discussed in <<managing-users-and-groups-in-glassfish-server>>.
+Managing users in GlassFish Server is discussed in <<_managing_users_and_groups_in_glassfish_server>>.
 
 An application will often prompt for a user name and password before allowing access to a protected resource.
 After the user name and password have been entered, that information is passed to the server, which either authenticates the user and sends the protected resource or does not authenticate the user, in which case access to the protected resource is denied.
-This type of user authentication is discussed in <<specifying-an-authentication-mechanism-in-the-deployment-descriptor>>.
+This type of user authentication is discussed in xref:security-webtier/security-webtier.adoc#_specifying_an_authentication_mechanism_in_the_deployment_descriptor[Specifying an Authentication Mechanism in the Deployment Descriptor].
 
 In some applications, authorized users are assigned to roles.
 In this situation, the role assigned to the user in the application must be mapped to a principal or group defined on the application server.
-<<mapping-roles-to-users-and-groups>> shows this.
-More information on mapping roles to users and groups can be found in <<setting-up-security-roles>>.
+<<_mapping_roles_to_users_and_groups>> shows this.
+More information on mapping roles to users and groups can be found in <<_setting_up_security_roles>>.
 
-[[mapping-roles-to-users-and-groups]]
+[[_mapping_roles_to_users_and_groups]]
 .Mapping Roles to Users and Groups
-image::jakartaeett_dt_044.svg["Diagram of role mapping, showing creation of users and groups, definition of roles, and mapping of roles to users and groups"]
+image::common:jakartaeett_dt_044.svg["Diagram of role mapping, showing creation of users and groups, definition of roles, and mapping of roles to users and groups"]
 
 The following sections provide more information on realms, users, groups, and roles.
 
@@ -58,12 +58,12 @@ This realm is used for the authentication of all clients except for web browser 
 In the `certificate` realm, the server stores user credentials in a certificate database.
 When using the `certificate` realm, the server uses certificates with HTTPS to authenticate web clients.
 To verify the identity of a user in the `certificate` realm, the authentication service verifies an X.509 certificate.
-For step-by-step instructions for creating this type of certificate, see <<working-with-digital-certificates>>.
+For step-by-step instructions for creating this type of certificate, see xref:security-advanced/security-advanced.adoc#_working_with_digital_certificates[Working with Digital Certificates].
 The common name field of the X.509 certificate is used as the principal name.
 
 The `admin-realm` is also a `file` realm and stores administrator user credentials locally in a file named `admin-keyfile`.
 You can use the Administration Console to manage users in this realm in the same way you manage users in the `file` realm.
-For more information, see <<managing-users-and-groups-in-glassfish-server>>.
+For more information, see <<_managing_users_and_groups_in_glassfish_server>>.
 
 ==== What Is a User?
 
@@ -144,7 +144,7 @@ For the example security applications, select the `file` realm.
 +
 You cannot add users to the `certificate` realm by using the Administration Console.
 In the `certificate` realm, you can add only certificates.
-For information on adding (importing) certificates to the `certificate` realm, see <<adding-users-to-the-certificate-realm>>.
+For information on adding (importing) certificates to the `certificate` realm, see xref:security-advanced/security-advanced.adoc#_adding_users_to_the_certificate_realm[Adding Users to the Certificate Realm].
 
 . On the Edit Realm page, click Manage Users.
 
@@ -155,7 +155,7 @@ For information on adding (importing) certificates to the `certificate` realm, s
 For the Admin Realm, the Group List field is read-only, and the group name is `asadmin`.
 Restart GlassFish Server and the Administration Console after you add a user to the Admin Realm.
 +
-For more information on these properties, see <<working-with-realms-users-groups-and-roles>>.
+For more information on these properties, see <<_working_with_realms_users_groups_and_roles>>.
 +
 For the example security applications, specify a user with any name and password you like, but make sure that the user is assigned to the group `TutorialUser`.
 The user name and password are case-sensitive.
@@ -169,7 +169,7 @@ When you design an enterprise bean or web component, you should always think abo
 For example, a web application for a human resources department might have a different request URL for someone who has been assigned the role of `DEPT_ADMIN` than for someone who has been assigned the role of `DIRECTOR`.
 The `DEPT_ADMIN` role may let you view employee data, but the `DIRECTOR` role enables you to modify employee data, including salary data.
 Each of these security roles is an abstract logical grouping of users that is defined by the person who assembles the application.
-When an application is deployed, the deployer will map the roles to security identities in the operational environment, as shown in <<mapping-roles-to-users-and-groups>>.
+When an application is deployed, the deployer will map the roles to security identities in the operational environment, as shown in <<_mapping_roles_to_users_and_groups>>.
 
 For Jakarta EE components, you define security roles using the `@DeclareRoles` and `@RolesAllowed` metadata annotations.
 
@@ -218,7 +218,7 @@ For example, a servlet might be annotated as follows:
 public class GreetingServlet extends HttpServlet { ... }
 ----
 
-These annotations are discussed in more detail in <<specifying-security-for-basic-authentication-using-annotations>> and <<securing-an-enterprise-bean-using-declarative-security>>.
+These annotations are discussed in more detail in xref:security-webtier/security-webtier.adoc#_specifying_security_for_basic_authentication_using_annotations[Specifying Security for Basic Authentication Using Annotations] and xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_using_declarative_security[Securing an Enterprise Bean Using Declarative Security].
 
 After users have provided their login information and the application has declared what roles are authorized to access protected parts of an application, the next step is to map the security role to the name of a user, or principal.
 

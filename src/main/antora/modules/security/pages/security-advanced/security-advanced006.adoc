@@ -13,7 +13,7 @@ The container determines the user name and password for establishing a connectio
 * Component-managed sign-on: The application component code manages EIS sign-on by including code that performs the sign-on process to an EIS.
 
 You can also configure security for resource adapters.
-See <<configuring-resource-adapter-security>>.
+See <<_configuring_resource_adapter_security>>.
 
 === Container-Managed Sign-On
 
@@ -115,7 +115,7 @@ You can, however, manually update the `server.policy` file to add the relevant p
 +
 The security permissions listed in the deployment descriptor are different from those required by the default permission set as specified in the connector specification.
 +
-For more information on the implementation of the security permission specification, see the security policy file documentation listed in <<further-information-about-advanced-security-topics>>.
+For more information on the implementation of the security permission specification, see the security policy file documentation listed in <<_further_information_about_advanced_security_topics>>.
 
 In addition to specifying resource adapter security in the `ra.xml` file, you can create a security map for a connector connection pool to map an application principal or a user group to a back-end EIS principal.
 The security map is usually used if one or more EIS back-end principals are used to execute operations (on the EIS) initiated by various principals or user groups in the application.

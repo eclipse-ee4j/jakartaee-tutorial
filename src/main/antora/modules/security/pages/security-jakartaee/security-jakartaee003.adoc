@@ -7,7 +7,7 @@ The following examples show how to secure enterprise beans using declarative and
 This section discusses how to configure an enterprise bean for basic user name/password authentication.
 When a bean that is constrained in this way is requested, the server requests a user name and password from the client and verifies that the user name and password are valid by comparing them against a database of authorized users in GlassFish Server.
 
-If the topic of authentication is new to you, see <<specifying-authentication-mechanisms>>.
+If the topic of authentication is new to you, see xref:security-webtier/security-webtier.adoc#_specifying_authentication_mechanisms[Specifying Authentication Mechanisms].
 
 This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_tut-install_/examples/ejb/cart/` directory and is discussed in <<the-cart-example>>.
 
@@ -18,12 +18,12 @@ In the example application included with this tutorial, these steps have been co
 The example in this tutorial starts with this example and demonstrates adding basic authentication of the client to this application.
 The example application discussed in this section can be found at `_tut-install_/examples/security/cart-secure/`.
 
-. If you have not already done so, complete the steps in <<to-set-up-your-system-for-running-the-security-examples>> to configure your system for running the tutorial applications.
+. If you have not already done so, complete the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples] to configure your system for running the tutorial applications.
 
 . Modify the source code for the enterprise bean, `CartBean.java`, to specify which roles are authorized to access which protected methods.
-This step is discussed in <<annotating-the-bean>>.
+This step is discussed in <<_annotating_the_bean>>.
 
-. Build, package, and deploy the enterprise bean; then build and run the client application by following the steps in <<to-run-the-cart-secure-example-using-netbeans-ide>> or <<to-run-the-cart-secure-example-using-maven>>.
+. Build, package, and deploy the enterprise bean; then build and run the client application by following the steps in <<_to_run_the_cart_secure_example_using_netbeans_ide>> or <<_to_run_the_cart_secure_example_using_maven>>.
 
 ==== Annotating the Bean
 
@@ -123,7 +123,7 @@ If no authentication method is specified in the deployment descriptor, the type 
 
 ==== To Run the cart-secure Example Using NetBeans IDE
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples].
 
 . From the File menu, choose Open Project.
 
@@ -162,7 +162,7 @@ If the user name and password are not authenticated, the dialog box reappears un
 
 ==== To Run the cart-secure Example Using Maven
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples].
 
 . In a terminal window, go to:
 +
@@ -200,8 +200,8 @@ This example demonstrates how to use the `getCallerPrincipal` and `isCallerInRol
 This example starts with a very simple enterprise bean application, `converter`, and modifies the methods of the `ConverterBean` so that currency conversion will occur only when the requester is in the role of `TutorialUser`.
 
 This example can be found in the `_tut-install_/examples/security/converter-secure` directory.
-This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:getting-started-with-enterprise-beans[xrefstyle=full] and is found in the `_tut-install_/examples/ejb/converter/` directory.
-This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in <<securing-an-enterprise-bean-programmatically>>.
+This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:getting-started-with-enterprise-beans[] and is found in the `_tut-install_/examples/ejb/converter/` directory.
+This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in <<_securing_an_enterprise_bean_programmatically>>.
 
 In general, the following steps are necessary when using the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
 In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
@@ -209,11 +209,11 @@ In the example application included with this tutorial, many of these steps have
 . Create a simple enterprise bean application.
 
 . Set up a user on GlassFish Server in the `file` realm, in the group `TutorialUser`, and set up default principal to role mapping.
-To do this, follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+To do this, follow the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples].
 
 . Modify the bean to add the `getCallerPrincipal` and `isCallerInRole` methods.
 
-. If the application contains a web client that is a servlet, specify security for the servlet, as described in <<specifying-security-for-basic-authentication-using-annotations>>.
+. If the application contains a web client that is a servlet, specify security for the servlet, as described in xref:security-webtier/security-webtier.adoc#_specifying_security_for_basic_authentication_using_annotations[Specifying Security for Basic Authentication Using Annotations].
 
 . Build, package, deploy, and run the application.
 
@@ -287,7 +287,7 @@ The following annotations specify security for the `converter` web client, `Conv
 
 ==== To Run the converter-secure Example Using NetBeans IDE
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples].
 
 . From the File menu, choose Open Project.
 
@@ -307,7 +307,7 @@ This command builds and deploys the example application to your GlassFish Server
 
 ==== To Run the converter-secure Example Using Maven
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples].
 
 . In a terminal window, go to:
 +

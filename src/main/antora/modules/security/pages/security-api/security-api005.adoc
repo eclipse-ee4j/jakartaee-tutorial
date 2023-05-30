@@ -4,7 +4,7 @@ The example described in this section demonstrates how to bundle and use a custo
 
 Topics include:
 
-* <<overview-of-the-custom-identity-store-example>>
+* <<_overview_of_the_custom_identity_store_example>>
 
 * <<running-the-custom-identity-store-example-2>>
 
@@ -21,11 +21,11 @@ The source code for this example is in the `_tut-install_/examples/security/secu
 The following sections describe the high-level process for defining the `TestIdentityStore`.
 Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use a custom identity store.
 
-* <<define-the-users-and-groups-in-the-identity-store>>
+* <<_define_the_users_and_groups_in_the_identity_store>>
 
-* <<specify-the-authentication-mechanism>>
+* <<_specify_the_authentication_mechanism>>
 
-* <<declare-roles-in-the-servlet-container>>
+* <<_declare_roles_in_the_servlet_container>>
 
 When a request that includes credentials is sent to the application, the configured authentication mechanism comes into effect and authentication is performed against the `TestIdentityStore` as defined in the application.
 
@@ -123,11 +123,11 @@ Therefore, you do not need to bundle `web.xml` with the application to provide m
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `custom-identity-store` application as described in the following topics:
 
-* <<to-build-package-and-deploy-the-custom-identity-store-example-using-netbeans-ide>>
+* <<_to_build_package_and_deploy_the_custom_identity_store_example_using_netbeans_ide>>
 
-* <<to-build-package-and-deploy-the-custom-identity-store-example-using-maven>>
+* <<_to_build_package_and_deploy_the_custom_identity_store_example_using_maven>>
 
-* <<to-run-the-custom-identity-store-example>>
+* <<_to_run_the_custom_identity_store_example>>
 
 ==== To Build, Package, and Deploy the custom-identity-store Example Using NetBeans IDE
 

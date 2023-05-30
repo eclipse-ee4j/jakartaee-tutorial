@@ -8,9 +8,9 @@ The examples use annotations, programmatic security, and/or declarative security
 
 Here are some other locations where you will find examples of securing various types of applications:
 
-* <<the-cart-secure-example-securing-an-enterprise-bean-with-declarative-security>>
+* xref:security-jakartaee/security-jakartaee.adoc#_the_cart_secure_example_securing_an_enterprise_bean_with_declarative_security[The cart-secure Example: Securing an Enterprise Bean with Declarative Security]
 
-* <<the-converter-secure-example-securing-an-enterprise-bean-with-programmatic-security>>
+* xref:security-jakartaee/security-jakartaee.adoc#_the_converter_secure_example_securing_an_enterprise_bean_with_programmatic_security[The converter-secure Example: Securing an Enterprise Bean with Programmatic Security]
 
 * Eclipse GlassFish samples for Jakarta EE 9: https://github.com/eclipse-ee4j/glassfish-samples[^]
 
@@ -22,7 +22,7 @@ Before continuing, follow these steps.
 . Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
 
 . Add an authorized user to GlassFish Server.
-For the examples in this chapter and in <<getting-started-securing-enterprise-applications>>, add a user to the `file` realm of GlassFish Server, and assign the user to the group `TutorialUser`.
+For the examples in this chapter and in xref:security-jakartaee/security-jakartaee.adoc#_getting_started_securing_enterprise_applications[Getting Started Securing Enterprise Applications], add a user to the `file` realm of GlassFish Server, and assign the user to the group `TutorialUser`.
 
 .. From the Administration Console, expand the Configurations node, then expand the server-config node.
 
@@ -46,7 +46,7 @@ For the examples in this chapter and in <<getting-started-securing-enterprise-ap
 +
 Be sure to write down the user name and password for the user you create so that you can use it for testing the example applications.
 Authentication is case sensitive for both the user name and password, so write down the user name and password exactly.
-This topic is discussed more in <<managing-users-and-groups-in-glassfish-server>>.
+This topic is discussed more in xref:security-intro/security-intro.adoc#_managing_users_and_groups_in_glassfish_server[Managing Users and Groups in GlassFish Server].
 +
 [NOTE]
 Jakarta Security requires that group principal names are mapped to roles of the same name by default.
@@ -58,19 +58,19 @@ This example explains how to use basic authentication with a servlet.
 With basic authentication of a servlet, the web browser presents a standard login dialog box that is not customizable.
 When a user submits his or her name and password, the server determines whether the user name and password are those of an authorized user and sends the requested web resource if the user is authorized to view it.
 
-In general, the following steps are necessary for adding basic authentication to an unsecured servlet, such as the ones described in xref:getting-started-with-web-applications[xrefstyle=full].
+In general, the following steps are necessary for adding basic authentication to an unsecured servlet, such as the ones described in xref:getting-started-with-web-applications[].
 In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 This application can be found in the `_tut-install_/examples/security/hello2-basicauth/` directory.
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
-. Create a web module for the servlet example, `hello2`, as described in xref:getting-started-with-web-applications[xrefstyle=full].
+. Create a web module for the servlet example, `hello2`, as described in xref:getting-started-with-web-applications[].
 
-. Add the appropriate security annotations to the servlet. The security annotations are described in <<specifying-security-for-basic-authentication-using-annotations>>.
+. Add the appropriate security annotations to the servlet. The security annotations are described in <<_specifying_security_for_basic_authentication_using_annotations>>.
 
-. Build, package, and deploy the web application by following the steps in <<to-build-package-and-deploy-the-hello2-basicauth-example-using-netbeans-ide>> or <<to-build-package-and-deploy-the-hello2-basicauth-example-using-maven>>.
+. Build, package, and deploy the web application by following the steps in <<_to_build_package_and_deploy_the_hello2_basicauth_example_using_netbeans_ide>> or <<_to_build_package_and_deploy_the_hello2_basicauth_example_using_maven>>.
 
-. Run the web application by following the steps described in <<to-run-the-hello2-basicauth-example>>.
+. Run the web application by following the steps described in <<_to_run_the_hello2_basicauth_example>>.
 
 ==== Specifying Security for Basic Authentication Using Annotations
 
@@ -111,7 +111,7 @@ Use the deployment descriptor to specify settings for nondefault authentication 
 
 ==== To Build, Package, and Deploy the hello2-basicauth Example Using NetBeans IDE
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
 . From the File menu, choose Open Project.
 
@@ -131,7 +131,7 @@ This command builds and deploys the example application to your GlassFish Server
 
 ==== To Build, Package, and Deploy the hello2-basicauth Example Using Maven
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
 . In a terminal window, go to:
 +
@@ -192,9 +192,9 @@ When a user submits his or her name and password, the server determines whether 
 
 This example, `hello1-formauth`, adds security to the basic Jakarta Faces application shown in <<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>.
 
-In general, the steps necessary for adding form-based authentication to an unsecured Jakarta Faces application are similar to those described in <<the-hello2-basicauth-example-basic-authentication-with-a-servlet>>.
-The major difference is that you must use a deployment descriptor to specify the use of form-based authentication, as described in <<specifying-security-for-the-form-based-authentication-example>>.
-In addition, you must create a login form page and a login error page, as described in <<creating-the-login-form-and-the-error-page>>.
+In general, the steps necessary for adding form-based authentication to an unsecured Jakarta Faces application are similar to those described in <<_the_hello2_basicauth_example_basic_authentication_with_a_servlet>>.
+The major difference is that you must use a deployment descriptor to specify the use of form-based authentication, as described in <<_specifying_security_for_the_form_based_authentication_example>>.
+In addition, you must create a login form page and a login error page, as described in <<_creating_the_login_form_and_the_error_page>>.
 
 This application can be found in the `_tut-install_/examples/security/hello1-formauth/` directory.
 
@@ -202,7 +202,7 @@ This application can be found in the `_tut-install_/examples/security/hello1-for
 
 When using form-based login mechanisms, you must specify a page that contains the form you want to use to obtain the user name and password, as well as a page to display if login authentication fails.
 This section discusses the login form and the error page used in this example.
-<<specifying-security-for-the-form-based-authentication-example>> shows how you specify these pages in the deployment descriptor.
+<<_specifying_security_for_the_form_based_authentication_example>> shows how you specify these pages in the deployment descriptor.
 
 The login page can be an HTML page or a servlet, and it must return an HTML page containing a form that conforms to specific naming conventions (see the Jakarta Servlet 5.0 specification for more information on these requirements).
 To do this, include the elements that accept user name and password information between `<form></form>` tags in your login page.
@@ -311,7 +311,7 @@ The following sample code shows the security elements added to the deployment de
 
 ==== To Build, Package, and Deploy the hello1-formauth Example Using NetBeans IDE
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
 . From the File menu, choose Open Project.
 
@@ -331,7 +331,7 @@ This command builds and deploys the example application to your GlassFish Server
 
 ==== To Build, Package, and Deploy the hello1-formauth Example Using Maven and the asadmin Command
 
-. Follow the steps in <<to-set-up-your-system-for-running-the-security-examples>>.
+. Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
 . In a terminal window, go to:
 +

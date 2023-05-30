@@ -16,7 +16,7 @@ A realm can be thought of as a database of user names and passwords that identif
 Access to specific web application resources is granted to all users in a particular role, instead of enumerating a list of associated users.
 A user name can have any number of roles associated with it.
 
-Two of the tutorial case studies, xref:dukes-tutoring-case-study-example[xrefstyle=full] and xref:dukes-forest-case-study-example[xrefstyle=full] use a JDBC realm for user authentication.
+Two of the tutorial case studies, xref:dukes-tutoring-case-study-example[] and xref:dukes-forest-case-study-example[] use a JDBC realm for user authentication.
 
 === To Configure a JDBC Authentication Realm
 

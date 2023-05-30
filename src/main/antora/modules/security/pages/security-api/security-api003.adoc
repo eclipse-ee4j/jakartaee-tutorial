@@ -2,9 +2,9 @@
 
 The Identity Store Interfaces are described in the following sections:
 
-* <<the-identitystore-interface>>
+* <<_the_identitystore_interface>>
 
-* <<the-remembermeidentitystore-interface>>
+* <<_the_remembermeidentitystore_interface>>
 
 === The IdentityStore Interface
 
@@ -20,14 +20,14 @@ They are configured with the parameters necessary to communicate with an externa
 
 * `DatabaseIdentityStoreDefinition` -- configures an identity store with the parameters necessary to connect to an external database, validate user credentials, and/or lookup user groups.
 You must supply a PasswordHash implementation when configuring a Database Identity Store.
-See <<the-passwordhash-interface>>.
+See <<_the_passwordhash_interface>>.
 
 An application can provide its own custom identity store, or use the built-in LDAP or database identity stores.
 For examples of both types, see:
 
-* <<running-the-built-in-database-identity-store-example>>
+* <<_running_the_built_in_database_identity_store_example>>
 
-* <<running-the-custom-identity-store-example>>
+* <<_running_the_custom_identity_store_example>>
 
 An implementation of `IdentityStore` must be a CDI bean to be recognized and deployed at runtime, and is assumed to be normal scoped.
 IdentityStores are primarily intended for use by implementations of `HttpAuthenticationMechanisms`, but this is not a requirement.
