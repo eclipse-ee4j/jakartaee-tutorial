@@ -76,7 +76,7 @@ Role names are case sensitive.
 The roles defined for the application must be mapped to users and groups defined on the server, except when default principal-to-role mapping is used.
 
 For more information about security roles, see <<_declaring_security_roles>>.
-For information on mapping security roles, see <<mapping-roles-to-users-and-groups-2>>.
+For information on mapping security roles, see xref:security-intro/security-intro.adoc#_mapping_roles_to_users_and_groups[Mapping Roles to Users and Groups].
 
 For a servlet, the `@HttpConstraint` and `@HttpMethodConstraint` annotations accept a `rolesAllowed` element that specifies the authorized roles.
 

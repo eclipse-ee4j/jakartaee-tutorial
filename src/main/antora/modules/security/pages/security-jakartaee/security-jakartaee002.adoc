@@ -75,7 +75,7 @@ It is important to keep in mind that security roles are used to define the logic
 They should not be confused with the user groups, users, principals, and other concepts that exist in GlassFish Server.
 Note that the Jakarta Security requires that group principal names be mapped to roles of the same name by default, but that implementations of the standard may allow configuration of a different default.
 In GlassFish Server, you do not need to perform any additional steps to map the roles defined in the application to users, groups, and principals that are the components of the user database in the `file` realm.
-This mapping is set by default in the GlassFish Server Administration Console as described in <<mapping-roles-to-users-and-groups-2>>.
+This mapping is set by default in the GlassFish Server Administration Console as described in xref:security-intro/security-intro.adoc#_mapping_roles_to_users_and_groups[Mapping Roles to Users and Groups]>.
 
 The following sections show how an application developer uses declarative security to either secure an application or to create a security view to pass along to the deployer.
 
@@ -218,7 +218,7 @@ public class SomeClass {
     ...
 }
 
-@Stateless 
+@Stateless
 public class MyBean extends SomeClass implements A  {
 
     @RolesAllowed("HR")
@@ -277,12 +277,12 @@ The following code sample illustrates the use of the `getCallerPrincipal` method
 +
 [source,java]
 ----
-@Stateless 
+@Stateless
 public class EmployeeServiceBean implements EmployeeService {
-    @Resource 
+    @Resource
     SessionContext ctx;
-    
-    @PersistenceContext 
+
+    @PersistenceContext
     EntityManager em;
 
     public void changePhoneNumber(...) {
@@ -318,9 +318,9 @@ The following code sample illustrates the use of the `isCallerInRole` method:
 +
 [source,java]
 ----
-@Stateless 
+@Stateless
 public class PayrollBean implements Payroll {
-    @Resource 
+    @Resource
     SessionContext ctx;
 
     public void updateEmployeeInfo(EmplInfo info) {
