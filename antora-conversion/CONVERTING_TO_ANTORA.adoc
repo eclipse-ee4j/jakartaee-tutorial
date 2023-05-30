@@ -28,7 +28,7 @@ Here’s the current process for migrating an individual module (i.e. security, 
 . Run the migration script from the root project folder. For example, for the Security module, you would run:
 
 ```shell
-jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/modules/security
+jbang antora-conversion/AntoraConverter.java src/main/antora/modules/security
 ```
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
@@ -69,7 +69,7 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
   - modules/security/nav.adoc
 ```
 
-. Commit your changes, push, and raise a PR. You're done with the first part of the migration!
+. Commit your changes, push, and raise a PR to merge into the `release/8` branch. You're done with the first part of the migration!
 
 === Migrating the Jakarta EE 9 branch
 
@@ -84,3 +84,11 @@ jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/
 ```
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
+
+. If there are any changes the script didn't make, either make them manually or update the script to handle them.
+
+. Commit your changes, push, and raise a PR to merge into the  `release/9.1` branch.
+
+. Raise a PR to merge `release/9.1` into `main`.
+
+. You're done!
