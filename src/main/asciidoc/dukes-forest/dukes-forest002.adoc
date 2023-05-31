@@ -194,7 +194,7 @@ The method is called from the checkout process of Duke's Store.
 The `dukes-resources` project contains a number of files used by both Duke's Store and Duke's Shipment, bundled into a JAR file placed in the classpath.
 The resources are in the `src/main/resources` directory:
 
-* `META-INF/resources/css`: Two style sheets, `default.css` and `jsfcrud.css`
+* `META-INF/resources/css`: Two style sheets, `default.css` and `facescrud.css`
 
 * `META-INF/resources/img`: Images used by the projects
 
@@ -381,7 +381,7 @@ The CDI managed beans in the main interface of Duke's Store use the following he
 
 * `ImageServlet`: A servlet class that retrieves the image content from the database and displays it
 
-* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing messages on a `FacesContext` instance
+* `FacesUtil`: Class used for Jakarta Faces operations, such as queuing messages on a `FacesContext` instance
 
 * `MD5Util`: Class used by the `CustomerController` managed bean to generate an encrypted password for a user
 
@@ -479,7 +479,7 @@ Duke's Shipment uses the following CDI managed beans, in the `com.forest.shipmen
 
 The Duke's Shipment managed beans use only one helper class, found in the `com.forest.shipment.web.util` package:
 
-* `JsfUtil`: Class used for Jakarta Faces operations, such as queuing messages on a `FacesContext` instance
+* `FacesUtil`: Class used for Jakarta Faces operations, such as queuing messages on a `FacesContext` instance
 
 ==== Qualifier Used in Duke's Shipment
 

@@ -68,10 +68,9 @@ public class MailerBean {
 The injected Jakarta Mail resource can be configured through the GlassFish Server Administration Console, through a GlassFish Server administrative command, or through a resource configuration file packaged with the application.
 The resource configuration can be modified at runtime by the GlassFish Server administrator to use a different mail server or transport protocol.
 
-The web client consists of a Facelets template, `template.xhtml`; two Facelets clients, `index.xhtml` and `response.xhtml`; and a Jakarta Faces managed bean, `MailerManagedBean`.
+The web client consists of a Facelets template, `template.xhtml`; two Facelets clients, `index.xhtml` and `response.xhtml`.
 The `index.xhtml` file contains a form for the target email address.
-When the user submits the form, the `MailerManagedBean.send` method is called.
-This method uses an injected instance of the `MailerBean` session bean to call `MailerBean.sendMessage`.
+When the user submits the form, the method is called that uses an injected instance of the `MailerBean` session bean to call `MailerBean.sendMessage`.
 The result is sent to the `response.xhtml` Facelets view.
 
 === Running the async Example

@@ -1,8 +1,8 @@
 == Overview of Jakarta Bean Validation
 
 Validating input received from the user to maintain data integrity is an important part of application logic.
-Validation of data can take place at different layers in even the simplest of applications, as shown in <<developing-a-simple-facelets-application-the-guessnumber-jsf-example-application>>.
-The `guessnumber-jsf` example application validates the user input (in the `h:inputText` tag) for numerical data at the presentation layer and for a valid range of numbers at the business layer.
+Validation of data can take place at different layers in even the simplest of applications, as shown in <<developing-a-simple-facelets-application-the-guessnumber-faces-example-application>>.
+The `guessnumber-faces` example application validates the user input (in the `h:inputText` tag) for numerical data at the presentation layer and for a valid range of numbers at the business layer.
 
 Jakarta Bean Validation provides a facility for validating objects, object members, methods, and constructors.
 In Jakarta EE environments, Jakarta Bean Validation integrates with Jakarta EE containers and services to allow developers to easily define and enforce validation constraints.

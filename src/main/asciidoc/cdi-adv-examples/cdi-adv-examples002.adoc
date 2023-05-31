@@ -59,7 +59,7 @@ The simple Facelets page for the `encoder` example, `index.xhtml`, asks the user
 ----
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="jakarta.faces.html">
     <h:head>
         <h:outputStylesheet library="css" name="default.css"/>
         <title>String Encoder</title>

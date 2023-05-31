@@ -26,7 +26,7 @@ This step is a partitioned step that gets each bill from the database, calculate
 * Two Facelets pages (`index.xhtml` and `jobstarted.xhtml`) that provide the front end of the batch application.
 The first page shows the log file that will be processed by the batch job, and the second page enables the user to check on the status of the job and shows the resulting bill for each customer.
 
-* A managed bean (`JsfBean`) that is accessed from the Facelets pages.
+* A managed bean (`FacesBean`) that is accessed from the Facelets pages.
 The bean submits the job to the batch runtime, checks on the status of the job, and reads the text files for each bill.
 
 ==== The Job Definition File
@@ -363,11 +363,11 @@ The page provides a button for the user to submit the batch job and navigate to 
     <h2>Log file</h2>
     <p>The batch job analyzes the following log file:</p>
     <textarea cols="90" rows="25"
-              readonly="true">#{jsfBean.createAndShowLog()}</textarea>
+              readonly="true">#{facesBean.createAndShowLog()}</textarea>
     <p> </p>
     <h:form>
         <h:commandButton value="Start Batch Job"
-                         action="#{jsfBean.startBatchJob()}" />
+                         action="#{facesBean.startBatchJob()}" />
     </h:form>
 </body>
 ----
@@ -378,29 +378,29 @@ The `jobstarted.xhtml` page provides a button to check the current status of the
 
 [source,xml]
 ----
-<p>Current Status of the Job: <b>#{jsfBean.jobStatus}</b></p>
-<h:dataTable var="_row" value="#{jsfBean.rowList}"
-             border="1" rendered="#{jsfBean.completed}">
-    <!-- ... show results from jsfBean.rowList ... -->
+<p>Current Status of the Job: <b>#{facesBean.jobStatus}</b></p>
+<h:dataTable var="_row" value="#{facesBean.rowList}"
+             border="1" rendered="#{facesBean.completed}">
+    <!-- ... show results from facesBean.rowList ... -->
 </h:dataTable>
 <!-- Render the check status button if the job has not finished -->
 <h:form>
     <h:commandButton value="Check Status"
-                     rendered="#{jsfBean.completed==false}"
+                     rendered="#{facesBean.completed==false}"
                      action="jobstarted" />
 </h:form>
 ----
 
 ==== The Managed Bean
 
-The `JsfBean` managed bean submits the job to the batch runtime, checks on the status of the job, and reads the text files for each bill.
+The `FacesBean` managed bean submits the job to the batch runtime, checks on the status of the job, and reads the text files for each bill.
 
 The `startBatchJob` method of the bean submits the job to the batch runtime:
 
 [source,java]
 ----
 /* Submit the batch job to the batch runtime.
- * JSF Navigation method (return the name of the next page) */
+ * Faces Navigation method (return the name of the next page) */
 public String startBatchJob() {
     jobOperator = BatchRuntime.getJobOperator();
     execID = jobOperator.start("phonebilling", null);
