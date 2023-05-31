@@ -26,9 +26,9 @@ The first two of these are used in the authentication process:
 An _authentication mechanism_ is somewhat like a controller in the well-known MVC pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate `these` credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
 
 An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g., it doesn't know about HTTP or headers etc.
-Example of identity stores are services that contact SQL/JDBC databases, LDAP servers, files on the file-system, etc.
+Some examples of identity stores are services that contact SQL/JDBC databases, LDAP servers, files on the file-system, etc.
 
-image::authentication_mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
+image::common:authentication_mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
 
 The third one is used for the authorization process:
 
