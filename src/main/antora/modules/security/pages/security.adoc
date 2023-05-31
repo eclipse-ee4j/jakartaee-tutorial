@@ -1,0 +1,771 @@
+= Jakarta Security
+
+Jakarta Security is the overarching security API in Jakarta EE.
+
+Due to historical and political reasons, a number of security features are distributed among several other APIs in Jakarta EE. Sometimes they overlap, and sometimes such features are only accessible from these other APIs. In this chapter, we'll focus primarily on explaining Jakarta Security, but we'll mention when other APIs are needed to accomplish a certain task.
+
+== Overview
+
+Before we look at some practical examples, let's quickly go through some basics.
+
+Some of the guiding principles in Jakarta Security are:
+
+. It should work directly out of the box, without requiring vendor-specific configuration.
+. It leverages Jakarta CDI as much as possible. Most artifacts are CDI beans, and many features are done via CDI interceptors.
+. The difference between framework-provided artifacts and custom (user provided) artifacts is minimal or non-existent.
+. It fully integrates with security features from other Jakarta EE APIs and proprietary (vendor-specific) artifacts.
+
+Jakarta Security defines several distinct artifacts that play an important role in the security process:
+
+. Authentication Mechanism
+. Identity Store
+. Permission Store
+
+The first two of these are used in the authentication process:
+
+An _authentication mechanism_ is somewhat like a controller in the well-known MVC pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate `these` credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
+
+An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g., it doesn't know about HTTP or headers etc.
+Some examples of identity stores are services that contact SQL/JDBC databases, LDAP servers, files on the file-system, etc.
+
+image::common:authentication_mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
+
+The third one is used for the authorization process:
+
+A _permission store_ is another kind of model that stores permissions, typically either globally, or per role (role-based permissions). This entity then performs a business / data operation where a query and an identity go in, and a yes/no answer goes out. For instance, a query such as "can access /foo/bar" along with the identity for user "John" with roles "bar" and "kaz".
+Examples of permission stores are the Jakarta Authorization usage of the Policy class, or the internal data structure where a Servlet Container such as Tomcat or Jetty stores the security constraints an application defined.
+
+== Provided authentication mechanisms and identity stores
+
+Jakarta Security provides a number of built-in authentication mechanisms and identity stores. We'll enumerate them here first, and will look at them in more detail below.
+
+Authentication mechanisms:
+
+. Basic
+. Form
+. Custom Form
+. Open ID Connect (OIDC)
+
+Identity stores:
+
+. Database
+. LDAP
+
+== Custom authentication mechanisms and identity stores
+
+When the provided authentication mechanisms and identity stores aren't sufficient, we can easily define custom ones. Both provided and custom ones use the same interfaces, and the system doesn't distinguish between them.
+
+== Authentication mechanisms and identity stores from other APIs
+
+The Servlet specification defines the exact same Form and Basic authentication mechanisms. Authenticating with them will have the exact same result as authenticating with a Jakarta Security authentication mechanism. (Role checks will work the same independent on which API was used to authenticate.)
+
+A Servlet authentication mechanism, however, will not necessarily consult a Jakarta Security identity store. This is server dependent. The identity store that is called is server dependent as well. Calling this server-dependent identity store is possible from Jakarta Security, but as an advanced feature.
+
+Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST, and Jakarta Servlet. These all return the same outcome, independent of whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism.
+
+== Securing an endpoint with Basic authentication
+
+In the following example, we'll be securing a REST endpoint using Basic authentication.
+
+You'll learn how to:
+
+. Define security constraints
+. Set a provided authentication mechanisms
+. Define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
+
+[source,java]
+----
+@Path("/resource")
+@RequestScoped
+public class Resource {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getCallerAndRole() {
+        return
+            securityContext.getCallerPrincipal().getName() + " : " +
+            securityContext.isCallerInRole("user");
+    }
+
+}
+----
+
+This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance.
+
+If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
+
+Also note that there is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a deprecated type and has been replaced by the Jakarta Security version.
+
+==== Declare the security constraints
+
+Next we'll define the security constraints in `web.xml`, which tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="5.0"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+</web-app>
+----
+
+This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
+
+Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
+
+The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension.
+
+There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(realmName = "basicAuth")
+@DeclareRoles({ "user", "caller" })
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+
+The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass because it also declares the path for REST resources.
+
+==== Define the identity store
+
+Finally, let's define a simple identity store that the security system can use to validate provided credentials for Basic authentication:
+
+[source,java]
+----
+@ApplicationScoped
+public class TestIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+----
+
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions about whether that would promote security best practices.
+
+Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+==== Test the application
+
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restBasicAuthCustomStore
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.414 s - in jakartaee.examples.focused.security.restbasicauthcustomstore.RestBasicAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestBasicAuthCustomStoreIT extends ITBase {
+
+    /**
+     * Stores the base URL.
+     */
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        DefaultCredentialsProvider credentialsProvider = new DefaultCredentialsProvider();
+        credentialsProvider.addCredentials("john", "secret1");
+
+        webClient.setCredentialsProvider(credentialsProvider);
+
+        TextPage page = webClient.getPage(baseUrl + "/rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+}
+----
+
+Using Arquillian, the test starts the default server (GlassFish 7), and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the remote GlassFish server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+
+The `DefaultCredentialsProvider` used here makes sure that the headers for Basic authentication are added to the request. The Basic authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
+
+If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restBasicAuthCustomStore/target/restBasicAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
+
+== Securing an endpoint with Basic authentication and a database identity store
+
+In the following example, we'll secure a REST endpoint using Basic authentication and the database identity store that is provided by Jakarta Security.
+
+You'll learn how to:
+
+. Define security constraints
+. Use the provided Basic authentication mechanism
+. Use the provided database identity store
+. Populate and configure the identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Declare the authentication mechanism and identity store
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@DatabaseIdentityStoreDefinition(
+    callerQuery = "select password from basic_auth_user where username = ?",
+    groupsQuery = "select name from basic_auth_group where username = ?",
+    hashAlgorithmParameters = {
+        "Pbkdf2PasswordHash.Iterations=3072",
+        "Pbkdf2PasswordHash.Algorithm=PBKDF2WithHmacSHA512",
+        "Pbkdf2PasswordHash.SaltSizeBytes=64"
+    }
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+----
+
+To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+
+Likewise, to declare the usage of a specific identity store, Jakarta EE provides `[XYZ]StoreDefinition` annotations.
+
+The annotations can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+
+You can use the provided `DatabaseIdentityStoreDefinition` with any authentication mechanism that validates username/password credentials. It requires at least two SQL queries:
+
+. A query that returns a password for the username part of credentials. The returned password is compared with the password part of those credentials. If they match (of more typically, their hashes match) the credential is considered valid.
+. A query that returns a number of roles given that same username part of the credentials
+
+Although not required, it's a good practice to provide some parameters for the hash algorithm. Passwords should never be stored in plain-text in a database.
+
+==== Populating the identity store
+
+In order to use the identity store, we need to put some data in a database. The following code shows one way how to do that:
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@DatabaseIdentityStoreDefinition(
+    callerQuery = "select password from basic_auth_user where username = ?",
+    groupsQuery = "select name from basic_auth_group where username = ?",
+    hashAlgorithmParameters = {
+        "Pbkdf2PasswordHash.Iterations=3072",
+        "Pbkdf2PasswordHash.Algorithm=PBKDF2WithHmacSHA512",
+        "Pbkdf2PasswordHash.SaltSizeBytes=64"
+    }
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+    /**
+     * Id of the one and only user we populate in out DB.
+     */
+    private static final BigInteger USER_ID = ONE;
+
+    /**
+     * Id of the one and only group we populate in out DB.
+     */
+    private static final BigInteger GROUP_ID = ONE;
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Inject
+    private Pbkdf2PasswordHash passwordHash;
+
+    @Transactional
+    public void onStart(@Observes @Initialized(ApplicationScoped.class) Object applicationContext) {
+        passwordHash.initialize(Map.of(
+            "Pbkdf2PasswordHash.Iterations", "3072",
+            "Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512",
+            "Pbkdf2PasswordHash.SaltSizeBytes", "64"));
+
+        if (entityManager.find(User.class, USER_ID) == null) {
+            var user = new User();
+            user.id  = USER_ID;
+            user.username = "john";
+            user.password = passwordHash.generate("secret1".toCharArray());
+            entityManager.persist(user);
+        }
+
+        if (entityManager.find(Group.class, GROUP_ID) == null) {
+            var group = new Group();
+            group.id = GROUP_ID;
+            group.name = "user";
+            group.username = "john";
+            entityManager.persist(group);
+        }
+    }
+
+}
+
+@Entity
+@Table(name = "basic_auth_user")
+class User {
+    @Id
+    BigInteger id;
+
+    @Column(name = "password")
+    String password;
+
+    @Column(name = "username", unique = true)
+    String username;
+}
+
+@Entity
+@Table(name = "basic_auth_group")
+class Group {
+    @Column(name = "id")
+    @Id
+    BigInteger id;
+
+    @Column(name = "name")
+    String name;
+
+    @Column(name = "username")
+    String username;
+}
+----
+
+The code above uses Jakarta Persistence, which generates SQL from Java types. Jakarta Persistence is discussed in detail in its own chapter. Since we haven't specified a datasource, the `@DatabaseIdentityStoreDefinition` annotation will use the default datasource defined in Jakarta EE, so you don't have to explicitly install and configure an external database such as Postgres or MySQL. However, if necessary, you can configure a different one using the `dataSourceLookup` attribute.
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restBasicAuthDBStore
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.307 s - in jakartaee.examples.focused.security.restbasicauthdbstore.RestBasicAuthDBStoreIT
+----
+
+The test itself is basically the same as that for the <<Securing an endpoint with Basic authentication>> example.
+
+== Securing an endpoint with Basic authentication and multiple identity stores
+
+In the following example, we'll be securing a REST endpoint using Basic authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store.
+
+You'll learn how to:
+
+. Define security constraints
+. Use the provided Basic authentication mechanism
+. Use the provided database identity store
+. Create a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Declare the authentication mechanism and identity store
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@DatabaseIdentityStoreDefinition(
+    callerQuery = "select password from basic_auth_user where username = ?",
+    groupsQuery = "select name from basic_auth_group where username = ?",
+    hashAlgorithmParameters = {
+        "Pbkdf2PasswordHash.Iterations=3072",
+        "Pbkdf2PasswordHash.Algorithm=PBKDF2WithHmacSHA512",
+        "Pbkdf2PasswordHash.SaltSizeBytes=64"
+    }
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+----
+
+[source,java]
+----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("pete", "secret2")) {
+            return new CredentialValidationResult("pete", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+----
+
+In this example we have two enabled CDI beans implementing the `IdentityStore` interface. One of them will be implicitly enabled via the `@DatabaseIdentityStoreDefinition` annotation, while the other one is defined explicitly via the `CustomIdentityStore` class. As with a single identity store, it doesn't matter how or where the CDI beans are defined, only that multiple enabled ones exist.
+
+When multiple identity stores are present, the security system will try them in order of their priority. We didn't set a priority here, so the order will be undefined. If the default validation algorithm is used, a successful validation wins over a failed validation. For example, let's say we have multiple identity stores that know about the user "pete". If "pete" fails validation in one store, but passes validation in another store, the end result is still that validation passed.
+
+In the two stores above, however only one store knows about "pete" and that's the `CustomIdentityStore`. The store created from `@DatabaseIdentityStoreDefinition` doesn't know about "pete" at all, and will simply not validate it.
+
+
+==== Populating the identity store
+
+In order to use the identity store, we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a Database identity store>>.
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restBasicAuthDBStoreAndCustomStore
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+pete : true
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.239 s - in jakartaee.examples.focused.security.restbasicauthdbstoreandcustomstore.RestBasicAuthDBStoreAndCustomStoreIT
+----
+
+Let's take a quick look at the actual test again:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * <p>
+     * This will use the "john" credentials, which should be validated by the DB store
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall1() throws Exception {
+        DefaultCredentialsProvider credentialsProvider = new DefaultCredentialsProvider();
+        credentialsProvider.addCredentials("john", "secret1");
+
+        webClient.setCredentialsProvider(credentialsProvider);
+
+        TextPage page = webClient.getPage(baseUrl + "/rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * <p>
+     * This will use the "pete" credentials, which should be validated by the custom store
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall2() throws Exception {
+        DefaultCredentialsProvider credentialsProvider = new DefaultCredentialsProvider();
+        credentialsProvider.addCredentials("pete", "secret2");
+
+        webClient.setCredentialsProvider(credentialsProvider);
+
+        TextPage page = webClient.getPage(baseUrl + "/rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+}
+----
+
+We have two tests here: in one test we try to authenticate as "john", in the other test as "pete". As we've seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognizing a username by any of them will not fail the overall validation.
+
+== Securing an endpoint with Form authentication
+
+In the following example, we'll secure a REST endpoint using Form authentication.
+
+You'll learn how to:
+
+. Define security constraints
+. Use the Form authentication mechanisms
+. How to define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
+
+[source,java]
+----
+@Path("/resource")
+@RequestScoped
+public class Resource {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getCallerAndRole() {
+        return
+            securityContext.getCallerPrincipal().getName() + " : " +
+            securityContext.isCallerInRole("user");
+    }
+
+}
+----
+
+This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance.
+
+If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
+
+Also note that there is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the point of view of Jakarta EE that is a deprecated type and replaced by the Jakarta Security version.
+
+==== Declare the security constraints
+
+Next we'll define the security constraints in `web.xml`, which tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="5.0"
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+</web-app>
+----
+
+This XML says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
+
+Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of the Permission Store that we explained above. Knowledge about this transformation is only needed for very advanced use cases.
+
+The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behavior for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension.
+
+There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@ApplicationScoped
+@FormAuthenticationMechanismDefinition(
+    loginToContinue = @LoginToContinue(
+        loginPage="/login.html",
+        errorPage="/login-error.html"
+    )
+)
+@DeclareRoles({ "user", "caller" })
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+
+The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+
+To use this authentication method, we need to designate two paths to resources that are relative to our application. One path is for the login page, which the user will be directed to when attempting to access a protected resource. The other path is for when login fails, such as when the user enters incorrect login credentials. If the paths are the same, a request parameter can be used to distinguish between them. Paths can point to anything our server can respond to; a static HTML file, a REST resource, or anything else. For simplicity, we'll use two static HTML files here:
+
+[source,html]
+----
+<!DOCTYPE html>
+
+<html>
+    <body>
+        Login to continue
+        <form method="POST" action="j_security_check">
+            <p>
+                <strong>Username </strong> <input type="text" name="j_username">
+            <p>
+                <strong>Password </strong> <input type="password" name="j_password">
+            <p>
+                <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+----
+
+[source,html]
+----
+<!DOCTYPE html>
+
+<html>
+    <body>
+        Login failed!
+        <a href="login.html">Try again</a>
+    </body>
+</html>
+----
+
+==== Define the identity store
+
+Finally, let's define a basic identity store that the security system can use to validate provided credentials for Form authentication:
+
+[source,java]
+-----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+-----
+
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions about whether that would promote security best practices.
+
+Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself via a configuration annotation, or programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restBasicAuthCustomStore
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.24 s - in jakartaee.examples.focused.security.restformauthcustomstore.RestFormAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestFormAuthCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("j_username")
+            .setValueAttribute("john");
+
+        form.getInputByName("j_password")
+            .setValueAttribute("secret1");
+
+        TextPage page = form.getInputByValue("Submit")
+                   .click();
+
+        System.out.println(page.getContent());
+    }
+}
+----
+
+Using Arquillian, the test starts the default server (GlassFish 7), and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the remote GlassFish server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+
+The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
+
+
