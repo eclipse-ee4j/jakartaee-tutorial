@@ -220,6 +220,14 @@ class AntoraConverter {
                 }
                 changeCount++;
             }
+            if (content.contains(("link:http"))) {
+                System.out.println("=> Updating external links");
+                content = content.replace("link:http", "https");
+                if (!dryRun) {
+                    Files.write(file.toPath(), content.getBytes());
+                }
+                changeCount++;
+            }
             if (content.contains(("link:#"))) {
                 System.out.println("=> Changing links with anchors to xrefs");
                 content = replaceBetween(content, "link:", "[", "_", "-", "_", (originalLink, newLink) -> {

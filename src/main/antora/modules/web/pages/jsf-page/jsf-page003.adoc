@@ -1,0 +1,137 @@
+== Using Core Tags
+
+The tags included in the Jakarta Faces core tag library are used to perform core actions that are not performed by HTML tags.
+
+<<_event_handling_core_tags>> lists the event-handling core tags.
+
+[[_event_handling_core_tags]]
+.Event-Handling Core Tags
+[width="99%",cols="30%,70%"]
+|===
+|Tag |Function
+
+|`f:actionListener` |Adds an action listener to a parent component
+
+|`f:phaseListener` a|Adds a `PhaseListener` to a page
+
+|`f:setPropertyActionListener` |Registers a special action listener whose sole purpose is to push a value into a managed bean when a form is submitted
+
+|`f:valueChangeListener` |Adds a value-change listener to a parent component
+|===
+
+<<_data_conversion_core_tags>> lists the data-conversion core tags.
+
+[[_data_conversion_core_tags]]
+.Data-Conversion Core Tags
+[width="99%",cols="30%,70%"]
+|===
+|Tag |Function
+
+|`f:converter` |Adds an arbitrary converter to the parent component
+
+|`f:convertDateTime` a|Adds a `DateTimeConverter` instance to the parent component
+
+|`f:convertNumber` a|Adds a `NumberConverter` instance to the parent component
+|===
+
+<<_facet_core_tags>> lists the facet core tags.
+
+[[_facet_core_tags]]
+.Facet Core Tags
+[width="99%",cols="30%,70%"]
+|===
+|Tag |Function
+
+|`f:facet` |Adds a nested component that has a special relationship to
+its enclosing tag
+
+|`f:metadata` a|Registers a `facet` on a parent component
+|===
+
+<<_core_tags_that_represent_items_in_a_list>> lists the core tags that represent items in a list.
+
+[[_core_tags_that_represent_items_in_a_list]]
+.Core Tags That Represent Items in a List
+[width="99%",cols="30%,70%"]
+|===
+|Tag |Function
+
+|`f:selectItem` |Represents one item in a list of items
+
+|`f:selectItems` |Represents a set of items
+|===
+
+<<_validator_core_tags>> lists the validator core tags.
+
+[[_validator_core_tags]]
+.Validator Core Tags
+[width="99%",cols="30%,70%"]
+|===
+|Tag |Function
+
+|`f:validateDoubleRange` a|Adds a `DoubleRangeValidator` to a component
+
+|`f:validateLength` a|Adds a `LengthValidator` to a component
+
+|`f:validateLongRange` a|Adds a `LongRangeValidator` to a component
+
+|`f:validator` |Adds a custom validator to a component
+
+|`f:validateRegEx` a|Adds a `RegExValidator` to a component
+
+|`f:validateBean` a|Delegates the validation of a local value to a `BeanValidator`
+
+|`f:validateRequired` |Enforces the presence of a value in a component
+|===
+
+<<_miscellaneous_core_tags>> lists the core tags that fall into other categories.
+
+[[_miscellaneous_core_tags]]
+.Miscellaneous Core Tags
+[width="99%",cols="25%,15%,60%"]
+|===
+|Tag Category |Tag |Function
+
+|Attribute configuration |`f:attribute` |Adds configurable attributes to a parent component
+
+|Localization |`f:loadBundle` a|Specifies a `ResourceBundle` that is exposed as a `Map`
+
+|Parameter substitution |`f:param` a|Substitutes parameters into a `MessageFormat` instance and adds query string name-value pairs to a URL
+
+|Ajax |`f:ajax` |Associates an Ajax action with a single component or a group of components based on placement
+
+|Event |`f:event` a|Allows installing a `ComponentSystemEventListener` on a component
+
+|WebSocket |`f:websocket` |Allows server-side communications to be pushed to all instances of a socket containing the same channel name.
+|===
+
+These tags, which are used in conjunction with component tags, are explained in other sections of this tutorial.
+
+<<_where_the_core_tags_are_explained>> lists the sections that explain how to use specific core tags.
+
+[[_where_the_core_tags_are_explained]]
+.Where the Core Tags Are Explained
+[width="99%",cols="30%,70%"]
+|===
+|Tags |Where Explained
+
+|Event-handling tags | xref:jsf-page-core/jsf-page-core.adoc#_registering_listeners_on_components[Registering Listeners on Components]
+
+|Data-conversion tags | xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters]
+
+|`f:facet` |<<_using_data_bound_table_components>> and <<_laying_out_components_with_the_hpanelgrid_and_hpanelgroup_tags>>
+
+|`f:loadBundle` | xref:webi18n/webi18n.adoc#_setting_the_resource_bundle[Setting the Resource Bundle]
+
+|`f:metadata` | <<_using_view_parameters_to_configure_bookmarkable_urls>>
+
+|`f:param` | <<_displaying_a_formatted_message_with_the_houtputformat_tag>>
+
+|`f:selectItem` and `f:selectItems` | <<_using_the_fselectitem_and_fselectitems_tags>>
+
+|Validator tags |xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators]
+
+|`f:ajax` | xref:jsf-ajax/jsf-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology]
+
+|`f:websocket` | xref:jsf-ws/jsf-ws.adoc#_using_websockets_with_jakarta_faces_technology[Using WebSockets with Jakarta Faces Technology]
+|===
