@@ -4,7 +4,7 @@ As part of the documentation upgrade process, we're migrating the existing conte
 
 == Setup
 
-The conversion script is written in Java and requires https://jbang.io[JBang] to run. Install that first.
+The conversion script is xref:AntoraConverter.java[]. You can run it with https://jbang.dev[JBang] or just using plain vanilla Java or your favorite IDE. The instructions below use jbang.
 
 == Migration Process
 
