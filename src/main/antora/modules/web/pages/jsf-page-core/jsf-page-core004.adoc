@@ -36,7 +36,7 @@ attributes.
 The component tag refers to a managed bean method using a method
 expression as a value of one of the attributes. The method referenced by
 an attribute must follow a particular signature, which is defined by the
-tag attribute's definition in the olink:JSFTL[Jakarta Server Faces Facelets
+tag attribute's definition in the https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server Faces Facelets
 Tag Library documentation]. For example, the definition of the
 `validator` attribute of the `inputText` tag is the following:
 

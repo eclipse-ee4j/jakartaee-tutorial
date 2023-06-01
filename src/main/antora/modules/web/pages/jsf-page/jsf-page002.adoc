@@ -114,7 +114,7 @@ Properties] explains how to write a bean property bound to that
 particular component or its value.
 
 For reference information about the tags and their attributes, see the
-olink:JSFTL[Jakarta Server Faces Facelets Tag Library documentation].
+https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server Faces Facelets Tag Library documentation].
 
 [[BNARG]][[common-component-tag-attributes]]
 
@@ -469,7 +469,7 @@ The input tags support the tag attributes shown in link:#GKCNH[Table
 10-4] in addition to those described in link:#BNARG[Common Component Tag
 Attributes]. Note that this table does not include all the attributes
 supported by the input tags but just those that are used most often. For
-the complete list of attributes, refer to the olink:JSFTL[Jakarta Server
+the complete list of attributes, refer to the https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server
 Faces Facelets Tag Library documentation].
 
 [[sthref45]][[GKCNH]]
@@ -1508,7 +1508,7 @@ message. In the example in this section, the text will be a shade of
 red, New Century Schoolbook, serif font family, and oblique style, and a
 line will appear over the text. The message and messages tags support
 many other attributes for defining styles. For more information on these
-attributes, refer to the olink:JSFTL[Jakarta Server Faces Facelets Tag
+attributes, refer to the https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server Faces Facelets Tag
 Library documentation].
 
 Another attribute supported by the `h:messages` tag is the `layout`
@@ -1741,7 +1741,7 @@ Resource relocation can be defined with the following HTML tags:
 
 These tags have `name` and `target` attributes, which can be used to
 define the render location. For a complete list of attributes for these
-tags, see theolink:JSFTL[Jakarta Server Faces Facelets Tag Library
+tags, see the https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server Faces Facelets Tag Library
 documentation].
 
 For the `h:outputScript` tag, the `name` and `target` attributes define

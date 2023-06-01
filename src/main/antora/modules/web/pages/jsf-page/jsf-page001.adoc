@@ -12,13 +12,13 @@ libraries
 To add the Jakarta Server Faces components to your web page, you need to
 provide the page access to the two standard tag libraries: the
 Jakarta Server Faces HTML render kit tag library and the Jakarta Server Faces
-core tag library. The olink:JSFRK[Jakarta Server Faces standard HTML tag
-library] defines tags that represent common HTML user interface
+core tag library. The Jakarta Server Faces standard HTML tag
+library defines tags that represent common HTML user interface
 components. The Jakarta Server Faces core tag library defines tags that
 perform core actions and are independent of a particular render kit.
 
 For a complete list of Jakarta Server Faces Facelets tags and their
-attributes, refer to the olink:JSFTL[Jakarta Server Faces Facelets Tag
+attributes, refer to the https://jakarta.ee/specifications/faces/2.3/vdldoc/[Jakarta Server Faces Facelets Tag
 Library documentation].
 
 To use any of the Jakarta Server Faces tags, you need to include appropriate
