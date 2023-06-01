@@ -94,9 +94,10 @@ these are run automatically before pushing.
 
 . Run the migration script from the root project folder. For example, for the Security module, you would run:
 
-```shell
+[source,shell]
+----
 jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/modules/security
-```
+----
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
 
