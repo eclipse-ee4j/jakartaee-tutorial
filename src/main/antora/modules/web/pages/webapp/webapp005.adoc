@@ -15,7 +15,7 @@ This section describes the following tasks involved with configuring web applica
 The web components in a web module share an object that represents their application context.
 You can pass context parameters to the context, or you can pass initialization parameters to a servlet.
 Context parameters are available to the entire application.
-For information on initialization parameters, see <<creating-and-initializing-a-servlet>>.
+For information on initialization parameters, see xref:servlets/servlets.adoc#_creating_and_initializing_a_servlet[Creating and Initializing a Servlet].
 
 ==== To Add a Context Parameter Using NetBeans IDE
 
@@ -139,11 +139,11 @@ However, managed beans are managed by the container; therefore, they can accept 
 Components that can accept resource injections are listed in xref:web-components-that-accept-resource-injections[xrefstyle=short].
 
 This section explains how to use a couple of the annotations supported by a web container to inject resources.
-xref:running-the-persistence-examples[xrefstyle=full], explains how web applications use annotations supported by Jakarta Persistence.
-xref:getting-started-securing-web-applications[xrefstyle=full], explains how to use annotations to specify information about securing web applications.
-See xref:resource-adapters-and-contracts[xrefstyle=full], for more information on resources.
+xref:running-the-persistence-examples[], explains how web applications use annotations supported by Jakarta Persistence.
+xref:getting-started-securing-web-applications[], explains how to use annotations to specify information about securing web applications.
+See xref:resource-adapters-and-contracts[], for more information on resources.
 
-[[web-components-that-accept-resource-injections]]
+[[_web_components_that_accept_resource_injections]]
 .Web Components That Accept Resource Injections
 [width="50%",cols="20%,30%"]
 |===

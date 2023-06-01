@@ -8,15 +8,15 @@ Users can ask simple questions to a bot agent that is always available in the ch
 
 The `websocketbot` example application consists of the following elements:
 
-* <<the-cdi-bean>> – A CDI bean (`BotBean`) that contains the logic for the bot agent to reply to messages
+* <<_the_cdi_bean>> – A CDI bean (`BotBean`) that contains the logic for the bot agent to reply to messages
 
-* <<the-websocket-endpoint>> – A WebSocket endpoint (`BotEndpoint`) that implements the chat room
+* <<_the_websocket_endpoint>> – A WebSocket endpoint (`BotEndpoint`) that implements the chat room
 
-* <<the-application-messages>> – A set of classes (`Message`, `ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`) that represent application messages
+* <<_the_application_messages>> – A set of classes (`Message`, `ChatMessage`, `InfoMessage`, `JoinMessage`, and `UsersMessage`) that represent application messages
 
-* <<the-encoder-classes>> – A set of classes (`ChatMessageEncoder`, `InfoMessageEncoder`, `JoinMessageEncoder`, and `UsersMessageEncoder`) that encode application messages into WebSocket text messages as JSON data
+* <<_the_encoder_classes>> – A set of classes (`ChatMessageEncoder`, `InfoMessageEncoder`, `JoinMessageEncoder`, and `UsersMessageEncoder`) that encode application messages into WebSocket text messages as JSON data
 
-* <<the-message-decoder>> – A class (`MessageDecoder`) the parses WebSocket text messages as JSON data and decodes them into `JoinMessage` or `ChatMessage` objects
+* <<_the_message_decoder>> – A class (`MessageDecoder`) the parses WebSocket text messages as JSON data and decodes them into `JoinMessage` or `ChatMessage` objects
 
 * <<the-html-page-3>> – An HTML page (`index.html`) that uses JavaScript code to implement the client for the chat room
 
@@ -119,7 +119,7 @@ If the message is a join message, the endpoint adds the new user to the list and
 If the message is a chat message, the endpoint forwards it to all connected clients.
 
 If a chat message is for the bot agent, the endpoint obtains a response using the `BotBean` instance and sends it to all connected clients.
-The `sendAll` method is similar to the example in <<sending-messages-to-all-peers-connected-to-an-endpoint>>.
+The `sendAll` method is similar to the example in <<_sending_messages_to_all_peers_connected_to_an_endpoint>>.
 
 ===== Asynchronous Processing and Concurrency Considerations
 
@@ -132,7 +132,7 @@ This facilitates the development of WebSocket endpoints, because you are guarant
 When you introduce a new thread in an endpoint, as in this example, you must ensure that variables and methods accessed by more than one thread are thread safe.
 In this example, the code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method has been declared `synchronized`.
 
-Refer to xref:jakarta-concurrency-2[xrefstyle=full] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
+Refer to xref:jakarta-concurrency-2[] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
 
 ==== The Application Messages
 
@@ -173,7 +173,7 @@ public class ChatMessageEncoder implements Encoder.Text<ChatMessage> {
 }
 ----
 
-See xref:json-processing[xrefstyle=full] for more information on the Jakarta JSON Processing.
+See xref:jsonp/jsonp.adoc#_json_processing[JSON Processing] for more information on the Jakarta JSON Processing.
 
 ==== The Message Decoder
 
@@ -263,7 +263,7 @@ This command builds and packages the application into a WAR file, `websocketbot.
 http://localhost:8080/websocketbot/
 ----
 +
-See <<to-test-the-websocketbot-example-application>> for more information.
+See <<_to_test_the_websocketbot_example_application>> for more information.
 
 ==== To Run the websocketbot Example Application Using Maven
 
@@ -288,7 +288,7 @@ mvn install
 http://localhost:8080/websocketbot/
 ----
 +
-See <<to-test-the-websocketbot-example-application>> for more information.
+See <<_to_test_the_websocketbot_example_application>> for more information.
 
 ==== To Test the websocketbot Example Application
 

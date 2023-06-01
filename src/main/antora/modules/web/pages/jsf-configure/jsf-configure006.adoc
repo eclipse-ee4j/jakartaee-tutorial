@@ -3,7 +3,7 @@
 Application messages can include any strings displayed to the user as well as custom error messages (which are displayed by the `message` and `messages` tags) for your custom converters or validators.
 To make messages available at application startup time, do one of the following:
 
-* Queue an individual message onto the `jakarta.faces.context.FacesContext` instance programmatically, as described in <<using-facesmessage-to-create-a-message>>
+* Queue an individual message onto the `jakarta.faces.context.FacesContext` instance programmatically, as described in <<_using_facesmessage_to_create_a_message>>
 
 * Register all the messages with your application using the application configuration resource file
 
@@ -92,7 +92,7 @@ public static String loadErrorMessage(FacesContext context,
 
 === Referencing Error Messages
 
-A Jakarta Faces page uses the `message` or `messages` tags to access error messages, as explained in <<displaying-error-messages-with-the-hmessage-and-hmessages-tags>>.
+A Jakarta Faces page uses the `message` or `messages` tags to access error messages, as explained in xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
 
 The error messages these tags access include
 

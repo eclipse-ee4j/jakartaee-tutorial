@@ -1,9 +1,9 @@
 == Referencing a Managed Bean Method
 
 A component tag has a set of attributes for referencing managed bean methods that can perform certain functions for the component associated with the tag.
-These attributes are summarized in <<component-tag-attributes-that-reference-managed-bean-methods>>.
+These attributes are summarized in <<_component_tag_attributes_that_reference_managed_bean_methods>>.
 
-[[component-tag-attributes-that-reference-managed-bean-methods]]
+[[_component_tag_attributes_that_reference_managed_bean_methods]]
 .Component Tag Attributes That Reference Managed Bean Methods
 [width="60%",cols="10%,50%"]
 |===
@@ -50,7 +50,7 @@ The following example shows how to reference a navigation method:
                  action="#{cashierBean.submit}" />
 ----
 
-See <<writing-a-method-to-handle-navigation>> for information on how to write such a method.
+See xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_navigation[Writing a Method to Handle Navigation] for information on how to write such a method.
 
 === Referencing a Method That Handles an Action Event
 
@@ -66,7 +66,7 @@ The following example shows how such a method could be referenced:
 
 The `actionListener` attribute of this component tag references the `chooseBookFromLink` method using a method expression.
 The `chooseBookFromLink` method handles the event when the user clicks the link rendered by this component.
-See <<writing-a-method-to-handle-an-action-event>> for information on how to write such a method.
+See xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_an_action_event[Writing a Method to Handle an Action Event] for information on how to write such a method.
 
 === Referencing a Method That Performs Validation
 
@@ -85,7 +85,7 @@ The following simplified example from <<the-guessnumber-cdi-cdi-example>> shows 
 ----
 
 The managed bean method `validateNumberRange` verifies that the input value is within the valid range, which changes each time another guess is made.
-See <<writing-a-method-to-perform-validation>> for information on how to write such a method.
+See xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_perform_validation[Writing a Method to Perform Validation] for information on how to write such a method.
 
 === Referencing a Method That Handles a Value-Change Event
 
@@ -104,4 +104,4 @@ If you want a component on your page to generate a value-change event and you wa
 The `valueChangeListener` attribute of this component tag references the `processValueChange` method of `CashierBean` by using a method expression.
 The `processValueChange` method handles the event of a user entering a name in the input field rendered by this component.
 
-<<writing-a-method-to-handle-a-value-change-event>> describes how to implement a method that handles a `ValueChangeEvent`.
+xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_a_value_change_event[Writing a Method to Handle a Value-Change Event] describes how to implement a method that handles a `ValueChangeEvent`.

@@ -97,7 +97,7 @@ The response page appears.Even simpler than the greeting page, the response page
 
 . Expand the Source Packages node, then the `ee.jakarta.tutorial.hello1` node.
 
-. [[hello1-nb-step-7, Step 7]] Double-click the `Hello.java` file to view it.
+. [[_hello1_nb_step_7, Step 7]] Double-click the `Hello.java` file to view it.
 +
 The `Hello` class, called a managed bean class, provides getter and setter methods for the `name` property used in the Facelets page expressions.
 By default, the expression language refers to the class name, with the first letter in lowercase (`hello.name`).
@@ -191,7 +191,7 @@ When an application consists of multiple requests and responses where data needs
 
 Application (`@ApplicationScoped`):: Application scope persists across all users' interactions with a web application.
 
-For more information on scopes in Jakarta Faces technology, see <<using-managed-bean-scopes>>.
+For more information on scopes in Jakarta Faces technology, see xref:jsf-configure/jsf-configure.adoc#_using_managed_bean_scopes[Using Managed Bean Scopes].
 
 === Packaging and Deploying the hello1 Web Module
 

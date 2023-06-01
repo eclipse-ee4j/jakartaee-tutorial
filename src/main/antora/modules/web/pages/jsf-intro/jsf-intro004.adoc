@@ -1,7 +1,7 @@
 == A Simple Jakarta Faces Application
 
 Jakarta Faces technology provides an easy and user-friendly process for creating web applications.
-Developing a simple Jakarta Faces application typically requires the following tasks, which have already been described in <<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>:
+Developing a simple Jakarta Faces application typically requires the following tasks, which have already been described in xref:webapp/webapp.adoc#_a_web_module_that_uses_jakarta_faces_technology_the_hello1_example[A Web Module That Uses Jakarta Faces Technology: The hello1 Example]:
 
 * Creating web pages using component tags
 
@@ -12,9 +12,9 @@ Developing a simple Jakarta Faces application typically requires the following t
 The `hello1` example includes a managed bean and two Facelets web pages.
 When accessed by a client, the first web page asks the user for his or her name, and the second page responds by providing a greeting.
 
-For details on Facelets technology, see xref:introduction-to-facelets[xrefstyle=full].
-For details on using EL expressions, see xref:expression-language[xrefstyle=full].
-For details on the Jakarta Faces programming model and building web pages using Jakarta Faces technology, see xref:using-jakarta-faces-technology-in-web-pages[xrefstyle=full].
+For details on Facelets technology, see xref:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
+For details on using EL expressions, see xref:jsf-el/jsf-el.adoc#_expression_language[Expression Language].
+For details on the Jakarta Faces programming model and building web pages using Jakarta Faces technology, see xref:jsf-page/jsf-page.adoc#_using_jakarta_faces_technology_in_web_pages[Using Jakarta Faces Technology in Web Pages].
 
 Every web application has a lifecycle.
 Common tasks, such as handling incoming requests, decoding parameters, modifying and saving state, and rendering web pages to the browser, are all performed during a web application lifecycle.
@@ -64,4 +64,4 @@ The `hello1` example application goes through the following stages when it is de
 
 . On subsequent (postback) requests, the component tree is rebuilt, and the saved state is applied.
 
-For full details on the lifecycle, see <<the-lifecycle-of-a-jakarta-faces-application>>.
+For full details on the lifecycle, see <<_the_lifecycle_of_a_jakarta_faces_application>>.

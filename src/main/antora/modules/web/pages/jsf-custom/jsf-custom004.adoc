@@ -14,7 +14,7 @@ You can apply the following steps while developing your own custom component.
 
 .. Saves and restores the component state
 
-. [[create-custom-component-step-2, Step 2]] Delegate rendering to a renderer if your component does not handle the rendering.
+. [[_create_custom_component_step_2, Step 2]] Delegate rendering to a renderer if your component does not handle the rendering.
 To do this:
 
 .. Create a custom renderer class by extending `jakarta.faces.render.Renderer`.
@@ -27,5 +27,5 @@ To do this:
 
 . Create a tag library descriptor (TLD) that defines the custom tag.
 
-See <<registering-a-custom-component>> and <<registering-a-custom-renderer-with-a-render-kit>> for information on registering the custom component and the renderer.
-The section <<using-a-custom-component>> discusses how to use the custom component in a Jakarta Faces page.
+See xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_component[Registering a Custom Component] and xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_renderer_with_a_render_kit[Registering a Custom Renderer with a Render Kit] for information on registering the custom component and the renderer.
+The section <<_using_a_custom_component>> discusses how to use the custom component in a Jakarta Faces page.

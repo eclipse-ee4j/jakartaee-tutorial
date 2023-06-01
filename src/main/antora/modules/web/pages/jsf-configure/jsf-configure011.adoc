@@ -1,9 +1,9 @@
 == Registering a Custom Renderer with a Render Kit
 
-When the application developer creates a custom renderer, as described in <<delegating-rendering-to-a-renderer>>, you must register it using the appropriate render kit.
+When the application developer creates a custom renderer, as described in xref:jsf-custom/jsf-custom.adoc#_delegating_rendering_to_a_renderer[Delegating Rendering to a Renderer], you must register it using the appropriate render kit.
 Because the image map application implements an HTML image map, the `AreaRenderer` and `MapRenderer` classes in the Duke's Bookstore case study should be registered using the HTML render kit.
 
-You register the renderer either by using the `@FacesRenderer` annotation, as described in <<creating-the-renderer-class>>, or by using the `render-kit` element of the application configuration resource file.
+You register the renderer either by using the `@FacesRenderer` annotation, as described in xref:jsf-custom/jsf-custom.adoc#_creating_the_renderer_class[Creating the Renderer Class], or by using the `render-kit` element of the application configuration resource file.
 Here is a hypothetical configuration of `AreaRenderer`:
 
 [source,xml]

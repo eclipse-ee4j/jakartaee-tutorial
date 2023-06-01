@@ -1,6 +1,6 @@
 == Registering a Custom Validator
 
-If the application developer provides an implementation of the `jakarta.faces.validator.Validator` interface to perform validation, you must register this custom validator either by using the `@FacesValidator` annotation, as described in <<implementing-the-validator-interface>>, or by using the `validator` XML element in the application configuration resource file:
+If the application developer provides an implementation of the `jakarta.faces.validator.Validator` interface to perform validation, you must register this custom validator either by using the `@FacesValidator` annotation, as described in xref:jsf-custom/jsf-custom.adoc#_implementing_the_validator_interface[Implementing the Validator Interface], or by using the `validator` XML element in the application configuration resource file:
 
 [source,xml]
 ----
@@ -31,6 +31,6 @@ It has required `attribute-name` and `attribute-class` subelements.
 The `attribute-name` element refers to the name of the attribute as it appears in the `validator` tag.
 The `attribute-class` element identifies the Java type of the value associated with the attribute.
 
-<<creating-and-using-a-custom-validator>> explains how to implement the `Validator` interface.
+xref:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_validator[Creating and Using a Custom Validator] explains how to implement the `Validator` interface.
 
-<<using-a-custom-validator>> explains how to reference the validator from the page.
+xref:jsf-custom/jsf-custom.adoc#_using_a_custom_validator[Using a Custom Validator] explains how to reference the validator from the page.

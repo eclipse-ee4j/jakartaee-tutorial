@@ -28,22 +28,22 @@ You do not need to create a custom component in the following cases.
 
 * You need to aggregate components to create a new component that has its own unique behavior.
 In this situation, you can use a composite component to combine existing standard components.
-For more information on composite components, see <<composite-components>> and xref:composite-components-advanced-topics-and-an-example[xrefstyle=full].
+For more information on composite components, see xref:jsf-facelets/jsf-facelets.adoc#_composite_components[Composite Components] and xref:jsf-advanced-cc/jsf-advanced-cc.adoc#_composite_components_advanced_topics_and_an_example[Composite Components: Advanced Topics and an Example].
 
 * You simply need to manipulate data on the component or add application-specific functionality to it.
 In this situation, you should create a managed bean for this purpose and bind it to the standard component rather than create a custom component.
-See <<managed-beans-in-jakarta-faces-technology>> for more information on managed beans.
+See xref:jsf-develop/jsf-develop.adoc#_managed_beans_in_jakarta_faces_technology[Managed Beans in Jakarta Faces Technology] for more information on managed beans.
 
 * You need to convert a component's data to a type not supported by its renderer.
-See <<using-the-standard-converters>> for more information about converting a component's data.
+See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters] for more information about converting a component's data.
 
 * You need to perform validation on the component data.
 Standard validators and custom validators can be added to a component by using the validator tags from the page.
-See <<using-the-standard-validators>> and <<creating-and-using-a-custom-validator>> for more information about validating a component's data.
+See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators] and <<_creating_and_using_a_custom_validator>> for more information about validating a component's data.
 
 * You need to register event listeners on components.
 You can either register event listeners on components using the `f:valueChangeListener` and `f:actionListener` tags, or you can point at an event-processing method on a managed bean using the component's `actionListener` or `valueChangeListener` attributes.
-See <<implementing-an-event-listener>> and <<writing-managed-bean-methods>> for more information.
+See <<_implementing_an_event_listener>> and xref:jsf-develop/jsf-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for more information.
 
 === When to Use a Custom Renderer
 
@@ -93,9 +93,9 @@ For example, suppose that you need to create a custom validator that requires ex
 In this case, the custom tag corresponds to a custom validator and not to a custom component or custom renderer.
 In any case, you still need to associate the custom tag with a server-side object.
 
-<<requirements-for-custom-components-custom-renderers-and-custom-tags>> summarizes what you must or can associate with a custom component, custom renderer, or custom tag.
+<<_requirements_for_custom_components_custom_renderers_and_custom_tags>> summarizes what you must or can associate with a custom component, custom renderer, or custom tag.
 
-[[requirements-for-custom-components-custom-renderers-and-custom-tags]]
+[[_requirements_for_custom_components_custom_renderers_and_custom_tags]]
 .Requirements for Custom Components, Custom Renderers and Custom Tags
 [width="90%",cols="34%,30%,36%"]
 |===

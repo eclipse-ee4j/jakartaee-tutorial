@@ -3,9 +3,9 @@
 The tags defined by the Jakarta Faces standard HTML tag library represent HTML form components and other basic HTML elements.
 These components display data or accept data from the user.
 This data is collected as part of a form and is submitted to the server, usually when the user clicks a button.
-This section explains how to use each of the component tags shown in <<the-component-tags>>.
+This section explains how to use each of the component tags shown in <<_the_component_tags>>.
 
-[[the-component-tags]]
+[[_the_component_tags]]
 .The Component Tags
 [width="99%",cols="15%,30%,30%,25%"]
 |===
@@ -67,18 +67,18 @@ For a standalone radio button, use the `group` attribute.
 |===
 
 The tags correspond to components in the `jakarta.faces.component` package.
-The components are discussed in more detail in xref:developing-with-jakarta-faces-technology[xrefstyle=full]
+The components are discussed in more detail in xref:jsf-develop/jsf-develop.adoc#_developing_with_jakarta_faces_technology[Developing with Jakarta Faces Technology]
 
 The next section explains the important attributes that are common to most component tags.
-For each of the components discussed in the following sections, <<writing-bean-properties>> explains how to write a bean property bound to that particular component or its value.
+For each of the components discussed in the following sections, xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] explains how to write a bean property bound to that particular component or its value.
 
 For reference information about the tags and their attributes, see the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
 === Common Component Tag Attributes
 
-Most of the component tags support the attributes shown in <<common-tag-attributes>>.
+Most of the component tags support the attributes shown in <<_common_tag_attributes>>.
 
-[[common-tag-attributes]]
+[[_common_tag_attributes]]
 .Common Component Tag Attributes
 [width="80%",cols="20%,60%"]
 |===
@@ -100,7 +100,7 @@ If the condition is not satisfied, the component is not rendered.
 |`value` |Specifies the value of the component in the form of a value expression.
 |===
 
-All the tag attributes except `id` can accept expressions, as defined by the Expression Language, described in xref:expression-language[xrefstyle=full].
+All the tag attributes except `id` can accept expressions, as defined by the Expression Language, described in xref:jsf-el/jsf-el.adoc#_expression_language[Expression Language].
 
 An attribute such as `rendered` or `value` can be set on the page and then modified in the backing bean for the page.
 
@@ -108,8 +108,8 @@ An attribute such as `rendered` or `value` can be set on the page and then modif
 
 The `id` attribute is not usually required for a component tag but is used when another component or a server-side class must refer to the component.
 If you don't include an `id` attribute, the Jakarta Faces implementation automatically generates a component ID.
-Unlike most other Jakarta Faces tag attributes, the `id` attribute takes expressions using only the evaluation syntax described in <<immediate-evaluation>>, which uses the `${}` delimiters.
-For more information on expression syntax, see <<value-expressions>>.
+Unlike most other Jakarta Faces tag attributes, the `id` attribute takes expressions using only the evaluation syntax described in xref:jsf-el/jsf-el.adoc#_immediate_evaluation[Immediate Evaluation], which uses the `${}` delimiters.
+For more information on expression syntax, see xref:jsf-el/jsf-el.adoc#_value_expressions[Value Expressions].
 
 ==== The immediate Attribute
 
@@ -171,18 +171,18 @@ For example, the `commandLink` component in the following section of a page is n
 ----
 
 Unlike nearly every other Jakarta Faces tag attribute, the `rendered` attribute is restricted to using rvalue expressions.
-As explained in <<value-and-method-expressions>>, these rvalue expressions can only read data; they cannot write the data back to the data source.
+As explained in xref:jsf-el/jsf-el.adoc#_value_and_method_expressions[Value and Method Expressions], these rvalue expressions can only read data; they cannot write the data back to the data source.
 Therefore, expressions used with `rendered` attributes can use the arithmetic operators and literals that rvalue expressions can use but lvalue expressions cannot use.
 For example, the expression in the preceding example uses the `>` operator.
 
 [NOTE]
 In this example and others, `bundle` refers to a `java.util.ResourceBundle` file that contains locale-specific strings to be displayed.
-Resource bundles are discussed in xref:internationalizing-and-localizing-web-applications[xrefstyle=full].
+Resource bundles are discussed in xref:webi18n/webi18n.adoc#_internationalizing_and_localizing_web_applications[Internationalizing and Localizing Web Applications].
 
 ==== The style and styleClass Attributes
 
 The `style` and `styleClass` attributes allow you to specify CSS styles for the rendered output of your tags.
-<<displaying-error-messages-with-the-hmessage-and-hmessages-tags>> describes an example of using the `style` attribute to specify styles directly in the attribute.
+<<_displaying_error_messages_with_the_hmessage_and_hmessages_tags>> describes an example of using the `style` attribute to specify styles directly in the attribute.
 A component tag can instead refer to a CSS class.
 
 The following example shows the use of a `dataTable` tag that references the style class `list-background`:
@@ -203,7 +203,7 @@ For more information on defining styles, see the Cascading Style Sheets specific
 
 A tag representing an output component uses the `value` and `binding` attributes to bind its component's value or instance, respectively, to a data object.
 The `value` attribute is used more commonly than the `binding` attribute, and examples appear throughout this chapter.
-For more information on these attributes, see <<creating-a-managed-bean>>, <<writing-properties-bound-to-component-values>>, and <<writing-properties-bound-to-component-instances>>.
+For more information on these attributes, see xref:jsf-develop/jsf-develop.adoc#_creating_a_managed_bean[Creating a Managed Bean], xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_values[Writing Properties Bound to Component Values], and xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances].
 
 === Adding HTML Head and Body Tags
 
@@ -248,17 +248,17 @@ The following is an example of an XHTML page using `h:head` and `h:body` tags:
 
 Both of the preceding example code segments render the same HTML elements.
 The head and body tags are useful mainly for resource relocation.
-For more information on resource relocation, see <<resource-relocation-using-houtputscript-and-houtputstylesheet-tags>>.
+For more information on resource relocation, see <<_resource_relocation_using_houtputscript_and_houtputstylesheet_tags>>.
 
 === Adding a Form Component
 
 An `h:form` tag represents an input form, which includes child components that can contain data that is either presented to the user or submitted with the form.
 
-<<a-typical-form>> shows a typical login form in which a user enters a user name and password, then submits the form by clicking the Login button.
+<<_a_typical_form>> shows a typical login form in which a user enters a user name and password, then submits the form by clicking the Login button.
 
-[[a-typical-form]]
+[[_a_typical_form]]
 .A Typical Form
-image::jakartaeett_dt_065_frmcmpnt.svg["Form with User Name and Password text fields and a Login button."]
+image::common:jakartaeett_dt_065_frmcmpnt.svg["Form with User Name and Password text fields and a Login button."]
 
 The `h:form` tag represents the form on the page and encloses all the components that display or collect data from the user, as shown here:
 
@@ -285,11 +285,11 @@ The basic types of text components are as follows:
 
 * Password field, which is a type of field that displays a set of characters, such as asterisks, instead of the password text that the user enters
 
-<<example-text-components>> shows examples of these text components.
+<<_example_text_components>> shows examples of these text components.
 
-[[example-text-components]]
+[[_example_text_components]]
 .Example Text Components
-image::jakartaeett_dt_068_txtcmpnts.svg["A form. "User Name" labels a field. "Password" labels a password field. "Comments" labels a multi-line field."]
+image::common:jakartaeett_dt_068_txtcmpnts.svg["A form. "User Name" labels a field. "Password" labels a password field. "Comments" labels a multi-line field."]
 
 Text components can be categorized as either input or output.
 A Jakarta Faces output component, such as a label, is rendered as read-only text.
@@ -297,9 +297,9 @@ A Jakarta Faces input component, such as a field, is rendered as editable text.
 
 The input and output components can each be rendered in various ways to display more specialized text.
 
-<<input-tags>> lists the tags that represent the input components.
+<<_input_tags>> lists the tags that represent the input components.
 
-[[input-tags]]
+[[_input_tags]]
 .Input Tags
 [width="80%",cols="20%,60%"]
 |===
@@ -314,18 +314,18 @@ The input and output components can each be rendered in various ways to display 
 |`h:inputTextarea` |The standard multiline field: accepts multiple lines of text
 |===
 
-The input tags support the tag attributes shown in <<input-tag-attributes>> in addition to those described in <<common-component-tag-attributes>>.
+The input tags support the tag attributes shown in <<_input_tag_attributes>> in addition to those described in <<_common_component_tag_attributes>>.
 Note that this table does not include all the attributes supported by the input tags but just those that are used most often.
 For the complete list of attributes, refer to the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
-[[input-tag-attributes]]
+[[_input_tag_attributes]]
 .Input Tag Attributes
 [width="80%",cols="20%,60%"]
 |===
 |Attribute |Description
 
 |`converter` |Identifies a converter that will be used to convert the component's local data.
-See <<using-the-standard-converters>> for more information on how to use this attribute.
+See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters] for more information on how to use this attribute.
 
 |`converterMessage` |Specifies an error message to display when the converter registered on the component fails.
 
@@ -341,17 +341,17 @@ Acceptable values are `ltr`, meaning left to right, and `rtl`, meaning right to 
 |`requiredMessage` |Specifies an error message to display when the user does not enter a value into the component.
 
 |`validator` |Identifies a method expression pointing to a managed bean method that performs validation on the component's data.
-See <<referencing-a-method-that-performs-validation>> for an example of using the `f:validator` tag.
+See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_validation[Referencing a Method That Performs Validation] for an example of using the `f:validator` tag.
 
 |`validatorMessage` |Specifies an error message to display when the validator registered on the component fails to validate the component's local value.
 
 |`valueChangeListener` |Identifies a method expression that points to a managed bean method that handles the event of entering a value in this component.
-See <<referencing-a-method-that-handles-a-value-change-event>> for an example of using `valueChangeListener`.
+See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_a_value_change_event[Referencing a Method That Handles a Value-Change Event] for an example of using `valueChangeListener`.
 |===
 
-<<output-tags>> lists the tags that represent the output components.
+<<_output_tags>> lists the tags that represent the output components.
 
-[[output-tags]]
+[[_output_tags]]
 .Output Tags
 [width="80%",cols="20%,60%"]
 |===
@@ -366,9 +366,9 @@ See <<referencing-a-method-that-handles-a-value-change-event>> for an example of
 |`h:outputText` |Displays a one-line text string
 |===
 
-The output tags support the `converter` tag attribute in addition to those listed in <<common-component-tag-attributes>>.
+The output tags support the `converter` tag attribute in addition to those listed in <<_common_component_tag_attributes>>.
 
-The rest of this section explains how to use some of the tags listed in <<output-tags>>.
+The rest of this section explains how to use some of the tags listed in <<_output_tags>>.
 The other tags are written in a similar way.
 
 ==== Rendering a Field with the h:inputText Tag
@@ -526,15 +526,15 @@ These tags are called command component tags because they perform an action when
 The `h:commandButton` tag is rendered as a button.
 The `h:commandLink` tag is rendered as a link.
 
-In addition to the tag attributes listed in <<common-component-tag-attributes>>, the `h:commandButton` and `h:commandLink` tags can use the following attributes.
+In addition to the tag attributes listed in <<_common_component_tag_attributes>>, the `h:commandButton` and `h:commandLink` tags can use the following attributes.
 
 * `action`, which is either a logical outcome `String` or a method expression pointing to a bean method that returns a logical outcome `String`.
 In either case, the logical outcome `String` is used to determine what page to access when the command component tag is activated.
 
 * `actionListener`, which is a method expression pointing to a bean method that processes an action event fired by the command component tag.
 
-See <<referencing-a-method-that-performs-navigation>> for more information on using the `action` attribute.
-See <<referencing-a-method-that-handles-an-action-event>> for details on using the `actionListener` attribute.
+See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation] for more information on using the `action` attribute.
+See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_an_action_event[Referencing a Method That Handles an Action Event] for details on using the `actionListener` attribute.
 
 ==== Rendering a Button with the h:commandButton Tag
 
@@ -551,7 +551,7 @@ Clicking the button will cause the `submit` method of `CashierBean` to be invoke
 The `submit` method performs some processing and returns a logical outcome.
 
 The `value` attribute of the example `h:commandButton` tag references the button's label.
-For information on how to use the `action` attribute, see <<referencing-a-method-that-performs-navigation>>.
+For information on how to use the `action` attribute, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
 
 ==== Rendering a Link with the h:commandLink Tag
 
@@ -595,7 +595,7 @@ In a Jakarta Faces application, use the `h:graphicImage` tag to render an image 
 In this example, the `url` attribute specifies the path to the image.
 The URL of the example tag begins with a slash (`/`), which adds the relative context path of the web application to the beginning of the path to the image.
 
-Alternatively, you can use the facility described in <<web-resources>> to point to the image location.
+Alternatively, you can use the facility described in xref:jsf-facelets/jsf-facelets.adoc#_web_resources[Web Resources] to point to the image location.
 Here are two examples:
 
 [source,xml]
@@ -626,9 +626,9 @@ header {
 
 In a Jakarta Faces application, you use a panel as a layout container for a set of other components.
 A panel is rendered as an HTML table.
-<<panel-component-tags>> lists the tags used to create panels.
+<<_panel_component_tags>> lists the tags used to create panels.
 
-[[panel-component-tags]]
+[[_panel_component_tags]]
 .Panel Component Tags
 [width="90%",cols="20%,50%,20%"]
 |===
@@ -707,9 +707,9 @@ Because the `h:panelGrid` tag specifies a `headerClass`, the `h:panelGrid` tag m
 The example `h:panelGrid` tag uses an `f:facet` tag for the header.
 Facets can have only one child, so an `h:panelGroup` tag is needed if you want to group more than one component within an `f:facet`.
 The example `h:panelGrid` tag has only one cell of data, so an `h:panelGroup` tag is not needed.
-(For more information about facets, see <<using-data-bound-table-components>>.
+(For more information about facets, see <<_using_data_bound_table_components>>.
 
-The `h:panelGroup` tag has an attribute, `layout`, in addition to those listed in <<common-component-tag-attributes>>.
+The `h:panelGroup` tag has an attribute, `layout`, in addition to those listed in <<_common_component_tag_attributes>>.
 If the `layout` attribute has the value `block`, an HTML `div` element is rendered to enclose the row; otherwise, an HTML `span` element is rendered to enclose the row.
 If you are specifying styles for the `h:panelGroup` tag, you should set the `layout` attribute to `block` in order for the styles to be applied to the components within the `h:panelGroup` tag.
 You should do this because styles, such as those that set width and height, are not applied to inline elements, which is how content enclosed by the `span` element is defined.
@@ -734,11 +734,11 @@ The most common tags for this kind of component are as follows:
 
 * An `h:selectOneListbox` tag, displayed as an unscrollable list
 
-<<example-components-for-selecting-one-item>> shows examples of these components.
+<<_example_components_for_selecting_one_item>> shows examples of these components.
 
-[[example-components-for-selecting-one-item]]
+[[_example_components_for_selecting_one_item]]
 .Example Components for Selecting One Item
-image::jakartaeett_dt_067_slctn.svg["Options, check box, and lists."]
+image::common:jakartaeett_dt_067_slctn.svg["Options, check box, and lists."]
 
 ==== Displaying a Check Box Using the h:selectBooleanCheckbox Tag
 
@@ -788,7 +788,7 @@ You are not required to provide a value for the currently selected item.
 If you don't provide a value, the browser determines which one is selected.
 
 Like the `h:selectOneRadio` tag, the `h:selectOneMenu` tag must contain either an `f:selectItems` tag or a set of `f:selectItem` tags for representing the items in the list.
-<<using-the-fselectitem-and-fselectitems-tags>> describes these tags.
+<<_using_the_fselectitem_and_fselectitems_tags>> describes these tags.
 
 === Displaying Components for Selecting Multiple Values
 
@@ -801,11 +801,11 @@ You can do this using one of the following component tags:
 
 * An `h:selectManyListbox` tag, displayed as a box
 
-<<example-components-for-selecting-multiple-values>> shows examples of these components.
+<<_example_components_for_selecting_multiple_values>> shows examples of these components.
 
-[[example-components-for-selecting-multiple-values]]
+[[_example_components_for_selecting_multiple_values]]
 .Example Components for Selecting Multiple Values
-image::jakartaeett_dt_066_slctmny.svg["Check box group, scrollable box, and unscrollable box."]
+image::common:jakartaeett_dt_066_slctmny.svg["Check box group, scrollable box, and unscrollable box."]
 
 These tags allow the user to select zero or more values from a set of values.
 This section explains the `h:selectManyCheckbox` tag.
@@ -868,7 +868,7 @@ The rest of this section shows you how to use the `f:selectItems` and `f:selectI
 
 ==== Using the f:selectItems Tag
 
-The following example from <<displaying-components-for-selecting-multiple-values>> shows how to use the `h:selectManyCheckbox` tag:
+The following example from <<_displaying_components_for_selecting_multiple_values>> shows how to use the `h:selectManyCheckbox` tag:
 
 [source,xml]
 ----
@@ -882,12 +882,12 @@ The following example from <<displaying-components-for-selecting-multiple-values
 The `value` attribute of the `f:selectItems` tag is bound to the managed bean property `cashierBean.newsletterItems`.
 The individual `SelectItem` objects are created programmatically in the managed bean.
 
-See <<uiselectitems-properties>> for information on how to write a managed bean property for one of these tags.
+See xref:jsf-develop/jsf-develop.adoc#_uiselectitems_properties[UISelectItems Properties] for information on how to write a managed bean property for one of these tags.
 
 ==== Using the f:selectItem Tag
 
 The `f:selectItem` tag represents a single item in a list of items.
-Here is the example from <<displaying-a-menu-using-the-hselectonemenu-tag>> once again:
+Here is the example from <<_displaying_a_menu_using_the_hselectonemenu_tag>> once again:
 
 [source,xml]
 ----
@@ -913,7 +913,7 @@ These attributes can also define literal values, as shown in the example `h:sele
 
 If you display components that allow a user to select values, you may also want to display the result of the selection.
 
-For example, you might want to thank a user who selected the checkbox to join the Duke Fan Club, as described in <<displaying-a-check-box-using-the-hselectbooleancheckbox-tag>>.
+For example, you might want to thank a user who selected the checkbox to join the Duke Fan Club, as described in <<_displaying_a_check_box_using_the_hselectbooleancheckbox_tag>>.
 Because the checkbox is bound to the `specialOffer` property of `CashierBean`, a `UISelectBoolean` value, you can call the `isSelected` method of the property to determine whether to render a thank-you message:
 
 [source,xml]
@@ -922,7 +922,7 @@ Because the checkbox is bound to the `specialOffer` property of `CashierBean`, a
               rendered="#{cashierBean.specialOffer.isSelected()}"/>
 ----
 
-Similarly, you might want to acknowledge that a user subscribed to newsletters using the `h:selectManyCheckbox` tag, as described in <<displaying-components-for-selecting-multiple-values>>.
+Similarly, you might want to acknowledge that a user subscribed to newsletters using the `h:selectManyCheckbox` tag, as described in <<_displaying_components_for_selecting_multiple_values>>.
 To do so, you can retrieve the value of the `newsletters` property, the `String` array that holds the selected items:
 
 [source,xml]
@@ -938,7 +938,7 @@ To do so, you can retrieve the value of the `newsletters` property, the `String`
 
 An introductory thank-you message is displayed only if the `newsletters` array is not empty.
 Then a `ui:repeat` tag, a simple way to show values in a loop, displays the contents of the selected items in an itemized list.
-(This tag is listed in <<facelets-templating-tags>>.)
+(This tag is listed in xref:jsf-facelets/jsf-facelets.adoc#_facelets_templating_tags[null].)
 
 === Using Data-Bound Table Components
 
@@ -1038,7 +1038,7 @@ This data can take the form of any of the following:
 
 All data sources for data components have a `DataModel` wrapper.
 Unless you explicitly construct a `DataModel` wrapper, the Jakarta Faces implementation will create one around data of any of the other acceptable types.
-See <<writing-bean-properties>> for more information on how to write properties for use with a data component.
+See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] for more information on how to write properties for use with a data component.
 
 The `var` attribute specifies a name that is used by the components within the `h:dataTable` tag as an alias to the data referenced in the `value` attribute of `h:dataTable`.
 
@@ -1056,9 +1056,9 @@ For example, if you wanted to display records 2 through 10 of the underlying dat
 When you display a subset of the data in your pages, you might want to consider including a link or button that causes subsequent rows to display when clicked.
 By default, both `first` and `rows` are set to zero, and this causes all the rows of the underlying data to display.
 
-<<optional-attributes-for-the-hdatatable-tag>> shows the optional attributes for the `h:dataTable` tag.
+<<_optional_attributes_for_the_hdatatable_tag>> shows the optional attributes for the `h:dataTable` tag.
 
-[[optional-attributes-for-the-hdatatable-tag]]
+[[_optional_attributes_for_the_hdatatable_tag]]
 .Optional Attributes for the h:dataTable Tag
 [width="60%",cols="30%,30%"]
 |===
@@ -1077,7 +1077,7 @@ By default, both `first` and `rows` are set to zero, and this causes all the row
 |`styleClass` |The entire table
 |===
 
-Each of the attributes in <<optional-attributes-for-the-hdatatable-tag>> can specify more than one style.
+Each of the attributes in <<_optional_attributes_for_the_hdatatable_tag>> can specify more than one style.
 If `columnClasses` or `rowClasses` specifies more than one style, the styles are applied to the columns or rows in the order that the styles are listed in the attribute.
 For example, if `columnClasses` specifies styles `list-column-center` and `list-column-right`, and if the table has two columns, the first column will have style `list-column-center`, and the second column will have style `list-column-right`.
 
@@ -1224,10 +1224,10 @@ The order in which the various parameter values are read is as follows:
 
 === The bookmarks Example Application
 
-The `bookmarks` example application modifies the `hello1` application described in <<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>> to use a bookmarkable URL that uses view parameters.
+The `bookmarks` example application modifies the `hello1` application described in xref:webapp/webapp.adoc#_a_web_module_that_uses_jakarta_faces_technology_the_hello1_example[A Web Module That Uses Jakarta Faces Technology: The hello1 Example] to use a bookmarkable URL that uses view parameters.
 
 Like `hello1`, the application includes the `Hello.java` managed bean, an `index.xhtml` page, and a `response.xhtml` page.
-In addition, it includes a `personal.xhtml page`, to which a bookmarkable URL and view parameters are passed from the `response.xhtml` page, as described in <<using-view-parameters-to-configure-bookmarkable-urls>>.
+In addition, it includes a `personal.xhtml page`, to which a bookmarkable URL and view parameters are passed from the `response.xhtml` page, as described in <<_using_view_parameters_to_configure_bookmarkable_urls>>.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `bookmarks` example.
 The source code for this example is in the `_tut-install_/examples/web/jsf/bookmarks/` directory.

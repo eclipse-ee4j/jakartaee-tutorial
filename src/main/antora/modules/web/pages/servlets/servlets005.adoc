@@ -82,11 +82,11 @@ Buffering allows content to be written before anything is sent back to the clien
 The method must be called before any content is written or before the response is committed.
 
 * Set localization information, such as locale and character encoding.
-See xref:internationalizing-and-localizing-web-applications[xrefstyle=full] for details.
+See xref:webi18n/webi18n.adoc#_internationalizing_and_localizing_web_applications[Internationalizing and Localizing Web Applications] for details.
 
 HTTP response objects, `jakarta.servlet.http.HttpServletResponse`, have fields representing HTTP headers, such as the following.
 
 * Status codes, which are used to indicate the reason a request is not satisfied or that a request has been redirected.
 
 * Cookies, which are used to store application-specific information at the client.
-Sometimes, cookies are used to maintain an identifier for tracking a user's session (see <<session-tracking>>).
+Sometimes, cookies are used to maintain an identifier for tracking a user's session (see <<_session_tracking>>).

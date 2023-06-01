@@ -1,9 +1,9 @@
 == Using the Standard Validators
 
 Jakarta Faces technology provides a set of standard classes and associated tags that page authors and application developers can use to validate a component's data.
-<<the-validator-classes>> lists all the standard validator classes and the tags that allow you to use the validators from the page.
+<<_the_validator_classes>> lists all the standard validator classes and the tags that allow you to use the validators from the page.
 
-[[the-validator-classes]]
+[[_the_validator_classes]]
 .The Validator Classes
 [width="99%",cols="15%,15%,60%"]
 |===
@@ -41,31 +41,31 @@ For example, the error message that displays when the component's value exceeds 
 
 In this case, the `{1}` substitution parameter is replaced by the component's label or `id`, and the `{0}` substitution parameter is replaced with the maximum value allowed by the validator.
 
-See <<displaying-error-messages-with-the-hmessage-and-hmessages-tags>> for information on how to display validation error messages on the page when validation fails.
+See <<_displaying_error_messages_with_the_hmessage_and_hmessages_tags>> for information on how to display validation error messages on the page when validation fails.
 
 Instead of using the standard validators, you can use Bean Validation to validate data.
 If you specify bean validation constraints on your managed bean properties, the constraints are automatically placed on the corresponding fields on your applications web pages.
-See xref:introduction-to-jakarta-bean-validation[xrefstyle=full] for more information.
+See xref:introduction-to-jakarta-bean-validation[] for more information.
 You do not need to specify the `validateBean` tag to use Bean Validation, but the tag allows you to use more advanced Bean Validation features.
 For example, you can use the `validationGroups` attribute of the tag to specify constraint groups.
 
 You can also create and register custom validators, although Bean Validation has made this feature less useful.
-For details, see <<creating-and-using-a-custom-validator>>.
+For details, see xref:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_validator[Creating and Using a Custom Validator].
 
 === Validating a Component's Value
 
 To validate a component's value using a particular validator, you need to register that validator on the component.
 You can do this in one of the following ways.
 
-* Nest the validator's corresponding tag (shown in <<the-validator-classes>>) inside the component's tag.
-<<using-validator-tags>> explains how to use the `validateLongRange` tag.
+* Nest the validator's corresponding tag (shown in <<_the_validator_classes>>) inside the component's tag.
+<<_using_validator_tags>> explains how to use the `validateLongRange` tag.
 You can use the other standard tags in the same way.
 
 * Refer to a method that performs the validation from the component tag's `validator` attribute.
 
 * Nest a validator tag inside the component tag, and use either the validator tag's `validatorId` attribute or its `binding` attribute to refer to the validator.
 
-See <<referencing-a-method-that-performs-validation>> for more information on using the `validator` attribute.
+See <<_referencing_a_method_that_performs_validation>> for more information on using the `validator` attribute.
 
 The `validatorId` attribute works similarly to the `converterId` attribute of the `converter` tag, as described in <<converting-a-components-value>>.
 

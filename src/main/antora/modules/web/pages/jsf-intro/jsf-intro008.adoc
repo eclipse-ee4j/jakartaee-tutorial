@@ -8,4 +8,4 @@ Once such a partial request enters the Jakarta Faces lifecycle, the information 
 The Jakarta Faces lifecycle is still aware of such Ajax requests and modifies the component tree accordingly.
 
 The `execute` and `render` attributes of the `f:ajax` tag are used to identify which components may be executed and rendered.
-For more information on these attributes, see xref:using-ajax-with-jakarta-faces-technology[xrefstyle=full].
+For more information on these attributes, see xref:jsf-ajax/jsf-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology].

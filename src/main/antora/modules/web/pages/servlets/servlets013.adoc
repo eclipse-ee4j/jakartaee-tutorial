@@ -2,7 +2,7 @@
 
 Web containers in application servers normally use a server thread per client request.
 To develop scalable web applications, you must ensure that threads associated with client requests are never sitting idle waiting for a blocking operation to complete.
-<<asynchronous-processing>> provides a mechanism to execute application-specific blocking operations in a new thread, returning the thread associated with the request immediately to the container.
+<<_asynchronous_processing>> provides a mechanism to execute application-specific blocking operations in a new thread, returning the thread associated with the request immediately to the container.
 Even if you use asynchronous processing for all the application-specific blocking operations inside your service methods, threads associated with client requests can be momentarily sitting idle because of input/output considerations.
 
 For example, if a client is submitting a large HTTP POST request over a slow network connection, the server can read the request faster than the client can provide it.
@@ -11,7 +11,7 @@ Using traditional I/O, the container thread associated with this request would b
 Jakarta EE provides nonblocking I/O support for servlets and filters when processing requests in asynchronous mode.
 The following steps summarize how to use nonblocking I/O to process requests and write responses inside service methods.
 
-. Put the request in asynchronous mode as described in <<asynchronous-processing>>.
+. Put the request in asynchronous mode as described in <<_asynchronous_processing>>.
 
 . Obtain an input stream and/or an output stream from the request and response objects in the service method.
 
@@ -19,10 +19,10 @@ The following steps summarize how to use nonblocking I/O to process requests and
 
 . Process the request and the response inside the listener's callback methods.
 
-<<nonblocking-io-support-in-servletoutputstream>> describe the methods available in the servlet input and output streams for nonblocking I/O support.
-<<listener-interfaces-for-nonblocking-io-support>> describes the interfaces for read listeners and write listeners.
+<<_nonblocking_io_support_in_servletoutputstream>> describe the methods available in the servlet input and output streams for nonblocking I/O support.
+<<_listener_interfaces_for_nonblocking_io_support>> describes the interfaces for read listeners and write listeners.
 
-[[nonblocking-io-support-in-servletinputstream]]
+[[_nonblocking_io_support_in_servletinputstream]]
 .Nonblocking I/O Support in jakarta.servlet.ServletInputStream
 [width="100%",cols="50%,50%"]
 |===
@@ -36,7 +36,7 @@ You provide the listener object as an anonymous class or use another mechanism t
 |`boolean isFinished()` |Returns true when all the data has been read.
 |===
 
-[[nonblocking-io-support-in-servletoutputstream]]
+[[_nonblocking_io_support_in_servletoutputstream]]
 .Nonblocking I/O Support in jakarta.servlet.ServletOutputStream
 [width="100%",cols="50%,50%"]
 |===
@@ -48,7 +48,7 @@ You provide the write listener object as an anonymous class or use another mecha
 |`boolean isReady()` |Returns true if data can be written without blocking.
 |===
 
-[[listener-interfaces-for-nonblocking-io-support]]
+[[_listener_interfaces_for_nonblocking_io_support]]
 .Listener Interfaces for Nonblocking I/O Support
 [width="100%",cols="20%,30%,50%"]
 |===
@@ -67,7 +67,7 @@ You provide the write listener object as an anonymous class or use another mecha
 
 === Reading a Large HTTP POST Request Using Nonblocking I/O
 
-The code in this section shows how to read a large HTTP POST request inside a servlet by putting the request in asynchronous mode (as described in <<asynchronous-processing>>) and using the nonblocking I/O functionality from <<nonblocking-io-support-in-servletinputstream>> and <<listener-interfaces-for-nonblocking-io-support>>.
+The code in this section shows how to read a large HTTP POST request inside a servlet by putting the request in asynchronous mode (as described in <<_asynchronous_processing>>) and using the nonblocking I/O functionality from <<_nonblocking_io_support_in_servletinputstream>> and <<_listener_interfaces_for_nonblocking_io_support>>.
 
 [source,java]
 ----

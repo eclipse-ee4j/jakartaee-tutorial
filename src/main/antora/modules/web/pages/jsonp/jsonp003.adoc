@@ -69,7 +69,7 @@ JsonObjectBuilder addNull(String name)
 The `JsonArrayBuilder` class contains similar `add` methods that do not have a name (key) parameter.
 You can nest arrays and objects by passing a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to the corresponding `add` method, as shown in this example.
 
-The resulting tree represents the JSON data from <<json-syntax>>.
+The resulting tree represents the JSON data from <<_json_syntax>>.
 
 === Navigating an Object Model
 
@@ -116,7 +116,7 @@ public static void navigateTree(JsonValue tree, String key) {
 }
 ----
 
-The method `navigateTree` can be used with the models built in <<creating-an-object-model-from-json-data>> and <<creating-an-object-model-from-application-code>> as follows:
+The method `navigateTree` can be used with the models built in <<_creating_an_object_model_from_json_data>> and <<_creating_an_object_model_from_application_code>> as follows:
 
 [source,java]
 ----
@@ -134,7 +134,7 @@ For objects, the `JsonObject.keySet` method returns a set of strings that contai
 For arrays, `JsonArray` implements the `List<JsonValue>` interface.
 You can use enhanced `for` loops with the `Set<String>` instance returned by `JsonObject.keySet` and with instances of `JsonArray`, as shown in this example.
 
-The `navigateTree` method for the model built in <<creating-an-object-model-from-application-code>> produces the following output:
+The `navigateTree` method for the model built in <<_creating_an_object_model_from_application_code>> produces the following output:
 
 ----
 OBJECT
@@ -156,7 +156,7 @@ OBJECT
 
 === Writing an Object Model to a Stream
 
-The object models created in <<creating-an-object-model-from-json-data>> and <<creating-an-object-model-from-application-code>> can be written to a stream using the `JsonWriter` class as follows:
+The object models created in <<_creating_an_object_model_from_json_data>> and <<_creating_an_object_model_from_application_code>> can be written to a stream using the `JsonWriter` class as follows:
 
 [source,java]
 ----

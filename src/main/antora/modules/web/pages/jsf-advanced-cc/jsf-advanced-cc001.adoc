@@ -1,12 +1,12 @@
 == Attributes of a Composite Component
 
 A composite component is a special type of Jakarta Faces template that acts as a component.
-If you are new to composite components, see <<composite-components>> before you proceed with this chapter.
+If you are new to composite components, see xref:jsf-facelets/jsf-facelets.adoc#_composite_components[Composite Components] before you proceed with this chapter.
 
 You define an attribute of a composite component by using the `composite:attribute` tag.
-<<commonly-used-attributes-of-the-compositeattribute-tag>> lists the commonly used attributes of this tag.
+<<_commonly_used_attributes_of_the_compositeattribute_tag>> lists the commonly used attributes of this tag.
 
-[[commonly-used-attributes-of-the-compositeattribute-tag]]
+[[_commonly_used_attributes_of_the_compositeattribute_tag]]
 .Commonly Used Attributes of the composite:attribute Tag
 [width="70%",cols="15%,55%"]
 |===

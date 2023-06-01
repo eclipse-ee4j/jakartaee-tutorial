@@ -27,11 +27,11 @@ You can configure a flow programmatically, by creating a class annotated `@FlowD
 The configuration file can be limited to one flow, or you can use the `faces-config.xml` file to put all the flows in one place, if you have many flows in an application.
 The programmatic configuration places the code closer to the rest of the flow code and enables you to modularize the flows.
 
-<<two-faces-flows-and-their-interactions>> shows two flows and illustrates how they interact.
+<<_two_faces_flows_and_their_interactions>> shows two flows and illustrates how they interact.
 
-[[two-faces-flows-and-their-interactions]]
+[[_two_faces_flows_and_their_interactions]]
 .Two Faces Flows and Their Interactions
-image::jakartaeett_dt_017.svg["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow."]
+image::common:jakartaeett_dt_017.svg["This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow."]
 
 In this figure, Flow A has a start node named `flow-a` and two additional pages, `next_a1` and `next_a2`.
 From `next_a2`, a user can either exit the flow using the defined return node, `taskFlowReturn1`, or call Flow B, passing two parameters.
@@ -44,7 +44,7 @@ Each flow also has an associated managed bean; the beans are `Flow_a_Bean` and `
 Typically, you package flows in a web application using a directory structure that modularizes the flows.
 In the `src/main/webapp` directory of a Maven project, for example, you would place the Facelets files that are outside the flow at the top level as usual.
 Then the `webapp` files for each flow would be in a separate directory, and the Java files would be under `src/main/java`.
-For example, the files for the application shown in <<two-faces-flows-and-their-interactions>> might look like this:
+For example, the files for the application shown in <<_two_faces_flows_and_their_interactions>> might look like this:
 
 ----
 src/main/webapp/
@@ -211,7 +211,7 @@ Click Back to Start to return to the `index.xhtml` page.
 The `checkout-module` example application is considerably more complex than `simple-flow`.
 It shows how you might use the Faces Flows feature to implement a checkout module for an online store.
 
-Like the hypothetical example in <<two-faces-flows-and-their-interactions>>, the example application contains two flows, each of which can call the other.
+Like the hypothetical example in <<_two_faces_flows_and_their_interactions>>, the example application contains two flows, each of which can call the other.
 Both flows have explicit flow definitions.
 One flow, `checkoutFlow`, is specified programmatically.
 The other flow, `joinFlow`, is specified in a configuration file.

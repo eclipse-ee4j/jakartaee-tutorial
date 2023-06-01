@@ -104,11 +104,11 @@ You specify a filter mapping list for a WAR in its deployment descriptor by eith
 If you want to log every request to a web application, you map the hit counter filter to the URL pattern `/*`.
 
 You can map a filter to one or more web resources, and you can map more than one filter to a web resource.
-This is illustrated in <<filter-to-servlet-mapping>>, in which filter F1 is mapped to servlets S1, S2, and S3; filter F2 is mapped to servlet S2; and filter F3 is mapped to servlets S1 and S2.
+This is illustrated in <<_filter_to_servlet_mapping>>, in which filter F1 is mapped to servlets S1, S2, and S3; filter F2 is mapped to servlet S2; and filter F3 is mapped to servlets S1 and S2.
 
-[[filter-to-servlet-mapping]]
+[[_filter_to_servlet_mapping]]
 .Filter-to-Servlet Mapping
-image::jakartaeett_dt_018.svg["Diagram of filter-to-servlet mapping with filters F1-F3 and servlets S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2."]
+image::common:jakartaeett_dt_018.svg["Diagram of filter-to-servlet mapping with filters F1-F3 and servlets S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2."]
 
 Recall that a filter chain is one of the objects passed to the `doFilter` method of a filter.
 This chain is formed indirectly by means of filter mappings.
@@ -157,11 +157,11 @@ REQUEST:: Only when the request comes directly from the client
 
 ASYNC:: Only when the asynchronous request comes from the client
 
-FORWARD:: Only when the request has been forwarded to a component (see <<transferring-control-to-another-web-component>>)
+FORWARD:: Only when the request has been forwarded to a component (see <<_transferring_control_to_another_web_component>>)
 
-INCLUDE:: Only when the request is being processed by a component that has been included (see <<including-other-resources-in-the-response>>)
+INCLUDE:: Only when the request is being processed by a component that has been included (see <<_including_other_resources_in_the_response>>)
 
-ERROR:: Only when the request is being processed with the error page mechanism (see <<handling-servlet-errors>>)
+ERROR:: Only when the request is being processed with the error page mechanism (see <<_handling_servlet_errors>>)
 
 You can direct the filter to be applied to any combination of the preceding situations by selecting multiple dispatcher types.
 If no types are specified, the default option is *REQUEST*.

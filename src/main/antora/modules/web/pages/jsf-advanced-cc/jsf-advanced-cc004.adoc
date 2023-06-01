@@ -99,7 +99,7 @@ It calculates the sum of the letters in the string, with `'a'` equal to 1 and `'
 An uppercase letter in the input string has the same value as its lowercase equivalent.
 
 The bean specifies the minimum and maximum size of the `name` string, which is enforced by the Bean Validation `@Size` constraint.
-The bean uses the `@Model` annotation, a shortcut for `@Named` and `@RequestScoped`, as described in <<hello1-nb-step-7>> of <<to-view-the-hello1-web-module-using-netbeans-ide>>.
+The bean uses the `@Model` annotation, a shortcut for `@Named` and `@RequestScoped`, as described in <<hello1-nb-step-7>> of xref:webapp/webapp.adoc#_to_view_the_hello1_web_module_using_netbeans_ide[To View the hello1 Web Module Using NetBeans IDE].
 
 [source,java]
 ----

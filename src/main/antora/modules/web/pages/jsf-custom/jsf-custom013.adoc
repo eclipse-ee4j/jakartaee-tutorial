@@ -50,9 +50,9 @@ The `value` attribute that references this property must have this value-binding
 ----
 
 In addition to binding a component's value to a bean property, the `value` attribute can specify a literal value or can map the component's data to any primitive (such as `int`), structure (such as an array), or collection (such as a list), independent of a JavaBeans component.
-<<examples-of-value-binding-expressions>> lists some example value-binding expressions that you can use with the `value` attribute.
+<<_examples_of_value_binding_expressions>> lists some example value-binding expressions that you can use with the `value` attribute.
 
-[[examples-of-value-binding-expressions]]
+[[_examples_of_value_binding_expressions]]
 .Examples of Value-Binding Expressions
 [width="60%",cols="30%,30%"]
 |===
@@ -129,7 +129,7 @@ Although the `bookstore:area` tags on the `index.xhtml` page do not bind to an `
 <h:outputText value="#{Book201.shape}" />
 ----
 
-See <<configuring-managed-beans>> for information on how to configure beans in the application configuration resource file.
+See xref:jsf-configure/jsf-configure.adoc#_configuring_managed_beans[Configuring Managed Beans] for information on how to configure beans in the application configuration resource file.
 
 === Binding a Component Value to an Implicit Object
 
@@ -153,10 +153,10 @@ Thank you, Gwen Canigetit, for purchasing your books from us.
 ----
 
 Retrieving values from other implicit objects is done in a similar way to the example shown in this section.
-<<implicit-objects>> lists the implicit objects to which a value attribute can refer.
+<<_implicit_objects>> lists the implicit objects to which a value attribute can refer.
 All of the implicit objects, except for the scope objects, are read-only and therefore should not be used as values for a `UIInput` component.
 
-[[implicit-objects]]
+[[_implicit_objects]]
 .Implicit Objects
 [width="75%",cols="15%,60%"]
 |===
@@ -219,4 +219,4 @@ These tags use component bindings rather than value bindings because the managed
 
 If the tags were to use value bindings instead of component bindings, the managed bean would not have direct access to the components and would therefore require additional code to access the components from the `FacesContext` instance to change the components' `rendered` properties.
 
-<<writing-properties-bound-to-component-instances>> explains how to write the bean properties bound to the example components.
+xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances] explains how to write the bean properties bound to the example components.

@@ -10,7 +10,7 @@ Follow these steps to send messages in an endpoint.
 
 . Obtain the `Session` object from the connection.
 +
-The `Session` object is available as a parameter in the annotated lifecycle methods of the endpoint, like those in <<websocket-endpoint-lifecycle-annotations>>.
+The `Session` object is available as a parameter in the annotated lifecycle methods of the endpoint, like those in <<_websocket_endpoint_lifecycle_annotations>>.
 When your message is a response to a message from the peer, you have the `Session` object available inside the method that received the message (the method annotated with `@OnMessage`).
 If you have to send messages that are not responses, store the `Session` object as an instance variable of the endpoint class in the method annotated with `@OnOpen` so that you can access it from other methods.
 
@@ -42,7 +42,7 @@ end a ping frame to the peer.
 +
 Send a pong frame to the peer.
 
-The example in <<annotated-endpoints>> demonstrates how to use this procedure to reply to every incoming text message.
+The example in <<_annotated_endpoints>> demonstrates how to use this procedure to reply to every incoming text message.
 
 ==== Sending Messages to All Peers Connected to an Endpoint
 

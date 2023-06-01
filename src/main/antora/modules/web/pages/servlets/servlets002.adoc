@@ -9,13 +9,13 @@ When a request is mapped to a servlet, the container performs the following step
 
 .. Creates an instance of the servlet class
 
-.. Initializes the servlet instance by calling the `init` method (initialization is covered in <<creating-and-initializing-a-servlet>>)
+.. Initializes the servlet instance by calling the `init` method (initialization is covered in <<_creating_and_initializing_a_servlet>>)
 
 . The container invokes the `service` method, passing request and response objects.
-Service methods are discussed in <<writing-service-methods>>.
+Service methods are discussed in <<_writing_service_methods>>.
 
 If it needs to remove the servlet, the container finalizes the servlet by calling the servlet's `destroy` method.
-For more information, see <<finalizing-a-servlet>>.
+For more information, see <<_finalizing_a_servlet>>.
 
 === Handling Servlet Lifecycle Events
 
@@ -25,11 +25,11 @@ To use these listener objects, you must define and specify the listener class.
 ==== Defining the Listener Class
 
 You define a listener class as an implementation of a listener interface.
-<<servlet-lifecycle-events>> lists the events that can be monitored and the corresponding interface that must be implemented.
+<<_servlet_lifecycle_events>> lists the events that can be monitored and the corresponding interface that must be implemented.
 When a listener method is invoked, it is passed an event that contains information appropriate to the event.
 For example, the methods in the `HttpSessionListener` interface are passed an `HttpSessionEvent`, which contains an `HttpSession`.
 
-[[servlet-lifecycle-events]]
+[[_servlet_lifecycle_events]]
 .Servlet Lifecycle Events
 [width="90%",cols="15%,30%,45%"]
 |===

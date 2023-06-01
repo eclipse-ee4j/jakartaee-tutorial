@@ -13,9 +13,9 @@ This reusable, user-created component has a customized, defined functionality an
 With Facelets, any XHTML page that contains markup tags and other components can be converted into a composite component.
 Using the resources facility, the composite component can be stored in a library that is available to the application from the defined resources location.
 
-<<composite-component-tags>> lists the most commonly used composite tags and their functions.
+<<_composite_component_tags>> lists the most commonly used composite tags and their functions.
 
-[[composite-component-tags]]
+[[_composite_component_tags]]
 .Composite Component Tags
 [width="99%",cols="20%,80%"]
 |===
@@ -71,7 +71,7 @@ The word `cc` in Jakarta Faces is a reserved word for composite components.
 The `#{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
 
 The preceding example content is stored as a file named `email.xhtml` in a folder named `resources/emcomp`, under the application web root directory.
-This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see <<web-resources>>.
+This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see <<_web_resources>>.
 
 The web page that uses this composite component is generally called a using page.
 The using page includes a reference to the composite component, in the `xml` namespace declarations:
@@ -105,4 +105,4 @@ When compiled and deployed on a server, it can be accessed with the following UR
 http://localhost:8080/application-name/emuserpage.xhtml
 ----
 
-See xref:composite-components-advanced-topics-and-an-example[xrefstyle=full] for more information and an example.
+See xref:jsf-advanced-cc/jsf-advanced-cc.adoc#_composite_components_advanced_topics_and_an_example[Composite Components: Advanced Topics and an Example] for more information and an example.

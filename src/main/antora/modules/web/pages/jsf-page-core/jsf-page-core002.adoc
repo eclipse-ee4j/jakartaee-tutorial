@@ -4,7 +4,7 @@ An application developer can implement listeners as classes or as managed bean m
 If a listener is a managed bean method, the page author references the method from either the component's `valueChangeListener` attribute or its `actionListener` attribute.
 If the listener is a class, the page author can reference the listener from either an `f:valueChangeListener` tag or an `f:actionListener` tag and nest the tag inside the component tag to register the listener on the component.
 
-<<referencing-a-method-that-handles-an-action-event>> and <<referencing-a-method-that-handles-a-value-change-event>> explain how a page author uses the `valueChangeListener` and `actionListener` attributes to reference managed bean methods that handle events.
+<<_referencing_a_method_that_handles_an_action_event>> and <<_referencing_a_method_that_handles_a_value_change_event>> explain how a page author uses the `valueChangeListener` and `actionListener` attributes to reference managed bean methods that handle events.
 
 This section explains how to register a `NameChanged` value-change listener and a `BookChange` action listener implementation on components.
 The Duke's Bookstore case study includes both of these listeners.
@@ -12,9 +12,9 @@ The Duke's Bookstore case study includes both of these listeners.
 === Registering a Value-Change Listener on a Component
 
 A page author can register a `ValueChangeListener` implementation on a component that implements `EditableValueHolder` by nesting an `f:valueChangeListener` tag within the component's tag on the page.
-The `f:valueChangeListener` tag supports the attributes shown in <<attributes-for-the-fvaluechangelistener-tag>>, one of which must be used.
+The `f:valueChangeListener` tag supports the attributes shown in <<_attributes_for_the_fvaluechangelistener_tag>>, one of which must be used.
 
-[[attributes-for-the-fvaluechangelistener-tag]]
+[[_attributes_for_the_fvaluechangelistener_tag]]
 .Attributes for the f:valueChangeListener Tag
 [width="60%",cols="10%,50%"]
 |===
@@ -47,7 +47,7 @@ After this component tag is processed and local values have been validated, its 
 
 The `binding` attribute is used to bind a `ValueChangeListener` implementation to a managed bean property.
 This attribute works in a similar way to the `binding` attribute supported by the standard converter tags.
-See <<binding-component-values-and-instances-to-managed-bean-properties>> for more information.
+See xref:jsf-custom/jsf-custom.adoc#_binding_component_values_and_instances_to_managed_bean_properties[Binding Component Values and Instances to Managed Bean Properties] for more information.
 
 === Registering an Action Listener on a Component
 
@@ -68,7 +68,7 @@ Here is an example of an `h:commandLink` tag that references an `ActionListener`
 
 The `type` attribute of the `f:actionListener` tag specifies the fully qualified class name of the `ActionListener` implementation.
 Similarly to the `f:valueChangeListener` tag, the `f:actionListener` tag also supports the `binding` attribute.
-See <<binding-converters-listeners-and-validators-to-managed-bean-properties>> for more information about binding listeners to managed bean properties.
+See xref:jsf-custom/jsf-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties] for more information about binding listeners to managed bean properties.
 
 In addition to the `actionListener` tag that allows you register a custom listener onto a component, the core tag library includes the `f:setPropertyActionListener` tag.
 You use this tag to register a special action listener onto the `ActionSource` instance associated with a component.

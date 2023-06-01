@@ -13,9 +13,9 @@ The data object contains all the properties available for the `onevent` attribut
 * `errorMessage`
 
 The `type` is `error`.
-The `status` property of the data object contains one of the valid error values listed in <<valid-error-values-for-the-data-object-status-property>>.
+The `status` property of the data object contains one of the valid error values listed in <<_valid_error_values_for_the_data_object_status_property>>.
 
-[[valid-error-values-for-the-data-object-status-property]]
+[[_valid_error_values_for_the_data_object_status_property]]
 .Valid Error Values for the Data Object status Property
 [width="60%",cols="15%,45%"]
 |===

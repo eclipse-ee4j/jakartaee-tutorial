@@ -1,6 +1,6 @@
 == Creating Custom Component Classes
 
-As explained in <<when-to-use-a-custom-component>>, a component class defines the state and behavior of a UI component.
+As explained in <<_when_to_use_a_custom_component>>, a component class defines the state and behavior of a UI component.
 The state information includes the component's type, identifier, and local value.
 The behavior defined by the component class includes the following:
 
@@ -109,7 +109,7 @@ Its behavior consists of the following actions:
 `MapComponent` delegates the rendering of the HTML `map` and `input` tags to the `MapRenderer` class.
 
 `AreaComponent` is bound to a bean that stores the shape and coordinates of the region of the image map.
-You will see how all this data is accessed through the value expression in <<creating-the-renderer-class>>.
+You will see how all this data is accessed through the value expression in <<_creating_the_renderer_class>>.
 The behavior of `AreaComponent` consists of the following:
 
 * Retrieving the shape and coordinate data from the bean
@@ -119,10 +119,10 @@ The behavior of `AreaComponent` consists of the following:
 * Rendering the `area` tag, including the JavaScript for the `onmouseover`, `onmouseout`, and `onclick` functions
 
 Although these tasks are actually performed by `AreaRenderer`, `AreaComponent` must delegate the tasks to `AreaRenderer`.
-See <<delegating-rendering-to-a-renderer>> for more information.
+See <<_delegating_rendering_to_a_renderer>> for more information.
 
 The rest of this section describes the tasks that `MapComponent` performs as well as the encoding and decoding that it delegates to `MapRenderer`.
-<<handling-events-for-custom-components>> details how `MapComponent` handles events.
+<<_handling_events_for_custom_components>> details how `MapComponent` handles events.
 
 === Specifying the Component Family
 
@@ -137,8 +137,8 @@ public String getFamily() {
 ----
 
 The component family identifier, `Map`, must match that defined by the `component-family` elements included in the component and renderer configurations in the application configuration resource file.
-<<registering-a-custom-renderer-with-a-render-kit>> explains how to define the component family in the renderer configuration.
-<<registering-a-custom-component>> explains how to define the component family in the component configuration.
+xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_renderer_with_a_render_kit[Registering a Custom Renderer with a Render Kit] explains how to define the component family in the renderer configuration.
+xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_component[Registering a Custom Component] explains how to define the component family in the component configuration.
 
 === Performing Encoding
 
@@ -316,7 +316,7 @@ public void setAction(MethodExpression action) {
 
 === Saving and Restoring State
 
-As described in <<enabling-component-properties-to-accept-expressions>>, use of the `StateHelper` interface facilities allows you to save the component's state at the same time you set and retrieve property values.
+As described in <<_enabling_component_properties_to_accept_expressions>>, use of the `StateHelper` interface facilities allows you to save the component's state at the same time you set and retrieve property values.
 The `StateHelper` implementation allows partial state saving; it saves only the changes in the state since the initial request, not the entire state, because the full state can be restored during the Restore View phase.
 
 Component classes that implement `StateHolder` may prefer to implement the `saveState(FacesContext)` and `restoreState(FacesContext, Object)` methods to help the Jakarta Faces implementation save and restore the state of components across multiple requests.

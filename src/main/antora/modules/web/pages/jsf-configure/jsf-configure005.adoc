@@ -1,11 +1,11 @@
 == Configuring Managed Beans
 
 When a page references a managed bean for the first time, the Jakarta Faces implementation initializes it either based on a `@Named` annotation and scope annotation in the bean class or according to its configuration in the application configuration resource file.
-For information on using annotations to initialize beans, see <<using-annotations-to-configure-managed-beans>>.
+For information on using annotations to initialize beans, see <<_using_annotations_to_configure_managed_beans>>.
 
 You can use either annotations or the application configuration resource file to instantiate managed beans that are used in a Jakarta Faces application and to store them in scope.
 The managed bean creation facility is configured in the application configuration resource file using `managed-bean` XML elements to define each bean. This file is processed at application startup time.
-For information on using this facility, see <<using-the-managed-bean-element>>.
+For information on using this facility, see <<_using_the_managed_bean_element>>.
 
 Managed beans created in the application configuration resource file are Jakarta Faces managed beans, not CDI managed beans.
 
@@ -20,7 +20,7 @@ With the managed bean creation facility, you can
 * Using `value` elements, set a property of one managed bean to be the result of evaluating another value expression
 
 This section shows you how to initialize beans using the managed bean creation facility.
-See <<writing-bean-properties>> and <<writing-managed-bean-methods>> for information on programming managed beans.
+See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] and xref:jsf-develop/jsf-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for information on programming managed beans.
 
 === Using the managed-bean Element
 
@@ -100,11 +100,11 @@ Each `SelectItem` object is in turn configured as a managed bean with properties
 This approach may be useful for quick-and-dirty creation of selection item lists before a development team has had time to create such lists from the database.
 Note that each of the individual newsletter beans has a `managed-bean-scope` setting of `none` so that they will not themselves be placed into any scope.
 
-See <<initializing-array-and-list-properties>> for more information on configuring collections as beans.
+See <<_initializing_array_and_list_properties>> for more information on configuring collections as beans.
 
 To map to a property defined by a `managed-property` element, you must ensure that the part of a component tag's `value` expression after the period matches the `managed-property` element's `property-name` element.
-The next section, <<initializing-properties-using-the-managed-property-element>>, explains in more detail how to use the `managed-property` element.
-See <<initializing-managed-bean-properties>> for an example of initializing a managed bean property.
+The next section, <<_initializing_properties_using_the_managed_property_element>>, explains in more detail how to use the `managed-property` element.
+See <<_initializing_managed_bean_properties>> for an example of initializing a managed bean property.
 
 === Initializing Properties Using the managed-property Element
 
@@ -112,9 +112,9 @@ A `managed-property` element must contain a `property-name` element, which must 
 A `managed-property` element must also contain one of a set of elements that defines the value of the property.
 This value must be of the same type as that defined for the property in the corresponding bean.
 Which element you use to define the value depends on the type of the property defined in the bean.
-<<subelements-of-managed-property-elements-that-define-property-values>> lists all the elements that are used to initialize a value.
+<<_subelements_of_managed_property_elements_that_define_property_values>> lists all the elements that are used to initialize a value.
 
-[[subelements-of-managed-property-elements-that-define-property-values]]
+[[_subelements_of_managed_property_elements_that_define_property_values]]
 .Subelements of managed-property Elements That Define Property Values
 [width="75%",cols="25%,50%"]
 |===
@@ -129,7 +129,7 @@ Which element you use to define the value depends on the type of the property de
 |`value` |Defines a single value, such as a `String`, `int`, or Jakarta Faces EL expression
 |===
 
-<<using-the-managed-bean-element>> includes an example of initializing an `int` property (a primitive type) using the `value` subelement.
+<<_using_the_managed_bean_element>> includes an example of initializing an `int` property (a primitive type) using the `value` subelement.
 You also use the `value` subelement to initialize `String` and other reference types.
 The rest of this section describes how to use the `value` subelement and other subelements to initialize properties of Java `Enum` types, `Map`, `array`, and `Collection`, as well as initialization parameters.
 
@@ -339,9 +339,9 @@ Because both the `mailingAddress` and the `streetAddress` properties reference `
 When you create an object that points to other objects, do not try to point to an object with a shorter life span, because it might be impossible to recover that scope's resources when it goes away.
 A session-scoped object, for example, cannot point to a request-scoped object.
 And objects with `none` scope have no effective life span managed by the framework, so they can point only to other `none`-scoped objects.
-<<allowable-connections-between-scoped-objects>> outlines all of the allowed connections.
+<<_allowable_connections_between_scoped_objects>> outlines all of the allowed connections.
 
-[[allowable-connections-between-scoped-objects]]
+[[_allowable_connections_between_scoped_objects]]
 .Allowable Connections between Scoped Objects
 [width="60%",cols="20%,40%"]
 |===

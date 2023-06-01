@@ -1,6 +1,6 @@
 == Writing Bean Properties
 
-As explained in <<managed-beans-in-jakarta-faces-technology>>, a managed bean property can be bound to one of the following items:
+As explained in <<_managed_beans_in_jakarta_faces_technology>>, a managed bean property can be bound to one of the following items:
 
 * A component value
 
@@ -17,7 +17,7 @@ For more information on JavaBeans components, see the JavaBeans Tutorial at http
 
 The component's tag binds the component's value to a managed bean property by using its `value` attribute and binds the component's instance to a managed bean property by using its `binding` attribute.
 Likewise, all the converter, listener, and validator tags use their `binding` attributes to bind their associated implementations to managed bean properties.
-See <<binding-component-values-and-instances-to-managed-bean-properties>> and <<binding-converters-listeners-and-validators-to-managed-bean-properties>> for more information.
+See xref:jsf-custom/jsf-custom.adoc#_binding_component_values_and_instances_to_managed_bean_properties[Binding Component Values and Instances to Managed Bean Properties] and xref:jsf-custom/jsf-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties] for more information.
 
 To bind a component's value to a managed bean property, the type of the property must match the type of the component's value to which it is bound.
 For example, if a managed bean property is bound to a `UISelectBoolean` component's value, the property should accept and return a `boolean` value or a `Boolean` wrapper `Object` instance.
@@ -28,15 +28,15 @@ For example, if a managed bean property is bound to a `UISelectBoolean` instance
 Similarly, to bind a converter, listener, or validator implementation to a managed bean property, the property must accept and return the same type of converter, listener, or validator object.
 For example, if you are using the `convertDateTime` tag to bind a `jakarta.faces.convert.DateTimeConverter` to a property, that property must accept and return a `DateTimeConverter` instance.
 
-The rest of this section explains how to write properties that can be bound to component values, to component instances for the component objects described in <<adding-components-to-a-page-using-html-tag-library-tags>>, and to converter, listener, and validator implementations.
+The rest of this section explains how to write properties that can be bound to component values, to component instances for the component objects described in xref:jsf-page/jsf-page.adoc#_adding_components_to_a_page_using_html_tag_library_tags[Adding Components to a Page Using HTML Tag Library Tags], and to converter, listener, and validator implementations.
 
 === Writing Properties Bound to Component Values
 
 To write a managed bean property that is bound to a component's value, you must match the property type to the component's value.
 
-<<acceptable-types-of-component-values>> lists the `jakarta.faces.component` classes and the acceptable types of their values.
+<<_acceptable_types_of_component_values>> lists the `jakarta.faces.component` classes and the acceptable types of their values.
 
-[[acceptable-types-of-component-values]]
+[[_acceptable_types_of_component_values]]
 .Acceptable Types of Component Values
 [width="99%",cols="25%,75%"]
 |===
@@ -84,8 +84,8 @@ public String getName() {
 }
 ----
 
-As described in <<using-the-standard-converters>>, to convert the value of an input or output component you can either apply a converter or create the bean property bound to the component with the matching type.
-Here is the example tag, from <<using-datetimeconverter>>, that displays the date on which items will be shipped.
+As described in xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters], to convert the value of an input or output component you can either apply a converter or create the bean property bound to the component with the matching type.
+Here is the example tag, from xref:jsf-page-core/jsf-page-core.adoc#_using_datetimeconverter[Using DateTimeConverter], that displays the date on which items will be shipped.
 
 [source,xml]
 ----
@@ -113,8 +113,8 @@ public void setShipDate(Date shipDate) {
 
 The `UIData` component class is represented by the `h:dataTable` component tag.
 
-`UIData` components must be bound to one of the managed bean property types listed in <<acceptable-types-of-component-values>>.
-Data components are discussed in <<using-data-bound-table-components>>.
+`UIData` components must be bound to one of the managed bean property types listed in <<_acceptable_types_of_component_values>>.
+Data components are discussed in xref:jsf-page/jsf-page.adoc#_using_data_bound_table_components[Using Data-Bound Table Components].
 Here is part of the start tag of `dataTable` from that section:
 
 [source,xml]
@@ -199,7 +199,7 @@ For UIData and UIRepeat, the supported types are:
 The `UISelectBoolean` component class is represented by the component tag `h:selectBooleanCheckbox`.
 
 Managed bean properties that hold a `UISelectBoolean` component's data must be of `boolean` or `Boolean` type.
-The example `selectBooleanCheckbox` tag from the section <<displaying-components-for-selecting-one-value>> binds a component to a property.
+The example `selectBooleanCheckbox` tag from the section xref:jsf-page/jsf-page.adoc#_displaying_components_for_selecting_one_value[Displaying Components for Selecting One Value] binds a component to a property.
 The following example shows a tag that binds a component value to a `boolean` property:
 
 [source,xml]
@@ -231,7 +231,7 @@ The `UISelectMany` component class is represented by the component tags that beg
 Because a `UISelectMany` component allows a user to select one or more items from a list of items, this component must map to a bean property of type `List` or `array`.
 This bean property represents the set of currently selected items from the list of available items.
 
-The following example of the `selectManyCheckbox` tag comes from <<displaying-components-for-selecting-multiple-values>>:
+The following example of the `selectManyCheckbox` tag comes from xref:jsf-page/jsf-page.adoc#_displaying_components_for_selecting_multiple_values[Displaying Components for Selecting Multiple Values]:
 
 [source,xml]
 ----
@@ -257,7 +257,7 @@ public String[] getNewsletters() {
 ----
 
 The `UISelectItem` and `UISelectItems` components are used to represent all the values in a `UISelectMany` component.
-See <<uiselectitems-properties>> for information on writing the bean properties for the `UISelectItem` and `UISelectItems` components.
+See <<_uiselectitems_properties>> for information on writing the bean properties for the `UISelectItem` and `UISelectItems` components.
 
 ==== UISelectOne Properties
 
@@ -266,7 +266,7 @@ The `UISelectOne` component class is represented by the component tags that begi
 `UISelectOne` properties accept the same types as `UIInput` and `UIOutput` properties, because a `UISelectOne` component represents the single selected item from a set of items.
 This item can be any of the primitive types and anything else for which you can apply a converter.
 
-Here is an example of the `h:selectOneMenu` tag from <<displaying-a-menu-using-the-hselectonemenu-tag>>:
+Here is an example of the `h:selectOneMenu` tag from xref:jsf-page/jsf-page.adoc#_displaying_a_menu_using_the_hselectonemenu_tag[Displaying a Menu Using the h:selectOneMenu Tag]:
 
 [source,xml]
 ----
@@ -299,9 +299,9 @@ public String getShippingOption() {
 Note that `shippingOption` represents the currently selected item from the list of items in the `UISelectOne` component.
 
 The `UISelectItem` and `UISelectItems` components are used to represent all the values in a `UISelectOne` component.
-This is explained in <<displaying-a-menu-using-the-hselectonemenu-tag>>.
+This is explained in xref:jsf-page/jsf-page.adoc#_displaying_a_menu_using_the_hselectonemenu_tag[Displaying a Menu Using the h:selectOneMenu Tag].
 
-For information on how to write the managed bean properties for the `UISelectItem` and `UISelectItems` components, see <<uiselectitems-properties>>.
+For information on how to write the managed bean properties for the `UISelectItem` and `UISelectItems` components, see <<_uiselectitems_properties>>.
 
 ==== UISelectItem Properties
 
@@ -309,7 +309,7 @@ A `UISelectItem` component represents a single value in a set of values in a `UI
 A `UISelectItem` component must be bound to a managed bean property of type `jakarta.faces.model.SelectItem`.
 A `SelectItem` object is composed of an `Object` representing the value along with two `Strings` representing the label and the description of the `UISelectItem` object.
 
-The example `selectOneMenu` tag from <<uiselectone-properties>> contains `selectItem` tags that set the values of the list of items in the page.
+The example `selectOneMenu` tag from <<_uiselectone_properties>> contains `selectItem` tags that set the values of the list of items in the page.
 Here is an example of a bean property that can set the values for this list in the bean:
 
 [source,java]
@@ -401,11 +401,11 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 }
 ----
 
-For more general information on component binding, see <<managed-beans-in-jakarta-faces-technology>>.
+For more general information on component binding, see <<_managed_beans_in_jakarta_faces_technology>>.
 
-For information on how to reference a managed bean method that performs navigation when a button is clicked, see <<referencing-a-method-that-performs-navigation>>.
+For information on how to reference a managed bean method that performs navigation when a button is clicked, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
 
-For more information on writing managed bean methods that handle navigation, see <<writing-a-method-to-handle-navigation>>.
+For more information on writing managed bean methods that handle navigation, see <<_writing_a_method_to_handle_navigation>>.
 
 === Writing Properties Bound to Converters, Listeners, or Validators
 

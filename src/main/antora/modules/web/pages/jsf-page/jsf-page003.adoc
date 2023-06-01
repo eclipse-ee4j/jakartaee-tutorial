@@ -2,9 +2,9 @@
 
 The tags included in the Jakarta Faces core tag library are used to perform core actions that are not performed by HTML tags.
 
-<<event-handling-core-tags>> lists the event-handling core tags.
+<<_event_handling_core_tags>> lists the event-handling core tags.
 
-[[event-handling-core-tags]]
+[[_event_handling_core_tags]]
 .Event-Handling Core Tags
 [width="99%",cols="30%,70%"]
 |===
@@ -19,9 +19,9 @@ The tags included in the Jakarta Faces core tag library are used to perform core
 |`f:valueChangeListener` |Adds a value-change listener to a parent component
 |===
 
-<<data-conversion-core-tags>> lists the data-conversion core tags.
+<<_data_conversion_core_tags>> lists the data-conversion core tags.
 
-[[data-conversion-core-tags]]
+[[_data_conversion_core_tags]]
 .Data-Conversion Core Tags
 [width="99%",cols="30%,70%"]
 |===
@@ -34,9 +34,9 @@ The tags included in the Jakarta Faces core tag library are used to perform core
 |`f:convertNumber` a|Adds a `NumberConverter` instance to the parent component
 |===
 
-<<facet-core-tags>> lists the facet core tags.
+<<_facet_core_tags>> lists the facet core tags.
 
-[[facet-core-tags]]
+[[_facet_core_tags]]
 .Facet Core Tags
 [width="99%",cols="30%,70%"]
 |===
@@ -48,9 +48,9 @@ its enclosing tag
 |`f:metadata` a|Registers a `facet` on a parent component
 |===
 
-<<core-tags-that-represent-items-in-a-list>> lists the core tags that represent items in a list.
+<<_core_tags_that_represent_items_in_a_list>> lists the core tags that represent items in a list.
 
-[[core-tags-that-represent-items-in-a-list]]
+[[_core_tags_that_represent_items_in_a_list]]
 .Core Tags That Represent Items in a List
 [width="99%",cols="30%,70%"]
 |===
@@ -61,9 +61,9 @@ its enclosing tag
 |`f:selectItems` |Represents a set of items
 |===
 
-<<validator-core-tags>> lists the validator core tags.
+<<_validator_core_tags>> lists the validator core tags.
 
-[[validator-core-tags]]
+[[_validator_core_tags]]
 .Validator Core Tags
 [width="99%",cols="30%,70%"]
 |===
@@ -84,9 +84,9 @@ its enclosing tag
 |`f:validateRequired` |Enforces the presence of a value in a component
 |===
 
-<<miscellaneous-core-tags>> lists the core tags that fall into other categories.
+<<_miscellaneous_core_tags>> lists the core tags that fall into other categories.
 
-[[miscellaneous-core-tags]]
+[[_miscellaneous_core_tags]]
 .Miscellaneous Core Tags
 [width="99%",cols="25%,15%,60%"]
 |===
@@ -107,31 +107,31 @@ its enclosing tag
 
 These tags, which are used in conjunction with component tags, are explained in other sections of this tutorial.
 
-<<where-the-core-tags-are-explained>> lists the sections that explain how to use specific core tags.
+<<_where_the_core_tags_are_explained>> lists the sections that explain how to use specific core tags.
 
-[[where-the-core-tags-are-explained]]
+[[_where_the_core_tags_are_explained]]
 .Where the Core Tags Are Explained
 [width="99%",cols="30%,70%"]
 |===
 |Tags |Where Explained
 
-|Event-handling tags | <<registering-listeners-on-components>>
+|Event-handling tags | xref:jsf-page-core/jsf-page-core.adoc#_registering_listeners_on_components[Registering Listeners on Components]
 
-|Data-conversion tags | <<using-the-standard-converters>>
+|Data-conversion tags | xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters]
 
-|`f:facet` |<<using-data-bound-table-components>> and <<laying-out-components-with-the-hpanelgrid-and-hpanelgroup-tags>>
+|`f:facet` |<<_using_data_bound_table_components>> and <<_laying_out_components_with_the_hpanelgrid_and_hpanelgroup_tags>>
 
-|`f:loadBundle` | <<setting-the-resource-bundle>>
+|`f:loadBundle` | xref:webi18n/webi18n.adoc#_setting_the_resource_bundle[Setting the Resource Bundle]
 
-|`f:metadata` | <<using-view-parameters-to-configure-bookmarkable-urls>>
+|`f:metadata` | <<_using_view_parameters_to_configure_bookmarkable_urls>>
 
-|`f:param` | <<displaying-a-formatted-message-with-the-houtputformat-tag>>
+|`f:param` | <<_displaying_a_formatted_message_with_the_houtputformat_tag>>
 
-|`f:selectItem` and `f:selectItems` | <<using-the-fselectitem-and-fselectitems-tags>>
+|`f:selectItem` and `f:selectItems` | <<_using_the_fselectitem_and_fselectitems_tags>>
 
-|Validator tags |<<using-the-standard-validators>>
+|Validator tags |xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators]
 
-|`f:ajax` | xref:using-ajax-with-jakarta-faces-technology[xrefstyle=full]
+|`f:ajax` | xref:jsf-ajax/jsf-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology]
 
-|`f:websocket` | xref:using-websockets-with-jakarta-faces-technology[xrefstyle=full]
+|`f:websocket` | xref:jsf-ws/jsf-ws.adoc#_using_websockets_with_jakarta_faces_technology[Using WebSockets with Jakarta Faces Technology]
 |===

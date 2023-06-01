@@ -57,7 +57,7 @@ You need to use this element only if your application uses more than one contrac
 
 === The hello1-rlc Example Application
 
-The `hello1-rlc` example modifies the simple `hello1` example from <<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>> to use two resource library contracts.
+The `hello1-rlc` example modifies the simple `hello1` example from xref:webapp/webapp.adoc#_a_web_module_that_uses_jakarta_faces_technology_the_hello1_example[A Web Module That Uses Jakarta Faces Technology: The hello1 Example] to use two resource library contracts.
 Each of the two pages in the application uses a different contract.
 
 The managed bean for `hello1-rlc`, `Hello.java`, is identical to the one for `hello1` (except that it replaces the `@Named` and `@RequestScoped` annotations with `@Model`).

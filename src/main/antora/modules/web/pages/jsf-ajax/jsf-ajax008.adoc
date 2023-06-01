@@ -2,7 +2,7 @@
 
 An Ajax request varies from other typical Jakarta Faces requests, and its processing is also handled differently by the Jakarta Faces lifecycle.
 
-As described in <<partial-processing-and-partial-rendering>>, when an Ajax request is received, the state associated with that request is captured by the `jakarta.faces.context.PartialViewContext`.
+As described in xref:jsf-intro/jsf-intro.adoc#_partial_processing_and_partial_rendering[Partial Processing and Partial Rendering], when an Ajax request is received, the state associated with that request is captured by the `jakarta.faces.context.PartialViewContext`.
 This object provides access to information such as which components are targeted for processing/rendering.
 The `processPartial` method of `PartialViewContext` uses this information to perform partial component tree processing and rendering.
 

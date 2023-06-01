@@ -4,7 +4,7 @@ Jakarta EE includes support for the Jakarta JSON Binding spec, which provides an
 Jakarta JSON Binding contains the following packages:
 
 * The `jakarta.json.bind` package contains the binding interface, the builder interface, and a configuration class.
-<<main-classes-and-interfaces-in-bind>> lists the main classes and interfaces in this package.
+<<_main_classes_and_interfaces_in_bind>> lists the main classes and interfaces in this package.
 
 * The `jakarta.json.bind.adapter` package contains the `JsonbAdapter` interface, which provides methods for binding custom Java types by converting them to known types.
 
@@ -12,15 +12,15 @@ Jakarta JSON Binding contains the following packages:
 Annotations can be used for field, JavaBean property, type, or package elements.
 
 * The `jakarta.json.bind.config` package interfaces and classes for customizing default binding behavior.
-<<main-classes-and-interfaces-in-config>> lists the main classes and interfaces in this package.
+<<_main_classes_and_interfaces_in_config>> lists the main classes and interfaces in this package.
 
 * The `jakarta.json.bind.serializer` package contains interfaces that are used to create serialization and deserialization routines for custom types that cannot be easily mapped using the `JsonbAdapter` methods.
-<<main-classes-and-interfaces-in-serializer>> lists the main interfaces in this package.
+<<_main_classes_and_interfaces_in_serializer>> lists the main interfaces in this package.
 
 * The `jakarta.json.bind.spi` package contains a Service Provider Interface (SPI) for creating JSON Binding implementations.
 This package contains the `JsonbProvider` class, which contains the methods that a service provider implements.
 
-[[main-classes-and-interfaces-in-bind]]
+[[_main_classes_and_interfaces_in_bind]]
 .Main Classes and Interfaces in jakarta.json.bind
 [width="99%",cols="25%,75%"]
 |===
@@ -36,7 +36,7 @@ Properties include binding strategies and properties for configuring custom seri
 |`JsonbException` | Indicates that a problem occurred during JSON binding.
 |===
 
-[[main-classes-and-interfaces-in-config]]
+[[_main_classes_and_interfaces_in_config]]
 .Main Classes and Interfaces in jakarta.json.bind.config
 [width="99%",cols="25%,75%"]
 |===
@@ -51,7 +51,7 @@ Properties include binding strategies and properties for configuring custom seri
 |`PropertyOrderStrategy` | Used to set how properties are ordered during serialization.
 |===
 
-[[main-classes-and-interfaces-in-serializer]]
+[[_main_classes_and_interfaces_in_serializer]]
 .Main Classes and Interfaces in jakarta.json.bind.serializer
 [width="99%",cols="25%,75%"]
 |===

@@ -20,9 +20,9 @@ The `jsonpmodel` example application contains the following files.
 * The `ObjectModelBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages.
 This file also contains code that uses the JSON object model API.
 
-The code used in `ObjectModelBean.java` to create an object model from the data in the form is similar to the example in <<creating-an-object-model-from-application-code>>.
-The code to write JSON output from the model is similar to the example in <<writing-an-object-model-to-a-stream>>.
-The code to navigate the object model tree is similar to the example in <<navigating-an-object-model>>.
+The code used in `ObjectModelBean.java` to create an object model from the data in the form is similar to the example in <<_creating_an_object_model_from_application_code>>.
+The code to write JSON output from the model is similar to the example in <<_writing_an_object_model_to_a_stream>>.
+The code to navigate the object model tree is similar to the example in <<_navigating_an_object_model>>.
 
 === Running the jsonpmodel Example Application
 

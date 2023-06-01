@@ -20,8 +20,8 @@ The `jsonpstreaming` example application contains the following files.
 * The `StreamingBean.java` managed bean, a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages.
 This file also contains code that uses the JSON streaming API.
 
-The code used in `StreamingBean.java` to write JSON data to a file is similar to the example in <<writing-json-data-using-a-generator>>.
-The code to parse JSON data from a file is similar to the example in <<reading-json-data-using-a-parser>>.
+The code used in `StreamingBean.java` to write JSON data to a file is similar to the example in <<_writing_json_data_using_a_generator>>.
+The code to parse JSON data from a file is similar to the example in <<_reading_json_data_using_a_parser>>.
 
 === Running the jsonpstreaming Example Application
 

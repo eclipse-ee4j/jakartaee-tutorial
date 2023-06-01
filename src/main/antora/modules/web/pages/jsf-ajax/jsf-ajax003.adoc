@@ -27,9 +27,9 @@ In the following example, Ajax behavior is added to an input component by includ
 In this example, although Ajax is enabled, the other attributes of the `f:ajax` tag are not defined.
 If an event is not defined, the default action for the component is performed.
 For the `inputText` component, when no `event` attribute is specified, the default event is `valueChange`.
-<<attributes-of-the-fajax-tag>> lists the attributes of the `f:ajax` tag and their default actions.
+<<_attributes_of_the_fajax_tag>> lists the attributes of the `f:ajax` tag and their default actions.
 
-[[attributes-of-the-fajax-tag]]
+[[_attributes_of_the_fajax_tag]]
 .Attributes of the f:ajax Tag
 [width="99%",cols="15%,25%,60%"]
 |===
@@ -66,9 +66,9 @@ If a `ValueExpression` is specified, it must refer to a property that returns a 
 If not specified, the default value is `@none`.
 |===
 
-The keywords listed in <<execute-and-render-keywords>> can be used with the `execute` and `render` attributes of the `f:ajax` tag.
+The keywords listed in <<_execute_and_render_keywords>> can be used with the `execute` and `render` attributes of the `f:ajax` tag.
 
-[[execute-and-render-keywords]]
+[[_execute_and_render_keywords]]
 .Execute and Render Keywords
 [width="60%",cols="15%,45%"]
 |===
@@ -84,4 +84,4 @@ The keywords listed in <<execute-and-render-keywords>> can be used with the `exe
 |===
 
 Note that when you use the `f:ajax` tag in a Facelets page, the JavaScript resource library is loaded implicitly.
-This resource library can also be loaded explicitly as described in <<loading-javascript-as-a-resource>>.
+This resource library can also be loaded explicitly as described in <<_loading_javascript_as_a_resource>>.

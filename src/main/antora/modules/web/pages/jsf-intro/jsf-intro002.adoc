@@ -18,12 +18,12 @@ In a Jakarta Faces application, managed beans serve as backing beans, which defi
 
 * Optionally, a set of custom tags for representing custom objects on the page.
 
-<<responding-to-a-client-request-for-a-jakarta-faces-page>> shows the interaction between client and server in a typical Jakarta Faces application.
+<<_responding_to_a_client_request_for_a_jakarta_faces_page>> shows the interaction between client and server in a typical Jakarta Faces application.
 In response to a client request, a web page is rendered by the web container that implements Jakarta Faces technology.
 
-[[responding-to-a-client-request-for-a-jakarta-faces-page]]
+[[_responding_to_a_client_request_for_a_jakarta_faces_page]]
 .Responding to a Client Request for a Jakarta Faces Page
-image::jakartaeett_dt_014.svg["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response."]
+image::common:jakartaeett_dt_014.svg["Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response."]
 
 The web page, `myfacelet.xhtml`, is built using Jakarta Faces component tags.
 Component tags are used to add components to the `view` (represented by `myView` in the diagram), which is the server-side representation of the page.

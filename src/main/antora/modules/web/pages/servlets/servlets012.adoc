@@ -45,9 +45,9 @@ public void doGet(HttpServletRequest req, HttpServletResponse resp) {
 This call puts the request into asynchronous mode and ensures that the response is not committed after exiting the service method.
 You have to generate the response in the asynchronous context after the blocking operation completes or dispatch the request to another servlet.
 
-<<functionality-provided-by-the-asynccontext-class>> describes the basic functionality provided by the `AsyncContext` class.
+<<_functionality_provided_by_the_asynccontext_class>> describes the basic functionality provided by the `AsyncContext` class.
 
-[[functionality-provided-by-the-asynccontext-class]]
+[[_functionality_provided_by_the_asynccontext_class]]
 .Functionality Provided by the AsyncContext Class
 [width="90%",cols="20%,70%"]
 |===

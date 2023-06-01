@@ -132,7 +132,7 @@ public class PriceVolumeBean {
 }
 ----
 
-See <<using-the-timer-service>> in xref:running-the-enterprise-bean-examples[xrefstyle=full] for more information on the timer service.
+See <<using-the-timer-service>> in xref:running-the-enterprise-bean-examples[] for more information on the timer service.
 
 ==== The HTML Page
 
@@ -183,7 +183,7 @@ function makeAjaxRequest() {
 
 The `XMLHttpRequest` API is supported by most modern browsers, and it is widely used in Ajax web client development (Asynchronous JavaScript and XML).
 
-See <<the-dukeetf2-example-application>> in xref:jakarta-websocket-2[xrefstyle=full] for an equivalent version of this example implemented using a WebSocket endpoint.
+See xref:websocket/websocket.adoc#_the_dukeetf2_example_application[The dukeetf2 Example Application] in xref:jakarta-websocket-2[] for an equivalent version of this example implemented using a WebSocket endpoint.
 
 === Running the dukeetf Example Application
 

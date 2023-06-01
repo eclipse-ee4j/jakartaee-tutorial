@@ -70,7 +70,7 @@ The setting for Duke's Bookstore looks like this:
 </resource-bundle>
 ----
 
-After the locale is set, the controller of a web application could retrieve the resource bundle for that locale and save it as a session attribute (see <<associating-objects-with-a-session>>) for use by other components or simply be used to return a text string appropriate for the selected locale:
+After the locale is set, the controller of a web application could retrieve the resource bundle for that locale and save it as a session attribute (see xref:servlets/servlets.adoc#_associating_objects_with_a_session[Associating Objects with a Session]) for use by other components or simply be used to return a text string appropriate for the selected locale:
 
 [source,java]
 ----
@@ -93,7 +93,7 @@ This tag loads the correct resource bundle according to the locale stored in `Fa
 
 Resource bundles containing messages that are explicitly referenced from a Jakarta Faces tag attribute using a value expression must be registered using the `resource-bundle` element of the configuration file.
 
-For more information on using this element, see <<registering-application-messages>>.
+For more information on using this element, see xref:jsf-configure/jsf-configure.adoc#_registering_application_messages[Registering Application Messages].
 
 === Retrieving Localized Messages
 
@@ -124,7 +124,7 @@ The following example shows a `message` tag that displays the error message queu
            id="errors1" for="userNo"/>
 ----
 
-For more information on using the `message` or `messages` tags, see <<displaying-error-messages-with-the-hmessage-and-hmessages-tags>>.
+For more information on using the `message` or `messages` tags, see xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
 
 Messages that are not queued on a component and are therefore not loaded automatically are referenced using a value expression.
 You can reference a localized message from almost any Jakarta Faces tag attribute.

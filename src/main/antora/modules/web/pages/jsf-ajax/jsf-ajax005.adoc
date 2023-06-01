@@ -5,9 +5,9 @@ The value of this attribute is the name of a JavaScript function.
 Jakarta Faces calls the `onevent` function at each stage of the processing of an Ajax request: begin, complete, and success.
 
 When calling the JavaScript function assigned to the `onevent` property, Jakarta Faces passes a data object to it.
-The data object contains the properties listed in <<properties-of-the-onevent-data-object>>.
+The data object contains the properties listed in <<_properties_of_the_onevent_data_object>>.
 
-[[properties-of-the-onevent-data-object]]
+[[_properties_of_the_onevent_data_object]]
 .Properties of the onevent Data Object
 [width="60%",cols="15%,45%"]
 |===

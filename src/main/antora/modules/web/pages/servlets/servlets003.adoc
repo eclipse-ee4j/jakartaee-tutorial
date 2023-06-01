@@ -10,25 +10,25 @@ Web components can do so by doing the following.
 * Using a database.
 
 * Invoking other web resources.
-The Jakarta Servlet technology mechanisms that allow a web component to invoke other web resources are described in <<invoking-other-web-resources>>.
+The Jakarta Servlet technology mechanisms that allow a web component to invoke other web resources are described in <<_invoking_other_web_resources>>.
 
 === Using Scope Objects
 
 Collaborating web components share information by means of objects that are maintained as attributes of four scope objects.
 You access these attributes by using the `getAttribute` and `setAttribute` methods of the class representing the scope.
-<<scope-objects>> lists the scope objects.
+<<_scope_objects>> lists the scope objects.
 
-[[scope-objects]]
+[[_scope_objects]]
 .Scope Objects
 [width="90%",cols="15%,25%,50%"]
 |===
 |Scope Object |Class |Accessible From
 
 |Web context |`jakarta.servlet.ServletContext` |Web components within a web context.
-See <<accessing-the-web-context>>.
+See <<_accessing_the_web_context>>.
 
 |Session |`jakarta.servlet.http.HttpSession` |Web components handling a request that belongs to the session.
-See <<maintaining-client-state>>.
+See <<_maintaining_client_state>>.
 
 |Request |Subtype of `jakarta.servlet.ServletRequest` |Web components handling the request.
 

@@ -28,10 +28,10 @@ Most Jakarta Faces component libraries provide their own render kits.
 A `jakarta.faces.view.facelets.Tag` object is a helper to the `UIComponent` and `Renderer` that allows the page author to include an instance of a `UIComponent` in a Jakarta Faces view.
 A tag represents a specific combination of `component-type` and `renderer-type`.
 
-See <<component-renderer-and-tag-combinations>> for information on how components, renderers, and tags interact.
+See <<_component_renderer_and_tag_combinations>> for information on how components, renderers, and tags interact.
 
 This chapter uses the image map component from the Duke's Bookstore case study example to explain how you can create simple custom components, custom renderers, and associated custom tags, and take care of all the other details associated with using the components and renderers in an application.
-See xref:dukes-bookstore-case-study-example[xrefstyle=full] for more information about this example.
+See xref:dukes-bookstore-case-study-example[] for more information about this example.
 
 The chapter also describes how to create other custom objects: custom converters, custom listeners, and custom validators.
 It also describes how to bind component values and instances to data objects and how to bind custom objects to managed bean properties.
