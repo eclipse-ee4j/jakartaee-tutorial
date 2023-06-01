@@ -5,8 +5,10 @@ asciidoc:
   attributes:
     source-language: asciidoc@
     table-caption: false
-    xrefstyle: full
+    figure-caption: false
+      xrefstyle: full
 nav:
   - modules/ROOT/nav.adoc
   - modules/security/nav.adoc
+  - modules/web/nav.adoc
 

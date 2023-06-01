@@ -1,6 +1,6 @@
 = Antora Migration Notes
 
-As part of the documentation upgrade process, we are migrating the existing content to Antora. This will allow us to go back to previous versions of the docs (currently 9.1 and 8.0) from within the docs site.
+As part of the documentation upgrade process, we're migrating the existing content to Antora. This will allow us to go back to previous versions of the docs (currently 9.1 and 8.0) from within the docs site.
 
 == Setup
 
@@ -55,7 +55,8 @@ include::security-advanced/security-advanced.adoc[]
 
 After copying these into `nav.adoc`, replace "include::" with "* xref:" and add a header with the module name:
 
-```asciidoc
+[source,asciidoc]
+----
 .Security
 * xref:security-intro/security-intro.adoc[]
 
@@ -66,13 +67,22 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
 * xref:security-api/security-api.adoc[]
 
 * xref:security-advanced/security-advanced.adoc[]
-```
+----
 
 . Add this module to the `src/main/antora/antora.yml`. For example, for the Security module, you would add this line to the end of  `src/main/antora/antora.yml` file:
 
-```yaml
+[source,yaml]
+----
   - modules/security/nav.adoc
-```
+----
+
+. Test out your changes by building the playbook from the `jakartaee-tutorial-playbook repo`. In your `local-antora-playbook.yaml` change `release/XX` to the name of your feature branch, so you can test locally.
+
+. If there are any changes the script didn't make, either make them manually or update the script to handle them.
+If you're updating the script, usually your best bet is to revert the changes from the previous and run it again.
+
+> TIP: If you're using the Antora IDE plugin, it helps to review its errors and updating before committing. With IntellJ,
+these are run automatically before pushing.
 
 . Commit your changes, push, and raise a PR to merge into the `release/8` branch. You're done with the first part of the migration!
 
@@ -84,13 +94,16 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
 
 . Run the migration script from the root project folder. For example, for the Security module, you would run:
 
-```shell
+[source,shell]
+----
 jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/modules/security
-```
+----
 
 > TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
 
 > NOTE: References to chapters that haven't yet been converted will not work until they have been converted.
+
+. Test out your changes by building the playbook from the `jakartaee-tutorial-playbook repo` in author mode. In your `local-antora-playbook.yaml` change `release/XX` or `main` to the name of your feature branch, so you can test locally.
 
 . If there are any changes the script didn't make, either make them manually or update the script to handle them.
 
