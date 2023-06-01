@@ -26,3 +26,39 @@ This chapter discusses the following simple web applications:
 * `helloServlet`, a Jakarta Servlet based service-oriented web application
 
 They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.
+
+Maven is used to build the example projects.
+A Maven WAR project has the following basic structure; not all mentioned resources are required, they are all optional:
+
+[source]
+----
+src
+ `-- main
+      |-- java
+      |    `-- com
+      |         `-- example
+      |              `-- Hello.java
+      |-- resources
+      |    `-- com
+      |         `-- example
+      |              `-- i18n
+      |                   |-- text.properties
+      |                   |-- text_en.properties
+      |                   `-- text_es.properties
+      `-- webapp
+           |-- META-INF
+           |    `-- MANIFEST.MF
+           |-- resources
+           |    |-- css
+           |    |    `-- style.css
+           |    |-- img
+           |    |    `-- logo.png
+           |    `-- js
+           |         `-- script.js
+           |-- WEB-INF
+           |    |-- beans.xml
+           |    |-- faces-config.xml
+           |    `-- web.xml
+           |-- favicon.ico
+           `-- index.xhtml
+----
