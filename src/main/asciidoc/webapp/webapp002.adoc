@@ -18,13 +18,11 @@ It can be summarized as follows:
 . Run the web application by accessing a URL that references the web component.
 
 Developing the web component code and DD files is covered in the later chapters.
-Steps 3 through 6 are expanded on in the following sections and illustrated with a Hello World–style, web application.
-This application allows a user to enter a name into an HTML form and then displays a greeting after the name is submitted.
-
-The Hello World application contains two web components that generate the greeting and the response.
-This chapter discusses the following simple applications:
+Steps 3 through 6 are expanded on in the following sections and illustrated with two web applications, in Hello World–style.
+The web applications take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
+This chapter discusses the following simple web applications:
 
 * `helloFaces`, a Jakarta Faces based presentation-oriented web application
 * `helloServlet`, a Jakarta Servlet based service-oriented web application
 
-The applications are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web components.
+The web applications are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.

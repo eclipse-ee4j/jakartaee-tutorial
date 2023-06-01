@@ -30,7 +30,8 @@ image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clie
 . The web component can then fill the `HttpServletResponse` object with the generated dynamic content or can pass the object to another web component to fill it.
 . The servlet container ultimately converts the `HttpServletResponse` object to an HTTP response and the web server returns it to the client.
 
-Jakarta Servlet is a barebones web framework that can act as a presentation-oriented as well as a service-oriented web application.
+Jakarta Servlet is a corner stone web framework that can act as a presentation-oriented as well as a service-oriented web application.
+Jakarta Servlet intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as a HTTP response, and to manage all the lifecycle around them.
 Jakarta Faces is a component based MVC framework that can be executed on a servlet container and act as a presentation-oriented web application.
 Jakarta Faces intends to reduce the boilerplate code needed to apply the request values, convert and validate them, update the JavaBean properties, invoke the JavaBean methods and generate HTML output.
 Jakarta Faces is designed as such that it can be exuected on a non-servlet container such as a portlet container.
@@ -40,11 +41,10 @@ Jakarta REST is designed as such that it can be exuected on a non-servlet contai
 
 A servlet container is a kind of a web container that can be part of an application server.
 The application server gives web components access to such APIs as naming, validation, security, web sockets, persistence transactions, concurrency, and email.
-
-Certain aspects of web application behavior can be configured when the application is installed, or deployed, to a web container.
+Certain aspects of web component behavior can be configured when the web application is installed, or deployed, to a servlet container.
 The configuration information can be specified using annotations or can be maintained in a XML file called a deployment descriptor (DD).
-A DD must conform to the schema described in the associated specification.
-When the same configuration is specified using annotations and in a XML file, then the configuration in the XML file will always have precedence.
+A DD file must conform to the schema described in the associated specification.
+When the same configuration is specified using annotations and in a DD file, then the configuration in the DD file will always have precedence.
 
 This chapter gives a brief overview of the activities involved in developing Jakarta Servlet based web applications.
 It explains how to compile, develop, package, deploy, and run Jakarta Servlet based web applications in a servlet container.
