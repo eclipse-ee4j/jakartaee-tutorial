@@ -5,8 +5,7 @@ asciidoc:
   attributes:
     source-language: asciidoc@
     table-caption: false
-    figure-caption: false
-      xrefstyle: full
+    xrefstyle: full
 nav:
   - modules/ROOT/nav.adoc
   - modules/security/nav.adoc
