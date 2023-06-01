@@ -1,32 +1,30 @@
-== Web Application Lifecycle
+== The Web Application Archive
 
-A web application consists of web components; static resource files, such as images and cascading style sheets (CSS); and helper classes and libraries.
-The web container provides many supporting services that enhance the capabilities of web components and make them easier to develop.
-However, because a web application must take these services into account, the process for creating and running a web application is different from that of traditional stand-alone Java classes.
+A Jakarta Servlet based web application can contain one or more of the following parts:
 
-The process for creating, deploying, and executing a web application can be summarized as follows:
+* one or more web components, which can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST
+* assets (also called static resource files), such Cascading Style Sheets (CSS), JavaScript (JS) and images
+* helper libraries
+* DD files
+
+The process for creating, deploying, and executing a Jakarta Servlet based web application is different from that of Java classes which are packaged and executed as a Java application archive (JAR).
+It can be summarized as follows:
 
 . Develop the web component code.
+. Develop the DD files, if necessary.
+. Compile the web component code against the libraries of the servlet container and the helper libraries, if any.
+. Package the compiled code along with helper libraries, assets and DD files, if any, into a deployable unit, called a web application archive (WAR).
+. Deploy the WAR into a servlet container.
+. Run the web application by accessing a URL that references the web component.
 
-. Develop the web application deployment descriptor, if necessary.
-
-. Compile the web application components and helper classes referenced by the components.
-
-. Optionally, package the application into a deployable unit.
-
-. Deploy the application into a web container.
-
-. Access a URL that references the web application.
-
-Developing web component code is covered in the later chapters.
-Steps 2 through 6 are expanded on in the following sections and illustrated with a Hello, World–style, presentation-oriented application.
+Developing the web component code and DD files is covered in the later chapters.
+Steps 3 through 6 are expanded on in the following sections and illustrated with a Hello World–style, web application.
 This application allows a user to enter a name into an HTML form and then displays a greeting after the name is submitted.
 
-The Hello application contains two web components that generate the greeting and the response.
+The Hello World application contains two web components that generate the greeting and the response.
 This chapter discusses the following simple applications:
 
-* `hello1`, a Jakarta Faces technology–based application that uses two XHTML pages and a managed bean
+* `helloFaces`, a Jakarta Faces based presentation-oriented web application
+* `helloServlet`, a Jakarta Servlet based service-oriented web application
 
-* `hello2`, a servlet-based web application in which the components are implemented by two servlet classes
-
-The applications are used to illustrate tasks involved in packaging, deploying, configuring, and running an application that contains web components.
+The applications are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web components.
