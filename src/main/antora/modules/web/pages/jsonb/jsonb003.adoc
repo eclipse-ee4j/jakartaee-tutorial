@@ -1,4 +1,4 @@
-[[running-the-jsonbbasics-example-application]]
+[[_running_the_jsonbbasics_example_application]]
 == Running the jsonbbasics Example Application
 
 This section describes how to build and run the `jsonbbasics` example
@@ -9,7 +9,7 @@ object.
 The `jsonbbasics` example application is in the
 `_tut-install_/examples/web/jsonb/jsonbbasics` directory.
 
-[[components-of-the-jsonbbasics-example-application]]
+[[_components_of_the_jsonbbasics_example_application]]
 === Components of the jsonbbasics Example Application
 
 The `jsonbbasics` example application contains the following files.
@@ -19,7 +19,7 @@ The `jsonbbasics` example application contains the following files.
 ** The `jsongenerated.xhtml` page contains a text area that displays the data in JSON format.
 * The `jsonbBean.java` managed bean, which is a session-scoped managed bean that stores the data from the form and directs the navigation between the Facelets pages. This file contains code that uses the JSON Binding API.
 
-[[running-the-jsonbbasics-example-application-2]]
+[[_running_the_jsonbbasics_example_application_2]]
 === Running the jsonbbasics Example Application
 
 This section describes how to run the `jsonbbasics` example application
@@ -27,7 +27,7 @@ from the command line using Maven.
 
 To run the jsonbbasics example application using Maven:
 
-.  Make sure that GlassFish Server has been started (see link:#BNADI[Starting and Stopping GlassFish Server]).
+.  Make sure that GlassFish Server has been started (see xref:#BNADI[Starting and Stopping GlassFish Server]).
 .  In a terminal window, go to:
 +
 [source,java]

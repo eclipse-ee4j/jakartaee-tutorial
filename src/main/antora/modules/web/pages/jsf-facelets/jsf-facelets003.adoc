@@ -1,4 +1,4 @@
-[[GIPOB]][[developing-a-simple-facelets-application-the-guessnumber-jsf-example-application]]
+[[GIPOB]][[_developing_a_simple_facelets_application_the_guessnumber_jsf_example_application]]
 
 == Developing a Simple Facelets Application: The guessnumber-jsf Example Application
 
@@ -11,7 +11,7 @@ Jakarta Server Faces application. The following tasks are usually required:
 * Mapping the `FacesServlet` instance
 * Adding managed bean declarations
 
-[[GIQTE]][[creating-a-facelets-application]]
+[[GIQTE]][[_creating_a_facelets_application]]
 
 === Creating a Facelets Application
 
@@ -24,7 +24,7 @@ correctly or incorrectly.
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/guessnumber-jsf/` directory.
 
-[[GIQQZ]][[developing-a-managed-bean]]
+[[GIQQZ]][[_developing_a_managed_bean]]
 
 ==== Developing a Managed Bean
 
@@ -102,7 +102,7 @@ accessible through the EL. The `@SessionScoped` annotation registers the
 bean scope as `session` to enable you to make multiple guesses as you
 run the application.
 
-[[GJZPV]][[creating-facelets-views]]
+[[GJZPV]][[_creating_facelets_views]]
 
 ==== Creating Facelets Views
 
@@ -187,7 +187,7 @@ range by the Jakarta Server Faces standard validator tag
 
 The image file, `wave.med.gif`, is added to the page as a resource, as
 is the style sheet. For more details about the resources facility, see
-link:#GIRGM[Web Resources].
+xref:jsf-facelets/jsf-facelets.adoc#GIRGM[Web Resources].
 
 An `h:commandButton` tag with the ID `submit` starts validation of the
 input data when a user clicks the button. Using implicit navigation, the
@@ -227,7 +227,7 @@ content:
 This page also uses implicit navigation, setting the `action` attribute
 for the Back button to send the user to the `greeting.xhtml` page.
 
-[[GJJKC]][[configuring-the-application]]
+[[GJJKC]][[_configuring_the_application]]
 
 === Configuring the Application
 
@@ -283,19 +283,19 @@ For example, if the project stage is defined as `Development`, debugging
 information is automatically generated for the user. If not defined by
 the user, the default project stage is `Production`.
 
-[[GIRGF]][[running-the-guessnumber-jsf-facelets-example]]
+[[GIRGF]][[_running_the_guessnumber_jsf_facelets_example]]
 
 === Running the guessnumber-jsf Facelets Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `guessnumber-jsf` example.
 
-[[GJQZL]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-netbeans-ide]]
+[[GJQZL]][[_to_build_package_and_deploy_the_guessnumber_jsf_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -312,12 +312,12 @@ select Build.
 This option builds the example application and deploys it to your
 GlassFish Server instance.
 
-[[GJQYU]][[to-build-package-and-deploy-the-guessnumber-jsf-example-using-maven]]
+[[GJQYU]][[_to_build_package_and_deploy_the_guessnumber_jsf_example_using_maven]]
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -336,7 +336,7 @@ This command builds and packages the application into a WAR file,
 `guessnumber-jsf.war`, that is located in the `target` directory. It
 then deploys it to the server.
 
-[[GJQYX]][[to-run-the-guessnumber-jsf-example]]
+[[GJQYX]][[_to_run_the_guessnumber_jsf_example]]
 
 ==== To Run the guessnumber-jsf Example
 

@@ -1,4 +1,4 @@
-[[the-jsonpstreaming-example-application]]
+[[_the_jsonpstreaming_example_application]]
 == The jsonpstreaming Example Application
 
 This section describes how to build and run the `jsonpstreaming` example
@@ -9,7 +9,7 @@ write JSON output using the streaming API.
 The `jsonpstreaming` example application is in the
 `_tut-install_/examples/web/jsonp/jsonpstreaming` directory.
 
-[[components-of-the-jsonpstreaming-example-application]]
+[[_components_of_the_jsonpstreaming_example_application]]
 === Components of the jsonpstreaming Example Application
 
 The `jsonpstreaming` example application contains the following files.
@@ -29,23 +29,23 @@ the Facelets pages. This file also contains code that uses the JSON
 streaming API.
 
 The code used in `StreamingBean.java` to write JSON data to a file is
-similar to the example in link:#BABGJEEF[Writing JSON Data
+similar to the example in xref:#BABGJEEF[Writing JSON Data
 Using a Generator]. The code to parse JSON data from a file is similar
-to the example in link:#BABGCHIG[Reading JSON Data Using a
+to the example in xref:#BABGCHIG[Reading JSON Data Using a
 Parser].
 
 
-[[running-the-jsonpstreaming-example-application]]
+[[_running_the_jsonpstreaming_example_application]]
 === Running the jsonpstreaming Example Application
 
 This section describes how to run the `jsonpstreaming` example
 application using NetBeans IDE and from the command line.
 
-[[to-run-the-jsonpstreaming-example-application-using-netbeans-ide]]
+[[_to_run_the_jsonpstreaming_example_application_using_netbeans_ide]]
 ==== To Run the jsonpstreaming Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -74,11 +74,11 @@ page shows the contents of the text file.
 lists the parser events for the JSON data in the text file.
 
 
-[[to-run-the-jsonpstreaming-example-application-using-maven]]
+[[_to_run_the_jsonpstreaming_example_application_using_maven]]
 ==== To Run the jsonpstreaming Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

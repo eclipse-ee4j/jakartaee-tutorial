@@ -1,10 +1,10 @@
-[[GIPRR]][[the-lifecycle-of-a-facelets-application]]
+[[GIPRR]][[_the_lifecycle_of_a_facelets_application]]
 
 == The Lifecycle of a Facelets Application
 
 The Jakarta Server Faces specification defines the lifecycle of a Jakarta Server
 Faces application. For more information on this lifecycle, see
-link:#BNAQQ[The Lifecycle of a Jakarta Server Faces
+xref:jsf-intro/jsf-intro.adoc#BNAQQ[The Lifecycle of a Jakarta Server Faces
 Application]. The following steps describe that process as applied to a
 Facelets-based application.
 
@@ -29,7 +29,7 @@ triggered.
 7.  If the same view is requested, the stored view is rendered once
 again.
 8.  If a new view is requested, then the process described in Step
-link:#BABGCBAJ[2] is continued.
+xref:jsf-facelets/jsf-facelets.adoc#BABGCBAJ[2] is continued.
 9.  The new view is then rendered back as a response to the client.
 
 

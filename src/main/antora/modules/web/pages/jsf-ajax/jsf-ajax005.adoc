@@ -1,4 +1,4 @@
-[[GKDDF]][[monitoring-events-on-the-client]]
+[[GKDDF]][[_monitoring_events_on_the_client]]
 
 == Monitoring Events on the Client
 
@@ -9,7 +9,7 @@ the processing of an Ajax request: begin, complete, and success.
 
 When calling the JavaScript function assigned to the `onevent` property,
 Jakarta Server Faces passes a data object to it. The data object contains
-the properties listed in link:#GKGOE[Table 13-3].
+the properties listed in xref:jsf-ajax/jsf-ajax.adoc#GKGOE[Table 13-3].
 
 [[sthref71]][[GKGOE]]
 

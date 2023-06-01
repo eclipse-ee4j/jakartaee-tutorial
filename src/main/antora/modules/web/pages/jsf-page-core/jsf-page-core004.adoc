@@ -1,10 +1,10 @@
-[[BNATN]][[referencing-a-managed-bean-method]]
+[[BNATN]][[_referencing_a_managed_bean_method]]
 
 == Referencing a Managed Bean Method
 
 A component tag has a set of attributes for referencing managed bean
 methods that can perform certain functions for the component associated
-with the tag. These attributes are summarized in link:#BNATO[Table
+with the tag. These attributes are summarized in xref:jsf-page-core/jsf-page-core.adoc#BNATO[Table
 11-7].
 
 [[sthref66]][[BNATO]]
@@ -48,7 +48,7 @@ void validate(javax.faces.context.FacesContext,
 
 The following sections give examples of how to use the attributes.
 
-[[BNATP]][[referencing-a-method-that-performs-navigation]]
+[[BNATP]][[_referencing_a_method_that_performs_navigation]]
 
 === Referencing a Method That Performs Navigation
 
@@ -70,10 +70,10 @@ The following example shows how to reference a navigation method:
                  action="#{cashierBean.submit}" />
 ----
 
-See link:#BNAVC[Writing a Method to Handle Navigation]
+See xref:jsf-develop/jsf-develop.adoc#BNAVC[Writing a Method to Handle Navigation]
 for information on how to write such a method.
 
-[[BNATQ]][[referencing-a-method-that-handles-an-action-event]]
+[[BNATQ]][[_referencing_a_method_that_handles_an_action_event]]
 
 === Referencing a Method That Handles an Action Event
 
@@ -93,10 +93,10 @@ The `actionListener` attribute of this component tag references the
 `chooseBookFromLink` method using a method expression. The
 `chooseBookFromLink` method handles the event when the user clicks the
 link rendered by this component. See
-link:#BNAVD[Writing a Method to Handle an Action
+xref:jsf-develop/jsf-develop.adoc#BNAVD[Writing a Method to Handle an Action
 Event] for information on how to write such a method.
 
-[[BNATR]][[referencing-a-method-that-performs-validation]]
+[[BNATR]][[_referencing_a_method_that_performs_validation]]
 
 === Referencing a Method That Performs Validation
 
@@ -105,7 +105,7 @@ managed bean method, refer to the method from the component's tag by
 using the `validator` attribute.
 
 The following simplified example from
-link:#GJCXV[The guessnumber-cdi CDI Example]
+xref:#GJCXV[The guessnumber-cdi CDI Example]
 shows how to reference a method that performs validation on
 `inputGuess`, an input component:
 
@@ -121,10 +121,10 @@ shows how to reference a method that performs validation on
 
 The managed bean method `validateNumberRange` verifies that the input
 value is within the valid range, which changes each time another guess
-is made. See link:#BNAVE[Writing a Method to Perform
+is made. See xref:jsf-develop/jsf-develop.adoc#BNAVE[Writing a Method to Perform
 Validation] for information on how to write such a method.
 
-[[BNATS]][[referencing-a-method-that-handles-a-value-change-event]]
+[[BNATS]][[_referencing_a_method_that_handles_a_value_change_event]]
 
 === Referencing a Method That Handles a Value-Change Event
 
@@ -148,6 +148,6 @@ The `valueChangeListener` attribute of this component tag references the
 expression. The `processValueChange` method handles the event of a user
 entering a name in the input field rendered by this component.
 
-link:#BNAVF[Writing a Method to Handle a Value-Change
+xref:jsf-develop/jsf-develop.adoc#BNAVF[Writing a Method to Handle a Value-Change
 Event] describes how to implement a method that handles a
 `ValueChangeEvent`.

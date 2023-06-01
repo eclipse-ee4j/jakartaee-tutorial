@@ -1,4 +1,4 @@
-[[BABGCEHE]][[the-dukeetf2-example-application]]
+[[BABGCEHE]][[_the_dukeetf2_example_application]]
 
 == The dukeetf2 Example Application
 
@@ -8,7 +8,7 @@ how to use a WebSocket endpoint to provide data updates to web clients.
 The example resembles a service that provides periodic updates on the
 price and trading volume of an electronically traded fund (ETF).
 
-[[CIHJHJCD]][[architecture-of-the-dukeetf2-sample-application]]
+[[CIHJHJCD]][[_architecture_of_the_dukeetf2_sample_application]]
 
 === Architecture of the dukeetf2 Sample Application
 
@@ -23,7 +23,7 @@ every second.
 endpoint, parse incoming messages, and update the price and volume
 information without reloading the page.
 
-[[sthref116]][[the-endpoint]]
+[[sthref116]][[_the_endpoint]]
 
 ==== The Endpoint
 
@@ -88,7 +88,7 @@ public class ETFEndpoint {
 }
 ----
 
-[[sthref117]][[the-enterprise-bean]]
+[[sthref117]][[_the_enterprise_bean]]
 
 ==== The Enterprise Bean
 
@@ -126,12 +126,12 @@ public class PriceVolumeBean {
 ----
 
 The enterprise bean calls the `send` method of the `ETFEndpoint` class
-in the timeout method. See link:#BNBOY[Using the
-Timer Service] in link:#GIJRB[Chapter 37, "Running
+in the timeout method. See xref:#BNBOY[Using the
+Timer Service] in xref:#GIJRB[Chapter 37, "Running
 the Enterprise Bean Examples"] for more information on the timer
 service.
 
-[[CIHHIEFH]][[the-html-page]]
+[[CIHHIEFH]][[_the_html_page]]
 
 ==== The HTML Page
 
@@ -178,19 +178,19 @@ window.addEventListener("load", connect, false);
 The WebSocket API is supported by most modern browsers, and it is widely
 used in HTML5 web client development.
 
-[[CIHHBAIC]][[running-the-dukeetf2-example-application]]
+[[CIHHBAIC]][[_running_the_dukeetf2_example_application]]
 
 === Running the dukeetf2 Example Application
 
 This section describes how to run the `dukeetf2` example application
 using NetBeans IDE and from the command line.
 
-[[CIHEBIAH]][[to-run-the-dukeetf2-example-application-using-netbeans-ide]]
+[[CIHEBIAH]][[_to_run_the_dukeetf2_example_application_using_netbeans_ide]]
 
 ==== To Run the dukeetf2 Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -216,12 +216,12 @@ http://localhost:8080/dukeetf2/
 Open the same URL on a different web browser tab or window to see how
 both pages get price and volume updates simultaneously.
 
-[[CIHDJCGJ]][[to-run-the-dukeetf2-example-application-using-maven]]
+[[CIHDJCGJ]][[_to_run_the_dukeetf2_example_application_using_maven]]
 
 ==== To Run the dukeetf2 Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

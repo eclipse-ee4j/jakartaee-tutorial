@@ -1,4 +1,4 @@
-[[BNAQM]][[managed-beans-in-javaserver-faces-technology]]
+[[BNAQM]][[_managed_beans_in_javaserver_faces_technology]]
 
 == Managed Beans in Jakarta Server Faces Technology
 
@@ -13,8 +13,8 @@ configuring, and using managed beans in an application.
 a|
 *Note*:
 
-link:#BNAQZ[Chapter 10, "Using Jakarta Server Faces Technology
-in Web Pages"] and link:#GJCUT[Chapter 11, "Using
+xref:jsf-page/jsf-page.adoc#BNAQZ[Chapter 10, "Using Jakarta Server Faces Technology
+in Web Pages"] and xref:jsf-page-core/jsf-page-core.adoc#GJCUT[Chapter 11, "Using
 Converters, Listeners, and Validators"] show how to add components to a
 page and connect them to server-side objects by using component tags and
 core tags. These chapters also show how to provide additional
@@ -26,7 +26,7 @@ event handlers, and validators.
 |=======================================================================
 
 
-[[BNAQN]][[creating-a-managed-bean]]
+[[BNAQN]][[_creating_a_managed_bean]]
 
 === Creating a Managed Bean
 
@@ -69,7 +69,7 @@ basic primitive and numeric types or any Java object type for which the
 application has access to an appropriate converter. For example, a
 property can be of type `java.util.Date` if the application has access
 to a converter that can convert the `Date` type to a `String` and back
-again. See link:#BNATY[Writing Bean Properties] for
+again. See xref:jsf-develop/jsf-develop.adoc#BNATY[Writing Bean Properties] for
 information on which types are accepted by which component tags.
 
 When a bean property is bound to a component instance, the property's
@@ -81,16 +81,16 @@ listener instance, the property must be of the appropriate converter,
 validator, or listener type.
 
 For more information on writing beans and their properties, see
-link:#BNATY[Writing Bean Properties].
+xref:jsf-develop/jsf-develop.adoc#BNATY[Writing Bean Properties].
 
-[[BNAQP]][[using-the-el-to-reference-managed-beans]]
+[[BNAQP]][[_using_the_el_to_reference_managed_beans]]
 
 === Using the EL to Reference Managed Beans
 
 To bind component values and objects to managed bean properties or to
 reference managed bean methods from component tags, page authors use the
 Expression Language syntax. As explained in
-link:#BNAHQ[Overview of the EL], the following are some of
+xref:jsf-el/jsf-el.adoc#BNAHQ[Overview of the EL], the following are some of
 the features that the EL offers:
 
 * Deferred evaluation of expressions
@@ -157,8 +157,8 @@ can configure your custom component properties to accept expressions by
 creating `javax.el.ValueExpression` or `javax.el.MethodExpression`
 instances for them.
 
-For information on the EL, see link:#GJDDD[Chapter 9,
+For information on the EL, see xref:jsf-el/jsf-el.adoc#GJDDD[Chapter 9,
 "Expression Language"].
 
 For information on referencing managed bean methods from component tags,
-see link:#BNATN[Referencing a Managed Bean Method].
+see xref:jsf-page-core/jsf-page-core.adoc#BNATN[Referencing a Managed Bean Method].

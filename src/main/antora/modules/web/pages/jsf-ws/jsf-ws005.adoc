@@ -1,4 +1,4 @@
-[[conditionally-connecting-websockets]]
+[[_conditionally_connecting_websockets]]
 == Conditionally Connecting WebSockets
 
 You can use the optional connected attribute to control whether to
@@ -35,7 +35,7 @@ function someWebsocketListener(message) {
 }
 ----
 
-[[websocket-events-server]]
+[[_websocket_events_server]]
 === WebSocket Events: Server
 
 When a session or view-scoped socket is automatically closed with close reason
@@ -63,7 +63,7 @@ public class WebsocketObserver {
 }
 ----
 
-[[websocket-events-clients]]
+[[_websocket_events_clients]]
 === WebSocket Events: Clients
 
 You can use the optional `onopen` JavaScript listener function to listen for

@@ -1,4 +1,4 @@
-[[BNAXJ]][[basic-requirements-of-a-javaserver-faces-application]]
+[[BNAXJ]][[_basic_requirements_of_a_javaserver_faces_application]]
 
 == Basic Requirements of a Jakarta Server Faces Application
 
@@ -44,7 +44,7 @@ The `web.xml` file (or web deployment descriptor), the set of JAR files,
 and the set of application files must be contained in the `WEB-INF`
 directory of the WAR file.
 
-[[BNAXK]][[configuring-an-application-with-a-web-deployment-descriptor]]
+[[BNAXK]][[_configuring_an_application_with_a_web_deployment_descriptor]]
 
 === Configuring an Application with a Web Deployment Descriptor
 
@@ -72,7 +72,7 @@ This section gives more details on these configurations. Where
 appropriate, it also describes how you can make these configurations
 using NetBeans IDE.
 
-[[GLPOO]][[identifying-the-servlet-for-lifecycle-processing]]
+[[GLPOO]][[_identifying_the_servlet_for_lifecycle_processing]]
 
 ==== Identifying the Servlet for Lifecycle Processing
 
@@ -86,7 +86,7 @@ technology.
 Before a Jakarta Server Faces application can launch its first web page, the
 web container must invoke the `FacesServlet` instance in order for the
 application lifecycle process to start. See
-link:#BNAQQ[The Lifecycle of a Jakarta Server Faces
+xref:jsf-intro/jsf-intro.adoc#BNAQQ[The Lifecycle of a Jakarta Server Faces
 Application] for more information.
 
 The following example shows the default configuration of the
@@ -159,11 +159,11 @@ deployment descriptor is automatically created for you with default
 configurations. If you created your application without an IDE, you can
 create a web deployment descriptor.
 
-[[BNAXM]][[to-specify-a-path-to-an-application-configuration-resource-file]]
+[[BNAXM]][[_to_specify_a_path_to_an_application_configuration_resource_file]]
 
 ==== To Specify a Path to an Application Configuration Resource File
 
-As explained in link:#BNAWP[Application
+As explained in xref:jsf-configure/jsf-configure.adoc#BNAWP[Application
 Configuration Resource File], an application can have multiple
 application configuration resource files. If these files are not located
 in the directories that the implementation searches by default or the
@@ -184,7 +184,7 @@ To specify these paths using NetBeans IDE, do the following.
 ..  Click OK.
 ..  Repeat steps 1 through 7 for each configuration file.
 
-[[BNAXN]][[to-specify-where-state-is-saved]]
+[[BNAXN]][[_to_specify_where_state_is_saved]]
 
 ==== To Specify Where State Is Saved
 
@@ -193,7 +193,7 @@ deployment descriptor where you want the state to be saved, on either
 client or server. You do this by setting a context parameter in your
 deployment descriptor. By default, state is saved on the server, so you
 need to specify this context parameter only if you want to save state on
-the client. See link:#BNAVZ[Saving and Restoring State]
+the client. See xref:jsf-custom/jsf-custom.adoc#BNAVZ[Saving and Restoring State]
 for information on the advantages and disadvantages of each location.
 
 To specify where state is saved using NetBeans IDE, do the following.
@@ -214,7 +214,7 @@ rendered to a hidden field on the page. The Jakarta Server Faces
 implementation saves the state on the server by default. Duke's Forest
 saves its state on the client.
 
-[[GIQXL]][[configuring-project-stage]]
+[[GIQXL]][[_configuring_project_stage]]
 
 === Configuring Project Stage
 
@@ -245,7 +245,7 @@ deployment descriptor file. Here is an example:
 If no Project Stage is defined, the default stage is `Production`. You
 can also add custom stages according to your requirements.
 
-[[BNAXT]][[including-the-classes-pages-and-other-resources]]
+[[BNAXT]][[_including_the_classes_pages_and_other_resources]]
 
 === Including the Classes, Pages, and Other Resources
 
@@ -256,7 +256,7 @@ notice that the scripts package resources in the following ways.
 * The `faces-config.xml` file and the `web.xml` file are packaged in the `WEB-INF` directory.
 * All packages are stored in the `WEB-INF/classes/` directory.
 * All application JAR files are packaged in the `WEB-INF/lib/` directory.
-* All resource files are either under the root of the web application `/resources` directory or in the web application's classpath, the `META-INF/resources/`{zwsp}resourceIdentifier directory. For more information on resources, see link:#GIRGM[Web Resources].
+* All resource files are either under the root of the web application `/resources` directory or in the web application's classpath, the `META-INF/resources/`{zwsp}resourceIdentifier directory. For more information on resources, see xref:jsf-facelets/jsf-facelets.adoc#GIRGM[Web Resources].
 
 When packaging your own applications, you can use NetBeans IDE or you
 can use XML files such as those created for Maven. You can modify the

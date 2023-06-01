@@ -1,4 +1,4 @@
-[[BEIJHCDJ]][[protocol-upgrade-processing]]
+[[BEIJHCDJ]][[_protocol_upgrade_processing]]
 
 == Protocol Upgrade Processing
 
@@ -37,7 +37,7 @@ OtherHeaderB: Value
 ----
 
 Jakarta EE supports the HTTP protocol upgrade functionality in servlets, as
-described in link:#BEIBDHAG[Table 18-7].
+described in xref:servlets/servlets.adoc#BEIBDHAG[Table 18-7].
 
 [[sthref110]][[BEIBDHAG]]
 
@@ -74,14 +74,14 @@ the new protocol.
 `ServletInputStream getInputStream()`
 
 The `getInputStream` method provides access to the input stream of the
-connection. You can use link:#BEIHICDH[Nonblocking I/O]
+connection. You can use xref:servlets/servlets.adoc#BEIHICDH[Nonblocking I/O]
 with the returned stream to implement the new protocol.
 
 |`WebConnection` a|
 `ServletOutputStream getOutputStream()`
 
 The `getOutputStream` method provides access to the output stream of the
-connection. You can use link:#BEIHICDH[Nonblocking I/O]
+connection. You can use xref:servlets/servlets.adoc#BEIHICDH[Nonblocking I/O]
 with the returned stream to implement the new protocol.
 
 |=======================================================================

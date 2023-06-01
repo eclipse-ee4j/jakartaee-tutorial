@@ -1,4 +1,4 @@
-[[BNAHR]][[immediate-and-deferred-evaluation-syntax]]
+[[BNAHR]][[_immediate_and_deferred_evaluation_syntax]]
 
 == Immediate and Deferred Evaluation Syntax
 
@@ -22,7 +22,7 @@ lifecycle.
 Other technologies using the EL might have different reasons for using
 deferred expressions.
 
-[[BNAHS]][[immediate-evaluation]]
+[[BNAHS]][[_immediate_evaluation]]
 
 === Immediate Evaluation
 
@@ -43,7 +43,7 @@ The Jakarta Server Faces implementation evaluates the expression
 `${catalog.bookQuantity}`, converts it, and passes the returned value to
 the tag handler. The value is updated on the page.
 
-[[BNAHT]][[deferred-evaluation]]
+[[BNAHT]][[_deferred_evaluation]]
 
 === Deferred Evaluation
 

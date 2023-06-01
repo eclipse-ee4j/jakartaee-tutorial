@@ -1,4 +1,4 @@
-[[GIRCH]][[using-annotations-to-configure-managed-beans]]
+[[GIRCH]][[_using_annotations_to_configure_managed_beans]]
 
 == Using Annotations to Configure Managed Beans
 
@@ -15,7 +15,7 @@ preferred approach.
 
 
 Jakarta Server Faces support for bean annotations is introduced in
-link:#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]. Bean
+xref:jsf-intro/jsf-intro.adoc#BNAPH[Chapter 7, "Jakarta Server Faces Technology"]. Bean
 annotations can be used for configuring Jakarta Server Faces applications.
 
 The `@Named` (`javax.inject.Named`) annotation in a class, along with a
@@ -37,7 +37,7 @@ The above code snippet shows a bean that is managed by the Jakarta Server
 Faces implementation and is available for the length of the session.
 
 You can annotate beans with any of the scopes listed in the next
-section, link:#GIRCR[Using Managed Bean Scopes].
+section, xref:jsf-configure/jsf-configure.adoc#GIRCR[Using Managed Bean Scopes].
 
 All classes will be scanned for annotations at startup unless the
 `faces-config` element in the `faces-config.xml` file has the
@@ -47,10 +47,10 @@ Annotations are also available for other artifacts, such as components,
 converters, validators, and renderers, to be used in place of
 application configuration resource file entries. These are discussed,
 along with registration of custom listeners, custom validators, and
-custom converters, in link:#BNAVG[Chapter 15, "Creating
+custom converters, in xref:jsf-custom/jsf-custom.adoc#BNAVG[Chapter 15, "Creating
 Custom UI Components and Other Custom Objects"].
 
-[[GIRCR]][[using-managed-bean-scopes]]
+[[GIRCR]][[_using_managed_bean_scopes]]
 
 === Using Managed Bean Scopes
 
@@ -64,7 +64,7 @@ application.
 persists across multiple HTTP requests in a web application.
 * Flow (`javax.faces.flows.FlowScoped`): Flow scope persists during a
 user's interaction with a specific flow of a web application. See
-link:#CHDGFCJF[Using Faces Flows] for more
+xref:jsf-configure/jsf-configure.adoc#CHDGFCJF[Using Faces Flows] for more
 information.
 * Request (`javax.enterprise.context.RequestScoped`): Request scope
 persists during a single HTTP request in a web application.

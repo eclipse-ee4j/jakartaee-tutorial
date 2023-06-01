@@ -1,4 +1,4 @@
-[[BNAST]][[using-the-standard-converters]]
+[[BNAST]][[_using_the_standard_converters]]
 
 == Using the Standard Converters
 
@@ -8,13 +8,13 @@ implementations that you can use to convert component data. The purpose
 of conversion is to take the String-based data coming in from the
 Servlet API and convert it to strongly typed Java objects suitable for
 the business domain. For more information on the conceptual details of
-the conversion model, see link:#BNAQI[Conversion Model].
+the conversion model, see xref:jsf-intro/jsf-intro.adoc#BNAQI[Conversion Model].
 
 The standard `Converter` implementations are located in the
 `javax.faces.convert` package. Normally, converters are implicitly
 assigned based on the type of the EL expression pointed to by the value
 of the component. However, these converters can also be accessed by a
-converter ID. link:#CHDIHIIC[Table 11-1] shows the converter classes and
+converter ID. xref:jsf-page-core/jsf-page-core.adoc#CHDIHIIC[Table 11-1] shows the converter classes and
 their associated converter IDs.
 
 [[sthref60]][[CHDIHIIC]]
@@ -58,13 +58,13 @@ name of the input component on which the converter is registered.
 Two of the standard converters (`DateTimeConverter` and
 `NumberConverter`) have their own tags, which allow you to configure the
 format of the component data using the tag attributes. For more
-information about using `DateTimeConverter`, see link:#BNASV[Using
+information about using `DateTimeConverter`, see xref:jsf-page-core/jsf-page-core.adoc#BNASV[Using
 DateTimeConverter]. For more information about using `NumberConverter`,
-see link:#BNASX[Using NumberConverter]. The following section explains
+see xref:jsf-page-core/jsf-page-core.adoc#BNASX[Using NumberConverter]. The following section explains
 how to convert a component's value, including how to register other
 standard converters with a component.
 
-[[BNASU]][[converting-a-components-value]]
+[[BNASU]][[_converting_a_components_value]]
 
 === Converting a Component's Value
 
@@ -74,7 +74,7 @@ the standard converters in one of the following ways.
 
 * Nest one of the standard converter tags inside the component's tag.
 These tags are `f:convertDateTime` and `f:convertNumber`, which are
-described in link:#BNASX[Using
+described in xref:jsf-page-core/jsf-page-core.adoc#BNASX[Using
 NumberConverter], respectively.
 * Bind the value of the component to a managed bean property of the same
 type as the converter. This is the most common technique.
@@ -108,7 +108,7 @@ attribute to reference the converter.
 
 The `converterId` attribute must reference the converter's ID. Here is
 an example that uses one of the converter IDs listed in
-link:#CHDIHIIC[Table 11-1]:
+xref:jsf-page-core/jsf-page-core.adoc#CHDIHIIC[Table 11-1]:
 
 [source,xml]
 ----
@@ -124,16 +124,16 @@ instance.
 
 You can also create custom converters and register them on components
 using the `f:converter` tag. For details, see
-link:#BNAUS[Creating and Using a Custom Converter].
+xref:jsf-custom/jsf-custom.adoc#BNAUS[Creating and Using a Custom Converter].
 
-[[BNASV]][[using-datetimeconverter]]
+[[BNASV]][[_using_datetimeconverter]]
 
 === Using DateTimeConverter
 
 You can convert a component's data to a `java.util.Date` by nesting the
 `convertDateTime` tag inside the component tag. The `convertDateTime`
 tag has several attributes that allow you to specify the format and type
-of the data. link:#BNASW[Table 11-2] lists the attributes.
+of the data. xref:jsf-page-core/jsf-page-core.adoc#BNASW[Table 11-2] lists the attributes.
 
 Here is a simple example of a `convertDateTime` tag:
 
@@ -218,7 +218,7 @@ Custom formatting pattern that determines how the date/time string
 should be formatted and parsed. If this attribute is specified,
 `dateStyle` and `timeStyle` attributes are ignored.
 
-See link:#CFHEABEI[Table 11-3] for the default values when `pattern` is
+See xref:jsf-page-core/jsf-page-core.adoc#CFHEABEI[Table 11-3] for the default values when `pattern` is
 not specified.
 
 |`timeStyle` |`String` |Defines the format, as specified by
@@ -236,7 +236,7 @@ Valid values are: `date`, `time`, `both`, `LocalDate`, `LocalTime`,
 `LocalDateTime`, `OffsetTime`, `OffsetDateTime`, or `ZonedDateTime`. If
 no value is specified, `date` is used.
 
-See link:#CFHEABEI[Table 11-3] for additional information.
+See xref:jsf-page-core/jsf-page-core.adoc#CFHEABEI[Table 11-3] for additional information.
 
 |=======================================================================
 
@@ -275,14 +275,14 @@ See link:#CFHEABEI[Table 11-3] for additional information.
 |=======================================================================
 
 
-[[BNASX]][[using-numberconverter]]
+[[BNASX]][[_using_numberconverter]]
 
 === Using NumberConverter
 
 You can convert a component's data to a `java.lang.Number` by nesting
 the `convertNumber` tag inside the component tag. The `convertNumber`
 tag has several attributes that allow you to specify the format and type
-of the data. link:#BNASY[Table 11-4] lists the attributes.
+of the data. xref:jsf-page-core/jsf-page-core.adoc#BNASY[Table 11-4] lists the attributes.
 
 The following example uses a `convertNumber` tag to display the total
 prices of the contents of a shopping cart:

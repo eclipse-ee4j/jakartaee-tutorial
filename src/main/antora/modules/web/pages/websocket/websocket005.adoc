@@ -1,4 +1,4 @@
-[[BABFCGBJ]][[sending-and-receiving-messages]]
+[[BABFCGBJ]][[_sending_and_receiving_messages]]
 
 == Sending and Receiving Messages
 
@@ -8,7 +8,7 @@ section describes how to use the `Session` and `RemoteEndpoint`
 interfaces to send messages to the connected peer and how to use the
 `OnMessage` annotation to receive messages from it.
 
-[[CIHEHFCB]][[sending-messages]]
+[[CIHEHFCB]][[_sending_messages]]
 
 === Sending Messages
 
@@ -18,7 +18,7 @@ Follow these steps to send messages in an endpoint.
 +
 The `Session` object is available as a parameter in the annotated
 lifecycle methods of the endpoint, like those in
-link:#BABDGEJH[Table 19-1]. When your message is a
+xref:websocket/websocket.adoc#BABDGEJH[Table 19-1]. When your message is a
 response to a message from the peer, you have the `Session` object
 available inside the method that received the message (the method
 annotated with `@OnMessage`). If you have to send messages that are not
@@ -51,11 +51,11 @@ Send a ping frame to the peer.
 +
 Send a pong frame to the peer.
 
-The example in link:#BABFEBGA[Annotated Endpoints]
+The example in xref:websocket/websocket.adoc#BABFEBGA[Annotated Endpoints]
 demonstrates how to use this procedure to reply to every incoming text
 message.
 
-[[BABIFBCG]][[sending-messages-to-all-peers-connected-to-an-endpoint]]
+[[BABIFBCG]][[_sending_messages_to_all_peers_connected_to_an_endpoint]]
 
 ==== Sending Messages to All Peers Connected to an Endpoint
 
@@ -83,7 +83,7 @@ public class EchoAllEndpoint {
 }
 ----
 
-[[CIHIDFHD]][[receiving-messages]]
+[[CIHIDFHD]][[_receiving_messages]]
 
 === Receiving Messages
 

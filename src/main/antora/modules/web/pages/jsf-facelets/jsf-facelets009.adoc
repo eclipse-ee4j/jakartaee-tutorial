@@ -1,4 +1,4 @@
-[[BABGECCJ]][[html5-friendly-markup]]
+[[BABGECCJ]][[_html5_friendly_markup]]
 
 == HTML5-Friendly Markup
 
@@ -6,7 +6,7 @@ When you want to produce user interface features for which HTML does not
 have its own elements, you can create a custom Jakarta Server Faces
 component and insert it in your Facelets page. This mechanism can cause
 a simple element to create complex web code. However, creating such a
-component is a significant task (see link:#BNAVG[Chapter
+component is a significant task (see xref:jsf-custom/jsf-custom.adoc#BNAVG[Chapter
 15, "Creating Custom UI Components and Other Custom Objects"]).
 
 HTML5 offers new elements and attributes that can make it unnecessary to
@@ -26,7 +26,7 @@ rather than having to pass this control off to component authors. You
 can mix and match Jakarta Server Faces and HTML5 components and elements as
 you see fit.
 
-[[sthref33]][[using-pass-through-elements]]
+[[sthref33]][[_using_pass_through_elements]]
 
 === Using Pass-Through Elements
 
@@ -52,7 +52,7 @@ input tag's attributes are treated as part of the Facelets page. This
 means that, for example, you can use EL expressions to retrieve managed
 bean properties.
 
-link:#BABJADGH[Table 8-4] shows how pass-through elements are rendered
+xref:jsf-facelets/jsf-facelets.adoc#BABJADGH[Table 8-4] shows how pass-through elements are rendered
 as Facelets tags. The server faces implementation uses the element name and the
 identifying attribute to determine the corresponding Facelets tag that
 will be used in the server-side processing. The browser, however,
@@ -104,7 +104,7 @@ interprets the markup that the page author has written.
 |=======================================================
 
 
-[[sthref35]][[using-pass-through-attributes]]
+[[sthref35]][[_using_pass_through_attributes]]
 
 === Using Pass-Through Attributes
 
@@ -189,7 +189,7 @@ public Bean() {
 }
 ----
 
-[[BABGGIAA]][[the-reservation-example-application]]
+[[BABGGIAA]][[_the_reservation_example_application]]
 
 === The reservation Example Application
 
@@ -202,7 +202,7 @@ The pages use both pass-through attributes and pass-through elements.
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/reservation/` directory.
 
-[[BABGCAHH]][[the-facelets-pages-for-the-reservation-application]]
+[[BABGCAHH]][[_the_facelets_pages_for_the_reservation_application]]
 
 ==== The Facelets Pages for the reservation Application
 
@@ -233,7 +233,7 @@ namespaces:
 
 Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag
 within the `h:body` tag illustrates the use of a relocatable resource
-(as described in link:#BABHGBJI[Relocatable
+(as described in xref:jsf-facelets/jsf-facelets.adoc#BABHGBJI[Relocatable
 Resources]):
 
 [source,xml]
@@ -291,7 +291,7 @@ to the browser uninterpreted by the Jakarta Server Faces input component:
 
 The output of the `calculateTotal` method that is specified as the
 listener for the Ajax event is rendered in the output element whose `id`
-and `name` value is `total`. See link:#GKIOW[Chapter 13,
+and `name` value is `total`. See xref:jsf-ajax/jsf-ajax.adoc#GKIOW[Chapter 13,
 "Using Ajax with Jakarta Server Faces Technology"], for more information.
 
 The second Facelets page, `confirmation.xhtml`, uses a pass-through
@@ -299,7 +299,7 @@ The second Facelets page, `confirmation.xhtml`, uses a pass-through
 a Facelets `h:commandButton` tag to allow the user to return to the
 `reservation.xhtml` page.
 
-[[BABHFCCG]][[the-managed-bean-for-the-reservation-application]]
+[[BABHFCCG]][[_the_managed_bean_for_the_reservation_application]]
 
 ==== The Managed Bean for the reservation Application
 
@@ -309,12 +309,12 @@ Facelets pages. It also contains two methods, `calculateTotal` and
 `clear`, that act as listeners for Ajax events on the
 `reservation.xhtml` page.
 
-[[BABIHHGC]][[to-build-package-and-deploy-the-reservation-example-using-netbeans-ide]]
+[[BABIHHGC]][[_to_build_package_and_deploy_the_reservation_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -331,12 +331,12 @@ select Build.
 This option builds the example application and deploys it to your
 GlassFish Server instance.
 
-[[sthref36]][[to-build-package-and-deploy-the-reservation-example-using-maven]]
+[[sthref36]][[_to_build_package_and_deploy_the_reservation_example_using_maven]]
 
 ==== To Build, Package, and Deploy the reservation Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -355,7 +355,7 @@ This command builds and packages the application into a WAR file,
 `reservation.war`, that is located in the `target` directory. It then
 deploys the WAR file to your GlassFish Server instance.
 
-[[sthref37]][[to-run-the-reservation-example]]
+[[sthref37]][[_to_run_the_reservation_example]]
 
 ==== To Run the reservation Example
 

@@ -1,4 +1,4 @@
-[[BNAPJ]][[javaserver-faces-technology-benefits]]
+[[BNAPJ]][[_javaserver_faces_technology_benefits]]
 
 == Jakarta Server Faces Technology Benefits
 
@@ -22,15 +22,12 @@ Another important goal of Jakarta Server Faces technology is to leverage
 familiar component and web-tier concepts without limiting you to a
 particular scripting technology or markup language. Jakarta Server Faces
 technology APIs are layered directly on top of the Servlet API, as shown
-in link:#GJEPW[Figure 7-2].
+in xref:jsf-intro/jsf-intro.adoc#GJEPW[Figure 7-2].
 
 [[GJEPW]]
 
 .*Figure 7-2 Java Web Application Technologies*
-image:jakartaeett_dt_015.png[
-"Diagram of web application technologies. Jakarta Server Pages, the server pages
-Standard Tag Library, and Jakarta Server Faces rest on Java Servlet
-technology."]
+image::common:jakartaeett_dt_015.png[ "Diagram of web application technologies. Jakarta Server Pages, the server pages Standard Tag Library, and Jakarta Server Faces rest on Java Servlet technology."]
 
 This layering of APIs enables several important application use cases,
 such as using different presentation technologies, creating your own
@@ -40,7 +37,7 @@ output for various client devices.
 Facelets technology, available as part of Jakarta Server Faces technology,
 is the preferred presentation technology for building Jakarta Server Faces
 technology–based web applications. For more information on Facelets
-technology features, see link:#GIEPX[Chapter 8,
+technology features, see xref:jsf-facelets/jsf-facelets.adoc#GIEPX[Chapter 8,
 "Introduction to Facelets"].
 
 Facelets technology offers several advantages.
@@ -50,7 +47,7 @@ and composite component features.
 * You can use annotations to automatically register the managed bean as
 a resource available for Jakarta Server Faces applications. In addition,
 implicit navigation rules allow developers to quickly configure page
-navigation (see link:#BNAQL[Navigation Model] for
+navigation (see xref:jsf-intro/jsf-intro.adoc#BNAQL[Navigation Model] for
 details). These features reduce the manual configuration process for
 applications.
 * Most important, Jakarta Server Faces technology provides a rich

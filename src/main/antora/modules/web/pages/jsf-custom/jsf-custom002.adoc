@@ -1,4 +1,4 @@
-[[BNAVH]][[determining-whether-you-need-a-custom-component-or-renderer]]
+[[BNAVH]][[_determining_whether_you_need_a_custom_component_or_renderer]]
 
 == Determining Whether You Need a Custom Component or Renderer
 
@@ -7,7 +7,7 @@ components and associated renderers. This section helps you to decide
 whether you can use standard components and renderers in your
 application or need a custom component or custom renderer.
 
-[[BNAVI]][[when-to-use-a-custom-component]]
+[[BNAVI]][[_when_to_use_a_custom_component]]
 
 === When to Use a Custom Component
 
@@ -50,34 +50,34 @@ You do not need to create a custom component in the following cases.
 * You need to aggregate components to create a new component that has
 its own unique behavior. In this situation, you can use a composite
 component to combine existing standard components. For more information
-on composite components, see link:#GIQZR[Composite
-Components] and link:#GKHXA[Chapter 14, "Composite
+on composite components, see xref:jsf-facelets/jsf-facelets.adoc#GIQZR[Composite
+Components] and xref:jsf-advanced-cc/jsf-advanced-cc.adoc#GKHXA[Chapter 14, "Composite
 Components: Advanced Topics and an Example"].
 * You simply need to manipulate data on the component or add
 application-specific functionality to it. In this situation, you should
 create a managed bean for this purpose and bind it to the standard
 component rather than create a custom component. See
-link:#BNAQM[Managed Beans in Jakarta Server Faces
+xref:jsf-develop/jsf-develop.adoc#BNAQM[Managed Beans in Jakarta Server Faces
 Technology] for more information on managed beans.
 * You need to convert a component's data to a type not supported by its
-renderer. See link:#BNAST[Using the Standard
+renderer. See xref:jsf-page-core/jsf-page-core.adoc#BNAST[Using the Standard
 Converters] for more information about converting a component's data.
 * You need to perform validation on the component data. Standard
 validators and custom validators can be added to a component by using
 the validator tags from the page. See
-link:#BNATC[Using the Standard Validators] and
-link:#BNAUW[Creating and Using a Custom Validator] for
+xref:jsf-page-core/jsf-page-core.adoc#BNATC[Using the Standard Validators] and
+xref:jsf-custom/jsf-custom.adoc#BNAUW[Creating and Using a Custom Validator] for
 more information about validating a component's data.
 * You need to register event listeners on components. You can either
 register event listeners on components using the `f:valueChangeListener`
 and `f:actionListener` tags, or you can point at an event-processing
 method on a managed bean using the component's `actionListener` or
 `valueChangeListener` attributes. See
-link:#BNAUT[Implementing an Event Listener] and
-link:#BNAVB[Writing Managed Bean Methods] for more
+xref:jsf-custom/jsf-custom.adoc#BNAUT[Implementing an Event Listener] and
+xref:jsf-develop/jsf-develop.adoc#BNAVB[Writing Managed Bean Methods] for more
 information.
 
-[[BNAVJ]][[when-to-use-a-custom-renderer]]
+[[BNAVJ]][[_when_to_use_a_custom_renderer]]
 
 === When to Use a Custom Renderer
 
@@ -121,7 +121,7 @@ approach, you can actually use both models. Your component class can
 include some default rendering code, but it can delegate rendering to a
 renderer if there is one.
 
-[[BNAVK]][[component-renderer-and-tag-combinations]]
+[[BNAVK]][[_component_renderer_and_tag_combinations]]
 
 === Component, Renderer, and Tag Combinations
 
@@ -156,7 +156,7 @@ validator tag. In this case, the custom tag corresponds to a custom
 validator and not to a custom component or custom renderer. In any case,
 you still need to associate the custom tag with a server-side object.
 
-link:#BNAVL[Table 15-1] summarizes what you must or can associate with a
+xref:jsf-custom/jsf-custom.adoc#BNAVL[Table 15-1] summarizes what you must or can associate with a
 custom component, custom renderer, or custom tag.
 
 [[sthref76]][[BNAVL]]

@@ -1,4 +1,4 @@
-[[GKHUO]][[invoking-a-managed-bean]]
+[[GKHUO]][[_invoking_a_managed_bean]]
 
 == Invoking a Managed Bean
 
@@ -9,7 +9,7 @@ To enable a composite component to handle server-side data
 * Directly use the properties of the managed bean.
 +
 The example application described in
-link:#GKHVN[The compositecomponentexample Example
+xref:jsf-advanced-cc/jsf-advanced-cc.adoc#GKHVN[The compositecomponentexample Example
 Application] shows how to use a managed bean with a composite component
 by passing the reference of the managed bean to the component.
 

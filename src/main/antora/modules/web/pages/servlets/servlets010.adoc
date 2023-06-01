@@ -1,4 +1,4 @@
-[[BNAGS]][[finalizing-a-servlet]]
+[[BNAGS]][[_finalizing_a_servlet]]
 
 == Finalizing a Servlet
 
@@ -27,7 +27,7 @@ long-running threads of the shutdown and wait for them to complete.
 * Have the long-running methods poll periodically to check for shutdown
 and, if necessary, stop working, clean up, and return.
 
-[[BNAGT]][[tracking-service-requests]]
+[[BNAGT]][[_tracking_service_requests]]
 
 === Tracking Service Requests
 
@@ -78,7 +78,7 @@ protected void service(HttpServletRequest req,
 }
 ----
 
-[[BNAGU]][[notifying-methods-to-shut-down]]
+[[BNAGU]][[_notifying_methods_to_shut_down]]
 
 === Notifying Methods to Shut Down
 
@@ -128,7 +128,7 @@ public void destroy() {
 }
 ----
 
-[[BNAGV]][[creating-polite-long-running-methods]]
+[[BNAGV]][[_creating_polite_long_running_methods]]
 
 === Creating Polite Long-Running Methods
 

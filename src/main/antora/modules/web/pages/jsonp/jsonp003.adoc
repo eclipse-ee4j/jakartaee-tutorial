@@ -1,4 +1,4 @@
-[[using-the-object-model-api]]
+[[_using_the_object_model_api]]
 == Using the Object Model API
 
 This section describes four use cases of the object model API: creating
@@ -6,7 +6,7 @@ an object model from JSON data, creating an object model from
 application code, navigating an object model, and writing an object
 model to a stream.
 
-[[creating-an-object-model-from-json-data]]
+[[_creating_an_object_model_from_json_data]]
 === Creating an Object Model from JSON Data
 
 The following code demonstrates how to create an object model from JSON
@@ -30,7 +30,7 @@ represents the top of the tree and can be used to navigate the tree or
 to write it to a stream as JSON data.
 
 
-[[creating-an-object-model-from-application-code]]
+[[_creating_an_object_model_from_application_code]]
 === Creating an Object Model from Application Code
 
 The following code demonstrates how to create an object model from
@@ -85,10 +85,10 @@ a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to
 the corresponding `add` method, as shown in this example.
 
 The resulting tree represents the JSON data from
-link:#BABGHEHG[JSON Syntax].
+xref:#BABGHEHG[JSON Syntax].
 
 
-[[navigating-an-object-model]]
+[[_navigating_an_object_model]]
 === Navigating an Object Model
 
 The following code demonstrates a simple approach to navigating an
@@ -136,8 +136,8 @@ public static void navigateTree(JsonValue tree, String key) {
 ----
 
 The method `navigateTree` can be used with the models built in
-link:#BABBHEBA[Creating an Object Model from JSON Data] and
-link:#BABIGIAF[Creating an Object Model from Application Code] as
+xref:#BABBHEBA[Creating an Object Model from JSON Data] and
+xref:#BABIGIAF[Creating an Object Model from Application Code] as
 follows:
 
 [source,java]
@@ -161,7 +161,7 @@ whose key is `name`. For arrays, `JsonArray` implements the
 `Set<String>` instance returned by `JsonObject.keySet` and with
 instances of `JsonArray`, as shown in this example.
 
-The `navigateTree` method for the model built in link:#BABIGIAF[Creating
+The `navigateTree` method for the model built in xref:#BABIGIAF[Creating
 an Object Model from Application Code] produces the following output:
 
 [source,java]
@@ -183,11 +183,11 @@ Key type: STRING home
 Key number: STRING 222-222-2222
 ----
 
-[[writing-an-object-model-to-a-stream]]
+[[_writing_an_object_model_to_a_stream]]
 === Writing an Object Model to a Stream
 
-The object models created in link:#BABBHEBA[Creating an Object Model
-from JSON Data] and link:#BABIGIAF[Creating an Object Model from
+The object models created in xref:#BABBHEBA[Creating an Object Model
+from JSON Data] and xref:#BABIGIAF[Creating an Object Model from
 Application Code] can be written to a stream using the `JsonWriter`
 class as follows:
 

@@ -1,4 +1,4 @@
-[[introduction-to-json]]
+[[_introduction_to_json]]
 == Introduction to JSON
 
 JSON is a text-based data exchange format derived from JavaScript that
@@ -7,7 +7,7 @@ sections provide an introduction to JSON syntax, an overview of JSON
 uses, and a description of the most common approaches to generate and
 parse JSON.
 
-[[json-syntax]]
+[[_json_syntax]]
 === JSON Syntax
 
 JSON defines only two data structures: objects and arrays. An object is
@@ -49,7 +49,7 @@ including another array or an object.
 * When objects and arrays contain other objects or arrays, the data has
 a tree-like structure.
 
-[[uses-of-json]]
+[[_uses_of_json]]
 === Uses of JSON
 
 JSON is often used as a common format to serialize and deserialize data
@@ -73,7 +73,7 @@ because JSON does not have closing tags. Unlike XML, JSON does not have
 a widely accepted schema for defining and validating the structure of
 JSON data.
 
-[[generating-and-parsing-json-data]]
+[[_generating_and_parsing_json_data]]
 === Generating and Parsing JSON Data
 
 For generating and parsing JSON data, there are two programming models,
@@ -96,7 +96,7 @@ the data. The streaming model generates JSON output to a given stream by
 making a function call with one element at a time.
 
 There are many JSON generators and parsers available for different
-programming languages and environments. link:#BABDFHHD[JSON
+programming languages and environments. xref:#BABDFHHD[JSON
 Processing in the Jakarta EE Platform] describes the functionality provided
 by Jakarta JSON Processing.
 

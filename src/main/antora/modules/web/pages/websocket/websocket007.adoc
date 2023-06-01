@@ -1,4 +1,4 @@
-[[BABGADFG]][[using-encoders-and-decoders]]
+[[BABGADFG]][[_using_encoders_and_decoders]]
 
 == Using Encoders and Decoders
 
@@ -14,7 +14,7 @@ This mechanism simplifies WebSocket applications, because it decouples
 the business logic from the serialization and deserialization of
 objects.
 
-[[CIHBIGBI]][[implementing-encoders-to-convert-java-objects-into-websocket-messages]]
+[[CIHBIGBI]][[_implementing_encoders_to_convert_java_objects_into_websocket_messages]]
 
 === Implementing Encoders to Convert Java Objects into WebSocket Messages
 
@@ -82,7 +82,7 @@ instances are associated with one and only one WebSocket connection and
 peer, so there is only one thread executing the code of an encoder
 instance at any given time.
 
-[[CIHGDJFG]][[implementing-decoders-to-convert-websocket-messages-into-java-objects]]
+[[CIHGDJFG]][[_implementing_decoders_to_convert_websocket_messages_into_java_objects]]
 
 === Implementing Decoders to Convert WebSocket Messages into Java Objects
 

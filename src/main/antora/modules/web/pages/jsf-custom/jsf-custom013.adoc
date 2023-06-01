@@ -1,4 +1,4 @@
-[[BNATG]][[binding-component-values-and-instances-to-managed-bean-properties]]
+[[BNATG]][[_binding_component_values_and_instances_to_managed_bean_properties]]
 
 == Binding Component Values and Instances to Managed Bean Properties
 
@@ -68,7 +68,7 @@ In addition to binding a component's value to a bean property, the
 `value` attribute can specify a literal value or can map the component's
 data to any primitive (such as `int`), structure (such as an array), or
 collection (such as a list), independent of a JavaBeans component.
-link:#BNATH[Table 15-3] lists some example value-binding expressions
+xref:jsf-custom/jsf-custom.adoc#BNATH[Table 15-3] lists some example value-binding expressions
 that you can use with the `value` attribute.
 
 [[sthref78]][[BNATH]]
@@ -98,7 +98,7 @@ component's value to a bean property or other data objects and how to
 use the `binding` attribute to bind a component instance to a bean
 property.
 
-[[BNATI]][[binding-a-component-value-to-a-property]]
+[[BNATI]][[_binding_a_component_value_to_a_property]]
 
 === Binding a Component Value to a Property
 
@@ -176,11 +176,11 @@ attribute of the component's tag:
 <h:outputText value="#{Book201.shape}" />
 ----
 
-See link:#BNAWQ[Configuring Managed Beans] for
+See xref:jsf-configure/jsf-configure.adoc#BNAWQ[Configuring Managed Beans] for
 information on how to configure beans in the application configuration
 resource file.
 
-[[BNATJ]][[binding-a-component-value-to-an-implicit-object]]
+[[BNATJ]][[_binding_a_component_value_to_an_implicit_object]]
 
 === Binding a Component Value to an Implicit Object
 
@@ -209,7 +209,7 @@ Thank you, Gwen Canigetit, for purchasing your books from us.
 ----
 
 Retrieving values from other implicit objects is done in a similar way
-to the example shown in this section. link:#BNATK[Table 15-4] lists the
+to the example shown in this section. xref:jsf-custom/jsf-custom.adoc#BNATK[Table 15-4] lists the
 implicit objects to which a value attribute can refer. All of the
 implicit objects, except for the scope objects, are read-only and
 therefore should not be used as values for a `UIInput` component.
@@ -256,7 +256,7 @@ the `FacesRequest` for this request
 |=======================================================================
 
 
-[[BNATL]][[binding-a-component-instance-to-a-bean-property]]
+[[BNATL]][[_binding_a_component_instance_to_a_bean_property]]
 
 === Binding a Component Instance to a Bean Property
 
@@ -308,6 +308,6 @@ would therefore require additional code to access the components from
 the `FacesContext` instance to change the components' `rendered`
 properties.
 
-link:#BNAUK[Writing Properties Bound to Component
+xref:jsf-develop/jsf-develop.adoc#BNAUK[Writing Properties Bound to Component
 Instances] explains how to write the bean properties bound to the
 example components.

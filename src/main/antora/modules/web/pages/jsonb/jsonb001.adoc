@@ -1,4 +1,4 @@
-[[json-binding-in-the-jakarta-ee-platform]]
+[[_json_binding_in_the_jakarta_ee_platform]]
 == JSON Binding in the Jakarta EE Platform
 
 Jakarta EE includes support for the Jakarta JSON Binding spec, which provides an API that can serialize
@@ -6,7 +6,7 @@ Java objects to JSON documents and deserialize JSON documents to Java objects.
 Jakarta JSON Binding contains the following packages:
 
 * The `javax.json.bind` package contains the binding interface, the builder interface, and
-a configuration class. link:#main-classes-and-interfaces-in-bind[Table 21-1] lists the main classes
+a configuration class. xref:jsonb/jsonb.adoc#_main_classes_and_interfaces_in_bind[Table 21-1] lists the main classes
 and interfaces in this package.
 
 * The `javax.json.bind.adapter` package contains the `JsonbAdapter` interface, which provides
@@ -17,19 +17,19 @@ binding behavior. Annotations can be used for field, JavaBean property, type, or
 elements.
 
 * The `javax.json.bind.config` package interfaces and classes for customizing default binding behavior.
-link:#main-classes-and-interfaces-in-config[Table 21-2] lists the main classes
+xref:jsonb/jsonb.adoc#_main_classes_and_interfaces_in_config[Table 21-2] lists the main classes
 and interfaces in this package.
 
 * The `javax.json.bind.serializer` package contains interfaces that are used to create serialization and
  deserialization routines for custom types that cannot be easily mapped using the `JsonbAdapter` methods.
- link:#main-classes-and-interfaces-in-serializer[Table 21-3] lists the main interfaces in this package.
+ xref:jsonb/jsonb.adoc#_main_classes_and_interfaces_in_serializer[Table 21-3] lists the main interfaces in this package.
 
 * The `javax.json.bind.spi` package contains a Service Provider Interface (SPI) for  creating
 JSON Binding implementations. This package contains the `JsonbProvider` class, which
 contains the methods that a service provider implements.
 
 
-[[main-classes-and-interfaces-in-bind]]
+[[_main_classes_and_interfaces_in_bind]]
 
 *Table 21-1 Main Classes and Interfaces in javax.json.bind*
 
@@ -47,7 +47,7 @@ binding strategies and properties for configuring custom serializers and deseria
 |`JsonbException` | Indicates that a problem occurred during JSON binding.
 |=======================================================================
 
-[[main-classes-and-interfaces-in-config]]
+[[_main_classes_and_interfaces_in_config]]
 
 *Table 21-2 Main Classes and Interfaces in javax.json.bind.config*
 [width="99%",cols="25%,75%"]
@@ -64,7 +64,7 @@ overriding the default scope and field access behavior.
 |=======================================================================
 
 
-[[main-classes-and-interfaces-in-serializer]]
+[[_main_classes_and_interfaces_in_serializer]]
 
 *Table 21-3 Main Classes and Interfaces in javax.json.bind.serializer*
 [width="99%",cols="25%,75%"]

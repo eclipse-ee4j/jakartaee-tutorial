@@ -1,4 +1,4 @@
-[[GIQZR]][[composite-components]]
+[[GIQZR]][[_composite_components]]
 
 == Composite Components
 
@@ -22,7 +22,7 @@ resources facility, the composite component can be stored in a library
 that is available to the application from the defined resources
 location.
 
-link:#GJCWC[Table 8-3] lists the most commonly used composite tags and
+xref:jsf-facelets/jsf-facelets.adoc#GJCWC[Table 8-3] lists the most commonly used composite tags and
 their functions.
 
 [[sthref31]][[GJCWC]]
@@ -106,7 +106,7 @@ The preceding example content is stored as a file named `email.xhtml` in
 a folder named `resources/emcomp`, under the application web root
 directory. This directory is considered a library by Jakarta Server Faces,
 and a component can be accessed from such a library. For more
-information on resources, see link:#GIRGM[Web
+information on resources, see xref:jsf-facelets/jsf-facelets.adoc#GIRGM[Web
 Resources].
 
 The web page that uses this composite component is generally called a
@@ -146,5 +146,5 @@ accessed with the following URL:
 http://localhost:8080/application-name/emuserpage.xhtml
 ----
 
-See link:#GKHXA[Chapter 14, "Composite Components:
+See xref:jsf-advanced-cc/jsf-advanced-cc.adoc#GKHXA[Chapter 14, "Composite Components:
 Advanced Topics and an Example,"] for more information and an example.

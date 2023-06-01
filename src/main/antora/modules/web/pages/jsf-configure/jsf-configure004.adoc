@@ -1,4 +1,4 @@
-[[CHDGFCJF]][[using-faces-flows]]
+[[CHDGFCJF]][[_using_faces_flows]]
 
 == Using Faces Flows
 
@@ -44,17 +44,13 @@ have many flows in an application. The programmatic configuration places
 the code closer to the rest of the flow code and enables you to
 modularize the flows.
 
-link:#CHDIHDCD[Figure 16-1] shows two flows and illustrates how they
+xref:jsf-configure/jsf-configure.adoc#CHDIHDCD[Figure 16-1] shows two flows and illustrates how they
 interact.
 
 [[CHDIHDCD]]
 
 .*Figure 16-1 Two Faces Flows and Their Interactions*
-image:jakartaeett_dt_017.png[
-"This figure shows two Faces flows, Flow A and Flow B. Each has a start
-node and two additional pages. Each has an associated managed bean. Each
-defines a return node, and each defines two parameters to be passed to
-the other flow."]
+image::common:jakartaeett_dt_017.png[ "This figure shows two Faces flows, Flow A and Flow B. Each has a start node and two additional pages. Each has an associated managed bean. Each defines a return node, and each defines two parameters to be passed to the other flow."]
 
 In this figure, Flow A has a start node named `flow-a` and two
 additional pages, `next_a1` and `next_a2`. From `next_a2`, a user can
@@ -64,7 +60,7 @@ parameters that it can accept from Flow B. Flow B is identical to Flow A
 except for the names of the flow and files. Each flow also has an
 associated managed bean; the beans are `Flow_a_Bean` and `Flow_b_Bean`.
 
-[[sthref81]][[packaging-flows-in-an-application]]
+[[sthref81]][[_packaging_flows_in_an_application]]
 
 === Packaging Flows in an Application
 
@@ -74,7 +70,7 @@ of a Maven project, for example, you would place the Facelets files that
 are outside the flow at the top level as usual. Then the `webapp` files
 for each flow would be in a separate directory, and the Java files would
 be under `src/main/java`. For example, the files for the application
-shown in link:#CHDIHDCD[Figure 16-1] might look like this:
+shown in xref:jsf-configure/jsf-configure.adoc#CHDIHDCD[Figure 16-1] might look like this:
 
 [source,xml]
 ----
@@ -101,7 +97,7 @@ src/main/java/jakarta/tutorial/flowexample
 In this example, `flow-a` is defined programmatically in `FlowA.java`,
 while `flow-b` is defined by the configuration file `flow-b-flow.xml`.
 
-[[sthref82]][[the-simplest-possible-flow-the-simple-flow-example-application]]
+[[sthref82]][[_the_simplest_possible_flow_the_simple_flow_example_application]]
 
 === The Simplest Possible Flow: The simple-flow Example Application
 
@@ -195,12 +191,12 @@ no value outside of the flow, and provides a link that navigates to the
 The Facelets pages use only flow-scoped data, so the example does not
 need a managed bean.
 
-[[sthref83]][[to-build-package-and-deploy-the-simple-flow-example-using-netbeans-ide]]
+[[sthref83]][[_to_build_package_and_deploy_the_simple_flow_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the simple-flow Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -218,12 +214,12 @@ This command builds and packages the application into a WAR file,
 `simple-flow.war`, that is located in the `target` directory. It then
 deploys the application to the server.
 
-[[sthref84]][[to-build-package-and-deploy-the-simple-flow-example-using-maven]]
+[[sthref84]][[_to_build_package_and_deploy_the_simple_flow_example_using_maven]]
 
 ==== To Build, Package, and Deploy the simple-flow Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -242,7 +238,7 @@ This command builds and packages the application into a WAR file,
 `simple-flow.war`, that is located in the `target` directory. It then
 deploys the application to the server.
 
-[[sthref85]][[to-run-the-simple-flow-example]]
+[[sthref85]][[_to_run_the_simple_flow_example]]
 
 ==== To Run the simple-flow Example
 
@@ -261,7 +257,7 @@ Click Return.
 inaccessible value. Click Back to Start to return to the `index.xhtml`
 page.
 
-[[sthref86]][[the-checkout-module-example-application]]
+[[sthref86]][[_the_checkout_module_example_application]]
 
 === The checkout-module Example Application
 
@@ -269,7 +265,7 @@ The `checkout-module` example application is considerably more complex
 than `simple-flow`. It shows how you might use the Faces Flows feature
 to implement a checkout module for an online store.
 
-Like the hypothetical example in link:#CHDIHDCD[Figure 16-1], the
+Like the hypothetical example in xref:jsf-configure/jsf-configure.adoc#CHDIHDCD[Figure 16-1], the
 example application contains two flows, each of which can call the
 other. Both flows have explicit flow definitions. One flow,
 `checkoutFlow`, is specified programmatically. The other flow,
@@ -320,7 +316,7 @@ The managed beans scoped to each flow are `CheckoutFlowBean.java` and
 `JoinFlowBean.java`, whereas `CheckoutBean.java` is the backing bean for
 the `index.html` page.
 
-[[sthref87]][[the-facelets-pages-for-the-checkout-module-example]]
+[[sthref87]][[_the_facelets_pages_for_the_checkout_module_example]]
 
 ==== The Facelets Pages for the checkout-module Example
 
@@ -396,7 +392,7 @@ to call the checkout flow as well as one to return from the join flow:
 For this flow, the actions `callcheckoutFlow` and `returnFromJoinFlow`
 are defined in the configuration file `joinFlow-flow.xml`.
 
-[[sthref88]][[using-a-configuration-file-to-configure-a-flow]]
+[[sthref88]][[_using_a_configuration_file_to_configure_a_flow]]
 
 ==== Using a Configuration File to Configure a Flow
 
@@ -471,7 +467,7 @@ action of calling the flow. Within the `flow-call` element, the
 to be passed when `checkoutFlow` is called. Here they are just arbitrary
 strings.
 
-[[sthref89]][[using-a-java-class-to-configure-a-flow]]
+[[sthref89]][[_using_a_java_class_to_configure_a_flow]]
 
 ==== Using a Java Class to Configure a Flow
 
@@ -553,7 +549,7 @@ are values from the `CheckoutFlowBean` managed bean.
 Finally, the `defineFlow` method calls the `getFlow` method and returns
 the result.
 
-[[sthref90]][[the-flow-scoped-managed-beans]]
+[[sthref90]][[_the_flow_scoped_managed_beans]]
 
 ==== The Flow-Scoped Managed Beans
 
@@ -575,12 +571,12 @@ public String getReturnValue() {
 
 For the `JoinFlowBean`, the return node is the `exithome.xhtml` page.
 
-[[sthref91]][[to-build-package-and-deploy-the-checkout-module-example-using-netbeans-ide]]
+[[sthref91]][[_to_build_package_and_deploy_the_checkout_module_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the checkout-module Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -598,12 +594,12 @@ This command builds and packages the application into a WAR file,
 `checkout-module.war`, that is located in the `target` directory. It
 then deploys the application to the server.
 
-[[sthref92]][[to-build-package-and-deploy-the-checkout-module-example-using-maven]]
+[[sthref92]][[_to_build_package_and_deploy_the_checkout_module_example_using_maven]]
 
 ==== To Build, Package, and Deploy the checkout-module Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -622,7 +618,7 @@ This command builds and packages the application into a WAR file,
 `checkout-module.war`, that is located in the `target` directory. It
 then deploys the application to the server.
 
-[[sthref93]][[to-run-the-checkout-module-example]]
+[[sthref93]][[_to_run_the_checkout_module_example]]
 
 ==== To Run the checkout-module Example
 

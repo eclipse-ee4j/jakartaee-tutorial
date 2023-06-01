@@ -1,4 +1,4 @@
-[[BNAGM]][[maintaining-client-state]]
+[[BNAGM]][[_maintaining_client_state]]
 
 == Maintaining Client State
 
@@ -10,7 +10,7 @@ HTTP is stateless. To support applications that need to maintain state,
 Jakarta Servlet technology provides an API for managing sessions and allows
 several mechanisms for implementing sessions.
 
-[[BNAGN]][[accessing-a-session]]
+[[BNAGN]][[_accessing_a_session]]
 
 === Accessing a Session
 
@@ -19,7 +19,7 @@ session by calling the `getSession` method of a request object. This
 method returns the current session associated with this request; or, if
 the request does not have a session, this method creates one.
 
-[[BNAGO]][[associating-objects-with-a-session]]
+[[BNAGO]][[_associating_objects_with_a_session]]
 
 === Associating Objects with a Session
 
@@ -28,7 +28,7 @@ attributes are accessible by any web component that belongs to the same
 web context and is handling a request that is part of the same session.
 
 Recall that your application can notify web context and session listener
-objects of servlet lifecycle events (link:#BNAFJ[Handling
+objects of servlet lifecycle events (xref:servlets/servlets.adoc#BNAFJ[Handling
 Servlet Lifecycle Events]). You can also notify objects of certain
 events related to their association with a session, such as the
 following.
@@ -42,7 +42,7 @@ between virtual machines or saved to and restored from persistent
 storage. To receive this notification, your object must implement the
 `javax.servlet.http.HttpSessionActivationListener` interface.
 
-[[BNAGQ]][[session-management]]
+[[BNAGQ]][[_session_management]]
 
 === Session Management
 
@@ -58,7 +58,7 @@ resets the session's time-to-live counter.
 session's `invalidate` method to invalidate a session on the server side
 and remove any session data.
 
-[[sthref100]][[to-set-the-timeout-period-using-netbeans-ide]]
+[[sthref100]][[_to_set_the_timeout_period_using_netbeans_ide]]
 
 ==== To Set the Timeout Period Using NetBeans IDE
 
@@ -76,7 +76,7 @@ node.
 The integer value represents the number of minutes of inactivity that
 must pass before the session times out.
 
-[[BNAGR]][[session-tracking]]
+[[BNAGR]][[_session_tracking]]
 
 === Session Tracking
 

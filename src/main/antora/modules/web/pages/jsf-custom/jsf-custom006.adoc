@@ -1,10 +1,10 @@
-[[BNAWA]][[delegating-rendering-to-a-renderer]]
+[[BNAWA]][[_delegating_rendering_to_a_renderer]]
 
 == Delegating Rendering to a Renderer
 
 Both `MapComponent` and `AreaComponent` delegate all of their rendering
 to a separate renderer. The section
-link:#BNAVW[Performing Encoding] explains how
+xref:jsf-custom/jsf-custom.adoc#BNAVW[Performing Encoding] explains how
 `MapRenderer` performs the encoding for `MapComponent`. This section
 explains in detail the process of delegating rendering to a renderer
 using `AreaRenderer`, which performs the rendering for `AreaComponent`.
@@ -12,10 +12,10 @@ using `AreaRenderer`, which performs the rendering for `AreaComponent`.
 To delegate rendering, you perform the tasks described in the following
 topics:
 
-* link:#BNAWB[Creating the Renderer Class]
-* link:#BNAWC[Identifying the Renderer Type]
+* xref:jsf-custom/jsf-custom.adoc#BNAWB[Creating the Renderer Class]
+* xref:jsf-custom/jsf-custom.adoc#BNAWC[Identifying the Renderer Type]
 
-[[BNAWB]][[creating-the-renderer-class]]
+[[BNAWB]][[_creating_the_renderer_class]]
 
 === Creating the Renderer Class
 
@@ -51,7 +51,7 @@ ImageArea ia = (ImageArea)area.getValue();
 
 The attribute value is the `ImageArea` bean instance, which contains the
 `shape`, `coords`, and `alt` values associated with the `book203`
-`AreaComponent` instance. link:#GLPBO[Configuring Model
+`AreaComponent` instance. xref:jsf-custom/jsf-custom.adoc#GLPBO[Configuring Model
 Data] describes how the application stores these values.
 
 After retrieving the `ImageArea` object, the method renders the values
@@ -128,13 +128,13 @@ The `@FacesRenderer` annotation registers the renderer class with the
 Jakarta Server Faces implementation as a renderer class. The annotation
 identifies the component family as well as the renderer type.
 
-[[BNAWC]][[identifying-the-renderer-type]]
+[[BNAWC]][[_identifying_the_renderer_type]]
 
 === Identifying the Renderer Type
 
 Register the renderer with a render kit by using the `@FacesRenderer`
 annotation (or by using the application configuration resource file, as
-explained in link:#BNAXH[Registering a Custom
+explained in xref:jsf-configure/jsf-configure.adoc#BNAXH[Registering a Custom
 Renderer with a Render Kit]). During the Render Response phase, the
 Jakarta Server Faces implementation calls the `getRendererType` method of
 the component's tag handler to determine which renderer to invoke, if

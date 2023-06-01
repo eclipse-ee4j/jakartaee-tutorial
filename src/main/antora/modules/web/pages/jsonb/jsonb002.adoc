@@ -1,12 +1,12 @@
-[[overview-of-the-json-binding-api]]
+[[_overview_of_the_json_binding_api]]
 == Overview of the JSON Binding API
 
 This section provides basic instructions for using the Jakarta JSON Binding client API. The instructions provide a
-basis for understanding the link:jsonb003.html[jsonbbasics Example Application].
-Refer to the link:http://json-b.net/index.html[Jakarta JSON Binding] project page for API documentation and a more detailed
+basis for understanding the xref:jsonb003.html[jsonbbasics Example Application].
+Refer to the https://json-b.net/index.html[Jakarta JSON Binding] project page for API documentation and a more detailed
 User Guide.
 
-[[creating-a-jasonb-instance]]
+[[_creating_a_jasonb_instance]]
 === Creating a jasonb Instance
 
 A `jsonb` instance provides access to methods for binding objects to JSON.
@@ -20,7 +20,7 @@ Jsonb jsonb = JsonbBuilder.create();
 ----
 
 
-[[using-the-default-mapping]]
+[[_using_the_default_mapping]]
 === Using the Default Mapping
 
 Jakarta JSON Binding provides default mappings for serializing and deserializing basic Java and Java SE types as well
@@ -45,7 +45,7 @@ person = jsonb.fromJson("{name:\"joe"\"}", Person.class);
 
 ----
 
-[[using-customizations]]
+[[_using_customizations]]
 === Using Customizations
 Jakarta JSON Binding supports many ways to customize the default mapping behavior. For runtime
 customizations, a `JsonbConfig` configuration object is used when creating the `jsonbinstance`. The `JsonbConfig`
@@ -64,7 +64,7 @@ JsonbConfig config = new JsonbConfig()
 Jsonb jsonb = JsonbBuilder.create(config);
 ----
 
-[[using-annotations]]
+[[_using_annotations]]
 === Using Annotations
 Jakarta JSON Binding includes many annotations that can be used at compile time to customize the default mapping behavior.
 The following example uses the `@JsonbProperty` annotation to change the `name` field to `person-name` when

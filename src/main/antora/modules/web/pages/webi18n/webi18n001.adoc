@@ -1,4 +1,4 @@
-[[BNAXV]][[java-platform-localization-classes]]
+[[BNAXV]][[_java_platform_localization_classes]]
 
 == Java Platform Localization Classes
 
@@ -20,7 +20,7 @@ resource bundle) containing the pairs. You construct a resource bundle
 instance by appending a locale string representation to a base name.
 
 The Duke's Bookstore application (see
-link:#GLNVI[Chapter 60, "Duke's Bookstore Case Study
+xref:#GLNVI[Chapter 60, "Duke's Bookstore Case Study
 Example"]) contains resource bundles with the base name
 `messages.properties` for the locales `de` (German), `es` (Spanish), and
 `fr` (French). The default locale, `en` (English), which is specified in

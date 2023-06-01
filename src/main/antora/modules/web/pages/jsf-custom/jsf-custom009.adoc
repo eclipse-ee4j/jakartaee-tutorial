@@ -1,4 +1,4 @@
-[[BNAWN]][[defining-the-custom-component-tag-in-a-tag-library-descriptor]]
+[[BNAWN]][[_defining_the_custom_component_tag_in_a_tag_library_descriptor]]
 
 == Defining the Custom Component Tag in a Tag Library Descriptor
 
@@ -45,7 +45,7 @@ the `rendererType` defined in the `@FacesRenderer` annotation.
 
 The `facelet-taglib` element must also include a `namespace` element,
 which defines the namespace to be specified in pages that use the custom
-component. See link:#BNATT[Using a Custom Component]
+component. See xref:jsf-custom/jsf-custom.adoc#BNATT[Using a Custom Component]
 for information on specifying the namespace in pages.
 
 The TLD file is located in the `WEB-INF` directory. In addition, an

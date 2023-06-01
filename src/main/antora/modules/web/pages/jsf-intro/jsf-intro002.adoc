@@ -1,4 +1,4 @@
-[[BNAPK]][[what-is-a-javaserver-faces-application]]
+[[BNAPK]][[_what_is_a_javaserver_faces_application]]
 
 == What Is a Jakarta Server Faces Application?
 
@@ -23,7 +23,7 @@ application developer.
 * Optionally, a set of custom tags for representing custom objects on
 the page.
 
-link:#BNAPI[Figure 7-1] shows the interaction between client and server
+xref:jsf-intro/jsf-intro.adoc#BNAPI[Figure 7-1] shows the interaction between client and server
 in a typical Jakarta Server Faces application. In response to a client
 request, a web page is rendered by the web container that implements
 Jakarta Server Faces technology.
@@ -31,10 +31,7 @@ Jakarta Server Faces technology.
 [[BNAPI]]
 
 .*Figure 7-1 Responding to a Client Request for a Jakarta Server Faces Page*
-image:jakartaeett_dt_014.png[
-"Diagram that shows a browser accessing the myfacelet.xhtml page using an
-HTTP Request and the server sending the rendered HTML page using an HTTP
-Response."]
+image::common:jakartaeett_dt_014.png[ "Diagram that shows a browser accessing the myfacelet.xhtml page using an HTTP Request and the server sending the rendered HTML page using an HTTP Response."]
 
 The web page, `myfacelet.xhtml`, is built using Jakarta Server Faces
 component tags. Component tags are used to add components to the `view`

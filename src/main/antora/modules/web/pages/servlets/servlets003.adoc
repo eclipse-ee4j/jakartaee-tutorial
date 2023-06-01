@@ -1,4 +1,4 @@
-[[BNAFO]][[sharing-information]]
+[[BNAFO]][[_sharing_information]]
 
 == Sharing Information
 
@@ -10,16 +10,16 @@ accomplish their tasks. Web components can do so by doing the following.
 * Using a database.
 * Invoking other web resources. The Jakarta Servlet technology mechanisms
 that allow a web component to invoke other web resources are described
-in link:#BNAGI[Invoking Other Web Resources].
+in xref:servlets/servlets.adoc#BNAGI[Invoking Other Web Resources].
 
-[[BNAFP]][[using-scope-objects]]
+[[BNAFP]][[_using_scope_objects]]
 
 === Using Scope Objects
 
 Collaborating web components share information by means of objects that
 are maintained as attributes of four scope objects. You access these
 attributes by using the `getAttribute` and `setAttribute` methods of the
-class representing the scope. link:#BNAFQ[Table 18-2] lists the scope
+class representing the scope. xref:servlets/servlets.adoc#BNAFQ[Table 18-2] lists the scope
 objects.
 
 [[sthref98]][[BNAFQ]]
@@ -30,11 +30,11 @@ objects.
 |=======================================================================
 |*Scope Object* |*Class* |*Accessible From*
 |Web context |`javax.servlet.ServletContext` |Web components within a
-web context. See link:#BNAGL[Accessing the Web Context].
+web context. See xref:servlets/servlets.adoc#BNAGL[Accessing the Web Context].
 
 |Session |`javax.servlet.http.HttpSession` |Web components handling a
 request that belongs to the session. See
-link:#BNAGM[Maintaining Client State].
+xref:servlets/servlets.adoc#BNAGM[Maintaining Client State].
 
 |Request |Subtype of `javax.servlet.ServletRequest` |Web components
 handling the request.
@@ -44,7 +44,7 @@ object.
 |=======================================================================
 
 
-[[BNAFS]][[controlling-concurrent-access-to-shared-resources]]
+[[BNAFS]][[_controlling_concurrent_access_to_shared_resources]]
 
 === Controlling Concurrent Access to Shared Resources
 

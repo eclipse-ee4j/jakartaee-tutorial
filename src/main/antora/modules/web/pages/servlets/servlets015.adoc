@@ -1,4 +1,4 @@
-[[GKCPG]][[the-mood-example-application]]
+[[GKCPG]][[_the_mood_example_application]]
 
 == The mood Example Application
 
@@ -9,7 +9,7 @@ example shows how to develop a simple application by using the
 `@WebServlet`, `@WebFilter`, and `@WebListener` annotations to create a
 servlet, a listener, and a filter.
 
-[[CHDEBFCB]][[components-of-the-mood-example-application]]
+[[CHDEBFCB]][[_components_of_the_mood_example_application]]
 
 === Components of the mood Example Application
 
@@ -47,19 +47,19 @@ statement that sets Duke's mood based on the current time.
 `SimpleServletListener` logs changes in the servlet's lifecycle. The log
 entries appear in the server log.
 
-[[GKCOJ]][[running-the-mood-example]]
+[[GKCOJ]][[_running_the_mood_example]]
 
 === Running the mood Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `mood` example.
 
-[[GKCOB]][[to-run-the-mood-example-using-netbeans-ide]]
+[[GKCOB]][[_to_run_the_mood_example_using_netbeans_ide]]
 
 ==== To Run the mood Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -84,12 +84,12 @@ The URL specifies the context root, followed by the URL pattern.
 A web page appears with the title "Servlet MoodServlet at /mood", a text
 string describing Duke's mood, and an illustrative graphic.
 
-[[GKCPJ]][[to-run-the-mood-example-using-maven]]
+[[GKCPJ]][[_to_run_the_mood_example_using_maven]]
 
 ==== To Run the mood Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

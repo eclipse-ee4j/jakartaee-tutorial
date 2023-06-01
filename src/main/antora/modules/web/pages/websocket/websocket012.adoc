@@ -1,4 +1,4 @@
-[[BABCDBBC]][[the-websocketbot-example-application]]
+[[BABCDBBC]][[_the_websocketbot_example_application]]
 
 == The websocketbot Example Application
 
@@ -9,32 +9,32 @@ example resembles a chat room in which many users can join and have a
 conversation. Users can ask simple questions to a bot agent that is
 always available in the chat room.
 
-[[CIHICIDE]][[architecture-of-the-websocketbot-example-application]]
+[[CIHICIDE]][[_architecture_of_the_websocketbot_example_application]]
 
 === Architecture of the websocketbot Example Application
 
 The `websocketbot` example application consists of the following
 elements:
 
-* link:#CIHDAEHF[The CDI Bean] – A CDI bean (`BotBean`) that contains
+* xref:websocket/websocket.adoc#CIHDAEHF[The CDI Bean] – A CDI bean (`BotBean`) that contains
 the logic for the bot agent to reply to messages
-* link:#CIHJJJHG[The WebSocket Endpoint] – A WebSocket endpoint
+* xref:websocket/websocket.adoc#CIHJJJHG[The WebSocket Endpoint] – A WebSocket endpoint
 (`BotEndpoint`) that implements the chat room
-* link:#CIHFDGHG[The Application Messages] – A set of classes
+* xref:websocket/websocket.adoc#CIHFDGHG[The Application Messages] – A set of classes
 (`Message`, `ChatMessage`, `InfoMessage`, `JoinMessage`, and
 `UsersMessage`) that represent application messages
-* link:#CIHGHHBD[The Encoder Classes] – A set of classes
+* xref:websocket/websocket.adoc#CIHGHHBD[The Encoder Classes] – A set of classes
 (`ChatMessageEncoder`, `InfoMessageEncoder`, `JoinMessageEncoder`, and
 `UsersMessageEncoder`) that encode application messages into WebSocket
 text messages as JSON data
-* link:#CIHHFICG[The Message Decoder] – A class (`MessageDecoder`) the
+* xref:websocket/websocket.adoc#CIHHFICG[The Message Decoder] – A class (`MessageDecoder`) the
 parses WebSocket text messages as JSON data and decodes them into
 `JoinMessage` or `ChatMessage` objects
-* link:#CIHHIEFH[The HTML Page] – An HTML page
+* xref:websocket/websocket.adoc#CIHHIEFH[The HTML Page] – An HTML page
 (`index.html`) that uses JavaScript code to implement the client for the
 chat room
 
-[[CIHDAEHF]][[the-cdi-bean]]
+[[CIHDAEHF]][[_the_cdi_bean]]
 
 ==== The CDI Bean
 
@@ -50,7 +50,7 @@ public class BotBean {
 }
 ----
 
-[[CIHJJJHG]][[the-websocket-endpoint]]
+[[CIHJJJHG]][[_the_websocket_endpoint]]
 
 ==== The WebSocket Endpoint
 
@@ -142,7 +142,7 @@ message, the endpoint forwards it to all connected clients.
 If a chat message is for the bot agent, the endpoint obtains a response
 using the `BotBean` instance and sends it to all connected clients. The
 `sendAll` method is similar to the example in
-link:#BABIFBCG[Sending Messages to All Peers Connected
+xref:websocket/websocket.adoc#BABIFBCG[Sending Messages to All Peers Connected
 to an Endpoint].
 
 Asynchronous Processing and Concurrency Considerations
@@ -166,11 +166,11 @@ accessed by more than one thread are thread safe. In this example, the
 code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method
 has been declared `synchronized`.
 
-Refer to link:#GKJIQ8[Chapter 59, "Concurrency
+Refer to xref:#GKJIQ8[Chapter 59, "Concurrency
 Utilities for Jakarta EE"] for more information on the managed executor
 service and Concurrency Utilities for Jakarta EE.
 
-[[CIHFDGHG]][[the-application-messages]]
+[[CIHFDGHG]][[_the_application_messages]]
 
 ==== The Application Messages
 
@@ -189,7 +189,7 @@ public class ChatMessage extends Message {
 }
 ----
 
-[[CIHGHHBD]][[the-encoder-classes]]
+[[CIHGHHBD]][[_the_encoder_classes]]
 
 ==== The Encoder Classes
 
@@ -216,10 +216,10 @@ public class ChatMessageEncoder implements Encoder.Text<ChatMessage> {
 }
 ----
 
-See link:#GLRBB[JSON
+See xref:#GLRBB[JSON
 Processing] for more information on the Java API for JSON Processing.
 
-[[CIHHFICG]][[the-message-decoder]]
+[[CIHHFICG]][[_the_message_decoder]]
 
 ==== The Message Decoder
 
@@ -273,7 +273,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
 }
 ----
 
-[[CIHGDBGF]][[the-html-page]]
+[[CIHGDBGF]][[_the_html_page]]
 
 ==== The HTML Page
 
@@ -288,19 +288,19 @@ endpoint, send messages, and designate callback methods. The WebSocket
 API is supported by most modern browsers and is widely used for web
 client development with HTML5.
 
-[[CIHHJHDB]][[running-the-websocketbot-example-application]]
+[[CIHHJHDB]][[_running_the_websocketbot_example_application]]
 
 === Running the websocketbot Example Application
 
 This section describes how to run the `websocketbot` example application
 using NetBeans IDE and from the command line.
 
-[[CIHFDDGE]][[to-run-the-websocketbot-example-application-using-netbeans-ide]]
+[[CIHFDDGE]][[_to_run_the_websocketbot_example_application_using_netbeans_ide]]
 
 ==== To Run the websocketbot Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -323,15 +323,15 @@ the server; and launches a web browser window with the following URL:
 http://localhost:8080/websocketbot/
 ----
 +
-See link:#BABDDAAG[To Test the websocketbot Example Application] for
+See xref:websocket/websocket.adoc#BABDDAAG[To Test the websocketbot Example Application] for
 more information.
 
-[[CIHEDEHB]][[to-run-the-websocketbot-example-application-using-maven]]
+[[CIHEDEHB]][[_to_run_the_websocketbot_example_application_using_maven]]
 
 ==== To Run the websocketbot Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -352,10 +352,10 @@ mvn install
 http://localhost:8080/websocketbot/
 ----
 +
-See link:#BABDDAAG[To Test the websocketbot Example Application] for
+See xref:websocket/websocket.adoc#BABDDAAG[To Test the websocketbot Example Application] for
 more information.
 
-[[BABDDAAG]][[to-test-the-websocketbot-example-application]]
+[[BABDDAAG]][[_to_test_the_websocketbot_example_application]]
 
 ==== To Test the websocketbot Example Application
 

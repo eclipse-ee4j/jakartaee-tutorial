@@ -1,4 +1,4 @@
-[[BEIFAIFF]][[the-dukeetf-example-application]]
+[[BEIFAIFF]][[_the_dukeetf_example_application]]
 
 == The dukeetf Example Application
 
@@ -8,7 +8,7 @@ asynchronous processing in a servlet to provide data updates to web
 clients. The example resembles a service that provides periodic updates
 on the price and trading volume of an electronically traded fund (ETF).
 
-[[CHDBBEDA]][[architecture-of-the-dukeetf-example-application]]
+[[CHDBBEDA]][[_architecture_of_the_dukeetf_example_application]]
 
 === Architecture of the dukeetf Example Application
 
@@ -35,7 +35,7 @@ uses JavaScript to make new connections. In this model, clients make a
 new request immediately after receiving new data, and the server keeps
 the connection open until new data becomes available.
 
-[[sthref111]][[the-servlet]]
+[[sthref111]][[_the_servlet]]
 
 ==== The Servlet
 
@@ -117,7 +117,7 @@ public void doGet(HttpServletRequest request,
 }
 ----
 
-[[sthref112]][[the-enterprise-bean]]
+[[sthref112]][[_the_enterprise_bean]]
 
 ==== The Enterprise Bean
 
@@ -159,11 +159,11 @@ public class PriceVolumeBean {
 }
 ----
 
-See link:#BNBOY[Using the Timer Service] in
-link:#GIJRB[Chapter 37, "Running the Enterprise
+See xref:#BNBOY[Using the Timer Service] in
+xref:#GIJRB[Chapter 37, "Running the Enterprise
 Bean Examples"] for more information on the timer service.
 
-[[sthref113]][[the-html-page]]
+[[sthref113]][[_the_html_page]]
 
 ==== The HTML Page
 
@@ -218,24 +218,24 @@ The `XMLHttpRequest` API is supported by most modern browsers, and it is
 widely used in Ajax web client development (Asynchronous JavaScript and
 XML).
 
-See link:#BABGCEHE[The dukeetf2 Example Application] in
-link:#GKJIQ5[Chapter 19, "Jakarta WebSocket"] for an
+See xref:websocket/websocket.adoc#BABGCEHE[The dukeetf2 Example Application] in
+xref:websocket/websocket.adoc#GKJIQ5[Chapter 19, "Jakarta WebSocket"] for an
 equivalent version of this example implemented using a WebSocket
 endpoint.
 
-[[CHDHBBBI]][[running-the-dukeetf-example-application]]
+[[CHDHBBBI]][[_running_the_dukeetf_example_application]]
 
 === Running the dukeetf Example Application
 
 This section describes how to run the `dukeetf` example application
 using NetBeans IDE and from the command line.
 
-[[CHDCGCJD]][[to-run-the-dukeetf-example-application-using-netbeans-ide]]
+[[CHDCGCJD]][[_to_run_the_dukeetf_example_application_using_netbeans_ide]]
 
 ==== To Run the dukeetf Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -261,12 +261,12 @@ http://localhost:8080/dukeetf/
 Open the same URL in a different web browser to see how both pages get
 price and volume updates simultaneously.
 
-[[CHDHHAFG]][[to-run-the-dukeetf-example-application-using-maven]]
+[[CHDHHAFG]][[_to_run_the_dukeetf_example_application_using_maven]]
 
 ==== To Run the dukeetf Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

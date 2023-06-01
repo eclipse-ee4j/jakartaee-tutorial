@@ -1,4 +1,4 @@
-[[BNAQL]][[navigation-model]]
+[[BNAQL]][[_navigation_model]]
 
 == Navigation Model
 
@@ -173,14 +173,14 @@ After the student is created, the user is returned to the Administration
 index page.
 
 For more information on how to define navigation rules, see
-link:#BNAXF[Configuring Navigation Rules].
+xref:jsf-configure/jsf-configure.adoc#BNAXF[Configuring Navigation Rules].
 
 For more information on how to implement action methods to handle
-navigation, see link:#BNAVD[Writing a Method to Handle
+navigation, see xref:jsf-develop/jsf-develop.adoc#BNAVD[Writing a Method to Handle
 an Action Event].
 
 For more information on how to reference outcomes or action methods from
-component tags, see link:#BNATP[Referencing a Method
+component tags, see xref:jsf-page-core/jsf-page-core.adoc#BNATP[Referencing a Method
 That Performs Navigation].
 
 

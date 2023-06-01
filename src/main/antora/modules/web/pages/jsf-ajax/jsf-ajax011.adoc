@@ -1,9 +1,9 @@
-[[GKOKB]][[the-ajaxguessnumber-example-application]]
+[[GKOKB]][[_the_ajaxguessnumber_example_application]]
 
 == The ajaxguessnumber Example Application
 
 To demonstrate the advantages of using Ajax, revisit the `guessnumber`
-example from link:#GIEPX[Chapter 8, "Introduction to
+example from xref:jsf-facelets/jsf-facelets.adoc#GIEPX[Chapter 8, "Introduction to
 Facelets"]. If you modify this example to use Ajax, the response need
 not be displayed on the `response.xhtml` page. Instead, an asynchronous
 call is made to the bean on the server side, and the response is
@@ -13,13 +13,13 @@ rather than by form submission.
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/ajaxguessnumber/` directory.
 
-[[GKOIJ]][[the-ajaxguessnumber-source-files]]
+[[GKOIJ]][[_the_ajaxguessnumber_source_files]]
 
 === The ajaxguessnumber Source Files
 
 The changes to the `guessnumber` application occur in two source files.
 
-[[GKOFW]][[the-ajaxgreeting.xhtml-facelets-page]]
+[[GKOFW]][[_the_ajaxgreeting.xhtml_facelets_page]]
 
 ==== The ajaxgreeting.xhtml Facelets Page
 
@@ -82,7 +82,7 @@ validation error occurs, the managed bean is not executed, and the
 validation error message is displayed in the message pane. Otherwise,
 the result of the guess is rendered in the `result` component.
 
-[[GKOHN]][[the-usernumberbean-backing-bean]]
+[[GKOHN]][[_the_usernumberbean_backing_bean]]
 
 ==== The UserNumberBean Backing Bean
 
@@ -105,7 +105,7 @@ public String getResponse() {
 }
 ----
 
-[[CHDGAIGJ]][[the-dukesnumberbean-cdi-managed-bean]]
+[[CHDGAIGJ]][[_the_dukesnumberbean_cdi_managed_bean]]
 
 ==== The DukesNumberBean CDI Managed Bean
 
@@ -121,22 +121,22 @@ user submitted:
 DukesNumberBean dukesNumberBean;
 ----
 
-You will learn more about CDI in link:#GIWHB[Chapter 25,
+You will learn more about CDI in xref:#GIWHB[Chapter 25,
 "Introduction to Jakarta Contexts and Dependency Injection"].
 
-[[GKOKE]][[running-the-ajaxguessnumber-example]]
+[[GKOKE]][[_running_the_ajaxguessnumber_example]]
 
 === Running the ajaxguessnumber Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `ajaxguessnumber` application.
 
-[[GLHVU]][[to-build-package-and-deploy-the-ajaxguessnumber-example-using-netbeans-ide]]
+[[GLHVU]][[_to_build_package_and_deploy_the_ajaxguessnumber_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -152,12 +152,12 @@ select Build.
 +
 This command builds and deploys the project.
 
-[[GLHVQ]][[to-build-package-and-deploy-the-ajaxguessnumber-example-using-maven]]
+[[GLHVQ]][[_to_build_package_and_deploy_the_ajaxguessnumber_example_using_maven]]
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -176,7 +176,7 @@ This command builds and packages the application into a WAR file,
 `ajaxguessnumber.war`, located in the `target` directory. It then
 deploys the application.
 
-[[GLHWE]][[to-run-the-ajaxguessnumber-example]]
+[[GLHWE]][[_to_run_the_ajaxguessnumber_example]]
 
 ==== To Run the ajaxguessnumber Example
 

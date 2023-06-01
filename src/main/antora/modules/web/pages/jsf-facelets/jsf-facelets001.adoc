@@ -1,4 +1,4 @@
-[[GIJTU]][[what-is-facelets]]
+[[GIJTU]][[_what_is_facelets]]
 
 == What Is Facelets?
 
@@ -33,7 +33,7 @@ convention, web pages built with XHTML have an `.xhtml` extension.
 
 Jakarta Server Faces technology supports various tag libraries to add
 components to a web page. To support the Jakarta Server Faces tag library
-mechanism, Facelets uses XML namespace declarations. link:#GJBOX[Table
+mechanism, Facelets uses XML namespace declarations. xref:jsf-facelets/jsf-facelets.adoc#GJBOX[Table
 8-1] lists the tag libraries supported by Facelets.
 
 [[sthref29]][[GJBOX]]
@@ -100,11 +100,11 @@ HTML5-friendly markup
 
 
 Facelets provides two namespaces to support HTML5-friendly markup. For
-details, see link:#BABGECCJ[HTML5-Friendly Markup].
+details, see xref:jsf-facelets/jsf-facelets.adoc#BABGECCJ[HTML5-Friendly Markup].
 
 Facelets supports tags for composite components, for which you can
 declare custom prefixes. For more information on composite components,
-see link:#GIQZR[Composite Components].
+see xref:jsf-facelets/jsf-facelets.adoc#GIQZR[Composite Components].
 
 The namespace prefixes shown in the table are conventional, not
 mandatory. As is always the case when you declare an XML namespace, you
@@ -128,4 +128,4 @@ syntax, Facelets uses EL expressions to reference properties and methods
 of managed beans. EL expressions can be used to bind component objects
 or values to methods or properties of managed beans that are used as
 backing beans. For more information on using EL expressions, see
-link:#BNAQP[Using the EL to Reference Managed Beans].
+xref:jsf-develop/jsf-develop.adoc#BNAQP[Using the EL to Reference Managed Beans].

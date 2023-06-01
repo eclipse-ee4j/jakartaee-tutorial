@@ -1,4 +1,4 @@
-[[BNAQQ]][[the-lifecycle-of-a-javaserver-faces-application]]
+[[BNAQQ]][[_the_lifecycle_of_a_javaserver_faces_application]]
 
 == The Lifecycle of a Jakarta Server Faces Application
 
@@ -19,16 +19,16 @@ manually for more complex applications as required.
 Jakarta Server Faces applications that use advanced features may require
 interaction with the lifecycle at certain phases. For example, Ajax
 applications use partial processing features of the lifecycle (see
-link:#GKNOJ[Partial Processing and Partial Rendering]).
+xref:jsf-intro/jsf-intro.adoc#GKNOJ[Partial Processing and Partial Rendering]).
 A clearer understanding of the lifecycle phases is key to creating
 well-designed components.
 
 A simplified view of the Jakarta Server faces lifecycle, consisting of the
 two main phases of a Jakarta Server Faces web application, is introduced in
-link:#GJAAM[A Simple Jakarta Server Faces Application]. This
+xref:jsf-intro/jsf-intro.adoc#GJAAM[A Simple Jakarta Server Faces Application]. This
 section examines the Jakarta Server Faces lifecycle in more detail.
 
-[[GLPRC]][[overview-of-the-javaserver-faces-lifecycle]]
+[[GLPRC]][[_overview_of_the_javaserver_faces_lifecycle]]
 
 === Overview of the Jakarta Server Faces Lifecycle
 
@@ -52,15 +52,12 @@ specified on the server side.
 
 The Jakarta Server Faces implementation performs all these tasks as a series
 of steps in the Jakarta Server Faces request-response lifecycle.
-link:#BNAQR[Figure 7-3] illustrates these steps.
+xref:jsf-intro/jsf-intro.adoc#BNAQR[Figure 7-3] illustrates these steps.
 
 [[BNAQR]]
 
 .*Figure 7-3 Jakarta Server Faces Standard Request-Response Lifecycle*
-image:jakartaeett_dt_016.png[
-"Flow diagram of Faces request and Faces response, including event and
-validation processing, error handling, model updating, application
-invocation."]
+image::common:jakartaeett_dt_016.png[ "Flow diagram of Faces request and Faces response, including event and validation processing, error handling, model updating, application invocation."]
 
 The request-response lifecycle handles two kinds of requests: initial
 requests and postbacks. An initial request occurs when a user makes a
@@ -82,8 +79,8 @@ information associated with processing an incoming request and creating
 a response. The application then acquires object references needed by
 the view and calls the `FacesContext.renderResponse` method, which
 forces immediate rendering of the view by skipping to the
-link:#BNAQX[Render Response Phase] of the lifecycle, as is shown by the
-arrows labelled Render Response in link:#BNAQR[Figure 7-3].
+xref:jsf-intro/jsf-intro.adoc#BNAQX[Render Response Phase] of the lifecycle, as is shown by the
+arrows labelled Render Response in xref:jsf-intro/jsf-intro.adoc#BNAQR[Figure 7-3].
 
 Sometimes, an application might need to redirect to a different web
 application resource, such as a web service, or generate a response that
@@ -101,7 +98,7 @@ validations, and model updates and to generate the response.
 There is one exception to the lifecycle described in this section. When
 a component's `immediate` attribute is set to `true`, the validation,
 conversion, and events associated with these components are processed
-during the link:#BNAQT[Apply Request Values Phase] rather than in a
+during the xref:jsf-intro/jsf-intro.adoc#BNAQT[Apply Request Values Phase] rather than in a
 later phase.
 
 The details of the lifecycle explained in the following sections are
@@ -114,14 +111,14 @@ documentation from `https://jakarta.ee/specifications/faces/`.
 The Jakarta Server Faces application lifecycle Execute phase contains the
 following subphases:
 
-* link:#BNAQS[Restore View Phase]
-* link:#BNAQT[Apply Request Values Phase]
-* link:#GJSBP[Process Validations Phase]
-* link:#BNAQV[Update Model Values Phase]
-* link:#BNAQW[Invoke Application Phase]
-* link:#BNAQX[Render Response Phase]
+* xref:jsf-intro/jsf-intro.adoc#BNAQS[Restore View Phase]
+* xref:jsf-intro/jsf-intro.adoc#BNAQT[Apply Request Values Phase]
+* xref:jsf-intro/jsf-intro.adoc#GJSBP[Process Validations Phase]
+* xref:jsf-intro/jsf-intro.adoc#BNAQV[Update Model Values Phase]
+* xref:jsf-intro/jsf-intro.adoc#BNAQW[Invoke Application Phase]
+* xref:jsf-intro/jsf-intro.adoc#BNAQX[Render Response Phase]
 
-[[BNAQS]][[restore-view-phase]]
+[[BNAQS]][[_restore_view_phase]]
 
 === Restore View Phase
 
@@ -146,7 +143,7 @@ page already exists in the `FacesContext` instance. During this phase,
 the Jakarta Server Faces implementation restores the view by using the state
 information saved on the client or the server.
 
-[[BNAQT]][[apply-request-values-phase]]
+[[BNAQT]][[_apply_request_values_phase]]
 
 === Apply Request Values Phase
 
@@ -163,7 +160,7 @@ If any events have been queued during this phase, the Jakarta Server Faces
 implementation broadcasts the events to interested listeners.
 
 If some components on the page have their `immediate` attributes (see
-link:#BNARI[The immediate Attribute]) set to `true`, then
+xref:jsf-page/jsf-page.adoc#BNARI[The immediate Attribute]) set to `true`, then
 the validations, conversions, and events associated with these
 components will be processed during this phase. If any conversion fails,
 an error message associated with the component is generated and queued
@@ -183,7 +180,7 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[GJSBP]][[process-validations-phase]]
+[[GJSBP]][[_process_validations_phase]]
 
 === Process Validations Phase
 
@@ -218,7 +215,7 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[BNAQV]][[update-model-values-phase]]
+[[BNAQV]][[_update_model_values_phase]]
 
 === Update Model Values Phase
 
@@ -248,7 +245,7 @@ If the current request is identified as a partial request, the partial
 context is retrieved from the `FacesContext`, and the partial processing
 method is applied.
 
-[[BNAQW]][[invoke-application-phase]]
+[[BNAQW]][[_invoke_application_phase]]
 
 === Invoke Application Phase
 
@@ -268,7 +265,7 @@ events are broadcast to interested listeners.
 Finally, the Jakarta Server Faces implementation transfers control to the
 Render Response phase.
 
-[[BNAQX]][[render-response-phase]]
+[[BNAQX]][[_render_response_phase]]
 
 === Render Response Phase
 

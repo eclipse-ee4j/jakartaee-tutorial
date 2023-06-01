@@ -1,16 +1,16 @@
-[[BNAXH]][[registering-a-custom-renderer-with-a-render-kit]]
+[[BNAXH]][[_registering_a_custom_renderer_with_a_render_kit]]
 
 == Registering a Custom Renderer with a Render Kit
 
 When the application developer creates a custom renderer, as described
-in link:#BNAWA[Delegating Rendering to a Renderer], you
+in xref:jsf-custom/jsf-custom.adoc#BNAWA[Delegating Rendering to a Renderer], you
 must register it using the appropriate render kit. Because the image map
 application implements an HTML image map, the `AreaRenderer` and
 `MapRenderer` classes in the Duke's Bookstore case study should be
 registered using the HTML render kit.
 
 You register the renderer either by using the `@FacesRenderer`
-annotation, as described in link:#BNAWB[Creating the
+annotation, as described in xref:jsf-custom/jsf-custom.adoc#BNAWB[Creating the
 Renderer Class], or by using the `render-kit` element of the application
 configuration resource file. Here is a hypothetical configuration of
 `AreaRenderer`:

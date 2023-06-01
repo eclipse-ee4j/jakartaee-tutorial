@@ -1,4 +1,4 @@
-[[BNAWP]][[application-configuration-resource-file]]
+[[BNAWP]][[_application_configuration_resource_file]]
 
 == Application Configuration Resource File
 
@@ -75,7 +75,7 @@ creates a single instance of the `Application` class and configures it
 with the information you provided in the application configuration
 resource file.
 
-[[GIREP]][[configuring-eager-application-scoped-managed-beans]]
+[[GIREP]][[_configuring_eager_application_scoped_managed_beans]]
 
 === Configuring Eager Application-Scoped Managed Beans
 
@@ -104,7 +104,7 @@ The annotation is as follows:
 @ApplicationScoped
 ----
 
-[[GIQCK]][[ordering-of-application-configuration-resource-files]]
+[[GIQCK]][[_ordering_of_application_configuration_resource_files]]
 
 === Ordering of Application Configuration Resource Files
 

@@ -1,4 +1,4 @@
-[[BNADX]][[a-web-module-that-uses-javaserver-faces-technology-the-hello1-example]]
+[[BNADX]][[_a_web_module_that_uses_javaserver_faces_technology_the_hello1_example]]
 
 == A Web Module That Uses Jakarta Server Faces Technology: The hello1 Example
 
@@ -9,7 +9,7 @@ to view the application files, or you can use NetBeans IDE.
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/hello1/` directory.
 
-[[GJWTV]][[to-view-the-hello1-web-module-using-netbeans-ide]]
+[[GJWTV]][[_to_view_the_hello1_web_module_using_netbeans_ide]]
 
 === To View the hello1 Web Module Using NetBeans IDE
 
@@ -151,7 +151,7 @@ If you use the default name for the bean class, you can specify `@Model`
 as the annotation instead of having to specify both `@Named` and
 `@RequestScoped`. The `@Model` annotation is called a stereotype, a term
 for an annotation that encapsulates other annotations. It is described
-later in link:#GKHQC[Using Stereotypes in CDI
+later in xref:#GKHQC[Using Stereotypes in CDI
 Applications]. Some examples will use `@Model` where it is appropriate.
 8.  Under the Web Pages node, expand the WEB-INF node and double-click
 the `web.xml` file to view it.
@@ -199,7 +199,7 @@ page:
     </welcome-file-list>
 ----
 
-[[GLQLK]][[introduction-to-scopes]]
+[[GLQLK]][[_introduction_to_scopes]]
 
 ==== Introduction to Scopes
 
@@ -223,9 +223,9 @@ use session scope.
 all users' interactions with a web application.
 
 For more information on scopes in Jakarta Server Faces technology, see
-link:#GIRCR[Using Managed Bean Scopes].
+xref:jsf-configure/jsf-configure.adoc#GIRCR[Using Managed Bean Scopes].
 
-[[BNADZ]][[packaging-and-deploying-the-hello1-web-module]]
+[[BNADZ]][[_packaging_and_deploying_the_hello1_web_module]]
 
 === Packaging and Deploying the hello1 Web Module
 
@@ -245,14 +245,14 @@ You can deploy a WAR file to GlassFish Server by:
 Throughout the tutorial, you will use NetBeans IDE or Maven for
 packaging and deploying.
 
-[[GJRGN]][[to-build-and-package-the-hello1-web-module-using-netbeans-ide]]
+[[GJRGN]][[_to_build_and_package_the_hello1_web_module_using_netbeans_ide]]
 
 ==== To Build and Package the hello1 Web Module Using NetBeans IDE
 
 To build and package the `hello1` web module using NetBeans IDE:
 
 1.  Start GlassFish Server as described in
-link:#CHDCACDI[To Start GlassFish Server Using
+xref:#CHDCACDI[To Start GlassFish Server Using
 NetBeans IDE], if you have not already done so.
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -266,14 +266,14 @@ tut-install/examples/web/jsf
 6.  In the Projects tab, right-click the `hello1` project and select
 Build. This command deploys the project to the server.
 
-[[GJRKN]][[to-build-and-package-the-hello1-web-module-using-maven]]
+[[GJRKN]][[_to_build_and_package_the_hello1_web_module_using_maven]]
 
 ==== To Build and Package the hello1 Web Module Using Maven
 
 To build and package the `hello1` web module using Maven:
 
 1.  Start GlassFish Server as described in
-link:#CHDBDDAF[To Start GlassFish Server Using the
+xref:#CHDBDDAF[To Start GlassFish Server Using the
 Command Line], if you have not already done so.
 2.  In a terminal window, go to:
 +
@@ -292,7 +292,7 @@ This command spawns any necessary compilations and creates the WAR file
 in `_tut-install_/examples/web/jsf/hello1/target/`. It then deploys the
 project to the server.
 
-[[BNAEI]][[viewing-deployed-web-modules]]
+[[BNAEI]][[_viewing_deployed_web_modules]]
 
 === Viewing Deployed Web Modules
 
@@ -300,7 +300,7 @@ GlassFish Server provides two ways to view the deployed web modules: the
 Administration Console and the `asadmin` command. You can also use
 NetBeans IDE to view deployed modules.
 
-[[GJSGR]][[to-view-deployed-web-modules-using-the-administration-console]]
+[[GJSGR]][[_to_view_deployed_web_modules_using_the_administration_console]]
 
 ==== To View Deployed Web Modules Using the Administration Console
 
@@ -311,7 +311,7 @@ To view deployed web modules using the Administration Console:
 +
 The deployed web modules appear in the Deployed Applications table.
 
-[[GJSEW]][[to-view-deployed-web-modules-using-the-asadmin-command]]
+[[GJSEW]][[_to_view_deployed_web_modules_using_the_asadmin_command]]
 
 ==== To View Deployed Web Modules Using the asadmin Command
 
@@ -322,7 +322,7 @@ Enter the following command:
 asadmin list-applications
 ----
 
-[[sthref24]][[to-view-deployed-web-modules-using-netbeans-ide]]
+[[sthref24]][[_to_view_deployed_web_modules_using_netbeans_ide]]
 
 ==== To View Deployed Web Modules Using NetBeans IDE
 
@@ -332,7 +332,7 @@ To view deployed web modules using NetBeans IDE:
 GlassFish Server node.
 2.  Expand the Applications node to view the deployed modules.
 
-[[BCEBEGED]][[running-the-deployed-hello1-web-module]]
+[[BCEBEGED]][[_running_the_deployed_hello1_web_module]]
 
 === Running the Deployed hello1 Web Module
 
@@ -355,7 +355,7 @@ http://localhost:8080/hello1/
 The response page displays the name you submitted. Click Back to try
 again.
 
-[[BNAEM]][[dynamic-reloading-of-deployed-modules]]
+[[BNAEM]][[_dynamic_reloading_of_deployed_modules]]
 
 ==== Dynamic Reloading of Deployed Modules
 
@@ -376,14 +376,14 @@ that time become invalid, and the client must restart the session.
 
 In GlassFish Server, dynamic reloading is enabled by default.
 
-[[BNAEN]][[undeploying-the-hello1-web-module]]
+[[BNAEN]][[_undeploying_the_hello1_web_module]]
 
 === Undeploying the hello1 Web Module
 
 You can undeploy web modules and other types of enterprise applications
 by using either NetBeans IDE or Maven.
 
-[[GJSEJ]][[to-undeploy-the-hello1-web-module-using-netbeans-ide]]
+[[GJSEJ]][[_to_undeploy_the_hello1_web_module_using_netbeans_ide]]
 
 ==== To Undeploy the hello1 Web Module Using NetBeans IDE
 
@@ -396,7 +396,7 @@ GlassFish Server node.
 4.  To delete the class files and other build artifacts, go back to the
 Projects tab, right-click the project, and select Clean.
 
-[[GJSHH]][[to-undeploy-the-hello1-web-module-using-maven]]
+[[GJSHH]][[_to_undeploy_the_hello1_web_module_using_maven]]
 
 ==== To Undeploy the hello1 Web Module Using Maven
 

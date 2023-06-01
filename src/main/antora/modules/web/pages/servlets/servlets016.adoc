@@ -1,4 +1,4 @@
-[[BABDGFJJ]][[the-fileupload-example-application]]
+[[BABDGFJJ]][[_the_fileupload_example_application]]
 
 == The fileupload Example Application
 
@@ -37,7 +37,7 @@ data that results from the download or use of content.
 |=======================================================================
 
 
-[[CHDFGBGI]][[architecture-of-the-fileupload-example-application]]
+[[CHDFGBGI]][[_architecture_of_the_fileupload_example_application]]
 
 === Architecture of the fileupload Example Application
 
@@ -210,19 +210,19 @@ private String getFileName(final Part part) {
 }
 ----
 
-[[CHDIHJCI]][[running-the-fileupload-example]]
+[[CHDIHJCI]][[_running_the_fileupload_example]]
 
 === Running the fileupload Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `fileupload` example.
 
-[[CHDGDJCI]][[to-build-package-and-deploy-the-fileupload-example-using-netbeans-ide]]
+[[CHDGDJCI]][[_to_build_package_and_deploy_the_fileupload_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the fileupload Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -236,12 +236,12 @@ tut-install/examples/web/servlet
 6.  In the Projects tab, right-click the `fileupload` project and select
 Build.
 
-[[CHDCFADG]][[to-build-package-and-deploy-the-fileupload-example-using-maven]]
+[[CHDCFADG]][[_to_build_package_and_deploy_the_fileupload_example_using_maven]]
 
 ==== To Build, Package, and Deploy the fileupload Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -256,7 +256,7 @@ tut-install/examples/web/servlet/fileupload/
 mvn install
 ----
 
-[[CHDDDAAJ]][[to-run-the-fileupload-example]]
+[[CHDDDAAJ]][[_to_run_the_fileupload_example]]
 
 ==== To Run the fileupload Example
 

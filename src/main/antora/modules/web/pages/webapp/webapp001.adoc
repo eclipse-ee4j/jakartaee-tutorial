@@ -1,4 +1,4 @@
-[[GEYSJ]][[web-applications]]
+[[GEYSJ]][[_web_applications]]
 
 == Web Applications
 
@@ -9,21 +9,21 @@ Web applications are of the following types:
 generates interactive web pages containing various types of markup
 language (HTML, XHTML, XML, and so on) and dynamic content in response
 to requests. Development of presentation-oriented web applications is
-covered in link:#BNAPH[Chapter 7, "Jakarta Server Faces
-Technology,"] through link:#BNAFD[Chapter 18, "Jakarta Servlet
+covered in xref:jsf-intro/jsf-intro.adoc#BNAPH[Chapter 7, "Jakarta Server Faces
+Technology,"] through xref:servlets/servlets.adoc#BNAFD[Chapter 18, "Jakarta Servlet
 Technology."]
 * Service-oriented: A service-oriented web application implements the
 endpoint of a web service. Presentation-oriented applications are often
 clients of service-oriented web applications. Development of
 service-oriented web applications is covered in
-link:#BNAYL[Chapter 31, "Building Web Services with JAX-WS,"]
-and link:#GIEPU[Chapter 32, "Building RESTful Web Services with
-Jakarta RESTful Web Services,"] in link:#BNAYK[Part III, "Web Services."]
+xref:#BNAYL[Chapter 31, "Building Web Services with JAX-WS,"]
+and xref:#GIEPU[Chapter 32, "Building RESTful Web Services with
+Jakarta RESTful Web Services,"] in xref:#BNAYK[Part III, "Web Services."]
 
 In the Jakarta EE platform, web components provide the dynamic extension
 capabilities for a web server. Web components can be Jakarta servlets, web
 pages implemented with Jakarta Server Faces technology, web service
-endpoints, or Jakarta Server pages. link:#BNADS[Figure 6-1] illustrates the
+endpoints, or Jakarta Server pages. xref:webapp/webapp.adoc#BNADS[Figure 6-1] illustrates the
 interaction between a web client and a web application that uses a
 servlet. The client sends an HTTP request to the web server. A web
 server that implements Jakarta Servlet and Jakarta Server Pages technology
@@ -38,9 +38,7 @@ HTTP response and returns it to the client.
 [[BNADS]]
 
 .*Figure 6-1 Jakarta Web Application Request Handling*
-image:jakartaeett_dt_013.png[
-"Diagram of web application request handling. Clients and servlets
-communicate using HttpServletRequest and HttpServletResponse."]
+image::common:jakartaeett_dt_013.png[ "Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse."]
 
 Servlets are Java programming language classes that dynamically process
 requests and construct responses. Java technologies, such as Jakarta Server

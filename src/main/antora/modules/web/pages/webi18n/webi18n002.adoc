@@ -1,4 +1,4 @@
-[[BNAXW]][[providing-localized-messages-and-labels]]
+[[BNAXW]][[_providing_localized_messages_and_labels]]
 
 == Providing Localized Messages and Labels
 
@@ -32,7 +32,7 @@ Visitor=You are visitor number
 What=What We\'re Reading
 ----
 
-[[GKUIA]][[establishing-the-locale]]
+[[GKUIA]][[_establishing_the_locale]]
 
 === Establishing the Locale
 
@@ -74,7 +74,7 @@ public class LocaleBean {
 }
 ----
 
-[[BNAXY]][[setting-the-resource-bundle]]
+[[BNAXY]][[_setting_the_resource_bundle]]
 
 === Setting the Resource Bundle
 
@@ -93,7 +93,7 @@ configuration file. The setting for Duke's Bookstore looks like this:
 
 After the locale is set, the controller of a web application could
 retrieve the resource bundle for that locale and save it as a session
-attribute (see link:#BNAGO[Associating Objects with a
+attribute (see xref:servlets/servlets.adoc#BNAGO[Associating Objects with a
 Session]) for use by other components or simply be used to return a text
 string appropriate for the selected locale:
 
@@ -123,9 +123,9 @@ registered using the `resource-bundle` element of the configuration
 file.
 
 For more information on using this element, see
-link:#BNAXB[Registering Application Messages].
+xref:jsf-configure/jsf-configure.adoc#BNAXB[Registering Application Messages].
 
-[[GKUFC]][[retrieving-localized-messages]]
+[[GKUFC]][[_retrieving_localized_messages]]
 
 === Retrieving Localized Messages
 
@@ -163,7 +163,7 @@ validate the value the user enters into the component.
 ----
 
 For more information on using the `message` or `messages` tags, see
-link:#BNASO[Displaying Error Messages with the h:message
+xref:jsf-page/jsf-page.adoc#BNASO[Displaying Error Messages with the h:message
 and h:messages Tags].
 
 Messages that are not queued on a component and are therefore not loaded

@@ -1,4 +1,4 @@
-[[GKHVN]][[the-compositecomponentexample-example-application]]
+[[GKHVN]][[_the_compositecomponentexample_example_application]]
 
 == The compositecomponentexample Example Application
 
@@ -15,7 +15,7 @@ file, a using page, and a managed bean.
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/compositecomponentexample/` directory.
 
-[[GKHUU]][[the-composite-component-file]]
+[[GKHUU]][[_the_composite_component_file]]
 
 === The Composite Component File
 
@@ -91,7 +91,7 @@ prime or not is rendered only if the input value is validated.
 </composite:implementation>
 ----
 
-[[GKHVX]][[the-using-page]]
+[[GKHVX]][[_the_using_page]]
 
 === The Using Page
 
@@ -108,7 +108,7 @@ along with the managed bean. It validates the user's input.
 </div>
 ----
 
-[[GKHVQ]][[the-managed-bean]]
+[[GKHVQ]][[_the_managed_bean]]
 
 === The Managed Bean
 
@@ -123,8 +123,8 @@ same value as its lowercase equivalent.
 The bean specifies the minimum and maximum size of the `name` string,
 which is enforced by the Bean Validation `@Size` constraint. The bean
 uses the `@Model` annotation, a shortcut for `@Named` and
-`@RequestScoped`, as described in Step link:#CHDCABHC[7] of
-link:#GJWTV[To View the hello1 Web Module Using NetBeans
+`@RequestScoped`, as described in Step xref:webapp/webapp.adoc#CHDCABHC[7] of
+xref:webapp/webapp.adoc#GJWTV[To View the hello1 Web Module Using NetBeans
 IDE].
 
 [source,java]
@@ -142,19 +142,19 @@ public class PrimeBean implements Serializable {
 }
 ----
 
-[[GLECV]][[running-the-compositecomponentexample-example]]
+[[GLECV]][[_running_the_compositecomponentexample_example]]
 
 === Running the compositecomponentexample Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and
 run the `compositecomponentexample` example.
 
-[[GKHVC]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-netbeans-ide]]
+[[GKHVC]][[_to_build_package_and_deploy_the_compositecomponentexample_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -170,12 +170,12 @@ project and select Build.
 +
 This command builds and deploys the application.
 
-[[GLEAE]][[to-build-package-and-deploy-the-compositecomponentexample-example-using-maven]]
+[[GLEAE]][[_to_build_package_and_deploy_the_compositecomponentexample_example_using_maven]]
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -190,7 +190,7 @@ tut-install/examples/web/jsf/compositecomponentexample/
 mvn install
 ----
 
-[[GLEEU]][[to-run-the-compositecomponentexample-example]]
+[[GLEEU]][[_to_run_the_compositecomponentexample_example]]
 
 ==== To Run the compositecomponentexample Example
 

@@ -1,18 +1,18 @@
-[[BNAUW]][[creating-and-using-a-custom-validator]]
+[[BNAUW]][[_creating_and_using_a_custom_validator]]
 
 == Creating and Using a Custom Validator
 
 If the standard validators or Bean Validation don't perform the
 validation checking you need, you can create a custom validator to
 validate user input. As explained in
-link:#BNAQK[Validation Model], there are two ways to
+xref:jsf-intro/jsf-intro.adoc#BNAQK[Validation Model], there are two ways to
 implement validation code.
 
 * Implement a managed bean method that performs the validation.
 * Provide an implementation of the `javax.faces.validator.Validator`
 interface to perform the validation.
 
-link:#BNAVE[Writing a Method to Perform Validation]
+xref:jsf-develop/jsf-develop.adoc#BNAVE[Writing a Method to Perform Validation]
 explains how to implement a managed bean method to perform validation.
 The rest of this section explains how to implement the `Validator`
 interface.
@@ -25,12 +25,12 @@ on a component.
 If you prefer to configure the attributes in the `Validator`
 implementation, you can forgo specifying a custom tag and instead let
 the page author register the validator on a component using the
-`f:validator` tag, as described in link:#BNATV[Using a Custom
+`f:validator` tag, as described in xref:jsf-custom/jsf-custom.adoc#BNATV[Using a Custom
 Validator].
 
 You can also create a managed bean property that accepts and returns the
 `Validator` implementation you create, as described in
-link:#BNAUL[Writing Properties Bound to Converters,
+xref:jsf-develop/jsf-develop.adoc#BNAUL[Writing Properties Bound to Converters,
 Listeners, or Validators]. You can use the `f:validator` tag's binding
 attribute to bind the `Validator` implementation to the managed bean
 property.
@@ -42,7 +42,7 @@ After creating the resource bundle, you have two ways to make the
 messages available to the application. You can queue the error messages
 onto the `FacesContext` programmatically, or you can register the error
 messages in the application configuration resource file, as explained in
-link:#BNAXB[Registering Application Messages].
+xref:jsf-configure/jsf-configure.adoc#BNAXB[Registering Application Messages].
 
 For example, an e-commerce application might use a general-purpose
 custom validator called `FormatValidator.java` to validate input data
@@ -68,7 +68,7 @@ situation. However, the rest of this section describes how this
 validator would be implemented and how to specify a custom tag so that
 the page author could register the validator on a component.
 
-[[BNAUX]][[implementing-the-validator-interface]]
+[[BNAUX]][[_implementing_the_validator_interface]]
 
 === Implementing the Validator Interface
 
@@ -185,10 +185,10 @@ implement the `StateHolder` interface as well as the `Validator`
 interface. To implement `StateHolder`, you would need to implement its
 four methods: `saveState(FacesContext)`,
 `restoreState(FacesContext, Object)`, `isTransient`, and
-`setTransient(boolean)`. See link:#BNAVZ[Saving and
+`setTransient(boolean)`. See xref:jsf-custom/jsf-custom.adoc#BNAVZ[Saving and
 Restoring State] for more information.
 
-[[BNAUY]][[specifying-a-custom-tag]]
+[[BNAUY]][[_specifying_a_custom_tag]]
 
 === Specifying a Custom Tag
 
@@ -198,7 +198,7 @@ the following.
 
 * Allow the page author to specify the `Validator` implementation to use
 with the `f:validator` tag. In this case, the `Validator` implementation
-must define its own properties. link:#BNATV[Using a Custom Validator]
+must define its own properties. xref:jsf-custom/jsf-custom.adoc#BNATV[Using a Custom Validator]
 explains how to use the `f:validator` tag.
 * Specify a custom tag that provides attributes for configuring the
 properties of the validator from the page.
@@ -224,10 +224,10 @@ a Facelets page. The `validator-id` element identifies the custom
 validator. The `validator-class` element wires the custom tag to its
 implementation class.
 
-link:#BNATV[Using a Custom Validator] explains how to use the custom
+xref:jsf-custom/jsf-custom.adoc#BNATV[Using a Custom Validator] explains how to use the custom
 validator tag on the page.
 
-[[BNATV]][[using-a-custom-validator]]
+[[BNATV]][[_using_a_custom_validator]]
 
 === Using a Custom Validator
 
@@ -274,7 +274,7 @@ validator that is defined in the application configuration resource
 file.
 * Bind the custom `Validator` implementation to a managed bean property
 using the `f:validator` tag's `binding` attribute, as described in
-link:#BNATM[Binding Converters, Listeners, and
+xref:jsf-custom/jsf-custom.adoc#BNATM[Binding Converters, Listeners, and
 Validators to Managed Bean Properties].
 
 The following tag registers a hypothetical validator on a component

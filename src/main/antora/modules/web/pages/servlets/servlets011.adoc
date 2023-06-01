@@ -1,4 +1,4 @@
-[[BABFGCHB]][[uploading-files-with-java-servlet-technology]]
+[[BABFGCHB]][[_uploading_files_with_java_servlet_technology]]
 
 == Uploading Files with Jakarta Servlet Technology
 
@@ -19,7 +19,7 @@ annotated with `@MultipartConfig` can retrieve the `Part` components of
 a given `multipart/form-data` request by calling the
 `request.getPart(String name)` or `request.getParts()` method.
 
-[[sthref101]][[the-multipartconfig-annotation]]
+[[sthref101]][[_the_multipartconfig_annotation]]
 
 === The @MultipartConfig Annotation
 
@@ -66,7 +66,7 @@ file:
 </multipart-config>
 ----
 
-[[sthref102]][[the-getparts-and-getpart-methods]]
+[[sthref102]][[_the_getparts_and_getpart_methods]]
 
 === The getParts and getPart Methods
 

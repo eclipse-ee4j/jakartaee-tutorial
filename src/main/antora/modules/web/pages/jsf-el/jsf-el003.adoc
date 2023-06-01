@@ -1,4 +1,4 @@
-[[BNAHU]][[value-and-method-expressions]]
+[[BNAHU]][[_value_and_method_expressions]]
 
 == Value and Method Expressions
 
@@ -6,7 +6,7 @@ The EL defines two kinds of expressions: value expressions and method
 expressions. Value expressions can be evaluated to yield a value, and
 method expressions are used to reference a method.
 
-[[BNAHV]][[value-expressions]]
+[[BNAHV]][[_value_expressions]]
 
 === Value Expressions
 
@@ -41,7 +41,7 @@ is evaluated immediately during an initial request for the page. During
 a postback request, this expression can be used to set the value of the
 `name` property with user input.
 
-[[BNAHW]][[referencing-objects]]
+[[BNAHW]][[_referencing_objects]]
 
 ==== Referencing Objects
 
@@ -86,7 +86,7 @@ you can compare `suit.hearts` to the instance:
 ${mySuit == suit.hearts}
 ----
 
-[[BNAHX]][[referencing-object-properties-or-collection-elements]]
+[[BNAHX]][[_referencing_object_properties_or_collection_elements]]
 
 ==== Referencing Object Properties or Collection Elements
 
@@ -145,7 +145,7 @@ ${customer.orders["socks"]}
 ${customer.orders.socks}
 ----
 
-[[sthref38]][[referencing-literals]]
+[[sthref38]][[_referencing_literals]]
 
 ==== Referencing Literals
 
@@ -164,7 +164,7 @@ Here are some examples:
 * `${true}`
 * `${57}`
 
-[[GJHBZ]][[parameterized-method-calls]]
+[[GJHBZ]][[_parameterized_method_calls]]
 
 ==== Parameterized Method Calls
 
@@ -217,7 +217,7 @@ in which a parameter is passed:
 In the preceding example, you are passing the string `'SOMESTOCK'` (a
 stock symbol) as a parameter to the `buy` method.
 
-[[BNAHY]][[where-value-expressions-can-be-used]]
+[[BNAHY]][[_where_value_expressions_can_be_used]]
 
 ==== Where Value Expressions Can Be Used
 
@@ -301,7 +301,7 @@ of an attribute of type `float` will result in the following conversion:
 Float.valueOf("1.2E4").floatValue()
 ----
 
-[[BNAHZ]][[method-expressions]]
+[[BNAHZ]][[_method_expressions]]
 
 === Method Expressions
 
@@ -366,7 +366,7 @@ this method expression is invoked, the method returns the `String`
 literal, which is then converted to the expected return type, as defined
 in the tag's tag library descriptor.
 
-[[BEIHCBAH]][[lambda-expressions]]
+[[BEIHCBAH]][[_lambda_expressions]]
 
 === Lambda Expressions
 

@@ -1,8 +1,8 @@
-[[BNATM]][[binding-converters-listeners-and-validators-to-managed-bean-properties]]
+[[BNATM]][[_binding_converters_listeners_and_validators_to_managed_bean_properties]]
 
 == Binding Converters, Listeners, and Validators to Managed Bean Properties
 
-As described in link:#BNARF[Adding Components to a Page
+As described in xref:jsf-page/jsf-page.adoc#BNARF[Adding Components to a Page
 Using HTML Tag Library Tags], a page author can bind converter,
 listener, and validator implementations to managed bean properties using
 the `binding` attributes of the tags that are used to register the
@@ -10,7 +10,7 @@ implementations on components.
 
 This technique has similar advantages to binding component instances to
 managed bean properties, as described in
-link:#BNATG[Binding Component Values and Instances to
+xref:jsf-custom/jsf-custom.adoc#BNATG[Binding Component Values and Instances to
 Managed Bean Properties]. In particular, binding a converter, listener,
 or validator implementation to a managed bean property yields the
 following benefits.
@@ -64,7 +64,7 @@ public void setConvertDate(DateTimeConverter convertDate) {
 }
 ----
 
-See link:#BNAUL[Writing Properties Bound to
+See xref:jsf-develop/jsf-develop.adoc#BNAUL[Writing Properties Bound to
 Converters, Listeners, or Validators] for more information on writing
 managed bean properties for converter, listener, and validator
 implementations.

@@ -1,4 +1,4 @@
-[[CHDHGJIA]][[configuring-web-applications]]
+[[CHDHGJIA]][[_configuring_web_applications]]
 
 == Configuring Web Applications
 
@@ -10,7 +10,7 @@ applications:
 * Mapping errors to error screens
 * Declaring resource references
 
-[[BNAES]][[setting-context-parameters]]
+[[BNAES]][[_setting_context_parameters]]
 
 === Setting Context Parameters
 
@@ -18,10 +18,10 @@ The web components in a web module share an object that represents their
 application context. You can pass context parameters to the context, or
 you can pass initialization parameters to a servlet. Context parameters
 are available to the entire application. For information on
-initialization parameters, see link:#BNAFU[Creating and
+initialization parameters, see xref:servlets/servlets.adoc#BNAFU[Creating and
 Initializing a Servlet].
 
-[[GJSFJ]][[to-add-a-context-parameter-using-netbeans-ide]]
+[[GJSFJ]][[_to_add_a_context_parameter_using_netbeans_ide]]
 
 ==== To Add a Context Parameter Using NetBeans IDE
 
@@ -36,7 +36,7 @@ To add a context parameter using NetBeans IDE:
 4.  Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
-the steps in link:#GKIHH[To Create a web.xml File Using NetBeans IDE].
+the steps in xref:webapp/webapp.adoc#GKIHH[To Create a web.xml File Using NetBeans IDE].
 5.  Click General at the top of the editor window.
 6.  Expand the Context Parameters node.
 7.  Click Add.
@@ -46,7 +46,7 @@ field, enter the name that specifies the context object.
 context object.
 10. Click OK.
 
-[[GKIHH]][[to-create-a-web.xml-file-using-netbeans-ide]]
+[[GKIHH]][[_to_create_a_web.xml_file_using_netbeans_ide]]
 
 ==== To Create a web.xml File Using NetBeans IDE
 
@@ -60,7 +60,7 @@ Standard Deployment Descriptor under File Types.
 +
 A basic `web.xml` file appears in `web/WEB-INF/`.
 
-[[BNAER]][[declaring-welcome-files]]
+[[BNAER]][[_declaring_welcome_files]]
 
 === Declaring Welcome Files
 
@@ -102,7 +102,7 @@ The `hello2` example does not specify a welcome file, because the URL
 request is mapped to the `GreetingServlet` web component through the URL
 pattern `/greeting`.
 
-[[GKBKW]][[mapping-errors-to-error-screens]]
+[[GKBKW]][[_mapping_errors_to_error_screens]]
 
 === Mapping Errors to Error Screens
 
@@ -117,7 +117,7 @@ descriptor. Each element identifies a different error that causes an
 error page to open. This error page can be the same for any number of
 `error-page` elements.
 
-[[BNAET]][[to-set-up-error-mapping-using-netbeans-ide]]
+[[BNAET]][[_to_set_up_error_mapping_using_netbeans_ide]]
 
 ==== To Set Up Error Mapping Using NetBeans IDE
 
@@ -132,7 +132,7 @@ To set up error mapping using NetBeans IDE:
 4.  Double-click `web.xml`.
 +
 If the project does not have a `web.xml` file, create one by following
-the steps in link:#GKIHH[To Create a web.xml File Using NetBeans IDE].
+the steps in xref:webapp/webapp.adoc#GKIHH[To Create a web.xml File Using NetBeans IDE].
 5.  Click Pages at the top of the editor window.
 6.  Expand the Error Pages node.
 7.  Click Add.
@@ -147,7 +147,7 @@ exception that will cause the error page to load. To specify all
 throwable errors and exceptions, enter `java.lang.Throwable`.
 10. Click OK.
 
-[[BNAEU]][[declaring-resource-references]]
+[[BNAEU]][[_declaring_resource_references]]
 
 === Declaring Resource References
 
@@ -167,17 +167,17 @@ simple JavaBeans components. However, managed beans are managed by the
 container; therefore, they can accept resource injections.
 
 Components that can accept resource injections are listed in
-link:#BNAEV[Table 6-1].
+xref:webapp/webapp.adoc#BNAEV[Table 6-1].
 
 This section explains how to use a couple of the annotations supported
 by a web container to inject resources.
-link:#GIJST[Chapter 41, "Running the
+xref:#GIJST[Chapter 41, "Running the
 Persistence Examples"], explains how web applications use annotations
 supported by Jakarta Persistence.
-link:#BNCAS[Chapter 51, "Getting Started Securing
+xref:#BNCAS[Chapter 51, "Getting Started Securing
 Web Applications"], explains how to use annotations to specify
 information about securing web applications. See
-link:#BNCJH[Chapter 55, "Resource Adapters and Contracts"],
+xref:#BNCJH[Chapter 55, "Resource Adapters and Contracts"],
 for more information on resources.
 
 [[sthref25]][[BNAEV]]
@@ -208,7 +208,7 @@ for more information on resources.
 |================================================
 
 
-[[BNAEW]][[declaring-a-reference-to-a-resource]]
+[[BNAEW]][[_declaring_a_reference_to_a_resource]]
 
 ==== Declaring a Reference to a Resource
 
@@ -259,11 +259,11 @@ do not use the `@Resource` annotation to inject a data source. However,
 this API supports the `@PersistenceUnit` and `@PersistenceContext`
 annotations for injecting `EntityManagerFactory` and `EntityManager`
 instances, respectively.
-link:#GIJST[Chapter 41, "Running the
+xref:#GIJST[Chapter 41, "Running the
 Persistence Examples"] describes these annotations and the use of the
 Jakarta Persistence in web applications.
 
-[[BNAEX]][[declaring-a-reference-to-a-web-service]]
+[[BNAEX]][[_declaring_a_reference_to_a_web_service]]
 
 ==== Declaring a Reference to a Web Service
 

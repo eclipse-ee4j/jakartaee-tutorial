@@ -1,4 +1,4 @@
-[[BNAGB]][[filtering-requests-and-responses]]
+[[BNAGB]][[_filtering_requests_and_responses]]
 
 == Filtering Requests and Responses
 
@@ -27,7 +27,7 @@ or more filters in a specific order. This chain is specified when the
 web application containing the component is deployed and is instantiated
 when a web container loads the component.
 
-[[BNAGC]][[programming-filters]]
+[[BNAGC]][[_programming_filters]]
 
 === Programming Filters
 
@@ -83,7 +83,7 @@ instantiated. If you wish to pass initialization parameters to the
 filter, you retrieve them from the `FilterConfig` object passed to
 `init`.
 
-[[BNAGD]][[programming-customized-requests-and-responses]]
+[[BNAGD]][[_programming_customized_requests_and_responses]]
 
 === Programming Customized Requests and Responses
 
@@ -108,7 +108,7 @@ extends either `ServletRequestWrapper` or `HttpServletRequestWrapper`.
 To override response methods, you wrap the response in an object that
 extends either `ServletResponseWrapper` or `HttpServletResponseWrapper`.
 
-[[BNAGF]][[specifying-filter-mappings]]
+[[BNAGF]][[_specifying_filter_mappings]]
 
 === Specifying Filter Mappings
 
@@ -125,16 +125,14 @@ counter filter to the URL pattern `/*`.
 
 You can map a filter to one or more web resources, and you can map more
 than one filter to a web resource. This is illustrated in
-link:#BNAGH[Figure 18-1], in which filter F1 is mapped to servlets S1,
+xref:servlets/servlets.adoc#BNAGH[Figure 18-1], in which filter F1 is mapped to servlets S1,
 S2, and S3; filter F2 is mapped to servlet S2; and filter F3 is mapped
 to servlets S1 and S2.
 
 [[BNAGH]]
 
 .*Figure 18-1 Filter-to-Servlet Mapping*
-image:jakartaeett_dt_018.png[
-"Diagram of filter-to-servlet mapping with filters F1-F3 and servlets
-S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2."]
+image::common:jakartaeett_dt_018.png[ "Diagram of filter-to-servlet mapping with filters F1-F3 and servlets S1-S3. F1 filters S1-S3, then F2 filters S2, then F3 filters S1 and S2."]
 
 Recall that a filter chain is one of the objects passed to the
 `doFilter` method of a filter. This chain is formed indirectly by means
@@ -150,7 +148,7 @@ F1 and F3, F1's call to `chain.doFilter` invokes the `doFilter` method
 of filter F3. When F3's `doFilter` method completes, control returns to
 F1's `doFilter` method.
 
-[[GJSLC]][[to-specify-filter-mappings-using-netbeans-ide]]
+[[GJSLC]][[_to_specify_filter_mappings_using_netbeans_ide]]
 
 ==== To Specify Filter Mappings Using NetBeans IDE
 
@@ -176,9 +174,9 @@ You can include wildcard characters so that you can apply the filter to more tha
 ..  In the Add Filter Mapping dialog box, select one of the following dispatcher types:
 ... REQUEST: Only when the request comes directly from the client
 ... ASYNC: Only when the asynchronous request comes from the client
-... FORWARD: Only when the request has been forwarded to a component (see link:#BNAGK[Transferring Control to Another Web Component])
-... INCLUDE: Only when the request is being processed by a component that has been included (see link:#BNAGJ[Including Other Resources in the Response])
-... ERROR: Only when the request is being processed with the error page mechanism (see link:#BNAFN[Handling Servlet Errors])
+... FORWARD: Only when the request has been forwarded to a component (see xref:servlets/servlets.adoc#BNAGK[Transferring Control to Another Web Component])
+... INCLUDE: Only when the request is being processed by a component that has been included (see xref:servlets/servlets.adoc#BNAGJ[Including Other Resources in the Response])
+... ERROR: Only when the request is being processed with the error page mechanism (see xref:servlets/servlets.adoc#BNAFN[Handling Servlet Errors])
 
 You can direct the filter to be applied to any combination of the preceding situations by selecting multiple dispatcher types. If no types are specified, the default option is REQUEST.
 --

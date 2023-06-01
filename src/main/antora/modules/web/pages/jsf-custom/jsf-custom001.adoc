@@ -1,4 +1,4 @@
-[[A1350198]][[introduction-to-creating-custom-components]]
+[[A1350198]][[_introduction_to_creating_custom_components]]
 
 == Introduction to Creating Custom Components
 
@@ -60,7 +60,7 @@ A `javax.faces.view.facelets.Tag` object is a helper to the
 instance of a `UIComponent` in a Jakarta Server Faces view. A tag represents
 a specific combination of `component-type` and `renderer-type`.
 
-See link:#BNAVK[Component, Renderer, and Tag
+See xref:jsf-custom/jsf-custom.adoc#BNAVK[Component, Renderer, and Tag
 Combinations] for information on how components, renderers, and tags
 interact.
 
@@ -68,7 +68,7 @@ This chapter uses the image map component from the Duke's Bookstore case
 study example to explain how you can create simple custom components,
 custom renderers, and associated custom tags, and take care of all the
 other details associated with using the components and renderers in an
-application. See link:#GLNVI[Chapter 60, "Duke's
+application. See xref:#GLNVI[Chapter 60, "Duke's
 Bookstore Case Study Example"] for more information about this example.
 
 The chapter also describes how to create other custom objects: custom

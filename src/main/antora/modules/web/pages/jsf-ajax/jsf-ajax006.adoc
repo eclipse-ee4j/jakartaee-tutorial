@@ -1,4 +1,4 @@
-[[GKDCB]][[handling-errors]]
+[[GKDCB]][[_handling_errors]]
 
 == Handling Errors
 
@@ -16,7 +16,7 @@ to it. The data object contains all the properties available for the
 * `errorMessage`
 
 The `type` is `error`. The `status` property of the data object contains
-one of the valid error values listed in link:#GKGOU[Table 13-4].
+one of the valid error values listed in xref:jsf-ajax/jsf-ajax.adoc#GKGOU[Table 13-4].
 
 [[sthref72]][[GKGOU]]
 

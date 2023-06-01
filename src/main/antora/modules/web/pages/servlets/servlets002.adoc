@@ -1,4 +1,4 @@
-[[BNAFI]][[servlet-lifecycle]]
+[[BNAFI]][[_servlet_lifecycle]]
 
 == Servlet Lifecycle
 
@@ -9,14 +9,14 @@ container performs the following steps.
 .  If an instance of the servlet does not exist, the web container:
 .  Loads the servlet class
 .  Creates an instance of the servlet class
-.  Initializes the servlet instance by calling the `init` method (initialization is covered in link:#BNAFU[Creating and Initializing a Servlet])
-.  The container invokes the `service` method, passing request and response objects. Service methods are discussed in link:#BNAFV[Writing Service Methods].
+.  Initializes the servlet instance by calling the `init` method (initialization is covered in xref:servlets/servlets.adoc#BNAFU[Creating and Initializing a Servlet])
+.  The container invokes the `service` method, passing request and response objects. Service methods are discussed in xref:servlets/servlets.adoc#BNAFV[Writing Service Methods].
 
 If it needs to remove the servlet, the container finalizes the servlet
 by calling the servlet's `destroy` method. For more information, see
-link:#BNAGS[Finalizing a Servlet].
+xref:servlets/servlets.adoc#BNAGS[Finalizing a Servlet].
 
-[[BNAFJ]][[handling-servlet-lifecycle-events]]
+[[BNAFJ]][[_handling_servlet_lifecycle_events]]
 
 === Handling Servlet Lifecycle Events
 
@@ -25,12 +25,12 @@ listener objects whose methods get invoked when lifecycle events occur.
 To use these listener objects, you must define and specify the listener
 class.
 
-[[BNAFK]][[defining-the-listener-class]]
+[[BNAFK]][[_defining_the_listener_class]]
 
 ==== Defining the Listener Class
 
 You define a listener class as an implementation of a listener
-interface. link:#BNAFL[Table 18-1] lists the events that can be
+interface. xref:servlets/servlets.adoc#BNAFL[Table 18-1] lists the events that can be
 monitored and the corresponding interface that must be implemented. When
 a listener method is invoked, it is passed an event that contains
 information appropriate to the event. For example, the methods in the
@@ -100,7 +100,7 @@ public class SimpleServletListener implements ServletContextListener,
     ...
 ----
 
-[[BNAFN]][[handling-servlet-errors]]
+[[BNAFN]][[_handling_servlet_errors]]
 
 === Handling Servlet Errors
 

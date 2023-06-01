@@ -1,4 +1,4 @@
-[[BABHAHDF]][[resource-library-contracts]]
+[[BABHAHDF]][[_resource_library_contracts]]
 
 == Resource Library Contracts
 
@@ -70,12 +70,12 @@ You can specify the contract usage within an application's
 You need to use this element only if your application uses more than one
 contract, however.
 
-[[sthref32]][[the-hello1-rlc-example-application]]
+[[sthref32]][[_the_hello1_rlc_example_application]]
 
 === The hello1-rlc Example Application
 
 The `hello1-rlc` example modifies the simple `hello1` example from
-link:#BNADX[A Web Module That Uses Jakarta Server Faces
+xref:webapp/webapp.adoc#BNADX[A Web Module That Uses Jakarta Server Faces
 Technology: The hello1 Example] to use two resource library contracts.
 Each of the two pages in the application uses a different contract.
 
@@ -86,7 +86,7 @@ annotations with `@Model`).
 The source code for this application is in the
 `_tut-install_/examples/web/jsf/hello1-rlc/` directory.
 
-[[BABGEDEB]][[configuring-the-hello1-rlc-example]]
+[[BABGEDEB]][[_configuring_the_hello1_rlc_example]]
 
 ==== Configuring the hello1-rlc Example
 
@@ -143,7 +143,7 @@ Because it is not located under `src/main/webapp/reply`, this Facelets
 page uses the `hello` contract, whereas
 `src/main/webapp/reply/response.xhtml` uses the `reply` contract.
 
-[[BABDHCFG]][[the-facelets-pages-for-the-hello1-rlc-example]]
+[[BABDHCFG]][[_the_facelets_pages_for_the_hello1_rlc_example]]
 
 ==== The Facelets Pages for the hello1-rlc Example
 
@@ -163,12 +163,12 @@ specifies.
 The `default.css` stylesheets in the two contracts differ in only one
 respect: the background color specified for the `body` element.
 
-[[BABBGFFF]][[to-build-package-and-deploy-the-hello1-rlc-example-using-netbeans-ide]]
+[[BABBGFFF]][[_to_build_package_and_deploy_the_hello1_rlc_example_using_netbeans_ide]]
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -185,12 +185,12 @@ Build.
 This option builds the example application and deploys it to your
 GlassFish Server instance.
 
-[[BABJAGFB]][[to-build-package-and-deploy-the-hello1-rlc-example-using-maven]]
+[[BABJAGFB]][[_to_build_package_and_deploy_the_hello1_rlc_example_using_maven]]
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +
@@ -209,7 +209,7 @@ This command builds and packages the application into a WAR file,
 `hello1-rlc.war`, that is located in the `target` directory. It then
 deploys it to your GlassFish Server instance.
 
-[[BABFCHEB]][[to-run-the-hello1-rlc-example]]
+[[BABFCHEB]][[_to_run_the_hello1_rlc_example]]
 
 ==== To Run the hello1-rlc Example
 

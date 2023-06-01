@@ -1,4 +1,4 @@
-[[configuring-websockets]]
+[[_configuring_websockets]]
 == Configuring WebSockets
 
 To configure WebSockets for use in server faces web applications, first enable the
@@ -25,7 +25,7 @@ to explicitly specify the port:
 </context-param>
 ----
 
-[[websocket-usage-client-side]]
+[[_websocket_usage_client_side]]
 === WebSocket Usage: Client Side
 
 Declare the `f:websocket tag` in the server faces view with a channel name and
@@ -62,7 +62,7 @@ network error or server restart. It will not auto-reconnect when the very
 first connection attempt fails. The WebSocket will be implicitly closed after
 the document is unloaded.
 
-[[websocket-usage-server-side]]
+[[_websocket_usage_server_side]]
 === WebSocket Usage: Server Side
 
 On the Java programming side, inject a `PushContext` using the `@Push` annotation

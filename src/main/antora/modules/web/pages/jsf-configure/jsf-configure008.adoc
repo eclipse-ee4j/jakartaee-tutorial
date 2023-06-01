@@ -1,4 +1,4 @@
-[[BNAXD]][[registering-a-custom-validator]]
+[[BNAXD]][[_registering_a_custom_validator]]
 
 == Registering a Custom Validator
 
@@ -6,7 +6,7 @@ If the application developer provides an implementation of the
 `javax.faces.validator.Validator` interface to perform validation, you
 must register this custom validator either by using the
 `@FacesValidator` annotation, as described in
-link:#BNAUX[Implementing the Validator Interface], or
+xref:jsf-custom/jsf-custom.adoc#BNAUX[Implementing the Validator Interface], or
 by using the `validator` XML element in the application configuration
 resource file:
 
@@ -44,10 +44,10 @@ the name of the attribute as it appears in the `validator` tag. The
 `attribute-class` element identifies the Java type of the value
 associated with the attribute.
 
-link:#BNAUW[Creating and Using a Custom Validator]
+xref:jsf-custom/jsf-custom.adoc#BNAUW[Creating and Using a Custom Validator]
 explains how to implement the `Validator` interface.
 
-link:#BNATV[Using a Custom Validator] explains how to
+xref:jsf-custom/jsf-custom.adoc#BNATV[Using a Custom Validator] explains how to
 reference the validator from the page.
 
 

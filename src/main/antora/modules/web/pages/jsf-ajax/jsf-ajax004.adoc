@@ -1,4 +1,4 @@
-[[GKACE]][[sending-an-ajax-request]]
+[[GKACE]][[_sending_an_ajax_request]]
 
 == Sending an Ajax Request
 
@@ -7,7 +7,7 @@ request and send it to the server. The server then processes the
 request.
 
 The application uses the attributes of the `f:ajax` tag listed in
-link:#GKDER[Table 13-1] to create the Ajax request. The
+xref:jsf-ajax/jsf-ajax.adoc#GKDER[Table 13-1] to create the Ajax request. The
 following sections explain the process of creating and sending an Ajax
 request using some of these attributes.
 
@@ -24,7 +24,7 @@ posts the request to the Jakarta Server Faces lifecycle.
 |=======================================================================
 
 
-[[GKHVT]][[using-the-event-attribute]]
+[[GKHVT]][[_using_the_event_attribute]]
 
 === Using the event Attribute
 
@@ -65,7 +65,7 @@ not have the `on` prefix.
 For a command button, the default event is `click`, so you do not
 actually need to specify `event="click"` to obtain the desired behavior.
 
-[[GKHUZ]][[using-the-execute-attribute]]
+[[GKHUZ]][[_using_the_execute_attribute]]
 
 === Using the execute Attribute
 
@@ -97,7 +97,7 @@ The following code specifies that the `h:inputText` component with the
 </h:commandButton>
 ----
 
-[[GKHWM]][[using-the-immediate-attribute]]
+[[GKHWM]][[_using_the_immediate_attribute]]
 
 === Using the immediate Attribute
 
@@ -109,7 +109,7 @@ broadcast during the Invoke Application phase.
 
 If not defined, the default value of this attribute is `false`.
 
-[[GKHZS]][[using-the-listener-attribute]]
+[[GKHZS]][[_using_the_listener_attribute]]
 
 === Using the listener Attribute
 
@@ -118,7 +118,7 @@ on the server side in response to an Ajax action on the client. The
 listener's `javax.faces.event.AjaxBehaviorListener.processAjaxBehavior`
 method is called once during the Invoke Application phase of the
 lifecycle. In the following code from the `reservation` example
-application (see link:#BABGGIAA[The reservation
+application (see xref:jsf-facelets/jsf-facelets.adoc#BABGGIAA[The reservation
 Example Application]), a `listener` attribute is defined by an `f:ajax`
 tag, which refers to a method from the bean:
 

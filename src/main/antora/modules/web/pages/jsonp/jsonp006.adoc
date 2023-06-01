@@ -1,4 +1,4 @@
-[[the-jsonpmodel-example-application]]
+[[_the_jsonpmodel_example_application]]
 == The jsonpmodel Example Application
 
 This section describes how to build and run the `jsonpmodel` example
@@ -9,7 +9,7 @@ write JSON data using the object model API.
 The `jsonpmodel` example application is in the
 `_tut-install_/examples/web/jsonp/jsonpmodel` directory.
 
-[[components-of-the-jsonpmodel-example-application]]
+[[_components_of_the_jsonpmodel_example_application]]
 === Components of the jsonpmodel Example Application
 
 The `jsonpmodel` example application contains the following files.
@@ -30,24 +30,24 @@ uses the JSON object model API.
 
 The code used in `ObjectModelBean.java` to create an object model from
 the data in the form is similar to the example in
-link:#BABIGIAF[Creating an Object Model from Application
+xref:#BABIGIAF[Creating an Object Model from Application
 Code]. The code to write JSON output from the model is similar to the
-example in link:#BABHEJFF[Writing an Object Model to a
+example in xref:#BABHEJFF[Writing an Object Model to a
 Stream]. The code to navigate the object model tree is similar to the
-example in link:#BABJHEHG[Navigating an Object Model].
+example in xref:#BABJHEHG[Navigating an Object Model].
 
 
-[[running-the-jsonpmodel-example-application]]
+[[_running_the_jsonpmodel_example_application]]
 === Running the jsonpmodel Example Application
 
 This section describes how to run the `jsonpmodel` example application
 using NetBeans IDE and from the command line.
 
-[[to-run-the-jsonpmodel-example-application-using-netbeans-ide]]
+[[_to_run_the_jsonpmodel_example_application_using_netbeans_ide]]
 ==== To Run the jsonpmodel Example Application Using NetBeans IDE
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  From the File menu, choose Open Project.
 3.  In the Open Project dialog box, navigate to:
@@ -76,11 +76,11 @@ from the form.
 nodes of the object model tree.
 
 
-[[to-run-the-jsonpmodel-example-application-using-maven]]
+[[_to_run_the_jsonpmodel_example_application_using_maven]]
 ==== To Run the jsonpmodel Example Application Using Maven
 
 1.  Make sure that GlassFish Server has been started (see
-link:#BNADI[Starting and Stopping GlassFish
+xref:#BNADI[Starting and Stopping GlassFish
 Server]).
 2.  In a terminal window, go to:
 +

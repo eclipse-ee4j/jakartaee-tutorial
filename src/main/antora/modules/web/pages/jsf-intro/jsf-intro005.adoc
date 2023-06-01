@@ -1,4 +1,4 @@
-[[BNAQD]][[user-interface-component-model]]
+[[BNAQD]][[_user_interface_component_model]]
 
 == User Interface Component Model
 
@@ -31,7 +31,7 @@ component
 This section briefly describes each of these pieces of the component
 architecture.
 
-[[BNAQE]][[user-interface-component-classes]]
+[[BNAQE]][[_user_interface_component_classes]]
 
 === User Interface Component Classes
 
@@ -43,7 +43,7 @@ standard components.
 
 The component classes are completely extensible, allowing component
 writers to create their own custom components. See
-link:#BNAVG[Chapter 15, "Creating Custom UI Components and
+xref:jsf-custom/jsf-custom.adoc#BNAVG[Chapter 15, "Creating Custom UI Components and
 Other Custom Objects"] for more information.
 
 The abstract base class for all components is
@@ -133,7 +133,7 @@ The next section explains how the rendering model works and how page
 authors can choose to render the components by selecting the appropriate
 tags.
 
-[[BNAQF]][[component-rendering-model]]
+[[BNAQF]][[_component_rendering_model]]
 
 === Component Rendering Model
 
@@ -172,14 +172,14 @@ Each custom tag defined in the standard HTML render kit is composed of
 the component functionality (defined in the `UIComponent` class) and the
 rendering attributes (defined by the `Renderer` class).
 
-The section link:#BNARF[Adding Components to a Page Using
+The section xref:jsf-page/jsf-page.adoc#BNARF[Adding Components to a Page Using
 HTML Tag Library Tags] lists all supported component tags and
 illustrates how to use the tags in an example.
 
 The Jakarta Server Faces implementation provides a custom tag library for
 rendering components in HTML.
 
-[[BNAQI]][[conversion-model]]
+[[BNAQI]][[_conversion_model]]
 
 === Conversion Model
 
@@ -220,10 +220,10 @@ implementation converts the component's data between the two views.
 
 You can either use the standard converters supplied with the Jakarta Server
 Faces implementation or create your own custom converter. Custom
-converter creation is covered in link:#BNAVG[Chapter 15,
+converter creation is covered in xref:jsf-custom/jsf-custom.adoc#BNAVG[Chapter 15,
 "Creating Custom UI Components and Other Custom Objects"].
 
-[[GIREH]][[event-and-listener-model]]
+[[GIREH]][[_event_and_listener_model]]
 
 === Event and Listener Model
 
@@ -263,7 +263,7 @@ types that can generate these types of events are the `UIInput`,
 Value-change events are fired only if no validation errors are detected.
 
 Depending on the value of the `immediate` property (see
-link:#BNARI[The immediate Attribute]) of the component
+xref:jsf-page/jsf-page.adoc#BNARI[The immediate Attribute]) of the component
 emitting the event, action events can be processed during the Invoke
 Application phase or the Apply Request Values phase, and value-change
 events can be processed during the Process Validations phase or the
@@ -288,27 +288,27 @@ component tag.
 the method with a method expression from the appropriate attribute of
 the component's tag.
 
-See link:#BNAUT[Implementing an Event Listener] for
+See xref:jsf-custom/jsf-custom.adoc#BNAUT[Implementing an Event Listener] for
 information on how to implement an event listener. See
-link:#BNASZ[Registering Listeners on Components] for
+xref:jsf-page-core/jsf-page-core.adoc#BNASZ[Registering Listeners on Components] for
 information on how to register the listener on a component.
 
-See link:#BNAVD[Writing a Method to Handle an Action
-Event] and link:#BNAVF[Writing a Method to Handle a
+See xref:jsf-develop/jsf-develop.adoc#BNAVD[Writing a Method to Handle an Action
+Event] and xref:jsf-develop/jsf-develop.adoc#BNAVF[Writing a Method to Handle a
 Value-Change Event] for information on how to implement managed bean
 methods that handle these events.
 
-See link:#BNATN[Referencing a Managed Bean Method]
+See xref:jsf-page-core/jsf-page-core.adoc#BNATN[Referencing a Managed Bean Method]
 for information on how to refer to the managed bean method from the
 component tag.
 
 When emitting events from custom components, you must implement the
 appropriate event class and manually queue the event on the component in
 addition to implementing an event listener class or a managed bean
-method that handles the event. link:#BNAWD[Handling
+method that handles the event. xref:jsf-custom/jsf-custom.adoc#BNAWD[Handling
 Events for Custom Components] explains how to do this.
 
-[[BNAQK]][[validation-model]]
+[[BNAQK]][[_validation_model]]
 
 === Validation Model
 
@@ -321,7 +321,7 @@ Like the conversion model, the validation model defines a set of
 standard classes for performing common data validation checks. The
 Jakarta Server Faces core tag library also defines a set of tags that
 correspond to the standard `javax.faces.validator.Validator`
-implementations. See link:#BNATC[Using the Standard
+implementations. See xref:jsf-page-core/jsf-page-core.adoc#BNATC[Using the Standard
 Validators] for a list of all the standard validation classes and
 corresponding tags.
 
@@ -333,7 +333,7 @@ component by nesting the validator's tag within the component's tag.
 In addition to validators that are registered on the component, you can
 declare a default validator that is registered on all `UIInput`
 components in the application. For more information on default
-validators, see link:#GIREB[Using Default
+validators, see xref:jsf-configure/jsf-configure.adoc#GIREB[Using Default
 Validators].
 
 The validation model also allows you to create your own custom validator
@@ -353,7 +353,7 @@ validator on the component.
 In the previously described standard validation model, the validator is
 defined for each input component on a page. The Bean Validation model
 allows the validator to be applied to all fields in a page. See
-link:#CHDGJIIA[Chapter 23, "Introduction to Bean
-Validation"] and link:#GKAHP[Chapter 24,
+xref:#CHDGJIIA[Chapter 23, "Introduction to Bean
+Validation"] and xref:#GKAHP[Chapter 24,
 "Bean Validation: Advanced Topics"] for more information on Bean
 Validation.

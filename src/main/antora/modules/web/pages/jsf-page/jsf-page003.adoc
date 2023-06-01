@@ -1,11 +1,11 @@
-[[BNARC]][[using-core-tags]]
+[[BNARC]][[_using_core_tags]]
 
 == Using Core Tags
 
 The tags included in the Jakarta Server Faces core tag library are used to
 perform core actions that are not performed by HTML tags.
 
-link:#GKVYB[Table 10-8] lists the event-handling core tags.
+xref:jsf-page/jsf-page.adoc#GKVYB[Table 10-8] lists the event-handling core tags.
 
 [[sthref53]][[GKVYB]]
 
@@ -27,7 +27,7 @@ component
 |=======================================================================
 
 
-link:#GKVYY[Table 10-9] lists the data-conversion core tags.
+xref:jsf-page/jsf-page.adoc#GKVYY[Table 10-9] lists the data-conversion core tags.
 
 [[sthref54]][[GKVYY]]
 
@@ -46,7 +46,7 @@ component
 |=======================================================================
 
 
-link:#GKVZG[Table 10-10] lists the facet core tags.
+xref:jsf-page/jsf-page.adoc#GKVZG[Table 10-10] lists the facet core tags.
 
 [[sthref55]][[GKVZG]]
 
@@ -62,7 +62,7 @@ its enclosing tag
 |=======================================================================
 
 
-link:#GKVZA[Table 10-11] lists the core tags that represent items in a
+xref:jsf-page/jsf-page.adoc#GKVZA[Table 10-11] lists the core tags that represent items in a
 list.
 
 [[sthref56]][[GKVZA]]
@@ -77,7 +77,7 @@ list.
 |======================================================
 
 
-link:#GKVYV[Table 10-12] lists the validator core tags.
+xref:jsf-page/jsf-page.adoc#GKVYV[Table 10-12] lists the validator core tags.
 
 [[sthref57]][[GKVYV]]
 
@@ -103,7 +103,7 @@ link:#GKVYV[Table 10-12] lists the validator core tags.
 |=======================================================================
 
 
-link:#GKVYU[Table 10-13] lists the core tags that fall into other
+xref:jsf-page/jsf-page.adoc#GKVYU[Table 10-13] lists the core tags that fall into other
 categories.
 
 [[sthref58]][[GKVYU]]
@@ -136,7 +136,7 @@ pushed to all instances of a socket containing the same channel name.
 These tags, which are used in conjunction with component tags, are
 explained in other sections of this tutorial.
 
-link:#BNARE[Table 10-14] lists the sections that explain how to use
+xref:jsf-page/jsf-page.adoc#BNARE[Table 10-14] lists the sections that explain how to use
 specific core tags.
 
 [[sthref59]][[BNARE]]
@@ -147,45 +147,45 @@ specific core tags.
 |=======================================================================
 |*Tags* |*Where Explained*
 |Event-handling tags a|
-link:#BNASZ[Registering Listeners on Components]
+xref:jsf-page-core/jsf-page-core.adoc#BNASZ[Registering Listeners on Components]
 
 
 |Data-conversion tags a|
-link:#BNAST[Using the Standard Converters]
+xref:jsf-page-core/jsf-page-core.adoc#BNAST[Using the Standard Converters]
 
 
-|`f:facet` |link:#BNARZ[Using Data-Bound Table
-Components] and link:#BNASC[Laying Out Components with
+|`f:facet` |xref:jsf-page/jsf-page.adoc#BNARZ[Using Data-Bound Table
+Components] and xref:jsf-page/jsf-page.adoc#BNASC[Laying Out Components with
 the h:panelGrid and h:panelGroup Tags]
 
 |`f:loadBundle` a|
-link:#BNAXY[Setting the Resource Bundle]
+xref:webi18n/webi18n.adoc#BNAXY[Setting the Resource Bundle]
 
 
 |`f:metadata` a|
-link:#GIQWQ[Using View Parameters to Configure
+xref:jsf-page/jsf-page.adoc#GIQWQ[Using View Parameters to Configure
 Bookmarkable URLs]
 
 
 |`f:param` a|
-link:#BNARU[Displaying a Formatted Message with the
+xref:jsf-page/jsf-page.adoc#BNARU[Displaying a Formatted Message with the
 h:outputFormat Tag]
 
 
 |`f:selectItem` and `f:selectItems` a|
-link:#BNASK[Using the f:selectItem and f:selectItems
+xref:jsf-page/jsf-page.adoc#BNASK[Using the f:selectItem and f:selectItems
 Tags]
 
 
-|Validator tags |link:#BNATC[Using the Standard
+|Validator tags |xref:jsf-page-core/jsf-page-core.adoc#BNATC[Using the Standard
 Validators]
 
 |`f:ajax` a|
-link:#GKIOW[Chapter 13, "Using Ajax with Jakarta Server Faces
+xref:jsf-ajax/jsf-ajax.adoc#GKIOW[Chapter 13, "Using Ajax with Jakarta Server Faces
 Technology"]
 
 |`f:websocket` a|
-link:#using-websockets-with-javaserver-faces-technology[Chapter 17, "Using WebSockets with Jakarta Server Faces Technology"]
+xref:jsf-ws/jsf-ws.adoc#_using_websockets_with_javaserver_faces_technology[Chapter 17, "Using WebSockets with Jakarta Server Faces Technology"]
 
 
 |=======================================================================
