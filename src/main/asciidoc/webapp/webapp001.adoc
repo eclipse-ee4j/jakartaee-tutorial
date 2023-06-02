@@ -39,12 +39,11 @@ Jakarta REST is a RESTful web service framework that can be executed on a servle
 Jakarta REST intends to reduce the boilerplate code needed to convert the request values to a JavaBean and further convert it to the desired response such as JSON or XML.
 Jakarta REST is designed as such that it can be exuected on a non-servlet container such as a microservice.
 
-A servlet container is a kind of a web container that can be part of an application server.
-The application server gives web components access to such APIs as naming, validation, security, web sockets, persistence transactions, concurrency, and email.
+A servlet container is a kind of a web container that can be part of a Jakarta runtime such as an application server.
 Certain aspects of web component behavior can be configured when the web application is installed, or deployed, to a servlet container.
 The configuration information can be specified using annotations or can be maintained in a XML file called a deployment descriptor (DD).
 A DD file must conform to the schema described in the associated specification.
 When the same configuration is specified using annotations and in a DD file, then the configuration in the DD file will always have precedence.
 
 This chapter gives a brief overview of the activities involved in developing Jakarta Servlet based web applications.
-It explains how to compile, develop, package, deploy, and run Jakarta Servlet based web applications in a servlet container.
+It explains how to compile, package, deploy, and run Jakarta Servlet based web applications in a servlet container.

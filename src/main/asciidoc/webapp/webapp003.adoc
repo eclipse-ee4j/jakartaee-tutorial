@@ -1,20 +1,19 @@
 == Hello World Web Application Using Jakarta Faces
 
 The `helloFaces` application is a web application that uses Jakarta Faces take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
-The response is represented as a HTML document.
-There is an image file as asset.
+As a presentation-oriented web application, the response is represented as a HTML document.
 
 The source code for this application is in the `_tut-install_/examples/web/faces/helloFaces/` directory.
 
-Jakarta Faces is a component based MVC framework that provides its own servlet as controller (the "C" part of MVC).
+Jakarta Faces is a component based MVC framework that provides its own servlet as controller (the "C" part of MVC), the `FacesServlet`.
 The model and the view are usually provided by you, the web developer.
 
 === The Model
 
-In a typical Jakarta Faces application, the model is represented by a JavaBean class.
+In a typical Jakarta Faces application, the model (the "M" part of MVC) is represented by a JavaBean class.
 Such a JavaBean class is in the Jakarta Faces world called a _Backing Bean_.
 
-For this Hello World web application, the backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
+For this Hello World web application, the `src/main/java/jakartaee/tutorial/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
 
 [source,java]
 ----
@@ -50,58 +49,49 @@ public class Hello {
 
 Note that a getter is required for output and that a setter is only required for input.
 
-We'll briefly go through the annotations that are used here:
+In a typical Jakarta Faces application, CDI is used to manage the backing beans.
+We'll briefly go through the CDI annotations that are used here:
 
-* `@Named` -- gives the bean a name, which is primarily used to reference it in Expression Language (EL).
+* `@Named` -- gives the backing bean a managed bean name, which is primarily used to reference it in Expression Language (EL).
   Without any attributes this defaults to the simple class name with the first letter in lowercase.
-  This backing bean will thus be available as `#{hello}` in EL.
-* `@RequestScoped` -- gives the bean a scope, which is essentially its lifespan.
+  This backing bean will thus be available as a managed bean via `#{hello}` in EL.
+* `@RequestScoped` -- gives the backing bean a managed bean scope, which essentially represents its lifespan.
   In this case that lifespan is the duration of an HTTP request.
-  When the HTTP request ends, then the bean instance is destroyed.
+  When the HTTP request ends, then the managed bean instance is destroyed.
 
 === The View
 
-In a typical Jakarta Faces application, the view is represented by a XHTML file.
+In a typical Jakarta Faces application, the view (the "V" part of MVC) is represented by a XHTML file.
 Such a XHTML file is in the Jakarta Faces world called a _Facelets File_ or just _Facelet_.
 In Jakarta Faces, the view technology is pluggable and Facelets is used as the default view technology.
-XHTML markup is being used because it allows the framework to easily use a XML parser to find components of interest and to generate HTML output.
+XHTML markup is being used because it allows the framework to easily use a XML parser to find Jakarta Faces tags of interest and to generate HTML output.
 
-For this Hello World web application, the Facelet defines a header with an image and a heading, and a form with a label, input field, messages holder and a command button:
+For this Hello World web application, the `src/main/webapp/hello.xhtml` Facelet defines a form with an input field, a command button and an output field:
 
 [source,xml]
 ----
 <!DOCTYPE html>
-<html lang="en" xmlns:h="jakarta.faces.html">
+<html lang="en"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html">
     <h:head>
         <title>Jakarta Faces Hello World</title>
     </h:head>
     <h:body>
-        <header>
-            <h:graphicImage name="duke.svg" alt="Duke waving his hand" />
-            <h1>Hello, my name is Duke. What's yours?</h1>
-        </header>
+        <h1>Hello, what's your name?</h1>
         <h:form>
-            <div>
-                <h:outputLabel for="username"
-                               value="My name is:" />
-                <h:inputText id="username"
-                             value="#{hello.name}"
-                             required="true"
-                             requiredMessage="Error: A name is required."
-                             maxlength="25" />
-                <h:messages for="username" />
-            </div>
-            <div>
-                <h:commandButton value="Submit"
-                                 action="#{hello.submit}" />
-            </div>
+            <h:inputText value="#{hello.name}" required="true" />
+            <h:commandButton value="Submit" action="#{hello.submit}">
+                <f:ajax execute="@form" render=":greeting" />
+            </h:commandButton>
+            <h:messages />
         </h:form>
-        <h2>#{hello.greeting}</h2>
+        <h:outputText id="greeting" value="#{hello.greeting}" />
     </h:body>
 </html>
 ----
 
-We'll briefly go through the Jakarta Faces-specific XHTML tags that are used here:
+We'll briefly go through the Jakarta Faces-specific XHTML tags that are used here.
 
 * `<h:head>` -- generates the HTML `<head>`.
   It gives Jakarta Faces the opportunity to automatically include any necessary JS and CSS files in the generated HTML head.
@@ -109,125 +99,59 @@ We'll briefly go through the Jakarta Faces-specific XHTML tags that are used her
   It gives Jakarta Faces the opportunity to automatically include any necessary JS files in the end of the generated HTML body.
 * `<h:form>` -- generates the HTML `<form>`.
   It gives Jakarta Faces the opportunity to automatically include a hidden field representing the view state.
-* `<h:outputLabel>` -- generates the HTML `<label>`.
-  It gives Jakarta Faces the opportunity to automatically include the label in any conversion or validation messages.
 * `<h:inputText>` -- generates the HTML `<input>`.
-  It gives Jakarta Faces the opportunity to automatically get and set the value as a backing bean property, as well as to perform any conversion and validation on it.
-* `<h:messages>` -- generates the HTML `<ul>` containing any conversion or validation messages.
-  It gives Jakarta Faces the opportunity to automatically get and set the value as a backing bean property specified in the `value` attribute, as well as to perform any conversion and validation on it.
+  It gives Jakarta Faces the opportunity to automatically get and set the value as a managed bean property specified in the `value` attribute, as well as to perform any conversion and validation on it.
 * `<h:commandButton>` -- generates the HTML `<input type="submit">`.
   It gives Jakarta Faces the opportunity to automatically invoke the backing bean method specified in the `action` attribute.
+* `<h:messages>` -- generates the HTML `<ul>` or `<div>` or `<table>` depending on state and configuration.
+  It gives you the opportunity to declare the place where any conversion and validation messages will be displayed.
+* `<f:ajax>` -- generates the necessary JavaScript code for Ajax behavior.
+  If gives you the opportunity to configure the form submit to be performed asynchronously using Ajax.
+* `<h:outputText>` -- generates the HTML `<span>`.
+  This is the one being updated on completion of the Ajax submit and it will display the current value of the managed bean property specified in the `value` attribute.
 
+The `<h:...>` tags basically define standard HTML components.
+The `<f:...>` tags basically define behavior.
 
+The input value is via EL value expression `#{hello.name}` connected to the `name` property of the `Hello` backing bean via its getter and setter.
+The output value is via EL value expression `#{hello.greeting}` connected to the `greeting` property of the `Hello` backing bean via its getter.
+The command button is via EL method expression `#{hello.submit}` connected to the `submit` method of the `Hello` backing bean.
 
+Note that for EL value expressions the physical field representing the property doesn't need to have exactly the same name nor that it needs to exist at all.
+EL only looks for the getter and setter methods, not for the field.
 
+=== The Controller
 
+In a typical Jakarta Faces application, the controller (the "C" part of MVC) is registered in the Jakarta Servlet deployment descriptor file, the `src/main/webapp/WEB-INF/web.xml`.
 
-
-
-
-
-
-
-+
-The most complex element on the page is the `inputText` field.
-The `maxlength` attribute specifies the maximum length of the field.
-The `required` attribute specifies that the field must be filled out; the `requiredMessage` attribute provides the error message to be displayed if the field is left empty.
-The `title` attribute provides the text to be used by screen readers for the visually disabled.
-Finally, the `value` attribute contains an expression that will be provided by the `Hello` managed bean.
-+
-The web page connects to the `Hello` managed bean through the Expression Language (EL) value expression `#{hello.name}`, which retrieves the value of the `name` property from the managed bean.
-Note the use of `hello` to reference the managed bean `Hello`.
-If no name is specified in the `@Named` annotation of the managed bean, the managed bean is always accessed with the first letter of the class name in lowercase.
-+
-The Submit `commandButton` element specifies the action as `response`, meaning that when the button is clicked, the `response.xhtml` page is displayed.
-
-. Double-click the `response.xhtml` file to view it.
-+
-The response page appears.Even simpler than the greeting page, the response page contains a graphic image, a header that displays the expression provided by the managed bean, and a single button whose `action` element transfers you back to the `index.xhtml` page:
-+
 [source,xml]
 ----
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html">
-    <h:head>
-        <title>Facelets Hello Response</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <h:graphicImage url="#{resource['images:duke.waving.gif']}"
-                            alt="Duke waving his hand"/>
-            <h2>Hello, #{hello.name}!</h2>
-            <p></p>
-            <h:commandButton id="back" value="Back" action="index" />
-        </h:form>
-    </h:body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <servlet>
+        <servlet-name>facesServlet</servlet-name>
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>facesServlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+</web-app>
 ----
 
+It basically instructs the servlet container to create an instance of `jakarta.faces.webapp.FacesServlet` as `facesServlet` during startup and to execute it when the URL pattern of the HTTP request matches `*.xhtml`.
 
-. Under the Web Pages node, expand the WEB-INF node and double-click the `web.xml` file to view it.
-+
-The `web.xml` file contains several elements that are required for a Facelets application.
-All of the following are created automatically when you use NetBeans IDE to create an application.
 
-* A context parameter specifying the project stage:
-+
-[source,xml]
-----
-<context-param>
-    <param-name>jakarta.faces.PROJECT_STAGE</param-name>
-    <param-value>Development</param-value>
-</context-param>
-----
-+
-A context parameter provides configuration information needed by a web application.
-An application can define its own context parameters.
-In addition, Jakarta Faces technology and Jakarta Servlet technology define context parameters that an application can use.
 
-* A `servlet` element and its `servlet-mapping` element specifying the `FacesServlet`. All files with the `.xhtml` suffix will be matched:
-+
-[source,xml]
-----
-<servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>*.xhtml</url-pattern>
-</servlet-mapping>
-----
 
-* A `welcome-file-list` element specifying the location of the landing page:
-+
-[source,xml]
-----
-<welcome-file-list>
-    <welcome-file>index.xhtml</welcome-file>
-</welcome-file-list>
-----
 
-==== Introduction to Scopes
 
-In the `Hello.java` class, the annotations `jakarta.inject.Named` and `jakarta.enterprise.context.RequestScoped` identify the class as a managed bean using request scope.
-Scope defines how application data persists and is shared.
 
-The most commonly used scopes in Jakarta Faces applications are the following:
 
-Request (`@RequestScoped`):: Request scope persists during a single HTTP request in a web application.
-In an application like `hello1`, in which the application consists of a single request and response, the bean uses request scope.
-
-Session (`@SessionScoped`):: Session scope persists across multiple HTTP requests in a web application.
-When an application consists of multiple requests and responses where data needs to be maintained, beans use session scope.
-
-Application (`@ApplicationScoped`):: Application scope persists across all users' interactions with a web application.
-
-For more information on scopes in Jakarta Faces technology, see <<using-managed-bean-scopes>>.
 
 === Packaging and Deploying the hello1 Web Module
 

@@ -22,8 +22,8 @@ Steps 3 through 6 are expanded on in the following sections and illustrated with
 The web applications take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 This chapter discusses the following simple web applications:
 
-* `helloFaces`, a Jakarta Faces based presentation-oriented web application
 * `helloServlet`, a Jakarta Servlet based service-oriented web application
+* `helloFaces`, a Jakarta Faces based presentation-oriented web application
 
 They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.
 
@@ -52,7 +52,7 @@ src
            |    |-- css
            |    |    `-- style.css
            |    |-- img
-           |    |    `-- logo.png
+           |    |    `-- logo.svg
            |    `-- js
            |         `-- script.js
            |-- WEB-INF
