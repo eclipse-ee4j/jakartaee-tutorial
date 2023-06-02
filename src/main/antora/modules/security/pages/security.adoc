@@ -185,7 +185,7 @@ public class TestIdentityStore implements IdentityStore {
 This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. 
 
 [NOTE]
-Jakarta Security doesn't define a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
+Jakarta Security doesn't provide a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
 
 
 The identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
@@ -244,7 +244,7 @@ public class RestBasicAuthCustomStoreIT extends ITBase {
 }
 ----
 
-The test starts a default server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the remote GlassFish server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
 
 The `DefaultCredentialsProvider` used here makes sure that the headers for Basic authentication are added to the request. The Basic authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
