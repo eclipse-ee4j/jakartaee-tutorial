@@ -41,9 +41,9 @@ Jakarta REST is designed as such that it can be exuected on a non-servlet contai
 
 A servlet container is a kind of a web container that can be part of a Jakarta runtime such as an application server.
 Certain aspects of web component behavior can be configured when the web application is installed, or deployed, to a servlet container.
-The configuration information can be specified using annotations or can be maintained in a XML file called a deployment descriptor (DD).
-A DD file must conform to the schema described in the associated specification.
-When the same configuration is specified using annotations and in a DD file, then the configuration in the DD file will always have precedence.
+The configuration information can be specified using annotations or can be maintained in a XML file called a deployment descriptor.
+A deployment descriptor file must comply to the schema described in the associated specification.
+When the same configuration is specified using annotations and in a deployment descriptor file, then the configuration in the deployment descriptor file will always have precedence.
 
 This chapter gives a brief overview of the activities involved in developing Jakarta Servlet based web applications.
 It explains how to compile, package, deploy, and run Jakarta Servlet based web applications in a servlet container.

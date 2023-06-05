@@ -2,22 +2,22 @@
 
 A Jakarta Servlet based web application can contain one or more of the following parts:
 
-* one or more web components, which can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST
-* assets (also called static resource files), such Cascading Style Sheets (CSS), JavaScript (JS) and images
-* helper libraries
-* DD files
+* One or more web components, which can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST.
+* Assets (also called static resource files), such as Cascading Style Sheets (CSS), JavaScript (JS) and images.
+* Dependencies (also called helper libraries, third party libraries, "JARs").
+* Deployment descriptor files.
 
 The process for creating, deploying, and executing a Jakarta Servlet based web application is different from that of Java classes which are packaged and executed as a Java application archive (JAR).
 It can be summarized as follows:
 
 . Develop the web component code.
-. Develop the DD files, if necessary.
+. Develop the deployment descriptor files, if necessary.
 . Compile the web component code against the libraries of the servlet container and the helper libraries, if any.
 . Package the compiled code along with helper libraries, assets and DD files, if any, into a deployable unit, called a web application archive (WAR).
 . Deploy the WAR into a servlet container.
 . Run the web application by accessing a URL that references the web component.
 
-Developing the web component code and DD files is covered in the later chapters.
+Developing the web component code and deployment descriptor files is covered in the later chapters.
 Steps 3 through 6 are expanded on in the following sections and illustrated with two web applications, in Hello World–style.
 The web applications take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 This chapter discusses the following simple web applications:
@@ -37,7 +37,8 @@ src
       |-- java
       |    `-- com
       |         `-- example
-      |              `-- Hello.java
+      |              `-- model
+      |                   `-- Hello.java
       |-- resources
       |    `-- com
       |         `-- example
