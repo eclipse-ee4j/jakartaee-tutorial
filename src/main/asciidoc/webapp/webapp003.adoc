@@ -1,9 +1,9 @@
 == Hello World Web Application Using Jakarta Faces
 
-The `helloFaces` application is a web application that uses Jakarta Faces take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
+The `hello-faces` application is a web application that uses Jakarta Faces take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 As a presentation-oriented web application, the response is represented as a HTML document.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/helloFaces/` directory.
+The source code for this application is in the `_tut-install_/tutorial/web/faces/hello-faces/` directory.
 
 Jakarta Faces is a component based MVC framework that provides its own servlet as controller (the "C" part of MVC), the `FacesServlet`.
 The model and the view are usually provided by you, the web developer.
@@ -13,11 +13,11 @@ The model and the view are usually provided by you, the web developer.
 In a typical Jakarta Faces application, the model (the "M" part of MVC) is represented by a JavaBean class.
 Such a JavaBean class is in the Jakarta Faces world called a _Backing Bean_.
 
-For this Hello World web application, the `src/main/java/jakartaee/tutorial/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
+For this Hello World web application, the `src/main/java/jakarta/tutorial/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
 
 [source,java]
 ----
-package jakartaee.tutorial.faces;
+package jakarta.tutorial.web.faces;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;

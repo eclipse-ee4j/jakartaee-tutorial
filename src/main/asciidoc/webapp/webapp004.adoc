@@ -1,20 +1,20 @@
 == Hello World Web Application Using Jakarta Servlet
 
-The `helloServlet` application is a web application that uses Jakarta Servlet take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
+The `hello-servlet` application is a web application that uses Jakarta Servlet take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 As a service-oriented web application, the response is represented as plain text.
 
-The source code for this application is in the `_tut-install_/examples/web/servlet/helloServlet/` directory.
+The source code for this application is in the `_tut-install_/tutorial/web/servlet/hello-servlet/` directory.
 
 === The Servlet
 
 In a typical Jakarta Servlet application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
 Such a class is in the Jakarta Servlet world called a _Servlet_.
 
-For this Hello World web application, the `src/main/java/jakartaee/tutorial/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
+For this Hello World web application, the `src/main/java/jakarta/tutorial/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
 
 [source,java]
 ----
-package jakartaee.tutorial.servlet;
+package jakarta.tutorial.web.servlet;
 
 import java.io.IOException;
 
@@ -59,17 +59,17 @@ http(s)://host:port/context-path[/url-pattern]
 
 You can set the URL pattern for a servlet by using the `@WebServlet` annotation in the servlet source file or by using `<servlet-mapping>` entry in the Jakarta Servlet deployment descriptor file, the `src/main/webapp/WEB-INF/web.xml`.
 In the `Greeting` servlet example the `@WebServlet` annotation indicates that the URL pattern is `/greeting`.
-Therefore, when the servlet is deployed to a local server listening on `http://localhost:8080` with the context path set to `helloServlet`, it is accessed with the following URL:
+Therefore, when the servlet is deployed to a local server listening on `http://localhost:8080` with the context path set to `hello-servlet`, it is accessed with the following URL:
 
 ----
-http://localhost:8080/helloServlet/greeting
+http://localhost:8080/hello-servlet/greeting
 ----
 
 The Hello World example will return a HTTP 400 error as response indicating a 'Bad Request'.
 When specifying the name as a request parameter in the following URL:
 
 ----
-http://localhost:8080/helloServlet/greeting?name=Duke
+http://localhost:8080/hello-servlet/greeting?name=Duke
 ----
 
 Then it will return the response `Hello, Duke!`.

@@ -48,7 +48,7 @@ You can obtain them in application code via `getInitParameter(String name)` meth
 String theme = servletContext.getInitParameter("com.example.THEME");
 ----
 
-These context parameters can be used to configure (default) application-wide variables, such as the web application's project stage, the path to save uploaded files, the path to a more specific configuration file, the maximum size of a cache, the expiration time of a cacheable resource, the name of the tenant/theme/scheme, or even helper library specific parameters, et cetera, but never passwords.
+These context parameters can be used to configure (default) application-wide variables, such as the web application's project stage, the path to save uploaded files, the path to a more specific configuration file, the maximum size of a cache, the expiration time of a cacheable resource, the name of the tenant/theme/scheme, or even helper library specific parameters, etcetera, but never passwords.
 It are those variables which you'd normally define as constants in a Java class, but then without the need to recompile Java classes whenever you'd like to edit them.
 
 
@@ -57,7 +57,7 @@ It are those variables which you'd normally define as constants in a Java class,
 The welcome files mechanism allows you to specify a list of files that the servlet container can return as a default resource when any folder is requested which does not map to an existing web component.
 For example, suppose that you define two welcome files `index.xhtml` and `index.html`.
 So, if for example the `/` folder is requested, and it does not map to a web component, then it'll search for `/index.xhtml` and `/index.html` files and return the first found one.
-Or if there is none, then the servlet container will continue to perform the default behavior: displaying a HTTP 404 error page.
+Or if there is none, then the servlet container will continue to perform the default behavior, which is usually displaying a HTTP 404 error page.
 Note that this also applies to sub folders, so if for example the `/foo` folder is requested, then it'll search for `/foo/index.xhtml` and `/foo/index.html` files and return the first found one.
 You specify welcome files in the `web.xml` file.
 
@@ -72,42 +72,42 @@ You specify welcome files in the `web.xml` file.
 A specified welcome file must not have a leading slash (`/`) as it is interpreted independently of the requested folder.
 
 
-=== Mapping Errors to Error Screens
+=== Mapping Errors to Error Pages
 
-When an error occurs during execution of a web application, you can have the application display a specific error screen according to the type of error.
-In particular, you can specify a mapping between the status code returned in an HTTP response or a Java programming language exception returned by any web component and any type of error screen.
+When an error occurs during execution of a web application, you can have the application display a specific error page according to the type of error.
+In particular, you can specify a mapping between the status code returned in an HTTP response or a Java programming language exception returned by any web component and any type of error page.
 You specify error pages in the `web.xml` file.
 
 [source,xml]
 ----
 <error-page>
     <error-code>401</error-code>
-    <location>/WEB-INF/unauthorized.xhtml</location>
+    <location>/WEB-INF/error-pages/unauthorized.xhtml</location>
 </error-page>
 <error-page>
     <error-code>403</error-code>
-    <location>/WEB-INF/unauthenticated.xhtml</location>
+    <location>/WEB-INF/error-pages/unauthenticated.xhtml</location>
 </error-page>
 <error-page>
     <error-code>404</error-code>
-    <location>/WEB-INF/not-found.xhtml</location>
+    <location>/WEB-INF/error-pages/not-found.xhtml</location>
 </error-page>
 <error-page>
     <error-code>500</error-code>
-    <location>/WEB-INF/general-error.html</location>
+    <location>/WEB-INF/error-pages/general-error.html</location>
 </error-page>
 <error-page>
     <exception-type>jakarta.faces.application.ViewExpiredException</exception-type>
-    <location>/WEB-INF/view-expired.html</location>
+    <location>/WEB-INF/error-pages/view-expired.html</location>
 </error-page>
 <error-page>
     <!-- No error-code or exception-type, i.e. this will match any other HTTP status than defined above -->
-    <location>/WEB-INF/unknown-error.html</location>
+    <location>/WEB-INF/error-pages/unknown-error.html</location>
 </error-page>
 ----
 
 A specified location must have a leading slash (`/`) as it is interpreted as an absolute path within the context of the web application deployment.
-The error page being placed in `WEB-INF` is not technically required, but it is the best practice as it will prevent the client from being able to request or even bookmark them individually.
+The error page being placed in `/WEB-INF` folder is not technically required, but it is the best practice as it will prevent the client from being able to request or even bookmark them individually.
 
 
 === Declaring Resource References
@@ -120,7 +120,7 @@ The container is responsible for instantiating and injecting references to resou
 Container-managed objects are primarily those objects which you do not explicitly instantiate yourself as in `new ContainerManagedObject()` but basically let the container do.
 For example CDI managed beans in case of a CDI container, and web components in case of a servlet container.
 CDI managed beans are recognizable as classes having a CDI scope annotation such as `@RequestScoped` or `@Dependent`.
-Web components are recognizable as classes that extend or implement a class or interface of the `jakarta.servlet.*` package.
+Web components are recognizable as classes that extend or implement a class or interface of the `jakarta.servlet.*` package, and are registered via an annotation of the `jakarta.servlet.annotation.*` package or an entry in the `web.xml` file.
 
 
 ==== Declaring Data Source References
