@@ -776,8 +776,220 @@ public class RestFormAuthCustomStoreIT extends ITBase {
 }
 ----
 
-Using Arquillian, the test starts the default server (GlassFish 7), and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the remote GlassFish server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
 
 The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
 
 
+== Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores
+
+In the following example, we'll be securing a REST endpoint using Basic authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store. Instead of relying on the default algorithm provided by Jakarta Security to handle multiple identity stores we'll be using a custom algoritm.
+
+You'll learn how to:
+
+. Define security constraints
+. Use the provided Basic authentication mechanism
+. Use the provided database identity store
+. Create a custom identity store
+. Create a custom identity store handler
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use a slightly modified resource and security constraints compared to the ones we used for the <<Securing an endpoint with Basic authentication>> example.
+
+The REST resource is now as follows:
+
+[source,java]
+----
+@Path("/resource")
+@RequestScoped
+public class Resource {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getCallerAndRole() {
+        return
+            securityContext.getCallerPrincipal().getName() + " : " +
+            securityContext.isCallerInRole("user") + "," +
+            securityContext.isCallerInRole("caller1") + "," +
+            securityContext.isCallerInRole("caller2");
+    }
+
+}
+----
+
+As can be seen, the difference is quite small; we're now printing out the results of two extra role checks.
+
+
+`web.xml` on its turn looks as follows now:
+
+[source,xml]
+----
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+            <role-name>caller2</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>caller1</role-name>
+    </security-role>
+
+</web-app>
+----
+
+Compared to the example in <<Securing an endpoint with Basic authentication>> we have now added an extra role to the `<auth-constraint>` section. The semantics of that are that a caller needs to have both of these roles in order to be authorised to access the resource under `/rest/*`.
+
+Although it's customary to explicitly declare all roles in the application using `<security-role>`, it's technically not needed. As long as the role name appears in some XML fragment or annotation attribute the Jakarta EE requirement to declare all roles upfront is satisfied. As we can see in the fragment above, the role names "user" and "caller2" already appear in the `<auth-constraint>` section, so they don't *have* to be repeated.
+
+[NOTE]
+The reason it's deemed good practice to list all roles in the `<security-role>` even when not really needed is to have a single place where all roles are listed, instead of them being scattered throughout the application.
+
+
+==== Declare the authentication mechanism and identity store
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@DatabaseIdentityStoreDefinition(
+    callerQuery = "select password from basic_auth_user where username = ?",
+    groupsQuery = "select name from basic_auth_group where username = ?",
+    hashAlgorithmParameters = {
+        "Pbkdf2PasswordHash.Iterations=3072",
+        "Pbkdf2PasswordHash.Algorithm=PBKDF2WithHmacSHA512",
+        "Pbkdf2PasswordHash.SaltSizeBytes=64"
+    }
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+----
+
+[source,java]
+----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("caller1", "caller2"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+----
+
+In this example we have two enabled CDI beans implementing the `IdentityStore` interface. One of them will be implicitly enabled via the `@DatabaseIdentityStoreDefinition` annotation, while the other one is defined explicitly via the `CustomIdentityStore` class. As with a single identity store, it doesn't matter how or where the CDI beans are defined, only that multiple enabled ones exist.
+
+When multiple identity stores are present, a so-called identity store handler (of type `IdentityStoreHandler`) is consulted. Jakara Security provides a default one as explained in <<Securing an endpoint with Basic authentication and multiple identity stores>>. This default handler can be overridden however to provide custom semantics. We'll use a custom handler to enforce a caller authenticates with both identity stores, and we'll combine the roles returned by both in the final result.
+
+==== Populating the identity store
+
+In order to use the identity store, we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a Database identity store>>.
+
+[NOTE]
+In the custom identity store defined above and in the database identity store here we both use name "john' and password "secret1".
+
+==== Writing the identity store handler
+
+We'll now write the identity store handler:
+
+[source,java]
+----
+@Alternative
+@Priority(APPLICATION)
+@ApplicationScoped
+public class CustomIdentityStoreHandler implements IdentityStoreHandler {
+    
+    @Inject
+    Instance<IdentityStore> identityStores;
+    
+    @Override
+    public CredentialValidationResult validate(Credential credential) {
+        CredentialValidationResult result = null;
+        Set<String> groups = new HashSet<>();
+        
+        for (IdentityStore identityStore : identityStores) {
+            result = identityStore.validate(credential);
+            if (result.getStatus() == NOT_VALIDATED) {
+                // Identity store probably doesn't handle our credential type
+                continue;
+            }
+            
+            if (result.getStatus() == INVALID) {
+                // Identity store handled our credential type and determined its
+                // invalid. End the loop.
+                return INVALID_RESULT;
+            }
+            
+            groups.addAll(result.getCallerGroups());
+        }
+        
+        return new CredentialValidationResult(
+            result.getCallerPrincipal(), groups);
+    }
+}
+----
+
+Since we're overriding an existing CDI bean (the default `IdentityStoreHandler` provided by Jakarta Security), we have to annotate our custom `IdentityStoreHandler` with `@Alternative` and `@Priority(APPLICATION)` as shown above.
+
+With `@Inject` `Instance<IdentityStore> identityStores` CDI will give us a collection of all identity stores in the application. In the case of this example that will be the store behind `@DatabaseIdentityStoreDefinition` and our `CustomIdentityStore`. We can the iterate over those stores in our code, and offer the credentials (the username and password in this example) to each of them.
+
+There are various result outcomes possible. 
+
+`NOT_VALIDATED` means the store did not try to validate the credentials at all. In most situations that status is set when the store in question doesnt't handle a given credential. I.e. it only handles say `JWTCredentials` and not `UsernamePasswordCredential`.
+
+`INVALID` means the store tried to validate the credentials, and validation failed. E.g. the username and password were wrong.
+
+In our custom handler code here we return an `INVALID_RESULT` for the first store that fails, as we want all stores to validate successfully here. If validation does succeed (the outcome is `VALID` then) we grab the groups it returned and store in a set.
+
+[NOTE]
+Identity stores also have a capability to query it for roles directly, without validating credentials. We haven't used that feature here.
+
+Eventually we return a result based on the `CallerPrincipal` from the last successful validation result, and all the collected groups.
+
+[NOTE]
+In our example it doesn't matter from which validation result we grab the `CallerPrincipal` as it's all the one with name "pete" here. In general identity stores may transform the name from the input credential (e.g. "pete") to something else (e.g. "Pete Anderson").
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restBasicAuthCustomStoreHandler
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true,true,true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.634 s - in jakartaee.examples.focused.security.restbasicauthcustomstorehandler.RestBasicAuthCustomStoreHandlerIT
+----
+
+The resource that we defined above required only two roles to access it (`user` and `caller2`), but our custom identity store also returned `caller1`. The resource we created tests for this, and as it appears, we indeed had this role.
+
+[NOTE]
+If we hadn't declared `caller1` in `web.xml` (or via an annotation), the test for `caller1` might have returned false. This is however server dependent.
