@@ -23,7 +23,7 @@ Jakarta Security defines several distinct artifacts that play an important role 
 
 The first two of these are used in the authentication process:
 
-An _authentication mechanism_ is somewhat like a controller in the well-known [MVC](https://en.wikipedia.org/wiki/Model–view–controller) pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate `these` credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
+An _authentication mechanism_ is somewhat like a controller in the well-known https://en.wikipedia.org/wiki/Model–view–controller[MVC,role=external,window=_blank] pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate `these` credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
 
 An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g., it doesn't know about HTTP or headers etc.
 Some examples of identity stores are services that contact SQL or NoSQL databases, LDAP servers, files on the file-system, etc.
@@ -993,3 +993,135 @@ The resource that we defined above required only two roles to access it (`user` 
 
 [NOTE]
 If we hadn't declared `caller1` in `web.xml` (or via an annotation), the test for `caller1` might have returned false. This is however server dependent.
+
+
+
+== Securing an endpoint with a custom authentication mechanism and a custom identity store
+
+In the following example, we'll be securing a REST endpoint using a custom authentication mechanism. A custom authentication mechanism is one we provide ourselves, instead of using one provided by Jakarta Security (such as the Basic HTTP authentication mechanism).
+
+You'll learn how to:
+
+. Define security constraints
+. Define (and implicitly set) a custom authentication mechanism
+. Define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Define the authentication mechanism
+
+Let's now define a simple authentication mechanism that the security system can use to interact with the caller who tries to access a resource:
+
+[source,java]
+----
+@ApplicationScoped
+public class CustomAuthenticationMechanism implements HttpAuthenticationMechanism {
+    
+    @Inject
+    private IdentityStoreHandler identityStoreHandler;
+
+    @Override
+    public AuthenticationStatus validateRequest(
+        HttpServletRequest request, 
+        HttpServletResponse response, 
+        HttpMessageContext httpMessageContext) throws AuthenticationException {
+        
+        String callerName = request.getHeader("callername");
+        String password = request.getParameter("callerpassword");
+        
+        if (callerName == null || password == null) {
+            return httpMessageContext.doNothing();
+        }
+
+        CredentialValidationResult result = identityStoreHandler.validate(
+            new UsernamePasswordCredential(callerName, password));
+        
+        if (result.getStatus() != VALID) {
+            return httpMessageContext.responseUnauthorized();
+        }
+
+        return httpMessageContext.notifyContainerAboutLogin(
+            result.getCallerPrincipal(), 
+            result.getCallerGroups());
+    }
+    
+}
+----
+
+This custom authentication mechanism interacts with the caller by grabbing two headers from the request: `callername` and `callerpassword`. In case any of them are null, we return a special status; the "do nothing" status. This means there has been no request or attempt to do authentication. If the resource the caller is trying to access is not protected, the caller can access it anonymously. If it is proteced, the caller will not be able to access it.
+
+When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values and pass that into the injected `IdentityStoreHandler`. We've seen how such handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
+
+[NOTE]
+An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict users from things like inserting extra identity stores into the chain that can do things like adding extra groups.
+
+If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. 
+
+[NOTE]
+In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a so-called https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
+
+The authentication mechanism is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `HttpAuthenticationMechanism`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+==== Define the identity store
+
+We'll use the same identity store as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Test the application
+
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restCustomAuthCustomStore
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.591 s - in jakartaee.examples.focused.security.restcustomauthcustomstore.RestCustomAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestCustomAuthCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        webClient.addRequestHeader("callername", "john");
+        webClient.addRequestHeader("callerpassword", "secret1");
+        
+        TextPage page = webClient.getPage(baseUrl + "rest/resource");
+        String content = page.getContent();
+
+        System.out.println(content);
+    }
+}
+----
+
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+
+The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
+
+If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restCustomAuthCustomStore/target/restCustomAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
+
+
