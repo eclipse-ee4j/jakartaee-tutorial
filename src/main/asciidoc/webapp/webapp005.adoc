@@ -125,7 +125,7 @@ Web components are recognizable as classes that extend or implement a class or i
 
 ==== Declaring Data Source References
 
-If your web application uses data sources, then you can specify it in `web.xml` and use the `@Resource` annotation to inject it into a container-managed object of your web application as a `javax.sqlDataSource` instance.
+If your web application uses data sources, then you can specify it in `web.xml` and use the `@Resource` annotation to inject it into a container-managed object of your web application as a `javax.sql.DataSource` instance.
 The below example specifies a H2 data source listening on JNDI resource name of `java:global/YourDataSourceName`, using the `org.h2.jdbcx.JdbcDataSource` as `javax.sql.DataSource` implementation.
 
 [source,xml]
@@ -161,11 +161,12 @@ public Connection getConnection() {
 }
 ----
 
+Do note that `javax.sql.DataSource` is not part of Jakarta EE but of Java SE and hence it has still the `javax` as root package.
 
 ==== Declaring Mail Session References
 
-If your web application uses mail sessions, then you can specify it in `web.xml` and use the `@Resource` annotation to inject it into a container-managed object of your web application as a `javax.mail.Session` instance.
-The below example specifies a SMTP mail session listening on JNDI name of `java:global/YourMailSessionName`, using the `smtp.example.com` host to create `javax.mail.Session` for.
+If your web application uses mail sessions, then you can specify it in `web.xml` and use the `@Resource` annotation to inject it into a container-managed object of your web application as a `jakarta.mail.Session` instance.
+The below example specifies a SMTP mail session listening on JNDI name of `java:global/YourMailSessionName`, using the `smtp.example.com` host to create `jakarta.mail.Session` for.
 
 [source,xml]
 ----
@@ -176,7 +177,7 @@ The below example specifies a SMTP mail session listening on JNDI name of `java:
 </mail-session>
 ----
 
-If you have only one mail session reference specified, then you can inject it as a `@Resource` of `javax.mail.Session` type without an explicit JNDI resource name.
+If you have only one mail session reference specified, then you can inject it as a `@Resource` of `jakarta.mail.Session` type without an explicit JNDI resource name.
 
 [source,java]
 ----
@@ -201,3 +202,4 @@ public void sendMail(YourMail mail) throws MessagingException {
     // ...
 }
 ----
+
