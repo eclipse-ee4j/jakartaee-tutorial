@@ -27,9 +27,16 @@ This chapter discusses the following simple web applications:
 
 They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.
 
-=== Building The Example Projects
+=== Building, Deploying and Running The Example Projects
 
+This describes steps 3 through 6.
+You need Maven and a servlet container.
+
+==== Building The Example Projects
+
+This describes steps 3 and 4.
 Maven is used to build the example projects.
+Download and install it as per instructions in https://maven.apache.org/[maven.apache.org].
 A Maven WAR project has the following basic structure; not all mentioned resources are required, only the `pom.xml` is required and the rest is optional:
 
 [source]
@@ -80,18 +87,19 @@ This command compiles and packages the code as described in steps 3 and 4.
 After the build, the resulting WAR file will be present in the automatically created `target` folder.
 The WAR file is recognizable by having the `.war` extension.
 
-=== Deploying The Example Projects
+==== Deploying The Example Projects
 
+This describes step 5.
 You need at least a servlet container in order to deploy a WAR file.
 The https://jakarta.ee/compatibility/[Jakarta EE Compatible Products] page lists several Jakarta runtimes having a servlet container.
 At least those compatible with "Web Profile" and "Full Platform" have a servlet container.
-Examples are GlassFish, Open Liberty and WildFly.
+Examples are Eclipse GlassFish, IBM Open Liberty and Red Hat WildFly.
 They are available in both "Web Profile" and "Full Profile" flavors.
 
 There are also partial Jakarta runtimes having a servlet container.
 Partial as in, they do not fully implement "Web Profile".
-One example is Tomcat.
-It does implement Jakarta Servlet, Jakarta Pages, Jakarta WebSocket, Jakarta Expression Language and Jakarta Security.
+One example is Apache Tomcat.
+It does implement Jakarta Servlet, Jakarta Pages, Jakarta Expression Language, Jakarta WebSocket, and Jakarta Security.
 But it does not implement Jakarta REST, Jakarta CDI, Jakarta Faces nor Jakarta Tags.
 
 Deploying a WAR file is generally done by placing the WAR file in the runtime-specific folder dedicated for (automatic) deployments.
@@ -114,9 +122,11 @@ For this you'll need to start the server first and then open a specific URL in y
 
 You can also use an integrated development environment (IDE) to manage runtimes and deployments.
 Examples are Eclipse IDE, IntelliJ IDEA and Apache NetBeans.
+They can also automatically build the projects for you.
 
-=== Running The Example Projects
+==== Running The Example Projects
 
+This describes step 6.
 You'll need to start the server first and then open a specific URL in your web browser representing the location of the WAR deployment.
 By default, the URL has the following form:
 

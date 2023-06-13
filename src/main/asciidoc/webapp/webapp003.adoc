@@ -147,14 +147,7 @@ It basically instructs the servlet container to create an instance of `jakarta.f
 
 === Running the `hello-faces` example application
 
-In a terminal window, go to the `hello-faces` folder containing the `pom.xml` and execute the following command:
-
-[source,shell]
-----
-mvn install
-----
-
-Find the `target/hello-faces.war` file and deploy it to a servlet container as instructed in <<Deploying The Example Projects>>.
+Build and deploy as instructed in <<Building, Deploying and Running The Example Projects>>.
 
 In a web browser, open the following URL:
 
