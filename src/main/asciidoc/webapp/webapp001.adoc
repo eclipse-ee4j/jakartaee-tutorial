@@ -2,19 +2,20 @@
 
 A web application, also known as a web app, is a software application that runs on one or more web servers.
 It is typically accessed through a web browser over a network, such as the Internet.
-The advantage over traditional desktop applications is being platform-independent, as it can be accessed and used on different devices.
+The advantage over desktop and mobile applications is being platform-independent, as it can be accessed and used on different devices.
 Web applications are of the following types:
 
 Presentation-oriented::
-A presentation-oriented web application generates interactive web pages containing dynamic content in response to HTTP requests.
+A presentation-oriented web application generates dynamic web pages in response to HTTP requests.
 The response is usually represented as a HTML document along with assets.
-Development of presentation-oriented web applications is covered in [TBD]
+Presentation-oriented applications are often directly used by humans.
+Development of presentation-oriented web applications is covered in [TBD].
 
 Service-oriented::
 A service-oriented web application generates dynamic data structures in response to HTTP requests.
 The response is usually represented as a JSON object or as a XML document.
-Presentation-oriented applications are often clients of service-oriented web applications.
-Development of service-oriented web applications is covered in [TBD]
+Service-oriented applications are often directly used by presentation-oriented web applications.
+Development of service-oriented web applications is covered in [TBD].
 
 In the Jakarta EE platform, web applications are represented by web components as seen in xref:jakarta-web-application-request-handling[xrefstyle=short].
 A web component can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST.
@@ -27,13 +28,13 @@ image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clie
 . The web server module that supports Jakarta Servlet based web components is called a servlet container.
 . The servlet container converts the HTTP request into an `HttpServletRequest` object and prepares the `HttpServletResponse` object.
 . These objects are delivered to a web component, which can interact with JavaBeans components or a database to generate dynamic content.
-. The web component can then fill the `HttpServletResponse` object with the generated dynamic content or can pass the object to another web component to fill it.
+. The web component can fill the `HttpServletResponse` object with the generated dynamic content or can pass the object to another web component to fill it.
 . The servlet container ultimately converts the `HttpServletResponse` object to an HTTP response and the web server returns it to the client.
 
 Jakarta Servlet is a corner stone web framework that can act as a presentation-oriented as well as a service-oriented web application.
 Jakarta Servlet intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as a HTTP response, and to manage all the lifecycle around them.
 Jakarta Faces is a component based MVC framework that can be executed on a servlet container and act as a presentation-oriented web application.
-Jakarta Faces intends to reduce the boilerplate code needed to apply the request values, convert and validate them, update the JavaBean properties, invoke the JavaBean methods and generate HTML output.
+Jakarta Faces intends to reduce the boilerplate code needed to apply the request values, convert and validate them, update the JavaBean properties, invoke the JavaBean methods, and generate HTML output.
 Jakarta Faces is designed as such that it can be exuected on a non-servlet container such as a portlet container.
 Jakarta REST is a RESTful web service framework that can be executed on a servlet container and act as a service-oriented web application. 
 Jakarta REST intends to reduce the boilerplate code needed to convert the request values to a JavaBean and further convert it to the desired response such as JSON or XML.
