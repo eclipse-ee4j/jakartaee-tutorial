@@ -66,7 +66,7 @@ Such a XHTML file is in the Jakarta Faces world called a _Facelets File_ or just
 In Jakarta Faces, the view technology is pluggable and Facelets is used as the default view technology.
 XHTML markup is being used because it allows the framework to easily use a XML parser to find Jakarta Faces tags of interest and to generate HTML output.
 
-For this Hello World web application, the `src/main/webapp/hello.xhtml` Facelet defines a form with an input field, a command button and an output field:
+For this Hello World web application, the `src/main/webapp/hello.xhtml` Facelet defines a form with an input field, a command button and an output field.
 
 [source,xml]
 ----
@@ -145,175 +145,23 @@ In a typical Jakarta Faces application, the controller (the "C" part of MVC) is 
 
 It basically instructs the servlet container to create an instance of `jakarta.faces.webapp.FacesServlet` as `facesServlet` during startup and to execute it when the URL pattern of the HTTP request matches `*.xhtml`.
 
+=== Running the `hello-faces` example application
 
+In a terminal window, go to the `hello-faces` folder containing the `pom.xml` and execute the following command:
 
-
-
-
-
-
-
-=== Packaging and Deploying the hello1 Web Module
-
-A web module must be packaged into a WAR in certain deployment scenarios and whenever you want to distribute the web module.
-You can package a web module into a WAR file by using Maven or by using the IDE tool of your choice.
-This tutorial shows you how to use NetBeans IDE or Maven to build, package, and deploy the `hello1` sample application.
-
-You can deploy a WAR file to GlassFish Server by:
-
-* Using NetBeans IDE
-
-* Using the `asadmin` command
-
-* Using the Administration Console
-
-* Copying the WAR file into the `_domain-dir_/autodeploy/` directory
-
-Throughout the tutorial, you will use NetBeans IDE or Maven for packaging and deploying.
-
-==== To Build, Package and Deploy the hello1 Web Module Using NetBeans IDE
-
-To build and package the `hello1` web module using NetBeans IDE:
-
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-netbeans-ide>>, if you have not already done so.
-
-. From the *File* menu, choose *Open Project*.
-
-. In the Open Project dialog box, navigate to:
-+
-----
-tut-install/examples/web/faces
-----
-
-. Select the `hello1` folder.
-
-. Click *Open Project*.
-
-. In the *Projects* tab, right-click the `hello1` project and select *Build*. This command deploys the project to the server.
-
-==== To Build, Package and Deploy the hello1 Web Module Using Maven
-
-To build and package the `hello1` web module using Maven:
-
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-the-command-line>>, if you have not already done so.
-
-. In a terminal window, go to:
-+
-----
-tut-install/examples/web/faces/hello1/
-----
-
-. Enter the following command:
-+
 [source,shell]
 ----
 mvn install
 ----
-+
-This command spawns any necessary compilations and creates the WAR file in `_tut-install_/examples/web/faces/hello1/target/`.
-It then deploys the project to the server.
 
-=== Viewing Deployed Web Modules
+Find the `target/hello-faces.war` file and deploy it to a servlet container as instructed in <<Deploying The Example Projects>>.
 
-GlassFish Server provides two ways to view the deployed web modules: the Administration Console and the `asadmin` command.
-You can also use NetBeans IDE to view deployed modules.
+In a web browser, open the following URL:
 
-==== To View Deployed Web Modules Using the Administration Console
-
-To view deployed web modules using the Administration Console:
-
-. Open the URL http://localhost:4848/[^] in a browser.
-
-. Select the Applications node.
-+
-The deployed web modules appear in the Deployed Applications table.
-
-==== To View Deployed Web Modules Using the asadmin Command
-
-Enter the following command:
-
-[source,shell]
 ----
-asadmin list-applications
+http://localhost:8080/hello-faces/hello.xhtml
 ----
 
-==== To View Deployed Web Modules Using NetBeans IDE
-
-To view deployed web modules using NetBeans IDE:
-
-. In the *Services* tab, expand the *Servers* node, then expand the *GlassFish Server* node.
-
-. Expand the *Applications* node to view the deployed modules.
-
-=== Running the Deployed hello1 Web Module
-
-Now that the web module is deployed, you can view it by opening the application in a web browser.
-By default, the application is deployed to host `localhost` on port 8080.
-The context root of the web application is `hello1`.
-
-To run the deployed `hello1` web module:
-
-. Open a web browser.
-
-. Enter the following URL:
-+
-----
-http://localhost:8080/hello1/
-----
-
-. In the field, enter your name and click Submit.
-+
-The response page displays the name you submitted. Click Back to try again.
-
-==== Dynamic Reloading of Deployed Modules
-
-If dynamic reloading is enabled, you do not have to redeploy an application or module when you change its code or deployment descriptors.
-All you have to do is copy the changed pages or class files into the deployment directory for the application or module.
-The deployment directory for a web module named context-root is `_domain-dir_/applications/_context-root_`.
-The server checks for changes periodically and redeploys the application, automatically and dynamically, with the changes.
-
-This capability is useful in a development environment because it allows code changes to be tested quickly.
-Dynamic reloading is not recommended for a production environment, however, because it may degrade performance.
-In addition, whenever a reload takes place, the sessions at that time become invalid, and the client must restart the session.
-
-In GlassFish Server, dynamic reloading is enabled by default.
-
-=== Undeploying the hello1 Web Module
-
-You can undeploy web modules and other types of enterprise applications by using either NetBeans IDE or Maven.
-
-==== To Undeploy the hello1 Web Module Using NetBeans IDE
-
-To undeploy the `hello1` web module using NetBeans IDE:
-
-. In the *Services* tab, expand the *Servers* node, then expand the *GlassFish Server* node.
-
-. Expand the *Applications* node.
-
-. Right-click the `hello1` module and select *Undeploy*.
-
-. To delete the class files and other build artifacts, go back to the *Projects* tab, right-click the project, and select *Clean*.
-
-==== To Undeploy the hello1 Web Module Using Maven
-
-To undeploy the `hello1` web module using Maven:
-
-. In a terminal window, go to:
-+
-----
-tut-install/examples/web/faces/hello1/
-----
-
-. Enter the following command:
-+
-[source,shell]
-----
-mvn cargo:undeploy
-----
-
-. To delete the class files and other build artifacts, enter the following command:
-+
-[source,shell]
-----
-mvn clean
-----
+It will show a web page with a form asking for your name.
+Enter your name in the input field of the form, for example 'Duke', and click Submit.
+This will show the text `Hello, Duke!` below the form.

@@ -10,7 +10,7 @@ The source code for this application is in the `_tut-install_/tutorial/web/servl
 In a typical Jakarta Servlet application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
 Such a class is in the Jakarta Servlet world called a _Servlet_.
 
-For this Hello World web application, the `src/main/java/jakarta/tutorial/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
+For this Hello World web application, the `src/main/java/jakarta/tutorial/web/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
 
 [source,java]
 ----
@@ -74,85 +74,28 @@ http://localhost:8080/hello-servlet/greeting?name=Duke
 
 Then it will return the response `Hello, Duke!`.
 
+=== Running the `hello-servlet` example application
 
+In a terminal window, go to the `hello-servlet` folder containing the `pom.xml` and execute the following command:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=== Running the hello2 Example
-
-You can use either NetBeans IDE or Maven to build, package, deploy, and run the `hello2` example.
-
-==== To Build, Package, Deploy and Run the hello2 Example Using NetBeans IDE
-
-To build, package, deploy and run the `hello2` example using NetBeans IDE:
-
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-netbeans-ide>>, if you have not already done so.
-
-. From the *File* menu, choose *Open Project*.
-
-. In the Open Project dialog box, navigate to:
-+
-----
-tut-install/examples/web/servlet
-----
-
-. Select the `hello2` folder.
-
-. Click *Open Project*.
-
-. In the *Projects* tab, right-click the `hello2` project and select *Build* to package and deploy the project.
-
-. In a web browser, open the following URL:
-+
-----
-http://localhost:8080/hello2/greeting
-----
-+
-The URL specifies the context root, followed by the URL pattern.
-+
-The application looks much like the `hello1` application.
-The major difference is that after you click Submit the response appears below the greeting, not on a separate page.
-
-====  To Build, Package, Deploy and Run the hello2 Example Using Maven
-
-To build, package, deploy and run the `hello2` example using Maven:
-
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-the-command-line>>, if you have not already done so.
-
-. In a terminal window, go to:
-+
-----
-tut-install/examples/web/servlet/hello2/
-----
-
-. Enter the following command:
-+
 [source,shell]
 ----
 mvn install
 ----
-+
-This target builds the WAR file, copies it to the `_tut-install_/examples/web/hello2/target/` directory, and deploys it.
 
-. In a web browser, open the following URL:
-+
+Find the `target/hello-servlet.war` file and deploy it to a servlet container as instructed in <<Deploying The Example Projects>>.
+
+In a web browser, open the following URL:
+
 ----
-http://localhost:8080/hello2/greeting
+http://localhost:8080/hello-servlet/greeting?name=Duke
 ----
-+
-The URL specifies the context root, followed by the URL pattern.
-+
-The application looks much like the `hello1` application.
-The major difference is that after you click Submit the response appears below the greeting, not on a separate page.
+
+It will return the response `Hello, Duke!`.
+You can edit the `name` parameter into something else to get a different response.
+
+----
+http://localhost:8080/hello-servlet/greeting?name=Joe
+----
+
+This will return the response `Hello, Joe!`.

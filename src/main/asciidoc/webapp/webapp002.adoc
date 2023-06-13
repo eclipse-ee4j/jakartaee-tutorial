@@ -13,7 +13,7 @@ It can be summarized as follows:
 . Develop the web component code.
 . Develop the deployment descriptor files, if necessary.
 . Compile the web component code against the libraries of the servlet container and the helper libraries, if any.
-. Package the compiled code along with helper libraries, assets and DD files, if any, into a deployable unit, called a web application archive (WAR).
+. Package the compiled code along with helper libraries, assets and deployment descriptor files, if any, into a deployable unit, called a web application archive (WAR).
 . Deploy the WAR into a servlet container.
 . Run the web application by accessing a URL that references the web component.
 
@@ -27,39 +27,104 @@ This chapter discusses the following simple web applications:
 
 They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.
 
+=== Building The Example Projects
+
 Maven is used to build the example projects.
-A Maven WAR project has the following basic structure; not all mentioned resources are required, they are all optional:
+A Maven WAR project has the following basic structure; not all mentioned resources are required, only the `pom.xml` is required and the rest is optional:
 
 [source]
 ----
-src
- `-- main
-      |-- java
-      |    `-- com
-      |         `-- example
-      |              `-- model
-      |                   `-- Hello.java
-      |-- resources
-      |    `-- com
-      |         `-- example
-      |              `-- i18n
-      |                   |-- text.properties
-      |                   |-- text_en.properties
-      |                   `-- text_es.properties
-      `-- webapp
-           |-- META-INF
-           |    `-- MANIFEST.MF
-           |-- resources
-           |    |-- css
-           |    |    `-- style.css
-           |    |-- img
-           |    |    `-- logo.svg
-           |    `-- js
-           |         `-- script.js
-           |-- WEB-INF
-           |    |-- beans.xml
-           |    |-- faces-config.xml
-           |    `-- web.xml
-           |-- favicon.ico
-           `-- index.xhtml
+ |-- src
+ |    `-- main
+ |         |-- java
+ |         |    `-- com
+ |         |         `-- example
+ |         |              |-- controller
+ |         |              |    `-- Servlet.java
+ |         |              `-- model
+ |         |                   `-- Bean.java
+ |         |-- resources
+ |         |    `-- com
+ |         |         `-- example
+ |         |              `-- i18n
+ |         |                   |-- text.properties
+ |         |                   |-- text_en.properties
+ |         |                   `-- text_es.properties
+ |         `-- webapp
+ |              |-- META-INF
+ |              |    `-- MANIFEST.MF
+ |              |-- resources
+ |              |    |-- css
+ |              |    |    `-- style.css
+ |              |    |-- img
+ |              |    |    `-- logo.svg
+ |              |    `-- js
+ |              |         `-- script.js
+ |              |-- WEB-INF
+ |              |    |-- beans.xml
+ |              |    |-- faces-config.xml
+ |              |    `-- web.xml
+ |              |-- favicon.ico
+ |              `-- index.xhtml
+ `-- pom.xml
 ----
+
+In a terminal window, go to the folder containing the `pom.xml` and execute the following command:
+
+[source,shell]
+----
+mvn install
+----
+
+This command compiles and packages the code as described in steps 3 and 4.
+After the build, the resulting WAR file will be present in the automatically created `target` folder.
+The WAR file is recognizable by having the `.war` extension.
+
+=== Deploying The Example Projects
+
+You need at least a servlet container in order to deploy a WAR file.
+The https://jakarta.ee/compatibility/[Jakarta EE Compatible Products] page lists several Jakarta runtimes having a servlet container.
+At least those compatible with "Web Profile" and "Full Platform" have a servlet container.
+Examples are GlassFish, Open Liberty and WildFly.
+They are available in both "Web Profile" and "Full Profile" flavors.
+
+There are also partial Jakarta runtimes having a servlet container.
+Partial as in, they do not fully implement "Web Profile".
+One example is Tomcat.
+It does implement Jakarta Servlet, Jakarta Pages, Jakarta WebSocket, Jakarta Expression Language and Jakarta Security.
+But it does not implement Jakarta REST, Jakarta CDI, Jakarta Faces nor Jakarta Tags.
+
+Deploying a WAR file is generally done by placing the WAR file in the runtime-specific folder dedicated for (automatic) deployments.
+The exact location depends on the runtime used:
+
+* In case of Eclipse GlassFish that's the `glassfish/domains/domain1/autodeploy` folder.
+* In case of IBM Open Liberty that's the `config/dropins` folder.
+* In case of Red Hat WildFly that's the `standalone/deployments` folder.
+* In case of Apache Tomcat that's the `webapps` folder.
+
+Undeploying a WAR file is generally done by removing the WAR file from the folder.
+
+Some runtimes offer a graphical user interface (GUI) for administration tasks such as selecting, uploading and a deploying a WAR file.
+For this you'll need to start the server first and then open a specific URL in your web browser representing the location of the admin console:
+
+* In case of Eclipse GlassFish that's reachable via `http://localhost:4848`
+* In case of IBM Open Liberty that's reachable via `https://localhost:9443`
+* In case of Red Hat WildFly that's reachable via `http://localhost:9990`
+* In case of Apache Tomcat that's reachable via `http://localhost:8080/manager`
+
+You can also use an integrated development environment (IDE) to manage runtimes and deployments.
+Examples are Eclipse IDE, IntelliJ IDEA and Apache NetBeans.
+
+=== Running The Example Projects
+
+You'll need to start the server first and then open a specific URL in your web browser representing the location of the WAR deployment.
+By default, the URL has the following form:
+
+----
+http(s)://host:port/context-path
+----
+
+By default, the `context-path` is represented by the base file name of the WAR file, without the extension.
+If there is no web component listening on the root of the context path, then you could face a HTTP 404 'Not Found' error page.
+In that case you would need to use a more specific URL, depending on the configuration of the desired web component.
+This will be detailed in the chapter associated with the example project.
