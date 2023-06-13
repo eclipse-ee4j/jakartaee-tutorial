@@ -33,11 +33,13 @@ image::jakartaeett_dt_013.svg["Diagram of web application request handling. Clie
 
 Jakarta Servlet is a corner stone web framework that can act as a presentation-oriented as well as a service-oriented web application.
 Jakarta Servlet intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as a HTTP response, and to manage all the lifecycle around them.
+
 Jakarta Faces is a component based MVC framework that can be executed on a servlet container and act as a presentation-oriented web application.
-Jakarta Faces intends to reduce the boilerplate code needed to apply the request values, convert and validate them, update the JavaBean properties, invoke the JavaBean methods, and generate HTML output.
+Jakarta Faces intends to reduce the boilerplate code needed to collect the request parameters, convert and validate them, update the JavaBean properties with them, invoke the JavaBean methods, and generate HTML output as response.
 Jakarta Faces is designed as such that it can be exuected on a non-servlet container such as a portlet container.
+
 Jakarta REST is a RESTful web service framework that can be executed on a servlet container and act as a service-oriented web application. 
-Jakarta REST intends to reduce the boilerplate code needed to convert the request values to a JavaBean and further convert it to the desired response such as JSON or XML.
+Jakarta REST intends to reduce the boilerplate code needed to convert the request parameters to a JavaBean and further convert it to the desired response such as JSON or XML.
 Jakarta REST is designed as such that it can be exuected on a non-servlet container such as a microservice.
 
 A servlet container is a kind of a web container that can be part of a Jakarta runtime such as an application server.
