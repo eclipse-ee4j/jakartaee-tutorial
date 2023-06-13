@@ -1029,14 +1029,14 @@ public class CustomAuthenticationMechanism implements HttpAuthenticationMechanis
         HttpServletResponse response, 
         HttpMessageContext httpMessageContext) throws AuthenticationException {
         
-        String callerName = request.getHeader("callername");
-        String password = request.getParameter("callerpassword");
+        var callerName = request.getHeader("callername");
+        var password = request.getHeader("callerpassword");
         
         if (callerName == null || password == null) {
             return httpMessageContext.doNothing();
         }
 
-        CredentialValidationResult result = identityStoreHandler.validate(
+        var result = identityStoreHandler.validate(
             new UsernamePasswordCredential(callerName, password));
         
         if (result.getStatus() != VALID) {
