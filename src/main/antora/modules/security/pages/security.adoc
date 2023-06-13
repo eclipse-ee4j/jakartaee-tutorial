@@ -856,7 +856,7 @@ Compared to the example in <<Securing an endpoint with Basic authentication>> we
 Although it's customary to explicitly declare all roles in the application using `<security-role>`, it's technically not needed. As long as the role name appears in some XML fragment or annotation attribute the Jakarta EE requirement to declare all roles upfront is satisfied. As we can see in the fragment above, the role names "user" and "caller2" already appear in the `<auth-constraint>` section, so they don't *have* to be repeated.
 
 [NOTE]
-The reason it's deemed good practice to list all roles in the `<security-role>` even when not really needed is to have a single place where all roles are listed, instead of them being scattered throughout the application.
+The reason it's deemed good practice to list all roles in the `<security-role>` element in web.xml (or alternatively in an `@DeclareRoles` annotation) even when not really needed is to have a single place where all roles are listed, instead of them being scattered throughout the application.
 
 
 ==== Declare the authentication mechanism and identity store
@@ -900,7 +900,7 @@ public class CustomIdentityStore implements IdentityStore {
 
 In this example we have two enabled CDI beans implementing the `IdentityStore` interface. One of them will be implicitly enabled via the `@DatabaseIdentityStoreDefinition` annotation, while the other one is defined explicitly via the `CustomIdentityStore` class. As with a single identity store, it doesn't matter how or where the CDI beans are defined, only that multiple enabled ones exist.
 
-When multiple identity stores are present, a so-called identity store handler (of type `IdentityStoreHandler`) is consulted. Jakara Security provides a default one as explained in <<Securing an endpoint with Basic authentication and multiple identity stores>>. This default handler can be overridden however to provide custom semantics. We'll use a custom handler to enforce a caller authenticates with both identity stores, and we'll combine the roles returned by both in the final result.
+When multiple identity stores are present, an identity store handler (of type `IdentityStoreHandler`) is consulted. Jakara Security provides a default one as explained in <<Securing an endpoint with Basic authentication and multiple identity stores>>. This default handler can be overridden however to provide custom semantics. We'll use a custom handler to enforce a caller authenticates with both identity stores, and we'll combine the roles returned by both in the final result.
 
 ==== Populating the identity store
 
@@ -915,13 +915,13 @@ We'll now write the identity store handler:
 
 [source,java]
 ----
-@Alternative
-@Priority(APPLICATION)
+@Alternative <1>
+@Priority(APPLICATION) <2>
 @ApplicationScoped
 public class CustomIdentityStoreHandler implements IdentityStoreHandler {
     
     @Inject
-    Instance<IdentityStore> identityStores;
+    Instance<IdentityStore> identityStores; <3>
     
     @Override
     public CredentialValidationResult validate(Credential credential) {
@@ -949,10 +949,9 @@ public class CustomIdentityStoreHandler implements IdentityStoreHandler {
     }
 }
 ----
-
-Since we're overriding an existing CDI bean (the default `IdentityStoreHandler` provided by Jakarta Security), we have to annotate our custom `IdentityStoreHandler` with `@Alternative` and `@Priority(APPLICATION)` as shown above.
-
-With `@Inject` `Instance<IdentityStore> identityStores` CDI will give us a collection of all identity stores in the application. In the case of this example that will be the store behind `@DatabaseIdentityStoreDefinition` and our `CustomIdentityStore`. We can the iterate over those stores in our code, and offer the credentials (the username and password in this example) to each of them.
+<1> Since we're overriding an existing CDI bean (the default `IdentityStoreHandler` provided by Jakarta Security), we have to annotate our custom `IdentityStoreHandler` with `@Alternative`.
+<2> To make `@Alternative` actually work, we additionally have to annotate with `@Priority(APPLICATION)`
+<3> With `@Inject` `Instance<IdentityStore> identityStores` CDI will give us a collection of all identity stores in the application. In the case of this example that will be the store behind `@DatabaseIdentityStoreDefinition` and our `CustomIdentityStore`. We can the iterate over those stores in our code, and offer the credentials (the username and password in this example) to each of them.
 
 There are various result outcomes possible. 
 
@@ -972,7 +971,7 @@ In our example it doesn't matter from which validation result we grab the `Calle
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
 
 Download or clone this repo, then cd into the `focused` folder and execute:
 
@@ -1029,21 +1028,21 @@ public class CustomAuthenticationMechanism implements HttpAuthenticationMechanis
         HttpServletResponse response, 
         HttpMessageContext httpMessageContext) throws AuthenticationException {
         
-        var callerName = request.getHeader("callername");
+        var callerName = request.getHeader("callername"); <1>
         var password = request.getHeader("callerpassword");
         
-        if (callerName == null || password == null) {
+        if (callerName == null || password == null) { <2>
             return httpMessageContext.doNothing();
         }
 
-        var result = identityStoreHandler.validate(
-            new UsernamePasswordCredential(callerName, password));
+        var result = identityStoreHandler.validate( <4>
+            new UsernamePasswordCredential(callerName, password)); <3>
         
         if (result.getStatus() != VALID) {
             return httpMessageContext.responseUnauthorized();
         }
 
-        return httpMessageContext.notifyContainerAboutLogin(
+        return httpMessageContext.notifyContainerAboutLogin( <5>
             result.getCallerPrincipal(), 
             result.getCallerGroups());
     }
@@ -1051,14 +1050,14 @@ public class CustomAuthenticationMechanism implements HttpAuthenticationMechanis
 }
 ----
 
-This custom authentication mechanism interacts with the caller by grabbing two headers from the request: `callername` and `callerpassword`. In case any of them are null, we return a special status; the "do nothing" status. This means there has been no request or attempt to do authentication. If the resource the caller is trying to access is not protected, the caller can access it anonymously. If it is proteced, the caller will not be able to access it.
+This custom authentication mechanism interacts with the caller by grabbing two headers from the request: `callername` and `callerpassword`. (1) In case any of them are `null`, we return a special status; the "do nothing" status. (2) This means there has been no request or attempt to do authentication. If the resource the caller is trying to access is not protected, the caller can access it anonymously. If it is proteced, the caller will not be able to access it.
 
-When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values and pass that into the injected `IdentityStoreHandler`. We've seen how such handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
+When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values (3) and pass that into the injected `IdentityStoreHandler`. (4) We've seen how such handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
 
 [NOTE]
-An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict users from things like inserting extra identity stores into the chain that can do things like adding extra groups.
+An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict developers from things like inserting extra identity stores into the chain that can do things like adding extra groups.
 
-If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. 
+If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. (5)
 
 [NOTE]
 In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a so-called https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
