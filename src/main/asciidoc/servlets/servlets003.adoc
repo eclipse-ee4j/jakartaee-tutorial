@@ -1,20 +1,75 @@
 == Sharing Information
 
-Web components, like most objects, usually work with other objects to accomplish their tasks.
-Web components can do so by doing the following.
+Web components, like most objects, usually work with data to accomplish their tasks.
+Web components can store this information in a database or in a scope object.
 
-* Using private helper objects (for example, JavaBeans components).
+=== Using CDI Managed Beans
 
-* Sharing objects that are attributes of a public scope.
+CDI can be used to define scope objects which can be injected in any container-managed objects such as web components.
+These scope objects can then be used to store and transfer information.
 
-* Using a database.
+CDI defines three basic scopes which can be used for this:
 
-* Invoking other web resources.
-The Jakarta Servlet technology mechanisms that allow a web component to invoke other web resources are described in <<invoking-other-web-resources>>.
+`@jakarta.enterprise.context.RequestScoped`::
+In a servlet container, this is basically mapped to the `jakarta.servlet.ServletRequest`.
+It lives from the time that the client has sent the request until it has retrieved the corresponding response.
+It is not shared elsewhere.
 
-=== Using Scope Objects
+`@jakarta.enterprise.context.SessionScoped`::
+In a servlet container, this is basically mapped to the `jakarta.servlet.http.HttpSession`.
+It lives for as long as the client is interacting with the web application with the same browser instance, and the session hasn't timed out at the server side.
+It is shared among all requests in the same session.
 
-Collaborating web components share information by means of objects that are maintained as attributes of four scope objects.
+`@jakarta.enterprise.context.ApplicationScoped`::
+In a servlet container, this is basically mapped to the `jakarta.servlet.ServletContext`.
+It lives for as long as the web application lives.
+It is shared among all requests in all sessions.
+
+The below example illustrates how the CDI `@SessionScoped` can be used to define an object which stores the user preferences.
+
+[source,java]
+----
+@Named
+@SessionScoped
+public class UserPreferences implements Serializable {
+
+    // TBD
+
+}
+----
+
+[source,java]
+----
+@WebServlet("/foo")
+public class Foo extends HttpServlet {
+
+    @Inject
+    private UserPreferences userPreferences;
+
+    // TBD
+
+}
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Collaborating web components share information by means of objects that are maintained as attributes of scope objects.
 You access these attributes by using the `getAttribute` and `setAttribute` methods of the class representing the scope.
 <<scope-objects>> lists the scope objects.
 
@@ -23,16 +78,11 @@ You access these attributes by using the `getAttribute` and `setAttribute` metho
 [width="90%",cols="15%,25%,50%"]
 |===
 |Scope Object |Class |Accessible From
-
-|Web context |`jakarta.servlet.ServletContext` |Web components within a web context.
+|Application |`jakarta.servlet.ServletContext` |Web components within the web application.
 See <<accessing-the-web-context>>.
-
 |Session |`jakarta.servlet.http.HttpSession` |Web components handling a request that belongs to the session.
 See <<maintaining-client-state>>.
-
-|Request |Subtype of `jakarta.servlet.ServletRequest` |Web components handling the request.
-
-|Page |`jakarta.servlet.jsp.JspContext` |The Jakarta Server Pages page that creates the object.
+|Request |`jakarta.servlet.ServletRequest` |Web components handling the request.
 |===
 
 === Controlling Concurrent Access to Shared Resources
@@ -49,10 +99,6 @@ Concurrent access can arise in several situations.
 * Multiple threads within a web component accessing instance variables.
 
 A web container will typically create a thread to handle each request.
-To ensure that a servlet instance handles only one request at a time, a servlet can implement the `SingleThreadModel` interface.
-If a servlet implements this interface, no two threads will execute concurrently in the servlet's service method.
-A web container can implement this guarantee by synchronizing access to a single instance of the servlet or by maintaining a pool of web component instances and dispatching each new request to a free instance.
-This interface does not prevent synchronization problems that result from web components' accessing shared resources, such as static class variables or external objects.
 
 When resources can be accessed concurrently, they can be used in an inconsistent fashion.
 You prevent this by controlling the access using the synchronization techniques described in the Threads lesson at https://docs.oracle.com/javase/tutorial/essential/concurrency/[^].

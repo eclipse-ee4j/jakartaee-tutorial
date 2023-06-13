@@ -2,8 +2,8 @@
 
 A servlet is a Java programming language class that directly or indirectly implements the `jakarta.servlet.Servlet` interface.
 The `jakarta.servlet` and `jakarta.servlet.http` packages provide interfaces and classes for writing servlets.
-All servlets must implement the `jakarta.servlet.Servlet` interface, which defines lifecycle methods.
+All servlets must implement the `jakarta.servlet.Servlet` interface, which defines lifecycle methods such as `init`, `service`, and `destroy`.
 When implementing a generic service, you can extend the `jakarta.servlet.GenericServlet` class which already implements the `Servlet` interface.
 When implementing a HTTP service, you can extend the `jakarta.servlet.http.HttpServlet` class which already extends the `GenericServlet` class.
 
-In a typical Jakarta Servlet based web application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
+In a typical Jakarta Servlet based web application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx` methods where `Xxx` represents the HTTP method of interest.
