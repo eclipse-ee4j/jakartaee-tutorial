@@ -7,7 +7,7 @@ The source code for this application is in the `_jakartaee-examples_/tutorial/we
 
 === The Servlet
 
-In a typical Jakarta Servlet application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
+In a typical Jakarta Servlet based web application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
 Such a class is in the Jakarta Servlet world called a _Servlet_.
 
 For this Hello World web application, the `src/main/java/jakarta/tutorial/web/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
