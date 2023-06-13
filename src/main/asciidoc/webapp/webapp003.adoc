@@ -3,7 +3,7 @@
 The `hello-faces` application is a web application that uses Jakarta Faces take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 As a presentation-oriented web application, the response is represented as a HTML document.
 
-The source code for this application is in the `_tut-install_/tutorial/web/faces/hello-faces/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/hello-faces/` directory.
 
 Jakarta Faces is a component based MVC framework that provides its own servlet as controller (the "C" part of MVC), the `FacesServlet`.
 The model and the view are usually provided by you, the web developer.
