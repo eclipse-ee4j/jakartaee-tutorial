@@ -1129,7 +1129,8 @@ If you want to inspect the app yourself, you can manually deploy the WAR file (`
 
 In the following example, we'll secure a REST endpoint using Form authentication and remember-me.
 
-Remember-me is a facility where an authenticated identity can be remembered beyond the scope of an HTTP session.
+Remember-me is a facility where an authenticated identity can be remembered beyond the scope of an HTTP session. This happens via
+a separate cookie that has a longer life-time than the cookie used for the HTTP session (and the session itself on the server).
 
 You'll learn how to:
 
@@ -1154,10 +1155,8 @@ We'll use the same authentication mechanism declaration as we used for <<Securin
 
 ==== Enable remember-me
 
-In Jakarta Security various services are made available via CDI Interceptors(*), among which the remember-me service. Remember-me can be transparently applied to basically every authentication mechanism. In CDI, it's trivial to add Interceptors to beans that we define ourselves, but a little less trivial to add to provided beans. In this section we explain how to do this via a CDI extension.
+In Jakarta Security, there are several services available through CDI Interceptors footnote:[Technically Jakarta Interceptors is an API separate from CDI, but in modern applications they are used exclusively with CDI, hence we use the term "CDI Interceptors" here.], one of which is the remember-me service. Remember-me can be transparently applied to basically every authentication mechanism. In CDI, it's trivial to add Interceptors to beans that we define ourselves, but a little less trivial to add to provided beans. In this section we explain how to do this via a CDI extension.
 
-[NOTE]
-*) Technically Jakarta Interceptors is an API separate from CDI, but in modern applications they are used exclusively with CDI, hence we use the term "CDI Interceptors" here.
 
 For this example, we'll add the CDI extension interface (1) to our application config class:
 
@@ -1186,13 +1185,13 @@ public class ApplicationConfig extends Application
 
 CDI allows us to enhance classes using a method annotated with the `@Enhancement` annotation and as attribute the class we're seeking to enhance. For our example that will be a sub-type of the `HttpAuthenticationMechanism` interface (we know the bean enabled by `FormAuthenticationMechanismDefinition` will implement the `HttpAuthenticationMechanism` interface), hence we set the `withSubtypes` attribute to `true`. (2)
 
-Within the method we can then programmatically add the `@RememberMe` annotation used to bind the remember-me interceptor to a class. In the example here we use the default instance (which has all attributes set to their defaults).
+Within the method we can then programmatically add the `@RememberMe` annotation used to bind the remember-me interceptor to a class. In the example here we use the default instance (which has all attributes set to their defaults). There are attributes for setting various aspects of the cookie, such as its name, whether it should be secure and http only, and perhaps most importantly the max age of the cookie (default is one day).
 
 ==== Define the remember-me identity store
 
 For remember-me to work a token has to be created that is used as a credential to authenticate right away instead of invoking the authentication mechanism that is being intercepted. Jakarta Security uses a special identity store for this; the `RememberMeIdentityStore`. This type of identity store is exclusively used by the remember-me feature, hence it's a different type from `IdentityStore`.
 
-Jakarta Security does not ship with any provided remember-me identity store, but for demonstration purposes we can easily create one ourselves:
+Jakarta Security does not ship with any provided remember-me identity store, but for demonstration purposes we can easily create one ourselves.
 
 The following shows an example:
 
@@ -1246,7 +1245,7 @@ When storing the Principal, care must be taken that the Principal could be an el
 
 The next thing that must be done is essentially similar to what a normal identity store does: validating a `Credential`. For a `RememberMeIdentityStore` this will always be of type `RememberMeCredential` with `getToken()` returning a token of the kind that was generated in `generateLoginToken()`. In our example (2) we're just using the token as key in our map.
 
-Finally we can provider behaviour to remove the login token (and essentially invalidate it) via the `removeLoginToken` method. This method is called when a caller explicitly logs out. In our example (3) we just remove the token from our map. 
+Finally we can provide behaviour to remove the login token (and essentially invalidate it) via the `removeLoginToken` method. This method is called when a caller explicitly logs out. In our example (3) we just remove the token from our map. 
 
 [NOTE]
 When storing the principal and groups in a token that we send to the client we can't always easily invalidate it when the caller logs out; the caller can always keep the token and send it again. 
