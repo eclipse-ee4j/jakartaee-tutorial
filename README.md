@@ -31,7 +31,7 @@ See that repo for details.
 
 * [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
 * [virtua-tech/jakartaee-tutorial-playbook](https://github.com/virtua-tech/jakartaee-tutorial-playbook) - builds documentation site
-* [jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui) - HTML and CSS assets used for the documentation site look and feel.
+* [virtua-tech/jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui) - HTML and CSS assets used for the documentation site look and feel.
 
 ## Contributing
 
