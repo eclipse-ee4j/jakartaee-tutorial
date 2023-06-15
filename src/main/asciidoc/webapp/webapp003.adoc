@@ -10,8 +10,8 @@ The model and the view are usually provided by you, the web developer.
 
 === The Model
 
-In a typical Jakarta Faces application, the model (the "M" part of MVC) is represented by a JavaBean class.
-Such a JavaBean class is in the Jakarta Faces world called a _Backing Bean_.
+In a typical Jakarta Faces application, the model (the "M" part of MVC) is represented by a bean class.
+Such a bean class is in the Jakarta Faces world called a _Backing Bean_.
 
 For this Hello World web application, the `src/main/java/jakarta/tutorial/web/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
 
