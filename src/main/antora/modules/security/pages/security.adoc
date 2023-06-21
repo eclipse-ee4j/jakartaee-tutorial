@@ -67,8 +67,7 @@ A Servlet authentication mechanism, however, will not necessarily consult a Jaka
 
 Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST, and Jakarta Servlet. These all return the same outcome, independent of whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism. Within a Jakarta EE environment the usage of Jakarta Security for this is encouraged, and the usage of those other APIs is discouraged. 
 
-[NOTE]
-Programmatic role checks in Jakarta REST, Jakarta Servlet and various other APIs are not being deprecated for the time being, as those APIs are also used stand-alone (outside Jakarta EE). Future versions of those APIs may contain warnings about their usage within Jakarta EE.
+NOTE: Programmatic role checks in Jakarta REST, Jakarta Servlet and various other APIs are not being deprecated for the time being, as those APIs are also used stand-alone (outside Jakarta EE). Future versions of those APIs may contain warnings about their usage within Jakarta EE.
 
 == Securing an endpoint with Basic authentication
 
@@ -109,8 +108,7 @@ This resource uses the injected Jakarta EE `SecurityContext` to obtain access to
 
 If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
 
-[NOTE]
-There is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a discouraged type and the Jakarta Security version is to be preferred.
+NOTE: There is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a discouraged type and the Jakarta Security version is to be preferred.
 
 ==== Declare the security constraints
 
@@ -139,11 +137,9 @@ Next we'll define the security constraints in `web.xml`, which tell the security
 
 This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
 
-[NOTE]
-In Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
+NOTE: In Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
 
-[NOTE]
-The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension. There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+NOTE: The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension. There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
 
 ==== Declare the authentication mechanism
 
@@ -184,8 +180,7 @@ public class TestIdentityStore implements IdentityStore {
 
 This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. 
 
-[NOTE]
-Jakarta Security doesn't provide a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
+NOTE: Jakarta Security doesn't provide a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
 
 
 The identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
@@ -781,6 +776,7 @@ The test starts a server and deploys the output of the build process (a .war fil
 The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
 
 
+
 == Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores
 
 In the following example, we'll be securing a REST endpoint using Basic authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store. Instead of relying on the default algorithm provided by Jakarta Security to handle multiple identity stores we'll be using a custom algoritm.
@@ -855,8 +851,7 @@ Compared to the example in <<Securing an endpoint with Basic authentication>> we
 
 Although it's customary to explicitly declare all roles in the application using `<security-role>`, it's technically not needed. As long as the role name appears in some XML fragment or annotation attribute the Jakarta EE requirement to declare all roles upfront is satisfied. As we can see in the fragment above, the role names "user" and "caller2" already appear in the `<auth-constraint>` section, so they don't *have* to be repeated.
 
-[NOTE]
-The reason it's deemed good practice to list all roles in the `<security-role>` element in web.xml (or alternatively in an `@DeclareRoles` annotation) even when not really needed is to have a single place where all roles are listed, instead of them being scattered throughout the application.
+NOTE: The reason it's deemed good practice to list all roles in the `<security-role>` element in web.xml (or alternatively in an `@DeclareRoles` annotation) even when not really needed is to have a single place where all roles are listed, instead of them being scattered throughout the application.
 
 
 ==== Declare the authentication mechanism and identity store
@@ -906,8 +901,7 @@ When multiple identity stores are present, an identity store handler (of type `I
 
 In order to use the identity store, we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a Database identity store>>.
 
-[NOTE]
-In the custom identity store defined above and in the database identity store here we both use name "john' and password "secret1".
+NOTE: In the custom identity store defined above and in the database identity store here we both use name "john' and password "secret1".
 
 ==== Writing the identity store handler
 
@@ -961,13 +955,11 @@ There are various result outcomes possible.
 
 In our custom handler code here we return an `INVALID_RESULT` for the first store that fails, as we want all stores to validate successfully here. If validation does succeed (the outcome is `VALID` then) we grab the groups it returned and store in a set.
 
-[NOTE]
-Identity stores also have a capability to query it for roles directly, without validating credentials. We haven't used that feature here.
+NOTE: Identity stores also have a capability to query it for roles directly, without validating credentials. We haven't used that feature here.
 
 Eventually we return a result based on the `CallerPrincipal` from the last successful validation result, and all the collected groups.
 
-[NOTE]
-In our example it doesn't matter from which validation result we grab the `CallerPrincipal` as it's all the one with name "pete" here. In general identity stores may transform the name from the input credential (e.g. "pete") to something else (e.g. "Pete Anderson").
+NOTE: In our example it doesn't matter from which validation result we grab the `CallerPrincipal` as it's all the one with name "pete" here. In general identity stores may transform the name from the input credential (e.g. "pete") to something else (e.g. "Pete Anderson").
 
 ==== Test the application
 
@@ -990,8 +982,7 @@ john : true,true,true
 
 The resource that we defined above required only two roles to access it (`user` and `caller2`), but our custom identity store also returned `caller1`. The resource we created tests for this, and as it appears, we indeed had this role.
 
-[NOTE]
-If we hadn't declared `caller1` in `web.xml` (or via an annotation), the test for `caller1` might have returned false. This is however server dependent.
+NOTE: If we hadn't declared `caller1` in `web.xml` (or via an annotation), the test for `caller1` might have returned false. This is however server dependent.
 
 
 
@@ -1052,15 +1043,13 @@ public class CustomAuthenticationMechanism implements HttpAuthenticationMechanis
 
 This custom authentication mechanism interacts with the caller by grabbing two headers from the request: `callername` and `callerpassword`. (1) In case any of them are `null`, we return a special status; the "do nothing" status. (2) This means there has been no request or attempt to do authentication. If the resource the caller is trying to access is not protected, the caller can access it anonymously. If it is proteced, the caller will not be able to access it.
 
-When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values (3) and pass that into the injected `IdentityStoreHandler`. (4) We've seen how such handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
+When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values (3) and pass that into the injected `IdentityStoreHandler`. (4) We saw how this type of handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
 
-[NOTE]
-An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict developers from things like inserting extra identity stores into the chain that can do things like adding extra groups.
+NOTE: An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict developers from things like inserting extra identity stores into the chain that can do things like adding extra groups.
 
 If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. (5)
 
-[NOTE]
-In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a so-called https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
+NOTE: In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
 
 The authentication mechanism is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `HttpAuthenticationMechanism`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
 
@@ -1122,5 +1111,388 @@ The test starts a server and deploys the output of the build process (a .war fil
 The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
 If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restCustomAuthCustomStore/target/restCustomAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
+
+
+
+== Securing an endpoint with Form authentication and remember-me
+
+In the following example, we'll secure a REST endpoint using Form authentication and remember-me.
+
+Remember-me is a facility where an authenticated identity can be remembered beyond the scope of an HTTP session. This happens via
+a separate cookie that has a longer life-time than the cookie used for the HTTP session (and the session itself on the server).
+
+You'll learn how to:
+
+. Define security constraints
+. Use the Form authentication mechanism
+. Enable the remember-me feature
+. How to define (and implicitly set) a custom remember-me identity store
+. How to define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource class as we used for <<Securing an endpoint with Form authentication>>
+
+==== Declare the security constraints
+
+We'll use the same security constraints as we used for <<Securing an endpoint with Form authentication>>
+
+==== Declare the authentication mechanism
+
+We'll use the same authentication mechanism declaration as we used for <<Securing an endpoint with Form authentication>>
+
+==== Enable remember-me
+
+In Jakarta Security, there are several services available through CDI Interceptors footnote:[Technically Jakarta Interceptors is an API separate from CDI, but in modern applications they are used exclusively with CDI, hence we use the term "CDI Interceptors" here.], one of which is the remember-me service. Remember-me can be transparently applied to basically every authentication mechanism. In CDI, it's trivial to add Interceptors to beans that we define ourselves, but a little less trivial to add to provided beans. In this section we explain how to do this via a CDI extension.
+
+
+For this example, we'll add the CDI extension interface (1) to our application config class:
+
+[source,java]
+-----
+@ApplicationScoped
+@FormAuthenticationMechanismDefinition(
+    loginToContinue = @LoginToContinue(
+        loginPage="/login.html",
+        errorPage="/login-error.html"
+    )
+)
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application 
+    implements BuildCompatibleExtension { <1>
+    
+    @Enhancement(
+        types = HttpAuthenticationMechanism.class, 
+        withSubtypes = true) <2>
+    public void addRememberMe(ClassConfig httpAuthenticationMechanism) {
+        httpAuthenticationMechanism.addAnnotation(
+            RememberMe.Literal.INSTANCE); <3>
+    }
+}
+-----
+
+CDI allows us to enhance classes using a method annotated with the `@Enhancement` annotation and as attribute the class we're seeking to enhance. For our example that will be a sub-type of the `HttpAuthenticationMechanism` interface (we know the bean enabled by `FormAuthenticationMechanismDefinition` will implement the `HttpAuthenticationMechanism` interface), hence we set the `withSubtypes` attribute to `true`. (2)
+
+Within the method we can then programmatically add the `@RememberMe` annotation used to bind the remember-me interceptor to a class. In the example here we use the default instance (which has all attributes set to their defaults). There are attributes for setting various aspects of the cookie, such as its name, whether it should be secure and http only, and perhaps most importantly the max age of the cookie (default is one day).
+
+==== Define the remember-me identity store
+
+For remember-me to work a token has to be created that is used as a credential to authenticate right away instead of invoking the authentication mechanism that is being intercepted. Jakarta Security uses a special identity store for this; the `RememberMeIdentityStore`. This type of identity store is exclusively used by the remember-me feature, hence it's a different type from `IdentityStore`.
+
+Jakarta Security does not ship with any provided remember-me identity store, but for demonstration purposes we can easily create one ourselves.
+
+The following shows an example:
+
+[source,java]
+-----
+@ApplicationScoped
+public class CustomRememberMeIdentityStore implements RememberMeIdentityStore {
+
+    private final Map<String, CredentialValidationResult> tokenToIdentityMap = 
+        new ConcurrentHashMap<>();
+    
+    @Override
+    public String generateLoginToken(
+        CallerPrincipal callerPrincipal, Set<String> groups) { <1>
+        var token = UUID.randomUUID().toString();
+
+        tokenToIdentityMap.put(
+            token, 
+            new CredentialValidationResult(callerPrincipal, groups));
+
+        return token;
+    }
+
+    @Override
+    public CredentialValidationResult validate(
+        RememberMeCredential credential) { <2>
+        if (tokenToIdentityMap.containsKey(credential.getToken())) {
+            return tokenToIdentityMap.get(credential.getToken());
+        }
+
+        return INVALID_RESULT;
+    }
+
+    @Override
+    public void removeLoginToken(String token) { <3>
+        tokenToIdentityMap.remove(token);
+    }
+
+}
+-----
+
+The `RememberMeIdentityStore` needs to perform 3 tasks. 
+
+It first needs to generate a token representing a caller principal and a set of groups. The caller principal and the set of groups are the ones set by the authentication mechanism right after the caller successfully authenticated. In our example (1) here we're generating a random UUID that's used as a key in an application scoped map.
+
+NOTE: Storing the authenticated identity (principal and groups) in an application scoped map is just an example. Other options could be storing it in a database or key-value store, encrypting the principal and groups, or generating some kind of JSON Web Token (JWT).
+
+NOTE: When storing the Principal, care must be taken that the Principal could be an elaborate custom Principal containing many more fields than just `name`. 
+
+The next thing that must be done is essentially similar to what a normal identity store does: validating a `Credential`. For a `RememberMeIdentityStore` this will always be of type `RememberMeCredential` with `getToken()` returning a token of the kind that was generated in `generateLoginToken()`. In our example (2) we're just using the token as key in our map.
+
+Finally we can provide behaviour to remove the login token (and essentially invalidate it) via the `removeLoginToken` method. This method is called when a caller explicitly logs out. In our example (3) we just remove the token from our map. 
+
+NOTE: When storing the principal and groups in a token that we send to the client we can't always easily invalidate it when the caller logs out; the caller can always keep the token and send it again. 
+
+
+==== Define the identity store
+
+We'll use the same identity store as we used for <<Securing an endpoint with Form authentication>>
+
+==== Test the application
+
+It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restFormAuthCustomStoreRememberMe
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.702 s - in jakartaee.examples.focused.security.restformauthcustomatorerememberme.RestFormAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        // Initial request
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        // Response is login form, so we can authenticate
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("j_username")
+            .setValueAttribute("john");
+
+        form.getInputByName("j_password")
+            .setValueAttribute("secret1");
+
+        // After logging in, we should get the actual resource response
+        TextPage page = form.getInputByValue("Submit")
+                   .click();
+
+        System.out.println(page.getContent());
+        
+        // Remove all cookies (specially the JSESSONID), except for the
+        // JREMEMBERMEID cookie which carries the token to login again
+        for (Cookie cookie : webClient.getCookieManager().getCookies()) {
+            if (!"JREMEMBERMEID".equals(cookie.getName())) {
+                webClient.getCookieManager().removeCookie(cookie);
+            }
+        }
+        
+        // Should get the resource response, and not the login form
+        TextPage pageAgain = webClient.getPage(baseUrl + "/rest/resource");
+        
+        System.out.println(pageAgain.getContent());
+    }
+}
+----
+
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+
+The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
+
+Then we delete all cookies, specifically the `JSESSIONID` cookie that keeps the session that the form authentication mechanism uses to remember the authenticated identity. The test then does another request, and this time the value from the `JREMEMBERMEID` cookie is used to login.
+
+
+
+
+== Securing an endpoint with a custom authentication mechanism, a custom identity store and remember-me
+
+In the following example, we'll secure a REST endpoint using custom authentication and remember-me.
+
+Remember-me is a facility where an authenticated identity can be remembered beyond the scope of an HTTP session. This happens via
+a separate cookie that has a longer life-time than the cookie used for the HTTP session (and the session itself on the server).
+
+You'll learn how to:
+
+. Define security constraints
+. Define (and implicitly set) a custom authentication mechanism with remember-me
+. How to define (and implicitly set) a custom remember-me identity store
+. Define (and implicitly set) a custom identity store
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Define the authentication mechanism
+
+Let's now define a simple authentication mechanism that the security system can use to interact with the caller who tries to access a resource and specifically make sure the RememberMe feature is used:
+
+[source,java]
+----
+@RememberMe <6>
+@ApplicationScoped
+public class CustomAuthenticationMechanism implements HttpAuthenticationMechanism {
+    
+    @Inject
+    private IdentityStoreHandler identityStoreHandler;
+
+    @Override
+    public AuthenticationStatus validateRequest(
+        HttpServletRequest request, 
+        HttpServletResponse response, 
+        HttpMessageContext httpMessageContext) throws AuthenticationException {
+        
+        var callerName = request.getHeader("callername"); <1>
+        var password = request.getHeader("callerpassword");
+        
+        if (callerName == null || password == null) { <2>
+            return httpMessageContext.doNothing();
+        }
+
+        var result = identityStoreHandler.validate( <4>
+            new UsernamePasswordCredential(callerName, password)); <3>
+        
+        if (result.getStatus() != VALID) {
+            return httpMessageContext.responseUnauthorized();
+        }
+
+        return httpMessageContext.notifyContainerAboutLogin( <5>
+            result.getCallerPrincipal(), 
+            result.getCallerGroups());
+    }
+    
+}
+----
+
+NOTE: This is the same custom authentication mechanism that was used in <<Securing an endpoint with a custom authentication mechanism and a custom identity store>>, but with the `@RememberMe` annotation added.
+
+This custom authentication mechanism interacts with the caller by grabbing two headers from the request: `callername` and `callerpassword`. (1) In case any of them are `null`, we return a special status; the "do nothing" status. (2) This means there has been no request or attempt to do authentication. If the resource the caller is trying to access is not protected, the caller can access it anonymously. If it is proteced, the caller will not be able to access it.
+
+When the two required headers are provided by the caller, we create a `UsernamePasswordCredential` out of their values (3) and pass that into the injected `IdentityStoreHandler`. (4) We've seen how such handler worked in the example <<Securing an endpoint with Basic authentication and a custom algorithm for handling multiple identity stores>>.
+
+NOTE: An authentication mechanism in Jakarta Security is not strictly required to delegate the credential validation to the identity store handler. However not doing so is considered bad practice, as it would restrict developers from things like inserting extra identity stores into the chain that can do things like adding extra groups.
+
+If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. (5)
+
+NOTE: In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a so-called https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
+
+We annotate our custom authentication mechanism with the `@RememberMe` annotation to enable the remember-me feature for use with this authentication mechanism. In the example here we don't set any attributes (all of them have default values). There are attributes for setting various aspects of the cookie used for remember-me, such as its name, whether it should be secure and http only, and perhaps most importantly the max age of the cookie (default is one day).
+
+NOTE: Instead of using the `@RememberMe` annotation here, we could also have used the same extension that was used in <<Securing an endpoint with Form authentication and remember-me>> to enable the remember-me feature. The annotation however is a little bit easier to use.
+
+The authentication mechanism is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `HttpAuthenticationMechanism`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+==== Define the identity store
+
+We'll use the same identity store as we used for the <<Securing an endpoint with Basic authentication>> example.
+
+==== Define the remember-me identity store
+
+We'll use the same remember-me identity store as we used for the <<Securing an endpoint with Form authentication and remember-me>> example.
+
+==== Test the application
+
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restCustomAuthCustomStoreRememberMe
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+john : true
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.287 s - in jakartaee.examples.focused.security.restcustomauthcustomstorerememberme.RestCustomAuthCustomStoreRememberMeIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        // Initial request
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        // Response is login form, so we can authenticate
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("j_username")
+            .setValueAttribute("john");
+
+        form.getInputByName("j_password")
+            .setValueAttribute("secret1");
+
+        // After logging in, we should get the actual resource response
+        TextPage page = form.getInputByValue("Submit")
+                   .click();
+
+        System.out.println(page.getContent());
+        
+        // Remove all cookies (specially the JSESSONID), except for the
+        // JREMEMBERMEID cookie which carries the token to login again
+        for (Cookie cookie : webClient.getCookieManager().getCookies()) {
+            if (!"JREMEMBERMEID".equals(cookie.getName())) {
+                webClient.getCookieManager().removeCookie(cookie);
+            }
+        }
+        
+        // Should get the resource response, and not the login form
+        TextPage pageAgain = webClient.getPage(baseUrl + "/rest/resource");
+        
+        System.out.println(pageAgain.getContent());
+    }
+}
+----
+
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+
+
+The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
+
+The test sends a request here to the protected resource along with the headers we mentioned above, and the server responds with the right content. 
+
+Then we delete all cookies, except for the `JREMEMBERMEID` cookie, and we unset all headers that we used before. The test then does another request, and this time the value from the `JREMEMBERMEID` cookie is used to login.
 
 
