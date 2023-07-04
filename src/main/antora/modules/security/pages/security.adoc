@@ -245,6 +245,10 @@ The `DefaultCredentialsProvider` used here makes sure that the headers for Basic
 
 If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restBasicAuthCustomStore/target/restBasicAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
 
+
+
+
+
 == Securing an endpoint with Basic authentication and a database identity store
 
 In the following example, we'll secure a REST endpoint using Basic authentication and the database identity store that is provided by Jakarta Security.
@@ -413,6 +417,10 @@ john : true
 
 The test itself is basically the same as that for the <<Securing an endpoint with Basic authentication>> example.
 
+
+
+
+
 == Securing an endpoint with Basic authentication and multiple identity stores
 
 In the following example, we'll be securing a REST endpoint using Basic authentication and two identity stores: the database identity store that is provided by Jakarta Security and a custom identity store.
@@ -558,6 +566,10 @@ public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
 
 We have two tests here: in one test we try to authenticate as "john", in the other test as "pete". As we've seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognizing a username by any of them will not fail the overall validation.
 
+
+
+
+
 == Securing an endpoint with Form authentication
 
 In the following example, we'll secure a REST endpoint using Form authentication.
@@ -565,7 +577,7 @@ In the following example, we'll secure a REST endpoint using Form authentication
 You'll learn how to:
 
 . Define security constraints
-. Use the Form authentication mechanisms
+. Use the Form authentication mechanism
 . How to define (and implicitly set) a custom identity store
 . Use the Jakarta Security `SecurityContext`
 
@@ -774,6 +786,7 @@ public class RestFormAuthCustomStoreIT extends ITBase {
 The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
 
 The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
+
 
 
 
@@ -1395,7 +1408,7 @@ NOTE: An authentication mechanism in Jakarta Security is not strictly required t
 
 If the credentials validated correctly, we use the `HttpMessageContext` to communicate the details of the authenticated caller to the container. (5)
 
-NOTE: In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a so-called https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
+NOTE: In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
 
 We annotate our custom authentication mechanism with the `@RememberMe` annotation to enable the remember-me feature for use with this authentication mechanism. In the example here we don't set any attributes (all of them have default values). There are attributes for setting various aspects of the cookie used for remember-me, such as its name, whether it should be secure and http only, and perhaps most importantly the max age of the cookie (default is one day).
 
@@ -1494,5 +1507,262 @@ The `webClient.addRequestHeader()` calls used here make sure that the headers fo
 The test sends a request here to the protected resource along with the headers we mentioned above, and the server responds with the right content. 
 
 Then we delete all cookies, except for the `JREMEMBERMEID` cookie, and we unset all headers that we used before. The test then does another request, and this time the value from the `JREMEMBERMEID` cookie is used to login.
+
+
+
+
+== Securing an endpoint with OpenID Connect authentication
+
+In the following example, we'll be securing a REST endpoint using OpenID Connect authentication.
+
+With https://en.wikipedia.org/wiki/OpenID[OpenID Connect,role=external,window=_blank] authentication a caller is redirected to a third party server, typically a public one such as Google, Facebook, Linkedin, Apple, etc, but it can be a private one as well. The caller authenticates with that third party server, and is then redirected back along with a token. Our server than validates that token, and if it's valid the caller is considered authenticated.
+
+You'll learn how to:
+
+. Define security constraints
+. Use the OpenID Connect authentication mechanism
+. Define (and implicitly set) a custom identity store used for authorization only
+. Use the Jakarta Security `SecurityContext`
+
+=== Write the application
+
+We'll use the same resource class as we used for <<Securing an endpoint with Form authentication>>
+
+==== Declare the security constraints
+
+We'll use the same security constraints as we used for <<Securing an endpoint with Form authentication>>
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@OpenIdAuthenticationMechanismDefinition(
+    providerURI = "https://localhost:8443/openid-connect-server-webapp", <1>
+    clientId = "client", <2>
+    clientSecret = "secret", <3>
+    redirectToOriginalResource = true <4>
+)
+@ApplicationScoped
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+
+The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+
+Contrary to the Basic HTTP authentication mechanism and the Form authentication mechanism, the OpenID Connect authentication mechanism requires a third party server that performs the actual authentication. Such third party server is called the OpenID Connect Provider (OIDC provider or OpenID Provider are also used). After authentication this provider handles user consent and and issues a token. The client requesting a user's authentication is called a Relying Party. In the case of Jakarta EE and Jakarta Security, the Jakarta EE server running the OpenID Connect authentication mechanism is a Relying Party.
+
+To use this authentication mechanism, Jakarta Security provides the `@OpenIdAuthenticationMechanismDefinition` annotation, for which we typically need 3 mandatory configuration items as shown in the example code above. 
+
+The first is the `providerURI` (1), which points to the third party OpenID Connect Provider. In this example we use `https://localhost:8443/openid-connect-server-webapp`, which is the URL on which the example code has installed and started a local OpenID Connect provider called "Mitre". Whenever a caller accesses a protected resource, that caller is redirected to that OpenID Connect Provider.
+
+The OpenId authentication mechanism needs to identify itself to the OpenID Connect Provider via a username/password (called `clientId` (2) and `clientSecret` (3)). We use "client" respectively "secret" here for those, which are the credentials for a default client that is available in Mitre.
+
+After a caller successfully authenticates with the OpenID Connect Provider, that caller is redirected back to a URL on the Relying Party (our Jakarta EE server). This is called the "callback URL" and can be set via the `redirectURI` attribute. The default value is `${baseURL}/Callback`, where `${baseURL}` expands to the context-root of the application that uses Jakarta Security, e.g. `https://localhost:8080/openid-client` in our example. This exact URI must be known to Mitre. Mitre (and any OpenID Connect Provider in general) never redirects to unknown URIs.
+
+By default, after the caller is redirected back to the Relying Party (our Jakarta EE server), the resource behind `/Callback` is invoked. When the attribute `redirectToOriginalResource` (4) is set to `true` however, the caller is once again redirected to the URL originally requested and which triggered the authentication process.
+
+NOTE: When `redirectToOriginalResource` is set to to `true` it's not necessary to actually map anything to the callback URL (e.g. a Servlet or a REST resource). The authentication mechanism is invoked before the resource mapped to the callback URL is invoked, so if the authentication mechanism always redirects it never invokes this resource and the resource therefore doesn't need to actually exist.
+
+==== Define the identity store
+
+In many cases the OpenID Connect Provider has no knowledge of the application for which it authenticates the caller, and therefore does not normally provide any logical groups for the authenticated user. Those groups are application specific after all. We therefore define an additional identity store that does provide those groups for a caller.
+
+NOTE: Despite not being typical, Jakarta Security supports getting the groups via the `claimsDefinition` attribute of the `@OpenIdAuthenticationMechanismDefinition` annotation. This can be used to set a claim name (default is "groups"). Jakarta Security then tries to find this name in the AccessToken, IdentityToken, or in the info returned by the `/userinfo` endpoint of the OpenId Connect Provider. Providers often need special configuration to return group claims.
+
+[source,java]
+----
+@ApplicationScoped
+public class AuthorizationIdentityStore implements IdentityStore {
+
+    private Map<String, Set<String>> groupsPerCaller = 
+        Map.of("user", Set.of("user")); <2>
+
+    @Override
+    public Set<ValidationType> validationTypes() {
+        return EnumSet.of(PROVIDE_GROUPS); <1>
+    }
+
+    @Override
+    public Set<String> getCallerGroups(
+        CredentialValidationResult validationResult) { <3>
+        return groupsPerCaller.get(validationResult.getCallerPrincipal().getName()); 
+    }
+
+}
+----
+
+This identity store is set to `PROVIDE_GROUPS` (1) only, which means the default `IdentityStoreHandler` will consult this identity store for groups after another identity store has successfully validated the credentials. For our example here we create a `Map` (2) with as key the caller principal name, and as value the set of groups. When the `IdentityStoreHandler` comes asking for the groups (3) of caller "user", a set with just the group "user" is returned.
+
+NOTE: As validation of the `IdentityToken` that's returned by the OpenID Connect Provider is integral to the OpenID Connect flow and not application specific, developers don't have to provide or define an identity store explicitly for this. Such a store is provided by Jakarta Security as an implementation detail, and automatically activated when the OpenID Connect authentication mechanism is activated.
+
+The identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+
+==== Install and configure Mitre
+
+Installing and configuring Mitre is outside the scope of Jakarta Security itself, but for completeness sake we'll briefly
+discuss it by illustration of Maven pom fragments.
+
+[source,xml]
+----
+<plugin>
+        
+    <!-- 
+        Unpack and install Tomcat + Mitre 
+        
+        Mitre is a Spring based OpenID Connect Server that best runs on a javax based Tomcat.
+    -->
+    <artifactId>maven-dependency-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>unpack</goal>
+            </goals>
+            <configuration>
+                <artifactItems>
+                    <artifactItem>
+                        <groupId>org.apache.tomcat</groupId>
+                        <artifactId>tomcat</artifactId>
+                        <version>9.0.76</version>
+                        <type>zip</type>
+                        <outputDirectory>${tomcat.root}</outputDirectory>
+                    </artifactItem>
+                    <artifactItem>
+                        <groupId>org.mitre</groupId>
+                        <artifactId>openid-connect-server-webapp</artifactId>
+                        <version>1.3.4</version>
+                        <type>war</type>
+                        <outputDirectory>${tomcat.dir}/webapps/openid-connect-server-webapp</outputDirectory>
+                    </artifactItem>
+                </artifactItems>
+            </configuration>
+        </execution>
+----
+
+Mitre is a Spring application that uses the `javax.*` namespace. We therefore need a Tomcat from the 9.x series, which is available as a zip file from the Maven coordinates `org.apache.tomcat:tomcat:9.0.76`. Likewise, Mitre is available from `org.mitre:openid-connect-server-webapp:1.3.4`. We simply need to unzip Tomcat, and unzip Mitre into its `webapps` folder. We also need to update Tomcat with the JAXB standalone libraries (see full example code).
+
+
+[source,xml]
+----
+<!-- 
+    Configure Tomcat to use HTTPS, as Open ID Connect strictly speaking requires this. 
+    Some servers may refuse to use Open ID Connect if not running on a secure connection.
+    
+    Also configure Mitre to use the callback of our client.
+    
+    Then start Tomcat and with it Mitre.
+-->
+<plugin>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <executions>
+        <execution>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <target>
+                    <echo level="info">Replacing in ${tomcat.dir}</echo>
+                    
+                    <!-- Configure Mitre to let it know its running on HTTPS  -->
+                    <replace token="http://localhost:8080" value="https://localhost:8443" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF" summary="yes">
+                        <include name="server-config.xml" />
+                    </replace>
+                    
+                    <!-- Configure Mitre to let it know where the Open ID callback needs to go to -->
+                    <replace token="http://localhost/" value="http://localhost:8080/openid-client/Callback" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF/classes/db/hsql" summary="yes">
+                        <include name="clients.sql" />
+                    </replace>
+                    
+                    <!-- Configure Tomcat using our pre-configured server.xml (which sets https) -->
+                    <copy file="src/test/resources/server.xml" todir="${tomcat.dir}/conf"/>
+                    <copy file="src/test/resources/localhost-rsa.jks" todir="${tomcat.dir}/conf"/>
+
+                    <chmod dir="${tomcat.dir}/bin" perm="ugo+rx" includes="*" />
+
+                    <!-- Start Tomcat and Mitre -->
+                    <exec executable="${tomcat.dir}/bin/startup.sh" dir="${tomcat.dir}" >
+                        <env key="CATALINA_PID" value="${tomcat.pidfile}" />
+                    </exec>
+                </target>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+----
+
+Out of the box Mitre runs on HTTP, but since we're using HTTPS instead we need to configure it to run on HTTPS using the `server-config.xml` file. We also need to tell it about the exact callback URL that we discussed above (`http://localhost:8080/openid-client/Callback`), which can be done in `clients.sql`. Tomcat has to be configured to run on HTTPS as well, which requires updating `server.xml` and providing it with a keystore.
+
+Tomcat, and with it Mitre, can be started by executing `[tomcat dir]/bin/startup.sh`.
+
+==== Test the application
+
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source]
+----
+mvn clean install -pl :restOpenIdConnectAuth
+----
+
+This will run a test associated with the project, printing something like the following:
+
+[source]
+----
+
+user : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.324 s - in jakartaee.examples.focused.security.restopenidconnectauth.RestOpenIdConnectAuthIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestOpenIdConnectAuthIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        HtmlPage page = webClient.getPage(baseUrl + "/rest/resource"); <1>
+
+        // Authenticate with the OpenId Provider using the 
+        // username and password for a default user
+        page.getElementById("j_username")
+            .setAttribute("value", "user");
+
+        page.getElementById("j_password")
+            .setAttribute("value", "password"); <2>
+
+        // Submit
+        HtmlPage confirmationPage = 
+            page.getElementByName("submit")
+                .click(); <3>
+        
+        // Confirm
+        TextPage originalResource = 
+            confirmationPage.getElementByName("authorize")
+                            .click(); <4>
+
+        System.out.println(originalResource.getContent());
+    }
+}
+----
+
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+
+After the test requests our protected resource at "/rest/resource" (1), the OpenID Connect authentication mechanism redirects to Mitre, which will respond with a login page. The test programmically sets the fields `j_username` and `j_password`, (2) and then clicks submits (3). After confirming (4), Mitre will redirect the test code back to the `/Callback` URL, which will redirect back to the original resource at "/rest/resource".
 
 
