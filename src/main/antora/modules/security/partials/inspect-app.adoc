@@ -1,0 +1,3 @@
+The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+
+If you want to inspect the app yourself, you can manually deploy the WAR file (`security/{app-name}/target/{app-name}.war`) to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.

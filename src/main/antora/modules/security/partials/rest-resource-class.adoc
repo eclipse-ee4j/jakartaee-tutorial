@@ -1,0 +1,27 @@
+Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
+
+[source,java]
+----
+@Path("/resource")
+@RequestScoped
+public class Resource {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @GET
+    @Produces(TEXT_PLAIN)
+    public String getCallerAndRole() {
+        return
+            securityContext.getCallerPrincipal().getName() + " : " +
+            securityContext.isCallerInRole("user");
+    }
+
+}
+----
+
+This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance.
+
+If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
+
+NOTE: There is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a discouraged type and the Jakarta Security version is to be preferred.

@@ -82,64 +82,11 @@ You'll learn how to:
 
 === Write the application
 
-Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
-
-[source,java]
-----
-@Path("/resource")
-@RequestScoped
-public class Resource {
-
-    @Inject
-    private SecurityContext securityContext;
-
-    @GET
-    @Produces(TEXT_PLAIN)
-    public String getCallerAndRole() {
-        return
-            securityContext.getCallerPrincipal().getName() + " : " +
-            securityContext.isCallerInRole("user");
-    }
-
-}
-----
-
-This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance.
-
-If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
-
-NOTE: There is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the Jakarta EE perspective, that is a discouraged type and the Jakarta Security version is to be preferred.
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the security constraints
 
-Next we'll define the security constraints in `web.xml`, which tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
-
-[source,xml]
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app version="5.0"
-    xmlns="https://jakarta.ee/xml/ns/jakartaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
-
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>protected</web-resource-name>
-            <url-pattern>/rest/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>user</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-</web-app>
-----
-
-This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
-
-NOTE: In Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
-
-NOTE: The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension. There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+include::partial$declare-security-constraints.adoc[]
 
 ==== Declare the authentication mechanism
 
@@ -154,49 +101,16 @@ public class ApplicationConfig extends Application {
 }
 ----
 
-To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
-
-The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass because it also declares the path for REST resources.
+include::partial$declare-authentication-mechanism.adoc[]
 
 ==== Define the identity store
 
-Finally, let's define a simple identity store that the security system can use to validate provided credentials for Basic authentication:
-
-[source,java]
-----
-@ApplicationScoped
-public class TestIdentityStore implements IdentityStore {
-
-    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
-        if (usernamePasswordCredential.compareTo("john", "secret1")) {
-            return new CredentialValidationResult("john", Set.of("user", "caller"));
-        }
-
-        return INVALID_RESULT;
-    }
-
-}
-----
-
-This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. 
-
-NOTE: Jakarta Security doesn't provide a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
-
-
-The identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+include::partial$simple-identity-store.adoc[]
 
 ==== Test the application
 
-It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restBasicAuthCustomStore
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restBasicAuthCustomStore
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -239,12 +153,9 @@ public class RestBasicAuthCustomStoreIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+include::partial$inspect-app.adoc[]
 
 The `DefaultCredentialsProvider` used here makes sure that the headers for Basic authentication are added to the request. The Basic authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
-
-If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restBasicAuthCustomStore/target/restBasicAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
-
 
 
 
@@ -263,7 +174,7 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the authentication mechanism and identity store
 
@@ -288,7 +199,7 @@ public class ApplicationConfig extends Application {
 
 ----
 
-To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
+include::partial$declare-authentication-mechanism.adoc[]
 
 Likewise, to declare the usage of a specific identity store, Jakarta EE provides `[XYZ]StoreDefinition` annotations.
 
@@ -398,16 +309,8 @@ The code above uses Jakarta Persistence, which generates SQL from Java types. Ja
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restBasicAuthDBStore
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restBasicAuthDBStore
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -435,7 +338,7 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the authentication mechanism and identity store
 
@@ -485,20 +388,12 @@ In the two stores above, however only one store knows about "pete" and that's th
 
 ==== Populating the identity store
 
-In order to use the identity store, we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a Database identity store>>.
+In order to use the identity store, we need to put some data in a database. This is done in the same as in <<Securing an endpoint with Basic authentication and a database identity store>>.
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restBasicAuthDBStoreAndCustomStore
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restBasicAuthDBStoreAndCustomStore
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -564,6 +459,8 @@ public class RestBasicAuthDBStoreAndCustomStoreIT extends ITBase {
 }
 ----
 
+include::partial$inspect-app.adoc[]
+
 We have two tests here: in one test we try to authenticate as "john", in the other test as "pete". As we've seen, each identity store only validates one of them. The fact that both tests pass demonstrates that each store will validate the right user, and that not recognizing a username by any of them will not fail the overall validation.
 
 
@@ -583,66 +480,11 @@ You'll learn how to:
 
 === Write the application
 
-Let's start with defining a simple REST resource class for a `/rest/resource` endpoint:
-
-[source,java]
-----
-@Path("/resource")
-@RequestScoped
-public class Resource {
-
-    @Inject
-    private SecurityContext securityContext;
-
-    @GET
-    @Produces(TEXT_PLAIN)
-    public String getCallerAndRole() {
-        return
-            securityContext.getCallerPrincipal().getName() + " : " +
-            securityContext.isCallerInRole("user");
-    }
-
-}
-----
-
-This resource uses the injected Jakarta EE `SecurityContext` to obtain access to the current authenticated caller, which is represented by a `Principal` instance.
-
-If this resource were available to unauthenticated callers, `getCallerPrincipal()` would return `null` for unauthenticated requests, so we'd have to check for `null`. Our example, however, requires authentication for this resource, so we can skip that check.
-
-Also note that there is a Jakarta REST-specific type that is also named `SecurityContext` and has similar methods as the ones we used here. From the point of view of Jakarta EE that is a deprecated type and replaced by the Jakarta Security version.
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the security constraints
 
-Next we'll define the security constraints in `web.xml`, which tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
-
-[source,xml]
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app version="5.0"
-    xmlns="https://jakarta.ee/xml/ns/jakartaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
-
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>protected</web-resource-name>
-            <url-pattern>/rest/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>user</role-name>
-        </auth-constraint>
-    </security-constraint>
-
-</web-app>
-----
-
-This XML says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
-
-Note that in Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of the Permission Store that we explained above. Knowledge about this transformation is only needed for very advanced use cases.
-
-The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the `@RolesAllowed` annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behavior for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the JWT API in MicroProfile has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension.
-
-There are also a number of annotations and APIs in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.
+include::partial$declare-security-constraints.adoc[]
 
 ==== Declare the authentication mechanism
 
@@ -662,9 +504,7 @@ public class ApplicationConfig extends Application {
 }
 ----
 
-To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
-
-The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+include::partial$declare-authentication-mechanism.adoc[]
 
 Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
 
@@ -723,20 +563,12 @@ public class CustomIdentityStore implements IdentityStore {
 
 This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions about whether that would promote security best practices.
 
-Also note that the identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself via a configuration annotation, or programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+include::partial$identity-store-installed.adoc[]
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restBasicAuthCustomStore
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restBasicAuthCustomStore
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -783,7 +615,7 @@ public class RestFormAuthCustomStoreIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+include::partial$inspect-app.adoc[]
 
 The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
 
@@ -976,16 +808,8 @@ NOTE: In our example it doesn't matter from which validation result we grab the 
 
 ==== Test the application
 
-It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restBasicAuthCustomStoreHandler
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restBasicAuthCustomStoreHandler
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -1012,7 +836,7 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$rest-resource-class.adoc[]
 
 ==== Define the authentication mechanism
 
@@ -1064,24 +888,16 @@ If the credentials validated correctly, we use the `HttpMessageContext` to commu
 
 NOTE: In Jakarta Security the two basic items that make up an "authenticated identity" are just a caller principal (of type `Principal`) and a set of groups (of type `String`). Via a https://en.wikipedia.org/wiki/Service_provider_interface[Service Provider Interface,role=external,window=_blank] a specific Jakarta EE product (such as WildFly or GlassFish) is able to receive these two items and then stores it internally in some way.
 
-The authentication mechanism is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `HttpAuthenticationMechanism`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+include::partial$authentication-mechanism-installed.adoc[]
 
 ==== Define the identity store
 
-We'll use the same identity store as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$simple-identity-store.adoc[]
 
 ==== Test the application
 
-It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restCustomAuthCustomStore
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restCustomAuthCustomStore
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -1119,11 +935,10 @@ public class RestCustomAuthCustomStoreIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+include::partial$inspect-app.adoc[]
 
 The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
-If you want to inspect the app yourself, you can manually deploy the WAR file (`security/restCustomAuthCustomStore/target/restCustomAuthCustomStore.war` )to the server of your choice (e.g. GlassFish 7), and request the URL via a browser or a commandline util such as `curl`.
 
 
 
@@ -1145,11 +960,11 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource class as we used for <<Securing an endpoint with Form authentication>>
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the security constraints
 
-We'll use the same security constraints as we used for <<Securing an endpoint with Form authentication>>
+include::partial$declare-security-constraints.adoc[]
 
 ==== Declare the authentication mechanism
 
@@ -1252,20 +1067,12 @@ NOTE: When storing the principal and groups in a token that we send to the clien
 
 ==== Define the identity store
 
-We'll use the same identity store as we used for <<Securing an endpoint with Form authentication>>
+include::partial$simple-identity-store.adoc[]
 
 ==== Test the application
 
-It's now time to test our application. A ready to test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restFormAuthCustomStoreRememberMe
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restFormAuthCustomStoreRememberMe
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -1329,7 +1136,7 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
+include::partial$inspect-app.adoc[]
 
 The test first sends a request here to the protected resource, and the server responds with the HTML form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the Submit button. The form posts back to a special "j_security_check" URL, where the authentication mechanism receives the request and retrieves the username and password from the POST data, much like the Basic authentication mechanism retrieves them from the HTTP headers.
 
@@ -1355,7 +1162,7 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource and same security constraints as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$rest-resource-class.adoc[]
 
 ==== Define the authentication mechanism
 
@@ -1414,11 +1221,11 @@ We annotate our custom authentication mechanism with the `@RememberMe` annotatio
 
 NOTE: Instead of using the `@RememberMe` annotation here, we could also have used the same extension that was used in <<Securing an endpoint with Form authentication and remember-me>> to enable the remember-me feature. The annotation however is a little bit easier to use.
 
-The authentication mechanism is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `HttpAuthenticationMechanism`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+include::partial$authentication-mechanism-installed.adoc[]
 
 ==== Define the identity store
 
-We'll use the same identity store as we used for the <<Securing an endpoint with Basic authentication>> example.
+include::partial$simple-identity-store.adoc[]
 
 ==== Define the remember-me identity store
 
@@ -1426,16 +1233,8 @@ We'll use the same remember-me identity store as we used for the <<Securing an e
 
 ==== Test the application
 
-It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restCustomAuthCustomStoreRememberMe
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restCustomAuthCustomStoreRememberMe
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -1499,8 +1298,7 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires.
-
+include::partial$inspect-app.adoc[]
 
 The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
@@ -1526,11 +1324,11 @@ You'll learn how to:
 
 === Write the application
 
-We'll use the same resource class as we used for <<Securing an endpoint with Form authentication>>
+include::partial$rest-resource-class.adoc[]
 
 ==== Declare the security constraints
 
-We'll use the same security constraints as we used for <<Securing an endpoint with Form authentication>>
+include::partial$declare-security-constraints.adoc[]
 
 ==== Declare the authentication mechanism
 
@@ -1549,9 +1347,7 @@ public class ApplicationConfig extends Application {
 }
 ----
 
-To declare the usage of a specific authentication mechanism, Jakarta EE provides `[XYZ]MechanismDefinition` annotations. Such an annotation is picked up by the security system, and in response to it a CDI bean that implements the `HttpAuthenticationMechanism` is enabled for it.
-
-The annotation can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+include::partial$declare-authentication-mechanism.adoc[]
 
 Contrary to the Basic HTTP authentication mechanism and the Form authentication mechanism, the OpenID Connect authentication mechanism requires a third party server that performs the actual authentication. Such third party server is called the OpenID Connect Provider (OIDC provider or OpenID Provider are also used). After authentication this provider handles user consent and and issues a token. The client requesting a user's authentication is called a Relying Party. In the case of Jakarta EE and Jakarta Security, the Jakarta EE server running the OpenID Connect authentication mechanism is a Relying Party.
 
@@ -1599,7 +1395,7 @@ This identity store is set to `PROVIDE_GROUPS` (1) only, which means the default
 
 NOTE: As validation of the `IdentityToken` that's returned by the OpenID Connect Provider is integral to the OpenID Connect flow and not application specific, developers don't have to provide or define an identity store explicitly for this. Such a store is provided by Jakarta Security as an implementation detail, and automatically activated when the OpenID Connect authentication mechanism is activated.
 
-The identity store is installed and used by the security system just by the virtue of being there; it picks up all enabled CDI beans that implement `IdentityStore`. Such beans can be enabled by the security system itself (following some configuration annotation), or can be programmatically added using the appropriate CDI APIs. Where the bean comes from doesn't matter for Jakarta Security, only the fact that it's there.
+include::partial$identity-store-installed.adoc[]
 
 ==== Install and configure Mitre
 
@@ -1699,16 +1495,8 @@ Tomcat, and with it Mitre, can be started by executing `[tomcat dir]/bin/startup
 
 ==== Test the application
 
-It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
-
-Download or clone this repo, then cd into the `focused` folder and execute:
-
-[source]
-----
-mvn clean install -pl :restOpenIdConnectAuth
-----
-
-This will run a test associated with the project, printing something like the following:
+:app-name: restOpenIdConnectAuth
+include::partial$test-github.adoc[]
 
 [source]
 ----
@@ -1761,7 +1549,7 @@ public class RestOpenIdConnectAuthIT extends ITBase {
 }
 ----
 
-The test starts a server and deploys the output of the build process (a .war file) to it. The test runs in the integration test phase, rather than the unit test phase, to make sure this build output is available when it runs. The test then sends a request to the server using the provided HtmlUnit `webClient`. Note that the `webClient` can be used for any other HTTP requests your test requires. 
+include::partial$inspect-app.adoc[]
 
 After the test requests our protected resource at "/rest/resource" (1), the OpenID Connect authentication mechanism redirects to Mitre, which will respond with a login page. The test programmically sets the fields `j_username` and `j_password`, (2) and then clicks submits (3). After confirming (4), Mitre will redirect the test code back to the `/Callback` URL, which will redirect back to the original resource at "/rest/resource".
 
