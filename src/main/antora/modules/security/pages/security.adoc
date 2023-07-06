@@ -17,8 +17,8 @@ Some of the guiding principles in Jakarta Security are:
 
 Jakarta Security defines several distinct artifacts that play an important role in the security process:
 
-. Authentication Mechanism
-. Identity Store
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#authentication-mechanism[Authentication Mechanism,role=external,window=_blank]
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#identity-store[Identity Store,role=external,window=_blank]
 . Permission Store
 
 The first two of these are used in the authentication process:
@@ -45,23 +45,23 @@ Jakarta Security provides a number of built-in authentication mechanisms and ide
 
 Authentication mechanisms:
 
-. Basic
-. Form
-. Custom Form
-. Open ID Connect (OIDC)
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#basic-annotation[Basic,role=external,window=_blank]
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#form-annotation[Form,role=external,window=_blank]
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#custom-form-annotation[Custom Form,role=external,window=_blank]
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#openid-connect-annotation[Open ID Connect (OIDC),role=external,window=_blank]
 
 Identity stores:
 
-. Database
-. LDAP
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#database-annotation[Database,role=external,window=_blank]
+. https://jakarta.ee/specifications/security/3.0/jakarta-security-spec-3.0.html#ldap-annotation[LDAP,role=external,window=_blank]
 
 == Custom authentication mechanisms and identity stores
 
-When the provided authentication mechanisms and identity stores aren't sufficient, we can easily define custom ones. Both provided and custom ones use the same interfaces, and the system doesn't distinguish between them.
+When the provided authentication mechanisms and identity stores aren't sufficient, we can easily define custom ones. Both provided and custom ones use https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/identitystore[the same interfaces,role=external,window=_blank], and the system doesn't distinguish between them.
 
 == Authentication mechanisms and identity stores from other APIs
 
-The Servlet specification defines the exact same Form and Basic authentication mechanisms. Authenticating with them will have the same result as authenticating with a Jakarta Security authentication mechanism. (Role checks will work the same independent on which API was used to authenticate.)
+The https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html[Servlet specification,role=external,window=_blank] defines the exact same https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#form-based-authentication[Form,role=external,window=_blank] and https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#http-basic-authentication[Basic,role=external,window=_blank] authentication mechanisms. Authenticating with them will have the same result as authenticating with a Jakarta Security authentication mechanism. (Role checks will work the same independent on which API was used to authenticate.)
 
 A Servlet authentication mechanism, however, will not necessarily consult a Jakarta Security identity store. This is server dependent. The identity store that is called is server dependent as well. Calling this server-dependent identity store is possible from Jakarta Security, but as an advanced feature.
 
@@ -75,10 +75,10 @@ In the following example, we'll be securing a REST endpoint using Basic authenti
 
 You'll learn how to:
 
-. Define security constraints
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
 . Set a provided authentication mechanisms
 . Define (and implicitly set) a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -166,11 +166,11 @@ In the following example, we'll secure a REST endpoint using Basic authenticatio
 
 You'll learn how to:
 
-. Define security constraints
-. Use the provided Basic authentication mechanism
-. Use the provided database identity store
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/basicauthenticationmechanismdefinition[Basic authentication mechanism,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/databaseidentitystoredefinition[database identity store,role=external,window=_blank]
 . Populate and configure the identity store
-. Use the Jakarta Security `SecurityContext`
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -330,11 +330,11 @@ In the following example, we'll be securing a REST endpoint using Basic authenti
 
 You'll learn how to:
 
-. Define security constraints
-. Use the provided Basic authentication mechanism
-. Use the provided database identity store
-. Create a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/basicauthenticationmechanismdefinition[Basic authentication mechanism,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/databaseidentitystoredefinition[database identity store,role=external,window=_blank]
+. Create a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -473,10 +473,10 @@ In the following example, we'll secure a REST endpoint using Form authentication
 
 You'll learn how to:
 
-. Define security constraints
-. Use the Form authentication mechanism
-. How to define (and implicitly set) a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/formauthenticationmechanismdefinition[Form authentication mechanism,role=external,window=_blank]
+. How to define (and implicitly set) a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -628,12 +628,12 @@ In the following example, we'll be securing a REST endpoint using Basic authenti
 
 You'll learn how to:
 
-. Define security constraints
-. Use the provided Basic authentication mechanism
-. Use the provided database identity store
-. Create a custom identity store
-. Create a custom identity store handler
-. Use the Jakarta Security `SecurityContext`
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/basicauthenticationmechanismdefinition[Basic authentication mechanism,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/databaseidentitystoredefinition[database identity store,role=external,window=_blank]
+. Create a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+. Create a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/identitystorehandler[identity store handler,role=external,window=_blank]
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -829,10 +829,10 @@ In the following example, we'll be securing a REST endpoint using a custom authe
 
 You'll learn how to:
 
-. Define security constraints
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
 . Define (and implicitly set) a custom authentication mechanism
 . Define (and implicitly set) a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -951,12 +951,12 @@ a separate cookie that has a longer life-time than the cookie used for the HTTP 
 
 You'll learn how to:
 
-. Define security constraints
-. Use the Form authentication mechanism
-. Enable the remember-me feature
-. How to define (and implicitly set) a custom remember-me identity store
-. How to define (and implicitly set) a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/formauthenticationmechanismdefinition[Form authentication mechanism,role=external,window=_blank]
+. Enable the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/rememberme[remember-me,role=external,window=_blank] feature
+. How to define (and implicitly set) a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/remembermeidentitystore[remember-me identity store,role=external,window=_blank]
+. How to define (and implicitly set) a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -1154,11 +1154,11 @@ a separate cookie that has a longer life-time than the cookie used for the HTTP 
 
 You'll learn how to:
 
-. Define security constraints
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
 . Define (and implicitly set) a custom authentication mechanism with remember-me
 . How to define (and implicitly set) a custom remember-me identity store
 . Define (and implicitly set) a custom identity store
-. Use the Jakarta Security `SecurityContext`
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -1317,10 +1317,10 @@ With https://en.wikipedia.org/wiki/OpenID[OpenID Connect,role=external,window=_b
 
 You'll learn how to:
 
-. Define security constraints
-. Use the OpenID Connect authentication mechanism
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/openidauthenticationmechanismdefinition[OpenID Connect authentication mechanism,role=external,window=_blank]
 . Define (and implicitly set) a custom identity store used for authorization only
-. Use the Jakarta Security `SecurityContext`
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
 
 === Write the application
 
@@ -1367,7 +1367,7 @@ NOTE: When `redirectToOriginalResource` is set to to `true` it's not necessary t
 
 In many cases the OpenID Connect Provider has no knowledge of the application for which it authenticates the caller, and therefore does not normally provide any logical groups for the authenticated user. Those groups are application specific after all. We therefore define an additional identity store that does provide those groups for a caller.
 
-NOTE: Despite not being typical, Jakarta Security supports getting the groups via the `claimsDefinition` attribute of the `@OpenIdAuthenticationMechanismDefinition` annotation. This can be used to set a claim name (default is "groups"). Jakarta Security then tries to find this name in the AccessToken, IdentityToken, or in the info returned by the `/userinfo` endpoint of the OpenId Connect Provider. Providers often need special configuration to return group claims.
+NOTE: Despite not being typical, Jakarta Security supports getting the groups via the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/openidauthenticationmechanismdefinition#claimsDefinition()[claimsDefinition,role=external,window=_blank] attribute of the `@OpenIdAuthenticationMechanismDefinition` annotation. This can be used to set a claim name (default is "groups"). Jakarta Security then tries to find this name in the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/openid/accesstoken[AccessToken,role=external,window=_blank], https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/openid/identitytoken[IdentityToken,role=external,window=_blank], or in the info returned by the `/userinfo` endpoint of the OpenId Connect Provider. Providers often need special configuration to return group claims.
 
 [source,java]
 ----
