@@ -1554,3 +1554,164 @@ include::partial$inspect-app.adoc[]
 After the test requests our protected resource at "/rest/resource" (1), the OpenID Connect authentication mechanism redirects to Mitre, which will respond with a login page. The test programmically sets the fields `j_username` and `j_password`, (2) and then clicks submits (3). After confirming (4), Mitre will redirect the test code back to the `/Callback` URL, which will redirect back to the original resource at "/rest/resource".
 
 
+
+
+
+
+
+== Securing an endpoint with Basic authentication and an LDAP identity store
+
+In the following example, we'll secure a REST endpoint using Basic authentication and the LDAP identity store that is provided by Jakarta Security.
+
+You'll learn how to:
+
+. https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#specifying-security-constraints[Define security constraints,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/basicauthenticationmechanismdefinition[Basic authentication mechanism,role=external,window=_blank]
+. Use the provided https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/ldapidentitystoredefinition[LDAP identity store,role=external,window=_blank]
+. Populate and configure the identity store
+. Use the Jakarta Security https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/securitycontext[SecurityContext,role=external,window=_blank]
+
+=== Write the application
+
+include::partial$rest-resource-class.adoc[]
+
+==== Declare the authentication mechanism and identity store
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@LdapIdentityStoreDefinition(
+    url = "ldap://localhost:40000",
+    callerBaseDn = "ou=caller,dc=jakartaee",
+    groupSearchBase = "ou=group,dc=jakartaee",
+    groupSearchFilter = "(&(member=%s)(objectclass=groupofnames))"
+)
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+----
+
+include::partial$declare-authentication-mechanism.adoc[]
+
+Likewise, to declare the usage of a specific identity store, Jakarta EE provides `[XYZ]StoreDefinition` annotations.
+
+The annotations can be put on any bean, but in a REST application it fits particularly well on the `Application` subclass that also declares the path for REST resources.
+
+You can use the provided `@LdapIdentityStoreDefinition` with any authentication mechanism that validates username/password credentials. LDAP structures are very open-ended, and there's a lot of possible ways to model callers, their passwords, and their groups. We'll present one way here, where we'll define a `caller.jakartaee` object, that contains the caller name and password, and a `group.jakartaee` object that contains the group name and a list of all callers in that group.
+
+For this structure we need 3 attributes to be defined:
+
+. `callerBaseDn` - Used for credential validation using "direct binding", with the default caller name being "uid".
+. `groupSearchBase` - The object root used to search for groups of the caller
+. `groupSearchFilter` - The subtree to search for groups
+
+
+
+==== Populating the identity store
+
+In order to use the identity store, we need to put some data in an LDAP server. The following code shows one way how to do that:
+
+[source,java]
+----
+@ApplicationScoped
+@BasicAuthenticationMechanismDefinition(
+    realmName = "basicAuth"
+)
+@LdapIdentityStoreDefinition(
+    url = "ldap://localhost:40000",
+    callerBaseDn = "ou=caller,dc=jakartaee",
+    groupSearchBase = "ou=group,dc=jakartaee",
+    groupSearchFilter = "(&(member=%s)(objectclass=groupofnames))"
+)
+@DeclareRoles("user")
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+    private InMemoryDirectoryServer directoryServer;
+
+    public void onStart(@Observes @Initialized(ApplicationScoped.class) Object applicationContext) {
+        try {
+            InMemoryDirectoryServerConfig config = new InMemoryDirectoryServerConfig("dc=jakartaee");
+            config.setListenerConfigs(
+                new InMemoryListenerConfig("myListener", null, 40000, null, null, null));
+
+            directoryServer = new InMemoryDirectoryServer(config);
+
+            directoryServer.importFromLDIF(true,
+                new LDIFReader(new ByteArrayInputStream("""
+
+                        # Define caller.jakartaee and group.jakartaee structure
+
+                        dn: dc=jakartaee
+                        objectclass: top
+                        objectclass: dcObject
+                        objectclass: organization
+                        dc: jakartaee
+                        o: jakartaee
+
+                        dn: ou=caller,dc=jakartaee
+                        objectclass: top
+                        objectclass: organizationalUnit
+                        ou: caller
+
+                        dn: ou=group,dc=jakartaee
+                        objectclass: top
+                        objectclass: organizationalUnit
+                        ou: group
+
+
+
+                        # Add caller john:secret1 and group user with member john
+
+                        dn: uid=john,ou=caller,dc=jakartaee
+                        objectclass: top
+                        objectclass: uidObject
+                        objectclass: person
+                        uid: john
+                        cn: John Smith
+                        sn: John
+                        userPassword: secret1
+
+                        dn: cn=user,ou=group,dc=jakartaee
+                        objectclass: top
+                        objectclass: groupOfNames
+                        cn: user
+                        member: uid=john,ou=caller,dc=jakartaee
+
+                        """.getBytes())));
+
+            directoryServer.startListening();
+        } catch (LDAPException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+}
+----
+
+The code above uses an in-memory LDAP server called Unboundid that we start on port 40000. We populate it using embedded LDIF, which is a popular format to configure LDAP servers.
+
+In-depth explanation of LDAP itself is beyond the scope of this tutorial, but we'll briefly explain the process here. When a caller authenticates with username "john" and password "secret1", our LDAP identity store will construct the full name "uid=john,ou=caller,dc=jakartaee" using `callerNameAttribute` ("uid" as a default), and `callerBaseDn` ("ou=caller,dc=jakartaee" here). The store then uses the LDAP 'Bind' operation and directly attempts to "log in" as that user to the LDAP server. Unlike the Database identity store, the LDAP store doesn't look up and compare the passwords. If the aforementioned login succeeds, the credentials are assumed to be correct.
+
+The LDAP store will then search for groups using the `javax.naming.directory.DirContext.search()` method, with the `groupSearchBase` value ("ou=group,dc=jakartaee") and the formatted value from `groupSearchFilter` ("(&(member=uid=john,ou=caller,dc=jakartaee)(objectclass=groupofnames))") as parameters. The LDAP server will subsequently return "cn=user,ou=group,dc=jakartaee" for our example. From this the value of `groupNameAttribute` (defaults to "cn") is taken, which resolves to "user" here.
+
+==== Test the application
+
+:app-name: restBasicAuthLdapStore
+include::partial$test-github.adoc[]
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.247 s - in jakartaee.examples.focused.security.restBasicAuthLdapStore.RestBasicAuthLdapStoreIT
+----
+
+The test itself is basically the same as that for the <<Securing an endpoint with Basic authentication>> example.
+
+
+
+
+
