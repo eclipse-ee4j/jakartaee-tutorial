@@ -2,9 +2,9 @@
 
 This section explains how enterprise beans can be packaged in enterprise bean JAR or WAR modules. It includes the following sections:
 
-* <<packaging-enterprise-beans-in-enterprise-bean-jar-modules>>
+* <<_packaging_enterprise_beans_in_enterprise_bean_jar_modules>>
 
-* <<packaging-enterprise-beans-in-war-modules>>
+* <<_packaging_enterprise_beans_in_war_modules>>
 
 === Packaging Enterprise Beans in enterprise bean JAR Modules
 
@@ -13,11 +13,11 @@ An enterprise bean JAR file is portable and can be used for various applications
 To assemble a Jakarta EE application, package one or more modules, such as enterprise bean JAR files, into an EAR file, the archive file that holds the application.
 When deploying the EAR file that contains the enterprise bean's JAR file, you also deploy the enterprise bean to GlassFish Server.
 You can also deploy an enterprise bean JAR that is not contained in an EAR file.
-<<structure-of-an-enterprise-bean-jar>> shows the contents of an enterprise bean JAR file.
+<<_structure_of_an_enterprise_bean_jar>> shows the contents of an enterprise bean JAR file.
 
-[[structure-of-an-enterprise-bean-jar]]
+[[_structure_of_an_enterprise_bean_jar]]
 .Structure of an Enterprise Bean JAR
-image::jakartaeett_dt_011.svg["Diagram showing the structure and contents of an enterprise bean JAR file."]
+image::common:jakartaeett_dt_011.svg["Diagram showing the structure and contents of an enterprise bean JAR file."]
 
 === Packaging Enterprise Beans in WAR Modules
 

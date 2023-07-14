@@ -28,4 +28,4 @@ public class MyServlet extends HttpServlet {
 As opposed to resource injection, dependency injection is typesafe because it resolves by type.
 To decouple your code from the implementation of the managed bean, you can reference the injected instances using an interface type and have your managed bean implement that interface.
 
-For more information about dependency injection, see xref:introduction-to-jakarta-contexts-and-dependency-injection[xrefstyle=full] and the Jakarta Contexts and Dependency Injection spec.
+For more information about dependency injection, see xref:cdi:cdi-basic/cdi-basic.adoc[Introduction to Jakarta Contexts and Dependency Injection] and the Jakarta Contexts and Dependency Injection spec.
