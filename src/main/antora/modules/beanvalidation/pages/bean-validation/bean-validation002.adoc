@@ -5,10 +5,10 @@ The Jakarta Bean Validation model is supported by constraints in the form of ann
 Constraints can be built in or user defined.
 User-defined constraints are called custom constraints.
 Several built-in constraints are available in the `jakarta.validation.constraints` package.
-<<built-in-jakarta-bean-validation-constraints>> lists all the built-in constraints.
-See <<creating-custom-constraints>> for information on creating custom constraints.
+<<_built_in_jakarta_bean_validation_constraints>> lists all the built-in constraints.
+See xref:bean-validation-advanced/bean-validation-advanced.adoc#_creating_custom_constraints[Creating Custom Constraints] for information on creating custom constraints.
 
-[[built-in-jakarta-bean-validation-constraints]]
+[[_built_in_jakarta_bean_validation_constraints]]
 .Built-In Jakarta Bean Validation Constraints
 [width="99%",cols="22%,59%,18%a"]
 |===
@@ -328,7 +328,7 @@ Any managed bean that contains Bean Validation annotations automatically gets va
 
 For more information on using validation constraints, see the following:
 
-* xref:bean-validation-advanced-topics[xrefstyle=full]
+* xref:bean-validation-advanced/bean-validation-advanced.adoc#_bean_validation_advanced_topics[Bean Validation: Advanced Topics]
 
 * <<validating-resource-data-with-bean-validation>>
 
