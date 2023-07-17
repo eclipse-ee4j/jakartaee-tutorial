@@ -33,8 +33,8 @@ The web module just described is portable; you can deploy it into any web contai
 You can provide a runtime deployment descriptor (DD) when you deploy a WAR on GlassFish Server, but it is not required under most circumstances.
 The runtime DD is an XML file that may contain such information as the context root of the web application, the mapping of the portable names of an application's resources to GlassFish Server resources, and the mapping of an application's security roles to users, groups, and principals defined in GlassFish Server.
 The GlassFish Server web application runtime DD, if used, is named `glassfish-web.xml` and is located in the `WEB-INF` directory.
-The structure of a web module that can be deployed on GlassFish Server is shown in <<web-module-structure>>.
+The structure of a web module that can be deployed on GlassFish Server is shown in <<_web_module_structure>>.
 
-[[web-module-structure]]
+[[_web_module_structure]]
 .Web Module Structure
-image::jakartaeett_dt_012.svg["Diagram of web module structure. WEB-INF and web pages are under the root. Under WEB-INF are descriptors and the lib and classes directories."]
+image::common:jakartaeett_dt_012.svg["Diagram of web module structure. WEB-INF and web pages are under the root. Under WEB-INF are descriptors and the lib and classes directories."]
