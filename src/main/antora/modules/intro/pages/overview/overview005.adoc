@@ -26,15 +26,15 @@ After an enterprise bean is created, a client invokes methods on it as if it wer
 Because the Jakarta EE architecture provides configurable services, components within the same application can behave differently based on where they are deployed.
 For example, an enterprise bean can have security settings that allow it a certain level of access to database data in one production environment and another level of database access in another production environment.
 
-The container also manages nonconfigurable services, such as enterprise bean and servlet lifecycles, database connection resource pooling, data persistence, and access to the Jakarta EE platform APIs (see <<jakarta-ee-apis>>.
+The container also manages nonconfigurable services, such as enterprise bean and servlet lifecycles, database connection resource pooling, data persistence, and access to the Jakarta EE platform APIs (see <<_jakarta_ee_apis>>.
 
 === Container Types
 
-The deployment process installs Jakarta EE application components in the Jakarta EE containers, as illustrated in <<jakarta-ee-server-and-containers>>.
+The deployment process installs Jakarta EE application components in the Jakarta EE containers, as illustrated in <<_jakarta_ee_server_and_containers>>.
 
-[[jakarta-ee-server-and-containers]]
+[[_jakarta_ee_server_and_containers]]
 .Jakarta EE Server and Containers
-image::jakartaeett_dt_005.svg["Diagram of client-server communication showing servlets and web pages in the web tier and enterprise beans in the business tier."]
+image::common:jakartaeett_dt_005.svg["Diagram of client-server communication showing servlets and web pages in the web tier and enterprise beans in the business tier."]
 
 The server and containers are as follows:
 
