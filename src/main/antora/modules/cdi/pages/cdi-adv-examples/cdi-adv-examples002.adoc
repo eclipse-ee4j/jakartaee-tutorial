@@ -1,6 +1,6 @@
 == The encoder Example: Using Alternatives
 
-The `encoder` example shows how to use alternatives to choose between two beans at deployment time, as described in <<using-alternatives-in-cdi-applications>>.
+The `encoder` example shows how to use alternatives to choose between two beans at deployment time, as described in <<_using_alternatives_in_cdi_applications>>.
 The example includes an interface and two implementations of it, a managed bean, a Facelets page, and configuration files.
 
 The source files are located in the `_tut-install_/examples/cdi/encoder/src/main/java/ee/jakarta/tutorial/encoder/` directory.

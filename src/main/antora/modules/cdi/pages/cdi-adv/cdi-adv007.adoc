@@ -32,7 +32,7 @@ public abstract class CoderDecorator implements Coder {
 }
 ----
 
-See <<the-decorators-example-decorating-a-bean>> for an example that uses this decorator.
+See xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_decorators_example_decorating_a_bean[The decorators Example: Decorating a Bean] for an example that uses this decorator.
 
 This simple decorator returns more detailed output than the encoded string returned by the `CoderImpl.codeString` method.
 A more complex decorator could store information in a database or perform some other business logic.

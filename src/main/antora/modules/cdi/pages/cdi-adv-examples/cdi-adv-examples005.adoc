@@ -72,7 +72,7 @@ public class PaymentHandler implements Serializable {
 Each observer method takes as an argument the event, annotated with `@Observes` and with the qualifier for the type of payment.
 In a real application, the observer methods would pass the event information on to another component that would perform business logic on the payment.
 
-The qualifiers are defined in the `payment` package, described in <<the-billpayment-facelets-pages-and-managed-bean>>.
+The qualifiers are defined in the `payment` package, described in <<_the_billpayment_facelets_pages_and_managed_bean>>.
 
 The `PaymentHandler` bean is annotated `@Logged` so that all its methods can be intercepted.
 

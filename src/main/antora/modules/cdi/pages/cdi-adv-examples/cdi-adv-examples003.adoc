@@ -1,7 +1,7 @@
 == The producermethods Example: Using a Producer Method to Choose a Bean Implementation
 
-The `producermethods` example shows how to use a producer method to choose between two beans at runtime, as described in <<using-producer-methods-producer-fields-and-disposer-methods-in-cdi-applications>>.
-It is very similar to the `encoder` example described in <<the-encoder-example-using-alternatives>>.
+The `producermethods` example shows how to use a producer method to choose between two beans at runtime, as described in <<_using_producer_methods_producer_fields_and_disposer_methods_in_cdi_applications>>.
+It is very similar to the `encoder` example described in <<_the_encoder_example_using_alternatives>>.
 The example includes the same interface and two implementations of it, a managed bean, a Facelets page, and configuration files.
 It also contains a qualifier type.
 When you run it, you do not need to edit the `beans.xml` file and redeploy the application to change its behavior.

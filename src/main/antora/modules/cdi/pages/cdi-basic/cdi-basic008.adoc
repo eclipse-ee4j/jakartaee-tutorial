@@ -2,7 +2,7 @@
 
 For a web application to use a bean that injects another bean class, the bean needs to be able to hold state over the duration of the user's interaction with the application.
 The way to define this state is to give the bean a scope.
-You can give an object any of the scopes described in <<scopes>>, depending on how you are using it.
+You can give an object any of the scopes described in <<_scopes>>, depending on how you are using it.
 
 [[scopes]]
 .Scopes

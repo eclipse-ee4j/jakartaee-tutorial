@@ -27,7 +27,7 @@ The bean that implements this interface enables a servlet to access information 
 To inject a predefined bean, create an injection point to obtain an instance of the bean by using the `jakarta.annotation.Resource` annotation for resources or the `jakarta.inject.Inject` annotation for CDI beans.
 For the bean type, specify the class name of the interface the bean implements.
 
-[[injection-of-predefined-beans]]
+[[_injection_of_predefined_beans]]
 .Injection of Predefined Beans
 [width="80%",cols="20%,20%,40%"]
 |===

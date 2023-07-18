@@ -8,11 +8,11 @@ The example includes four source files, a Facelets page and template, and config
 
 The four source files for the `simplegreeting` example are:
 
-* The default `Greeting` class, shown in <<beans-as-injectable-objects>>
+* The default `Greeting` class, shown in <<_beans_as_injectable_objects>>
 
-* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in <<using-qualifiers>>
+* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in <<_using_qualifiers>>
 
-* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in <<adding-setter-and-getter-methods>>
+* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in <<_adding_setter_and_getter_methods>>
 
 The source files are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
 
