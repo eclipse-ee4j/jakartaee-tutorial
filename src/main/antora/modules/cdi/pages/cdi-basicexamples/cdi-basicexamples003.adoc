@@ -2,7 +2,7 @@
 
 The `guessnumber-cdi` example, somewhat more complex than the `simplegreeting` example, illustrates the use of producer methods and of session and application scope.
 The example is a game in which you try to guess a number in fewer than ten attempts.
-It is similar to the `guessnumber-jsf` example described in xref:introduction-to-facelets[], except that you can keep guessing until you get the right answer or until you use up your ten attempts.
+It is similar to the `guessnumber-jsf` example described in xref:web:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets], except that you can keep guessing until you get the right answer or until you use up your ten attempts.
 
 The example includes four source files, a Facelets page and template, and configuration files.
 The configuration files and the template are the same as those used for the `simplegreeting` example.
@@ -309,7 +309,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the guessnumber-cdi Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -330,7 +330,7 @@ This command builds and packages the application into a WAR file, `guessnumber-c
 
 ==== To Build, Package, and Deploy the guessnumber-cdi Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, change to the following directory:
 +

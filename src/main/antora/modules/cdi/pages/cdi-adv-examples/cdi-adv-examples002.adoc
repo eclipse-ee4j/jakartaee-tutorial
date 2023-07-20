@@ -1,6 +1,6 @@
 == The encoder Example: Using Alternatives
 
-The `encoder` example shows how to use alternatives to choose between two beans at deployment time, as described in <<_using_alternatives_in_cdi_applications>>.
+The `encoder` example shows how to use alternatives to choose between two beans at deployment time, as described in xref:cdi-adv/cdi-adv.adoc#_using_alternatives_in_cdi_applications[Using Alternatives in CDI Applications].
 The example includes an interface and two implementations of it, a managed bean, a Facelets page, and configuration files.
 
 The source files are located in the `_tut-install_/examples/cdi/encoder/src/main/java/ee/jakarta/tutorial/encoder/` directory.
@@ -144,7 +144,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the encoder Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -211,7 +211,7 @@ Result: input string is Java, shift value is 4
 
 ==== To Build, Package, and Deploy the encoder Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

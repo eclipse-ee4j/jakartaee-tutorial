@@ -50,7 +50,7 @@ For the bean type, specify the class name of the interface the bean implements.
 
 Predefined beans are injected with dependent scope and the predefined default qualifier `@Default`.
 
-For more information about injecting resources, see <<resource-injection>>.
+For more information about injecting resources, see xref:platform:injection/injection.adoc#_resource_injection[Resource Injection].
 
 The following code snippet shows how to use the `@Resource` and `@Inject` annotations to inject predefined beans.
 This code snippet injects a user transaction and a context object into the servlet class `TransactionServlet`.

@@ -54,7 +54,7 @@ Without it, the CDI implementation would not be able to choose between `CoderImp
 
 === Using Producer Fields to Generate Resources
 
-A common use of a producer field is to generate an object such as a JDBC `DataSource` or a Jakarta Persistence `EntityManager` (see xref:introduction-to-jakarta-persistence[], for more information).
+A common use of a producer field is to generate an object such as a JDBC `DataSource` or a Jakarta Persistence `EntityManager` (see xref:persist:persistence-intro/persistence-intro.adoc#_introduction_to_jakarta_persistence[Introduction to Jakarta Persistence], for more information).
 The object can then be managed by the container.
 For example, you could create a `@UserDatabase` qualifier and then declare a producer field for an entity manager as follows:
 

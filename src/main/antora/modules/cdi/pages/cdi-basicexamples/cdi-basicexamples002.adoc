@@ -8,11 +8,11 @@ The example includes four source files, a Facelets page and template, and config
 
 The four source files for the `simplegreeting` example are:
 
-* The default `Greeting` class, shown in <<_beans_as_injectable_objects>>
+* The default `Greeting` class, shown in xref:cdi-basic/cdi-basic.adoc#_beans_as_injectable_objects[Beans as Injectable Objects]
 
-* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in <<_using_qualifiers>>
+* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in xref:cdi-basic/cdi-basic.adoc#_using_qualifiers[Using Qualifiers]
 
-* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in <<_adding_setter_and_getter_methods>>
+* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in xref:cdi-basic/cdi-basic.adoc#_adding_setter_and_getter_methods[Adding Setter and Getter Methods]
 
 The source files are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
 
@@ -113,7 +113,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -152,7 +152,7 @@ This command builds and packages the application into a WAR file, `simplegreetin
 
 ==== To Build, Package, and Deploy the simplegreeting Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

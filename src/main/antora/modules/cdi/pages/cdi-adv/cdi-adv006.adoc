@@ -7,7 +7,7 @@ Interceptors allow you to specify the code for these tasks in one place for easy
 When interceptors were first introduced to the Jakarta EE platform, they were specific to enterprise beans.
 On the Jakarta EE platform, you can use them with Jakarta EE managed objects of all kinds, including managed beans.
 
-For information on Jakarta EE interceptors, see xref:using-jakarta-ee-interceptors[].
+For information on Jakarta EE interceptors, see xref:supporttechs:interceptors/interceptors.adoc#_using_jakarta_ee_interceptors[Using Jakarta EE Interceptors].
 
 An interceptor class often contains a method annotated `@AroundInvoke`, which specifies the tasks the interceptor will perform when intercepted methods are invoked.
 It can also contain a method annotated `@PostConstruct`, `@PreDestroy`, `@PrePassivate`, or `@PostActivate`, to specify lifecycle callback interceptors, and a method annotated `@AroundTimeout`, to specify enterprise bean timeout interceptors.

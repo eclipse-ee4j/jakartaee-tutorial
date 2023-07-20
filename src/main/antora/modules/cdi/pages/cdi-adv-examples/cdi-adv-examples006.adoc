@@ -12,7 +12,7 @@ The example includes an interface, an implementation of it, a decorator, an inte
 
 === Components of the decorators Example
 
-The `decorators` example is very similar to the `encoder` example described in <<_the_encoder_example_using_alternatives>>.
+The `decorators` example is very similar to the `encoder` example described in xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_encoder_example_using_alternatives[The encoder Example: Using Alternatives].
 Instead of providing two implementations of the `Coder` interface, however, this example provides only the `CoderImpl` class.
 The decorator class, `CoderDecorator`, rather than simply return the coded string, displays the input and output strings' values and length.
 
@@ -63,7 +63,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the decorators Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -83,7 +83,7 @@ This command builds and packages the application into a WAR file, `decorators.wa
 
 ==== To Build, Package, and Deploy the decorators Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

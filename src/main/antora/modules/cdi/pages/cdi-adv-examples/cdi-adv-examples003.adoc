@@ -1,7 +1,7 @@
 == The producermethods Example: Using a Producer Method to Choose a Bean Implementation
 
-The `producermethods` example shows how to use a producer method to choose between two beans at runtime, as described in <<_using_producer_methods_producer_fields_and_disposer_methods_in_cdi_applications>>.
-It is very similar to the `encoder` example described in <<_the_encoder_example_using_alternatives>>.
+The `producermethods` example shows how to use a producer method to choose between two beans at runtime, as described in xref:cdi-adv/cdi-adv.adoc#_using_producer_methods_producer_fields_and_disposer_methods_in_cdi_applications[Using Producer Methods, Producer Fields, and Disposer Methods in CDI Applications].
+It is very similar to the `encoder` example described in xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_encoder_example_using_alternatives[The encoder Example: Using Alternatives].
 The example includes the same interface and two implementations of it, a managed bean, a Facelets page, and configuration files.
 It also contains a qualifier type.
 When you run it, you do not need to edit the `beans.xml` file and redeploy the application to change its behavior.
@@ -86,7 +86,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the producermethods Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -106,7 +106,7 @@ This command builds and packages the application into a WAR file, `producermetho
 
 ==== To Build, Package, and Deploy the producermethods Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

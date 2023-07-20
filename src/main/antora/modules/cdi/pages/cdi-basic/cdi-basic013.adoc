@@ -1,7 +1,7 @@
 == Configuring a CDI Application
 
 When your beans are annotated with a scope type, the server recognizes the application as a bean archive and no additional configuration is required.
-The possible scope types for CDI beans are listed in <<_using_scopes>>.
+The possible scope types for CDI beans are listed in xref:cdi-basic/cdi-basic.adoc#_using_scopes[Using Scopes].
 
 CDI uses an optional deployment descriptor named `beans.xml`.
 Like other Jakarta EE deployment descriptors, the configuration settings in `beans.xml` are used in addition to annotation settings in CDI classes.
