@@ -24,7 +24,7 @@ Further information on the Jakarta REST APIs can be viewed at https://jakarta.ee
 
 |`@Path` |The `@Path` annotation's value is a relative URI path indicating where the Java class will be hosted: for example, `/helloworld`.
 You can also embed variables in the URIs to make a URI path template.
-For example, you could ask for the name of a user and pass it to the application as a variable in the URI: `/helloworld/{username}`.
+For example, you could ask for the name of a user and pass it to the application as a variable in the URI: `/helloworld/\{username}`.
 
 |`@GET` |The `@GET` annotation is a request method designator and corresponds to the similarly named HTTP method.
 The Java method annotated with this request method designator will process HTTP GET requests.
@@ -195,9 +195,9 @@ The Jakarta REST runtime parses URI path templates the same way, whether or not 
 
 A URI path template has one or more variables, with each variable name surrounded by braces: `{` to begin the variable name and `}` to end it.
 In the preceding example, `username` is the variable name.
-At runtime, a resource configured to respond to the preceding URI path template will attempt to process the URI data that corresponds to the location of `{username}` in the URI as the variable data for `username`.
+At runtime, a resource configured to respond to the preceding URI path template will attempt to process the URI data that corresponds to the location of `\{username}` in the URI as the variable data for `username`.
 
-For example, if you want to deploy a resource that responds to the URI path template `\http://example.com/myContextRoot/resources/{name1}/{name2}/`, you must first deploy the application to a Jakarta EE server that responds to requests to the `\http://example.com/myContextRoot` URI and then decorate your resource with the following `@Path` annotation:
+For example, if you want to deploy a resource that responds to the URI path template `\http://example.com/myContextRoot/resources/\{name1}/\{name2}/`, you must first deploy the application to a Jakarta EE server that responds to requests to the `\http://example.com/myContextRoot` URI and then decorate your resource with the following `@Path` annotation:
 
 [source,java]
 ----
@@ -246,13 +246,13 @@ The value of the `name3` variable is an empty string.
 |===
 |URI Path Template |URI After Substitution
 
-|\http://example.com/{name1}/{name2}/ |\http://example.com/james/gatz/
+|\http://example.com/\{name1}/\{name2}/ |\http://example.com/james/gatz/
 
-|\http://example.com/{question}/{question}/{question}/ |\http://example.com/why/why/why/
+|\http://example.com/\{question}/\{question}/\{question}/ |\http://example.com/why/why/why/
 
-|\http://example.com/maps/{location} |\http://example.com/maps/Main%20Street
+|\http://example.com/maps/\{location} |\http://example.com/maps/Main%20Street
 
-|\http://example.com/{name3}/home/ |\http://example.com//home/
+|\http://example.com/\{name3}/home/ |\http://example.com//home/
 |===
 
 === Responding to HTTP Methods and Requests

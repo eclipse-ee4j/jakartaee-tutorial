@@ -83,7 +83,7 @@ The `WebTarget.path` method creates a new `WebTarget` instance by appending the 
 
 Path parameters in client requests can be specified as URI template parameters, similar to the template parameters used when defining a resource URI in a Jakarta REST service.
 Template parameters are specified by surrounding the template variable with braces (`{}`).
-Call the `resolveTemplate` method to substitute the `{username}`, and then call the `queryParam` method to add another variable to pass.
+Call the `resolveTemplate` method to substitute the `\{username}`, and then call the `queryParam` method to add another variable to pass.
 
 [source,java]
 ----

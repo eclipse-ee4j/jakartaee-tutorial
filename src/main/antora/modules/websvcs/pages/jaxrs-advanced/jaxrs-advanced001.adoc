@@ -45,7 +45,7 @@ public class EmpResource {
 }
 ----
 
-In this example, the `@Path` annotation defines the URI variables (or path parameters) pass:q[`{firstname}`, `{lastname}`], and `{domain}`.
+In this example, the `@Path` annotation defines the URI variables (or path parameters) pass:q[`{firstname}`, `{lastname}`, and `{domain}`].
 The `@PathParam` in the method parameter of the request method extracts the last name from the email address.
 
 If your HTTP request is `GET` `/employees/john.doe@example.com`, the value "`doe`" is injected into pass:q[`{lastname}`].
