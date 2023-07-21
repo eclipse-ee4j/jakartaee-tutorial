@@ -1,5 +1,5 @@
 [preface]
-== Preface
+= Preface
 
 This tutorial is a guide to developing enterprise applications for the Jakarta EE 9 Platform, using Eclipse GlassFish Server.
 
@@ -8,17 +8,17 @@ Eclipse GlassFish Server, developed by the Eclipse GlassFish project open-source
 This lightweight, flexible, and open-source application server enables organizations not only to leverage the new capabilities introduced within the Jakarta EE 9 specification, but also to add to their existing capabilities through a faster and more streamlined development and deployment cycle.
 Eclipse GlassFish Server is hereafter referred to as GlassFish Server.
 
-=== Audience
+== Audience
 
 This tutorial is intended for programmers interested in developing and deploying Jakarta EE 9 applications.
 It covers the technologies comprising the Jakarta EE platform and describes how to develop Jakarta EE components and deploy them on the Eclipse GlassFish.
 
-=== Before You Read This Book
+== Before You Read This Book
 
 Before proceeding with this tutorial, you should have a good knowledge of the Java programming language.
 A good way to get to that point is to work through the Java(TM) Tutorials https://docs.oracle.com/javase/tutorial/index.html[^].
 
-=== Related Documentation
+== Related Documentation
 
 The GlassFish Server documentation set describes deployment planning and system installation.
 To obtain the GlassFish Server documentation, go to https://glassfish.org/docs[^].
@@ -34,7 +34,7 @@ For information about Apache Derby for use with GlassFish Server, see https://db
 The GlassFish Samples project is a collection of sample applications that demonstrate a broad range of Jakarta EE technologies.
 The GlassFish Samples are available from the GlassFish Samples project page at https://github.com/eclipse-ee4j/glassfish-samples/[^].
 
-=== Conventions
+== Conventions
 
 The following table describes the typographic conventions that are used in this book.
 
@@ -59,7 +59,7 @@ Do _not_ save the file.
 The command to remove a file is `rm _filename_`.
 |===
 
-=== Default Paths and File Names
+== Default Paths and File Names
 
 The following table describes the default paths and file names that are
 used in this book.
