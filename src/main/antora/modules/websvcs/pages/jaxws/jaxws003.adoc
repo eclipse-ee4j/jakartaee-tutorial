@@ -5,16 +5,16 @@ Application developers don't need to know the details of these mappings but shou
 
 The following sections explain the default schema-to-Java and Java-to-schema data type bindings:
 
-* <<schema-to-java-mapping>>
+* <<_schema_to_java_mapping>>
 
-* <<java-to-schema-mapping>>
+* <<_java_to_schema_mapping>>
 
 === Schema-to-Java Mapping
 
 The Java language provides a richer set of data types than XML schema.
-<<mapping-of-xml-data-types-to-java-data-types>> lists the mapping of XML data types to Java data types.
+<<_mapping_of_xml_data_types_to_java_data_types>> lists the mapping of XML data types to Java data types.
 
-[[mapping-of-xml-data-types-to-java-data-types]]
+[[_mapping_of_xml_data_types_to_java_data_types]]
 .Mapping of XML Data Types to Java Data Types
 [width="50%",cols="20%,30%"]
 |===
@@ -71,9 +71,9 @@ The Java language provides a richer set of data types than XML schema.
 
 === Java-to-Schema Mapping
 
-<<mapping-of-java-classes-to-xml-data-types>> shows the default mapping of Java classes to XML data types.
+<<_mapping_of_java_classes_to_xml_data_types>> shows the default mapping of Java classes to XML data types.
 
-[[mapping-of-java-classes-to-xml-data-types]]
+[[_mapping_of_java_classes_to_xml_data_types]]
 .Mapping of Java Classes to XML Data Types
 [width="50%",cols="30%,20%"]
 |===

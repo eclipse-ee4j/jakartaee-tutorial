@@ -13,10 +13,10 @@ Developers decorate Java programming language class files with Jakarta REST anno
 Jakarta REST annotations are runtime annotations; therefore, runtime reflection will generate the helper classes and artifacts for the resource.
 A Jakarta EE application archive containing Jakarta REST resource classes will have the resources configured, the helper classes and artifacts generated, and the resource exposed to clients by deploying the archive to a Jakarta EE server.
 
-<<summary-of-jakarta-rest-annotations>> lists some of the Java programming annotations that are defined by Jakarta REST, with a brief description of how each is used.
+<<_summary_of_jakarta_rest_annotations>> lists some of the Java programming annotations that are defined by Jakarta REST, with a brief description of how each is used.
 Further information on the Jakarta REST APIs can be viewed at https://jakarta.ee/specifications/platform/9/apidocs/[^].
 
-[[summary-of-jakarta-rest-annotations]]
+[[_summary_of_jakarta_rest_annotations]]
 .Summary of Jakarta REST Annotations
 [width="99%",cols="10%,90%"]
 |===
@@ -224,7 +224,7 @@ For example, spaces in the value of a variable should be substituted with `%20`.
 
 When defining URI path templates, be careful that the resulting URI after substitution is valid.
 
-<<examples-of-uri-path-templates>> lists some examples of URI path template variables and how the URIs are resolved after substitution.
+<<_examples_of_uri_path_templates>> lists some examples of URI path template variables and how the URIs are resolved after substitution.
 The following variable names and values are used in the examples:
 
 * `name1`: `james`
@@ -240,7 +240,7 @@ The following variable names and values are used in the examples:
 [NOTE]
 The value of the `name3` variable is an empty string.
 
-[[examples-of-uri-path-templates]]
+[[_examples_of_uri_path_templates]]
 .Examples of URI Path Templates
 [width="80%",cols="40%,40%"]
 |===
@@ -296,7 +296,7 @@ For OPTIONS, the `Allow` response header will be set to the set of HTTP methods 
 In addition, the Jakarta REST runtime will return a Web Application Definition Language (WADL) document describing the resource; see https://www.w3.org/Submission/wadl/[^] for more information.
 
 Methods decorated with request method designators must return `void`, a Java programming language type, or a `jakarta.ws.rs.core.Response` object.
-Multiple parameters may be extracted from the URI by using the `@PathParam` or `@QueryParam` annotations, as described in <<extracting-request-parameters>>.
+Multiple parameters may be extracted from the URI by using the `@PathParam` or `@QueryParam` annotations, as described in <<_extracting_request_parameters>>.
 Conversion between Java types and an entity body is the responsibility of an entity provider, such as `MessageBodyReader` or `MessageBodyWriter`.
 Methods that need to provide additional metadata with a response should return an instance of the `Response` class.
 The `ResponseBuilder` class provides a convenient way to create a `Response` instance using a builder pattern.
@@ -321,10 +321,10 @@ For HTTP requests, the `MessageBodyReader` is used to map an HTTP request entity
 On the response side, a return value is mapped to an HTTP response entity body by using a `MessageBodyWriter`.
 If the application needs to supply additional metadata, such as HTTP headers or a different status code, a method can return a `Response` that wraps the entity and that can be built by using `Response.ResponseBuilder`.
 
-<<types-supported-for-http-request-and-response-entity-bodies>> shows the standard types that are supported automatically for HTTP request and response entity bodies.
+<<_types_supported_for_http_request_and_response_entity_bodies>> shows the standard types that are supported automatically for HTTP request and response entity bodies.
 You need to write an entity provider only if you are not choosing one of these standard types.
 
-[[types-supported-for-http-request-and-response-entity-bodies]]
+[[_types_supported_for_http_request_and_response_entity_bodies]]
 .Types Supported for HTTP Request and Response Entity Bodies
 [width="50%",cols="50%,50%",options="header"]
 |===
