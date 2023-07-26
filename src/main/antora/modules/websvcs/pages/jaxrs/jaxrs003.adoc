@@ -12,7 +12,7 @@ You can find a version of this application at `_tut-install_/examples/jaxrs/hell
 
 ==== To Create a RESTful Web Service Using NetBeans IDE
 
-. Ensure you have installed the tutorial archetypes as described in <<installing-the-tutorial-archetypes>>.
+. Ensure you have installed the tutorial archetypes as described in xref:intro:usingexamples/usingexamples.adoc#_installing_the_tutorial_archetypes[Installing the Tutorial Archetypes].
 
 . In NetBeans IDE, create a simple web application using the `jaxrs-service-archetype` Maven archetype.
 This archetype creates a very simple "Hello, World" web application.
@@ -56,7 +56,7 @@ http://localhost:8080/HelloWorldApplication/HelloWorldApplication
 +
 A browser window opens and displays the return value of `Hello, World!!`
 
-For other sample applications that demonstrate deploying and running Jakarta REST applications using NetBeans IDE, see <<the-rsvp-example-application>> and Your First Cup: An Introduction to the Jakarta EE Platform at https://eclipse-ee4j.github.io/jakartaee-firstcup/toc.html[^].
+For other sample applications that demonstrate deploying and running Jakarta REST applications using NetBeans IDE, see <<_the_rsvp_example_application>> and Your First Cup: An Introduction to the Jakarta EE Platform at https://eclipse-ee4j.github.io/jakartaee-firstcup/toc.html[^].
 You may also look at the tutorials on the NetBeans IDE tutorial site, such as the one titled "Getting Started with RESTful Web Services" at https://netbeans.apache.org/kb/docs/websvc/rest.html[^].
 This tutorial includes a section on creating a CRUD application from a database.
 Create, read, update, and delete (CRUD) are the four basic functions of persistent storage and relational databases.
@@ -135,7 +135,7 @@ The `rsvp.entity.Event`, `rsvp.entity.Person`, and `rsvp.entity.Response` entiti
 The `rsvp.util.ResponseEnum` class declares an enumerated type that represents all the possible response statuses an invitee may have.
 
 The web application also includes two CDI managed beans, `StatusManager` and `EventManager`, which use the Jakarta REST Client API to call the resources exposed in `StatusBean` and `ResponseBean`.
-For information on how the Client API is used in `rsvp`, see <<the-client-api-in-the-rsvp-example-application>>.
+For information on how the Client API is used in `rsvp`, see xref:jaxrs-client/jaxrs-client.adoc#_the_client_api_in_the_rsvp_example_application[The Client API in the rsvp Example Application].
 
 ==== Running the rsvp Example Application
 
@@ -143,9 +143,9 @@ Both NetBeans IDE and Maven can be used to deploy and run the `rsvp` example app
 
 ===== To Run the rsvp Example Application Using NetBeans IDE
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -178,9 +178,9 @@ The invitee's new status should now be displayed in the table of invitees and th
 
 ===== To Run the rsvp Example Application Using Maven
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

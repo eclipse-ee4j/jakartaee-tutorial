@@ -4,7 +4,7 @@ This section describes how to build and run the `customer` example application.
 This application is a RESTful web service that uses Jakarta XML Binding to perform the create, read, update, delete (CRUD) operations for a specific entity.
 
 The `customer` sample application is in the `_tut-install_/examples/jaxrs/customer/` directory.
-See xref:using-the-tutorial-examples[xrefstyle=full], for basic information on building and running sample applications.
+See xref:intro:usingexamples/usingexamples.adoc#_using_the_tutorial_examples[Using the Tutorial Examples], for basic information on building and running sample applications.
 
 === Overview of the customer Example Application
 
@@ -16,7 +16,7 @@ These classes model the data of the application and contain Jakarta XML Binding 
 
 * The `CustomerService` resource class.
 This class contains Jakarta REST resource methods that perform operations on `Customer` instances represented as XML or JSON data using Jakarta XML Binding.
-See <<the-customerservice-class>> for details.
+See <<_the_customerservice_class>> for details.
 
 * The `CustomerBean` session bean that acts as a backing bean for the web client.
 `CustomerBean` uses the Jakarta REST client API to call the methods of `CustomerService`.
@@ -327,7 +327,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the customer Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -357,7 +357,7 @@ The web client allows you to create and view customers.
 ==== To Build, Package, and Deploy the customer Example Using Maven
 
 . Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

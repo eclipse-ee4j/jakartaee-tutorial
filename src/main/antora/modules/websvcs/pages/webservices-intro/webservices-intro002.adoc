@@ -8,7 +8,7 @@ The two types of web services discussed in this section can be distinguished as 
 
 === "Big" Web Services
 
-Jakarta XML Web Services provides the functionality for "big" web services, which are described in xref:building-web-services-with-jakarta-xml-web-services[xrefstyle=full].
+Jakarta XML Web Services provides the functionality for "big" web services, which are described in xref:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services].
 Big web services use XML messages that follow the Simple Object Access Protocol (SOAP) standard, an XML language defining a message architecture and message formats.
 Such systems often contain a machine-readable description of the operations offered by the service, written in the Web Services Description Language (WSDL), an XML language for defining interfaces syntactically.
 
@@ -65,5 +65,5 @@ Developers can use such technologies as JAX-RS and Asynchronous JavaScript with 
 Rather than starting from scratch, services can be exposed with XML and consumed by HTML pages without significantly refactoring the existing website architecture.
 Existing developers will be more productive because they are adding to something they are already familiar with rather than having to start from scratch with new technology.
 
-RESTful web services are discussed in xref:building-restful-web-services-with-jakarta-rest[xrefstyle=full].
+RESTful web services are discussed in xref:jaxrs/jaxrs.adoc#_building_restful_web_services_with_jakarta_rest[Building RESTful Web Services with Jakarta REST].
 This chapter contains information about generating the skeleton of a RESTful web service using both NetBeans IDE and the Maven project-management tool.

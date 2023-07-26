@@ -33,7 +33,7 @@ As you define the resources for your application, consider the type of data you 
 You may already have a relational database that contains information you want to expose to users, or you may have static content that does not reside in a database but does need to be distributed as resources.
 Using Jakarta REST, you can distribute content from multiple sources.
 RESTful web services can use various types of input/output formats for request and response.
-The `customer` example, described in <<the-customer-example-application>>, uses XML.
+The `customer` example, described in xref:jaxrs-advanced/jaxrs-advanced.adoc#_the_customer_example_application[The customer Example Application], uses XML.
 
 Resources have representations.
 A resource representation is the content in the HTTP message that is sent to, or returned from, the resource using the URI.
@@ -137,7 +137,7 @@ public class ProductService {
 ----
 
 Some IDEs, such as NetBeans IDE, will run the schema generator tool automatically during the build process if you add Java classes that have Jakarta XML Binding annotations to your project.
-For a detailed example, see <<the-customer-example-application>>.
+For a detailed example, see xref:jaxrs-advanced/jaxrs-advanced.adoc#_the_customer_example_application[The customer Example Application].
 The `customer` example contains a more complex relationship between the Java classes that model the data, which results in a more hierarchical XML representation.
 
 === Starting from an Existing XML Schema Definition

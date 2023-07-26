@@ -3,11 +3,11 @@
 This section shows how to build and deploy a simple web service and two clients: an application client and a web client.
 The source code for the service is in the `_tut-install_/examples/jaxws/helloservice-war/` directory, and the clients are in the `_tut-install_/examples/jaxws/hello-appclient/` and `_tut-install_/examples/jaxws/hello-webclient/` directories.
 
-<<communication-between-a-xml-web-service-and-a-client>> illustrates how XML Web Services technology manages communication between a web service and a client.
+<<_communication_between_a_xml_web_service_and_a_client>> illustrates how XML Web Services technology manages communication between a web service and a client.
 
-[[communication-between-a-xml-web-service-and-a-client]]
+[[_communication_between_a_xml_web_service_and_a_client]]
 .Communication between a XML Web Service and a Client
-image::jakartaeett_dt_019.svg["Diagram showing a client and web service communicating through a SOAP message."]
+image::common:jakartaeett_dt_019.svg["Diagram showing a client and web service communicating through a SOAP message."]
 
 The starting point for developing a XML Web Services web service is a Java class annotated with the `jakarta.jws.WebService` annotation.
 The `@WebService` annotation defines the class as a web service endpoint.
@@ -58,7 +58,7 @@ If no `endpointInterface` is specified in `@WebService`, an SEI is implicitly de
 * Business methods that are exposed to web service clients must be annotated with `jakarta.jws.WebMethod`.
 
 * Business methods that are exposed to web service clients must have Jakarta XML Binding-compatible parameters and return types.
-See the list of Jakarta XML Binding default data type bindings in <<types-supported-by-xml-web-services>>.
+See the list of Jakarta XML Binding default data type bindings in xref:jaxws/jaxws.adoc#_types_supported_by_xml_web_services[Types Supported by XML Web Services].
 
 * The implementing class must not be declared `final` and must not be `abstract`.
 
@@ -106,7 +106,7 @@ You can use either NetBeans IDE or Maven to build, package, and deploy the `hell
 
 ==== To Build, Package, and Deploy the Service Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -123,14 +123,14 @@ tut-install/examples/jaxws
 . In the *Projects* tab, right-click the `helloservice-war` project and select *Run*.
 +
 This command builds and packages the application into a WAR file, `helloservice-war.war`, located in `_tut-install_/examples/jaxws/helloservice-war/target/`, and deploys this WAR file to your GlassFish Server instance.
-It also opens the web service test interface at the URL shown in <<to-test-the-service-without-a-client>>.
+It also opens the web service test interface at the URL shown in <<_to_test_the_service_without_a_client>>.
 
 You can view the WSDL file of the deployed service by requesting the URL http://localhost:8080/helloservice-war/HelloService?wsdl[^] in a web browser.
 Now you are ready to create a client that accesses this service.
 
 ==== To Build, Package, and Deploy the Service Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +
@@ -245,7 +245,7 @@ public class HelloAppClient {
 ==== Running the Application Client
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `hello-appclient` application.
-To build the client, you must first have deployed `helloservice-war`, as described in <<building-packaging-and-deploying-the-service>>.
+To build the client, you must first have deployed `helloservice-war`, as described in <<_building_packaging_and_deploying_the_service>>.
 
 ===== To Run the Application Client Using NetBeans IDE
 
@@ -404,7 +404,7 @@ public class HelloServlet extends HttpServlet {
 ==== Running the Web Client
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `hello-webclient` application.
-To build the client, you must first have deployed `helloservice-war`, as described in <<building-packaging-and-deploying-the-service>>.
+To build the client, you must first have deployed `helloservice-war`, as described in <<_building_packaging_and_deploying_the_service>>.
 
 ===== To Run the Web Client Using NetBeans IDE
 

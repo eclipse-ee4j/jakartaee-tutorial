@@ -16,20 +16,20 @@ The following principles encourage RESTful applications to be simple, lightweigh
 
 * Resource identification through URI: A RESTful web service exposes a set of resources that identify the targets of the interaction with its clients.
 Resources are identified by URIs, which provide a global addressing space for resource and service discovery.
-See <<the-path-annotation-and-uri-path-templates>> for more information.
+See xref:jaxrs/jaxrs.adoc#_the_path_annotation_and_uri_path_templates[The @Path Annotation and URI Path Templates] for more information.
 
 * Uniform interface: Resources are manipulated using a fixed set of four create, read, update, delete operations: PUT, GET, POST, and DELETE.
 PUT creates a new resource, which can be then deleted by using DELETE.
 GET retrieves the current state of a resource in some representation.
 POST transfers a new state onto a resource.
-See <<responding-to-http-methods-and-requests>> for more information.
+See xref:jaxrs/jaxrs.adoc#_responding_to_http_methods_and_requests[Responding to HTTP Methods and Requests] for more information.
 
 * Self-descriptive messages: Resources are decoupled from their representation so that their content can be accessed in a variety of formats, such as HTML, XML, plain text, PDF, JPEG, JSON, and other document formats.
 Metadata about the resource is available and used, for example, to control caching, detect transmission errors, negotiate the appropriate representation format, and perform authentication or access control.
-See <<responding-to-http-methods-and-requests>> and <<using-entity-providers-to-map-http-response-and-request-entity-bodies>> for more information.
+See xref:jaxrs/jaxrs.adoc#_responding_to_http_methods_and_requests[Responding to HTTP Methods and Requests] and xref:jaxrs/jaxrs.adoc#_using_entity_providers_to_map_http_response_and_request_entity_bodies[Using Entity Providers to Map HTTP Response and Request Entity Bodies] for more information.
 
 * Stateful interactions through links: Every interaction with a resource is stateless; that is, request messages are self-contained.
 Stateful interactions are based on the concept of explicit state transfer.
 Several techniques exist to exchange state, such as URI rewriting, cookies, and hidden form fields.
 State can be embedded in response messages to point to valid future states of the interaction.
-See <<using-entity-providers-to-map-http-response-and-request-entity-bodies>> and <<extracting-request-parameters>> in the Jakarta REST Overview document for more information.
+See xref:jaxrs/jaxrs.adoc#_using_entity_providers_to_map_http_response_and_request_entity_bodies[Using Entity Providers to Map HTTP Response and Request Entity Bodies] and xref:jaxrs/jaxrs.adoc#_extracting_request_parameters[Extracting Request Parameters] in the Jakarta REST Overview document for more information.
