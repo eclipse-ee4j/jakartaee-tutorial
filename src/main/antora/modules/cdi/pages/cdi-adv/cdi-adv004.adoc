@@ -27,7 +27,7 @@ The bean that implements this interface enables a servlet to access information 
 To inject a predefined bean, create an injection point to obtain an instance of the bean by using the `jakarta.annotation.Resource` annotation for resources or the `jakarta.inject.Inject` annotation for CDI beans.
 For the bean type, specify the class name of the interface the bean implements.
 
-[[injection-of-predefined-beans]]
+[[_injection_of_predefined_beans]]
 .Injection of Predefined Beans
 [width="80%",cols="20%,20%,40%"]
 |===
@@ -50,7 +50,7 @@ For the bean type, specify the class name of the interface the bean implements.
 
 Predefined beans are injected with dependent scope and the predefined default qualifier `@Default`.
 
-For more information about injecting resources, see <<resource-injection>>.
+For more information about injecting resources, see xref:platform:injection/injection.adoc#_resource_injection[Resource Injection].
 
 The following code snippet shows how to use the `@Resource` and `@Inject` annotations to inject predefined beans.
 This code snippet injects a user transaction and a context object into the servlet class `TransactionServlet`.

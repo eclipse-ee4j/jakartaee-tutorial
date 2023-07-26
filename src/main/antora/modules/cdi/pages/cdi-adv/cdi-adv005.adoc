@@ -13,7 +13,7 @@ An event consists of the following:
 
 * Zero or more qualifier types, the event qualifiers
 
-For example, in the `billpayment` example described in <<the-billpayment-example-using-events-and-interceptors>>, a `PaymentEvent` bean defines an event using three properties, which have setter and getter methods:
+For example, in the `billpayment` example described in xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_billpayment_example_using_events_and_interceptors[The billpayment Example: Using Events and Interceptors], a `PaymentEvent` bean defines an event using three properties, which have setter and getter methods:
 
 [source,java]
 ----

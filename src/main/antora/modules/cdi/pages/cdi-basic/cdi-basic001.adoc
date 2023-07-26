@@ -75,15 +75,15 @@ This is specified using the `jakarta.enterprise.context.RequestScoped` annotatio
 public class MessageB implements Message { ... }
 ----
 
-For more information on scopes, see <<using-scopes>>.
+For more information on scopes, see xref:cdi-basic/cdi-basic.adoc#_using_scopes[Using Scopes].
 
 The `MessageB` class is a CDI bean.
 CDI beans are classes that CDI can instantiate, manage, and inject automatically to satisfy the dependencies of other objects.
 Almost any Java class can be managed and injected by CDI.
-For more information on beans, see <<about-beans>>.
+For more information on beans, see xref:cdi-basic/cdi-basic.adoc#_about_beans[About Beans].
 A JAR or WAR file that contains a CDI bean is a bean archive.
-For more information on packaging bean archives, see <<configuring-a-cdi-application>> in this chapter and <<packaging-cdi-applications>> in xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
+For more information on packaging bean archives, see xref:cdi-basic/cdi-basic.adoc#_configuring_a_cdi_application[Configuring a CDI Application] in this chapter and xref:cdi-adv/cdi-adv.adoc#_packaging_cdi_applications[Packaging CDI Applications] in xref:cdi-adv/cdi-adv.adoc#_jakarta_contexts_and_dependency_injection_advanced_topics[Jakarta Contexts and Dependency Injection: Advanced Topics].
 
 In this example, `MessageB` is the only class that implements the `Message` interface.
 If an application has more than one implementation of an interface, CDI provides mechanisms that you can use to select which implementation to inject.
-For more information, see <<using-qualifiers>> in this chapter and <<using-alternatives-in-cdi-applications>> in xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
+For more information, see xref:cdi-basic/cdi-basic.adoc#_using_qualifiers[Using Qualifiers] in this chapter and xref:cdi-adv/cdi-adv.adoc#_using_alternatives_in_cdi_applications[Using Alternatives in CDI Applications] in xref:cdi-adv/cdi-adv.adoc#_jakarta_contexts_and_dependency_injection_advanced_topics[Jakarta Contexts and Dependency Injection: Advanced Topics].

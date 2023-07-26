@@ -8,7 +8,7 @@ A producer method generates an object that can then be injected.Typically, you u
 
 * When the object requires some custom initialization that the bean constructor does not perform
 
-For more information on producer methods, see <<injecting-objects-by-using-producer-methods>>.
+For more information on producer methods, see xref:cdi-basic/cdi-basic.adoc#_injecting_objects_by_using_producer_methods[Injecting Objects by Using Producer Methods].
 
 A producer field is a simpler alternative to a producer method; it is a field of a bean that generates an object.
 It can be used instead of a simple getter method.
@@ -19,7 +19,7 @@ A producer method or field is annotated with the `jakarta.enterprise.inject.Prod
 === Using Producer Methods
 
 A producer method can allow you to select a bean implementation at runtime instead of at development time or deployment time.
-For example, in the example described in <<the-producermethods-example-using-a-producer-method-to-choose-a-bean-implementation>>, the managed bean defines the following producer method:
+For example, in the example described in xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_producermethods_example_using_a_producer_method_to_choose_a_bean_implementation[The producermethods Example: Using a Producer Method to Choose a Bean Implementation], the managed bean defines the following producer method:
 
 [source,java]
 ----
@@ -54,7 +54,7 @@ Without it, the CDI implementation would not be able to choose between `CoderImp
 
 === Using Producer Fields to Generate Resources
 
-A common use of a producer field is to generate an object such as a JDBC `DataSource` or a Jakarta Persistence `EntityManager` (see xref:introduction-to-jakarta-persistence[xrefstyle=full], for more information).
+A common use of a producer field is to generate an object such as a JDBC `DataSource` or a Jakarta Persistence `EntityManager` (see xref:persist:persistence-intro/persistence-intro.adoc#_introduction_to_jakarta_persistence[Introduction to Jakarta Persistence], for more information).
 The object can then be managed by the container.
 For example, you could create a `@UserDatabase` qualifier and then declare a producer field for an entity manager as follows:
 
@@ -76,7 +76,7 @@ The `@UserDatabase` qualifier can be used when you inject the object into anothe
     ...
 ----
 
-<<the-producerfields-example-using-producer-fields-to-generate-resources>> shows how to use producer fields to generate an entity manager.
+xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_producerfields_example_using_producer_fields_to_generate_resources[The producerfields Example: Using Producer Fields to Generate Resources] shows how to use producer fields to generate an entity manager.
 You can use a similar mechanism to inject `@Resource`, `@EJB`, or `@WebServiceRef` objects.
 
 To minimize the reliance on resource injection, specify the producer field for the resource in one place in the application, and then inject the object wherever in the application you need it.

@@ -16,7 +16,7 @@ When the managed bean is injected into a component, CDI calls the method after a
 [NOTE]
 As mandated in Jakarta Annotations, if the annotated method is declared in a superclass, the method is called unless a subclass of the declaring class overrides the method.
 
-The `UserNumberBean` managed bean in <<the-guessnumber-cdi-cdi-example>> uses `@PostConstruct` to annotate a method that resets all bean fields:
+The `UserNumberBean` managed bean in xref:cdi-basicexamples/cdi-basicexamples.adoc#_the_guessnumber_cdi_cdi_example[The guessnumber-cdi CDI Example] uses `@PostConstruct` to annotate a method that resets all bean fields:
 
 [source,java]
 ----

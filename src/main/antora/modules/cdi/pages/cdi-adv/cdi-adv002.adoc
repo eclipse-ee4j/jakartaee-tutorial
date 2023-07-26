@@ -1,6 +1,6 @@
 == Using Alternatives in CDI Applications
 
-When you have more than one version of a bean that you use for different purposes, you can choose between them during the development phase by injecting one qualifier or another, as shown in <<the-simplegreeting-cdi-example>>.
+When you have more than one version of a bean that you use for different purposes, you can choose between them during the development phase by injecting one qualifier or another, as shown in xref:cdi-basicexamples/cdi-basicexamples.adoc#_the_simplegreeting_cdi_example[The simplegreeting CDI Example].
 
 Instead of having to change the source code of your application, however, you can make the choice at deployment time by using alternatives.
 
@@ -15,7 +15,7 @@ Alternatives are commonly used for purposes such as the following:
 To make a bean available for lookup, injection, or EL resolution using this mechanism, give it a `jakarta.enterprise.inject.Alternative` annotation and then use the `alternatives` element to specify it in the `beans.xml` file.
 
 For example, you might want to create a full version of a bean and also a simpler version that you use only for certain kinds of testing.
-The example described in <<the-encoder-example-using-alternatives>> contains two such beans, `CoderImpl` and `TestCoderImpl`.
+The example described in xref:cdi-adv-examples/cdi-adv-examples.adoc#_the_encoder_example_using_alternatives[The encoder Example: Using Alternatives] contains two such beans, `CoderImpl` and `TestCoderImpl`.
 The test bean is annotated as follows:
 
 [source,java]
