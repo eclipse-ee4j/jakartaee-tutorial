@@ -144,7 +144,7 @@ public class Employee extends Person {
 }
 ----
 
-The constraint definition `@USPhoneNumber` is define in the sample listed under <<using-the-built-in-constraints-to-make-a-new-constraint>>.
+The constraint definition `@USPhoneNumber` is define in the sample listed under <<_using_the_built_in_constraints_to_make_a_new_constraint>>.
 In the sample, another constraint `@Pattern` is used to validate the phone number.
 
 == Using In-Built Value Extractors in Custom Containers

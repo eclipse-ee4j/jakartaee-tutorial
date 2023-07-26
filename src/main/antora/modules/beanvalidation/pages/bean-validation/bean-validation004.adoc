@@ -26,7 +26,7 @@ The amount of the salary for the employee must not be null, cannot be greater th
 The currency type must not be null and is validated using a custom constraint.
 
 If you add method constraints to classes in an object hierarchy, special care must be taken to avoid unintended behavior by subtypes.
-See <<using-method-constraints-in-type-hierarchies>> for more information.
+See xref:bean-validation-advanced/bean-validation-advanced.adoc#_using_method_constraints_in_type_hierarchies[Using Method Constraints in Type Hierarchies] for more information.
 
 === Cross-Parameter Constraints
 
@@ -66,7 +66,7 @@ public Map<@NotNull String, @USPhoneNumber String> getAddressesByType() { }
 ----
 
 In this sample, `@Email` is an in-built constraint supported by Bean Validation, and `@USPhoneNumber` is a user-defined constraint.
-See <<using-the-built-in-constraints-to-make-a-new-constraint>>.
+See xref:bean-validation-advanced/bean-validation-advanced.adoc#_using_the_built_in_constraints_to_make_a_new_constraint[Using the Built-In Constraints to Make a New Constraint].
 
 `@USPhoneNumber` has `ElementType.TYPE_USE` as one of its `@Target`, and therefore it is possible to use `@USPhoneNumber` constraint for validating type arguments of parameterized types.
 
@@ -95,4 +95,4 @@ To avoid this ambiguity, add a `validationAppliesTo` element to the constraint a
 public Employee getManager(Employee employee) { ... }
 ----
 
-See <<removing-ambiguity-in-constraint-targets>> for more information.
+See xref:bean-validation-advanced/bean-validation-advanced.adoc#_removing_ambiguity_in_constraint_targets[Removing Ambiguity in Constraint Targets] for more information.
