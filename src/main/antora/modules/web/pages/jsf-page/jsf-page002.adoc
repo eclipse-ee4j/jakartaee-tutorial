@@ -405,7 +405,7 @@ The Jakarta Faces implementation checks whether the value of the component is nu
 If your component must have a non-null value or a `String` value at least one character in length, you should add a `required` attribute to your tag and set its value to `true`.
 If your tag has a `required` attribute that is set to `true` and the value is null or a zero-length string, no other validators that are registered on the tag are called.
 If your tag does not have a `required` attribute set to `true`, other validators that are registered on the tag are called, but those validators must handle the possibility of a null or zero-length string.
-See <<validating-null-and-empty-strings>> for more information.
+See xref:beanvalidation:bean-validation/bean-validation.adoc#_validating_null_and_empty_strings[Validating Null and Empty Strings] for more information.
 
 ==== Rendering a Password Field with the h:inputSecret Tag
 
@@ -1234,7 +1234,7 @@ The source code for this example is in the `_tut-install_/examples/web/jsf/bookm
 
 ==== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -1254,7 +1254,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 
 ==== To Build, Package, and Deploy the bookmarks Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

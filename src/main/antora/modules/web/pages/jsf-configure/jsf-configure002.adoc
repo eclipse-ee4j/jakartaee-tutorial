@@ -37,7 +37,7 @@ You can specify one of the following scopes for a bean class.
 * Session (`jakarta.enterprise.context.SessionScoped`): Session scope persists across multiple HTTP requests in a web application.
 
 * Flow (`jakarta.faces.flows.FlowScoped`): Flow scope persists during a user's interaction with a specific flow of a web application.
-See <<_using_faces_flows>> for more information.
+See xref:jsf-configure/jsf-configure.adoc#_using_faces_flows[Using Faces Flows] for more information.
 
 * Request (`jakarta.enterprise.context.RequestScoped`): Request scope persists during a single HTTP request in a web application.
 

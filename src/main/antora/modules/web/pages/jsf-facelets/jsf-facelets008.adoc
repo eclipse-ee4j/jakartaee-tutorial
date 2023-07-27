@@ -128,7 +128,7 @@ The `default.css` stylesheets in the two contracts differ in only one respect: t
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -148,7 +148,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 
 ==== To Build, Package, and Deploy the hello1-rlc Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

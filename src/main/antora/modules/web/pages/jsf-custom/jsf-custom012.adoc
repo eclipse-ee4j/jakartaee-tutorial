@@ -137,7 +137,7 @@ Input must match one of the following patterns: {0}
 You may wish to save and restore state for your validator, although state saving is not usually necessary.
 To do so, you will need to implement the `StateHolder` interface as well as the `Validator` interface.
 To implement `StateHolder`, you would need to implement its four methods: `saveState(FacesContext)`, `restoreState(FacesContext, Object)`, `isTransient`, and `setTransient(boolean)`.
-See <<_saving_and_restoring_state>> for more information.
+See xref:jsf-custom/jsf-custom.adoc#_saving_and_restoring_state[Saving and Restoring State] for more information.
 
 === Specifying a Custom Tag
 
@@ -202,7 +202,7 @@ Then the page author needs to do one of the following.
 
 * Set the `f:validator` tag's `validatorId` attribute to the ID of the validator that is defined in the application configuration resource file.
 
-* Bind the custom `Validator` implementation to a managed bean property using the `f:validator` tag's `binding` attribute, as described in <<_binding_converters_listeners_and_validators_to_managed_bean_properties>>.
+* Bind the custom `Validator` implementation to a managed bean property using the `f:validator` tag's `binding` attribute, as described in xref:jsf-custom/jsf-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties].
 
 The following tag registers a hypothetical validator on a component using an `f:validator` tag and references the ID of the validator:
 

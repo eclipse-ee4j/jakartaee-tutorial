@@ -15,10 +15,10 @@ During a web application lifecycle, common tasks are performed, including the fo
 The Jakarta Faces web application framework manages lifecycle phases automatically for simple applications or allows you to manage them manually for more complex applications as required.
 
 Jakarta Faces applications that use advanced features may require interaction with the lifecycle at certain phases.
-For example, Ajax applications use partial processing features of the lifecycle (see <<_partial_processing_and_partial_rendering>>).
+For example, Ajax applications use partial processing features of the lifecycle (see xref:jsf-intro/jsf-intro.adoc#_partial_processing_and_partial_rendering[Partial Processing and Partial Rendering]).
 A clearer understanding of the lifecycle phases is key to creating well-designed components.
 
-A simplified view of the Jakarta Faces lifecycle, consisting of the two main phases of a Jakarta Faces web application, is introduced in <<_a_simple_jakarta_faces_application>>.
+A simplified view of the Jakarta Faces lifecycle, consisting of the two main phases of a Jakarta Faces web application, is introduced in xref:jsf-intro/jsf-intro.adoc#_a_simple_jakarta_faces_application[A Simple Jakarta Faces Application].
 This section examines the Jakarta Faces lifecycle in more detail.
 
 === Overview of the Jakarta Faces Lifecycle

@@ -39,11 +39,11 @@ See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using t
 
 * You need to perform validation on the component data.
 Standard validators and custom validators can be added to a component by using the validator tags from the page.
-See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators] and <<_creating_and_using_a_custom_validator>> for more information about validating a component's data.
+See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators] and xref:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_validator[Creating and Using a Custom Validator] for more information about validating a component's data.
 
 * You need to register event listeners on components.
 You can either register event listeners on components using the `f:valueChangeListener` and `f:actionListener` tags, or you can point at an event-processing method on a managed bean using the component's `actionListener` or `valueChangeListener` attributes.
-See <<_implementing_an_event_listener>> and xref:jsf-develop/jsf-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for more information.
+See xref:jsf-custom/jsf-custom.adoc#_implementing_an_event_listener[Implementing an Event Listener] and xref:jsf-develop/jsf-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for more information.
 
 === When to Use a Custom Renderer
 

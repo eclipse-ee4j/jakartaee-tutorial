@@ -71,7 +71,7 @@ The word `cc` in Jakarta Faces is a reserved word for composite components.
 The `#{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
 
 The preceding example content is stored as a file named `email.xhtml` in a folder named `resources/emcomp`, under the application web root directory.
-This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see <<_web_resources>>.
+This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see xref:jsf-facelets/jsf-facelets.adoc#_web_resources[Web Resources].
 
 The web page that uses this composite component is generally called a using page.
 The using page includes a reference to the composite component, in the `xml` namespace declarations:

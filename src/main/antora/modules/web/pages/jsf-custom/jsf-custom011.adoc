@@ -188,7 +188,7 @@ This method is shown in `bookcashier.xhtml`:
 </h:inputText>
 ----
 
-* Bind the `Converter` implementation to a managed bean property using the `f:converter` tag's `binding` attribute, as described in <<_binding_converters_listeners_and_validators_to_managed_bean_properties>>.
+* Bind the `Converter` implementation to a managed bean property using the `f:converter` tag's `binding` attribute, as described in xref:jsf-custom/jsf-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties].
 
 The Jakarta Faces implementation calls the converter's `getAsObject` method to strip spaces and hyphens from the input value.
 The `getAsString` method is called when the `bookcashier.xhtml` page is redisplayed; this happens if the user orders more than $100 worth of books.

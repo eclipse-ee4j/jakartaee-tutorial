@@ -99,7 +99,7 @@ It calculates the sum of the letters in the string, with `'a'` equal to 1 and `'
 An uppercase letter in the input string has the same value as its lowercase equivalent.
 
 The bean specifies the minimum and maximum size of the `name` string, which is enforced by the Bean Validation `@Size` constraint.
-The bean uses the `@Model` annotation, a shortcut for `@Named` and `@RequestScoped`, as described in <<hello1-nb-step-7>> of xref:webapp/webapp.adoc#_to_view_the_hello1_web_module_using_netbeans_ide[To View the hello1 Web Module Using NetBeans IDE].
+The bean uses the `@Model` annotation, a shortcut for `@Named` and `@RequestScoped`, as described in xref:webapp/webapp.adoc#_hello1_nb_step_7[Step 7] of xref:webapp/webapp.adoc#_to_view_the_hello1_web_module_using_netbeans_ide[To View the hello1 Web Module Using NetBeans IDE].
 
 [source,java]
 ----
@@ -122,7 +122,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -142,7 +142,7 @@ This command builds and deploys the application.
 
 ==== To Build, Package, and Deploy the compositecomponentexample Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

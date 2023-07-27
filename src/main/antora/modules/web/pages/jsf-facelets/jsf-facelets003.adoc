@@ -165,7 +165,7 @@ An `h:inputText` tag accepts user input and sets the value of the managed bean p
 The input value is validated for value range by the Jakarta Faces standard validator tag `f:validateLongRange`.
 
 The image file, `wave.med.gif`, is added to the page as a resource, as is the style sheet.
-For more details about the resources facility, see <<_web_resources>>.
+For more details about the resources facility, see xref:jsf-facelets/jsf-facelets.adoc#_web_resources[Web Resources].
 
 An `h:commandButton` tag with the ID `submit` starts validation of the input data when a user clicks the button.
 Using implicit navigation, the tag redirects the client to another page, `response.xhtml`, which shows the response to your input.
@@ -253,7 +253,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -273,7 +273,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 
 ==== To Build, Package, and Deploy the guessnumber-jsf Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

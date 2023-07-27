@@ -6,7 +6,7 @@ You can apply the following steps while developing your own custom component.
 
 .. Overrides the `getFamily` method to return the component family, which is used to look up renderers that can render the component
 
-.. Includes the rendering code or delegates it to a renderer (explained in <<create-custom-component-step-2>>)
+.. Includes the rendering code or delegates it to a renderer (explained in <<_create_custom_component_step_2>>)
 
 .. Enables component attributes to accept expressions
 
@@ -28,4 +28,4 @@ To do this:
 . Create a tag library descriptor (TLD) that defines the custom tag.
 
 See xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_component[Registering a Custom Component] and xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_renderer_with_a_render_kit[Registering a Custom Renderer with a Render Kit] for information on registering the custom component and the renderer.
-The section <<_using_a_custom_component>> discusses how to use the custom component in a Jakarta Faces page.
+The section xref:jsf-custom/jsf-custom.adoc#_using_a_custom_component[Using a Custom Component] discusses how to use the custom component in a Jakarta Faces page.

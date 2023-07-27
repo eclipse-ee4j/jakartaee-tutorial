@@ -4,7 +4,7 @@ An application developer can implement listeners as classes or as managed bean m
 If a listener is a managed bean method, the page author references the method from either the component's `valueChangeListener` attribute or its `actionListener` attribute.
 If the listener is a class, the page author can reference the listener from either an `f:valueChangeListener` tag or an `f:actionListener` tag and nest the tag inside the component tag to register the listener on the component.
 
-<<_referencing_a_method_that_handles_an_action_event>> and <<_referencing_a_method_that_handles_a_value_change_event>> explain how a page author uses the `valueChangeListener` and `actionListener` attributes to reference managed bean methods that handle events.
+xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_an_action_event[Referencing a Method That Handles an Action Event] and xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_a_value_change_event[Referencing a Method That Handles a Value-Change Event] explain how a page author uses the `valueChangeListener` and `actionListener` attributes to reference managed bean methods that handle events.
 
 This section explains how to register a `NameChanged` value-change listener and a `BookChange` action listener implementation on components.
 The Duke's Bookstore case study includes both of these listeners.

@@ -72,4 +72,4 @@ Each element can be processed or discarded by the application code, and then the
 This approach is adequate for local processing, in which the processing of an element does not require information from the rest of the data.
 The streaming model generates JSON output to a given stream by making a function call with one element at a time.
 
-There are many JSON generators and parsers available for different programming languages and environments. <<_json_processing_in_the_jakarta_ee_platform>> describes the functionality provided by Jakarta JSON Processing.
+There are many JSON generators and parsers available for different programming languages and environments. xref:jsonp/jsonp.adoc#_json_processing_in_the_jakarta_ee_platform[JSON Processing in the Jakarta EE Platform] describes the functionality provided by Jakarta JSON Processing.

@@ -47,13 +47,13 @@ public Integer getUserNumber() {
 
 When bound to a component's value, a bean property can be any of the basic primitive and numeric types or any Java object type for which the application has access to an appropriate converter.
 For example, a property can be of type `java.util.Date` if the application has access to a converter that can convert the `Date` type to a `String` and back again.
-See <<_writing_bean_properties>> for information on which types are accepted by which component tags.
+See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] for information on which types are accepted by which component tags.
 
 When a bean property is bound to a component instance, the property's type must be the same as the component object.
 For example, if a `jakarta.faces.component.UISelectBoolean` component is bound to the property, the property must accept and return a `UISelectBoolean` object.
 Likewise, if the property is bound to a converter, validator, or listener instance, the property must be of the appropriate converter, validator, or listener type.
 
-For more information on writing beans and their properties, see <<_writing_bean_properties>>.
+For more information on writing beans and their properties, see xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties].
 
 === Using the EL to Reference Managed Beans
 

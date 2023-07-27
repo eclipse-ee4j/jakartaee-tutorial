@@ -3,7 +3,7 @@
 To activate Ajax functionality, the web application must create an Ajax request and send it to the server.
 The server then processes the request.
 
-The application uses the attributes of the `f:ajax` tag listed in <<_attributes_of_the_fajax_tag>> to create the Ajax request.
+The application uses the attributes of the `f:ajax` tag listed in xref:jsf-ajax/jsf-ajax.adoc#_attributes_of_the_fajax_tag[attributes of the f:ajax tag] to create the Ajax request.
 The following sections explain the process of creating and sending an Ajax request using some of these attributes.
 
 [NOTE]

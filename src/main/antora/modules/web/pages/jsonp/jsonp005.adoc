@@ -1,9 +1,9 @@
 == JSON in Jakarta EE RESTful Web Services
 
 This section explains how the Jakarta JSON Processing is related to other Jakarta EE packages that provide JSON support for RESTful web services.
-See xref:building-restful-web-services-with-jakarta-rest[] for more information on RESTful web services.
+See xref:websvcs:jaxrs/jaxrs.adoc#_building_restful_web_services_with_jakarta_rest[Building RESTful Web Services with Jakarta REST] for more information on RESTful web services.
 
-Jersey, the Jakarta RESTful Web Services implementation included in GlassFish Server, provides support for binding JSON data from RESTful resource methods to Java objects using Jakarta XML Binding, as described in <<using-jakarta-rest-with-jakarta-xml-binding>> in xref:jakarta-rest-advanced-topics-and-an-example[].
+Jersey, the Jakarta RESTful Web Services implementation included in GlassFish Server, provides support for binding JSON data from RESTful resource methods to Java objects using Jakarta XML Binding, as described in xref:websvcs:jaxrs-advanced/jaxrs-advanced.adoc#_using_jakarta_rest_with_jakarta_xml_binding[Using Jakarta REST with Jakarta XML Binding] in xref:websvcs:jaxrs-advanced/jaxrs-advanced.adoc#_jakarta_rest_advanced_topics_and_an_example[Jakarta REST: Advanced Topics and an Example].
 However, JSON support is not part of Jakarta RESTful Web Services or Jakarta XML Binding, so that procedure may not work for Jakarta EE implementations other than GlassFish Server.
 
 You can still use the Jakarta JSON Processing with Jakarta RESTful Web Services resource methods.

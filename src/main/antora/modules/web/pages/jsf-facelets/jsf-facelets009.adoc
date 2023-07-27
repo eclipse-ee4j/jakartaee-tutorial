@@ -224,7 +224,7 @@ The namespace declarations in the `html` element of the `reservation.xhtml` page
       xmlns:jsf="http://xmlns.jcp.org/jsf">
 ----
 
-Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in <<_relocatable_resources>>):
+Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in xref:jsf-facelets/jsf-facelets.adoc#_relocatable_resources[Relocatable Resources]):
 
 [source,xml]
 ----
@@ -285,7 +285,7 @@ It also contains two methods, `calculateTotal` and `clear`, that act as listener
 
 ==== To Build, Package, and Deploy the reservation Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -305,7 +305,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 
 ==== To Build, Package, and Deploy the reservation Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

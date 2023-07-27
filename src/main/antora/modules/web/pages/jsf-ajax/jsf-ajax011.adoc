@@ -99,7 +99,7 @@ It is injected into `UserNumberBean` with the CDI `@Inject` annotation so that t
 DukesNumberBean dukesNumberBean;
 ----
 
-You will learn more about CDI in xref:introduction-to-jakarta-contexts-and-dependency-injection[].
+You will learn more about CDI in xref:cdi:cdi-basic/cdi-basic.adoc#_introduction_to_jakarta_contexts_and_dependency_injection[Introduction to Jakarta Contexts and Dependency Injection].
 
 === Running the ajaxguessnumber Example
 
@@ -107,7 +107,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -127,7 +127,7 @@ This command builds and deploys the project.
 
 ==== To Build, Package, and Deploy the ajaxguessnumber Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

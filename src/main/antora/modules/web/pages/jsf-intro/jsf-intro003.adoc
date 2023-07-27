@@ -24,7 +24,7 @@ Facelets technology offers several advantages.
 * Code can be reused and extended for components through the templating and composite component features.
 
 * You can use annotations to automatically register the managed bean as a resource available for Jakarta Faces applications.
-In addition, implicit navigation rules allow developers to quickly configure page navigation (see <<_navigation_model>> for details).
+In addition, implicit navigation rules allow developers to quickly configure page navigation (see xref:jsf-intro/jsf-intro.adoc#_navigation_model[Navigation Model] for details).
 These features reduce the manual configuration process for applications.
 
 * Most important, Jakarta Faces technology provides a rich architecture for managing component state, processing component data, validating user input, and handling events.

@@ -2,7 +2,7 @@
 
 As described in xref:jsf-page/jsf-page.adoc#_adding_components_to_a_page_using_html_tag_library_tags[Adding Components to a Page Using HTML Tag Library Tags], a page author can bind converter, listener, and validator implementations to managed bean properties using the `binding` attributes of the tags that are used to register the implementations on components.
 
-This technique has similar advantages to binding component instances to managed bean properties, as described in <<_binding_component_values_and_instances_to_managed_bean_properties>>.
+This technique has similar advantages to binding component instances to managed bean properties, as described in xref:jsf-custom/jsf-custom.adoc#_binding_component_values_and_instances_to_managed_bean_properties[Binding Component Values and Instances to Managed Bean Properties].
 In particular, binding a converter, listener, or validator implementation to a managed bean property yields the following benefits.
 
 * The managed bean can instantiate the implementation instead of

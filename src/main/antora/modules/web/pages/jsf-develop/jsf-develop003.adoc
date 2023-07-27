@@ -80,7 +80,7 @@ public Object submit(){
 ----
 
 The section xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation] explains how a component tag references this method.
-The section <<_writing_properties_bound_to_component_instances>> explains how to write the bean properties to which the components are bound.
+The section xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances] explains how to write the bean properties to which the components are bound.
 
 === Writing a Method to Handle an Action Event
 
@@ -113,7 +113,7 @@ A managed bean method that performs validation must accept a `jakarta.faces.cont
 A component refers to the managed bean method by using its `validator` attribute.
 Only values of `UIInput` components or values of components that extend `UIInput` can be validated.
 
-Here is an example of a managed bean method that validates user input, from <<the-guessnumber-cdi-cdi-example>>:
+Here is an example of a managed bean method that validates user input, from xref:cdi:cdi-basicexamples/cdi-basicexamples.adoc#_the_guessnumber_cdi_cdi_example[The guessnumber-cdi CDI Example]:
 
 [source,java]
 ----

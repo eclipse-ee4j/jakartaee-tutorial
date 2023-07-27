@@ -1,6 +1,6 @@
 == Writing Bean Properties
 
-As explained in <<_managed_beans_in_jakarta_faces_technology>>, a managed bean property can be bound to one of the following items:
+As explained in xref:jsf-develop/jsf-develop.adoc#_managed_beans_in_jakarta_faces_technology[Managed Beans in Jakarta Faces Technology], a managed bean property can be bound to one of the following items:
 
 * A component value
 
@@ -401,11 +401,11 @@ public void setSpecialOffer(UISelectBoolean specialOffer) {
 }
 ----
 
-For more general information on component binding, see <<_managed_beans_in_jakarta_faces_technology>>.
+For more general information on component binding, see xref:jsf-develop/jsf-develop.adoc#_managed_beans_in_jakarta_faces_technology[Managed Beans in Jakarta Faces Technology].
 
 For information on how to reference a managed bean method that performs navigation when a button is clicked, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
 
-For more information on writing managed bean methods that handle navigation, see <<_writing_a_method_to_handle_navigation>>.
+For more information on writing managed bean methods that handle navigation, see xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_navigation[Writing a Method to Handle Navigation].
 
 === Writing Properties Bound to Converters, Listeners, or Validators
 

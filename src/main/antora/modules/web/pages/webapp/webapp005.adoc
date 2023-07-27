@@ -31,7 +31,7 @@ To add a context parameter using NetBeans IDE:
 
 . Double-click `web.xml`.
 +
-If the project does not have a `web.xml` file, create one by following the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
+If the project does not have a `web.xml` file, create one by following the steps in <<_to_create_a_web_xml_file_using_netbeans_ide>>.
 
 . Click *General* at the top of the editor window.
 
@@ -108,7 +108,7 @@ To set up error mapping using NetBeans IDE:
 
 . Double-click `web.xml`.
 +
-If the project does not have a `web.xml` file, create one by following the steps in <<to-create-a-web-xml-file-using-netbeans-ide>>.
+If the project does not have a `web.xml` file, create one by following the steps in <<_to_create_a_web_xml_file_using_netbeans_ide>>.
 
 . Click *Pages* at the top of the editor window.
 
@@ -136,12 +136,12 @@ First, you can inject resources only into container-managed objects, because a c
 As a result, you cannot inject resources into such objects as simple JavaBeans components.
 However, managed beans are managed by the container; therefore, they can accept resource injections.
 
-Components that can accept resource injections are listed in xref:web-components-that-accept-resource-injections[xrefstyle=short].
+Components that can accept resource injections are listed in xref:webapp/webapp.adoc#_web_components_that_accept_resource_injections[Web Components That Accept Resource Injections].
 
 This section explains how to use a couple of the annotations supported by a web container to inject resources.
-xref:running-the-persistence-examples[], explains how web applications use annotations supported by Jakarta Persistence.
-xref:getting-started-securing-web-applications[], explains how to use annotations to specify information about securing web applications.
-See xref:resource-adapters-and-contracts[], for more information on resources.
+xref:persist:persistence-basicexamples/persistence-basicexamples.adoc#_running_the_persistence_examples[Running the Persistence Examples], explains how web applications use annotations supported by Jakarta Persistence.
+xref:security:security-webtier/security-webtier.adoc#_getting_started_securing_web_applications[Getting Started Securing Web Applications], explains how to use annotations to specify information about securing web applications.
+See xref:supporttechs:resources/resources.adoc#_resource_adapters_and_contracts[Resource Adapters and Contracts], for more information on resources.
 
 [[_web_components_that_accept_resource_injections]]
 .Web Components That Accept Resource Injections
@@ -206,7 +206,7 @@ The web application examples in this tutorial use Jakarta Persistence to access 
 This API does not require you to explicitly create a connection to a data source.
 Therefore, the examples do not use the `@Resource` annotation to inject a data source.
 However, this API supports the `@PersistenceUnit` and `@PersistenceContext` annotations for injecting `EntityManagerFactory` and `EntityManager` instances, respectively.
-<<running-the-persistence-examples>> describes these annotations and the use of the Jakarta Persistence in web applications.
+xref:persist:persistence-basicexamples/persistence-basicexamples.adoc#_running_the_persistence_examples[Running the Persistence Examples] describes these annotations and the use of the Jakarta Persistence in web applications.
 
 ==== Declaring a Reference to a Web Service
 

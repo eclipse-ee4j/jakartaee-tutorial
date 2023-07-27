@@ -1,7 +1,7 @@
 == Delegating Rendering to a Renderer
 
 Both `MapComponent` and `AreaComponent` delegate all of their rendering to a separate renderer.
-The section <<_performing_encoding>> explains how `MapRenderer` performs the encoding for `MapComponent`.
+The section xref:jsf-custom/jsf-custom.adoc#_performing_encoding[Performing Encoding] explains how `MapRenderer` performs the encoding for `MapComponent`.
 This section explains in detail the process of delegating rendering to a renderer using `AreaRenderer`, which performs the rendering for `AreaComponent`.
 
 To delegate rendering, you perform the tasks described in the following topics:
@@ -37,7 +37,7 @@ ImageArea ia = (ImageArea)area.getValue();
 ----
 
 The attribute value is the `ImageArea` bean instance, which contains the `shape`, `coords`, and `alt` values associated with the `book203` `AreaComponent` instance.
-<<_configuring_model_data>> describes how the application stores these values.
+xref:jsf-custom/jsf-custom.adoc#_configuring_model_data[Configuring Model Data] describes how the application stores these values.
 
 After retrieving the `ImageArea` object, the method renders the values for `shape`, `coords`, and `alt` by simply calling the associated accessor methods and passing the returned values to the `ResponseWriter` instance, as shown by these lines of code, which write out the shape and coordinates:
 

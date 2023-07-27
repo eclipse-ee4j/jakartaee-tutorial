@@ -133,7 +133,7 @@ If you created your application without an IDE, you can create a web deployment 
 
 ==== To Specify a Path to an Application Configuration Resource File
 
-As explained in <<_application_configuration_resource_file>>, an application can have multiple application configuration resource files.
+As explained in xref:jsf-configure/jsf-configure.adoc#_application_configuration_resource_file[Application Configuration Resource File], an application can have multiple application configuration resource files.
 If these files are not located in the directories that the implementation searches by default or the files are not named `faces-config.xml`, you need to specify paths to these files.
 
 To specify these paths using NetBeans IDE, do the following.

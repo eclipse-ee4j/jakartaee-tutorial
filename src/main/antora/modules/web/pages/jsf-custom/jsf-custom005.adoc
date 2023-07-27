@@ -1,6 +1,6 @@
 == Creating Custom Component Classes
 
-As explained in <<_when_to_use_a_custom_component>>, a component class defines the state and behavior of a UI component.
+As explained in xref:jsf-custom/jsf-custom.adoc#_when_to_use_a_custom_component[When to Use a Custom Component], a component class defines the state and behavior of a UI component.
 The state information includes the component's type, identifier, and local value.
 The behavior defined by the component class includes the following:
 
@@ -109,7 +109,7 @@ Its behavior consists of the following actions:
 `MapComponent` delegates the rendering of the HTML `map` and `input` tags to the `MapRenderer` class.
 
 `AreaComponent` is bound to a bean that stores the shape and coordinates of the region of the image map.
-You will see how all this data is accessed through the value expression in <<_creating_the_renderer_class>>.
+You will see how all this data is accessed through the value expression in xref:jsf-custom/jsf-custom.adoc#_creating_the_renderer_class[Creating the Renderer Class].
 The behavior of `AreaComponent` consists of the following:
 
 * Retrieving the shape and coordinate data from the bean
@@ -119,10 +119,10 @@ The behavior of `AreaComponent` consists of the following:
 * Rendering the `area` tag, including the JavaScript for the `onmouseover`, `onmouseout`, and `onclick` functions
 
 Although these tasks are actually performed by `AreaRenderer`, `AreaComponent` must delegate the tasks to `AreaRenderer`.
-See <<_delegating_rendering_to_a_renderer>> for more information.
+See xref:jsf-custom/jsf-custom.adoc#_delegating_rendering_to_a_renderer[Delegating Rendering to a Renderer] for more information.
 
 The rest of this section describes the tasks that `MapComponent` performs as well as the encoding and decoding that it delegates to `MapRenderer`.
-<<_handling_events_for_custom_components>> details how `MapComponent` handles events.
+xref:jsf-custom/jsf-custom.adoc#_handling_events_for_custom_components[Handling Events for Custom Components] details how `MapComponent` handles events.
 
 === Specifying the Component Family
 

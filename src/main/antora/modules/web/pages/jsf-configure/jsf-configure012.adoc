@@ -37,4 +37,4 @@ The `component-class` element indicates the fully qualified class name of the co
 The `property` elements specify the component properties and their types.
 
 If the custom component can include facets, you can configure the facets in the component configuration using `facet` elements, which are allowed after the `component-class` elements.
-See <<_registering_a_custom_renderer_with_a_render_kit>> for further details on configuring facets.
+See xref:jsf-configure/jsf-configure.adoc#_registering_a_custom_renderer_with_a_render_kit[Registering a Custom Renderer with a Render Kit] for further details on configuring facets.

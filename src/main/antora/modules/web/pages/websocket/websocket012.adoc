@@ -119,7 +119,7 @@ If the message is a join message, the endpoint adds the new user to the list and
 If the message is a chat message, the endpoint forwards it to all connected clients.
 
 If a chat message is for the bot agent, the endpoint obtains a response using the `BotBean` instance and sends it to all connected clients.
-The `sendAll` method is similar to the example in <<_sending_messages_to_all_peers_connected_to_an_endpoint>>.
+The `sendAll` method is similar to the example in xref:websocket/websocket.adoc#_sending_messages_to_all_peers_connected_to_an_endpoint[Sending Messages to All Peers Connected to an Endpoint].
 
 ===== Asynchronous Processing and Concurrency Considerations
 
@@ -241,7 +241,7 @@ This section describes how to run the `websocketbot` example application using N
 
 ==== To Run the websocketbot Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -267,7 +267,7 @@ See <<_to_test_the_websocketbot_example_application>> for more information.
 
 ==== To Run the websocketbot Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

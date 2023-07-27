@@ -244,4 +244,4 @@ If you are implementing a `Validator` interface, you must also do the following.
 
 In the previously described standard validation model, the validator is defined for each input component on a page.
 The Bean Validation model allows the validator to be applied to all fields in a page.
-See xref:introduction-to-jakarta-bean-validation[] and xref:bean-validation-advanced-topics[] for more information on Bean Validation.
+See xref:beanvalidation:bean-validation/bean-validation.adoc#_introduction_to_jakarta_bean_validation[Introduction to Jakarta Bean Validation] and xref:beanvalidation:bean-validation-advanced/bean-validation-advanced.adoc#_bean_validation_advanced_topics[Bean Validation: Advanced Topics] for more information on Bean Validation.

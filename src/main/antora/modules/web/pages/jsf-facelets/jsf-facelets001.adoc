@@ -71,10 +71,10 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 |===
 
 Facelets provides two namespaces to support HTML5-friendly markup.
-For details, see <<_html5_friendly_markup>>.
+For details, see xref:jsf-facelets/jsf-facelets.adoc#_html5_friendly_markup[HTML5-Friendly Markup].
 
 Facelets supports tags for composite components, for which you can declare custom prefixes.
-For more information on composite components, see <<_composite_components>>.
+For more information on composite components, see xref:jsf-facelets/jsf-facelets.adoc#_composite_components[Composite Components].
 
 The namespace prefixes shown in the table are conventional, not mandatory.
 As is always the case when you declare an XML namespace, you can specify any prefix in your Facelets page.

@@ -11,7 +11,7 @@ To use a JavaScript resource directly with a `UIComponent`, you must explicitly 
 
 * <<_using_javascript_api_in_a_facelets_application>> – Uses the `h:outputScript` tag directly in a Facelets page
 
-* <<using-the-resourcedependency-annotation-in-a-bean-class>> – Uses the `jakarta.faces.application.ResourceDependency` annotation on a `UIComponent` Java class
+* <<_using_the_resourcedependency_annotation_in_a_bean_class>> – Uses the `jakarta.faces.application.ResourceDependency` annotation on a `UIComponent` Java class
 
 === Using JavaScript API in a Facelets Application
 
@@ -59,9 +59,9 @@ The optional options parameter contains a set of name/value pairs from <<_possib
 |===
 |Name |Value
 
-|`execute` |A space-delimited list of client identifiers or one of the keywords listed in <<_execute_and_render_keywords>>. The identifiers reference the components that will be processed during the Execute phase of the lifecycle.
+|`execute` |A space-delimited list of client identifiers or one of the keywords listed in xref:jsf-ajax/jsf-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the Execute phase of the lifecycle.
 
-|`render` |A space-delimited list of client identifiers or one of the keywords listed in <<_execute_and_render_keywords>>. The identifiers reference the components that will be processed during the render phase of the lifecycle.
+|`render` |A space-delimited list of client identifiers or one of the keywords listed in xref:jsf-ajax/jsf-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the render phase of the lifecycle.
 
 |`onevent` |A `String` that is the name of the JavaScript function to call when an event occurs.
 

@@ -72,7 +72,7 @@ See xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_an_action_even
 
 If the input of one of the components on your page is validated by a managed bean method, refer to the method from the component's tag by using the `validator` attribute.
 
-The following simplified example from <<the-guessnumber-cdi-cdi-example>> shows how to reference a method that performs validation on `inputGuess`, an input component:
+The following simplified example from xref:cdi:cdi-basicexamples/cdi-basicexamples.adoc#_the_guessnumber_cdi_cdi_example[The guessnumber-cdi CDI Example] shows how to reference a method that performs validation on `inputGuess`, an input component:
 
 [source,xml]
 ----

@@ -45,11 +45,13 @@ public class LinkChecker {
 	class Reference extends Location {
 		public String manchor;
 		public String mtext;
+		public boolean mheader;
 
-		public Reference(String module, String submod, String file, String anchor, String text) {
+		public Reference(String module, String submod, String file, String anchor, String text, boolean header) {
 			super(module, submod, file);
 			manchor = anchor;
 			mtext = text;
+			mheader = header;
 		}
 
 		public String makeLink(boolean local) {
@@ -124,18 +126,19 @@ public class LinkChecker {
 		Pattern p = Pattern.compile("(?m)^=+\s*(.+)");
 		Matcher m = p.matcher(content);
 		while (m.find()) {
-			addAnchor(module, submod, file.getName(), anchorKey(m.group(1)), m.group(1));
+			addAnchor(module, submod, file.getName(), anchorKey(m.group(1)), m.group(1), true);
 		}
 		// index inline [anchors]
-		p = Pattern.compile("\\[\\[([^\\]]+)\\]\\]");
+		p = Pattern.compile("\\[\\[([^,\\]]+),?\\s*([^\\]]*)\\]\\]");
 		m = p.matcher(content);
 		while (m.find()) {
-			addAnchor(module, submod, file.getName(), m.group(1), anchor2title(m.group(1)));
+			String title = m.group(2).length() > 0 ? m.group(2) : anchor2title(m.group(1));
+			addAnchor(module, submod, file.getName(), m.group(1), title, false);
 		}
 	}
 
-	private void addAnchor(String module, String submod, String filename, String key, String text) {
-		Reference reference = new Reference(module, submod, filename, key, text);
+	private void addAnchor(String module, String submod, String filename, String key, String text, boolean header) {
+		Reference reference = new Reference(module, submod, filename, key, text, header);
 		refmap.put(key, reference);
 		if (showIndex) {
 			System.out.println(key);
@@ -144,7 +147,7 @@ public class LinkChecker {
 
 	private static String anchorKey(String str) {
 		final var strWithPrefix = str.charAt(0) == '_' ? str : "_" + str;
-		return strWithPrefix.toLowerCase().replaceAll("[\\s-]", "_").replace(":", "").replaceAll("[@?,&()]", "");
+		return strWithPrefix.toLowerCase().replaceAll("[\\s-\\.]", "_").replaceAll("[@?,&()/':]", "");
 	}
 
 	public static String anchor2title(String str) {
@@ -152,7 +155,7 @@ public class LinkChecker {
 		String ret = "";
 		String words[] = str.split("\\s");
 		for (String word : words) {
-			if(word.length() > 0) {
+			if (word.length() > 0) {
 				String first = word.substring(0, 1);
 				String rest = word.substring(1);
 				ret += first.toUpperCase() + rest + " ";
@@ -190,7 +193,7 @@ public class LinkChecker {
 					String linkmod = fm.group(3) != null ? fm.group(3) : module;
 					Location linkloc = new Location(linkmod, fm.group(4), fm.group(5)); // , anchor, linkmod)
 					if (linkloc.mmodule.equals(ref.mmodule) && linkloc.msubmod.equals(ref.msubmod)) {
-						if (!ref.mtext.equals(fm.group(8))) {
+						if (!ref.mtext.equals(fm.group(8)) && ref.mheader) {
 							warn("mismatch link text: expected '" + ref.mtext + "' in " + fm.group());
 						} else {
 							ok("xref resolves: " + fm.group(1));
@@ -210,6 +213,11 @@ public class LinkChecker {
 			Reference ref = resolve(anchor);
 			if (ref != null) {
 				if (ref.sameFile(myref)) {
+					if (!ref.manchor.equals(anchor)) {
+						error("local anchor does not exist: " + anchor);
+						String newlink = "<<" + ref.manchor + ">>";
+						replaceLink(replacements, m.group(), newlink);
+					}
 					ok("anchor exists: " + anchor);
 				} else {
 					warn("local anchor '" + anchor + "' from a different file: " + ref.mfile);

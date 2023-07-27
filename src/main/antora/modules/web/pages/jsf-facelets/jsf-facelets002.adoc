@@ -20,6 +20,6 @@ At this time, the saved view is restored from the stored state.
 
 . If the same view is requested, the stored view is rendered once again.
 
-. If a new view is requested, then the process described in <<step-2-of-lifecycle-of-facelets>> is continued.
+. If a new view is requested, then the process described in <<_step_2_of_lifecycle_of_facelets>> is continued.
 
 . The new view is then rendered back as a response to the client.
