@@ -10,7 +10,7 @@ Development of presentation-oriented web applications is covered in xref:jakarta
 Service-oriented::
 A service-oriented web application implements the endpoint of a web service.
 Presentation-oriented applications are often clients of service-oriented web applications.
-Development of service-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services] and xref:websvcs:jaxrs/jaxrs.adoc#_building_restful_web_services_with_jakarta_rest[Building RESTful Web Services with Jakarta REST] in xref:web-services[]
+Development of service-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services] and xref:websvcs:jaxrs/jaxrs.adoc#_building_restful_web_services_with_jakarta_rest[Building RESTful Web Services with Jakarta REST].
 
 In the Jakarta EE platform, web components provide the dynamic extension capabilities for a web server.
 Web components can be Jakarta servlets, web pages implemented with Jakarta Faces technology, web service endpoints, or Jakarta Server Pages.
