@@ -18,7 +18,7 @@ The `websocketbot` example application consists of the following elements:
 
 * <<_the_message_decoder>> – A class (`MessageDecoder`) the parses WebSocket text messages as JSON data and decodes them into `JoinMessage` or `ChatMessage` objects
 
-* <<the-html-page-3>> – An HTML page (`index.html`) that uses JavaScript code to implement the client for the chat room
+* <<_the_html_page>> – An HTML page (`index.html`) that uses JavaScript code to implement the client for the chat room
 
 ==== The CDI Bean
 
@@ -132,7 +132,7 @@ This facilitates the development of WebSocket endpoints, because you are guarant
 When you introduce a new thread in an endpoint, as in this example, you must ensure that variables and methods accessed by more than one thread are thread safe.
 In this example, the code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method has been declared `synchronized`.
 
-Refer to xref:jakarta-concurrency-2[] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
+Refer to xref:supporttechs:concurrency-utilities/concurrency-utilities.adoc#_jakarta_concurrency[Jakarta Concurrency] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
 
 ==== The Application Messages
 

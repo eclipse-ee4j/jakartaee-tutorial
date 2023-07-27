@@ -28,7 +28,7 @@ You access these attributes by using the `getAttribute` and `setAttribute` metho
 See xref:servlets/servlets.adoc#_accessing_the_web_context[Accessing the Web Context].
 
 |Session |`jakarta.servlet.http.HttpSession` |Web components handling a request that belongs to the session.
-See xref:websocket/websocket.adoc#_maintaining_client_state[Maintaining Client State].
+See xref:servlets/servlets.adoc#_maintaining_client_state[Maintaining Client State].
 
 |Request |Subtype of `jakarta.servlet.ServletRequest` |Web components handling the request.
 

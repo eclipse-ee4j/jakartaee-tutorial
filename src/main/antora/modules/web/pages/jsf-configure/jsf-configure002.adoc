@@ -3,7 +3,7 @@
 [NOTE]
 In Jakarta Faces 2.3, managed bean annotations are deprecated; CDI is now the preferred approach.
 
-Jakarta Faces support for bean annotations is introduced in xref:jakarta-faces-technology-2[].
+Jakarta Faces support for bean annotations is introduced in xref:jsf-intro/jsf-intro.adoc#_jakarta_faces_technology[Jakarta Faces Technology].
 Bean annotations can be used for configuring Jakarta Faces applications.
 
 The `@Named` (`jakarta.inject.Named`) annotation in a class, along with a scope annotation, automatically registers that class as a resource with the Jakarta Faces implementation.
