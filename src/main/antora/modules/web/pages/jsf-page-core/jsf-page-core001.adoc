@@ -157,7 +157,7 @@ jueves 24 de octubre de 2013 15:07:04 GMT
 
 Refer to the "Customizing Formats" lesson of the Java Tutorial at https://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html[^] for more information on how to format the output using the `pattern` attribute of the `convertDateTime` tag.
 
-[[_attributes_for_the_fconvertDateTime_tag]]
+[[_attributes_for_the_fconvertdatetime_tag]]
 .Attributes for the f:convertDateTime Tag
 [width="99%",cols="25%a,25%,50%"]
 |===
@@ -255,7 +255,7 @@ This result can also be displayed by using the following tag in which the curren
 
 See the "Customizing Formats" lesson of the Java Tutorial at https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html[^] for more information on how to format the output by using the `pattern` attribute of the `convertNumber` tag.
 
-[[_attributes_for_the_fconvertNumber_tag]]
+[[_attributes_for_the_fconvertnumber_tag]]
 .Attributes for the f:convertNumber Tag
 [width="99%",cols="25%,25%,50%"]
 |===

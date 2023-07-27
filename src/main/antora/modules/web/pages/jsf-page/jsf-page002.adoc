@@ -938,7 +938,7 @@ To do so, you can retrieve the value of the `newsletters` property, the `String`
 
 An introductory thank-you message is displayed only if the `newsletters` array is not empty.
 Then a `ui:repeat` tag, a simple way to show values in a loop, displays the contents of the selected items in an itemized list.
-(This tag is listed in xref:jsf-facelets/jsf-facelets.adoc#_facelets_templating_tags[null].)
+(This tag is listed in xref:jsf-facelets/jsf-facelets.adoc#_facelets_templating_tags[Facelets Templating Tags].)
 
 === Using Data-Bound Table Components
 
