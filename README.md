@@ -20,8 +20,8 @@ help is greatly appreciated. If you have an idea for the tutorial and
 want to add a section or update an existing section, then review the
 following links:
 
+* [Style Guide](STYLE_GUIDE.md)
 * [Contribute](CONTRIBUTING.md)
-* [Pull Request Acceptance Workflow](src/main/jbake/assets/pr_doc_workflow.md)
 * [License](LICENSE.md)
 
 ## Building the Jakarta EE Tutorial
@@ -72,13 +72,13 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
   You can use Google Fonts for this.
   In case you're using draw.io:
     - Wherever you see a 'Font' dropdown, unfold it.
-        ![Select font](README/images/drawio-font-1-select-font.png)
+        ![Select font](readme-images/drawio-font-1-select-font.png)
     - If there's no 'Open Sans' option, pick 'Custom'.
-        ![Select custom](README/images/drawio-font-2-select-custom.png)
+        ![Select custom](readme-images/drawio-font-2-select-custom.png)
     - Choose the 'Google Fonts' option and set the font name to 'Open Sans' and apply.
-        ![Set Google Open Sans](README/images/drawio-font-3-set-google-open-sans.png)
+        ![Set Google Open Sans](readme-images/drawio-font-3-set-google-open-sans.png)
     - Type text and verify that the font is Open Sans
-        ![Using Google Open Sans](README/images/drawio-font-4-using-google-open-sans.png)
+        ![Using Google Open Sans](readme-images/drawio-font-4-using-google-open-sans.png)
 
 - Color must be one of those defined in [Jakarta EE Brand Usage Handbook](https://jakarta.ee/legal/trademark_guidelines/jakarta-ee-branding-guidelines.pdf), along with black and white.
     - Primary colors:
