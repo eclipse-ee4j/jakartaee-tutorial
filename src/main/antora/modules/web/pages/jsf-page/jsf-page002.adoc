@@ -490,7 +490,7 @@ Here is an example of an `h:outputFormat` tag:
 
 The `value` attribute specifies the `MessageFormat` pattern.
 The `f:param` tag specifies the substitution parameters for the message.
-The value of the parameter replaces the `{0}` in the sentence.
+The value of the parameter replaces the `\{0}` in the sentence.
 If the value of `"#{hello.name}"` is "Bill", the message displayed in the page is as follows:
 
 ----
@@ -509,7 +509,7 @@ Here is the preceding example modified with an additional parameter:
 </h:outputFormat>
 ----
 
-The value of `{1}` is replaced by the second parameter.
+The value of `\{1}` is replaced by the second parameter.
 The parameter is an EL expression, `bean.numVisitor`, in which the property `numVisitor` of the managed bean `bean` keeps track of visitors to the page.
 This is an example of a value-expression-enabled tag attribute accepting an EL expression.
 The message displayed in the page is now as follows:

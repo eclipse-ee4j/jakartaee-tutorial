@@ -127,7 +127,7 @@ public static final String FORMAT_INVALID_MESSAGE_ID =
 
 Finally, the method passes the message to the constructor of `jakarta.faces.validator.ValidatorException`.
 
-When the error message is displayed, the format pattern will be substituted for the `{0}` in the error message, which, in English, is as follows:
+When the error message is displayed, the format pattern will be substituted for the `\{0}` in the error message, which, in English, is as follows:
 
 [source,java]
 ----

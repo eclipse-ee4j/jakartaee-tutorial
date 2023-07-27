@@ -51,7 +51,7 @@ For example, the following error message appears if `BigIntegerConverter` fails 
 {0} must be a number consisting of one or more digits
 ----
 
-In this case, the `{0}` substitution parameter will be replaced with the name of the input component on which the converter is registered.
+In this case, the `\{0}` substitution parameter will be replaced with the name of the input component on which the converter is registered.
 
 Two of the standard converters (`DateTimeConverter` and `NumberConverter`) have their own tags, which allow you to configure the format of the component data using the tag attributes.
 For more information about using `DateTimeConverter`, see <<_using_datetimeconverter>>.

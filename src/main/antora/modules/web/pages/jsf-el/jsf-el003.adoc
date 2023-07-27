@@ -50,7 +50,7 @@ ${customer}
 ----
 
 You can use a custom EL resolver to alter the way variables are resolved.
-For instance, you can provide an EL resolver that intercepts objects with the name `customer`, so that `${customer}` returns a value in the EL resolver instead.
+For instance, you can provide an EL resolver that intercepts objects with the name `customer`, so that `$\{customer}` returns a value in the EL resolver instead.
 (Jakarta Faces technology uses an EL resolver to handle managed beans.)
 
 An `enum` constant is a special case of a static field, and you can reference such a constant directly.
@@ -134,9 +134,9 @@ Here are some examples:
 
 * `${"literal"}`
 
-* `${true}`
+* `$\{true}`
 
-* `${57}`
+* `$\{57}`
 
 ==== Parameterized Method Calls
 

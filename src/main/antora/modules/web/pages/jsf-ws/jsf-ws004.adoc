@@ -30,7 +30,7 @@ For example, when you are using container managed authentication or a related fr
 <f:websocket channel="someChannel"user="#{request.remoteUser}" ... />
 ----
 
-Or, when you have a custom user entity accessible via EL, such as `#{someLoggedInUser}` which has an `id` property representing its identifier:
+Or, when you have a custom user entity accessible via EL, such as `#\{someLoggedInUser}` which has an `id` property representing its identifier:
 
 [source,xml]
 ----

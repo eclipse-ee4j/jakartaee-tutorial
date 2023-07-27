@@ -39,7 +39,7 @@ For example, the error message that displays when the component's value exceeds 
 {1}: Validation Error: Value is greater than allowable maximum of "{0}"
 ----
 
-In this case, the `{1}` substitution parameter is replaced by the component's label or `id`, and the `{0}` substitution parameter is replaced with the maximum value allowed by the validator.
+In this case, the `\{1}` substitution parameter is replaced by the component's label or `id`, and the `\{0}` substitution parameter is replaced with the maximum value allowed by the validator.
 
 See xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags] for information on how to display validation error messages on the page when validation fails.
 

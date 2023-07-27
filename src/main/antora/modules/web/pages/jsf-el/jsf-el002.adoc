@@ -28,7 +28,7 @@ The Jakarta Faces implementation evaluates the expression `${catalog.bookQuantit
 
 === Deferred Evaluation
 
-Deferred evaluation expressions take the form `#{expr}` and can be evaluated at other phases of a page lifecycle as defined by whatever technology is using the expression.
+Deferred evaluation expressions take the form `#\{expr}` and can be evaluated at other phases of a page lifecycle as defined by whatever technology is using the expression.
 In the case of Jakarta Faces technology, its controller can evaluate the expression at different phases of the lifecycle, depending on how the expression is being used in the page.
 
 The following example shows a Jakarta Faces `h:inputText` tag, which represents a field component into which a user enters a value.
