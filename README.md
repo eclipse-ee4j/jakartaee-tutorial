@@ -20,7 +20,7 @@ help is greatly appreciated. If you have an idea for the tutorial and
 want to add a section or update an existing section, then review the
 following links:
 
-* [Style Guide](STYLE_GUIDE.md)
+* [Style Guide](STYLE_GUIDE.adoc)
 * [Contribute](CONTRIBUTING.md)
 * [License](LICENSE.md)
 
