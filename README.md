@@ -16,6 +16,16 @@ https://virtua-tech.github.io/jakartaee-tutorial-playbook/.
 > For the current production version of the tutorial, see
 > [eclipse-ee4j/jakartaee-tutorial](https://github.com/eclipse-ee4j/jakartaee-tutorial).
 
+## A Note about Images
+
+We keep the source files and the published format (SVG)
+for images in the `src/main/antora/modules/common/images` folder. 
+However, currently all the source file names don't match their corresponding SVG file. 
+If you modify a source image, 
+please help us out and rename it to match the output image.
+
+Guidelines for generating new images can be found in the [Contributing guide](CONTRIBUTING.md). 
+
 ## Important links
 
 * [Wiki](https://virtua.atlassian.net/wiki/spaces/JETR/overview)
@@ -27,7 +37,7 @@ The contents of this repo are built by
 the [jakartaee-tutorial-playbook repository](https://github.com/virtua-tech/jakartaee-tutorial-playbook).
 See that repo for details.
 
-## Related repositories
+## Related Repositories
 
 * [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
 * [virtua-tech/jakartaee-tutorial-playbook](https://github.com/virtua-tech/jakartaee-tutorial-playbook) - builds documentation site
