@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Simple utility to replace the string "faces" with "jsf" for all .adoc files in the specified folder
-# Uses the git "mv" command to retain history
+# Simple utility to replace the string "jsf" with "faces" for all .adoc files in the specified folder
+# Uses the git "mv" command to retain history.
 
 find "$1" -name "*.adoc" -type f -exec sh -c '
     for file do
