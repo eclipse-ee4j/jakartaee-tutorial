@@ -1,6 +1,6 @@
 == Overview of the Jakarta Enterprise Beans Examples
 
-In xref:getting-started-with-enterprise-beans[xrefstyle=full], you built a stateless session bean named `ConverterBean`.
+In xref:ejb-gettingstarted/ejb-gettingstarted.adoc#_getting_started_with_enterprise_beans[Getting Started with Enterprise Beans], you built a stateless session bean named `ConverterBean`.
 This chapter examines the source code of four more session beans:
 
 * `CartBean`: a stateful session bean that is accessed by a remote client

@@ -12,9 +12,9 @@ Automatic timers are created upon the successful deployment of an enterprise bea
 === Creating Calendar-Based Timer Expressions
 
 Timers can be set according to a calendar-based schedule, expressed using a syntax similar to the UNIX `cron` utility.
-Both programmatic and automatic timers can use calendar-based timer expressions. <<calendar-based-timer-attributes>> shows the calendar-based timer attributes.
+Both programmatic and automatic timers can use calendar-based timer expressions. <<_calendar_based_timer_attributes>> shows the calendar-based timer attributes.
 
-[[calendar-based-timer-attributes]]
+[[_calendar_based_timer_attributes]]
 .Calendar-Based Timer Attributes
 [width="99%",cols="15%,35%,15%,35%"]
 |===
@@ -213,7 +213,7 @@ Timer timer = timerService.createSingleActionTimer(date, new TimerConfig());
 ----
 
 For calendar-based timers, the expiration of the timer is expressed as a `jakarta.ejb.ScheduleExpression` object, passed as a parameter to the `TimerService.createCalendarTimer` method.
-The `ScheduleExpression` class represents calendar-based timer expressions and has methods that correspond to the attributes described in <<creating-calendar-based-timer-expressions>>.
+The `ScheduleExpression` class represents calendar-based timer expressions and has methods that correspond to the attributes described in <<_creating_calendar_based_timer_expressions>>.
 
 The following code creates a programmatic timer using the `ScheduleExpression` helper class:
 
@@ -227,7 +227,7 @@ Timer timer = timerService.createCalendarTimer(schedule);
 
 For details on the method signatures, see the `TimerService` API documentation at https://jakarta.ee/specifications/platform/9/apidocs/jakarta/ejb/TimerService.html[^].
 
-The bean described in <<the-timersession-example>> creates a timer as follows:
+The bean described in <<_the_timersession_example>> creates a timer as follows:
 
 [source,java]
 ----
@@ -256,7 +256,7 @@ Automatic timers can be configured through annotations or through the `ejb-jar.x
 
 Adding a `@Schedule` annotation on an enterprise bean marks that method as a timeout method according to the calendar schedule specified in the attributes of `@Schedule`.
 
-The `@Schedule` annotation has elements that correspond to the calendar expressions detailed in <<creating-calendar-based-timer-expressions>> and the `persistent`, `info`, and `timezone` elements.
+The `@Schedule` annotation has elements that correspond to the calendar expressions detailed in <<_creating_calendar_based_timer_expressions>> and the `persistent`, `info`, and `timezone` elements.
 
 The optional `persistent` element takes a Boolean value and is used to specify whether the automatic timer should survive a server restart or crash.
 By default, all automatic timers are persistent.

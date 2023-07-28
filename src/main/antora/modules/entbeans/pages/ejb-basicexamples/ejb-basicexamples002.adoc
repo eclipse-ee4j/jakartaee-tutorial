@@ -11,7 +11,7 @@ To assemble `cart`, you need the following code:
 All session beans require a session bean class.
 All enterprise beans that permit remote access must have a remote business interface.
 To meet the needs of a specific application, an enterprise bean may also need some helper classes.
-The `CartBean` session bean uses two helper classes, `BookException` and `IdVerifier`, which are discussed in the section <<helper-classes>>.
+The `CartBean` session bean uses two helper classes, `BookException` and `IdVerifier`, which are discussed in the section <<_helper_classes>>.
 
 The source code for this example is in the `_tut-install_/examples/ejb/cart/` directory.
 

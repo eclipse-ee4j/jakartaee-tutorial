@@ -1,8 +1,8 @@
 == Developing Embeddable Enterprise Bean Applications
 
-All embeddable enterprise bean containers support the features listed in <<required-enterprise-bean-features-in-the-embeddable-container>>.
+All embeddable enterprise bean containers support the features listed in <<_required_enterprise_bean_features_in_the_embeddable_container>>.
 
-[[required-enterprise-bean-features-in-the-embeddable-container]]
+[[_required_enterprise_bean_features_in_the_embeddable_container]]
 .Required Enterprise Bean Features in the Embeddable Container
 [width="50%",cols="15%,25%"]
 |===
@@ -21,7 +21,7 @@ Session beans must not be web service endpoints.
 |Deployment descriptor |The optional `ejb-jar.xml` deployment descriptor, with the same overriding rules for the enterprise bean container in Jakarta EE servers.
 |===
 
-Container providers are allowed to support the full set of features in enterprise beans, but applications that use the embedded container will not be portable if they use enterprise bean features not listed in <<required-enterprise-bean-features-in-the-embeddable-container>>, such as the timer service, session beans as web service endpoints, or remote business interfaces.
+Container providers are allowed to support the full set of features in enterprise beans, but applications that use the embedded container will not be portable if they use enterprise bean features not listed in <<_required_enterprise_bean_features_in_the_embeddable_container>>, such as the timer service, session beans as web service endpoints, or remote business interfaces.
 
 === Running Embedded Applications
 
@@ -106,7 +106,7 @@ EJBContainer ec = EJBContainer.createEJBContainer();
 Context ctx = ec.getContext();
 ----
 +
-References to session beans can then be obtained using the portable JNDI syntax detailed in <<portable-jndi-syntax>>.
+References to session beans can then be obtained using the portable JNDI syntax detailed in xref:ejb-intro/ejb-intro.adoc#_portable_jndi_syntax[Portable JNDI Syntax].
 For example, to obtain a reference to `MySessionBean`, a local session bean with a no-interface view, use the following code:
 +
 [source,java]
