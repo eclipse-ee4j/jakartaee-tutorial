@@ -17,7 +17,7 @@ You can run the clients in two terminal windows.
 
 When you write a Messaging client to run in an enterprise bean application, you use many of the same methods in much the same sequence as for an application client.
 However, there are some significant differences.
-<<using-jakarta-messaging-in-jakarta-ee-applications>> describes these differences, and this chapter provides examples that illustrate them.
+xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications] describes these differences, and this chapter provides examples that illustrate them.
 
 The examples for this section are in the `_tut-install_/examples/jms/simple/` directory, under the following subdirectories:
 
@@ -147,7 +147,7 @@ General steps this example performs are as follows.
 . Accept and verify command-line arguments.
 You can use this example to send any number of messages to either a queue or a topic, so you specify the destination type and the number of messages on the command line when you run the program.
 
-. Create a `JMSContext`, then send the specified number of text messages in the form of strings, as described in <<message-bodies>>.
+. Create a `JMSContext`, then send the specified number of text messages in the form of strings, as described in xref:jms-concepts/jms-concepts.adoc#_message_bodies[Message Bodies].
 
 . Send a final message of type `Message` to indicate that the consumer should expect no more messages.
 
@@ -257,7 +257,7 @@ If you do not specify a number of messages, the client sends one message.
 
 You will use the client to send three messages to a queue.
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>) and that you have created resources and built the simple Jakarta Messaging examples (see <<creating-jakarta-messaging-administered-objects>> and <<building-all-the-simple-examples>>).
+. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>) and that you have created resources and built the simple Jakarta Messaging examples (see <<_creating_jakarta_messaging_administered_objects>> and <<_building_all_the_simple_examples>>).
 
 . In a terminal window, go to the `producer` directory:
 +
@@ -418,7 +418,7 @@ appclient -client target/synchconsumer.jar topic
 +
 The result, however, is different.
 Because you are using a subscription on a topic, messages that were sent before you created the subscription on the topic will not be added to the subscription and delivered to the consumer.
-(See <<publishsubscribe-messaging-style>> and <<consuming-messages-from-topics>> for details.)
+(See <<publishsubscribe-messaging-style>> and xref:jms-concepts/jms-concepts.adoc#_consuming_messages_from_topics[Consuming Messages from Topics] for details.)
 Instead of receiving the messages, the client waits for messages to arrive.
 
 . Leave the `SynchConsumer` client running and run the `Producer` client again:
@@ -452,7 +452,7 @@ To allow asynchronous message delivery in a web or enterprise bean application, 
 
 ==== Writing the AsynchConsumer.java and TextListener.java Clients
 
-The sending client is `Producer.java`, the same client used in <<receiving-messages-synchronously>>.
+The sending client is `Producer.java`, the same client used in <<_receiving_messages_synchronously>>.
 
 An asynchronous consumer normally runs indefinitely.
 This one runs until the user types the character `q` or `Q` to stop the client.
@@ -503,13 +503,13 @@ public void onMessage(Message m) {
 }
 ----
 
-For this example, you will use the same connection factory and destinations you created in <<to-create-resources-for-the-simple-examples>>.
+For this example, you will use the same connection factory and destinations you created in <<_to_create_resources_for_the_simple_examples>>.
 
 The steps assume that you have already built and packaged all the examples using NetBeans IDE or Maven.
 
 ==== To Run the AsynchConsumer and Producer Clients
 
-You will need two terminal windows, as you did in <<receiving-messages-synchronously>>.
+You will need two terminal windows, as you did in <<_receiving_messages_synchronously>>.
 
 . In the terminal window where you ran the `SynchConsumer` client, go to the `asynchconsumer` example directory:
 +
@@ -610,7 +610,7 @@ Message is not a TextMessage
 
 === Browsing Messages on a Queue
 
-This section describes an example that creates a `QueueBrowser` object to examine messages on a queue, as described in <<jakarta-messaging-queue-browsers>>.
+This section describes an example that creates a `QueueBrowser` object to examine messages on a queue, as described in xref:jms-concepts/jms-concepts.adoc#_jakarta_messaging_queue_browsers[Jakarta Messaging Queue Browsers].
 This section then explains how to compile, package, and run the example using GlassFish Server.
 
 ==== The MessageBrowser.java Client
@@ -678,7 +678,7 @@ Properties:             {JMSXDeliveryCount=0}
 
 Instead of displaying the message contents this way, you can call some of the `Message` interface's getter methods to retrieve the parts of the message you want to see.
 
-For this example, you will use the connection factory and queue you created for <<receiving-messages-synchronously>>.
+For this example, you will use the connection factory and queue you created for <<_receiving_messages_synchronously>>.
 It is assumed that you have already built and packaged all the examples.
 
 ==== To Run the QueueBrowser Client
@@ -844,9 +844,9 @@ Jakarta Messaging provides two alternative ways for a consuming client to ensure
 In the Jakarta EE platform, `CLIENT_ACKNOWLEDGE` sessions can be used only in application clients, as in this example.
 
 The `clientackconsumer` example demonstrates the first alternative, in which a synchronous consumer uses client acknowledgment.
-The `asynchconsumer` example described in <<using-a-message-listener-for-asynchronous-message-delivery>> demonstrates the second alternative.
+The `asynchconsumer` example described in <<_using_a_message_listener_for_asynchronous_message_delivery>> demonstrates the second alternative.
 
-For information about message acknowledgment, see <<controlling-message-acknowledgment>>.
+For information about message acknowledgment, see xref:jms-concepts/jms-concepts.adoc#_controlling_message_acknowledgment[Controlling Message Acknowledgment].
 
 The following table describes four possible interactions between types of consumers and types of acknowledgment.
 
@@ -885,7 +885,7 @@ context.acknowledge();
 
 The example uses the following objects:
 
-* The `jms/MyQueue` resource that you created for <<receiving-messages-synchronously>>.
+* The `jms/MyQueue` resource that you created for <<_receiving_messages_synchronously>>.
 
 * `java:comp/DefaultJMSConnectionFactory`, the platform default connection factory preconfigured with GlassFish Server
 

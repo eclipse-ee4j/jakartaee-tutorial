@@ -8,23 +8,23 @@ The example directory for each example is relative to the `_tut-install_/example
 |===
 |Example Directory |Description
 
-|`simple/producer` |Using an application client to send messages; see <<sending-messages>>
+|`simple/producer` |Using an application client to send messages; see <<_sending_messages>>
 
-|`simple/synchconsumer` |Using an application client to receive messages synchronously; see <<receiving-messages-synchronously>>
+|`simple/synchconsumer` |Using an application client to receive messages synchronously; see <<_receiving_messages_synchronously>>
 
-|`simple/asynchconsumer` |Using an application client to receive messages asynchronously; see <<using-a-message-listener-for-asynchronous-message-delivery>>
+|`simple/asynchconsumer` |Using an application client to receive messages asynchronously; see <<_using_a_message_listener_for_asynchronous_message_delivery>>
 
-|`simple/messagebrowser` |Using an application client to use a `QueueBrowser` to browse a queue; see <<browsing-messages-on-a-queue>>
+|`simple/messagebrowser` |Using an application client to use a `QueueBrowser` to browse a queue; see <<_browsing_messages_on_a_queue>>
 
-|`simple/clientackconsumer` |Using an application client to acknowledge messages received synchronously; see <<acknowledging-messages>>
+|`simple/clientackconsumer` |Using an application client to acknowledge messages received synchronously; see <<_acknowledging_messages>>
 
-|`durablesubscriptionexample` |Using an application client to create a durable subscription on a topic; see <<using-durable-subscriptions>>
+|`durablesubscriptionexample` |Using an application client to create a durable subscription on a topic; see <<_using_durable_subscriptions>>
 
-|`transactedexample` |Using an application client to send and receive messages in local transactions (also uses request-reply messaging); see <<using-local-transactions>>
+|`transactedexample` |Using an application client to send and receive messages in local transactions (also uses request-reply messaging); see <<_using_local_transactions>>
 
-|`shared/sharedconsumer` |Using an application client to create shared nondurable topic subscriptions; see <<using-shared-nondurable-subscriptions>>
+|`shared/sharedconsumer` |Using an application client to create shared nondurable topic subscriptions; see <<_using_shared_nondurable_subscriptions>>
 
-|`shared/shareddurableconsumer` |Using an application client to create shared durable topic subscriptions; see <<using-shared-durable-subscriptions>>
+|`shared/shareddurableconsumer` |Using an application client to create shared durable topic subscriptions; see <<_using_shared_durable_subscriptions>>
 |===
 
 .Jakarta Messaging Examples That Show the Use of Jakarta EE Web and Enterprise Bean Components
@@ -32,11 +32,11 @@ The example directory for each example is relative to the `_tut-install_/example
 |===
 |Example Directory |Description
 
-|`websimplemessage` |Using managed beans to send messages and to receive messages synchronously; see <<sending-and-receiving-messages-using-a-simple-web-application>>
+|`websimplemessage` |Using managed beans to send messages and to receive messages synchronously; see <<_sending_and_receiving_messages_using_a_simple_web_application>>
 
-|`simplemessage` |Using an application client to send messages, and using a message-driven bean to receive messages asynchronously; see <<receiving-messages-asynchronously-using-a-message-driven-bean>>
+|`simplemessage` |Using an application client to send messages, and using a message-driven bean to receive messages asynchronously; see <<_receiving_messages_asynchronously_using_a_message_driven_bean>>
 
-|`clientsessionmdb` |Using a session bean to send messages, and using a message-driven bean to receive messages; see <<sending-messages-from-a-session-bean-to-an-mdb>>
+|`clientsessionmdb` |Using a session bean to send messages, and using a message-driven bean to receive messages; see <<_sending_messages_from_a_session_bean_to_an_mdb>>
 
-|`clientmdbentity` |Using an application client, two message-driven beans, and JPA persistence to create a simple HR application; see <<using-an-entity-to-join-messages-from-two-mdbs>>
+|`clientmdbentity` |Using an application client, two message-driven beans, and JPA persistence to create a simple HR application; see <<_using_an_entity_to_join_messages_from_two_mdbs>>
 |===

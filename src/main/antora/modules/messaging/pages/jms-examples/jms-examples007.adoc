@@ -10,7 +10,7 @@ Message-driven beans can implement any messaging type.
 Most commonly, however, they implement the Jakarta Messaging technology.
 
 This section describes a simple message-driven bean example.
-Before proceeding, you should read the basic conceptual information in the section <<what-is-a-message-driven-bean>> as well as <<using-message-driven-beans-to-receive-messages-asynchronously>>.
+Before proceeding, you should read the basic conceptual information in the section <<what-is-a-message-driven-bean>> as well as xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
 
 === Overview of the simplemessage Example
 
@@ -20,13 +20,13 @@ The `simplemessage` application has the following components:
 
 * `SimpleMessageBean`: A message-driven bean that asynchronously processes the messages that are sent to the queue
 
-<<the-simplemessage-application>> illustrates the structure of this application.
+<<_the_simplemessage_application>> illustrates the structure of this application.
 The application client sends messages to the queue, which was created administratively using the Administration Console.
 The Messaging provider (in this case, GlassFish Server) delivers the messages to the instances of the message-driven bean, which then processes the messages.
 
-[[the-simplemessage-application]]
+[[_the_simplemessage_application]]
 .The simplemessage Application
-image::jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"]
+image::common:jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"]
 
 The source code for this application is in the `_tut-install_/examples/jms/simplemessage/` directory.
 
@@ -67,7 +67,7 @@ for (int i = 0; i < NUM_MSGS; i++) {
 
 === The simplemessage Message-Driven Bean Class
 
-The code for the `SimpleMessageBean` class illustrates the requirements of a message-driven bean class described in <<using-message-driven-beans-to-receive-messages-asynchronously>>.
+The code for the `SimpleMessageBean` class illustrates the requirements of a message-driven bean class described in xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
 
 The first few lines of the `SimpleMessageBean` class use the `@MessageDriven` annotation's `activationConfig` attribute to specify configuration properties:
 
@@ -81,9 +81,9 @@ The first few lines of the `SimpleMessageBean` class use the `@MessageDriven` an
 })
 ----
 
-See <<activationconfigproperty-settings-for-message-driven-beans>> for a list of the available properties.
+See xref:jms-concepts/jms-concepts.adoc#_activationconfigproperty_settings_for_message_driven_beans[null] for a list of the available properties.
 
-See <<sending-messages-from-a-session-bean-to-an-mdb>> for examples of the `subscriptionDurability`, `clientId`, `subscriptionName`, and `messageSelector` properties.
+See <<_sending_messages_from_a_session_bean_to_an_mdb>> for examples of the `subscriptionDurability`, `clientId`, `subscriptionName`, and `messageSelector` properties.
 
 ==== The onMessage Method
 
@@ -123,10 +123,10 @@ You can use either NetBeans IDE or Maven to build, deploy, and run the `simpleme
 
 This example uses the queue named `jms/MyQueue` and the preconfigured default connection factory `java:comp/DefaultJMSConnectionFactory`.
 
-If you have run the simple Jakarta Messaging examples in <<writing-simple-jakarta-messaging-applications>> and have not deleted the resources, you already have the queue.
-Otherwise, follow the instructions in <<to-create-resources-for-the-simple-examples>> to create it.
+If you have run the simple Jakarta Messaging examples in <<_writing_simple_jakarta_messaging_applications>> and have not deleted the resources, you already have the queue.
+Otherwise, follow the instructions in <<_to_create_resources_for_the_simple_examples>> to create it.
 
-For more information on creating Messaging resources, see <<creating-jakarta-messaging-administered-objects>>.
+For more information on creating Messaging resources, see <<_creating_jakarta_messaging_administered_objects>>.
 
 ==== To Run the simplemessage Example Using NetBeans IDE
 

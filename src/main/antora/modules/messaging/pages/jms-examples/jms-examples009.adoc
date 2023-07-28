@@ -22,7 +22,7 @@ It then uses the information in all these messages to assemble a message that it
 The common term for this design pattern (which is not specific to Jakarta Messaging) is joining messages.
 Such a task must be transactional, with all the receives and the send as a single transaction.
 If not all the messages are received successfully, the transaction can be rolled back.
-For an application client example that illustrates this task, see <<using-local-transactions>>.
+For an application client example that illustrates this task, see <<_using_local_transactions>>.
 
 A message-driven bean can process only one message at a time in a transaction.
 To provide the ability to join messages, an application can have the message-driven bean store the interim information in a Jakarta Persistence entity.
@@ -34,7 +34,7 @@ The basic steps of the application are as follows.
 . The HR department's application client generates an employee ID for each new hire and then publishes a message (M1) containing the new hire's name, employee ID, and position.
 It publishes the message to a topic because the message needs to be consumed by two message-driven beans.
 The client then creates a temporary queue, `ReplyQueue`, with a message listener that waits for a reply to the message.
-(See <<creating-temporary-destinations>> for more information.)
+(See xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations] for more information.)
 
 . Two message-driven beans process each message: One bean, `OfficeMDB`, assigns the new hire's office number, and the other bean, `EquipmentMDB`, assigns the new hire's equipment.
 The first bean to process the message creates and persists an entity named `SetupOffice`, then calls a business method of the entity to store the information it has generated.
@@ -45,17 +45,17 @@ The message-driven bean then sends to the reply queue a message (M2) describing 
 Then it removes the entity.
 The application client's message listener retrieves the information.
 
-<<an-enterprise-bean-application-client-to-message-driven-beans-to-entity>> illustrates the structure of this application.
+<<_an_enterprise_bean_application_client_to_message_driven_beans_to_entity>> illustrates the structure of this application.
 Of course, an actual HR application would have more components; other beans could set up payroll and benefits records, schedule orientation, and so on.
 
-<<an-enterprise-bean-application-client-to-message-driven-beans-to-entity>> assumes that `OfficeMDB` is the first message-driven bean to consume the message from the client.
+<<_an_enterprise_bean_application_client_to_message_driven_beans_to_entity>> assumes that `OfficeMDB` is the first message-driven bean to consume the message from the client.
 `OfficeMDB` then creates and persists the `SetupOffice` entity and stores the office information.
 `EquipmentMDB` then finds the entity, stores the equipment information, and learns that the entity has completed its work.
 `EquipmentMDB` then sends the message to the reply queue and removes the entity.
 
-[[an-enterprise-bean-application-client-to-message-driven-beans-to-entity]]
+[[_an_enterprise_bean_application_client_to_message_driven_beans_to_entity]]
 .An Enterprise Bean Application: Client to Message-Driven Beans to Entity
-image::jakartaeett_dt_038.svg["Diagram of application showing an application client, two message-driven beans, and an entity, as well as the associated topic and queue"]
+image::common:jakartaeett_dt_038.svg["Diagram of application showing an application client, two message-driven beans, and an entity, as well as the associated topic and queue"]
 
 === Writing the Application Components for the clientmdbentity Example
 
