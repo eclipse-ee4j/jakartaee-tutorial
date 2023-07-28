@@ -1,0 +1,19 @@
+== Starting With Enterprise Beans
+
+Here's an overview of the steps you'll follow:
+
+. Create the enterprise bean: `ConverterBean`.
+
+. Create the web client.
+
+. Deploy `converter` onto the server.
+
+. Using a browser, run the web client.
+
+Before proceeding, make sure that you've done the following:
+
+* Read xref:intro:overview/overview.adoc#_overview[Overview]
+
+* Become familiar with enterprise beans (see xref:ejb-intro/ejb-intro.adoc#_enterprise_beans[Enterprise Beans])
+
+* Started the server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server])

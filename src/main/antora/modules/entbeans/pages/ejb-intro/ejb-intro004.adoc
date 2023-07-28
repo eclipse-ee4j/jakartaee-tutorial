@@ -225,11 +225,11 @@ public class BeanName implements InterfaceName { ... }
 
 The remote interface defines the business and lifecycle methods that are specific to the bean.
 For example, the remote interface of a bean named `BankAccountBean` might have business methods named `deposit` and `credit`.
-<<interfaces-for-an-enterprise-bean-with-remote-access>> shows how the interface controls the client's view of an enterprise bean.
+<<_interfaces_for_an_enterprise_bean_with_remote_access>> shows how the interface controls the client's view of an enterprise bean.
 
-[[interfaces-for-an-enterprise-bean-with-remote-access]]
+[[_interfaces_for_an_enterprise_bean_with_remote_access]]
 .Interfaces for an Enterprise Bean with Remote Access
-image::jakartaeett_dt_020.svg["Diagram showing a remote client accessing an enterprise bean's methods through its remote interface."]
+image::common:jakartaeett_dt_020.svg["Diagram showing a remote client accessing an enterprise bean's methods through its remote interface."]
 
 Client access to an enterprise bean that implements a remote business interface is accomplished through either dependency injection or JNDI lookup.
 
@@ -253,7 +253,7 @@ ExampleRemote example = (ExampleRemote)
 
 A web service client can access a Jakarta EE application in two ways.
 First, the client can access a web service created with Jakarta XML Web Services.
-(For more information on Jakarta XML Web Services, see xref:building-web-services-with-jakarta-xml-web-services[xrefstyle=full].)
+(For more information on Jakarta XML Web Services, see xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services].)
 Second, a web service client can invoke the business methods of a stateless session bean.
 Message beans cannot be accessed by web service clients.
 
@@ -267,7 +267,7 @@ By default, all public methods in the bean class are accessible to web service c
 The `@WebMethod` annotation may be used to customize the behavior of web service methods.
 If the `@WebMethod` annotation is used to decorate the bean class's methods, only those methods decorated with `@WebMethod` are exposed to web service clients.
 
-For a code sample, see <<a-web-service-example-helloservice>>.
+For a code sample, see xref:ejb-basicexamples/ejb-basicexamples.adoc#_a_web_service_example_helloservice[A Web Service Example: helloservice].
 
 === Method Parameters and Access
 
