@@ -78,7 +78,7 @@ collection_valued_path_expression ::=
     collection_valued_association_field
 state_field ::=
     {embedded_class_state_field.}*simple_state_field
-update_clause ::=UPDATE abstract_schema_name [[_AS]
+update_clause ::=UPDATE abstract_schema_name [[AS]
     identification_variable] SET update_item {, update_item}*
 update_item ::= [identification_variable.]{state_field |
     single_valued_association_field} = new_value
@@ -187,11 +187,11 @@ comparison_operator ::= = |> |>= |< |<= |<>
 arithmetic_expression ::= simple_arithmetic_expression |
     (subquery)
 simple_arithmetic_expression ::=
-    arithmetic_term | simple_arithmetic_expression {+ |_ }
+    arithmetic_term | simple_arithmetic_expression {+ |- }
         arithmetic_term
 arithmetic_term ::= arithmetic_factor | arithmetic_term {* |/ }
     arithmetic_factor
-arithmetic_factor ::= [{+ |_ }] arithmetic_primary
+arithmetic_factor ::= [{+ |- }] arithmetic_primary
 arithmetic_primary ::=
     state_field_path_expression |
     numeric_literal |
@@ -251,7 +251,7 @@ functions_returning_strings ::=
     LOWER(string_primary) |
     UPPER(string_primary)
 trim_specification ::= LEADING | TRAILING | BOTH
-____
+----
 
 === FROM Clause
 
@@ -265,7 +265,7 @@ Each subsequent character in the sequence must be a valid nonfirst character (le
 (For details, see the Java SE API documentation of the `isJavaIdentifierStart` and `isJavaIdentifierPart` methods of the `Character` class.)
 The question mark (`?`) is a reserved character in the query language and cannot be used in an identifier.
 
-A query language identifier is case_sensitive, with two exceptions:
+A query language identifier is case-sensitive, with two exceptions:
 
 * Keywords
 
@@ -325,7 +325,7 @@ An identification variable is an identifier declared in the `FROM` clause.
 Although they can reference identification variables, the `SELECT` and `WHERE` clauses cannot declare them.
 All identification variables must be declared in the `FROM` clause.
 
-Because it is an identifier, an identification variable has the same naming conventions and restrictions as an identifier, with the exception that an identification variable is case_insensitive.
+Because it is an identifier, an identification variable has the same naming conventions and restrictions as an identifier, with the exception that an identification variable is case-insensitive.
 For example, an identification variable cannot be the same as a query language keyword.
 (See <<_identifiers>> for more naming rules.)
 Also, within a given persistence unit, an identification variable name must not match the name of any entity or abstract schema.
@@ -335,36 +335,36 @@ A declaration can reference another identification variable that has been previo
 In the following `FROM` clause, the variable `t` references the previously declared variable `p`:
 
 [source,sql]
-____
+----
 FROM Player p, IN (p.teams) AS t
-____
+----
 
 Even if it is not used in the `WHERE` clause, an identification variable's declaration can affect the results of the query.
 For example, compare the next two queries.
 The following query returns all players, whether or not they belong to a team:
 
 [source,sql]
-____
+----
 SELECT p
 FROM Player p
-____
+----
 
 In contrast, because it declares the `t` identification variable, the next query fetches all players who belong to a team:
 
 [source,sql]
-____
+----
 SELECT p
 FROM Player p, IN (p.teams) AS t
-____
+----
 
 The following query returns the same results as the preceding query, but the `WHERE` clause makes it easier to read:
 
 [source,sql]
-____
+----
 SELECT p
 FROM Player p
 WHERE p.teams IS NOT EMPTY
-____
+----
 
 An identification variable always designates a reference to a single value whose type is that of the expression used in the declaration.
 There are two kinds of declarations: range variable and collection member.
@@ -376,16 +376,16 @@ In other words, an identification variable can range over the abstract schema ty
 In the following example, an identification variable named `p` represents the abstract schema named `Player`:
 
 [source,sql]
-____
+----
 FROM Player p
-____
+----
 
 A range variable declaration can include the optional `AS` operator:
 
 [source,sql]
-____
+----
 FROM Player AS p
-____
+----
 
 To obtain objects, a query usually uses path expressions to navigate through the relationships.
 But for those objects that cannot be obtained by navigation, you can use a range variable declaration to designate a starting point, or query root.
@@ -393,15 +393,15 @@ But for those objects that cannot be obtained by navigation, you can use a range
 If the query compares multiple values of the same abstract schema type, the `FROM` clause must declare multiple identification variables for the abstract schema:
 
 [source,sql]
-____
+----
 FROM Player p1, Player p2
-____
+----
 
 For an example of such a query, see <<_comparison_operators>>.
 
 ==== Collection Member Declarations
 
-In a one_to_many relationship, the multiple side consists of a collection of entities.
+In a one-to-many relationship, the multiple side consists of a collection of entities.
 An identification variable can represent a member of this collection.
 To access a collection member, the path expression in the variable's declaration navigates through the relationships in the abstract schema.
 (For more information on path expressions, see <<_path_expressions>>.) Because a path expression can be based on another path expression, the navigation can traverse several relationships.
@@ -413,9 +413,9 @@ In the following example, the entity represented by the abstract schema named `P
 The identification variable called `t` represents a single member of the `teams` collection:
 
 [source,sql]
-____
+----
 FROM Player p, IN (p.teams) t
-____
+----
 
 ==== Joins
 
@@ -424,57 +424,57 @@ The `JOIN` operator is used to traverse over relationships between entities and 
 In the following example, the query joins over the relationship between customers and orders:
 
 [source,sql]
-____
+----
 SELECT c
 FROM Customer c JOIN c.orders o
 WHERE c.status = 1 AND o.totalPrice > 10000
-____
+----
 
 The `INNER` keyword is optional:
 
 [source,sql]
-____
+----
 SELECT c
 FROM Customer c INNER JOIN c.orders o
 WHERE c.status = 1 AND o.totalPrice > 10000
-____
+----
 
 These examples are equivalent to the following query, which uses the `IN` operator:
 
 [source,sql]
-____
+----
 SELECT c
 FROM Customer c, IN (c.orders) o
 WHERE c.status = 1 AND o.totalPrice > 10000
-____
+----
 
-You can also join a single_valued relationship:
+You can also join a single-valued relationship:
 
 [source,sql]
-____
+----
 SELECT t
 FROM Team t JOIN t.league l
 WHERE l.sport = :sport
-____
+----
 
 A `LEFT JOIN` or `LEFT OUTER JOIN` retrieves a set of entities where matching values in the join condition may be absent.
 The `OUTER` keyword is optional:
 
 [source,sql]
-____
+----
 SELECT c.name, o.totalPrice
 FROM CustomerOrder o LEFT JOIN o.customer c
-____
+----
 
 A `FETCH JOIN` is a join operation that returns associated entities as a side effect of running the query.
 In the following example, the query returns a set of departments and, as a side effect, the associated employees of the departments, even though the employees were not explicitly retrieved by the `SELECT` clause:
 
 [source,sql]
-____
+----
 SELECT d
 FROM Department d LEFT JOIN FETCH d.employees
 WHERE d.deptno = 1
-____
+----
 
 === Path Expressions
 
@@ -489,29 +489,29 @@ Finally, although much of the query language is a subset of SQL, path expression
 Here, the `WHERE` clause contains a `single_valued_path_expression`; the `p` is an identification variable, and `salary` is a persistent field of `Player`:
 
 [source,sql]
-____
+----
 SELECT DISTINCT p
 FROM Player p
 WHERE p.salary BETWEEN :lowerSalary AND :higherSalary
-____
+----
 
-Here, the `WHERE` clause also contains a `single_valued_path_expression`; `t` is an identification variable, `league` is a single_valued relationship field, and `sport` is a persistent field of `league`:
+Here, the `WHERE` clause also contains a `single_valued_path_expression`; `t` is an identification variable, `league` is a single-valued relationship field, and `sport` is a persistent field of `league`:
 
 [source,sql]
-____
+----
 SELECT DISTINCT p
 FROM Player p, IN (p.teams) t
 WHERE t.league.sport = :sport
-____
+----
 
-Here, the `WHERE` clause contains a `collection_valued_path_expression`; `p` is an identification variable, and `teams` designates a collection_valued relationship field:
+Here, the `WHERE` clause contains a `collection_valued_path_expression`; `p` is an identification variable, and `teams` designates a collection-valued relationship field:
 
 [source,sql]
-____
+----
 SELECT DISTINCT p
 FROM Player p
 WHERE p.teams IS EMPTY
-____
+----
 
 ==== Expression Types
 
@@ -519,13 +519,13 @@ The type of a path expression is the type of the object represented by the endin
 
 * Persistent field
 
-* Single_valued relationship field
+* Single-valued relationship field
 
-* Collection_valued relationship field
+* Collection-valued relationship field
 
 For example, the type of the expression `p.salary` is `double` because the terminating persistent field (`salary`) is a `double`.
 
-In the expression `p.teams`, the terminating element is a collection_valued relationship field (`teams`).
+In the expression `p.teams`, the terminating element is a collection-valued relationship field (`teams`).
 This expression's type is a collection of the abstract schema type named `Team`.
 Because `Team` is the abstract schema name for the `Team` entity, this type maps to the entity.
 For more information on the type mapping of abstract schemas, see <<_return_types>>.
@@ -534,16 +534,16 @@ For more information on the type mapping of abstract schemas, see <<_return_type
 
 A path expression enables the query to navigate to related entities.
 The terminating elements of an expression determine whether navigation is allowed.
-If an expression contains a single_valued relationship field, the navigation can continue to an object that is related to the field.
-However, an expression cannot navigate beyond a persistent field or a collection_valued relationship field.
-For example, the expression `p.teams.league.sport` is illegal because `teams` is a collection_valued relationship field.
+If an expression contains a single-valued relationship field, the navigation can continue to an object that is related to the field.
+However, an expression cannot navigate beyond a persistent field or a collection-valued relationship field.
+For example, the expression `p.teams.league.sport` is illegal because `teams` is a collection-valued relationship field.
 To reach the `sport` field, the `FROM` clause could define an identification variable named `t` for the `teams` field:
 
 [source,sql]
-____
+----
 FROM Player AS p, IN (p.teams) t
 WHERE t.league.sport = 'soccer'
-____
+----
 
 === WHERE Clause
 
@@ -551,12 +551,12 @@ The `WHERE` clause specifies a conditional expression that limits the values ret
 The query returns all corresponding values in the data store for which the conditional expression is `TRUE`.
 Although usually specified, the `WHERE` clause is optional.
 If the `WHERE` clause is omitted, the query returns all values.
-The high_level syntax for the `WHERE` clause is as follows:
+The high-level syntax for the `WHERE` clause is as follows:
 
 [source,sql]
-____
+----
 where_clause ::= WHERE conditional_expression
-____
+----
 
 ==== Literals
 
@@ -565,16 +565,16 @@ There are four kinds of literals: string, numeric, Boolean, and enum.
 * String literals: A string literal is enclosed in single quotes:
 +
 [source,java]
-____
+----
 'Duke'
-____
+----
 +
 If a string literal contains a single quote, you indicate the quote by using two single quotes:
 +
 [source,java]
-____
+----
 'Duke''s'
-____
+----
 +
 Like a Java `String`, a string literal in the query language uses the Unicode character encoding.
 
@@ -584,20 +584,20 @@ Like a Java `String`, a string literal in the query language uses the Unicode ch
 Using the Java integer syntax, exact numeric literals support numbers in the range of a Java `long`.
 
 ** An approximate numeric literal is a numeric value in scientific notation, such as 57., –85.7, and +2.1.
-Using the syntax of the Java floating_point literal, approximate numeric literals support numbers in the range of a Java `double`.
+Using the syntax of the Java floating-point literal, approximate numeric literals support numbers in the range of a Java `double`.
 
 * Boolean literals: A Boolean literal is either `TRUE` or `FALSE`.
-These keywords are not case_sensitive.
+These keywords are not case-sensitive.
 
 * Enum literals: The Jakarta Persistence query language supports the use of enum literals using the Java enum literal syntax.
 The enum class name must be specified as a fully qualified class name:
 +
 [source,sql]
-____
+----
 SELECT e
 FROM Employee e
 WHERE e.status = com.example.EmployeeStatus.FULL_TIME
-____
+----
 
 ==== Input Parameters
 
@@ -616,7 +616,7 @@ The following rules apply to input parameters.
 
 * Named parameters and positional parameters may not be mixed in a single query.
 
-* Named parameters are case_sensitive.
+* Named parameters are case-sensitive.
 
 ==== Conditional Expressions
 
@@ -876,7 +876,7 @@ The first position in a string is designated by 1.
 
 |`SUBSTRING(String, start, length)` |`String`
 
-|`TRIM([[_LEADING\|TRAILING\|BOTH] char FROM] String)` |`String`
+|`TRIM([[LEADING\|TRAILING\|BOTH] char FROM] String)` |`String`
 
 |`LOWER(String)` |`String`
 
