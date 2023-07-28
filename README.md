@@ -18,7 +18,7 @@ https://virtua-tech.github.io/jakartaee-tutorial-playbook/.
 
 ## A Note about Images
 
-We keep the source files and the published format (SVG)
+We keep the source files (VSD) and the published format (SVG)
 for images in the `src/main/antora/modules/common/images` folder. 
 However, currently all the source file names don't match their corresponding SVG file. 
 If you modify a source image, 
