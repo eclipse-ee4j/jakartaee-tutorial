@@ -1,6 +1,6 @@
 == Jakarta Servlet Deployment Descriptor
 
-This section describes the following tasks involved with configuring Jakarta Servlet based web applications:
+This section describes the following tasks involved with configuring Jakarta Servlet-based web applications:
 
 * Preparing deployment descriptor
 * Setting context parameters
@@ -11,7 +11,7 @@ This section describes the following tasks involved with configuring Jakarta Ser
 
 === Preparing Deployment Descriptor
 
-The Jakarta Servlet deployment descriptor is represented by the `WEB-INF/web.xml` file which is in a Maven based project placed in `src/main/webapp` folder.
+The Jakarta Servlet deployment descriptor is represented by the `WEB-INF/web.xml` file which is in a Maven-based project placed in `src/main/webapp` folder.
 It must be a XML file with a `<web-app>` root element conform the `web-app_X_Y.xsd` XML schema of the https://jakarta.ee/xml/ns/jakartaee[https://jakarta.ee/xml/ns/jakartaee] namespace.
 
 [source,xml]

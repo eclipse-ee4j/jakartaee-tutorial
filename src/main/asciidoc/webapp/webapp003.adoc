@@ -5,7 +5,7 @@ As a presentation-oriented web application, the response is represented as a HTM
 
 The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/hello-faces/` directory.
 
-Jakarta Faces is a component based MVC framework that provides its own servlet as controller (the "C" part of MVC), the `FacesServlet`.
+Jakarta Faces is a component-based MVC framework that provides its own servlet as controller (the "C" part of MVC), the `FacesServlet`.
 The model and the view are usually provided by you, the web developer.
 
 === The Model
@@ -13,7 +13,7 @@ The model and the view are usually provided by you, the web developer.
 In a typical Jakarta Faces application, the model (the "M" part of MVC) is represented by a bean class.
 Such a bean class is in the Jakarta Faces world called a _Backing Bean_.
 
-For this Hello World web application, the `src/main/java/jakarta/tutorial/web/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output based on `name` as input.
+For this Hello World web application, the `src/main/java/jakarta/tutorial/web/faces/Hello.java` backing bean defines a `name` property along with a getter and setter, a `greeting` property along with a getter, and a `submit` action method which creates the `greeting` as output-based on `name` as input.
 
 [source,java]
 ----

@@ -1,13 +1,13 @@
 == The Web Application Archive
 
-A Jakarta Servlet based web application can contain one or more of the following parts:
+A Jakarta Servlet-based web application can contain one or more of the following parts:
 
 * One or more web components, which can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST.
 * Assets (also called static resource files), such as Cascading Style Sheets (CSS), JavaScript (JS) and images.
 * Dependencies (also called helper libraries, third party libraries, "JARs").
 * Deployment descriptor files.
 
-The process for creating, deploying, and executing a Jakarta Servlet based web application is different from that of Java classes which are packaged and executed as a Java application archive (JAR).
+The process for creating, deploying, and executing a Jakarta Servlet-based web application is different from that of Java classes which are packaged and executed as a Java application archive (JAR).
 It can be summarized as follows:
 
 . Develop the web component code.
@@ -22,10 +22,10 @@ Steps 3 through 6 are expanded on in the following sections and illustrated with
 The web applications take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
 This chapter discusses the following simple web applications:
 
-* `hello-servlet`, a Jakarta Servlet based service-oriented web application
-* `hello-faces`, a Jakarta Faces based presentation-oriented web application
+* `hello-servlet`, a Jakarta Servlet-based service-oriented web application
+* `hello-faces`, a Jakarta Faces-based presentation-oriented web application
 
-They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet based web application that contains web component code.
+They are used to illustrate tasks involved in compiling, packaging, deploying, and running a Jakarta Servlet-based web application that contains web component code.
 
 === Building, Deploying and Running The Example Projects
 
@@ -110,6 +110,8 @@ The exact location depends on the runtime used:
 * In case of Red Hat WildFly that's the `standalone/deployments` folder.
 * In case of Apache Tomcat that's the `webapps` folder.
 
+Refer to the documentation for your runtime for the most recent information.
+
 Undeploying a WAR file is generally done by removing the WAR file from the folder.
 
 Some runtimes offer a graphical user interface (GUI) for administration tasks such as selecting, uploading and a deploying a WAR file.
@@ -119,6 +121,8 @@ For this you'll need to start the server first and then open a specific URL in y
 * In case of IBM Open Liberty that's reachable via `https://localhost:9443`
 * In case of Red Hat WildFly that's reachable via `http://localhost:9990`
 * In case of Apache Tomcat that's reachable via `http://localhost:8080/manager`
+
+Refer to the documentation for your runtime for the most recent information.
 
 You can also use an integrated development environment (IDE) to manage runtimes and deployments.
 Examples are Eclipse IDE, IntelliJ IDEA and Apache NetBeans.
