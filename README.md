@@ -1,11 +1,11 @@
 # Jakarta EE Tutorial
 
 This repository contains the source files that are used to build the
-_Jakarta Enterprise Edition (Jakarta EE) Tutorial_. The source files
-are authored in [AsciiDoc](https://asciidoc.org/). AsciiDoc is similar
-to markdown but is particularly suited for user documentation. The
-source files are processed and integrated into the Jakarta EE Documentation site using
-[Antora](https://antora.org/),
+_Jakarta Enterprise Edition (Jakarta EE) Tutorial_. 
+The source files are authored in [AsciiDoc](https://asciidoc.org/). 
+AsciiDoc is similar to markdown but is particularly suited for user documentation. 
+The source files are processed and integrated into the Jakarta EE Documentation site using
+[Antora](https://antora.org/), 
 which is a tool for building documentation sites.
 
 You can always find the most recent build of the Jakarta EE Documentation site here:
@@ -36,9 +36,12 @@ See that repo for details.
 ## Contributing
 
 This project is open for contributions, and your
-help is greatly appreciated. The easiest way to contribute is by opening an issue in this project
-that contains feedback and review comments. You can also create PRs directly while viewing the published documentation.
+help is greatly appreciated. 
+The easiest way to contribute is by opening an issue in this project
+that contains feedback and review comments. 
+You can also create PRs directly while viewing the published documentation.
 
-If you'd like to propose changes or additions to the content and/or images, 
-please read the [Contributing guide](CONTRIBUTING.md) for more information.
+If you'd like to propose changes or additions to the content and/or images,
+please read the [Style guide](STYLE_GUIDE.adoc) and  
+[Contributing guide](CONTRIBUTING.md) for more information.
 
