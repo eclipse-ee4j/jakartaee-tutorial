@@ -2,7 +2,7 @@
 
 Web applications can use Jakarta Messaging to send and receive messages, as noted in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_ee_components_to_produce_and_to_synchronously_receive_messages[Using Jakarta EE Components to Produce and to Synchronously Receive Messages]. This section describes the components of a very simple web application that uses Jakarta Messaging.
 
-This section assumes that you are familiar with the basics of Jakarta Faces technology, described in xref:the-web-tier[].
+This section assumes that you are familiar with the basics of Jakarta Faces technology, described in the xref:web:jsf-intro/jsf-intro.adoc#_introduction_to_jakarta_faces_technology[Introduction to Jakarta Faces Technology]
 
 The example, `websimplemessage`, is under the `_tut-install_/jms/examples/` directory.
 It uses sending and receiving Facelets pages as well as corresponding backing beans.
