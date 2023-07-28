@@ -857,7 +857,7 @@ WHERE emp.salary > ALL (
 ==== Functional Expressions
 
 The query language includes several string, arithmetic, and date/time functions that may be used in the `SELECT`, `WHERE`, or `HAVING` clause of a query.
-The functions are listed in <<_string_expressions>>, <<arithmetic-expressions>> and <<_date_time_expressions>>.
+The functions are listed in <<_string_expressions>>, <<_arithmetic_expressions>> and <<_date_time_expressions>>.
 
 In <<_string_expressions>>, the `start` and `length` arguments are of type `int` and designate positions in the `String` argument.
 The first position in a string is designated by 1.
@@ -906,9 +906,9 @@ The default is `BOTH`, which removes the leading and trailing characters from th
 
 The `LOWER` and `UPPER` functions convert a string to lowercase or uppercase, respectively.
 
-In <<arithmetic_expressions>>, the `number` argument can be an `int`, a `float`, or a `double`.
+In <<_arithmetic_expressions>>, the `number` argument can be an `int`, a `float`, or a `double`.
 
-[[arithmetic_expressions]]
+[[_arithmetic_expressions]]
 .Arithmetic Expressions
 [width="60%",cols="30%,30%"]
 |===
