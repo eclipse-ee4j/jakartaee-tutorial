@@ -3,10 +3,10 @@
 Jakarta Persistence provides the following methods for querying entities.
 
 * The Jakarta Persistence query language (JPQL) is a simple, string-based language similar to SQL used to query entities and their relationships.
-See xref:the-jakarta-persistence-query-language[xrefstyle=full] for more information.
+See xref:persistence-querylanguage/persistence-querylanguage.adoc#_the_jakarta_persistence_query_language[The Jakarta Persistence Query Language] for more information.
 
 * The Criteria API is used to create typesafe queries using Java programming language APIs to query for entities and their relationships.
-See xref:using-the-criteria-api-to-create-queries[xrefstyle=full] for more information.
+See xref:persistence-criteria/persistence-criteria.adoc#_using_the_criteria_api_to_create_queries[Using the Criteria API to Create Queries] for more information.
 
 Both JPQL and the Criteria API have advantages and disadvantages.
 

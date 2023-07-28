@@ -1,7 +1,7 @@
 == The address-book Application
 
 The `address-book` example application is a simple web application that stores contact data.
-It uses a single entity class, `Contact`, that uses Jakarta Bean Validation to validate the data stored in the persistent attributes of the entity, as described in <<validating-persistent-fields-and-properties>>.
+It uses a single entity class, `Contact`, that uses Jakarta Bean Validation to validate the data stored in the persistent attributes of the entity, as described in xref:persistence-intro/persistence-intro.adoc#_validating_persistent_fields_and_properties[Validating Persistent Fields and Properties].
 
 === Bean Validation Constraints in address-book
 

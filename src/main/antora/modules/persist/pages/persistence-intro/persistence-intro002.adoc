@@ -417,9 +417,9 @@ For example, a line item is part of an order; if the order is deleted, the line 
 This is called a cascade delete relationship.
 
 The `jakarta.persistence.CascadeType` enumerated type defines the cascade operations that are applied in the `cascade` element of the relationship annotations.
-<<cascade-operations-for-entities>> lists the cascade operations for entities.
+<<_cascade_operations_for_entities>> lists the cascade operations for entities.
 
-[[cascade-operations-for-entities]]
+[[_cascade_operations_for_entities]]
 .Cascade Operations for Entities
 [width="75%",cols="15%,60%"]
 |===
