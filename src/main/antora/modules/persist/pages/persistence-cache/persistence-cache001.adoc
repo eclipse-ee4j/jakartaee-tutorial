@@ -12,7 +12,7 @@ Portable applications should not rely on support by persistence providers for a 
 The second-level cache for a persistence unit may be configured to one of several second-level cache modes.
 The following cache mode settings are defined by Jakarta Persistence.
 
-[[cache-mode-settings-for-the-second-level-cache]]
+[[_cache_mode_settings_for_the_second_level_cache]]
 .Cache Mode Settings for the Second-Level Cache
 [width="80%",cols="20%,60%"]
 |===
@@ -36,9 +36,9 @@ To avoid stale reads, use any of these strategies:
 
 * Change the second-level cache to one of the cache mode settings
 
-* Control which entities may be cached (see <<controlling-whether-entities-may-be-cached>>)
+* Control which entities may be cached (see <<_controlling_whether_entities_may_be_cached>>)
 
-* Change the cache's retrieval or store modes (see <<setting-the-cache-retrieval-and-store-modes>>)
+* Change the cache's retrieval or store modes (see xref:persistence-cache/persistence-cache.adoc#_setting_the_cache_retrieval_and_store_modes[Setting the Cache Retrieval and Store Modes])
 
 Which of these strategies works best to avoid stale reads depends upon the application.
 

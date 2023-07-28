@@ -7,9 +7,9 @@ The use of optimistic lock modes causes the persistence provider to check the ve
 
 The use of pessimistic lock modes specifies that the persistence provider is to immediately acquire long-term read or write locks for the database data corresponding to entity state.
 
-You can set the lock mode for an entity operation by specifying one of the lock modes defined in the `jakarta.persistence.LockModeType` enumerated type, listed in <<lock-modes-for-concurrent-entity-access>>.
+You can set the lock mode for an entity operation by specifying one of the lock modes defined in the `jakarta.persistence.LockModeType` enumerated type, listed in <<_lock_modes_for_concurrent_entity_access>>.
 
-[[lock-modes-for-concurrent-entity-access]]
+[[_lock_modes_for_concurrent_entity_access]]
 .Lock Modes for Concurrent Entity Access
 [width="75%",cols="25%,50%"]
 |===

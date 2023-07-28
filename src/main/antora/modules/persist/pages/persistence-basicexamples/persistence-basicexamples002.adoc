@@ -11,11 +11,11 @@ What is the order number? What parts are included in the order? What parts make 
 
 The `order` application consists of a single WAR module that includes the enterprise bean classes, the entities, the support classes, and the Facelets XHTML and class files.
 
-The database schema in the Derby database for `order` is shown in <<database-schema-for-the-order-application>>.
+The database schema in the Derby database for `order` is shown in <<_database_schema_for_the_order_application>>.
 
-[[database-schema-for-the-order-application]]
+[[_database_schema_for_the_order_application]]
 .Database Schema for the order Application
-image::jakartaeett_dt_024.svg["Diagram showing the database schema for the order application"]
+image::common:jakartaeett_dt_024.svg["Diagram showing the database schema for the order application"]
 
 [NOTE]
 In this diagram, for simplicity, the `PERSISTENCE_ORDER_` prefix is omitted from the table names.
@@ -172,7 +172,7 @@ The primary key field `vendorPartNumber` is of type `Long`, as the generated pri
 
 ==== Compound Primary Keys
 
-A compound primary key is made up of multiple fields and follows the requirements described in <<primary-keys-in-entities>>.
+A compound primary key is made up of multiple fields and follows the requirements described in xref:persistence-intro/persistence-intro.adoc#_primary_keys_in_entities[Primary Keys in Entities].
 To use a compound primary key, you must create a wrapper class.
 
 In `order`, two entities use compound primary keys: `Part` and `LineItem`.
@@ -280,7 +280,7 @@ public CustomerOrder getCustomerOrder() {
 }
 ----
 
-For `customerOrder`, you also use the `@JoinColumn` annotation to specify the column name in the table and that this column is an overlapping foreign key pointing at the `PERSISTENCE_ORDER_CUSTOMERORDER` table's `ORDERID` column (see <<one-to-many-relationship-mapped-to-overlapping-primary-and-foreign-keys>>).
+For `customerOrder`, you also use the `@JoinColumn` annotation to specify the column name in the table and that this column is an overlapping foreign key pointing at the `PERSISTENCE_ORDER_CUSTOMERORDER` table's `ORDERID` column (see <<_one_to_many_relationship_mapped_to_overlapping_primary_and_foreign_keys>>).
 That is, `customerOrder` will be set by the `CustomerOrder` entity.
 
 In ``LineItem``'s constructor, the line item number (`LineItem.itemId`) is set using the `CustomerOrder.getNextId` method:
@@ -580,9 +580,9 @@ First, you will create the database tables in Apache Derby.
 
 ==== To Run the order Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . From the *File* menu, choose *Open Project*.
 
@@ -606,9 +606,9 @@ http://localhost:8080/order/
 
 ==== To Run the order Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . In a terminal window, go to:
 +

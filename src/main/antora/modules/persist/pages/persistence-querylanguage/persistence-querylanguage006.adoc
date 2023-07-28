@@ -5,9 +5,9 @@ Much of the following material paraphrases or directly quotes the specification.
 
 === BNF Symbols
 
-<<bnf-symbol-summary>> describes the BNF symbols used in this chapter.
+<<_bnf_symbol_summary>> describes the BNF symbols used in this chapter.
 
-[[bnf-symbol-summary]]
+[[_bnf_symbol_summary]]
 .BNF Symbol Summary
 [width="75%",cols="25%,45%"]
 |===
@@ -327,7 +327,7 @@ All identification variables must be declared in the `FROM` clause.
 
 Because it is an identifier, an identification variable has the same naming conventions and restrictions as an identifier, with the exception that an identification variable is case-insensitive.
 For example, an identification variable cannot be the same as a query language keyword.
-(See <<identifiers>> for more naming rules.)
+(See <<_identifiers>> for more naming rules.)
 Also, within a given persistence unit, an identification variable name must not match the name of any entity or abstract schema.
 
 The `FROM` clause can contain multiple declarations, separated by commas.
@@ -397,15 +397,15 @@ If the query compares multiple values of the same abstract schema type, the `FRO
 FROM Player p1, Player p2
 ----
 
-For an example of such a query, see <<comparison-operators>>.
+For an example of such a query, see xref:persistence-querylanguage/persistence-querylanguage.adoc#_comparison_operators[Comparison Operators].
 
 ==== Collection Member Declarations
 
 In a one-to-many relationship, the multiple side consists of a collection of entities.
 An identification variable can represent a member of this collection.
 To access a collection member, the path expression in the variable's declaration navigates through the relationships in the abstract schema.
-(For more information on path expressions, see <<path-expressions>>.) Because a path expression can be based on another path expression, the navigation can traverse several relationships.
-See <<traversing-multiple-relationships>>.
+(For more information on path expressions, see <<_path_expressions>>.) Because a path expression can be based on another path expression, the navigation can traverse several relationships.
+See xref:persistence-querylanguage/persistence-querylanguage.adoc#_traversing_multiple_relationships[Traversing Multiple Relationships].
 
 A collection member declaration must include the `IN` operator but can omit the optional `AS` operator.
 
@@ -528,7 +528,7 @@ For example, the type of the expression `p.salary` is `double` because the termi
 In the expression `p.teams`, the terminating element is a collection-valued relationship field (`teams`).
 This expression's type is a collection of the abstract schema type named `Team`.
 Because `Team` is the abstract schema name for the `Team` entity, this type maps to the entity.
-For more information on the type mapping of abstract schemas, see <<return-types>>.
+For more information on the type mapping of abstract schemas, see <<_return_types>>.
 
 ==== Navigation
 
@@ -625,9 +625,9 @@ You can change the order of evaluation by using parentheses.
 
 ==== Operators and Their Precedence
 
-<<query-language-order-precedence>> lists the query language operators in order of decreasing precedence.
+<<query_language_order_precedence>> lists the query language operators in order of decreasing precedence.
 
-[[query-language-order-precedence]]
+[[query_language_order_precedence]]
 .Query Language Order Precedence
 [width="75%",cols="25%,45%"]
 |===
@@ -725,9 +725,9 @@ The pattern value is a string literal that can contain wildcard characters.
 The underscore (`_`) wildcard character represents any single character.
 The percent (`%`) wildcard character represents zero or more characters.
 The `ESCAPE` clause specifies an escape character for the wildcard characters in the pattern value.
-<<like-expression-examples>> shows some sample `LIKE` expressions.
+<<_like_expression_examples>> shows some sample `LIKE` expressions.
 
-[[like-expression-examples]]
+[[_like_expression_examples]]
 .LIKE Expression Examples
 [width=75%",cols="35%,20%,20%"]
 |===
@@ -857,12 +857,12 @@ WHERE emp.salary > ALL (
 ==== Functional Expressions
 
 The query language includes several string, arithmetic, and date/time functions that may be used in the `SELECT`, `WHERE`, or `HAVING` clause of a query.
-The functions are listed in <<string-expressions>>, <<arithmetic-expressions>> and <<date-time-expressions>>.
+The functions are listed in <<_string_expressions>>, <<_arithmetic_expressions>> and <<_date_time_expressions>>.
 
-In <<string-expressions>>, the `start` and `length` arguments are of type `int` and designate positions in the `String` argument.
+In <<_string_expressions>>, the `start` and `length` arguments are of type `int` and designate positions in the `String` argument.
 The first position in a string is designated by 1.
 
-[[string-expressions]]
+[[_string_expressions]]
 .String Expressions
 [width="75%",cols="45%,25%"]
 |===
@@ -906,9 +906,9 @@ The default is `BOTH`, which removes the leading and trailing characters from th
 
 The `LOWER` and `UPPER` functions convert a string to lowercase or uppercase, respectively.
 
-In <<arithmetic-expressions>>, the `number` argument can be an `int`, a `float`, or a `double`.
+In <<_arithmetic_expressions>>, the `number` argument can be an `int`, a `float`, or a `double`.
 
-[[arithmetic-expressions]]
+[[_arithmetic_expressions]]
 .Arithmetic Expressions
 [width="60%",cols="30%,30%"]
 |===
@@ -931,9 +931,9 @@ The `SQRT` function returns the square root of a number.
 
 The `SIZE` function returns an integer of the number of elements in the given collection.
 
-In <<date-time-expressions>>, the date/time functions return the date, time, or timestamp on the database server.
+In <<_date_time_expressions>>, the date/time functions return the date, time, or timestamp on the database server.
 
-[[date-time-expressions]]
+[[_date_time_expressions]]
 .Date/Time Expressions
 [width="60%",cols="30%,30%"]
 |===
@@ -998,10 +998,10 @@ Comparing two `NULL` values yields an unknown value.
 * The `IS NULL` test converts a `NULL` persistent field or a single-valued relationship field to `TRUE`.
 The `IS NOT NULL` test converts them to `FALSE`.
 
-* Boolean operators and conditional tests use the three-valued logic defined by <<and-operator-logic>> and <<or-operator-logic>>.
+* Boolean operators and conditional tests use the three-valued logic defined by <<_and_operator_logic>> and <<_or_operator_logic>>.
 (In these tables, T stands for `TRUE`, F for `FALSE`, and U for unknown.)
 
-[[and-operator-logic]]
+[[_and_operator_logic]]
 .AND Operator Logic
 [width="40%",cols="10%,10%,10%,10%"]
 |===
@@ -1014,7 +1014,7 @@ The `IS NOT NULL` test converts them to `FALSE`.
 |U |U |F |U
 |===
 
-[[or-operator-logic]]
+[[_or_operator_logic]]
 .OR Operator Logic
 [width="40%",cols="10%,10%,10%,10%"]
 |===
@@ -1041,9 +1041,9 @@ Two strings are equal only if they contain the same sequence of characters.
 Trailing blanks are significant; for example, the strings `'abc'` and `'abc '` are not equal.
 
 Two entities of the same abstract schema type are equal only if their primary keys have the same value.
-<<not-operator-logic>> shows the operator logic of a negation, and <<conditional-test>> shows the truth values of conditional tests.
+<<_not_operator_logic>> shows the operator logic of a negation, and <<_conditional_test>> shows the truth values of conditional tests.
 
-[[not-operator-logic]]
+[[_not_operator_logic]]
 .NOT Operator Logic
 [width="30%",cols="15%,15%"]
 |===
@@ -1056,7 +1056,7 @@ Two entities of the same abstract schema type are equal only if their primary ke
 |U |U
 |===
 
-[[conditional-test]]
+[[_conditional_test]]
 .Conditional Test
 [width="60%",cols="30%,10%,10%,10%"]
 |===
@@ -1099,9 +1099,9 @@ WHERE c.lastname = 'Coss' AND c.firstname = 'Roxane'
 
 This query returns a list of `Object[]` elements; the first array element is a string denoting the customer name, and the second array element is a string denoting the name of the customer's country.
 
-The result of a query may be the result of an aggregate function, listed in <<aggregate-functions-in-select-statements>>.
+The result of a query may be the result of an aggregate function, listed in <<_aggregate_functions_in_select_statements>>.
 
-[[aggregate-functions-in-select-statements]]
+[[_aggregate_functions_in_select_statements]]
 .Aggregate Functions in Select Statements
 [width="80%",cols="15%,50%,64%"]
 |===

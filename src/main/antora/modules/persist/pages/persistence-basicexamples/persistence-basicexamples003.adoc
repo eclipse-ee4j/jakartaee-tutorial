@@ -5,11 +5,11 @@ The application has four components: Jakarta Persistence entities (`Player`, `Te
 
 Functionally, `roster` is similar to the `order` application, with three new features that `order` does not have: many-to-many relationships, entity inheritance, and automatic table creation at deployment time.
 
-The database schema in Apache Derby for the `roster` application is shown in <<database-schema-for-the-roster-application>>.
+The database schema in Apache Derby for the `roster` application is shown in <<_database_schema_for_the_roster_application>>.
 
-[[database-schema-for-the-roster-application]]
+[[_database_schema_for_the_roster_application]]
 .Database Schema for the roster Application
-image::jakartaeett_dt_025.svg["Diagram showing the database schema for the roster application"]
+image::common:jakartaeett_dt_025.svg["Diagram showing the database schema for the roster application"]
 
 [NOTE]
 In this diagram, for simplicity, the `PERSISTENCE_ROSTER_` prefix is omitted from the table names.
@@ -72,7 +72,7 @@ public Collection<Team> getTeams() {
 
 === Entity Inheritance in the roster Application
 
-The `roster` application shows how to use entity inheritance, as described in <<entity-inheritance>>.
+The `roster` application shows how to use entity inheritance, as described in xref:persistence-intro/persistence-intro.adoc#_entity_inheritance[Entity Inheritance].
 
 The `League` entity in `roster` is an abstract entity with two concrete subclasses: `SummerLeague` and `WinterLeague`.
 Because `League` is an abstract class, it cannot be instantiated:
@@ -256,9 +256,9 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Run the roster Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . From the *File* menu, choose *Open Project*.
 
@@ -303,9 +303,9 @@ P25 Frank Fletcher defender 399.0
 
 ==== To Run the roster Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . In a terminal window, go to:
 +

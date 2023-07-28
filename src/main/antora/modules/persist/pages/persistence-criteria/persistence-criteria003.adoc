@@ -149,9 +149,9 @@ To create `Expression` instances, use methods defined in the `Expression` and `C
 ==== The Expression Interface Methods
 
 An `Expression` object is used in a query's `SELECT`, `WHERE`, or `HAVING` clause.
-<<conditional-methods-in-the-expression-interface>> shows conditional methods you can use with `Expression` objects.
+<<_conditional_methods_in_the_expression_interface>> shows conditional methods you can use with `Expression` objects.
 
-[[conditional-methods-in-the-expression-interface]]
+[[_conditional_methods_in_the_expression_interface]]
 .Conditional Methods in the Expression Interface
 [width="50%",cols="15%,35%"]
 |===
@@ -188,9 +188,9 @@ The `in` method can also check whether an attribute is a member of a collection.
 
 The `CriteriaBuilder` interface defines additional methods for creating expressions.
 These methods correspond to the arithmetic, string, date, time, and case operators and functions of JPQL.
-<<conditional-methods-in-the-criteriabuilder-interface>> shows conditional methods you can use with `CriteriaBuilder` objects.
+<<_conditional_methods_in_the_criteriabuilder_interface>> shows conditional methods you can use with `CriteriaBuilder` objects.
 
-[[conditional-methods-in-the-criteriabuilder-interface]]
+[[_conditional_methods_in_the_criteriabuilder_interface]]
 .Conditional Methods in the CriteriaBuilder Interface
 [width="60%",cols="15%,45%"]
 |===
@@ -252,9 +252,9 @@ Root<Pet> pet = cq.from(Pet.class);
 cq.where(cb.like(pet.get(Pet_.name), "*do"));
 ----
 
-To specify multiple conditional predicates, use the compound predicate methods of the `CriteriaBuilder` interface, as shown in <<compound-predicate-methods-in-the-criteriabuildder-interface>>.
+To specify multiple conditional predicates, use the compound predicate methods of the `CriteriaBuilder` interface, as shown in <<_compound_predicate_methods_in_the_criteriabuildder_interface>>.
 
-[[compound-predicate-methods-in-the-criteriabuildder-interface]]
+[[_compound_predicate_methods_in_the_criteriabuildder_interface]]
 .Compound Predicate Methods in the CriteriaBuilder Interface
 [width="50%",cols="15%,35%"]
 |===

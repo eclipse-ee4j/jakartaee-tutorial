@@ -37,7 +37,7 @@ The following is an example of a `persistence.xml` deployment descriptor that sp
 The `jakarta.persistence.schema-generation.database.action` property is used to specify the action taken by the persistence provider when an application is deployed.
 If the property is not set, the persistence provider will not create or drop any database artifacts.
 
-[[schema-creation-actions]]
+[[_schema_creation_actions]]
 .Schema Creation Actions
 [width="75%",cols="15%,60%"]
 |===
@@ -65,7 +65,7 @@ By default, the object/relational metadata in the persistence unit is used to cr
 You may also supply scripts used by the provider to create and delete the database artifacts.
 The `jakarta.persistence.schema-generation.create-source` and `jakarta.persistence.schema-generation.drop-source` properties control how the provider will create or delete the database artifacts.
 
-[[settings-for-create-and-delete-source-properties]]
+[[_settings_for_create_and_delete_source_properties]]
 .Settings for Create and Delete Source Properties
 [width="75%",cols="15%,60%"]
 |===

@@ -1,6 +1,6 @@
 == Example Queries
 
-The following queries are from the `Player` entity of the `roster` application, which is documented in <<the-roster-application>>.
+The following queries are from the `Player` entity of the `roster` application, which is documented in xref:persistence-basicexamples/persistence-basicexamples.adoc#_the_roster_application[The roster Application].
 
 === Simple Queries
 
@@ -26,7 +26,7 @@ FROM Player AS p
 +
 The `Player` element is the abstract schema name of the `Player` entity.
 
-* See also: <<identification-variables>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_identification_variables[Identification Variables].
 
 ==== Eliminating Duplicate Values
 
@@ -44,7 +44,7 @@ WHERE p.position = ?1
 The `WHERE` clause restricts the players retrieved by checking their `position`, a persistent field of the `Player` entity.
 The `?1` element denotes the input parameter of the query.
 
-* See also: <<input-parameters>> and <<the-distinct-keyword>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_input_parameters[Input Parameters] and xref:persistence-querylanguage/persistence-querylanguage.adoc#_the_distinct_keyword[The DISTINCT Keyword].
 
 ==== Using Named Parameters
 
@@ -136,7 +136,7 @@ Expressions cannot navigate beyond (or further qualify) relationship fields that
 In the syntax of an expression, a collection-valued field is a terminal symbol.
 Because the `teams` field is a collection, the `WHERE` clause cannot specify `p.teams.city` (an illegal expression).
 
-* See also: <<path-expressions>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_path_expressions[Path Expressions].
 
 ==== Traversing Multiple Relationships
 
@@ -175,7 +175,7 @@ Because it is not a collection, the `league` relationship field can be followed 
 Every `WHERE` clause must specify a conditional expression, of which there are several kinds.
 In the previous examples, the conditional expressions are comparison expressions that test for equality.
 The following examples demonstrate some of the other kinds of conditional expressions.
-For descriptions of all conditional expressions, see <<WHERE Clause>>.
+For descriptions of all conditional expressions, see xref:persistence-querylanguage/persistence-querylanguage.adoc#_where_clause[WHERE Clause].
 
 ==== The LIKE Expression
 
@@ -191,7 +191,7 @@ WHERE p.name LIKE 'Mich%'
 * Description: The `LIKE` expression uses wildcard characters to search for strings that match the wildcard pattern.
 In this case, the query uses the `LIKE` expression and the `%` wildcard to find all players whose names begin with the string "Mich." For example, "Michael" and "Michelle" both match the wildcard pattern.
 
-* See also: <<like-expressions>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_like_expressions[LIKE Expressions].
 
 ==== The IS NULL Expression
 
@@ -207,7 +207,7 @@ WHERE t.league IS NULL
 * Description: The `IS NULL` expression can be used to check whether a relationship has been set between two entities.
 In this case, the query checks whether the teams are associated with any leagues and returns the teams that do not have a league.
 
-* See also: <<null-comparison-expressions>> and <<null-values>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_null_comparison_expressions[NULL Comparison Expressions] and xref:persistence-querylanguage/persistence-querylanguage.adoc#_null_values[NULL Values].
 
 ==== The IS EMPTY Expression
 
@@ -223,7 +223,7 @@ WHERE p.teams IS EMPTY
 * Description: The `teams` relationship field of the `Player` entity is a collection.
 If a player does not belong to a team, the `teams` collection is empty, and the conditional expression is `TRUE`.
 
-* See also: <<empty-collection-comparison-expressions>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_empty_collection_comparison_expressions[Empty Collection Comparison Expressions].
 
 ==== The BETWEEN Expression
 
@@ -244,7 +244,7 @@ The following expression is equivalent to the `BETWEEN` expression:
 p.salary >= :lowerSalary AND p.salary <= :higherSalary
 ----
 
-* See also: <<between-expressions>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_between_expressions[BETWEEN Expressions].
 
 ==== Comparison Operators
 
@@ -260,7 +260,7 @@ WHERE p1.salary > p2.salary AND p2.name = :name
 * Description: The `FROM` clause declares two identification variables (`p1` and `p2`) of the same type (`Player`).
 Two identification variables are needed because the `WHERE` clause compares the salary of one player (`p2`) with that of the other players (`p1`).
 
-* See also: <<identification-variables>>.
+* See also: xref:persistence-querylanguage/persistence-querylanguage.adoc#_identification_variables[Identification Variables].
 
 === Bulk Updates and Deletes
 

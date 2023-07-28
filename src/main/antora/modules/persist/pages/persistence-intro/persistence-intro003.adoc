@@ -4,7 +4,7 @@ Entities support class inheritance, polymorphic associations, and polymorphic qu
 Entity classes can extend non-entity classes, and non-entity classes can extend entity classes.
 Entity classes can be both abstract and concrete.
 
-The `roster` example application demonstrates entity inheritance, as described in <<entity-inheritance-in-the-roster-application>>.
+The `roster` example application demonstrates entity inheritance, as described in xref:persistence-basicexamples/persistence-basicexamples.adoc#_entity_inheritance_in_the_roster_application[Entity Inheritance in the roster Application].
 
 === Abstract Entities
 
@@ -106,9 +106,9 @@ The default strategy, `InheritanceType.SINGLE_TABLE`, is used if the `@Inheritan
 With this strategy, which corresponds to the default `InheritanceType.SINGLE_TABLE`, all classes in the hierarchy are mapped to a single table in the database.
 This table has a discriminator column containing a value that identifies the subclass to which the instance represented by the row belongs.
 
-The discriminator column, whose elements are shown in <<discriminator-column-elements>>, can be specified by using the `jakarta.persistence.DiscriminatorColumn` annotation on the root of the entity class hierarchy.
+The discriminator column, whose elements are shown in <<_discriminator_column_elements>>, can be specified by using the `jakarta.persistence.DiscriminatorColumn` annotation on the root of the entity class hierarchy.
 
-[[discriminator-column-elements]]
+[[_discriminator_column_elements]]
 .@DiscriminatorColumn Elements
 [width="99%",cols="20%,20%,60%"]
 |===
@@ -177,4 +177,4 @@ Similarly, queries that cover the entire class hierarchy require join operations
 
 Some Jakarta Persistence providers, including the default provider in GlassFish Server, require a discriminator column that corresponds to the root entity when using the joined subclass strategy.
 If you are not using automatic table creation in your application, make sure that the database table is set up correctly for the discriminator column defaults, or use the `@DiscriminatorColumn` annotation to match your database schema.
-For information on discriminator columns, see <<the-single-table-per-class-hierarchy-strategy>>.
+For information on discriminator columns, see <<_the_single_table_per_class_hierarchy_strategy>>.
