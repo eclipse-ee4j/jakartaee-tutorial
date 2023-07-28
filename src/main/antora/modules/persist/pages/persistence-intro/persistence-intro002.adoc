@@ -197,9 +197,9 @@ When adding Bean Validation constraints, use the same access strategy as the per
 That is, if the persistent class uses field access, apply the Bean Validation constraint annotations on the class's fields.
 If the class uses property access, apply the constraints on the getter methods.
 
-<<built-in-jakarta-bean-validation-constraints>> lists Bean Validation's built-in constraints, defined in the `jakarta.validation.constraints` package.
+xref:beanvalidation:bean-validation/bean-validation.adoc#_built_in_jakarta_bean_validation_constraints[Built In Jakarta Bean Validation Constraints] lists Bean Validation's built-in constraints, defined in the `jakarta.validation.constraints` package.
 
-All the built-in constraints listed in <<built-in-jakarta-bean-validation-constraints>> have a corresponding annotation, `_ConstraintName_.List`, for grouping multiple constraints of the same type on the same field or property.
+All the built-in constraints listed in xref:beanvalidation:bean-validation/bean-validation.adoc#_built_in_jakarta_bean_validation_constraints[Built In Jakarta Bean Validation Constraints] have a corresponding annotation, `_ConstraintName_.List`, for grouping multiple constraints of the same type on the same field or property.
 For example, the following persistent field has two `@Pattern` constraints:
 
 [source,java]

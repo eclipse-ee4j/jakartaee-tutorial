@@ -397,7 +397,7 @@ If the query compares multiple values of the same abstract schema type, the `FRO
 FROM Player p1, Player p2
 ----
 
-For an example of such a query, see <<_comparison_operators>>.
+For an example of such a query, see xref:persistence-querylanguage/persistence-querylanguage.adoc#_comparison_operators[Comparison Operators].
 
 ==== Collection Member Declarations
 
@@ -405,7 +405,7 @@ In a one-to-many relationship, the multiple side consists of a collection of ent
 An identification variable can represent a member of this collection.
 To access a collection member, the path expression in the variable's declaration navigates through the relationships in the abstract schema.
 (For more information on path expressions, see <<_path_expressions>>.) Because a path expression can be based on another path expression, the navigation can traverse several relationships.
-See <<_traversing_multiple_relationships>>.
+See xref:persistence-querylanguage/persistence-querylanguage.adoc#_traversing_multiple_relationships[Traversing Multiple Relationships].
 
 A collection member declaration must include the `IN` operator but can omit the optional `AS` operator.
 

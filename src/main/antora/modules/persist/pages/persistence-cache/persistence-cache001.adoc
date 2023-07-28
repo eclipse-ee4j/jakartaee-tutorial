@@ -38,7 +38,7 @@ To avoid stale reads, use any of these strategies:
 
 * Control which entities may be cached (see <<_controlling_whether_entities_may_be_cached>>)
 
-* Change the cache's retrieval or store modes (see <<_setting_the_cache_retrieval_and_store_modes>>)
+* Change the cache's retrieval or store modes (see xref:persistence-cache/persistence-cache.adoc#_setting_the_cache_retrieval_and_store_modes[Setting the Cache Retrieval and Store Modes])
 
 Which of these strategies works best to avoid stale reads depends upon the application.
 

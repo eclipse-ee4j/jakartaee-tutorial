@@ -580,9 +580,9 @@ First, you will create the database tables in Apache Derby.
 
 ==== To Run the order Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . From the *File* menu, choose *Open Project*.
 
@@ -606,9 +606,9 @@ http://localhost:8080/order/
 
 ==== To Run the order Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it by following the instructions in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it by following the instructions in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . In a terminal window, go to:
 +
