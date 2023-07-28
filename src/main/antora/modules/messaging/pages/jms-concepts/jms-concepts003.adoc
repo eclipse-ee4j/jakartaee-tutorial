@@ -47,7 +47,7 @@ See xref:jms-examples/jms-examples.adoc#_creating_jakarta_messaging_administered
 
 The Jakarta EE platform specification allows a developer to create administered objects using annotations or deployment descriptor elements.
 Objects created in this way are specific to the application for which they are created.
-See <<_creating_resources_for_jakarta_ee_applications>> for details.
+See xref:jms-concepts/jms-concepts.adoc#_creating_resources_for_jakarta_ee_applications[Creating Resources for Jakarta EE Applications] for details.
 Definitions in a deployment descriptor override those specified by annotations.
 
 ==== Jakarta Messaging Connection Factories
@@ -128,7 +128,7 @@ You use sessions to create message producers, message consumers, messages, queue
 Sessions serialize the execution of message listeners; for details, see <<_jakarta_messaging_message_listeners>>.
 
 A session provides a transactional context with which to group a set of sends and receives into an atomic unit of work.
-For details, see <<_using_jakarta_messaging_local_transactions>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions].
 
 === JMSContext Objects
 
@@ -145,7 +145,7 @@ You use the `JMSContext` to create the following objects:
 
 * Queue browsers
 
-* Temporary queues and topics (see <<_creating_temporary_destinations>>)
+* Temporary queues and topics (see xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations])
 
 You can create a `JMSContext` in a `try`-with-resources block.
 
@@ -158,7 +158,7 @@ JMSContext context = connectionFactory.createContext();
 
 When called with no arguments from an application client or a Java SE client, or from the Jakarta EE web or Enterprise Beans container when there is no active Jakarta Transactions transaction in progress, the `createContext` method creates a non-transacted session with an acknowledgment mode of `JMSContext.AUTO_ACKNOWLEDGE`.
 When called with no arguments from the web or Enterprise Beans container when there is an active JTA transaction in progress, the `createContext` method creates a transacted session.
-For information about the way Jakarta Messaging transactions work in Jakarta EE applications, see <<_using_jakarta_messaging_in_jakarta_ee_applications>>.
+For information about the way Jakarta Messaging transactions work in Jakarta EE applications, see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 From an application client or a Java SE client, you can also call the `createContext` method with the argument `JMSContext.SESSION_TRANSACTED` to create a transacted session:
 
@@ -168,9 +168,9 @@ JMSContext context =
         connectionFactory.createContext(JMSContext.SESSION_TRANSACTED);
 ----
 
-The session uses local transactions; see <<_using_jakarta_messaging_local_transactions>> for details.
+The session uses local transactions; see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions] for details.
 
-Alternatively, you can specify a non-default acknowledgment mode; see <<_controlling_message_acknowledgment>> for more information.
+Alternatively, you can specify a non-default acknowledgment mode; see xref:jms-concepts/jms-concepts.adoc#_controlling_message_acknowledgment[Controlling Message Acknowledgment] for more information.
 
 When you use a `JMSContext`, message delivery normally begins as soon as you create a consumer.
 See <<_jakarta_messaging_message_consumers>> for more information.
@@ -275,7 +275,7 @@ The `onMessage` method takes one argument of type `Message`, which your implemen
 
 In the Jakarta EE web or Enterprise Beans container, you use message-driven beans for asynchronous message delivery.
 A message-driven bean also implements the `MessageListener` interface and contains an `onMessage` method.
-For details, see <<_using_message_driven_beans_to_receive_messages_asynchronously>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
 
 Your `onMessage` method should handle all exceptions.
 Throwing a `RuntimeException` is considered a programming error.
@@ -486,13 +486,13 @@ Some header fields are intended to be set by a client, but many are set automati
 
 |`JMSDestination` |Destination to which the message is being sent |JMS provider `send` method
 
-|`JMSDeliveryMode` |Delivery mode specified when the message was sent (see <<_specifying_message_persistence>>) |Messaging provider `send` method
+|`JMSDeliveryMode` |Delivery mode specified when the message was sent (see xref:jms-concepts/jms-concepts.adoc#_specifying_message_persistence[Specifying Message Persistence]) |Messaging provider `send` method
 
-|`JMSDeliveryTime` |The time the message was sent plus the delivery delay specified when the message was sent (see <<_specifying_a_delivery_delay>> |JMS provider `send` method
+|`JMSDeliveryTime` |The time the message was sent plus the delivery delay specified when the message was sent (see xref:jms-concepts/jms-concepts.adoc#_specifying_a_delivery_delay[Specifying a Delivery Delay] |JMS provider `send` method
 
-|`JMSExpiration` |Expiration time of the message (see <<_allowing_messages_to_expire>>) |JMS provider `send` method
+|`JMSExpiration` |Expiration time of the message (see xref:jms-concepts/jms-concepts.adoc#_allowing_messages_to_expire[Allowing Messages to Expire]) |JMS provider `send` method
 
-|`JMSPriority` |The priority of the message (see <<_setting_message_priority_levels>>) |Jakarta Messaging provider `send` method
+|`JMSPriority` |The priority of the message (see xref:jms-concepts/jms-concepts.adoc#_setting_message_priority_levels[Setting Message Priority Levels]) |Jakarta Messaging provider `send` method
 
 |`JMSMessageID` |Value that uniquely identifies each message sent by a provider |Messaging provider `send` method
 

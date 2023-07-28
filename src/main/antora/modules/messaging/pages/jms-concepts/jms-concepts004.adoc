@@ -14,7 +14,7 @@ A transaction is a unit of work into which you can group a series of operations,
 For details, see <<_using_jakarta_messaging_local_transactions>>.
 
 The most reliable way to consume a message is to do so within a transaction, either from a queue or from a durable subscription to a topic.
-For details, see <<_creating_durable_subscriptions>>, <<_creating_temporary_destinations>>, and <<_using_jakarta_messaging_local_transactions>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions], <<_creating_temporary_destinations>>, and <<_using_jakarta_messaging_local_transactions>>.
 
 Some features primarily allow an application to improve performance.
 For example, you can set messages to expire after a certain length of time (see <<_allowing_messages_to_expire>>), so that consumers do not receive unnecessary outdated information.
@@ -27,7 +27,7 @@ For example, you can create temporary destinations that last only for the durati
 See <<_creating_temporary_destinations>> for details.
 
 The following sections describe these features as they apply to application clients or Java SE clients.
-Some of the features work differently in the Jakarta EE web or enterprise bean container; in these cases, the differences are noted here and are explained in detail in <<_using_jakarta_messaging_in_jakarta_ee_applications>>.
+Some of the features work differently in the Jakarta EE web or enterprise bean container; in these cases, the differences are noted here and are explained in detail in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 === Controlling Message Acknowledgment
 
@@ -69,7 +69,7 @@ This option can reduce session overhead by minimizing the work the session does 
 
 If messages have been received from a queue but not acknowledged when a `JMSContext` is closed, the Messaging provider retains them and redelivers them when a consumer next accesses the queue.
 The provider also retains unacknowledged messages if an application closes a `JMSContext` that has been consuming messages from a durable subscription.
-(See <<_creating_durable_subscriptions>>.)
+(See xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions].)
 Unacknowledged messages that have been received from a nondurable subscription will be dropped when the `JMSContext` is closed.
 
 If you use a queue or a durable subscription, you can use the `JMSContext.recover` method to stop a nontransacted `JMSContext` and restart it with its first unacknowledged message.
@@ -248,7 +248,7 @@ As soon as the `commit` or the `rollback` method is called, one transaction ends
 Closing a transacted session rolls back its transaction in progress, including any pending sends and receives.
 
 In an application running in the Jakarta EE web or enterprise bean container, you cannot use local transactions.
-Instead, you use Jakarta Transactions, described in <<_using_jakarta_messaging_in_jakarta_ee_applications>>.
+Instead, you use Jakarta Transactions, described in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 You can combine several sends and receives in a single Jakarta Messaging local transaction, so long as they are all performed using the same `JMSContext`.
 

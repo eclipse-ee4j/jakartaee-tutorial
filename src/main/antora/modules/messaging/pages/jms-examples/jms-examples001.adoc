@@ -12,4 +12,4 @@ Before you deploy or run the examples, you need to create resources for them.
 Some examples have a `glassfish-resources.xml` file that is used to create resources for that example and others.
 You can use the `asadmin` command to create the resources.
 
-To use the `asadmin` and `appclient` commands, you need to put the GlassFish Server `bin` directories in your command path, as described in <<glassfish-server-installation-tips>>.
+To use the `asadmin` and `appclient` commands, you need to put the GlassFish Server `bin` directories in your command path, as described in xref:intro:usingexamples/usingexamples.adoc#_glassfish_server_installation_tips[GlassFish Server Installation Tips].

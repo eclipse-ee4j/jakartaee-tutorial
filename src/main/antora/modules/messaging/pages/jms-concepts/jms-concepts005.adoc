@@ -17,7 +17,7 @@ The resources you create in this way are visible only to the application for whi
 
 You can also use deployment descriptor elements to create these resources.
 Elements specified in the deployment descriptor override elements specified in annotations.
-See <<packaging-applications>> for basic information about deployment descriptors.
+See xref:platform:packaging/packaging.adoc#_packaging_applications[Packaging Applications] for basic information about deployment descriptors.
 You must use a deployment descriptor to create application-specific resources for application clients.
 
 To create a destination, use a `@JMSDestinationDefinition` annotation like the following on a class:
@@ -141,7 +141,7 @@ The example in xref:jms-examples/jms-examples.adoc#_sending_and_receiving_messag
 
 Because a synchronous receive with no specified timeout ties up server resources, this mechanism usually is not the best application design for a web or Jakarta Enterprise Beans component.
 Instead, use a synchronous receive that specifies a timeout value, or use a message-driven bean to receive messages asynchronously.
-For details about synchronous receives, see <<_jakarta_messaging_message_consumers>>.
+For details about synchronous receives, see xref:jms-concepts/jms-concepts.adoc#_jakarta_messaging_message_consumers[Jakarta Messaging Message Consumers].
 
 Using Jakarta Messaging in a Jakarta EE component is in many ways similar to using it in an application client.
 The main differences are the areas of resource management and transactions.
@@ -174,7 +174,7 @@ This tutorial does not provide any examples of bean-managed transactions.
 
 === Using Message-Driven Beans to Receive Messages Asynchronously
 
-The sections <<what-is-a-message-driven-bean>> and <<_how_does_jakarta_messaging_work_with_the_jakarta_ee_platform>> describe how the Jakarta EE platform supports a special kind of enterprise bean, the message-driven bean, which allows Jakarta EE applications to process Jakarta Messaging messages asynchronously.
+The sections xref:entbeans:ejb-intro/ejb-intro.adoc#_what_is_a_message_driven_bean[What Is a Message-Driven Bean?] and xref:jms-concepts/jms-concepts.adoc#_how_does_jakarta_messaging_work_with_the_jakarta_ee_platform[How Does Jakarta Messaging Work with the Jakarta EE Platform?] describe how the Jakarta EE platform supports a special kind of enterprise bean, the message-driven bean, which allows Jakarta EE applications to process Jakarta Messaging messages asynchronously.
 Other Jakarta EE web and Jakarta Enterprise Beans components allow you to send messages and to receive them synchronously but not asynchronously.
 
 A message-driven bean is a message listener to which messages can be delivered from either a queue or a topic.
@@ -231,13 +231,13 @@ The message is consumed in the transaction in which the `onMessage` method is in
 
 |`destinationType` |Either `jakarta.jms.Queue` or `jakarta.jms.Topic`
 
-|`subscriptionDurability` |For durable subscriptions, set the value to `Durable`; see <<_creating_durable_subscriptions>> for more information
+|`subscriptionDurability` |For durable subscriptions, set the value to `Durable`; see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions] for more information
 
 |`clientId` |For durable subscriptions, the client ID for the connection (optional)
 
 |`subscriptionName` |For durable subscriptions, the name of the subscription
 
-|`messageSelector` |A string that filters messages; see <<_jakarta_messaging_message_selectors>> for information
+|`messageSelector` |A string that filters messages; see xref:jms-concepts/jms-concepts.adoc#_jakarta_messaging_message_selectors[Jakarta Messaging Message Selectors] for information
 
 |`connectionFactoryLookup` |The lookup name of the connection factory to be used to connect to the Messaging provider from which the bean will receive messages
 |===
@@ -305,11 +305,11 @@ The container can pool these instances to allow streams of messages to be proces
 The container attempts to deliver messages in chronological order when that would not impair the concurrency of message processing, but no guarantees are made as to the exact order in which messages are delivered to the instances of the message-driven bean class.
 If message order is essential to your application, you may want to configure your application server to use just one instance of the message-driven bean.
 
-For details on the lifecycle of a message-driven bean, see <<the-lifecycle-of-a-message-driven-bean>>.
+For details on the lifecycle of a message-driven bean, see xref:entbeans:ejb-intro/ejb-intro.adoc#_the_lifecycle_of_a_message_driven_bean[The Lifecycle of a Message-Driven Bean].
 
 === Managing Jakarta Transactions
 
-Jakarta EE application clients and Java SE clients use JMS local transactions (described in <<_using_jakarta_messaging_local_transactions>>), which allow the grouping of sends and receives within a specific Messaging session.
+Jakarta EE application clients and Java SE clients use JMS local transactions (described in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions]), which allow the grouping of sends and receives within a specific Messaging session.
 Jakarta EE applications that run in the web or enterprise bean container commonly use Jakarta Transactions to ensure the integrity of accesses to external resources.
 The key difference between a Jakarta transaction and a Jakarta Messaging local transaction is that a Jakarta transaction is controlled by the application server's transaction managers.
 Jakarta transactions may be distributed, which means that they can encompass multiple resources in the same transaction, such as a Messaging provider and a database.
@@ -329,7 +329,7 @@ You can specify appropriate transaction attributes for your enterprise bean meth
 +
 Use the `Required` transaction attribute (the default) to ensure that a method is always part of a transaction.
 If a transaction is in progress when the method is called, the method will be part of that transaction; if not, a new transaction will be started before the method is called and will be committed when the method returns.
-See <<transaction-attributes>> for more information.
+See xref:supporttechs:transactions/transactions.adoc#_transaction_attributes[Transaction Attributes] for more information.
 
 * Bean-managed transactions: You can use these in conjunction with the `jakarta.transaction.UserTransaction` interface, which provides its own `commit` and `rollback` methods you can use to delimit transaction boundaries.
 Bean-managed transactions are recommended only for those who are experienced in programming transactions.

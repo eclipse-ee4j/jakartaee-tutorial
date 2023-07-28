@@ -22,7 +22,7 @@ It then uses the information in all these messages to assemble a message that it
 The common term for this design pattern (which is not specific to Jakarta Messaging) is joining messages.
 Such a task must be transactional, with all the receives and the send as a single transaction.
 If not all the messages are received successfully, the transaction can be rolled back.
-For an application client example that illustrates this task, see <<_using_local_transactions>>.
+For an application client example that illustrates this task, see xref:jms-examples/jms-examples.adoc#_using_local_transactions[Using Local Transactions].
 
 A message-driven bean can process only one message at a time in a transaction.
 To provide the ability to join messages, an application can have the message-driven bean store the interim information in a Jakarta Persistence entity.
@@ -165,7 +165,7 @@ Because the example defines its own application-private topic and uses the preco
 
 ==== To Run clientmdbentity Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]), as well as the database server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -195,7 +195,7 @@ The command then deploys the EAR file, retrieves the client stubs, and runs the 
 
 ==== To Run clientmdbentity Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]), as well as the database server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby]).
 
 . Go to the following directory:
 +

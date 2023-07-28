@@ -46,7 +46,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 
 ==== To Create Resources for the Durable Subscription Example
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a command window, go to the `durableconsumer` example.
 +
@@ -297,7 +297,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and `jms/CQueue`
 
 ==== To Create Resources for the transactedexample Example
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a command window, go to the `genericsupplier` example:
 +
@@ -488,7 +488,7 @@ Hard Drive Supplier: Sent 1 Hard Drive(s)
   Hard Drive Supplier: Committed transaction
 ----
 
-. Repeat <<transactedexample-step-10>> as many times as you wish.
+. Repeat <<_transactedexample_step_10>> as many times as you wish.
 Occasionally, the vendor will report an exception that causes a rollback:
 +
 [source,shell]

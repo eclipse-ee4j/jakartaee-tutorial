@@ -8,23 +8,23 @@ The example directory for each example is relative to the `_tut-install_/example
 |===
 |Example Directory |Description
 
-|`simple/producer` |Using an application client to send messages; see <<_sending_messages>>
+|`simple/producer` |Using an application client to send messages; see xref:web:websocket/websocket.adoc#_sending_messages[Sending Messages]
 
-|`simple/synchconsumer` |Using an application client to receive messages synchronously; see <<_receiving_messages_synchronously>>
+|`simple/synchconsumer` |Using an application client to receive messages synchronously; see xref:jms-examples/jms-examples.adoc#_receiving_messages_synchronously[Receiving Messages Synchronously]
 
-|`simple/asynchconsumer` |Using an application client to receive messages asynchronously; see <<_using_a_message_listener_for_asynchronous_message_delivery>>
+|`simple/asynchconsumer` |Using an application client to receive messages asynchronously; see xref:jms-examples/jms-examples.adoc#_using_a_message_listener_for_asynchronous_message_delivery[Using a Message Listener for Asynchronous Message Delivery]
 
-|`simple/messagebrowser` |Using an application client to use a `QueueBrowser` to browse a queue; see <<_browsing_messages_on_a_queue>>
+|`simple/messagebrowser` |Using an application client to use a `QueueBrowser` to browse a queue; see xref:jms-examples/jms-examples.adoc#_browsing_messages_on_a_queue[Browsing Messages on a Queue]
 
-|`simple/clientackconsumer` |Using an application client to acknowledge messages received synchronously; see <<_acknowledging_messages>>
+|`simple/clientackconsumer` |Using an application client to acknowledge messages received synchronously; see xref:jms-examples/jms-examples.adoc#_acknowledging_messages[Acknowledging Messages]
 
-|`durablesubscriptionexample` |Using an application client to create a durable subscription on a topic; see <<_using_durable_subscriptions>>
+|`durablesubscriptionexample` |Using an application client to create a durable subscription on a topic; see xref:jms-examples/jms-examples.adoc#_using_durable_subscriptions[Using Durable Subscriptions]
 
-|`transactedexample` |Using an application client to send and receive messages in local transactions (also uses request-reply messaging); see <<_using_local_transactions>>
+|`transactedexample` |Using an application client to send and receive messages in local transactions (also uses request-reply messaging); see xref:jms-examples/jms-examples.adoc#_using_local_transactions[Using Local Transactions]
 
-|`shared/sharedconsumer` |Using an application client to create shared nondurable topic subscriptions; see <<_using_shared_nondurable_subscriptions>>
+|`shared/sharedconsumer` |Using an application client to create shared nondurable topic subscriptions; see xref:jms-examples/jms-examples.adoc#_using_shared_nondurable_subscriptions[Using Shared Nondurable Subscriptions]
 
-|`shared/shareddurableconsumer` |Using an application client to create shared durable topic subscriptions; see <<_using_shared_durable_subscriptions>>
+|`shared/shareddurableconsumer` |Using an application client to create shared durable topic subscriptions; see xref:jms-examples/jms-examples.adoc#_using_shared_durable_subscriptions[Using Shared Durable Subscriptions]
 |===
 
 .Jakarta Messaging Examples That Show the Use of Jakarta EE Web and Enterprise Bean Components
@@ -32,11 +32,11 @@ The example directory for each example is relative to the `_tut-install_/example
 |===
 |Example Directory |Description
 
-|`websimplemessage` |Using managed beans to send messages and to receive messages synchronously; see <<_sending_and_receiving_messages_using_a_simple_web_application>>
+|`websimplemessage` |Using managed beans to send messages and to receive messages synchronously; see xref:jms-examples/jms-examples.adoc#_sending_and_receiving_messages_using_a_simple_web_application[Sending and Receiving Messages Using a Simple Web Application]
 
-|`simplemessage` |Using an application client to send messages, and using a message-driven bean to receive messages asynchronously; see <<_receiving_messages_asynchronously_using_a_message_driven_bean>>
+|`simplemessage` |Using an application client to send messages, and using a message-driven bean to receive messages asynchronously; see xref:jms-examples/jms-examples.adoc#_receiving_messages_asynchronously_using_a_message_driven_bean[Receiving Messages Asynchronously Using a Message-Driven Bean]
 
-|`clientsessionmdb` |Using a session bean to send messages, and using a message-driven bean to receive messages; see <<_sending_messages_from_a_session_bean_to_an_mdb>>
+|`clientsessionmdb` |Using a session bean to send messages, and using a message-driven bean to receive messages; see xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB]
 
-|`clientmdbentity` |Using an application client, two message-driven beans, and JPA persistence to create a simple HR application; see <<_using_an_entity_to_join_messages_from_two_mdbs>>
+|`clientmdbentity` |Using an application client, two message-driven beans, and JPA persistence to create a simple HR application; see xref:jms-examples/jms-examples.adoc#_using_an_entity_to_join_messages_from_two_mdbs[Using an Entity to Join Messages from Two MDBs]
 |===
