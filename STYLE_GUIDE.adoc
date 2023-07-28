@@ -87,7 +87,9 @@ For example:
 * xref:security-intro/security-intro.adoc#_introduction_to_security_in_the_jakarta_ee_platform[Introduction to Security in the Jakarta EE Platform]
 ----
 
-See the https://docs.antora.org/antora/latest/page/xref/[Antora xref docs] for more information.
+See the https://docs.antora.org/antora/latest/page/xref/[Antora xref docs^] for more information.
+
+TIP: If you want to give a heading a permanent identifier, you can https://docs.asciidoctor.org/asciidoc/latest/attributes/id/#add-additional-anchors-to-a-section[add an anchor to the section^] and use that instead.
 
 == Definitions
 
