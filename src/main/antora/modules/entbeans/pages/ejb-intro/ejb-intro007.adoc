@@ -27,7 +27,7 @@ The bean's instance is then ready for garbage collection.
 
 Your code controls the invocation of only one lifecycle method: the method annotated `@Remove`.
 All other methods in <<_lifecycle_of_a_stateful_session_bean>> are invoked by the Enterprise Bean container.
-See xref:resource-adapters-and-contracts[] for more information.
+See xref:supporttechs:resources/resources.adoc#_resource_adapters_and_contracts[Resource Adapters and Contracts] for more information.
 
 === The Lifecycle of a Stateless Session Bean
 

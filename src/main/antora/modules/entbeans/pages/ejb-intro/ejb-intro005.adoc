@@ -10,4 +10,4 @@ A business interface is not required if the enterprise bean exposes a local, no-
 * Helper classes: Other classes needed by the enterprise bean class, such as exception and utility classes.
 
 Package the programming artifacts in the preceding list either into an Enterprise Bean JAR file (a stand-alone module that stores the enterprise bean) or within a web application archive (WAR) module.
-See <<packaging-enterprise-beans-in-enterprise-bean-jar-modules>> and <<packaging-enterprise-beans-in-war-modules>> for more information.
+See xref:platform:packaging/packaging.adoc#_packaging_enterprise_beans_in_enterprise_bean_jar_modules[Packaging Enterprise Beans in enterprise bean JAR Modules] and xref:platform:packaging/packaging.adoc#_packaging_enterprise_beans_in_war_modules[Packaging Enterprise Beans in WAR Modules] for more information.

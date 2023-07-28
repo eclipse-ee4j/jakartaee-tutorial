@@ -2,7 +2,7 @@
 
 This example demonstrates a simple web service that generates a response based on information received from the client.
 `HelloServiceBean` is a stateless session bean that implements a single method: `sayHello`.
-This method matches the `sayHello` method invoked by the client described in <<a-simple-xml-web-services-application-client>>.
+This method matches the `sayHello` method invoked by the client described in xref:websvcs:jaxws/jaxws.adoc#_a_simple_xml_web_services_application_client[A Simple XML Web Services Application Client].
 
 === The Web Service Endpoint Implementation Class
 
@@ -19,7 +19,7 @@ If no `endpointInterface` is specified in `@WebService`, an SEI is implicitly de
 * Business methods that are exposed to web service clients must be annotated with `jakarta.jws.WebMethod`.
 
 * Business methods that are exposed to web service clients must have Jakarta XML Binding-compatible parameters and return types.
-See the list of Jakarta XML Binding default data type bindings at <<types-supported-by-xml-web-services>>.
+See the list of Jakarta XML Binding default data type bindings at xref:websvcs:jaxws/jaxws.adoc#_types_supported_by_xml_web_services[Types Supported by XML Web Services].
 
 * The implementing class must not be declared `final` and must not be `abstract`.
 
@@ -69,7 +69,7 @@ You can then use the Administration Console to test the web service endpoint met
 
 ==== To Build, Package, and Deploy the helloservice Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -89,7 +89,7 @@ This builds and packages the application into `helloservice.ear`, located in `_t
 
 ==== To Build, Package, and Deploy the helloservice Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +
