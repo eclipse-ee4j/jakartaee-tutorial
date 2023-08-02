@@ -132,7 +132,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 ==== To Build, Package, and Deploy the custom-identity-store Example Using NetBeans IDE
 
 . If you have not already done so, start the GlassFish server.
-See <<starting-and-stopping-glassfish-server>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . From the File menu, choose Open Project.
 
@@ -153,7 +153,7 @@ This command builds and deploys the example application to your GlassFish Server
 ==== To Build, Package, and Deploy the custom-identity-store Example Using Maven
 
 . If you have not already done so, start the GlassFish server.
-See <<starting-and-stopping-glassfish-server>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . In a terminal window, go to:
 +

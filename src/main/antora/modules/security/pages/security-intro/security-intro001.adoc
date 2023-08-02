@@ -10,7 +10,7 @@ A container provides two kinds of security: declarative and programmatic.
 * Declarative security expresses an application component's security requirements by using either deployment descriptors or annotations.
 +
 A deployment descriptor is an XML file that is external to the application and that expresses an application's security structure, including security roles, access control, and authentication requirements.
-For more information about deployment descriptors, read <<_using_deployment_descriptors_for_declarative_security>>.
+For more information about deployment descriptors, read xref:security-intro/security-intro.adoc#_using_deployment_descriptors_for_declarative_security[Using Deployment Descriptors for Declarative Security].
 +
 Annotations, also called metadata, are used to specify information about security within a class file.
 When the application is deployed, this information can be either used by or overridden by the application deployment descriptor.
@@ -18,11 +18,11 @@ Annotations save you from having to write declarative information inside XML des
 Instead, you simply put annotations on the code, and the required information gets generated.
 For this tutorial, annotations are used for securing applications wherever possible.
 For more information about annotations, see
-<<_using_annotations_to_specify_security_information>>.
+xref:security-intro/security-intro.adoc#_using_annotations_to_specify_security_information[Using Annotations to Specify Security Information].
 
 * Programmatic security is embedded in an application and is used to make security decisions.
 Programmatic security is useful when declarative security alone is not sufficient to express the security model of an application.
-For more information about programmatic security, read <<_using_programmatic_security>>.
+For more information about programmatic security, read xref:security-intro/security-intro.adoc#_using_programmatic_security[Using Programmatic Security].
 
 Jakarta EE 9 includes a Security API specification that defines portable, plug-in interfaces for authentication and identity stores, and a new injectable-type `SecurityContext` interface that provides an access point for programmatic security.
 You can use the built-in implementations of these APIs, or define custom implementations.
@@ -53,7 +53,7 @@ This action is shown in <<_initial_request>>.
 image::common:jakartaeett_dt_039.svg["Diagram of initial request from web client to web server for access to a protected resource"]
 
 Since the client has not yet authenticated itself to the application environment, the server responsible for delivering the web portion of the application, hereafter referred to as the web server, detects this and invokes the appropriate authentication mechanism for this resource.
-For more information on these mechanisms, see <<_security_mechanisms>>.
+For more information on these mechanisms, see xref:security-intro/security-intro.adoc#_security_mechanisms[Security Mechanisms].
 
 ==== Step 2: Initial Authentication
 
