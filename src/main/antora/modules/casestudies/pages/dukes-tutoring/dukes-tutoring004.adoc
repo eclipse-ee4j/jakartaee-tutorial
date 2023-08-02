@@ -10,11 +10,11 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run Duke
 
 ===== Before You Begin
 
-You must have already configured GlassFish Server as a Jakarta EE server in NetBeans IDE, as described in <<to-add-glassfish-server-as-a-server-using-netbeans-ide>>.
+You must have already configured GlassFish Server as a Jakarta EE server in NetBeans IDE, as described in xref:intro:usingexamples/usingexamples.adoc#_to_add_glassfish_server_as_a_server_using_netbeans_ide[To Add GlassFish Server as a Server Using NetBeans IDE].
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it as described in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it as described in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . From the File menu, choose Open Project.
 
@@ -38,9 +38,9 @@ This command creates a JDBC security realm named tutoringRealm, builds and packa
 
 ==== To Build and Deploy Duke's Tutoring Using Maven
 
-. Make sure that GlassFish Server has started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
-. If the database server is not already running, start it as described in <<starting-and-stopping-apache-derby>>.
+. If the database server is not already running, start it as described in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . In a terminal window, go to:
 +

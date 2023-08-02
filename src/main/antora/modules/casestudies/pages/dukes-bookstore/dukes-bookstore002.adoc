@@ -110,24 +110,24 @@ Specifies the name `showcart`.
 The map and area custom components for Duke's Bookstore, along with associated renderer, listener, and model classes, are defined in the following packages in the `_tut-install_/examples/case-studies/dukes-bookstore/src/main/java/ee/jakarta/tutorial/dukesbookstore/` directory.
 
 * `components`: Contains the `MapComponent` and `AreaComponent` classes.
-See <<creating-custom-component-classes>>.
+See xref:web:jsf-custom/jsf-custom.adoc#_creating_custom_component_classes[Creating Custom Component Classes].
 
 * `listeners`: Contains the `AreaSelectedEvent` class, along with other listener classes.
-See <<handling-events-for-custom-components>>.
+See xref:web:jsf-custom/jsf-custom.adoc#_handling_events_for_custom_components[Handling Events for Custom Components].
 
 * `model`: Contains the `ImageArea` class.
-See <<configuring-model-data>> for more information.
+See xref:web:jsf-custom/jsf-custom.adoc#_configuring_model_data[Configuring Model Data] for more information.
 
 * `renderers`: Contains the `MapRenderer` and `AreaRenderer` classes.
-See <<delegating-rendering-to-a-renderer>>.
+See xref:web:jsf-custom/jsf-custom.adoc#_delegating_rendering_to_a_renderer[Delegating Rendering to a Renderer].
 
 The `_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/` directory also contains a custom converter and other custom listeners not specifically tied to the custom components.
 
 * `converters`: Contains the `CreditCardConverter` class.
-See <<creating-and-using-a-custom-converter>>.
+See xref:web:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_converter[Creating and Using a Custom Converter].
 
 * `listeners`: Contains the `LinkBookChangeListener`, `MapBookChangeListener`, and `NameChanged` classes.
-See <<implementing-an-event-listener>>.
+See xref:web:jsf-custom/jsf-custom.adoc#_implementing_an_event_listener[Implementing an Event Listener].
 
 === Properties Files Used in Duke's Bookstore
 
@@ -152,7 +152,7 @@ The `html` tag in `bookstoreTemplate.xhtml` retrieves the language setting from 
 ...
 ----
 
-For more information about resource bundles, see xref:internationalizing-and-localizing-web-applications[].
+For more information about resource bundles, see xref:web:webi18n/webi18n.adoc#_internationalizing_and_localizing_web_applications[Internationalizing and Localizing Web Applications].
 
 The resource bundle is configured as follows in the `faces-config.xml` file:
 

@@ -322,7 +322,7 @@ It divides the screen into several areas and specifies the client page for each 
 * `login.xhtml`: Login page specified in `web.xml`.
 The main login interface is provided in `topbar.xhtml`, but this page appears if there is a login error.
 
-* `admin` directory: Pages related to the administration interface, described in <<facelets-files-used-in-the-administration-interface-of-dukes-store>>.
+* `admin` directory: Pages related to the administration interface, described in <<_facelets_files_used_in_the_administration_interface_of_dukes_store>>.
 
 * `customer` directory: Pages related to customers (`Create.xhtml`, `Edit.xhtml`, `List.xhtml`, `Profile.xhtml`, `View.xhtml`).
 
@@ -483,7 +483,7 @@ The Duke's Shipment managed beans use only one helper class, found in the `com.f
 
 ==== Qualifier Used in Duke's Shipment
 
-Duke's Shipment includes the `@LoggedIn` qualifier described in <<qualifiers-used-in-dukes-store>>.
+Duke's Shipment includes the `@LoggedIn` qualifier described in <<_qualifiers_used_in_dukes_store>>.
 
 ==== Deployment Descriptors Used in Duke's Shipment
 
