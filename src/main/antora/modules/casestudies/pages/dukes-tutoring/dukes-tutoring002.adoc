@@ -58,7 +58,7 @@ The `updateStatus` observer method is called by the container, and pushes out th
 The `index.xhtml` Jakarta Faces page contains JavaScript code to connect to the WebSocket endpoint.
 The `onMessage` method on this page clicks a Jakarta Faces button, which makes an Ajax request to refresh the table that shows the current status of the students.
 
-For more information on WebSocket endpoints, see xref:jakarta-websocket-2[].
+For more information on WebSocket endpoints, see xref:web:websocket/websocket.adoc#_jakarta_websocket[Jakarta WebSocket].
 For information on CDI events, see xref:cdi:cdi-adv/cdi-adv.adoc#_using_events_in_cdi_applications[Using Events in CDI Applications].
 
 === Facelets Files Used in the Main Interface
