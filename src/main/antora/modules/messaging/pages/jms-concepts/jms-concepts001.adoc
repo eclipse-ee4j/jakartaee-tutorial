@@ -60,11 +60,11 @@ For example, components of an enterprise application for an automobile manufactu
 * The business can publish updated catalog items to its sales force.
 
 Using messaging for these tasks allows the various components to interact with one another efficiently, without tying up network or other resources.
-<<messaging-in-an-enterpise-application>> illustrates how this simple example might work.
+<<_messaging_in_an_enterpise_application>> illustrates how this simple example might work.
 
-[[messaging-in-an-enterpise-application]]
+[[_messaging_in_an_enterpise_application]]
 .Messaging in an Enterprise Application
-image::jakartaeett_dt_026.svg["Diagram showing messaging between various departments in an enterprise"]
+image::common:jakartaeett_dt_026.svg["Diagram showing messaging between various departments in an enterprise"]
 
 Manufacturing is only one example of how an enterprise can use the Jakarta Messaging API.
 Retail applications, financial services applications, health services applications, and many others can make use of messaging.

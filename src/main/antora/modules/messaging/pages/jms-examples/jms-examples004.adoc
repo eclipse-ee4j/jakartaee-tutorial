@@ -9,7 +9,7 @@ It demonstrates that a durable subscription continues to exist and accumulate me
 
 The example consists of two modules, a `durableconsumer` application that creates a durable subscription and consumes messages, and an `unsubscriber` application that enables you to unsubscribe from the durable subscription after you have finished running the `durableconsumer` application.
 
-For information on durable subscriptions, see <<creating-durable-subscriptions>>.
+For information on durable subscriptions, see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions].
 
 The main client, `DurableConsumer.java`, is under the `_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer` directory.
 
@@ -46,7 +46,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 
 ==== To Create Resources for the Durable Subscription Example
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a command window, go to the `durableconsumer` example.
 +
@@ -178,7 +178,7 @@ The client reports that it is unsubscribing from the durable subscription.
 === Using Local Transactions
 
 The `transactedexample` example demonstrates the use of local transactions in a Messaging client application.
-It also demonstrates the use of the request/reply messaging pattern described in <<creating-temporary-destinations>>, although it uses permanent rather than temporary destinations.
+It also demonstrates the use of the request/reply messaging pattern described in xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations], although it uses permanent rather than temporary destinations.
 The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_tut-install_/examples/jms/transactedexample/` directory.
 The source code can be found in the `src/main/java/ee.jakarta.tutorial` trees for each module.
 The `genericsupplier` and `retailer` modules each contain a single class, `genericsupplier/GenericSupplier.java` and `retailer/Retailer.java`, respectively.
@@ -279,11 +279,11 @@ inMessage = (MapMessage) orderConfirmReceiver.receive();
 +
 The retailer then places a second order for twice as many computers as in the first order, so these steps are executed twice.
 
-<<transactions-messaging-client-example>> illustrates these steps.
+<<_transactions_messaging_client_example>> illustrates these steps.
 
-[[transactions-messaging-client-example]]
+[[_transactions_messaging_client_example]]
 .Transactions: Messaging Client Example
-image::jakartaeett_dt_034.svg["Diagram of steps in transaction example"]
+image::common:jakartaeett_dt_034.svg["Diagram of steps in transaction example"]
 
 All the messages use the `MapMessage` message type.
 Synchronous receives are used for all message reception except when the vendor processes the replies of the suppliers.
@@ -297,7 +297,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and `jms/CQueue`
 
 ==== To Create Resources for the transactedexample Example
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a command window, go to the `genericsupplier` example:
 +
@@ -423,7 +423,7 @@ Starting vendor
 cd tut-install/examples/jms/transactedexample/retailer
 ----
 
-. [[transactedexample-step-10, Step 10]] Use a command like the following to run the `Retailer` client.
+. [[_transactedexample_step_10, Step 10]] Use a command like the following to run the `Retailer` client.
 The argument specifies the number of computers to order:
 +
 [source,shell]
@@ -488,7 +488,7 @@ Hard Drive Supplier: Sent 1 Hard Drive(s)
   Hard Drive Supplier: Committed transaction
 ----
 
-. Repeat <<transactedexample-step-10>> as many times as you wish.
+. Repeat <<_transactedexample_step_10>> as many times as you wish.
 Occasionally, the vendor will report an exception that causes a rollback:
 +
 [source,shell]

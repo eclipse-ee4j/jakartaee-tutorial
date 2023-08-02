@@ -17,7 +17,7 @@ The resources you create in this way are visible only to the application for whi
 
 You can also use deployment descriptor elements to create these resources.
 Elements specified in the deployment descriptor override elements specified in annotations.
-See <<packaging-applications>> for basic information about deployment descriptors.
+See xref:platform:packaging/packaging.adoc#_packaging_applications[Packaging Applications] for basic information about deployment descriptors.
 You must use a deployment descriptor to create application-specific resources for application clients.
 
 To create a destination, use a `@JMSDestinationDefinition` annotation like the following on a class:
@@ -75,7 +75,7 @@ Which ones you can use depends on how your application is packaged.
 * `java:comp`: Makes the resource available to a single component only (except in a web application, where it is equivalent to `java:module`)
 
 See the API documentation for details on these annotations.
-The examples in <<sending-and-receiving-messages-using-a-simple-web-application>>, <<sending-messages-from-a-session-bean-to-an-mdb>>, and <<using-an-entity-to-join-messages-from-two-mdbs>> all use the `@JMSDestinationDefinition` annotation.
+The examples in xref:jms-examples/jms-examples.adoc#_sending_and_receiving_messages_using_a_simple_web_application[Sending and Receiving Messages Using a Simple Web Application], xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB], and xref:jms-examples/jms-examples.adoc#_using_an_entity_to_join_messages_from_two_mdbs[Using an Entity to Join Messages from Two MDBs] all use the `@JMSDestinationDefinition` annotation.
 The other JMS examples do not use these annotations.
 The examples that consist only of application clients are not deployed in the application server and must therefore communicate with each other using administratively created resources that exist outside of individual applications.
 
@@ -136,12 +136,12 @@ private JMSContext context2;
 === Using Jakarta EE Components to Produce and to Synchronously Receive Messages
 
 An application that produces messages or synchronously receives them can use a Jakarta EE web or Jakarta Enterprise Beans component, such as a managed bean, a servlet, or a session bean, to perform these operations.
-The example in <<sending-messages-from-a-session-bean-to-an-mdb>> uses a stateless session bean to send messages to a topic.
-The example in <<sending-and-receiving-messages-using-a-simple-web-application>> uses managed beans to produce and to consume messages.
+The example in xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB] uses a stateless session bean to send messages to a topic.
+The example in xref:jms-examples/jms-examples.adoc#_sending_and_receiving_messages_using_a_simple_web_application[Sending and Receiving Messages Using a Simple Web Application] uses managed beans to produce and to consume messages.
 
 Because a synchronous receive with no specified timeout ties up server resources, this mechanism usually is not the best application design for a web or Jakarta Enterprise Beans component.
 Instead, use a synchronous receive that specifies a timeout value, or use a message-driven bean to receive messages asynchronously.
-For details about synchronous receives, see <<jakarta-messaging-message-consumers>>.
+For details about synchronous receives, see xref:jms-concepts/jms-concepts.adoc#_jakarta_messaging_message_consumers[Jakarta Messaging Message Consumers].
 
 Using Jakarta Messaging in a Jakarta EE component is in many ways similar to using it in an application client.
 The main differences are the areas of resource management and transactions.
@@ -154,7 +154,7 @@ Here are some useful practices to follow.
 
 * If you wish to maintain a Messaging resource only for the life span of a business method, use a `try`-with-resources statement to create the `JMSContext` so that it will be closed automatically at the end of the `try` block.
 
-* To maintain a Messaging resource for the duration of a transaction or request, inject the `JMSContext` as described in <<injecting-a-jmscontext-object>>.
+* To maintain a Messaging resource for the duration of a transaction or request, inject the `JMSContext` as described in <<_injecting_a_jmscontext_object>>.
 This will also cause the resource to be released when it is no longer needed.
 
 * If you would like to maintain a Messaging resource for the life span of an enterprise bean instance, you can use a `@PostConstruct` callback method to create the resource and a `@PreDestroy` callback method to close the resource.
@@ -174,7 +174,7 @@ This tutorial does not provide any examples of bean-managed transactions.
 
 === Using Message-Driven Beans to Receive Messages Asynchronously
 
-The sections <<what-is-a-message-driven-bean>> and <<how-does-jakarta-messaging-work-with-the-jakarta-ee-platform>> describe how the Jakarta EE platform supports a special kind of enterprise bean, the message-driven bean, which allows Jakarta EE applications to process Jakarta Messaging messages asynchronously.
+The sections xref:entbeans:ejb-intro/ejb-intro.adoc#_what_is_a_message_driven_bean[What Is a Message-Driven Bean?] and xref:jms-concepts/jms-concepts.adoc#_how_does_jakarta_messaging_work_with_the_jakarta_ee_platform[How Does Jakarta Messaging Work with the Jakarta EE Platform?] describe how the Jakarta EE platform supports a special kind of enterprise bean, the message-driven bean, which allows Jakarta EE applications to process Jakarta Messaging messages asynchronously.
 Other Jakarta EE web and Jakarta Enterprise Beans components allow you to send messages and to receive them synchronously but not asynchronously.
 
 A message-driven bean is a message listener to which messages can be delivered from either a queue or a topic.
@@ -207,7 +207,7 @@ For a message-driven bean, you need only define the class and annotate it, and t
 
 * The bean class uses the `@MessageDriven` annotation, which typically contains an `activationConfig` element containing `@ActivationConfigProperty` annotations that specify properties used by the bean or the connection factory.
 These properties can include the connection factory, a destination type, a durable subscription, a message selector, or an acknowledgment mode.
-Some of the examples in xref:jakarta-messaging-examples[xrefstyle=full] set these properties.
+Some of the examples in xref:jms-examples/jms-examples.adoc#_jakarta_messaging_examples[Jakarta Messaging Examples] set these properties.
 You can also set the properties in the deployment descriptor.
 
 * The application client container has only one instance of a `MessageListener`, which is called on a single thread at a time.
@@ -217,9 +217,9 @@ Message-driven beans may therefore allow much faster processing of messages than
 * You do not need to specify a message acknowledgment mode unless you use bean-managed transactions.
 The message is consumed in the transaction in which the `onMessage` method is invoked.
 
-<<activationconfigproperty-settings-for-message-driven-beans>> lists the activation configuration properties defined by the Jakarta Messaging specification.
+<<_activationconfigproperty_settings_for_message_driven_beans>> lists the activation configuration properties defined by the Jakarta Messaging specification.
 
-[[activationconfigproperty-settings-for-message-driven-beans]]
+[[_activationconfigproperty_settings_for_message_driven_beans]]
 .@ActivationConfigProperty Settings for Message-Driven Beans
 [width="80%",cols="20%,60%"]
 |===
@@ -231,18 +231,18 @@ The message is consumed in the transaction in which the `onMessage` method is in
 
 |`destinationType` |Either `jakarta.jms.Queue` or `jakarta.jms.Topic`
 
-|`subscriptionDurability` |For durable subscriptions, set the value to `Durable`; see <<creating-durable-subscriptions>> for more information
+|`subscriptionDurability` |For durable subscriptions, set the value to `Durable`; see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions] for more information
 
 |`clientId` |For durable subscriptions, the client ID for the connection (optional)
 
 |`subscriptionName` |For durable subscriptions, the name of the subscription
 
-|`messageSelector` |A string that filters messages; see <<jakarta-messaging-message-selectors>> for information
+|`messageSelector` |A string that filters messages; see xref:jms-concepts/jms-concepts.adoc#_jakarta_messaging_message_selectors[Jakarta Messaging Message Selectors] for information
 
 |`connectionFactoryLookup` |The lookup name of the connection factory to be used to connect to the Messaging provider from which the bean will receive messages
 |===
 
-For example, here is the message-driven bean used in <<receiving-messages-asynchronously-using-a-message-driven-bean>>:
+For example, here is the message-driven bean used in xref:jms-examples/jms-examples.adoc#_receiving_messages_asynchronously_using_a_message_driven_bean[Receiving Messages Asynchronously Using a Message-Driven Bean]:
 
 [source,java]
 ----
@@ -305,11 +305,11 @@ The container can pool these instances to allow streams of messages to be proces
 The container attempts to deliver messages in chronological order when that would not impair the concurrency of message processing, but no guarantees are made as to the exact order in which messages are delivered to the instances of the message-driven bean class.
 If message order is essential to your application, you may want to configure your application server to use just one instance of the message-driven bean.
 
-For details on the lifecycle of a message-driven bean, see <<the-lifecycle-of-a-message-driven-bean>>.
+For details on the lifecycle of a message-driven bean, see xref:entbeans:ejb-intro/ejb-intro.adoc#_the_lifecycle_of_a_message_driven_bean[The Lifecycle of a Message-Driven Bean].
 
 === Managing Jakarta Transactions
 
-Jakarta EE application clients and Java SE clients use JMS local transactions (described in <<using-jakarta-messaging-local-transactions>>), which allow the grouping of sends and receives within a specific Messaging session.
+Jakarta EE application clients and Java SE clients use JMS local transactions (described in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions]), which allow the grouping of sends and receives within a specific Messaging session.
 Jakarta EE applications that run in the web or enterprise bean container commonly use Jakarta Transactions to ensure the integrity of accesses to external resources.
 The key difference between a Jakarta transaction and a Jakarta Messaging local transaction is that a Jakarta transaction is controlled by the application server's transaction managers.
 Jakarta transactions may be distributed, which means that they can encompass multiple resources in the same transaction, such as a Messaging provider and a database.
@@ -329,7 +329,7 @@ You can specify appropriate transaction attributes for your enterprise bean meth
 +
 Use the `Required` transaction attribute (the default) to ensure that a method is always part of a transaction.
 If a transaction is in progress when the method is called, the method will be part of that transaction; if not, a new transaction will be started before the method is called and will be committed when the method returns.
-See <<transaction-attributes>> for more information.
+See xref:supporttechs:transactions/transactions.adoc#_transaction_attributes[Transaction Attributes] for more information.
 
 * Bean-managed transactions: You can use these in conjunction with the `jakarta.transaction.UserTransaction` interface, which provides its own `commit` and `rollback` methods you can use to delimit transaction boundaries.
 Bean-managed transactions are recommended only for those who are experienced in programming transactions.

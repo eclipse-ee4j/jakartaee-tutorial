@@ -8,7 +8,7 @@ These examples use both nondurable and durable shared consumers.
 This section describes the receiving clients in an example that shows how to use a shared consumer to distribute messages sent to a topic among different consumers.
 This section then explains how to compile and run the clients using GlassFish Server.
 
-You may wish to compare this example to the results of <<running-multiple-consumers-on-the-same-destination>> using an unshared consumer.
+You may wish to compare this example to the results of xref:jms-examples/jms-examples.adoc#_running_multiple_consumers_on_the_same_destination[Running Multiple Consumers on the Same Destination] using an unshared consumer.
 In that example, messages are distributed among the consumers on a queue, but each consumer on the topic receives all the messages because each consumer on the topic is using a separate topic subscription.
 
 In this example, however, messages are distributed among multiple consumers on a topic, because all the consumers are sharing the same subscription.
@@ -46,11 +46,11 @@ The end of the `try-with-resources` block automatically causes the `JMSContext` 
 
 The `TextListener.java` class is identical to the one for the `asynchconsumer` example.
 
-For this example, you will use the default connection factory and the topic you created in <<to-create-resources-for-the-simple-examples>>.
+For this example, you will use the default connection factory and the topic you created in xref:jms-examples/jms-examples.adoc#_to_create_resources_for_the_simple_examples[To Create Resources for the Simple Examples].
 
 ==== To Run the SharedConsumer and Producer Clients
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . Open three command windows.
 In the first, go to the `simple/producer/` directory:

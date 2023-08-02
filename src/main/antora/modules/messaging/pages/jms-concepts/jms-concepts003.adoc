@@ -16,18 +16,18 @@ The basic building blocks of a Jakarta Messaging application are
 
 * Messages
 
-<<jakarta-messaging-programming-model-2>> shows how all these objects fit together in a Messaging client application.
+<<_jakarta_messaging_programming_model_2>> shows how all these objects fit together in a Messaging client application.
 
-[[jakarta-messaging-programming-model-2]]
+[[_jakarta_messaging_programming_model_2]]
 .Jakarta Messaging Programming Model
-image::jakartaeett_dt_030.svg["Diagram of Jakarta Messaging programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"]
+image::common:jakartaeett_dt_030.svg["Diagram of Jakarta Messaging programming model: connection factory, JMSContext, connection, session, message producer, message consumer, messages, and destinations"]
 
 Jakarta Messaging also provides queue browsers, objects that allow an application to browse messages on a queue.
 
 This section describes all these objects briefly and provides sample commands and code snippets that show how to create and use the objects.
 The last subsection briefly describes Jakarta Messaging API exception handling.
 
-Examples that show how to combine all these objects in applications appear in xref:jakarta-messaging-examples[xrefstyle=full] beginning with <<writing-simple-jakarta-messaging-applications>>.
+Examples that show how to combine all these objects in applications appear in xref:jms-examples/jms-examples.adoc#_jakarta_messaging_examples[Jakarta Messaging Examples] beginning with xref:jms-examples/jms-examples.adoc#_writing_simple_jakarta_messaging_applications[Writing Simple Jakarta Messaging Applications].
 For more detail, see Jakarta Messaging documentation, part of the Jakarta EE API documentation.
 
 === Jakarta Messaging Administered Objects
@@ -43,11 +43,11 @@ With GlassFish Server, you can use the `asadmin create-jms-resource` command or 
 You can also specify the resources in a file named `glassfish-resources.xml` that you can bundle with an application.
 
 NetBeans IDE provides a wizard that allows you to create Jakarta Messaging resources for GlassFish Server.
-See <<creating-jakarta-messaging-administered-objects>> for details.
+See xref:jms-examples/jms-examples.adoc#_creating_jakarta_messaging_administered_objects[Creating Jakarta Messaging Administered Objects] for details.
 
 The Jakarta EE platform specification allows a developer to create administered objects using annotations or deployment descriptor elements.
 Objects created in this way are specific to the application for which they are created.
-See <<creating-resources-for-jakarta-ee-applications>> for details.
+See xref:jms-concepts/jms-concepts.adoc#_creating_resources_for_jakarta_ee_applications[Creating Resources for Jakarta EE Applications] for details.
 Definitions in a deployment descriptor override those specified by annotations.
 
 ==== Jakarta Messaging Connection Factories
@@ -55,7 +55,7 @@ Definitions in a deployment descriptor override those specified by annotations.
 A connection factory is the object a client uses to create a connection to a provider.
 A connection factory encapsulates a set of connection configuration parameters that has been defined by an administrator.
 Each connection factory is an instance of the `ConnectionFactory`, `QueueConnectionFactory`, or `TopicConnectionFactory` interface.
-To learn how to create connection factories, see <<creating-jakarta-messaging-administered-objects>>.
+To learn how to create connection factories, see xref:jms-examples/jms-examples.adoc#_creating_jakarta_messaging_administered_objects[Creating Jakarta Messaging Administered Objects].
 
 At the beginning of a Messaging client program, you usually inject a connection factory resource into a `ConnectionFactory` object.
 A Jakarta EE server must provide a Jakarta Messaging connection factory with the logical JNDI name `java:comp/DefaultJMSConnectionFactory`.
@@ -75,7 +75,7 @@ A destination is the object a client uses to specify the target of messages it p
 In the PTP messaging style, destinations are called queues.
 In the pub/sub messaging style, destinations are called topics.
 A Jakarta Messaging application can use multiple queues or topics (or both).
-To learn how to create destination resources, see <<creating-jakarta-messaging-administered-objects>>.
+To learn how to create destination resources, see xref:jms-examples/jms-examples.adoc#_creating_jakarta_messaging_administered_objects[Creating Jakarta Messaging Administered Objects].
 
 To create a destination using GlassFish Server, you create a Jakarta Messaging destination resource that specifies a JNDI name for the destination.
 
@@ -115,20 +115,20 @@ In the Jakarta EE platform, the ability to create multiple sessions from a singl
 In web and enterprise bean components, a connection can create no more than one session.
 
 You normally create a connection by creating a `JMSContext` object.
-See <<jmscontext-objects>> for details.
+See <<_jmscontext_objects>> for details.
 
 === Sessions
 
 A session is a single-threaded context for producing and consuming messages.
 
 You normally create a session (as well as a connection) by creating a `JMSContext` object.
-See <<jmscontext-objects>> for details.
+See <<_jmscontext_objects>> for details.
 You use sessions to create message producers, message consumers, messages, queue browsers, and temporary destinations.
 
-Sessions serialize the execution of message listeners; for details, see <<jakarta-messaging-message-listeners>>.
+Sessions serialize the execution of message listeners; for details, see <<_jakarta_messaging_message_listeners>>.
 
 A session provides a transactional context with which to group a set of sends and receives into an atomic unit of work.
-For details, see <<using-jakarta-messaging-local-transactions>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions].
 
 === JMSContext Objects
 
@@ -145,7 +145,7 @@ You use the `JMSContext` to create the following objects:
 
 * Queue browsers
 
-* Temporary queues and topics (see <<creating-temporary-destinations>>)
+* Temporary queues and topics (see xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations])
 
 You can create a `JMSContext` in a `try`-with-resources block.
 
@@ -158,7 +158,7 @@ JMSContext context = connectionFactory.createContext();
 
 When called with no arguments from an application client or a Java SE client, or from the Jakarta EE web or Enterprise Beans container when there is no active Jakarta Transactions transaction in progress, the `createContext` method creates a non-transacted session with an acknowledgment mode of `JMSContext.AUTO_ACKNOWLEDGE`.
 When called with no arguments from the web or Enterprise Beans container when there is an active JTA transaction in progress, the `createContext` method creates a transacted session.
-For information about the way Jakarta Messaging transactions work in Jakarta EE applications, see <<using-jakarta-messaging-in-jakarta-ee-applications>>.
+For information about the way Jakarta Messaging transactions work in Jakarta EE applications, see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 From an application client or a Java SE client, you can also call the `createContext` method with the argument `JMSContext.SESSION_TRANSACTED` to create a transacted session:
 
@@ -168,12 +168,12 @@ JMSContext context =
         connectionFactory.createContext(JMSContext.SESSION_TRANSACTED);
 ----
 
-The session uses local transactions; see <<using-jakarta-messaging-local-transactions>> for details.
+The session uses local transactions; see xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_local_transactions[Using Jakarta Messaging Local Transactions] for details.
 
-Alternatively, you can specify a non-default acknowledgment mode; see <<controlling-message-acknowledgment>> for more information.
+Alternatively, you can specify a non-default acknowledgment mode; see xref:jms-concepts/jms-concepts.adoc#_controlling_message_acknowledgment[Controlling Message Acknowledgment] for more information.
 
 When you use a `JMSContext`, message delivery normally begins as soon as you create a consumer.
-See <<jakarta-messaging-message-consumers>> for more information.
+See <<_jakarta_messaging_message_consumers>> for more information.
 
 If you create a `JMSContext` in a `try`-with-resources block, you do not need to close it explicitly.
 It will be closed when the `try` block comes to an end.
@@ -205,7 +205,7 @@ context.createProducer().send(dest, message);
 ----
 
 You can create the message in a variable before sending it, as shown here, or you can create it within the `send` call.
-See <<jakarta-messaging-messages>> for more information.
+See <<_jakarta_messaging_messages>> for more information.
 
 === Jakarta Messaging Message Consumers
 
@@ -252,8 +252,8 @@ To enable asynchronous message delivery from an application client or a Java SE 
 
 You can use the `JMSContext.createDurableConsumer` method to create a durable topic subscription.
 This method is valid only if you are using a topic.
-For details, see <<creating-durable-subscriptions>>.
-For topics, you can also create shared consumers; see <<creating-shared-subscriptions>>.
+For details, see <<_creating_durable_subscriptions>>.
+For topics, you can also create shared consumers; see <<_creating_shared_subscriptions>>.
 
 ==== Jakarta Messaging Message Listeners
 
@@ -271,23 +271,23 @@ consumer.setMessageListener(myListener);
 ----
 
 When message delivery begins, the Messaging provider automatically calls the message listener's `onMessage` method whenever a message is delivered.
-The `onMessage` method takes one argument of type `Message`, which your implementation of the method can cast to another message subtype as needed (see <<message-bodies>>).
+The `onMessage` method takes one argument of type `Message`, which your implementation of the method can cast to another message subtype as needed (see <<_message_bodies>>).
 
 In the Jakarta EE web or Enterprise Beans container, you use message-driven beans for asynchronous message delivery.
 A message-driven bean also implements the `MessageListener` interface and contains an `onMessage` method.
-For details, see <<using-message-driven-beans-to-receive-messages-asynchronously>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
 
 Your `onMessage` method should handle all exceptions.
 Throwing a `RuntimeException` is considered a programming error.
 
-For a simple example of the use of a message listener, see <<using-a-message-listener-for-asynchronous-message-delivery>>.
-xref:jakarta-messaging-examples[xrefstyle=full] contains several more examples of message listeners and message-driven beans.
+For a simple example of the use of a message listener, see xref:jms-examples/jms-examples.adoc#_using_a_message_listener_for_asynchronous_message_delivery[Using a Message Listener for Asynchronous Message Delivery].
+xref:jms-examples/jms-examples.adoc#_jakarta_messaging_examples[Jakarta Messaging Examples] contains several more examples of message listeners and message-driven beans.
 
 ==== Jakarta Messaging Message Selectors
 
 If your messaging application needs to filter the messages it receives, you can use a Jakarta Messaging message selector, which allows a message consumer for a destination to specify the messages that interest it.
 Message selectors assign the work of filtering messages to the Messaging provider rather than to the application.
-For an example of an application that uses a message selector, see <<sending-messages-from-a-session-bean-to-an-mdb>>.
+For an example of an application that uses a message selector, see xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB].
 
 A message selector is a `String` that contains an expression.
 The syntax of the expression is based on a subset of the SQL92 conditional expression syntax.
@@ -301,7 +301,7 @@ NewsType = 'Sports' OR NewsType = 'Opinion'
 The `createConsumer` and `createDurableConsumer` methods, as well as the methods for creating shared consumers, allow you to specify a message selector as an argument when you create a message consumer.
 
 The message consumer then receives only messages whose headers and properties match the selector.
-(See <<message-headers>> and <<message-properties>>.)
+(See <<_message_headers>> and <<_message_properties>>.)
 A message selector cannot select messages on the basis of the content of the message body.
 
 ==== Consuming Messages from Topics
@@ -338,11 +338,11 @@ The `JMSContext.createConsumer` method creates a consumer on an unshared nondura
 * A shared nondurable subscription is identified by name and an optional client identifier, and may have several consumer objects consuming messages from it.
 It is created automatically when the first consumer object is created.
 It is not persisted and is deleted automatically when the last consumer object is closed.
-See <<creating-shared-subscriptions>> for more information.
+See <<_creating_shared_subscriptions>> for more information.
 
 At the cost of higher overhead, a subscription may be durable.
 A durable subscription is persisted and continues to accumulate messages until explicitly deleted, even if there are no consumer objects consuming messages from it.
-See <<creating-durable-subscriptions>> for details.
+See <<_creating_durable_subscriptions>> for details.
 
 ==== Creating Durable Subscriptions
 
@@ -401,24 +401,24 @@ context.unsubscribe(subName);
 
 The `unsubscribe` method deletes the state the provider maintains for the subscription.
 
-<<consumers-on-a-durable-subscription>> show the difference between a nondurable and a durable subscription.
+<<_consumers_on_a_durable_subscription>> show the difference between a nondurable and a durable subscription.
 With an ordinary, nondurable subscription, the consumer and the subscription begin and end at the same point and are, in effect, identical.
 When the consumer is closed, the subscription also ends.
 Here, `create` stands for a call to `JMSContext.createConsumer` with a `Topic` argument, and `close` stands for a call to `JMSConsumer.close`.
 Any messages sent to the topic between the time of the first `close` and the time of the second `create` are not added to either subscription.
-In <<nondurable-subscriptions-and-consumers>>, the consumers receive messages M1, M2, M5, and M6, but they do not receive messages M3 and M4.
+In <<_nondurable_subscriptions_and_consumers>>, the consumers receive messages M1, M2, M5, and M6, but they do not receive messages M3 and M4.
 
-[[nondurable-subscriptions-and-consumers]]
+[[_nondurable_subscriptions_and_consumers]]
 .Nondurable Subscriptions and Consumers
-image::jakartaeett_dt_031.svg["Diagram showing messages being lost when nondurable subscriptions are used"]
+image::common:jakartaeett_dt_031.svg["Diagram showing messages being lost when nondurable subscriptions are used"]
 
 With a durable subscription, the consumer can be closed and re-created, but the subscription continues to exist and to hold messages until the application calls the `unsubscribe` method.
-In <<consumers-on-a-durable-subscription>>, `create` stands for a call to `JMSContext.createDurableConsumer`, `close` stands for a call to `JMSConsumer.close`, and `unsubscribe` stands for a call to `JMSContext.unsubscribe`.
+In <<_consumers_on_a_durable_subscription>>, `create` stands for a call to `JMSContext.createDurableConsumer`, `close` stands for a call to `JMSConsumer.close`, and `unsubscribe` stands for a call to `JMSContext.unsubscribe`.
 Messages sent after the first consumer is closed are received when the second consumer is created (on the same durable subscription), so even though messages M2, M4, and M5 arrive while there is no consumer, they are not lost.
 
-[[consumers-on-a-durable-subscription]]
+[[_consumers_on_a_durable_subscription]]
 .Consumers on a Durable Subscription
-image::jakartaeett_dt_032.svg["Diagram showing messages being preserved when durable subscriptions are used"]
+image::common:jakartaeett_dt_032.svg["Diagram showing messages being preserved when durable subscriptions are used"]
 
 A shared durable subscription allows you to use multiple consumers to receive messages from a durable subscription.
 If you use a shared durable subscription, the connection factory you use does not need to have a client identifier.
@@ -430,7 +430,7 @@ JMSConsumer consumer =
         context.createSharedDurableConsumer(topic, "MakeItLast");
 ----
 
-See <<acknowledging-messages>>, <<using-durable-subscriptions>>, <<using-shared-durable-subscriptions>>, and <<sending-messages-from-a-session-bean-to-an-mdb>> for examples of Jakarta EE applications that use durable subscriptions.
+See xref:jms-examples/jms-examples.adoc#_acknowledging_messages[Acknowledging Messages], xref:jms-examples/jms-examples.adoc#_using_durable_subscriptions[Using Durable Subscriptions], xref:jms-examples/jms-examples.adoc#_using_shared_durable_subscriptions[Using Shared Durable Subscriptions], and xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB] for examples of Jakarta EE applications that use durable subscriptions.
 
 ==== Creating Shared Subscriptions
 
@@ -450,10 +450,10 @@ A shared subscription can be useful if you want to share the message load among 
 This feature can improve the scalability of Jakarta EE application client applications and Java SE applications.
 (Message-driven beans share the work of processing messages from a topic among multiple threads.)
 
-See <<using-shared-nondurable-subscriptions>> for a simple example of using shared nondurable consumers.
+See xref:jms-examples/jms-examples.adoc#_using_shared_nondurable_subscriptions[Using Shared Nondurable Subscriptions] for a simple example of using shared nondurable consumers.
 
 You can also create shared durable subscriptions by using the `JMSContext.createSharedDurableConsumer` method.
-For details, see <<creating-durable-subscriptions>>.
+For details, see <<_creating_durable_subscriptions>>.
 
 === Jakarta Messaging Messages
 
@@ -465,12 +465,12 @@ Only the header is required.
 The following sections describe these parts.
 
 For complete documentation of message headers, properties, and bodies, see the documentation of the `Message` interface in the API documentation.
-For a list of possible message types, see <<message-bodies>>.
+For a list of possible message types, see <<_message_bodies>>.
 
 ==== Message Headers
 
 A Jakarta Messaging message header contains a number of predefined fields that contain values used by both clients and providers to identify and route messages.
-<<how-jakarta-messaging-message-header-field-values-are-set>> lists and describes the Jakarta Messaging message header fields and indicates how their values are set.
+<<_how_jakarta_messaging_message_header_field_values_are_set>> lists and describes the Jakarta Messaging message header fields and indicates how their values are set.
 For example, every message has a unique identifier, which is represented in the header field `JMSMessageID`.
 The value of another header field, `JMSDestination`, represents the queue or the topic to which the message is sent.
 Other fields include a timestamp and a priority level.
@@ -478,7 +478,7 @@ Other fields include a timestamp and a priority level.
 Each header field has associated setter and getter methods, which are documented in the description of the `Message` interface.
 Some header fields are intended to be set by a client, but many are set automatically by the `send` method, which overrides any client-set values.
 
-[[how-jakarta-messaging-message-header-field-values-are-set]]
+[[_how_jakarta_messaging_message_header_field_values_are_set]]
 .How Jakarta Messaging Message Header Field Values Are Set
 [width="99%",cols="20%,60%,20%"]
 |===
@@ -486,13 +486,13 @@ Some header fields are intended to be set by a client, but many are set automati
 
 |`JMSDestination` |Destination to which the message is being sent |JMS provider `send` method
 
-|`JMSDeliveryMode` |Delivery mode specified when the message was sent (see <<specifying-message-persistence>>) |Messaging provider `send` method
+|`JMSDeliveryMode` |Delivery mode specified when the message was sent (see xref:jms-concepts/jms-concepts.adoc#_specifying_message_persistence[Specifying Message Persistence]) |Messaging provider `send` method
 
-|`JMSDeliveryTime` |The time the message was sent plus the delivery delay specified when the message was sent (see <<specifying-a-delivery-delay>> |JMS provider `send` method
+|`JMSDeliveryTime` |The time the message was sent plus the delivery delay specified when the message was sent (see xref:jms-concepts/jms-concepts.adoc#_specifying_a_delivery_delay[Specifying a Delivery Delay] |JMS provider `send` method
 
-|`JMSExpiration` |Expiration time of the message (see <<allowing-messages-to-expire>>) |JMS provider `send` method
+|`JMSExpiration` |Expiration time of the message (see xref:jms-concepts/jms-concepts.adoc#_allowing_messages_to_expire[Allowing Messages to Expire]) |JMS provider `send` method
 
-|`JMSPriority` |The priority of the message (see <<setting-message-priority-levels>>) |Jakarta Messaging provider `send` method
+|`JMSPriority` |The priority of the message (see xref:jms-concepts/jms-concepts.adoc#_setting_message_priority_levels[Setting Message Priority Levels]) |Jakarta Messaging provider `send` method
 
 |`JMSMessageID` |Value that uniquely identifies each message sent by a provider |Messaging provider `send` method
 
@@ -510,8 +510,8 @@ Some header fields are intended to be set by a client, but many are set automati
 ==== Message Properties
 
 You can create and set properties for messages if you need values in addition to those provided by the header fields.
-You can use properties to provide compatibility with other messaging systems, or you can use them to create message selectors (see <<jakarta-messaging-message-selectors>>).
-For an example of setting a property to be used as a message selector, see <<sending-messages-from-a-session-bean-to-an-mdb>>.
+You can use properties to provide compatibility with other messaging systems, or you can use them to create message selectors (see <<_jakarta_messaging_message_selectors>>).
+For an example of setting a property to be used as a message selector, see xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB].
 
 Jakarta Messaging provides some predefined property names that begin with `JMSX`.
 A Messaging provider is required to implement only one of these, `JMSXDeliveryCount` (which specifies the number of times a message has been delivered); the rest are optional.
@@ -522,9 +522,9 @@ The use of these predefined properties or of user-defined properties in applicat
 Jakarta Messaging defines six different types of messages.
 Each message type corresponds to a different message body.
 These message types allow you to send and receive data in many different forms.
-<<jakarta-messaging-message-types>> describes these message types.
+<<_jakarta_messaging_message_types>> describes these message types.
 
-[[jakarta-messaging-message-types]]
+[[_jakarta_messaging_message_types]]
 .Jakarta Messaging Message Types
 [width="75%",cols="15%,60%"]
 |===
@@ -598,7 +598,7 @@ String message = receiver.receiveBody(String.class);
 You can use the `receiveBody` method to receive any type of message except `StreamMessage` and `Message`, as long as the body of the message can be assigned to a particular type.
 
 An empty `Message` can be useful if you want to send a message that is simply a signal to the application.
-Some of the examples in xref:jakarta-messaging-examples[xrefstyle=full], send an empty message after sending a series of text messages.
+Some of the examples in xref:jms-examples/jms-examples.adoc#_jakarta_messaging_examples[Jakarta Messaging Examples], send an empty message after sending a series of text messages.
 For example:
 
 [source,java]
@@ -608,7 +608,7 @@ context.createProducer().send(dest, context.createMessage());
 
 The consumer code can then interpret a non-text message as a signal that all the messages sent have now been received.
 
-The examples in xref:jakarta-messaging-examples[xrefstyle=full], use messages of type `TextMessage`, `MapMessage`, and `Message`.
+The examples in xref:jms-examples/jms-examples.adoc#_jakarta_messaging_examples[Jakarta Messaging Examples], use messages of type `TextMessage`, `MapMessage`, and `Message`.
 
 === Jakarta Messaging Queue Browsers
 
@@ -623,10 +623,10 @@ For example:
 QueueBrowser browser = context.createBrowser(queue);
 ----
 
-See <<browsing-messages-on-a-queue>> for an example of using a `QueueBrowser` object.
+See xref:jms-examples/jms-examples.adoc#_browsing_messages_on_a_queue[Browsing Messages on a Queue] for an example of using a `QueueBrowser` object.
 
 The `createBrowser` method allows you to specify a message selector as a second argument when you create a `QueueBrowser`.
-For information on message selectors, see <<jakarta-messaging-message-selectors>>.
+For information on message selectors, see <<_jakarta_messaging_message_selectors>>.
 
 Jakarta Messaging provides no mechanism for browsing a topic.
 Messages usually disappear from a topic as soon as they appear: If there are no message consumers to consume them, the Messaging provider removes them.

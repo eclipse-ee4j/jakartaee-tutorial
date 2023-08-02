@@ -7,27 +7,27 @@ Jakarta Messaging provides this functionality.
 The most reliable way to produce a message is to send a `PERSISTENT` message, and to do so within a transaction.
 
 Jakarta Messaging messages are `PERSISTENT` by default; `PERSISTENT` messages will not be lost in the event of Messaging provider failure.
-For details, see <<specifying-message-persistence>>.
+For details, see <<_specifying_message_persistence>>.
 
 Transactions allow multiple messages to be sent or received in an atomic operation.In the Jakarta EE platform they also allow message sends and receives to be combined with database reads and writes in an atomic transaction.
 A transaction is a unit of work into which you can group a series of operations, such as message sends and receives, so that the operations either all succeed or all fail.
-For details, see <<using-jakarta-messaging-local-transactions>>.
+For details, see <<_using_jakarta_messaging_local_transactions>>.
 
 The most reliable way to consume a message is to do so within a transaction, either from a queue or from a durable subscription to a topic.
-For details, see <<creating-durable-subscriptions>>, <<creating-temporary-destinations>>, and <<using-jakarta-messaging-local-transactions>>.
+For details, see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions], <<_creating_temporary_destinations>>, and <<_using_jakarta_messaging_local_transactions>>.
 
 Some features primarily allow an application to improve performance.
-For example, you can set messages to expire after a certain length of time (see <<allowing-messages-to-expire>>), so that consumers do not receive unnecessary outdated information.
-You can send messages asynchronously; see <<sending-messages-asynchronously>>.
+For example, you can set messages to expire after a certain length of time (see <<_allowing_messages_to_expire>>), so that consumers do not receive unnecessary outdated information.
+You can send messages asynchronously; see <<_sending_messages_asynchronously>>.
 
-You can also specify various levels of control over message acknowledgment; see <<controlling-message-acknowledgment>>.
+You can also specify various levels of control over message acknowledgment; see <<_controlling_message_acknowledgment>>.
 
 Other features can provide useful capabilities unrelated to reliability.
 For example, you can create temporary destinations that last only for the duration of the connection in which they are created.
-See <<creating-temporary-destinations>> for details.
+See <<_creating_temporary_destinations>> for details.
 
 The following sections describe these features as they apply to application clients or Java SE clients.
-Some of the features work differently in the Jakarta EE web or enterprise bean container; in these cases, the differences are noted here and are explained in detail in <<using-jakarta-messaging-in-jakarta-ee-applications>>.
+Some of the features work differently in the Jakarta EE web or enterprise bean container; in these cases, the differences are noted here and are explained in detail in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 === Controlling Message Acknowledgment
 
@@ -41,7 +41,7 @@ The successful consumption of a message ordinarily takes place in three stages.
 . The message is acknowledged. +
 Acknowledgment is initiated either by the Messaging provider or by the client, depending on the session acknowledgment mode.
 
-In locally transacted sessions (see <<using-jakarta-messaging-local-transactions>>), a message is acknowledged when the session is committed.
+In locally transacted sessions (see <<_using_jakarta_messaging_local_transactions>>), a message is acknowledged when the session is committed.
 If a transaction is rolled back, all consumed messages are redelivered.
 
 In a Jakarta transaction (in the Jakarta EE web or enterprise bean container) a message is acknowledged when the transaction is committed.
@@ -69,7 +69,7 @@ This option can reduce session overhead by minimizing the work the session does 
 
 If messages have been received from a queue but not acknowledged when a `JMSContext` is closed, the Messaging provider retains them and redelivers them when a consumer next accesses the queue.
 The provider also retains unacknowledged messages if an application closes a `JMSContext` that has been consuming messages from a durable subscription.
-(See <<creating-durable-subscriptions>>.)
+(See xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions].)
 Unacknowledged messages that have been received from a nondurable subscription will be dropped when the `JMSContext` is closed.
 
 If you use a queue or a durable subscription, you can use the `JMSContext.recover` method to stop a nontransacted `JMSContext` and restart it with its first unacknowledged message.
@@ -77,22 +77,22 @@ In effect, the ``JMSContext``'s series of delivered messages is reset to the poi
 The messages it now delivers may be different from those that were originally delivered, if messages have expired or if higher-priority messages have arrived.
 For a consumer on a nondurable subscription, the provider may drop unacknowledged messages when the `JMSContext.recover` method is called.
 
-The sample program in <<acknowledging-messages>> demonstrates two ways to ensure that a message will not be acknowledged until processing of the message is complete.
+The sample program in xref:jms-examples/jms-examples.adoc#_acknowledging_messages[Acknowledging Messages] demonstrates two ways to ensure that a message will not be acknowledged until processing of the message is complete.
 
 === Specifying Options for Sending Messages
 
 You can set a number of options when you send a message.
 These options enable you to perform the tasks described in the following topics:
 
-* <<specifying-message-persistence>> - Specify that messages are persistent, meaning they must not be lost in the event of a provider failure.
+* <<_specifying_message_persistence>> - Specify that messages are persistent, meaning they must not be lost in the event of a provider failure.
 
-* <<setting-message-priority-levels>> - Set priority levels for messages, which can affect the order in which the messages are delivered.
+* <<_setting_message_priority_levels>> - Set priority levels for messages, which can affect the order in which the messages are delivered.
 
-* <<allowing-messages-to-expire>> - Specify an expiration time for messages so they will not be delivered if they are obsolete.
+* <<_allowing_messages_to_expire>> - Specify an expiration time for messages so they will not be delivered if they are obsolete.
 
-* <<specifying-a-delivery-delay>> - Specify a delivery delay for messages so that they will not be delivered until a specified amount of time has expired.
+* <<_specifying_a_delivery_delay>> - Specify a delivery delay for messages so that they will not be delivered until a specified amount of time has expired.
 
-* <<using-jmsproducer-method-chaining>> - Method chaining allows you to specify more than one of these options when you create a producer and call the `send` method.
+* <<_using_jmsproducer_method_chaining>> - Method chaining allows you to specify more than one of these options when you create a producer and call the `send` method.
 
 ==== Specifying Message Persistence
 
@@ -219,7 +219,7 @@ replyMsg.setJMSCorrelationID(msg.getJMSMessageID());
 context.createProducer().send((Topic) msg.getJMSReplyTo(), replyMsg);
 ----
 
-For an example, see <<using-an-entity-to-join-messages-from-two-mdbs>>.
+For an example, see xref:jms-examples/jms-examples.adoc#_using_an_entity_to_join_messages_from_two_mdbs[Using an Entity to Join Messages from Two MDBs].
 
 === Using Jakarta Messaging Local Transactions
 
@@ -233,7 +233,7 @@ You can send multiple messages in a transaction, and the messages will not be ad
 If you receive multiple messages in a transaction, they will not be acknowledged until the transaction is committed.
 
 You can use the `JMSContext.rollback` method to roll back a transaction.
-A transaction rollback means that all produced messages are destroyed and all consumed messages are recovered and redelivered unless they have expired (see <<allowing-messages-to-expire>>).
+A transaction rollback means that all produced messages are destroyed and all consumed messages are recovered and redelivered unless they have expired (see <<_allowing_messages_to_expire>>).
 
 A transacted session is always involved in a transaction.
 To create a transacted session, call the `createContext` method as follows:
@@ -248,7 +248,7 @@ As soon as the `commit` or the `rollback` method is called, one transaction ends
 Closing a transacted session rolls back its transaction in progress, including any pending sends and receives.
 
 In an application running in the Jakarta EE web or enterprise bean container, you cannot use local transactions.
-Instead, you use Jakarta Transactions, described in <<using-jakarta-messaging-in-jakarta-ee-applications>>.
+Instead, you use Jakarta Transactions, described in xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications].
 
 You can combine several sends and receives in a single Jakarta Messaging local transaction, so long as they are all performed using the same `JMSContext`.
 
@@ -270,11 +270,11 @@ Because a message sent during a transaction is not actually sent until the trans
 
 The production and the consumption of a message cannot both be part of the same transaction.
 The reason is that the transactions take place between the clients and the Messaging provider, which intervenes between the production and the consumption of the message.
-<<using-jakarta-messaging-local-transactions-2>> illustrates this interaction.
+<<_using_jakarta_messaging_local_transactions_2>> illustrates this interaction.
 
-[[using-jakarta-messaging-local-transactions-2]]
+[[_using_jakarta_messaging_local_transactions_2]]
 .Using Jakarta Messaging Local Transactions
-image::jakartaeett_dt_033.svg["Diagram of local transactions, showing separate transactions for sending and consuming a message"]
+image::common:jakartaeett_dt_033.svg["Diagram of local transactions, showing separate transactions for sending and consuming a message"]
 
 The sending of one or more messages to one or more destinations by Client 1 can form a single transaction, because it forms a single set of interactions with the Messaging provider using a single `JMSContext`.
 Similarly, the receiving of one or more messages from one or more destinations by Client 2 also forms a single transaction using a single `JMSContext`.
@@ -302,7 +302,7 @@ The `commit` and the `rollback` methods for local transactions are associated wi
 You can combine operations on more than one queue or topic, or on a combination of queues and topics, in a single transaction if you use the same session to perform the operations.
 For example, you can use the same `JMSContext` to receive a message from a queue and send a message to a topic in the same transaction.
 
-The example in <<using-local-transactions>> shows how to use Jakarta Messaging local transactions.
+The example in xref:jms-examples/jms-examples.adoc#_using_local_transactions[Using Local Transactions] shows how to use Jakarta Messaging local transactions.
 
 === Sending Messages Asynchronously
 

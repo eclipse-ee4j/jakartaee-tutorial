@@ -144,7 +144,7 @@ public class LinkChecker {
 
 	private static String anchorKey(String str) {
 		final var strWithPrefix = str.charAt(0) == '_' ? str : "_" + str;
-		return strWithPrefix.toLowerCase().replaceAll("[\\s-]", "_").replace(":", "").replaceAll("[@?,&()]", "");
+		return strWithPrefix.toLowerCase().replaceAll("[\\s-]", "_").replace(":", "").replaceAll("[@?,&()/]", "");
 	}
 
 	public static String anchor2title(String str) {
