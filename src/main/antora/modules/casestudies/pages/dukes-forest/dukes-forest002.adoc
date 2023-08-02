@@ -1,12 +1,12 @@
 == Design and Architecture of Duke's Forest
 
 Duke's Forest is a complex application consisting of three main projects and three subprojects.
-<<architecture-of-the-dukes-forest-example-application>> shows the architecture of the three main projects that you will deploy: Duke's Store, Duke's Shipment, and Duke's Payment.
+<<_architecture_of_the_dukes_forest_example_application>> shows the architecture of the three main projects that you will deploy: Duke's Store, Duke's Shipment, and Duke's Payment.
 It also shows how Duke's Store makes use of the Events and Entities projects.
 
-[[architecture-of-the-dukes-forest-example-application]]
+[[_architecture_of_the_dukes_forest_example_application]]
 .Architecture of the Duke's Forest Example Application
-image::jakartaeett_dt_062.svg["This figure shows the architecture of the main Duke's Forest projects and how they use the Events and Entities projects."]
+image::common:jakartaeett_dt_062.svg["This figure shows the architecture of the main Duke's Forest projects and how they use the Events and Entities projects."]
 
 Duke's Forest uses the following Jakarta EE platform features:
 
@@ -68,13 +68,13 @@ The Duke's Forest application has two main user interfaces, both packaged within
 
 The Duke's Shipment application also has a user interface, accessible to administrators.
 
-<<interactions-between-dukes-forest-components>> shows how the web applications and the web service interact.
+<<_interactions_between_dukes_forest_components>> shows how the web applications and the web service interact.
 
-[[interactions-between-dukes-forest-components]]
+[[_interactions_between_dukes_forest_components]]
 .Interactions between Duke's Forest Components
-image::jakartaeett_dt_063.svg["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP)."]
+image::common:jakartaeett_dt_063.svg["This figure shows the interactions between the Duke's Store and Duke's Shipment projects (using REST and HTTP), and between the Duke's Store and Duke's Payment projects (using REST and HTTP)."]
 
-As illustrated in <<interactions-between-dukes-forest-components>>, the customer interacts with the main interface of Duke's Store, while the administrator interacts with the administration interface.
+As illustrated in <<_interactions_between_dukes_forest_components>>, the customer interacts with the main interface of Duke's Store, while the administrator interacts with the administration interface.
 Both interfaces access a façade consisting of managed beans and stateless session beans, which in turn interact with the entities that represent database tables.
 The façade also interacts with web services APIs that access the Duke's Payment web service.
 When the payment for an order is approved, Duke's Store sends the order to a Jakarta Messaging queue.
@@ -125,10 +125,10 @@ To enable users to add more events to the project easily or update an event clas
 === The entities Project
 
 The `entities` project is a Jakarta Persistence project used by both Duke's Store and Duke's Shipment.
-It is generated from the database schema shown in <<dukes-forest-database-table-and-their-relationships>> and is also used as a base for the entities consumed and produced by the web services through Jakarta XML Binding.
+It is generated from the database schema shown in <<_dukes_forest_database_table_and_their_relationships>> and is also used as a base for the entities consumed and produced by the web services through Jakarta XML Binding.
 Each entity has validation rules based on business requirements, specified using Jakarta Bean Validation.
 
-[[dukes-forest-database-table-and-their-relationships]]
+[[_dukes_forest_database_table_and_their_relationships]]
 .Duke's Forest Database Tables and Their Relationships
 image:jakartaeett_dt_064.svg["This figure shows the database tables in Duke's Forest and their relationships."]
 
@@ -237,7 +237,7 @@ The administration interface of Duke's Store allows administrators to perform th
 
 * Group maintenance (create, edit, update, delete)
 
-The project also uses stateless session beans as façades for interactions with the Jakarta Persistence entities described in <<the-entities-project>>, and CDI managed beans as controllers for interactions with Facelets pages.
+The project also uses stateless session beans as façades for interactions with the Jakarta Persistence entities described in <<_the_entities_project>>, and CDI managed beans as controllers for interactions with Facelets pages.
 The project thus follows the MVC (Model-View-Controller) pattern and applies the same pattern to all entities and pages, as in the following example.
 
 * `AbstractFacade` is an abstract class that receives a `Type<T>` and implements the common operations (CRUD) for this type, where `<T>` is a Persistence entity.
@@ -397,7 +397,7 @@ Duke's Store defines the following qualifiers in the `com.forest.qualifiers` pac
 
 ==== Event Handlers Used in Duke's Store
 
-Duke's Store defines event handlers related to the `OrderEvent` class packaged in the `events` project (see <<the-events-project>>).
+Duke's Store defines event handlers related to the `OrderEvent` class packaged in the `events` project (see <<_the_events_project>>).
 The event handlers are in the `com.forest.handlers` package.
 
 * `IOrderHandler`: The `IOrderHandler` interface defines a method, `onNewOrder`, implemented by the two handler classes.
