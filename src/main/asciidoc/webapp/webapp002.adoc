@@ -141,4 +141,4 @@ http(s)://host:port/context-path
 By default, the `context-path` is represented by the base file name of the WAR file, without the extension.
 If there is no web component listening on the root of the context path, then you could face a HTTP 404 'Not Found' error page.
 In that case you would need to use a more specific URL, depending on the configuration of the desired web component.
-This will be detailed in the chapter associated with the example project.
+This will be detailed in xref:web:webapp/webapp.adoc#_mapping_urls_to_web_components[Mapping URLs to Web Components].
