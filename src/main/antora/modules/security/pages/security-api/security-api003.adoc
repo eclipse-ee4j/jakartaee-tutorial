@@ -27,7 +27,7 @@ For examples of both types, see:
 
 * xref:security-api/security-api.adoc#_running_the_built_in_database_identity_store_example[Running the Built-In Database Identity Store Example]
 
-* xref:security-api/security-api.adoc#_running_the_custom_identity_store_example[Running the custom-identity-store Example]
+* xref:security-api/security-api.adoc#_running_the_custom_identity_store_example[Running the Custom Identity Store Example]
 
 An implementation of `IdentityStore` must be a CDI bean to be recognized and deployed at runtime, and is assumed to be normal scoped.
 IdentityStores are primarily intended for use by implementations of `HttpAuthenticationMechanisms`, but this is not a requirement.

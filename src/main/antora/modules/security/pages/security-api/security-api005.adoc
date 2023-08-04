@@ -6,7 +6,7 @@ Topics include:
 
 * <<_overview_of_the_custom_identity_store_example>>
 
-* <<_running_the_custom_identity_store_example>>
+* <<_running_the_custom_identity_store_example_2>>
 
 === Overview of the Custom Identity Store Example
 
@@ -119,6 +119,7 @@ public class Servlet extends HttpServlet {
 In GlassFish 6.0, group to role mapping is enabled by default.
 Therefore, you do not need to bundle `web.xml` with the application to provide mapping between roles and groups.
 
+[[_running_the_custom_identity_store_example_2]]
 === Running the custom-identity-store Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `custom-identity-store` application as described in the following topics:
