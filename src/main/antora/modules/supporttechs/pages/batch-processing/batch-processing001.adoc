@@ -44,11 +44,11 @@ Batch frameworks enable chunk steps to bookmark their progress using checkpoints
 A chunk step that is interrupted can be restarted from the last checkpoint.
 The input retrieval and output writing parts of a chunk step save their current position after the processing of each chunk, and can recover it when the step is restarted.
 
-<<chunk-steps-in-a-batch-job>> shows the three parts of two steps in a batch job.
+<<_chunk_steps_in_a_batch_job>> shows the three parts of two steps in a batch job.
 
-[[chunk-steps-in-a-batch-job]]
+[[_chunk_steps_in_a_batch_job]]
 .Chunk Steps in a Batch Job
-image::jakartaeett_dt_058.svg["This figure shows a batch job that contains two chunk steps: step A and step B. Step A has the three parts of a chunk-oriented step: input retrieval A, business processing A, and output writing A. Step B also has the three parts of a chunk-oriented step: input retrieval B, business processing B, and output writing B."]
+image::common:jakartaeett_dt_058.svg["This figure shows a batch job that contains two chunk steps: step A and step B. Step A has the three parts of a chunk-oriented step: input retrieval A, business processing A, and output writing A. Step B also has the three parts of a chunk-oriented step: input retrieval B, business processing B, and output writing B."]
 
 For example, the phone billing application consists of two chunk steps.
 
@@ -86,11 +86,11 @@ Decision elements use the exit status of the previous step to determine the next
 Decision elements set the status of the batch job when terminating it.
 Like a step, a batch job can terminate successfully, be interrupted, or fail.
 
-<<steps-and-decision-elements-in-a-job>> shows an example of a job that contains chunk steps, task steps and a decision element.
+<<_steps_and_decision_elements_in_a_job>> shows an example of a job that contains chunk steps, task steps and a decision element.
 
-[[steps-and-decision-elements-in-a-job]]
+[[_steps_and_decision_elements_in_a_job]]
 .Steps and Decision Elements in a Job
-image::jakartaeett_dt_059.svg["This figure shows a batch job that contains two chunk steps, a task step and a decision element. The job starts with chunk step A, continues with chunk step B, and then decision element D evaluates condition 1. The condition is based on the status of step B. If condition 1 is true, the job terminates; otherwise the job continues with step C and then the job ends."]
+image::common:jakartaeett_dt_059.svg["This figure shows a batch job that contains two chunk steps, a task step and a decision element. The job starts with chunk step A, continues with chunk step B, and then decision element D evaluates condition 1. The condition is based on the status of step B. If condition 1 is true, the job terminates; otherwise the job continues with step C and then the job ends."]
 
 === Batch Framework Functionality
 

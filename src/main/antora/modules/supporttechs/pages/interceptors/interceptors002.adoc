@@ -1,6 +1,6 @@
 == Using Interceptors
 
-To define an interceptor, use one of the interceptor metadata annotations listed in <<interceptor-metadata-annotations>> within the target class, or in a separate interceptor class.
+To define an interceptor, use one of the interceptor metadata annotations listed in <<_interceptor_metadata_annotations>> within the target class, or in a separate interceptor class.
 The following code declares an `@AroundTimeout` interceptor method within a target class:
 
 [source,java]
@@ -335,9 +335,9 @@ The lower the number, the higher the priority of the associated interceptor.
 [NOTE]
 The invocation order of interceptors with the same priority value is implementation-specific.
 
-The `jakarta.interceptor.Interceptor.Priority` class defines the priority constants listed in <<interceptor-priority-constants>>.
+The `jakarta.interceptor.Interceptor.Priority` class defines the priority constants listed in <<_interceptor_priority_constants>>.
 
-[[interceptor-priority-constants]]
+[[_interceptor_priority_constants]]
 .Interceptor Priority Constants
 [width="99%",cols="15%,15%,70%"]
 |===

@@ -3,9 +3,9 @@
 The `traffic` example demonstrates how to implement and use a simple inbound resource adapter that receives data from a legacy EIS using a TCP socket.
 
 The example is in the `_tut-install_/examples/connectors/traffic` directory.
-See xref:using-the-tutorial-examples[xrefstyle=full] for basic information on building and running sample applications.
+See xref:using-the-tutorial-examples[] for basic information on building and running sample applications.
 
-The example demonstrates the scenario in <<the-traffic-example-2>> and consists of the following modules:
+The example demonstrates the scenario in <<_the_traffic_example_2>> and consists of the following modules:
 
 * `traffic-eis`: A Java SE program that simulates an EIS
 
@@ -17,9 +17,9 @@ The example demonstrates the scenario in <<the-traffic-example-2>> and consists 
 
 * `traffic-ear`: An enterprise archive that contains the resource adapter, the message-driven bean, and the web application
 
-[[the-traffic-example-2]]
+[[_the_traffic_example_2]]
 .The traffic Example
-image::jakartaeett_dt_056.svg["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket."]
+image::common:jakartaeett_dt_056.svg["This figure shows the components of the traffic example: a WAR communicating with an enterprise bean using a JMS topic, and a RAR communicating with an EIS over a TCP socket."]
 
 The `traffic-eis` module is an auxiliary project that resembles a legacy traffic information system.
 It contains a Java SE program that sends traffic status updates for several cities to any subscribed client.
@@ -94,15 +94,15 @@ This approach enables you to adapt the MDB to support new features in the EIS wi
 === Implementing the Inbound Resource Adapter
 
 The `traffic-rar` module implements the Jakarta Connectors inbound resource adapter contract for the simple traffic information system (EIS) used in this example.
-The architecture of the inbound resource adapter is shown in <<architecture-of-the-traffic-example>>.
+The architecture of the inbound resource adapter is shown in <<_architecture_of_the_traffic_example>>.
 
-[[architecture-of-the-traffic-example]]
+[[_architecture_of_the_traffic_example]]
 .Architecture of the traffic Example
-image::jakartaeett_dt_057.svg["This figure shows the classes in each of the components of the traffic example."]
+image::common:jakartaeett_dt_057.svg["This figure shows the classes in each of the components of the traffic example."]
 
-The `traffic-rar` module implements the interfaces listed in <<interfaces-implemented-in-the-traffic-rar-module>>.
+The `traffic-rar` module implements the interfaces listed in <<_interfaces_implemented_in_the_traffic_rar_module>>.
 
-[[interfaces-implemented-in-the-traffic-rar-module]]
+[[_interfaces_implemented_in_the_traffic_rar_module]]
 .Interfaces Implemented in the traffic-rar Module
 [width="99%",cols="20%,20%,60%"]
 |===

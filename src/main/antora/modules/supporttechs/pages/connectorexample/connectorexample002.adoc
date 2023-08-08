@@ -1,7 +1,7 @@
 == The trading Example
 
 The `trading` example demonstrates how to implement and use a simple outbound resource adapter that submits requests to a legacy EIS using a TCP socket.
-The example demonstrates the scenario in <<the-trading-example-2>> and consists of the following modules:
+The example demonstrates the scenario in <<_the_trading_example_2>> and consists of the following modules:
 
 * `trading-eis`: A Java SE program that simulates a legacy EIS
 
@@ -11,9 +11,9 @@ The example demonstrates the scenario in <<the-trading-example-2>> and consists 
 
 * `trading-ear`: An enterprise archive that contains the resource adapter and the web application
 
-[[the-trading-example-2]]
+[[_the_trading_example_2]]
 .The trading Example
-image::jakartaeett_dt_054.svg["This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket."]
+image::common:jakartaeett_dt_054.svg["This figure shows the trading example components: a deployed WAR and RAR that communicate with the EIS over a TCP socket."]
 
 The `trading-eis` module is an auxiliary project that resembles a legacy stock trading execution platform.
 It contains a Java SE program that listens for trading requests in plain text on a TCP socket.
@@ -50,7 +50,7 @@ The connection handles enable the application to make requests and obtain inform
 
 The `trading-rar` module provides a custom client interface that consists of the classes listed in <<classes-and-interfaces-in-the-trading-rar-module>>.
 
-[[classes-and-interfaces-in-the-trading-rar-module]]
+[[_classes_and_interfaces_in_the_trading_rar_module]]
 .Classes and Interfaces in the trading-rar module
 [width="80%",cols="20%,60%"]
 |===
@@ -140,15 +140,15 @@ try {
 === Implementing the Outbound Resource Adapter
 
 The `trading-rar` module implements the outbound contract and a custom client interface for the simple legacy stock trading platform EIS used in this example.
-The architecture of the outbound resource adapter is shown in <<architecture-of-the-trading-example>>.
+The architecture of the outbound resource adapter is shown in <<_architecture_of_the_trading_example>>.
 
-[[architecture-of-the-trading-example]]
+[[_architecture_of_the_trading_example]]
 .Architecture of the trading Example
-image::jakartaeett_dt_055.svg["This figure shows the classes in each of the modules of the trading example."]
+image::common:jakartaeett_dt_055.svg["This figure shows the classes in each of the modules of the trading example."]
 
-The `trading-rar` module implements the interfaces listed in <<interfaces-implemented-in-the-trading-rar-module>>.
+The `trading-rar` module implements the interfaces listed in <<_interfaces_implemented_in_the_trading_rar_module>>.
 
-[[interfaces-implemented-in-the-trading-rar-module]]
+[[_interfaces_implemented_in_the_trading_rar_module]]
 .Interfaces Implemented in the trading-rar Module
 [width="99%",cols="20%,20%,60%"]
 |===
@@ -165,7 +165,7 @@ The `trading-rar` module implements the interfaces listed in <<interfaces-implem
 |`trading.rar.api` |`TradeConnection` |Defines a connection handle that applications use to interact with the EIS
 |===
 
-When the `trading-ear` archive is deployed and a connection pool resource is configured as described in <<using-the-outbound-resource-adapter>>, the application server creates `TradeConnectionFactory` objects that applications can obtain using resource injection.
+When the `trading-ear` archive is deployed and a connection pool resource is configured as described in <<_using_the_outbound_resource_adapter>>, the application server creates `TradeConnectionFactory` objects that applications can obtain using resource injection.
 The `TradeConnectionFactory` implementation delegates creating connections to the connection manager provided by the application server.
 
 The connection manager uses the `ManagedConnectionFactory` implementation to obtain physical connections to the EIS and maintains a pool of active physical connections.

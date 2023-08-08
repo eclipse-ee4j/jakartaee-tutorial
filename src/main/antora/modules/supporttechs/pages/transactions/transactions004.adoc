@@ -22,13 +22,13 @@ Enterprise beans that use container-managed transaction demarcation also must no
 === Transaction Attributes
 
 A transaction attribute controls the scope of a transaction.
-<<transaction-scope>> illustrates why controlling the scope is important.
+<<_transaction_scope>> illustrates why controlling the scope is important.
 In the diagram, `method-A` begins a transaction and then invokes `method-B` of `Bean-2`.
 When `method-B` executes, does it run within the scope of the transaction started by `method-A`, or does it execute with a new transaction? The answer depends on the transaction attribute of `method-B`.
 
-[[transaction-scope]]
+[[_transaction_scope]]
 .Transaction Scope
-image::jakartaeett_dt_050.svg["A diagram showing a transaction between two beans."]
+image::common:jakartaeett_dt_050.svg["A diagram showing a transaction between two beans."]
 
 A transaction attribute can have one of the following values:
 
@@ -100,16 +100,16 @@ If the client is not associated with a transaction, the container does not start
 
 ==== Summary of Transaction Attributes
 
-<<transaction-attributes-and-scope>> summarizes the effects of the transaction attributes.
+<<_transaction_attributes_and_scope>> summarizes the effects of the transaction attributes.
 Both the `T1` and the `T2` transactions are controlled by the container.
 A `T1` transaction is associated with the client that calls a method in the enterprise bean.
 In most cases, the client is another enterprise bean.
 A `T2` transaction is started by the container just before the method executes.
 
-In the last column of <<transaction-attributes-and-scope>>, the word "None" means that the business method does not execute within a transaction controlled by the container.
+In the last column of <<_transaction_attributes_and_scope>>, the word "None" means that the business method does not execute within a transaction controlled by the container.
 However, the database calls in such a business method might be controlled by the transaction manager of the database management system.
 
-[[transaction-attributes-and-scope]]
+[[_transaction_attributes_and_scope]]
 .Transaction Attributes and Scope
 [width="60%",cols="20%,20%,20%"]
 |===
@@ -148,9 +148,9 @@ If you decorate the enterprise bean class with `@TransactionAttribute`, the spec
 Decorating a business method with `@TransactionAttribute` applies the `TransactionAttributeType` only to that method.
 If a `@TransactionAttribute` annotation decorates both the class and the method, the method `TransactionAttributeType` overrides the class `TransactionAttributeType`.
 
-The `TransactionAttributeType` constants shown in <<transactionattributetype-constants>> encapsulate the transaction attributes described earlier in this section.
+The `TransactionAttributeType` constants shown in <<_transactionattributetype_constants>> encapsulate the transaction attributes described earlier in this section.
 
-[[transactionattributetype-constants]]
+[[_transactionattributetype_constants]]
 .TransactionAttributeType Constants
 [width="34%",cols="20%,80%"]
 |===

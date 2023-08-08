@@ -14,9 +14,9 @@ Interceptor classes and methods are defined using metadata annotations, or in th
 [NOTE]
 Applications that use the deployment descriptor to define interceptors are not portable across Jakarta EE servers.
 
-Interceptor methods within the target class or in an interceptor class are annotated with one of the metadata annotations defined in <<interceptor-metadata-annotations>>.
+Interceptor methods within the target class or in an interceptor class are annotated with one of the metadata annotations defined in <<_interceptor_metadata_annotations>>.
 
-[[interceptor-metadata-annotations]]
+[[_interceptor_metadata_annotations]]
 .Interceptor Metadata Annotations
 [width="80%",cols="20%,60%"]
 |===

@@ -69,7 +69,7 @@ For example:
 
 The `listener` element specifies a batch artifact whose methods are invoked before and after the execution of the job.
 The batch artifact is an implementation of the `jakarta.batch.api.listener.JobListener` interface.
-See <<the-listener-batch-artifacts>> for an example of a job listener implementation.
+See <<_the_listener_batch_artifacts>> for an example of a job listener implementation.
 
 The first `step`, `flow`, or `split` element inside the `job` element executes first.
 
@@ -91,7 +91,7 @@ For chunk steps, the batch artifacts for these listeners can be implementations 
 +
 For task steps, the batch artifact for these listeners must be an implementation of the `StepListener` interface.
 +
-See <<the-listener-batch-artifacts>> for an example of an item processor listener implementation.
+See <<_the_listener_batch_artifacts>> for an example of an item processor listener implementation.
 
 * One `partition` element (optional).
 +
@@ -145,9 +145,9 @@ The following is an example of a task step:
 ==== The chunk Element
 
 The `chunk` element is a child of the `step` element for chunk-oriented steps.
-The attributes of this element are listed in <<attributes-of-the-chunk-element>>.
+The attributes of this element are listed in <<_attributes_of_the_chunk_element>>.
 
-[[attributes-of-the-chunk-element]]
+[[_attributes_of_the_chunk_element]]
 .Attributes of the chunk Element
 [width="99%",cols="15%,75%,10%"]
 |===
@@ -284,7 +284,7 @@ The batch runtime invokes this artifact and then uses the information it provide
 
 The rest of this section describes the `partition` element in detail and shows two examples of job definition files: one that uses partition properties to specify a range of items for each partition, and one that relies on a `PartitionMapper` implementation to determine partition-specific information.
 
-See <<the-phone-billing-chunk-step>> in <<the-phonebilling-example-application>> for a complete example of a partitioned chunk step.
+See <<_the_phone_billing_chunk_step>> in <<_the_phonebilling_example_application>> for a complete example of a partitioned chunk step.
 
 The `partition` element can contain the following elements.
 
@@ -366,7 +366,7 @@ The `PartitionMapper` implementation dynamically provides the same information a
 </step>
 ----
 
-Refer to <<the-phonebilling-example-application>> for an example implementation of the `PartitionMapper` interface.
+Refer to <<_the_phonebilling_example_application>> for an example implementation of the `PartitionMapper` interface.
 
 === The flow Element
 
