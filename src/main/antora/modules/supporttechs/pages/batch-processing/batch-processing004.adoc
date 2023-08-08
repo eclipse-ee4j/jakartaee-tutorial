@@ -69,7 +69,7 @@ For example:
 
 The `listener` element specifies a batch artifact whose methods are invoked before and after the execution of the job.
 The batch artifact is an implementation of the `jakarta.batch.api.listener.JobListener` interface.
-See <<_the_listener_batch_artifacts>> for an example of a job listener implementation.
+See xref:batch-processing/batch-processing.adoc#_the_listener_batch_artifacts[The Listener Batch Artifacts] for an example of a job listener implementation.
 
 The first `step`, `flow`, or `split` element inside the `job` element executes first.
 
@@ -91,7 +91,7 @@ For chunk steps, the batch artifacts for these listeners can be implementations 
 +
 For task steps, the batch artifact for these listeners must be an implementation of the `StepListener` interface.
 +
-See <<_the_listener_batch_artifacts>> for an example of an item processor listener implementation.
+See xref:batch-processing/batch-processing.adoc#_the_listener_batch_artifacts[The Listener Batch Artifacts] for an example of an item processor listener implementation.
 
 * One `partition` element (optional).
 +
@@ -284,7 +284,7 @@ The batch runtime invokes this artifact and then uses the information it provide
 
 The rest of this section describes the `partition` element in detail and shows two examples of job definition files: one that uses partition properties to specify a range of items for each partition, and one that relies on a `PartitionMapper` implementation to determine partition-specific information.
 
-See <<_the_phone_billing_chunk_step>> in <<_the_phonebilling_example_application>> for a complete example of a partitioned chunk step.
+See xref:batch-processing/batch-processing.adoc#_the_phone_billing_chunk_step[The Phone Billing Chunk Step] in xref:batch-processing/batch-processing.adoc#_the_phonebilling_example_application[The phonebilling Example Application] for a complete example of a partitioned chunk step.
 
 The `partition` element can contain the following elements.
 
@@ -366,7 +366,7 @@ The `PartitionMapper` implementation dynamically provides the same information a
 </step>
 ----
 
-Refer to <<_the_phonebilling_example_application>> for an example implementation of the `PartitionMapper` interface.
+Refer to xref:batch-processing/batch-processing.adoc#_the_phonebilling_example_application[The phonebilling Example Application] for an example implementation of the `PartitionMapper` interface.
 
 === The flow Element
 

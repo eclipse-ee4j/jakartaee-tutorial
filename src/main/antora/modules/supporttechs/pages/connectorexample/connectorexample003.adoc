@@ -3,7 +3,7 @@
 The `traffic` example demonstrates how to implement and use a simple inbound resource adapter that receives data from a legacy EIS using a TCP socket.
 
 The example is in the `_tut-install_/examples/connectors/traffic` directory.
-See xref:using-the-tutorial-examples[] for basic information on building and running sample applications.
+See xref:intro:usingexamples/usingexamples.adoc#_using_the_tutorial_examples[Using the Tutorial Examples] for basic information on building and running sample applications.
 
 The example demonstrates the scenario in <<_the_traffic_example_2>> and consists of the following modules:
 
@@ -185,7 +185,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 ==== To Run the traffic Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the File menu, choose Open Project.
 
@@ -228,7 +228,7 @@ The web interface shows filtered traffic updates for City1 every few seconds.
 
 ==== To Run the traffic Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

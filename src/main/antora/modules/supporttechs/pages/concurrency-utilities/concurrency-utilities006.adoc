@@ -3,7 +3,7 @@
 The `taskcreator` example demonstrates how to use Jakarta Concurrency to run tasks immediately, periodically, or after a fixed delay.
 This example provides a Jakarta Faces interface that enables users to submit tasks to be executed and displays information messages for each task.
 The example uses the Managed Executor Service to run tasks immediately and the Managed Scheduled Executor Service to run tasks periodically or after a fixed delay.
-(See <<_main_components_of_the_concurrency_utilities>> for information about these services.)
+(See xref:concurrency-utilities/concurrency-utilities.adoc#_main_components_of_the_concurrency_utilities[Main Components of the Concurrency Utilities] for information about these services.)
 
 The `taskcreator` example consists of the following components.
 
@@ -71,7 +71,7 @@ This section describes how to build, package, deploy, and run the `taskcreator` 
 
 ==== To Build, Package, and Deploy the taskcreator Example Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the File menu, choose Open Project.
 
@@ -91,7 +91,7 @@ This command builds and deploys the application.
 
 ==== To Build, Package, and Deploy the taskcreator Example Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

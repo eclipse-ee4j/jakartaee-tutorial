@@ -1,6 +1,6 @@
 == Using Interceptors
 
-To define an interceptor, use one of the interceptor metadata annotations listed in <<_interceptor_metadata_annotations>> within the target class, or in a separate interceptor class.
+To define an interceptor, use one of the interceptor metadata annotations listed in xref:interceptors/interceptors.adoc#_interceptor_metadata_annotations[Interceptor Metadata Annotations] within the target class, or in a separate interceptor class.
 The following code declares an `@AroundTimeout` interceptor method within a target class:
 
 [source,java]

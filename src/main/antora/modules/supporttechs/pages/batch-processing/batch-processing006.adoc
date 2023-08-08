@@ -54,4 +54,4 @@ String status = jobExec.getBatchStatus().toString();
 The component from which you invoke the batch runtime depends on the architecture of your particular application.
 For example, you can invoke the batch runtime from an enterprise bean, a servlet, a managed bean, and so on.
 
-See <<_the_webserverlog_example_application>> and <<_the_phonebilling_example_application>> for details on how to invoke the batch runtime from a managed bean driven by a Jakarta Faces user interface.
+See xref:batch-processing/batch-processing.adoc#_the_webserverlog_example_application[The webserverlog Example Application] and xref:batch-processing/batch-processing.adoc#_the_phonebilling_example_application[The phonebilling Example Application] for details on how to invoke the batch runtime from a managed bean driven by a Jakarta Faces user interface.

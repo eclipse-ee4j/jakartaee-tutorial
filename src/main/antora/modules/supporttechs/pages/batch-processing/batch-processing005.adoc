@@ -7,7 +7,7 @@ This section lists the main batch artifact interfaces, demonstrates how to acces
 === Batch Artifact Interfaces
 
 The following tables list the interfaces that you implement to create batch artifacts.
-The interface implementations are referenced from the elements described in <<_using_the_job_specification_language>>.
+The interface implementations are referenced from the elements described in xref:batch-processing/batch-processing.adoc#_using_the_job_specification_language[Using the Job Specification Language].
 
 <<_main_batch_artifact_interfaces>> lists the interfaces to implement batch artifacts for chunk steps, task steps, and decision elements.
 
@@ -156,7 +156,7 @@ For example, the following batch artifact is annotated with `@Dependent`:
 public class MyItemReaderImpl implements ItemReader { ... }
 ----
 +
-For more information on bean archives, see <<packaging-cdi-applications>> in xref:jakarta-contexts-and-dependency-injection-advanced-topics[].
+For more information on bean archives, see xref:cdi:cdi-adv/cdi-adv.adoc#_packaging_cdi_applications[Packaging CDI Applications] in xref:cdi:cdi-adv/cdi-adv.adoc#_jakarta_contexts_and_dependency_injection_advanced_topics[Jakarta Contexts and Dependency Injection: Advanced Topics].
 
 [NOTE]
 Jakarta Contexts and Dependency Injection (CDI) is required in order to access context objects from the batch runtime in batch artifacts.

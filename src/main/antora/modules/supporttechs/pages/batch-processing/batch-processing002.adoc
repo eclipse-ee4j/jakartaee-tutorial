@@ -60,7 +60,7 @@ A batch job can contain one or more of the following elements:
 
 * Decision elements
 
-Steps are described in <<_introduction_to_batch_processing>>, and can be chunk-oriented or task-oriented.
+Steps are described in xref:batch-processing/batch-processing.adoc#_introduction_to_batch_processing[Introduction to Batch Processing], and can be chunk-oriented or task-oriented.
 Chunk-oriented steps can be partitioned steps.
 In a partitioned chunk step, the processing of one item does not depend on other items, so these steps can run in more than one thread.
 
@@ -80,20 +80,20 @@ Jobs and steps can have a number of properties associated with them.
 You define properties in the job definition file, and batch artifacts access these properties using context objects from the batch runtime.
 Using properties in this manner enables you to decouple static parameters of the job from the business logic and to reuse batch artifacts in different job definition files.
 
-Specifying properties is described in <<_using_the_job_specification_language>>, and accessing properties in batch artifacts is described in <<_creating_batch_artifacts>>.
+Specifying properties is described in xref:batch-processing/batch-processing.adoc#_using_the_job_specification_language[Using the Job Specification Language], and accessing properties in batch artifacts is described in xref:batch-processing/batch-processing.adoc#_creating_batch_artifacts[Creating Batch Artifacts].
 
 Jakarta EE applications can also pass parameters to a job when they submit it to the batch runtime.
 This enables you to specify dynamic parameters that are only known at runtime.
 Parameters are also necessary for partitioned steps, since each partition needs to know, for example, what range of items to process.
 
-Specifying parameters when submitting jobs is described in <<_submitting_jobs_to_the_batch_runtime>>.
-Specifying parameters for partitioned steps and accessing them in batch artifacts is demonstrated in <<_the_phonebilling_example_application>>.
+Specifying parameters when submitting jobs is described in xref:batch-processing/batch-processing.adoc#_submitting_jobs_to_the_batch_runtime[Submitting Jobs to the Batch Runtime].
+Specifying parameters for partitioned steps and accessing them in batch artifacts is demonstrated in xref:batch-processing/batch-processing.adoc#_the_phonebilling_example_application[The phonebilling Example Application].
 
 === Job Instances and Job Executions
 
 A job definition can have multiple instances, each with different parameters.
 A job execution is an attempt to run a job instance.
-The batch runtime maintains information about job instances and job executions, as described in <<_checking_the_status_of_a_job>>.
+The batch runtime maintains information about job instances and job executions, as described in xref:batch-processing/batch-processing.adoc#_checking_the_status_of_a_job[Checking the Status of a Job].
 
 === Batch and Exit Status
 
@@ -122,9 +122,9 @@ They are represented as strings.
 |`ABANDONED` |The job was marked abandoned.
 |===
 
-Jakarta EE applications can submit jobs and access the batch status of a job using the `JobOperator` interface, as described in <<_submitting_jobs_to_the_batch_runtime>>.
-Job definition files can refer to batch status values using the Job Specification Language (JSL), as described in <<_using_the_job_specification_language>>.
-Batch artifacts can access batch status values using context objects, as described in <<_using_the_context_objects_from_the_batch_runtime>>.
+Jakarta EE applications can submit jobs and access the batch status of a job using the `JobOperator` interface, as described in xref:batch-processing/batch-processing.adoc#_submitting_jobs_to_the_batch_runtime[Submitting Jobs to the Batch Runtime].
+Job definition files can refer to batch status values using the Job Specification Language (JSL), as described in xref:batch-processing/batch-processing.adoc#_using_the_job_specification_language[Using the Job Specification Language].
+Batch artifacts can access batch status values using context objects, as described in xref:batch-processing/batch-processing.adoc#_using_the_context_objects_from_the_batch_runtime[Using the Context Objects from the Batch Runtime].
 
 For flows, the batch status is that of its last step.
 For splits, the batch status is the following:
