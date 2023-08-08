@@ -48,7 +48,7 @@ Outbound resource adapters provide Jakarta EE applications with the following el
 Jakarta EE applications obtain an instance of the connection factory via resource injection and then use the factory object to obtain connection handles to the EIS.
 The connection handles enable the application to make requests and obtain information from the EIS.
 
-The `trading-rar` module provides a custom client interface that consists of the classes listed in <<classes-and-interfaces-in-the-trading-rar-module>>.
+The `trading-rar` module provides a custom client interface that consists of the classes listed in <<_classes_and_interfaces_in_the_trading_rar_module>>.
 
 [[_classes_and_interfaces_in_the_trading_rar_module]]
 .Classes and Interfaces in the trading-rar module
