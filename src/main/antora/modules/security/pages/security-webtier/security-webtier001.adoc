@@ -1,7 +1,7 @@
 == Overview of Web Application Security
 
 A web application is accessed using a web browser over a network, such as the Internet or a company's intranet.
-As discussed in <<distributed-multitiered-applications>>, the Jakarta EE platform uses a distributed multitiered application model, and web applications run in the web tier.
+As discussed in xref:intro:overview/overview.adoc#_distributed_multitiered_applications[Distributed Multitiered Applications], the Jakarta EE platform uses a distributed multitiered application model, and web applications run in the web tier.
 
 Web applications contain resources that can be accessed by many users.
 These resources often traverse unprotected, open networks, such as the Internet.
@@ -22,7 +22,7 @@ Security for Jakarta EE web applications can be implemented in the following way
 * Declarative security can be implemented using either metadata annotations or an application's deployment descriptor.
 See xref:security-intro/security-intro.adoc#_overview_of_jakarta_security[Overview of Jakarta Security] for more information.
 +
-Declarative security for web applications is described in <<_securing_web_applications>>.
+Declarative security for web applications is described in xref:security-webtier/security-webtier.adoc#_securing_web_applications[Securing Web Applications].
 
 * Programmatic security is embedded in an application and can be used to make security decisions when declarative security alone is not sufficient to express the security model of an application.
 Declarative security alone may not be sufficient when conditional login in a particular work flow, instead of for all cases, is required in the middle of an application.
@@ -31,7 +31,7 @@ See xref:security-intro/security-intro.adoc#_overview_of_jakarta_security[Overvi
 Servlet 5.0 provides the `authenticate`, `login`, and `logout` methods of the `HttpServletRequest` interface.
 With the addition of the `authenticate`, `login`, and `logout` methods to the Servlet specification, an application deployment descriptor is no longer required for web applications but may still be used to further specify security requirements beyond the basic default values.
 +
-Programmatic security is discussed in <<_using_programmatic_security_with_web_applications>>.
+Programmatic security is discussed in xref:security-webtier/security-webtier.adoc#_using_programmatic_security_with_web_applications[Using Programmatic Security with Web Applications].
 
 * Message security works with web services and incorporates security features, such as digital signatures and encryption, into the header of a SOAP message, working in the application layer, ensuring end-to-end security.
 Message security is not a component of Jakarta EE and is mentioned here for informational purposes only.
@@ -39,10 +39,10 @@ Message security is not a component of Jakarta EE and is mentioned here for info
 Some of the material in this chapter builds on material presented earlier in this tutorial.
 In particular, this chapter assumes that you are familiar with the information in the following chapters:
 
-* xref:getting-started-with-web-applications[]
+* xref:web:webapp/webapp.adoc#_getting_started_with_web_applications[Getting Started with Web Applications]
 
-* xref:jakarta-faces-technology-2[]
+* xref:web:jsf-intro/jsf-intro.adoc#_jakarta_faces_technology[Jakarta Faces Technology]
 
-* xref:jakarta-servlet-technology-2[]
+* xref:web:servlets/servlets.adoc#_jakarta_servlet_technology[Jakarta Servlet Technology]
 
 * xref:security-intro/security-intro.adoc#_introduction_to_security_in_the_jakarta_ee_platform[Introduction to Security in the Jakarta EE Platform]

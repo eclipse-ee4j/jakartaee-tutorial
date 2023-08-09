@@ -38,7 +38,7 @@ The programmatic security APIs described in this chapter should be used only in 
 +
 Programmatic security is discussed in <<_securing_an_enterprise_bean_programmatically>>.
 
-Some of the material in this chapter assumes that you have already read xref:enterprise-beans-2[], xref:getting-started-with-enterprise-beans[], and xref:security-intro/security-intro.adoc#_introduction_to_security_in_the_jakarta_ee_platform[Introduction to Security in the Jakarta EE Platform].
+Some of the material in this chapter assumes that you have already read xref:entbeans:ejb-intro/ejb-intro.adoc#_enterprise_beans[Enterprise Beans], xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc#_getting_started_with_enterprise_beans[Getting Started with Enterprise Beans], and xref:security-intro/security-intro.adoc#_introduction_to_security_in_the_jakarta_ee_platform[Introduction to Security in the Jakarta EE Platform].
 
 This section discusses securing a Jakarta EE application where one or more modules, such as enterprise bean JAR files, are packaged into an EAR file, the archive file that holds the application.
 Security annotations will be used in the Java programming class files to specify authorized users and basic, or user name/password, authentication.
@@ -48,7 +48,7 @@ In these cases, packaging the enterprise bean within the web application's WAR m
 Enterprise beans may be packaged within a WAR module as Java class files or within a JAR file that is bundled within the WAR module.
 When a servlet or Jakarta Faces page handles the web front end and the application is packaged into a WAR module as a Java class file, security for the application can be handled in the application's `web.xml` file.
 The enterprise bean in the WAR file can have its own deployment descriptor, `ejb-jar.xml`, if required.
-Securing web applications using `web.xml` is discussed in xref:getting-started-securing-web-applications[xrefsyle=full].
+Securing web applications using `web.xml` is discussed in xref:security-webtier/security-webtier.adoc#_getting_started_securing_web_applications[Getting Started Securing Web Applications].
 
 The following sections describe declarative and programmatic security mechanisms that can be used to protect enterprise bean resources.
 The protected resources include enterprise bean methods that are called from application clients, web components, or other enterprise beans.
@@ -340,7 +340,7 @@ public class PayrollBean implements Payroll {
 ----
 
 You would use programmatic security in this way to dynamically control access to a method, for example, when you want to deny access except during a particular time of day.
-An example application that uses the `getCallerPrincipal` and `isCallerInRole` methods is described in <<_the_converter_secure_example_securing_an_enterprise_bean_with_programmatic_security>>.
+An example application that uses the `getCallerPrincipal` and `isCallerInRole` methods is described in xref:security-jakartaee/security-jakartaee.adoc#_the_converter_secure_example_securing_an_enterprise_bean_with_programmatic_security[The converter-secure Example: Securing an Enterprise Bean with Programmatic Security].
 
 === Propagating a Security Identity (Run-As)
 
@@ -362,7 +362,7 @@ This technique is used when the target container trusts the intermediate contain
 * A specific identity is propagated to the target enterprise bean.
 This technique is used when the target container expects access using a specific identity.
 
-To propagate an identity to the target enterprise bean, configure a run-as identity for the bean, as described in <<configuring-a-components-propagated-security-identity>>.
+To propagate an identity to the target enterprise bean, configure a run-as identity for the bean, as described in <<_configuring_a_components_propagated_security_identity>>.
 Establishing a run-as identity for an enterprise bean does not affect the identities of its callers, which are the identities tested for permission to access the methods of the enterprise bean.
 The run-as identity establishes the identity that the enterprise bean will use when it makes calls.
 
