@@ -59,9 +59,9 @@ The optional options parameter contains a set of name/value pairs from <<_possib
 |===
 |Name |Value
 
-|`execute` |A space-delimited list of client identifiers or one of the keywords listed in xref:jsf-ajax/jsf-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the Execute phase of the lifecycle.
+|`execute` |A space-delimited list of client identifiers or one of the keywords listed in xref:faces-ajax/faces-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the Execute phase of the lifecycle.
 
-|`render` |A space-delimited list of client identifiers or one of the keywords listed in xref:jsf-ajax/jsf-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the render phase of the lifecycle.
+|`render` |A space-delimited list of client identifiers or one of the keywords listed in xref:faces-ajax/faces-ajax.adoc#_execute_and_render_keywords[Execute And Render Keywords]. The identifiers reference the components that will be processed during the render phase of the lifecycle.
 
 |`onevent` |A `String` that is the name of the JavaScript function to call when an event occurs.
 

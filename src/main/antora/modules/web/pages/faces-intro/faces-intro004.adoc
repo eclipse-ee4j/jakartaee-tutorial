@@ -12,9 +12,9 @@ Developing a simple Jakarta Faces application typically requires the following t
 The `hello1` example includes a managed bean and two Facelets web pages.
 When accessed by a client, the first web page asks the user for his or her name, and the second page responds by providing a greeting.
 
-For details on Facelets technology, see xref:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
-For details on using EL expressions, see xref:jsf-el/jsf-el.adoc#_expression_language[Expression Language].
-For details on the Jakarta Faces programming model and building web pages using Jakarta Faces technology, see xref:jsf-page/jsf-page.adoc#_using_jakarta_faces_technology_in_web_pages[Using Jakarta Faces Technology in Web Pages].
+For details on Facelets technology, see xref:faces-facelets/faces-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
+For details on using EL expressions, see xref:faces-el/faces-el.adoc#_expression_language[Expression Language].
+For details on the Jakarta Faces programming model and building web pages using Jakarta Faces technology, see xref:faces-page/faces-page.adoc#_using_jakarta_faces_technology_in_web_pages[Using Jakarta Faces Technology in Web Pages].
 
 Every web application has a lifecycle.
 Common tasks, such as handling incoming requests, decoding parameters, modifying and saving state, and rendering web pages to the browser, are all performed during a web application lifecycle.
@@ -64,4 +64,4 @@ The `hello1` example application goes through the following stages when it is de
 
 . On subsequent (postback) requests, the component tree is rebuilt, and the saved state is applied.
 
-For full details on the lifecycle, see xref:jsf-intro/jsf-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application].
+For full details on the lifecycle, see xref:faces-intro/faces-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application].

@@ -41,7 +41,7 @@ For example, the error message that displays when the component's value exceeds 
 
 In this case, the `\{1}` substitution parameter is replaced by the component's label or `id`, and the `\{0}` substitution parameter is replaced with the maximum value allowed by the validator.
 
-See xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags] for information on how to display validation error messages on the page when validation fails.
+See xref:faces-page/faces-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags] for information on how to display validation error messages on the page when validation fails.
 
 Instead of using the standard validators, you can use Bean Validation to validate data.
 If you specify bean validation constraints on your managed bean properties, the constraints are automatically placed on the corresponding fields on your applications web pages.
@@ -50,7 +50,7 @@ You do not need to specify the `validateBean` tag to use Bean Validation, but th
 For example, you can use the `validationGroups` attribute of the tag to specify constraint groups.
 
 You can also create and register custom validators, although Bean Validation has made this feature less useful.
-For details, see xref:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_validator[Creating and Using a Custom Validator].
+For details, see xref:faces-custom/faces-custom.adoc#_creating_and_using_a_custom_validator[Creating and Using a Custom Validator].
 
 === Validating a Component's Value
 
@@ -65,9 +65,9 @@ You can use the other standard tags in the same way.
 
 * Nest a validator tag inside the component tag, and use either the validator tag's `validatorId` attribute or its `binding` attribute to refer to the validator.
 
-See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_validation[Referencing a Method That Performs Validation] for more information on using the `validator` attribute.
+See xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_performs_validation[Referencing a Method That Performs Validation] for more information on using the `validator` attribute.
 
-The `validatorId` attribute works similarly to the `converterId` attribute of the `converter` tag, as described in xref:jsf-page-core/jsf-page-core.adoc#_converting_a_components_value[Converting a Component's Value].
+The `validatorId` attribute works similarly to the `converterId` attribute of the `converter` tag, as described in xref:faces-page-core/faces-page-core.adoc#_converting_a_components_value[Converting a Component's Value].
 
 Keep in mind that validation can be performed only on components that implement `EditableValueHolder`, because these components accept values that can be validated.
 

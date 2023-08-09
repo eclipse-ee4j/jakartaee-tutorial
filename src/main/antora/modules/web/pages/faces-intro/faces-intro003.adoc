@@ -17,14 +17,14 @@ image::common:jakartaeett_dt_015.svg["Diagram of web application technologies. J
 This layering of APIs enables several important application use cases, such as using different presentation technologies, creating your own custom components directly from the component classes, and generating output for various client devices.
 
 Facelets technology, available as part of Jakarta Faces technology, is the preferred presentation technology for building Jakarta Faces technology–based web applications.
-For more information on Facelets technology features, see xref:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
+For more information on Facelets technology features, see xref:faces-facelets/faces-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
 
 Facelets technology offers several advantages.
 
 * Code can be reused and extended for components through the templating and composite component features.
 
 * You can use annotations to automatically register the managed bean as a resource available for Jakarta Faces applications.
-In addition, implicit navigation rules allow developers to quickly configure page navigation (see xref:jsf-intro/jsf-intro.adoc#_navigation_model[Navigation Model] for details).
+In addition, implicit navigation rules allow developers to quickly configure page navigation (see xref:faces-intro/faces-intro.adoc#_navigation_model[Navigation Model] for details).
 These features reduce the manual configuration process for applications.
 
 * Most important, Jakarta Faces technology provides a rich architecture for managing component state, processing component data, validating user input, and handling events.

@@ -129,7 +129,7 @@ Although the `bookstore:area` tags on the `index.xhtml` page do not bind to an `
 <h:outputText value="#{Book201.shape}" />
 ----
 
-See xref:jsf-configure/jsf-configure.adoc#_configuring_managed_beans[Configuring Managed Beans] for information on how to configure beans in the application configuration resource file.
+See xref:faces-configure/faces-configure.adoc#_configuring_managed_beans[Configuring Managed Beans] for information on how to configure beans in the application configuration resource file.
 
 === Binding a Component Value to an Implicit Object
 
@@ -219,4 +219,4 @@ These tags use component bindings rather than value bindings because the managed
 
 If the tags were to use value bindings instead of component bindings, the managed bean would not have direct access to the components and would therefore require additional code to access the components from the `FacesContext` instance to change the components' `rendered` properties.
 
-xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances] explains how to write the bean properties bound to the example components.
+xref:faces-develop/faces-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances] explains how to write the bean properties bound to the example components.

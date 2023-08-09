@@ -73,7 +73,7 @@ A requirement of a Jakarta Faces application is that all requests to the applica
 A `FacesServlet` instance manages the request-processing lifecycle for web applications and initializes the resources required by Jakarta Faces technology.
 
 Before a Jakarta Faces application can launch its first web page, the web container must invoke the `FacesServlet` instance in order for the application lifecycle process to start.
-See xref:jsf-intro/jsf-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application] for more information.
+See xref:faces-intro/faces-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application] for more information.
 
 The following example shows the default configuration of the `FacesServlet`:
 
@@ -133,7 +133,7 @@ If you created your application without an IDE, you can create a web deployment 
 
 ==== To Specify a Path to an Application Configuration Resource File
 
-As explained in xref:jsf-configure/jsf-configure.adoc#_application_configuration_resource_file[Application Configuration Resource File], an application can have multiple application configuration resource files.
+As explained in xref:faces-configure/faces-configure.adoc#_application_configuration_resource_file[Application Configuration Resource File], an application can have multiple application configuration resource files.
 If these files are not located in the directories that the implementation searches by default or the files are not named `faces-config.xml`, you need to specify paths to these files.
 
 To specify these paths using NetBeans IDE, do the following.
@@ -165,7 +165,7 @@ To specify these paths using NetBeans IDE, do the following.
 For all the components in a web application, you can specify in your deployment descriptor where you want the state to be saved, on either client or server.
 You do this by setting a context parameter in your deployment descriptor.
 By default, state is saved on the server, so you need to specify this context parameter only if you want to save state on the client.
-See xref:jsf-custom/jsf-custom.adoc#_saving_and_restoring_state[Saving and Restoring State] for information on the advantages and disadvantages of each location.
+See xref:faces-custom/faces-custom.adoc#_saving_and_restoring_state[Saving and Restoring State] for information on the advantages and disadvantages of each location.
 
 To specify where state is saved using NetBeans IDE, do the following.
 
@@ -236,7 +236,7 @@ When packaging web applications using the included build scripts, you'll notice 
 * All application JAR files are packaged in the `WEB-INF/lib/` directory.
 
 * All resource files are either under the root of the web application `/resources` directory or in the web application's classpath, the `META-INF/resources/_resourceIdentifier_` directory.
-For more information on resources, see xref:jsf-facelets/jsf-facelets.adoc#_web_resources[Web Resources].
+For more information on resources, see xref:faces-facelets/faces-facelets.adoc#_web_resources[Web Resources].
 
 When packaging your own applications, you can use NetBeans IDE or you can use XML files such as those created for Maven.
 You can modify the XML files to fit your situation.

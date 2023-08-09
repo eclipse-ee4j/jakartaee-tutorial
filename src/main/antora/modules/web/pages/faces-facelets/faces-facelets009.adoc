@@ -2,7 +2,7 @@
 
 When you want to produce user interface features for which HTML does not have its own elements, you can create a custom Jakarta Faces component and insert it in your Facelets page.
 This mechanism can cause a simple element to create complex web code.
-However, creating such a component is a significant task (see xref:jsf-custom/jsf-custom.adoc#_creating_custom_ui_components_and_other_custom_objects[Creating Custom UI Components and Other Custom Objects]).
+However, creating such a component is a significant task (see xref:faces-custom/faces-custom.adoc#_creating_custom_ui_components_and_other_custom_objects[Creating Custom UI Components and Other Custom Objects]).
 
 HTML5 offers new elements and attributes that can make it unnecessary to write your own components.
 It also provides many new capabilities for existing components.
@@ -224,7 +224,7 @@ The namespace declarations in the `html` element of the `reservation.xhtml` page
       xmlns:jsf="http://xmlns.jcp.org/jsf">
 ----
 
-Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in xref:jsf-facelets/jsf-facelets.adoc#_relocatable_resources[Relocatable Resources]):
+Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in xref:faces-facelets/faces-facelets.adoc#_relocatable_resources[Relocatable Resources]):
 
 [source,xml]
 ----
@@ -274,7 +274,7 @@ Here, the `p` prefix on the HTML5 attributes passes them through to the browser 
 ----
 
 The output of the `calculateTotal` method that is specified as the listener for the Ajax event is rendered in the output element whose `id` and `name` value is `total`.
-See xref:jsf-ajax/jsf-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology], for more information.
+See xref:faces-ajax/faces-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology], for more information.
 
 The second Facelets page, `confirmation.xhtml`, uses a pass-through `output` element to display the values entered by the user and provides a Facelets `h:commandButton` tag to allow the user to return to the `reservation.xhtml` page.
 

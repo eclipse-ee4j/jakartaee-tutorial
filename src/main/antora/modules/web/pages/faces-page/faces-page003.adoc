@@ -115,23 +115,23 @@ These tags, which are used in conjunction with component tags, are explained in 
 |===
 |Tags |Where Explained
 
-|Event-handling tags | xref:jsf-page-core/jsf-page-core.adoc#_registering_listeners_on_components[Registering Listeners on Components]
+|Event-handling tags | xref:faces-page-core/faces-page-core.adoc#_registering_listeners_on_components[Registering Listeners on Components]
 
-|Data-conversion tags | xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters]
+|Data-conversion tags | xref:faces-page-core/faces-page-core.adoc#_using_the_standard_converters[Using the Standard Converters]
 
-|`f:facet` |xref:jsf-page/jsf-page.adoc#_using_data_bound_table_components[Using Data-Bound Table Components] and xref:jsf-page/jsf-page.adoc#_laying_out_components_with_the_hpanelgrid_and_hpanelgroup_tags[Laying Out Components with the h:panelGrid and h:panelGroup Tags]
+|`f:facet` |xref:faces-page/faces-page.adoc#_using_data_bound_table_components[Using Data-Bound Table Components] and xref:faces-page/faces-page.adoc#_laying_out_components_with_the_hpanelgrid_and_hpanelgroup_tags[Laying Out Components with the h:panelGrid and h:panelGroup Tags]
 
 |`f:loadBundle` | xref:webi18n/webi18n.adoc#_setting_the_resource_bundle[Setting the Resource Bundle]
 
-|`f:metadata` | xref:jsf-page/jsf-page.adoc#_using_view_parameters_to_configure_bookmarkable_urls[Using View Parameters to Configure Bookmarkable URLs]
+|`f:metadata` | xref:faces-page/faces-page.adoc#_using_view_parameters_to_configure_bookmarkable_urls[Using View Parameters to Configure Bookmarkable URLs]
 
-|`f:param` | xref:jsf-page/jsf-page.adoc#_displaying_a_formatted_message_with_the_houtputformat_tag[Displaying a Formatted Message with the h:outputFormat Tag]
+|`f:param` | xref:faces-page/faces-page.adoc#_displaying_a_formatted_message_with_the_houtputformat_tag[Displaying a Formatted Message with the h:outputFormat Tag]
 
-|`f:selectItem` and `f:selectItems` | xref:jsf-page/jsf-page.adoc#_using_the_fselectitem_and_fselectitems_tags[Using the f:selectItem and f:selectItems Tags]
+|`f:selectItem` and `f:selectItems` | xref:faces-page/faces-page.adoc#_using_the_fselectitem_and_fselectitems_tags[Using the f:selectItem and f:selectItems Tags]
 
-|Validator tags |xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_validators[Using the Standard Validators]
+|Validator tags |xref:faces-page-core/faces-page-core.adoc#_using_the_standard_validators[Using the Standard Validators]
 
-|`f:ajax` | xref:jsf-ajax/jsf-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology]
+|`f:ajax` | xref:faces-ajax/faces-ajax.adoc#_using_ajax_with_jakarta_faces_technology[Using Ajax with Jakarta Faces Technology]
 
-|`f:websocket` | xref:jsf-ws/jsf-ws.adoc#_using_websockets_with_jakarta_faces_technology[Using WebSockets with Jakarta Faces Technology]
+|`f:websocket` | xref:faces-ws/faces-ws.adoc#_using_websockets_with_jakarta_faces_technology[Using WebSockets with Jakarta Faces Technology]
 |===

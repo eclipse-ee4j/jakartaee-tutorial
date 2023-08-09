@@ -1,27 +1,27 @@
 == Creating and Using a Custom Validator
 
 If the standard validators or Bean Validation don't perform the validation checking you need, you can create a custom validator to validate user input.
-As explained in xref:jsf-intro/jsf-intro.adoc#_validation_model[Validation Model], there are two ways to implement validation code.
+As explained in xref:faces-intro/faces-intro.adoc#_validation_model[Validation Model], there are two ways to implement validation code.
 
 * Implement a managed bean method that performs the validation.
 
 * Provide an implementation of the `jakarta.faces.validator.Validator` interface to perform the validation.
 
-xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_perform_validation[Writing a Method to Perform Validation] explains how to implement a managed bean method to perform validation.
+xref:faces-develop/faces-develop.adoc#_writing_a_method_to_perform_validation[Writing a Method to Perform Validation] explains how to implement a managed bean method to perform validation.
 The rest of this section explains how to implement the `Validator` interface.
 
 If you choose to implement the `Validator` interface and you want to allow the page author to configure the validator's attributes from the page, you also must specify a custom tag for registering the validator on a component.
 
 If you prefer to configure the attributes in the `Validator` implementation, you can forgo specifying a custom tag and instead let the page author register the validator on a component using the `f:validator` tag, as described in <<_using_a_custom_validator>>.
 
-You can also create a managed bean property that accepts and returns the `Validator` implementation you create, as described in xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_converters_listeners_or_validators[Writing Properties Bound to Converters, Listeners, or Validators].
+You can also create a managed bean property that accepts and returns the `Validator` implementation you create, as described in xref:faces-develop/faces-develop.adoc#_writing_properties_bound_to_converters_listeners_or_validators[Writing Properties Bound to Converters, Listeners, or Validators].
 You can use the `f:validator` tag's binding attribute to bind the `Validator` implementation to the managed bean property.
 
 Usually, you will want to display an error message when data fails validation.
 You need to store these error messages in a resource bundle.
 
 After creating the resource bundle, you have two ways to make the messages available to the application.
-You can queue the error messages onto the `FacesContext` programmatically, or you can register the error messages in the application configuration resource file, as explained in xref:jsf-configure/jsf-configure.adoc#_registering_application_messages[Registering Application Messages].
+You can queue the error messages onto the `FacesContext` programmatically, or you can register the error messages in the application configuration resource file, as explained in xref:faces-configure/faces-configure.adoc#_registering_application_messages[Registering Application Messages].
 
 For example, an e-commerce application might use a general-purpose custom validator called `FormatValidator.java` to validate input data against a format pattern that is specified in the custom validator tag.
 This validator would be used with a Credit Card Number field on a Facelets page.
@@ -137,7 +137,7 @@ Input must match one of the following patterns: {0}
 You may wish to save and restore state for your validator, although state saving is not usually necessary.
 To do so, you will need to implement the `StateHolder` interface as well as the `Validator` interface.
 To implement `StateHolder`, you would need to implement its four methods: `saveState(FacesContext)`, `restoreState(FacesContext, Object)`, `isTransient`, and `setTransient(boolean)`.
-See xref:jsf-custom/jsf-custom.adoc#_saving_and_restoring_state[Saving and Restoring State] for more information.
+See xref:faces-custom/faces-custom.adoc#_saving_and_restoring_state[Saving and Restoring State] for more information.
 
 === Specifying a Custom Tag
 
@@ -202,7 +202,7 @@ Then the page author needs to do one of the following.
 
 * Set the `f:validator` tag's `validatorId` attribute to the ID of the validator that is defined in the application configuration resource file.
 
-* Bind the custom `Validator` implementation to a managed bean property using the `f:validator` tag's `binding` attribute, as described in xref:jsf-custom/jsf-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties].
+* Bind the custom `Validator` implementation to a managed bean property using the `f:validator` tag's `binding` attribute, as described in xref:faces-custom/faces-custom.adoc#_binding_converters_listeners_and_validators_to_managed_bean_properties[Binding Converters, Listeners, and Validators to Managed Bean Properties].
 
 The following tag registers a hypothetical validator on a component using an `f:validator` tag and references the ID of the validator:
 

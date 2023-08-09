@@ -3,7 +3,7 @@
 [NOTE]
 In Jakarta Faces 2.3, managed bean annotations are deprecated; CDI is now the preferred approach.
 
-Jakarta Faces support for bean annotations is introduced in xref:jsf-intro/jsf-intro.adoc#_jakarta_faces_technology[Jakarta Faces Technology].
+Jakarta Faces support for bean annotations is introduced in xref:faces-intro/faces-intro.adoc#_jakarta_faces_technology[Jakarta Faces Technology].
 Bean annotations can be used for configuring Jakarta Faces applications.
 
 The `@Named` (`jakarta.inject.Named`) annotation in a class, along with a scope annotation, automatically registers that class as a resource with the Jakarta Faces implementation.
@@ -25,7 +25,7 @@ You can annotate beans with any of the scopes listed in the next section, <<_usi
 All classes will be scanned for annotations at startup unless the `faces-config` element in the `faces-config.xml` file has the `metadata-complete` attribute set to `true`.
 
 Annotations are also available for other artifacts, such as components, converters, validators, and renderers, to be used in place of application configuration resource file entries.
-These are discussed, along with registration of custom listeners, custom validators, and custom converters, in xref:jsf-custom/jsf-custom.adoc#_creating_custom_ui_components_and_other_custom_objects[Creating Custom UI Components and Other Custom Objects].
+These are discussed, along with registration of custom listeners, custom validators, and custom converters, in xref:faces-custom/faces-custom.adoc#_creating_custom_ui_components_and_other_custom_objects[Creating Custom UI Components and Other Custom Objects].
 
 === Using Managed Bean Scopes
 
@@ -37,7 +37,7 @@ You can specify one of the following scopes for a bean class.
 * Session (`jakarta.enterprise.context.SessionScoped`): Session scope persists across multiple HTTP requests in a web application.
 
 * Flow (`jakarta.faces.flows.FlowScoped`): Flow scope persists during a user's interaction with a specific flow of a web application.
-See xref:jsf-configure/jsf-configure.adoc#_using_faces_flows[Using Faces Flows] for more information.
+See xref:faces-configure/faces-configure.adoc#_using_faces_flows[Using Faces Flows] for more information.
 
 * Request (`jakarta.enterprise.context.RequestScoped`): Request scope persists during a single HTTP request in a web application.
 

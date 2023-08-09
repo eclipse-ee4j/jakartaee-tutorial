@@ -1,12 +1,12 @@
 == Handling Events for Custom Components
 
-As explained in xref:jsf-custom/jsf-custom.adoc#_implementing_an_event_listener[Implementing an Event Listener], events are automatically queued on standard components that fire events.
+As explained in xref:faces-custom/faces-custom.adoc#_implementing_an_event_listener[Implementing an Event Listener], events are automatically queued on standard components that fire events.
 A custom component, on the other hand, must manually queue events from its `decode` method if it fires events.
 
-xref:jsf-custom/jsf-custom.adoc#_performing_decoding[Performing Decoding] explains how to queue an event on `MapComponent` using its `decode` method.
+xref:faces-custom/faces-custom.adoc#_performing_decoding[Performing Decoding] explains how to queue an event on `MapComponent` using its `decode` method.
 This section explains how to write the class that represents the event of clicking on the map and how to write the method that processes this event.
 
-As explained in xref:jsf-custom/jsf-custom.adoc#_understanding_the_facelets_page[Understanding the Facelets Page], the `actionListener` attribute of the `bookstore:map` tag points to the `MapBookChangeListener` class.
+As explained in xref:faces-custom/faces-custom.adoc#_understanding_the_facelets_page[Understanding the Facelets Page], the `actionListener` attribute of the `bookstore:map` tag points to the `MapBookChangeListener` class.
 The listener class's `processAction` method processes the event of clicking the image map.
 Here is the `processAction` method:
 
@@ -47,5 +47,5 @@ public class AreaSelectedEvent extends ActionEvent {
 }
 ----
 
-As explained in the section xref:jsf-custom/jsf-custom.adoc#_creating_custom_component_classes[Creating Custom Component Classes], in order for `MapComponent` to fire events in the first place, it must implement `ActionSource`.
+As explained in the section xref:faces-custom/faces-custom.adoc#_creating_custom_component_classes[Creating Custom Component Classes], in order for `MapComponent` to fire events in the first place, it must implement `ActionSource`.
 Because `MapComponent` extends `UICommand`, it also implements `ActionSource`.

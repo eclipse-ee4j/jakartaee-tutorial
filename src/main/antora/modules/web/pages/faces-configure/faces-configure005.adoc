@@ -1,7 +1,7 @@
 == Configuring Managed Beans
 
 When a page references a managed bean for the first time, the Jakarta Faces implementation initializes it either based on a `@Named` annotation and scope annotation in the bean class or according to its configuration in the application configuration resource file.
-For information on using annotations to initialize beans, see xref:jsf-configure/jsf-configure.adoc#_using_annotations_to_configure_managed_beans[Using Annotations to Configure Managed Beans].
+For information on using annotations to initialize beans, see xref:faces-configure/faces-configure.adoc#_using_annotations_to_configure_managed_beans[Using Annotations to Configure Managed Beans].
 
 You can use either annotations or the application configuration resource file to instantiate managed beans that are used in a Jakarta Faces application and to store them in scope.
 The managed bean creation facility is configured in the application configuration resource file using `managed-bean` XML elements to define each bean. This file is processed at application startup time.
@@ -20,7 +20,7 @@ With the managed bean creation facility, you can
 * Using `value` elements, set a property of one managed bean to be the result of evaluating another value expression
 
 This section shows you how to initialize beans using the managed bean creation facility.
-See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] and xref:jsf-develop/jsf-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for information on programming managed beans.
+See xref:faces-develop/faces-develop.adoc#_writing_bean_properties[Writing Bean Properties] and xref:faces-develop/faces-develop.adoc#_writing_managed_bean_methods[Writing Managed Bean Methods] for information on programming managed beans.
 
 === Using the managed-bean Element
 

@@ -2,7 +2,7 @@
 
 The Jakarta Faces implementation provides a set of `Converter` implementations that you can use to convert component data.
 The purpose of conversion is to take the String-based data coming in from the Servlet API and convert it to strongly typed Java objects suitable for the business domain.
-For more information on the conceptual details of the conversion model, see xref:jsf-intro/jsf-intro.adoc#_conversion_model[Conversion Model].
+For more information on the conceptual details of the conversion model, see xref:faces-intro/faces-intro.adoc#_conversion_model[Conversion Model].
 
 The standard `Converter` implementations are located in the `jakarta.faces.convert` package.
 Normally, converters are implicitly assigned based on the type of the EL expression pointed to by the value of the component.
@@ -103,7 +103,7 @@ Instead of using the `converterId` attribute, the `f:converter` tag can use the 
 The `binding` attribute must resolve to a bean property that accepts and returns an appropriate `Converter` instance.
 
 You can also create custom converters and register them on components using the `f:converter` tag.
-For details, see xref:jsf-custom/jsf-custom.adoc#_creating_and_using_a_custom_converter[Creating and Using a Custom Converter].
+For details, see xref:faces-custom/faces-custom.adoc#_creating_and_using_a_custom_converter[Creating and Using a Custom Converter].
 
 === Using DateTimeConverter
 

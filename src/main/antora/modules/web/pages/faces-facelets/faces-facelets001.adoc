@@ -71,10 +71,10 @@ To support the Jakarta Faces tag library mechanism, Facelets uses XML namespace 
 |===
 
 Facelets provides two namespaces to support HTML5-friendly markup.
-For details, see xref:jsf-facelets/jsf-facelets.adoc#_html5_friendly_markup[HTML5-Friendly Markup].
+For details, see xref:faces-facelets/faces-facelets.adoc#_html5_friendly_markup[HTML5-Friendly Markup].
 
 Facelets supports tags for composite components, for which you can declare custom prefixes.
-For more information on composite components, see xref:jsf-facelets/jsf-facelets.adoc#_composite_components[Composite Components].
+For more information on composite components, see xref:faces-facelets/faces-facelets.adoc#_composite_components[Composite Components].
 
 The namespace prefixes shown in the table are conventional, not mandatory.
 As is always the case when you declare an XML namespace, you can specify any prefix in your Facelets page.
@@ -92,4 +92,4 @@ xmlns:cc="http://xmlns.jcp.org/jsf/composite"
 
 Based on the Jakarta Faces support for Expression Language (EL) syntax, Facelets uses EL expressions to reference properties and methods of managed beans.
 EL expressions can be used to bind component objects or values to methods or properties of managed beans that are used as backing beans.
-For more information on using EL expressions, see xref:jsf-develop/jsf-develop.adoc#_using_the_el_to_reference_managed_beans[Using the EL to Reference Managed Beans].
+For more information on using EL expressions, see xref:faces-develop/faces-develop.adoc#_using_the_el_to_reference_managed_beans[Using the EL to Reference Managed Beans].

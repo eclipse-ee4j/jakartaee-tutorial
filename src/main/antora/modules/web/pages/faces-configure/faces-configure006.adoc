@@ -92,7 +92,7 @@ public static String loadErrorMessage(FacesContext context,
 
 === Referencing Error Messages
 
-A Jakarta Faces page uses the `message` or `messages` tags to access error messages, as explained in xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
+A Jakarta Faces page uses the `message` or `messages` tags to access error messages, as explained in xref:faces-page/faces-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
 
 The error messages these tags access include
 

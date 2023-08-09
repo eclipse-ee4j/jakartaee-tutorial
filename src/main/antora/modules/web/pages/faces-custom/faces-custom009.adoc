@@ -37,7 +37,7 @@ Here are the tag definitions for the `area` and `map` components:
 The `component-type` element specifies the name defined in the `@FacesComponent` annotation, and the `renderer-type` element specifies the `rendererType` defined in the `@FacesRenderer` annotation.
 
 The `facelet-taglib` element must also include a `namespace` element, which defines the namespace to be specified in pages that use the custom component.
-See xref:jsf-custom/jsf-custom.adoc#_using_a_custom_component[Using a Custom Component] for information on specifying the namespace in pages.
+See xref:faces-custom/faces-custom.adoc#_using_a_custom_component[Using a Custom Component] for information on specifying the namespace in pages.
 
 The TLD file is located in the `WEB-INF` directory.
 In addition, an entry is included in the web deployment descriptor (`web.xml`) to identify the custom tag library descriptor file, as follows:

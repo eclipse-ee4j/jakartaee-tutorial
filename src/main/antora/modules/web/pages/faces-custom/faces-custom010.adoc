@@ -2,7 +2,7 @@
 
 To use a custom component in a page, you add the custom tag associated with the component to the page.
 
-As explained in xref:jsf-custom/jsf-custom.adoc#_defining_the_custom_component_tag_in_a_tag_library_descriptor[Defining the Custom Component Tag in a Tag Library Descriptor], you must ensure that the TLD that defines any custom tags is packaged in the application if you intend to use the tags in your pages.
+As explained in xref:faces-custom/faces-custom.adoc#_defining_the_custom_component_tag_in_a_tag_library_descriptor[Defining the Custom Component Tag in a Tag Library Descriptor], you must ensure that the TLD that defines any custom tags is packaged in the application if you intend to use the tags in your pages.
 TLD files are stored in the `WEB-INF/` directory or subdirectory of the WAR file or in the `META-INF/` directory or subdirectory of a tag library packaged in a JAR file.
 
 You also need to include a namespace declaration in the page so that the page has access to the tags.

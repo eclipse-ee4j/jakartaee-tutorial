@@ -2,7 +2,7 @@
 
 Navigation between different pages of a Jakarta Faces application, such as choosing the next page to be displayed after a button or link component is clicked, is defined by a set of rules.
 Navigation rules can be implicit, or they can be explicitly defined in the application configuration resource file.
-For more information on implicit navigation rules, see xref:jsf-intro/jsf-intro.adoc#_navigation_model[Navigation Model].
+For more information on implicit navigation rules, see xref:faces-intro/faces-intro.adoc#_navigation_model[Navigation Model].
 
 Each navigation rule specifies how to navigate from one page to another page or set of pages.
 The Jakarta Faces implementation chooses the proper navigation rule according to which page is currently displayed.

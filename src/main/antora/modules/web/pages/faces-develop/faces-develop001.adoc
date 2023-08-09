@@ -4,7 +4,7 @@ A typical Jakarta Faces application includes one or more managed beans, each of 
 This section introduces the basic concepts of creating, configuring, and using managed beans in an application.
 
 [NOTE]
-xref:jsf-page/jsf-page.adoc#_using_jakarta_faces_technology_in_web_pages[Using Jakarta Faces Technology in Web Pages] and xref:jsf-page-core/jsf-page-core.adoc#_using_converters_listeners_and_validators[Using Converters, Listeners, and Validators] show how to add components to a page and connect them to server-side objects by using component tags and core tags.
+xref:faces-page/faces-page.adoc#_using_jakarta_faces_technology_in_web_pages[Using Jakarta Faces Technology in Web Pages] and xref:faces-page-core/faces-page-core.adoc#_using_converters_listeners_and_validators[Using Converters, Listeners, and Validators] show how to add components to a page and connect them to server-side objects by using component tags and core tags.
 These chapters also show how to provide additional functionality to the components through converters, listeners, and validators.
 Developing a Jakarta Faces application also involves the task of programming the server-side objects: managed beans, converters, event handlers, and validators.
 
@@ -47,18 +47,18 @@ public Integer getUserNumber() {
 
 When bound to a component's value, a bean property can be any of the basic primitive and numeric types or any Java object type for which the application has access to an appropriate converter.
 For example, a property can be of type `java.util.Date` if the application has access to a converter that can convert the `Date` type to a `String` and back again.
-See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] for information on which types are accepted by which component tags.
+See xref:faces-develop/faces-develop.adoc#_writing_bean_properties[Writing Bean Properties] for information on which types are accepted by which component tags.
 
 When a bean property is bound to a component instance, the property's type must be the same as the component object.
 For example, if a `jakarta.faces.component.UISelectBoolean` component is bound to the property, the property must accept and return a `UISelectBoolean` object.
 Likewise, if the property is bound to a converter, validator, or listener instance, the property must be of the appropriate converter, validator, or listener type.
 
-For more information on writing beans and their properties, see xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties].
+For more information on writing beans and their properties, see xref:faces-develop/faces-develop.adoc#_writing_bean_properties[Writing Bean Properties].
 
 === Using the EL to Reference Managed Beans
 
 To bind component values and objects to managed bean properties or to reference managed bean methods from component tags, page authors use the Expression Language syntax.
-As explained in xref:jsf-el/jsf-el.adoc#_overview_of_the_el[Overview of the EL], the following are some of the features that the EL offers:
+As explained in xref:faces-el/faces-el.adoc#_overview_of_the_el[Overview of the EL], the following are some of the features that the EL offers:
 
 * Deferred evaluation of expressions
 
@@ -108,6 +108,6 @@ A page author does this by referencing the property from the `binding` attribute
 
 In addition to using expressions with the standard component tags, you can configure your custom component properties to accept expressions by creating `jakarta.el.ValueExpression` or `jakarta.el.MethodExpression` instances for them.
 
-For information on the EL, see xref:jsf-el/jsf-el.adoc#_expression_language[Expression Language].
+For information on the EL, see xref:faces-el/faces-el.adoc#_expression_language[Expression Language].
 
-For information on referencing managed bean methods from component tags, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_managed_bean_method[Referencing a Managed Bean Method].
+For information on referencing managed bean methods from component tags, see xref:faces-page-core/faces-page-core.adoc#_referencing_a_managed_bean_method[Referencing a Managed Bean Method].

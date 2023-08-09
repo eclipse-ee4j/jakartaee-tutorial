@@ -1,8 +1,8 @@
 == Binding Converters, Listeners, and Validators to Managed Bean Properties
 
-As described in xref:jsf-page/jsf-page.adoc#_adding_components_to_a_page_using_html_tag_library_tags[Adding Components to a Page Using HTML Tag Library Tags], a page author can bind converter, listener, and validator implementations to managed bean properties using the `binding` attributes of the tags that are used to register the implementations on components.
+As described in xref:faces-page/faces-page.adoc#_adding_components_to_a_page_using_html_tag_library_tags[Adding Components to a Page Using HTML Tag Library Tags], a page author can bind converter, listener, and validator implementations to managed bean properties using the `binding` attributes of the tags that are used to register the implementations on components.
 
-This technique has similar advantages to binding component instances to managed bean properties, as described in xref:jsf-custom/jsf-custom.adoc#_binding_component_values_and_instances_to_managed_bean_properties[Binding Component Values and Instances to Managed Bean Properties].
+This technique has similar advantages to binding component instances to managed bean properties, as described in xref:faces-custom/faces-custom.adoc#_binding_component_values_and_instances_to_managed_bean_properties[Binding Component Values and Instances to Managed Bean Properties].
 In particular, binding a converter, listener, or validator implementation to a managed bean property yields the following benefits.
 
 * The managed bean can instantiate the implementation instead of
@@ -45,4 +45,4 @@ public void setConvertDate(DateTimeConverter convertDate) {
 }
 ----
 
-See xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_converters_listeners_or_validators[Writing Properties Bound to Converters, Listeners, or Validators] for more information on writing managed bean properties for converter, listener, and validator implementations.
+See xref:faces-develop/faces-develop.adoc#_writing_properties_bound_to_converters_listeners_or_validators[Writing Properties Bound to Converters, Listeners, or Validators] for more information on writing managed bean properties for converter, listener, and validator implementations.

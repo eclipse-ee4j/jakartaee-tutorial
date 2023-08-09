@@ -3,7 +3,7 @@
 To activate Ajax functionality, the web application must create an Ajax request and send it to the server.
 The server then processes the request.
 
-The application uses the attributes of the `f:ajax` tag listed in xref:jsf-ajax/jsf-ajax.adoc#_attributes_of_the_fajax_tag[attributes of the f:ajax tag] to create the Ajax request.
+The application uses the attributes of the `f:ajax` tag listed in xref:faces-ajax/faces-ajax.adoc#_attributes_of_the_fajax_tag[attributes of the f:ajax tag] to create the Ajax request.
 The following sections explain the process of creating and sending an Ajax request using some of these attributes.
 
 [NOTE]
@@ -70,7 +70,7 @@ If not defined, the default value of this attribute is `false`.
 
 The `listener` attribute refers to a method expression that is executed on the server side in response to an Ajax action on the client.
 The listener's `jakarta.faces.event.AjaxBehaviorListener.processAjaxBehavior` method is called once during the Invoke Application phase of the lifecycle.
-In the following code from the `reservation` example application (see xref:jsf-facelets/jsf-facelets.adoc#_the_reservation_example_application[The reservation Example Application]), a `listener` attribute is defined by an `f:ajax` tag, which refers to a method from the bean:
+In the following code from the `reservation` example application (see xref:faces-facelets/faces-facelets.adoc#_the_reservation_example_application[The reservation Example Application]), a `listener` attribute is defined by an `f:ajax` tag, which refers to a method from the bean:
 
 [source,xml]
 ----

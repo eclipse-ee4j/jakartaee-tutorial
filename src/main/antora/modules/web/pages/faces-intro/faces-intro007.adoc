@@ -15,10 +15,10 @@ During a web application lifecycle, common tasks are performed, including the fo
 The Jakarta Faces web application framework manages lifecycle phases automatically for simple applications or allows you to manage them manually for more complex applications as required.
 
 Jakarta Faces applications that use advanced features may require interaction with the lifecycle at certain phases.
-For example, Ajax applications use partial processing features of the lifecycle (see xref:jsf-intro/jsf-intro.adoc#_partial_processing_and_partial_rendering[Partial Processing and Partial Rendering]).
+For example, Ajax applications use partial processing features of the lifecycle (see xref:faces-intro/faces-intro.adoc#_partial_processing_and_partial_rendering[Partial Processing and Partial Rendering]).
 A clearer understanding of the lifecycle phases is key to creating well-designed components.
 
-A simplified view of the Jakarta Faces lifecycle, consisting of the two main phases of a Jakarta Faces web application, is introduced in xref:jsf-intro/jsf-intro.adoc#_a_simple_jakarta_faces_application[A Simple Jakarta Faces Application].
+A simplified view of the Jakarta Faces lifecycle, consisting of the two main phases of a Jakarta Faces web application, is introduced in xref:faces-intro/faces-intro.adoc#_a_simple_jakarta_faces_application[A Simple Jakarta Faces Application].
 This section examines the Jakarta Faces lifecycle in more detail.
 
 === Overview of the Jakarta Faces Lifecycle
@@ -99,7 +99,7 @@ If any `decode` methods or event listeners have called the `renderResponse` meth
 
 If any events have been queued during this phase, the Jakarta Faces implementation broadcasts the events to interested listeners.
 
-If some components on the page have their `immediate` attributes (see xref:jsf-page/jsf-page.adoc#_the_immediate_attribute[The immediate Attribute]) set to `true`, then the validations, conversions, and events associated with these components will be processed during this phase.
+If some components on the page have their `immediate` attributes (see xref:faces-page/faces-page.adoc#_the_immediate_attribute[The immediate Attribute]) set to `true`, then the validations, conversions, and events associated with these components will be processed during this phase.
 If any conversion fails, an error message associated with the component is generated and queued on `FacesContext`.
 This message will be displayed during the Render Response phase, along with any validation errors resulting from the Process Validations phase.
 

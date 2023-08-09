@@ -134,8 +134,8 @@ The return value of `createdStudent` has a corresponding navigation case in the 
 
 After the student is created, the user is returned to the Administration index page.
 
-For more information on how to define navigation rules, see xref:jsf-configure/jsf-configure.adoc#_configuring_navigation_rules[Configuring Navigation Rules].
+For more information on how to define navigation rules, see xref:faces-configure/faces-configure.adoc#_configuring_navigation_rules[Configuring Navigation Rules].
 
-For more information on how to implement action methods to handle navigation, see xref:jsf-develop/jsf-develop.adoc#_writing_a_method_to_handle_an_action_event[Writing a Method to Handle an Action Event].
+For more information on how to implement action methods to handle navigation, see xref:faces-develop/faces-develop.adoc#_writing_a_method_to_handle_an_action_event[Writing a Method to Handle an Action Event].
 
-For more information on how to reference outcomes or action methods from component tags, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
+For more information on how to reference outcomes or action methods from component tags, see xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].

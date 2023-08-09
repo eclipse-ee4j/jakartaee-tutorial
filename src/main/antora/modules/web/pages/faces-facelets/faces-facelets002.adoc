@@ -1,7 +1,7 @@
 == The Lifecycle of a Facelets Application
 
 The Jakarta Faces specification defines the lifecycle of a Jakarta Faces application.
-For more information on this lifecycle, see xref:jsf-intro/jsf-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application].
+For more information on this lifecycle, see xref:faces-intro/faces-intro.adoc#_the_lifecycle_of_a_jakarta_faces_application[The Lifecycle of a Jakarta Faces Application].
 The following steps describe that process as applied to a Facelets-based application.
 
 . When a client, such as a browser, makes a new request to a page that is created using Facelets, a new component tree or `jakarta.faces.component.UIViewRoot` is created and placed in the `FacesContext`.

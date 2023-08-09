@@ -67,10 +67,10 @@ For a standalone radio button, use the `group` attribute.
 |===
 
 The tags correspond to components in the `jakarta.faces.component` package.
-The components are discussed in more detail in xref:jsf-develop/jsf-develop.adoc#_developing_with_jakarta_faces_technology[Developing with Jakarta Faces Technology]
+The components are discussed in more detail in xref:faces-develop/faces-develop.adoc#_developing_with_jakarta_faces_technology[Developing with Jakarta Faces Technology]
 
 The next section explains the important attributes that are common to most component tags.
-For each of the components discussed in the following sections, xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] explains how to write a bean property bound to that particular component or its value.
+For each of the components discussed in the following sections, xref:faces-develop/faces-develop.adoc#_writing_bean_properties[Writing Bean Properties] explains how to write a bean property bound to that particular component or its value.
 
 For reference information about the tags and their attributes, see the https://jakarta.ee/specifications/faces/3.0/vdldoc/[Jakarta Faces Facelets Tag Library documentation^].
 
@@ -100,7 +100,7 @@ If the condition is not satisfied, the component is not rendered.
 |`value` |Specifies the value of the component in the form of a value expression.
 |===
 
-All the tag attributes except `id` can accept expressions, as defined by the Expression Language, described in xref:jsf-el/jsf-el.adoc#_expression_language[Expression Language].
+All the tag attributes except `id` can accept expressions, as defined by the Expression Language, described in xref:faces-el/faces-el.adoc#_expression_language[Expression Language].
 
 An attribute such as `rendered` or `value` can be set on the page and then modified in the backing bean for the page.
 
@@ -108,8 +108,8 @@ An attribute such as `rendered` or `value` can be set on the page and then modif
 
 The `id` attribute is not usually required for a component tag but is used when another component or a server-side class must refer to the component.
 If you don't include an `id` attribute, the Jakarta Faces implementation automatically generates a component ID.
-Unlike most other Jakarta Faces tag attributes, the `id` attribute takes expressions using only the evaluation syntax described in xref:jsf-el/jsf-el.adoc#_immediate_evaluation[Immediate Evaluation], which uses the `${}` delimiters.
-For more information on expression syntax, see xref:jsf-el/jsf-el.adoc#_value_expressions[Value Expressions].
+Unlike most other Jakarta Faces tag attributes, the `id` attribute takes expressions using only the evaluation syntax described in xref:faces-el/faces-el.adoc#_immediate_evaluation[Immediate Evaluation], which uses the `${}` delimiters.
+For more information on expression syntax, see xref:faces-el/faces-el.adoc#_value_expressions[Value Expressions].
 
 ==== The immediate Attribute
 
@@ -171,7 +171,7 @@ For example, the `commandLink` component in the following section of a page is n
 ----
 
 Unlike nearly every other Jakarta Faces tag attribute, the `rendered` attribute is restricted to using rvalue expressions.
-As explained in xref:jsf-el/jsf-el.adoc#_value_and_method_expressions[Value and Method Expressions], these rvalue expressions can only read data; they cannot write the data back to the data source.
+As explained in xref:faces-el/faces-el.adoc#_value_and_method_expressions[Value and Method Expressions], these rvalue expressions can only read data; they cannot write the data back to the data source.
 Therefore, expressions used with `rendered` attributes can use the arithmetic operators and literals that rvalue expressions can use but lvalue expressions cannot use.
 For example, the expression in the preceding example uses the `>` operator.
 
@@ -203,7 +203,7 @@ For more information on defining styles, see the Cascading Style Sheets specific
 
 A tag representing an output component uses the `value` and `binding` attributes to bind its component's value or instance, respectively, to a data object.
 The `value` attribute is used more commonly than the `binding` attribute, and examples appear throughout this chapter.
-For more information on these attributes, see xref:jsf-develop/jsf-develop.adoc#_creating_a_managed_bean[Creating a Managed Bean], xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_values[Writing Properties Bound to Component Values], and xref:jsf-develop/jsf-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances].
+For more information on these attributes, see xref:faces-develop/faces-develop.adoc#_creating_a_managed_bean[Creating a Managed Bean], xref:faces-develop/faces-develop.adoc#_writing_properties_bound_to_component_values[Writing Properties Bound to Component Values], and xref:faces-develop/faces-develop.adoc#_writing_properties_bound_to_component_instances[Writing Properties Bound to Component Instances].
 
 === Adding HTML Head and Body Tags
 
@@ -325,7 +325,7 @@ For the complete list of attributes, refer to the https://jakarta.ee/specificati
 |Attribute |Description
 
 |`converter` |Identifies a converter that will be used to convert the component's local data.
-See xref:jsf-page-core/jsf-page-core.adoc#_using_the_standard_converters[Using the Standard Converters] for more information on how to use this attribute.
+See xref:faces-page-core/faces-page-core.adoc#_using_the_standard_converters[Using the Standard Converters] for more information on how to use this attribute.
 
 |`converterMessage` |Specifies an error message to display when the converter registered on the component fails.
 
@@ -341,12 +341,12 @@ Acceptable values are `ltr`, meaning left to right, and `rtl`, meaning right to 
 |`requiredMessage` |Specifies an error message to display when the user does not enter a value into the component.
 
 |`validator` |Identifies a method expression pointing to a managed bean method that performs validation on the component's data.
-See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_validation[Referencing a Method That Performs Validation] for an example of using the `f:validator` tag.
+See xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_performs_validation[Referencing a Method That Performs Validation] for an example of using the `f:validator` tag.
 
 |`validatorMessage` |Specifies an error message to display when the validator registered on the component fails to validate the component's local value.
 
 |`valueChangeListener` |Identifies a method expression that points to a managed bean method that handles the event of entering a value in this component.
-See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_a_value_change_event[Referencing a Method That Handles a Value-Change Event] for an example of using `valueChangeListener`.
+See xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_handles_a_value_change_event[Referencing a Method That Handles a Value-Change Event] for an example of using `valueChangeListener`.
 |===
 
 <<_output_tags>> lists the tags that represent the output components.
@@ -533,8 +533,8 @@ In either case, the logical outcome `String` is used to determine what page to a
 
 * `actionListener`, which is a method expression pointing to a bean method that processes an action event fired by the command component tag.
 
-See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation] for more information on using the `action` attribute.
-See xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_handles_an_action_event[Referencing a Method That Handles an Action Event] for details on using the `actionListener` attribute.
+See xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation] for more information on using the `action` attribute.
+See xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_handles_an_action_event[Referencing a Method That Handles an Action Event] for details on using the `actionListener` attribute.
 
 ==== Rendering a Button with the h:commandButton Tag
 
@@ -551,7 +551,7 @@ Clicking the button will cause the `submit` method of `CashierBean` to be invoke
 The `submit` method performs some processing and returns a logical outcome.
 
 The `value` attribute of the example `h:commandButton` tag references the button's label.
-For information on how to use the `action` attribute, see xref:jsf-page-core/jsf-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
+For information on how to use the `action` attribute, see xref:faces-page-core/faces-page-core.adoc#_referencing_a_method_that_performs_navigation[Referencing a Method That Performs Navigation].
 
 ==== Rendering a Link with the h:commandLink Tag
 
@@ -595,7 +595,7 @@ In a Jakarta Faces application, use the `h:graphicImage` tag to render an image 
 In this example, the `url` attribute specifies the path to the image.
 The URL of the example tag begins with a slash (`/`), which adds the relative context path of the web application to the beginning of the path to the image.
 
-Alternatively, you can use the facility described in xref:jsf-facelets/jsf-facelets.adoc#_web_resources[Web Resources] to point to the image location.
+Alternatively, you can use the facility described in xref:faces-facelets/faces-facelets.adoc#_web_resources[Web Resources] to point to the image location.
 Here are two examples:
 
 [source,xml]
@@ -882,7 +882,7 @@ The following example from <<_displaying_components_for_selecting_multiple_value
 The `value` attribute of the `f:selectItems` tag is bound to the managed bean property `cashierBean.newsletterItems`.
 The individual `SelectItem` objects are created programmatically in the managed bean.
 
-See xref:jsf-develop/jsf-develop.adoc#_uiselectitems_properties[UISelectItems Properties] for information on how to write a managed bean property for one of these tags.
+See xref:faces-develop/faces-develop.adoc#_uiselectitems_properties[UISelectItems Properties] for information on how to write a managed bean property for one of these tags.
 
 ==== Using the f:selectItem Tag
 
@@ -938,7 +938,7 @@ To do so, you can retrieve the value of the `newsletters` property, the `String`
 
 An introductory thank-you message is displayed only if the `newsletters` array is not empty.
 Then a `ui:repeat` tag, a simple way to show values in a loop, displays the contents of the selected items in an itemized list.
-(This tag is listed in xref:jsf-facelets/jsf-facelets.adoc#_facelets_templating_tags[Facelets Templating Tags].)
+(This tag is listed in xref:faces-facelets/faces-facelets.adoc#_facelets_templating_tags[Facelets Templating Tags].)
 
 === Using Data-Bound Table Components
 
@@ -1038,7 +1038,7 @@ This data can take the form of any of the following:
 
 All data sources for data components have a `DataModel` wrapper.
 Unless you explicitly construct a `DataModel` wrapper, the Jakarta Faces implementation will create one around data of any of the other acceptable types.
-See xref:jsf-develop/jsf-develop.adoc#_writing_bean_properties[Writing Bean Properties] for more information on how to write properties for use with a data component.
+See xref:faces-develop/faces-develop.adoc#_writing_bean_properties[Writing Bean Properties] for more information on how to write properties for use with a data component.
 
 The `var` attribute specifies a name that is used by the components within the `h:dataTable` tag as an alias to the data referenced in the `value` attribute of `h:dataTable`.
 
