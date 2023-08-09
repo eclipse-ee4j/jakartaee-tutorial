@@ -90,7 +90,7 @@ The following Facelets files are used in the main interface:
 
 * `WEB-INF/includes/mainNav.xhtml`: XHTML fragment for the main interface's navigation bar
 
-For information on using Facelets, see xref:web:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
+For information on using Facelets, see xref:web:faces-facelets/faces-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
 
 === Helper Classes Used in the Main Interface
 
@@ -128,7 +128,7 @@ For example, the strings for German-speaking locales are located in `ValidationM
 Each supported locale has a property file of the form `Messages___locale prefix__.properties` containing the localized strings.
 For example, the strings for simplified Chinese-speaking locales are located in `Messages_zh.properties`.
 
-For information on localizing web applications, see xref:web:jsf-configure/jsf-configure.adoc#_registering_application_messages[Registering Application Messages].
+For information on localizing web applications, see xref:web:faces-configure/faces-configure.adoc#_registering_application_messages[Registering Application Messages].
 
 === Deployment Descriptors Used in Duke's Tutoring
 
