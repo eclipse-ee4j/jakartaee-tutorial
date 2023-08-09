@@ -12,7 +12,7 @@ You can think of a public key certificate as the digital equivalent of a passpor
 The certificate is issued by a trusted organization, a certificate authority (CA), and provides identification for the bearer.
 
 Before using client authentication, make sure that the client has a valid public key certificate.
-For more information on creating and using public key certificates, read <<_working_with_digital_certificates>>.
+For more information on creating and using public key certificates, read xref:security-advanced/security-advanced.adoc#_working_with_digital_certificates[Working with Digital Certificates].
 
 The following example shows how to declare client authentication in your deployment descriptor:
 

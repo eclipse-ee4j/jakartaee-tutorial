@@ -35,7 +35,7 @@ One tool that can be used to set up a digital certificate is `keytool`, a key an
 This tool enables users to administer their own public/private key pairs and associated certificates for use in self-authentication, whereby the user authenticates himself or herself to other users or services, or data integrity and authentication services, using digital signatures.
 The tool also allows users to cache the public keys, in the form of certificates, of their communicating peers.
 
-For a better understanding of `keytool` and public-key cryptography, see <<_further_information_about_advanced_security_topics>> for a link to the `keytool` documentation.
+For a better understanding of `keytool` and public-key cryptography, see xref:security-advanced/security-advanced.adoc#_further_information_about_advanced_security_topics[Further Information about Advanced Security Topics] for a link to the `keytool` documentation.
 
 === Creating a Server Certificate
 
@@ -162,7 +162,7 @@ To specify that GlassFish Server should use the new keystore for authentication 
 To use a different keystore from the one provided for development purposes, follow these steps.
 
 . Start GlassFish Server if you haven't already done so.
-Information on starting the GlassFish Server can be found in <<starting-and-stopping-glassfish-server>>.
+Information on starting the GlassFish Server can be found in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . Open the GlassFish Server Administration Console in a web browser at http://localhost:4848[^].
 
