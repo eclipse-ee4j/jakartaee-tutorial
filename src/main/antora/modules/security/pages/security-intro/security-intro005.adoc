@@ -1,7 +1,7 @@
 == Working with Realms, Users, Groups, and Roles
 
 You often need to protect resources to ensure that only authorized users have access.
-See <<_characteristics_of_application_security>> for an introduction to the concepts of authentication, identification, and authorization.
+See xref:security-intro/security-intro.adoc#_characteristics_of_application_security[Characteristics of Application Security] for an introduction to the concepts of authentication, identification, and authorization.
 
 This section discusses setting up users so that they can be correctly identified and either given access to protected resources or denied access if they are not authorized to access the protected resources.
 To authenticate a user, you need to follow these basic steps.
@@ -121,7 +121,7 @@ Follow these steps for managing users before you run the tutorial examples.
 
 . Start GlassFish Server, if you haven't already done so.
 +
-Information on starting GlassFish Server is available in <<starting-and-stopping-glassfish-server>>.
+Information on starting GlassFish Server is available in xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . Start the Administration Console, if you haven't already done so.
 +

@@ -115,7 +115,7 @@ You can, however, manually update the `server.policy` file to add the relevant p
 +
 The security permissions listed in the deployment descriptor are different from those required by the default permission set as specified in the connector specification.
 +
-For more information on the implementation of the security permission specification, see the security policy file documentation listed in <<_further_information_about_advanced_security_topics>>.
+For more information on the implementation of the security permission specification, see the security policy file documentation listed in xref:security-advanced/security-advanced.adoc#_further_information_about_advanced_security_topics[Further Information about Advanced Security Topics].
 
 In addition to specifying resource adapter security in the `ra.xml` file, you can create a security map for a connector connection pool to map an application principal or a user group to a back-end EIS principal.
 The security map is usually used if one or more EIS back-end principals are used to execute operations (on the EIS) initiated by various principals or user groups in the application.

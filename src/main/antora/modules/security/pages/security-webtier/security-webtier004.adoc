@@ -19,7 +19,7 @@ Here are some other locations where you will find examples of securing various t
 To set up your system for running the security examples, you need to configure a user database that the application can use for authenticating users.
 Before continuing, follow these steps.
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . Add an authorized user to GlassFish Server.
 For the examples in this chapter and in xref:security-jakartaee/security-jakartaee.adoc#_getting_started_securing_enterprise_applications[Getting Started Securing Enterprise Applications], add a user to the `file` realm of GlassFish Server, and assign the user to the group `TutorialUser`.
@@ -58,13 +58,13 @@ This example explains how to use basic authentication with a servlet.
 With basic authentication of a servlet, the web browser presents a standard login dialog box that is not customizable.
 When a user submits his or her name and password, the server determines whether the user name and password are those of an authorized user and sends the requested web resource if the user is authorized to view it.
 
-In general, the following steps are necessary for adding basic authentication to an unsecured servlet, such as the ones described in xref:getting-started-with-web-applications[].
+In general, the following steps are necessary for adding basic authentication to an unsecured servlet, such as the ones described in xref:web:webapp/webapp.adoc#_getting_started_with_web_applications[Getting Started with Web Applications].
 In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 This application can be found in the `_tut-install_/examples/security/hello2-basicauth/` directory.
 
 . Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
-. Create a web module for the servlet example, `hello2`, as described in xref:getting-started-with-web-applications[].
+. Create a web module for the servlet example, `hello2`, as described in xref:web:webapp/webapp.adoc#_getting_started_with_web_applications[Getting Started with Web Applications].
 
 . Add the appropriate security annotations to the servlet. The security annotations are described in <<_specifying_security_for_basic_authentication_using_annotations>>.
 
@@ -190,7 +190,7 @@ This example explains how to use form-based authentication with a Jakarta Faces 
 With form-based authentication, you can customize the login screen and error pages that are presented to the web client for authentication of the user name and password.
 When a user submits his or her name and password, the server determines whether the user name and password are those of an authorized user and, if authorized, sends the requested web resource.
 
-This example, `hello1-formauth`, adds security to the basic Jakarta Faces application shown in <<a-web-module-that-uses-jakarta-faces-technology-the-hello1-example>>.
+This example, `hello1-formauth`, adds security to the basic Jakarta Faces application shown in xref:web:webapp/webapp.adoc#_a_web_module_that_uses_jakarta_faces_technology_the_hello1_example[A Web Module That Uses Jakarta Faces Technology: The hello1 Example].
 
 In general, the steps necessary for adding form-based authentication to an unsecured Jakarta Faces application are similar to those described in <<_the_hello2_basicauth_example_basic_authentication_with_a_servlet>>.
 The major difference is that you must use a deployment descriptor to specify the use of form-based authentication, as described in <<_specifying_security_for_the_form_based_authentication_example>>.
