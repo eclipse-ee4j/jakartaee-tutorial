@@ -170,8 +170,8 @@ The `OrderBy` annotation defines an order for retrieving the elements of the cal
 
 The batch artifacts use instances of these two entities as items to read, process, and write.
 
-For more information on Jakarta Persistence, see <<introduction-to-jakarta-persistence>>.
-For more information on Jakarta JSON Processing, see <<json-processing>>.
+For more information on Jakarta Persistence, see xref:persist:persistence-intro/persistence-intro.adoc#_introduction_to_jakarta_persistence[Introduction to Jakarta Persistence].
+For more information on Jakarta JSON Processing, see xref:web:jsonp/jsonp.adoc#_json_processing[JSON Processing].
 
 ==== The Call Records Chunk Step
 
@@ -427,7 +427,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 ==== To Run the phonebilling Example Application Using NetBeans IDE
 
 . Make sure that GlassFish Server has been started (see
-<<starting-and-stopping-glassfish-server>>).
+xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the File menu, choose Open Project.
 
@@ -451,7 +451,7 @@ http://localhost:8080/phonebilling/
 
 ==== To Run the phonebilling Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

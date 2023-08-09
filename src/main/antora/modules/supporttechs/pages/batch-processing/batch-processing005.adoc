@@ -7,15 +7,15 @@ This section lists the main batch artifact interfaces, demonstrates how to acces
 === Batch Artifact Interfaces
 
 The following tables list the interfaces that you implement to create batch artifacts.
-The interface implementations are referenced from the elements described in <<using-the-job-specification-language>>.
+The interface implementations are referenced from the elements described in xref:batch-processing/batch-processing.adoc#_using_the_job_specification_language[Using the Job Specification Language].
 
-<<main-batch-artifact-interfaces>> lists the interfaces to implement batch artifacts for chunk steps, task steps, and decision elements.
+<<_main_batch_artifact_interfaces>> lists the interfaces to implement batch artifacts for chunk steps, task steps, and decision elements.
 
-<<partition-batch-artifact-interfaces>> lists the interfaces to implement batch artifacts for partitioned steps.
+<<_partition_batch_artifact_interfaces>> lists the interfaces to implement batch artifacts for partitioned steps.
 
-<<listener-batch-artifact-interfaces>> lists the interfaces to implement batch artifacts for job and step listeners.
+<<_listener_batch_artifact_interfaces>> lists the interfaces to implement batch artifacts for job and step listeners.
 
-[[main-batch-artifact-interfaces]]
+[[_main_batch_artifact_interfaces]]
 .Main Batch Artifact Interfaces
 [width="99%",cols="15%,15%,70%"]
 |===
@@ -40,7 +40,7 @@ It is referenced from the `processor` element inside the `chunk` element.
 It is referenced from the `writer` element inside the `chunk` element.
 |===
 
-[[partition-batch-artifact-interfaces]]
+[[_partition_batch_artifact_interfaces]]
 .Partition Batch Artifact Interfaces
 [width="99%",cols="15%,15%,70%"]
 |===
@@ -62,7 +62,7 @@ It is referenced from the `collector` element inside the `partition` element.
 It is referenced from the `analyzer` element inside the `partition` element.
 |===
 
-[[listener-batch-artifact-interfaces]]
+[[_listener_batch_artifact_interfaces]]
 .Listener Batch Artifact Interfaces
 [width="99%",cols="15%,15%,70%"]
 |===
@@ -156,7 +156,7 @@ For example, the following batch artifact is annotated with `@Dependent`:
 public class MyItemReaderImpl implements ItemReader { ... }
 ----
 +
-For more information on bean archives, see <<packaging-cdi-applications>> in xref:jakarta-contexts-and-dependency-injection-advanced-topics[xrefstyle=full].
+For more information on bean archives, see xref:cdi:cdi-adv/cdi-adv.adoc#_packaging_cdi_applications[Packaging CDI Applications] in xref:cdi:cdi-adv/cdi-adv.adoc#_jakarta_contexts_and_dependency_injection_advanced_topics[Jakarta Contexts and Dependency Injection: Advanced Topics].
 
 [NOTE]
 Jakarta Contexts and Dependency Injection (CDI) is required in order to access context objects from the batch runtime in batch artifacts.
@@ -203,7 +203,7 @@ public class MyItemReaderImpl implements ItemReader {
 }
 ----
 
-See <<dependency-injection-in-batch-artifacts>> for instructions on how to define your batch artifacts to use dependency injection.
+See <<_dependency_injection_in_batch_artifacts>> for instructions on how to define your batch artifacts to use dependency injection.
 
 [NOTE]
 ====

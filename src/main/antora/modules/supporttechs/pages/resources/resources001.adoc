@@ -3,11 +3,11 @@
 A resource adapter is a Jakarta EE component that implements the Jakarta Connectors API for a specific EIS.
 Examples of EISs include enterprise resource planning, mainframe transaction processing, and database systems.
 In a Jakarta EE server, Jakarta Messaging and Jakarta Mail also act as EISs that you access using resource adapters.
-As illustrated in <<resource-adapters>>, the resource adapter facilitates communication between a Jakarta EE application and an EIS.
+As illustrated in <<_resource_adapters>>, the resource adapter facilitates communication between a Jakarta EE application and an EIS.
 
-[[resource-adapters]]
+[[_resource_adapters]]
 .Resource Adapters
-image::jakartaeett_dt_053.svg["Resource Adapter Contracts"]
+image::common:jakartaeett_dt_053.svg["Resource Adapter Contracts"]
 
 Stored in a Resource Adapter Archive (RAR) file, a resource adapter can be deployed on any Jakarta EE server, much like a Jakarta EE application.
 A RAR file may be contained in an Enterprise Archive (EAR) file, or it may exist as a separate file.
