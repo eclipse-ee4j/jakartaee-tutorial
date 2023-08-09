@@ -29,8 +29,8 @@ A particular tutoring session tracks which students attended that day, and which
 Students' statuses change when they check in to a tutoring session, when they go to the park, and when they check out.
 The status entry allows the tutoring center staff to track exactly which students attended a tutoring session, when they checked in and out, which students went to the park while they were at the tutoring center, and when they went to and came back from the park.
 
-For information on creating Jakarta Persistence entities, see xref:introduction-to-jakarta-persistence[xrefstyle=full].
-For information on validating entity data, see <<validating-persistent-fields-and-properties>> and xref:bean-validation-advanced-topics[xrefstyle=full].
+For information on creating Jakarta Persistence entities, see xref:persist:persistence-intro/persistence-intro.adoc#_introduction_to_jakarta_persistence[Introduction to Jakarta Persistence].
+For information on validating entity data, see xref:persist:persistence-intro/persistence-intro.adoc#_validating_persistent_fields_and_properties[Validating Persistent Fields and Properties] and xref:beanvalidation:bean-validation-advanced/bean-validation-advanced.adoc#_bean_validation_advanced_topics[Bean Validation: Advanced Topics].
 
 === Enterprise Beans Used in the Main Interface
 
@@ -44,9 +44,9 @@ These business methods use strongly typed Criteria API queries to retrieve data 
 `RequestBean` also injects a CDI event instance, `StatusEvent`.
 This event is fired from the business methods when the status of a student changes.
 
-For information on creating and using enterprise beans, see xref:enterprise-beans[xrefstyle=full].
-For information on creating strongly typed Criteria API queries, see xref:using-the-criteria-api-to-create-queries[xrefstyle=full].
-For information on CDI events, see <<using-events-in-cdi-applications>>.
+For information on creating and using enterprise beans, see xref:entbeans:ejb-intro/ejb-intro.adoc#_enterprise_beans[Enterprise Beans].
+For information on creating strongly typed Criteria API queries, see xref:persist:persistence-criteria/persistence-criteria.adoc#_using_the_criteria_api_to_create_queries[Using the Criteria API to Create Queries].
+For information on CDI events, see xref:cdi:cdi-adv/cdi-adv.adoc#_using_events_in_cdi_applications[Using Events in CDI Applications].
 
 === WebSocket Endpoint Used in the Main Interface
 
@@ -58,8 +58,8 @@ The `updateStatus` observer method is called by the container, and pushes out th
 The `index.xhtml` Jakarta Faces page contains JavaScript code to connect to the WebSocket endpoint.
 The `onMessage` method on this page clicks a Jakarta Faces button, which makes an Ajax request to refresh the table that shows the current status of the students.
 
-For more information on WebSocket endpoints, see xref:jakarta-websocket-2[xrefstyle=full].
-For information on CDI events, see <<using-events-in-cdi-applications>>.
+For more information on WebSocket endpoints, see xref:web:websocket/websocket.adoc#_jakarta_websocket[Jakarta WebSocket].
+For information on CDI events, see xref:cdi:cdi-adv/cdi-adv.adoc#_using_events_in_cdi_applications[Using Events in CDI Applications].
 
 === Facelets Files Used in the Main Interface
 
@@ -90,7 +90,7 @@ The following Facelets files are used in the main interface:
 
 * `WEB-INF/includes/mainNav.xhtml`: XHTML fragment for the main interface's navigation bar
 
-For information on using Facelets, see xref:introduction-to-facelets[xrefstyle=full].
+For information on using Facelets, see xref:web:jsf-facelets/jsf-facelets.adoc#_introduction_to_facelets[Introduction to Facelets].
 
 === Helper Classes Used in the Main Interface
 
@@ -128,7 +128,7 @@ For example, the strings for German-speaking locales are located in `ValidationM
 Each supported locale has a property file of the form `Messages___locale prefix__.properties` containing the localized strings.
 For example, the strings for simplified Chinese-speaking locales are located in `Messages_zh.properties`.
 
-For information on localizing web applications, see <<registering-application-messages>>.
+For information on localizing web applications, see xref:web:jsf-configure/jsf-configure.adoc#_registering_application_messages[Registering Application Messages].
 
 === Deployment Descriptors Used in Duke's Tutoring
 

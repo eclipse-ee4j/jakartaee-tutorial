@@ -4,7 +4,7 @@ You can use NetBeans IDE or Maven to build and deploy Duke's Forest.
 
 === To Build and Deploy the Duke's Forest Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]), as well as the database server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby]).
 
 . From the File menu, choose Open Project.
 
@@ -26,7 +26,7 @@ To configure the server, this task creates a JDBC security realm named `jdbcReal
 
 === To Build and Deploy the Duke's Forest Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]), as well as the database server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby]).
 
 . In a terminal window, go to:
 +

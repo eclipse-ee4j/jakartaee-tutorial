@@ -4,7 +4,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 === To Build and Deploy Duke's Bookstore Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the File menu, choose Open Project.
 
@@ -24,7 +24,7 @@ This will build, package, and deploy Duke's Bookstore to GlassFish Server.
 
 === To Build and Deploy Duke's Bookstore Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>), as well as the database server (see <<starting-and-stopping-apache-derby>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]), as well as the database server (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby]).
 
 . In a terminal window, go to:
 +
