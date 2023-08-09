@@ -227,18 +227,20 @@ public class LinkChecker {
 						}
 					} else {
 						boolean resolved = false;
+						boolean titlematch = false;
 						for (Reference ref : reflist) {
 							if (linkloc.sameSubmod(ref)) {
-								if (!ref.mtext.equals(fm.group(8)) && ref.mheader) {
-									warn("mismatch link text: expected '" + ref.mtext + "' in " + fm.group());
-								} else {
-									ok("xref resolves: " + fm.group(1));
-								}
 								resolved = true;
+								if (ref.mtext.equals(fm.group(8)) || !ref.mheader) {
+									ok("xref resolves: " + fm.group(1));
+									titlematch = true;
+								}
 							}
 						}
 						if (!resolved) {
 							error("xref could not be resolved: " + m.group());
+						} else if (!titlematch) {
+							warn("check link text: " + fm.group());
 						}
 					}
 				} else {
@@ -246,7 +248,7 @@ public class LinkChecker {
 				}
 			}
 		}
-		Pattern linkPattern = Pattern.compile("<<([^>]+)>>");
+		Pattern linkPattern = Pattern.compile("<<([^<>]+)>>");
 		m = linkPattern.matcher(content);
 		while (m.find()) {
 			String anchor = m.group(1);
@@ -269,7 +271,8 @@ public class LinkChecker {
 					}
 				} else {
 					// if it exists locally, all is good, otherwise it's ambiguous
-					List<Reference> local = reflist.stream().filter(e -> e.sameFile(checkfileloc)).collect(Collectors.toList());
+					List<Reference> local = reflist.stream().filter(e -> e.sameFile(checkfileloc))
+							.collect(Collectors.toList());
 					if (local.size() > 0) {
 						Reference ref = local.get(0);
 						if (!ref.manchor.equals(anchor)) {
