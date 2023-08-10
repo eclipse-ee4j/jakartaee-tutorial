@@ -130,7 +130,7 @@ public class Hello {
 +
 If you use the default name for the bean class, you can specify `@Model` as the annotation instead of having to specify both `@Named` and `@RequestScoped`.
 The `@Model` annotation is called a stereotype, a term for an annotation that encapsulates other annotations.
-It is described later in <<using-stereotypes-in-cdi-applications>>.
+It is described later in xref:cdi:cdi-adv/cdi-adv.adoc#_using_stereotypes_in_cdi_applications[Using Stereotypes in CDI Applications].
 Some examples will use `@Model` where it is appropriate.
 
 . Under the Web Pages node, expand the WEB-INF node and double-click the `web.xml` file to view it.
@@ -191,7 +191,7 @@ When an application consists of multiple requests and responses where data needs
 
 Application (`@ApplicationScoped`):: Application scope persists across all users' interactions with a web application.
 
-For more information on scopes in Jakarta Faces technology, see xref:jsf-configure/jsf-configure.adoc#_using_managed_bean_scopes[Using Managed Bean Scopes].
+For more information on scopes in Jakarta Faces technology, see xref:faces-configure/faces-configure.adoc#_using_managed_bean_scopes[Using Managed Bean Scopes].
 
 === Packaging and Deploying the hello1 Web Module
 
@@ -215,7 +215,7 @@ Throughout the tutorial, you will use NetBeans IDE or Maven for packaging and de
 
 To build and package the `hello1` web module using NetBeans IDE:
 
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-netbeans-ide>>, if you have not already done so.
+. Start GlassFish Server as described in xref:intro:usingexamples/usingexamples.adoc#_to_start_glassfish_server_using_netbeans_ide[To Start GlassFish Server Using NetBeans IDE], if you have not already done so.
 
 . From the *File* menu, choose *Open Project*.
 
@@ -235,7 +235,7 @@ tut-install/examples/web/jsf
 
 To build and package the `hello1` web module using Maven:
 
-. Start GlassFish Server as described in <<to-start-glassfish-server-using-the-command-line>>, if you have not already done so.
+. Start GlassFish Server as described in xref:intro:usingexamples/usingexamples.adoc#_to_start_glassfish_server_using_the_command_line[To Start GlassFish Server Using the Command Line], if you have not already done so.
 
 . In a terminal window, go to:
 +

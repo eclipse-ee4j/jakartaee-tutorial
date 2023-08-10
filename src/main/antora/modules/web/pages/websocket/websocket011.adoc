@@ -108,7 +108,7 @@ public class PriceVolumeBean {
 ----
 
 The enterprise bean calls the `send` method of the `ETFEndpoint` class in the timeout method.
-See <<using-the-timer-service>> in xref: <<running-the-enterprise-bean-examples>> for more information on the timer service.
+See xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_using_the_timer_service[Using the Timer Service] in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_running_the_enterprise_bean_examples[Running the Enterprise Bean Examples] for more information on the timer service.
 
 ==== The HTML Page
 
@@ -159,7 +159,7 @@ This section describes how to run the `dukeetf2` example application using NetBe
 
 ==== To Run the dukeetf2 Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -185,7 +185,7 @@ Open the same URL on a different web browser tab or window to see how both pages
 
 ==== To Run the dukeetf2 Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

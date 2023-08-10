@@ -16,7 +16,7 @@ This method returns the current session associated with this request; or, if the
 You can associate object-valued attributes with a session by name.
 Such attributes are accessible by any web component that belongs to the same web context and is handling a request that is part of the same session.
 
-Recall that your application can notify web context and session listener objects of servlet lifecycle events (<<_handling_servlet_lifecycle_events>>).
+Recall that your application can notify web context and session listener objects of servlet lifecycle events (xref:servlets/servlets.adoc#_handling_servlet_lifecycle_events[Handling Servlet Lifecycle Events]).
 You can also notify objects of certain events related to their association with a session, such as the following.
 
 * When the object is added to or removed from a session.

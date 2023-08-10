@@ -89,4 +89,4 @@ HTTP response objects, `jakarta.servlet.http.HttpServletResponse`, have fields r
 * Status codes, which are used to indicate the reason a request is not satisfied or that a request has been redirected.
 
 * Cookies, which are used to store application-specific information at the client.
-Sometimes, cookies are used to maintain an identifier for tracking a user's session (see <<_session_tracking>>).
+Sometimes, cookies are used to maintain an identifier for tracking a user's session (see xref:servlets/servlets.adoc#_session_tracking[Session Tracking]).

@@ -93,7 +93,7 @@ This tag loads the correct resource bundle according to the locale stored in `Fa
 
 Resource bundles containing messages that are explicitly referenced from a Jakarta Faces tag attribute using a value expression must be registered using the `resource-bundle` element of the configuration file.
 
-For more information on using this element, see xref:jsf-configure/jsf-configure.adoc#_registering_application_messages[Registering Application Messages].
+For more information on using this element, see xref:faces-configure/faces-configure.adoc#_registering_application_messages[Registering Application Messages].
 
 === Retrieving Localized Messages
 
@@ -124,7 +124,7 @@ The following example shows a `message` tag that displays the error message queu
            id="errors1" for="userNo"/>
 ----
 
-For more information on using the `message` or `messages` tags, see xref:jsf-page/jsf-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
+For more information on using the `message` or `messages` tags, see xref:faces-page/faces-page.adoc#_displaying_error_messages_with_the_hmessage_and_hmessages_tags[Displaying Error Messages with the h:message and h:messages Tags].
 
 Messages that are not queued on a component and are therefore not loaded automatically are referenced using a value expression.
 You can reference a localized message from almost any Jakarta Faces tag attribute.

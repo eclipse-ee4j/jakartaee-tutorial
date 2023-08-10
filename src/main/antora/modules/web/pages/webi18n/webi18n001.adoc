@@ -9,7 +9,7 @@ A resource bundle contains key-value pairs, where the keys uniquely identify a l
 A resource bundle can be backed by a text file (properties resource bundle) or a class (list resource bundle) containing the pairs.
 You construct a resource bundle instance by appending a locale string representation to a base name.
 
-The Duke's Bookstore application (see xref:dukes-bookstore-case-study-example[]) contains resource bundles with the base name `messages.properties` for the locales `de` (German), `es` (Spanish), and `fr` (French).
+The Duke's Bookstore application (see xref:casestudies:dukes-bookstore/dukes-bookstore.adoc#_dukes_bookstore_case_study_example[Duke's Bookstore Case Study Example]) contains resource bundles with the base name `messages.properties` for the locales `de` (German), `es` (Spanish), and `fr` (French).
 The default locale, `en` (English), which is specified in the `faces-config.xml` file, uses the resource bundle with the base name, `messages.properties`.
 
 For more details on internationalization and localization in the Java platform, see https://docs.oracle.com/javase/tutorial/i18n/index.html[^].

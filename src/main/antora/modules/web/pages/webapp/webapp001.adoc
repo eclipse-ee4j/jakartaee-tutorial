@@ -5,16 +5,16 @@ Web applications are of the following types:
 
 Presentation-oriented::
 A presentation-oriented web application generates interactive web pages containing various types of markup language (HTML, XHTML, XML, and so on) and dynamic content in response to requests.
-Development of presentation-oriented web applications is covered in xref:jakarta-faces-technology-2[] through xref:jakarta-servlet-technology-2[]
+Development of presentation-oriented web applications is covered in xref:faces-intro/faces-intro.adoc#_jakarta_faces_technology[Jakarta Faces Technology] through xref:servlets/servlets.adoc#_jakarta_servlet_technology[Jakarta Servlet Technology]
 
 Service-oriented::
 A service-oriented web application implements the endpoint of a web service.
 Presentation-oriented applications are often clients of service-oriented web applications.
-Development of service-oriented web applications is covered in xref:building-web-services-with-jakarta-xml-web-services[] and xref:building-restful-web-services-with-jakarta-rest[] in xref:web-services[]
+Development of service-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services] and xref:websvcs:jaxrs/jaxrs.adoc#_building_restful_web_services_with_jakarta_rest[Building RESTful Web Services with Jakarta REST].
 
 In the Jakarta EE platform, web components provide the dynamic extension capabilities for a web server.
 Web components can be Jakarta servlets, web pages implemented with Jakarta Faces technology, web service endpoints, or Jakarta Server Pages.
-xref:jakarta-web-application-request-handling[xrefstyle=short] illustrates the interaction between a web client and a web application that uses a servlet.
+xref:webapp/webapp.adoc#_jakarta_web_application_request_handling[Jakarta Web Application Request Handling] illustrates the interaction between a web client and a web application that uses a servlet.
 The client sends an HTTP request to the web server.
 A web server that implements Jakarta Servlet and Jakarta Server Pages technology converts the request into an `HTTPServletRequest` object.
 This object is delivered to a web component, which can interact with JavaBeans components or a database to generate dynamic content.

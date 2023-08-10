@@ -132,7 +132,7 @@ public class PriceVolumeBean {
 }
 ----
 
-See <<using-the-timer-service>> in xref:running-the-enterprise-bean-examples[] for more information on the timer service.
+See xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_using_the_timer_service[Using the Timer Service] in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_running_the_enterprise_bean_examples[Running the Enterprise Bean Examples] for more information on the timer service.
 
 ==== The HTML Page
 
@@ -183,7 +183,7 @@ function makeAjaxRequest() {
 
 The `XMLHttpRequest` API is supported by most modern browsers, and it is widely used in Ajax web client development (Asynchronous JavaScript and XML).
 
-See xref:websocket/websocket.adoc#_the_dukeetf2_example_application[The dukeetf2 Example Application] in xref:jakarta-websocket-2[] for an equivalent version of this example implemented using a WebSocket endpoint.
+See xref:websocket/websocket.adoc#_the_dukeetf2_example_application[The dukeetf2 Example Application] in xref:websocket/websocket.adoc#_jakarta_websocket[Jakarta WebSocket] for an equivalent version of this example implemented using a WebSocket endpoint.
 
 === Running the dukeetf Example Application
 
@@ -191,7 +191,7 @@ This section describes how to run the `dukeetf` example application using NetBea
 
 ==== To Run the dukeetf Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -217,7 +217,7 @@ Open the same URL in a different web browser to see how both pages get price and
 
 ==== To Run the dukeetf Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +

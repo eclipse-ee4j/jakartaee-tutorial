@@ -69,7 +69,7 @@ JsonObjectBuilder addNull(String name)
 The `JsonArrayBuilder` class contains similar `add` methods that do not have a name (key) parameter.
 You can nest arrays and objects by passing a new `JsonArrayBuilder` object or a new `JsonObjectBuilder` object to the corresponding `add` method, as shown in this example.
 
-The resulting tree represents the JSON data from <<_json_syntax>>.
+The resulting tree represents the JSON data from xref:jsonp/jsonp.adoc#_json_syntax[JSON Syntax].
 
 === Navigating an Object Model
 

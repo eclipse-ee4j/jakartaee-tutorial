@@ -2,7 +2,7 @@
 
 Web containers in application servers normally use a server thread per client request.
 To develop scalable web applications, you must ensure that threads associated with client requests are never sitting idle waiting for a blocking operation to complete.
-<<_asynchronous_processing>> provides a mechanism to execute application-specific blocking operations in a new thread, returning the thread associated with the request immediately to the container.
+xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing] provides a mechanism to execute application-specific blocking operations in a new thread, returning the thread associated with the request immediately to the container.
 Even if you use asynchronous processing for all the application-specific blocking operations inside your service methods, threads associated with client requests can be momentarily sitting idle because of input/output considerations.
 
 For example, if a client is submitting a large HTTP POST request over a slow network connection, the server can read the request faster than the client can provide it.
@@ -11,7 +11,7 @@ Using traditional I/O, the container thread associated with this request would b
 Jakarta EE provides nonblocking I/O support for servlets and filters when processing requests in asynchronous mode.
 The following steps summarize how to use nonblocking I/O to process requests and write responses inside service methods.
 
-. Put the request in asynchronous mode as described in <<_asynchronous_processing>>.
+. Put the request in asynchronous mode as described in xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing].
 
 . Obtain an input stream and/or an output stream from the request and response objects in the service method.
 
@@ -67,7 +67,7 @@ You provide the write listener object as an anonymous class or use another mecha
 
 === Reading a Large HTTP POST Request Using Nonblocking I/O
 
-The code in this section shows how to read a large HTTP POST request inside a servlet by putting the request in asynchronous mode (as described in <<_asynchronous_processing>>) and using the nonblocking I/O functionality from <<_nonblocking_io_support_in_servletinputstream>> and <<_listener_interfaces_for_nonblocking_io_support>>.
+The code in this section shows how to read a large HTTP POST request inside a servlet by putting the request in asynchronous mode (as described in xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing]) and using the nonblocking I/O functionality from <<_nonblocking_io_support_in_servletinputstream>> and <<_listener_interfaces_for_nonblocking_io_support>>.
 
 [source,java]
 ----

@@ -1,11 +1,14 @@
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * 
@@ -24,10 +27,6 @@ public class LinkChecker {
 		public String msubmod;
 		public String mfile;
 
-		boolean sameFile(Location other) {
-			return mmodule.equals(other.mmodule) && msubmod.equals(other.msubmod) && mfile.equals(other.mfile);
-		}
-
 		// data structure to refer to a file location
 		public Location(String module, String submod, String file) {
 			mmodule = module;
@@ -39,17 +38,28 @@ public class LinkChecker {
 		public String toString() {
 			return mmodule + ":" + msubmod + "/" + msubmod + ".adoc";
 		}
+
+		public boolean sameSubmod(Location other) {
+			return mmodule.equals(other.mmodule) && msubmod.equals(other.msubmod);
+		}
+
+		boolean sameFile(Location other) {
+			return mmodule.equals(other.mmodule) && msubmod.equals(other.msubmod) && mfile.equals(other.mfile);
+		}
+
 	}
 
 	// data structure to hold information about an anchor
 	class Reference extends Location {
 		public String manchor;
 		public String mtext;
+		public boolean mheader;
 
-		public Reference(String module, String submod, String file, String anchor, String text) {
+		public Reference(String module, String submod, String file, String anchor, String text, boolean header) {
 			super(module, submod, file);
 			manchor = anchor;
 			mtext = text;
+			mheader = header;
 		}
 
 		public String makeLink(boolean local) {
@@ -81,7 +91,7 @@ public class LinkChecker {
 		}
 	}
 
-	private Map<String, Reference> refmap = new HashMap<String, Reference>();
+	private Map<String, List<Reference>> refmap = new HashMap<String, List<Reference>>();
 	private boolean showIndex = false;
 
 	private void run(File modulesDir, String checkMod, boolean overwrite) throws IOException {
@@ -124,19 +134,25 @@ public class LinkChecker {
 		Pattern p = Pattern.compile("(?m)^=+\s*(.+)");
 		Matcher m = p.matcher(content);
 		while (m.find()) {
-			addAnchor(module, submod, file.getName(), anchorKey(m.group(1)), m.group(1));
+			addAnchor(module, submod, file.getName(), anchorKey(m.group(1)), m.group(1), true);
 		}
 		// index inline [anchors]
-		p = Pattern.compile("\\[\\[([^\\]]+)\\]\\]");
+		p = Pattern.compile("\\[\\[([^,\\]]+),?\\s*([^\\]]*)\\]\\]");
 		m = p.matcher(content);
 		while (m.find()) {
-			addAnchor(module, submod, file.getName(), m.group(1), anchor2title(m.group(1)));
+			String title = m.group(2).length() > 0 ? m.group(2) : anchor2title(m.group(1));
+			addAnchor(module, submod, file.getName(), m.group(1), title, false);
 		}
 	}
 
-	private void addAnchor(String module, String submod, String filename, String key, String text) {
-		Reference reference = new Reference(module, submod, filename, key, text);
-		refmap.put(key, reference);
+	private void addAnchor(String module, String submod, String filename, String key, String text, boolean header) {
+		Reference reference = new Reference(module, submod, filename, key, text, header);
+		List<Reference> current = refmap.get(key);
+		if (current == null) {
+			current = new ArrayList<LinkChecker.Reference>();
+			refmap.put(key, current);
+		}
+		current.add(reference);
 		if (showIndex) {
 			System.out.println(key);
 		}
@@ -144,7 +160,7 @@ public class LinkChecker {
 
 	private static String anchorKey(String str) {
 		final var strWithPrefix = str.charAt(0) == '_' ? str : "_" + str;
-		return strWithPrefix.toLowerCase().replaceAll("[\\s-]", "_").replace(":", "").replaceAll("[@?,&()/]", "");
+		return strWithPrefix.toLowerCase().replaceAll("[\\s-\\.]", "_").replaceAll("[@?,&()/':]", "");
 	}
 
 	public static String anchor2title(String str) {
@@ -152,7 +168,7 @@ public class LinkChecker {
 		String ret = "";
 		String words[] = str.split("\\s");
 		for (String word : words) {
-			if(word.length() > 0) {
+			if (word.length() > 0) {
 				String first = word.substring(0, 1);
 				String rest = word.substring(1);
 				ret += first.toUpperCase() + rest + " ";
@@ -165,7 +181,7 @@ public class LinkChecker {
 		System.out.println("== Checking file: " + file.getName());
 		var content = new String(Files.readAllBytes(file.toPath()));
 		// xref style
-		Location myref = new Location(module, submod, file.getName());
+		Location checkfileloc = new Location(module, submod, file.getName());
 		Pattern xrefBasicPattern = Pattern.compile("xref:([^\\[]*)\\[[^\\]]*\\]");
 		Pattern xrefFullPattern = Pattern.compile("xref:((([^:]+):)?([^/]+)/(([^\\.]+)\\.adoc)#(.*))\\[([^\\]]*)\\]");
 		Matcher m = xrefBasicPattern.matcher(content);
@@ -174,47 +190,105 @@ public class LinkChecker {
 			Matcher fm = xrefFullPattern.matcher(m.group());
 			if (!fm.matches() || !fm.group(4).equals(fm.group(6))) {
 				// is it a simple xref:_anchor[]
-				Reference ref = resolve(m.group(1));
-				if (ref != null) {
-					warn("xref link incomplete: " + m.group());
-					String newlink = ref.makeLink(ref.mmodule.equals(myref.mmodule));
-					replaceLink(replacements, m.group(), newlink);
+				List<Reference> reflist = resolve(m.group(1));
+				if (reflist != null) {
+					if (reflist.size() == 1) {
+						warn("xref link incomplete: " + m.group());
+						Reference ref = reflist.get(0);
+						String newlink = ref.makeLink(ref.mmodule.equals(checkfileloc.mmodule));
+						replaceLink(replacements, m.group(), newlink);
+					} else {
+						error("xref link ambiguous: " + m.group());
+						for (Reference ref : reflist) {
+							String newlink = ref.makeLink(ref.mmodule.equals(checkfileloc.mmodule));
+							System.out.println("\t? " + newlink);
+						}
+					}
 				} else {
 					error("xref could not be resolved: " + m.group());
 				}
 			} else {
 				String anchor = fm.group(7);
-				Reference ref = resolve(anchor);
-				if (ref != null) {
-					// check everything lines up!
+				List<Reference> reflist = resolve(anchor);
+				if (reflist != null) {
 					String linkmod = fm.group(3) != null ? fm.group(3) : module;
 					Location linkloc = new Location(linkmod, fm.group(4), fm.group(5)); // , anchor, linkmod)
-					if (linkloc.mmodule.equals(ref.mmodule) && linkloc.msubmod.equals(ref.msubmod)) {
-						if (!ref.mtext.equals(fm.group(8))) {
-							warn("mismatch link text: expected '" + ref.mtext + "' in " + fm.group());
+					if (reflist.size() == 1) {
+						// check everything lines up!
+						Reference ref = reflist.get(0);
+						if (linkloc.sameSubmod(ref)) {
+							if (!ref.mtext.equals(fm.group(8)) && ref.mheader) {
+								warn("mismatch link text: expected '" + ref.mtext + "' in " + fm.group());
+							} else {
+								ok("xref resolves: " + fm.group(1));
+							}
 						} else {
-							ok("xref resolves: " + fm.group(1));
+							error("xref location mismatch: " + ref + " vs " + linkloc + "#" + ref.manchor);
 						}
 					} else {
-						warn("xref location mismatch: " + ref + " vs " + linkloc);
+						boolean resolved = false;
+						boolean titlematch = false;
+						for (Reference ref : reflist) {
+							if (linkloc.sameSubmod(ref)) {
+								resolved = true;
+								if (ref.mtext.equals(fm.group(8)) || !ref.mheader) {
+									ok("xref resolves: " + fm.group(1));
+									titlematch = true;
+								}
+							}
+						}
+						if (!resolved) {
+							error("xref could not be resolved: " + m.group());
+						} else if (!titlematch) {
+							warn("check link text: " + fm.group());
+						}
 					}
 				} else {
 					error("failed to resolve xref: " + fm.group(1));
 				}
 			}
 		}
-		Pattern linkPattern = Pattern.compile("<<([^>]+)>>");
+		Pattern linkPattern = Pattern.compile("<<([^<>]+)>>");
 		m = linkPattern.matcher(content);
 		while (m.find()) {
 			String anchor = m.group(1);
-			Reference ref = resolve(anchor);
-			if (ref != null) {
-				if (ref.sameFile(myref)) {
-					ok("anchor exists: " + anchor);
+			List<Reference> reflist = resolve(anchor);
+			if (reflist != null) {
+				if (reflist.size() == 1) {
+					Reference ref = reflist.get(0);
+					if (ref.sameFile(checkfileloc)) {
+						if (!ref.manchor.equals(anchor)) {
+							error("local anchor does not exist: " + anchor);
+							String newlink = "<<" + ref.manchor + ">>";
+							replaceLink(replacements, m.group(), newlink);
+						} else {
+							ok("anchor exists: " + anchor);
+						}
+					} else {
+						warn("local anchor '" + anchor + "' from a different file: " + ref.mfile);
+						String newlink = ref.makeLink(ref.mmodule.equals(checkfileloc.mmodule));
+						replaceLink(replacements, m.group(), newlink);
+					}
 				} else {
-					warn("local anchor '" + anchor + "' from a different file: " + ref.mfile);
-					String newlink = ref.makeLink(ref.mmodule.equals(myref.mmodule));
-					replaceLink(replacements, m.group(), newlink);
+					// if it exists locally, all is good, otherwise it's ambiguous
+					List<Reference> local = reflist.stream().filter(e -> e.sameFile(checkfileloc))
+							.collect(Collectors.toList());
+					if (local.size() > 0) {
+						Reference ref = local.get(0);
+						if (!ref.manchor.equals(anchor)) {
+							error("local anchor does not exist: " + anchor);
+							String newlink = "<<" + ref.manchor + ">>";
+							replaceLink(replacements, m.group(), newlink);
+						} else {
+							ok("anchor exists: " + anchor);
+						}
+					} else {
+						error("local anchor ambiguous: " + m.group());
+						for (Reference ref : reflist) {
+							String newlink = ref.makeLink(ref.mmodule.equals(checkfileloc.mmodule));
+							System.out.println("\t? " + newlink);
+						}
+					}
 				}
 			} else {
 				error("failed to resolve local anchor: " + anchor);
@@ -246,8 +320,8 @@ public class LinkChecker {
 		System.out.println("\u2705 " + string);
 	}
 
-	private Reference resolve(String reference) {
-		Reference ret = refmap.get(reference);
+	private List<Reference> resolve(String reference) {
+		List<Reference> ret = refmap.get(reference);
 		if (ret == null) {
 			ret = refmap.get(anchorKey(reference));
 		}

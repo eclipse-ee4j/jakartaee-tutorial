@@ -9,13 +9,13 @@ When a request is mapped to a servlet, the container performs the following step
 
 .. Creates an instance of the servlet class
 
-.. Initializes the servlet instance by calling the `init` method (initialization is covered in <<_creating_and_initializing_a_servlet>>)
+.. Initializes the servlet instance by calling the `init` method (initialization is covered in xref:servlets/servlets.adoc#_creating_and_initializing_a_servlet[Creating and Initializing a Servlet])
 
 . The container invokes the `service` method, passing request and response objects.
-Service methods are discussed in <<_writing_service_methods>>.
+Service methods are discussed in xref:servlets/servlets.adoc#_writing_service_methods[Writing Service Methods].
 
 If it needs to remove the servlet, the container finalizes the servlet by calling the servlet's `destroy` method.
-For more information, see <<_finalizing_a_servlet>>.
+For more information, see xref:servlets/servlets.adoc#_finalizing_a_servlet[Finalizing a Servlet].
 
 === Handling Servlet Lifecycle Events
 

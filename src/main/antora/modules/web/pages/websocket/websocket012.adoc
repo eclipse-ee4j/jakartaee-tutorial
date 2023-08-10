@@ -18,7 +18,7 @@ The `websocketbot` example application consists of the following elements:
 
 * <<_the_message_decoder>> – A class (`MessageDecoder`) the parses WebSocket text messages as JSON data and decodes them into `JoinMessage` or `ChatMessage` objects
 
-* <<the-html-page-3>> – An HTML page (`index.html`) that uses JavaScript code to implement the client for the chat room
+* <<_the_html_page>> – An HTML page (`index.html`) that uses JavaScript code to implement the client for the chat room
 
 ==== The CDI Bean
 
@@ -119,7 +119,7 @@ If the message is a join message, the endpoint adds the new user to the list and
 If the message is a chat message, the endpoint forwards it to all connected clients.
 
 If a chat message is for the bot agent, the endpoint obtains a response using the `BotBean` instance and sends it to all connected clients.
-The `sendAll` method is similar to the example in <<_sending_messages_to_all_peers_connected_to_an_endpoint>>.
+The `sendAll` method is similar to the example in xref:websocket/websocket.adoc#_sending_messages_to_all_peers_connected_to_an_endpoint[Sending Messages to All Peers Connected to an Endpoint].
 
 ===== Asynchronous Processing and Concurrency Considerations
 
@@ -132,7 +132,7 @@ This facilitates the development of WebSocket endpoints, because you are guarant
 When you introduce a new thread in an endpoint, as in this example, you must ensure that variables and methods accessed by more than one thread are thread safe.
 In this example, the code in `BotBean` is thread safe, and the `BotEndpoint.sendAll` method has been declared `synchronized`.
 
-Refer to xref:jakarta-concurrency-2[] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
+Refer to xref:supporttechs:concurrency-utilities/concurrency-utilities.adoc#_jakarta_concurrency[Jakarta Concurrency] for more information on the managed executor service and Concurrency Utilities for Jakarta EE.
 
 ==== The Application Messages
 
@@ -241,7 +241,7 @@ This section describes how to run the `websocketbot` example application using N
 
 ==== To Run the websocketbot Example Application Using NetBeans IDE
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . From the *File* menu, choose *Open Project*.
 
@@ -267,7 +267,7 @@ See <<_to_test_the_websocketbot_example_application>> for more information.
 
 ==== To Run the websocketbot Example Application Using Maven
 
-. Make sure that GlassFish Server has been started (see <<starting-and-stopping-glassfish-server>>).
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
 
 . In a terminal window, go to:
 +
