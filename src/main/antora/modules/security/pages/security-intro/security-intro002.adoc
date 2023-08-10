@@ -32,7 +32,7 @@ For more information on Java SE security, visit https://docs.oracle.com/javase/8
 
 === Jakarta EE Security Mechanisms
 
-Jakarta EE security services are provided by the component container and can be implemented by using declarative or programmatic techniques (see <<_securing_containers>>).
+Jakarta EE security services are provided by the component container and can be implemented by using declarative or programmatic techniques (see xref:security-intro/security-intro.adoc#_securing_containers[Securing Containers]).
 Jakarta EE security services provide a robust and easily configured security mechanism for authenticating users and authorizing access to application functions and associated data at many different layers.
 Jakarta EE security services are separate from the security mechanisms of the operating system.
 
@@ -59,7 +59,7 @@ The disadvantages of using application-layer security include the following.
 
 * Data is close to or contained within the point of vulnerability.
 
-For more information on providing security at the application layer, see <<_securing_containers>>.
+For more information on providing security at the application layer, see xref:security-intro/security-intro.adoc#_securing_containers[Securing Containers].
 
 ==== Transport-Layer Security
 
@@ -101,7 +101,7 @@ Protection is removed automatically by the endpoint when it receives the message
 
 * It is not an end-to-end solution, simply point-to-point.
 
-For more information on transport-layer security, see <<_establishing_a_secure_connection_using_ssl>>.
+For more information on transport-layer security, see xref:security-intro/security-intro.adoc#_establishing_a_secure_connection_using_ssl[Establishing a Secure Connection Using SSL].
 
 ==== Message-Layer Security
 

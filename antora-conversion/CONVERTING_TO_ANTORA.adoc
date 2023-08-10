@@ -1,10 +1,10 @@
 = Antora Migration Notes
 
-As part of the documentation upgrade process, we are migrating the existing content to Antora. This will allow us to go back to previous versions of the docs (currently 9.1 and 8.0) from within the docs site.
+As part of the documentation upgrade process, we're migrating the existing content to Antora. This will allow us to go back to previous versions of the docs from within the docs site.
 
 == Setup
 
-The conversion script is written in Java and requires https://jbang.io[JBang] to run. Install that first.
+The conversion script is xref:AntoraConverter.java[]. You can run it with https://jbang.dev[JBang] or just using plain vanilla Java or your favorite IDE. The instructions below use jbang.
 
 == Migration Process
 
@@ -12,18 +12,18 @@ The conversion script is written in Java and requires https://jbang.io[JBang] to
 
 Here’s the current process for migrating an individual module (i.e. security, bean validation, etc).
 
-=== Migrating the Jakarta EE 8 branch
+=== Migrating the Jakarta EE 9.1 branch
 
-. Check out the release/8 branch and create a new branch from it for your work.
+. Check out the release/9.1 branch and create a new branch from it for your work with the name "feature/<issue#>_description". For example, "feature/JETUT-123_convert_bean_validation".
 
 . Select the module to migrate. We consider each Part of the current https://eclipse-ee4j.github.io/jakartaee-tutorial/[Jakata EE Tutorial] to be a module (for example, Introduction, Web Tier, Bean Validation, etc).
 
-. Create a new folder in the `src/main/antora/modules` folder with the name of the module you are migrating. For example, for the Security module, you would create a `security` folder.
-    * Inside of this folder, create a `pages` folder.
+. Create a new folder in the `src/main/antora/modules` folder with the name of the module you're migrating. For example, for the Security module, you would create a `security` folder.
+    * Inside this folder, create a `pages` folder.
 
-. Move all the folders for the module you are migrating into the new `pages` folder. For example, for the Security module, you would move all of the `src/main/asciidoc/security-*` folders into the `src/main/antora/modules/security/pages`. (Copy the entire folders, not just the `.adoc` files).
+. Move all the folders for the module you're migrating into the new `pages` folder. For example, for the Security module, you would move all of the `src/main/asciidoc/security-*` folders into the `src/main/antora/modules/security/pages`. (Copy the entire folders, not just the `.adoc` files).
 
-    > NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
+> NOTE: It's essential that you _move_ rather than copy the folders so that we keep the history intact.
 
 . Run the migration script from the root project folder. For example, for the Security module, you would run:
 
@@ -32,30 +32,31 @@ Here’s the current process for migrating an individual module (i.e. security, 
 jbang antora-conversion/AntoraConverter.java src/main/antora/modules/security
 ----
 
-> TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
+> TIP: You can use the `dryRun` parameter to see what changes will be made without actually making them.
 
-> NOTE: References to chapters that haven't yet been converted will not work until they have been converted.
+> NOTE: References to chapters that haven't yet been converted will not work until they've been converted.
 
-. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create a `security/nav.adoc`.
+. Create a new file called `nav.adoc` in the root of the module folder. For example, for the Security module, you would create `security/nav.adoc`.
 
-. Copy all the include statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the include statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the include statements for the Security module:
+. Copy all the `include` statements from the corresponding "part" file in the `src/main/asciidoc/` folder. For example, for the Security module, you would copy the `include` statements of `src/main/asciidoc/partsecurity.adoc` into the `security/nav.adoc` file. Here are the `include` statements for the Security module:
 
 [source,asciidoc]
 ----
-include::security-intro/security-intro.adoc[]
+\include::security-intro/security-intro.adoc[]
 
-include::security-webtier/security-webtier.adoc[]
+\include::security-webtier/security-webtier.adoc[]
 
-include::security-jakartaee/security-jakartaee.adoc[]
+\include::security-jakartaee/security-jakartaee.adoc[]
 
-include::security-api/security-api.adoc[]
+\include::security-api/security-api.adoc[]
 
-include::security-advanced/security-advanced.adoc[]
+\include::security-advanced/security-advanced.adoc[]
 ----
 
 After copying these into `nav.adoc`, replace "include::" with "* xref:" and add a header with the module name:
 
-```asciidoc
+[source,asciidoc]
+----
 .Security
 * xref:security-intro/security-intro.adoc[]
 
@@ -66,39 +67,39 @@ After copying these into `nav.adoc`, replace "include::" with "* xref:" and add 
 * xref:security-api/security-api.adoc[]
 
 * xref:security-advanced/security-advanced.adoc[]
-```
+----
 
 . Add this module to the `src/main/antora/antora.yml`. For example, for the Security module, you would add this line to the end of  `src/main/antora/antora.yml` file:
 
-```yaml
+[source,yaml]
+----
   - modules/security/nav.adoc
-```
+----
 
-. Commit your changes, push, and raise a PR to merge into the `release/8` branch. You're done with the first part of the migration!
+. Test out your changes by building the playbook from the `jakartaee-tutorial-playbook` repo.
+In your `local-antora-playbook.yaml` file, change `release/XX` to the name of your feature branch,
+so you can test locally.
+Then, run Maven using the `author-mode` profile like so:
 
-=== Migrating the Jakarta EE 9 branch
+----
+mvn package -P author-mode
+----
 
-. Create a new branch from the migrated version of the `release/8` branch you just created.
+Make sure you try several different pages and test out links.
 
-. Merge `release/9` into your new branch. Accept all changes from the `release/9` branch.
-
-. Run the migration script from the root project folder. For example, for the Security module, you would run:
-
-```shell
-jbang antora-conversion/AntoraConverter.java jakartaee-tutorial/src/main/antora/modules/security
-```
-
-> TIP: You can use the "dryrun" parameter to see what changes will be made without actually making them.
-
-> NOTE: References to chapters that haven't yet been converted will not work until they have been converted.
-
-. If there are any changes the script didn't make, either make them manually or update the script to handle them.
+. If there are any required changes the script didn't make,
+either make them manually or update the script to handle them.
+If you're updating the script,
+usually your best bet is to revert the changes from the previous run and then run it again after you update the script.
+Don't forget you can use the `dryRun` parameter while testing.
 
 > TIP: If you're using the Antora IDE plugin, it helps to review its errors and updating before committing. With IntellJ,
 these are run automatically before pushing.
 
-. Commit your changes, push, and raise a PR to merge into the  `release/9.1` branch.
+. Commit your changes and push.
 
-. Raise a PR to merge `release/9.1` into `main`.
+. Raise a PR to merge into the `release/9.1` branch.
 
-. You're done!
+. Once your PR has been approved and merged, raise a PR to merge `release/9.1` into `main`.
+
+. You're done! Rinse and repeat for remaining modules.

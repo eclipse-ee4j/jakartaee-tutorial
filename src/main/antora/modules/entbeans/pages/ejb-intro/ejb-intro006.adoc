@@ -1,0 +1,17 @@
+== Naming Conventions for Enterprise Beans
+
+Because enterprise beans are composed of multiple parts, it's useful to follow a naming convention for your applications.
+<<_naming_conventions_for_enterprise_beans_2>> summarizes the conventions for the example beans in this tutorial.
+
+[[_naming_conventions_for_enterprise_beans_2]]
+.Naming Conventions for Enterprise Beans
+[width="63%",cols="40%,30%,30%"]
+|===
+|Item |Syntax |Example
+
+|Enterprise bean name |__name__Bean |`AccountBean`
+
+|Enterprise bean class |__name__Bean |`AccountBean`
+
+|Business interface |_name_ |`Account`
+|===

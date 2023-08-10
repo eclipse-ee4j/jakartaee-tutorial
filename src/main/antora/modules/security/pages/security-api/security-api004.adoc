@@ -21,13 +21,13 @@ The source code for this example is in the `_tut-install_/examples/security/secu
 The following sections describe the high-level process for configuring the `DatabaseIdentityStore`.
 Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use the built-in database identity store.
 
-* <<_define_the_users_and_groups_in_the_identity_store>>
+* xref:security-api/security-api.adoc#_define_the_users_and_groups_in_the_identity_store[Define the Users and Groups in the Identity Store]
 
 * <<_map_the_databaseidentitystore_to_the_default_data_source>>
 
-* <<_specify_the_authentication_mechanism>>
+* xref:security-api/security-api.adoc#_specify_the_authentication_mechanism[Specify the Authentication Mechanism]
 
-* <<_declare_roles_in_the_servlet_container>>
+* xref:security-api/security-api.adoc#_declare_roles_in_the_servlet_container[Declare Roles in the Servlet Container]
 
 When a request that includes credentials is sent to the application, it triggers the configured authentication mechanism and authentication is performed against the `DatabaseIdentityStore` as defined in the application.
 
@@ -208,10 +208,10 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 
 . If you have not already done so, start the default database.
 This is necessary because we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
-See <<starting-and-stopping-apache-derby>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . If you have not already done so, start the GlassFish server.
-See <<starting-and-stopping-glassfish-server>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . From the File menu, choose Open Project.
 
@@ -233,10 +233,10 @@ This command builds and deploys the example application to your GlassFish Server
 
 . If you have not already done so, start the default database.
 This is necessary because we are using the DefaultDataSource bundled with GlassFish for `DatabaseIdentityStore`.
-See <<starting-and-stopping-apache-derby>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_apache_derby[Starting and Stopping Apache Derby].
 
 . If you have not already done so, start the GlassFish server. See
-<<starting-and-stopping-glassfish-server>>.
+xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . In a terminal window, go to:
 +

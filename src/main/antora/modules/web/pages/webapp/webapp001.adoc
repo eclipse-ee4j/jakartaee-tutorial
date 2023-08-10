@@ -1,0 +1,52 @@
+=== Web Applications
+
+A web application, also known as a web app, is a software application that runs on one or more web servers.
+It is typically accessed through a web browser over a network, such as the Internet.
+The advantage over desktop and mobile applications is being platform-independent, as it can be accessed and used on different devices.
+Web applications are of the following types:
+
+Presentation-oriented::
+A presentation-oriented web application (also called a "website") generates dynamic web pages in response to HTTP requests.
+The response is usually represented as a HTML document along with assets, such as Cascading Style Sheets (CSS), JavaScript (JS) and images.
+Presentation-oriented applications are often directly used by humans.
+Development of presentation-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services] through xref:servlets/servlets.adoc#_jakarta_servlet_technology[Jakarta Servlet Technology]
+
+Service-oriented::
+A service-oriented web application (also called a "service") generates dynamic data structures in response to HTTP requests.
+The response is usually represented as a JSON object or as a XML document or even as plain text.
+Service-oriented applications are often directly used by presentation-oriented web applications or other service-oriented applications.
+Development of service-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services]
+
+In the Jakarta EE platform, web applications are represented by web components as seen in xref:jakarta-web-application-request-handling[xrefstyle=short].
+A web component can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST.
+
+[[_jakarta_web_application_request_handling]]
+.Jakarta Web Application Request Handling
+image::common:jakartaeett_dt_013.svg["Diagram of web application request handling. Clients and servlets communicate using HttpServletRequest and HttpServletResponse."]
+
+. The client sends an HTTP request to the web server.
+. The web server module that supports Jakarta Servlet-based web components is called a servlet container.
+. The servlet container converts the HTTP request into an `HttpServletRequest` object and prepares the `HttpServletResponse` object.
+. These objects are delivered to a web component, which can interact with beans or a database to generate dynamic content.
+. The web component can fill the `HttpServletResponse` object with the generated dynamic content or can pass the object to another web component to fill it.
+. The servlet container ultimately converts the `HttpServletResponse` object to an HTTP response and the web server returns it to the client.
+
+Jakarta Servlet can be used to build both presentation and service-oriented web applications.
+It intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as a HTTP response, and to manage all the lifecycle around them.
+
+Jakarta Faces is a component-based MVC framework that can be executed on a servlet container and act as a presentation-oriented web application.
+It intends to reduce the boilerplate code needed to collect the request parameters, convert and validate them, update bean properties with them, invoke bean methods, and generate HTML output as response.
+It is designed to run in servlet and non-servlet environments such as a portlet container.footnote:[The portlet container is defined in https://jcp.org/en/jsr/detail?id=286[JSR 286 Portlet specification] which is not part of Jakarta EE.]
+
+Jakarta REST is a RESTful web service framework that can be executed on a servlet container and act as a service-oriented web application. 
+It intends to reduce the boilerplate code needed to convert the request parameters to a bean and further convert it to the desired response such as JSON or XML.
+It is designed to run in servlet and non-servlet environments such as a microservice.footnote:[Some frameworks use Jakarta REST with non-blocking server such as Eclipse https://vertx.io[Vert.X] or https://netty.io[Netty].]
+
+A servlet container can be part of a Jakarta runtime such as an application server.
+Certain aspects of web component behavior can be configured when the web application is installed, or deployed, to a servlet container.
+The configuration information can be specified using annotations or can be maintained in a XML file called a deployment descriptor.
+A deployment descriptor file must comply to the schema described in the specification associated with the web component.
+When the same configuration is specified using annotations and in a deployment descriptor file, then the configuration in the deployment descriptor file will always have precedence.
+
+This chapter gives a brief overview of the activities involved in developing Jakarta Servlet-based web applications.
+It explains how to compile, package, deploy, and run Jakarta Servlet-based web applications in a servlet container.

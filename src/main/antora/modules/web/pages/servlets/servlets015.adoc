@@ -1,0 +1,96 @@
+== The mood Example Application
+
+The `mood` example application, located in the `_tut-install_/examples/web/servlet/mood/` directory, is a simple example that displays Duke's moods at different times during the day.
+The example shows how to develop a simple application by using the `@WebServlet`, `@WebFilter`, and `@WebListener` annotations to create a servlet, a listener, and a filter.
+
+=== Components of the mood Example Application
+
+The `mood` example application is comprised of three components: `mood.web.MoodServlet`, `mood.web.TimeOfDayFilter`, and `mood.web.SimpleServletListener`.
+
+`MoodServlet`, the presentation layer of the application, displays Duke's mood in a graphic, based on the time of day.
+The `@WebServlet` annotation specifies the URL pattern:
+
+[source,java]
+----
+@WebServlet("/report")
+public class MoodServlet extends HttpServlet {
+    ...
+}
+----
+
+`TimeOfDayFilter` sets an initialization parameter indicating that Duke is awake:
+
+[source,java]
+----
+@WebFilter(filterName = "TimeOfDayFilter",
+urlPatterns = {"/*"},
+initParams = {
+    @WebInitParam(name = "mood", value = "awake")})
+public class TimeOfDayFilter implements Filter {
+    ...
+}
+----
+
+The filter calls the `doFilter` method, which contains a `switch` statement that sets Duke's mood based on the current time.
+
+`SimpleServletListener` logs changes in the servlet's lifecycle.
+The log entries appear in the server log.
+
+=== Running the mood Example
+
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `mood` example.
+
+==== To Run the mood Example Using NetBeans IDE
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the Open Project dialog box, navigate to:
++
+----
+tut-install/examples/web/servlet
+----
+
+. Select the `mood` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `mood` project and select *Build*.
+
+. In a web browser, enter the following URL:
++
+----
+http://localhost:8080/mood/report
+----
++
+The URL specifies the context root, followed by the URL pattern.
++
+A web page appears with the title "Servlet MoodServlet at /mood", a text string describing Duke's mood, and an illustrative graphic.
+
+==== To Run the mood Example Using Maven
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. In a terminal window, go to:
++
+----
+tut-install/examples/web/servlet/mood/
+----
+
+. Enter the following command to deploy the application:
++
+[source,shell]
+----
+mvn install
+----
+
+. In a web browser, enter the following URL:
++
+----
+http://localhost:8080/mood/report
+----
++
+The URL specifies the context root, followed by the URL pattern.
++
+A web page appears with the title "Servlet MoodServlet at /mood", a text string describing Duke's mood, and an illustrative graphic.
