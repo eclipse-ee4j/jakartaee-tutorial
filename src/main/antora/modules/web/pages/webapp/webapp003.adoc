@@ -54,7 +54,7 @@ We'll briefly go through the CDI annotations that are used here:
 
 * `@Named` -- gives the backing bean a managed bean name, which is primarily used to reference it in Expression Language (EL).
   Without any attributes this defaults to the simple class name with the first letter in lowercase.
-  This backing bean will thus be available as a managed bean via `#{hello}` in EL.
+  This backing bean will thus be available as a managed bean via `#\{hello}` in EL.
 * `@RequestScoped` -- gives the backing bean a managed bean scope, which essentially represents its lifespan.
   In this case that lifespan is the duration of an HTTP request.
   When the HTTP request ends, then the managed bean instance is destroyed.
