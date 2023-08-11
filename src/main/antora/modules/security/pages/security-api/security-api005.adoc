@@ -6,7 +6,7 @@ Topics include:
 
 * <<_overview_of_the_custom_identity_store_example>>
 
-* <<_running_the_custom_identity_store_example>>
+* <<_running_the_custom_identity_store_example_2>>
 
 === Overview of the Custom Identity Store Example
 
@@ -119,6 +119,7 @@ public class Servlet extends HttpServlet {
 In GlassFish 6.0, group to role mapping is enabled by default.
 Therefore, you do not need to bundle `web.xml` with the application to provide mapping between roles and groups.
 
+[[_running_the_custom_identity_store_example_2]]
 === Running the custom-identity-store Example
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `custom-identity-store` application as described in the following topics:
@@ -132,7 +133,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 ==== To Build, Package, and Deploy the custom-identity-store Example Using NetBeans IDE
 
 . If you have not already done so, start the GlassFish server.
-See <<starting-and-stopping-glassfish-server>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . From the File menu, choose Open Project.
 
@@ -153,7 +154,7 @@ This command builds and deploys the example application to your GlassFish Server
 ==== To Build, Package, and Deploy the custom-identity-store Example Using Maven
 
 . If you have not already done so, start the GlassFish server.
-See <<starting-and-stopping-glassfish-server>>.
+See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server].
 
 . In a terminal window, go to:
 +
