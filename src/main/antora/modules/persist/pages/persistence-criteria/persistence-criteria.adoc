@@ -1,5 +1,7 @@
 = Using the Criteria API to Create Queries
 
+include::ROOT:partial$not_updated.adoc[]
+
 The Criteria API is used to define queries for entities and their persistent state by creating query-defining objects.
 Criteria queries are written using Java programming language APIs, are typesafe, and are portable.
 Such queries work regardless of the underlying data store.
