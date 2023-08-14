@@ -1,1 +1,214 @@
+
+.Introduction
+
 * xref:index.adoc[]
+
+
+
+.Core Profile
+
+* Jakarta EE Contexts and Dependency Injection
+
+** xref:cdi:cdi-basic/cdi-basic.adoc[]
+
+** xref:cdi:cdi-basicexamples/cdi-basicexamples.adoc[]
+
+** xref:supporttechs:interceptors/interceptors.adoc[]
+
+* Jakarta REST
+
+** xref:websvcs:jaxrs/jaxrs.adoc[]
+
+** xref:websvcs:jaxrs-client/jaxrs-client.adoc[]
+
+** xref:websvcs:jaxrs-advanced/jaxrs-advanced.adoc[]
+
+* Jakarta JSON
+
+** xref:web:jsonb/jsonb.adoc[]
+
+** xref:web:jsonp/jsonp.adoc[]
+
+
+
+
+.Web Profile
+
+* Jakarta Validation
+
+** xref:beanvalidation:bean-validation/bean-validation.adoc[]
+
+** xref:beanvalidation:bean-validation-advanced/bean-validation-advanced.adoc[]
+
+* Jakarta Security
+
+** xref:security:security.adoc[]
+
+* Jakarta Servlets
+
+** xref:web:webapp/webapp.adoc[]
+
+** xref:web:servlets/servlets.adoc[]
+
+* Jakarta Faces
+
+** xref:web:faces-intro/faces-intro.adoc[]
+
+** xref:web:faces-facelets/faces-facelets.adoc[]
+
+** xref:web:faces-page/faces-page.adoc[]
+
+** xref:web:faces-page-core/faces-page-core.adoc[]
+
+** xref:web:faces-develop/faces-develop.adoc[]
+
+** xref:web:faces-ajax/faces-ajax.adoc[]
+
+* Jakarta WebSocket
+
+** xref:web:websocket/websocket.adoc[]
+
+* Jakarta Persistence
+
+** xref:persist:persistence-intro/persistence-intro.adoc[]
+
+** xref:persist:persistence-basicexamples/persistence-basicexamples.adoc[]
+
+** xref:persist:persistence-querylanguage/persistence-querylanguage.adoc[]
+
+** xref:persist:persistence-criteria/persistence-criteria.adoc[]
+
+** xref:persist:persistence-string-queries/persistence-string-queries.adoc[]
+
+** xref:persist:persistence-locking/persistence-locking.adoc[]
+
+** xref:persist:persistence-entitygraphs/persistence-entitygraphs.adoc[]
+
+** xref:persist:persistence-cache/persistence-cache.adoc[]
+
+** xref:supporttechs:concurrency-utilities/concurrency-utilities.adoc[]
+
+** xref:supporttechs:transactions/transactions.adoc[]
+
+* Jakarta Enterprise Beans (Lite)
+
+** xref:entbeans:ejb-intro/ejb-intro.adoc[]
+
+** xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc[]
+
+** xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc[]
+
+
+
+
+.Full Profile
+
+* Jakarta Mail
+
+* Jakarta Messaging
+
+** xref:messaging:jms-concepts/jms-concepts.adoc[]
+
+** xref:messaging:jms-examples/jms-examples.adoc[]
+
+* Jakarta Batch
+
+** xref:supporttechs:batch-processing/batch-processing.adoc[]
+
+
+
+
+.Advanced
+
+* Core Profile
+
+** Jakarta JSON
+
+
+* Web Profile
+
+** Jakarta CDI (Full)
+
+*** xref:cdi:cdi-adv/cdi-adv.adoc[]
+
+*** xref:cdi:cdi-bootstrap-se8/cdi-bootstrap-se8.adoc[]
+
+*** xref:cdi:cdi-adv-examples/cdi-adv-examples.adoc[]
+
+** Jakarta Authentication
+
+*** [[just a minimal description and a link to spec for vendors
+
+** Jakarta Authorization
+
+*** [[Just a minimal description and a link to spec for vendors
+
+** Jakarta Servlets
+
+** Jakarta Faces
+
+*** xref:web:faces-advanced-cc/faces-advanced-cc.adoc[]
+
+*** xref:web:faces-custom/faces-custom.adoc[]
+
+*** xref:web:faces-configure/faces-configure.adoc[]
+
+*** xref:web:faces-ws/faces-ws.adoc[]
+
+*** xref:web:webi18n/webi18n.adoc[]
+
+** Jakarta Transactions
+
+** Jakarta Concurrency
+
+*** xref:entbeans:ejb-async/ejb-async.adoc[]
+
+
+* Full Profile
+
+** Jakarta Connectors
+
+*** [[Just a minimal description and a link to spec for vendors
+
+
+* Optional Components
+
+** Jakarta Expression Language
+
+*** xref:web:faces-el/faces-el.adoc[]
+
+** Jakarta XML Binding
+
+
+
+
+.Archived
+
+* Web Profile
+
+** Jakarta Pages (scriptlets, tagfiles)
+
+*** 🔗 Just a minimal description and a link to last known tutorial on the subject
+
+** Jakarta Tags (fmt, sql, xml)
+
+*** 🔗 Just a minimal description and a link to last known tutorial on the subject
+
+** Resource-refs
+
+*** 🔗 Just a minimal description and a link to last known tutorial on the subject
+
+** Role-refs
+
+*** 🔗 Just a minimal description and a link to last known tutorial on the subject
+
+
+* Full Profile
+
+** Jakarta XML Web Services
+
+*** xref:websvcs:webservices-intro/webservices-intro.adoc[]
+
+*** xref:websvcs:jaxws/jaxws.adoc[]
+
+** Jakarta Enterprise Beans (and Application Client Container)
