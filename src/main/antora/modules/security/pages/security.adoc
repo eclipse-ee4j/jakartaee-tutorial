@@ -1713,4 +1713,222 @@ The test itself is basically the same as that for the <<Securing an endpoint wit
 
 
 
+== Securing an endpoint with Custom Form authentication
+
+In the following example, we'll secure a REST endpoint using Custom Form authentication.
+
+You'll learn how to:
+
+include::partial$list-item-learn-security-constraints.adoc[]
+. Use the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/customformauthenticationmechanismdefinition[Custom Form authentication mechanism,role=external,window=_blank]
+. Use Jakarta Faces and Jakarta Validation to customise the Form used for Form authentication
+. How to define (and implicitly set) a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+include::partial$list-item-learn-security-context.adoc[]
+
+=== Write the application
+
+include::partial$rest-resource-class.adoc[]
+
+==== Declare the security constraints
+
+include::partial$declare-security-constraints.adoc[]
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@ApplicationScoped
+@CustomFormAuthenticationMechanismDefinition(
+    loginToContinue = @LoginToContinue(
+        loginPage="/login.xhtml",
+        errorPage=""
+    )
+)
+@DeclareRoles({ "user", "caller" })
+@FacesConfig
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+include::partial$declare-authentication-mechanism.adoc[]
+
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+
+Contrary to the regular Form authentication mechanism, the Custom Form authentication mechanism let's us customize the login dialog even more by having the ability to execute custom code between the postback of a login form and the form authentication mechanism taking the provided credentials.
+
+To use this authentication method, we need to designate a path to a resource that is relative to our application. The authentication mechanism will redirect the caller to this resource when authentication is required. The resource can be anything, but a postback should eventually lead to some code being executed that continues the authentication dialog. E.g. a plain .html file or .jsp file combined with  a Filter, or a Faces view with a backing bean.
+
+
+==== Define the authentication mechanism's view and backing code
+
+For this example we'll use a Faces view with a backing bean:
+
+[source,xml]
+----
+<html lang="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="jakarta.faces.html"
+    xmlns:faces="jakarta.faces"
+>
+    <h:head/>
+    <h:messages />
+    
+    <body>
+        <p>
+            Login to continue
+        </p>
+    
+         <form faces:id="form">
+            <p>
+                <strong>Username </strong> 
+                <input faces:id="username" type="text" faces:value="#{loginBacking.username}" />
+            </p>
+            <p>
+                <strong>Password </strong> 
+                <input faces:id="password" type="password" faces:value="#{loginBacking.password}" />
+            </p>
+            <p>
+                <input type="submit" value="Login" faces:action="#{loginBacking.login}" />
+            </p>
+        </form>
+    </body>
+</html>
+----
+
+[source,java]
+----
+@Named
+@RequestScoped
+public class LoginBacking {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @Inject
+    private FacesContext facesContext;
+
+    @NotNull
+    @Size(min = 3, max = 15, message="Username must be between 3 and 15 characters")
+    private String username;
+
+    @NotNull
+    @Size(min = 5, max = 50, message="Password must be between 5 and 50 characters")
+    private String password;
+
+    public void login() {
+        switch (
+            // Continue the authentication dialog manually by invoking the authenticate()
+            // method. The form authentication picks this up, just like a post to j_security does.
+            securityContext.authenticate(
+                getRequest(),
+                getResponse(),
+                withParams()
+                    .credential(new UsernamePasswordCredential(username, new Password(password))))) {
+
+            case SEND_CONTINUE:
+
+                // Authentication mechanism has send a redirect, should not
+                // send anything to response from Faces now.
+                facesContext.responseComplete();
+                return;
+
+            case SEND_FAILURE:
+
+                addError("Login failed");
+                return;
+
+            default:
+        }
+    }
+
+    // getters/setters + utility methods omitted
+}
+----
+
+The view itself is quite similar to the HTML page we used for the form in <<Securing an endpoint with Form authentication>>. The main difference is bindings of the form fields to a (CDI) backing bean. The bean side of the binding has Jakarta Validation constraints applied to it; this allows for fine-grained validation of some general requirements of the credentials without actually attempting authentication.
+
+If this initial validation passes, we arrive in the `login()` method. For our example the only thing we need to do here is signaling that we want to continue the authentication dialog, and when doing so provide the credentials that we earlier obtained in a custom way.
+
+We have two important outcomes to handle. `SEND_CONTINUE` effectively means the credentials were validated successfully, and the caller is therefore directed to the resource that was originally requested. `SEND_FAILURE` means the opposite; the credentials were not validated successfully. By just returning from our callback method in the last case the form will be redisplayed, albeit with the error message added.
+
+==== Define the identity store
+
+Finally, let's define a basic identity store that the security system can use to validate provided credentials for Form authentication:
+
+[source,java]
+-----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+-----
+
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions about whether that would promote security best practices.
+
+include::partial$identity-store-installed.adoc[]
+
+==== Test the application
+
+:app-name: restCustomFormAuthCustomStore
+include::partial$test-github.adoc[]
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.272 s - in jakartaee.examples.focused.security.restCustomFormAuthCustomStore.RestCustomFormAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestCustomFormAuthCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("form:username")
+            .setValueAttribute("john");
+
+        form.getInputByName("form:password")
+            .setValueAttribute("secret1");
+
+        TextPage page = form.getInputByValue("Login")
+                            .click();
+
+        System.out.println(page.getContent());
+    }
+}
+----
+
+include::partial$inspect-app.adoc[]
+
+The test first sends a request here to the protected resource, and the server responds with the rendered version of the Faces view form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the `Login` button. The form posts back to the same URL it was requested from. Faces will detect this postback and will orchestrate the validation using Jakarta Validation and invoking the CDI based backing bean.
+
 
