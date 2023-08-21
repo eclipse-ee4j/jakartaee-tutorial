@@ -1,0 +1,94 @@
+== Hello World Web Application Using Jakarta Servlet
+
+The `hello-servlet` application is a web application that uses Jakarta Servlet take a name as an HTTP request parameter, generate the greeting and return it as an HTTP response.
+As a service-oriented web application, the response is in this minimal example represented as plain text.
+
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/servlet/hello-servlet/` directory.
+
+=== The Servlet
+
+In a typical Jakarta Servlet-based web application, the class must extend `jakarta.servlet.http.HttpServlet` and override one of the `doXxx()` methods where `Xxx` represents the HTTP method of interest.
+Such a class is in the Jakarta Servlet world called a _Servlet_.
+
+For this Hello World web application, the `src/main/java/jakarta/tutorial/web/servlet/Greeting.java` servlet listens on HTTP GET requests and extracts the `name` request parameter as input and creates the `greeting` as output.
+
+[source,java]
+----
+package jakarta.tutorial.web.servlet;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/greeting")
+public class Greeting extends HttpServlet {
+
+    @Override
+    public void doGet
+        (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        var name = request.getParameter("name");
+
+        if (name == null || name.isBlank()) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        var greeting = "Hello, " + name + "!";
+
+        response.setContentType("text/plain");
+        response.getWriter().write(greeting);
+    }
+}
+----
+
+=== Mapping URLs to Web Components
+
+When the servlet container receives a request, it must determine which web component should handle the request.
+The servlet container does so by mapping the URL contained in the request to a web component.
+A URL contains the context path and, optionally, a URL pattern:
+
+----
+http(s)://host:port/context-path[/url-pattern]
+----
+
+You can set the URL pattern for a servlet by using the `@WebServlet` annotation in the servlet source file or by using `<servlet-mapping>` entry in the Jakarta Servlet deployment descriptor file, the `src/main/webapp/WEB-INF/web.xml`.
+In the `Greeting` servlet example the `@WebServlet` annotation indicates that the URL pattern is `/greeting`.
+Therefore, when the servlet is deployed to a local server listening on `http://localhost:8080` with the context path set to `hello-servlet`, it is accessed with the following URL:
+
+----
+http://localhost:8080/hello-servlet/greeting
+----
+
+The Hello World example will return a HTTP 400 error as response indicating a 'Bad Request'.
+When specifying the name as a request parameter in the following URL:
+
+----
+http://localhost:8080/hello-servlet/greeting?name=Duke
+----
+
+Then it will return the response `Hello, Duke!`.
+
+=== Running the `hello-servlet` example application
+
+Build and deploy as instructed in xref:webapp/webapp.adoc#_building_deploying_and_running_the_example_projects[Building, Deploying and Running The Example Projects].
+
+In a web browser, open the following URL:
+
+----
+http://localhost:8080/hello-servlet/greeting?name=Duke
+----
+
+It will return the response `Hello, Duke!`.
+You can edit the `name` parameter into something else to get a different response.
+
+----
+http://localhost:8080/hello-servlet/greeting?name=Joe
+----
+
+This will return the response `Hello, Joe!`.

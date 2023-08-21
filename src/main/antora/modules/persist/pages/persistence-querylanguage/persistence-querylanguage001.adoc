@@ -1,0 +1,9 @@
+== Overview of the Jakarta Persistence Query Language
+
+The query language uses the abstract persistence schemas of entities, including their relationships, for its data model and defines operators and expressions based on this data model.
+The scope of a query spans the abstract schemas of related entities that are packaged in the same persistence unit.
+The query language uses an SQL-like syntax to select objects or values based on entity abstract schema types and relationships among them.
+
+This chapter relies on the material presented in earlier chapters.
+For conceptual information, see xref:persistence-intro/persistence-intro.adoc#_introduction_to_jakarta_persistence[Introduction to Jakarta Persistence].
+For code examples, see xref:persistence-basicexamples/persistence-basicexamples.adoc#_running_the_persistence_examples[Running the Persistence Examples].

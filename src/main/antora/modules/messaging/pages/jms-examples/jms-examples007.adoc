@@ -1,0 +1,215 @@
+== Receiving Messages Asynchronously Using a Message-Driven Bean
+
+If you are writing an application to run in the Jakarta EE application client container or on the Java SE platform, and you want to receive messages asynchronously, you need to define a class that implements the `MessageListener` interface, create a `JMSConsumer`, and call the method `setMessageListener`.
+
+If you're writing an application to run in the Jakarta EE web or enterprise bean container and want it to receive messages asynchronously, you also need to need to define a class that implements the `MessageListener` interface.
+However, instead of creating a `JMSConsumer` and calling the method `setMessageListener`, you must configure your message listener class to be a message-driven bean.
+The application server will then take care of the rest.
+
+Message-driven beans can implement any messaging type.
+Most commonly, however, they implement the Jakarta Messaging technology.
+
+This section describes a simple message-driven bean example.
+Before proceeding, you should read the basic conceptual information in the section xref:entbeans:ejb-intro/ejb-intro.adoc#_what_is_a_message_driven_bean[What Is a Message-Driven Bean?] as well as xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
+
+=== Overview of the simplemessage Example
+
+The `simplemessage` application has the following components:
+
+* `SimpleMessageClient`: An application client that sends several messages to a queue
+
+* `SimpleMessageBean`: A message-driven bean that asynchronously processes the messages that are sent to the queue
+
+<<_the_simplemessage_application>> illustrates the structure of this application.
+The application client sends messages to the queue, which was created administratively using the Administration Console.
+The Messaging provider (in this case, GlassFish Server) delivers the messages to the instances of the message-driven bean, which then processes the messages.
+
+[[_the_simplemessage_application]]
+.The simplemessage Application
+image::common:jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"]
+
+The source code for this application is in the `_tut-install_/examples/jms/simplemessage/` directory.
+
+=== The simplemessage Application Client
+
+The `SimpleMessageClient` sends messages to the queue that the `SimpleMessageBean` listens to.
+The client starts by injecting the connection factory and queue resources:
+
+[source,java]
+----
+@Resource(lookup = "java:comp/DefaultJMSConnectionFactory")
+private static ConnectionFactory connectionFactory;
+
+@Resource(lookup = "jms/MyQueue")
+private static Queue queue;
+----
+
+Next, the client creates the `JMSContext` in a `try-with-resources` block:
+
+[source,java]
+----
+String text;
+final int NUM_MSGS = 3;
+
+try (JMSContext context = connectionFactory.createContext();) { ... }
+----
+
+Finally, the client sends several text messages to the queue:
+
+[source,java]
+----
+for (int i = 0; i < NUM_MSGS; i++) {
+    text = "This is message " + (i + 1);
+    System.out.println("Sending message: " + text);
+    context.createProducer().send(queue, text);
+}
+----
+
+=== The simplemessage Message-Driven Bean Class
+
+The code for the `SimpleMessageBean` class illustrates the requirements of a message-driven bean class described in xref:jms-concepts/jms-concepts.adoc#_using_message_driven_beans_to_receive_messages_asynchronously[Using Message-Driven Beans to Receive Messages Asynchronously].
+
+The first few lines of the `SimpleMessageBean` class use the `@MessageDriven` annotation's `activationConfig` attribute to specify configuration properties:
+
+[source,java]
+----
+@MessageDriven(activationConfig = {
+    @ActivationConfigProperty(propertyName = "destinationLookup",
+            propertyValue = "jms/MyQueue"),
+    @ActivationConfigProperty(propertyName = "destinationType",
+            propertyValue = "jakarta.jms.Queue")
+})
+----
+
+See xref:jms-concepts/jms-concepts.adoc#_activationconfigproperty_settings_for_message_driven_beans[null] for a list of the available properties.
+
+See xref:jms-examples/jms-examples.adoc#_sending_messages_from_a_session_bean_to_an_mdb[Sending Messages from a Session Bean to an MDB] for examples of the `subscriptionDurability`, `clientId`, `subscriptionName`, and `messageSelector` properties.
+
+==== The onMessage Method
+
+When the queue receives a message, the enterprise bean container invokes the message listener method or methods.
+For a bean that uses Jakarta Messaging, this is the `onMessage` method of the `MessageListener` interface.
+
+In the `SimpleMessageBean` class, the `onMessage` method casts the incoming message to a `TextMessage` and displays the text:
+
+[source,java]
+----
+public void onMessage(Message inMessage) {
+
+    try {
+        if (inMessage instanceof TextMessage) {
+            logger.log(Level.INFO,
+                    "MESSAGE BEAN: Message received: {0}",
+                    inMessage.getBody(String.class));
+        } else {
+            logger.log(Level.WARNING,
+                    "Message of wrong type: {0}",
+                    inMessage.getClass().getName());
+        }
+    } catch (JMSException e) {
+        logger.log(Level.SEVERE,
+                "SimpleMessageBean.onMessage: JMSException: {0}",
+                e.toString());
+        mdc.setRollbackOnly();
+    }
+}
+----
+
+=== Running the simplemessage Example
+
+You can use either NetBeans IDE or Maven to build, deploy, and run the `simplemessage` example.
+
+==== Creating Resources for the simplemessage Example
+
+This example uses the queue named `jms/MyQueue` and the preconfigured default connection factory `java:comp/DefaultJMSConnectionFactory`.
+
+If you have run the simple Jakarta Messaging examples in xref:jms-examples/jms-examples.adoc#_writing_simple_jakarta_messaging_applications[Writing Simple Jakarta Messaging Applications] and have not deleted the resources, you already have the queue.
+Otherwise, follow the instructions in xref:jms-examples/jms-examples.adoc#_to_create_resources_for_the_simple_examples[To Create Resources for the Simple Examples] to create it.
+
+For more information on creating Messaging resources, see xref:jms-examples/jms-examples.adoc#_creating_jakarta_messaging_administered_objects[Creating Jakarta Messaging Administered Objects].
+
+==== To Run the simplemessage Example Using NetBeans IDE
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the *Open Project* dialog box, navigate to:
++
+----
+tut-install/examples/jms/simplemessage
+----
+
+. Select the `simplemessage` folder.
+
+. Make sure that the *Open Required Projects* check box is selected, then click *Open Project*.
+
+. In the *Projects* tab, right-click the `simplemessage` project and select *Build*.
+(If NetBeans IDE suggests that you run a priming build, click the box to do so.)
++
+This command packages the application client and the message-driven bean, then creates a file named `simplemessage.ear` in the `simplemessage-ear/target/` directory.
+It then deploys the `simplemessage-ear` module, retrieves the client stubs, and runs the application client.
++
+The output in the output window looks like this (preceded by application client container output):
++
+----
+Sending message: This is message 1
+Sending message: This is message 2
+Sending message: This is message 3
+To see if the bean received the messages,
+ check <install_dir>/domains/domain1/logs/server.log.
+----
++
+In the server log file, lines similar to the following appear:
++
+----
+MESSAGE BEAN: Message received: This is message 1
+MESSAGE BEAN: Message received: This is message 2
+MESSAGE BEAN: Message received: This is message 3
+----
++
+The received messages may appear in a different order from the order in which they were sent.
+
+. After you have finished running the application, undeploy it using the *Services* tab.
+
+==== To Run the simplemessage Example Using Maven
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. In a terminal window, go to:
++
+----
+tut-install/examples/jms/simplemessage/
+----
+
+. To compile the source files and package the application, use the following command:
++
+[source,shell]
+----
+mvn install
+----
++
+This target packages the application client and the message-driven bean, then creates a file named `simplemessage.ear` in the `simplemessage-ear/target/` directory.
+It then deploys the `simplemessage-ear` module, retrieves the client stubs, and runs the application client.
++
+The output in the terminal window looks like this (preceded by application client container output):
++
+----
+Sending message: This is message 1
+Sending message: This is message 2
+Sending message: This is message 3
+To see if the bean received the messages,
+ check <install_dir>/domains/domain1/logs/server.log.
+----
++
+In the server log file, lines similar to the following appear:
++
+----
+MESSAGE BEAN: Message received: This is message 1
+MESSAGE BEAN: Message received: This is message 2
+MESSAGE BEAN: Message received: This is message 3
+----
++
+The received messages may appear in a different order from the order in which they were sent.
+
+. After you have finished running the application, undeploy it using the `mvn cargo:undeploy` command.

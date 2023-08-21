@@ -9,12 +9,12 @@ When a bean that is constrained in this way is requested, the server requests a 
 
 If the topic of authentication is new to you, see xref:security-webtier/security-webtier.adoc#_specifying_authentication_mechanisms[Specifying Authentication Mechanisms].
 
-This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_tut-install_/examples/ejb/cart/` directory and is discussed in <<the-cart-example>>.
+This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_tut-install_/examples/ejb/cart/` directory and is discussed in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_the_cart_example[The cart Example].
 
 In general, the following steps are necessary to add user name/password authentication to an existing application that contains an enterprise bean.
 In the example application included with this tutorial, these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 
-. Create an application like the one in <<the-cart-example>>.
+. Create an application like the one in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_the_cart_example[The cart Example].
 The example in this tutorial starts with this example and demonstrates adding basic authentication of the client to this application.
 The example application discussed in this section can be found at `_tut-install_/examples/security/cart-secure/`.
 
@@ -200,8 +200,8 @@ This example demonstrates how to use the `getCallerPrincipal` and `isCallerInRol
 This example starts with a very simple enterprise bean application, `converter`, and modifies the methods of the `ConverterBean` so that currency conversion will occur only when the requester is in the role of `TutorialUser`.
 
 This example can be found in the `_tut-install_/examples/security/converter-secure` directory.
-This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:getting-started-with-enterprise-beans[] and is found in the `_tut-install_/examples/ejb/converter/` directory.
-This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in <<_securing_an_enterprise_bean_programmatically>>.
+This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc#_getting_started_with_enterprise_beans[Getting Started with Enterprise Beans] and is found in the `_tut-install_/examples/ejb/converter/` directory.
+This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_programmatically[Securing an Enterprise Bean Programmatically].
 
 In general, the following steps are necessary when using the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
 In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.

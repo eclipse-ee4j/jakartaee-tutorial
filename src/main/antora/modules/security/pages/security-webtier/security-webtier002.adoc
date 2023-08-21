@@ -244,7 +244,7 @@ If the user is authorized, the server redirects the client to the resource by us
 .Form-Based Authentication
 image::common:jakartaeett_dt_046.svg["Diagram of four steps in form-based authentication between client and server"]
 
-The section <<_the_hello1_formauth_example_form_based_authentication_with_a_jakarta_faces_application>> is an example application that uses form-based authentication.
+The section xref:security-webtier/security-webtier.adoc#_the_hello1_formauth_example_form_based_authentication_with_a_jakarta_faces_application[The hello1-formauth Example: Form-Based Authentication with a Jakarta Faces Application] is an example application that uses form-based authentication.
 
 When you create a form-based login, be sure to maintain sessions using cookies or SSL session information.
 
@@ -279,7 +279,7 @@ The element content must be either `NONE`, `BASIC`, `DIGEST`, `FORM`, or `CLIENT
 * The `form-login-config` subelement specifies the login and error pages that should be used when form-based login is specified.
 
 [NOTE]
-Another way to specify form-based authentication is to use the `authenticate`, `login`, and `logout` methods of `HttpServletRequest`, as discussed in <<_authenticating_users_programmatically>>.
+Another way to specify form-based authentication is to use the `authenticate`, `login`, and `logout` methods of `HttpServletRequest`, as discussed in xref:security-webtier/security-webtier.adoc#_authenticating_users_programmatically[Authenticating Users Programmatically].
 
 When you try to access a web resource that is constrained by a `security-constraint` element, the web container activates the authentication mechanism that has been configured for that resource.
 The authentication mechanism specifies how the user will be prompted to log in.
@@ -301,7 +301,7 @@ The following example shows how to declare form-based authentication in your dep
 ----
 
 The login and error page locations are specified relative to the location of the deployment descriptor.
-Examples of login and error pages are shown in <<_creating_the_login_form_and_the_error_page>>.
+Examples of login and error pages are shown in xref:security-webtier/security-webtier.adoc#_creating_the_login_form_and_the_error_page[Creating the Login Form and the Error Page].
 
 The following example shows how to declare digest authentication in your deployment descriptor:
 
