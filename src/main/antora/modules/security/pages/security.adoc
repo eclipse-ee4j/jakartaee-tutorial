@@ -1756,7 +1756,7 @@ include::partial$declare-authentication-mechanism.adoc[]
 
 Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog (the process between the caller and the authentication mechanism) and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
 
-Contrary to the regular Form authentication mechanism, the Custom Form authentication mechanism let's us customize the login dialog even more by having the ability to execute custom code between the postback of a login form and the form authentication mechanism taking the provided credentials.
+Contrary to the regular Form authentication mechanism, the Custom Form authentication mechanism lets us customize the login dialog even more by having the ability to execute custom code between the postback of a login form and the form authentication mechanism taking the provided credentials.
 
 To use this authentication method, we need to designate a path to a resource that is relative to our application. The authentication mechanism will redirect the caller to this resource when authentication is required. The resource can be anything, but a postback should eventually lead to some code being executed that continues the authentication dialog. For example a plain .html file or .jsp file combined with  a Filter, or a Faces view with a backing bean.
 
