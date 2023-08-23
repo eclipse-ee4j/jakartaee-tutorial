@@ -506,7 +506,7 @@ public class ApplicationConfig extends Application {
 
 include::partial$declare-authentication-mechanism.adoc[]
 
-Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog (the process between the caller and the authentication mechanism) and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
 
 To use this authentication method, we need to designate two paths to resources that are relative to our application. One path is for the login page, which the user will be directed to when attempting to access a protected resource. The other path is for when login fails, such as when the user enters incorrect login credentials. If the paths are the same, a request parameter can be used to distinguish between them. Paths can point to anything our server can respond to; a static HTML file, a REST resource, or anything else. For simplicity, we'll use two static HTML files here:
 
@@ -1754,7 +1754,7 @@ public class ApplicationConfig extends Application {
 
 include::partial$declare-authentication-mechanism.adoc[]
 
-Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog (the process between the caller and the authentication mechanism) and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
 
 Contrary to the regular Form authentication mechanism, the Custom Form authentication mechanism let's us customize the login dialog even more by having the ability to execute custom code between the postback of a login form and the form authentication mechanism taking the provided credentials.
 
@@ -1849,7 +1849,7 @@ public class LoginBacking {
 
 The view itself is quite similar to the HTML page we used for the form in <<Securing an endpoint with Form authentication>>. The main difference is bindings of the form fields to a (CDI) backing bean. The bean side of the binding has Jakarta Validation constraints applied to it; this allows for fine-grained validation of some general requirements of the credentials without actually attempting authentication.
 
-If this initial validation passes, we arrive in the `login()` method. For our example the only thing we need to do here is signaling that we want to continue the authentication dialog, and when doing so provide the credentials that we earlier obtained in a custom way.
+If this initial validation passes, we arrive in the `login()` method. For our example the only thing we need to do here is signaling that we want to continue the authentication dialog (the process or interaction between the caller and the authentication mechanism), and when doing so provide the credentials that we earlier obtained in a custom way.
 
 We have two important outcomes to handle. `SEND_CONTINUE` effectively means the credentials were validated successfully, and the caller is therefore directed to the resource that was originally requested. `SEND_FAILURE` means the opposite; the credentials were not validated successfully. By just returning from our callback method in the last case the form will be redisplayed, albeit with the error message added.
 
