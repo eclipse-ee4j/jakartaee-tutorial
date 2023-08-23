@@ -1767,11 +1767,7 @@ For this example we'll use a Faces view with a backing bean:
 
 [source,xml]
 ----
-<html lang="en"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="jakarta.faces.html"
-    xmlns:faces="jakarta.faces"
->
+<html lang="en" xmlns:h="jakarta.faces.html" >
     <h:head/>
     
     <h:body>
@@ -1781,7 +1777,7 @@ For this example we'll use a Faces view with a backing bean:
             Login to continue
         </p>
     
-         <form faces:id="form">
+         <h:form id="form">
             <p>
                 <h:outputLabel for="username" value="Username" />
                 <h:inputText id="username" value="#{loginBacking.username}"/>
@@ -1793,7 +1789,7 @@ For this example we'll use a Faces view with a backing bean:
             <p>
                 <h:commandButton value="Login" type="submit" action="#{loginBacking.login}" />
             </p>
-        </form>
+        </h:form>
     </h:body>
 </html>
 ----
