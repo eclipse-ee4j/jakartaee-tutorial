@@ -1783,15 +1783,15 @@ For this example we'll use a Faces view with a backing bean:
     
          <form faces:id="form">
             <p>
-                <strong>Username </strong> 
-                <input faces:id="username" type="text" faces:value="#{loginBacking.username}" />
+                <h:outputLabel for="username" value="Username" />
+                <h:inputText id="username" value="#{loginBacking.username}"/>
             </p>
             <p>
-                <strong>Password </strong> 
-                <input faces:id="password" type="password" faces:value="#{loginBacking.password}" />
+                <h:outputLabel for="password" value="Password" />
+                <h:inputSecret id="password" value="#{loginBacking.password}"/>
             </p>
             <p>
-                <input type="submit" value="Login" faces:action="#{loginBacking.login}" />
+                <h:commandButton value="Login" type="submit" action="#{loginBacking.login}" />
             </p>
         </form>
     </h:body>
