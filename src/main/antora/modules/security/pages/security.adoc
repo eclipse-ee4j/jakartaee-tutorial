@@ -1853,6 +1853,10 @@ If this initial validation passes, we arrive in the `login()` method. For our ex
 
 We have two important outcomes to handle. `SEND_CONTINUE` effectively means the credentials were validated successfully, and the caller is therefore directed to the resource that was originally requested. `SEND_FAILURE` means the opposite; the credentials were not validated successfully. By just returning from our callback method in the last case the form will be redisplayed, albeit with the error message added.
 
+NOTE: `NOT_DONE` and `SUCCESS` are two other outcomes, but we don't have to handle them here. `NOT_DONE` only applies to pre-emptive authentication, but we're doing explicit (forced, mandatory) authentication here. `SUCCESS` means we can go ahead and render the page, which is exactly what happens if we don't do anything.
+
+
+
 ==== Define the identity store
 
 Finally, let's define a basic identity store that the security system can use to validate provided credentials for Form authentication:
