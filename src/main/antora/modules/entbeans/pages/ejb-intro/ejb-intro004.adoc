@@ -253,7 +253,7 @@ ExampleRemote example = (ExampleRemote)
 
 A web service client can access a Jakarta EE application in two ways.
 First, the client can access a web service created with Jakarta XML Web Services.
-(For more information on Jakarta XML Web Services, see xref:9.1@websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services].)
+(For more information on Jakarta XML Web Services, see "Building Web Services with Jakarta XML Web Services", xref:9.1@websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[available in a previous version of the tutorial,window=_blank]&#x2197;.)
 Second, a web service client can invoke the business methods of a stateless session bean.
 Message beans cannot be accessed by web service clients.
 
