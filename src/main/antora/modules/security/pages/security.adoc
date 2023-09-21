@@ -25,8 +25,8 @@ The first two of these are used in the authentication process:
 
 An _authentication mechanism_ is somewhat like a controller in the well-known https://en.wikipedia.org/wiki/Model–view–controller[MVC,role=external,window=_blank] pattern; it is the entity that interacts with the caller (typically a human), via some kind of view to collect credentials, and with the model (business logic) to validate `these` credentials. An authentication mechanism knows about the environment this caller uses to communicate with the server. An authentication mechanism for HTTP knows about URLs to redirect or forward to, or about response headers to send to the client. It also knows about the data coming back, such as cookies, request headers, and post data. Examples of authentication mechanisms are Form authentication and Basic authentication.
 
-An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; e.g., it doesn't know about HTTP or headers etc.
-Some examples of identity stores are services that contact SQL or NoSQL databases, LDAP servers, files on the file-system, etc.
+An _identity store_ is more like the model in the MVC pattern. This entity strictly performs a business / data operation where credentials go in, and an identity comes out. The identity contains logic to validate said credentials, and embeds or contacts a database. This "database" contains usernames, along with their credentials and (typically) roles. An identity store therefore knows nothing about the environment that this caller uses to communicate with the server; for example, it doesn't know about HTTP or headers and more.
+Some examples of identity stores are services that contact SQL or NoSQL databases, LDAP servers, files on the file-system, and more.
 
 <<_mechanism_store_in_mvc>> shows the _authentication mechanism_ and _identity store_ in an MVC-like structure.
 
@@ -506,7 +506,7 @@ public class ApplicationConfig extends Application {
 
 include::partial$declare-authentication-mechanism.adoc[]
 
-Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog (the process between the caller and the authentication mechanism) and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
 
 To use this authentication method, we need to designate two paths to resources that are relative to our application. One path is for the login page, which the user will be directed to when attempting to access a protected resource. The other path is for when login fails, such as when the user enters incorrect login credentials. If the paths are the same, a request parameter can be used to distinguish between them. Paths can point to anything our server can respond to; a static HTML file, a REST resource, or anything else. For simplicity, we'll use two static HTML files here:
 
@@ -796,7 +796,7 @@ There are various result outcomes possible.
 
 `NOT_VALIDATED` means the store did not try to validate the credentials at all. In most situations that status is set when the store in question doesnt't handle a given credential. I.e. it only handles say `JWTCredentials` and not `UsernamePasswordCredential`.
 
-`INVALID` means the store tried to validate the credentials, and validation failed. E.g. the username and password were wrong.
+`INVALID` means the store tried to validate the credentials, and validation failed. For example the username and password were wrong.
 
 In our custom handler code here we return an `INVALID_RESULT` for the first store that fails, as we want all stores to validate successfully here. If validation does succeed (the outcome is `VALID` then) we grab the groups it returned and store in a set.
 
@@ -804,7 +804,7 @@ NOTE: Identity stores also have a capability to query it for roles directly, wit
 
 Eventually we return a result based on the `CallerPrincipal` from the last successful validation result, and all the collected groups.
 
-NOTE: In our example it doesn't matter from which validation result we grab the `CallerPrincipal` as it's all the one with name "pete" here. In general identity stores may transform the name from the input credential (e.g. "pete") to something else (e.g. "Pete Anderson").
+NOTE: In our example it doesn't matter from which validation result we grab the `CallerPrincipal` as it's all the one with name "pete" here. In general identity stores may transform the name from the input credential (for example "pete") to something else (for example "Pete Anderson").
 
 ==== Test the application
 
@@ -1313,7 +1313,7 @@ Then we delete all cookies, except for the `JREMEMBERMEID` cookie, and we unset 
 
 In the following example, we'll be securing a REST endpoint using OpenID Connect authentication.
 
-With https://en.wikipedia.org/wiki/OpenID[OpenID Connect,role=external,window=_blank] authentication a caller is redirected to a third party server, typically a public one such as Google, Facebook, Linkedin, Apple, etc, but it can be a private one as well. The caller authenticates with that third party server, and is then redirected back along with a token. Our server than validates that token, and if it's valid the caller is considered authenticated.
+With https://en.wikipedia.org/wiki/OpenID[OpenID Connect,role=external,window=_blank] authentication a caller is redirected to a third party server, typically a public one such as Google, Facebook, Linkedin, Apple, and more, but it can be a private one as well. The caller authenticates with that third party server, and is then redirected back along with a token. Our server than validates that token, and if it's valid the caller is considered authenticated.
 
 You'll learn how to:
 
@@ -1357,11 +1357,11 @@ The first is the `providerURI` (1), which points to the third party OpenID Conne
 
 The OpenId authentication mechanism needs to identify itself to the OpenID Connect Provider via a username/password (called `clientId` (2) and `clientSecret` (3)). We use "client" respectively "secret" here for those, which are the credentials for a default client that is available in Mitre.
 
-After a caller successfully authenticates with the OpenID Connect Provider, that caller is redirected back to a URL on the Relying Party (our Jakarta EE server). This is called the "callback URL" and can be set via the `redirectURI` attribute. The default value is `${baseURL}/Callback`, where `${baseURL}` expands to the context-root of the application that uses Jakarta Security, e.g. `https://localhost:8080/openid-client` in our example. This exact URI must be known to Mitre. Mitre (and any OpenID Connect Provider in general) never redirects to unknown URIs.
+After a caller successfully authenticates with the OpenID Connect Provider, that caller is redirected back to a URL on the Relying Party (our Jakarta EE server). This is called the "callback URL" and can be set via the `redirectURI` attribute. The default value is `${baseURL}/Callback`, where `${baseURL}` expands to the context-root of the application that uses Jakarta Security, for example `https://localhost:8080/openid-client` in our example. This exact URI must be known to Mitre. Mitre (and any OpenID Connect Provider in general) never redirects to unknown URIs.
 
 By default, after the caller is redirected back to the Relying Party (our Jakarta EE server), the resource behind `/Callback` is invoked. When the attribute `redirectToOriginalResource` (4) is set to `true` however, the caller is once again redirected to the URL originally requested and which triggered the authentication process.
 
-NOTE: When `redirectToOriginalResource` is set to to `true` it's not necessary to actually map anything to the callback URL (e.g. a Servlet or a REST resource). The authentication mechanism is invoked before the resource mapped to the callback URL is invoked, so if the authentication mechanism always redirects it never invokes this resource and the resource therefore doesn't need to actually exist.
+NOTE: When `redirectToOriginalResource` is set to to `true` it's not necessary to actually map anything to the callback URL (for example a Servlet or a REST resource). The authentication mechanism is invoked before the resource mapped to the callback URL is invoked, so if the authentication mechanism always redirects it never invokes this resource and the resource therefore doesn't need to actually exist.
 
 ==== Define the identity store
 
@@ -1712,5 +1712,227 @@ The test itself is basically the same as that for the <<Securing an endpoint wit
 
 
 
+
+== Securing an endpoint with Custom Form authentication
+
+In the following example, we'll secure a REST endpoint using Custom Form authentication.
+
+You'll learn how to:
+
+include::partial$list-item-learn-security-constraints.adoc[]
+. Use the https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/authentication/mechanism/http/customformauthenticationmechanismdefinition[Custom Form authentication mechanism,role=external,window=_blank]
+. Use Jakarta Faces and Jakarta Validation to customize the Form used for Form authentication
+. How to define (and implicitly set) a custom https://jakarta.ee/specifications/security/3.0/apidocs/jakarta.security/jakarta/security/enterprise/identitystore/package-summary.html[identity store,role=external,window=_blank]
+include::partial$list-item-learn-security-context.adoc[]
+
+=== Write the application
+
+include::partial$rest-resource-class.adoc[]
+
+==== Declare the security constraints
+
+include::partial$declare-security-constraints.adoc[]
+
+==== Declare the authentication mechanism
+
+[source,java]
+----
+@ApplicationScoped
+@CustomFormAuthenticationMechanismDefinition(
+    loginToContinue = @LoginToContinue(
+        loginPage="/login.xhtml",
+        errorPage=""
+    )
+)
+@DeclareRoles({ "user", "caller" })
+@FacesConfig
+@ApplicationPath("/rest")
+public class ApplicationConfig extends Application {
+
+}
+----
+
+include::partial$declare-authentication-mechanism.adoc[]
+
+Contrary to the Basic HTTP authentication mechanism, the Form authentication mechanism allows us to customize the login dialog (the process between the caller and the authentication mechanism) and to keep track of the authenticated session on the server (using a cookie). This also allows us to logout, something that for unknown reasons has never been specified for Basic HTTP authentication.
+
+Contrary to the regular Form authentication mechanism, the Custom Form authentication mechanism lets us customize the login dialog even more by having the ability to execute custom code between the postback of a login form and the form authentication mechanism taking the provided credentials.
+
+To use this authentication method, we need to designate a path to a resource that is relative to our application. The authentication mechanism will redirect the caller to this resource when authentication is required. The resource can be anything, but a postback should eventually lead to some code being executed that continues the authentication dialog. For example a plain .html file or .jsp file combined with  a Filter, or a Faces view with a backing bean.
+
+
+==== Define the authentication mechanism's view and backing code
+
+For this example we'll use a Faces view with a backing bean:
+
+[source,xml]
+----
+<!DOCTYPE html>
+<html lang="en" xmlns:h="jakarta.faces.html" >
+    <h:head/>
+    
+    <h:body>
+        <h1>
+            Login to continue
+        </h1>
+        
+        <h:messages />
+    
+        <h:form id="form">
+            <div>
+                <h:outputLabel for="username" value="Username" />
+                <h:inputText id="username" value="#{loginBacking.username}"/>
+            </div>
+            <div>
+                <h:outputLabel for="password" value="Password" />
+                <h:inputSecret id="password" value="#{loginBacking.password}"/>
+            </div>
+            <div>
+                <h:commandButton value="Login" type="submit" action="#{loginBacking.login}" />
+            </div>
+        </h:form>
+    </h:body>
+</html>
+----
+
+[source,java]
+----
+@Named
+@RequestScoped
+public class LoginBacking {
+
+    @Inject
+    private SecurityContext securityContext;
+
+    @Inject
+    private FacesContext facesContext;
+
+    @NotNull
+    @Size(min = 3, max = 15, message="Username must be between 3 and 15 characters")
+    private String username;
+
+    @NotNull
+    @Size(min = 5, max = 50, message="Password must be between 5 and 50 characters")
+    private String password;
+
+    public void login() {
+        switch (
+            // Continue the authentication dialog manually by invoking the authenticate()
+            // method. The form authentication picks this up, just like a post to j_security does.
+            securityContext.authenticate(
+                getRequest(),
+                getResponse(),
+                withParams()
+                    .credential(new UsernamePasswordCredential(username, new Password(password))))) {
+
+            case SEND_CONTINUE:
+
+                // Authentication mechanism has send a redirect, should not
+                // send anything to response from Faces now.
+                facesContext.responseComplete();
+                return;
+
+            case SEND_FAILURE:
+
+                addError("Login failed");
+                return;
+
+            default:
+        }
+    }
+
+    // getters/setters + utility methods omitted
+}
+----
+
+The view itself is quite similar to the HTML page we used for the form in <<Securing an endpoint with Form authentication>>. The main difference is bindings of the form fields to a (CDI) backing bean. The bean side of the binding has Jakarta Validation constraints applied to it; this allows for fine-grained validation of some general requirements of the credentials without actually attempting authentication.
+
+If this initial validation passes, we arrive in the `login()` method. For our example the only thing we need to do here is signaling that we want to continue the authentication dialog (the process or interaction between the caller and the authentication mechanism), and when doing so provide the credentials that we earlier obtained in a custom way.
+
+We have two important outcomes to handle. `SEND_CONTINUE` effectively means the credentials were validated successfully, and the caller is therefore directed to the resource that was originally requested. `SEND_FAILURE` means the opposite; the credentials were not validated successfully. By just returning from our callback method in the last case the form will be redisplayed, albeit with the error message added.
+
+NOTE: `NOT_DONE` and `SUCCESS` are two other outcomes, but we don't have to handle them here. `NOT_DONE` only applies to pre-emptive authentication, but we're doing explicit (forced, mandatory) authentication here. `SUCCESS` means we can go ahead and render the page, which is exactly what happens if we don't do anything.
+
+See xref:web:webapp/webapp.adoc#_getting_started_with_web_applications[Getting Started with Web Applications] for more information on running `.xhtml` files and their backing beans.
+
+
+
+==== Define the identity store
+
+Finally, let's define a basic identity store that the security system can use to validate provided credentials for Form authentication:
+
+[source,java]
+-----
+@ApplicationScoped
+public class CustomIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+-----
+
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. Note that Jakarta Security doesn't define a simple identity store out of the box, because there are questions about whether that would promote security best practices.
+
+include::partial$identity-store-installed.adoc[]
+
+==== Test the application
+
+:app-name: restCustomFormAuthCustomStore
+include::partial$test-github.adoc[]
+
+[source]
+----
+john : true
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.272 s - in jakartaee.examples.focused.security.restCustomFormAuthCustomStore.RestCustomFormAuthCustomStoreIT
+----
+
+Let's take a quick look at the actual test:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+@RunAsClient
+public class RestCustomFormAuthCustomStoreIT extends ITBase {
+
+    @ArquillianResource
+    private URL baseUrl;
+
+    /**
+     * Test the call to a protected REST service
+     *
+     * @throws Exception when a serious error occurs.
+     */
+    @RunAsClient
+    @Test
+    public void testRestCall() throws Exception {
+        HtmlPage loginPage = webClient.getPage(baseUrl + "/rest/resource");
+        System.out.println(loginPage.asXml());
+
+        HtmlForm form = loginPage.getForms()
+                                 .get(0);
+
+        form.getInputByName("form:username")
+            .setValueAttribute("john");
+
+        form.getInputByName("form:password")
+            .setValueAttribute("secret1");
+
+        TextPage page = form.getInputByValue("Login")
+                            .click();
+
+        System.out.println(page.getContent());
+    }
+}
+----
+
+include::partial$inspect-app.adoc[]
+
+The test first sends a request here to the protected resource, and the server responds with the rendered version of the Faces view form we defined above. Using the `HtmlUnit` API, it's easy to navigate the HTML DOM, fill out the username and password in the form, and programmatically click the `Login` button. The form posts back to the same URL it was requested from. Faces will detect this postback and will orchestrate the validation using Jakarta Validation and invoking the CDI based backing bean.
 
 
