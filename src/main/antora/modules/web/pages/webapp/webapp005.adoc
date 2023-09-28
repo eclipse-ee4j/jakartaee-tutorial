@@ -57,7 +57,7 @@ It are those variables which you'd normally define as constants in a Java class,
 The welcome files mechanism allows you to specify a list of files that the servlet container can return as a default resource when any folder is requested which does not map to an existing web component.
 For example, suppose that you define two welcome files `index.xhtml` and `index.html`.
 So, if for example the `/` folder is requested, and it does not map to a web component, then it'll search for `/index.xhtml` and `/index.html` files and return the first found one.
-Or if there is none, then the servlet container will continue to perform the default behavior, which is usually displaying a HTTP 404 error page.
+Or if there is none, then the servlet container will continue to perform the default behavior, which is usually displaying an HTTP 404 error page.
 Note that this also applies to sub folders, so if for example the `/foo` folder is requested, then it'll search for `/foo/index.xhtml` and `/foo/index.html` files and return the first found one.
 You specify welcome files in the `web.xml` file.
 
