@@ -9,13 +9,13 @@ Presentation-oriented::
 A presentation-oriented web application (also called a "website") generates dynamic web pages in response to HTTP requests.
 The response is usually represented as a HTML document along with assets, such as Cascading Style Sheets (CSS), JavaScript (JS) and images.
 Presentation-oriented applications are often directly used by humans.
-Development of presentation-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services] through xref:servlets/servlets.adoc#_jakarta_servlet_technology[Jakarta Servlet Technology]
+Development of presentation-oriented web applications is covered in "Building Web Services with Jakarta XML Web Services" (xref:9.1@websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[available in a previous version of the tutorial,window=_blank]&#x2197;) through xref:servlets/servlets.adoc#_jakarta_servlet_technology[Jakarta Servlet Technology]
 
 Service-oriented::
 A service-oriented web application (also called a "service") generates dynamic data structures in response to HTTP requests.
 The response is usually represented as a JSON object or as a XML document or even as plain text.
 Service-oriented applications are often directly used by presentation-oriented web applications or other service-oriented applications.
-Development of service-oriented web applications is covered in xref:websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[Building Web Services with Jakarta XML Web Services]
+Development of service-oriented web applications is covered in "Building Web Services with Jakarta XML Web Services" (xref:9.1@websvcs:jaxws/jaxws.adoc#_building_web_services_with_jakarta_xml_web_services[available in a previous version of the tutorial,window=_blank]&#x2197;)
 
 In the Jakarta EE platform, web applications are represented by web components as seen in xref:webapp/webapp.adoc#_jakarta_web_application_request_handling[Jakarta Web Application Request Handling].
 A web component can be represented by Jakarta Servlet, Jakarta Faces or Jakarta REST.
