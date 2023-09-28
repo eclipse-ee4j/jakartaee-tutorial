@@ -12,17 +12,17 @@ These scoped beans can then be used to store and transfer information.
 CDI defines three basic scopes which can be used for this:
 
 `@jakarta.enterprise.context.RequestScoped`::
-In a servlet container, this is basically mapped to the `jakarta.servlet.ServletRequest`.
+In a servlet container, this is mapped to the `jakarta.servlet.ServletRequest`.
 It lives from the time that the client has sent the request until it has retrieved the corresponding response.
 It is not shared elsewhere.
 
 `@jakarta.enterprise.context.SessionScoped`::
-In a servlet container, this is basically mapped to the `jakarta.servlet.http.HttpSession`.
+In a servlet container, this is mapped to the `jakarta.servlet.http.HttpSession`.
 It lives for as long as the client is interacting with the web application with the same browser instance, and the session hasn't timed out at the server side.
 It is shared among all requests in the same session.
 
 `@jakarta.enterprise.context.ApplicationScoped`::
-In a servlet container, this is basically mapped to the `jakarta.servlet.ServletContext`.
+In a servlet container, this is mapped to the `jakarta.servlet.ServletContext`.
 It lives for as long as the web application lives.
 It is shared among all requests in all sessions.
 
