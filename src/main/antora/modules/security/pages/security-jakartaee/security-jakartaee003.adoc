@@ -9,14 +9,14 @@ When a bean that is constrained in this way is requested, the server requests a 
 
 If the topic of authentication is new to you, see xref:security-webtier/security-webtier.adoc#_specifying_authentication_mechanisms[Specifying Authentication Mechanisms].
 
-This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_tut-install_/examples/ejb/cart/` directory and is discussed in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_the_cart_example[The cart Example].
+This example demonstrates security by starting with the unsecured enterprise bean application, `cart`, which is found in the `_jakartaee-examples_/tutorial/ejb/cart/` directory and is discussed in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_the_cart_example[The cart Example].
 
 In general, the following steps are necessary to add user name/password authentication to an existing application that contains an enterprise bean.
 In the example application included with this tutorial, these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
 
 . Create an application like the one in xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc#_the_cart_example[The cart Example].
 The example in this tutorial starts with this example and demonstrates adding basic authentication of the client to this application.
-The example application discussed in this section can be found at `_tut-install_/examples/security/cart-secure/`.
+The example application discussed in this section can be found at `_jakartaee-examples_/tutorial/security/cart-secure/`.
 
 . If you have not already done so, complete the steps in xref:security-webtier/security-webtier.adoc#_to_set_up_your_system_for_running_the_security_examples[To Set Up Your System for Running the Security Examples] to configure your system for running the tutorial applications.
 
@@ -28,7 +28,7 @@ This step is discussed in <<_annotating_the_bean>>.
 ==== Annotating the Bean
 
 The source code for the original `cart` application was modified as shown in the following code snippet (modifications in bold).
-The resulting file can be found in the file `_tut-install_/examples/security/cart-secure/cart-secure-ejb/src/main/java/ee/jakarta/tutorial/cart/ejb/CartBean.java`.
+The resulting file can be found in the file `_jakartaee-examples_/tutorial/security/cart-secure/cart-secure-ejb/src/main/java/jakarta/tutorial/cart/ejb/CartBean.java`.
 
 The code snippet is as follows:
 
@@ -199,8 +199,8 @@ If the user name and password are not authenticated, the dialog box reappears un
 This example demonstrates how to use the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
 This example starts with a very simple enterprise bean application, `converter`, and modifies the methods of the `ConverterBean` so that currency conversion will occur only when the requester is in the role of `TutorialUser`.
 
-This example can be found in the `_tut-install_/examples/security/converter-secure` directory.
-This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc#_getting_started_with_enterprise_beans[Getting Started with Enterprise Beans] and is found in the `_tut-install_/examples/ejb/converter/` directory.
+This example can be found in the `_jakartaee-examples_/tutorial/security/converter-secure` directory.
+This example is based on the unsecured enterprise bean application, `converter`, which is discussed in xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc#_getting_started_with_enterprise_beans[Getting Started with Enterprise Beans] and is found in the `_jakartaee-examples_/tutorial/ejb/converter/` directory.
 This section builds on the example by adding the necessary elements to secure the application by using the `getCallerPrincipal` and `isCallerInRole` methods, which are discussed in more detail in xref:security-jakartaee/security-jakartaee.adoc#_securing_an_enterprise_bean_programmatically[Securing an Enterprise Bean Programmatically].
 
 In general, the following steps are necessary when using the `getCallerPrincipal` and `isCallerInRole` methods with an enterprise bean.
@@ -222,7 +222,7 @@ To do this, follow the steps in xref:security-webtier/security-webtier.adoc#_to_
 The source code for the original `ConverterBean` class was modified to add the `if..else` clause that tests whether the caller is in the role of `TutorialUser`.
 If the user is in the correct role, the currency conversion is computed and displayed.
 If the user is not in the correct role, the computation is not performed, and the application displays the result as `0`.
-The code example can be found in `_tut-install_/examples/security/converter-secure/converter-secure-ejb/src/main/java/ee/jakarta/tutorial/converter/ejb/ConverterBean.java`.
+The code example can be found in `_jakartaee-examples_/tutorial/security/converter-secure/converter-secure-ejb/src/main/java/jakarta/tutorial/converter/ejb/ConverterBean.java`.
 
 The code snippet (with modifications shown in *bold*) is as follows:
 

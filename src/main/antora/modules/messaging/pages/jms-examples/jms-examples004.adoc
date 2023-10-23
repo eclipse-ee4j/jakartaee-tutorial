@@ -11,7 +11,7 @@ The example consists of two modules, a `durableconsumer` application that create
 
 For information on durable subscriptions, see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions].
 
-The main client, `DurableConsumer.java`, is under the `_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer` directory.
+The main client, `DurableConsumer.java`, is under the `_jakartaee-examples_/tutorial/jms/durablesubscriptionexample/durableconsumer` directory.
 
 The example uses a connection factory, `jms/DurableConnectionFactory`, that has a client ID.
 
@@ -179,7 +179,7 @@ The client reports that it is unsubscribing from the durable subscription.
 
 The `transactedexample` example demonstrates the use of local transactions in a Messaging client application.
 It also demonstrates the use of the request/reply messaging pattern described in xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations], although it uses permanent rather than temporary destinations.
-The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_tut-install_/examples/jms/transactedexample/` directory.
+The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_jakartaee-examples_/tutorial/jms/transactedexample/` directory.
 The source code can be found in the `src/main/java/ee.jakarta.tutorial` trees for each module.
 The `genericsupplier` and `retailer` modules each contain a single class, `genericsupplier/GenericSupplier.java` and `retailer/Retailer.java`, respectively.
 The `vendor` module is more complex, containing four classes: `vendor/Vendor.java`, `vendor/VendorMessageListener.java`, `vendor/Order.java`, and `vendor/SampleUtilities.java`.

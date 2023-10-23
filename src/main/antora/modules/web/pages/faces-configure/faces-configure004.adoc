@@ -77,7 +77,7 @@ You may want to start with a simple example like this one and build upon it.
 This example provides an implicit flow definition by including an empty configuration file.
 A configuration file that has content, or a class annotated `@FlowDefinition`, provides an explicit flow definition.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/simple-flow/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/simple-flow/` directory.
 
 The file layout of the `simple-flow` example looks like this:
 
@@ -216,7 +216,7 @@ Both flows have explicit flow definitions.
 One flow, `checkoutFlow`, is specified programmatically.
 The other flow, `joinFlow`, is specified in a configuration file.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/checkout-module/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/checkout-module/` directory.
 
 For the `checkout-module` application, the directory structure is as follows (there is also a `src/main/webapp/resources` directory with a stylesheet and an image):
 

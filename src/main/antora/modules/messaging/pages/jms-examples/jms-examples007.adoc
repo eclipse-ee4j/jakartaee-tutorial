@@ -28,7 +28,7 @@ The Messaging provider (in this case, GlassFish Server) delivers the messages to
 .The simplemessage Application
 image::common:jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"]
 
-The source code for this application is in the `_tut-install_/examples/jms/simplemessage/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/jms/simplemessage/` directory.
 
 === The simplemessage Application Client
 

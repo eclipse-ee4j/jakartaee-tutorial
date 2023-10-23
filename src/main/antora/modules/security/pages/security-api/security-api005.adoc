@@ -16,7 +16,7 @@ When bundled with the application, this custom identity store can then be used f
 This example demonstrates how to define a custom identity store, `TestIdentityStore`, and provide it as part of the application being deployed.
 The authentication mechanism used is `BasicAuthenticationMechanism`.
 
-The source code for this example is in the `_tut-install_/examples/security/security-api/custom-identity-store` directory.
+The source code for this example is in the `_jakartaee-examples_/tutorial/security/security-api/custom-identity-store` directory.
 
 The following sections describe the high-level process for defining the `TestIdentityStore`.
 Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use a custom identity store.

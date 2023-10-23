@@ -8,7 +8,7 @@ This section demonstrates the steps that are needed to create, build, deploy, an
 This section explains how to use NetBeans IDE to create a RESTful web service using a Maven archetype.
 The archetype generates a skeleton for the application, and you simply need to implement the appropriate method.
 
-You can find a version of this application at `_tut-install_/examples/jaxrs/hello/`.
+You can find a version of this application at `_jakartaee-examples_/tutorial/jaxrs/hello/`.
 
 ==== To Create a RESTful Web Service Using NetBeans IDE
 
@@ -63,7 +63,7 @@ Create, read, update, and delete (CRUD) are the four basic functions of persiste
 
 === The rsvp Example Application
 
-The `rsvp` example application, located in the `_tut-install_/examples/jaxrs/rsvp/` directory, allows invitees to an event to indicate whether they will attend.
+The `rsvp` example application, located in the `_jakartaee-examples_/tutorial/jaxrs/rsvp/` directory, allows invitees to an event to indicate whether they will attend.
 The events, people invited to the event, and the responses to the invite are stored in Apache Derby using Jakarta Persistence.
 The Jakarta REST resources in `rsvp` are exposed in a stateless session enterprise bean.
 

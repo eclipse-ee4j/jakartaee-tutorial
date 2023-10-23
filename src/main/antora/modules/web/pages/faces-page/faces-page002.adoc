@@ -1230,7 +1230,7 @@ Like `hello1`, the application includes the `Hello.java` managed bean, an `index
 In addition, it includes a `personal.xhtml page`, to which a bookmarkable URL and view parameters are passed from the `response.xhtml` page, as described in <<_using_view_parameters_to_configure_bookmarkable_urls>>.
 
 You can use either NetBeans IDE or Maven to build, package, deploy, and run the `bookmarks` example.
-The source code for this example is in the `_tut-install_/examples/web/faces/bookmarks/` directory.
+The source code for this example is in the `_jakartaee-examples_/tutorial/web/faces/bookmarks/` directory.
 
 ==== To Build, Package, and Deploy the bookmarks Example Using NetBeans IDE
 

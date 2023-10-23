@@ -4,7 +4,7 @@ To demonstrate the advantages of using Ajax, revisit the `guessnumber` example f
 If you modify this example to use Ajax, the response need not be displayed on the `response.xhtml` page.
 Instead, an asynchronous call is made to the bean on the server side, and the response is displayed on the originating page by executing just the input component rather than by form submission.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/ajaxguessnumber/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/ajaxguessnumber/` directory.
 
 === The ajaxguessnumber Source Files
 

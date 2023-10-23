@@ -1,7 +1,7 @@
 == Creating the Enterprise Bean
 
 The enterprise bean in our example is a stateless session bean called `ConverterBean`.
-The source code for `ConverterBean` is in the `_tut-install_/examples/ejb/converter/src/main/java/` directory.
+The source code for `ConverterBean` is in the `_jakartaee-examples_/tutorial/ejb/converter/src/main/java/` directory.
 
 Creating `ConverterBean` requires these steps:
 
@@ -46,7 +46,7 @@ This annotation lets the container know that `ConverterBean` is a stateless sess
 
 === Creating the converter Web Client
 
-The web client is contained in the following servlet class under the `_tut-install_/examples/ejb/converter/src/main/java/` directory:
+The web client is contained in the following servlet class under the `_jakartaee-examples_/tutorial/ejb/converter/src/main/java/` directory:
 
 ----
 converter/web/ConverterServlet.java

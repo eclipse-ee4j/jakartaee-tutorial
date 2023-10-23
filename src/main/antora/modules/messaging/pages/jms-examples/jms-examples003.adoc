@@ -19,7 +19,7 @@ When you write a Messaging client to run in an enterprise bean application, you 
 However, there are some significant differences.
 xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications] describes these differences, and this chapter provides examples that illustrate them.
 
-The examples for this section are in the `_tut-install_/examples/jms/simple/` directory, under the following subdirectories:
+The examples for this section are in the `_jakartaee-examples_/tutorial/jms/simple/` directory, under the following subdirectories:
 
 `producer/` +
 `synchconsumer/` +
@@ -864,7 +864,7 @@ The following table describes four possible interactions between types of consum
 |Asynchronous |Auto |Message is automatically acknowledged when `onMessage` method returns
 |===
 
-The example is under the `_tut-install_/examples/jms/simple/clientackconsumer/` directory.
+The example is under the `_jakartaee-examples_/tutorial/jms/simple/clientackconsumer/` directory.
 
 The example client, `ClientAckConsumer.java`, creates a `JMSContext` that specifies client acknowledgment:
 

@@ -14,7 +14,7 @@ The four source files for the `simplegreeting` example are:
 
 * The `Printer` managed bean class, which injects one of the two interfaces, shown in full in xref:cdi-basic/cdi-basic.adoc#_adding_setter_and_getter_methods[Adding Setter and Getter Methods]
 
-The source files are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
 
 === The Facelets Template and Page
 
@@ -99,7 +99,7 @@ Hello, name.
 Hi, name!
 ----
 +
-The Facelets page and template are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/webapp/` directory.
+The Facelets page and template are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/webapp/` directory.
 +
 The simple CSS file that is used by the Facelets page is in the following location:
 +

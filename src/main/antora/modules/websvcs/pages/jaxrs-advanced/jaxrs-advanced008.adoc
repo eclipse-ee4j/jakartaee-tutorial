@@ -3,12 +3,12 @@
 This section describes how to build and run the `customer` example application.
 This application is a RESTful web service that uses Jakarta XML Binding to perform the create, read, update, delete (CRUD) operations for a specific entity.
 
-The `customer` sample application is in the `_tut-install_/examples/jaxrs/customer/` directory.
+The `customer` sample application is in the `_jakartaee-examples_/tutorial/jaxrs/customer/` directory.
 See xref:intro:usingexamples/usingexamples.adoc#_using_the_tutorial_examples[Using the Tutorial Examples], for basic information on building and running sample applications.
 
 === Overview of the customer Example Application
 
-The source files of this application are at `_tut-install_/examples/jaxrs/customer/src/main/java/`.
+The source files of this application are at `_jakartaee-examples_/tutorial/jaxrs/customer/src/main/java/`.
 The application has three parts.
 
 * The `Customer` and `Address` entity classes.

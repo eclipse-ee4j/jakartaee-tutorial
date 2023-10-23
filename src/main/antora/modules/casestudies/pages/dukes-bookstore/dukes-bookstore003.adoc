@@ -39,7 +39,7 @@ tut-install/examples/case-studies/dukes-bookstore/
 mvn install
 ----
 +
-This command builds the application and packages it in a WAR file in the `_tut-install_/examples/case-studies/dukes-bookstore/target/` directory.
+This command builds the application and packages it in a WAR file in the `_jakartaee-examples_/tutorial/case-studies/dukes-bookstore/target/` directory.
 It then deploys the application to GlassFish Server.
 
 === To Run Duke's Bookstore

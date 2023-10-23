@@ -62,7 +62,7 @@ Each of the two pages in the application uses a different contract.
 
 The managed bean for `hello1-rlc`, `Hello.java`, is identical to the one for `hello1` (except that it replaces the `@Named` and `@RequestScoped` annotations with `@Model`).
 
-The source code for this application is in the `_tut-install_/examples/web/faces/hello1-rlc/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/hello1-rlc/` directory.
 
 ==== Configuring the hello1-rlc Example
 

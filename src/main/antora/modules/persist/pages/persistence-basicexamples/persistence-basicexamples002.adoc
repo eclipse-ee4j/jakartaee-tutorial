@@ -623,7 +623,7 @@ tut-install/examples/persistence/order/
 mvn install
 ----
 +
-This compiles the source files and packages the application into a WAR file located at `_tut-install_/examples/persistence/order/target/order.war`.
+This compiles the source files and packages the application into a WAR file located at `_jakartaee-examples_/tutorial/persistence/order/target/order.war`.
 Then the WAR file is deployed to your GlassFish Server instance.
 
 . To create and update the order data, open a web browser to the following URL:

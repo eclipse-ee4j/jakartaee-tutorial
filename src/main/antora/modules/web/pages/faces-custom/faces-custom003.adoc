@@ -139,7 +139,7 @@ How these beans are stored in the application scope is explained more in the nex
 |`MapBookChangeListener` a|The action listener for the `MapComponent`.
 |===
 
-The Duke's Bookstore source directory, called bookstore-dir, is `_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/`.
+The Duke's Bookstore source directory, called bookstore-dir, is `_jakartaee-examples_/tutorial/case-studies/dukes-bookstore/src/main/java/jakarta/tutorial/dukesbookstore/`.
 The event and listener classes are located in `_bookstore-dir_/listeners/`.
 The component classes are located in `_bookstore-dir_/components/`.
 The renderer classes are located in `_bookstore-dir_/renderers/`.
