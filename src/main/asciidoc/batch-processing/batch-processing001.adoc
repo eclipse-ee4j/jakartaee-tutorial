@@ -119,7 +119,7 @@ run in parallel.
 
 Batch frameworks keep track of a status for every step in a job. The
 status indicates if a step is running or if it has completed. If the
-step has completed, the status indicates one of the following.
+step has completed, the status indicates one of the following:
 
 * The execution of the step was successful.
 * The step was interrupted.

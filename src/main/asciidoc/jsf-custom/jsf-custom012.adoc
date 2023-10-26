@@ -194,7 +194,7 @@ Restoring State] for more information.
 
 If you implemented a `Validator` interface rather than implementing a
 managed bean method that performs the validation, you need to do one of
-the following.
+the following:
 
 * Allow the page author to specify the `Validator` implementation to use
 with the `f:validator` tag. In this case, the `Validator` implementation
@@ -232,7 +232,7 @@ validator tag on the page.
 === Using a Custom Validator
 
 To register a custom validator on a component, you must do one of the
-following.
+following:
 
 * Nest the validator's custom tag inside the tag of the component whose
 value you want to be validated.
@@ -267,7 +267,7 @@ developer will not create a custom tag for use with the validator.
 
 In this case, the page author must nest the `f:validator` tag inside the
 tag of the component whose data needs to be validated. Then the page
-author needs to do one of the following.
+author needs to do one of the following:
 
 * Set the `f:validator` tag's `validatorId` attribute to the ID of the
 validator that is defined in the application configuration resource

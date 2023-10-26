@@ -187,7 +187,7 @@ class.
 === Using a Custom Converter
 
 To apply the data conversion performed by a custom converter to a
-particular component's value, you must do one of the following.
+particular component's value, you must do one of the following:
 
 * Reference the converter from the component tag's `converter`
 attribute.
@@ -234,7 +234,7 @@ Instead of referencing the converter from the component tag's
 `converter` attribute, you can reference the converter from an
 `f:converter` tag nested inside the component's tag. To reference the
 custom converter using the `f:converter` tag, you do one of the
-following.
+following:
 
 * Set the `f:converter` tag's `converterId` attribute to the `Converter`
 implementation's identifier defined in the `@FacesConverter` annotation

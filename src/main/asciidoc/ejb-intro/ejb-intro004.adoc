@@ -194,7 +194,7 @@ or `@Remote`, and if the bean class does not specify the interface using
 interface.
 
 To build an enterprise bean that allows only local access, you may, but
-are not required to, do one of the following.
+are not required to, do one of the following:
 
 * Create an enterprise bean implementation class that does not implement
 a business interface, indicating that the bean exposes a no-interface
