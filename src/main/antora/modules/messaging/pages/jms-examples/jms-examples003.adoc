@@ -60,7 +60,7 @@ A `glassfish-resources.xml` file in one of the Maven projects can create all the
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 ----
 
 . Create the resources using the `asadmin add-resources` command:
@@ -121,7 +121,7 @@ This command places the application client JAR files in the `target` directories
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/
+cd jakartaee-examples/tutorial/jms/simple/
 ----
 
 . Enter the following command to build all the projects:
@@ -385,7 +385,7 @@ The client displays the destination type and then waits for messages.
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 appclient -client target/producer.jar queue 3
 ----
 +
@@ -515,7 +515,7 @@ You will need two terminal windows, as you did in <<_receiving_messages_synchron
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/asynchconsumer
+cd jakartaee-examples/tutorial/jms/simple/asynchconsumer
 ----
 
 . Run the `AsynchConsumer` client, specifying the `topic` destination type:
@@ -716,7 +716,7 @@ Text messages sent: 1
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/messagebrowser
+cd jakartaee-examples/tutorial/jms/simple/messagebrowser
 ----
 
 . Run the `MessageBrowser` client using the following command:

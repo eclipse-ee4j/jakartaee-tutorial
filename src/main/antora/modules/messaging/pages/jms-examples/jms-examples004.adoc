@@ -52,7 +52,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 +
 [source,shell]
 ----
-cd tut-install/jms/durablesubscriptionexample/durableconsumer
+cd jakartaee-examples/tutorial/jms/durablesubscriptionexample/durableconsumer
 ----
 
 . Create the resources using the `asadmin add-resources` command:
@@ -303,7 +303,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and `jms/CQueue`
 +
 [source,shell]
 ----
-cd tut-install/jms/transactedexample/genericsupplier
+cd jakartaee-examples/tutorial/jms/transactedexample/genericsupplier
 ----
 
 . Create the resources using the `asadmin add-resources` command:
