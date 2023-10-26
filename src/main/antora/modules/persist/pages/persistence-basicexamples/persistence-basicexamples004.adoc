@@ -134,7 +134,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/persistence
+jakartaee-examples/tutorial/persistence
 ----
 
 . Select the `address-book` folder.
@@ -163,7 +163,7 @@ If any of the values entered violate the constraints in `Contact`, an error mess
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/persistence/address-book/
+jakartaee-examples/tutorial/persistence/address-book/
 ----
 
 . Enter the following command:

@@ -117,7 +117,7 @@ This example uses an annotation-defined queue and the preconfigured default conn
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms
+jakartaee-examples/tutorial/jms
 ----
 
 . Select the `websimplemessage` folder.
@@ -135,7 +135,7 @@ This command builds and deploys the project.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/jms/websimplemessage/
+jakartaee-examples/tutorial/jms/websimplemessage/
 ----
 
 . To compile the source files and package and deploy the application, use the following command:

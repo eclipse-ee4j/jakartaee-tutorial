@@ -107,7 +107,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `converter` folder.
@@ -133,7 +133,7 @@ A second page opens, showing the converted values.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/ejb/converter/
+jakartaee-examples/tutorial/ejb/converter/
 ----
 
 . Enter the following command:

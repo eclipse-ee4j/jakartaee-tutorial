@@ -87,7 +87,7 @@ Command list-jms-resources executed successfully.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/durablesubscriptionexample/
+jakartaee-examples/tutorial/jms/durablesubscriptionexample/
 ----
 
 . Build the `durableconsumer` and `unsubscriber` examples:
@@ -124,7 +124,7 @@ To end program, enter Q or q, then <return>
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 appclient -client target/producer.jar topic 3
 ----
 
@@ -163,7 +163,7 @@ After you have finished running the `DurableConsumer` client, run the `unsubscri
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/durablesubscriptionexample/unsubscriber
+jakartaee-examples/tutorial/jms/durablesubscriptionexample/unsubscriber
 ----
 
 . To run the `Unsubscriber` client, enter the following command:
@@ -343,7 +343,7 @@ Make sure that you start the clients in the correct order.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/transactedexample/
+jakartaee-examples/tutorial/jms/transactedexample/
 ----
 
 . To build and package all the modules, enter the following command:
@@ -378,7 +378,7 @@ Starting CPU supplier
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/genericsupplier
+cd jakartaee-examples/tutorial/jms/transactedexample/genericsupplier
 ----
 
 . Use the following command to start the hard drive supplier client:
@@ -399,7 +399,7 @@ Starting Hard Drive supplier
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/vendor
+cd jakartaee-examples/tutorial/jms/transactedexample/vendor
 ----
 
 . Use the following command to start the `Vendor` client:
@@ -420,7 +420,7 @@ Starting vendor
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/retailer
+cd jakartaee-examples/tutorial/jms/transactedexample/retailer
 ----
 
 . [[_transactedexample_step_10, Step 10]] Use a command like the following to run the `Retailer` client.

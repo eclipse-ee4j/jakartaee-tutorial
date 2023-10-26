@@ -93,7 +93,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `producermethods` folder.
@@ -111,7 +111,7 @@ This command builds and packages the application into a WAR file, `producermetho
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/producermethods/
+jakartaee-examples/tutorial/cdi/producermethods/
 ----
 
 . Enter the following command to deploy the application:

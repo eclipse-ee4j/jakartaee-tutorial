@@ -483,7 +483,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `timersession` folder.
@@ -501,7 +501,7 @@ This builds and packages the application into a WAR file located at `_jakartaee-
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/ejb/timersession/
+jakartaee-examples/tutorial/ejb/timersession/
 ----
 
 . Enter the following command:

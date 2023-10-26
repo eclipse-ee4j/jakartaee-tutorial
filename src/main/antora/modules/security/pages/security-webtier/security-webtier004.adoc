@@ -118,7 +118,7 @@ Use the deployment descriptor to specify settings for nondefault authentication 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `hello2-basicauth` folder.
@@ -136,7 +136,7 @@ This command builds and deploys the example application to your GlassFish Server
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/hello2-basicauth/
+jakartaee-examples/tutorial/security/hello2-basicauth/
 ----
 
 . Enter the following command:
@@ -318,7 +318,7 @@ The following sample code shows the security elements added to the deployment de
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `hello1-formauth` folder.
@@ -336,7 +336,7 @@ This command builds and deploys the example application to your GlassFish Server
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/hello1-formauth/
+jakartaee-examples/tutorial/security/hello1-formauth/
 ----
 
 . Enter the following command at the terminal window or command prompt:

@@ -172,7 +172,7 @@ Because the example defines its own application-private topic and uses the preco
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms/clientmdbentity
+jakartaee-examples/tutorial/jms/clientmdbentity
 ----
 
 . Select the `clientmdbentity` folder.
@@ -200,7 +200,7 @@ The command then deploys the EAR file, retrieves the client stubs, and runs the 
 . Go to the following directory:
 +
 ----
-tut-install/examples/jms/clientmdbentity/
+jakartaee-examples/tutorial/jms/clientmdbentity/
 ----
 
 . To compile the source files and package, deploy, and run the application, enter the following command:

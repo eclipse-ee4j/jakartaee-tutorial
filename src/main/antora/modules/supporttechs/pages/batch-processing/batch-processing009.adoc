@@ -434,7 +434,7 @@ xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_ser
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/batch
+jakartaee-examples/tutorial/batch
 ----
 
 . Select the `phonebilling` folder.
@@ -456,7 +456,7 @@ http://localhost:8080/phonebilling/
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/batch/phonebilling/
+jakartaee-examples/tutorial/batch/phonebilling/
 ----
 
 . Enter the following command to deploy the application:

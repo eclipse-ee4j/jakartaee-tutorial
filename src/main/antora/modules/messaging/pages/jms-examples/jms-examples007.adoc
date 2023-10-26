@@ -137,7 +137,7 @@ For more information on creating Messaging resources, see xref:jms-examples/jms-
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms/simplemessage
+jakartaee-examples/tutorial/jms/simplemessage
 ----
 
 . Select the `simplemessage` folder.
@@ -179,7 +179,7 @@ The received messages may appear in a different order from the order in which th
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/jms/simplemessage/
+jakartaee-examples/tutorial/jms/simplemessage/
 ----
 
 . To compile the source files and package the application, use the following command:

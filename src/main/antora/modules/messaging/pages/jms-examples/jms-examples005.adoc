@@ -57,14 +57,14 @@ In the first, go to the `simple/producer/` directory:
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer/
+cd jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . In the second and third command windows, go to the `shared/sharedconsumer/` directory:
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/shared/sharedconsumer/
+cd jakartaee-examples/tutorial/jms/shared/sharedconsumer/
 ----
 
 . In one of the `sharedconsumer` windows, build the example:
@@ -125,7 +125,7 @@ You run the example in combination with the `Producer.java` client.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/shared/shareddurableconsumer
+jakartaee-examples/tutorial/jms/shared/shareddurableconsumer
 ----
 
 . To compile and package the client, enter the following command:
@@ -157,7 +157,7 @@ The subscription remains active, although the client is not running.
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 ----
 
 . Run the `producer` example, sending a number of messages to the topic:

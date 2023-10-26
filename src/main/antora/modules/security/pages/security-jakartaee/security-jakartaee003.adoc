@@ -130,7 +130,7 @@ If no authentication method is specified in the deployment descriptor, the type 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `cart-secure` folder.
@@ -167,7 +167,7 @@ If the user name and password are not authenticated, the dialog box reappears un
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/cart-secure/
+jakartaee-examples/tutorial/security/cart-secure/
 ----
 
 . To build the application, package it into an EAR file in the `cart-secure-ear/target` subdirectory, deploy it, and run it, enter the following command at the terminal window or command prompt:
@@ -294,7 +294,7 @@ The following annotations specify security for the `converter` web client, `Conv
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `converter-secure` folder.
@@ -312,7 +312,7 @@ This command builds and deploys the example application to your GlassFish Server
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/converter-secure/
+jakartaee-examples/tutorial/security/converter-secure/
 ----
 
 . Enter the following command:

@@ -104,7 +104,7 @@ You can build the examples using either NetBeans IDE or Maven.
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms
+jakartaee-examples/tutorial/jms
 ----
 
 . Expand the `jms` node and select the `simple` folder.
@@ -693,7 +693,7 @@ To run the clients, you need two terminal windows.
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer/
+cd jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . Run the `Producer` client, sending one message to the queue, along with the non-text control message:
@@ -894,7 +894,7 @@ The example uses the following objects:
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/simple/producer/
+jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . Run the `Producer` client, sending some messages to the queue:
@@ -907,7 +907,7 @@ appclient -client target/producer.jar queue 3
 . In another terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/simple/clientackconsumer/
+jakartaee-examples/tutorial/jms/simple/clientackconsumer/
 ----
 
 . To run the client, use the following command:

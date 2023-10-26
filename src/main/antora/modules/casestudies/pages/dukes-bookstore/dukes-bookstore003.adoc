@@ -11,7 +11,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/case-studies
+jakartaee-examples/tutorial/case-studies
 ----
 
 . Select the `dukes-bookstore` folder.
@@ -29,7 +29,7 @@ This will build, package, and deploy Duke's Bookstore to GlassFish Server.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/case-studies/dukes-bookstore/
+jakartaee-examples/tutorial/case-studies/dukes-bookstore/
 ----
 
 . Enter the following command:

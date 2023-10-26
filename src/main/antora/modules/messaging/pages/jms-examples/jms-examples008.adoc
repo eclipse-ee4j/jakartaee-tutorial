@@ -126,7 +126,7 @@ This example uses an annotation-defined topic and the preconfigured default conn
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms/clientsessionmdb
+jakartaee-examples/tutorial/jms/clientsessionmdb
 ----
 
 . Select the `clientsessionmdb` folder.
@@ -169,7 +169,7 @@ Because of the message selector, the message-driven bean receives only the messa
 . Go to the following directory:
 +
 ----
-tut-install/examples/jms/clientsessionmdb/
+jakartaee-examples/tutorial/jms/clientsessionmdb/
 ----
 
 . To compile the source files and package, deploy, and run the application, enter the following command:

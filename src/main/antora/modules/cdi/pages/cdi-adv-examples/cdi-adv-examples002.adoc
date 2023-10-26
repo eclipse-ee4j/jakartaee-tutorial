@@ -151,7 +151,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `encoder` folder.
@@ -216,7 +216,7 @@ Result: input string is Java, shift value is 4
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/encoder/
+jakartaee-examples/tutorial/cdi/encoder/
 ----
 
 . Enter the following command to deploy the application:
@@ -248,7 +248,7 @@ For example, if you enter `Java` and `4`, the result is `Neze`.
 .. In a text editor, open the following file:
 +
 ----
-tut-install/examples/cdi/encoder/src/main/webapp/WEB-INF/beans.xml
+jakartaee-examples/tutorial/cdi/encoder/src/main/webapp/WEB-INF/beans.xml
 ----
 
 .. Remove the comment characters that surround the `alternatives` element, so that it looks like this:

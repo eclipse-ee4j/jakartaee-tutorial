@@ -104,7 +104,7 @@ The Facelets page and template are located in the `_jakartaee-examples_/tutorial
 The simple CSS file that is used by the Facelets page is in the following location:
 +
 ----
-tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.css
+jakartaee-examples/tutorial/cdi/simplegreeting/src/main/webapp/resources/css/default.css
 ----
 
 === Running the simplegreeting Example
@@ -120,7 +120,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `simplegreeting` folder.
@@ -157,7 +157,7 @@ This command builds and packages the application into a WAR file, `simplegreetin
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/simplegreeting/
+jakartaee-examples/tutorial/cdi/simplegreeting/
 ----
 
 . Enter the following command to deploy the application:

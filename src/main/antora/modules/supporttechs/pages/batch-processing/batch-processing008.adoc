@@ -342,7 +342,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/batch
+jakartaee-examples/tutorial/batch
 ----
 
 . Select the `webserverlog` folder.
@@ -364,7 +364,7 @@ http://localhost:8080/webserverlog/
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/batch/webserverlog/
+jakartaee-examples/tutorial/batch/webserverlog/
 ----
 
 . Enter the following command to deploy the application:

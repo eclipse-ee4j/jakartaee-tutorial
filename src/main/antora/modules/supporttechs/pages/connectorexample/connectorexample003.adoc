@@ -192,7 +192,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/connectors
+jakartaee-examples/tutorial/connectors
 ----
 
 . Select the `traffic` folder.
@@ -233,7 +233,7 @@ The web interface shows filtered traffic updates for City1 every few seconds.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/connectors/traffic/traffic-eis/
+jakartaee-examples/tutorial/connectors/traffic/traffic-eis/
 ----
 
 . Enter the following command in the terminal window:
@@ -263,7 +263,7 @@ Leave this terminal window open.
 . Open a new terminal window and go to:
 +
 ----
-tut-install/examples/connectors/traffic/
+jakartaee-examples/tutorial/connectors/traffic/
 ----
 
 . Enter the following command:
