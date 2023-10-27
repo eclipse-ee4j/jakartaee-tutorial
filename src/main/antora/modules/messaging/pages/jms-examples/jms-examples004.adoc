@@ -187,7 +187,7 @@ The `vendor` module is more complex, containing four classes: `vendor/Vendor.jav
 The example shows how to use a queue and a topic in a single transaction as well as how to pass a `JMSContext` to a message listener's constructor function.
 The example represents a highly simplified e-commerce application in which the following actions occur.
 
-. A retailer (`retailer/src/main/java/ee/jakarta/tutorial/retailer/Retailer.java`) sends a `MapMessage` to a vendor order queue, ordering a quantity of computers, and waits for the vendor's reply:
+. A retailer (`retailer/src/main/java/jakarta/tutorial/retailer/Retailer.java`) sends a `MapMessage` to a vendor order queue, ordering a quantity of computers, and waits for the vendor's reply:
 +
 [source,java]
 ----
@@ -200,7 +200,7 @@ System.out.println("Retailer: ordered " + quantity + " computer(s)");
 orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);
 ----
 
-. The vendor (`vendor/src/main/java/ee/jakarta/tutorial/retailer/Vendor.java`) receives the retailer's order message and sends an order message to the supplier order topic in one transaction.
+. The vendor (`vendor/src/main/java/jakarta/tutorial/retailer/Vendor.java`) receives the retailer's order message and sends an order message to the supplier order topic in one transaction.
 This Jakarta Messaging transaction uses a single session, so you can combine a receive from a queue with a send to a topic.
 Here is the code that uses the same session to create a consumer for a queue:
 +
@@ -225,7 +225,7 @@ context.commit();
 +
 For simplicity, there are only two suppliers, one for CPUs and one for hard drives.
 
-. Each supplier (`genericsupplier/src/main/java/ee/jakarta/tutorial/retailer/GenericSupplier.java`) receives the order from the order topic, checks its inventory, and then sends the items ordered to the queue named in the order message's `JMSReplyTo` field.
+. Each supplier (`genericsupplier/src/main/java/jakarta/tutorial/retailer/GenericSupplier.java`) receives the order from the order topic, checks its inventory, and then sends the items ordered to the queue named in the order message's `JMSReplyTo` field.
 If it does not have enough of the item in stock, the supplier sends what it has.
 The synchronous receive from the topic and the send to the queue take place in one Jakarta Messaging transaction:
 +
