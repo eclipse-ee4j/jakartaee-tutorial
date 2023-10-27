@@ -19,7 +19,7 @@ When you write a Messaging client to run in an enterprise bean application, you 
 However, there are some significant differences.
 xref:jms-concepts/jms-concepts.adoc#_using_jakarta_messaging_in_jakarta_ee_applications[Using Jakarta Messaging in Jakarta EE Applications] describes these differences, and this chapter provides examples that illustrate them.
 
-The examples for this section are in the `_tut-install_/examples/jms/simple/` directory, under the following subdirectories:
+The examples for this section are in the `_jakartaee-examples_/tutorial/jms/simple/` directory, under the following subdirectories:
 
 `producer/` +
 `synchconsumer/` +
@@ -60,7 +60,7 @@ A `glassfish-resources.xml` file in one of the Maven projects can create all the
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 ----
 
 . Create the resources using the `asadmin add-resources` command:
@@ -104,7 +104,7 @@ You can build the examples using either NetBeans IDE or Maven.
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms
+jakartaee-examples/tutorial/jms
 ----
 
 . Expand the `jms` node and select the `simple` folder.
@@ -121,7 +121,7 @@ This command places the application client JAR files in the `target` directories
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/
+cd jakartaee-examples/tutorial/jms/simple/
 ----
 
 . Enter the following command to build all the projects:
@@ -385,7 +385,7 @@ The client displays the destination type and then waits for messages.
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 appclient -client target/producer.jar queue 3
 ----
 +
@@ -515,7 +515,7 @@ You will need two terminal windows, as you did in <<_receiving_messages_synchron
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/asynchconsumer
+cd jakartaee-examples/tutorial/jms/simple/asynchconsumer
 ----
 
 . Run the `AsynchConsumer` client, specifying the `topic` destination type:
@@ -693,7 +693,7 @@ To run the clients, you need two terminal windows.
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer/
+cd jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . Run the `Producer` client, sending one message to the queue, along with the non-text control message:
@@ -716,7 +716,7 @@ Text messages sent: 1
 +
 [source,shell]
 ----
-cd tut-install/jms/simple/messagebrowser
+cd jakartaee-examples/tutorial/jms/simple/messagebrowser
 ----
 
 . Run the `MessageBrowser` client using the following command:
@@ -864,7 +864,7 @@ The following table describes four possible interactions between types of consum
 |Asynchronous |Auto |Message is automatically acknowledged when `onMessage` method returns
 |===
 
-The example is under the `_tut-install_/examples/jms/simple/clientackconsumer/` directory.
+The example is under the `_jakartaee-examples_/tutorial/jms/simple/clientackconsumer/` directory.
 
 The example client, `ClientAckConsumer.java`, creates a `JMSContext` that specifies client acknowledgment:
 
@@ -894,7 +894,7 @@ The example uses the following objects:
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/simple/producer/
+jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . Run the `Producer` client, sending some messages to the queue:
@@ -907,7 +907,7 @@ appclient -client target/producer.jar queue 3
 . In another terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/simple/clientackconsumer/
+jakartaee-examples/tutorial/jms/simple/clientackconsumer/
 ----
 
 . To run the client, use the following command:

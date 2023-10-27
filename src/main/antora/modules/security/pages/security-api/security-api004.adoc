@@ -16,7 +16,7 @@ To support this mandatory requirement, `DatabaseIdentityStore` is bundled with G
 This example demonstrates how you can configure a `DatabaseIdentityStore` to point to a backend database and then use it as an IdentityStore.
 The authentication mechanism used is `BasicAuthenticationMechanism`.
 
-The source code for this example is in the `_tut-install_/examples/security/security-api/built-in-db-identity-store` directory.
+The source code for this example is in the `_jakartaee-examples_/tutorial/security/security-api/built-in-db-identity-store` directory.
 
 The following sections describe the high-level process for configuring the `DatabaseIdentityStore`.
 Note that the configuration described in these sections has already been completed in the application files, but is provided here to illustrate what you need to do to use the built-in database identity store.
@@ -218,7 +218,7 @@ See xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security/security-api
+jakartaee-examples/tutorial/security/security-api
 ----
 
 . Select the `built-in-db-identity-store` folder.
@@ -241,7 +241,7 @@ xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_ser
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/security-api/built-in-db-identity-store
+jakartaee-examples/tutorial/security/security-api/built-in-db-identity-store
 ----
 
 . Enter the following command:

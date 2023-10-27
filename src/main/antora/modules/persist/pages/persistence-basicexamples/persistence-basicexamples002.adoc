@@ -589,7 +589,7 @@ First, you will create the database tables in Apache Derby.
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/persistence
+jakartaee-examples/tutorial/persistence
 ----
 
 . Select the `order` folder.
@@ -613,7 +613,7 @@ http://localhost:8080/order/
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/persistence/order/
+jakartaee-examples/tutorial/persistence/order/
 ----
 
 . Enter the following command:
@@ -623,7 +623,7 @@ tut-install/examples/persistence/order/
 mvn install
 ----
 +
-This compiles the source files and packages the application into a WAR file located at `_tut-install_/examples/persistence/order/target/order.war`.
+This compiles the source files and packages the application into a WAR file located at `_jakartaee-examples_/tutorial/persistence/order/target/order.war`.
 Then the WAR file is deployed to your GlassFish Server instance.
 
 . To create and update the order data, open a web browser to the following URL:

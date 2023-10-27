@@ -13,7 +13,7 @@ All enterprise beans that permit remote access must have a remote business inter
 To meet the needs of a specific application, an enterprise bean may also need some helper classes.
 The `CartBean` session bean uses two helper classes, `BookException` and `IdVerifier`, which are discussed in the section <<_helper_classes>>.
 
-The source code for this example is in the `_tut-install_/examples/ejb/cart/` directory.
+The source code for this example is in the `_jakartaee-examples_/tutorial/ejb/cart/` directory.
 
 === The Business Interface
 
@@ -261,7 +261,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `cart` folder.
@@ -272,7 +272,7 @@ tut-install/examples/ejb
 
 . In the *Projects* tab, right-click the `cart` project and select *Build*.
 +
-This builds and packages the application into `cart.ear`, located in `_tut-install_/examples/ejb/cart/cart-ear/target/`, and deploys this EAR file to your GlassFish Server instance.
+This builds and packages the application into `cart.ear`, located in `_jakartaee-examples_/tutorial/ejb/cart/cart-ear/target/`, and deploys this EAR file to your GlassFish Server instance.
 +
 You will see the output of the `cart-app-client` application client in the Output tab:
 +
@@ -293,7 +293,7 @@ xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_ser
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/ejb/cart/
+jakartaee-examples/tutorial/ejb/cart/
 ----
 
 . Enter the following command:

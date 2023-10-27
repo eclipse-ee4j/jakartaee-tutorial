@@ -18,7 +18,7 @@ The following tasks are usually required:
 The example used in this tutorial is the `guessnumber-faces` application.
 The application presents you with a page that asks you to guess a number from 0 to 10, validates your input against a random number, and responds with another page that informs you whether you guessed the number correctly or incorrectly.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/guessnumber-faces/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/guessnumber-faces/` directory.
 
 ==== Developing a Managed Bean
 
@@ -260,7 +260,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/faces
+jakartaee-examples/tutorial/web/faces
 ----
 
 . Select the `guessnumber-faces` folder.
@@ -278,7 +278,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/faces/guessnumber-faces/
+jakartaee-examples/tutorial/web/faces/guessnumber-faces/
 ----
 
 . Enter the following command:

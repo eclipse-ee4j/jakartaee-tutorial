@@ -1,6 +1,6 @@
 == The dukeetf2 Example Application
 
-The `dukeetf2` example application, located in the `_tut-install_/examples/web/websocket/dukeetf2/` directory, demonstrates how to use a WebSocket endpoint to provide data updates to web clients.
+The `dukeetf2` example application, located in the `_jakartaee-examples_/tutorial/web/websocket/dukeetf2/` directory, demonstrates how to use a WebSocket endpoint to provide data updates to web clients.
 The example resembles a service that provides periodic updates on the price and trading volume of an electronically traded fund (ETF).
 
 === Architecture of the dukeetf2 Sample Application
@@ -166,7 +166,7 @@ This section describes how to run the `dukeetf2` example application using NetBe
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/websocket
+jakartaee-examples/tutorial/web/websocket
 ----
 
 . Select the `dukeetf2` folder.
@@ -190,7 +190,7 @@ Open the same URL on a different web browser tab or window to see how both pages
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/websocket/dukeetf2/
+jakartaee-examples/tutorial/web/websocket/dukeetf2/
 ----
 
 . Enter the following command to deploy the application:

@@ -10,7 +10,7 @@ This implementation, at a minimum, must define how to convert data both ways bet
 All custom converters must implement the `jakarta.faces.convert.Converter` interface.
 This section explains how to implement this interface to perform a custom data conversion.
 
-The Duke's Bookstore case study uses a custom `Converter` implementation, located in `_tut-install_/examples/case-studies/dukes-bookstore/src/java/dukesbookstore/converters/CreditCardConverter.java`, to convert the data entered in the Credit Card Number field on the `bookcashier.xhtml` page.
+The Duke's Bookstore case study uses a custom `Converter` implementation, located in `_jakarta-examples_/tutorial/case-studies/dukes-bookstore/src/main/java/jakarta/tutorial/dukesbookstore/converters/CreditCardConverter.java`, to convert the data entered in the Credit Card Number field on the `bookcashier.xhtml` page.
 It strips blanks and hyphens from the text string and formats it so that a blank space separates every four characters.
 
 Another common use case for a custom converter is in a list for a nonstandard object type.

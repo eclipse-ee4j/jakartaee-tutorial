@@ -28,7 +28,7 @@ The Messaging provider (in this case, GlassFish Server) delivers the messages to
 .The simplemessage Application
 image::common:jakartaeett_dt_036.svg["Diagram of application showing an application client sending a message to a queue, and the message being delivered to a message-driven bean"]
 
-The source code for this application is in the `_tut-install_/examples/jms/simplemessage/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/jms/simplemessage/` directory.
 
 === The simplemessage Application Client
 
@@ -137,7 +137,7 @@ For more information on creating Messaging resources, see xref:jms-examples/jms-
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms/simplemessage
+jakartaee-examples/tutorial/jms/simplemessage
 ----
 
 . Select the `simplemessage` folder.
@@ -179,7 +179,7 @@ The received messages may appear in a different order from the order in which th
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/jms/simplemessage/
+jakartaee-examples/tutorial/jms/simplemessage/
 ----
 
 . To compile the source files and package the application, use the following command:

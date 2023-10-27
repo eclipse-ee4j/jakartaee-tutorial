@@ -60,7 +60,7 @@ When a user submits his or her name and password, the server determines whether 
 
 In general, the following steps are necessary for adding basic authentication to an unsecured servlet, such as the ones described in xref:web:webapp/webapp.adoc#_getting_started_with_web_applications[Getting Started with Web Applications].
 In the example application included with this tutorial, many of these steps have been completed for you and are listed here simply to show what needs to be done should you wish to create a similar application.
-This application can be found in the `_tut-install_/examples/security/hello2-basicauth/` directory.
+This application can be found in the `_jakartaee-examples_/tutorial/security/hello2-basicauth/` directory.
 
 . Follow the steps in <<_to_set_up_your_system_for_running_the_security_examples>>.
 
@@ -118,7 +118,7 @@ Use the deployment descriptor to specify settings for nondefault authentication 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `hello2-basicauth` folder.
@@ -136,7 +136,7 @@ This command builds and deploys the example application to your GlassFish Server
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/hello2-basicauth/
+jakartaee-examples/tutorial/security/hello2-basicauth/
 ----
 
 . Enter the following command:
@@ -196,7 +196,7 @@ In general, the steps necessary for adding form-based authentication to an unsec
 The major difference is that you must use a deployment descriptor to specify the use of form-based authentication, as described in <<_specifying_security_for_the_form_based_authentication_example>>.
 In addition, you must create a login form page and a login error page, as described in <<_creating_the_login_form_and_the_error_page>>.
 
-This application can be found in the `_tut-install_/examples/security/hello1-formauth/` directory.
+This application can be found in the `_jakartaee-examples_/tutorial/security/hello1-formauth/` directory.
 
 ==== Creating the Login Form and the Error Page
 
@@ -216,7 +216,7 @@ The content of an HTML page or servlet for a login page should be coded as follo
 </form>
 ----
 
-The full code for the login page used in this example can be found at `_tut-install_/examples/security/hello1-formauth/src/main/webapp/login.html`.
+The full code for the login page used in this example can be found at `_jakartaee-examples_/tutorial/security/hello1-formauth/src/main/webapp/login.html`.
 Here is the code for this page:
 
 [source,html]
@@ -250,7 +250,7 @@ Here is the code for this page:
 ----
 
 The login error page is displayed if the user enters a user name and password combination that is not authorized to access the protected URI.
-For this example, the login error page can be found at `_tut-install_/examples/security/hello1-formauth/src/main/webapp/error.html`.
+For this example, the login error page can be found at `_jakartaee-examples_/tutorial/security/hello1-formauth/src/main/webapp/error.html`.
 For this example, the login error page explains the reason for receiving the error page and provides a link that will allow the user to try again.
 Here is the code for this page:
 
@@ -277,7 +277,7 @@ Here is the code for this page:
 This example takes a very simple servlet-based web application and adds form-based security.
 To specify form-based instead of basic authentication for a Jakarta Faces example, you must use the deployment descriptor.
 
-The following sample code shows the security elements added to the deployment descriptor for this example, which can be found in `_tut-install_/examples/security/hello1-formauth/src/main/webapp/WEB-INF/web.xml`:
+The following sample code shows the security elements added to the deployment descriptor for this example, which can be found in `_jakartaee-examples_/tutorial/security/hello1-formauth/src/main/webapp/WEB-INF/web.xml`:
 
 [source,xml]
 ----
@@ -318,7 +318,7 @@ The following sample code shows the security elements added to the deployment de
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/security
+jakartaee-examples/tutorial/security
 ----
 
 . Select the `hello1-formauth` folder.
@@ -336,7 +336,7 @@ This command builds and deploys the example application to your GlassFish Server
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/security/hello1-formauth/
+jakartaee-examples/tutorial/security/hello1-formauth/
 ----
 
 . Enter the following command at the terminal window or command prompt:

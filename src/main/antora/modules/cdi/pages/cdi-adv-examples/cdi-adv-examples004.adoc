@@ -7,7 +7,7 @@ The `producerfields` example is the simplest possible entity example.
 It also contains a qualifier and a class that generates the entity manager.
 It also contains a single entity, a stateful session bean, a Facelets page, and a managed bean.
 
-The source files are located in the `_tut-install_/examples/cdi/producerfields/src/main/java/ee/jakarta/tutorial/producerfields/` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/producerfields/src/main/java/jakarta/tutorial/producerfields/` directory.
 
 === The Producer Field for the producerfields Example
 
@@ -289,7 +289,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `producerfields` folder.
@@ -309,7 +309,7 @@ This command builds and packages the application into a WAR file, `producerfield
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/producerfields/
+jakartaee-examples/tutorial/cdi/producerfields/
 ----
 
 . Enter the following command to deploy the application:

@@ -4,7 +4,7 @@ Web applications can use Jakarta Messaging to send and receive messages, as note
 
 This section assumes that you are familiar with the basics of Jakarta Faces technology, described in the xref:web:faces-intro/faces-intro.adoc#_introduction_to_jakarta_faces_technology[Introduction to Jakarta Faces Technology]
 
-The example, `websimplemessage`, is under the `_tut-install_/jms/examples/` directory.
+The example, `websimplemessage`, is under the `_jakartaee-examples_/tutorial/jms/` directory.
 It uses sending and receiving Facelets pages as well as corresponding backing beans.
 When a user enters a message in the text field of the sending page and clicks a button, the backing bean for the page sends the message to a queue and displays it on the page.
 When the user goes to the receiving page and clicks another button, the backing bean for that page receives the message synchronously and displays it.
@@ -117,7 +117,7 @@ This example uses an annotation-defined queue and the preconfigured default conn
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/jms
+jakartaee-examples/tutorial/jms
 ----
 
 . Select the `websimplemessage` folder.
@@ -135,7 +135,7 @@ This command builds and deploys the project.
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/jms/websimplemessage/
+jakartaee-examples/tutorial/jms/websimplemessage/
 ----
 
 . To compile the source files and package and deploy the application, use the following command:

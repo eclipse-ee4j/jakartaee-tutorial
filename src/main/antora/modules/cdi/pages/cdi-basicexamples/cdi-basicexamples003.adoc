@@ -19,7 +19,7 @@ The four source files for the `guessnumber-cdi` example are:
 
 * The `UserNumberBean` managed bean
 
-The source files are located in the `_tut-install_/examples/cdi/guessnumber-cdi/src/main/java/ee/jakarta/tutorial/guessnumber` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/guessnumber-cdi/src/main/java/jakarta/tutorial/guessnumber` directory.
 
 ==== The @MaxNumber and @Random Qualifier Interfaces
 
@@ -317,7 +317,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 +
 [source,java]
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `guessnumber-cdi` folder.
@@ -336,7 +336,7 @@ This command builds and packages the application into a WAR file, `guessnumber-c
 +
 [source,java]
 ----
-tut-install/examples/cdi/guessnumber-cdi/
+jakartaee-examples/tutorial/cdi/guessnumber-cdi/
 ----
 
 . Enter the following command to deploy the application:

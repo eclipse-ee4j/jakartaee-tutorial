@@ -14,7 +14,7 @@ The elements of the deployment descriptor that add basic authentication to an ex
 
 * If authorized, display the servlet to the user.
 
-The following sample code shows the security elements for a deployment descriptor that could be used in the example of basic authentication found in the `_tut-install_/examples/security/hello2_basicauth/` directory:
+The following sample code shows the security elements for a deployment descriptor that could be used in the example of basic authentication found in the `_jakartaee-examples_/tutorial/security/hello2_basicauth/` directory:
 
 [source,xml]
 ----

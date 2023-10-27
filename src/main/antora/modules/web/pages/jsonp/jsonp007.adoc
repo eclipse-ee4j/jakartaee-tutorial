@@ -3,7 +3,7 @@
 This section describes how to build and run the `jsonpstreaming` example application.
 This example is a web application that demonstrates how to create JSON data from form data, how to parse JSON data, and how to write JSON output using the streaming API.
 
-The `jsonpstreaming` example application is in the `_tut-install_/examples/web/jsonp/jsonpstreaming` directory.
+The `jsonpstreaming` example application is in the `_jakartaee-examples_/tutorial/web/jsonp/jsonpstreaming` directory.
 
 === Components of the jsonpstreaming Example Application
 
@@ -36,7 +36,7 @@ This section describes how to run the `jsonpstreaming` example application using
 .  In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/jsonp
+jakartaee-examples/tutorial/web/jsonp
 ----
 
 . Select the `jsonpstreaming` folder.
@@ -64,7 +64,7 @@ The following page contains a table that lists the parser events for the JSON da
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/jsonp/jsonpstreaming/
+jakartaee-examples/tutorial/web/jsonp/jsonpstreaming/
 ----
 
 . Enter the following command to deploy the application:
