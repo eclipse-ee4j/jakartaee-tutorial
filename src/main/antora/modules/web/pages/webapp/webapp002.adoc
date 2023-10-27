@@ -92,9 +92,9 @@ The WAR file is recognizable by having the `.war` extension.
 This describes step 5.
 You need at least a servlet container in order to deploy a WAR file.
 The https://jakarta.ee/compatibility/[Jakarta EE Compatible Products] page lists several Jakarta runtimes having a servlet container.
-At least those compatible with "Web Profile" and "Full Platform" have a servlet container.
+At least those compatible with "Web Profile" and "Jakarta EE Platform" have a servlet container.
 Examples are Eclipse GlassFish, IBM Open Liberty and Red Hat WildFly.
-They are available in both "Web Profile" and "Full Profile" flavors.
+They are available in both "Web Profile" and "Jakarta EE Platform" flavors.
 
 There are also partial Jakarta runtimes having a servlet container.
 Partial as in, they do not fully implement "Web Profile".
