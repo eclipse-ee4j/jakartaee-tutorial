@@ -1,6 +1,6 @@
 == The fileupload Example Application
 
-The `fileupload` example, located in the `_tut-install_/examples/web/servlet/fileupload/` directory, illustrates how to implement and use the file upload feature.
+The `fileupload` example, located in the `_jakartaee-examples_/tutorial/web/servlet/fileupload/` directory, illustrates how to implement and use the file upload feature.
 
 The Duke's Forest case study provides a more complex example that uploads an image file and stores its content in a database.
 
@@ -182,7 +182,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/servlet
+jakartaee-examples/tutorial/web/servlet
 ----
 
 . Select the `fileupload` folder.
@@ -198,7 +198,7 @@ tut-install/examples/web/servlet
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/servlet/fileupload/
+jakartaee-examples/tutorial/web/servlet/fileupload/
 ----
 
 . Enter the following command to deploy the application:

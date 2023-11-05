@@ -10,7 +10,7 @@ Later sections cover more advanced concepts, including the ones you need in orde
 A Jakarta Messaging application is composed of the following parts.
 
 * A Jakarta Messaging provider is a messaging system that implements the Messaging interfaces and provides administrative and control features.
-An implementation of the Jakarta EE platform that supports the full profile includes a Messaging provider.
+A Jakarta EE implementation that supports the Jakarta EE Platform also includes a Messaging provider.
 
 * Jakarta Messaging clients are the programs or components, written in the Java programming language, that produce and consume messages.
 Any Jakarta EE application component can act as a Messaging client.

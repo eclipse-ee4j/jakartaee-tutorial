@@ -1,6 +1,6 @@
 == The mood Example Application
 
-The `mood` example application, located in the `_tut-install_/examples/web/servlet/mood/` directory, is a simple example that displays Duke's moods at different times during the day.
+The `mood` example application, located in the `_jakartaee-examples_/tutorial/web/servlet/mood/` directory, is a simple example that displays Duke's moods at different times during the day.
 The example shows how to develop a simple application by using the `@WebServlet`, `@WebFilter`, and `@WebListener` annotations to create a servlet, a listener, and a filter.
 
 === Components of the mood Example Application
@@ -49,7 +49,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/servlet
+jakartaee-examples/tutorial/web/servlet
 ----
 
 . Select the `mood` folder.
@@ -75,7 +75,7 @@ A web page appears with the title "Servlet MoodServlet at /mood", a text string 
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/servlet/mood/
+jakartaee-examples/tutorial/web/servlet/mood/
 ----
 
 . Enter the following command to deploy the application:

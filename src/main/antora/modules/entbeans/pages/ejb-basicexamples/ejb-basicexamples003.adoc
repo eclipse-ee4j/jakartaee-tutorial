@@ -345,7 +345,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `counter` folder.
@@ -365,7 +365,7 @@ A web browser will open the URL http://localhost:8080/counter[^], which displays
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/ejb/counter/
+jakartaee-examples/tutorial/ejb/counter/
 ----
 
 . Enter the following command:

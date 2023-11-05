@@ -53,7 +53,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `interceptor` folder and click Open Project.
@@ -77,7 +77,7 @@ The name will be converted to lowercase by the method interceptor defined in the
 . Go to the following directory:
 +
 ----
-tut-install/examples/ejb/interceptor/
+jakartaee-examples/tutorial/ejb/interceptor/
 ----
 
 . To compile the source files and package the application, use the following command:

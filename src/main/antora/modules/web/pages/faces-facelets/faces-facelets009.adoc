@@ -199,7 +199,7 @@ The `reservation` example application provides a set of HTML5 `input` elements o
 It consists of two Facelets pages, `reservation.xhtml` and `confirmation.xhtml`, and a backing bean, `ReservationBean.java`.
 The pages use both pass-through attributes and pass-through elements.
 
-The source code for this application is in the `_tut-install_/examples/web/faces/reservation/` directory.
+The source code for this application is in the `_jakartaee-examples_/tutorial/web/faces/reservation/` directory.
 
 ==== The Facelets Pages for the reservation Application
 
@@ -292,7 +292,7 @@ It also contains two methods, `calculateTotal` and `clear`, that act as listener
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/web/faces
+jakartaee-examples/tutorial/web/faces
 ----
 
 . Select the `reservation` folder.
@@ -310,7 +310,7 @@ This option builds the example application and deploys it to your GlassFish Serv
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/web/faces/reservation/
+jakartaee-examples/tutorial/web/faces/reservation/
 ----
 
 . Enter the following command:
