@@ -10,7 +10,7 @@ An _lvalue_ expression can specify a target, such as an object, a bean property,
 An _rvalue_ expression cannot specify such a target.
 
 All expressions that are evaluated immediately use the `${}` delimiters, and although the expression can be an _lvalue_ expression, no assignments will ever happen.
-Expressions whose evaluation can be deferred use the `#{}` delimiters and can act as both _rvalue_ and _lvalue_ expressions; if the expression is an _lvalue_ expression, it can be assigned a new value.
+Expressions whose evaluation can be deferred use the `&#35;{}` delimiters and can act as both _rvalue_ and _lvalue_ expressions; if the expression is an _lvalue_ expression, it can be assigned a new value.
 Consider the following two value expressions:
 
 [source,java]
@@ -283,7 +283,7 @@ The `h:inputText` tag displays as a field. The `validator` attribute of this `h:
 Because a method can be invoked during different phases of the lifecycle, method expressions must always use the deferred evaluation syntax.
 
 Like lvalue expressions, method expressions can use the `.` and the `[]` operators.
-For example, `#{object.method}` is equivalent to #`{object["method"]}`.
+For example, `&#35;{object.method}` is equivalent to #`{object["method"]}`.
 The literal inside the `[]` is converted to `String` and is used to find the name of the method that matches it.
 
 Method expressions can be used only in tag attributes and only in the following ways:

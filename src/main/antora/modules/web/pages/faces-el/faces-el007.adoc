@@ -48,7 +48,7 @@
 
 |`${requestScope['jakarta.servlet.forward.servlet_path']}` |The value of the request-scoped attribute named `jakarta.servlet.forward.servlet_path`
 
-|`#{customer.lName}` |Gets the value of the property `lName` from the `customer` bean during an initial request; sets the value of `lName` during a postback
+|`&#35;{customer.lName}` |Gets the value of the property `lName` from the `customer` bean during an initial request; sets the value of `lName` during a postback
 
-|`#{customer.calcTotal}` |The return value of the method `calcTotal` of the `customer` bean
+|`&#35;{customer.calcTotal}` |The return value of the method `calcTotal` of the `customer` bean
 |===

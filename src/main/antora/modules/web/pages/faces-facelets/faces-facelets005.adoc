@@ -68,7 +68,7 @@ The following example shows a composite component that accepts an email address 
 
 Note the use of `cc.attrs.value` when defining the value of the `inputText` component.
 The word `cc` in Jakarta Faces is a reserved word for composite components.
-The `#{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
+The `&#35;{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
 
 The preceding example content is stored as a file named `email.xhtml` in a folder named `resources/emcomp`, under the application web root directory.
 This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see xref:faces-facelets/faces-facelets.adoc#_web_resources[Web Resources].

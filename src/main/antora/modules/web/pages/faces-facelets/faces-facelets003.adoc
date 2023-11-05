@@ -161,7 +161,7 @@ Note the use of the following tags:
 
 * The Facelets core tag `f:validateLongRange` to validate the user input
 
-An `h:inputText` tag accepts user input and sets the value of the managed bean property `userNumber` through the EL expression `#{userNumberBean.userNumber}`.
+An `h:inputText` tag accepts user input and sets the value of the managed bean property `userNumber` through the EL expression `&#35;{userNumberBean.userNumber}`.
 The input value is validated for value range by the Jakarta Faces standard validator tag `f:validateLongRange`.
 
 The image file, `wave.med.gif`, is added to the page as a resource, as is the style sheet.
