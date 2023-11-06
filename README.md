@@ -9,12 +9,12 @@ The source files are processed and integrated into the Jakarta EE Documentation 
 which is a tool for building documentation sites.
 
 You can always find the most recent build of the Jakarta EE Documentation site here:
-https://virtua-tech.github.io/jakartaee-tutorial-playbook/.
+https://jakartaee.github.io/jakartaee-documentation/jakartaee-tutorial/current/.
 
 > NOTE: We're currently in the process of updating the tutorial site and
 > refreshing the content for Jakarta EE 10 and beyond. This is a work in progress.
 > For the current production version of the tutorial, see
-> [eclipse-ee4j/jakartaee-tutorial](https://github.com/eclipse-ee4j/jakartaee-tutorial).
+> [jakartaee/jakartaee-tutorial](https://github.com/jakartaee/jakartaee-tutorial).
 
 ## A Note about Images
 
@@ -26,22 +26,17 @@ please help us out and rename it to match the output image.
 
 Guidelines for generating new images can be found in the [Contributing guide](CONTRIBUTING.md). 
 
-## Important links
-
-* [Wiki](https://virtua.atlassian.net/wiki/spaces/JETR/overview)
-* [Issue tracker](https://virtua.atlassian.net/jira/software/c/projects/JETUT/issues/)
-
 ## Building
 
 The contents of this repo are built by
-the [jakartaee-tutorial-playbook repository](https://github.com/virtua-tech/jakartaee-tutorial-playbook).
+the [jakartaee-tutorial-playbook repository](https://github.com/jakartaee/jakartaee-documentation).
 See that repo for details.
 
 ## Related Repositories
 
 * [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
-* [virtua-tech/jakartaee-tutorial-playbook](https://github.com/virtua-tech/jakartaee-tutorial-playbook) - builds documentation site
-* [virtua-tech/jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui) - HTML and CSS assets used for the documentation site look and feel.
+* [jakartaee/jakartaee-documentation](https://github.com/jakartaee/jakartaee-documentation) - builds documentation site
+* [jakartaee/jakartaee-documentation-ui](https://github.com/jakartaee/jakartaee-documentation-ui) - HTML and CSS assets used for the documentation site look and feel.
 
 ## Contributing
 
