@@ -2,7 +2,7 @@
 
 The `decorators` example, which is yet another variation on the `encoder` example, shows how to use a decorator to implement additional business logic for a bean.
 
-The source files are located in the `_tut-install_/examples/cdi/decorators/src/main/java/ee/jakarta/tutorial/decorators/` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/decorators/src/main/java/jakarta/tutorial/decorators/` directory.
 
 === Overview of the decorators Example
 
@@ -70,7 +70,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `decorators` folder.
@@ -88,7 +88,7 @@ This command builds and packages the application into a WAR file, `decorators.wa
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/decorators/
+jakartaee-examples/tutorial/cdi/decorators/
 ----
 
 . Enter the following command to deploy the application:

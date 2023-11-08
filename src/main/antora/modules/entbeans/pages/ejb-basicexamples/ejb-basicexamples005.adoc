@@ -338,7 +338,7 @@ If the transaction is rolled back, the container will call the `@Timeout` method
 
 === The timersession Example
 
-The source code for this example is in the `_tut-install_/examples/ejb/timersession/src/main/java/` directory.
+The source code for this example is in the `_jakartaee-examples_/tutorial/ejb/timersession/src/main/java/` directory.
 
 `TimerSessionBean` is a singleton session bean that shows how to set both an automatic timer and a programmatic timer.
 In the source code listing of `TimerSessionBean` that follows, the `setTimer` and `@Timeout` methods are used to set a programmatic timer.
@@ -483,7 +483,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/ejb
+jakartaee-examples/tutorial/ejb
 ----
 
 . Select the `timersession` folder.
@@ -492,7 +492,7 @@ tut-install/examples/ejb
 
 . From the *Run* menu, choose *Run Project*.
 +
-This builds and packages the application into a WAR file located at `_tut-install_/examples/ejb/timersession/target/timersession.war`, deploys this WAR file to your GlassFish Server instance, and then runs the web client.
+This builds and packages the application into a WAR file located at `_jakartaee-examples_/tutorial/ejb/timersession/target/timersession.war`, deploys this WAR file to your GlassFish Server instance, and then runs the web client.
 
 ==== To Build, Package, and Deploy the timersession Example Using Maven
 
@@ -501,7 +501,7 @@ This builds and packages the application into a WAR file located at `_tut-instal
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/ejb/timersession/
+jakartaee-examples/tutorial/ejb/timersession/
 ----
 
 . Enter the following command:
@@ -511,7 +511,7 @@ tut-install/examples/ejb/timersession/
 mvn install
 ----
 +
-This builds and packages the application into a WAR file located at `_tut-install_/examples/ejb/timersession/target/timersession.war` and deploys this WAR file to your GlassFish Server instance.
+This builds and packages the application into a WAR file located at `_jakartaee-examples_/tutorial/ejb/timersession/target/timersession.war` and deploys this WAR file to your GlassFish Server instance.
 
 ==== To Run the Web Client
 

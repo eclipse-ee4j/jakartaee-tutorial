@@ -2,7 +2,7 @@
 
 The `billpayment` example shows how to use both events and interceptors.
 
-The source files are located in the `_tut-install_/examples/cdi/billpayment/src/main/java/ee/jakarta/tutorial/billpayment/` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/billpayment/src/main/java/jakarta/tutorial/billpayment/` directory.
 
 === Overview of the billpayment Example
 
@@ -292,7 +292,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `billpayment` folder.
@@ -310,7 +310,7 @@ This command builds and packages the application into a WAR file, `billpayment.w
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/billpayment/
+jakartaee-examples/tutorial/cdi/billpayment/
 ----
 
 . Enter the following command to deploy the application:

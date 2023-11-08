@@ -11,7 +11,7 @@ The example consists of two modules, a `durableconsumer` application that create
 
 For information on durable subscriptions, see xref:jms-concepts/jms-concepts.adoc#_creating_durable_subscriptions[Creating Durable Subscriptions].
 
-The main client, `DurableConsumer.java`, is under the `_tut-install_/examples/jms/durablesubscriptionexample/durableconsumer` directory.
+The main client, `DurableConsumer.java`, is under the `_jakartaee-examples_/tutorial/jms/durablesubscriptionexample/durableconsumer` directory.
 
 The example uses a connection factory, `jms/DurableConnectionFactory`, that has a client ID.
 
@@ -52,7 +52,7 @@ try (JMSContext context = durableConnectionFactory.createContext();) {
 +
 [source,shell]
 ----
-cd tut-install/jms/durablesubscriptionexample/durableconsumer
+cd jakartaee-examples/tutorial/jms/durablesubscriptionexample/durableconsumer
 ----
 
 . Create the resources using the `asadmin add-resources` command:
@@ -87,7 +87,7 @@ Command list-jms-resources executed successfully.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/durablesubscriptionexample/
+jakartaee-examples/tutorial/jms/durablesubscriptionexample/
 ----
 
 . Build the `durableconsumer` and `unsubscriber` examples:
@@ -124,7 +124,7 @@ To end program, enter Q or q, then <return>
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 appclient -client target/producer.jar topic 3
 ----
 
@@ -163,7 +163,7 @@ After you have finished running the `DurableConsumer` client, run the `unsubscri
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/durablesubscriptionexample/unsubscriber
+jakartaee-examples/tutorial/jms/durablesubscriptionexample/unsubscriber
 ----
 
 . To run the `Unsubscriber` client, enter the following command:
@@ -179,15 +179,15 @@ The client reports that it is unsubscribing from the durable subscription.
 
 The `transactedexample` example demonstrates the use of local transactions in a Messaging client application.
 It also demonstrates the use of the request/reply messaging pattern described in xref:jms-concepts/jms-concepts.adoc#_creating_temporary_destinations[Creating Temporary Destinations], although it uses permanent rather than temporary destinations.
-The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_tut-install_/examples/jms/transactedexample/` directory.
-The source code can be found in the `src/main/java/ee.jakarta.tutorial` trees for each module.
+The example consists of three modules, `genericsupplier`, `retailer`, and `vendor`, which can be found under the `_jakartaee-examples_/tutorial/jms/transactedexample/` directory.
+The source code can be found in the `src/main/java/jakarta.tutorial` trees for each module.
 The `genericsupplier` and `retailer` modules each contain a single class, `genericsupplier/GenericSupplier.java` and `retailer/Retailer.java`, respectively.
 The `vendor` module is more complex, containing four classes: `vendor/Vendor.java`, `vendor/VendorMessageListener.java`, `vendor/Order.java`, and `vendor/SampleUtilities.java`.
 
 The example shows how to use a queue and a topic in a single transaction as well as how to pass a `JMSContext` to a message listener's constructor function.
 The example represents a highly simplified e-commerce application in which the following actions occur.
 
-. A retailer (`retailer/src/main/java/ee/jakarta/tutorial/retailer/Retailer.java`) sends a `MapMessage` to a vendor order queue, ordering a quantity of computers, and waits for the vendor's reply:
+. A retailer (`retailer/src/main/java/jakarta/tutorial/retailer/Retailer.java`) sends a `MapMessage` to a vendor order queue, ordering a quantity of computers, and waits for the vendor's reply:
 +
 [source,java]
 ----
@@ -200,7 +200,7 @@ System.out.println("Retailer: ordered " + quantity + " computer(s)");
 orderConfirmReceiver = context.createConsumer(retailerConfirmQueue);
 ----
 
-. The vendor (`vendor/src/main/java/ee/jakarta/tutorial/retailer/Vendor.java`) receives the retailer's order message and sends an order message to the supplier order topic in one transaction.
+. The vendor (`vendor/src/main/java/jakarta/tutorial/vendor/Vendor.java`) receives the retailer's order message and sends an order message to the supplier order topic in one transaction.
 This Jakarta Messaging transaction uses a single session, so you can combine a receive from a queue with a send to a topic.
 Here is the code that uses the same session to create a consumer for a queue:
 +
@@ -225,7 +225,7 @@ context.commit();
 +
 For simplicity, there are only two suppliers, one for CPUs and one for hard drives.
 
-. Each supplier (`genericsupplier/src/main/java/ee/jakarta/tutorial/retailer/GenericSupplier.java`) receives the order from the order topic, checks its inventory, and then sends the items ordered to the queue named in the order message's `JMSReplyTo` field.
+. Each supplier (`genericsupplier/src/main/java/jakarta/tutorial/genericsupplier/GenericSupplier.java`) receives the order from the order topic, checks its inventory, and then sends the items ordered to the queue named in the order message's `JMSReplyTo` field.
 If it does not have enough of the item in stock, the supplier sends what it has.
 The synchronous receive from the topic and the send to the queue take place in one Jakarta Messaging transaction:
 +
@@ -303,7 +303,7 @@ The example uses three queues named `jms/AQueue`, `jms/BQueue`, and `jms/CQueue`
 +
 [source,shell]
 ----
-cd tut-install/jms/transactedexample/genericsupplier
+cd jakartaee-examples/tutorial/jms/transactedexample/genericsupplier
 ----
 
 . Create the resources using the `asadmin add-resources` command:
@@ -343,7 +343,7 @@ Make sure that you start the clients in the correct order.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/transactedexample/
+jakartaee-examples/tutorial/jms/transactedexample/
 ----
 
 . To build and package all the modules, enter the following command:
@@ -378,7 +378,7 @@ Starting CPU supplier
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/genericsupplier
+cd jakartaee-examples/tutorial/jms/transactedexample/genericsupplier
 ----
 
 . Use the following command to start the hard drive supplier client:
@@ -399,7 +399,7 @@ Starting Hard Drive supplier
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/vendor
+cd jakartaee-examples/tutorial/jms/transactedexample/vendor
 ----
 
 . Use the following command to start the `Vendor` client:
@@ -420,7 +420,7 @@ Starting vendor
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/transactedexample/retailer
+cd jakartaee-examples/tutorial/jms/transactedexample/retailer
 ----
 
 . [[_transactedexample_step_10, Step 10]] Use a command like the following to run the `Retailer` client.

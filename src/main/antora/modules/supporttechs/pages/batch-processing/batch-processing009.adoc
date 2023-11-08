@@ -1,6 +1,6 @@
 == The phonebilling Example Application
 
-The `phonebilling` example application, located in the `_tut-install_/examples/batch/phonebilling/` directory, demonstrates how to use the batch framework in Jakarta EE to implement a phone billing system.
+The `phonebilling` example application, located in the `_jakartaee-examples_/tutorial/batch/phonebilling/` directory, demonstrates how to use the batch framework in Jakarta EE to implement a phone billing system.
 This example application processes a log file of phone calls and creates a bill for each customer.
 
 === Architecture of the phonebilling Example Application
@@ -434,7 +434,7 @@ xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_ser
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/batch
+jakartaee-examples/tutorial/batch
 ----
 
 . Select the `phonebilling` folder.
@@ -456,7 +456,7 @@ http://localhost:8080/phonebilling/
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/batch/phonebilling/
+jakartaee-examples/tutorial/batch/phonebilling/
 ----
 
 . Enter the following command to deploy the application:

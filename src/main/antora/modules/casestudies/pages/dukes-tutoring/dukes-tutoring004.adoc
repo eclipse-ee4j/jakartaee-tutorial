@@ -21,7 +21,7 @@ You must have already configured GlassFish Server as a Jakarta EE server in NetB
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/case-studies
+jakartaee-examples/tutorial/case-studies
 ----
 
 . Select the `dukes-tutoring` folder.
@@ -45,7 +45,7 @@ This command creates a JDBC security realm named tutoringRealm, builds and packa
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/case-studies/dukes-tutoring/
+jakartaee-examples/tutorial/case-studies/dukes-tutoring/
 ----
 
 . Enter the following command:

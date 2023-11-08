@@ -57,14 +57,14 @@ In the first, go to the `simple/producer/` directory:
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer/
+cd jakartaee-examples/tutorial/jms/simple/producer/
 ----
 
 . In the second and third command windows, go to the `shared/sharedconsumer/` directory:
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/shared/sharedconsumer/
+cd jakartaee-examples/tutorial/jms/shared/sharedconsumer/
 ----
 
 . In one of the `sharedconsumer` windows, build the example:
@@ -108,7 +108,7 @@ The `shareddurableconsumer` client shows how to use shared durable subscriptions
 It shows how shared durable subscriptions combine the advantages of durable subscriptions (the subscription remains active when the client is not) with those of shared consumers (the message load can be divided among multiple clients).
 
 The example is much more similar to the `sharedconsumer` example than to the `DurableConsumer.java` client.
-It uses two classes, `SharedDurableConsumer.java` and `TextListener.java`, which can be found under the `_tut-install_/examples/jms/shared/shareddurableconsumer/` directory.
+It uses two classes, `SharedDurableConsumer.java` and `TextListener.java`, which can be found under the `_jakartaee-examples_/tutorial/jms/shared/shareddurableconsumer/` directory.
 
 The client uses `java:comp/DefaultJMSConnectionFactory`, the connection factory that does not have a client identifier, as is recommended for shared durable subscriptions.
 It uses the `createSharedDurableConsumer` method with a subscription name to establish the subscription:
@@ -125,7 +125,7 @@ You run the example in combination with the `Producer.java` client.
 . In a terminal window, go to the following directory:
 +
 ----
-tut-install/examples/jms/shared/shareddurableconsumer
+jakartaee-examples/tutorial/jms/shared/shareddurableconsumer
 ----
 
 . To compile and package the client, enter the following command:
@@ -157,7 +157,7 @@ The subscription remains active, although the client is not running.
 +
 [source,shell]
 ----
-cd tut-install/examples/jms/simple/producer
+cd jakartaee-examples/tutorial/jms/simple/producer
 ----
 
 . Run the `producer` example, sending a number of messages to the topic:

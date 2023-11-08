@@ -75,7 +75,7 @@ The message can be specified directly:
 protected String homePhone;
 ----
 
-The constraints in `Contact`, however, are strings in the resource bundle `ValidationMessages.properties`, under `_tut-install_/examples/persistence/address-book/src/java/`.
+The constraints in `Contact`, however, are strings in the resource bundle `ValidationMessages.properties`, under `_jakartaee-examples_/tutorial/persistence/address-book/src/main/java`.
 This allows the validation messages to be located in one single properties file and the messages to be easily localized.
 Overridden Bean Validation messages must be placed in a resource bundle properties file named `ValidationMessages.properties` in the default package, with localized resource bundles taking the form `ValidationMessages___locale-prefix__.properties`.
 For example, `ValidationMessages_es.properties` is the resource bundle used in Spanish-speaking locales.
@@ -134,7 +134,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/persistence
+jakartaee-examples/tutorial/persistence
 ----
 
 . Select the `address-book` folder.
@@ -163,7 +163,7 @@ If any of the values entered violate the constraints in `Contact`, an error mess
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/persistence/address-book/
+jakartaee-examples/tutorial/persistence/address-book/
 ----
 
 . Enter the following command:

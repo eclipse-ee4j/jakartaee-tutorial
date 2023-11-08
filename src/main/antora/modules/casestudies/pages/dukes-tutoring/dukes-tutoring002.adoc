@@ -64,7 +64,7 @@ For information on CDI events, see xref:cdi:cdi-adv/cdi-adv.adoc#_using_events_i
 === Facelets Files Used in the Main Interface
 
 The Duke's Tutoring application uses Facelets to display the user interface, making extensive use of the templating features of Facelets.
-Facelets, the default display technology for Jakarta Faces technology, consists of XHTML files located in the `_tut-install_/examples/case-studies/dukes-tutoring-war/src/main/webapp/` directory.
+Facelets, the default display technology for Jakarta Faces technology, consists of XHTML files located in the `_jakartaee-examples_/tutorial/case-studies/dukes-tutoring/dukes-tutoring-war/src/main/webapp/` directory.
 
 The following Facelets files are used in the main interface:
 

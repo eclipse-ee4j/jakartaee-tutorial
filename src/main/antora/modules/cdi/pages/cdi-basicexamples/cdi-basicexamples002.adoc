@@ -14,7 +14,7 @@ The four source files for the `simplegreeting` example are:
 
 * The `Printer` managed bean class, which injects one of the two interfaces, shown in full in xref:cdi-basic/cdi-basic.adoc#_adding_setter_and_getter_methods[Adding Setter and Getter Methods]
 
-The source files are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/java/ee/jakarta/tutorial/simplegreeting` directory.
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/java/jakarta/tutorial/simplegreeting` directory.
 
 === The Facelets Template and Page
 
@@ -99,12 +99,12 @@ Hello, name.
 Hi, name!
 ----
 +
-The Facelets page and template are located in the `_tut-install_/examples/cdi/simplegreeting/src/main/webapp/` directory.
+The Facelets page and template are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/webapp/` directory.
 +
 The simple CSS file that is used by the Facelets page is in the following location:
 +
 ----
-tut-install/examples/cdi/simplegreeting/src/main/webapp/resources/css/default.css
+jakartaee-examples/tutorial/cdi/simplegreeting/src/main/webapp/resources/css/default.css
 ----
 
 === Running the simplegreeting Example
@@ -120,7 +120,7 @@ You can use either NetBeans IDE or Maven to build, package, deploy, and run the 
 . In the *Open Project* dialog box, navigate to:
 +
 ----
-tut-install/examples/cdi
+jakartaee-examples/tutorial/cdi
 ----
 
 . Select the `simplegreeting` folder.
@@ -157,7 +157,7 @@ This command builds and packages the application into a WAR file, `simplegreetin
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/cdi/simplegreeting/
+jakartaee-examples/tutorial/cdi/simplegreeting/
 ----
 
 . Enter the following command to deploy the application:

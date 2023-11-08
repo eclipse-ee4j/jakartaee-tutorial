@@ -11,7 +11,7 @@ You can use NetBeans IDE or Maven to build and deploy Duke's Forest.
 . In the Open Project dialog box, navigate to:
 +
 ----
-tut-install/examples/case-studies
+jakartaee-examples/tutorial/case-studies
 ----
 
 . Select the `dukes-forest` folder.
@@ -31,7 +31,7 @@ To configure the server, this task creates a JDBC security realm named `jdbcReal
 . In a terminal window, go to:
 +
 ----
-tut-install/examples/case-studies/dukes-forest/
+jakartaee-examples/tutorial/case-studies/dukes-forest/
 ----
 
 . Enter the following command to configure the server, create and populate the database, build all the subprojects, assemble them into JAR and WAR files, and deploy the `dukes-payment`, `dukes-store,` and `dukes-shipment` applications:
