@@ -1,39 +1,143 @@
 == Sharing Information
 
-Web components, like most objects, usually work with other objects to accomplish their tasks.
-Web components can do so by doing the following.
+Web components, like most objects, usually work with data to accomplish their tasks.
+Web components can store this information in a data store or in a scoped bean, among others.
 
-* Using private helper objects (for example, JavaBeans components).
 
-* Sharing objects that are attributes of a public scope.
+=== Using CDI Managed Beans
 
-* Using a database.
+CDI can be used to define scoped beans which can be injected in any container-managed objects such as web components.
+These scoped beans can then be used to store and transfer information.
 
-* Invoking other web resources.
-The Jakarta Servlet technology mechanisms that allow a web component to invoke other web resources are described in xref:servlets/servlets.adoc#_invoking_other_web_resources[Invoking Other Web Resources].
+CDI defines three basic scopes which can be used for this:
 
-=== Using Scope Objects
+`@jakarta.enterprise.context.RequestScoped`::
+In a servlet container, this is mapped to the `jakarta.servlet.ServletRequest`.
+It lives from the time that the client has sent the request until it has retrieved the corresponding response.
+It is not shared elsewhere.
 
-Collaborating web components share information by means of objects that are maintained as attributes of four scope objects.
-You access these attributes by using the `getAttribute` and `setAttribute` methods of the class representing the scope.
-<<_scope_objects>> lists the scope objects.
+`@jakarta.enterprise.context.SessionScoped`::
+In a servlet container, this is mapped to the `jakarta.servlet.http.HttpSession`.
+It lives for as long as the client is interacting with the web application with the same browser instance, and the session hasn't timed out at the server side.
+It is shared among all requests in the same session.
 
-[[_scope_objects]]
+`@jakarta.enterprise.context.ApplicationScoped`::
+In a servlet container, this is mapped to the `jakarta.servlet.ServletContext`.
+It lives for as long as the web application lives.
+It is shared among all requests in all sessions.
+
+The below example illustrates how CDI `@SessionScoped` can be used to define a session scoped bean which stores the user preferences.
+
+[source,java]
+----
+@Named
+@SessionScoped
+public class UserPreferences implements Serializable {
+
+    private Locale language;
+    private ZoneId timeZone;
+    private boolean darkMode;
+
+    // ...
+}
+----
+
+It can be injected in any web component.
+The below example illustrates how a servlet can be used to take a time zone offset in minutes and update the user preferences with it.
+
+[source,java]
+----
+@WebServlet("/timeZoneHandler")
+public class TimeZoneHandler extends HttpServlet {
+
+    @Inject
+    private UserPreferences userPreferences;
+
+    @Override
+    public void doPost
+        (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        var offsetInMinutes = request.getParameter("offsetInMinutes");
+
+        if (offsetInMinutes == null || !offsetInMinutes.matches("\\-?[0-9]{1,3}")) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        var offsetInSeconds = TimeUnit.MINUTES.toSeconds(Long.valueOf(offsetInMinutes));
+        ZoneId timeZone = ZoneOffset.ofTotalSeconds((int) offsetInSeconds);
+        userPreferences.setTimeZone(timeZone);
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+    }
+}
+----
+
+For example JavaScript's `new Date().getTimeZoneOffset()` returns the local (negative) time zone offset in minutes.
+This servlet can then be invoked as follows in JavaScript in order to inform the server about the client's time zone:
+
+[source,javascript]
+----
+fetch("/context-path/timeZoneHandler", {
+    method: "POST",
+    body: new URLSearchParams({
+        offsetInMinutes: -new Date().getTimezoneOffset()
+    })
+});
+----
+
+=== Using Scope Objects Directly
+
+If CDI is not available, an alternative is to use Jakarta Servlet's own scope objects directly.
+You can use `getAttribute` and `setAttribute` methods of the Jakarta Servlet class representing the scope.
+<<scope-objects>> lists the scope objects.
+
+[[scope-objects]]
 .Scope Objects
 [width="90%",cols="15%,25%,50%"]
 |===
 |Scope Object |Class |Accessible From
-
-|Web context |`jakarta.servlet.ServletContext` |Web components within a web context.
-See xref:servlets/servlets.adoc#_accessing_the_web_context[Accessing the Web Context].
-
+|Application |`jakarta.servlet.ServletContext` |Web components within the web application.
+See <<accessing-the-web-context>>.
 |Session |`jakarta.servlet.http.HttpSession` |Web components handling a request that belongs to the session.
-See xref:servlets/servlets.adoc#_maintaining_client_state[Maintaining Client State].
-
-|Request |Subtype of `jakarta.servlet.ServletRequest` |Web components handling the request.
-
-|Page |`jakarta.servlet.jsp.JspContext` |The Jakarta Server Pages page that creates the object.
+See <<maintaining-client-state>>.
+|Request |`jakarta.servlet.ServletRequest` |Web components handling the request.
 |===
+
+The below example illustrates how the previously shown servlet needs to be adjusted to manually manage the `UserPreferences` bean.
+
+[source,java]
+----
+@WebServlet("/timeZoneHandler")
+public class TimeZoneHandler extends HttpServlet {
+
+    @Override
+    public void doPost
+        (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        var offsetInMinutes = request.getParameter("offsetInMinutes");
+
+        if (offsetInMinutes == null || !offsetInMinutes.matches("\\-?[0-9]{1,3}")) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        var offsetInSeconds = TimeUnit.MINUTES.toSeconds(Long.valueOf(offsetInMinutes));
+        ZoneId timeZone = ZoneOffset.ofTotalSeconds((int) offsetInSeconds);
+        HttpSession session = request.getSession();
+        UserPreferenes userPreferences = session.getAttribute("userPreferences");
+
+        if (userPreferences == null) {
+            userPreferences = new UserPreferences();
+            session.setAttribute("userPreferences", userPreferences);
+        }
+
+        userPreferences.setTimeZone(timeZone);
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+    }
+}
+----
 
 === Controlling Concurrent Access to Shared Resources
 
@@ -42,17 +146,13 @@ In addition to scope object attributes, shared resources include in-memory data,
 
 Concurrent access can arise in several situations.
 
-* Multiple web components accessing objects stored in the web context.
-
-* Multiple web components accessing objects stored in a session.
-
+* Multiple web components accessing objects stored in the application scope.
+* Multiple web components accessing objects stored in the session scope.
 * Multiple threads within a web component accessing instance variables.
 
 A web container will typically create a thread to handle each request.
-To ensure that a servlet instance handles only one request at a time, a servlet can implement the `SingleThreadModel` interface.
-If a servlet implements this interface, no two threads will execute concurrently in the servlet's service method.
-A web container can implement this guarantee by synchronizing access to a single instance of the servlet or by maintaining a pool of web component instances and dispatching each new request to a free instance.
-This interface does not prevent synchronization problems that result from web components' accessing shared resources, such as static class variables or external objects.
-
 When resources can be accessed concurrently, they can be used in an inconsistent fashion.
-You prevent this by controlling the access using the synchronization techniques described in the Threads lesson at https://docs.oracle.com/javase/tutorial/essential/concurrency/[^].
+First step is to ensure that the variable representing the resource has the correct scope and use a as narrow as possible scope.
+For example, request scoped information should not be stored in a session scoped bean nor be assigned as an instance variable of a servlet, and session scoped information should not be stored in an application scoped bean.
+
+If concurrent access is inevitable, then you prevent this by using synchronized or atomic objects such as wrapping a `Map` in `Collections.synchronizedMap()` before assigning it to a property of a session scoped bean.

@@ -32,7 +32,7 @@ image::common:jakartaeett_dt_013.svg["Diagram of web application request handlin
 . The servlet container ultimately converts the `HttpServletResponse` object to an HTTP response and the web server returns it to the client.
 
 Jakarta Servlet can be used to build both presentation and service-oriented web applications.
-It intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as a HTTP response, and to manage all the lifecycle around them.
+It intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as an HTTP response, and to manage all the lifecycle around them.
 
 Jakarta Faces is a component-based MVC framework that can be executed on a servlet container and act as a presentation-oriented web application.
 It intends to reduce the boilerplate code needed to collect the request parameters, convert and validate them, update bean properties with them, invoke bean methods, and generate HTML output as response.

@@ -1,8 +1,7 @@
-= Jakarta Servlet Technology
+= Jakarta Servlet
 
-include::ROOT:partial$not_updated.adoc[]
-
-Jakarta Servlet technology provides dynamic, user-oriented content in web applications using a request-response programming model.
+Jakarta Servlet is a corner stone web framework that can act as a presentation-oriented as well as a service-oriented web application.
+Jakarta Servlet intends to reduce the boilerplate code needed to convert the HTTP request into a Java object and to offer a Java object as an HTTP response, and to manage all the lifecycle around them.
 
 include::servlets001.adoc[]
 
@@ -13,6 +12,8 @@ include::servlets003.adoc[]
 include::servlets004.adoc[]
 
 include::servlets005.adoc[]
+
+include::servlets019.adoc[]
 
 include::servlets006.adoc[]
 
