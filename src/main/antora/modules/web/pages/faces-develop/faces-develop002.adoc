@@ -151,7 +151,7 @@ For example, here is the `h:outputText` tag that displays the book title in the 
 ----
 
 The title is actually a link to the `bookdetails.xhtml` page.
-The `h:outputText` tag uses the value expression `#{item.item.title}` to bind its `UIOutput` component to the `title` property of the `Book` entity.
+The `h:outputText` tag uses the value expression `&#35;{item.item.title}` to bind its `UIOutput` component to the `title` property of the `Book` entity.
 The first item in the expression is the `ShoppingCartItem` instance that the `h:dataTable` tag is referencing while rendering the current row.
 The second item in expression refers to the `item` property of `ShoppingCartItem`, which returns an `Object` (in this case, a `Book`).
 The `title` part of the expression refers to the `title` property of `Book`.

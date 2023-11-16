@@ -68,7 +68,7 @@ As explained in xref:faces-el/faces-el.adoc#_overview_of_the_el[Overview of the 
 
 Deferred evaluation of expressions is important because the Jakarta Faces lifecycle is split into several phases in which component event handling, data conversion and validation, and data propagation to external objects are all performed in an orderly fashion.
 The implementation must be able to delay the evaluation of expressions until the proper phase of the lifecycle has been reached.
-Therefore, the implementation's tag attributes always use deferred-evaluation syntax, which is distinguished by the `#{}` delimiter.
+Therefore, the implementation's tag attributes always use deferred-evaluation syntax, which is distinguished by the `&#35;{}` delimiter.
 
 To store data in external objects, almost all Jakarta Faces tag attributes use lvalue expressions, which are expressions that allow both getting and setting data on external objects.
 

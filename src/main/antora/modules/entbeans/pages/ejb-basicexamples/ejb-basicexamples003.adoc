@@ -312,7 +312,7 @@ public class Count implements Serializable {
 ----
 
 The `template.xhtml` and `index.xhtml` files are used to render a Facelets view that displays the number of hits to that view.
-The `index.xhtml` file uses an expression language statement, `#{count.hitCount}`, to access the `hitCount` property of the `Count` managed bean.
+The `index.xhtml` file uses an expression language statement, `&#35;{count.hitCount}`, to access the `hitCount` property of the `Count` managed bean.
 Here is the content of `index.xhtml`:
 
 [source,xml]

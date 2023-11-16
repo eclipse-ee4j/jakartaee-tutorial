@@ -54,7 +54,7 @@ We'll briefly go through the CDI annotations that are used here:
 
 * `@Named` -- gives the backing bean a managed bean name, which is primarily used to reference it in Expression Language (EL).
   Without any attributes this defaults to the simple class name with the first letter in lowercase.
-  This backing bean will thus be available as a managed bean via `#\{hello}` in EL.
+  This backing bean will thus be available as a managed bean via `&#35;\{hello}` in EL.
 * `@RequestScoped` -- gives the backing bean a managed bean scope, which essentially represents its lifespan.
   In this case that lifespan is the duration of an HTTP request.
   When the HTTP request ends, then the managed bean instance is destroyed.
@@ -113,9 +113,9 @@ We'll briefly go through the Jakarta Faces-specific XHTML tags that are used her
 The `<h:...>` tags define standard HTML components.
 The `<f:...>` tags define behavior.
 
-The input value is via EL value expression `#{hello.name}` connected to the `name` property of the `Hello` backing bean via its getter and setter.
-The output value is via EL value expression `#{hello.greeting}` connected to the `greeting` property of the `Hello` backing bean via its getter.
-The command button is via EL method expression `#{hello.submit}` connected to the `submit` method of the `Hello` backing bean.
+The input value is via EL value expression `&#35;{hello.name}` connected to the `name` property of the `Hello` backing bean via its getter and setter.
+The output value is via EL value expression `&#35;{hello.greeting}` connected to the `greeting` property of the `Hello` backing bean via its getter.
+The command button is via EL method expression `&#35;{hello.submit}` connected to the `submit` method of the `Hello` backing bean.
 
 Note that for EL value expressions the physical field representing the property doesn't need to have exactly the same name nor that it needs to exist at all.
 EL only looks for the getter and setter methods, not for the field.

@@ -32,7 +32,7 @@ When the `user` attribute is specified, then the default scope is `session`.
 The user identifier of the WebSocket channel, so that user-targeted push messages can be sent.
 It must implement Serializable and preferably have a low memory footprint.
 
-*Hint*: Use `\#{request.remoteUser}` or `#{someLoggedInUser.id}`.
+*Hint*: Use `&#35;{request.remoteUser}` or `&#35;{someLoggedInUser.id}`.
 
 All open WebSockets on the same channel and user will receive the same push message from the server.
 
