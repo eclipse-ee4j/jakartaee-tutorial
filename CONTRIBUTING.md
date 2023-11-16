@@ -21,6 +21,33 @@ The project maintains the following source code repositories
 * [jakartaee-tutorial](https://github.com/virtua-tech/jakartaee-tutorial)
 * [jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui)
 
+### Coding guidelines
+
+#### Branches
+
+##### Normal Branches
+
+* Restrict work on a single feature or issue to a single branch
+* Branch name: `feature/[issue #]_description_if_necessary`
+  * Example: `feature/123_this_is_an_example`
+  * Example: `feature/123`
+  * Example: `feature/remove_stale_files (no issue number)`
+
+##### Release Branches
+
+* For the main tutorial repo and any other repos with Antora content (that does not include a playbook), we’ll keep a release branch so that we maintain docs for the particular version of Jakarta EE.
+* The main branch will represent the current release. All previous releases should have their own branch.
+Branch name: `release/[version]`
+  * Example: `release/9.1`
+  * Example: `release/10`
+
+##### Commits
+
+* Include the issue # in the message (if applicable)
+  * Example: “#123 Adds a the ability to synchronize with the example repo”
+  * Example: “Updates #123 with changes for pom file”
+  * Example: “Removed stale files”
+
 ### Creating diagrams
 
 Diagrams are located in `src/main/asciidoc/images`.
@@ -64,6 +91,20 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
         - Yellow: `#FDB940`
         - Grey: `#58595B`
         - Dark blue: `#131660`
+
+### Terminology
+
+| Old | New |
+| --- | --- |
+| Jakarta Foo Technology | Jakarta Foo API |
+| JavaBeans components | beans |
+| application server | Jakara runtime |
+| (web) container | servlet container | 
+| context root | context path |
+| web context | application scope |
+
+* Do not use in-house abbreviations! E.g. do not use “DD” but write out fully “deployment descriptor”.
+* List items should always start with capital and end with full stop.
 
 ## Eclipse Contributor Agreement
 
