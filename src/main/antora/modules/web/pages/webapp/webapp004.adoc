@@ -65,7 +65,7 @@ Therefore, when the servlet is deployed to a local server listening on `http://l
 http://localhost:8080/hello-servlet/greeting
 ----
 
-The Hello World example will return a HTTP 400 error as response indicating a 'Bad Request'.
+The Hello World example will return an HTTP 400 error as response indicating a 'Bad Request'.
 When specifying the name as a request parameter in the following URL:
 
 ----

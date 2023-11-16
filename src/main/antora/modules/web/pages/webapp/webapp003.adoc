@@ -110,8 +110,8 @@ We'll briefly go through the Jakarta Faces-specific XHTML tags that are used her
 * `<h:outputText>` -- generates the HTML `<span>`.
   This is the one being updated on completion of the Ajax submit and it will display the current value of the managed bean property specified in the `value` attribute.
 
-The `<h:...>` tags basically define standard HTML components.
-The `<f:...>` tags basically define behavior.
+The `<h:...>` tags define standard HTML components.
+The `<f:...>` tags define behavior.
 
 The input value is via EL value expression `&#35;{hello.name}` connected to the `name` property of the `Hello` backing bean via its getter and setter.
 The output value is via EL value expression `&#35;{hello.greeting}` connected to the `greeting` property of the `Hello` backing bean via its getter.
