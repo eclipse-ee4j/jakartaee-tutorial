@@ -1,4 +1,4 @@
-# Contributing to Jakarta EE Platform
+# Contributing to Jakarta EE Documentation
 
 Thanks for your interest in this project.
 
@@ -6,21 +6,16 @@ Thanks for your interest in this project.
 
 The Eclipse Documentation for Jakarta EE project hosts documentation intended for programmers interested in developing and deploying Jakarta EE applications. It covers the technologies comprising the Jakarta EE platform and describes how to develop applications using Jakarta EE components and deploy them on Jakarta EE runtimes.
 
-Link TBD
+Eclipse project page: https://projects.eclipse.org/projects/ee4j.jakartaee-documentation
 
 ## Developer resources
 
-Information regarding source code management, builds, coding standards, and
-more.
-
-* [https://projects.eclipse.org/projects/ee4j.jakartaee-platform/developer](https://projects.eclipse.org/projects/ee4j.jakartaee-platform/developer)
-
 The project maintains the following source code repositories
 
-* [jakartaee-tutorial-playbook](https://github.com/virtua-tech/jakartaee-tutorial-playbook)
-* [jakartaee-tutorial](https://github.com/virtua-tech/jakartaee-tutorial)
-* [jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui)
-
+* [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
+* [jakartaee/jakartaee-documentation](https://github.com/jakartaee/jakartaee-documentation) - builds documentation site
+* [jakartaee/jakartaee-documentation-ui](https://github.com/jakartaee/jakartaee-documentation-ui) - HTML and CSS assets used for the documentation site look and feel.
+* 
 ### Coding guidelines
 
 #### Branches
@@ -106,6 +101,10 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
 * Do not use in-house abbreviations! E.g. do not use “DD” but write out fully “deployment descriptor”.
 * List items should always start with capital and end with full stop.
 
+## Style guide
+
+If you're going to write documentation, please make sure you follow the [style guide](STYLE_GUIDE.adoc).
+
 ## Eclipse Contributor Agreement
 
 Before your contribution can be accepted by the project team contributors must
@@ -124,6 +123,5 @@ For more information, please see the Eclipse Committer Handbook:
 
 ## Contact
 
-Contact the project developers via the project's "dev" list.
-
-* [TBD]
+Contact the project developers via the project's "dev" list:
+https://accounts.eclipse.org/mailing-list/jakartaee-documentation-dev or via the Github issue tracker.
