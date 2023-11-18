@@ -1,3 +1,4 @@
+### Note: This repository is no longer maintained and the project is now moved. To refer to the new project, follow this link: [Jakarta EE Tutorial](https://github.com/jakartaee/jakartaee-tutorial)
 # Jakarta EE Tutorial
 
 ![ build](https://github.com/eclipse-ee4j/jakartaee-tutorial/workflows/build/badge.svg)
