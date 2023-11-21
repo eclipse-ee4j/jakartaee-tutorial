@@ -45,19 +45,22 @@ Branch name: `release/[version]`
 
 ### Creating diagrams
 
-Diagrams are located in `src/main/antora/modules/common/images`.
+Diagrams are located in `src/main/antora/modules/common/images` or in the `images` folder of the module;
+for example `src/main/antora/modules/cdi/images`.
 Use [draw.io](https://draw.io) to create/adjust diagrams.
 This tool is primarily chosen for being free to use and the most flexible.
-For portability and maintainability, make sure that the diagram is saved/exported into following 3 formats:
+For portability and maintainability, make sure that the diagram is saved/exported into following three formats:
 
-- `*.drawio`
-- `*.vsdx`
-- `*.svg`
+- `*.drawio` (use the Save function)
+- `*.vsdx` (use the Export function)
+- Editable `*.svg` (use the Save As function) 
 
 The `*.drawio` format ensures being able to reopen exactly the intended diagram in the original tool.
 The `*.vsdx` format ensures being able to import the diagram in another tool as this is the most supported format by
 various diagramming tools, just in case that draw.io stops to exist in some unpredictable future.
 The `*.svg` format is ultimately used to embed the diagram in the tutorial document.
+
+Also, make sure you use a hyphen ("-") in the name as a delimiter; for example `persistance-mapping`.
 
 #### Diagram requirements
 
@@ -73,10 +76,11 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
       ![Set Google Open Sans](readme-images/drawio-font-3-set-google-open-sans.png)
     - Type text and verify that the font is Open Sans
       ![Using Google Open Sans](readme-images/drawio-font-4-using-google-open-sans.png)
+- Font size for all text should be 12pt 
 
 - Color must be one of those defined
   in [Jakarta EE Brand Usage Handbook](https://jakarta.ee/legal/trademark_guidelines/jakarta-ee-branding-guidelines.pdf),
-  along with black and white.
+  along with black and white (you can use opacity to affect the depth of the color).
     - Primary colors:
         - Blue: `#1B208B`
         - Orange: `#F98200`
@@ -86,6 +90,10 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
         - Yellow: `#FDB940`
         - Grey: `#58595B`
         - Dark blue: `#131660`
+
+- Arrows must be Orange (`#F98200`)
+ 
+- Background must be white (`#FFFFFF`) 
 
 ### Terminology
 
