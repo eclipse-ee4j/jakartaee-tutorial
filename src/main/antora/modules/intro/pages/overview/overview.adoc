@@ -1,26 +1,26 @@
 = Overview
 
-include::ROOT:partial$not_updated.adoc[]
+include::ROOT:partial$draft.adoc[]
 
-This chapter introduces you to Jakarta EE enterprise application development.
-Here you will review development basics, learn about the Jakarta EE architecture and APIs, become acquainted with important terms and concepts, and find out how to approach Jakarta EE application programming, assembly, and deployment.
+This chapter explains what Jakarta EE is, what features it provides, common terms,
+and how Jakarta EE applications are structured.
 
-include::overview001.adoc[]
+include::overview-highlights.adoc[]
 
-include::overview002.adoc[]
+include::overview-what-is-jakarta-ee.adoc[]
 
-include::overview003.adoc[]
+include::overview-jakartaee-services.adoc[]
 
-include::overview004.adoc[]
+include::overview-containers.adoc[]
 
-include::overview005.adoc[]
+include::overview-jakartaee-components.adoc[]
 
-include::overview006.adoc[]
+include::overview-javase-dependencies.adoc[]
 
-include::overview007.adoc[]
+include::overview-how-do-i-get-it.adoc[]
 
-include::overview008.adoc[]
+== Further Reading
 
-include::overview009.adoc[]
-
-include::overview010.adoc[]
+* https://jakarta.ee/[Jakarta EE Home Page]
+* https://jakarta.ee/about/jesp/[Jakarta EE Specification Process]
+* https://jakarta.ee/specifications/[Jakarta EE Specifications]

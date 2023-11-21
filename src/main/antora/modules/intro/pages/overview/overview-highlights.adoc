@@ -1,0 +1,30 @@
+// This file should always contain the highlights for the current version of Jakarta EE.
+
+== Jakarta EE 10 Platform Highlights
+
+Jakarta EE 10 is the first feature release of the platform since it moved to the Eclipse Foundation several years ago.
+The key emphasis of this release is better alignment with Java SE and creation of a new lightweight Core profile,
+which can be easily consumed by other standards such as https://microprofile.io/[MicroProfile^].
+
+Here are some highlights:
+
+* CDI Alignment
+** `@Asynchronous` in Jakarta Concurrency
+** Better CDI support in Jakarta Batch
+* Java SE Alignment
+** Support for Java SE 11 and 17
+** `CompletionStage`, `ForkJoinPool`, parallel streams in Jakarta Concurrency
+** Bootstrap APIs for Jakarta REST
+* Closing standardization gaps
+** OpenID Connect support in Jakarta Security
+** UUID as entity keys, more SQL support in Jakarta Persistence queries
+** Multipart/form-data support in Jakarta REST
+** `@ClientWindowScoped` and Facelet pure Java views in Jakarta Faces
+** New Core Profile that includes Jakarta CDI Light to enable next generation cloud native runtimes; used by MicroProfile
+** Jakarta Concurrency has moved to the Web Profile
+* Deprecation/removal
+** `@Context` annotation in Jakarta REST
+** EJB Entity Beans
+** Embeddable EJB container
+** Deprecated features in Jakarta Servlet, Jakarta Faces, and Jakarta CDI
+

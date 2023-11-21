@@ -2,6 +2,8 @@
 
 = Preface
 
+include::ROOT:partial$draft.adoc[]
+
 == Legal
 
 This documentation and the accompanying materials are made available under the terms of the Eclipse Public License v. 2.0,
@@ -14,7 +16,7 @@ Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other
 == About this Tutorial
 
 This tutorial explains how to use the features of the Jakarta EE Platform to build cloud-native applications,
-such as services (microservices or "right sized" services) and server-based web applications.
+such as microservices, "right sized" services, and server-based web applications.
 
 == Prerequisites
 
@@ -39,7 +41,7 @@ Throughout this tutorial, we use the following typographic conventions:
 
 |*Boldface* |Boldface type indicates graphical user interface elements associated with an action or terms defined in text. |From the *File* menu, choose *Open Project*.
 
-A *cache* is a copy that is stored locally.
+A *cache* is a copy stored locally.
 
 |`Monospace` |Monospace type indicates the names of files and directories, commands within a paragraph, URLs, code in examples, text that appears on the screen, or text that you enter. |Edit your `.login` file.
 
@@ -63,7 +65,7 @@ used in this book.
 |===
 |Placeholder |Description |Default Value
 
-|`_as-install_` |Represents the base installation directory for GlassFish Server. | Installations on the Solaris operating system, Linux operating system, and Mac operating system:
+|`_as-install_` |Represents the base installation directory for GlassFish Server. | Installations on the Linux, UNIX, or macOS:
 
 `_user's-home-directory_/glassfish6/glassfish`
 

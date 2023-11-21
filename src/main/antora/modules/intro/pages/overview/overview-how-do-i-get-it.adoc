@@ -1,0 +1,13 @@
+== How do I get Jakarta EE?
+
+Since Jakarta EE is an open-source industry standard, there are multiple implementations.
+A good place to start is the https://start.jakarta.ee/[Jakarta EE Starter],
+which lets you quickly generate a sample starter app using one of the supported Jakarta EE servers.
+You can also find the most recent list of servers on the https://jakarta.ee/compatibility/[Jakarta EE website].
+
+If you are working with a Open Container Initiative (OCI)-compliant (i.e., Docker-compatible) containers,
+most of these vendors also provide images.
+
+If you are using a cloud provider,
+you may also want to check to see if they have additional support, guides, or managed Jakarta EE servers.
+
