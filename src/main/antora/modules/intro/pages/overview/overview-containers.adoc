@@ -13,7 +13,7 @@ executes your code and provides low-level application services,
 such as dependency injection, transactions, HTTP request handling, REST support, and so on.
 In the case of Docker container (which is technically an Object Computing Initiative,
 or OCI container) your application is executed inside it,
-but the container provides operating system services, such as disk and network I/O.
+but the container provides operating system services, such as disk and network I/O.F
 
 While the two container types are different,
 it's entirely possible (and common) to run a Jakarta EE application inside a Docker container.
