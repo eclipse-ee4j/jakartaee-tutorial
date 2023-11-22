@@ -39,9 +39,9 @@ Throughout this tutorial, we use the following typographic conventions:
 |===
 |Convention |Meaning |Example
 
-|*Boldface* |Boldface type indicates graphical user interface elements associated with an action or terms defined in text. |From the *File* menu, choose *Open Project*.
+|*Boldface* |Boldface type indicates a term defined in text or graphical user interface elements associated with an action. |A *cache* is a copy stored locally.
 
-A *cache* is a copy stored locally.
+From the *File* menu, choose *Open Project*.
 
 |`Monospace` |Monospace type indicates the names of files and directories, commands within a paragraph, URLs, code in examples, text that appears on the screen, or text that you enter. |Edit your `.login` file.
 
@@ -51,7 +51,7 @@ Use `ls -a` to list all files.
 
 |_Italic_ |Italic type indicates book titles, emphasis, or placeholder variables for which you supply particular values. |Read Chapter 6 in the _User's Guide_.
 
-_Don’t_ save the file.
+Do _not_ save the file.
 
 The command to remove a file is `rm _filename_`.
 |===
