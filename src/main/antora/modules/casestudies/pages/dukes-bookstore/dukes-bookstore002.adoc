@@ -115,7 +115,7 @@ See xref:web:faces-custom/faces-custom.adoc#_creating_custom_component_classes[C
 * `listeners`: Contains the `AreaSelectedEvent` class, along with other listener classes.
 See xref:web:faces-custom/faces-custom.adoc#_handling_events_for_custom_components[Handling Events for Custom Components].
 
-
+* `model`: Contains the `ImageArea` class.
 
 * `renderers`: Contains the `MapRenderer` and `AreaRenderer` classes.
 See xref:web:faces-custom/faces-custom.adoc#_delegating_rendering_to_a_renderer[Delegating Rendering to a Renderer].
