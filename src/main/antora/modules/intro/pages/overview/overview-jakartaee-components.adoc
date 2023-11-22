@@ -9,8 +9,8 @@ injecting multiple dependencies, querying a database, firing and event, and part
 Jakarta EE supports the following components:
 
 * *Web components{empty}footnote:[Not to be confused with the web browser standard, https://developer.mozilla.org/en-US/docs/Web/API/Web_Components[Web Components], or user interface widgets in general, which are often called UI components.]* interact with web standards (HTTPS, HTML, WebSocket, and so on) using Jakarta Servlet, Jakarta Faces, Jakarta WebSocket, and related technologies.
-* Business components implement logic necessary to support the business domain using either *Enterprise bean components (enterprise beans)*{empty}footnote:[Enterprise Beans previously supported persistence via Entity Beans, but that has been deprecated in favor of Jakarta Persistence] or CDI managed bean components.
-** For new applications, business components should be implemented using CDI managed bean components,
+* Business components implement logic necessary to support the business domain using either *Enterprise bean components (enterprise beans)*{empty}footnote:[Enterprise Beans previously supported persistence via Entity Beans, but that has been deprecated in favor of Jakarta Persistence] or CDI managed beans.
+** For new applications, business components should be implemented using CDI managed beans,
 unless you need Enterprise bean-specific features such as transactions, role-based security,
 messaging driven beans, or remote execution.
 The two technologies play well together.
