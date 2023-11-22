@@ -45,8 +45,22 @@ This component is analogous to the `form` tag in HTML.
 
 * `UIGraphic`: Displays an image.
 
-* `UIInput`: Takes data input from a user.
+* `UIOutput`: Displays data output on a page.
+
+** `UIInput`: Takes data input from a user.
 This class is a subclass of `UIOutput`.
+
+*** `UISelectBoolean`: Allows a user to set a `boolean` value on a control by selecting or deselecting it.
+This class is a subclass of the `UIInput` class.
+
+*** `UISelectMany`: Allows a user to select multiple items from a group of items.
+This class is a subclass of the `UIInput` class.
+
+*** `UISelectOne`: Allows a user to select one item from a group of items.
+This class is a subclass of the `UIInput` class.
+
+*** `UIViewParameter`: Represents the query parameters in a request.
+This class is a subclass of the `UIInput` class.
 
 * `UIMessage`: Displays a localized error message.
 
@@ -54,27 +68,13 @@ This class is a subclass of `UIOutput`.
 
 * `UIOutcomeTarget`: Displays a link in the form of a link or a button.
 
-* `UIOutput`: Displays data output on a page.
-
 * `UIPanel`: Manages the layout of its child components.
 
 * `UIParameter`: Represents substitution parameters.
 
-* `UISelectBoolean`: Allows a user to set a `boolean` value on a control by selecting or deselecting it.
-This class is a subclass of the `UIInput` class.
-
 * `UISelectItem`: Represents a single item in a set of items.
 
 * `UISelectItems`: Represents an entire set of items.
-
-* `UISelectMany`: Allows a user to select multiple items from a group of items.
-This class is a subclass of the `UIInput` class.
-
-* `UISelectOne`: Allows a user to select one item from a group of items.
-This class is a subclass of the `UIInput` class.
-
-* `UIViewParameter`: Represents the query parameters in a request.
-This class is a subclass of the `UIInput` class.
 
 * `UIViewRoot`: Represents the root of the component tree.
 
@@ -84,9 +84,8 @@ These behavioral interfaces, all defined in the `jakarta.faces.component` packag
 
 * `ActionSource`: Indicates that the component can fire an action event.
 This interface is intended for use with components based on JavaServer Faces technology 1.1_01 and earlier versions.
-This interface is deprecated in JavaServer Faces 2.
 
-* `ActionSource2`: Extends `ActionSource` and therefore provides the same functionality.
+** `ActionSource2`: Extends `ActionSource` and therefore provides the same functionality.
 However, it allows components to use the Expression Language (EL) when they are referencing methods that handle action events.
 
 * `EditableValueHolder`: Extends `ValueHolder` and specifies additional features for editable components, such as validation and emitting value-change events.
