@@ -37,7 +37,7 @@ ImageArea ia = (ImageArea)area.getValue();
 ----
 
 The attribute value is the `ImageArea` bean instance, which contains the `shape`, `coords`, and `alt` values associated with the `book203` `AreaComponent` instance.
-xref:faces-custom/faces-custom.adoc#_configuring_model_data[Configuring Model Data] describes how the application stores these values.
+
 
 After retrieving the `ImageArea` object, the method renders the values for `shape`, `coords`, and `alt` by simply calling the associated accessor methods and passing the returned values to the `ResponseWriter` instance, as shown by these lines of code, which write out the shape and coordinates:
 
