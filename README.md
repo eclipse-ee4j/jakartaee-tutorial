@@ -11,11 +11,6 @@ which is a tool for building documentation sites.
 You can always find the most recent build of the Jakarta EE Documentation site here:
 https://jakartaee.github.io/jakartaee-documentation/.
 
-> NOTE: We're currently in the process of updating the tutorial site and
-> refreshing the content for Jakarta EE 10 and beyond. This is a work in progress.
-> For the current production version of the tutorial, see
-> [jakartaee/jakartaee-tutorial](https://github.com/jakartaee/jakartaee-tutorial).
-
 ## A Note about Images
 
 We keep the source files (VSD) and the published format (SVG)
