@@ -1,4 +1,4 @@
-# Contributing to Jakarta EE Platform
+# Contributing to Jakarta EE Documentation
 
 Thanks for your interest in this project.
 
@@ -6,21 +6,16 @@ Thanks for your interest in this project.
 
 The Eclipse Documentation for Jakarta EE project hosts documentation intended for programmers interested in developing and deploying Jakarta EE applications. It covers the technologies comprising the Jakarta EE platform and describes how to develop applications using Jakarta EE components and deploy them on Jakarta EE runtimes.
 
-Link TBD
+Eclipse project page: https://projects.eclipse.org/projects/ee4j.jakartaee-documentation
 
 ## Developer resources
 
-Information regarding source code management, builds, coding standards, and
-more.
-
-* [https://projects.eclipse.org/projects/ee4j.jakartaee-platform/developer](https://projects.eclipse.org/projects/ee4j.jakartaee-platform/developer)
-
 The project maintains the following source code repositories
 
-* [jakartaee-tutorial-playbook](https://github.com/virtua-tech/jakartaee-tutorial-playbook)
-* [jakartaee-tutorial](https://github.com/virtua-tech/jakartaee-tutorial)
-* [jakartaee-tutorial-ui](https://github.com/virtua-tech/jakartaee-tutorial-ui)
-
+* [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
+* [jakartaee/jakartaee-documentation](https://github.com/jakartaee/jakartaee-documentation) - builds documentation site
+* [jakartaee/jakartaee-documentation-ui](https://github.com/jakartaee/jakartaee-documentation-ui) - HTML and CSS assets used for the documentation site look and feel.
+* 
 ### Coding guidelines
 
 #### Branches
@@ -50,19 +45,22 @@ Branch name: `release/[version]`
 
 ### Creating diagrams
 
-Diagrams are located in `src/main/asciidoc/images`.
+Diagrams are located in `src/main/antora/modules/common/images` or in the `images` folder of the module;
+for example `src/main/antora/modules/cdi/images`.
 Use [draw.io](https://draw.io) to create/adjust diagrams.
 This tool is primarily chosen for being free to use and the most flexible.
-For portability and maintainability, make sure that the diagram is saved/exported into following 3 formats:
+For portability and maintainability, make sure that the diagram is saved/exported into following three formats:
 
-- `*.drawio`
-- `*.vsdx`
-- `*.svg`
+- `*.drawio` (use the Save function)
+- `*.vsdx` (use the Export function)
+- Editable `*.svg` (use the Save As function) 
 
 The `*.drawio` format ensures being able to reopen exactly the intended diagram in the original tool.
 The `*.vsdx` format ensures being able to import the diagram in another tool as this is the most supported format by
 various diagramming tools, just in case that draw.io stops to exist in some unpredictable future.
 The `*.svg` format is ultimately used to embed the diagram in the tutorial document.
+
+Also, make sure you use a hyphen ("-") in the name as a delimiter; for example `persistance-mapping`.
 
 #### Diagram requirements
 
@@ -71,17 +69,18 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
   You can use Google Fonts for this.
   In case you're using draw.io:
     - Wherever you see a 'Font' dropdown, unfold it.
-      ![Select font](README/images/drawio-font-1-select-font.png)
+      ![Select font](readme-images/drawio-font-1-select-font.png)
     - If there's no 'Open Sans' option, pick 'Custom'.
-      ![Select custom](README/images/drawio-font-2-select-custom.png)
+      ![Select custom](readme-images/drawio-font-2-select-custom.png)
     - Choose the 'Google Fonts' option and set the font name to 'Open Sans' and apply.
-      ![Set Google Open Sans](README/images/drawio-font-3-set-google-open-sans.png)
+      ![Set Google Open Sans](readme-images/drawio-font-3-set-google-open-sans.png)
     - Type text and verify that the font is Open Sans
-      ![Using Google Open Sans](README/images/drawio-font-4-using-google-open-sans.png)
+      ![Using Google Open Sans](readme-images/drawio-font-4-using-google-open-sans.png)
+- Font size for all text should be 12pt 
 
 - Color must be one of those defined
   in [Jakarta EE Brand Usage Handbook](https://jakarta.ee/legal/trademark_guidelines/jakarta-ee-branding-guidelines.pdf),
-  along with black and white.
+  along with black and white (you can use opacity to affect the depth of the color).
     - Primary colors:
         - Blue: `#1B208B`
         - Orange: `#F98200`
@@ -91,6 +90,10 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
         - Yellow: `#FDB940`
         - Grey: `#58595B`
         - Dark blue: `#131660`
+
+- Arrows must be Orange (`#F98200`)
+ 
+- Background must be white (`#FFFFFF`) 
 
 ### Terminology
 
@@ -105,6 +108,10 @@ The `*.svg` format is ultimately used to embed the diagram in the tutorial docum
 
 * Do not use in-house abbreviations! E.g. do not use “DD” but write out fully “deployment descriptor”.
 * List items should always start with capital and end with full stop.
+
+## Style guide
+
+If you're going to write documentation, please make sure you follow the [style guide](STYLE_GUIDE.adoc).
 
 ## Eclipse Contributor Agreement
 
@@ -124,6 +131,5 @@ For more information, please see the Eclipse Committer Handbook:
 
 ## Contact
 
-Contact the project developers via the project's "dev" list.
-
-* [TBD]
+Contact the project developers via the project's "dev" list:
+https://accounts.eclipse.org/mailing-list/jakartaee-documentation-dev or via the Github issue tracker.

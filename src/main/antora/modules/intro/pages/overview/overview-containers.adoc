@@ -1,0 +1,45 @@
+== Jakarta EE Containers and Servers
+
+The services we discussed in <<_jakarta_ee_services>> section are provided by *container{empty}footnote:[Technically, there are multiple containers (Web, CDI, Enterprise Beans), but the distinction about which container is providing the services isn't terribly important. Jakarta EE also supports an Application Client container for Java clients, but this is rarely used. ]*.
+A *Jakarta EE Server* is software that runs the container, deploys applications into into it, and provides administration and additional features.
+Jakarta EE Servers run stand-alone, but many implementations also support the ability to generate a single "fat",
+executable Java Archive (JAR) file that includes all the code necessary to run the application.
+
+.Jakarta EE Containers vs Docker Containers
+****
+_Container_ is a commonly used term in computing, but it basically means "that which holds something".
+In the case of Jakarta EE, the container "holds," or more accurately,
+executes your code and provides low-level application services,
+such as dependency injection, transactions, HTTP request handling, REST support, and so on.
+In the case of Docker container (which is technically an Object Computing Initiative,
+or OCI container) your application is executed inside it,
+but the container provides operating system services, such as disk and network I/O.
+
+While the two container types are different,
+it's entirely possible (and common) to run a Jakarta EE application inside a Docker container.
+****
+The figure below shows how the application code, container, and Jakarta EE Server are related:
+
+image::container-services.svg[ "Relationship between containers, serveris, and your code."]
+
+In a simple case, an application might look like this:
+
+image::simple-app.svg[ "Simple Jakarta EE Application"]
+
+However, a single Jakarta EE Server can run multiple applications,
+and applications can communicate with each other remotely.
+So you can create more complicated scenarios, as shown below:
+
+image::multitier-app.svg[ "More Complex Jakarta EE Application"]
+
+NOTE: Even though the figures above show communication between multiple Jakarta EE applications,
+they can and often do communicate with non-Jakarta EE applications via messaging or streaming servers, REST, and so on.
+
+Regardless of how simple or complicated your system architecture is,
+a key benefit of Jakarta EE is that container services are configurable.
+This means the same component can behave differently based on where it's deployed.
+The container also manages non-configurable services, such as the lifecycle of components,
+database connection resource pooling, data persistence, and access to the Jakarta EE APIs.
+
+
+

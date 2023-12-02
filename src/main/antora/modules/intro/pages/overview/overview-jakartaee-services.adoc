@@ -1,0 +1,86 @@
+== Jakarta EE Services
+
+Jakarta EE provides a wide range of services, organized into three main categories.
+Each category is implemented by one of three profiles.
+The Core profile contains the foundational services.
+The Web profile contains the Core profile plus services for writing web applications.
+The Platform contains the Core and Web profiles, plus additional services for mail, batch processing,
+and messaging, and more.
+
+The table below lists each high-level service, the specification that provides it, and the profile that contains it:
+
+[cols="1,1,1"]
+|===
+|Service |Specification |Profile
+
+|Dependency injection
+|Jakarta Contexts and Dependency Injection (CDI) Lite
+|Core
+
+|RESTful web services
+|Jakarta REST (formerly JAX-RS)
+|Core
+
+|JSON processing
+|Jakarta JSON Binding (JSON-B) and Jakarta JSON Processing (JSON-P)
+|Core
+
+|Advanced dependency injection
+|Jakarta Contexts and Dependency Injection (CDI) Full
+|Web
+
+|Validation
+|Jakarta Validation (Bean Validation)
+|Web
+
+|Security
+|Jakarta Security
+|Web
+
+|HTTP request handling
+|Jakarta Servlet
+|Web
+
+|Server-side web applications
+|Jakarta Faces (formerly JavaServer Faces, or JSF)
+|Web
+
+|WebSocket request handling
+|Jakarta WebSocket
+|Web
+
+|Relational data persistence
+|Jakarta Persistence (formerly JPA)
+|Web
+
+|Application components
+|Jakarta Enterprise Beans Lite (formerly EJB Lite)
+|Web
+
+|Transactions
+|Jakarta Transactions
+|Web
+
+|Managed concurrency
+|Jakarta Concurrency
+|Web
+
+|Email handling
+|Jakarta Mail
+|Platform
+
+|Messaging
+|Jakarta Messaging
+|Platform
+
+|Batch processing
+|Jakarta Batch
+|Platform
+
+|===
+
+As you work with Jakarta EE, you'll encounter other services that support the ones listed above.
+
+Each service is provided by one or more APIs, which are defined in Jakarta EE specifications.
+The specifications provide details for users and implementors of the service.
+You can find a https://jakarta.ee/specifications/[full list of the Jakarta EE specifications] on the Jakarta EE site.

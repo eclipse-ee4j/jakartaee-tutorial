@@ -1,50 +1,47 @@
 [preface]
+
 = Preface
 
-This tutorial is a guide to developing enterprise applications for the Jakarta EE 9 Platform, using Eclipse GlassFish Server.
+include::ROOT:partial$draft.adoc[]
 
-Eclipse GlassFish Server is the leading open-source and open-community platform for building and deploying next-generation applications and services.
-Eclipse GlassFish Server, developed by the Eclipse GlassFish project open-source community at https://projects.eclipse.org/projects/ee4j.glassfish[^], is a compatible implementation of the Jakarta EE 9 platform specification.
-This lightweight, flexible, and open-source application server enables organizations not only to leverage the new capabilities introduced within the Jakarta EE 9 specification, but also to add to their existing capabilities through a faster and more streamlined development and deployment cycle.
-Eclipse GlassFish Server is hereafter referred to as GlassFish Server.
+== Legal
 
-== Audience
+This documentation and the accompanying materials are made available under the terms of the Eclipse Public License v. 2.0,
+which is available at https://www.eclipse.org/legal/epl-2.0.
 
-This tutorial is intended for programmers interested in developing and deploying Jakarta EE 9 applications.
-It covers the technologies comprising the Jakarta EE platform and describes how to develop Jakarta EE components and deploy them on the Eclipse GlassFish.
+SPDX-License-Identifier: EPL-2.0
 
-== Before You Read This Book
+Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
 
-Before proceeding with this tutorial, you should have a good knowledge of the Java programming language.
-A good way to get to that point is to work through the Java(TM) Tutorials https://dev.java/learn/it [^].
+== About this Tutorial
 
-== Related Documentation
+This tutorial explains how to use the features of the Jakarta EE Platform to build cloud-native applications,
+such as microservices, "right sized" services, and server-based web applications.
 
-The GlassFish Server documentation set describes deployment planning and system installation.
-To obtain the GlassFish Server documentation, go to https://glassfish.org/docs[^].
+== Prerequisites
 
-The Jakarta EE 9 API specification can be viewed at https://jakarta.ee/specifications/platform/9/[^].
+Jakarta EE applications use the Java Platform, and are usually written in the Java programming language.
+All the examples in this tutorial are written in Java.
+If you're new to Java, spend some time getting up to speed on the language and platform;
+a good place to start is https://dev.java/learn/[dev.java/learn].
 
-Additionally, the Jakarta EE Specifications at https://jakarta.ee/specifications[^] might be useful.
-
-For information about creating enterprise applications in the NetBeans Integrated Development Environment (IDE), see https://netbeans.apache.org/kb/[^].
-
-For information about Apache Derby for use with GlassFish Server, see https://db.apache.org/derby/docs/10.14/adminguide/[^].
-
-The GlassFish Samples project is a collection of sample applications that demonstrate a broad range of Jakarta EE technologies.
-The GlassFish Samples are available from the GlassFish Samples project page at https://github.com/eclipse-ee4j/glassfish-samples/[^].
+Each topic in this tutorial provides some background information,
+but in general,
+we assume you have a basic understanding of the technologies each Jakarta EE feature works with.
+For example, in the Jakarta Persistence chapter,
+we assume you have a basic understanding of relational databases.
 
 == Conventions
 
-The following table describes the typographic conventions that are used in this book.
+Throughout this tutorial, we use the following typographic conventions:
 
 [width="99%",cols="20%,38%,37%"]
 |===
 |Convention |Meaning |Example
 
-|*Boldface* |Boldface type indicates graphical user interface elements associated with an action or terms defined in text. |From the *File* menu, choose *Open Project*.
+|*Boldface* |Boldface type indicates a term defined in text or graphical user interface elements associated with an action. |A *cache* is a copy stored locally.
 
-A *cache* is a copy that is stored locally.
+From the *File* menu, choose *Open Project*.
 
 |`Monospace` |Monospace type indicates the names of files and directories, commands within a paragraph, URLs, code in examples, text that appears on the screen, or text that you enter. |Edit your `.login` file.
 
@@ -61,6 +58,8 @@ The command to remove a file is `rm _filename_`.
 
 == Default Paths and File Names
 
+include::ROOT:partial$not_updated.adoc[]
+
 The following table describes the default paths and file names that are
 used in this book.
 
@@ -68,7 +67,7 @@ used in this book.
 |===
 |Placeholder |Description |Default Value
 
-|`_as-install_` |Represents the base installation directory for GlassFish Server. | Installations on the Solaris operating system, Linux operating system, and Mac operating system:
+|`_as-install_` |Represents the base installation directory for GlassFish Server. | Installations on the Linux, UNIX, or macOS:
 
 `_user's-home-directory_/glassfish6/glassfish`
 
@@ -76,11 +75,11 @@ Windows, all installations:
 
 `_SystemDrive_:\glassfish6\glassfish`
 
-|`_as-install-parent_` |Represents the parent of the base installation directory for GlassFish Server. |Installations on the Solaris operating system, Linux operating system, and Mac operating system:
+|`_as-install-parent_` |Represents the parent of the base installation directory for GlassFish Server. |Installations on UNIX/Linux/macOS:
 
 `_user's-home-directory_/glassfish6`
 
-Windows, all installations:
+Windows:
 
 `_SystemDrive_:\glassfish6`
 

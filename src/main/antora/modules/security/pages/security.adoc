@@ -32,7 +32,7 @@ Some examples of identity stores are services that contact SQL or NoSQL database
 
 [[_mechanism_store_in_mvc]]
 .Mechanism Store in MVC
-image::common:authentication_mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
+image::authentication-mvc.svg["Diagram illustrating the role of the authentication mechanism and identity store in an MVC like structure"]
 
 The third one is used for the authorization process:
 
@@ -65,7 +65,7 @@ The https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html[
 
 A Servlet authentication mechanism, however, will not necessarily consult a Jakarta Security identity store. This is server dependent. The identity store that is called is server dependent as well. Calling this server-dependent identity store is possible from Jakarta Security, but as an advanced feature.
 
-Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST, and Jakarta Servlet. These all return the same outcome, independent of whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism. Within a Jakarta EE environment the usage of Jakarta Security for this is encouraged, and the usage of those other APIs is discouraged. 
+Likewise, programmatic role checks can be done from various APIs, including Jakarta Security, Jakarta REST, and Jakarta Servlet. These all return the same outcome, independent of whether authentication took place with a Jakarta Security Authentication Mechanism or a Servlet Authentication Mechanism. Within a Jakarta EE environment the usage of Jakarta Security for this is encouraged, and the usage of those other APIs is discouraged.
 
 NOTE: Programmatic role checks in Jakarta REST, Jakarta Servlet and various other APIs are not being deprecated for the time being, as those APIs are also used stand-alone (outside Jakarta EE). Future versions of those APIs may contain warnings about their usage within Jakarta EE.
 
@@ -758,31 +758,31 @@ We'll now write the identity store handler:
 @Priority(APPLICATION) <2>
 @ApplicationScoped
 public class CustomIdentityStoreHandler implements IdentityStoreHandler {
-    
+
     @Inject
     Instance<IdentityStore> identityStores; <3>
-    
+
     @Override
     public CredentialValidationResult validate(Credential credential) {
         CredentialValidationResult result = null;
         Set<String> groups = new HashSet<>();
-        
+
         for (IdentityStore identityStore : identityStores) {
             result = identityStore.validate(credential);
             if (result.getStatus() == NOT_VALIDATED) {
                 // Identity store probably doesn't handle our credential type
                 continue;
             }
-            
+
             if (result.getStatus() == INVALID) {
                 // Identity store handled our credential type and determined its
                 // invalid. End the loop.
                 return INVALID_RESULT;
             }
-            
+
             groups.addAll(result.getCallerGroups());
         }
-        
+
         return new CredentialValidationResult(
             result.getCallerPrincipal(), groups);
     }
@@ -792,7 +792,7 @@ public class CustomIdentityStoreHandler implements IdentityStoreHandler {
 <2> To make `@Alternative` actually work, we additionally have to annotate with `@Priority(APPLICATION)`
 <3> With `@Inject` `Instance<IdentityStore> identityStores` CDI will give us a collection of all identity stores in the application. In the case of this example that will be the store behind `@DatabaseIdentityStoreDefinition` and our `CustomIdentityStore`. We can the iterate over those stores in our code, and offer the credentials (the username and password in this example) to each of them.
 
-There are various result outcomes possible. 
+There are various result outcomes possible.
 
 `NOT_VALIDATED` means the store did not try to validate the credentials at all. In most situations that status is set when the store in question doesnt't handle a given credential. I.e. it only handles say `JWTCredentials` and not `UsernamePasswordCredential`.
 
@@ -846,35 +846,35 @@ Let's now define a simple authentication mechanism that the security system can 
 ----
 @ApplicationScoped
 public class CustomAuthenticationMechanism implements HttpAuthenticationMechanism {
-    
+
     @Inject
     private IdentityStoreHandler identityStoreHandler;
 
     @Override
     public AuthenticationStatus validateRequest(
-        HttpServletRequest request, 
-        HttpServletResponse response, 
+        HttpServletRequest request,
+        HttpServletResponse response,
         HttpMessageContext httpMessageContext) throws AuthenticationException {
-        
+
         var callerName = request.getHeader("callername"); <1>
         var password = request.getHeader("callerpassword");
-        
+
         if (callerName == null || password == null) { <2>
             return httpMessageContext.doNothing();
         }
 
         var result = identityStoreHandler.validate( <4>
             new UsernamePasswordCredential(callerName, password)); <3>
-        
+
         if (result.getStatus() != VALID) {
             return httpMessageContext.responseUnauthorized();
         }
 
         return httpMessageContext.notifyContainerAboutLogin( <5>
-            result.getCallerPrincipal(), 
+            result.getCallerPrincipal(),
             result.getCallerGroups());
     }
-    
+
 }
 ----
 
@@ -926,7 +926,7 @@ public class RestCustomAuthCustomStoreIT extends ITBase {
     public void testRestCall() throws Exception {
         webClient.addRequestHeader("callername", "john");
         webClient.addRequestHeader("callerpassword", "secret1");
-        
+
         TextPage page = webClient.getPage(baseUrl + "rest/resource");
         String content = page.getContent();
 
@@ -987,11 +987,11 @@ For this example, we'll add the CDI extension interface (1) to our application c
     )
 )
 @ApplicationPath("/rest")
-public class ApplicationConfig extends Application 
+public class ApplicationConfig extends Application
     implements BuildCompatibleExtension { <1>
-    
+
     @Enhancement(
-        types = HttpAuthenticationMechanism.class, 
+        types = HttpAuthenticationMechanism.class,
         withSubtypes = true) <2>
     public void addRememberMe(ClassConfig httpAuthenticationMechanism) {
         httpAuthenticationMechanism.addAnnotation(
@@ -1017,16 +1017,16 @@ The following shows an example:
 @ApplicationScoped
 public class CustomRememberMeIdentityStore implements RememberMeIdentityStore {
 
-    private final Map<String, CredentialValidationResult> tokenToIdentityMap = 
+    private final Map<String, CredentialValidationResult> tokenToIdentityMap =
         new ConcurrentHashMap<>();
-    
+
     @Override
     public String generateLoginToken(
         CallerPrincipal callerPrincipal, Set<String> groups) { <1>
         var token = UUID.randomUUID().toString();
 
         tokenToIdentityMap.put(
-            token, 
+            token,
             new CredentialValidationResult(callerPrincipal, groups));
 
         return token;
@@ -1050,19 +1050,19 @@ public class CustomRememberMeIdentityStore implements RememberMeIdentityStore {
 }
 -----
 
-The `RememberMeIdentityStore` needs to perform 3 tasks. 
+The `RememberMeIdentityStore` needs to perform 3 tasks.
 
 It first needs to generate a token representing a caller principal and a set of groups. The caller principal and the set of groups are the ones set by the authentication mechanism right after the caller successfully authenticated. In our example (1) here we're generating a random UUID that's used as a key in an application scoped map.
 
 NOTE: Storing the authenticated identity (principal and groups) in an application scoped map is just an example. Other options could be storing it in a database or key-value store, encrypting the principal and groups, or generating some kind of JSON Web Token (JWT).
 
-NOTE: When storing the Principal, care must be taken that the Principal could be an elaborate custom Principal containing many more fields than just `name`. 
+NOTE: When storing the Principal, care must be taken that the Principal could be an elaborate custom Principal containing many more fields than just `name`.
 
 The next thing that must be done is essentially similar to what a normal identity store does: validating a `Credential`. For a `RememberMeIdentityStore` this will always be of type `RememberMeCredential` with `getToken()` returning a token of the kind that was generated in `generateLoginToken()`. In our example (2) we're just using the token as key in our map.
 
-Finally we can provide behaviour to remove the login token (and essentially invalidate it) via the `removeLoginToken` method. This method is called when a caller explicitly logs out. In our example (3) we just remove the token from our map. 
+Finally we can provide behaviour to remove the login token (and essentially invalidate it) via the `removeLoginToken` method. This method is called when a caller explicitly logs out. In our example (3) we just remove the token from our map.
 
-NOTE: When storing the principal and groups in a token that we send to the client we can't always easily invalidate it when the caller logs out; the caller can always keep the token and send it again. 
+NOTE: When storing the principal and groups in a token that we send to the client we can't always easily invalidate it when the caller logs out; the caller can always keep the token and send it again.
 
 
 ==== Define the identity store
@@ -1119,7 +1119,7 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
                    .click();
 
         System.out.println(page.getContent());
-        
+
         // Remove all cookies (specially the JSESSONID), except for the
         // JREMEMBERMEID cookie which carries the token to login again
         for (Cookie cookie : webClient.getCookieManager().getCookies()) {
@@ -1127,10 +1127,10 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
                 webClient.getCookieManager().removeCookie(cookie);
             }
         }
-        
+
         // Should get the resource response, and not the login form
         TextPage pageAgain = webClient.getPage(baseUrl + "/rest/resource");
-        
+
         System.out.println(pageAgain.getContent());
     }
 }
@@ -1173,35 +1173,35 @@ Let's now define a simple authentication mechanism that the security system can 
 @RememberMe <6>
 @ApplicationScoped
 public class CustomAuthenticationMechanism implements HttpAuthenticationMechanism {
-    
+
     @Inject
     private IdentityStoreHandler identityStoreHandler;
 
     @Override
     public AuthenticationStatus validateRequest(
-        HttpServletRequest request, 
-        HttpServletResponse response, 
+        HttpServletRequest request,
+        HttpServletResponse response,
         HttpMessageContext httpMessageContext) throws AuthenticationException {
-        
+
         var callerName = request.getHeader("callername"); <1>
         var password = request.getHeader("callerpassword");
-        
+
         if (callerName == null || password == null) { <2>
             return httpMessageContext.doNothing();
         }
 
         var result = identityStoreHandler.validate( <4>
             new UsernamePasswordCredential(callerName, password)); <3>
-        
+
         if (result.getStatus() != VALID) {
             return httpMessageContext.responseUnauthorized();
         }
 
         return httpMessageContext.notifyContainerAboutLogin( <5>
-            result.getCallerPrincipal(), 
+            result.getCallerPrincipal(),
             result.getCallerGroups());
     }
-    
+
 }
 ----
 
@@ -1281,7 +1281,7 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
                    .click();
 
         System.out.println(page.getContent());
-        
+
         // Remove all cookies (specially the JSESSONID), except for the
         // JREMEMBERMEID cookie which carries the token to login again
         for (Cookie cookie : webClient.getCookieManager().getCookies()) {
@@ -1289,10 +1289,10 @@ public class RestFormAuthCustomStoreRememberMeIT extends ITBase {
                 webClient.getCookieManager().removeCookie(cookie);
             }
         }
-        
+
         // Should get the resource response, and not the login form
         TextPage pageAgain = webClient.getPage(baseUrl + "/rest/resource");
-        
+
         System.out.println(pageAgain.getContent());
     }
 }
@@ -1302,7 +1302,7 @@ include::partial$inspect-app.adoc[]
 
 The `webClient.addRequestHeader()` calls used here make sure that the headers for our custom authentication mechanism are added to the request. The authentication mechanism that we defined for our applications reads those headers, extracts the username and password from them, and consults our identity store with them.
 
-The test sends a request here to the protected resource along with the headers we mentioned above, and the server responds with the right content. 
+The test sends a request here to the protected resource along with the headers we mentioned above, and the server responds with the right content.
 
 Then we delete all cookies, except for the `JREMEMBERMEID` cookie, and we unset all headers that we used before. The test then does another request, and this time the value from the `JREMEMBERMEID` cookie is used to login.
 
@@ -1351,7 +1351,7 @@ include::partial$declare-authentication-mechanism.adoc[]
 
 Contrary to the Basic HTTP authentication mechanism and the Form authentication mechanism, the OpenID Connect authentication mechanism requires a third party server that performs the actual authentication. Such third party server is called the OpenID Connect Provider (OIDC provider or OpenID Provider are also used). After authentication this provider handles user consent and and issues a token. The client requesting a user's authentication is called a Relying Party. In the case of Jakarta EE and Jakarta Security, the Jakarta EE server running the OpenID Connect authentication mechanism is a Relying Party.
 
-To use this authentication mechanism, Jakarta Security provides the `@OpenIdAuthenticationMechanismDefinition` annotation, for which we typically need 3 mandatory configuration items as shown in the example code above. 
+To use this authentication mechanism, Jakarta Security provides the `@OpenIdAuthenticationMechanismDefinition` annotation, for which we typically need 3 mandatory configuration items as shown in the example code above.
 
 The first is the `providerURI` (1), which points to the third party OpenID Connect Provider. In this example we use `https://localhost:8443/openid-connect-server-webapp`, which is the URL on which the example code has installed and started a local OpenID Connect provider called "Mitre". Whenever a caller accesses a protected resource, that caller is redirected to that OpenID Connect Provider.
 
@@ -1374,7 +1374,7 @@ NOTE: Despite not being typical, Jakarta Security supports getting the groups vi
 @ApplicationScoped
 public class AuthorizationIdentityStore implements IdentityStore {
 
-    private Map<String, Set<String>> groupsPerCaller = 
+    private Map<String, Set<String>> groupsPerCaller =
         Map.of("user", Set.of("user")); <2>
 
     @Override
@@ -1385,7 +1385,7 @@ public class AuthorizationIdentityStore implements IdentityStore {
     @Override
     public Set<String> getCallerGroups(
         CredentialValidationResult validationResult) { <3>
-        return groupsPerCaller.get(validationResult.getCallerPrincipal().getName()); 
+        return groupsPerCaller.get(validationResult.getCallerPrincipal().getName());
     }
 
 }
@@ -1404,10 +1404,10 @@ Installing and configuring the OpenID Connect provider Mitre is outside the scop
 [source,xml]
 ----
 <plugin>
-        
-    <!-- 
-        Unpack and install Tomcat + Mitre 
-        
+
+    <!--
+        Unpack and install Tomcat + Mitre
+
         Mitre is a Spring based OpenID Connect Server that best runs on a javax based Tomcat.
     -->
     <artifactId>maven-dependency-plugin</artifactId>
@@ -1442,12 +1442,12 @@ Mitre is a Spring application that uses the `javax.*` namespace. We therefore ne
 
 [source,xml]
 ----
-<!-- 
-    Configure Tomcat to use HTTPS, as Open ID Connect strictly speaking requires this. 
+<!--
+    Configure Tomcat to use HTTPS, as Open ID Connect strictly speaking requires this.
     Some servers may refuse to use Open ID Connect if not running on a secure connection.
-    
+
     Also configure Mitre to use the callback of our client.
-    
+
     Then start Tomcat and with it Mitre.
 -->
 <plugin>
@@ -1460,17 +1460,17 @@ Mitre is a Spring application that uses the `javax.*` namespace. We therefore ne
             <configuration>
                 <target>
                     <echo level="info">Replacing in ${tomcat.dir}</echo>
-                    
+
                     <!-- Configure Mitre to let it know its running on HTTPS  -->
                     <replace token="http://localhost:8080" value="https://localhost:8443" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF" summary="yes">
                         <include name="server-config.xml" />
                     </replace>
-                    
+
                     <!-- Configure Mitre to let it know where the Open ID callback needs to go to -->
                     <replace token="http://localhost/" value="http://localhost:8080/openid-client/Callback" dir="${tomcat.dir}/webapps/openid-connect-server-webapp/WEB-INF/classes/db/hsql" summary="yes">
                         <include name="clients.sql" />
                     </replace>
-                    
+
                     <!-- Configure Tomcat using our pre-configured server.xml (which sets https) -->
                     <copy file="src/test/resources/server.xml" todir="${tomcat.dir}/conf"/>
                     <copy file="src/test/resources/localhost-rsa.jks" todir="${tomcat.dir}/conf"/>
@@ -1525,7 +1525,7 @@ public class RestOpenIdConnectAuthIT extends ITBase {
     public void testRestCall() throws Exception {
         HtmlPage page = webClient.getPage(baseUrl + "/rest/resource"); <1>
 
-        // Authenticate with the OpenId Provider using the 
+        // Authenticate with the OpenId Provider using the
         // username and password for a default user
         page.getElementById("j_username")
             .setAttribute("value", "user");
@@ -1534,12 +1534,12 @@ public class RestOpenIdConnectAuthIT extends ITBase {
             .setAttribute("value", "password"); <2>
 
         // Submit
-        HtmlPage confirmationPage = 
+        HtmlPage confirmationPage =
             page.getElementByName("submit")
                 .click(); <3>
-        
+
         // Confirm
-        TextPage originalResource = 
+        TextPage originalResource =
             confirmationPage.getElementByName("authorize")
                             .click(); <4>
 
@@ -1770,14 +1770,14 @@ For this example we'll use a Faces view with a backing bean:
 <!DOCTYPE html>
 <html lang="en" xmlns:h="jakarta.faces.html" >
     <h:head/>
-    
+
     <h:body>
         <h1>
             Login to continue
         </h1>
-        
+
         <h:messages />
-    
+
         <h:form id="form">
             <div>
                 <h:outputLabel for="username" value="Username" />

@@ -1,0 +1,31 @@
+== Usage of Java Standard Edition (SE) APIs
+
+In addition to many of the core Java programming language APIs,
+there are a couple of key APIs you may encounter when working with Jakarta EE:
+Java Database Connectivity (JDBC) and Java Naming and Directory Interface (JNDI).
+
+=== Java Database Connectivity API
+
+The Java Database Connectivity (JDBC) API lets you work with SQL databases.
+You can use the JDBC API directly from within a Jakarta EE component,
+but most Jakarta EE applications use xref:persist:persistence-intro/persistence-intro.adoc[Jakarta Persistence]
+to map between objects and database tables.
+Jakarta EE servers also support managed JDBC data sources, which can be configured for one or more applications.
+
+=== Java Naming and Directory Interface API
+
+The Java Naming and Directory Interface (JNDI) API allows you to work with multiple naming and directory services,
+such as LDAP, DNS, and NIS.
+The API has methods for performing standard directory operations,
+such as associating attributes with objects and searching for objects using their attributes.
+Using JNDI, a Jakarta EE application can store and retrieve any type of named Java object, allowing Jakarta EE applications to coexist with many legacy applications and systems.
+
+Jakarta EE servers provide a naming environment for Jakarta EE components.
+This environment allows a component to be customized without the need to access or change the component's source code.
+A container implements the component's environment and provides it to the component as a JNDI naming context.
+
+The naming environment provides four logical namespaces: `java:comp`, `java:module`, `java:app`, and `java:global` for objects available to components, modules, or applications or shared by all deployed applications.
+A Jakarta EE component can access named system-provided and user-defined objects. The names of some system-provided objects, such as a default JDBC `DataSource` object, a default Messaging connection factory, and a Transactions `UserTransaction` object, are stored in the `java:comp` namespace.
+
+You can also create your own objects, such as enterprise beans, environment entries, JDBC `DataSource` objects, and messaging destinations.
+
