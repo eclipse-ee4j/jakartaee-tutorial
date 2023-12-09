@@ -87,7 +87,7 @@ import jakarta.enterprise.inject.Produces;
 @ApplicationScoped
 public class Generator implements Serializable {
 
-    private static final long serialVersionUID = -7213673465118041882L;
+    private static final long serialVersionUID = 1L;
 
     private final java.util.Random random =
         new java.util.Random( System.currentTimeMillis() );
@@ -132,7 +132,7 @@ package guessnumber;
 
 import java.io.Serializable;
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.view.ViewScoped;
 import jakarta.enterprise.inject.Instance;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.component.UIComponent;
@@ -142,10 +142,10 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named
-@SessionScoped
+@ViewScoped
 public class UserNumberBean implements Serializable {
 
-    private static final long serialVersionUID = -7698506329160109476L;
+    private static final long serialVersionUID = 1L;
 
     private int number;
     private Integer userNumber;
@@ -162,42 +162,16 @@ public class UserNumberBean implements Serializable {
     @Inject
     Instance<Integer> randomInt;
 
-    public UserNumberBean() {
+    @PostConstruct
+    public void init() {
+        minimum = 0;
+        userNumber = 0;
+        remainingGuesses = 10;
+        maximum = maxNumber;
+        number = randomInt.get();
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setUserNumber(Integer user_number) {
-        userNumber = user_number;
-    }
-
-    public Integer getUserNumber() {
-        return userNumber;
-    }
-
-    public int getMaximum() {
-        return (this.maximum);
-    }
-
-    public void setMaximum(int maximum) {
-        this.maximum = maximum;
-    }
-
-    public int getMinimum() {
-        return (this.minimum);
-    }
-
-    public void setMinimum(int minimum) {
-        this.minimum = minimum;
-    }
-
-    public int getRemainingGuesses() {
-        return remainingGuesses;
-    }
-
-    public String check() throws InterruptedException {
+    public void check() {
         if (userNumber > number) {
             maximum = userNumber - 1;
         }
@@ -209,16 +183,10 @@ public class UserNumberBean implements Serializable {
                 new FacesMessage("Correct!"));
         }
         remainingGuesses--;
-        return null;
     }
 
-    @PostConstruct
     public void reset() {
-        this.minimum = 0;
-        this.userNumber = 0;
-        this.remainingGuesses = 10;
-        this.maximum = maxNumber;
-        this.number = randomInt.get();
+        init();
     }
 
     public void validateNumberRange(FacesContext context,
@@ -227,12 +195,30 @@ public class UserNumberBean implements Serializable {
         int input = (Integer) value;
 
         if (input < minimum || input > maximum) {
-            ((UIInput) toValidate).setValid(false);
-
-            FacesMessage message = new FacesMessage("Invalid guess");
-            context.addMessage(toValidate.getClientId(context), message);
+            throw new ValidatorException(new FacesMessage("Invalid guess"));
         }
     }
+
+    public void setUserNumber(Integer userNumber) {
+        this.userNumber = userNumber;
+    }
+
+    public Integer getUserNumber() {
+        return userNumber;
+    }
+
+    public int getMaximum() {
+        return maximum;
+    }
+
+    public int getMinimum() {
+        return minimum;
+    }
+
+    public int getRemainingGuesses() {
+        return remainingGuesses;
+    }
+
 }
 ----
 

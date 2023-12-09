@@ -163,7 +163,7 @@ It then fires the event.
 ----
 @Logged
 public String pay() {
-    this.setDatetime(Calendar.getInstance().getTime());
+    this.setDatetime(LocalDateTime.now());
     switch (paymentOption) {
         case DEBIT:
             PaymentEvent debitPayload = new PaymentEvent();
