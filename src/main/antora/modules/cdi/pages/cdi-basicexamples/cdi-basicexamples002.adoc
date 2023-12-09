@@ -22,38 +22,33 @@ To use the managed bean in a simple Facelets application:
 
 . Use a very simple template file and `index.xhtml` page.
 +
-The template page, `template.xhtml`, looks like this:
+The template page, `/WEB-INF/templates/template.xhtml`, looks like this:
 +
 [source,xml]
 ----
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets">
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <h:outputStylesheet library="css" name="default.css"/>
         <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet name="css/default.css" />
     </h:head>
+    <h:body>
+        <main>
+            <header>
+                <h1>
+                    <ui:insert name="head">
+                        <ui:insert name="title">Default Header</ui:insert>
+                    </ui:insert>
+                </h1>
+            </header>
 
-    <body>
-        <div id="container">
-            <div id="header">
-                <h2><ui:insert name="head">Head</ui:insert></h2>
-            </div>
-
-            <div id="space">
-                <p></p>
-            </div>
-
-            <div id="content">
-                <ui:insert name="content"/>
-            </div>
-        </div>
-    </body>
+            <article>
+                <ui:insert name="content" />
+            </article>
+        </main>
+    </h:body>
 </html>
 ----
 
@@ -61,29 +56,32 @@ The template page, `template.xhtml`, looks like this:
 +
 [source,xml]
 ----
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:h="jakarta.faces.html">
-    <ui:composition template="/template.xhtml">
-
-        <ui:define name="title">Simple Greeting</ui:define>
-        <ui:define name="head">Simple Greeting</ui:define>
-        <ui:define name="content">
-            <h:form id="greetme">
-               <p><h:outputLabel value="Enter your name: " for="name"/>
-                  <h:inputText id="name" value="#{printer.name}"/></p>
-               <p><h:commandButton value="Say Hello"
-                                   action="#{printer.createSalutation}"/></p>
-               <p><h:outputText value="#{printer.salutation}"/> </p>
-            </h:form>
-        </ui:define>
-
-    </ui:composition>
-</html>
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html">
+    <ui:define name="title">Simple Greeting</ui:define>
+    <ui:define name="content">
+        <h:form id="simpleGreetingForm">
+            <div class="input">
+                <h:outputLabel for="name" value="Enter your name" />
+                <h:inputText id="name" value="#{printer.name}"/>
+            </div>
+            <div class="actions">
+                <h:commandButton id="createSalutation"
+                                 value="Say Hello"
+                                 action="#{printer.createSalutation}">
+                    <f:ajax execute="@form" render="salutation" />
+                </h:commandButton>
+            </div>
+            <div class="output">
+                <p>
+                    <h:outputText id="salutation"
+                                  value="#{printer.salutation}" />
+                </p>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 +
 The form asks the user to enter a name.

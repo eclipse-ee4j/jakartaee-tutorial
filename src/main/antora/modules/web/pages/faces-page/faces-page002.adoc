@@ -217,14 +217,13 @@ The following is an example of an XHTML page using the usual head and body marku
 
 [source,xml]
 ----
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
     <head>
         <title>Add a title</title>
     </head>
     <body>
-        Add Content
+        <main>Add content</main>
     </body>
 </html>
 ----
@@ -233,15 +232,13 @@ The following is an example of an XHTML page using `h:head` and `h:body` tags:
 
 [source,xml]
 ----
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html">
+<!DOCTYPE html>
+<html xmlns:h="jakarta.faces.html">
     <h:head>
-        Add a title
+        <title>Add a title</title>
     </h:head>
     <h:body>
-        Add Content
+        <main>Add content</main>
     </h:body>
 </html>
 ----

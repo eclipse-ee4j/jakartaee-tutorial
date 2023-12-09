@@ -118,18 +118,19 @@ The table contains two fields referenced from JavaScript code:
 [source,html]
 ----
 <!DOCTYPE html>
-<html>
-<head>...</head>
-<body>
-  ...
-  <table>
+<html lang="en">
+  <head>...</head>
+  <body>
     ...
-    <td id="price">--.--</td>
+    <table>
+      ...
+      <td id="price">--.--</td>
+      ...
+      <td id="volume">--</td>
+      ...
+    </table>
     ...
-    <td id="volume">--</td>
-    ...
-  </table>
-</body>
+  </body>
 </html>
 ----
 

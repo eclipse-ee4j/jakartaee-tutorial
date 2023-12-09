@@ -204,8 +204,7 @@ The source code for this application is in the `_jakartaee-examples_/tutorial/we
 ==== The Facelets Pages for the reservation Application
 
 The first important feature of the Facelets pages for the `reservation` application is the `DOCTYPE` header.
-Most Facelets pages in Jakarta Faces applications refer to the XHTML DTD.
-The facelets pages for this application begin simply with the following `DOCTYPE` header, which indicates an HTML5 page:
+The facelets pages for this application begin simply with the following `DOCTYPE` header, which indicates that the XHTML-generated result is an HTML5 page:
 
 [source,xml]
 ----
@@ -217,59 +216,55 @@ The namespace declarations in the `html` element of the `reservation.xhtml` page
 [source,xml]
 ----
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:faces="jakarta.faces"
       xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
-      xmlns:p="jakarta.faces.passthrough"
-      xmlns:faces="jakarta.faces">
+      xmlns:p="jakarta.faces.passthrough">
 ----
 
-Next, an empty `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in xref:faces-facelets/faces-facelets.adoc#_relocatable_resources[Relocatable Resources]):
+Next, an `h:head` tag followed by an `h:outputStylesheet` tag within the `h:body` tag illustrates the use of a relocatable resource (as described in xref:faces-facelets/faces-facelets.adoc#_relocatable_resources[Relocatable Resources]):
 
 [source,xml]
 ----
 <h:head>
+    <title>Reservation Application</title>
 </h:head>
 <h:body>
-    <h:outputStylesheet name="css/stylesheet.css" target="head"/>
+    <h:outputStylesheet name="css/stylesheet.css" target="head" />
 ----
 
-The `reservation.xhtml` page uses pass-through elements for most of the form fields on the page.
-This allows it to use some HTML5-specific `input` element types, such as `date` and `email`.
-For example, the following element renders both a date format and a calendar from which you can choose a date.
-The `faces` prefix on the `id` attribute makes the element a pass-through one:
+The `reservation.xhtml` page uses a HTML5-specific `input` element type on `h:inputText`, which is `date`.
 
 [source,xml]
 ----
-    <input type="date" faces:id="date" name="date"
-           value="#{reservationBean.date}" required="required"
-           title="Enter or choose a date."/>
+    <h:inputText id="date" type="date"
+                 value="#{reservationBean.date}" required="true"
+                 title="Enter or choose a date." />
 ----
 
-The field for the number of tickets, however, uses the `h:passThroughAttributes` tag to pass a `Map` defined in the managed bean.
+The field for the number of tickets uses the `f:passThroughAttributes` tag to pass a `Map` defined in the managed bean.
 It also recalculates the total in response to a change in the field:
 
 [source,xml]
 ----
     <h:inputText id="tickets" value="#{reservationBean.tickets}">
         <f:passThroughAttributes value="#{reservationBean.ticketAttrs}"/>
-        <f:ajax event="change" render="total"
-                listener="#{reservationBean.calculateTotal}"/>
+        <f:ajax listener="#{reservationBean.calculateTotal}"
+                render="total" />
     </h:inputText>
 ----
 
-The field for the price specifies the `number` type as a pass-through attribute of the `h:inputText` element, offering a range of four ticket prices.
+The field for the price specifies the `min`, `max` and `step` as a pass-through attribute of the `h:inputText` element, offering a range of four ticket prices.
 Here, the `p` prefix on the HTML5 attributes passes them through to the browser uninterpreted by the Jakarta Faces input component:
 
 [source,xml]
 ----
-    <h:inputText id="price" p:type="number"
-                 value="#{reservationBean.price}"
-                 p:min="80" p:max="120"
-                 p:step="20" p:required="required"
-                 p:title="Enter a price: 80, 100, 120, or 140.">
-        <f:ajax event="change" render="total"
-                listener="#{reservationBean.calculateTotal}"/>
+    <h:inputText id="price" type="number"
+                 value="#{reservationBean.price}" required="true"
+                 p:min="80" p:max="120" p:step="20"
+                 title="Enter a price: 80, 100, 120, or 140.">
+        <f:ajax listener="#{reservationBean.calculateTotal}"
+                render="total" />
     </h:inputText>
 ----
 

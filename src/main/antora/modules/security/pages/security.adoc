@@ -513,17 +513,20 @@ To use this authentication method, we need to designate two paths to resources t
 [source,html]
 ----
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
+    <head><title>Login to continue</title></head>
     <body>
-        Login to continue
-        <form method="POST" action="j_security_check">
-            <p>
-                <strong>Username </strong> <input type="text" name="j_username">
-            <p>
-                <strong>Password </strong> <input type="password" name="j_password">
-            <p>
+        <h1>Login to continue</h1>
+        <form method="post" action="j_security_check">
+            <div>
+                <label>Username: <input type="text" name="j_username"></label>
+            </div>
+            <div>
+                <label>Password: <input type="password" name="j_password"></label>
+            </div>
+            <div>
                 <input type="submit" value="Submit">
+            </div>
         </form>
     </body>
 </html>
@@ -532,11 +535,13 @@ To use this authentication method, we need to designate two paths to resources t
 [source,html]
 ----
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
+    <head><title>Login failed!</title></head>
     <body>
-        Login failed!
-        <a href="login.html">Try again</a>
+        <h1>Login failed!</h1>
+        <div>
+            <a href="login.html">Try again</a>
+        </div>
     </body>
 </html>
 ----
@@ -1768,13 +1773,12 @@ For this example we'll use a Faces view with a backing bean:
 [source,xml]
 ----
 <!DOCTYPE html>
-<html lang="en" xmlns:h="jakarta.faces.html" >
-    <h:head/>
-
+<html lang="en" xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Login to continue</title>
+    </h:head>
     <h:body>
-        <h1>
-            Login to continue
-        </h1>
+        <h1>Login to continue</h1>
 
         <h:messages />
 
