@@ -272,9 +272,9 @@ The `index.xhtml` file, however, is more complex.
                 <h:commandButton id="check" value="Guess"
                                  action="#{userNumberBean.check}"
                                  disabled="#{
-                                    userNumberBean.number eq userNumberBean.userNumber
-                                        or
                                     userNumberBean.remainingGuesses le 0
+                                        or
+                                    userNumberBean.number eq userNumberBean.userNumber
                                  }">
                     <f:ajax execute="@form"
                             render="@this remainingGuesses userNumber output messages" />
@@ -287,10 +287,14 @@ The `index.xhtml` file, however, is more complex.
             </div>
             <h:panelGroup id="output" layout="block">
                 <h:outputText value="Higher!" rendered="#{
-                    userNumberBean.number gt userNumberBean.userNumber and userNumberBean.userNumber ne 0
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number gt userNumberBean.userNumber
                 }" />
                 <h:outputText value="Lower!" rendered="#{
-                    userNumberBean.number lt userNumberBean.userNumber and userNumberBean.userNumber ne 0
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number lt userNumberBean.userNumber
                 }" />
             </h:panelGroup>
             <h:messages id="messages" />
