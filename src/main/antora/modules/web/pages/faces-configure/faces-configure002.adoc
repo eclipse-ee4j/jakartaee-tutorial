@@ -34,14 +34,16 @@ You can specify one of the following scopes for a bean class.
 
 * Application (`jakarta.enterprise.context.ApplicationScoped`): Application scope persists across all users' interactions with a web application.
 
-* Session (`jakarta.enterprise.context.SessionScoped`): Session scope persists across multiple HTTP requests in a web application.
+* Session (`jakarta.enterprise.context.SessionScoped`): Session scope persists across multiple HTTP requests during a single HTTP session in a web application.
 
-* Flow (`jakarta.faces.flows.FlowScoped`): Flow scope persists during a user's interaction with a specific flow of a web application.
+* Flow (`jakarta.faces.flow.FlowScoped`): Flow scope persists during a user's interaction with a specific flow during a single HTTP session in a web application.
 See xref:faces-configure/faces-configure.adoc#_using_faces_flows[Using Faces Flows] for more information.
+
+* View (`jakarta.faces.view.ViewScoped`): View scope persists across multiple HTTP postbacks on a single view during a single HTTP session in a web application.
 
 * Request (`jakarta.enterprise.context.RequestScoped`): Request scope persists during a single HTTP request in a web application.
 
-* Dependent (`jakarta.enterprise.context.Dependent`): Indicates that the bean depends on some other bean.
+* Dependent (`jakarta.enterprise.context.Dependent`): Indicates that the bean scope depends on the other bean where it's injected.
 
 You may want to use `@Dependent` when a managed bean references another managed bean.
 The second bean should not be in a scope (`@Dependent`) if it is supposed to be created only when it is referenced.
