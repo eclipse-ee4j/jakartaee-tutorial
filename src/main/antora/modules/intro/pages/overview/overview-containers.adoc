@@ -1,7 +1,7 @@
 == Jakarta EE Containers and Servers
 
 The services we discussed in <<_jakarta_ee_services>> section are provided by *container{empty}footnote:[Technically, there are multiple containers (Web, CDI, Enterprise Beans), but the distinction about which container is providing the services isn't terribly important. Jakarta EE also supports an Application Client container for Java clients, but this is rarely used. ]*.
-A *Jakarta EE Server* is software that runs the container, deploys applications into into it, and provides administration and additional features.
+A *Jakarta EE Server* is software that runs the container, deploys applications into it, and provides administration and additional features.
 Jakarta EE Servers run stand-alone, but many implementations also support the ability to generate a single "fat",
 executable Java Archive (JAR) file that includes all the code necessary to run the application.
 
