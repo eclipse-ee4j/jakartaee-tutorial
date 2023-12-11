@@ -40,69 +40,68 @@ If a `composite:interface` element appears, there must be a corresponding `compo
 
 For more information and a complete list of Facelets composite tags, see the Jakarta Faces Facelets Tag Library documentation.
 
-The following example shows a composite component that accepts an email address as input:
+The following example shows a composite component that renders an form field with a label, input and message component:
 
 [source,xml]
 ----
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:composite="jakarta.faces.composite"
-  xmlns:h="jakarta.faces.html">
+<ui:component xmlns:ui="jakarta.faces.facelets"
+              xmlns:cc="jakarta.faces.composite"
+              xmlns:h="jakarta.faces.html">
+    <cc:interface>
+        <cc:attribute name="label" required="true" />
+        <cc:attribute name="value" required="true" />
+    </cc:interface>
 
-    <h:head>
-        <title>This content will not be displayed</title>
-    </h:head>
-    <h:body>
-        <composite:interface>
-            <composite:attribute name="value" required="false"/>
-        </composite:interface>
-
-        <composite:implementation>
-            <h:outputLabel value="Email id: "></h:outputLabel>
-            <h:inputText value="#{cc.attrs.value}"></h:inputText>
-        </composite:implementation>
-    </h:body>
-</html>
+    <cc:implementation>
+        <div id="#{cc.clientId}" class="field">
+            <h:outputLabel for="input" value="#{cc.attrs.label}" />
+            <h:inputText id="input" value="#{cc.attrs.value}" />
+            <h:message for="input" />
+        </div>
+    </cc:implementation>
+</ui:component>
 ----
 
-Note the use of `cc.attrs.value` when defining the value of the `inputText` component.
+Note the use of `cc.attrs.value` when defining the value of the `outputLabel` and `inputText` components.
 The word `cc` in Jakarta Faces is a reserved word for composite components.
 The `&#35;{cc.attrs._attribute-name_}` expression is used to access the attributes defined for the composite component's interface, which in this case happens to be `value`.
 
-The preceding example content is stored as a file named `email.xhtml` in a folder named `resources/emcomp`, under the application web root directory.
-This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library. For more information on resources, see xref:faces-facelets/faces-facelets.adoc#_web_resources[Web Resources].
+The preceding example content is stored as a file named `field.xhtml` in a folder named `resources/mycomponents`, under the application web root directory.
+This directory is considered a library by Jakarta Faces, and a component can be accessed from such a library.
+The `mycomponents` folder name is free to your choice.
+For more information on resources, see xref:faces-facelets/faces-facelets.adoc#_web_resources[Web Resources].
 
 The web page that uses this composite component is generally called a using page.
 The using page includes a reference to the composite component, in the `xml` namespace declarations:
 
 [source,xml]
 ----
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:h="jakarta.faces.html"
-  xmlns:em="jakarta.faces.composite/emcomp">
+<!DOCTYPE html>
+<html xmlns:h="jakarta.faces.html"
+      xmlns:my="jakarta.faces.composite/mycomponents">
 
     <h:head>
         <title>Using a sample composite component</title>
     </h:head>
 
-    <body>
+    <h:body>
         <h:form>
-            <em:email value="Enter your email id" />
+            <my:field id="email"
+                      label="Enter your email address"
+                      value="#{bean.email}" />
         </h:form>
-    </body>
+    </h:body>
 </html>
 ----
 
-The local composite component library is defined in the `xmlns` namespace with the declaration `xmlns:em="jakarta.faces.composite.emcomp"`.
-The component itself is accessed through the `em:email` tag.
-The preceding example content can be stored as a web page named `emuserpage.xhtml` under the web root directory.
+The local composite component library is defined in the `xmlns` namespace with the declaration `xmlns:my="jakarta.faces.composite/mycomponents"`.
+The `my` XML namespace are free to your choice. The `/mycomponents` part must represent the folder name where the composite component files are located.
+The component itself is accessed through the `my:field` tag.
+The preceding example content can be stored as a web page named `userpage.xhtml` under the web root directory.
 When compiled and deployed on a server, it can be accessed with the following URL:
 
 ----
-http://localhost:8080/application-name/emuserpage.xhtml
+http://localhost:8080/application-name/userpage.xhtml
 ----
 
 See xref:faces-advanced-cc/faces-advanced-cc.adoc#_composite_components_advanced_topics_and_an_example[Composite Components: Advanced Topics and an Example] for more information and an example.

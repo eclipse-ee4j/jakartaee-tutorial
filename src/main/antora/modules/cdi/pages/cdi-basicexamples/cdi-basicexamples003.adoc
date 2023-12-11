@@ -87,7 +87,7 @@ import jakarta.enterprise.inject.Produces;
 @ApplicationScoped
 public class Generator implements Serializable {
 
-    private static final long serialVersionUID = -7213673465118041882L;
+    private static final long serialVersionUID = 1L;
 
     private final java.util.Random random =
         new java.util.Random( System.currentTimeMillis() );
@@ -132,7 +132,7 @@ package guessnumber;
 
 import java.io.Serializable;
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.view.ViewScoped;
 import jakarta.enterprise.inject.Instance;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.component.UIComponent;
@@ -142,10 +142,10 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named
-@SessionScoped
+@ViewScoped
 public class UserNumberBean implements Serializable {
 
-    private static final long serialVersionUID = -7698506329160109476L;
+    private static final long serialVersionUID = 1L;
 
     private int number;
     private Integer userNumber;
@@ -162,42 +162,16 @@ public class UserNumberBean implements Serializable {
     @Inject
     Instance<Integer> randomInt;
 
-    public UserNumberBean() {
+    @PostConstruct
+    public void init() {
+        minimum = 0;
+        userNumber = 0;
+        remainingGuesses = 10;
+        maximum = maxNumber;
+        number = randomInt.get();
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setUserNumber(Integer user_number) {
-        userNumber = user_number;
-    }
-
-    public Integer getUserNumber() {
-        return userNumber;
-    }
-
-    public int getMaximum() {
-        return (this.maximum);
-    }
-
-    public void setMaximum(int maximum) {
-        this.maximum = maximum;
-    }
-
-    public int getMinimum() {
-        return (this.minimum);
-    }
-
-    public void setMinimum(int minimum) {
-        this.minimum = minimum;
-    }
-
-    public int getRemainingGuesses() {
-        return remainingGuesses;
-    }
-
-    public String check() throws InterruptedException {
+    public void check() {
         if (userNumber > number) {
             maximum = userNumber - 1;
         }
@@ -209,16 +183,10 @@ public class UserNumberBean implements Serializable {
                 new FacesMessage("Correct!"));
         }
         remainingGuesses--;
-        return null;
     }
 
-    @PostConstruct
     public void reset() {
-        this.minimum = 0;
-        this.userNumber = 0;
-        this.remainingGuesses = 10;
-        this.maximum = maxNumber;
-        this.number = randomInt.get();
+        init();
     }
 
     public void validateNumberRange(FacesContext context,
@@ -227,12 +195,30 @@ public class UserNumberBean implements Serializable {
         int input = (Integer) value;
 
         if (input < minimum || input > maximum) {
-            ((UIInput) toValidate).setValid(false);
-
-            FacesMessage message = new FacesMessage("Invalid guess");
-            context.addMessage(toValidate.getClientId(context), message);
+            throw new ValidatorException(new FacesMessage("Invalid guess"));
         }
     }
+
+    public void setUserNumber(Integer userNumber) {
+        this.userNumber = userNumber;
+    }
+
+    public Integer getUserNumber() {
+        return userNumber;
+    }
+
+    public int getMaximum() {
+        return maximum;
+    }
+
+    public int getMinimum() {
+        return minimum;
+    }
+
+    public int getRemainingGuesses() {
+        return remainingGuesses;
+    }
+
 }
 ----
 
@@ -243,59 +229,64 @@ The `index.xhtml` file, however, is more complex.
 
 [source,xml]
 ----
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:h="jakarta.faces.html">
-    <ui:composition template="/template.xhtml">
-
-        <ui:define name="title">Guess My Number</ui:define>
-        <ui:define name="head">Guess My Number</ui:define>
-        <ui:define name="content">
-            <h:form id="GuessMain">
-                <div style="color: black; font-size: 24px;">
-                    <p>I'm thinking of a number from
-                    <span style="color: blue">#{userNumberBean.minimum}</span>
-                    to
-                    <span style="color: blue">#{userNumberBean.maximum}</span>.
-                    You have
-                    <span style="color: blue">
-                        #{userNumberBean.remainingGuesses}
-                    </span>
-                    guesses.</p>
-                </div>
-                <h:panelGrid border="0" columns="5" style="font-size: 18px;">
-                    <h:outputLabel for="inputGuess">Number:</h:outputLabel>
-                    <h:inputText id="inputGuess"
-                                 value="#{userNumberBean.userNumber}"
-                                 required="true" size="3"
-disabled="#{userNumberBean.number eq userNumberBean.userNumber or userNumberBean.remainingGuesses le 0}"
-                               validator="#{userNumberBean.validateNumberRange}">
-                    </h:inputText>
-                    <h:commandButton id="GuessButton" value="Guess"
-                                     action="#{userNumberBean.check}"
-disabled="#{userNumberBean.number eq userNumberBean.userNumber or userNumberBean.remainingGuesses le 0}"/>
-                    <h:commandButton id="RestartButton" value="Reset"
-                                     action="#{userNumberBean.reset}"
-                                     immediate="true" />
-                    <h:outputText id="Higher" value="Higher!"
-rendered="#{userNumberBean.number gt userNumberBean.userNumber and userNumberBean.userNumber ne 0}"
-                                  style="color: #d20005"/>
-                    <h:outputText id="Lower" value="Lower!"
-rendered="#{userNumberBean.number lt userNumberBean.userNumber and userNumberBean.userNumber ne 0}"
-                                  style="color: #d20005"/>
-                </h:panelGrid>
-                <div style="color: #d20005; font-size: 14px;">
-                    <h:messages id="messages" globalOnly="false"/>
-                </div>
-            </h:form>
-        </ui:define>
-
-    </ui:composition>
-</html>
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html">
+    <ui:define name="title">Guess My Number</ui:define>
+    <ui:define name="content">
+        <h:form id="guessMyNumberForm">
+            <p>
+                I'm thinking of a number from #{userNumberBean.minimum}
+                to #{userNumberBean.maximum}. You have
+                <h:outputText id="remainingGuesses"
+                              value="#{userNumberBean.remainingGuesses}" />
+                guesses.
+            </p>
+            <div class="input">
+                <h:outputLabel for="userNumber" value="Number" />
+                <h:inputText id="userNumber"
+                             value="#{userNumberBean.userNumber}"
+                             required="true" size="3"
+                             disabled="#{
+                                userNumberBean.remainingGuesses le 0
+                                    or
+                                userNumberBean.number eq userNumberBean.userNumber
+                             }"
+                             validator="#{userNumberBean.validateNumberRange}" />
+            </div>
+            <div class="actions">
+                <h:commandButton id="check" value="Guess"
+                                 action="#{userNumberBean.check}"
+                                 disabled="#{
+                                    userNumberBean.remainingGuesses le 0
+                                        or
+                                    userNumberBean.number eq userNumberBean.userNumber
+                                 }">
+                    <f:ajax execute="@form"
+                            render="@this remainingGuesses userNumber output messages" />
+                </h:commandButton>
+                <h:commandButton id="reset" value="Reset"
+                                 action="#{userNumberBean.reset}">
+                    <f:ajax execute="@this"
+                            render="@this remainingGuesses userNumber output messages" />
+                </h:commandButton>
+            </div>
+            <h:panelGroup id="output" layout="block">
+                <h:outputText value="Higher!" rendered="#{
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number gt userNumberBean.userNumber
+                }" />
+                <h:outputText value="Lower!" rendered="#{
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number lt userNumberBean.userNumber
+                }" />
+            </h:panelGroup>
+            <h:messages id="messages" />
+        </h:form>
+    </ui:define>
+</ui:composition>
 ----
 
 The Facelets page presents the user with the minimum and maximum values and the number of guesses remaining.
