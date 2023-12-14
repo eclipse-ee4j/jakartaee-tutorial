@@ -37,9 +37,12 @@ See that repo for details.
 
 This project is open for contributions, and your
 help is greatly appreciated. 
-The easiest way to contribute is by opening an issue in this project
+The easiest way to contribute is by opening an [issue](https://github.com/jakartaee/jakartaee-tutorial/issues) in this project
 that contains feedback and review comments. 
-You can also create PRs directly while viewing the published documentation.
+
+You can also create PRs directly while viewing the published documentation by using the Edit button in the UI.
+
+If you want to keep up with our project planning across all of the repos, see the [project board](https://github.com/orgs/jakartaee/projects/7).
 
 If you'd like to propose changes or additions to the content and/or images,
 please read the [Style guide](STYLE_GUIDE.adoc) and  
