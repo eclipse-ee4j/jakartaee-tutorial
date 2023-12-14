@@ -1,0 +1,28 @@
+Next we'll define the security constraints in `web.xml`, which tell the security system that access to a given URL or URL pattern is protected, and hence authentication is required:
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>protected</web-resource-name>
+            <url-pattern>/rest/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+</web-app>
+----
+
+This XML essentially says that to access any URL that starts with "/rest" requires the caller to have the role "user". Roles are opaque strings; merely identifiers. It's fully up to the application how broad or fine-grained they are.
+
+NOTE: In Jakarta EE, internally these XML constraints are transformed into `Permission` instances and made available via a specific type of permission store. Knowledge about this transformation is only needed for very advanced use cases.
+
+NOTE: The observant reader may wonder if XML is really the only option here, given the strong feelings that exist in parts of the community around XML. The answer is yes and no. Jakarta EE does define the https://jakarta.ee/specifications/annotations/2.1/annotations-spec-2.1.html#jakarta-annotation-security-rolesallowed[@RolesAllowed,role=external,window=_blank] annotation that could be used to replace the XML shown above, but only the legacy Enterprise Beans has specified a behaviour for this when put on an Enterprise Bean. Jakarta REST has done no such thing, although the https://microprofile.io/project/eclipse/microprofile-jwt-auth/spec/src/main/asciidoc/configuration.asciidoc[JWT API in MicroProfile,role=external,window=_blank] has defined this for REST resources. In Jakarta EE, however, this remains a vendor-specific extension. There are also a number of https://jakarta.ee/specifications/servlet/6.0/jakarta-servlet-spec-6.0.html#programmatic-security-policy-configuration[annotations and APIs,role=external,window=_blank] in Jakarta EE to set these kinds of constraints for individual Servlets, but those won't help us much either here.

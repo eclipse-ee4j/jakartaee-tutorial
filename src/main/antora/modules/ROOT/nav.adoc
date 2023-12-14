@@ -1,0 +1,175 @@
+
+xref:index.adoc[]
+
+.Introduction
+
+* xref:intro:overview/overview.adoc[]
+
+* xref:intro:usingexamples/usingexamples.adoc[]
+
+.Platform Basics
+
+* xref:platform:resource-creation/resource-creation.adoc[]
+
+* xref:platform:injection/injection.adoc[]
+
+* xref:platform:packaging/packaging.adoc[]
+
+.Jakarta EE Core Profile
+
+* Jakarta CDI Lite
+
+** xref:cdi:cdi-basic/cdi-basic.adoc[]
+
+** xref:cdi:cdi-basicexamples/cdi-basicexamples.adoc[]
+
+** xref:supporttechs:interceptors/interceptors.adoc[]
+
+* Jakarta REST
+
+** xref:websvcs:jaxrs/jaxrs.adoc[]
+
+** xref:websvcs:jaxrs-client/jaxrs-client.adoc[]
+
+** xref:websvcs:jaxrs-advanced/jaxrs-advanced.adoc[]
+
+* Jakarta JSON
+
+** xref:web:jsonb/jsonb.adoc[]
+
+** xref:web:jsonp/jsonp.adoc[]
+
+
+.Jakarta EE Web Profile
+
+* Jakarta CDI Full
+
+** xref:cdi:cdi-adv/cdi-adv.adoc[]
+
+** xref:cdi:cdi-bootstrap-se8/cdi-bootstrap-se8.adoc[]
+
+** xref:cdi:cdi-adv-examples/cdi-adv-examples.adoc[]
+
+* Jakarta Validation
+
+** xref:beanvalidation:bean-validation/bean-validation.adoc[]
+
+** xref:beanvalidation:bean-validation-advanced/bean-validation-advanced.adoc[]
+
+* xref:security:security.adoc[]
+
+* Jakarta Servlets
+
+** xref:web:webapp/webapp.adoc[]
+
+** xref:web:servlets/servlets.adoc[]
+
+* Jakarta Faces
+
+** xref:web:faces-intro/faces-intro.adoc[]
+
+** xref:web:faces-facelets/faces-facelets.adoc[]
+
+** xref:web:faces-page/faces-page.adoc[]
+
+** xref:web:faces-page-core/faces-page-core.adoc[]
+
+** xref:web:faces-develop/faces-develop.adoc[]
+
+** xref:web:faces-ajax/faces-ajax.adoc[]
+
+** xref:web:faces-advanced-cc/faces-advanced-cc.adoc[]
+
+** xref:web:faces-custom/faces-custom.adoc[]
+
+** xref:web:faces-configure/faces-configure.adoc[]
+
+** xref:web:faces-ws/faces-ws.adoc[]
+
+** xref:web:webi18n/webi18n.adoc[]
+
+* xref:web:websocket/websocket.adoc[]
+
+* Jakarta Persistence
+
+** xref:persist:persistence-intro/persistence-intro.adoc[]
+
+** xref:persist:persistence-basicexamples/persistence-basicexamples.adoc[]
+
+** xref:persist:persistence-querylanguage/persistence-querylanguage.adoc[]
+
+** xref:persist:persistence-criteria/persistence-criteria.adoc[]
+
+** xref:persist:persistence-string-queries/persistence-string-queries.adoc[]
+
+** xref:persist:persistence-locking/persistence-locking.adoc[]
+
+** xref:persist:persistence-entitygraphs/persistence-entitygraphs.adoc[]
+
+** xref:persist:persistence-cache/persistence-cache.adoc[]
+
+* Jakarta Enterprise Beans Lite
+
+** xref:entbeans:ejb-intro/ejb-intro.adoc[]
+
+** xref:entbeans:ejb-gettingstarted/ejb-gettingstarted.adoc[]
+
+** xref:entbeans:ejb-basicexamples/ejb-basicexamples.adoc[]
+
+** xref:entbeans:ejb-async/ejb-async.adoc[]
+
+
+.Jakarta EE Platform
+
+* xref:messaging:mail-api/mail-api.adoc[]
+
+* Jakarta Messaging
+
+** xref:messaging:jms-concepts/jms-concepts.adoc[]
+
+** xref:messaging:jms-examples/jms-examples.adoc[]
+
+* xref:supporttechs:batch-processing/batch-processing.adoc[]
+
+
+.Advanced
+
+* Web Profile
+
+** xref:security:security-authentication/security-authentication.adoc[]
+
+** xref:security:security-authorization/security-authorization.adoc[]
+
+** xref:supporttechs:transactions/transactions.adoc[]
+
+** xref:supporttechs:concurrency-utilities/concurrency-utilities.adoc[]
+
+
+* Jakarta EE Platform
+
+** xref:supporttechs:connectors/connectors.adoc[]
+
+
+* Optional Components
+
+** xref:web:faces-el/faces-el.adoc[]
+
+** Jakarta XML Binding
+
+
+.Archived
+
+* Web Profile
+
+** xref:web:jakarta-pages/jakarta-pages.adoc[]
+
+** xref:web:jakarta-tags/jakarta-tags.adoc[]
+
+
+* Jakarta EE Platform
+
+** xref:websvcs:xml-websvcs/xml-websvcs.adoc[]
+
+** xref:entbeans:ejb-full/ejb-full.adoc[]
+
+

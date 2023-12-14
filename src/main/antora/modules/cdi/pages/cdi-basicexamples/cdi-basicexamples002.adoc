@@ -1,0 +1,196 @@
+== The simplegreeting CDI Example
+
+The `simplegreeting` example illustrates some of the most basic features of CDI: scopes, qualifiers, bean injection, and accessing a managed bean in a Jakarta Faces application.
+When you run the example, you click a button that presents either a formal or an informal greeting, depending on how you edited one of the classes.
+The example includes four source files, a Facelets page and template, and configuration files.
+
+=== The simplegreeting Source Files
+
+The four source files for the `simplegreeting` example are:
+
+* The default `Greeting` class, shown in xref:cdi-basic/cdi-basic.adoc#_beans_as_injectable_objects[Beans as Injectable Objects]
+
+* The `@Informal` qualifier interface definition and the `InformalGreeting` class that implements the interface, both shown in xref:cdi-basic/cdi-basic.adoc#_using_qualifiers[Using Qualifiers]
+
+* The `Printer` managed bean class, which injects one of the two interfaces, shown in full in xref:cdi-basic/cdi-basic.adoc#_adding_setter_and_getter_methods[Adding Setter and Getter Methods]
+
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/java/jakarta/tutorial/simplegreeting` directory.
+
+=== The Facelets Template and Page
+
+To use the managed bean in a simple Facelets application:
+
+. Use a very simple template file and `index.xhtml` page.
++
+The template page, `/WEB-INF/templates/template.xhtml`, looks like this:
++
+[source,xml]
+----
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets">
+    <h:head>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet name="css/default.css" />
+    </h:head>
+    <h:body>
+        <main>
+            <header>
+                <h1>
+                    <ui:insert name="head">
+                        <ui:insert name="title">Default Header</ui:insert>
+                    </ui:insert>
+                </h1>
+            </header>
+
+            <article>
+                <ui:insert name="content" />
+            </article>
+        </main>
+    </h:body>
+</html>
+----
+
+. To create the Facelets page, redefine the title and head, then add a small form to the content:
++
+[source,xml]
+----
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html">
+    <ui:define name="title">Simple Greeting</ui:define>
+    <ui:define name="content">
+        <h:form id="simpleGreetingForm">
+            <div class="input">
+                <h:outputLabel for="name" value="Enter your name" />
+                <h:inputText id="name" value="#{printer.name}"/>
+            </div>
+            <div class="actions">
+                <h:commandButton id="createSalutation"
+                                 value="Say Hello"
+                                 action="#{printer.createSalutation}">
+                    <f:ajax execute="@form" render="salutation" />
+                </h:commandButton>
+            </div>
+            <div class="output">
+                <p>
+                    <h:outputText id="salutation"
+                                  value="#{printer.salutation}" />
+                </p>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+----
++
+The form asks the user to enter a name.
+The button is labeled *Say Hello*, and the action defined for it is to call the `createSalutation` method of the `Printer` managed bean.
+This method in turn calls the `greet` method of the defined `Greeting` class.
++
+The output text for the form is the value of the greeting returned by the setter method.
+Depending on whether the default or the `@Informal` version of the greeting is injected, this is one of the following, where `name` is the name entered by the user:
++
+----
+Hello, name.
+
+Hi, name!
+----
++
+The Facelets page and template are located in the `_jakartaee-examples_/tutorial/cdi/simplegreeting/src/main/webapp/` directory.
++
+The simple CSS file that is used by the Facelets page is in the following location:
++
+----
+jakartaee-examples/tutorial/cdi/simplegreeting/src/main/webapp/resources/css/default.css
+----
+
+=== Running the simplegreeting Example
+
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `simplegreeting` application.
+
+==== To Build, Package, and Run the simplegreeting Example Using NetBeans IDE
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the *Open Project* dialog box, navigate to:
++
+----
+jakartaee-examples/tutorial/cdi
+----
+
+. Select the `simplegreeting` folder.
+
+. Click *Open Project*.
+
+. To modify the `Printer.java` file, perform these steps:
+
+.. Expand the *Source Packages* node.
+
+.. Expand the `greetings` node.
+
+.. Double-click the `Printer.java` file.
+
+.. In the editor, comment out the `@Informal` annotation:
++
+[source,java]
+----
+@Inject
+//@Informal
+Greeting greeting;
+----
+
+.. Save the file.
+
+. In the *Projects* tab, right-click the `simplegreeting` project and select *Build*.
++
+This command builds and packages the application into a WAR file, `simplegreeting.war`, located in the `target` directory, and then deploys it to GlassFish Server.
+
+==== To Build, Package, and Deploy the simplegreeting Example Using Maven
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. In a terminal window, go to:
++
+----
+jakartaee-examples/tutorial/cdi/simplegreeting/
+----
+
+. Enter the following command to deploy the application:
++
+[source,shell]
+----
+mvn install
+----
++
+This command builds and packages the application into a WAR file, `simplegreeting.war`, located in the `target` directory, and then deploys it to GlassFish Server.
+
+==== To Run the simplegreeting Example
+
+. In a web browser, enter the following URL:
++
+----
+http://localhost:8080/simplegreeting
+----
++
+The *Simple Greeting* page opens.
+
+. Enter a name in the field.
++
+For example, suppose that you enter `Duke`.
+
+. Click *Say Hello*.
++
+If you did not modify the `Printer.java` file, then the following text string appears below the button:
++
+----
+Hi, Duke!
+----
++
+If you commented out the `@Informal` annotation in the `Printer.java` file, then the following text string appears below the button:
++
+----
+Hello, Duke.
+----

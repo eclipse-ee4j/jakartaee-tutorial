@@ -1,82 +1,51 @@
 ### Note: This repository is no longer maintained and the project is now moved. To refer to the new project, follow this link: [Jakarta EE Tutorial](https://github.com/jakartaee/jakartaee-tutorial)
 # Jakarta EE Tutorial
 
-![ build](https://github.com/eclipse-ee4j/jakartaee-tutorial/workflows/build/badge.svg)
-
 This repository contains the source files that are used to build the
-_Jakarta Enterprise Edition (Jakarta EE) Tutorial_. The source files
-are authored in [AsciiDoc](http://asciidoc.org/).  AsciiDoc is similar
-to markdown but is particularly suited for user documentation.  
+_Jakarta Enterprise Edition (Jakarta EE) Tutorial_. 
+The source files are authored in [AsciiDoc](https://asciidoc.org/). 
+AsciiDoc is similar to markdown but is particularly suited for user documentation. 
+The source files are processed and integrated into the Jakarta EE Documentation site using
+[Antora](https://antora.org/), 
+which is a tool for building documentation sites.
 
-Note that the Jakarta EE Tutorial code examples are located in a
-separate repository
-[eclipse-ee4j/jakartaee-tutorial-examples](https://github.com/eclipse-ee4j/jakartaee-tutorial-examples).
+You can always find the most recent build of the Jakarta EE Documentation site here:
+https://jakartaee.github.io/jakartaee-documentation/.
+
+## A Note about Images
+
+We keep the source files (VSD) and the published format (SVG)
+for images in the `src/main/antora/modules/common/images` folder. 
+However, currently all the source file names don't match their corresponding SVG file. 
+If you modify a source image, 
+please help us out and rename it to match the output image.
+
+Guidelines for generating new images can be found in the [Contributing guide](CONTRIBUTING.md). 
+
+## Building
+
+The contents of this repo are built by
+the [jakartaee-tutorial-playbook repository](https://github.com/jakartaee/jakartaee-documentation).
+See that repo for details.
+
+## Related Repositories
+
+* [eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples) - Contains examples used in the tutorial (and additional examples)
+* [jakartaee/jakartaee-documentation](https://github.com/jakartaee/jakartaee-documentation) - builds documentation site
+* [jakartaee/jakartaee-documentation-ui](https://github.com/jakartaee/jakartaee-documentation-ui) - HTML and CSS assets used for the documentation site look and feel.
 
 ## Contributing
-The easiest way to contribute is by opening an issue in this project
-that contains feedback and review comments.
 
-The Jakarta EE Tutorial project is also open for contributions and your
-help is greatly appreciated. If you have an idea for the tutorial and
-want to add a section or update an existing section, then review the
-following links:
+This project is open for contributions, and your
+help is greatly appreciated. 
+The easiest way to contribute is by opening an [issue](https://github.com/jakartaee/jakartaee-tutorial/issues) in this project
+that contains feedback and review comments. 
 
-* [Contribute](CONTRIBUTING.md)
-* [Pull Request Acceptance Workflow](src/main/jbake/assets/pr_doc_workflow.md)
-* [License](LICENSE.md)
+You can also create PRs directly while viewing the published documentation by using the Edit button in the UI.
 
-## Building the Jakarta EE Tutorial
+If you want to keep up with our project planning across all of the repos, see the [project board](https://github.com/orgs/jakartaee/projects/7).
 
-The following directions explain how to do local builds of the
-tutorial. Note that any changes that are pushed to the master branch
-automatically trigger a build of the site files and tutorial sources.
-The results are automatically pushed to the gh-pages branch. You can
-view the published site
-[here](https://eclipse-ee4j.github.io/jakartaee-tutorial).
+If you'd like to propose changes or additions to the content and/or images,
+please read the [Style guide](STYLE_GUIDE.adoc) and  
+[Contributing guide](CONTRIBUTING.md) for more information.
 
-### Pre-Requisites
-
-- Maven
-- JDK8+
-
-Note that manually deploying the site requires password-less
-authentication. This is done by exporting your SSH public key into your
-GitHub account.
-
-### Build the Site Locally
-
-The site is generated under `target/staging`. Open
-`file:///PATH_TO_PROJECT_DIR/target/staging` in a browser to view the
-output.
-
-```
-mvn generate-resources
-```
-
-
-### Deploy the Site to Github Pages
-
-If you want to manually push a build to the gh-pages branch, use:
-
-```
-mvn deploy -Ppublish-site
-```
-Never commit changes to the *gh-pages* branch directly.
-
-### Produce a Zip File for Download
-
-To produce a zip file containing the generated HTML files, use:
-
-```
-mvn package
-```
-
-When making a release on GitHub, this zip file should be added to the release.
-
-## Links
-
-- [Asciidoctor Maven Plugin](https://asciidoctor.org/docs/asciidoctor-maven-plugin/)
-
-- [AsciiDoc User Guide](http://asciidoc.org/userguide.html)
-
-- [Asciidoctor quick reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
