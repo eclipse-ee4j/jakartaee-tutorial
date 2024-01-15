@@ -165,7 +165,7 @@ within a component tag, specifying an EL value that must evaluate to a
 +
 [source,xml]
 ----
-<h:inputText value="#{bean.nights">
+<h:inputText value="#{bean.nights}">
     <f:passThroughAttributes value="#{bean.nameValuePairs}" />
 </h:inputText>
 ----
