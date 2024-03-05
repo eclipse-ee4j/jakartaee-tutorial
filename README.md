@@ -1,18 +1,20 @@
 ### Note: This repository is no longer maintained and the project is now moved. To refer to the new project, follow this link: [Jakarta EE Tutorial](https://github.com/jakartaee/jakartaee-tutorial)
+
 # Jakarta EE Tutorial
 
 ![ build](https://github.com/eclipse-ee4j/jakartaee-tutorial/workflows/build/badge.svg)
 
 This repository contains the source files that are used to build the
 _Jakarta Enterprise Edition (Jakarta EE) Tutorial_. The source files
-are authored in [AsciiDoc](http://asciidoc.org/).  AsciiDoc is similar
-to markdown but is particularly suited for user documentation.  
+are authored in [AsciiDoc](http://asciidoc.org/). AsciiDoc is similar
+to markdown but is particularly suited for user documentation.
 
 Note that the Jakarta EE Tutorial code examples are located in a
 separate repository
-[eclipse-ee4j/jakartaee-tutorial-examples](https://github.com/eclipse-ee4j/jakartaee-tutorial-examples).
+[eclipse-ee4j/jakartaee-examples](https://github.com/eclipse-ee4j/jakartaee-examples).
 
 ## Contributing
+
 The easiest way to contribute is by opening an issue in this project
 that contains feedback and review comments.
 
@@ -21,9 +23,9 @@ help is greatly appreciated. If you have an idea for the tutorial and
 want to add a section or update an existing section, then review the
 following links:
 
-* [Contribute](CONTRIBUTING.md)
-* [Pull Request Acceptance Workflow](src/main/jbake/assets/pr_doc_workflow.md)
-* [License](LICENSE.md)
+- [Contribute](CONTRIBUTING.md)
+- [Pull Request Acceptance Workflow](src/main/jbake/assets/pr_doc_workflow.md)
+- [License](LICENSE.md)
 
 ## Building the Jakarta EE Tutorial
 
@@ -53,7 +55,6 @@ output.
 mvn generate-resources
 ```
 
-
 ### Deploy the Site to Github Pages
 
 If you want to manually push a build to the gh-pages branch, use:
@@ -61,7 +62,8 @@ If you want to manually push a build to the gh-pages branch, use:
 ```
 mvn deploy -Ppublish-site
 ```
-Never commit changes to the *gh-pages* branch directly.
+
+Never commit changes to the _gh-pages_ branch directly.
 
 ### Produce a Zip File for Download
 

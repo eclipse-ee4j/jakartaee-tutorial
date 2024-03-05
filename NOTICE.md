@@ -3,7 +3,7 @@
 This content is produced and maintained by the Jakarta EE Platform
 project.
 
-* Project home: https://projects.eclipse.org/projects/ee4j.jakartaee-platform
+- Project home: https://projects.eclipse.org/projects/ee4j.jakartaee-platform
 
 ## Trademarks
 
@@ -27,12 +27,12 @@ SPDX-License-Identifier: EPL-2.0
 
 The project maintains the following source code repositories:
 
-* https://github.com/eclipse-ee4j/jakartaee-platform
-* https://github.com/eclipse-ee4j/jakartaee-tutorial
-* https://github.com/eclipse-ee4j/jakartaee-tutorial-examples
-* https://github.com/eclipse-ee4j/jakartaee-firstcup
-* https://github.com/eclipse-ee4j/jakartaee-firstcup-examples
-* https://github.com/eclipse-ee4j/jakartaee-schemas
+- https://github.com/eclipse-ee4j/jakartaee-platform
+- https://github.com/eclipse-ee4j/jakartaee-tutorial
+- https://github.com/eclipse-ee4j/jakartaee-examples
+- https://github.com/eclipse-ee4j/jakartaee-firstcup
+- https://github.com/eclipse-ee4j/jakartaee-firstcup-examples
+- https://github.com/eclipse-ee4j/jakartaee-schemas
 
 ## Third-party Content
 
@@ -40,9 +40,9 @@ This project leverages the following third party content.
 
 W3C Documents for JakartaEE Schemas (n/a)
 
-* License: W3C-19980720
-* Project: https://github.com/eclipse-ee4j/jakartaee-schemas
-* Source: http://www.w3.org/2001
+- License: W3C-19980720
+- Project: https://github.com/eclipse-ee4j/jakartaee-schemas
+- Source: http://www.w3.org/2001
 
 ## Cryptography
 
