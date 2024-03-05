@@ -457,7 +457,7 @@ If `orphanRemoval` is set to `true`, the line item entity will be deleted when t
 
 The `orphanRemoval` attribute in `@OneToMany` and `@oneToOne` takes a Boolean value and is by default false.
 
-The following example will cascade the remove operation to the orphaned `order` entity when the `customer` entity is deleted:
+The following example will cascade the remove operation to the orphaned `order` entity when the `customer` entity removes the order:
 
 [source,java]
 ----
