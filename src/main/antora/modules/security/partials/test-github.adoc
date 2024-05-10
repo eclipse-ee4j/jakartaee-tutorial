@@ -1,0 +1,10 @@
+It's now time to test our application. A ready-to-test version is available from the Jakarta EE Examples project at https://github.com/eclipse-ee4j/jakartaee-examples.
+
+Download or clone this repo, then cd into the `focused` folder and execute:
+
+[source,subs="attributes+,+replacements"]
+----
+mvn clean install -pl :{app-name}
+----
+
+This will run a test associated with the project, printing something like the following:

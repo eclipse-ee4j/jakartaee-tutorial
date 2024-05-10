@@ -1,0 +1,41 @@
+<mxfile host="app.diagrams.net" modified="2023-11-21T02:43:20.548Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="M2xa8VTQoYFmhpFeckEL" version="21.6.5" type="device">
+  <diagram name="Page-1" id="kZ1cG6v_w5aUAQFG9GD5">
+    <mxGraphModel dx="1087" dy="653" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cMLyCkzywxG6j4JxettD-2" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Jakarta EE Server or &lt;br&gt;Executable &quot;fat&quot; JAR file" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=default;fillColor=#1b028b;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;shadow=1;gradientColor=none;fillStyle=auto;fontColor=#FFFFFF;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-3" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Container (Web, CDI, Enterprise Bean services)" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#000000;fillColor=#ffffff;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;dashed=1;dashPattern=8 8;fontColor=#FFFFFF;opacity=40;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="305" y="350" width="170" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-4" value="Application Code" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#000000;fillColor=#fdb940;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;shadow=0;fontColor=#FFFFFF;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="350" y="380" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-7" value="Data Store" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=1;dashed=0;html=1;strokeColor=default;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;align=center;fillColor=#131660;shape=mxgraph.mscae.enterprise.database_generic;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;fontColor=#FFFFFF;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="341.9" y="620" width="96.2" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-9" value="Client&lt;br&gt;(Web Service, Browser, so on)" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=default;fillColor=#131660;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;shadow=1;gradientColor=none;fillStyle=auto;fontColor=#FFFFFF;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="335" y="140" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-12" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;strokeColor=#F98200;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;fontStyle=0" edge="1" parent="1" source="cMLyCkzywxG6j4JxettD-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="375.57" y="288.98" as="sourcePoint" />
+            <mxPoint x="390.59" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cMLyCkzywxG6j4JxettD-13" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;strokeColor=#F98200;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Open Sans;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DOpen%2BSans;fontStyle=0" edge="1" parent="1" source="cMLyCkzywxG6j4JxettD-2" target="cMLyCkzywxG6j4JxettD-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620.41" y="570" as="sourcePoint" />
+            <mxPoint x="620" y="610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="390" y="600" />
+              <mxPoint x="390" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

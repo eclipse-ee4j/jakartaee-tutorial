@@ -1,0 +1,113 @@
+== Nonblocking I/O
+
+Web containers in application servers normally use a server thread per client request.
+To develop scalable web applications, you must ensure that threads associated with client requests are never sitting idle waiting for a blocking operation to complete.
+xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing] provides a mechanism to execute application-specific blocking operations in a new thread, returning the thread associated with the request immediately to the container.
+Even if you use asynchronous processing for all the application-specific blocking operations inside your service methods, threads associated with client requests can be momentarily sitting idle because of input/output considerations.
+
+For example, if a client is submitting a large HTTP POST request over a slow network connection, the server can read the request faster than the client can provide it.
+Using traditional I/O, the container thread associated with this request would be sometimes sitting idle waiting for the rest of the request.
+
+Jakarta EE provides nonblocking I/O support for servlets and filters when processing requests in asynchronous mode.
+The following steps summarize how to use nonblocking I/O to process requests and write responses inside service methods.
+
+. Put the request in asynchronous mode as described in xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing].
+
+. Obtain an input stream and/or an output stream from the request and response objects in the service method.
+
+. Assign a read listener to the input stream and/or a write listener to the output stream.
+
+. Process the request and the response inside the listener's callback methods.
+
+<<_nonblocking_io_support_in_servletoutputstream>> describe the methods available in the servlet input and output streams for nonblocking I/O support.
+<<_listener_interfaces_for_nonblocking_io_support>> describes the interfaces for read listeners and write listeners.
+
+[[_nonblocking_io_support_in_servletinputstream]]
+.Nonblocking I/O Support in jakarta.servlet.ServletInputStream
+[width="100%",cols="50%,50%"]
+|===
+|Method |Description
+
+|`void setReadListener(ReadListener rl)` |Associates this input stream with a listener object that contains callback methods to read data asynchronously.
+You provide the listener object as an anonymous class or use another mechanism to pass the input stream to the read listener object.
+
+|`boolean isReady()` |Returns true if data can be read without blocking.
+
+|`boolean isFinished()` |Returns true when all the data has been read.
+|===
+
+[[_nonblocking_io_support_in_servletoutputstream]]
+.Nonblocking I/O Support in jakarta.servlet.ServletOutputStream
+[width="100%",cols="50%,50%"]
+|===
+|Method |Description
+
+|`void setWriteListener(WriteListener wl)` |Associates this output stream with a listener object that contains callback methods to write data asynchronously.
+You provide the write listener object as an anonymous class or use another mechanism to pass the output stream to the write listener object.
+
+|`boolean isReady()` |Returns true if data can be written without blocking.
+|===
+
+[[_listener_interfaces_for_nonblocking_io_support]]
+.Listener Interfaces for Nonblocking I/O Support
+[width="100%",cols="20%,30%,50%"]
+|===
+|Interface |Methods |Description
+
+|`ReadListener` | `void onDataAvailable()`
+
+`void onAllDataRead()`
+
+`void onError(Throwable t)` |A `ServletInputStream` instance calls these methods on its listener when there is data available to read, when all the data has been read, or when there is an error.
+
+|`WriteListener` | `void onWritePossible()`
+
+`void onError(Throwable t)` |A `ServletOutputStream` instance calls these methods on its listener when it is possible to write data without blocking or when there is an error.
+|===
+
+=== Reading a Large HTTP POST Request Using Nonblocking I/O
+
+The code in this section shows how to read a large HTTP POST request inside a servlet by putting the request in asynchronous mode (as described in xref:servlets/servlets.adoc#_asynchronous_processing[Asynchronous Processing]) and using the nonblocking I/O functionality from <<_nonblocking_io_support_in_servletinputstream>> and <<_listener_interfaces_for_nonblocking_io_support>>.
+
+[source,java]
+----
+@WebServlet(urlPatterns={"/asyncioservlet"}, asyncSupported=true)
+public class AsyncIOServlet extends HttpServlet {
+   @Override
+   public void doPost(HttpServletRequest request,
+                      HttpServletResponse response)
+                      throws IOException {
+      final AsyncContext acontext = request.startAsync();
+      final ServletInputStream input = request.getInputStream();
+
+      input.setReadListener(new ReadListener() {
+         byte buffer[] = new byte[4*1024];
+         StringBuilder sbuilder = new StringBuilder();
+         @Override
+         public void onDataAvailable() {
+            try {
+               do {
+                  int length = input.read(buffer);
+                  sbuilder.append(new String(buffer, 0, length));
+               } while(input.isReady());
+            } catch (IOException ex) { ... }
+         }
+         @Override
+         public void onAllDataRead() {
+            try {
+               acontext.getResponse().getWriter()
+                                     .write("...the response...");
+            } catch (IOException ex) { ... }
+            acontext.complete();
+         }
+         @Override
+         public void onError(Throwable t) { ... }
+      });
+   }
+}
+----
+
+This example declares the web servlet with asynchronous support using the `@WebServlet` annotation parameter `asyncSupported=true`.
+The service method first puts the request in asynchronous mode by calling the `startAsync()` method of the request object, which is required in order to use nonblocking I/O.
+Then, the service method obtains an input stream associated with the request and assigns a read listener defined as an inner class.
+The listener reads parts of the request as they become available and then writes some response to the client when it finishes reading the request.

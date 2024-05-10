@@ -1,0 +1,16 @@
+== Servlet Lifecycle
+
+The lifecycle of a servlet is controlled by the servlet container in which the servlet has been deployed.
+When a request is mapped to a servlet, the servlet container performs the following steps:
+
+. If an instance of the servlet does not exist, the servlet container:
+.. Loads the servlet class
+.. Creates an instance of the servlet class
+.. Initializes the servlet instance by calling the `init` method
+. The servlet container invokes the `service` method, passing request and response objects.
+
+Initialization is covered in <<creating-and-initializing-a-servlet>>.
+Service methods are discussed in <<writing-service-methods>>.
+
+If it needs to remove the servlet, the servlet container finalizes the servlet by calling the servlet's `destroy` method.
+For more information, see <<finalizing-a-servlet>>.

@@ -1,0 +1,360 @@
+== The guessnumber-cdi CDI Example
+
+The `guessnumber-cdi` example, somewhat more complex than the `simplegreeting` example, illustrates the use of producer methods and of session and application scope.
+The example is a game in which you try to guess a number in fewer than ten attempts.
+It is similar to the `guessnumber-faces` example described in xref:web:faces-facelets/faces-facelets.adoc#_introduction_to_facelets[Introduction to Facelets], except that you can keep guessing until you get the right answer or until you use up your ten attempts.
+
+The example includes four source files, a Facelets page and template, and configuration files.
+The configuration files and the template are the same as those used for the `simplegreeting` example.
+
+=== The guessnumber-cdi Source Files
+
+The four source files for the `guessnumber-cdi` example are:
+
+* The `@MaxNumber` qualifier interface
+
+* The `@Random` qualifier interface
+
+* The `Generator` managed bean, which defines producer methods
+
+* The `UserNumberBean` managed bean
+
+The source files are located in the `_jakartaee-examples_/tutorial/cdi/guessnumber-cdi/src/main/java/jakarta/tutorial/guessnumber` directory.
+
+==== The @MaxNumber and @Random Qualifier Interfaces
+
+The `@MaxNumber` qualifier interface is defined as follows:
+
+[source,java]
+----
+package guessnumber;
+
+import java.lang.annotation.Documented;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.ElementType.TYPE;
+import java.lang.annotation.Retention;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import java.lang.annotation.Target;
+import jakarta.inject.Qualifier;
+
+@Target({TYPE, METHOD, PARAMETER, FIELD})
+@Retention(RUNTIME)
+@Documented
+@Qualifier
+public @interface MaxNumber {
+}
+----
+
+The `@Random` qualifier interface is defined as follows:
+
+[source,java]
+----
+package guessnumber;
+
+import java.lang.annotation.Documented;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.PARAMETER;
+import static java.lang.annotation.ElementType.TYPE;
+import java.lang.annotation.Retention;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import java.lang.annotation.Target;
+import jakarta.inject.Qualifier;
+
+@Target({TYPE, METHOD, PARAMETER, FIELD})
+@Retention(RUNTIME)
+@Documented
+@Qualifier
+public @interface Random {
+}
+----
+
+==== The Generator Managed Bean
+
+The `Generator` managed bean contains the two producer methods for the application.
+The bean has the `@ApplicationScoped` annotation to specify that its context extends for the duration of the user's interaction with the application:
+
+[source,java]
+----
+package guessnumber;
+
+import java.io.Serializable;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
+
+@ApplicationScoped
+public class Generator implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private final java.util.Random random =
+        new java.util.Random( System.currentTimeMillis() );
+
+    private final int maxNumber = 100;
+
+    java.util.Random getRandom() {
+        return random;
+    }
+
+    @Produces @Random int next() {
+        return getRandom().nextInt(maxNumber + 1);
+    }
+
+    @Produces @MaxNumber int getMaxNumber() {
+        return maxNumber;
+    }
+
+}
+----
+
+==== The UserNumberBean Managed Bean
+
+The `UserNumberBean` managed bean, the managed bean for the Jakarta Faces application, provides the basic logic for the game.
+This bean does the following:
+
+* Implements setter and getter methods for the bean fields
+
+* Injects the two qualifier objects
+
+* Provides a `reset` method that allows you to begin a new game after you complete one
+
+* Provides a `check` method that determines whether the user has guessed the number
+
+* Provides a `validateNumberRange` method that determines whether the user's input is correct
+
+The bean is defined as follows:
+
+[source,java]
+----
+package guessnumber;
+
+import java.io.Serializable;
+import jakarta.annotation.PostConstruct;
+import jakarta.faces.view.ViewScoped;
+import jakarta.enterprise.inject.Instance;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.component.UIInput;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+
+@Named
+@ViewScoped
+public class UserNumberBean implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private int number;
+    private Integer userNumber;
+    private int minimum;
+    private int remainingGuesses;
+
+    @MaxNumber
+    @Inject
+    private int maxNumber;
+
+    private int maximum;
+
+    @Random
+    @Inject
+    Instance<Integer> randomInt;
+
+    @PostConstruct
+    public void init() {
+        minimum = 0;
+        userNumber = 0;
+        remainingGuesses = 10;
+        maximum = maxNumber;
+        number = randomInt.get();
+    }
+
+    public void check() {
+        if (userNumber > number) {
+            maximum = userNumber - 1;
+        }
+        if (userNumber < number) {
+            minimum = userNumber + 1;
+        }
+        if (userNumber == number) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage("Correct!"));
+        }
+        remainingGuesses--;
+    }
+
+    public void reset() {
+        init();
+    }
+
+    public void validateNumberRange(FacesContext context,
+                                    UIComponent toValidate,
+                                    Object value) {
+        int input = (Integer) value;
+
+        if (input < minimum || input > maximum) {
+            throw new ValidatorException(new FacesMessage("Invalid guess"));
+        }
+    }
+
+    public void setUserNumber(Integer userNumber) {
+        this.userNumber = userNumber;
+    }
+
+    public Integer getUserNumber() {
+        return userNumber;
+    }
+
+    public int getMaximum() {
+        return maximum;
+    }
+
+    public int getMinimum() {
+        return minimum;
+    }
+
+    public int getRemainingGuesses() {
+        return remainingGuesses;
+    }
+
+}
+----
+
+=== The Facelets Page
+
+This example uses the same template that the `simplegreeting` example uses.
+The `index.xhtml` file, however, is more complex.
+
+[source,xml]
+----
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:h="jakarta.faces.html">
+    <ui:define name="title">Guess My Number</ui:define>
+    <ui:define name="content">
+        <h:form id="guessMyNumberForm">
+            <p>
+                I'm thinking of a number from #{userNumberBean.minimum}
+                to #{userNumberBean.maximum}. You have
+                <h:outputText id="remainingGuesses"
+                              value="#{userNumberBean.remainingGuesses}" />
+                guesses.
+            </p>
+            <div class="input">
+                <h:outputLabel for="userNumber" value="Number" />
+                <h:inputText id="userNumber"
+                             value="#{userNumberBean.userNumber}"
+                             required="true" size="3"
+                             disabled="#{
+                                userNumberBean.remainingGuesses le 0
+                                    or
+                                userNumberBean.number eq userNumberBean.userNumber
+                             }"
+                             validator="#{userNumberBean.validateNumberRange}" />
+            </div>
+            <div class="actions">
+                <h:commandButton id="check" value="Guess"
+                                 action="#{userNumberBean.check}"
+                                 disabled="#{
+                                    userNumberBean.remainingGuesses le 0
+                                        or
+                                    userNumberBean.number eq userNumberBean.userNumber
+                                 }">
+                    <f:ajax execute="@form"
+                            render="@this remainingGuesses userNumber output messages" />
+                </h:commandButton>
+                <h:commandButton id="reset" value="Reset"
+                                 action="#{userNumberBean.reset}">
+                    <f:ajax execute="@this"
+                            render="@this remainingGuesses userNumber output messages" />
+                </h:commandButton>
+            </div>
+            <h:panelGroup id="output" layout="block">
+                <h:outputText value="Higher!" rendered="#{
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number gt userNumberBean.userNumber
+                }" />
+                <h:outputText value="Lower!" rendered="#{
+                    userNumberBean.userNumber ne 0
+                        and
+                    userNumberBean.number lt userNumberBean.userNumber
+                }" />
+            </h:panelGroup>
+            <h:messages id="messages" />
+        </h:form>
+    </ui:define>
+</ui:composition>
+----
+
+The Facelets page presents the user with the minimum and maximum values and the number of guesses remaining.
+The user's interaction with the game takes place within the `panelGrid` table, which contains an input field, *Guess* and *Reset* buttons, and a field that appears if the guess is higher or lower than the correct number.
+Every time the user clicks *Guess*, the `userNumberBean.check` method is called to reset the maximum or minimum value or, if the guess is correct, to generate a `FacesMessage` to that effect.
+The method that determines whether each guess is valid is `userNumberBean.validateNumberRange`.
+
+=== Running the guessnumber-cdi Example
+
+You can use either NetBeans IDE or Maven to build, package, deploy, and run the `guessnumber-cdi` application.
+
+==== To Build, Package, and Deploy the guessnumber-cdi Example Using NetBeans IDE
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. From the *File* menu, choose *Open Project*.
+
+. In the *Open Project* dialog box, navigate to:
++
+[source,java]
+----
+jakartaee-examples/tutorial/cdi
+----
+
+. Select the `guessnumber-cdi` folder.
+
+. Click *Open Project*.
+
+. In the *Projects* tab, right-click the `guessnumber-cdi` project and select *Build*.
++
+This command builds and packages the application into a WAR file, `guessnumber-cdi.war`, located in the `target` directory, and then deploys it to GlassFish Server.
+
+==== To Build, Package, and Deploy the guessnumber-cdi Example Using Maven
+
+. Make sure that GlassFish Server has been started (see xref:intro:usingexamples/usingexamples.adoc#_starting_and_stopping_glassfish_server[Starting and Stopping GlassFish Server]).
+
+. In a terminal window, change to the following directory:
++
+[source,java]
+----
+jakartaee-examples/tutorial/cdi/guessnumber-cdi/
+----
+
+. Enter the following command to deploy the application:
++
+[source,java]
+----
+mvn install
+----
++
+This command builds and packages the application into a WAR file, `guessnumber-cdi.war`, located in the `target` directory, and then deploys it to GlassFish Server.
+
+==== To Run the guessnumber Example
+
+. In a web browser, enter the following URL:
++
+----
+http://localhost:8080/guessnumber-cdi
+----
++
+The *Guess My Number* page opens.
+
+. On the *Guess My Number* page, enter a number in the *Number* field and click *Guess*.
++
+The minimum and maximum values are modified, along with the remaining number of guesses.
+
+. Keep guessing numbers until you get the right answer or run out of guesses.
++
+If you get the right answer or run out of guesses, the input field and *Guess* button are grayed out.
+
+. Click *Reset* to play the game again with a new random number.

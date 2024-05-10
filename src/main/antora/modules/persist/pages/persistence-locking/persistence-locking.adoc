@@ -1,0 +1,9 @@
+= Controlling Concurrent Access to Entity Data with Locking
+
+include::ROOT:partial$not_updated.adoc[]
+
+This chapter details how to handle concurrent access to entity data, and the locking strategies available to Jakarta Persistence application developers.
+
+include::persistence-locking001.adoc[]
+
+include::persistence-locking002.adoc[]

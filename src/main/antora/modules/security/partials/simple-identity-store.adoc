@@ -1,0 +1,23 @@
+Finally, let's define a simple identity store that the security system can use to validate provided credentials for Basic authentication:
+
+[source,java]
+----
+@ApplicationScoped
+public class TestIdentityStore implements IdentityStore {
+
+    public CredentialValidationResult validate(UsernamePasswordCredential usernamePasswordCredential) {
+        if (usernamePasswordCredential.compareTo("john", "secret1")) {
+            return new CredentialValidationResult("john", Set.of("user", "caller"));
+        }
+
+        return INVALID_RESULT;
+    }
+
+}
+----
+
+This identity store only validates the single identity (user) "john", with password "secret1" and roles "user" and "caller". Defining this kind of identity store is often the simplest way to get started. 
+
+NOTE: Jakarta Security doesn't provide a simple identity store out of the box. The reason is that everything in Jakarta Security promotes best practices, and it's not clear if a simple identity store fits in with those best practices.
+
+include::partial$identity-store-installed.adoc[]
